@@ -1,9 +1,9 @@
 ---
-title: Criar uma sequência de tarefas para atualizar um sistema operacional
+title: Criar uma sequência de tarefas de atualização do sistema operacional
 titleSuffix: Configuration Manager
 description: Usar uma sequência de tarefas para a atualização automática do Windows 7 ou posterior para o Windows 10
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.latest.revision: 12
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 91d3bf5b1488eb7eac52c7426e4bdeeb92ff43b8
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 48a5e7aa381924e3c0ad052833c9588e3dffa4f5
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager"></a>Crie uma sequência de tarefas para atualizar um sistema operacional no System Center Configuration Manager
 
@@ -87,9 +87,16 @@ Use sequências de tarefas no Configuration Manager para fazer upgrade automatic
 
 
 ## <a name="configure-pre-cache-content"></a>Configurar o conteúdo de armazenamento prévio em cache
-O recurso pré-cache para as implantações disponíveis de sequências de tarefas permite que os clientes baixem o conteúdo relevante do pacote de atualização do sistema operacional antes que um usuário instale a sequência de tarefas.
+<!--1021244-->
+O recurso pré-cache para as implantações disponíveis de sequências de tarefas permite que os clientes baixem o conteúdo relevante do pacote de atualização do sistema operacional antes que um usuário instale a sequência de tarefas.  
+
 > [!TIP]  
-> Esse recurso foi introduzido na versão 1702 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1706, esse recurso não é mais um recurso de pré-lançamento.
+> Esse recurso foi introduzido na versão 1702 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1706, esse recurso não é mais um recurso de pré-lançamento.  
+
+
+> [!Note]  
+> O Configuration Manager não habilita esse recurso opcional por padrão. Você precisa habilitar esse recurso antes de usá-lo. Para obter mais informações, confira [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 Por exemplo, você deseja apenas ter uma sequência de tarefas de atualização in-loco para todos os usuários e tem muitas arquiteturas e muitos idiomas. Nas versões anteriores, o conteúdo começa a ser baixado quando o usuário instala uma implantação de sequência de tarefas disponível no Centro de Software. Esse atraso acrescenta tempo extra antes que a instalação esteja pronta para ser iniciada. Todo o conteúdo referenciado na sequência de tarefas é baixado. Esse conteúdo inclui o pacote de upgrade do sistema operacional para todas as arquiteturas e linguagens. Se cada pacote de upgrade tiver aproximadamente três GB, o conteúdo total será muito grande.
 

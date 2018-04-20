@@ -1,9 +1,9 @@
 ---
 title: Cache de pares do cliente
 titleSuffix: Configuration Manager
-description: "Use cache de pares para locais de fonte de conteúdo do cliente durante a implantação de conteúdo com o System Center Configuration Manager."
+description: Use cache de pares para locais de fonte de conteúdo do cliente durante a implantação de conteúdo com o System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/07/2017
+ms.date: 04/10/2018
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -12,24 +12,30 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
-caps.latest.revision: 
+caps.latest.revision: 3
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 424f4030f2dd2a337a29d48ca831fa3a791de610
-ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
+manager: dougeby
+ms.openlocfilehash: 99eef9faf6ac66f65d16020b703e3a64d9beb9d0
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Cache de pares para clientes do Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Começando com o System Center Configuration Manager versão 1610, você pode usar o **Cache de pares** para ajudar a gerenciar a implantação de conteúdo para clientes em locais remotos. O Cache de Pares é uma solução interna do Configuration Manager que habilita os clientes a compartilharem conteúdo com outros clientes diretamente do cache local.   
+<!--1101436-->
+Use o **Cache Par** para ajudar a gerenciar a implantação de conteúdo para clientes em locais remotos. O Cache de Pares é uma solução interna do Configuration Manager que habilita os clientes a compartilharem conteúdo com outros clientes diretamente do cache local.   
 
 > [!TIP]  
-> Esse recurso foi introduzido na versão 1610 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1710, esse recurso deixou de ser um recurso de pré-lançamento.
+> Esse recurso foi introduzido na versão 1610 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1710, esse recurso deixou de ser um recurso de pré-lançamento.  
+
+
+> [!Note]  
+> O Configuration Manager não habilita esse recurso opcional por padrão. Você precisa habilitar esse recurso antes de usá-lo. Para obter mais informações, confira [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 ## <a name="overview"></a>Visão geral
 Um cliente de Cache de mesmo nível é um cliente do Configuration Manager que está habilitado para uso do Cache de mesmo nível. Um cliente de Cache de mesmo nível que possui conteúdo para compartilhamento com outros clientes é uma fonte de Cache de mesmo nível.
@@ -38,7 +44,7 @@ Um cliente de Cache de mesmo nível é um cliente do Configuration Manager que e
     -  Deve ingressar no domínio. No entanto, um cliente não associado a um domínio pode obter o conteúdo de um domínio ingressado na fonte de Cache de mesmo nível.
     -  Deve ser membro do grupo de limites atual do cliente que está procurando o conteúdo. Quando um cliente usa o fallback para buscar o conteúdo de um grupo de limites vizinho, a lista de locais de origem de conteúdo não inclui um cliente de Cache Par em um grupo de limites vizinho. Para obter mais informações sobre grupos de limite atuais e próximos, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).
  - O cliente do Configuration Manager serve todo tipo de conteúdo mantido no cache a outros clientes usando o Cache Par. Esse conteúdo inclui arquivos do Office 365 e arquivos de instalação expressa.<!--SMS.500850-->
- -  O Cache Par não substitui o uso de outras soluções como o BranchCache. O Cache Par funciona junto com outras soluções para dar a você mais opções para estender as soluções tradicionais de implantação de conteúdo, tais como pontos de distribuição. O Cache Par é uma solução personalizada sem nenhuma dependência do BranchCache.  Se você não habilitar ou usar o Windows BranchCache, o Cache Par ainda funcionará.
+ -  O Cache Par não substitui o uso de outras soluções como o BranchCache. O Cache Par funciona junto com outras soluções para dar a você mais opções para estender as soluções tradicionais de implantação de conteúdo, tais como pontos de distribuição. O Cache Par é uma solução personalizada sem nenhuma dependência do BranchCache. Se você não habilitar ou usar o Windows BranchCache, o Cache Par ainda funcionará.
 
 ### <a name="operations"></a>Operações
 
@@ -82,7 +88,7 @@ Use esse relatório para entender os detalhes de rejeição para um grupo de lim
 3. **Detalhes da rejeição de conteúdo de origem de cache de pares**:   
   Use esse relatório para entender o conteúdo que o cliente estava solicitando quando ele foi rejeitado.
 
- - **Problema conhecido:** não é possível selecionar a partir de parâmetros disponíveis, é preciso digitá-los manualmente. Insira o valor para *Tipo de Rejeição* conforme exibido no relatório de **Rejeição do conteúdo de origem do cache par**. Em seguida, digite a *ID de Recurso* para a fonte de conteúdo sobre a qual você deseja obter mais informações.  Para localizar a ID de recurso da fonte de conteúdo:  
+ - **Problema conhecido:** não é possível selecionar a partir de parâmetros disponíveis, é preciso digitá-los manualmente. Insira o valor para *Tipo de Rejeição* conforme exibido no relatório de **Rejeição do conteúdo de origem do cache par**. Em seguida, digite a *ID de Recurso* para a fonte de conteúdo sobre a qual você deseja obter mais informações. Para localizar a ID de recurso da fonte de conteúdo:  
 
     1. Localizar o nome do computador que é exibido como a *Origem de cache par* nos resultados da **Rejeição de conteúdo de fonte de cache par por condição**.  
     2. Em seguida, vá para **Ativos e Conformidade** > **Dispositivos** e procure o nome desse computador. Use o valor da coluna de ID de Recurso.  
@@ -93,7 +99,7 @@ Use esse relatório para entender os detalhes de rejeição para um grupo de lim
 
 -   Os clientes só podem transferir conteúdo de clientes de cache de pares que estão em seu grupo de limites atual.
 
--   Antes da versão 1706, cada site em que os clientes usam Cache Par deve ser configurado com uma [Conta de Acesso à Rede](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). A partir da versão 1706, essa conta não é mais necessária, com uma exceção.  O cenário de exceção é quando um cliente habilitado para cache par executa uma sequência de tarefas no Centro de Software e essa sequência de tarefas reinicializa para uma imagem de inicialização. Nesse cenário, o cliente ainda exige a Conta de Acesso à Rede. Quando o cliente está no Windows PE, ele usa a Conta de Acesso à Rede para obter o conteúdo da origem do cache par.
+-   Antes da versão 1706, cada site em que os clientes usam Cache Par deve ser configurado com uma [Conta de Acesso à Rede](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). A partir da versão 1706, essa conta não é mais necessária, com uma exceção. O cenário de exceção é quando um cliente habilitado para cache par executa uma sequência de tarefas no Centro de Software e essa sequência de tarefas reinicializa para uma imagem de inicialização. Nesse cenário, o cliente ainda exige a Conta de Acesso à Rede. Quando o cliente está no Windows PE, ele usa a Conta de Acesso à Rede para obter o conteúdo da origem do cache par.
 
     Quando necessário, o computador de origem do Cache Par usa a Conta de Acesso à Rede para autenticar solicitações de download dos pares. Essa conta requer somente permissões de usuário de domínio para essa finalidade.
 

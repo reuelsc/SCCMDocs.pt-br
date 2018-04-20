@@ -1,45 +1,42 @@
 ---
-title: "Versões incrementais"
+title: Versões incrementais
 titleSuffix: Configuraton Manager
-description: "Saiba como instalar e gerenciar atualizações do System Center Configuration Manager."
-ms.custom: na
-ms.date: 7/31/2017
-ms.reviewer: na
-ms.suite: na
+description: Saiba quais são as novidades na atualização mais recente do Configuration Manager.
+ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
+ms.technology:
+- configmgr-other
 ms.topic: article
 ms.assetid: b57acf0b-05b7-46af-ad4c-f3e707bd3861
-caps.latest.revision: "4"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 4c29d2499dd5fe9665492219cbdc8300bab7568a
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+caps.latest.revision: 4
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: f80871b2bfbcb3cf783b51191feac82feb9b038d
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="whats-new-in-system-center-configuration-manager-incremental-versions"></a>Novidades nas versões incrementais do System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
+ O Configuration Manager usa um processo de [atualizações e manutenção](/sccm/core/servers/manage/updates) no console. Esse processo de atualização facilita a descoberta e a instalação de atualizações do Configuration Manager. Há não há mais service packs nem versões de atualização cumulativas a serem acompanhadas e instaladas. Você não precisa pesquisar o download da versão ou das atualizações mais recentes.
 
+ Para atualizar o produto para uma nova versão do branch atual, use o console do Configuration Manager para localizar e, em seguida, [instalar atualizações no console](../../../core/servers/manage/install-in-console-updates.md). Algumas vezes ao ano, a Microsoft lança novas versões que incluem atualizações do produto. Cada versão também apresenta novos recursos. Ao instalar uma atualização com novos recursos, você pode optar por usar esses recursos. 
 
+ Versões de atualização diferentes são identificadas por ano e mês. Por exemplo, a versão 1511 identifica novembro de 2015 (o mês em que o branch atual do Configuration Manager foi liberado para fabricação pela primeira vez). As atualizações posteriores terão nomes de versão como 1802, que indicam uma atualização criada em fevereiro de 2018. Essas versões de atualização são fundamentais para entender a versão incremental de sua instalação do Configuration Manager e quais recursos estão disponíveis para serem habilitados em seu ambiente.
 
- O System Center Configuration Manager usa um processo de [atualizações e manutenção](/sccm/core/servers/manage/updates) no console que torna mais fácil descobrir e instalar atualizações do Configuration Manager. Isso significa que não há mais service packs ou versões de atualização cumulativa para acompanhar. Você não precisa mais pesquisar pelo download da versão ou das atualizações mais recentes.
-
- Em vez disso, para atualizar o produto para uma nova versão da ramificação atual, use o console do Configuration Manager para localizar e [instalar as atualizações no console](../../../core/servers/manage/install-in-console-updates.md). Algumas vezes por ano são lançadas versões de lançamento que incluem as atualizações de produto. Cada versão também pode introduzir novos recursos.  
-
- Ao instalar uma atualização com novos recursos, você pode escolher usar (ou não usar) tais recursos na sua implantação. Versões de atualização diferentes são identificadas por ano e mês. Por exemplo, a versão 1511 identifica novembro de 2015 (o mês em que a ramificação atual do System Center Configuration Manager foi liberado para fabricação). As atualizações posteriores, a partir de 2016, terão nomes de versão como 1610, que indicam uma atualização criada em outubro de 2016.
-
- Essas versões de atualização são essenciais para entender a versão incremental da sua instalação do System Center Configuration Manager, bem como quais recursos podem estar disponíveis para habilitar na sua implantação.
-
- A versão inicial da ramificação atual do System Center Configuration Manager é a versão 1511. Atualizações adicionais estão disponíveis desde esta versão inicial. Use os links a seguir para descobrir as novidades de cada versão que permanecem com suporte:
+## <a name="supported-versions"></a>Versões com suporte
+ Use os links a seguir para descobrir as novidades em cada versão com suporte:
+  - [Novidades na versão 1802](../../../core/plan-design/changes/whats-new-in-version-1802.md)
+  - [Novidades na versão 1710](../../../core/plan-design/changes/whats-new-in-version-1710.md)
   - [Novidades na versão 1706](../../../core/plan-design/changes/whats-new-in-version-1706.md)  
-  - [Novidades na versão 1702](../../../core/plan-design/changes/whats-new-in-version-1702.md)
-  - [Novidades na versão 1610](../../../core/plan-design/changes/whats-new-in-version-1610.md)
 
 
- Cada versão de atualização tem suporte por um ano após seu lançamento. Recomendamos que você permaneça atualizado com a versão mais recente sempre que possível. Para mais informações, consulte [Suporte para versões do branch atual do System Center Configuration Manager](../../../core/servers/manage/current-branch-versions-supported.md).  
+ Cada versão de atualização tem suporte por um ano após seu lançamento. Mantenha-se atualizado com a versão de atualização mais recente. Para obter mais informações, confira [Suporte para versões do branch atual do System Center Configuration Manager](../../../core/servers/manage/current-branch-versions-supported.md).  
+
+
+## <a name="see-also"></a>Consulte também
+[Notas de versão](/sccm/core/servers/deploy/install/release-notes)

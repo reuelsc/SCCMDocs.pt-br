@@ -7,20 +7,21 @@ ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 98feaa06-64b1-4e86-a122-93017c97cd4f
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 7
+caps.handback.revision: 0
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: eaefae0c51af91e4419ef15cf02b8250c3d2efd8
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 6b0ae2042c1c463bce53c0c1a7438cc7102cd66e
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>Como monitorar perfis de certificado no System Center Configuration Manager
 
@@ -61,7 +62,7 @@ Para monitorar a conformidade de certificado SCEP, não use o console, em vez di
     |0x00000004|O registro deve ser adiado.|  
     |0x00000010|Ocorreu um erro.|  
     |0x00000020|O status do registro é desconhecido.|  
-    |0x00000040|As informações de status foram ignoradas. Isso pode ocorrer se uma autoridade de certificação HYPERLINK "http://msdn.microsoft.com/en-us/windows/ms721572" \l "_security_certification_authority_gly" não for válida ou não tiver sido selecionada para o monitoramento.|  
+    |0x00000040|As informações de status foram ignoradas. Isso poderá ocorrer se uma autoridade de certificação HYPERLINK "http://msdn.microsoft.com/windows/ms721572" \l "_security_certification_authority_gly" não for válida ou não tiver sido selecionada para monitoramento.|  
     |0x00000100|O registro foi negado.|  
 
 ##  <a name="view-compliance-results-by-using-reports"></a>Exibir resultados de conformidade por meio de relatórios

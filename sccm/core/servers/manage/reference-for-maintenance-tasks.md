@@ -1,26 +1,27 @@
 ---
-title: "Referência para tarefas de manutenção"
+title: Referência para tarefas de manutenção
 titleSuffix: Configuration Manager
-description: "Leia detalhes para cada uma das tarefas de manutenção de site do System Center Configuration Manager e se essas tarefas são habilitadas por padrão."
+description: Leia detalhes para cada uma das tarefas de manutenção de site do System Center Configuration Manager e se essas tarefas são habilitadas por padrão.
 ms.custom: na
 ms.date: 3/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 68dc6acd-5848-47a4-b4c1-ffa40e47890b
-caps.latest.revision: "16"
-caps.handback.revision: "0"
+caps.latest.revision: 16
+caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 3f67bddcb7233b62769271871354c86c5440e320
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 21b5e47efd2678f78fe7b7c0e10524ec7141634d
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Referência para tarefas de manutenção do System Center Configuration Manager
 
@@ -105,7 +106,7 @@ Este tópico lista detalhes de cada uma das tarefas de manutenção de site do S
 -   **Site primário**: habilitado    
 -   Site secundário: indisponível  
 
-**Excluir Dados Antigos de Descoberta**: use essa tarefa para excluir dados de descoberta antigos do banco de dados. Esses dados podem incluir registros resultantes dos métodos de descoberta de pulsação, descoberta de rede e descoberta do Active Directory Domain Services (Sistema, Usuário e Grupo). Quando essa tarefa é executada em um site, os dados associados a esse site são excluídos, e essas alterações são replicadas em outros sites. Para obter mais informações sobre Descoberta, consulte [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
+**Excluir Dados Antigos de Descoberta**: use essa tarefa para excluir dados de descoberta antigos do banco de dados. Esses dados podem incluir registros resultantes dos métodos de descoberta de pulsação, descoberta de rede e descoberta do Active Directory Domain Services (Sistema, Usuário e Grupo). Essa tarefa também removerá dispositivos antigos marcados como desativados. Quando essa tarefa é executada em um site, os dados associados a esse site são excluídos, e essas alterações são replicadas em outros sites. Para obter mais informações sobre Descoberta, consulte [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
 
 -   Site de administração central: indisponível    
 -   **Site primário**: habilitado    
@@ -237,7 +238,7 @@ Esta tarefa só opera em recursos que são clientes do Configuration Manager. É
 -   **Site primário**: não habilitado    
 -   Site secundário: indisponível  
 
-**Excluir Sites e Sub-redes de Descoberta de Floresta Obsoleta**: use essa tarefa para excluir dados sobre sites, sub-redes e domínios do Active Directory que não foram descobertos pelo método de descoberta de florestas do Active Directory nos últimos 30 dias. Isso remove os dados de descoberta, mas não afeta os limites criados por meio desses dados de descoberta. Para obter mais informações, consulte [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
+**Excluir Sites e Sub-redes de Descoberta de Floresta Obsoleta**: use essa tarefa para excluir dados sobre sites, sub-redes e domínios do Active Directory que não foram descobertos pelo método de descoberta de florestas do Active Directory nos últimos 30 dias. Isso remove os dados de descoberta, mas não afeta os limites criados por meio desses dados de descoberta. Para obter mais informações, consulte [Executar descoberta para o System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
 
 -   **Site de administração central**: habilitado    
 -   **Site primário**: habilitado    

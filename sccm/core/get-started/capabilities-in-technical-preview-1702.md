@@ -1,7 +1,7 @@
 ---
 title: Recursos no Technical Preview 1702
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1702."
+description: Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1702.
 ms.custom: na
 ms.date: 02/24/2017
 ms.prod: configuration-manager
@@ -12,15 +12,15 @@ ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aedd608d-6db3-4ea5-851d-70f2dcda6bb5
-caps.latest.revision: 
+caps.latest.revision: 5
 author: erikje
 ms.author: erikje
 manager: angrobe
-ms.openlocfilehash: ed2a858c55cbf389a0e974f4699b5a9c548953ef
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 94c025a75cd0aef62ee00c11b8ee5a113fba2bb1
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1702 do System Center Configuration Manager
 
@@ -42,7 +42,7 @@ Essa visualização apresenta novas opções de comentários no console do Confi
 -  Ao clicar com o botão direito do mouse em qualquer objeto no console.   
     ![Opção ao clicar com o botão direito do mouse](./media/feedback-option.png)   
 
-Escolher **Comentários** abre seu navegador para o site de comentários do UserVoice do Configuration Manager, em https://configurationmanager.uservoice.com/forums/300492-ideas.
+Escolher **Comentários** abre o navegador no site de comentários UserVoice do Configuration Manager, em https://configurationmanager.uservoice.com/forums/300492-ideas.
 ##  <a name="changes-for-updates-and-servicing"></a>Alterações em Atualizações e Manutenção
 Os itens a seguir são apresentados com essa visualização.
 
@@ -104,7 +104,7 @@ O Azure AD armazena os dispositivos na UO **Computadores do AADDC**.  Configure 
 O Azure AD não tem uma UO que armazena grupos. Em vez disso, use a mesma estrutura geral das consultas de sistema ou usuário e configure a consulta LDAP para apontar para a UO que contém os grupos que você deseja descobrir.
 
 Para obter mais informações sobre o Azure AD, consulte o seguinte:  
- - [Azure Active Directory Domain Services](https://azure.microsoft.com/en-us/services/active-directory-ds) em azure.microsoft.com.
+ - [Azure Active Directory Domain Services](https://azure.microsoft.com/services/active-directory-ds) em azure.microsoft.com.
  - [Documentação do Active Directory Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services) em docs.microsoft.com.
 
 ## <a name="conditional-access-device-compliance-policy-improvements"></a>Aprimoramentos na política de conformidade de dispositivo de acesso condicional
@@ -151,11 +151,11 @@ A nova política é exibida no nó **Políticas de Conformidade** do espaço de 
 1. No console do Configuration Manager, acesse **Ativos e Conformidade** > **Configurações de Conformidade** e clique em **Políticas de Conformidade**.
 2. Na guia **Início** , no grupo **Implantação** , clique em **Implantar**.
 3. Na caixa de diálogo **Implantar Política de Conformidade** , clique em **Procurar** para selecionar a coleção de usuários nos quais você deseja implantar a política.
-   Além disso, é possível selecionar opções para gerar alertas quando a política não for compatível e também para configurar o agendamento por meio do qual essa política será avaliada quanto à conformidade.
+   Além disso, é possível selecionar opções para gerar alertas quando a política não estiver em conformidade e também para configurar o agendamento por meio do qual essa política será avaliada quanto à conformidade.
 4. Quando terminar, clique em **OK**.
 
 ### <a name="monitor-the-compliance-policy"></a>Monitorar a política de conformidade
-Depois de criar a política de conformidade, você pode monitorar os resultados de conformidade no console do Configuration Manager. Para obter detalhes, consulte [Monitorar a política de conformidade](https://docs.microsoft.com/en-us/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
+Depois de criar a política de conformidade, você pode monitorar os resultados de conformidade no console do Configuration Manager. Para obter detalhes, consulte [Monitorar a política de conformidade](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
 
 
 ## <a name="improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences"></a>Aprimoramentos nas configurações e mensagens de notificação do Centro de Software para sequências de tarefas de alto impacto
@@ -301,7 +301,7 @@ O Android for Work é uma plataforma separada do Android e você precisará deci
 As seções a seguir descrevem o gerenciamento do Android for Work.
 
 #### <a name="enable-android-for-work-management"></a>Habilitar o gerenciamento do Android for Work
-1. Crie uma conta do Google em https://accounts.google.com/SignUp para usar como a conta de administrador do Android for Work que será associada a todas as tarefas de gerenciamento do Android for Work para esse locatário do Intune. Essa pode ser uma conta do Google compartilhada entre os administradores que gerenciam dispositivos Android. Essa é a conta do Google que sua organização usa para gerenciar e publicar aplicativos no console do Play for Work. Você usará essa conta para aprovar os aplicativos na loja do Play for Work, portanto, mantenha o controle do nome da conta e senha.
+1. Crie uma conta do Google em https://accounts.google.com/SignUp a ser usada como a conta do administrador do Android for Work que será associada a todas as tarefas de gerenciamento do Android for Work desse locatário do Intune. Essa pode ser uma conta do Google compartilhada entre os administradores que gerenciam dispositivos Android. Essa é a conta do Google que sua organização usa para gerenciar e publicar aplicativos no console do Play for Work. Você usará essa conta para aprovar os aplicativos na loja do Play for Work, portanto, mantenha o controle do nome da conta e senha.
 2. Habilite o registro do Android associando a conta do Google ao locatário do Intune gerenciado no Configuration Manager:
   1. Acesse **Administração** > **Visão Geral** > **Serviços de Nuvem** > **Assinaturas do Microsoft Intune** e selecione sua assinatura do Intune.
   2. Na faixa de opções, clique em **Configurar Plataformas** > **Android** e certifique-se de que **Habilitar registro do Android** esteja selecionado.

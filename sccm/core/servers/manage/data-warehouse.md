@@ -3,7 +3,7 @@ title: Data warehouse
 titleSuffix: Configuration Manager
 description: Ponto de serviço e banco de dados de Data warehouse para o System Center Configuration Manager
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,22 +13,28 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aaf43e69-68b4-469a-ad58-9b66deb29057
 caps.latest.revision: ''
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 83bfc0e3d7bdf1ff8718c7c211c897e37b21a06b
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 02a3c672c95587aeecd41e804b32981104896923
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/16/2018
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>O ponto de serviço do data warehouse para o System Center Configuration Manager
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-A partir da versão 1702, é possível usar o ponto de serviço do data warehouse para armazenar e relatar dados históricos de longo prazo para sua implantação do Configuration Manager.
+<!--1277922-->
+Use o ponto de serviço do data warehouse para armazenar e relatar dados históricos de longo prazo da sua implantação do Configuration Manager.
 
 > [!TIP]
-> Esse recurso foi introduzido na versão 1702 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1706, esse recurso não é mais um recurso de pré-lançamento.
+> Esse recurso foi introduzido na versão 1702 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1706, esse recurso não é mais um recurso de pré-lançamento.  
+
+
+> [!Note]  
+> O Configuration Manager não habilita esse recurso opcional por padrão. Você precisa habilitar esse recurso antes de usá-lo. Para obter mais informações, confira [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 O data warehouse dá suporte a até 2 TB de dados, com carimbos de data e hora para controle de alterações. O armazenamento dos dados é possibilitado por meio de sincronizações automatizadas do banco de dados de site do Configuration Manager para o banco de dados de data warehouse. Essas informações ficam acessíveis de seu ponto do Reporting Services. Os dados que são sincronizados com o banco de dados do data warehouse são retidos por três anos. Periodicamente, uma tarefa interna remove os dados com mais de três anos.
 
@@ -168,7 +174,7 @@ Quando você abre um relatório do data warehouse, o seguinte erro retorna:
 
 
 ## <a name="data-warehouse-dataflow"></a>Fluxo de dados do data warehouse   
-![Datawarehouse_flow](./media/datawarehouse.png)
+![Diagrama mostrando o fluxo de dados lógicos entre os componentes do site do data warehouse](./media/datawarehouse.png)
 
 **Sincronização e armazenamento de dados**
 

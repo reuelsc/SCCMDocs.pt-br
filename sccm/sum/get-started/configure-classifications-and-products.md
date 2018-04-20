@@ -1,22 +1,23 @@
 ---
-title: "configurar classificações e produtos para sincronizar"
+title: Configurar classificações e produtos
 titleSuffix: Configuration Manager
-description: "Siga estas etapas para configurar classificações e produtos para sincronizar no console do Configuration Manager."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.date: 11/20/2017
+description: Siga estas etapas para configurar as classificações e os produtos de atualização de software a serem sincronizados no console do Configuration Manager.
+keywords: ''
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
-ms.technology: configmgr-sum
+ms.service: ''
+ms.technology:
+- configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
-ms.openlocfilehash: f36ff74b794e57b51742c40d10bd25a9cb4a13a5
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: 9ba0872b1d2e4ef5dd027df3f7c16a6b3a94e9ac
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/16/2018
 ---
 #  <a name="configure-classifications-and-products-to-synchronize"></a>configurar classificações e produtos para sincronizar  
 
@@ -53,9 +54,11 @@ ms.lasthandoff: 11/21/2017
     >       
 
     > [!NOTE]    
-    > A partir do Configuration Manager versão 1706, você pode marcar a caixa de seleção **Incluir drivers e atualizações de firmware do Microsoft Surface** para sincronizar os drivers do Microsoft Surface. Todos os pontos de atualização de software devem executar o Windows Server 2016 para sincronizar com êxito os drivers do Surface. Se você habilitar um ponto de atualização de software em um computador que executa o Windows Server 2012 depois de habilitar os drivers do Surface, os resultados da verificação das atualizações de driver não serão precisos. Isso resulta na exibição de dados de conformidade incorretos no console do Configuration Manager e nos relatórios do Configuration Manager.  
-    > 
-    > A caixa de seleção **Incluir drivers e atualizações de firmware do Microsoft Surface** está sempre disponível no Configuration Manager versão 1710. No entanto, esse é um recurso de pré-lançamento do Configuration Manager versão 1706 e você precisa ativá-lo para que fique disponível. Os recursos de pré-lançamento são recursos que estão na Ramificação atual para testes iniciais em um ambiente de produção. Esses recursos têm suporte total, mas ainda estão em desenvolvimento ativo e podem receber alterações até que saiam da categoria de pré-lançamento. Para obter mais informações, consulte [Usar recursos de pré-lançamento de atualizações](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
+    > Começando com o Configuration Manager versão 1706, você pode marcar a caixa de seleção **Incluir atualizações de drivers e de firmware do Microsoft Surface** para sincronizar os drivers do Microsoft Surface.<!--1098490--> Todos os pontos de atualização de software devem executar o Windows Server 2016 para sincronizar com êxito os drivers do Surface. Se você habilitar um ponto de atualização de software em um computador que executa o Windows Server 2012 depois de habilitar os drivers do Surface, os resultados da verificação das atualizações de driver não serão precisos. Isso resulta na exibição de dados de conformidade incorretos no console do Configuration Manager e nos relatórios do Configuration Manager.  
+    >  
+    > Esse recurso foi introduzido pela primeira vez na versão 1706 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1710, esse recurso deixou de ser um recurso de pré-lançamento.  
+    >  
+    > O Configuration Manager não habilita esse recurso opcional por padrão. Você precisa habilitar esse recurso antes de usá-lo. Para obter mais informações, confira [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 5.  Na guia **Produtos** , especifique os produtos para os quais você deseja sincronizar atualizações de software e clique em **Fechar**.  
 

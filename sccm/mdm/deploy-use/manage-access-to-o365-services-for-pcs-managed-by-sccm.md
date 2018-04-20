@@ -1,9 +1,9 @@
 ---
-title: "Gerenciar o acesso aos serviços do O365 para computadores gerenciados"
+title: Gerenciar o acesso aos serviços do O365
 titleSuffix: Configuration Manager
-description: Saiba como configurar o acesso condicional para computadores gerenciados pelo System Center Configuration Manager.
+description: Saiba como configurar o acesso condicional aos serviços do Office 365 para computadores gerenciados pelo System Center Configuration Manager.
 ms.custom: na
-ms.date: 01/10/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,26 +12,26 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 34024741-edfa-4088-8599-d6bafc331e62
-caps.latest.revision: 
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: e1f50ea65236473f059ded6ef85c37646e929e53
-ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
+caps.latest.revision: 15
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 1e02cb911397d5f1f837996318b12049d328c9c3
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gerenciar o acesso aos serviços O365 para PCs gerenciados pelo System Center Configuration Manager.
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este artigo descreve como configurar o acesso condicional para computadores gerenciados pelo Configuration Manager.  
+<!--1191496-->
+Configure o acesso condicional aos serviços do Office 365 para computadores gerenciados pelo Configuration Manager.  
 
-<!--
- >> [!Tip]  
-> This feature was first introduced in version 1602 as a [pre-release feature](/sccm/core/servers/manage/pre-release-features). Beginning with version 1702, this feature is no longer a pre-release feature.
--->
+> [!Note]  
+> O Configuration Manager não habilita esse recurso opcional por padrão. Você precisa habilitar esse recurso antes de usá-lo. Para obter mais informações, confira [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 Para obter informações sobre como configurar o acesso condicional para dispositivos registrados e gerenciados pelo Microsoft Intune, consulte [Gerenciar o acesso a serviços no System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md). Esse artigo também aborda os dispositivos ingressados em domínio e não são avaliados quanto à conformidade.
 
@@ -95,15 +95,18 @@ Para obter informações sobre como configurar o acesso condicional para disposi
     - **Exigir que o BitLocker esteja habilitado no dispositivo**
     - **Exigir que a Inicialização Segura esteja habilitada no dispositivo** 
     - **Exigir que a Integridade de Código esteja habilitada no dispositivo**
-    - **Exigir que o Antimalware de Início Antecipado esteja habilitado no dispositivo**
+    - **Exigir que o Antimalware de Início Antecipado esteja habilitado no dispositivo**  
 
->[!Tip]
-> Introduzidos com a versão 1710, os critérios de acesso condicional para o atestado de integridade do dispositivo é um recurso de pré-lançamento. Para habilitar esse recurso, consulte [Recursos de pré-lançamento](/sccm/core/servers/manage/pre-release-features). 
+    >[!Tip]  
+    > Os critérios de acesso condicional para o atestado de integridade do dispositivo foram introduzidos na versão 1710 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). Na versão 1802, esse recurso deixou de ser um recurso de pré-lançamento.<!--1235616-->  
+
+    > [!Note]  
+    > O Configuration Manager não habilita esse recurso opcional por padrão. Você precisa habilitar esse recurso antes de usá-lo. Para obter mais informações, confira [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 ### <a name="step-2-evaluate-the-effect-of-conditional-access"></a>Etapa 2. Avaliar o efeito do acesso condicional  
- Execute o Relatório de conformidade de acesso condicional. Ele pode ser encontrado na seção Monitoramento em Relatórios > Gerenciamento de Conformidade e Configurações. Esse relatório exibe o status de conformidade para todos os dispositivos.  Dispositivos relatados como fora de conformidade são impedidos de acessar o Exchange Online e o SharePoint Online.  
+ Execute o **Relatório de Conformidade de Acesso Condicional**. Ele pode ser encontrado no espaço de trabalho **Monitoramento** em **Relatórios** > **Gerenciamento de conformidade e configurações**. Esse relatório exibe o status de conformidade para todos os dispositivos. Dispositivos relatados como fora de conformidade são impedidos de acessar o Exchange Online e o SharePoint Online.  
 
- ![CA&#95;compliance&#95;report](media/CA_compliance_report.png)  
+ ![Console do Configuration Manager, espaço de trabalho de monitoramento, relatórios, gerenciamento de conformidade e de configurações: relatório de conformidade de acesso condicional](media/CA_compliance_report.png)  
 
 ### <a name="configure-active-directory-security-groups"></a>Configurar grupos de segurança do Active Directory  
  Você direciona políticas de acesso condicional a grupos de usuários de acordo com os tipos de política. Esses grupos contêm os usuários que são afetados ou que ficam isentos da política. Quando uma política afeta um usuário, cada dispositivo usado por ele deve estar em conformidade para que possa acessar o serviço.  
@@ -114,12 +117,12 @@ Para obter informações sobre como configurar o acesso condicional para disposi
 
 -   **Grupos de destino** – grupos de usuários aos quais a política é aplicada. O mesmo grupo deve ser usado para as políticas de conformidade e de acesso condicional.  
 
--   **Grupos isentos** – Grupos de usuários isentos da política (opcional)  
+-   **Grupos isentos** – grupos de usuários isentos da política (opcional).  
     Se um usuário estiver nas duas, ele ficará isento da política.  
 
      Somente os grupos que são afetados pela política de acesso condicional são avaliados.  
 
-### <a name="step-3--create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>Etapa 3.  Criar uma política de acesso condicional para o Exchange Online e o SharePoint Online.  
+### <a name="step-3-create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>Etapa 3. Criar uma política de acesso condicional para o Exchange Online e o SharePoint Online.  
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
 

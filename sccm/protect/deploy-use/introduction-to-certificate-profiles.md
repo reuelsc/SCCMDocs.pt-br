@@ -1,71 +1,77 @@
 ---
-title: "Introdução aos perfis de certificado"
+title: Introdução aos perfis de certificado
 titleSuffix: Configuration Manager
-description: "Saiba como os perfis de certificado no System Center Configuration Manager funcionam com Serviços de Certificados do Active Directory."
+description: Saiba como os perfis de certificado no System Center Configuration Manager funcionam com Serviços de Certificados do Active Directory.
 ms.custom: na
-ms.date: 09/11/2017
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 41dcc259-f147-4420-bff2-b65bdf8cff77
-caps.latest.revision: "7"
-author: lleonard-msft
-ms.author: alleonar
-manager: angrobe
-ms.openlocfilehash: dc70aec1746f6e555011ba87c84811c1f8ea0620
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+caps.latest.revision: 7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 0e82c9704c0505c8c7ed9ef3d04260ca74026999
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introdução aos perfis de certificado no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-Os perfis de certificado funcionam com os Serviços de Certificados do Active Directory e com a função Serviço de Registro de Dispositivo de Rede para provisionar certificados de autenticação para os dispositivos gerenciados para que os usuários possam acessar perfeitamente os recursos da empresa. Por exemplo, você pode criar e implantar perfis de certificado para fornecer os certificados necessários para que os usuários iniciem conexões VPN e sem fio.
+Os perfis de certificado funcionam com os Serviços de Certificados do Active Directory e a função NDES (Serviço de Registro de Dispositivo de Rede). Crie e implante certificados de autenticação para dispositivos gerenciados para que os usuários possam acessar facilmente os recursos da empresa. Por exemplo, você pode criar e implantar perfis de certificado para fornecer os certificados necessários para que os usuários se conectem a conexões de VPN e sem fio.
 
-Os perfis de certificado podem configurar automaticamente dispositivos de usuários para que os recursos da empresa, como redes Wi-Fi e servidores VPN, possam ser acessados sem a necessidade de instalar certificados manualmente ou usar um processo fora da banda. Perfis de certificado também podem ajudar a manter os recursos da empresa protegidos, porque você pode usar configurações mais seguras que têm suporte por sua infraestrutura de chave pública (PKI) corporativa. Por exemplo, você pode exigir autenticação de servidor para todas as conexões VPN e Wi-Fi porque provisionou os certificados necessários nos dispositivos gerenciados.   
+Os perfis de certificado podem configurar dispositivos de usuário automaticamente. Os usuários acessam os recursos da empresa, como redes Wi-Fi e servidores de VPN, sem instalar certificados manualmente nem usar um processo fora de banda. Os perfis de certificado ajudam a manter os recursos da empresa protegidos, porque permitem usar configurações mais seguras compatíveis com a PKI (infraestrutura de chave pública) da empresa. Por exemplo, exigir autenticação de servidor para todas as conexões de VPN e Wi-Fi porque você implantou os certificados necessários nos dispositivos gerenciados.   
 
 Os perfis de certificado oferecem os seguintes recursos de gerenciamento:  
 
 -   Registro de certificado e renovação de uma AC (autoridade de certificação) corporativa para dispositivos que executam iOS, Windows 8.1, Windows RT 8.1, Windows 10 Desktop e Mobile e Android. Esses certificados podem ser usados para conexões Wi-Fi e VPN.  
 
--   Implantação de certificados de autoridade de certificação raiz confiável e certificados de autoridade de certificação intermediários para configurar uma cadeia de confiança em dispositivos para conexões VPN e Wi-Fi, quando a autenticação de servidor for exigida.  
+-   Implantação de certificados AC raiz confiáveis e de certificados AC intermediários. Esses certificados configuram uma cadeia de confiança em dispositivos para conexões de VPN e Wi-Fi quando a autenticação de servidor é necessária.  
 
 -   Monitorar e emitir relatórios sobre os certificados instalados.  
 
-**Exemplo:** Todos os funcionários devem conseguir se conectar aos pontos de acesso Wi-Fi em vários locais corporativos. Implantar os certificados necessários para se conectar ao Wi-Fi e implantar perfis de Wi-Fi que referenciam o certificado para habilitar conexão sem interrupções para o usuário.  
+**Exemplo:** Todos os funcionários devem conseguir se conectar aos pontos de acesso Wi-Fi em vários locais corporativos. Para habilitar a conexão fácil do usuário, primeiro implante os certificados necessários para a conexão com o Wi-Fi. Em seguida, implante perfis de Wi-Fi que referenciem o certificado.  
 
-**Exemplo:** Você tem uma PKI implementada e desejar mover para um método mais flexível e seguro de provisionamento de certificados que permite aos usuários acessar os recursos da empresa em seus dispositivos pessoais sem comprometer a segurança. Configurar perfis de certificado com configurações e protocolos com suporte pela plataforma específica do dispositivo. Os dispositivos podem solicitar automaticamente esses certificados de um servidor de registro da Internet. Em seguida, configurar perfis VPN para usar esses certificados para que o dispositivo possa acessar os recursos da empresa.  
+**Exemplo:** você tem uma PKI em vigor. Você deseja passar para um método mais flexível e seguro de implantação de certificados. Os usuários devem ser capazes de acessar recursos da empresa em seus dispositivos pessoais sem comprometer a segurança. Configurar perfis de certificado com configurações e protocolos com suporte pela plataforma específica do dispositivo. Os dispositivos podem solicitar automaticamente esses certificados de um servidor de registro da Internet. Em seguida, configurar perfis VPN para usar esses certificados para que o dispositivo possa acessar os recursos da empresa.  
+
+
 
 ## <a name="types-of-certificate-profiles"></a>Tipos de perfis de certificado  
  Há três tipos de perfis de certificado:  
 
--   **Certificado de AC confiável** - permite implantar uma AC de raiz ou intermediária confiável para formar uma cadeia de certificados de confiança quando o dispositivo precisar autenticar-se em um servidor.  
+-   **Certificado de Autoridade de Certificação confiável** – implantar um certificado AC raiz confiável ou um certificado AC intermediário. Esses certificados formam uma cadeia de confiança quando o dispositivo precisa autenticar um servidor.  
 
--   **Protocolo SCEP** – permite solicitar um certificado para um dispositivo ou usuário usando o protocolo SCEP e o Serviço de Registro de Dispositivo de Rede em um servidor que executa o Windows Server 2012 R2.
+-   **SCEP (protocolo SCEP)** – solicitar um certificado para um dispositivo ou usuário usando o protocolo SCEP. Esse tipo requer a função NDES (Serviço de Registro de Dispositivo de Rede) em um servidor que execute o Windows Server 2012 R2 ou posterior.
 
-    Para criar um perfil de certificado **SCEP (Protocolo de Registro de Certificado Simples)**, primeiro crie um perfil **Certificado AC confiável**.
+    Para criar um perfil de certificado **SCEP (protocolo SCEP)**, primeiro crie um perfil **Certificado de Autoridade de Certificação confiável**.
 
--   **Troca de informações pessoais (.pfx)** – permite que você solicite um certificado .pfx (também conhecido como PKCS #12) para um dispositivo ou usuário.
+-   **Troca de informações pessoais (.pfx)** – solicitar um certificado .pfx (também conhecido como PKCS #12) para um dispositivo ou usuário.<!--1321368-->  
 
     Você pode criar perfis de certificado PFX [importando credenciais](/sccm/mdm/deploy-use/import-pfx-certificate-profiles) de certificados existentes ou [definindo uma autoridade de certificação](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) para processar solicitações.
 
-    A partir da versão 1706, você pode usar Microsoft ou Entrust como autoridades de certificação para certificados **Troca de informações pessoais (.pfx)**.
+    > [!Note]  
+    > O Configuration Manager não habilita esse recurso opcional por padrão. Você precisa habilitar esse recurso antes de usá-lo. Para obter mais informações, confira [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
+    Começando com a versão 1706, você pode usar a Microsoft ou a Entrust como autoridades de certificação para certificados de **Troca de informações pessoais (.pfx)**.
 
 
 ## <a name="requirements-and-supported-platforms"></a>Requisitos e plataformas com suporte  
-Para implantar perfis de certificado que usam o protocolo SCEP, você deve instalar o ponto de registro de certificado em um servidor do sistema de sites no site de administração central ou em um site primário. Além disso, você deve instalar um módulo para NDES, o Módulo de Política do Configuration Manager, em um servidor que executa o Windows Server 2012 R2 com a função de Serviços de Certificados do Active Directory e um NDES operacional que possa ser acessado pelos dispositivos que exigem os certificados. Para dispositivos registrados pelo Microsoft Intune, isso requer que o NDES esteja acessível pela Internet, por exemplo, em uma sub-rede filtrada (também conhecida como DMZ).  
+Para implantar perfis de certificado que usam o SCEP, instale o ponto de registro de certificado em um servidor do sistema de sites. Também instale um módulo de política para NDES, o módulo de política do Configuration Manager, em um servidor que execute o Windows Server 2012 R2 ou posterior. Este servidor requer a função Serviços de Certificados do Active Directory e um NDES operacional que esteja acessível para os dispositivos que exigem os certificados. Para os dispositivos registrados pelo Microsoft Intune, o NDES precisar estar acessível pela Internet. Por exemplo, em uma sub-rede filtrada, também conhecida como DMZ.  
 
-Certificados PFX também exigem um ponto de registro de certificado em um servidor do sistema de sites no site de administração central ou em um site primário.  Você também deve especificar a AC (autoridade de certificação) para o certificado e especificar credenciais de acesso relevantes.  A partir da versão 1706, você pode especificar a Microsoft ou Entrust como autoridades de certificação.  
+Os certificados PFX também exigem um ponto de registro de certificado. Também especifique a AC (autoridade de certificação) do certificado e as credenciais de acesso relevantes. A partir da versão 1706, você pode especificar a Microsoft ou Entrust como autoridades de certificação.  
 
 Para obter mais informações sobre como o Serviço de Registro de Dispositivo de Rede dá suporte a um módulo de política para que o Configuration Manager possa implantar certificados, consulte [Usando um Módulo de Política com o Serviço de Registro de Dispositivo de Rede](http://go.microsoft.com/fwlink/p/?LinkId=328657).  
 
-O Configuration Manager dá suporte à implantação de certificados em repositórios de certificado diferentes, dependendo dos requisitos, do tipo de dispositivo e do sistema operacional. Os seguintes dispositivos e sistemas operacionais têm suporte:  
+Dependendo dos requisitos, o Configuration Manager permite implantar certificados em diferentes repositórios de certificados em vários tipos de dispositivos e sistemas operacionais. Os seguintes dispositivos e sistemas operacionais têm suporte:  
 
 -   Windows RT 8.1  
 
@@ -80,16 +86,16 @@ O Configuration Manager dá suporte à implantação de certificados em reposit�
 -   Android  
 
 > [!IMPORTANT]  
->  Para implantar perfis em dispositivos Android, iOS, Windows Phone e em dispositivos registrados Windows 8.1 ou posteriores, esses dispositivos devem ser [registrados no Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).   
+>  Para implantar perfis em dispositivos Android, iOS, Windows Phone e em dispositivos registrados Windows 8.1 ou posteriores, esses dispositivos devem ser [registrados no Microsoft Intune](/intune/device-enrollment).   
 
-Um cenário típico do System Center Configuration Manager é instalar certificados de AC raiz confiável para autenticar servidores Wi-Fi e VPN quando a conexão usa protocolos de autenticação EAP-TLS, EAP-TTLS e PEAP, além de protocolos de túnel IKEv2, L2TP/IPsec e Cisco IPsec VPN.  
+Um cenário típico do Configuration Manager é instalar certificados AC raiz confiáveis para autenticar servidores de Wi-Fi e de VPN quando a conexão usa os protocolos de autenticação EAP-TLS, EAP-TTLS e PEAP, além dos protocolos de túnel de VPN IKEv2, L2TP/IPsec e Cisco IPsec.  
 
-Você deve verificar se um certificado de autoridade de certificação raiz corporativo está instalado no dispositivo para que ele possa solicitar certificados usando um perfil de certificado SCEP.  
+É necessário instalar um certificado AC raiz corporativo no dispositivo para que o dispositivo possa solicitar certificados usando um perfil de certificado SCEP.  
 
-Você pode especificar uma variedade de configurações em um perfil de certificado do protocolo SCEP para solicitar certificados personalizados para diferentes ambientes ou requisitos de conectividade. O **Assistente para Criar Perfil de Certificado** contém duas páginas de parâmetros de registro. A primeira, **Registro de SCEP**, contém as configurações da solicitação de registro e o local onde o certificado deve ser instalado. A segunda, **Propriedades do Certificado**, descreve o certificado solicitado.  
+Você pode especificar configurações em um perfil de certificado do SCEP para solicitar certificados personalizados para diferentes ambientes ou requisitos de conectividade. O **Assistente para Criar Perfil de Certificado** tem duas páginas de parâmetros de registro. A primeira, **Registro do SCEP**, inclui configurações para a solicitação de registro e onde instalar o certificado. A segunda, **Propriedades do Certificado**, descreve o certificado solicitado.  
 
 ## <a name="deploying-certificate-profiles"></a>Implantando de perfis de certificado  
- Quando você implanta um perfil de certificado, os arquivos de certificado dentro do perfil são instalados em dispositivos clientes. Todos os parâmetros SCEP também serão implantados, e as solicitações de SCEP serão processadas no dispositivo cliente. Você pode implantar perfis de certificado em coleções de usuários ou de dispositivos e especificar o armazenamento de destino para cada certificado. Regras de aplicabilidade determinam se os certificados podem ser instalados no dispositivo. Quando os perfis de certificado são implantados em coleções de usuários, a afinidade de dispositivo de usuário determina quais dos dispositivos de usuários instalarão os certificados. Quando os perfis de certificado que contêm certificados de usuário são implantados em coleções de dispositivos, por padrão, os certificados serão instalados em cada um dos dispositivos primários dos usuários. Você pode modificar esse comportamento para instalar o certificado em qualquer um dos dispositivos dos usuários na página **Registro do protocolo SCEP** do **Assistente para Criar Perfil de Certificado**. Além disso, os certificados de usuário não serão implantados em dispositivos se eles forem computadores de grupo de trabalho.  
+ Quando você implanta um perfil de certificado, os arquivos de certificado dentro do perfil são instalados em dispositivos clientes. Todos os parâmetros do SCEP também são implantados, e as solicitações do SCEP são processadas no dispositivo cliente. Você pode implantar perfis de certificado em coleções de usuários ou de dispositivos e especificar o armazenamento de destino para cada certificado. Regras de aplicabilidade determinam se os certificados podem ser instalados no dispositivo. Quando os perfis de certificado são implantados em coleções de usuários, a afinidade de dispositivo de usuário determina quais dos dispositivos de usuários devem instalar os certificados. Quando os perfis de certificado que incluem certificados de usuário são implantados em coleções de dispositivos, por padrão, os certificados são instalados em cada um dos dispositivos primários dos usuários. Você pode modificar esse comportamento para instalar o certificado em qualquer um dos dispositivos dos usuários na página **Registro do protocolo SCEP** do **Assistente para Criar Perfil de Certificado**. Se os dispositivos forem computadores do grupo de trabalho, os certificados de usuário não serão implantados.  
 
 ## <a name="monitoring-certificate-profiles"></a>Monitorando perfis de certificado  
 
