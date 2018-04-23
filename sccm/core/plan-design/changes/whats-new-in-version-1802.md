@@ -3,7 +3,7 @@ title: Nova versão 1802
 titleSuffix: Configuration Manager
 description: Obtenha os detalhes sobre as alterações e as novas funcionalidades introduzidas na versão 1802 do Configuration Manager.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/11/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,20 +12,27 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5bd637b1-d7a1-411b-877a-c7aae9741173
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9c9ff975a58e7c56375fa7740a0a5bb6ebfa6341
-ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
+ms.openlocfilehash: a667c34dc39ef0578ff840e5603080b09c67c63c
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Novidades da versão 1802 do System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 A atualização do 1802 para o branch atual do Configuration Manager está disponível como uma atualização no console. Aplique essa atualização em sites que executam a versão 1702, 1706 ou 1710. <!-- baseline only statement: -->Ao instalar um novo site, ela também está disponível como uma versão de linha de base.
+
+Além de novos recursos, este lançamento inclui outras alterações, como correções de bugs. Para saber mais, veja [Resumo das alterações no Branch Atual do System Center Configuration Manager, versão 1802](https://support.microsoft.com/help/4101375).
+
+<!--
+The following additional updates to this release are also now available:
+- [Update rollup for System Center Configuration Manager current branch, version 1710](https://support.microsoft.com/help/4057517)
+-->
 
 > [!TIP]  
 > Para instalar um novo site, você deve usar uma versão de linha de base do Configuration Manager.  
@@ -84,7 +91,7 @@ Com a afinidade do site do ponto de distribuição na nuvem, um cliente baseado 
 
 ## <a name="management-insights"></a>Informações de gerenciamento
 <!-- 1353967 -->
-Os insights de gerenciamento no System Center Configuration Manager fornecem informações sobre o estado atual do ambiente. As informações baseiam-se na análise de dados do banco de dados do site. As informações ajudam você a melhor compreender seu ambiente e executar ações com base nas informações. Para obter detalhes, consulte [Insights de gerenciamento](/sccm/core/servers/manage/management-insights)
+Os Insights de Gerenciamento do System Center Configuration Manager fornecem informações sobre o estado atual do ambiente. As informações baseiam-se na análise de dados do banco de dados do site. As informações ajudam você a melhor compreender seu ambiente e executar ações com base nas informações. Para obter detalhes, consulte [Insights de gerenciamento](/sccm/core/servers/manage/management-insights)
 
 No Configuration Manager 1802, os seguintes insights estão disponíveis:
 - Aplicativos:

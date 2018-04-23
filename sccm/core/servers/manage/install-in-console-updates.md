@@ -3,7 +3,7 @@ title: Atualização no console
 titleSuffix: Configuration Manager
 description: Instalar as atualizações do Configuration Manager por meio da nuvem da Microsoft
 ms.custom: na
-ms.date: 03/28/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c14a3607-253b-41fb-8381-ae2d534a9022
 caps.latest.revision: 36
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 054bbd8e7b1dd3f5d565afe60eb7e3379cc7a9ee
-ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
+ms.openlocfilehash: 9924346ccbd862aa4462075a3307b4ec40b955bc
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Instalações de atualizações para o System Center Configuration Manager
 
@@ -311,7 +311,7 @@ Quando estiver pronto para repetir a instalação de uma atualização, selecion
 #### <a name="retry-installation-for-the-hierarchy"></a>Repita a instalação para a hierarquia
 Você pode repetir a instalação de uma atualização para toda a hierarquia quando essa atualização estiver em um dos estados a seguir:  
 
-  -   Verificação de pré-requisitos aprovada com um ou mais avisos e a opção de ignorar os avisos de verificação de pré-requisitos não foi definida no Assistente de Atualização. (O valor da atualização para **Ignorar aviso de pré-requisito** no nó **Atualizações e manutenção** é **Não**.)   
+  -   Verificações de pré-requisitos aprovadas com um ou mais avisos e a opção de ignorar os avisos de verificação de pré-requisitos não foram definidas no Assistente de Atualização. (O valor da atualização para **Ignorar aviso de pré-requisito** no nó **Atualizações e manutenção** é **Não**.)   
   -   Falha dos pré-requisitos    
   -   Falha na instalação
   -   Falha na replicação do conteúdo para o site   
@@ -324,7 +324,7 @@ Acesse **Administração** > **Atualizações e Manutenção**, selecione a atua
 #### <a name="retry-installation-for-the-site"></a>Repita a instalação para o site  
  Você pode repetir a instalação de uma atualização em um site específico quando essa atualização estiver em um dos estados a seguir:  
 
-  -   Verificação de pré-requisitos aprovada com um ou mais avisos e opção de ignorar os avisos de verificação de pré-requisitos não foi definida no Assistente de Atualização. (O valor das atualizações para **Ignorar aviso de pré-requisito** no nó Atualizações e manutenção é **Não**).  
+  -   Verificações de pré-requisitos aprovadas com um ou mais avisos e a opção de ignorar os avisos de verificação de pré-requisitos não foram definidas no Assistente de Atualização. (O valor das atualizações para **Ignorar aviso de pré-requisito** no nó Atualizações e manutenção é **Não**).  
   -   Falha dos pré-requisitos    
   -   Falha na instalação    
 
@@ -369,10 +369,36 @@ Quando uma atualização inclui um ou mais recursos opcionais, você tem a oport
 
 Para exibir os recursos disponíveis e seus status, no console, navegue até **Administração** > **Atualizações e Manutenção** > **Recursos**.
 
-Quando um recurso não é opcional, ele é instalado automaticamente e não aparece no nó **Recursos**.  
+Quando um recurso não é opcional, ele é instalado automaticamente. Ele não aparece no nó **Recursos**.  
+
+> [!Important]  
+> Em uma hierarquia multisite, somente é possível habilitar recursos opcionais ou de pré-lançamento no site de administração central. Esse comportamento garante que não haja nenhum conflito na hierarquia. <!--507197-->
+ 
+
+Ao habilitar um novo recurso ou recurso de pré-lançamento, o gerenciador de hierarquia (HMAN) do Configuration Manager deve processar a alteração antes de o recurso ser disponibilizado. O processamento da alteração costuma ser imediato, mas pode levar até 30 minutos para ser concluído, dependendo do ciclo de processamento do HMAN. Após o processamento da alteração, é necessário reiniciar o console antes de exibir os novos nós relacionados a esse recurso.
+
+#### <a name="list-of-optional-features"></a>Lista de recursos opcionais
+Os recursos a seguir são opcionais na versão mais recente do Configuration Manager:<!--505213-->  
+- [Acesso condicional para PCs gerenciados](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)  <!--1191496-->
+- O [Passport for Work](/sccm/protect/deploy-use/windows-hello-for-business-settings) (também conhecido como *Windows Hello para Empresas*) <!--1245704-->
+- [VPN para Windows 10](/sccm/protect/deploy-use/vpn-profiles) <!--1283610-->
+- [Política do Windows Defender Exploit Guard](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy) <!--1355468-->
+- [Conector do OMS (Microsoft Operations Management Suite)](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) <!--1258052-->
+- [Criação de PFX](/sccm/protect/deploy-use/introduction-to-certificate-profiles) <!--1321368-->
+- [Cache de pares do cliente](/sccm/core/plan-design/hierarchy/client-peer-cache) <!--1101436-->
+- [Ponto de serviço do Data Warehouse](/sccm/core/servers/manage/data-warehouse) <!--1277922-->
+- [Gateway de Gerenciamento de Nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) <!--1101764-->
+- [Atualizações de driver do Surface](/sccm/sum/get-started/configure-classifications-and-products) <!--1098490-->
+- [Pré-cache do conteúdo de sequência de tarefas](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content) <!--1021244-->
+- [Executar etapa da sequência de tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#add-child-task-sequences-to-a-task-sequence) <!--1261338-->
+- [Criar e executar scripts](/sccm/apps/deploy-use/create-deploy-scripts) <!--1236459-->
+- [Avaliação do Atestado de Integridade do Dispositivo para políticas de conformidade para acesso condicional](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--1235616-->
+- [Aprovar pedidos de aplicativos para usuários por dispositivo](/sccm/apps/deploy-use/deploy-applications#specify-deployment-settings) <!--1357015-->  
 
 
-Ao habilitar um novo recurso ou recurso de pré-lançamento, o gerenciador de hierarquia (HMAN) do Configuration Manager deve processar a alteração antes de o recurso ser disponibilizado. O processamento da alteração costuma ser imediato, mas pode levar até 30 minutos para ser concluído, dependendo do ciclo de processamento do HMAN. Após o processamento da alteração, é necessário reiniciar o console antes de exibir a nova interface do usuário relacionada a esse recurso.
+> [!Tip]  
+> Para obter mais informações sobre os recursos que exigem autorização para habilitar, veja [Recursos de pré-lançamento](/sccm/core/servers/manage/pre-release-features).  
+> Para obter mais informações sobre os recursos que estão disponíveis somente no branch de Technical Preview, veja [Technical Preview](/sccm/core/get-started/technical-preview).
 
 
 
