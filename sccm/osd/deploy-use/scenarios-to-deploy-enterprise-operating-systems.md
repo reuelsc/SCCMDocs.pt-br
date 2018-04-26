@@ -1,17 +1,18 @@
 ---
-title: "Cenários para implantar sistemas operacionais corporativos"
+title: Cenários para implantar sistemas operacionais corporativos
 titleSuffix: Configuration Manager
-description: "Conheça vários cenários para implantar sistemas operacionais corporativos com o System Center Configuration Manager."
+description: Conheça vários cenários para implantar sistemas operacionais corporativos com o System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f74fdb86-c7c2-447f-91f6-b42df6370d7f
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
@@ -50,7 +51,7 @@ Os seguintes cenários de implantação de sistema operacional estão disponíve
 
  O tamanho padrão do cache em clientes do Configuration Manager pode não ser suficientemente grande para a maioria das implantações de imagem do sistema operacional. Se você planeja baixar a imagem completa no cache do cliente, ajuste o tamanho do cache do cliente do Configuration Manager nos computadores de destino para acomodar o tamanho da imagem que será implantada.  
 
- Para obter mais informações, consulte [Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache).  
+ Para obter mais informações, consulte [Configurar o cache de cliente para clientes do Configuration Manager](../../core/clients/manage/manage-clients.md#BKMK_ClientCache).  
 
 ## <a name="task-sequence-deployments"></a>Implantações de sequência de tarefas  
  A sequência de tarefas criada pode implantar a imagem do sistema operacional em um computador cliente do Configuration Manager de uma das seguintes maneiras:  

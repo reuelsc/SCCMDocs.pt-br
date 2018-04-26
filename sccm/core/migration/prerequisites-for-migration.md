@@ -1,18 +1,19 @@
 ---
-title: "Pré-requisitos de migração"
+title: Pré-requisitos de migração
 titleSuffix: Configuration Manager
-description: "Entenda as versões compatíveis do Configuration Manager, os idiomas com suporte do site de origem e as configurações necessárias para migração."
+description: Entenda as versões compatíveis do Configuration Manager, os idiomas com suporte do site de origem e as configurações necessárias para migração.
 ms.custom: na
 ms.date: 3/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ec976930-7467-4d3c-b33c-991bf408a74a
-caps.latest.revision: "10"
-caps.handback.revision: "0"
+caps.latest.revision: 10
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
@@ -87,7 +88,7 @@ Veja a seguir as configurações necessárias para o uso da migração e de suas
 
         -   Para sites de origem do Configuration Manager 2007 SP2, essa conta necessita de permissão de **Leitura** para todos os objetos do site de origem.  
 
-        -   Para um site de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, essa conta exige permissão de **Leitura** para todos os objetos do site de origem. Você concede essa permissão à conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
+        -   Para um site de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, essa conta exige permissão de **Leitura** para todos os objetos do site de origem. Você concede essa permissão à conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentos de administração baseada em funções para o System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
     -   **Conta do Banco de Dados do Site de Origem:** essa conta é usada para acessar o banco de dados do SQL Server do site de origem e exige as permissões **Connect**, **Execute**e **Select** para o banco de dados do site de origem.  
 
@@ -114,7 +115,7 @@ Veja a seguir as configurações necessárias para o uso da migração e de suas
 
      Para todo site de origem, são compartilhados somente os pontos de distribuição instalados nos servidores do sistema de site configurados com um FQDN.  
 
-     Além disso, para compartilhar um ponto de distribuição de um site de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, a **Conta de Site de Origem** (que acessa o Provedor de SMS para o servidor do site de origem) deve ter permissões **Modificar** para o objeto **Site** no site de origem. Você pode conceder essa permissão para a conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
+     Além disso, para compartilhar um ponto de distribuição de um site de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, a **Conta de Site de Origem** (que acessa o Provedor de SMS para o servidor do site de origem) deve ter permissões **Modificar** para o objeto **Site** no site de origem. Você pode conceder essa permissão para a conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentos de administração baseada em funções para o System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
 
 -   **Atualizar ou reatribuir pontos de distribuição:**  
@@ -123,6 +124,6 @@ Veja a seguir as configurações necessárias para o uso da migração e de suas
 
     -   Para atualizar um ponto de distribuição do Configuration Manager 2007, a conta necessita das permissões de **Leitura**, **Executar** e **Excluir** para a classe do **Site** no servidor do site do Configuration Manager 2007 para remover com êxito o ponto de distribuição do site de origem do Configuration Manager 2007  
 
-    -   Para reatribuir um ponto de distribuição do System Center 2012 Configuration Manager ou do System Center Configuration Manager, a conta deve ter uma permissão **Modificar** para o objeto **Site** no site de origem. Você pode conceder essa permissão para a conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
+    -   Para reatribuir um ponto de distribuição do System Center 2012 Configuration Manager ou do System Center Configuration Manager, a conta deve ter uma permissão **Modificar** para o objeto **Site** no site de origem. Você pode conceder essa permissão para a conta usando a administração baseada em funções. Para obter informações sobre como usar a administração baseada em funções, consulte [Fundamentos de administração baseada em funções para o System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
      Para atualizar ou reatribuir com sucesso um ponto de distribuição a uma nova hierarquia, as portas configuradas para solicitações de cliente no site que gerencia o ponto de distribuição na hierarquia de origem deve ser igual às portas que estão configuradas para solicitações de cliente no site de destino que irá gerenciar o ponto de distribuição. Para obter informações sobre portas de solicitação de cliente, consulte [Como configurar portas de comunicação do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-communication-ports.md).  

@@ -1,18 +1,19 @@
 ---
 title: Planejar MDM local
 titleSuffix: Configuration Manager
-description: "Planeje o Gerenciamento de Dispositivo Móvel local para gerenciar dispositivos móveis no System Center Configuration Manager."
+description: Planeje o Gerenciamento de Dispositivo Móvel local para gerenciar dispositivos móveis no System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 02979fb8-ea7e-4ec6-b7e0-ecbfda73e52d
-caps.latest.revision: "9"
-caps.handback.revision: "0"
+caps.latest.revision: 9
+caps.handback.revision: 0
 author: dougeby
 ms.author: dougeby
 manager: angrobe
@@ -104,7 +105,7 @@ Considere os seguintes requisitos antes de preparar a infraestrutura do Configur
 
 -   Pacote de provisionamento OOBE (tela de apresentação)  
 
- Para obter mais informações, consulte [Set up certificates for trusted communications for On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
+ Para obter mais informações, consulte [Configure certificados para comunicações confiáveis do Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager.](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
 
 ##  <a name="bkmk_enrollment"></a> Considerações sobre registro  
  Para habilitar o registro de dispositivo para o Gerenciamento de Dispositivo Móvel local, os usuários devem ter permissão de registro e seus dispositivos devem poder ter uma comunicação confiável com os servidores do sistema de sites que hospedam as funções do sistema de sites necessárias.  

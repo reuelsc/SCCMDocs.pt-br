@@ -1,17 +1,18 @@
 ---
-title: "Criar uma imagem de um OEM na fábrica ou em um repositório local"
+title: Criar uma imagem de um OEM na fábrica ou em um repositório local
 titleSuffix: Configuration Manager
-description: "Use implantações de mídia de pré-teste para reduzir o tráfego de rede ao implantar um sistema operacional em um computador que não está totalmente provisionado."
+description: Use implantações de mídia de pré-teste para reduzir o tráfego de rede ao implantar um sistema operacional em um computador que não está totalmente provisionado.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a7d3df90-062d-4d57-9e9d-e137d3e7cd7f
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
@@ -48,7 +49,7 @@ Esse método de implantação pode reduzir o tráfego de rede, pois a imagem de 
 -   **Somente mídia e PXE (oculto)**  
 
 ## <a name="create-the-prestaged-media"></a>Criar a mídia pré-configurada  
- Crie o arquivo de mídia pré-configurada para enviar ao OEM ou repositório local. Para obter mais informações, consulte [Create prestaged media with System Center Configuration Manager](create-prestaged-media.md).  
+ Crie o arquivo de mídia pré-configurada para enviar ao OEM ou repositório local. Para obter mais informações, consulte [Criar mídia pré-configurada com o System Center Configuration Manager](create-prestaged-media.md).  
 
 ## <a name="send-the-prestaged-media-file-to-the-oem-or-local-depot"></a>Enviar o arquivo de mídia pré-configurada ao OEM ou repositório local  
  Envie a mídia ao OEM ou a seu repositório local para pré-configurar os computadores. O arquivo de mídia pré-configurada é aplicado a um disco rígido formatado no computador.  

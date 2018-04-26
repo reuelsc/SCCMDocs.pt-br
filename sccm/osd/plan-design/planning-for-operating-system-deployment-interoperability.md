@@ -1,17 +1,18 @@
 ---
-title: "Planejando a interoperabilidade da implantação do sistema operacional"
+title: Planejando a interoperabilidade da implantação do sistema operacional
 titleSuffix: Configuration Manager
-description: "Compreenda os problemas de interoperabilidade quando sites diferentes do System Center Configuration Manager em uma única hierarquia usam versões diferentes."
+description: Compreenda os problemas de interoperabilidade quando sites diferentes do System Center Configuration Manager em uma única hierarquia usam versões diferentes.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: e327ce38-6c07-4a27-b6eb-7e5bf74ed04b
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
@@ -25,7 +26,7 @@ ms.lasthandoff: 12/12/2017
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Quando sites diferentes do System Center Configuration Manager em uma única hierarquia usam versões diferentes, alguma funcionalidade do Configuration Manager não está disponível. Normalmente, a funcionalidade da versão do mais recente do Configuration Manager não é acessível em sites ou por clientes que executam uma versão inferior. Para obter mais informações, consulte [Interoperability between different versions of System Center Configuration Manager](../../core/plan-design/hierarchy/interoperability-between-different-versions.md).  
+Quando sites diferentes do System Center Configuration Manager em uma única hierarquia usam versões diferentes, alguma funcionalidade do Configuration Manager não está disponível. Normalmente, a funcionalidade da versão do mais recente do Configuration Manager não é acessível em sites ou por clientes que executam uma versão inferior. Para obter mais informações, consulte [Interoperabilidade entre versões diferentes do Configuration Manager](../../core/plan-design/hierarchy/interoperability-between-different-versions.md).  
 
  Considere o seguinte quando for atualizar o site de nível superior na hierarquia e outros sites na hierarquia executarem o Configuration Manager com uma versão inferior:  
 
