@@ -1,25 +1,26 @@
 ---
 title: Localizar recursos de site
 titleSuffix: Configuration Manager
-description: "Saiba como e quando os clientes do System Center Configuration Manager usam o local do serviço para encontrar recursos do site."
+description: Saiba como e quando os clientes do System Center Configuration Manager usam o local do serviço para encontrar recursos do site.
 ms.custom: na
 ms.date: 2/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae72df4b-5f5d-4e19-9052-bda28edfbace
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: d0cbaf0b9f10926015cf203dbb28633976034162
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 76d9d486bf0c07da3d81596b1b065fe6532b29fe
+ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="learn-how-clients-find-site-resources-and-services-for-system-center-configuration-manager"></a>Saiba como os clientes encontram serviços e recursos do site para o System Center Configuration Manager
 
@@ -61,8 +62,8 @@ Quando um cliente é atribuído inicialmente a um site primário, ele seleciona 
 
 Um cliente seleciona um ponto de gerenciamento para se comunicarem com base no local de rede atual e nas configurações de grupo de limite. Embora tenha um ponto de gerenciamento atribuído, esse não pode ser o ponto de gerenciamento que o cliente usa.  
 
-    > [!NOTE]  
-    >  A client always uses the assigned management point for registration messages and certain policy messages, even when other communications are sent to a proxy or local management point.  
+   > [!NOTE]  
+   >  Um cliente sempre usa o ponto de gerenciamento atribuído para mensagens de registro e determinadas mensagens de política, mesmo quando outras comunicações são enviadas para um proxy ou um ponto de gerenciamento local.
 
 Você pode usar pontos de gerenciamento preferenciais. Os pontos de gerenciamento preferenciais são pontos de gerenciamento do site atribuído de um cliente associados a um grupo de limites que o cliente usa para encontrar servidores do sistema de sites. A associação do ponto de gerenciamento preferencial a um grupo de limites, como o servidor do sistema de sites, é semelhante ao modo como os pontos de distribuição ou pontos de migração de estado são associados a um grupo de limites. Se você habilitar pontos de gerenciamento preferenciais para a hierarquia, quando um cliente usar um ponto de gerenciamento do seu site atribuído, ele tentará usar um ponto de gerenciamento preferencial antes de usar outros pontos de gerenciamento de seu site atribuído.  
 
