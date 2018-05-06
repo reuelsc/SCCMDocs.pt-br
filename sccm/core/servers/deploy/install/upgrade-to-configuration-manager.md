@@ -15,11 +15,11 @@ caps.latest.revision: 21
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 72e11a04eb64d649749f2001ac4e3550c784132c
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 2af440e68d3f37914299d899b3a0e565050f651b
+ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="upgrade-to-system-center-configuration-manager"></a>Atualização para o System Center Configuration Manager
 
@@ -35,7 +35,7 @@ Você pode executar uma atualização in-loco para atualizar para o System Cente
 ##  <a name="bkmk_path"></a> Caminhos de atualização in-loco  
 
 **Atualizar para a versão 1802**   
-Quando você tiver a mídia de linha de base da versão 1702, atualize o seguinte para uma versão totalmente licenciada do System Center Configuration Manager versão 1802:   
+Quando você tiver a mídia de linha de base da versão 1802, atualize o seguinte para uma versão totalmente licenciada do System Center Configuration Manager versão 1802:   
 -     Uma instalação de avaliação do System Center Configuration Manager versão 1802
 -     System Center 2012 Configuration Manager com Service Pack 1
 -     System Center 2012 Configuration Manager com Service Pack 2

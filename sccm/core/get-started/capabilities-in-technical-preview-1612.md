@@ -16,11 +16,11 @@ caps.latest.revision: 5
 author: erikje
 ms.author: erikje
 manager: angrobe
-ms.openlocfilehash: 80cace2bec8cb9c39d5f3f00ea244b697e1d75c9
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: e0688c41978d95e0e1fd4da817e602a2c8a6483b
+ms.sourcegitcommit: f65d4d24f0533e5e196ece0d8a4df0fb3e30eba1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1612 do System Center Configuration Manager
 
@@ -122,7 +122,7 @@ Depois de instalar uma função do sistema de sites do Data Warehouse, os seguin
 | **Relatório Geral do Inventário de Software**  | Exibe todo o inventário de software para um computador específico.|
 | **Visão Geral de Integridade de Infraestrutura**  |Exibe uma visão geral da integridade da infraestrutura do seu Configuration Manager.|
 | **Lista de Malwares Detectados**  |Exibe os malwares que foram detectados na sua organização.|
-|** Relatório de Resumo de Distribuição de Software** | Um resumo da distribuição de software para um anúncio e computador específicos.|
+| **Relatório de Resumo de Distribuição de Software** | Um resumo da distribuição de software para um anúncio e computador específicos.|
 
 ### <a name="move-the-data-warehouse-database"></a>Mover o banco de dados de data warehouse
 Use as seguintes etapas para mover o banco de dados de data warehouse para um novo SQL Server:

@@ -3,7 +3,7 @@ title: Servidores de sistema de site com suporte
 titleSuffix: Configuration Manager
 description: Saiba quais versões do Windows você pode usar para hospedar um site ou função de sistema de sites do System Center Configuration Manager.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/17/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,21 +13,21 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 17905b4c-3895-4ad4-a69c-5e0d0fc5a8c3
 caps.latest.revision: 44
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5bcaddb38ea6ecf1c3b5e0543c676c6a99e06101
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 092fc9d47e0dc7bb7afe0e078bd835dd2d091226
+ms.sourcegitcommit: e23350fe65ff99228274e465b24b5e163769f38f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>Sistemas operacionais com suporte para servidores do sistema de sites do System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-Este artigo detalha as versões do Windows você pode usar para hospedar um site ou função de sistema de sites do System Center Configuration Manager.
+Este artigo detalha as versões do Windows que você pode usar para hospedar um site ou função de sistema de sites do Configuration Manager.
 
 
 Use as informações neste artigo com as informações nos seguintes artigos:
@@ -85,6 +85,14 @@ Com o pacote cumulativo de atualizações do hotfix da KB3186654, há suporte pa
 -   Ponto de atualização de software  
 
 -   Ponto de migração de estado
+
+
+
+## <a name="windows-storage-server-2016"></a>Windows Storage Server 2016
+
+**Servidor do sistema de site**  
+
+-   Ponto de distribuição  
 
 
 
@@ -253,7 +261,10 @@ Esse sistema operacional não é compatível com servidores do site ou funções
 
     -   Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para obter mais informações sobre as opções disponíveis para pontos de distribuição, consulte [Gerenciar o conteúdo e a infraestrutura de conteúdo](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-
+## <a name="the-server-core-installation-of-windows-server-version-1709"></a>A instalação server core do Windows Server, versão 1709
+A partir do Configuration Manager 1710, [o Windows Server, versão 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709) tem suporte para uso como um ponto de distribuição com as seguintes limitações:  
+  -   Há suporte apenas para a versão de x64 bits.
+  -   Os pontos de distribuição desse sistema operacional não dão suporte ao PXE nem ao Multicast.  
 
 ## <a name="the-server-core-installation-of-windows-server-2016"></a>A instalação Server Core do Windows Server 2016
 Com o pacote cumulativo de atualizações do hotfix da KB3186654, esse sistema operacional pode ser usado como um ponto de distribuição com as seguintes limitações:  

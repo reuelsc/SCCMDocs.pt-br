@@ -13,11 +13,11 @@ ms.date: 03/22/2018
 ms.topic: article
 ms.service: ''
 ms.assetid: 60e2022f-a4f9-40dd-af01-9ecb37b43878
-ms.openlocfilehash: cdfe52768499b929db473ac08d42207059965ffd
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: d0cee0eb242011d6cc7b3085b4ae9df908604fa8
+ms.sourcegitcommit: ac06e034cc60db7b1acade1f541e26b6cc50506e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="switch-configuration-manager-workloads-to-intune"></a>Mudar as cargas de trabalho do Configuration Manager para o Intune
 Em [Preparar dispositivos Windows 10 para cogerenciamento](co-management-prepare.md), você preparou dispositivos Windows 10 para o cogerenciamento. Esses dispositivos ingressaram no AD e no Azure AD, estão registrados no Intune e têm o cliente do Configuration Manager. Provavelmente ainda há dispositivos Windows 10 que ingressaram no AD e têm o cliente do Configuration Manager, mas que não ingressaram no Azure AD e não estão registrados no Intune. O procedimento a seguir fornece as etapas para habilitar o cogerenciamento e preparar o restante dos dispositivos Windows 10 (clientes do Configuration Manager sem registro no Intune) para o cogerenciamento e permite que você comece a mudar cargas de trabalho do Configuration Manager específicas para o Intune.
@@ -43,10 +43,13 @@ Selecione o objeto de cogerenciamento e, em seguida, na guia Início, clique em 
 ## <a name="workloads-able-to-be-transitioned-to-intune"></a>As cargas de trabalho podem ser transferidas para o Intune
 Algumas cargas de trabalho estão disponíveis para serem transferidas para o Intune. A seguinte lista será atualizada conforme as cargas de trabalho ficarem disponíveis para a transição:
 1. Políticas de conformidade do dispositivo
-2. Políticas de acesso a recursos
+2. Políticas de acesso a recursos: as políticas de acesso a recursos definem as configurações de VPN, Wi-Fi, email e certificado nos dispositivos. Para saber mais, confira [Implantar perfis de acesso a recursos](https://docs.microsoft.com/intune/device-profiles).
+      - Perfil de email
+      - Perfil de Wi-Fi
+      - Perfil da VPN
+      - Perfil de certificado
 3. Políticas do Windows Update
 4. Endpoint Protection (a partir do Configuration Manager versão 1802)
-      - Windows Defender Antivírus
       - Windows Defender Application Guard
       - Windows Defender Firewall
       - Windows Defender SmartScreen
@@ -60,6 +63,8 @@ Algumas cargas de trabalho estão disponíveis para serem transferidas para o In
 
 ## <a name="monitor-co-management"></a>Monitorar o cogerenciamento
 Depois de habilitar o cogerenciamento, você poderá monitorar dispositivos de cogerenciamento usando os seguintes métodos:
+
+- [Painel de cogerenciamento](/sccm/core/clients/manage/co-management-dashboard)
 - **Exibição SQL e classe WMI**: você pode consultar a exibição SQL **v&#95;ClientCoManagementState** no banco de dados do site do Configuration Manager ou a classe WMI **SMS&#95;Client&#95;ComanagementState**. Com as informações na classe WMI, você pode criar coleções personalizadas no Configuration Manager para ajudar a determinar o status da implantação do cogerenciamento. Para obter detalhes, consulte [Como criar coleções](/sccm/core/clients/manage/collections/create-collections). Os campos a seguir estão disponíveis na exibição SQL e na classe WMI: 
     - **MachineId**: especifica uma ID de dispositivo exclusiva do cliente do Configuration Manager.
     - **MDMEnrolled**: especifica se o dispositivo é registrado no MDM. 

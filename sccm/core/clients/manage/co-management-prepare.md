@@ -11,11 +11,11 @@ ms.prod: configuration-manager
 ms.service: ''
 ms.technology: ''
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: a45ded0f3824c148f64f9578e51cc112c05d9f78
-ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
+ms.openlocfilehash: 93a991cb3fd78e44f5ae4434a9845a57450e1025
+ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="prepare-windows-10-devices-for-co-management"></a>Preparar dispositivos Windows 10 para o cogerenciamento
 Você pode habilitar o cogerenciamento em dispositivos Windows 10 que foram ingressados no AD e no Azure AD e registrados no Microsoft Intune e em um cliente no Configuration Manager. Para novos dispositivos Windows 10 e dispositivos que já estão registrados no Intune, instale o cliente do Configuration Manager antes que eles possam ser cogerenciados. Para dispositivos Windows 10 que já são clientes do Configuration Manager, você pode registrar os dispositivos no Intune e habilitar o cogerenciamento no console do Configuration Manager.
@@ -23,6 +23,32 @@ Você pode habilitar o cogerenciamento em dispositivos Windows 10 que foram ingr
 > [!IMPORTANT]
 > Dispositivos móveis Windows 10 não são compatíveis com o cogerenciamento.
 
+
+## <a name="prerequisites"></a>Pré-requisitos
+Você deve ter os seguintes pré-requisitos em vigor antes de habilitar o cogerenciamento. Há pré-requisitos gerais e pré-requisitos diferentes para dispositivos com o cliente do Configuration Manager e para dispositivos que não têm o cliente instalado.
+### <a name="general-prerequisites"></a>Pré-requisitos gerais
+Estes são os pré-requisitos gerais para habilitar o cogerenciamento:  
+
+- Configuration Manager versão 1710 ou posterior
+- Azure AD
+- Licença do EMS ou do Intune para todos os usuários
+- [Registro automático do Azure AD](https://docs.microsoft.com/intune/windows-enroll#enable-windows-10-automatic-enrollment) habilitado
+- Assinatura do Intune &#40;autoridade do MDM no Intune definida para **Intune**&#41;
+
+
+   > [!Note]  
+   > Se você tiver um ambiente de MDM híbrido (Intune integrado ao Configuration Manager), não será possível habilitar o cogerenciamento. No entanto, você pode iniciar a migração de usuários para o Intune autônomo e, em seguida, habilitar seus dispositivos Windows 10 associados para cogerenciamento. Para obter mais informações sobre como migrar para o Intune autônomo, consulte [Iniciar a migração do MDM híbrido para o Intune autônomo](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
+
+### <a name="additional-prerequisites-for-devices-with-the-configuration-manager-client"></a>Pré-requisitos adicionais para dispositivos com o cliente do Configuration Manager
+- Windows 10, versão 1709 ou posterior
+- [Azure AD híbrido ingressado](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup) (ingressado no AD e ao Azure AD)
+
+### <a name="additional-prerequisites-for-devices-without-the-configuration-manager-client"></a>Pré-requisitos adicionais para dispositivos sem o cliente do Configuration Manager
+- Windows 10, versão 1709 ou posterior
+- [Gateway de Gerenciamento de Nuvem](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) no Configuration Manager (quando o Intune é usado para instalar o cliente do Configuration Manager)
+
+> [!IMPORTANT]
+> Dispositivos móveis Windows 10 não são compatíveis com o cogerenciamento.
 
 
 ## <a name="command-line-to-install-configuration-manager-client"></a>Linha de comando para instalar o cliente do Configuration Manager
@@ -39,8 +65,8 @@ Por exemplo, se você tiver os valores a seguir:
 
 - **FQDN do MP (ponto de gerenciamento)**: mp1.contoso.com    
 - **Código do site**: PS1    
-- **ID do locatário do Azure AD**: daf4a1c2-3a0c-401b-966f-0b855d3abd1a    
-- **ID do aplicativo de cliente do Azure AD**: 7506ee10-f7ec-415a-b415-cd3d58790d97     
+- **ID do locatário do Azure AD**: 60a413f4-c606-4744-8adb-9476ae3XXXXX    
+- **ID do aplicativo cliente do Azure AD**: 9fb9315f-4c42-405f-8664-ae63283XXXXX     
 - **URI da ID do recurso do AAD**: ConfigMgrServer    
 
   > [!Note]    
@@ -48,7 +74,7 @@ Por exemplo, se você tiver os valores a seguir:
 
 Você usaria a seguinte linha de comando:
 
-`ccmsetup.msi CCMSETUPCMD="/mp:https://contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500    CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=PS1 SMSMP=https://mp1.contoso.com AADTENANTID=daf4a1c2-3a0c-401b-966f-0b855d3abd1a AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://ConfigMgrServer"`
+`ccmsetup.msi CCMSETUPCMD="/mp:https://contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500    CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=PS1 SMSMP=https://mp1.contoso.com AADTENANTID=60a413f4-c606-4744-8adb-9476ae3XXXXX AADCLIENTAPPID=9fb9315f-4c42-405f-8664-ae63283XXXXX AADRESOURCEURI=https://ConfigMgrServer"`
 
 > [!Tip]
 > Você pode encontrar os parâmetros de linha de comando para o seu site usando as seguintes etapas:     

@@ -3,7 +3,7 @@ title: Notas de versão
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os problemas urgentes que ainda não foram corrigidos no produto nem abordados em um artigo da Base de Dados de Conhecimento Microsoft.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/18/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,11 +17,11 @@ caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e22bc4818f10a1f60fdb2135eb705e46dbaa10a4
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 2eabcba6e56bd2a0a9977ab31610a9d747ab6207
+ms.sourcegitcommit: e23350fe65ff99228274e465b24b5e163769f38f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="release-notes-for-system-center-configuration-manager"></a>Release notes for System Center Configuration Manager
 
@@ -101,6 +101,21 @@ Por padrão, o assistente para Criar Planos de Manutenção atualmente é execut
 
 #### <a name="workaround"></a>Solução alternativa
  depois de criar um plano de manutenção, abra as propriedades do plano de manutenção, vá para a guia **Agendamento de Avaliação**, escolha **Executar a regra em um agendamento**, clique em **Personalizar** e crie um agendamento personalizado. Por exemplo, o plano de manutenção pode ser agendado para ser executado a cada 60 dias.  
+
+
+### <a name="changing-office-365-client-setting-doesnt-apply"></a>Não se aplica a alteração da configuração do cliente do Office 365 
+<!--511551-->
+*Aplicável a: Configuration Manager versão 1802*  
+
+Implante uma [configuração de cliente](/sccm/core/clients/deploy/about-client-settings#enable-management-of-the-office-365-client-agent) com **Habilitar o gerenciamento do Agente Cliente do Office 365** configurado para `Yes`. Em seguida, altere a configuração para `No` ou `Not Configured`. Depois de atualizar a política de clientes direcionados, as atualizações do Office 365 ainda são gerenciadas pelo Configuration Manager. 
+
+#### <a name="workaround"></a>Solução alternativa
+Altere o seguinte valor de registro para `0` e reinicie o **Serviço Clique para Executar do Microsoft Office** (ClickToRunSvc):
+
+```
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\office\16.0\Common\officeupdate]
+"OfficeMgmtCOM"=dword:00000000
+```
 
 
 

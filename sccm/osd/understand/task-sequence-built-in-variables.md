@@ -1,9 +1,9 @@
 ---
-title: "Variáveis internas de sequência de tarefas"
+title: Variáveis internas de sequência de tarefas
 titleSuffix: Configuration Manager
-description: "As variáveis internas da sequência de tarefas fornecem informações sobre o ambiente no qual a sequência de tarefas é executada e estão disponíveis durante toda a sequência de tarefas."
+description: As variáveis internas da sequência de tarefas fornecem informações sobre o ambiente no qual a sequência de tarefas é executada e estão disponíveis durante toda a sequência de tarefas.
 ms.custom: na
-ms.date: 02/09/2018
+ms.date: 04/18/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 02bc6bd4-ca53-4e22-8b80-d8ee5fe72567
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: 15
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 673f29189fe03df706d9f277afc7bde5fc8e72b0
-ms.sourcegitcommit: fbde417e3c3002898bd216a7e110e725ae269893
+ms.openlocfilehash: fe26982195e7cae639cc457dbba31e3dbd45b6d3
+ms.sourcegitcommit: e23350fe65ff99228274e465b24b5e163769f38f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="task-sequence-built-in-variables-in-system-center-configuration-manager"></a>Variáveis internas de sequência de tarefas no System Center Configuration Manager
 
@@ -78,6 +78,7 @@ ms.lasthandoff: 02/12/2018
 |SMSTSDriverReceiveTimeOut|O número de segundos antes de o tempo limite da conexão para o servidor ser atingido.|
 |SMSTSErrorDialogTimeout|Quando ocorre um erro em uma sequência de tarefas, ele exibe uma caixa de diálogo com o erro. A sequência de tarefas a descarta automaticamente após o número de segundos especificado por essa variável. Por padrão, este valor é **900** segundos (15 minutos).|  
 | TSDisableProgressUI | <!-- 1354291 --> Começando pelo Configuration Manager versão 1706, use essa variável para controlar quando a sequência de tarefas exibe o progresso para usuários finais. Para ocultar ou exibir o andamento em momentos diferentes, defina essa variável várias vezes em uma sequência de tarefas. Para ocultar o andamento da sequência de tarefas, defina o valor dessa variável para **True**. Para exibir o andamento da sequência de tarefas, defina o valor dessa variável para **False**. | 
+| SMSTSDisableStatusRetry | <!--512358--> Em cenários desconectados, o mecanismo de sequência de tarefas tenta repetidamente enviar mensagens de status ao ponto de gerenciamento. Esse comportamento neste cenário causa atrasos no processamento da sequência de tarefas. A partir da versão 1802 do Configuration Manager, defina essa variável como **Verdadeiro** e o mecanismo de sequência de tarefas não tentará reenviar mensagens de status após a primeira falha. Esse comportamento perdura até a próxima reinicialização ou o valor dessa variável é definido como **Falso**. OBSERVAÇÃO: [o relatório de status da sequência de tarefas](/sccm/core/servers/manage/list-of-reports#task-sequence---deployment-status) depende dessas mensagens de status para exibir o progresso, o histórico e os detalhes de cada etapa. | 
 |SMSTSLanguageFolder|Use essa variável para alterar o idioma de exibição de uma imagem de inicialização neutra de idioma.|  
 |SMSTSLocalDataDrive|Especifica onde os arquivos temporários são armazenados no computador de destino enquanto a sequência de tarefas está em execução.<br /><br /> Essa variável deve ser definida antes do início da sequência de tarefas, como definindo uma variável de coleta. Depois de iniciada a sequência de tarefas, o Configuration Manager define a variável _SMSTSMDataPath depois que a sequência de tarefas é iniciada.|  
 |SMSTSMP|Use esta variável para especificar a URL ou endereço IP de um ponto de gerenciamento do Configuration Manager.|  
