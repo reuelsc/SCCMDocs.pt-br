@@ -1,26 +1,20 @@
 ---
-title: "Gerenciar o estado do usuário "
+title: 'Gerenciar o estado do usuário '
 titleSuffix: Configuration Manager
-description: "O System Center Configuration Manager usa a Ferramenta de Migração do Usuário para capturar e restaurar os dados de estado do usuário em cenários de implantação de sistema operacional."
-ms.custom: na
+description: O System Center Configuration Manager usa a Ferramenta de Migração do Usuário para capturar e restaurar os dados de estado do usuário em cenários de implantação de sistema operacional.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: d8d5c345-1e91-410b-b8a9-0170dcfa846e
-caps.latest.revision: "12"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: b85199d1109d216cbb7d7368717b99c110ec3219
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 8a5f801edced78306316a63d125d9b90b37600b2
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-user-state-in-system-center-configuration-manager"></a>Gerenciar estado do usuário no System Center Configuration Manager
 

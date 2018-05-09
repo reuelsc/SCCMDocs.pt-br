@@ -1,25 +1,20 @@
 ---
-title: "Práticas recomendadas para a implantação de cliente"
+title: Práticas recomendadas para a implantação de cliente
 titleSuffix: Configuration Manager
-description: "Conheça as práticas recomendadas para a implantação de cliente no System Center Configuration Manager."
-ms.custom: na
+description: Conheça as práticas recomendadas para a implantação de cliente no System Center Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: a933d69c-5feb-4b2b-84e8-56b3b64d5947
-caps.latest.revision: "11"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 7e369b81d57183b4d1a7e646ae0fd13b7804a38d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 9c68a51202152e4b1418101412739b0d83f10203
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="best-practices-for-client-deployment-in-system-center-configuration-manager"></a>Práticas recomendadas para a implantação de cliente no System Center Configuration Manager
 

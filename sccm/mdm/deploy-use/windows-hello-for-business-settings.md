@@ -1,26 +1,20 @@
 ---
-title: "Configurações do Windows Hello para Empresas"
+title: Configurações do Windows Hello para Empresas
 titleSuffix: Configuration Manager
 description: Saiba como integrar o Windows Hello para Empresas com o System Center Configuration Manager.
-ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-hybrid
+ms.topic: conceptual
 ms.assetid: c0593c07-5dd7-4d23-a0d8-d30165f49ef7
-caps.latest.revision: 
-author: lleonard-msft
-ms.author: alleonar
-manager: angrobe
-ms.openlocfilehash: 285fb9e9a9d4538c0ff3b0f9e8b19bec99e9a8c5
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 7471b408fbc8ce55e443873e4662c2ed87410c3a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="windows-hello-for-business-settings-in-system-center-configuration-manager-hybrid"></a>Configurações do Windows Hello para Empresas no System Center Configuration Manager (híbrido)
 
@@ -103,6 +97,6 @@ Para obter informações gerais sobre como configurar o Windows Hello para Empre
 5.  Ao terminar, clique em **OK**.  
 
 ### <a name="see-also"></a>Consulte também  
- [Proteger a infraestrutura de dados e do site com o System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
+ [Protect data and site infrastructure with System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
 
  [Gerenciar a verificação de identidade usando o Windows Hello para Empresas](https://technet.microsoft.com/itpro/windows/keep-secure/manage-identity-verification-using-microsoft-passport).  

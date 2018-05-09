@@ -1,23 +1,20 @@
 ---
 title: Mudar as cargas de trabalho do Configuration Manager para o Intune
-titleSuffix: System Center Configuration Manager
+titleSuffix: Configuraton Manager
 description: Saiba como mudar as cargas de trabalho que no momento são gerenciadas pelo Configuration Manager para serem gerenciadas pelo Microsoft Intune.
 ms.prod: configuration-manager
-ms.suite: na
-ms.technology:
-- configmgr-client
-author: mestew
-ms.author: mstewart
+ms.technology: configmgr-client
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.date: 03/22/2018
-ms.topic: article
-ms.service: ''
+ms.topic: conceptual
 ms.assetid: 60e2022f-a4f9-40dd-af01-9ecb37b43878
-ms.openlocfilehash: d0cee0eb242011d6cc7b3085b4ae9df908604fa8
-ms.sourcegitcommit: ac06e034cc60db7b1acade1f541e26b6cc50506e
+ms.openlocfilehash: 439e4e26c08b5a2710da0978ed2407d715bc86bd
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="switch-configuration-manager-workloads-to-intune"></a>Mudar as cargas de trabalho do Configuration Manager para o Intune
 Em [Preparar dispositivos Windows 10 para cogerenciamento](co-management-prepare.md), você preparou dispositivos Windows 10 para o cogerenciamento. Esses dispositivos ingressaram no AD e no Azure AD, estão registrados no Intune e têm o cliente do Configuration Manager. Provavelmente ainda há dispositivos Windows 10 que ingressaram no AD e têm o cliente do Configuration Manager, mas que não ingressaram no Azure AD e não estão registrados no Intune. O procedimento a seguir fornece as etapas para habilitar o cogerenciamento e preparar o restante dos dispositivos Windows 10 (clientes do Configuration Manager sem registro no Intune) para o cogerenciamento e permite que você comece a mudar cargas de trabalho do Configuration Manager específicas para o Intune.

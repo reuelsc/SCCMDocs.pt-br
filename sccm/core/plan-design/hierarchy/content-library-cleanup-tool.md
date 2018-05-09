@@ -1,25 +1,20 @@
 ---
-title: "A ferramenta de limpeza da biblioteca de conteúdo"
+title: A ferramenta de limpeza da biblioteca de conteúdo
 titleSuffix: Configuration Manager
-description: "Use a ferramenta de limpeza da biblioteca de conteúdo para remover conteúdo órfão não associado a uma implantação do System Center Configuration Manager."
-ms.custom: na
+description: Use a ferramenta de limpeza da biblioteca de conteúdo para remover conteúdo órfão não associado a uma implantação do System Center Configuration Manager.
 ms.date: 4/7/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 226cbbb2-9afa-4e2e-a472-be989c0f0e11
-caps.latest.revision: "4"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 334b79e675ea7804128b0feb9678de4ad06dbc93
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 5d83b23673d8eea6e98f21ea30b6b802eb7e5595
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="the-content-library-cleanup-tool-for-system-center-configuration-manager"></a>A ferramenta de limpeza da biblioteca de conteúdo no System Center Configuration Manager
 
@@ -29,7 +24,7 @@ ms.lasthandoff: 01/04/2018
 
 A ferramenta só afeta o conteúdo no ponto de distribuição que você especificar ao executá-la. A ferramenta não pode remover o conteúdo da biblioteca de conteúdo no servidor do site.
 
-Você poderá encontrar o **ContentLibraryCleanup.exe** na pasta \*%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* no servidor do site no site de administração central ou site primário.
+Você poderá encontrar o **ContentLibraryCleanup.exe** na pasta *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* no servidor do site no site de administração central ou site primário.
 
 ## <a name="requirements"></a>requisitos  
  A ferramenta só pode ser executada em um único ponto de distribuição por vez.  

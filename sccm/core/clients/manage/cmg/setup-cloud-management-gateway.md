@@ -1,22 +1,20 @@
 ---
 title: Configurar o gateway de gerenciamento de nuvem
-titleSuffix: System Center Configuration Manager
+titleSuffix: Configuraton Manager
 description: Use este processo passo a passo para configurar um CMG (gateway de gerenciamento de nuvem).
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.date: 03/22/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: ''
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: fb2a44897064e88f7ab6fd4f4b293520f54f1db7
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 04c1b262704ec6458bd9773c28c43a50d8fc0840
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurar o gateway de gerenciamento de nuvem para o Configuration Manager
 

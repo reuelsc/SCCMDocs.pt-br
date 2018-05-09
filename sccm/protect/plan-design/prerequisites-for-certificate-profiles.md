@@ -1,25 +1,20 @@
 ---
-title: "Pré-requisitos para perfis de certificado"
+title: Pré-requisitos para perfis de certificado
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os perfis de certificado no System Center Configuration Manager e suas dependências externas e dependências dentro do produto."
-ms.custom: na
+description: Saiba mais sobre os perfis de certificado no System Center Configuration Manager e suas dependências externas e dependências dentro do produto.
 ms.date: 12/20/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: 0317fd02-3721-4634-b18b-7c976a4e92bf
-caps.latest.revision: "9"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: b12afbb731d2280fadaa43e94af0dc85d6a9e0ec
-ms.sourcegitcommit: 6c2aa79924c0e7fc64ef5e9003498fc00c349db9
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 1c5a4ddc906b6304f61f1476a125d98c18acab55
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prerequisites-for-certificate-profiles-in-system-center-configuration-manager"></a>Pré-requisitos dos perfis de certificado no System Center Configuration Manager
 

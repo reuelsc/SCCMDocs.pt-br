@@ -1,25 +1,20 @@
 ---
 title: Recursos no Technical Preview 1605
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1605."
-ms.custom: na
+description: Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1605.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 2bafd028-1923-4463-9e3e-ee41bc0c437b
-caps.latest.revision: "36"
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: 795b7658f5da8f863f208f01896ae2d7823ff2a6
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 05d87b253f2387dd8428f4b9fadea3fe5f3a48e8
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1605 do System Center Configuration Manager
 
@@ -102,7 +97,7 @@ Ações comuns, como **Desativar/Apagar**, **Redefinir Senha**, **Bloqueio Remot
 
 1.  No Azure Active Directory, registre o Configuration Manager como uma ferramenta de gerenciamento de "Aplicativo Web e/ou API da Web". Isso fornecerá uma ID de cliente que você precisará mais tarde.  
 
-    1.  No nó Active Directory de [https://manage.windowsazure.com](https://manage.windowsazure.com), selecione seu Azure Active Directory e clique em **Aplicativos** > **Adicionar**.  
+    1.  No nó do Active Directory do [https://manage.windowsazure.com](https://manage.windowsazure.com), selecione Azure Active Directory, clique em **Aplicativos** > **Adicionar**.  
 
     2.  Clique em **Adicionar um aplicativo que minha organização esteja desenvolvendo**.  
 
@@ -120,7 +115,7 @@ Ações comuns, como **Desativar/Apagar**, **Redefinir Senha**, **Bloqueio Remot
 
 3.  Na Windows Store para Empresas, configure o Configuration Manager como a ferramenta de gerenciamento da loja.  
 
-    1.  Abra [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/managementtools) e se conecte, se solicitado.  
+    1.  Abra [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/managementtools) e entre, se solicitado.  
 
     2.  Aceite os termos de uso, se necessário.  
 

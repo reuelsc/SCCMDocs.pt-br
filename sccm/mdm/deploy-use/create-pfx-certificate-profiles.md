@@ -1,26 +1,20 @@
 ---
-title: "Criar perfis de certificado PFX usando uma autoridade de certificação"
+title: Criar perfis de certificado PFX usando uma autoridade de certificação
 titleSuffix: Configuration Manager
-description: "Saiba como usar arquivos PFX no System Center Configuration Manager para gerar certificados específicos do usuário que dão suporte à troca de dados criptografados."
-ms.custom: na
+description: Saiba como usar arquivos PFX no System Center Configuration Manager para gerar certificados específicos do usuário que dão suporte à troca de dados criptografados.
 ms.date: 11/01/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: d240a836-c49b-49ab-a920-784c062d6748
-caps.latest.revision: "5"
-caps.handback.revision: "0"
-author: lleonard-msft
-ms.author: alleonar
-manager: angrobe
-ms.openlocfilehash: ee51d395026b03d251e65f510b1df3ba5b03325d
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: a186e0b2c4b355cabcaaeb3b3124b65d3588fbc8
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-pfx-certificate-profiles-using-a-certificate-authority"></a>Como criar perfis de certificado PFX usando uma autoridade de certificação
 
@@ -40,7 +34,7 @@ Para importar as credenciais de certificado de arquivos de certificado existente
 ### <a name="get-started"></a>Introdução
 
 1.  No console do System Center Configuration Manager, escolha **Ativos e Conformidade**.  
-2.  No espaço de trabalho **Ativos e Conformidade**, escolha **Configurações de Conformidade**, escolha &gt;Acesso ao Recurso da Empresa **e clique em**  &gt; **Perfis de Certificado**.  
+2.  No espaço de trabalho **Ativos e Conformidade**, escolha **Configurações de Conformidade**, escolha &gt;Acesso ao Recurso da Empresa**e clique em** &gt; **Perfis de Certificado**.  
 
 3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Perfil Certificado**.
 

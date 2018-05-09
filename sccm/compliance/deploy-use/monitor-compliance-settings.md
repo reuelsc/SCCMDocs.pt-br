@@ -1,26 +1,20 @@
 ---
-title: "Monitorar as configurações de conformidade"
+title: Monitorar as configurações de conformidade
 titleSuffix: Configuration Manager
-description: "Use um ou mais dos procedimentos deste tópico para exibir o status de conformidade da linha de base de configuração."
-ms.custom: na
+description: Use um ou mais dos procedimentos deste tópico para exibir o status de conformidade da linha de base de configuração.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 92c1ccca-a748-44cd-a52e-e41d34bf981d
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 1da8bf6ab83be7c72cc95ec5e07cb9b1a17526d5
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 9920bd48ad7b953469261602c21a6664580143a2
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="monitor-compliance-settings-in-system-center-configuration-manager"></a>Monitorar as configurações de conformidade no System Center Configuration Manager
 

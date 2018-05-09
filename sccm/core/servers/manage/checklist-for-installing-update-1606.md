@@ -1,25 +1,20 @@
 ---
-title: "Lista de verificação para 1606"
+title: Lista de verificação para 1606
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre as ações a serem executadas antes de atualizar do System Center Configuration Manager versão 1511 ou 1602 para a 1606."
-ms.custom: na
+description: Saiba mais sobre as ações a serem executadas antes de atualizar do System Center Configuration Manager versão 1511 ou 1602 para a 1606.
 ms.date: 6/6/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 75652cd2-a95a-46c5-91c1-6d43fc8e787e
-caps.latest.revision: "7"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: ce41852584f11d881c24c201867e13124595eba8
-ms.sourcegitcommit: 2867fd119256ec670fc5ae65cdc8a80d39f9b4d4
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 981cf40cdb2c14ff019c882c838bdee8315836dc
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1606 do System Center Configuration Manager
 

@@ -2,25 +2,19 @@
 title: Configurar opções de linha de comando
 titleSuffix: Configuration Manager
 description: Crie scripts de automação para instalar o System Center Configuration Manager por meio de uma linha de comando.
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 0da167f1-52cf-4dfd-8f73-833ca3eb8478
-caps.latest.revision: 3
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fede359c884ef8b4027935b2e3fb48a5b7543d26
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: fa8e3bf572ced8a2394099bbb59532502ef3b019
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opções de linha de comando para instalação no System Center Configuration Manager
 

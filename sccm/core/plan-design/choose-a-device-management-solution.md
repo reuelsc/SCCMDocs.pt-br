@@ -1,26 +1,20 @@
 ---
-title: "Escolher uma solução de gerenciamento de dispositivo "
+title: 'Escolher uma solução de gerenciamento de dispositivo '
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre as soluções oferecidas pelo System Center Configuration Manager para gerenciar computadores, servidores e dispositivos."
-ms.custom: na
+description: Saiba mais sobre as soluções oferecidas pelo System Center Configuration Manager para gerenciar computadores, servidores e dispositivos.
 ms.date: 12/08/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 24633725-791a-4df7-8dce-2c24c1a19a03
-caps.latest.revision: "14"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 311bdaf6cef45e2b52a14de07caf58c8846121a0
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 616bf5549c80c94b1dd5d27dc15ea693c86e2ca2
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="choose-a-device-management-solution-for-system-center-configuration-manager"></a>Escolher uma solução de gerenciamento de dispositivo para o System Center Configuration Manager
 

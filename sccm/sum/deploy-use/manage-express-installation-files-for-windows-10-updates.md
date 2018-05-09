@@ -2,22 +2,19 @@
 title: Gerenciar os arquivos de instalação expressa para atualizações do Windows 10
 titleSuffix: Configuration Manager
 description: O Configuration Manager dá suporte a arquivo de instalação expressa para o Windows 10, proporciona downloads menores e instalações mais rápidas nos clientes.
-keywords: ''
-author: dougeby
-ms.author: dougeby
-manager: angrobe
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
 ms.date: 03/24/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: ''
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: b8d8af88-e8ac-4deb-921b-975e2d2afd80
-ms.openlocfilehash: 80ff608ca0e8270fc004995f861a0ccb312a6f34
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+ms.openlocfilehash: 4ca7a6c37137e266d719b76532b4131a6c43d4de
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-express-installation-files-for-windows-10-updates"></a>Gerenciar os arquivos de instalação expressa para atualizações do Windows 10
 A partir da versão 1702, o Configuration Manager oferece suporte a arquivos de instalação expressa para atualizações do Windows 10. Ao usar uma versão do Windows 10 com suporte, é possível usar as definições do cliente do Configuration Manager para configurar o cliente para baixar somente as alterações entre a Atualização Cumulativa do Windows 10 do mês atual e a atualização do mês anterior. Sem os arquivos da instalação expressa, os clientes do Configuration Manager baixam a Atualização Cumulativa do Windows 10 completa (incluindo todas as atualizações dos meses anteriores) todo mês. Usar arquivos de instalação expressa proporciona downloads menores e instalações mais rápidas nos clientes.

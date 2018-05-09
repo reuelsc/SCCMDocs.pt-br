@@ -1,27 +1,20 @@
 ---
 title: Sites para sistemas de sites
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os sites padrão e personalizado para servidores do sistema de sites no System Center Configuration Manager."
-ms.custom: na
+description: Saiba mais sobre os sites padrão e personalizado para servidores do sistema de sites no System Center Configuration Manager.
 ms.date: 2/8/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 681f0893-e83b-476e-9ec0-a5dc7c9deeb6
-caps.latest.revision: 
-caps.handback.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 7d91bc91ec1992ecf06244adf48b76332fc25a1b
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 5614317639c12813acf61f17de844c8304bed70f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="websites-for-site-system-servers-in-system-center-configuration-manager"></a>Sites para servidores de sistema de sites no System Center Configuration Manager
 
@@ -60,7 +53,7 @@ Várias funções de sistema de sites do Configuration Manager requerem o uso do
 
 -   Ponto de serviços Web do Catálogo de Aplicativos  
 
--   Ponto de sites da Web do catálogo de aplicativos  
+-   Ponto de sites da Web do Catálogo de Aplicativos  
 
 -   Ponto de distribuição  
 
@@ -107,7 +100,7 @@ As funções a seguir devem ser **reinstaladas manualmente**:
 
 -   Ponto de serviços Web do Catálogo de Aplicativos  
 
--   Ponto de sites da Web do catálogo de aplicativos  
+-   Ponto de sites da Web do Catálogo de Aplicativos  
 
 -   Ponto de registro  
 

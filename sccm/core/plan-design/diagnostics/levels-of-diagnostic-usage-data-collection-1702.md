@@ -1,43 +1,20 @@
 ---
-title: "Dados de diagnóstico para 1702"
+title: Dados de diagnóstico para 1702
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os níveis de dados de diagnóstico e de uso que o System Center Configuration Manager versão 1702 coleta."
-ms.custom: na
+description: Saiba mais sobre os níveis de dados de diagnóstico e de uso que o System Center Configuration Manager versão 1702 coleta.
 ms.date: 3/27/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: d43ab033-2902-4681-8716-b4b17a6df372
-caps.latest.revision: "4"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- hu-hu
-- it-it
-- ja-jp
-- ko-kr
-- nl-nl
-- pl-pl
-- pt-br
-- pt-pt
-- ru-ru
-- sv-se
-- tr-tr
-- zh-cn
-- zh-tw
-ms.openlocfilehash: 56e1bb899a52a3ca44e6faea3566231e830924e9
-ms.sourcegitcommit: da27d37cc4e4e06cf23758846cdd7acb617f744b
+manager: dougeby
+ms.openlocfilehash: b77f2d38cb24b681aec4123621ffbbf8ba1be579
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1702-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1702 do System Center Configuration Manager
 

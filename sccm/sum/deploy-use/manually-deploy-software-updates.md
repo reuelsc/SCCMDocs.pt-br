@@ -1,22 +1,20 @@
 ---
-title: "Implantar atualizações de software manualmente"
+title: Implantar atualizações de software manualmente
 titleSuffix: Configuration Manager
-description: "Para implantar atualizações manualmente, selecione atualizações no console do Configuration Manager e implante-as manualmente ou adicione atualizações a um grupo de atualização e implante o grupo."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
+description: Para implantar atualizações manualmente, selecione atualizações no console do Configuration Manager e implante-as manualmente ou adicione atualizações a um grupo de atualização e implante o grupo.
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
 ms.date: 12/07/2016
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
-ms.openlocfilehash: becab57c5f04bb67512d665175038f6c477b65b1
-ms.sourcegitcommit: e13bb2c86c40a88e5f4602beb1d31e4adc90e099
+ms.openlocfilehash: 3f79da78df10e97813b221ffca3df25396591fbc
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 05/03/2018
 ---
 #  <a name="BKMK_ManualDeploy"></a> Implantar atualizações de software manualmente  
 
@@ -175,7 +173,7 @@ ms.lasthandoff: 01/12/2018
 
     -   **Nome**: especifique o nome da implantação. A implantação deve ter um nome exclusivo que descreva a finalidade da implantação e diferencie-a de outras implantações no site do Configuration Manager. Por padrão, o Configuration Manager fornece automaticamente um nome para a implantação no seguinte formato: **Atualizações de software da Microsoft -** <*data*><*hora*>  
 
-    -   **Descrição:**especifique uma descrição para a implantação. A descrição fornece uma visão geral da implantação e qualquer outra informação relevante que ajude a identificá-la e a diferenciá-la entre outras no site do Configuration Manager. O campo de descrição é opcional, tem um limite de 256 caracteres e um valor em branco por padrão.  
+    -   **Descrição:** especifique uma descrição para a implantação. A descrição fornece uma visão geral da implantação e qualquer outra informação relevante que ajude a identificá-la e a diferenciá-la entre outras no site do Configuration Manager. O campo de descrição é opcional, tem um limite de 256 caracteres e um valor em branco por padrão.  
 
     -   **Atualização de Software/Grupo de Atualização de Software**: verifique se o grupo de atualização de software exibido ou a atualização de software está correta.  
 

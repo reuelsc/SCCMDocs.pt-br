@@ -1,25 +1,20 @@
 ---
 title: Criar aplicativos de computador Mac
 titleSuffix: Configuration Manager
-description: "Veja quais considerações você deverá levar em conta ao criar e implantar aplicativos para computadores Mac."
-ms.custom: na
+description: Veja quais considerações você deverá levar em conta ao criar e implantar aplicativos para computadores Mac.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: ab1aecdd-d943-44f5-b0a9-e8fe7439e5d6
-caps.latest.revision: "9"
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: 912632c672c49deefc946e089dad6a82454c4b67
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 3cbb7281cd7dd39a32a71105fe173f868947eef9
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-mac-computer-applications-with-system-center-configuration-manager"></a>Criar aplicativos de computador Mac com o System Center Configuration Manager
 

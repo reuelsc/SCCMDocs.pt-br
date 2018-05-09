@@ -2,24 +2,19 @@
 title: Restringir o acesso com base em riscos
 titleSuffix: Configuration Manager
 description: Restrinja o acesso aos recursos da empresa com base em risco de dispositivo, rede e aplicativo.
-ms.custom: na
 ms.date: 04/25/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 9083c571-f4fc-4a78-adc5-8aec84dabcbd
-caps.latest.revision: 
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: e013c2a3758685aacdacf0707ca0df2c258976b2
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: e921e6ab90eb57caf031b49d375d0017ea9a2930
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>Gerenciar o acesso aos recursos da empresa com base em risco de dispositivo, rede e aplicativo
 

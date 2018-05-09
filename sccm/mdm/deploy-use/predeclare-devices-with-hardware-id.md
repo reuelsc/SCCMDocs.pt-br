@@ -1,25 +1,20 @@
 ---
-title: "Pré-declarar dispositivos com número de série do iOS ou IMEI"
+title: Pré-declarar dispositivos com número de série do iOS ou IMEI
 titleSuffix: Configuration Manager
-description: "Pré-declare dispositivos corporativos com o número de série do iOS ou IMEI deles."
-ms.custom: na
+description: Pré-declare dispositivos corporativos com o número de série do iOS ou IMEI deles.
 ms.date: 09/01/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: ddb4c68e-e7f7-475a-89e2-7379a86e44c4
-caps.latest.revision: "3"
-author: nathbarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: a58c765833fe1ef65c2497fd1e2d079caa3f2ff3
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 86ef14c871f476df39923e01e47874702271a08d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Pré-declarar dispositivos com número de série do iOS ou IMEI
 

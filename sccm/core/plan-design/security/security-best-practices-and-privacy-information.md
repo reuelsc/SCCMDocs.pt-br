@@ -1,25 +1,20 @@
 ---
-title: "Práticas recomendadas de segurança e informações de privacidade"
+title: Práticas recomendadas de segurança e informações de privacidade
 titleSuffix: Configuration Manager
-description: "Encontre recursos que fornecem as práticas recomendadas de segurança e informações de privacidade para o System Center Configuration Manager."
-ms.custom: na
+description: Encontre recursos que fornecem as práticas recomendadas de segurança e informações de privacidade para o System Center Configuration Manager.
 ms.date: 1/3/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: b7bff8a0-fe76-4d3b-aac6-065290888bea
-caps.latest.revision: "10"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 74b8eb59f9e0156d370281d6105df15701253093
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 83a06e2b43166f80532fbcc45e4f7199c890adcc
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="security-best-practices-and-privacy-information-for-system-center-configuration-manager"></a>Práticas recomendadas de segurança e informações de privacidade para o System Center Configuration Manager
 

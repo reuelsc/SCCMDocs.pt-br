@@ -2,26 +2,19 @@
 title: Contas usadas
 titleSuffix: Configuraton Manager
 description: Identifique e gerencie grupos e contas do Windows no System Center Configuration Manager.
-ms.custom: na
 ms.date: 2/9/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
-caps.latest.revision: 
-caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 1b8248cbbade7d46d1a1ad41edd704b5ad8d49aa
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+manager: dougeby
+ms.openlocfilehash: b2ca81115207db66a39d2aeb5e07740ae259d54c
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="accounts-used-in-system-center-configuration-manager"></a>Contas usadas no System Center Configuration Manager
 

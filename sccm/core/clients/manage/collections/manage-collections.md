@@ -1,26 +1,20 @@
 ---
-title: "Gerenciar coleções"
+title: Gerenciar coleções
 titleSuffix: Configuration Manager
-description: "Realize tarefas de gerenciamento de coleções comuns no System Center Configuration Manager."
-ms.custom: na
+description: Realize tarefas de gerenciamento de coleções comuns no System Center Configuration Manager.
 ms.date: 4/25/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: e102fd1a-76df-4d8e-b1b0-10ee18318f67
-caps.latest.revision: "8"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 0655a1dc566657cb27cdc7537603871dc36cc568
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: b00b62a90f496eb19a77dcc431ccf157b1227923
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-manage-collections-in-system-center-configuration-manager"></a>Como gerenciar coleções no System Center Configuration Manager
 
@@ -77,11 +71,11 @@ Use as informações de visão geral contidas neste tópico para ajudá-lo a exe
 |Nome da guia|Mais informações|  
 |--------------|----------------------|  
 |**Geral**|Permite exibir e configurar informações gerais sobre a coleção selecionada, incluindo o nome da coleção e a limitação da coleção.|  
-|**Regras de associação**|Permite configurar as regras de associação que definem a associação desta coleção. Para mais informações, consulte [Como criar coleções no System Center Configuration Manager](../../../../core/clients/manage/collections/create-collections.md).|  
+|**Regras de associação**|Permite configurar as regras de associação que definem os membros dessa coleção. Para mais informações, consulte [Como criar coleções no System Center Configuration Manager](../../../../core/clients/manage/collections/create-collections.md).|  
 |**Gerenciamento de energia**|Permite configurar planos de gerenciamento de energia que são atribuídos aos computadores na coleção selecionada. Para mais informações, consulte [Introdução ao gerenciamento de energia](../../../../core/clients/manage/power/introduction-to-power-management.md).|  
 |**Implantações**|Exibe qualquer software implantado nos membros da coleção selecionada.|  
 |**Janelas de Manutenção**|Permite exibir e configurar as janelas de manutenção que são aplicadas aos membros da coleção selecionada. Para obter mais informações, consulte [Como usar as janelas de manutenção no System Center Configuration Manager](../../../../core/clients/manage/collections/use-maintenance-windows.md).|  
-|**Variáveis de coleção**|Permite configurar as variáveis que se aplicam a esta coleção e que podem ser usadas pelas sequências de tarefas. Para obter mais informações, consulte [Variáveis internas da sequência de tarefas](../../../../osd/understand/task-sequence-built-in-variables.md).|  
-|**Grupos de pontos de distribuição**|Permite que você associe um ou mais grupos de pontos de distribuição aos membros da coleção selecionada. Para mais informações, consulte [Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager](../../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
+|**Variáveis de coleção**|Permite que você configure variáveis que se aplicam a esta coleção e podem ser usados pelas sequências de tarefas. Para obter mais informações, consulte [Variáveis internas da sequência de tarefas](../../../../osd/understand/task-sequence-built-in-variables.md).|  
+|**Grupos de pontos de distribuição**|Permite que você associe um ou mais grupos de pontos de distribuição para os membros da coleção selecionada. Para mais informações, consulte [Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager](../../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
 |**Segurança**|Exibe os usuários administrativos que têm permissões sobre a coleção selecionada das funções associadas e dos escopos de segurança.|  
 |**Monitor**|Permite configurar quando os alertas são gerados para o status do cliente e o Endpoint Protection. Para mais informações, consulte [Como configurar o status do cliente no System Center Configuration Manager](../../../../core/clients/deploy/configure-client-status.md) e [Como monitorar o Endpoint Protection no System Center Configuration Manager](../../../../protect/deploy-use/monitor-endpoint-protection.md).|  

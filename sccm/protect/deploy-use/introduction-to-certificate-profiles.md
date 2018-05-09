@@ -2,25 +2,19 @@
 title: Introdução aos perfis de certificado
 titleSuffix: Configuration Manager
 description: Saiba como os perfis de certificado no System Center Configuration Manager funcionam com Serviços de Certificados do Active Directory.
-ms.custom: na
 ms.date: 04/10/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: 41dcc259-f147-4420-bff2-b65bdf8cff77
-caps.latest.revision: 7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0e82c9704c0505c8c7ed9ef3d04260ca74026999
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+ms.openlocfilehash: c4230b935b7fabc44743d57fcb2315348edb4274
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introdução aos perfis de certificado no System Center Configuration Manager
 
@@ -59,7 +53,7 @@ Os perfis de certificado oferecem os seguintes recursos de gerenciamento:
     Você pode criar perfis de certificado PFX [importando credenciais](/sccm/mdm/deploy-use/import-pfx-certificate-profiles) de certificados existentes ou [definindo uma autoridade de certificação](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) para processar solicitações.
 
     > [!Note]  
-    > O Configuration Manager não habilita esse recurso opcional por padrão. Você precisa habilitar esse recurso antes de usá-lo. Para obter mais informações, confira [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+    > O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, confira [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
     Começando com a versão 1706, você pode usar a Microsoft ou a Entrust como autoridades de certificação para certificados de **Troca de informações pessoais (.pfx)**.
 

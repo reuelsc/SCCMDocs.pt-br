@@ -1,26 +1,20 @@
 ---
-title: "Domínios do Active Directory com suporte"
+title: Domínios do Active Directory com suporte
 titleSuffix: Configuration Manager
-description: "Obtenha os requisitos para a associação de um sistema de sites do System Center Configuration Manager em um domínio do Active Directory."
-ms.custom: na
+description: Obtenha os requisitos para a associação de um sistema de sites do System Center Configuration Manager em um domínio do Active Directory.
 ms.date: 9/18/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 8c5a13f8-42d5-4898-b7b6-e594dae8b335
-caps.latest.revision: "7"
-caps.handback.revision: "0"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 7ec8d6f3a37f48e7dc6032af5b30fb452171d14c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: dcb0f5e82d0ef53524e9abfdb974605e3ae73db3
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="supported-active-directory-domains-for-system-center-configuration-manager"></a>Domínios do Active Directory com suporte no System Center Configuration Manager
 

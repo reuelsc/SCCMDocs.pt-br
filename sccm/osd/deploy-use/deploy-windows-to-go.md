@@ -1,26 +1,20 @@
 ---
 title: Implantar o Windows to Go
 titleSuffix: Configuration Manager
-description: "Saiba como provisionar o Windows To Go no System Center Configuration Manager para criar um espaço de trabalho do Windows To Go que é inicializado de uma unidade externa."
-ms.custom: na
+description: Saiba como provisionar o Windows To Go no System Center Configuration Manager para criar um espaço de trabalho do Windows To Go que é inicializado de uma unidade externa.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 8eed50f5-80a4-422e-8aa6-a7ccb2171475
-caps.latest.revision: "8"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 9d902f75911b484d22d38b07cea40e1c00ea0d93
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 12b7a28ff5ea0e2e1870c0c37edd8e056930b09f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="deploy-windows-to-go-with-system-center-configuration-manager"></a>Implantar o Windows to Go com o System Center Configuration Manager
 
@@ -265,7 +259,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
     -   **Espaço em disco estimado**: especifique o tamanho da pasta de origem do pacote para o Windows To Go Creator.  
 
-    -   **Tempo de execução máximo permitido (minutos):**especifica o tempo máximo que o programa está previsto para ser executado no computador do cliente. Por padrão, esse valor é definido como 120 minutos.  
+    -   **Tempo de execução máximo permitido (minutos):** especifica o tempo máximo que o programa está previsto para ser executado no computador do cliente. Por padrão, esse valor é definido como 120 minutos.  
 
         > [!IMPORTANT]  
         >  Se você estiver usando janelas de manutenção para a coleção em que esse programa é executado, poderá ocorrer um conflito se o **Tempo de execução máximo permitido** for maior do que o tempo da janela de manutenção agendada. Se o tempo de execução máximo for definido como **Desconhecido**, ele será iniciado durante a janela de manutenção, mas continuará sendo executado até que seja concluído ou que ocorra uma falha após a janela de manutenção ser fechada. Se você definir o tempo de execução máximo para um período específico (não definido como Desconhecido) que exceda a duração de qualquer janela de manutenção disponível, esse programa não será executado.  

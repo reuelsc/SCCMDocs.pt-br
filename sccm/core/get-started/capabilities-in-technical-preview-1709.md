@@ -1,25 +1,20 @@
 ---
 title: Technical Preview 1709
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os recursos disponíveis na Technical Preview versão 1709 do System Center Configuration Manager."
-ms.custom: na
+description: Saiba mais sobre os recursos disponíveis na Technical Preview versão 1709 do System Center Configuration Manager.
 ms.date: 09/28/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: a3ef6bdc-a204-4c4c-a02f-2bd03f35183e
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: f0acc5ae0d8207dce92c56a4c80e8321faf51393
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 74ffd06f8b9786d627dc7fd9cecb15215228313d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Recursos na Technical Preview 1709 do System Center Configuration Manager
 

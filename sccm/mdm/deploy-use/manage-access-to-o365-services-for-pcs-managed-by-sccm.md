@@ -2,25 +2,19 @@
 title: Gerenciar o acesso aos serviços do O365
 titleSuffix: Configuration Manager
 description: Saiba como configurar o acesso condicional aos serviços do Office 365 para computadores gerenciados pelo System Center Configuration Manager.
-ms.custom: na
 ms.date: 04/10/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-hybrid
+ms.topic: conceptual
 ms.assetid: 34024741-edfa-4088-8599-d6bafc331e62
-caps.latest.revision: 15
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1e02cb911397d5f1f837996318b12049d328c9c3
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+ms.openlocfilehash: 7bf7114382c956dcac6302b3fc11617ad6b5eeec
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gerenciar o acesso aos serviços O365 para PCs gerenciados pelo System Center Configuration Manager.
 
@@ -30,7 +24,7 @@ ms.lasthandoff: 04/16/2018
 Configure o acesso condicional aos serviços do Office 365 para computadores gerenciados pelo Configuration Manager.  
 
 > [!Note]  
-> O Configuration Manager não habilita esse recurso opcional por padrão. Você precisa habilitar esse recurso antes de usá-lo. Para obter mais informações, confira [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, veja [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 
 Para obter informações sobre como configurar o acesso condicional para dispositivos registrados e gerenciados pelo Microsoft Intune, consulte [Gerenciar o acesso a serviços no System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md). Esse artigo também aborda os dispositivos ingressados em domínio e não são avaliados quanto à conformidade.
@@ -101,7 +95,7 @@ Para obter informações sobre como configurar o acesso condicional para disposi
     > Os critérios de acesso condicional para o atestado de integridade do dispositivo foram introduzidos na versão 1710 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). Na versão 1802, esse recurso deixou de ser um recurso de pré-lançamento.<!--1235616-->  
 
     > [!Note]  
-    > O Configuration Manager não habilita esse recurso opcional por padrão. Você precisa habilitar esse recurso antes de usá-lo. Para obter mais informações, confira [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+    > O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, veja [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 ### <a name="step-2-evaluate-the-effect-of-conditional-access"></a>Etapa 2. Avaliar o efeito do acesso condicional  
  Execute o **Relatório de Conformidade de Acesso Condicional**. Ele pode ser encontrado no espaço de trabalho **Monitoramento** em **Relatórios** > **Gerenciamento de conformidade e configurações**. Esse relatório exibe o status de conformidade para todos os dispositivos. Dispositivos relatados como fora de conformidade são impedidos de acessar o Exchange Online e o SharePoint Online.  

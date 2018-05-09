@@ -1,25 +1,20 @@
 ---
 title: Use o Centro de Software para implantar o Windows pela rede
 titleSuffix: Configuration Manager
-description: "Você pode implantar um sistema operacional no Centro de Software para atualizar um computador existente com uma nova versão do Windows ou para atualizar o Windows para a versão mais recente."
-ms.custom: na
+description: Você pode implantar um sistema operacional no Centro de Software para atualizar um computador existente com uma nova versão do Windows ou para atualizar o Windows para a versão mais recente.
 ms.date: 6/16/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 919e3636-53fe-4119-ad14-2d03702b391b
-caps.latest.revision: "5"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: f9df5c6c0f761b4afd82b7592c049dc010b73f10
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 3fd4853a35c4bfa1112e61286add1e1f458e8b6f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-software-center-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Use o Centro de Software para implantar o Windows pela rede com o System Center Configuration Manager
 

@@ -1,25 +1,20 @@
 ---
-title: "Introdução à emissão de relatórios"
+title: Introdução à emissão de relatórios
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre o conjunto de ferramentas e recursos disponível para gerenciar relatórios no Configuration Manager."
-ms.custom: na
+description: Saiba mais sobre o conjunto de ferramentas e recursos disponível para gerenciar relatórios no Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 230be984-d2cd-4d53-bd7a-bc24dd93fc22
-caps.latest.revision: "7"
-author: Dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: eab08e56ac133f412dd70386002eabb29ecb7115
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 579e9494a4f44f41a411af88bf58df7dcc5e8075
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="introduction-to-reporting-in-system-center-configuration-manager"></a>Introdução à emissão de relatórios no System Center Configuration Manager
 

@@ -1,25 +1,20 @@
 ---
 title: Definir limites
 titleSuffix: Configuration Manager
-description: "Entenda como definir locais de rede na sua intranet que podem conter dispositivos que você deseja gerenciar."
-ms.custom: na
+description: Entenda como definir locais de rede na sua intranet que podem conter dispositivos que você deseja gerenciar.
 ms.date: 3/27/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 4a9dc4d9-e114-42ec-ae2b-73bee14ab04f
-caps.latest.revision: "10"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 224e91ebb3ff6ccfa94c3e2022066ad6d27c3afb
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 1e27bce7576f6d96a8e8af95fa5df69dd39c05cd
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="define-network-locations-as-boundaries-for-system-center-configuration-manager"></a>Definir locais de rede como limites para o System Center Configuration Manager
 
@@ -42,7 +37,7 @@ Cada limite está disponível para uso por todos os sites na sua hierarquia. Dep
 
 1.  No console do Configuration Manager, clique em **Administração** > **Configuração da Hierarquia** > **Limites**  
 
-2.  Na guia **Início** , no grupo **Criar** , clique em **Criar Boundary.**  
+2.  Na guia **Início** , no grupo **Criar** , clique em **Criar Boundary**.  
 
 3.  Na guia **Geral** da caixa de diálogo Criar Limite, é possível especificar uma **Descrição** para identificar o limite por um nome amigável ou de referência.  
 

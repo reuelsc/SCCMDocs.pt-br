@@ -2,26 +2,19 @@
 title: Configurar a infraestrutura de certificado
 titleSuffix: Configuration Manager
 description: Saiba como configurar registro de certificado no System Center Configuration Manager.
-ms.custom: na
 ms.date: 07/25/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: 29ae59b7-2695-4a0f-a9ff-4f29222f28b3
-caps.latest.revision: 7
-caps.handback.revision: 0
-author: lleonard-msft
-ms.author: alleonar
-manager: angrobe
-ms.openlocfilehash: 9ef62bbf6269a6090f2345b10c24cc4df16c1e3b
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: c27f92374470c7d87d49661b20996a3f0c47f8a4
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-certificate-infrastructure"></a>Configurar a infraestrutura de certificado
 
@@ -161,11 +154,11 @@ Use estas etapas para configurar sua infraestrutura para certificados SCEP ou PF
 
     -   No espaço de trabalho **Monitoramento** , expanda **Status do Sistema**, clique em **Status do Componente**e procure pelas mensagens de status do componente **SMS_CERTIFICATE_REGISTRATION_POINT** .  
 
-    -   No servidor do sistema de sites, use o arquivo *<ConfigMgr Installation Path\>*\Logs\crpsetup.log e o arquivo *<ConfigMgr Installation Path\>*\Logs\crpmsi.log. Uma instalação bem-sucedida retornará um código de saída igual a 0.  
+    -   No servidor do sistema de sites, use o arquivo *<ConfigMgr Installation Path\>* \Logs\crpsetup.log e o arquivo *<ConfigMgr Installation Path\>* \Logs\crpmsi.log. Uma instalação bem-sucedida retornará um código de saída igual a 0.  
 
     -   Usando um navegador, verifique se é possível se conectar à URL do ponto de registro de certificado, por exemplo, https://server1.contoso.com/CMCertificateRegistration. Uma página de **Erro do Servidor** será exibida para o nome do aplicativo com uma descrição HTTP 404.  
 
-11. Localize o arquivo de certificado exportado para a AC raiz que o ponto de registro de certificado criou automaticamente na seguinte pasta no computador do servidor do site primário: *<ConfigMgr Installation Path\>*\inboxes\certmgr.box. Salve este arquivo em um local seguro em que você possa acessá-lo mais tarde quando for instalar o Módulo de Política do System Center Configuration Manager no servidor que está executando o Serviço de Registro de Dispositivo de Rede.  
+11. Localize o arquivo de certificado exportado para a AC raiz que o ponto de registro de certificado criou automaticamente na seguinte pasta no computador do servidor do site primário: *<ConfigMgr Installation Path\>* \inboxes\certmgr.box. Salve este arquivo em um local seguro em que você possa acessá-lo mais tarde quando for instalar o Módulo de Política do System Center Configuration Manager no servidor que está executando o Serviço de Registro de Dispositivo de Rede.  
 
     > [!TIP]  
     >  Este certificado não está imediatamente disponível nessa pasta. Talvez você precise esperar um pouco (por exemplo, meia hora) até que o System Center Configuration Manager copie o arquivo para este local.  

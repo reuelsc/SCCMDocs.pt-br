@@ -1,25 +1,20 @@
 ---
 title: Preparar para instalar sites
 titleSuffix: Configuration Manager
-description: "Se você planeja instalar vários sites do Configuration Manager, leia essas informações para ajudá-lo a economizar tempo e evitar erros."
-ms.custom: na
+description: Se você planeja instalar vários sites do Configuration Manager, leia essas informações para ajudá-lo a economizar tempo e evitar erros.
 ms.date: 3/1/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 9089e1b5-cba4-42bd-a2de-126ef882a3af
-caps.latest.revision: "5"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 67f53f6f9e346835ed3e72fe45b699c86d35766a
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 9f07a321ac6f10f5287a88d0df7064920f538ae5
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prepare-to-install-system-center-configuration-manager-sites"></a>Preparar para instalar sites do System Center Configuration Manager
 

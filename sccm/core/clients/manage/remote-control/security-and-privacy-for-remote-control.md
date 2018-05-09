@@ -1,26 +1,20 @@
 ---
-title: "Privacidade de segurança do controle remoto"
+title: Privacidade de segurança do controle remoto
 titleSuffix: Configuration Manager
-description: "Obtenha as informações de segurança e privacidade de controle remoto no System Center Configuration Manager."
-ms.custom: na
+description: Obtenha as informações de segurança e privacidade de controle remoto no System Center Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 272ee86b-d3d9-4fd9-b5c4-73e490e1a1e4
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 4923aee0e55f42f679c6f17ea0fd760c1909f9ef
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: fc49a74fe4e257acceaea54d7c423709998a87bd
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="security-and-privacy-for-remote-control-in-system-center-configuration-manager"></a>Segurança e privacidade do controle remoto no System Center Configuration Manager
 
@@ -29,7 +23,7 @@ ms.lasthandoff: 10/12/2017
 Este tópico contém as informações de segurança e privacidade de controle remoto no System Center 2012 Configuration Manager.  
 
 ##  <a name="BKMK_Security_HardwareInventory"></a> Práticas recomendadas de segurança para o controle remoto  
- Use as práticas recomendadas de segurança a seguir ao gerenciar computadores cliente usando o controle remoto.  
+ Use as seguintes práticas recomendadas de segurança ao gerenciar computadores cliente usando o controle remoto.  
 
 |Prática recomendada de segurança|Mais informações|  
 |----------------------------|----------------------|  

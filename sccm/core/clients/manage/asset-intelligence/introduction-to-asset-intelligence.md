@@ -1,26 +1,20 @@
 ---
-title: "Introdução ao Asset Intelligence"
+title: Introdução ao Asset Intelligence
 titleSuffix: Configuration Manager
-description: "Obtenha uma introdução ao Asset Intelligence no System Center Configuration Manager."
-ms.custom: na
+description: Obtenha uma introdução ao Asset Intelligence no System Center Configuration Manager.
 ms.date: 2/22/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 0bdfdef5-390f-4099-8bde-de51d9a89175
-caps.latest.revision: "7"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 349f5998c0d5e96a626e901ae99fee76541d1b4e
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 0c09160e88d8a713caadfdd9a6973fd436b4cad1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="introduction-to-asset-intelligence-in-system-center-configuration-manager"></a>Introdução ao Asset Intelligence no System Center Configuration Manager
 
@@ -122,13 +116,13 @@ O Asset Intelligence no System Center Configuration Manager permite inventariar 
     > [!NOTE]  
     >  A seção de sincronização do catálogo do Asset Intelligence da home page do **Asset Intelligence** é exibida somente se uma função do sistema de sites do ponto de sincronização do Asset Intelligence tiver sido instalada.  
 
--   **Status de Software Inventariado**: fornece a contagem e o percentual de software inventariado, categorias de software e famílias de software que são identificadas pela Microsoft, identificados por um administrador, com identificação online pendente ou não identificados e não pendentes. As informações exibidas em formato de tabela mostram a contagem para cada um, e as informações exibidas no gráfico mostram o percentual de cada um.  
+-   **Status de Software Inventariado**: fornece a contagem e o percentual de software inventariado, categorias de software e famílias de software que são identificadas pela Microsoft, identificados por um administrador, com identificação online pendente ou não identificados e não pendentes. As informações exibidas no formato de tabela mostram a contagem de cada um, e as informações exibidas no gráfico mostram a porcentagem de cada.  
 
 ##  <a name="BKMK_AssetIntelligenceReports"></a> Relatórios do Asset Intelligence  
  Os relatórios do Asset Intelligence estão localizados no console do Configuration Manager, no espaço de trabalho **Monitoramento** da pasta do Asset Intelligence, no nó **Relatórios**. Os relatórios fornecem informações sobre hardware, gerenciamento de licenças e software. Para obter mais informações sobre os relatórios no Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
 
 > [!NOTE]  
->  A precisão da quantidade de títulos de software instalados e de informações de licença exibidas nos relatórios do Asset Intelligence pode variar do número real dos títulos de software instalados ou das licenças usadas no ambiente. Essa variação é causada devido às dependências complexas e limitações envolvidas no inventário das informações de licença de software para títulos de software que estão instalados em ambientes corporativos. Não use relatórios do Asset Intelligence como a única origem para determinar a conformidade das licenças de software adquiridas.  
+>  A precisão da quantidade de títulos de software instalados e de informações de licença exibidas nos relatórios do Asset Intelligence pode variar do número real dos títulos de software instalados ou das licenças usadas no ambiente. Essa variação é causada devido às dependências complexas e limitações envolvidas no inventário das informações de licença de software para títulos de software que estão instalados em ambientes corporativos. Não use relatórios do Asset Intelligence como a origem única para determinar a conformidade da licença de software adquirido.  
 
 ###  <a name="BKMK_HardwareReports"></a> Relatórios de hardware do Asset Intelligence  
  Os relatórios de hardware do Asset Intelligence fornecem informações sobre ativos de hardware na organização. Usando as informações de inventário de hardware, como velocidade, memória, dispositivos periféricos e muito mais, os relatórios de hardware do Asset Intelligence podem apresentar informações sobre os dispositivos USB, sobre o hardware que precisa ser atualizado e até mesmo sobre os computadores que não estão prontos para uma atualização de software específica.  
@@ -146,7 +140,7 @@ O Asset Intelligence no System Center Configuration Manager permite inventariar 
  Os relatórios de software do Asset Intelligence fornecem informações sobre famílias de software, categorias e títulos de software específicos que estão instalados em computadores na organização. Os relatórios do software apresentam informações sobre objetos auxiliares de navegador, software que é iniciado automaticamente e muito mais. Esses relatórios podem ser usados para identificar o adware, spyware e outros tipos de malware e identificar a redundância de software para ajudar a simplificar a compra de software e o suporte.  
 
 ###  <a name="BKMK_SoftwareIdTagReports"></a> Relatórios de marca de identificação de software do Asset Intelligence  
- Os relatórios de marca de identificação de software do Asset Intelligence fornecem informações sobre software que contém uma marca de identificação de software que está em conformidade com a ISO/IEC 19770-2. As marcas de identificação de software fornecem informações autoritativa usadas para identificar o software instalado. Quando você habilita a classe de relatório de inventário de hardware SMS_SoftwareTag, o Configuration Manager coleta informações sobre o software com marcas de identificação de software. Os relatórios abaixo fornecem informações sobre o software:  
+ Asset Intelligence software identificação marca relatórios fornecem informações sobre software que contenha uma marca de identificação do software que está em conformidade com ISO/IEC 19770-2. As marcas de identificação de software fornecem informações autoritativa usadas para identificar o software instalado. Quando você habilita a classe de relatório de inventário de hardware SMS_SoftwareTag, o Configuration Manager coleta informações sobre o software com marcas de identificação de software. Os relatórios abaixo fornecem informações sobre o software:  
 
 -   **Software 14A – Pesquisar software habilitado para marca de identificação de software**: este relatório fornece a contagem de software instalado com uma marca de identificação de software habilitada.  
 
@@ -155,10 +149,10 @@ O Asset Intelligence no System Center Configuration Manager permite inventariar 
 -   **Software 14C – Software habilitado para marca de identificação de software instalado em um computador específico**: este relatório lista todos os programas instalados com uma marca de identificação de software específica habilitada em um computador específico.  
 
 ###  <a name="BKMK_ReportingLImitations"></a> Limitações de relatórios do Asset Intelligence  
- Os relatórios do Asset Intelligence podem fornecer grandes quantidades de informações sobre os títulos de software instalados e as licenças de software adquiridas que estão sendo usados. No entanto, você não deve usar essas informações como a única fonte para determinar a conformidade de licença de software adquirida.  
+ Relatórios do Asset Intelligence podem fornecer grandes quantidades de informações sobre títulos de software instalado e adquirido licenças de software que estão sendo usadas. No entanto, você não deve usar essas informações como a única fonte para determinar a conformidade da licença de software adquirido.  
 
 ####  <a name="BKMK_ExampleDependencies"></a> Exemplos de dependências  
- A precisão da quantidade exibida nos relatórios do Asset Intelligence para títulos de software instalados e informações de licença pode variar das quantidades reais usadas no momento. Essa variação é causada pelas dependências complexas envolvidas no inventário das informações de licença de software para títulos de software usados em ambientes corporativos. Os exemplos abaixo mostram as dependências envolvidas no inventário do software instalado na empresa usando Asset Intelligence que podem afetar a precisão dos relatórios do Asset Intelligence:  
+ A precisão da quantidade exibida nos relatórios do Asset Intelligence instalado títulos de software e informações de licença podem variar dos valores reais usados no momento. Essa variação é causada pelas dependências complexas envolvidas no inventário das informações de licença de software para títulos de software usados em ambientes corporativos. Os exemplos abaixo mostram as dependências envolvidas no inventário do software instalado na empresa usando Asset Intelligence que podem afetar a precisão dos relatórios do Asset Intelligence:  
 
  **Dependências de inventário de hardware do cliente**  
  Os relatórios de software instalado do Asset Intelligence se baseiam em dados coletados de clientes do Configuration Manager, estendendo o inventário de hardware para habilitar os relatórios do Asset Intelligence. Devido a essa dependência dos relatórios de inventário de hardware, os relatórios do Asset Intelligence refletem somente os dados dos clientes do Configuration Manager que concluírem com êxito os processos de inventário de hardware com as classes de relatório WMI do Asset Intelligence necessárias habilitadas. Além disso, como os clientes do Configuration Manager executam processos de inventário de hardware em um agendamento definido pelo usuário administrativo, pode ocorrer um atraso no relatório de dados que afetará a precisão dos relatórios do Asset Intelligence. Por exemplo, um título de software inventariado licenciado poderá ser desinstalado depois que o cliente concluir um ciclo de inventário de hardware bem-sucedido. No entanto, o título do software é exibido como instalado nos relatórios do Asset Intelligence até o próximo ciclo de relatórios do inventário de hardware agendado do cliente.  
@@ -167,7 +161,7 @@ O Asset Intelligence no System Center Configuration Manager permite inventariar 
  Como os relatórios do Asset Intelligence se baseiam em dados de títulos de software instalados que são coletados usando processos padrão de inventário de hardware do cliente do Configuration Manager, alguns dados do título de software podem não ser coletados corretamente. Por exemplo, as instalações de software que não seguirem os processos de instalação ou as instalações de software padrão que foram alterados antes da instalação podem gerar relatórios imprecisos do Asset Intelligence.  
 
 ####  <a name="BKMK_LegalLimitations"></a> Limitações legais  
- As informações exibidas nos relatórios do Asset Intelligence estão sujeitas a muitas limitações e as informações exibidas neles não representam assessoria jurídica, contábil ou qualquer outro tipo de assessoria profissional. As informações fornecidas pelos relatórios do Asset Intelligence servem apenas para fins informativos e não devem ser usadas como a única fonte de informação para determinar a conformidade do uso de licença de software.  
+ As informações exibidas no Asset Intelligence relatórios estão sujeitos a muitas limitações e as informações exibidas nelas não representam legal, contábil ou qualquer outro aconselhamento profissional. As informações fornecidas pelos relatórios do Asset Intelligence servem apenas para fins informativos e não devem ser usadas como a única fonte de informação para determinar a conformidade do uso de licença de software.  
 
  Estes são exemplos de limitações envolvidas no inventário do software instalado e do uso de licença na empresa usando Asset Intelligence que podem afetar a precisão dos relatórios do Asset Intelligence:  
 
@@ -186,10 +180,10 @@ O Asset Intelligence no System Center Configuration Manager permite inventariar 
  Os clientes do Configuration Manager devem concluir com êxito os ciclos de relatórios de inventário de hardware para que os relatórios do Asset Intelligence relatem com precisão a quantidade de títulos de software instalados. Além disso, pode haver um atraso entre a instalação ou desinstalação de um título de software licenciado após um ciclo de relatório de inventário de hardware bem-sucedido que não é refletido nos relatórios do Asset Intelligence executados antes de o cliente relatar seu próximo inventário de hardware agendado.  
 
  **Limitações de reconciliação de licença**  
- A reconciliação da quantidade de títulos de software instalados em relação à quantidade de licenças de software adquiridas é calculada usando uma comparação entre a quantidade de licenças especificadas pelo administrador e a quantidade de títulos de software instalados coletados de inventários de hardware de cliente do Configuration Manager com base no agendamento definido pelo administrador. Essa comparação não representa uma conclusão final da Microsoft sobre as posições de licenças. A posição real da licença depende da licença do título de software específico e dos direitos de uso concedidos pelos termos de licença.  
+ A reconciliação da quantidade de títulos de software instalados em relação à quantidade de licenças de software adquiridas é calculada usando uma comparação entre a quantidade de licenças especificadas pelo administrador e a quantidade de títulos de software instalados coletados de inventários de hardware de cliente do Configuration Manager com base no agendamento definido pelo administrador. Essa comparação não representa uma conclusão final da Microsoft sobre as posições de licenças. A posição de licença real depende dos direitos específicos de software de licença e o uso título concedidos aos termos de licença.  
 
 ##  <a name="BKMK_ValidationStates"></a> Estados de validação do Asset Intelligence  
- Os estados de validação do Asset Intelligence representam a origem e o status atual de validação das informações do catálogo do Asset Intelligence. A tabela a seguir mostra os possíveis estados de validação do Asset Intelligence e as ações do administrador que podem afetá-los.  
+ Estados de validação do Asset Intelligence representam a origem e o status atual de validação de informações do catálogo de Asset Intelligence. A tabela a seguir mostra os possíveis estados de validação do Asset Intelligence e as ações do administrador que podem afetá-los.  
 
 |**Estado**|**Definição**|**Ação do administrador**|**Comentário**|  
 |---------------|--------------------|------------------------------|-----------------|  

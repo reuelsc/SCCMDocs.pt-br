@@ -1,25 +1,20 @@
 ---
-title: "Ferramenta de conexão de serviço"
+title: Ferramenta de conexão de serviço
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre esta ferramenta que permite que você se conecte ao serviço de nuvem do Configuration Manager para carregar manualmente as informações de uso."
-ms.custom: na
+description: Saiba mais sobre esta ferramenta que permite que você se conecte ao serviço de nuvem do Configuration Manager para carregar manualmente as informações de uso.
 ms.date: 09/06/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
-caps.latest.revision: "11"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 3e7b397c2ef3bfb1feb44599756752f56a2ad465
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 906b39f01b05600d86a045e07d3e28184e9360e8
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usar a ferramenta de conexão de serviço do System Center Configuration Manager
 

@@ -1,43 +1,20 @@
 ---
-title: "Dados de diagnóstico para 1706"
+title: Dados de diagnóstico para 1706
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os níveis de dados de diagnóstico e de uso que o System Center Configuration Manager versão 1706 coleta."
-ms.custom: na
+description: Saiba mais sobre os níveis de dados de diagnóstico e de uso que o System Center Configuration Manager versão 1706 coleta.
 ms.date: 07/31/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 14ee4fb0-7790-45a6-906e-6e55627d4079
-caps.latest.revision: 
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- hu-hu
-- it-it
-- ja-jp
-- ko-kr
-- nl-nl
-- pl-pl
-- pt-br
-- pt-pt
-- ru-ru
-- sv-se
-- tr-tr
-- zh-cn
-- zh-tw
-ms.openlocfilehash: a69349d8373712a016e1165ab576b962ed58d7aa
-ms.sourcegitcommit: da27d37cc4e4e06cf23758846cdd7acb617f744b
+manager: dougeby
+ms.openlocfilehash: 0a855e332fe54779cc324ccf4fb2206a64b74110
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1706-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1706 do System Center Configuration Manager
 

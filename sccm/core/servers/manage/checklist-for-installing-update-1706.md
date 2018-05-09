@@ -1,25 +1,20 @@
 ---
-title: "Lista de verificação para 1706"
+title: Lista de verificação para 1706
 titleSuffix: Configuration Manager
-description: "Conheça as ações a serem executadas antes de atualizar para o System Center Configuration Manager versão 1706."
-ms.custom: na
+description: Conheça as ações a serem executadas antes de atualizar para o System Center Configuration Manager versão 1706.
 ms.date: 12/19/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 7def067e-845c-4db3-9d56-fa1dcf2fd7c7
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: b9acbf4a80bed52f0c720f70ee62042d1e90dd62
-ms.sourcegitcommit: 2867fd119256ec670fc5ae65cdc8a80d39f9b4d4
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: e3a5f04367057510c257b211c302cd5576929a71
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="checklist-for-installing-update-1706-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1706 do System Center Configuration Manager
 
@@ -35,7 +30,7 @@ Para obter a atualização da versão 1706, você deve usar uma função do sist
 
     -   Se o dmpdownloader.log indica que o processo de dmpdownloader está no estado de suspensão e esperando um intervalo para verificar se há atualizações, você pode reiniciar o serviço **SMS_Executive** no servidor do site para reiniciar o download dos arquivos de redistribuição da atualização.
 
-    -   Outro problema de download comum é devido às configurações do servidor proxy que impedem os downloads de <http://silverlight.dlservice.microsoft.com> e <http://download.microsoft.com>.
+    -   Outro problema de download comum ocorre quando as configurações do servidor proxy impedem downloads de <http://silverlight.dlservice.microsoft.com> e <http://download.microsoft.com>.
 
 Para obter mais informações de como instalar atualizações, consulte [Atualizações e manutenção no console](/sccm/core/servers/manage/updates#a-namebkmkinconsolea-in-console-updates-and-servicing).
 

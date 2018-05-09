@@ -2,25 +2,19 @@
 title: Configurações do Windows Hello para Empresas
 titleSuffix: Configuration Manager
 description: Saiba como integrar o Windows Hello para Empresas com o System Center Configuration Manager.
-ms.custom: na
 ms.date: 04/10/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: a95bc292-af10-4beb-ab56-2a815fc69304
-caps.latest.revision: 17
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0d5e0f5e1d47441bd105fb5cae2e8f3f313dfa54
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+ms.openlocfilehash: 60dcf98b83fb4650a10e5503d42b9f49d3aba359
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="windows-hello-for-business-settings-in-system-center-configuration-manager"></a>Windows Hello para Empresas no System Center Configuration Manager
 
@@ -35,7 +29,7 @@ Para obter mais informações, confira [Windows Hello para Empresas](https://doc
 
 
 > [!Note]  
-> O Configuration Manager não habilita esse recurso opcional por padrão. Você precisa habilitar esse recurso antes de usá-lo. Para obter mais informações, confira [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, veja [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 
  O Configuration Manager integra-se com o Windows Hello para Empresas de duas maneiras:  

@@ -1,25 +1,20 @@
 ---
-title: "Réplicas de banco de dados do ponto de gerenciamento"
+title: Réplicas de banco de dados do ponto de gerenciamento
 titleSuffix: Configuration Manager
-description: "Use uma réplica de banco de dados para reduzir a carga de CPU alocada no servidor de banco de dados do site por pontos de gerenciamento."
-ms.custom: na
+description: Use uma réplica de banco de dados para reduzir a carga de CPU alocada no servidor de banco de dados do site por pontos de gerenciamento.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: b06f781b-ab25-4d9a-b128-02cbd7cbcffe
-caps.latest.revision: "9"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: f322d5dcd2f505f52e363e07801497ffa3bfdc7e
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 0893df43f7979fa3c36ba90ab400e399f96e6228
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Réplicas de banco de dados para pontos de gerenciamento para o System Center Configuration Manager
 
@@ -152,7 +147,7 @@ Use o procedimento a seguir como um exemplo de como configurar o servidor de ré
 
     2.  Selecione **ConfigMgr_MPReplica**e clique em **Próximo**.  
 
-    3.  Na página **Local do agente de distribuição** , selecione **Executar cada agente em seu Assinante (assinaturas pull)**e clique em **Próximo**.  
+    3.  Na página **Local do agente de distribuição** , selecione **Executar cada agente em seu Assinante (assinaturas pull)** e clique em **Próximo**.  
 
     4.  Na página **Assinantes** , siga um destes procedimentos:  
 
@@ -186,7 +181,7 @@ Use o procedimento a seguir como um exemplo de como configurar o servidor de ré
 
     7.  Na página **Agenda de sincronização** , na caixa de listagem **Agenda do Agente** , selecione **Definir agendamento**e configure a **Nova Agenda de Trabalho**. Defina a frequência para ocorrer **Diariamente**, a cada **5 minuto(s)**, e a duração para **Sem data de término**. Clique em **Próximo** para salvar o agendamento e clique em **Próximo** novamente.  
 
-    8.  Na página **Ações do assistente** , marque a caixa de seleção para **Criar a(s) assinatura(s)**e clique em **Próximo**.  
+    8.  Na página **Ações do assistente** , marque a caixa de seleção para **Criar a(s) assinatura(s)** e clique em **Próximo**.  
 
     9. Na página **Concluir o assistente** , clique em **Concluir**e em **Fechar** para concluir o assistente.  
 
@@ -395,7 +390,7 @@ Além de configurar o ponto de gerenciamento para usar o servidor de réplica de
 
     5.  Na caixa de diálogo **Adicionar ou Remover Snap-ins** , clique em **OK**.  
 
-    6.  No console, expanda **Certificados (computador local)**e, em seguida, **Pessoal**e selecione **Certificados**.  
+    6.  No console, expanda **Certificados (computador local)** e, em seguida, **Pessoal**e selecione **Certificados**.  
 
     7.  Clique com o botão direito do mouse no certificado de nome amigável **Certificado de Identificação de SQL Server do ConfigMgr**, clique em **Todas as Tarefas**e, em seguida, selecione **Exportar**.  
 
@@ -405,7 +400,7 @@ Além de configurar o ponto de gerenciamento para usar o servidor de réplica de
 
     1.  Repita que as etapas anteriores, de 1.a até 1.e para configurar o MMC do snap-in do **Certificado** no computador do ponto de gerenciamento.  
 
-    2.  No console, expanda **Certificados (computador local)**e, em seguida, **Pessoas Confiáveis**; clique com o botão direito do mouse em **Certificados**, selecione **Todas as Tarefas**e, depois, **Importar** para iniciar o **Assistente para Importação de Certificados**.  
+    2.  No console, expanda **Certificados (computador local)** e, em seguida, **Pessoas Confiáveis**; clique com o botão direito do mouse em **Certificados**, selecione **Todas as Tarefas**e, depois, **Importar** para iniciar o **Assistente para Importação de Certificados**.  
 
     3.  Na página **Arquivo a Ser Importado** , selecione o certificado salvo na etapa 1.h e clique em **Próximo**.  
 

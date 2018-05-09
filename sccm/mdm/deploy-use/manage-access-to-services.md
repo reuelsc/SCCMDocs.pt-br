@@ -2,25 +2,19 @@
 title: Acesso condicional
 titleSuffix: Configuration Manager
 description: Saiba como usar o acesso condicional no System Center Configuration Manager para proteger emails e outros serviços.
-ms.custom: na
 ms.date: 12/22/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-hybrid
+ms.topic: conceptual
 ms.assetid: 7b04727b-d563-422f-8d59-4dd66215d0b3
-caps.latest.revision: 26
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 7fea8d0e47fff5288a58232eb9bd17171481b3a3
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: f354647ba9376ff18db1a4b63944ef31272308e1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-access-to-services-in-system-center-configuration-manager"></a>Gerenciar o acesso a serviços no System Center Configuration Manager
 

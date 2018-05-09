@@ -2,26 +2,19 @@
 title: Notas de versão
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os problemas urgentes que ainda não foram corrigidos no produto nem abordados em um artigo da Base de Dados de Conhecimento Microsoft.
-ms.custom: na
 ms.date: 04/18/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 030947fd-f5e0-4185-8513-2397fb2ec96f
-caps.latest.revision: 41
-caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2eabcba6e56bd2a0a9977ab31610a9d747ab6207
-ms.sourcegitcommit: e23350fe65ff99228274e465b24b5e163769f38f
+ms.openlocfilehash: 4aeacdbc73e21c3bae18111e22c8407eba865a87
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="release-notes-for-system-center-configuration-manager"></a>Release notes for System Center Configuration Manager
 

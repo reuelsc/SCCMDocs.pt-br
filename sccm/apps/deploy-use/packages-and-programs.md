@@ -1,26 +1,20 @@
 ---
 title: Pacotes e programas
 titleSuffix: Configuration Manager
-description: "Suporte para implantações que usam pacotes e programas ou aplicativos com o System Center Configuration Manager."
-ms.custom: na
+description: Suporte para implantações que usam pacotes e programas ou aplicativos com o System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: caad0507-9913-415a-b13d-d36f8f0a1b80
-caps.latest.revision: "8"
-caps.handback.revision: "0"
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: 7712721167edad5808c46827f68fc32a2b890bfd
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 6f34fd322e5f94550602d7883a0303d10059b702
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="packages-and-programs-in-system-center-configuration-manager"></a>Pacotes e programas no System Center Configuration Manager
 
@@ -285,7 +279,7 @@ Os pacotes podem usar alguns recursos novos do Configuration Manager, incluindo 
 |**Criar programa**|Abre o **Assistente para Criar Programa**, que permite criar um novo programa para esse pacote.|  
 |**Exportarar**|Abre o **Assistente para Exportar Pacote**, que permite exportar o pacote selecionado e seu conteúdo para um arquivo.<br /><br /> Para obter informações sobre como importar pacotes e programas, consulte [Criar pacotes e programas](/sccm/apps/deploy-use/packages-and-programs#create-packages-and-programs) neste tópico.|  
 |**Implantar**|Abre o **Assistente para Implantar Software**, que permite implantar o pacote e o programa selecionados em uma coleção. Para obter mais informações, consulte [Implantar pacotes e programas](/sccm/apps/deploy-use/packages-and-programs#deploy-packages-and-programs) neste tópico.|  
-|**Distribuir conteúdo**|Abre o **Assistente para Distribuir Conteúdo**, que permite enviar o conteúdo associado ao pacote e ao programa para pontos de distribuição ou grupos de pontos de distribuição selecionados.|  
+|**Distribuir Conteúdo**|Abre o **Assistente para Distribuir Conteúdo**, que permite enviar o conteúdo associado ao pacote e ao programa para pontos de distribuição ou grupos de pontos de distribuição selecionados.|  
 |**Atualizar Pontos de Distribuição**|Atualiza os pontos de distribuição com o conteúdo mais recente para o pacote e programa selecionados.|  
 
 ##  <a name="about-the-package-definition-file-format"></a>Sobre o formato de arquivo de definição de pacote  

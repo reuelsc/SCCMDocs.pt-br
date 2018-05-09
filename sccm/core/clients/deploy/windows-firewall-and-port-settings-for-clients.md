@@ -1,26 +1,20 @@
 ---
-title: "Configurações de porta firewall de cliente do Windows"
+title: Configurações de porta firewall de cliente do Windows
 titleSuffix: Configuration Manager
-description: "Selecione as configurações de porta e de Firewall do Windows para clientes no System Center Configuration Manager."
-ms.custom: na
+description: Selecione as configurações de porta e de Firewall do Windows para clientes no System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: dce4b640-c92f-401a-9873-ce9aa9262014
-caps.latest.revision: "8"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: fe9f98ad6567b4f691dcfe6f70868fc63d61a63d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 193ee803fd0a6bacf043dbabc6550ef68a4a629a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="windows-firewall-and-port-settings-for-clients-in-system-center-configuration-manager"></a>Configurações do Firewall do Windows e de porta para computadores cliente no System Center Configuration Manager
 
@@ -150,7 +144,7 @@ Os computadores cliente no System Center Configuration Manager que executam o Fi
 
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
-|Protocolo SMB entre o computador cliente e um compartilhamento de rede a partir do qual o CCMSetup.exe é executado.<br /><br /> Ao instalar o Configuration Manager, os arquivos de origem da instalação do cliente são copiados e compartilhados automaticamente da pasta *&lt;CaminhoInstalação\>*\Client nos pontos de gerenciamento. No entanto, é possível copiar esses arquivos e criar um novo compartilhamento em qualquer computador na rede. Como alternativa, é possível eliminar esse tráfego de rede executando o CCMSetup.exe localmente, por exemplo, usando mídia removível.|--|445|  
+|Protocolo SMB entre o computador cliente e um compartilhamento de rede a partir do qual o CCMSetup.exe é executado.<br /><br /> Ao instalar o Configuration Manager, os arquivos de origem da instalação do cliente são copiados e compartilhados automaticamente da pasta *&lt;CaminhoInstalação\>* \Client nos pontos de gerenciamento. No entanto, é possível copiar esses arquivos e criar um novo compartilhamento em qualquer computador na rede. Como alternativa, é possível eliminar esse tráfego de rede executando o CCMSetup.exe localmente, por exemplo, usando mídia removível.|--|445|  
 |Protocolo HTTP do computador cliente para um ponto de gerenciamento quando a conexão é feita por HTTP e a propriedade de linha de comando **/origem:&lt;Caminho\>** do CCMSetup não é especificada.|--|80 (Consulte a observação 1, **Porta alternativa disponível**)|  
 |Protocolo HTTPS do computador cliente para um ponto de gerenciamento quando a conexão é por HTTPS e a propriedade de linha de comando **/origem:&lt;Caminho\>** do CCMSetup não é especificada.|--|443 (Veja a observação 1, **Porta alternativa disponível**)|  
 |O Protocolo SMB entre o servidor de origem e o computador cliente ao especificar a propriedade de linha de comando CCMSetup **/source:&lt;Caminho\>**.|--|445|  

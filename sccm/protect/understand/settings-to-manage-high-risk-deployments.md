@@ -1,25 +1,20 @@
 ---
-title: "Gerenciar implantações de alto risco"
+title: Gerenciar implantações de alto risco
 titleSuffix: Configuration Manager
-description: "Saiba como definir as configurações de site no System Center Configuration Manager para avisar os administradores se eles criaram uma implantação de alto risco."
-ms.custom: na
+description: Saiba como definir as configurações de site no System Center Configuration Manager para avisar os administradores se eles criaram uma implantação de alto risco.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: 8d37b983-a964-402c-819d-2512ed2d463b
-caps.latest.revision: "6"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 96855503183c1f9a3b51c5861ca661089f3c2994
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 44c7c805baedde820bc230dc25a3186762ecc8dc
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="settings-to-manage-high-risk-deployments-for-system-center-configuration-manager"></a>Configurações para gerenciar implantações de alto risco para o System Center Configuration Manager
 

@@ -1,26 +1,20 @@
 ---
-title: "Configurar o inventário de software"
+title: Configurar o inventário de software
 titleSuffix: Configuration Manager
-description: "Configurar o inventário de software e excluir pastas do inventário de software no Configuration Manager."
-ms.custom: na
+description: Configurar o inventário de software e excluir pastas do inventário de software no Configuration Manager.
 ms.date: 01/03/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: f86559de-092a-4ce8-9b43-5d7530e0b763
-caps.latest.revision: "5"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: afddcef2caab6e1af0aacdac91366fa430f21d85
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 346ff3254f4c1833f49bf256cbf5ad0c489d77e0
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-configure-software-inventory-in-system-center-configuration-manager"></a>Como configurar o inventário de software no System Center Configuration Manager
 
@@ -44,7 +38,7 @@ Este procedimento define as configurações padrão do cliente para o inventári
 
 7.  Defina as configurações do cliente necessárias. A seção [Inventário de software](../../../../core/clients/deploy/about-client-settings.md#software-inventory) do artigo [Sobre as configurações do cliente no System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md) apresenta uma lista das configurações do cliente.  
 
- Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um cliente individual, veja [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+ Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um cliente individual, veja [Como gerenciar clientes no System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
 
  > [!TIP]  
         >   O código de erro 80041006 em inventoryprovider.log significa que a memória do provedor WMI é insuficiente. Ou seja, foi atingido o limite de cota de memória para um provedor e o provedor de inventário não pode continuar.

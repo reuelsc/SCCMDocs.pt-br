@@ -1,26 +1,20 @@
 ---
-title: "Criar itens de configuração para Macs gerenciados pelo cliente "
+title: 'Criar itens de configuração para Macs gerenciados pelo cliente '
 titleSuffix: Configuration Manager
-description: "Use o item de configuração do Mac OS X do System Center Configuration Manager para gerenciar as configurações de dispositivos Mac OS X."
-ms.custom: na
+description: Use o item de configuração do Mac OS X do System Center Configuration Manager para gerenciar as configurações de dispositivos Mac OS X.
 ms.date: 03/28/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 722d5bf5-bedc-4dfc-b324-6eeb773874e9
-caps.latest.revision: "8"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 1947bc8907d00a2f6d78acee5f563fa9b7f6cf78
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: e6358c8e84d12c37418d7a1af459e775783efaa2
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-configuration-items-for-mac-os-x-devices-managed-with-the-system-center-configuration-manager-client"></a>Como criar itens de configuração para dispositivos Mac OS X gerenciados com o cliente do System Center Configuration Manager
 Use o item de configuração do **Mac OS X (personalizado)** do System Center Configuration Manager para gerenciar as configurações de dispositivos Mac OS X que são gerenciados pelo cliente do Configuration Manager.  

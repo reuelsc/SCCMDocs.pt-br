@@ -2,22 +2,19 @@
 title: Gerenciar atualizações do Office 365 ProPlus
 titleSuffix: Configuration Manager
 description: O Configuration Manager sincroniza a atualização de clientes do Office 365 do catálogo do WSUS para o servidor do site para disponibilizar as atualizações para implantar em clientes.
-keywords: ''
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.date: 03/26/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: ''
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.openlocfilehash: 4fbbe4b6792c51cd7adeeae3a96f81927153362c
-ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
+ms.openlocfilehash: a7c1786e9acce10d98da031d9d5df3b81f9a1a28
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gerenciar o Office 365 ProPlus com o Configuration Manager
 
@@ -43,7 +40,7 @@ O painel de Gerenciamento de Clientes do Office 365 fornece gráficos com as seg
 - Versões do cliente do Office 365
 - Idiomas do cliente do Office 365
 - Canais do cliente do Office 365     
-  Para mais informações, confira [Visão geral dos canais de atualização do Office 365 ProPlus](https://technet.microsoft.com/library/mt455210.aspx).
+  Para mais informações, confira [Visão geral dos canais de atualização do Office 365 ProPlus](/DeployOffice/overview-of-update-channels-for-office-365-proplus).
 
 Para exibir o painel de Gerenciamento de Clientes do Office 365, no console do Configuration Manager, vá até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Clientes do Office 365**. Na parte superior do painel, use a configuração suspensa **Coleção** para filtrar os dados do painel por membros de uma coleção específica. A partir do Configuration Manager versão 1802, o painel de gerenciamento de clientes do Office 365 exibe uma lista de dispositivos relevantes quando seções de gráfico são selecionadas.
 
@@ -83,7 +80,7 @@ Para versões anteriores do Configuration Manager, execute as seguintes etapas p
 
     Quando você tiver um arquivo de configuração existente, insira o local do arquivo e vá para a etapa 7. Você deve especificar o local no formulário &#92;&#92;*server*&#92;*share*&#92;*filename*.XML.
     > [!IMPORTANT]    
-    > O arquivo de configuração XML deve conter apenas [idiomas com suporte pelo cliente do Office 365 ProPlus](https://technet.microsoft.com/library/cc179219&#40;v=office.16&#41;.aspx).
+    > O arquivo de configuração XML deve conter apenas [idiomas com suporte pelo cliente do Office 365 ProPlus](/DeployOffice/office2016/language-identifiers-and-optionstate-id-values-in-office-2016).
 
 5. Na página **Produtos do Cliente**, selecione o pacote do Office 365 utilizado. Selecione os aplicativos que você deseja incluir. Selecione produtos do Office adicionais que devem ser incluídos e, em seguida, clique em **Avançar**.
 6. Na página **Configurações do Cliente**, escolha as configurações a serem incluídas e clique em **Avançar**.
@@ -103,7 +100,7 @@ A partir do Configuration Manager versão 1706, as atualizações de cliente do 
 
 Use as etapas a seguir para implantar atualizações do Office 365 com o Configuration Manager:
 
-1.  [Verifique os requisitos](https://technet.microsoft.com/library/mt628083.aspx) para usar o Configuration Manager para gerenciar atualizações de clientes do Office 365 na seção **Requisitos para usar o Configuration Manager para gerenciar atualizações de clientes do Office 365** do artigo.  
+1.  [Verifique os requisitos](/DeployOffice/manage-updates-to-office-365-proplus-with-system-center-configuration-manager#requirements-for-using-configuration-manager-to-manage-office-365-client-updates) para usar o Configuration Manager para gerenciar atualizações de clientes do Office 365 na seção **Requisitos para usar o Configuration Manager para gerenciar atualizações de clientes do Office 365** do artigo.  
 
 2.  [Configure os pontos de atualização de software](../get-started/configure-classifications-and-products.md) para sincronizar as atualizações de clientes do Office 365. Defina as **atualizações** para a classificação e selecione o **cliente do Office 365**. Sincronize as atualizações de software depois de configurar os pontos de atualização de software para usar a classificação **Atualizações**.
 3.  Permita que os clientes do Office 365 recebam atualizações do Configuration Manager. Use as configurações do cliente do Configuration Manager ou a política de grupo para habilitar o cliente.   
@@ -116,7 +113,7 @@ Use as etapas a seguir para implantar atualizações do Office 365 com o Configu
 
       3.  Clique em **Atualizações de Software** e selecione **Sim** para a configuração **Habilitar o gerenciamento do Agente Cliente do Office 365**.  
 
-    **Método 2**: [Permitir que os clientes do Office 365 recebam atualizações](https://technet.microsoft.com/library/mt628083.aspx#BKMK_EnableClient) do Configuration Manager usando a Ferramenta de Implantação do Office ou a Política de Grupo.  
+    **Método 2**: [Permitir que os clientes do Office 365 recebam atualizações](/DeployOffice/manage-updates-to-office-365-proplus-with-system-center-configuration-manager#BKMK_EnableClient) do Configuration Manager usando a Ferramenta de Implantação do Office ou a Política de Grupo.  
 
 4. [Implante as atualizações do Office 365](deploy-software-updates.md) nos clientes.   
 

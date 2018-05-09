@@ -1,26 +1,20 @@
 ---
-title: "Configurações com suporte"
+title: Configurações com suporte
 titleSuffix: Configuration Manager
-description: "Identifique as principais configurações e requisitos para que você possa planejar, implantar e manter uma implantação funcional do System Center Configuration Manager."
-ms.custom: na
+description: Identifique as principais configurações e requisitos para que você possa planejar, implantar e manter uma implantação funcional do System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 45a10878-ff48-4318-9c6d-c014b38a4039
-caps.latest.revision: "9"
-caps.handback.revision: "0"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 097a4e5b6a44aec52027f075ad002a2393ae3fb3
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: de769a24b44c5ab5e28035e96fef341aecd78006
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="supported-configurations-for-system-center-configuration-manager"></a>Configurações com suporte para o System Center Configuration Manager
 

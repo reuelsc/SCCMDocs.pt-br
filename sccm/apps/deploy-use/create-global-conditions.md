@@ -1,26 +1,20 @@
 ---
-title: "Criar condições globais"
+title: Criar condições globais
 titleSuffix: Configuration Manager
-description: "Crie condições globais para especificar como um aplicativo é fornecido e implantado em dispositivos cliente."
-ms.custom: na
+description: Crie condições globais para especificar como um aplicativo é fornecido e implantado em dispositivos cliente.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 2d5f871a-19dc-4bd3-a3ad-4230c7a69f1b
-caps.latest.revision: "7"
-caps.handback.revision: "0"
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: 480e7a68308d458bc77ddb4956db2616eaaced97
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: dac47f55a1ad0d287e789d555d2f0a93b40f9376
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-global-conditions-in-system-center-configuration-manager"></a>Como criar condições globais no System Center Configuration Manager
 
@@ -102,7 +96,7 @@ No System Center Configuration Manager, as condições globais são as regras qu
 
         -   **Incluir subpastas** – Habilite esta opção se também desejar pesquisar quaisquer subpastas no caminho especificado.  
 
-        -   **Este arquivo ou pasta está associado a um aplicativo de 64 bits** ‑ Escolha se o local do arquivo do sistema de 64 bits (*%windir%*\system32) deve ser pesquisado além do local do arquivo do sistema de 32 bits (*%windir%*\syswow64) em clientes do Configuration Manager que executam uma versão de 64 bits do Windows.  
+        -   **Este arquivo ou pasta está associado a um aplicativo de 64 bits** ‑ Escolha se o local do arquivo do sistema de 64 bits (*%windir%* \system32) deve ser pesquisado além do local do arquivo do sistema de 32 bits (*%windir%* \syswow64) em clientes do Configuration Manager que executam uma versão de 64 bits do Windows.  
 
             > [!NOTE]  
             >  Se o mesmo arquivo ou pasta existir nos dois locais do arquivo do sistema de 64 e de 32 bits no mesmo computador de 64 bits, vários arquivos serão detectados pela condição global.  
@@ -181,7 +175,7 @@ No System Center Configuration Manager, as condições globais são as regras qu
 
         -   **Incluir subpastas** - Habilite esta opção se também desejar pesquisar quaisquer subpastas no caminho especificado.  
 
-        -   **Este arquivo está associado a um aplicativo de 64 bits** ‑ Escolha se o local do arquivo do sistema de 64 bits (*%windir%*\system32) deve ser pesquisado além do local do arquivo do sistema de 32 bits (*%windir%*\syswow64) em clientes do Configuration Manager que executam uma versão de 64 bits do Windows.  
+        -   **Este arquivo está associado a um aplicativo de 64 bits** ‑ Escolha se o local do arquivo do sistema de 64 bits (*%windir%* \system32) deve ser pesquisado além do local do arquivo do sistema de 32 bits (*%windir%* \syswow64) em clientes do Configuration Manager que executam uma versão de 64 bits do Windows.  
 
         -   **Consulta XPath** - Especifique uma consulta XPath (XML path language) válida completa a ser usada para avaliar a conformidade em computadores cliente.  
 

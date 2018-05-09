@@ -1,25 +1,20 @@
 ---
-title: "Nova versão 1610"
+title: Nova versão 1610
 titleSuffix: Configuration Manager
-description: "Veja os detalhes das alterações e os novos recursos introduzidos na versão 1610 do System Center Configuration Manager."
-ms.custom: na
+description: Veja os detalhes das alterações e os novos recursos introduzidos na versão 1610 do System Center Configuration Manager.
 ms.date: 11/23/2016
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f7eb0803-3f8f-4ab6-825a-99ac11f5ba7d
-caps.latest.revision: "40"
-author: mestew
-ms.author: mstewart
-manager: angrobe
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: e3dac4ceb08c15c1eaeef0a6006ebcc6eccff49c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 9bb046cd08e4e9d8cff6e34ea88ce8e582e2c863
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>Novidades da versão 1610 do System Center Configuration Manager
 
@@ -179,7 +174,7 @@ Para configurar o campo **Tamanho do Conteúdo (KB)**, siga um destes procedimen
 - Ao criar uma regra de implantação automática, no Assistente Criar regra de implantação automática, vá para a página **Atualizações de software**.
 - Nas propriedades de uma regra de implantação automática existente, vá para a guia **Atualizações de software**.
 
-## <a name="office-365-client-management-dashboard"></a>Painel de gerenciamento de clientes do Office 365
+## <a name="office-365-client-management-dashboard"></a>Painel de Gerenciamento de Clientes do Office 365
 O painel de Gerenciamento de Clientes do Office 365 agora está disponível no console do Configuration Manager. Para exibir o painel, acesse **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Cliente do Office 365**.
 
 O painel exibe gráficos para o seguinte:

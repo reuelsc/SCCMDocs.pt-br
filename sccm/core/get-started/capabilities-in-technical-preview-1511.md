@@ -1,26 +1,21 @@
 ---
 title: Recursos no Technical Preview 1511
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1511."
-ms.custom: na
+description: Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1511.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 69473706-21b3-498b-a67e-670fdc988f0d
-caps.latest.revision: "5"
-author: erikje
-ms.author: erikje
-manager: angrobe
+author: aczechowski
 robots: noindex,nofollow
-ms.openlocfilehash: e12e67a3b0d182a8e3abd045c89e6b2bf3183054
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 8a805d6b7075d61b0e7669200670ac8434eccdf5
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1511-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1511 do System Center Configuration Manager
 
@@ -135,7 +130,7 @@ Para instalar um site que usa um grupo de disponibilidade do SQL Server:
 
 1.  Substitua o seguinte quando for solicitado pela Instalação do Configuration Manager:  
 
-    -   **Nome do SQL Server:**insira o nome virtual do Ponto de extremidade configurado ao criar o grupo de disponibilidade. O nome virtual deve ser um nome DNS completo, como **&lt;endpointServer\>.fabrikam.com**.  
+    -   **Nome do SQL Server:** insira o nome virtual do Ponto de extremidade configurado ao criar o grupo de disponibilidade. O nome virtual deve ser um nome DNS completo, como **&lt;endpointServer\>.fabrikam.com**.  
 
     -   **Instância**: este valor deve permanecer em branco. Não há nenhuma instância nesta configuração.  
 

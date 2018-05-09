@@ -2,26 +2,19 @@
 title: Configurações do cliente
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as configurações padrão e personalizadas para controlar os comportamentos do cliente
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
-caps.latest.revision: 15
-caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bd03457abdd5cc4464c10227626ba72637c96f90
-ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
+ms.openlocfilehash: a60e54ffac3ae029f07c2df555e905b55ca7b0b5
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Sobre as configurações do cliente no System Center Configuration Manager
 
@@ -328,7 +321,7 @@ Para obter mais informações sobre as janelas de manutenção, consulte [Como u
 ## <a name="delivery-optimization"></a>Otimização de Entrega
 
 <!-- 1324696 -->
-Você usa os grupos de limites do Configuration Manager para definir e regular a distribuição de conteúdo em sua rede corporativa e para escritórios remotos. A [Otimização de Entrega do Windows](/windows/deployment/update/waas-delivery-optimization) é uma tecnologia ponto-a-ponto baseada na nuvem para compartilhar conteúdo entre dispositivos do Windows 10. A partir da versão 1802, configure a Otimização de Entrega para usar os grupos de limites ao compartilhar conteúdo entre pares.
+Você usa os grupos de limites do Configuration Manager para definir e regular a distribuição de conteúdo em sua rede corporativa e para escritórios remotos. A [Otimização de Entrega do Windows](/windows/deployment/update/waas-delivery-optimization) é uma tecnologia ponto-a-ponto baseada na nuvem para compartilhar conteúdo entre dispositivos do Windows 10. A partir da versão 1802, configure a Otimização de Entrega para que ela use os grupos de limites ao compartilhar o conteúdo entre pares.
 
  > [!Note]
  > A Otimização de Entrega está disponível apenas em clientes do Windows 10
@@ -714,7 +707,7 @@ Se você deseja coletar arquivos de computadores cliente, selecione **Definir Ar
     -   **Parar a coleta de arquivos quando o tamanho total dos arquivos exceder (KB)**: especifique o tamanho do arquivo, em KB (quilobytes), após o qual o cliente interromperá a coleta dos arquivos especificados.  
 
     > [!NOTE]  
-    >  O servidor do site coleta as cinco versões alteradas mais recentemente de arquivos coletados e as armazena no *&lt;Diretório de instalação do ConfigMgr\>*\Inboxes\Sinv.box\Filecol. Se um arquivo não foi alterado desde o último ciclo de inventário de software, o arquivo não será coletado novamente.  
+    >  O servidor do site coleta as cinco versões alteradas mais recentemente de arquivos coletados e as armazena no *&lt;Diretório de instalação do ConfigMgr\>* \Inboxes\Sinv.box\Filecol. Se um arquivo não foi alterado desde o último ciclo de inventário de software, o arquivo não será coletado novamente.  
     >   
     >  O inventário de software não coleta arquivos maiores que 20 MB.  
     >   

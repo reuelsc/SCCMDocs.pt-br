@@ -1,21 +1,19 @@
 ---
 title: Importar dados para o Microsoft Intune
 titleSuffix: Configuration Manager
-description: 
-keywords: 
-author: dougeby
+description: Importar dados do Configuration Manager para o Microsoft Intune
+author: aczechowski
 manager: dougeby
 ms.date: 12/05/2017
-ms.topic: article
-ms.prod: configmgr-hybrid
-ms.service: 
-ms.technology: 
+ms.topic: conceptual
+ms.prod: configuration-manager
+ms.technology: configmgr-hybrid
 ms.assetid: b552391d-abc0-48a2-a429-93605a13a66a
-ms.openlocfilehash: d42a5fd64b5baead8ef87d8c08a99ec659f94633
-ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
+ms.openlocfilehash: dcd84e484f55cb799953bea83be917055ca1292a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="import-configuration-manager-data-to-microsoft-intune"></a>Importar dados do Configuration Manager para o Microsoft Intune 
 

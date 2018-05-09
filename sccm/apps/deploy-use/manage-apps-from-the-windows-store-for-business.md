@@ -2,25 +2,19 @@
 title: Gerenciar aplicativos da Microsoft Store para Empresas
 titleSuffix: Configuration Manager
 description: Gerenciar e implantar aplicativos da Microsoft Store para Empresas usando o System Center Configuration Manager.
-ms.custom: na
 ms.date: 12/29/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-app
+ms.topic: conceptual
 ms.assetid: 8cdb22a6-72d7-41f5-9bed-c098b1bcf675
-caps.latest.revision: 11
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 89bb52b806c99395bca14be34d06611174823a3c
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+manager: dougeby
+ms.openlocfilehash: 4999784140ece9df49a28063e8660566f7206df0
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-apps-from-the-microsoft-store-for-business-with-system-center-configuration-manager"></a>Gerenciar aplicativos da Microsoft Store para Empresas com o System Center Configuration Manager
 Na [Microsoft Store para Empresas](https://www.microsoft.com/business-store), é possível encontrar e adquirir aplicativos Windows para sua organização, individualmente ou por volume. Ao conectar a loja ao Configuration Manager, é possível sincronizara lista de aplicativos adquiridos com o Configuration Manager. Em seguida, é possível exibir esses aplicativos no console do Configuration Manager e implantá-los como você implantaria qualquer outro aplicativo.

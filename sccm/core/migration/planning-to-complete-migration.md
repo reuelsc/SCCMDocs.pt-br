@@ -1,26 +1,20 @@
 ---
-title: "Concluir migração"
+title: Concluir migração
 titleSuffix: Configuration Manager
-description: "Saiba como concluir a migração para uma hierarquia de destino do System Center Configuration Manager depois que uma hierarquia de origem não contiver dados."
-ms.custom: na
+description: Saiba como concluir a migração para uma hierarquia de destino do System Center Configuration Manager depois que uma hierarquia de origem não contiver dados.
 ms.date: 1/12/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f4854b50-2e8c-414c-a872-9579554dca98
-caps.latest.revision: "5"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 67e1d850043d5b922ab53dd13a782414730d5866
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: b9bdffc9271b1e59bbe459dffc0e3c69578a4711
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-to-complete-migration-in-system-center-configuration-manager"></a>Planejamento da conclusão da migração no System Center Configuration Manager
 

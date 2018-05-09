@@ -1,26 +1,20 @@
 ---
-title: "Configurar as portas de comunicação do cliente"
+title: Configurar as portas de comunicação do cliente
 titleSuffix: Configuration Manager
-description: "Defina as portas de comunicação do cliente no System Center Configuration Manager."
-ms.custom: na
+description: Defina as portas de comunicação do cliente no System Center Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 406bbdbf-ab4a-4121-a68b-154f96ea14ec
-caps.latest.revision: "5"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: caec28f9e791bcbc2c67b63c9ff8886f9b750bca
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: b6f90995d00767c1607cc74323ebe4feefc97130
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-configure-client-communication-ports-in-system-center-configuration-manager"></a>Como configurar portas de comunicação do cliente no System Center Configuration Manager
 

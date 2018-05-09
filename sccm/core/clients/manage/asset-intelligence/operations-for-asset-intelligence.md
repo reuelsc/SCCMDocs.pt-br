@@ -2,26 +2,19 @@
 title: Usar o Asset Intelligence
 titleSuffix: Configuration Manager
 description: Realize tarefas comuns do Asset Intelligence no System Center Configuration Manager.
-ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: e8159bd9-5c2b-4d25-82f9-78fcfd732ba9
-caps.latest.revision: 
-caps.handback.revision: 
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 7838f087c18a2cfad6ff487ff987e638906faf6a
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 7d12fb7f3c7e14df57ec23074de23bfcf53e6c4b
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-use-asset-intelligence-in-system-center-configuration-manager"></a>Como usar o Asset Intelligence no System Center Configuration Manager
 
@@ -155,7 +148,7 @@ Este tópico contém informações para ajudar a gerenciar tarefas típicas do A
 6.  Na página **Conclusão** , clique em **Fechar** para sair do assistente.  
 
 ###  <a name="BKMK_SoftwareLabels"></a> Rótulos de software  
- Os rótulos de software personalizado do Asset Intelligence permitem criar filtros que você pode usar para agrupar títulos de software e exibi-los usando os relatórios do Asset Intelligence. Por exemplo, é possível criar um rótulo de software chamado shareware, associá-lo a uma quantidade de aplicativos e depois executar um relatório que mostra todos os títulos com o rótulo de software chamado shareware. O estado de validação é **Definido pelo Usuário** para todos os rótulos de software personalizado que você adicionar ao catálogo do Asset Intelligence.  
+ Rótulos de software personalizado do Asset Intelligence permitem criar filtros que você pode usar para agrupar os títulos de software e exibi-los por meio de relatórios do Asset Intelligence. Por exemplo, é possível criar um rótulo de software chamado shareware, associá-lo a uma quantidade de aplicativos e depois executar um relatório que mostra todos os títulos com o rótulo de software chamado shareware. O estado de validação é **Definido pelo Usuário** para todos os rótulos de software personalizado que você adicionar ao catálogo do Asset Intelligence.  
 
  Use o procedimento a seguir para criar um rótulo personalizado definido pelo usuário.  
 
@@ -267,7 +260,7 @@ Este tópico contém informações para ajudar a gerenciar tarefas típicas do A
 6.  Ao reverter as informações de categorização de software que estão no catálogo do Asset Intelligence, o estado de validação muda de **Definido pelo Usuário** para **Validado**. Ao reverter o software que não está no catálogo, o estado de validação muda de **Definido pelo Usuário** para **Não categorizado**.  
 
 ##  <a name="BKMK_RequestCatalogUpdate"></a> Solicitar uma atualização do catálogo para títulos de software não categorizados  
- As informações de títulos de software não categorizados podem ser enviadas para o System Center Online para pesquisa e categorização. Depois que um título de software não categorizado é enviado e houver, pelo menos, quatro solicitações de categorização de clientes pelo mesmo título de software, os pesquisadores identificam, categorizam e disponibilizam as informações de categorização de título de software para todos os clientes que estão usando o serviço do System Center Online. A Microsoft oferece a prioridade mais alta para títulos de software que têm a maioria das solicitações por categorização. É pouco provável que software personalizado e aplicativos de linha de negócios recebam uma categoria; por isso, como uma prática recomendada, você não deve enviar esses títulos de software à Microsoft para categorização.  
+ Informações de título de software não categorizados podem ser enviadas para o System Center Online para pesquisa e categorização. Depois que um título de software não categorizado é enviado e houver, pelo menos, quatro solicitações de categorização de clientes pelo mesmo título de software, os pesquisadores identificam, categorizam e disponibilizam as informações de categorização de título de software para todos os clientes que estão usando o serviço do System Center Online. A Microsoft oferece a prioridade mais alta para títulos de software que têm a maioria das solicitações por categorização. É pouco provável que software personalizado e aplicativos de linha de negócios recebam uma categoria; por isso, como uma prática recomendada, você não deve enviar esses títulos de software à Microsoft para categorização.  
 
  Quando as informações de título de software são enviadas para o System Center Online para categorização, as seguintes condições se aplicam:  
 
@@ -310,7 +303,7 @@ Este tópico contém informações para ajudar a gerenciar tarefas típicas do A
     >  O software enviado ao System Center Online para categorização tem um estado de validação de **Pendente** em um site de administração central, mas ainda é exibido com um estado de validação de **Não categorizado** nos sites primários filho.  
 
 ##  <a name="BKMK_ResolveSoftwareDetails"></a> Resolver conflitos de detalhes de software  
- Depois que os detalhes da categorização de software recém-atualizado que entram em conflito com informações detalhadas existentes de software tiverem sido recebidos do System Center Online, é possível escolher como resolver o conflito. O software que tem um conflito atual apresenta um estado de validação de **Atualizável**. Depois que um conflito de detalhes de software é resolvido, as informações de categorização de software são mantidas no catálogo do Asset Intelligence de acordo com a configuração que você especificar. Não ocorre um conflito de detalhes do software para o mesmo valor de categorização de software novamente, a menos que o valor do System Center Online seja alterado depois que o conflito for resolvido.  
+ Após a categorização de software recém-atualizado detalhes foram recebidos do System Center Online que entram em conflito com informações sobre detalhes de software existente, você pode escolher como resolver o conflito. O software que tem um conflito atual apresenta um estado de validação de **Atualizável**. Depois que um conflito de detalhes de software é resolvido, as informações de categorização de software são mantidas no catálogo do Asset Intelligence de acordo com a configuração que você especificar. Não ocorre um conflito de detalhes do software para o mesmo valor de categorização de software novamente, a menos que o valor do System Center Online seja alterado depois que o conflito for resolvido.  
 
  Use o procedimento a seguir para resolver um conflito de detalhes de software.  
 

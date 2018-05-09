@@ -2,25 +2,19 @@
 title: Gerenciar o Windows como serviço
 titleSuffix: Configuration Manager
 description: Exibir o estado do WaaS (Windows como serviço) usando o Configuration Manager, criar planos de manutenção para formar anéis de implantação e exibir alertas quando os clientes do Windows 10 estiverem próximos do fim do suporte.
-ms.custom: na
 ms.date: 10/02/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-sum
+ms.topic: conceptual
 ms.assetid: da1e687b-28f6-43c4-b14a-ff2b76e60d24
-caps.latest.revision: 26
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 71f31b7adbffea0eb74983960a8b50c4d9b37033
-ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
+ms.openlocfilehash: 6a6c9295f96519f9897228d03b85c76246a13ca9
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gerenciar o Windows como um serviço usando o System Center Configuration Manager
 
@@ -115,7 +109,7 @@ ms.lasthandoff: 03/28/2018
 
     -   **Nome**: especifique o nome para o plano de serviço. O nome deve ser exclusivo, deve ajudar a descrever a finalidade da regra e diferenciá-la de outras no site do Configuration Manager.  
 
-    -   **Descrição:**especifique uma descrição para o plano de serviço. A descrição deve fornecer uma visão geral do plano de serviço e qualquer outra informação relevante que ajude a identificá-lo e diferenciá-lo de outros planos no site do Configuration Manager. O campo de descrição é opcional, tem um limite de 256 caracteres e um valor em branco por padrão.  
+    -   **Descrição:** especifique uma descrição para o plano de serviço. A descrição deve fornecer uma visão geral do plano de serviço e qualquer outra informação relevante que ajude a identificá-lo e diferenciá-lo de outros planos no site do Configuration Manager. O campo de descrição é opcional, tem um limite de 256 caracteres e um valor em branco por padrão.  
 
 5.  Na página Plano de Serviço, defina as seguintes configurações:  
 

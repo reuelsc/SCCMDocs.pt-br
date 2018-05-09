@@ -2,25 +2,19 @@
 title: Sincronizar dados com o OMS
 titleSuffix: Configuration Manager
 description: Sincronizar dados do System Center Configuration Manager com o Microsoft Operations Management Suite.
-ms.custom: na
 ms.date: 04/10/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 33bcf8b3-a6b6-4fc9-bb59-70a9621b2b0d
-caps.latest.revision: 9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4ac6d69d07e17946abefdc4f5b7d4a1a73385c44
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+ms.openlocfilehash: 9a01c5534367ad66314afc563cff41adeb2b88dc
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 #  <a name="sync-data-from-configuration-manager-to-the-microsoft-operations-management-suite"></a>Sincronizar dados do Configuration Manager com o Microsoft Operations Management Suite
 
@@ -35,7 +29,7 @@ Use o **Assistente para Serviços do Azure** para configurar sua conexão do Con
 
 
 > [!Note]  
-> O Configuration Manager não habilita esse recurso opcional por padrão. Você precisa habilitar esse recurso antes de usá-lo. Para obter mais informações, confira [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, veja [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 
 

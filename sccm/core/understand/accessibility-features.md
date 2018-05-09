@@ -1,25 +1,20 @@
 ---
 title: Acessibilidade
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os recursos que tornam o System Center Configuration Manager acessível para pessoas com deficiências."
-ms.custom: na
+description: Saiba mais sobre os recursos que tornam o System Center Configuration Manager acessível para pessoas com deficiências.
 ms.date: 7/31/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 1cb96666-98bf-49a9-85ca-dbb53f0655e9
-caps.latest.revision: "6"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 8a56e14f1c366bb4e2218428c0e93b60aa13e015
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: fc0e7b81b4b46502e4477f098bdc129b0491be69
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="accessibility-features-in-system-center-configuration-manager"></a>Recursos de acessibilidade no System Center Configuration Manager
 

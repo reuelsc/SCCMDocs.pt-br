@@ -1,25 +1,20 @@
 ---
 title: Ajuda do cliente Endpoint Protection
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre recursos e aprimoramentos no Endpoint Protection que ajudam a proteger seu computador contra ameaças."
-ms.custom: na
+description: Saiba mais sobre recursos e aprimoramentos no Endpoint Protection que ajudam a proteger seu computador contra ameaças.
 ms.date: 02/14/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: fdcee455-22e3-451d-bcf3-e7b62792f04a
-caps.latest.revision: "6"
-author: NathBarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: 50b9e5c89776c57a5f1605d38f6fbbee7ecd833e
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 580218b701b01af388b56bbd2b7293f67cf5d77d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="endpoint-protection-client-help"></a>Ajuda do cliente Endpoint Protection
 

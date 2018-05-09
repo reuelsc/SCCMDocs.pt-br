@@ -1,24 +1,20 @@
 ---
-title: "Excluir as atualizações do cliente para Windows"
+title: Excluir as atualizações do cliente para Windows
 titleSuffix: Configuration Manager
-description: "Saiba como excluir clientes Windows de atualizações no System Center Configuration Manager."
-ms.custom: na
+description: Saiba como excluir clientes Windows de atualizações no System Center Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 4cd6031f-8844-4d0b-8166-b24d6528a94e
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 6069812d8d120f65ad79344efc3eeaa219066859
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 164fe811c44306e01e372aa380c2422ec8bd0be7
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-exclude-upgrading-clients-for-windows-computers-in-system-center-configuration-manager"></a>Como excluir clientes de atualizações em computadores Windows no System Center Configuration Manager
 

@@ -2,26 +2,19 @@
 title: Monitorar e planejar o gerenciamento de energia
 titleSuffix: Configuration Manager
 description: Saiba como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 507bf676-2679-4e4d-8831-3ffc9cf8557e
-caps.latest.revision: 
-caps.handback.revision: 
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: ce89941550d02ef80bf9f7e9bab83850dda9e981
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 70e6f4ddfa335a08bdf7039274b388b5a468311e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-monitor-and-plan-for-power-management-in-system-center-configuration-manager"></a>Como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager
 
@@ -69,7 +62,7 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 |**Data de Início**|Na lista suspensa, selecione a data de início para este relatório.|  
 |**Data de término (opcional)**|Na lista suspensa, selecione uma data de término opcional para este relatório.|  
 |**Nome da coleção**|Na lista suspensa, selecione uma coleção a ser usada para este relatório.|  
-|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja obter um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis).|  
+|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis).|  
 
 #### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
  Este relatório não contém parâmetros ocultos que podem ser definidos.  
@@ -128,11 +121,11 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 |**Nome da coleção**|Na lista suspensa, selecione uma coleção a ser usada para este relatório.|  
 |**Data do relatório**|Na lista suspensa, selecione uma data a ser usada para este relatório.|  
 |**Hora do relatório**|Na lista suspensa, selecione uma hora da data especificada na qual este relatório deve ser executado. Os valores válidos são entre **00h** e **23h**.|  
-|**Estado do computador**|Na lista suspensa, selecione o estado do computador no qual este relatório deve ser executado. Os valores válidos são **Todos** (computadores que ativados ou desativados) **Ativado** (computadores ativados) e **Desativado** (computadores desativados, no modo de suspensão ou em hibernação). Esses valores são retornados apenas para o período de relatório selecionado.|  
-|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja obter um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
-|**Capacidade de suspensão**|Na lista suspensa, selecione se deseja exibir computadores com capacidade de suspensão no relatório. Os valores válidos são **Todos** (computadores com e sem capacidade de suspensão), **Não** (computadores sem capacidade de suspensão) e **Sim** (computadores com capacidade de suspensão).|  
-|**Com capacidade de sair do modo de suspensão**|Na lista suspensa, selecione se deseja exibir computadores com capacidade de sair do modo de suspensão no relatório. Os valores válidos são **Todos** (computadores com e sem capacidade de retornar da suspensão), **Não** (computadores sem capacidade retornar da suspensão) e **Sim** (computadores com capacidade de retornar da suspensão).|  
-|**Plano de energia**|Na lista suspensa, selecione os tipos de plano de energia que deseja exibir no relatório. Os valores válidos são **Todos** (computadores que não têm planos de gerenciamento de energia aplicados; computadores que têm um plano de gerenciamento de energia aplicado; computadores excluídos do gerenciamento de energia), **Não especificado** (computadores que não têm um plano de gerenciamento de energia aplicado), **Definido** (computadores que têm um plano de gerenciamento de energia aplicado) e **Excluído** (computadores que foram excluídos do gerenciamento de energia).|  
+|**Estado do computador**|Na lista suspensa, selecione o estado do computador para executar este relatório. Os valores válidos são **Todos** (computadores que ativados ou desativados) **Ativado** (computadores ativados) e **Desativado** (computadores desativados, no modo de suspensão ou em hibernação). Esses valores são retornados apenas para o período de relatório selecionado.|  
+|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
+|**Capacidade de suspensão**|Na lista suspensa, selecione se deseja exibir computadores capazes de suspensão no relatório. Os valores válidos são **Todos** (computadores com e sem capacidade de suspensão), **Não** (computadores sem capacidade de suspensão) e **Sim** (computadores com capacidade de suspensão).|  
+|**Com capacidade de sair do modo de suspensão**|Na lista suspensa, selecione se deseja exibir computadores capazes de ativar a suspensão no relatório. Os valores válidos são **Todos** (computadores com e sem capacidade de retornar da suspensão), **Não** (computadores sem capacidade retornar da suspensão) e **Sim** (computadores com capacidade de retornar da suspensão).|  
+|**Plano de energia**|Na lista suspensa, selecione os tipos de plano de energia que você deseja exibir no relatório. Os valores válidos são **Todos** (computadores que não têm planos de gerenciamento de energia aplicados; computadores que têm um plano de gerenciamento de energia aplicado; computadores excluídos do gerenciamento de energia), **Não especificado** (computadores que não têm um plano de gerenciamento de energia aplicado), **Definido** (computadores que têm um plano de gerenciamento de energia aplicado) e **Excluído** (computadores que foram excluídos do gerenciamento de energia).|  
 |**Sistema operacional**|Na lista suspensa, selecione os sistemas operacionais de computador que deseja exibir no relatório ou selecione **Todos** para exibir todos os sistemas operacionais.|  
 
 #### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
@@ -178,7 +171,7 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 |**Nome da coleção**|Na lista suspensa, selecione uma coleção a ser usada para este relatório.|  
 |**Data do relatório**|Na lista suspensa, selecione uma data para este relatório.|  
 |**Hora do relatório**|Na lista suspensa, selecione uma hora da data especificada na qual este relatório deve ser executado. Os valores válidos são entre **00h** e **23h**.|  
-|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja obter um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
+|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
 
 #### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
  Este relatório não contém parâmetros ocultos que podem ser definidos.  
@@ -260,7 +253,7 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 |**Data de Início**|Na lista suspensa, selecione uma data de início para este relatório.|  
 |**Data de término**|Na lista suspensa, selecione uma data de término para este relatório.|  
 |**Nome da coleção**|Na lista suspensa, selecione uma coleção para este relatório.|  
-|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja obter um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
+|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
 
 #### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
  Opcionalmente, os parâmetros ocultos a seguir podem ser especificados para alterar o comportamento deste relatório.  
@@ -423,7 +416,7 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 |**Data de início do relatório**|Na lista suspensa, selecione uma data de início para este relatório.|  
 |**Data de término do relatório**|Na lista suspensa, selecione uma data de término para este relatório.|  
 |**Nome da coleção**|Na lista suspensa, selecione uma coleção para este relatório.|  
-|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja obter um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
+|**Tipo de dispositivo**|Na lista suspensa, selecione o tipo de computador para o qual deseja um relatório. Os valores válidos são **Todos** (computadores desktop e portáteis), **Desktop** (somente computadores desktop) e **Laptop** (somente computadores portáteis). Esses valores são retornados apenas para o período de relatório selecionado.|  
 
 #### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
  Opcionalmente, os parâmetros ocultos a seguir podem ser especificados para alterar o comportamento deste relatório.  
@@ -497,7 +490,7 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 |--------------------|-----------------|  
 |**Nome da coleção**|Na lista suspensa, selecione uma coleção a ser usada para este relatório.|  
 |**Intervalo do relatório (dias)**|Especifique o número de dias até o relatório. O valor padrão é **7** dias.|  
-|**Causa de insônia**|Na lista suspensa, selecione uma das causas que podem impedir que os computadores entrem em suspensão ou hibernação.|  
+|**Causa de insônia**|Na lista suspensa, selecione uma das causas que podem impedir que computadores entrando em suspensão ou hibernação.|  
 
 #### <a name="hidden-report-parameters"></a>Parâmetros de relatório ocultos  
  Este relatório não contém parâmetros ocultos que podem ser definidos.  

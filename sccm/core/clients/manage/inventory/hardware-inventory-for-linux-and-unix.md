@@ -1,25 +1,20 @@
 ---
-title: "Inventário de hardware para Linux e UNIX"
+title: Inventário de hardware para Linux e UNIX
 titleSuffix: Configuration Manager
-description: "Saiba como usar o inventário de hardware para Linux e UNIX no System Center Configuration Manager."
-ms.custom: na
+description: Saiba como usar o inventário de hardware para Linux e UNIX no System Center Configuration Manager.
 ms.date: 02/22/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 1026d616-2a20-4fb2-8604-d331763937f8
-caps.latest.revision: "6"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 6f71478f6a2a8e5a2a41068624debfe3ac3e915d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 68e60611356cbaea3dc14a42776e89ecdc951008
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hardware-inventory-for-linux-and-unix-in-system-center-configuration-manager"></a>Inventário de hardware para Linux e UNIX no System Center Configuration Manager
 
@@ -118,7 +113,7 @@ O cliente do System Center Configuration Manager para Linux e UNIX dá suporte a
      Para obter informações sobre o **omicli** e provedores personalizados de teste, veja o Guia de Introdução à OMI.  
 
 > [!TIP]  
->  Use a distribuição de software para implantar e registrar provedores personalizados em cada computador de cliente Linux e UNIX.  
+>  Use a distribuição de software para provedores personalizados de implantar e registrar provedores personalizados em cada computador cliente Linux e UNIX.  
 
 ###  <a name="BKMK_AddLinuxProvidertoCM"></a> Habilite a nova classe de inventário do Configuration Manager:  
  Antes que o Configuration Manager possa gerar relatórios sobre o inventário relatado pelo novo provedor em computadores Linux e UNIX, você deve importar o arquivo MOF (Managed Object Format) que define o esquema do provedor personalizado.  

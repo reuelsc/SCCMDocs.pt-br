@@ -1,26 +1,20 @@
 ---
 title: Criar perfis de Wi-Fi
 titleSuffix: Configuration Manager
-description: "Saiba como usar perfis de Wi-Fi no Configuration Manager para implantar as configurações de rede sem fio para usuários de dispositivo móvel em sua organização."
-ms.custom: na
+description: Saiba como usar perfis de Wi-Fi no Configuration Manager para implantar as configurações de rede sem fio para usuários de dispositivo móvel em sua organização.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: c72612d4-0b3d-4e71-b3c9-35782701b78a
-caps.latest.revision: "18"
-caps.handback.revision: "0"
-author: lleonard-msft
-ms.author: alleonar
-manager: angrobe
-ms.openlocfilehash: 5780eb6da6e6a72b7fb3504283ef5362842c9ef7
-ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 07f5e7dc0520a145b6130d0c1f79388c2a63456d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-wi-fi-profiles-for-mobile-devices-in-system-center-configuration-manager"></a>Como criar perfis de Wi-Fi para dispositivos móveis no System Center Configuration Manager
 

@@ -2,25 +2,19 @@
 title: Preparar o cache par do Windows PE para reduzir o tráfego da WAN
 titleSuffix: Configuration Manager
 description: O Cache Par do Windows PE funciona no Windows PE para obter o conteúdo de um par local e minimizar o tráfego da WAN quando não há nenhum ponto de distribuição local.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-osd
+ms.topic: conceptual
 ms.assetid: 6c64f276-b88c-4b1e-8073-331876a03038
-caps.latest.revision: 11
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 24e6aaa404054f5b9ac477cc0dbdd6fa9cce1860
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 90eaaec52076e4ac4fbaddf6cc07cf20359b5a68
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prepare-windows-pe-peer-cache-to-reduce-wan-traffic-in-system-center-configuration-manager"></a>Preparar o cache par do Windows PE para reduzir o tráfego da WAN no System Center Configuration Manager
 
@@ -75,7 +69,7 @@ Use as seções a seguir para gerenciar o Cache Par.
         > [!TIP]  
         >  Os clientes usarão HTTPS para baixar o conteúdo quando ele estiver disponível. No entanto, o mesmo número da porta será usado para HTTP ou HTTPS.  
 
--   [Configurar o cache de cliente para clientes do Configuration Manager](../../core/clients/manage/manage-clients.md#BKMK_ClientCache) nos clientes para garantir que eles têm espaço suficiente para manter e armazenar as imagens de implantação. O Cache par do Windows PE não afeta a configuração ou o comportamento do cache do cliente.  
+-   [Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache) nos clientes para garantir que eles têm espaço suficiente para manter e armazenar as imagens de implantação. O Cache par do Windows PE não afeta a configuração ou o comportamento do cache do cliente.  
 
 -   As opções de implantação para a implantação de sequência de tarefas devem ser configuradas como Baixar conteúdo localmente quando necessário por sequência de tarefas.  
 

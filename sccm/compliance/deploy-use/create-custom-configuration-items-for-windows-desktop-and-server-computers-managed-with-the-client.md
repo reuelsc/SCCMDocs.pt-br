@@ -1,26 +1,20 @@
 ---
-title: "Criar itens de configuração para computadores com Windows gerenciados pelo cliente "
+title: 'Criar itens de configuração para computadores com Windows gerenciados pelo cliente '
 titleSuffix: Configuration Manager
-description: "Gerencie configurações para computadores e servidores Windows com um item personalizado de configuração de Desktops e Servidores Windows."
-ms.custom: na
+description: Gerencie configurações para computadores e servidores Windows com um item personalizado de configuração de Desktops e Servidores Windows.
 ms.date: 11/18/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 1eb2fcaf-acac-4388-9b31-6cccafacaabe
-caps.latest.revision: "9"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: ed3aa1ce9e21c7c486cc40deb804a8687a1cd4f2
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: b2b2af6c022d854a6c6d623e3901abac70d42c7a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-system-center-configuration-manager-client"></a>Como criar itens de configuração personalizados para computadores desktop e de servidor com Windows gerenciados com o cliente do System Center Configuration Manager
 
@@ -235,7 +229,7 @@ Use o item de configuração **Servidores e Desktops Windows personalizados** do
 
             -   **Incluir subpastas** - Habilite esta opção se também desejar pesquisar quaisquer subpastas no caminho especificado.  
 
-            -   **Este arquivo está associado a um aplicativo de 64 bits** ‑ Escolha se o local do arquivo do sistema de 64 bits (*%windir%*\System32) deve ser pesquisado além do local do arquivo do sistema de 32 bits (*%windir%*\Syswow64) em clientes do Configuration Manager que executam uma versão de 64 bits do Windows.  
+            -   **Este arquivo está associado a um aplicativo de 64 bits** ‑ Escolha se o local do arquivo do sistema de 64 bits (*%windir%* \System32) deve ser pesquisado além do local do arquivo do sistema de 32 bits (*%windir%* \Syswow64) em clientes do Configuration Manager que executam uma versão de 64 bits do Windows.  
 
             -   **Consulta XPath** -especifique uma completa XML caminho language (XPath) consulta válida que é usada para avaliar a conformidade em computadores cliente.  
 
@@ -260,7 +254,7 @@ Use o item de configuração **Servidores e Desktops Windows personalizados** do
 ##  <a name="configure-compliance-rules"></a>Configurar regras de conformidade  
  Use o procedimento a seguir para configurar as regras de conformidade para o item de configuração.  
 
- Regras de conformidade especificam as condições que definem a conformidade de um item de configuração. Antes de uma configuração pode ser avaliada para conformidade, ele deve ter pelo menos uma regra de conformidade. WMI, registro e as configurações de script permitem corrigir os valores encontrados são incompatíveis. Você pode criar novas regras ou navegue até uma configuração existente em qualquer item de configuração para selecionar regras nele.  
+ As regras de conformidade especificam as condições que definem a conformidade de um item de configuração. Antes que uma configuração possa ser avaliada quanto à conformidade, ela deve ter pelo menos uma regra de conformidade. WMI, registro e as configurações de script permitem corrigir os valores encontrados são incompatíveis. Você pode criar novas regras ou navegue até uma configuração existente em qualquer item de configuração para selecionar regras nele.  
 
 ### <a name="to-create-a-compliance-rule"></a>Para criar uma regra de conformidade  
 
@@ -308,7 +302,7 @@ Use o item de configuração **Servidores e Desktops Windows personalizados** do
             -   **Consulta WQL**  
 
             > [!IMPORTANT]  
-            >  Você só pode corrigir regras não compatíveis quando o operador de regra é definido como **é igual a**.  
+            >  Só é possível corrigir regras não compatíveis quando o operador de regra é definido como **É igual a**.  
 
         -   **Não conformidade de relatório se essa instância de configuração não foi encontrada** – o item de configuração relatórios de não conformidade se essa configuração não for encontrada em computadores cliente.  
 

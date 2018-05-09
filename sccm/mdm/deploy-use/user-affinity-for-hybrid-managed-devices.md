@@ -1,25 +1,20 @@
 ---
-title: "Afinidade de usuário para dispositivos gerenciados híbridos"
+title: Afinidade de usuário para dispositivos gerenciados híbridos
 titleSuffix: Configuration Manager
-description: "Configurar afinidade de usuário para dispositivos gerenciados no Configuration Manager."
-ms.custom: na
+description: Configurar afinidade de usuário para dispositivos gerenciados no Configuration Manager.
 ms.date: 03/05/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: b5d520a7-e9e5-40ee-91f9-f2684214beb6
-caps.latest.revision: "6"
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: ea496402fa72c3145038701d65af5a72dd9fd3c4
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 11b448d27dbf639eaccf0f41ed97b7961a01adb6
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="user-affinity-for-hybrid-managed-devices-in-configuration-manager"></a>Afinidade de usuário para dispositivos híbridos gerenciados no Configuration Manager
 

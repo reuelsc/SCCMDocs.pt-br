@@ -1,26 +1,20 @@
 ---
-title: "Segurança e privacidade do gerenciamento de energia"
+title: Segurança e privacidade do gerenciamento de energia
 titleSuffix: Configuration Manager
-description: "Obtenha as informações de segurança e privacidade do gerenciamento de energia no System Center Configuration Manager."
-ms.custom: na
+description: Obtenha as informações de segurança e privacidade do gerenciamento de energia no System Center Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 469ff35f-59a1-484d-902b-107dd6070baf
-caps.latest.revision: "5"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 5de0ed261b3069306992eeddb4b71b3fe22f197c
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 47ddbf358426b7683dab42b4f7a6a89ad8e631de
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="security-and-privacy-for-power-management-in-system-center-configuration-manager"></a>Segurança e privacidade do gerenciamento de energia no System Center Configuration Manager
 
@@ -32,7 +26,7 @@ Esta seção contém as informações de segurança e privacidade do gerenciamen
  Não há práticas recomendadas relacionadas à segurança para o gerenciamento de energia.  
 
 ## <a name="privacy-information-for-power-management"></a>Informações sobre privacidade para o gerenciamento de conteúdo  
- O gerenciamento de energia usa recursos que são integrados ao Windows para monitorar o consumo de energia e aplicar as configurações de energia a computadores durante o horário comercial e fora dele. O Configuration Manager coleta informações de consumo de energia de computadores, o que inclui dados sobre o período em que um usuário está usando um computador. Embora o Configuration Manager monitore o consumo de energia para uma coleção em vez de para cada computador, uma coleção pode conter apenas um computador. Por padrão, o gerenciamento de energia não está habilitado e deve ser configurado por um administrador.  
+ Gerenciamento de energia usa recursos que são integrados do Windows para monitorar o uso de energia e aplicar as configurações de energia em computadores durante o horário comercial e horários. O Configuration Manager coleta informações de consumo de energia de computadores, o que inclui dados sobre o período em que um usuário está usando um computador. Embora o Configuration Manager monitore o consumo de energia para uma coleção em vez de para cada computador, uma coleção pode conter apenas um computador. Por padrão, o gerenciamento de energia não está habilitado e deve ser configurado por um administrador.  
 
  As informações de consumo de energia são armazenadas no banco de dados do Configuration Manager e não são enviadas à Microsoft. As informações detalhadas são mantidas no banco de dados durante 31 dias e as informações resumidas são mantidas por 13 meses. Não é possível configurar o intervalo de exclusão.  
 

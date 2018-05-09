@@ -1,20 +1,19 @@
 ---
 title: Alterar a autoridade de MDM para o Intune
 titleSuffix: Configuration Manager
-description: "Saiba como alterar a autoridade de MDM do Configuration Manager (híbrido) para Intune autônomo."
-keywords: 
-author: dougeby
-manager: angrobe
+description: Saiba como alterar a autoridade de MDM do Configuration Manager (híbrido) para Intune autônomo.
+author: aczechowski
+manager: dougeby
 ms.date: 12/05/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: be503ec9-5324-4f7c-bcf5-77204328e99c
-ms.openlocfilehash: 8884883c6e4e82cf38d83b9b7843002be3742bf1
-ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
+ms.openlocfilehash: b8bc778f4bcede45d3035b8b119fc3e4a4df4978
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="change-your-mdm-authority-to-intune-standalone"></a>Alterar a autoridade de MDM para o Intune autônomo
 

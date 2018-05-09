@@ -1,25 +1,20 @@
 ---
-title: "Definições de malware do Endpoint Protection do compartilhamento de rede"
+title: Definições de malware do Endpoint Protection do compartilhamento de rede
 titleSuffix: Configuration Manager
-description: "Aprenda como baixar manualmente as atualizações de definições mais recentes da Microsoft e configurar os clientes para baixar essas definições."
-ms.custom: na
+description: Aprenda como baixar manualmente as atualizações de definições mais recentes da Microsoft e configurar os clientes para baixar essas definições.
 ms.date: 02/14/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: ddef4d2a-f481-4020-9ddd-9cca5f9795cb
-caps.latest.revision: "21"
-author: NathBarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: 3487238d7fdcd6e152bd5f578b20fb3fb5690978
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 96fe34d713a1d9d3afb78dc59124865024e9eb77
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="enable-endpoint-protection-malware-definitions-to-download-from-a-network-share-for-configuration-manager"></a>Habilitar o download das definições de malware do Endpoint Protection de um compartilhamento de rede para o Configuration Manager
 

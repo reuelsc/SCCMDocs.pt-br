@@ -1,25 +1,20 @@
 ---
-title: "Exibir dados de diagnóstico"
+title: Exibir dados de diagnóstico
 titleSuffix: Configuration Manager
-description: "Veja os dados de uso e de diagnóstico para confirmar se sua hierarquia do System Center Configuration Manager não contém nenhuma informação confidencial."
-ms.custom: na
+description: Veja os dados de uso e de diagnóstico para confirmar se sua hierarquia do System Center Configuration Manager não contém nenhuma informação confidencial.
 ms.date: 3/27/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 594eb284-0d93-4c5d-9ae6-f0f71203682a
-caps.latest.revision: "8"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: eb05bee0e0fceb68611c660870bb1778a07ef0a9
-ms.sourcegitcommit: da27d37cc4e4e06cf23758846cdd7acb617f744b
+manager: dougeby
+ms.openlocfilehash: 15e6f84be22d90e937c33ebd3a24520e6832a751
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-view-diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Como exibir dados de diagnóstico e de dados do System Center Configuration Manager
 

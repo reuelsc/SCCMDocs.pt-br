@@ -1,23 +1,20 @@
 ---
-title: "Gerenciar sincronização das atualizações de software"
+title: Gerenciar sincronização das atualizações de software
 titleSuffix: Configuration Manager
-description: "Use estas etapas para agendar a sincronização de atualizações de software, iniciar a sincronização de atualizações de software manualmente e monitorar a sincronização de atualizações de software."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
+description: Use estas etapas para agendar a sincronização de atualizações de software, iniciar a sincronização de atualizações de software manualmente e monitorar a sincronização de atualizações de software.
+author: aczechowski
 ms.date: 10/06/2016
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: ea8698c4-9df5-4cf5-8b62-ab93115b4769
-ms.openlocfilehash: 3a17fb317553c783250b92212315a6ea895105c6
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 7e2e5493f1aaee448c6573d08a57a69aafb478c7
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 #  <a name="BKMK_SUMSync"></a> sincronizar atualizações de software
 

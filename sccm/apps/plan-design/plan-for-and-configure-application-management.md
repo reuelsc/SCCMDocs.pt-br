@@ -1,25 +1,20 @@
 ---
 title: Planejar e configurar o gerenciamento de aplicativos
 titleSuffix: Configuration Manager
-description: "Implemente e configure as dependências necessárias para implantar aplicativos no System Center Configuration Manager."
-ms.custom: na
+description: Implemente e configure as dependências necessárias para implantar aplicativos no System Center Configuration Manager.
 ms.date: 11/07/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 2be84a1d-ebb9-47ae-8982-c66d5b92a52a
-caps.latest.revision: "13"
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: cd06d3ee2ea14c9ff1b9cf09980c2b25a5263db9
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 18d9fe80a1c5525457579dadbfeaeafa3425202d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-for-and-configure-application-management-in-system-center-configuration-manager"></a>Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager
 
@@ -45,7 +40,7 @@ Use as informações descritas neste artigo como auxílio para implantar as depe
 |Contas de usuário descobertas para Catálogo de Aplicativos |O Configuration Manager deve primeiro descobrir as contas de usuários antes que os usuários possam exibir e solicitar aplicativos do Catálogo de Aplicativos. Para mais informações, consulte [Executar descoberta](/sccm/core/servers/deploy/configure/run-discovery).|  
 |Cliente App-V 4.6 SP1 ou posterior para executar aplicativos virtuais|Para criar aplicativos virtuais no Configuration Manager, os computadores cliente devem ter o cliente App-V 4.6 SP1 ou posterior instalado.<br /><br /> É necessário atualizar o cliente App-V com o hotfix descrito na Base de Dados de Conhecimento, [artigo 2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322) antes de implantar aplicativos virtuais.|  
 |Ponto de serviços Web do Catálogo de Aplicativos|O ponto de serviços Web do catálogo de aplicativos é uma função de sistema de site que fornece informações sobre softwares disponíveis da Biblioteca de Software para os sites da Web do catálogo de aplicativos.<br /><br /> Para saber mais sobre como configurar esta função do sistema de sites, veja [Configurar o Centro de Software e o Catálogo de Aplicativos (apenas para computadores Windows)](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only) neste artigo.|  
-|Ponto de sites da Web do catálogo de aplicativos|O ponto de sites da Web do catálogo de aplicativos é uma função de sistema de site que fornece aos usuários uma lista de softwares disponíveis.<br /><br /> Para saber mais sobre como configurar esta função do sistema de sites, veja [Configurar o Centro de Software e o Catálogo de Aplicativos (apenas para computadores Windows)](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only) neste artigo.|  
+|Ponto de sites da Web do Catálogo de Aplicativos|O ponto de sites da Web do catálogo de aplicativos é uma função de sistema de site que fornece aos usuários uma lista de softwares disponíveis.<br /><br /> Para saber mais sobre como configurar esta função do sistema de sites, veja [Configurar o Centro de Software e o Catálogo de Aplicativos (apenas para computadores Windows)](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only) neste artigo.|  
 |Ponto do Reporting Services|Para usar os relatórios no Configuration Manager para gerenciamento de aplicativos, primeiro instale e configure um ponto do Reporting Services.<br /><br /> Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).|  
 |Permissões de segurança para gerenciamento de aplicativos|Você deve ter as seguintes permissões de segurança para gerenciar aplicativos:<br /><br /> A função de segurança **Autor de Aplicativos** inclui as permissões listadas anteriormente que são necessárias para criar, alterar e desativar aplicativos no Configuration Manager.<br /><br /> **Para implantar aplicativos:**<br /><br /> A função de segurança **Gerenciador de Implantação de Aplicativos** inclui as permissões listadas anteriormente que são necessárias para implantar aplicativos no Configuration Manager.<br /><br /> A função de segurança do **Administrador de Aplicativos** tem todas as permissões de ambas as funções de segurança: **Autor de Aplicativos** e **Gerenciador de Implantação de Aplicativos**.<br /><br /> Para mais informações, consulte [Configurar administração baseada em funções](../../core/servers/deploy/configure/configure-role-based-administration.md).|  
 

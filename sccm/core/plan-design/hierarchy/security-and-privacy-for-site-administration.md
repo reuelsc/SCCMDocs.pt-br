@@ -1,25 +1,20 @@
 ---
-title: "Segurança e privacidade de administração de site"
+title: Segurança e privacidade de administração de site
 titleSuffix: Configuration Manager
-description: "Otimize a segurança e a privacidade para administração de site no System Center Configuration Manager."
-ms.custom: na
+description: Otimize a segurança e a privacidade para administração de site no System Center Configuration Manager.
 ms.date: 3/1/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 1d58176e-abc0-4087-8583-ce70deb4dcf5
-caps.latest.revision: "8"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 2dd77a607e2ab87d9abf0ea46ca7c5565a8286b6
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 515385c6c6855e63dc32b522edff9cd2047331bd
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="security-and-privacy-for-site-administration-in-system-center-configuration-manager"></a>Segurança e privacidade para administração de site no System Center Configuration Manager
 
@@ -188,7 +183,7 @@ Sempre que possível, use um servidor de email que dê suporte ao acesso autenti
 
  Ao executar a instalação e criar um site secundário, não selecione a opção para copiar os arquivos do site pai no site secundário e não use um local de origem na rede. Quando você copia arquivos pela rede, algum invasor habilidoso pode invadir o pacote de instalação do site secundário e adulterar os arquivos antes de serem instalados, apesar de que seria difícil cronometrar esse ataque. Esse ataque pode ser reduzido com o uso de IPsec ou SMB quando você transferir os arquivos.  
 
- Em vez de copiar os arquivos pela rede, no servidor do site secundário, copie os arquivos de origem da pasta de mídia para uma pasta local. Depois, ao executar a instalação para criar um site secundário, na página **Arquivos de Origem de Instalação**, selecione **Usar os arquivos de origem no seguinte local no computador do site secundário (mais seguro)**e especifique essa pasta.  
+ Em vez de copiar os arquivos pela rede, no servidor do site secundário, copie os arquivos de origem da pasta de mídia para uma pasta local. Depois, ao executar a instalação para criar um site secundário, na página **Arquivos de Origem de Instalação**, selecione **Usar os arquivos de origem no seguinte local no computador do site secundário (mais seguro)** e especifique essa pasta.  
 
  Para obter mais informações, consulte [Install a secondary site](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_secondary) (Instalar um site secundário) no tópico [Install System Center Configuration Manager sites](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) (Instalar sites do System Center Configuration Manager).  
 

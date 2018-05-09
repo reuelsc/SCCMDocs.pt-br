@@ -1,22 +1,20 @@
 ---
-title: "Segurança e privacidade das atualizações de software"
+title: Segurança e privacidade das atualizações de software
 titleSuffix: Configuration Manager
-description: "Siga essas práticas recomendadas de segurança para atualizações de software e saiba mais sobre como o Configuration Manager lida com informações de privacidade."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
+description: Siga essas práticas recomendadas de segurança para atualizações de software e saiba mais sobre como o Configuration Manager lida com informações de privacidade.
+author: aczechowski
+manager: dougeby
 ms.date: 10/06/2016
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 41d6d5d8-ba84-4efb-b105-4d1eed239824
-ms.openlocfilehash: 753f0c106a2f41b9991b8e3da72ad3784573d8f9
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.author: aaroncz
+ms.openlocfilehash: 3bf98c7b5ae2ee29266203e3496f0b28b1ea134e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="security-and-privacy-for-software-updates-in-system-center-configuration-manager"></a>Segurança e privacidade das atualizações de software no System Center Configuration Manager
 

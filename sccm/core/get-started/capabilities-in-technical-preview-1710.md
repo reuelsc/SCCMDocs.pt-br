@@ -1,24 +1,20 @@
 ---
 title: Technical Preview 1710 | Microsoft Docs
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os recursos disponíveis na Technical Preview versão 1710 do System Center Configuration Manager."
-ms.custom: na
+description: Saiba mais sobre os recursos disponíveis na Technical Preview versão 1710 do System Center Configuration Manager.
 ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f4706a58-1f11-4eab-b1eb-3d1a0da02d0f
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: ed5f977df79114e1209cd3cc82d2e56e8e728c3d
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 730d14c5985c088d964761bb83043f3a34924486
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1710-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1710 do System Center Configuration Manager
 

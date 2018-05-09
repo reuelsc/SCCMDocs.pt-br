@@ -1,26 +1,20 @@
 ---
-title: "Monitorar a replicação"
+title: Monitorar a replicação
 titleSuffix: Configuration Manager
-description: "Saiba como monitorar a infraestrutura e as operações no Configuration Manager quando o espaço de trabalho Monitoramento no console."
-ms.custom: na
+description: Saiba como monitorar a infraestrutura e as operações no Configuration Manager quando o espaço de trabalho Monitoramento no console.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 3fab4d67-8d2a-45ce-8b06-471280102cf6
-caps.latest.revision: "11"
-caps.handback.revision: "0"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 459a619d08a5d38c51301e2f6cff23a5d46a9464
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 04faf92545f84fdf53c522ad9aa0c74bbd5c4aa1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="monitor-hierarchy-and-replication-infrastructure-in-system-center-configuration-manager"></a>Monitorar a infraestrutura de hierarquia e de replicação no System Center Configuration Manager
 

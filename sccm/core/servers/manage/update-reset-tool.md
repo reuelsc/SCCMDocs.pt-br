@@ -1,26 +1,20 @@
 ---
-title: "Ferramenta de redefinição de atualização"
+title: Ferramenta de redefinição de atualização
 titleSuffix: Configuration Manager
-description: "Usar a ferramenta de redefinição de atualização para atualizações no console para o System Center Configuration Manager."
-ms.custom: na
+description: Usar a ferramenta de redefinição de atualização para atualizações no console para o System Center Configuration Manager.
 ms.date: 7/31/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 25fa89d6-7e47-45a6-8f4e-70b77560fba6
-caps.latest.revision: "0"
-caps.handback.revision: "0"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: cf854b1ea571991c1f070d6b3896db7861fe020f
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: e6ae6ed46cc1db5f545182e4b4f6b46374b5c174
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="update-reset-tool"></a>Ferramenta de redefinição de atualização
 

@@ -1,26 +1,20 @@
 ---
-title: "Gerenciar dados de configuração"
+title: Gerenciar dados de configuração
 titleSuffix: Configuration Manager
-description: "Depois de criar itens de configuração e linhas de base no System Center Configuration Manager, você poderá usar outros comandos para executar várias ações."
-ms.custom: na
+description: Depois de criar itens de configuração e linhas de base no System Center Configuration Manager, você poderá usar outros comandos para executar várias ações.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: b48c693c-d2b0-4707-a5dd-fe92172c49fe
-caps.latest.revision: "7"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 23a6bcf2e9fcb417dabde7700e09c953d436deb7
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: d4602a2dbee04259d5953873485cdbccdc58167d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-configuration-data-in-system-center-configuration-manager"></a>Gerenciar dados de configuração no System Center Configuration Manager
 
@@ -36,9 +30,9 @@ Depois de criar itens e linhas de base de configuração no System Center Config
 |---------------------|-------------|  
 |**Criar Item de Configuração Filho**|Abre o **Assistente para Criar Item de Configuração Filho** , em que é possível criar um item de configuração filho do item de configuração selecionado.<br /><br /> Não é possível criar um item de configuração filho por meio de um item de configuração de dispositivo móvel.<br /><br /> Para ver os detalhes, consulte [Como criar itens de configuração filho](../../compliance/deploy-use/create-child-configuration-items.md).|  
 |**Histórico de Revisão**|Abre a caixa de diálogo **Histórico de Revisão do Item de Configuração** , em que é possível exibir e gerenciar as revisões anteriores do item de configuração selecionado.|  
-|**Exibir definição XML**|Exibe o arquivo de definição XML para o item de configuração selecionado em uma nova janela. Essas informações podem ser úteis quando você desejar criar dados de configuração manualmente.|  
+|**Exibir definição XML**|Exibe o arquivo de definição XML para o item de configuração selecionado em uma nova janela. Essa informação pode ser útil quando você deseja criar dados de configuração manualmente.|  
 |**Exportarar**|Exporta um item de configuração em um formato de arquivo de gabinete (.cab), desde que ele tenha sido criado nesse site. Você pode importá-lo para o mesmo site ou outro site do Configuration Manager. Os dados de configuração são convertidos no resumo DCM.|  
-|**Copiar**|Cria uma cópia do item de configuração selecionado com um nome que você especificar. O novo item de configuração não mantém nenhuma relação com o item de configuração original. Isso significa que o item de configuração duplicado não continua herdando as informações de configuração do item de configuração original.|  
+|**Copiar**|Cria uma cópia do item de configuração selecionado com um nome que você especificar. O novo item de configuração não mantém nenhuma relação com o item de configuração original. Isso significa que o item de configuração duplicado não continuará herdam as informações de configuração do item de configuração original.|  
 |**Excluir**|Abre a caixa de diálogo **Excluir Item de Configuração** , em que é possível examinar todas as referências a esse item de configuração.<br /><br /> É necessário remover todas as referências a um item de configuração antes de excluir o item de configuração.|  
 
 ## <a name="manage-configuration-baselines"></a>Gerenciar linhas de base de configuração  
@@ -51,10 +45,10 @@ Depois de criar itens e linhas de base de configuração no System Center Config
 |**Mostrar Membros**|Exibe todos os itens de configuração que são referenciados pela linha de base de configuração.|  
 |**Resumo do agendamento**|Configura o agendamento pelo qual os dados mostrados no nó **Linhas de Base de Configuração** do console do Configuration Manager são atualizados com as informações mais recentes do banco de dados do site.|  
 |**Executar o resumo**|O resumo faz com que os dados do nó **Linhas de Base de Configuração** sejam atualizadas com os dados mais recentes do banco de dados do site. Esta ação pode levar vários minutos para concluir. Talvez você precise clicar em **Atualizar** antes de poder ver os dados mais recentes no console.|  
-|**Exibir definição XML**|Exibe o arquivo de definição XML para a linha de base de configuração selecionada em uma nova janela. Essas informações podem ser úteis quando você desejar criar dados de configuração manualmente.|  
-|**Habilitar**|Habilita uma linha de base de configuração para o monitoramento de conformidade.|  
-|**Desabilitar**|Desabilita uma linha de base de configuração para que ela não seja avaliada quanto à conformidade em computadores cliente. As linhas de base de configuração que fazem referência a esta linha de base de configuração também serão desabilitadas.|  
+|**Exibir definição XML**|Exibe o arquivo de definição XML para a linha de base de configuração selecionada em uma nova janela. Essa informação pode ser útil quando você deseja criar dados de configuração manualmente.|  
+|**Habilitar**|Permite que uma linha de base de configuração para o monitoramento de conformidade.|  
+|**Desabilitar**|Desabilita uma linha de base de configuração para que ela não seja avaliada quanto à conformidade em computadores cliente. Linhas de base de configuração que fazem referência a essa linha de base de configuração também serão desabilitadas.|  
 |**Exportarar**|Exporta uma linha de base de configuração em um formato de arquivo de gabinete (.cab), desde que ela tenha sido criada nesse site. Você pode importá-lo para o mesmo site ou outro site do Configuration Manager. Os dados de configuração são convertidos no resumo DCM.<br /><br /> Para obter informações sobre como importar dados de configuração, veja [Importar dados da configuração](../../compliance/deploy-use/import-configuration-data.md).|  
-|**Copiar**|Cria uma cópia da linha de base de configuração selecionada com um nome que você especificar. A nova linha de base de configuração não mantém nenhuma relação com a linha de base de configuração original.|  
+|**Copiar**|Cria uma cópia da linha de base de configuração selecionada com um nome que você especificar. A nova linha de base de configuração não mantém nenhuma relação com a linha de base original.|  
 |**Excluir**|Abre a caixa de diálogo **Excluir Linha de Base de Configuração** , em que é possível examinar todas as referências a essa linha de base de configuração.<br /><br /> É necessário remover todas as referências a uma linha de base de configuração antes de excluir a linha de base de configuração.|  
 |**Implantar**|Abre a caixa de diálogo **Implantar Linha de Base de Configuração** , em que você é possível implantar uma ou mais linhas de base de configuração em dispositivos de sua hierarquia.<br /><br /> Para ver os detalhes, consulte [Implantar linhas de base de configuração](../../compliance/deploy-use/deploy-configuration-baselines.md).|  

@@ -1,22 +1,20 @@
 ---
-title: "Adicionar atualizações a um grupo de atualização "
+title: 'Adicionar atualizações a um grupo de atualização '
 titleSuffix: Configuration Manager
-description: "Adicione atualizações de software manualmente ou automaticamente a um grupo de atualização de software no seu ambiente."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
+description: Adicione atualizações de software manualmente ou automaticamente a um grupo de atualização de software no seu ambiente.
+author: aczechowski
 ms.date: 01/23/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: a0767664-fd60-46a8-9da5-86cc431ce53c
-ms.openlocfilehash: da01e07749d1e185861941515cf1a4addbd45093
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: df213206ee673e872852958233973e4f091728b9
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="add-software-updates-to-an-update-group"></a>Adicionar atualizações de software a um grupo de atualização  
 
