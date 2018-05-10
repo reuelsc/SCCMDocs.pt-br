@@ -61,7 +61,7 @@ A atualização 1602 do System Center Configuration Manager está disponível ap
 
 -   As atualizações do Windows 10 disponíveis agora são exibidas apenas no nó **Manutenção do Windows 10** \ **Todas as Atualizações do Windows 10** do console do Configuration Manager. Essas atualizações não são mais exibidas no nó **Atualizações de Software** \ **Todas as Atualizações de Software** do console.  
 
--   Um plano de manutenção é considerado uma implantação de alto risco, e a janela **Selecionar Coleção** exibe apenas as coleções personalizadas que atendem às definições de verificação da implantação que são configuradas nas propriedades do site. Para obter mais informações, consulte [Settings to manage high-risk deployments for System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+-   Um plano de manutenção é considerado uma implantação de alto risco, e a janela **Selecionar Coleção** exibe apenas as coleções personalizadas que atendem às definições de verificação da implantação que são configuradas nas propriedades do site. Para obter mais informações, consulte [Configurações para gerenciar implantações de alto risco para o System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md).  
 
 -   Agora os usuários que iniciam um pacote de Atualização do Windows 10 recebem uma mensagem informando que seus sistemas operacionais serão atualizados.  
 
