@@ -79,7 +79,7 @@ A Coho Vineyard & Winery está abrindo um centro de visitantes e precisa de quio
 
      Como esses dispositivos estão ligados a um domínio do Active Directory, ela não precisa aprová-los manualmente como clientes confiáveis e confirma por meio do console do Configuration Manager que eles foram aprovados.  
 
-     Para obter mais informações, consulte [How to manage clients in System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
+     Para obter mais informações, consulte [Como gerenciar clientes no System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
 
 8.  Para instalar o software de apresentação interativa, Jane executa o **Assistente de implantação de software** e configura o aplicativo necessário. Na página **Experiência do usuário** do assistente, na seção **Manuseio de filtro de gravação para dispositivos Windows Embedded** , ela aceita a opção padrão que seleciona **Confirmar as alterações no prazo ou durante uma janela de manutenção (requer reinicializações)**.  
 

@@ -26,7 +26,7 @@ Antes de poder gerenciar um servidor Linux ou UNIX com o System Center Configura
 
  O script de instalação para o cliente do Configuration Manager para Linux e UNIX dá suporte a propriedades de linha de comando. Algumas propriedades de linha de comando são necessárias, enquanto outros são opcionais. Por exemplo, quando você instala o cliente, você deve especificar um ponto de gerenciamento do site que é usado pelo servidor Linux ou UNIX para o contato inicial com o site. Para obter uma lista completa das propriedades de linha de comando, consulte [Propriedades de linha de comando para instalar o cliente em servidores Linux e UNIX](#BKMK_CmdLineInstallLnUClient).  
 
- Depois de instalar o cliente, é possível especificar as Configurações do Cliente no console do Configuration Manager para configurar o agente cliente da mesma maneira que faria com clientes baseados em Windows. Para obter mais informações, consulte  [Client settings for Linux and UNIX servers](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ClientSettingsforLnU).  
+ Depois de instalar o cliente, é possível especificar as Configurações do Cliente no console do Configuration Manager para configurar o agente cliente da mesma maneira que faria com clientes baseados em Windows. Para obter mais informações, consulte  [Configurações do cliente para servidores Linux e UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ClientSettingsforLnU).  
 
 ##  <a name="BKMK_AboutInstallPackages"></a> Sobre pacotes de instalação do cliente e o agente Universal  
  Para instalar o cliente para Linux e UNIX em uma plataforma específica, você deve usar o pacote de instalação do cliente aplicável para o computador no qual você instala o cliente. Pacotes de instalação do cliente aplicáveis são incluídos como parte do download de cada cliente no [Centro de Download da Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184). Além dos pacotes de instalação do cliente, o download do cliente inclui o script **install** que gerencia a instalação do cliente em cada computador.  
@@ -138,7 +138,7 @@ Cada pacote de instalação de cliente contém todos os arquivos necessários pa
 
 -   **-UsePKICert &lt;parâmetro\>**  
 
-     Opcional. Especifica o nome de arquivo e caminho completo para um certificado x. 509 PKI no formato de certificado padrão de chave pública (PKCS #12). Esse certificado é usado para autenticação do cliente. Se um certificado não for especificado durante a instalação e você precisará adicionar ou alterar um certificado, use o utilitário **certutil** . Consulte [How to manage certificates on the client for Linux and UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ManageLinuxCerts) para obter informações sobre certutil.  
+     Opcional. Especifica o nome de arquivo e caminho completo para um certificado x. 509 PKI no formato de certificado padrão de chave pública (PKCS #12). Esse certificado é usado para autenticação do cliente. Se um certificado não for especificado durante a instalação e você precisará adicionar ou alterar um certificado, use o utilitário **certutil** . Consulte [Como gerenciar certificados no cliente para Linux e UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ManageLinuxCerts) para obter informações sobre certutil.  
 
      Ao usar **-UsePKICert**, você também deve fornecer a senha associada ao arquivo PKCS nº 12 usando o parâmetro de linha de comando **-certpw** .  
 
@@ -187,13 +187,13 @@ Cada pacote de instalação de cliente contém todos os arquivos necessários pa
 
 -   **-ignoreSHA256validation**  
 
-     Opcional. Especifica que a instalação do cliente ignora a validação do SHA-256. Use essa opção ao instalar o cliente em sistemas operacionais que não foram lançados com uma versão do OpenSSL que dá suporte a SHA-256. Para obter mais informações, consulte [About Linux and UNIX Operating Systems That do not Support SHA-256](../../../core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md#BKMK_NoSHA-256).  
+     Opcional. Especifica que a instalação do cliente ignora a validação do SHA-256. Use essa opção ao instalar o cliente em sistemas operacionais que não foram lançados com uma versão do OpenSSL que dá suporte a SHA-256. Para obter mais informações, consulte [Sobre o Linux e UNIX sistemas operacionais que fazer não suporte SHA-256](../../../core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md#BKMK_NoSHA-256).  
 
 -   **-signcertpath &lt;local do arquivo\>**  
 
      Opcional. Especifica o caminho completo e **. cer** nome do arquivo do certificado autoassinado exportado no servidor do site. Se certificados PKI não estiverem disponíveis, o servidor do site do Configuration Manager gerará automaticamente os certificados autoassinados.  
 
-     Esses certificados são usados para validar que as políticas do cliente baixadas do ponto de gerenciamento foram enviadas do local desejado. Se um certificado autoassinado não for especificado durante a instalação ou se você precisar alterar o certificado, use o utilitário **certutil** . Consulte [How to manage certificates on the client for Linux and UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ManageLinuxCerts) para obter informações sobre certutil.  
+     Esses certificados são usados para validar que as políticas do cliente baixadas do ponto de gerenciamento foram enviadas do local desejado. Se um certificado autoassinado não for especificado durante a instalação ou se você precisar alterar o certificado, use o utilitário **certutil** . Consulte [Como gerenciar certificados no cliente para Linux e UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ManageLinuxCerts) para obter informações sobre certutil.  
 
      Esse certificado é recuperado por meio do repositório de certificados **SMS** e tem como nome da Entidade **Servidor do Site** e como nome amigável **Certificado de Autenticação do Servidor do Site**.  
 
@@ -232,4 +232,4 @@ Cada pacote de instalação de cliente contém todos os arquivos necessários pa
 
  O cliente do Configuration Manager para Linux e UNIX entra em contato com esse ponto de gerenciamento no momento em que o cliente é instalado. Se o cliente falhar no contato com o ponto de gerenciamento, o software cliente continuará tentando até obter êxito.  
 
- Para obter mais informações sobre como os clientes localizam os pontos de gerenciamento, consulte [Locating Management Points](/sccm/core/clients/deploy/assign-clients-to-a-site#locating-management-points).
+ Para obter mais informações sobre como os clientes localizam os pontos de gerenciamento, consulte [Localizando pontos de gerenciamento](/sccm/core/clients/deploy/assign-clients-to-a-site#locating-management-points).
