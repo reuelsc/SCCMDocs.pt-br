@@ -1,25 +1,20 @@
 ---
-title: "Atualizar um computador existente com uma nova versão do Windows"
+title: Atualizar um computador existente com uma nova versão do Windows
 titleSuffix: Configuration Manager
-description: "Você pode usar vários métodos no Configuration Manager para particionar e formatar (apagar) um computador existente e instalar um novo sistema operacional nele."
-ms.custom: na
+description: Você pode usar vários métodos no Configuration Manager para particionar e formatar (apagar) um computador existente e instalar um novo sistema operacional nele.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: b189a346-8c0d-4870-a876-0719fbb0ab04
-caps.latest.revision: "7"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 2a5489c35acc82c6fc11a0e83b7a5101b2e472fb
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 622b49b9fb689db8238be8254a66b3a0264b4399
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="refresh-an-existing-computer-with-a-new-version-of-windows-using-system-center-configuration-manager"></a>Atualizar um computador existente com uma nova versão do Windows usando o System Center Configuration Manager
 
