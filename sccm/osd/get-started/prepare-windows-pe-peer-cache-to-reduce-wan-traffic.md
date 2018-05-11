@@ -69,7 +69,7 @@ Use as seções a seguir para gerenciar o Cache Par.
         > [!TIP]  
         >  Os clientes usarão HTTPS para baixar o conteúdo quando ele estiver disponível. No entanto, o mesmo número da porta será usado para HTTP ou HTTPS.  
 
--   [Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache) nos clientes para garantir que eles têm espaço suficiente para manter e armazenar as imagens de implantação. O Cache par do Windows PE não afeta a configuração ou o comportamento do cache do cliente.  
+-   [Configurar o cache de cliente para clientes do Configuration Manager](../../core/clients/manage/manage-clients.md#BKMK_ClientCache) nos clientes para garantir que eles têm espaço suficiente para manter e armazenar as imagens de implantação. O Cache par do Windows PE não afeta a configuração ou o comportamento do cache do cliente.  
 
 -   As opções de implantação para a implantação de sequência de tarefas devem ser configuradas como Baixar conteúdo localmente quando necessário por sequência de tarefas.  
 
