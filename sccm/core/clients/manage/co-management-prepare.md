@@ -2,20 +2,19 @@
 title: Preparar o Windows 10 para o cogerenciamento
 titleSuffix: Configuration Manager
 description: Saiba como preparar dispositivos Windows 10 para o cogerenciamento.
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.date: 03/28/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: ''
-ms.technology: ''
+ms.technology: configmgr-client
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: 93a991cb3fd78e44f5ae4434a9845a57450e1025
-ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
+ms.openlocfilehash: 8c025d7c7a1dc452cb96f937801656bc4d0cadab
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prepare-windows-10-devices-for-co-management"></a>Preparar dispositivos Windows 10 para o cogerenciamento
 Você pode habilitar o cogerenciamento em dispositivos Windows 10 que foram ingressados no AD e no Azure AD e registrados no Microsoft Intune e em um cliente no Configuration Manager. Para novos dispositivos Windows 10 e dispositivos que já estão registrados no Intune, instale o cliente do Configuration Manager antes que eles possam ser cogerenciados. Para dispositivos Windows 10 que já são clientes do Configuration Manager, você pode registrar os dispositivos no Intune e habilitar o cogerenciamento no console do Configuration Manager.
@@ -30,7 +29,7 @@ Você deve ter os seguintes pré-requisitos em vigor antes de habilitar o cogere
 Estes são os pré-requisitos gerais para habilitar o cogerenciamento:  
 
 - Configuration Manager versão 1710 ou posterior
-- Azure AD
+- [Site carregado com o Azure AD para gerenciamento de nuvem](/sccm/core/servers/deploy/configure/azure-services-wizard)
 - Licença do EMS ou do Intune para todos os usuários
 - [Registro automático do Azure AD](https://docs.microsoft.com/intune/windows-enroll#enable-windows-10-automatic-enrollment) habilitado
 - Assinatura do Intune &#40;autoridade do MDM no Intune definida para **Intune**&#41;

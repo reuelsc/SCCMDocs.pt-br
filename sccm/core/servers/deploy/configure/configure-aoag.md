@@ -2,25 +2,19 @@
 title: Configurar grupos de disponibilidade
 titleSuffix: Configuration Manager
 description: Configurar e gerenciar grupos de disponibilidade AlwaysOn do SQL Server com o SCCM.
-ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 7e4ec207-bb49-401f-af1b-dd705ecb465d
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: d6b208da49e27775548ac6f544b7a7278b96d980
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 2baafa04c315ebc7512504f042c89615b7217b4c
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Configurar grupos de disponibilidade AlwaysOn do SQL Server para o Configuration Manager
 
@@ -89,14 +83,14 @@ Para concluir este procedimento, a conta usada para executar a instalação do C
 > Quando você usa o Microsoft Intune com o Configuration Manager em uma configuração híbrida, a movimentação do banco de dados do site para ou de um grupo de disponibilidade aciona uma ressincronização dos dados com a nuvem. Essa nova sincronização não pode ser evitada.
 
 ### <a name="to-configure-a-site-to-use-the-availability-group"></a>Para configurar um site para usar o grupo de disponibilidade
-1.  Execute a **Instalação do Configuration Manager** na **&lt;*pasta de instalação do site do Configuration Manager*>\BIN\X64\setup.exe**.
+1.  Execute a **Instalação do Configuration Manager** na **&lt;*pasta de instalação> do site do Configuration Manager*\BIN\X64\setup.exe**.
 
 2.  Na página **Introdução** , selecione **Realizar a manutenção do site ou redefinir este site**e clique em **Próximo**.
 
 3.  Escolha a opção **Modificar configuração do SQL Server** e clique em **Avançar**.
 
 4.  Reconfigure o seguinte para o banco de dados do site:
-    -   **Nome do SQL Server:** insira o nome virtual do **ouvinte** do grupo de disponibilidade configurado ao criar o grupo de disponibilidade. O nome virtual deve ser um nome DNS completo, como **&lt;*servidorDoPontoDeExtremidade*>.fabrikam.com**.  
+    -   **Nome do SQL Server:** insira o nome virtual do **ouvinte** do grupo de disponibilidade configurado ao criar o grupo de disponibilidade. O nome virtual deve ser um nome DNS completo, como **&lt;*endpointServer*>.fabrikam.com**.  
 
     -   **Instância:** esse valor deve estar em branco para especificação da instância padrão do *ouvinte* do grupo de disponibilidade. Se o banco de dados do site atual for executado em uma instância nomeada, esta será listada e deverá ser apagada.
 
@@ -158,7 +152,7 @@ Para concluir este procedimento, a conta usada deverá ser:
 
 4.  No servidor que hospedará o banco de dados do site (a réplica primária ou o servidor onde você restaurou o banco de dados do site), altere o modelo de backup para o banco de dados do site de **COMPLETO** para **SIMPLES**. Confira [Exibir ou alterar o modelo de recuperação de um banco de dados](/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server) na documentação do SQL Server.  
 
-5.  Execute a **Instalação do Configuration Manager** na **&lt;*pasta de instalação do site do Configuration Manager>*\BIN\X64\setup.exe**.
+5.  Execute a **Instalação do Configuration Manager** na **&lt;*pasta de instalação> do site do Configuration Manager*\BIN\X64\setup.exe**.
 
 6.  Na página **Introdução** , selecione **Realizar a manutenção do site ou redefinir este site**e clique em **Próximo**.  
 

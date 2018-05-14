@@ -1,26 +1,20 @@
 ---
-title: "Exibir inventário de hardware com Gerenciador de Recursos"
+title: Exibir inventário de hardware com Gerenciador de Recursos
 titleSuffix: Configuration Manager
-description: "Usar o Gerenciador de Recursos para exibir o inventário de hardware no System Center Configuration Manager."
-ms.custom: na
+description: Usar o Gerenciador de Recursos para exibir o inventário de hardware no System Center Configuration Manager.
 ms.date: 01/03/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 375912f5-436d-4315-bdbe-d77afee6c9f3
-caps.latest.revision: 
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: a08fdd76fee73e50cb1f1249dd3ef4f54ce378a0
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: be2c8c3dbfef5ea0f35e338b14439c65150310be
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-use-resource-explorer-to-view-hardware-inventory-in-system-center-configuration-manager"></a>Como usar o Gerenciador de Recursos para exibir o inventário de hardware no System Center Configuration Manager
 
@@ -49,5 +43,5 @@ Use o Gerenciador de Recursos no System Center Configuration Manager para exibir
 
 3.  Escolha o computador que contém o inventário que você deseja exibir e, em seguida, na guia **Início** > grupo **Dispositivos**, escolha **Iniciar** >  **Gerenciador de Recursos**.   
 
-4.  Clique com o botão direito do mouse em qualquer item do painel direito da janela **Gerenciador de Recursos** e escolha **Propriedades** para abrir a caixa de diálogo ***Propriedades** do <nome do item\>* para exibir as informações de inventário coletadas em um formato mais legível.  
+4.  Clique com o botão direito do mouse em qualquer item do painel direito da janela **Gerenciador de Recursos** e escolha **Propriedades** para abrir a caixa de diálogo ****Propriedades\>* do <nome do item* para exibir as informações de inventário coletadas em um formato mais legível.  
 

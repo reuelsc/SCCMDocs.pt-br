@@ -1,26 +1,20 @@
 ---
-title: "Criar relatórios personalizados"
+title: Criar relatórios personalizados
 titleSuffix: Configuration Manager
-description: "Defina modelos de relatório para atender aos requisitos de negócios e, em seguida, implante os modelos de relatório no Configuration Manager."
-ms.custom: na
+description: Defina modelos de relatório para atender aos requisitos de negócios e, em seguida, implante os modelos de relatório no Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f2df88b4-c348-4dcf-854a-54fd6eedf485
-caps.latest.revision: "5"
-caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 56274cbec336219a7734d23bf1bade8a7892de30
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: fd606ff7068b7c14047e445d16ea78d20a5c12ea
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="creating-custom-report-models-for-system-center-configuration-manager-in-sql-server-reporting-services"></a>Criando modelos de relatório personalizados para o System Center Configuration Manager no SQL Server Reporting Services
 
@@ -175,7 +169,7 @@ Exemplos de modelos de relatórios estão incluídos no System Center Configurat
 
 9. Salve e feche o arquivo *&lt;Nome do Modelo\>***.smdl**.  
 
-10. Copie o arquivo *&lt;Nome do Modelo\>***.smdl** para a pasta *%programfiles%*\Microsoft Configuration Manager \AdminConsole\XmlStorage\Other no servidor do site do Configuration Manager.  
+10. Copie o arquivo *&lt;Nome do Modelo\>***.smdl** na pasta *%programfiles%* \Microsoft Configuration Manager \AdminConsole\XmlStorage\Other no servidor do site do Configuration Manager.  
 
     > [!IMPORTANT]  
     >  Depois de copiar o arquivo do modelo de relatório para o servidor do site do Configuration Manager, saia e reinicie o console do Configuration Manager antes de usar o modelo de relatório no **Assistente para Criar Relatório**.  
@@ -418,7 +412,7 @@ Exemplos de modelos de relatórios estão incluídos no System Center Configurat
 
 9. Salve e feche o arquivo *&lt;Nome do Modelo\>***.smdl**.  
 
-10. Copie o arquivo *&lt;Nome do Modelo\>***.smdl** para a pasta *%programfiles%*\Microsoft Configuration Manager\AdminConsole\XmlStorage\Other no servidor do site do Configuration Manager.  
+10. Copie o arquivo *&lt;Nome do Modelo\>***.smdl** na pasta *%programfiles%* \Microsoft Configuration Manager\AdminConsole\XmlStorage\Other no servidor do site do Configuration Manager.  
 
     > [!IMPORTANT]  
     >  Depois de copiar o arquivo do modelo de relatório para o servidor do site do Configuration Manager, saia e reinicie o console do Configuration Manager antes de usar o modelo de relatório no **Assistente para Criar Relatório**.  

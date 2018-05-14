@@ -2,24 +2,19 @@
 title: Perguntas frequentes sobre o cliente Endpoint Protection
 titleSuffix: Configuration Manager
 description: Obtenha respostas para as perguntas frequentes sobre o Windows Defender e o Endpoint Protection.
-ms.custom: na
 ms.date: 12/09/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: e3aaa9d2-a40e-42b1-ad75-5a115351729e
-caps.latest.revision: "15"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 2656a5c40dbd2916ef36268936a4e2163ebde14d
-ms.sourcegitcommit: 372171a5cd8d143d6d47b651018cda0c91cad67c
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 7e86c8196cf2ff2473b066fccf741c2df20cd8f9
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Perguntas frequentes sobre o cliente Endpoint Protection
 
@@ -158,7 +153,7 @@ Para remover todos os itens indesejados ou potencialmente prejudiciais que o Win
 
 -   Verifique se o software antivírus e antispyware, o Windows Defender, está usando as atualizações mais recentes contra possíveis ameaças (veja Como manter definições de vírus e spyware atualizadas?). Certifique-se também de estar sempre usando a última versão do Windows Defender.  
 
--   Baixe atualizações apenas de fontes confiáveis. Para sistemas operacionais Windows, sempre vá para [Microsoft Update](http://go.microsoft.com/fwlink/?LinkID=96304) (http://go.microsoft.com/fwlink/?LinkID=96304) e para outros software use sempre sites legítimos da empresa ou da pessoa que os produz.  
+-   Baixe atualizações apenas de fontes confiáveis. Para sistemas operacionais Windows, sempre vá para [Microsoft Update](http://go.microsoft.com/fwlink/?LinkID=96304) (http://go.microsoft.com/fwlink/?LinkID=96304) e, para outros softwares, use sempre sites legítimos da empresa ou da pessoa que os produz.  
 
 -   Se você receber um email com um anexo e não tiver certeza da origem, exclua-o imediatamente. Não baixe nenhum aplicativo ou arquivos de fontes desconhecidas e seja cuidadoso ao trocar arquivos com outros usuários.  
 
@@ -219,7 +214,7 @@ Para remover todos os itens indesejados ou potencialmente prejudiciais que o Win
 |Verificar todos os downloads|Essa opção monitora arquivos e programas baixados, inclusive arquivos baixados automaticamente por meio do Windows Internet Explorer e Microsoft Outlook® Express, como controles ActiveX® e programas de instalação de software. Esses arquivos podem ser baixados, instalados ou executados pelo próprio navegador. Softwares mal-intencionados, incluindo vírus, spywares e outros softwares potencialmente indesejados, podem ser incluídos nesses arquivos e instalados sem seu conhecimento.<br /><br /> Usando a opção de proteção em tempo real, o Windows Defender monitora o tempo todo o computador e verifica os arquivos ou programas mal-intencionados que você possa ter baixado. Esse recurso de monitoramento significa que o Windows Defender não precisa tornar mais lenta sua experiência de navegação ou email, exigindo uma verificação de arquivos ou programas que você queira baixar.|  
 |Monitorar atividade de arquivos e programas no computador|Essa opção monitora quando os arquivos e programas começam a ser executados no computador e o alerta sobre quaisquer ações executadas por eles ou neles. Isso é importante, pois o software mal-intencionado pode usar as vulnerabilidades nos programas que você instalou para executar software mal-intencionado ou indesejado sem seu conhecimento. Por exemplo, spyware pode ser executado em segundo plano quando você inicia um programa que usa com frequência. O Windows Defender monitora os programas e o alerta quando detecta atividade suspeita.|  
 |Habilitar o comportamento de monitoramento|Essa opção monitora coleções de padrões de comportamento suspeitos que não podem ser detectados por métodos de detecção de antivírus tradicionais.|  
-|Ativar o sistema de inspeção de rede|Esta opção ajuda a proteger o computador contra explorações de â€œdia zeroâ€ de vulnerabilidades conhecidas, diminuindo a janela de tempo entre o momento em que uma vulnerabilidade é descoberta e a aplicação de uma atualização.|  
+|Ativar o sistema de inspeção de rede|Esta opção ajuda a proteger o computador contra explorações de "dia zero" de vulnerabilidades conhecidas, diminuindo a janela de tempo entre o momento em que uma vulnerabilidade é descoberta e a aplicação de uma atualização.|  
 
 ### <a name="to-turn-off-real-time-protection"></a>Para desligar a proteção em tempo real  
 

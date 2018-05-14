@@ -1,21 +1,20 @@
 ---
-title: "Alterar a autoridade de MDM para usuários específicos (autoridade de MDM mista)"
+title: Alterar a autoridade de MDM para usuários específicos (autoridade de MDM mista)
 titleSuffix: Configuration Manager
-description: "Saiba como alterar a autoridade de MDM do MDM híbrido para Intune autônomo somente para alguns usuários."
-keywords: 
-author: dougeby
+description: Saiba como alterar a autoridade de MDM do MDM híbrido para Intune autônomo somente para alguns usuários.
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.date: 12/05/2017
-ms.topic: article
-ms.prod: configmgr-hybrid
-ms.service: 
-ms.technology: 
+ms.date: 04/30/2018
+ms.topic: conceptual
+ms.prod: configuration-manager
+ms.technology: configmgr-hybrid
 ms.assetid: 6f0201d7-5714-4ba0-b2bf-d1acd0203e9a
-ms.openlocfilehash: 59fb06d14002f781e0448a64bb0064b4add2f087
-ms.sourcegitcommit: ac9268e31440ffe91b133c2ba8405d885248d404
+ms.openlocfilehash: 46fb1333c58f3010acde4d064044a124050d211a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="change-the-mdm-authority-for-specific-users-mixed-mdm-authority"></a>Alterar a autoridade de MDM para usuários específicos (autoridade de MDM mista) 
 
@@ -105,45 +104,40 @@ O cmdlet alterna a autoridade de gerenciamento de dispositivos MDM sem afinidade
 
 
 ### <a name="parameters"></a>PARÂMETROS
-``` powershell
--Credential <PSCredential>
-Credential for Intune Tenant Admin or Service Admin account to use when switching device management authorities. The user is prompted for credentials if the parameter is not specified.
+#### `-Credential <PSCredential>`
+Um objeto de credencial do PowerShell para a conta de usuário do Azure AD que é usado ao alternar as autoridades de gerenciamento de dispositivo. As credenciais serão solicitadas ao usuário se o parâmetro não for especificado. A função do diretório para esta conta de usuário deve ser um **Administrador global** ou um **Administrador limitado** com a função administrativa de **Administrador do Intune**.
 
--DeviceIds <Guid[]>
-The ids of the MDM devices that need to have their management authority switched. The device ids are unique identifiers for the devices displayed by the Configuration Manager console.
+#### `-DeviceIds <Guid[]>`
+As IDs dos dispositivos de MDM que precisam ter sua autoridade de gerenciamento alternada. As IDs de dispositivo são identificadores exclusivos para os dispositivos exibidos pelo console do Configuration Manager.
 
--Force [<SwitchParameter>]
-Specify parameter to disable the Should Continue prompt.<br>
+#### `-Force [<SwitchParameter>]`
+Especifique um parâmetro para desabilitar o prompt Deve Continuar.<br>
  
--LogFilePath <string>
-Path to log file location.
+#### `-LogFilePath <string>`
+Caminho para o local do arquivo de log.
  
--LoggingLevel <SourceLevels>
-The log level used to determine the type of logs that need to be written to the log file.
+#### `-LoggingLevel <SourceLevels>`
+O nível de log é usado para determinar o tipo dos logs que precisam ser gravados no arquivo de log.
  
-The following are the possible values for LoggingLevel:
+Esses são os valores possíveis para LoggingLevel:
 
   - ActivityTracing
-  - All
-  - Critical
-  - Error
-  - Information
-  - Off
-  - Verbose
-  - Warning
+  - Todos
+  - Crítico
+  - Erro
+  - Informações
+  - Desativar
+  - Detalhado
+  - Aviso
  
--Confirm [<SwitchParameter>]
-Prompts you for confirmation before executing the command.
+#### `-Confirm [<SwitchParameter>]`
+Solicita a sua confirmação antes de executar o comando.
  
--WhatIf [<SwitchParameter>]
-Describes what would happen if you executed the command without actually executing the command.
+#### `-WhatIf [<SwitchParameter>]`
+Descreve o que aconteceria se você executasse o comando, sem chegar a executá-lo de verdade.
  
-<CommonParameters>
-This cmdlet supports the common parameters: Verbose, Debug,
-ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-OutBuffer, PipelineVariable, and OutVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
-```
+#### `<CommonParameters>`
+Este cmdlet dá suporte a parâmetros comuns: Verbose, Debug, ErrorAction, ErrorVariable, WarningAction, WarningVariable, OutBuffer, PipelineVariable e OutVariable. Para obter mais informações, veja [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ### <a name="example-1"></a>Exemplo 1
 
@@ -162,13 +156,13 @@ Description
  
 Successfully switched the management authority of the device from Configuration Manager to Intune.
 ```
+
 ### <a name="remarks"></a>COMENTÁRIOS
-``` powershell
-To see the examples, type: "get-help Switch-MdmDeviceAuthority -examples".
-For more information, type: "get-help Switch-MdmDeviceAuthority -detailed".
-For technical information, type: "get-help Switch-MdmDeviceAuthority -full".
-For online help, type: "get-help Switch-MdmDeviceAuthority -online".
-```
+- Para ver os exemplos, digite: `get-help Switch-MdmDeviceAuthority -examples`  
+- Para obter mais informações, digite: `get-help Switch-MdmDeviceAuthority -detailed`  
+- Para obter informações técnicas, digite: `get-help Switch-MdmDeviceAuthority -full`  
+- Para obter ajuda online, digite: `get-help Switch-MdmDeviceAuthority -online`   
+
 
 ## <a name="next-steps"></a>Próximas etapas
 Depois de migrar usuários e testar a funcionalidades do Intune, considere se você está pronto para [alterar a autoridade de MDM](migrate-change-mdm-authority.md) do locatário do Intune do Configuration Manager para o Intune. 

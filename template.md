@@ -1,20 +1,25 @@
 ---
-title: "TÍTULO DO ARTIGO | Microsoft Docs"
-description: 
-keywords: 
-author: GITHUB USERNAME
-manager: ALIAS
-ms.date: 10/06/2016
-ms.topic: article
-ms.prod: 
-ms.service: 
-ms.technology: 
-ms.assetid: GET ONE FROM guidgenerator.com
-ms.openlocfilehash: a218011ded1ff3acc1dbd24471119b701f2cce23
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+title:
+- TÍTULO DO ARTIGO em 35 caracteres ou menos
+titleSuffix: Configuration Manager
+description: ''
+ms.date: mm/dd/yyyy
+ms.prod: configuration-manager
+ms.technology: configmgr-other
+ms.topic: conceptual
+ms.assetid:
+- GET ONE FROM guidgenerator.com
+author:
+- GITHUB USERNAME
+ms.author:
+- ALIAS
+manager:
+- ALIAS
+ms.openlocfilehash: bb0a23b8870d31136967b1bc594580bcc2cd0cd9
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="metadata-and-markdown-template"></a>Modelo de metadados e Markdown
 
@@ -95,7 +100,7 @@ Se aparecer uma URL em um arquivo markdown, ela será transformada em um link cl
 1. é
 1. uma
 1. lista
-1. ordenada  
+1. Lista  
 
 
 #### <a name="ordered-list-with-an-embedded-list"></a>Lista ordenada com uma lista inserida
@@ -107,23 +112,23 @@ Se aparecer uma URL em um arquivo markdown, ela será transformada em um link cl
     1. inserida
     1. Professor Black
 1. Senhorita Scarlett
-1. e ordenada
+1. lista
 
 
 ### <a name="unordered-lists"></a>Listas Não Ordenadas
 
 - Esta
 - é
-- uma
+- a
 - lista
-- com marcadores
+- lista
 
 
 ##### <a name="unordered-list-with-an-embedded-lists"></a>Lista não ordenada com uma lista incorporada
 
 - Esta
 - lista
-- com marcadores
+- lista
     - Dona Violeta
     - Sr. Marinho
 - contém  

@@ -1,26 +1,20 @@
 ---
-title: "Ferramenta de manutenção de hierarquia"
+title: Ferramenta de manutenção de hierarquia
 titleSuffix: Configuration Manager
-description: "Entenda o que faz a ferramenta de manutenção de hierarquia e por que você pode usá-la. Inclui referência de opções de linha de comando."
-ms.custom: na
+description: Entenda o que faz a ferramenta de manutenção de hierarquia e por que você pode usá-la. Inclui referência de opções de linha de comando.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: cead6825-6113-4ba5-a381-ac3598dfee86
-caps.latest.revision: "7"
-caps.handback.revision: "0"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 02bd5bfe0fc4ccc976d95b944bd51e9f0a276db0
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 4dd1bf9b4085b6e1591d5841bfc307398505f5d1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hierarchy-maintenance-tool-preinstexe-for-system-center-configuration-manager"></a>Ferramenta de Manutenção de Hierarquia (Preinst.exe) para o System Center Configuration Manager
 
@@ -47,14 +41,14 @@ Quando você usa a ferramenta de Manutenção de Hierarquia, deve executá-la lo
 
 Ao executar a ferramenta de Manutenção de Hierarquia, é necessário usar a seguinte sintaxe: preinst.exe /&lt;opção\>. Veja a seguir as opções de linha de comando.  
 
- **/DELJOB &lt;*CódigoDoSite*>** use esta opção em um site para excluir todos os trabalhos ou comandos do site atual para o site de destino especificado.  
+ **/DELJOB &lt;*CódigoDoSite*>** – use esta opção em um site para excluir todos os trabalhos ou comandos do site atual para o site de destino especificado.  
 
- **/DELSITE &lt;*CódigoDoSiteFilhoASerRemovido*>** use esta opção em um site pai para excluir os dados de sites filho do banco de dados do site pai. Normalmente, você usará essa opção se um computador do servidor do site for encerrado antes que se desinstale o site dele.  
+ **/DELSITE &lt;*CódigoDoSiteFilhoASerRemovido*>** – use esta opção em um site pai para excluir os dados de sites filho do banco de dados do site pai. Normalmente, você usará essa opção se um computador do servidor do site for encerrado antes que se desinstale o site dele.  
 
 > [!NOTE]  
 >  A opção /DELSITE não desinstala o site no computador especificado pelo parâmetro ChildSiteCodeToRemove. Esta opção apenas remove as informações do banco de dados do site do Configuration Manager.  
 
-**/DUMP &lt;*CódigoDoSite*>**: use esta opção no servidor do site local para gravar imagens de controle de site na pasta raiz da unidade na qual o site está instalado. Você pode gravar uma imagem específica de controle de site na pasta ou gravar todos os arquivos de controle de site na hierarquia.  
+**/DUMP &lt;*CódigoDoSite*>** – use esta opção no servidor do site local para gravar imagens de controle de site na pasta raiz da unidade na qual o site está instalado. Você pode gravar uma imagem específica de controle de site na pasta ou gravar todos os arquivos de controle de site na hierarquia.  
 
 -   /DUMP &lt;*CódigoDoSite*> grava a imagem de controle de site somente para o site especificado.  
 

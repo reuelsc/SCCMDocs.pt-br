@@ -1,26 +1,20 @@
 ---
-title: "Verificador de Pré-requisitos"
+title: Verificador de Pré-requisitos
 titleSuffix: Configuration Manager
-description: "Saiba como usar o Verificador de Pré-requisitos para identificar e corrigir problemas que podem impedir a instalação de um site ou função de sistema de sites."
-ms.custom: na
+description: Saiba como usar o Verificador de Pré-requisitos para identificar e corrigir problemas que podem impedir a instalação de um site ou função de sistema de sites.
 ms.date: 3/1/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: aaf13bb8-4ba2-4bd7-9fac-d36a9d88a1b6
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 45e356b153a95a49f09f2d2931b8b306d0fd2b4c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 296ed6590c10adeab22fb274d5e6f44bc578a784
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prerequisite-checker-for-system-center-configuration-manager"></a>Verificador de pré-requisitos para System Center Configuration Manager
 

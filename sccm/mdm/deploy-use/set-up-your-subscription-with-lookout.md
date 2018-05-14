@@ -1,25 +1,20 @@
 ---
 title: Configurar sua assinatura com Lookout
 titleSuffix: Configuration Manager
-description: "Este tópico fornece detalhes sobre como configurar a proteção contra ameaças de dispositivo do Lookout."
-ms.custom: na
+description: Este tópico fornece detalhes sobre como configurar a proteção contra ameaças de dispositivo do Lookout.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 6087b279-ba05-4824-b5e3-3af14f3d3cfe
-caps.latest.revision: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 142926bc41a79adc8d8300e413022fb0e3566c5a
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 08bf88c0f6660c213c47a5ed283b3be0431056a2
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="set-up-your-subscription-for--lookout-device-threat-protection"></a>Configure sua assinatura para a proteção contra ameaças de dispositivo do Lookout
 
@@ -59,7 +54,7 @@ O suporte do Lookout funcionará com seu contato principal para integrar sua ass
 
 ## <a name="configure-your-subscription-with-lookout-device-threat-protection"></a>Configure sua assinatura com a proteção contra ameaças de dispositivo do Lookout
 ### <a name="step-1-set-up-your-device-threat-protection"></a>Etapa1: configure a proteção contra ameaças de dispositivo
-Depois que o suporte do Lookout criar sua conta do Lookout Enterprise, você poderá entrar no console do Lookout.   Um email do Lookout Enterprise é enviado para o contato principal da sua empresa com um link para a URL de logon: https://aad.lookout.com/les?action=consent
+Depois que o suporte do Lookout criar sua conta do Lookout Enterprise, você poderá entrar no console do Lookout.   Um email do Lookout é enviado para o contato principal da sua empresa com um link para a URL de logon: https://aad.lookout.com/les?action=consent
 
 Você deve usar uma conta de usuário com a função de Administrador Global do Azure AD quando fizer logon pela primeira vez no console do Lookout, pois o Lookout requer que essas informações registrem seu locatário do Azure AD.   A entrada subsequente não exigirá que o usuário tenha esse nível de privilégio do Azure AD.  Neste primeiro logon, é exibida uma página de consentimento. Escolha **Aceitar** para concluir o registro.
 

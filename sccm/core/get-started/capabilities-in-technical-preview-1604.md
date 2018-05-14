@@ -1,26 +1,21 @@
 ---
 title: Recursos no Technical Preview 1604
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1604."
-ms.custom: na
+description: Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1604.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 684a5559-9e6e-469b-86ae-e768e9f0c9ac
-caps.latest.revision: "8"
-author: erikje
-ms.author: erikje
-manager: angrobe
+author: aczechowski
 robots: noindex,nofollow
-ms.openlocfilehash: a6a3bb10b751768cd0e3987b30c80b5953e8eda5
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 113e22c33e9e8545c382373f3ba093dba3969939
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1604-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1604 do System Center Configuration Manager
 
@@ -45,7 +40,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
 1.  No Azure Active Directory, registre o Configuration Manager como uma ferramenta de gerenciamento de "Aplicativo Web e/ou API da Web". Isso fornecerá uma ID de cliente que você precisará mais tarde.  
 
-    1.  No nó **Active Directory** de [https://manage.windowsazure.com](https://manage.windowsazure.com), selecione seu Azure Active Directory e clique em **Aplicativos** > **Adicionar**.  
+    1.  No nó do **Active Directory** do [https://manage.windowsazure.com](https://manage.windowsazure.com), selecione Azure Active Directory, clique em **Aplicativos** > **Adicionar**.  
 
     2.  Clique em **Adicionar um aplicativo que minha organização esteja desenvolvendo**.  
 
@@ -63,7 +58,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
 3.  Na Windows Store para Empresas, configure o Configuration Manager como a ferramenta de gerenciamento da loja.  
 
-    1.  Abra [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/en-us/managementtools) e se conecte, se solicitado.  
+    1.  Abra [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/en-us/managementtools) e entre, se solicitado.  
 
     2.  Aceite os termos de uso, se necessário.  
 

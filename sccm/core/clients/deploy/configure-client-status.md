@@ -1,27 +1,20 @@
 ---
 title: Configurar o status do cliente
 titleSuffix: Configuration Manager
-description: "Selecione as configurações do status do cliente no System Center Configuration Manager."
-ms.custom: na
+description: Selecione as configurações do status do cliente no System Center Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: a2275ba2-c83d-43e7-90ed-418963a707fe
-caps.latest.revision: 
-caps.handback.revision: 
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 5db52925515e65797a43ed35775460369f742f49
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 8f919e647ae252731d60a98e01485a01aae10698
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-configure-client-status-in-system-center-configuration-manager"></a>Como configurar o status do cliente no System Center Configuration Manager
 
@@ -78,7 +71,7 @@ Para monitorar o status do cliente do System Center Configuration Manager e corr
     > [!NOTE]  
     >  Você não pode configurar alertas para coleções de usuário.  
 
-4.  Na guia **Alertas** da caixa de diálogo *&lt;Nome da Coleção\>***Propriedades**, clique em **Adicionar**.  
+4.  Na guia **Alertas** da caixa de diálogo *&lt;***Propriedades* do \>nome da coleção*, clique em **Adicionar**.  
 
     > [!NOTE]  
     >  A guia **Alertas** torna-se visível somente se a função de segurança com a qual você está associado tiver permissões para alertas.  
@@ -93,7 +86,7 @@ Para monitorar o status do cliente do System Center Configuration Manager e corr
 
     -   **Gerar alerta** – Especifique o percentual de limite para o alerta.  
 
-7.  Clique em **OK** para fechar a caixa de diálogo *&lt;Nome da Coleção\>***Propriedades**.  
+7.  Clique em **OK** para fechar a caixa de diálogo *&lt;***Propriedades* do \>nome da coleção*.  
 
 ##  <a name="BKMK_3"></a> Para excluir computadores de correção automática  
 

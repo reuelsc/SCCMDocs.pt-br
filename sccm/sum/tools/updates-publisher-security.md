@@ -1,27 +1,21 @@
 ---
-title: "Certificados e segurança"
+title: Certificados e segurança
 titleSuffix: Configuration Manager
-description: "Gerenciar certificados e segurança para o System Center Updates Publisher"
-ms.custom: na
+description: Gerenciar certificados e segurança para o System Center Updates Publisher
 ms.date: 4/29/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-sum
+ms.topic: conceptual
 ms.assetid: a7f91e63-4750-402e-9970-dd14be7f76a3
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 9d8812da3588b60f388288cef6f9a093731d873f
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: b3ce22747cddc1371fb38718cc97b70cda8afcb1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-certificates-and-security-for-updates-publisher"></a>Gerenciar certificados e segurança para o Updates Publisher
 
@@ -51,7 +45,7 @@ O procedimento a seguir é um dos vários métodos possíveis para adicionar o c
 
 8.  Se um certificado autoassinado for usado, como **Editores WSUS Autoassinados**, clique com botão direito em **Autoridades de Certificação Raiz Confiáveis**, clique em **Todas as Tarefas** e, em seguida, clique em **Importar**. Conclua o Assistente para Importar Certificados usando o arquivo exportado na etapa 6.
 
-9.  Clique com botão direito em **Certificados (*nome do servidor de atualização*)**, clique em **Conectar a outro computador**, insira o nome do computador do Updates Publisher e clique em **OK**.
+9.  Clique com o botão direito do mouse em **Certificados (*nome do servidor de atualização*)**, clique em **Conectar a outro computador**, insira o nome do computador do Updates Publisher e clique em **OK**.
 
 10. Se o Updates Publisher for remoto com relação ao servidor de atualização, repita as etapas 7 a 9 para importar o certificado para o repositório de certificados no computador do Updates Publisher.
 

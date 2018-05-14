@@ -2,25 +2,19 @@
 title: Criar e aplicar planos de energia
 titleSuffix: Configuration Manager
 description: Criar e aplicar planos de energia no System Center Configuration Manager.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 738eddaa-52e2-467f-b453-821ef2884d47
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: ec32a0b1591fffe77ace91f478e03302f429c957
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 4504f26f8f6288750d36028d8eb795ae0d839fbc
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-and-apply-power-plans-in-system-center-configuration-manager"></a>Como criar e aplicar planos de energia no System Center Configuration Manager
 
@@ -52,7 +46,7 @@ O gerenciamento de energia no System Center Configuration Manager permite que vo
 
 3.  Na lista **Coleções de Dispositivos** , clique na coleção à qual deseja aplicar as configurações de gerenciamento de energia e, na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  Na guia **Gerenciamento de Energia** da caixa de diálogo *Propriedades\>***<Nome de Coleção**, selecione **Especificar configurações de gerenciamento de energia para esta coleção**.  
+4.  Na guia **Gerenciamento de Energia** da caixa de diálogo ****Propriedades\>* do <nome da coleção*, selecione **Especificar configurações de gerenciamento de energia para esta coleção**.  
 
     > [!NOTE]  
     >  Você também pode clicar em **Procurar** e copiar as configurações do gerenciamento de energia de uma coleção selecionada para a coleção selecionada.  
@@ -69,12 +63,12 @@ O gerenciamento de energia no System Center Configuration Manager permite que vo
     > [!NOTE]  
     >  Você pode usar o relatório **Atividade do computador** para ajudá-lo a decidir os agendamentos a ser usados para o horário de pico e fora de pico quando aplicar os planos de energia às coleções de computadores. Para mais informações, consulte [Como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
 
-     Também é possível selecionar **Equilibrado (ConfigMgr)**, **Alto Desempenho (ConfigMgr)** e **Economia de Energia (ConfigMgr)**nos planos de energia internos e depois clicar em **Exibição** para exibir as propriedades de cada plano de energia.  
+     Também é possível selecionar **Equilibrado (ConfigMgr)**, **Alto Desempenho (ConfigMgr)** e **Economia de Energia (ConfigMgr)** nos planos de energia internos e depois clicar em **Exibição** para exibir as propriedades de cada plano de energia.  
 
     > [!NOTE]  
     >  Não é possível modificar os planos de energia internos.  
 
-8.  Na caixa de diálogo *Propriedades\>***<nome do plano de energia**, defina as seguintes configurações:  
+8.  Na caixa de diálogo ****Propriedades* do\><nome do plano de energia*, defina as seguintes configurações:  
 
     -   **Nome:** especifique um nome para esse plano de energia ou use o valor padrão fornecido.  
 
@@ -85,9 +79,9 @@ O gerenciamento de energia no System Center Configuration Manager permite que vo
         > [!IMPORTANT]  
         >  As configurações habilitadas são aplicadas aos computadores quando o plano de energia é aplicado. Se você desmarcar uma caixa de seleção da configuração de energia, o valor no computador cliente não será alterado quando o plano de energia é aplicado. Desmarcar uma caixa de seleção não restaura a configuração de energia para seu valor anterior à aplicação de um plano de energia.  
 
-9. Clique em **OK** para fechar a caixa de diálogo *Propriedades\>***<nome do plano de energia**.  
+9. Clique em **OK** para fechar a caixa de diálogo ****Propriedades* do\><nome do plano de energia*.  
 
-10. Clique em **OK** para fechar a caixa de diálogo *Configurações\>***<Nome da Coleção** e aplicar o plano de energia.  
+10. Clique em **OK** para fechar a caixa de diálogo ****Configurações* do \><nome da coleção* e aplicar o plano de energia.  
 
 ##  <a name="BKMK_Plans"></a> Available power management plan settings  
  A tabela a seguir lista as configurações de gerenciamento de energia disponíveis no Configuration Manager. Você pode definir configurações separadas para quando o computador estiver conectado ou funcionando com bateria. Dependendo da versão do Windows que você está usando, algumas configurações podem não ser configuráveis.  
@@ -95,20 +89,20 @@ O gerenciamento de energia no System Center Configuration Manager permite que vo
 > [!NOTE]  
 >  As configurações de energia que não forem definidas manterão seu valor atual nos computadores cliente.  
 
-|Nome|Descrição|  
+|Name|Descrição|  
 |----------|-----------------|  
 |**Desligar o monitor após (minutos)**|Especifica o período de tempo, em minutos, em que o computador deverá ficar inativo antes que a tela seja desligada. Especifique um valor de **0** se você não quiser que o gerenciamento de energia desligue a tela.|  
 |**Suspensão após (minutos)**|Especifica o período de tempo, em minutos, em que o computador deverá ficar inativo antes de entrar no modo de suspensão. Especifique um valor de **0** se não quiser que o gerenciamento de energia entre no modo de suspensão no computador.|  
 |**Exigir uma senha durante a ativação**|Um valor **Sim** ou **Não** especifica se uma senha é necessária para desbloquear o computador quando ele entra a ativação do modo de suspensão.|  
-|**Ação do botão de energia**|Especifica a ação executada quando o botão de energia do computador é pressionado. Especifica a ação que ocorre quando o usuário fecha a tampa de um computador portátil. Os valores possíveis são **Não fazer nada**, **Suspender**, **Hibernar** e **Desligar**.|  
-|**Botão de energia do menu Iniciar**|Especifica a ação que ocorre quando você pressiona o botão de energia do menu **Iniciar** do computador. Especifica a ação que ocorre quando o usuário fecha a tampa de um computador portátil. Os valores possíveis são **Suspender**, **Hibernar** e **Desligar**.|  
-|**Ação do botão Suspender**|Especifica a ação que ocorre quando você pressiona o botão **Suspensão** do computador. Especifica a ação que ocorre quando o usuário fecha a tampa de um computador portátil. Os valores possíveis são **Não fazer nada**, **Suspender**, **Hibernar** e **Desligar**.|  
-|**Ação de fechamento da tampa**|Especifica a ação que ocorre quando o usuário fecha a tampa de um computador portátil. Os valores possíveis são **Não fazer nada**, **Suspender**, **Hibernar** e **Desligar**.|  
+|**Ação do botão de energia**|Especifica a ação executada quando o botão de energia do computador é pressionado. Especifica a ação que ocorre quando o usuário fechar a tampa de um computador portátil. Os valores possíveis são **Não fazer nada**, **Suspender**, **Hibernar** e **Desligar**.|  
+|**Botão de energia do menu Iniciar**|Especifica a ação que ocorre quando você pressiona o botão de energia do menu **Iniciar** do computador. Especifica a ação que ocorre quando o usuário fechar a tampa de um computador portátil. Os valores possíveis são **Suspender**, **Hibernar** e **Desligar**.|  
+|**Ação do botão Suspender**|Especifica a ação que ocorre quando você pressiona o botão **Suspensão** do computador. Especifica a ação que ocorre quando o usuário fechar a tampa de um computador portátil. Os valores possíveis são **Não fazer nada**, **Suspender**, **Hibernar** e **Desligar**.|  
+|**Ação de fechamento da tampa**|Especifica a ação que ocorre quando o usuário fechar a tampa de um computador portátil. Os valores possíveis são **Não fazer nada**, **Suspender**, **Hibernar** e **Desligar**.|  
 |**Desligar o disco rígido após (minutos)**|Especifica o período de tempo, em minutos, em que o disco rígido do computador deverá ficar inativo antes que ele seja desligado. Especifique um valor de **0** se você não quiser que o gerenciamento de energia desligue o disco rígido do computador.|  
 |**Hibernação após (minutos)**|Especifica o período de tempo, em minutos, em que o computador deverá ficar inativo antes de entrar no modo de hibernação. Especifique um valor de **0** se não quiser que o gerenciamento de energia entre no modo de hibernação no computador.|  
-|**Ação de bateria fraca**|Especifica a ação que ocorre quando a bateria do computador atinge o nível de notificação de bateria fraca especificado. Especifica a ação que ocorre quando o usuário fecha a tampa de um computador portátil. Os valores possíveis são **Não fazer nada**, **Suspender**, **Hibernar** e **Desligar**.|  
-|**Ação de bateria crítica**|Especifica a ação executada quando a bateria do computador atinge o nível de notificação de bateria crítica especificado. Especifica a ação que ocorre quando o usuário fecha a tampa de um computador portátil. Os valores possíveis incluem **Suspender**, **Hibernar** e **Desligar**.|  
+|**Ação de bateria fraca**|Especifica a ação que ocorre quando a bateria do computador atinge o nível de notificação de bateria fraca especificado. Especifica a ação que ocorre quando o usuário fechar a tampa de um computador portátil. Os valores possíveis são **Não fazer nada**, **Suspender**, **Hibernar** e **Desligar**.|  
+|**Ação de bateria crítica**|Especifica a ação executada quando a bateria do computador atinge o nível de notificação de bateria crítica especificado. Especifica a ação que ocorre quando o usuário fechar a tampa de um computador portátil. Os valores possíveis incluem **Suspender**, **Hibernar** e **Desligar**.|  
 |**Permitir suspensão híbrida**|Selecionar o valor **On** ou **Off** especifica se o Windows salva um arquivo de hibernação quando entrando em suspensão, o que pode ser usado para restaurar o estado do computador em caso de perda de energia enquanto ele entrou em suspensão.<br /><br /> A suspensão híbrida foi projetada para computadores desktop e, por padrão, não está habilitada em computadores portáteis. Em computadores que executam o Windows 7, a habilitação da suspensão híbrida desabilita a funcionalidade de hibernação.|  
 |**Permitir estado de espera durante a ação de suspensão**|Selecionar o valor **On** ou **Off** permite que o computador esteja em espera, o que ainda consome alguns energia, mas permite que o computador seja ativado mais rapidamente. Se essa configuração for definida como **Desligado**, o computador poderá apenas hibernar ou ser desligado.|  
 |**Ociosidade necessária para suspensão (%)**|Especifica o percentual de tempo ocioso no tempo do processador do computador necessário para que o computador entre no modo de suspensão. Para computadores que executam o Windows 7, esse valor é sempre definido como **0**.|  
-|**Habilitar o temporizador de ativação do Windows para computadores desktop**|Selecionar o valor **Habilitar** ou **Desabilitar** pode habilitar o temporizador interno do Windows a ser usado pelo gerenciamento de energia para ativar um computador desktop. Quando um computador desktop é ativado usando o temporizador de ativação do Windows, ele permanecerá ativo por 10 minutos por padrão para permitir que computador tenha tempo para instalar quaisquer atualizações ou receber a política.<br /><br /> Não há suporte para temporizadores de ativação em computadores portáteis, para evitar cenários em que possam ser ativados quando não estiverem conectados.|  
+|**Habilitar o temporizador de ativação do Windows para computadores desktop**|Selecionar o valor **Habilitar** ou **Desabilitar** pode habilitar o temporizador interno do Windows a ser usado pelo gerenciamento de energia para ativar um computador desktop. Quando um computador desktop é ativado usando o timer de ativação do Windows, ele permanecerá ativo por 10 minutos por padrão para permitir um tempo para o computador para instalar as atualizações ou recebem a política.<br /><br /> Não há suporte para temporizadores de ativação em computadores portáteis, para evitar cenários em que possam ser ativados quando não estiverem conectados.|  

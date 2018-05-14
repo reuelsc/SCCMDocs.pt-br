@@ -1,25 +1,20 @@
 ---
-title: "Referência da instalação"
+title: Referência da instalação
 titleSuffix: Configuration Manager
-description: "Examine essa referência para ajudar você a se preparar para instalar um site ou hierarquia do Configuration Manager."
-ms.custom: na
+description: Examine essa referência para ajudar você a se preparar para instalar um site ou hierarquia do Configuration Manager.
 ms.date: 4/18/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: cdb9fb0c-0912-41e4-b427-f40620971763
-caps.latest.revision: "22"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: bc85d1140b19167b31d5ae2176ddbcb9320b21e1
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: f9f857a2045f67690579955236c082ff29721a5f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="reference-for-system-center-configuration-manager-setup"></a>Referência da instalação do System Center Configuration Manager
 
@@ -75,4 +70,4 @@ Os três níveis de coleção de dados são:
 
 Para saber mais, incluindo a divulgação dos detalhes coletados por cada nível, veja [Dados de diagnóstico e de uso para o System Center Configuration Manager](../../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md).  
 
-Para exibir o System Center Configuration Manager Privacy Statement online, vá para [http://go.microsoft.com/fwlink/?LinkID=626527](http://go.microsoft.com/fwlink/?LinkID=626527).
+Para exibir a política de privacidade online do System Center Configuration Manager, vá para [http://go.microsoft.com/fwlink/?LinkID=626527](http://go.microsoft.com/fwlink/?LinkID=626527).

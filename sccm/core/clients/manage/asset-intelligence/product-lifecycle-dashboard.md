@@ -1,28 +1,21 @@
 ---
 title: Painel do Ciclo de Vida do Produto
 titleSuffix: Configuration Manager
-description: "Obtenha informações sobre o Painel do Ciclo de Vida do Produto no System Center Configuration Manager."
-ms.custom: na
+description: Obtenha informações sobre o Painel do Ciclo de Vida do Produto no System Center Configuration Manager.
 ms.date: 02/13/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 8b5b144a-0e5f-4fcc-87b2-33b9bcdb5655
-caps.latest.revision: 
-caps.handback.revision: 
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 robots: noindex,nofollow
-ms.openlocfilehash: cfc54c1beb92d0102897f77ce3c287cc0ef9e0f4
-ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
+ms.openlocfilehash: 8f24fcd2d75d34e2d2d69c9c54f4f47991be7301
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-the-product-lifecycle-dashboard-to-manage-microsoft-lifecycle-policy-in-system-center-configuration-manager"></a>Use o Painel do Ciclo de Vida do Produto para gerenciar a Política de Ciclo de Vida da Microsoft no System Center Configuration Manager
 
@@ -72,7 +65,7 @@ O painel contém os seguintes blocos:
     - Próximas etapas 
 
 >[!IMPORTANT]
->As informações apresentadas neste painel são fornecidas para sua conveniência e somente para uso interno em sua empresa. Você não deve depender exclusivamente dessas informações para confirmar a conformidade. Certifique-se de verificar a precisão das informações fornecidas para você, juntamente com a disponibilidade de informações de suporte acessando https://support.microsoft.com/en-us/lifecycle.
+>As informações apresentadas neste painel são fornecidas para sua conveniência e somente para uso interno em sua empresa. Você não deve depender exclusivamente dessas informações para confirmar a conformidade. Não deixe de verificar a precisão das informações fornecidas para você, juntamente com a disponibilidade de informações de suporte acessando https://support.microsoft.com/en-us/lifecycle.
 
 ## <a name="reporting"></a>Relatórios
 Os seguintes novos relatórios são adicionados na categoria **Ciclo de Vida do Produto**:

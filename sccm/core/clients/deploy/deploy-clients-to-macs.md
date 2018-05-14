@@ -2,25 +2,19 @@
 title: Implantar clientes do Mac
 titleSuffix: Configuration Manager
 description: Saiba como implantar clientes em computadores Mac no System Center Configuration Manager.
-ms.custom: na
 ms.date: 05/04/2017
 ms.prod: configuration-manager
-ms.reviewer: aaroncz
-ms.suite: na
-ms.technology:
-- configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: e46ad501-5d73-44ac-92de-0de14ef72b83
-caps.latest.revision: 12
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 1b7f20a48e0e7219d933c367fb9f0315fc287dfd
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 01e53b80b47b3c1452cd73e408af48bc0283d60b
+ms.sourcegitcommit: 526ded222b69b5e75e8068ba09c5dda227c155c4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-deploy-clients-to-macs"></a>How to deploy clients to Macs
 
@@ -199,7 +193,7 @@ Use este procedimento para automação da instalação do cliente e solicitaçã
 > -   O arquivo da BOM (Lista de Materiais) e o arquivo da lista de propriedades (.plist) criados pela instalação do cliente do Configuration Manager.  
 > -   O conteúdo da pasta /Library/Application Support/Microsoft/CCM/Logs.  
 >   
->  As informações coletadas por CmDiagnostics são adicionadas a um arquivo zip, que é salvo na área de trabalho do computador e que tem o nome cmdiag-*<hostname\>***-***&gt;date and time\>*.zip.***
+>  As informações coletadas pelo CmDiagnostics são adicionadas a um arquivo zip que é salvo na área de trabalho do computador e tem o nome de `cmdiag-<hostname>-<datetime>.zip`
 
 
 ##  <a name="use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager"></a>Usar uma solicitação de certificado e o método de instalação que é independente do Configuration Manager  

@@ -2,25 +2,19 @@
 title: Configurar a descoberta
 titleSuffix: Configuration Manager
 description: Configure métodos de descoberta para encontrar recursos para gerenciá-los na rede, no Active Directory e no Azure Active Directory.
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 49505eb1-d44d-4121-8712-e0f3d8b15bf5
-caps.latest.revision: 5
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 825b9b250000e8353b1428cbee45f8fda9a30c35
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: e7ac10fdc08569e519468633f30548c5c76b5838
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Configurar métodos de descoberta para o System Center Configuration Manager
 
@@ -183,6 +177,9 @@ Use os procedimentos a seguir para habilitar a descoberta de florestas do Active
 6.  Na guia **Agendamento de Sondagem** , configure o agendamento de sondagem de descoberta completa e a descoberta de deltas.  
 
 7.  Opcionalmente, na guia **Atributos do Active Directory** , você pode configurar atributos adicionais do Active Directory para computadores que você deseja descobrir. Os atributos de objeto padrão também são listados.  
+
+     > [!Tip]  
+     > Por exemplo, sua organização usa o atributo **Descrição** na conta de computador no Active Directory. Clique em **Personalizar** e adicione `Description` como um atributo personalizado. Depois de executar esse método de descoberta, esse atributo é mostrado na guia Propriedades do dispositivo no console do Configuration Manager.<!--513948-->
 
 8.  Opcionalmente, na guia **Opção**, você pode configurar opções para filtrar, ou excluir, registros de computadores obsoletos da descoberta.  
 

@@ -1,31 +1,26 @@
 ---
 title: 'Registrar dispositivos iOS com o Programa de registro de dispositivos (DEP) '
 titleSuffix: Configuration Manager
-description: "Habilite o registro no DEP (Programa de Registro de Dispositivos) do iOS para implantações híbridas no Configuration Manager com o Intune."
-ms.custom: na
+description: Habilite o registro no DEP (Programa de Registro de Dispositivos) do iOS para implantações híbridas no Configuration Manager com o Intune.
 ms.date: 09/22/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 78d44adc-9b1c-4bc6-b72d-e93873916ea6
-caps.latest.revision: "9"
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 1d8a1765b599daa98014feeb3d88efe9a07cb907
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: a4a6d8d67060dbf7c5bc75892d2f231bce67df8f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registro no DEP (Programa de Registro de Dispositivos) do iOS para implantações híbridas com o Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-As empresas podem adquirir dispositivos iOS por meio do programa de registro de dispositivo da Apple e, em seguida, gerenciá-los usando o Microsoft Intune. Para gerenciar dispositivos iOS de propriedade corporativa com o DEP (Programa de Registro de Dispositivo) da Apple, as empresas devem concluir as etapas com a Apple para participar do programa e adquirir dispositivos por meio desse programa. Detalhes desse processo estão disponíveis em:  [https://deploy.apple.com](https://deploy.apple.com). As vantagens do programa incluem instalação não assistida de dispositivos sem conectar cada dispositivo por USB a um computador.  
+As empresas podem adquirir dispositivos iOS por meio do programa de registro de dispositivo da Apple e, em seguida, gerenciá-los usando o Microsoft Intune. Para gerenciar dispositivos iOS de propriedade corporativa com o DEP (Programa de Registro de Dispositivo) da Apple, as empresas devem concluir as etapas com a Apple para participar do programa e adquirir dispositivos por meio desse programa. Detalhes do processo estão disponíveis em: [https://deploy.apple.com](https://deploy.apple.com). As vantagens do programa incluem instalação não assistida de dispositivos sem conectar cada dispositivo por USB a um computador.  
 
  Antes de registrar dispositivos iOS corporativos pelo DEP, você precisa de um token do DEP da Apple. Esse token permite que Intune sincronize informações sobre dispositivos participantes no DEP pertencentes a sua empresa. Ele também permite que o Intune carregue perfis de registro na Apple e atribua dispositivos a esses perfis.  
 
@@ -39,7 +34,7 @@ As empresas podem adquirir dispositivos iOS por meio do programa de registro de 
 2.  **Criar uma solicitação de token do DEP**   
     No console do Configuration Manager, no espaço de trabalho **Administração**, expanda **Configuração da Hierarquia**, expanda **Serviços de Nuvem** e clique em **Assinaturas do Microsoft Intune**. Clique em **Criar Solicitação de Token de DEP** na guia **Início** , clique em **Procurar** para especificar o local de download para a solicitação de token de DEP e clique em **Baixar**. Salve o arquivo de solicitação de token DEP (.pem) localmente. O arquivo .pem é usado para solicitar um token confiável (.p7m) do portal do Programa de Registro de Dispositivo da Apple.  
 3.  **Obter um token do Programa de Registro de Dispositivo**   
-    Vá até o [Portal do Programa de Registro de Dispositivo](https://deploy.apple.com) (https://deploy.apple.com) e entre com sua ID Apple corporativa. Essa ID da Apple deve ser usada no futuro para renovar seu token do DEP.  
+    Vá até o [Portal do Programa de Registro de Dispositivos](https://deploy.apple.com) (https://deploy.apple.com) e entre com sua ID da Apple corporativa. Essa ID da Apple deve ser usada no futuro para renovar seu token do DEP.  
     1.  No console do [Portal do Programa de Registro de Dispositivo](https://deploy.apple.com), vá para **Programa de Registro de Dispositivo** > **Gerenciar Servidores**e clique em **Adicionar Servidor MDM**.  
     ![Captura de tela da adição do servidor MDM no portal do Programa de registro de dispositivos](../media/enrollment-program-token-add-server.png)
     2.  Insira o **Nome do Servidor MDM**e clique em **Avançar**. O nome do servidor é para sua referência para identificar o servidor MDM. Não é o nome ou URL do servidor do Intune ou do Configuration Manager.  
@@ -97,7 +92,7 @@ As empresas podem adquirir dispositivos iOS por meio do programa de registro de 
 
 ## <a name="assign-dep-devices-for-management"></a>Atribuir dispositivos do DEP para gerenciamento
 
-1. Vá até o [Portal do Programa de Registro de Dispositivo](https://deploy.apple.com) (https://deploy.apple.com) e entre com sua ID Apple corporativa.
+1. Vá até o [Portal do Programa de Registro de Dispositivos](https://deploy.apple.com) (https://deploy.apple.com) e entre com sua ID da Apple corporativa.
 2. Vá para **Programa de Implantação** > **Programa de Registro de Dispositivo** > **Gerenciar Dispositivos**. Especifique como você vai **Escolher Dispositivos**, forneça informações do dispositivo e especifique os detalhes por **Número de Série**, **Número do Pedido**do dispositivo ou ao **Carregar o Arquivo CSV**. Em seguida, selecione **Atribuir ao Servidor**, selecione o <*ServerName*> que você especificou na etapa 3 e clique em **OK**.  
 ![Captura de tela da adição de dispositivos no portal do Programa de registro de dispositivos Apple](../media/enrollment-program-token-specify-serial.png)
 

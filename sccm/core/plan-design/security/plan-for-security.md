@@ -1,26 +1,20 @@
 ---
-title: "Planejar a segurança"
+title: Planejar a segurança
 titleSuffix: Configuration Manager
-description: "Veja as práticas recomendadas de segurança e informações sobre segurança no System Center Configuration Manager."
-ms.custom: na
+description: Veja as práticas recomendadas de segurança e informações sobre segurança no System Center Configuration Manager.
 ms.date: 01/04/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 8f63d1b762b296cb6b6aa56480a5cddf7a3249dc
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 02ab0884b49a8b4ac6998b9994cec23f02f076ec
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-for-security-in-system-center-configuration-manager"></a>Planejar a segurança no System Center Configuration Manager
 
@@ -258,7 +252,7 @@ Use os seguintes procedimentos para pré-provisionar e verificar a chave de raiz
 
 4.  Salve o arquivo e coloque-o em um local em que todos os computadores possam acessá-lo, mas um local que esteja protegido contra violação.  
 
-5.  Instale o cliente usando qualquer método de instalação que aceitar propriedades de Client.msi e especifique a propriedade de Client.msi **SMSROOTKEYPATH=***&lt;Caminho completo e nome do arquivo\>*.  
+5.  Instale o cliente usando qualquer método de instalação que aceitar propriedades de Client.msi e especifique a propriedade de Client.msi, **SMSROOTKEYPATH=***&lt;Caminho completo e nome do arquivo\>*.  
 
     > [!IMPORTANT]  
     >  Ao especificar a chave de raiz confiável para segurança adicional durante a instalação do cliente, você também precisa especificar o código do site, usando a propriedade **SMSSITECODE=&lt;código do site\>** do Client.msi.  
@@ -269,7 +263,7 @@ Use os seguintes procedimentos para pré-provisionar e verificar a chave de raiz
 
 2.  Localize a entrada SMSPublicRootKey=, anote a chave dessa linha ou copie-a na área de transferência e feche o arquivo sem quaisquer alterações.  
 
-3.  Instale o cliente usando qualquer método de instalação que aceitar as propriedades de Client.msi e especifique a propriedade de Client.msi **SMSPublicRootKey=***&lt;chave\>*, em que *&lt;chave\>* é a cadeia de caracteres que você copiou de mobileclient.tcf.  
+3.  Instale o cliente usando qualquer método de instalação que aceitar as propriedades de Client.msi e especifique a propriedade de Client.msi, **SMSPublicRootKey=***&lt;chave\>*, em que *&lt;chave\>* é a cadeia de caracteres que você copiou de mobileclient.tcf.  
 
     > [!IMPORTANT]  
     >  Ao especificar a chave de raiz confiável para segurança adicional durante a instalação do cliente, você também precisa especificar o código do site, usando a propriedade **SMSSITECODE=&lt;código do site\>** do Client.msi.  

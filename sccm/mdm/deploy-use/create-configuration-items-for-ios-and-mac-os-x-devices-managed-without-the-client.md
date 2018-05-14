@@ -1,26 +1,20 @@
 ---
-title: "Criar itens de configuração para dispositivos com iOS e Mac OS X gerenciados com o Intune"
+title: Criar itens de configuração para dispositivos com iOS e Mac OS X gerenciados com o Intune
 titleSuffix: Configuration Manager
-description: "Use o item de configuração do iOS e Mac OS X do System Center Configuration Manager para gerenciar as configurações de dispositivos iOS e Mac OS X."
-ms.custom: na
+description: Use o item de configuração do iOS e Mac OS X do System Center Configuration Manager para gerenciar as configurações de dispositivos iOS e Mac OS X.
 ms.date: 03/28/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 613a48ac-c55d-4c4a-94ea-d3747a1b10cb
-caps.latest.revision: "15"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: d101ffc649928c1136386bc7979d4a37ad404af1
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 0a6925cdc1f3b3a5018cc4895820019d88254bd3
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Como criar itens de configuração para dispositivos com iOS e Mac OS X gerenciados com o Intune
 Use o item de configuração **iOS e Mac OS X** do System Center Configuration Manager para gerenciar as configurações para dispositivos iOS e Mac OS X que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  
@@ -225,7 +219,7 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
 |**AirDrop** (somente supervisionado)|Permita o uso do recurso AirDrop para trocar conteúdo com dispositivos próximos.|
   
 ###  <a name="compliant-and-noncompliant-apps-ios"></a>Aplicativos compatíveis e não compatíveis (iOS)  
- Permite especificar uma lista de aplicativos do iOS que são compatíveis ou não compatíveis em sua empresa. Em seguida, você pode usar os relatórios para exibir os dispositivos que contêm aplicativos não compatíveis instalados e o usuário associado.  
+ Permite especificar uma lista de aplicativos do iOS que estão em conformidade ou sem conformidade em sua empresa. Em seguida, você pode usar os relatórios para exibir os dispositivos que contêm aplicativos não compatíveis instalados e o usuário associado.  
   
  Não é possível especificar aplicativos compatíveis e não compatíveis no mesmo item de configuração.  
   
@@ -280,7 +274,7 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
         >  Para localizar a ID do pacote de um aplicativo, use as seguintes etapas em um computador Mac que tem o aplicativo instalado:  
         >   
         >  1.  Abra a pasta na qual o aplicativo está instalado (por exemplo, **/Aplicativos**)  
-        > 2.  Selecione o pacote *<Nome do Aplicativo\>***.app** e escolha **Mostrar Conteúdo do Pacote**  
+        > 2.  Selecione o pacote *<nome do aplicativo\>***.app** e escolha **Mostrar Conteúdo do Pacote**  
         > 3.  Abra o arquivo **Info.plist**  
         > 4.  Verifique o valor associado à chave **CFBundleIdentifier**  
         >   

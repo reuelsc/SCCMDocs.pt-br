@@ -1,26 +1,20 @@
 ---
 title: Configure iOS apps with app configuration policies
 titleSuffix: Configuration Manager
-description: "Ajude a eliminar problemas de configuração em dispositivos que executam o iOS 8 ou posterior ao implantar políticas de configuração de aplicativos para os usuários antes que eles executem aplicativos."
-ms.custom: na
+description: Ajude a eliminar problemas de configuração em dispositivos que executam o iOS 8 ou posterior ao implantar políticas de configuração de aplicativos para os usuários antes que eles executem aplicativos.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f0a78038-ea22-4826-9c07-1771b7dd2e8d
-caps.latest.revision: "18"
-caps.handback.revision: "0"
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 905b0925f88395942c954561aa0828c15d3ba758
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: e5d00b1efd02d3b096a0b64033b450f0da949eeb
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Aplicar configurações a aplicativos iOS com políticas de configuração de aplicativo no System Center Configuration Manager
 
@@ -39,7 +33,7 @@ Para usar uma política de configuração de aplicativo no Configuration Manager
 
 Atualmente, as políticas de configuração de aplicativo estão disponíveis somente em dispositivos com iOS 8 e posterior e para estes tipos de aplicativos:
 
-- **pacote do aplicativo para iOS (arquivo* .ipa)**
+- **pacote do aplicativo para iOS (arquivo *.ipa)**
 - **pacote do aplicativo para iOS da App Store**
 
 Para obter mais informações sobre os tipos de instalação de aplicativos, consulte a [introdução ao gerenciamento de aplicativos](/sccm/apps/understand/introduction-to-application-management).

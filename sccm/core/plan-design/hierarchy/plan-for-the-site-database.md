@@ -1,27 +1,20 @@
 ---
 title: Planejar o banco de dados do site
 titleSuffix: Configuration Manager
-description: "Considere o banco de dados do site e a função do servidor de banco de dados do site ao planejar sua hierarquia do System Center Configuration Manager."
-ms.custom: na
-ms.date: 03/08/20168
+description: Considere o banco de dados do site e a função do servidor de banco de dados do site ao planejar sua hierarquia do System Center Configuration Manager.
+ms.date: 03/08/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 104fb4cc-6e83-40a3-8e6b-ac909fb9ec7d
-caps.latest.revision: 
-caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 908ca61bc99db3ca93f46120a806cd9ae54c81f7
-ms.sourcegitcommit: b653342fb5d69a16e71b3548a7e9a2e47e54bf88
+manager: dougeby
+ms.openlocfilehash: f2dbdb4702a1deac4ae130e89c501e3d122f1b49
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-for-the-site-database-for-system-center-configuration-manager"></a>Planejar o banco de dados do site para o System Center Configuration Manager
 
@@ -37,7 +30,7 @@ O servidor de banco de dados do site é um computador que executa uma versão co
 
 -  Para o uso de um Grupo de Disponibilidade que não seja do SQL, o Modelo de Recuperação de Banco de Dados deve ser definido como SIMPLES  
 
-Encontre mais informações sobre os Modelos de Recuperação do SQL em [Modelos de Recuperação (SQL Server)] (https://docs.microsoft.com/sql/relational-databases/backup-restore/recovery-models-sql-server).
+Mais informações sobre os modos de recuperação do SQL podem ser encontradas em [modelos de recuperação (SQL Server)] (https://docs.microsoft.com/sql/relational-databases/backup-restore/recovery-models-sql-server).
 
 As seguintes configurações do SQL Server podem ser usadas para hospedar o banco de dados do site:  
 

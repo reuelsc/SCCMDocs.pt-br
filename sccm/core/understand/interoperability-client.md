@@ -1,68 +1,76 @@
 ---
-title: 'Usar o cliente de interoperabilidade estendida com o Branch Atual '
+title: Cliente de interoperabilidade estendida
 titleSuffix: Configuration Manager
-description: "Saiba como usar o cliente do Branch de Manutenção de Longo Prazo do Configuration Manager com um site do Branch Atual."
-ms.custom: na
-ms.date: 08/09/2017
+description: Saiba mais sobre como usar o cliente de interoperabilidade estendida para dar suporte de longo prazo de um cliente do Configuration Manager estático com um site de branch atual.
+ms.date: 05/01/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 600086d5-bd9e-4ac1-8ace-c7a62de80dc2
-caps.latest.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: ba79f2b9cf0cdfc4525645a647dddb624a0a5e5b
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: f46fdb622a55c7281de89c84d5e66e54ab149548
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-the-configuration-manager-client-software-for-extended-interoperability-with-future-versions-of-a-current-branch-site"></a>Usar o software cliente do Configuration Manager para interoperabilidade estendida com versões futuras de um site do Branch Atual
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual), (Branch de Manutenção de Longo Prazo)*  
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*  
 
-Em alguns casos, as políticas de sua empresa podem não permitir a atualização regular do cliente do Configuration Manager em alguns computadores. Por exemplo, talvez você precise estar em conformidade com políticas de gerenciamento de alterações, ou o dispositivo pode ser essencial.
-
-Embora você deva continuar a usar a atualização automática do cliente quando possível para a maioria dos clientes, a partir da atualização 1610 do Configuration Manager, você poderá acomodar essas necessidades instalando um novo cliente para uso de longo prazo, chamado de EIC (cliente de interoperabilidade estendida).
-
-O EIC é compatível com sites do Configuration Manager que executam a versão 1610 ou posterior. O EIC só deve ser usado para computadores específicos que não são atualizados com frequência, como quiosque ou dispositivos de ponto de venda. Use o cliente do Configuration Manager mais recente para todos os outros computadores.
+Os requisitos de sua empresa podem não permitir a atualização regular do cliente do Configuration Manager em alguns dispositivos. Por exemplo, talvez você precise estar em conformidade com políticas de gerenciamento de alterações, ou o dispositivo pode ser essencial. Acomode essas necessidades instalando um novo cliente para uso de longo prazo, chamado de EIC (cliente de interoperabilidade estendida). O EIC só deve ser usado para dispositivos específicos que não são atualizados com frequência, como quiosque ou dispositivos de ponto de venda. Continue a usar a [atualização automática do cliente](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#use-automatic-client-upgrade) para a maioria dos seus clientes. 
 
 ## <a name="how-this-scenario-works"></a>Como este cenário funciona
 
-Normalmente, quando você instala uma nova atualização no console para o Branch Atual, os clientes atualizam automaticamente o software cliente para que possam usar esses novos recursos.
+Normalmente, quando você instala uma nova [atualização no console](/sccm/core/servers/manage/install-in-console-updates) para o Configuration Manager, os clientes atualizam automaticamente o software cliente para que possam usar esses novos recursos. Neste cenário, você ainda atualiza para o branch atual e recebe as atualizações e os novos recursos. A maioria dos dispositivos atualiza o software cliente do Configuration Manager com cada atualização de versão que você instalar. No entanto, em um subconjunto de sistemas críticos que você não deseja receber atualizações de software cliente, instale o cliente de interoperabilidade estendida. Esses clientes não instalam o novo software cliente até que você implante explicitamente uma nova versão do software cliente neles.
 
-Neste cenário, você usa o Branch Atual e recebe as atualizações e novos recursos. A maioria dos clientes executa o software cliente a do Branch Atual e pode atualizar o software cliente com cada atualização de versão que você instalar. No entanto, em um subconjunto de sistemas críticos que você não deseja receber atualizações de software cliente, instale o cliente de interoperabilidade estendida. Esses clientes não instalam o novo software cliente até que você implante explicitamente uma nova versão do software cliente neles.
 
->[!IMPORTANT]
->O site do Branch Atual deve executar a versão 1610 ou posterior.
+
+## <a name="supported-versions"></a>Versões com suporte
+A tabela a seguir lista as versões do cliente do Configuration Manager com suporte para este cenário:
+
+| Version  | Data de disponibilidade  | Data de término do suporte  |
+|---------|---------|---------|
+|1802<br/>5.00.8634     | 1º de maio de 2018        | Não anterior a 1º de maio de 2020        |
+|1606<br/>5.00.8412     | 18 de novembro de 2016        | 1º de maio de 2019        |
+
+> [!TIP]  
+> O EIC tem suporte de pelo menos dois anos a partir da data de lançamento. Para mais informações sobre as datas de lançamento, veja [Suporte para versões do branch atual do System Center Configuration Manager](/sccm/core/servers/manage/current-branch-versions-supported).  
+
+Planeje atualizar o cliente de interoperabilidade estendida em dispositivos gerenciados com o branch atual antes que o suporte do cliente expire. Para fazer isso, baixe uma nova versão do cliente da Microsoft e, em seguida, implante esse software cliente atualizado nos dispositivos que usam o cliente de interoperabilidade estendida atual.
+
+
 
 ## <a name="how-to-use-the-eic"></a>Como usar o EIC
 
-1. Obtenha o EIC (versão de cliente 5.00.8412) da pasta \SMSSETUP\Client da mídia de instalação da atualização 1606 do Configuration Manager. Copie todo o conteúdo da pasta.
-2. Instale manualmente o EIC nos dispositivos. [Leia mais detalhes sobre como instalar manualmente o cliente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual).
-3. Exclua essa coleção das atualizações do cliente.
+1. Obter uma versão com suporte do EIC da pasta `\SMSSETUP\Client` da mídia de instalação de atualização do Configuration Manager. Copie todo o conteúdo da pasta.  
 
->[!TIP]
->Para localizar o System Center Configuration Manager versão 1606 no VLSC (Centro de Serviços de Licenciamento por Volume), acesse a guia **Downloads e Chaves** do [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx), pesquise “configuração do system center” e selecione **System Center Config Mgr (Branch Atual e LTSB)**.
+2. Instale manualmente o EIC nos dispositivos. Para obter mais informações, veja [Instalar manualmente o cliente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual).  
 
-## <a name="the-extended-interoperability-client-software"></a>O software cliente de interoperabilidade estendida
+    > [!Important]  
+    > Ao atualizar os clientes da versão 1606 para a versão 1802, use a opção CCMSETUP **/AlwaysExcludeUpgrade:True**. Caso contrário, o cliente poderá receber a política do ponto de gerenciamento para atualizar automaticamente antes da política de exclusão.
 
-O EIC atual continuará a ser compatível com versões atualizadas do Branch Atual do Configuration Manager até pelo menos 18 de novembro de 2018. Após esse período, confira esta página para obter detalhes de um novo EIC, ou uma extensão de suporte para o EIC existente.
+3. Adicione esses dispositivos a uma coleção e exclua a coleção das atualizações automáticas do cliente. Para obter mais informações, consulte [Usar o upgrade automático do cliente](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#use-automatic-client-upgrade).  
 
->[!TIP]
->Há suporte para o EIC por pelo menos dois anos a partir da data de lançamento (consulte [Suporte para versões do branch atual do System Center Configuration Manager](/sccm/core/servers/manage/current-branch-versions-supported)). Por exemplo, o suporte para o EIC atual é de dois anos após o lançamento do 1610, que é de 18 de novembro de 2018.
+> [!TIP]  
+> Para localizar a mídia do Configuration Manager no VLSC [Centro de Serviços de Licenciamento por Volume](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx), acesse a guia **Downloads e Chaves**, pesquise `System Center Config` e selecione **System Center Config Mgr (branch atual)**.
 
-Planeje atualizar o cliente de interoperabilidade estendida em dispositivos gerenciados com o Branch Atual antes que o suporte do cliente expire. Para fazer isso, baixe uma nova versão do cliente da Microsoft e, em seguida, implante esse software cliente atualizado nos dispositivos que usam o cliente de interoperabilidade estendida atual.
+
 
 ## <a name="limitations-of-the-extended-interoperability-client"></a>Limitações do cliente de interoperabilidade estendida
 
-- Atualizações para o software cliente de interoperabilidade estendida não estão disponíveis por meio de atualizações no console. Detalhes adicionais para a implantação de um software cliente atualizado serão fornecidos quando um cliente atualizado for liberado.
-- O EIC só dá suporte a atualizações de software, inventário e pacotes e programas.
+- Atualizações para o software cliente de interoperabilidade estendida não estão disponíveis por meio de atualizações no console. Para obter mais informações sobre como atualizar clientes EIC, veja [Como usar o EIC](#how-to-use-the-eic).  
+
+- O EIC só é compatível com os seguintes recursos:  
+
+   - Atualizações de software  
+   - Inventário de hardware e software
+   - Pacotes e programas
+
+
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Use as informações em [Como monitorar clientes](/sccm/core/clients/manage/monitor-clients) para garantir que os clientes estejam instalados corretamente nos dispositivos que você deseja.
+Para garantir que os clientes estejam instalados corretamente nos dispositivos que você deseja, veja [Como monitorar os clientes](/sccm/core/clients/manage/monitor-clients).

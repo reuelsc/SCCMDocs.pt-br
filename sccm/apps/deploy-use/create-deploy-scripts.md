@@ -2,26 +2,19 @@
 title: Criar e executar scripts
 titleSuffix: Configuration Manager
 description: Crie e execute scripts do Powershell em dispositivos clientes.
-ms.custom: na
 ms.date: 04/10/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-app
+ms.topic: conceptual
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
-caps.latest.revision: 14
-caps.handback.revision: 0
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7cfb969ab70c27859788732839f4715541e1b91e
-ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
+ms.openlocfilehash: fcf3bc335efc4c7436842b29d30c67c118ceb05d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Criar e executar scripts do PowerShell do console do Configuration Manager
 
@@ -116,43 +109,50 @@ As três funções de segurança usadas para executar scripts não são criadas 
 1. No console do Configuration Manager, acesse **Administração** >**Segurança** >**Funções de Segurança**
 2. Clique com o botão direito do mouse em uma função e clique em **Copiar**. A função copiada tem permissões já atribuídas. Use somente as permissões desejadas. 
 3. Forneça à função personalizada um **Nome** e uma **Descrição**. 
-4. Atribua a função de segurança às permissões descritas abaixo. 
+4. Atribua a função de segurança às permissões descritas abaixo.  
 
-    ### <a name="security-role-permissions"></a>**Permissões de função de segurança**
+### <a name="security-role-permissions"></a>Permissões de função de segurança  
 
-     **Nome da Função**: Executores de Script
-    - **Descrição**: com essas permissões, a função executa apenas os scripts que foram criados anteriormente e aprovados por outras funções. 
-    - **Permissões:** verifique se a opção a seguir está definida como **Sim**.
-         |**Categoria**|**Permissão**|**Estado**|
-         |---|---|---|
-         |Coleta|Executar Script|Sim|
-         |Scripts do SMS|Criar|Sim|
-         |Scripts do SMS|Ler|Sim|
+**Nome da Função**: Executores de Script  
+- **Descrição**: com essas permissões, a função executa apenas os scripts que foram criados anteriormente e aprovados por outras funções.  
+- **Permissões:** verifique se a opção a seguir está definida como **Sim**.  
 
-     **Nome da Função**: Autores do Script
-    - **Descrição**: com essas permissões, a função cria scripts, mas elas não podem aprová-los nem os executar. 
-    - **Permissões**: verifique se as permissões a seguir estão definidas.
-    - 
-         |**Categoria**|**Permissão**|**Estado**|
-         |---|---|---|
-         |Coleta|Executar Script|Não|
-         |Scripts do SMS|Criar|Sim|
-         |Scripts do SMS|Ler|Sim|
-         |Scripts do SMS|Excluir|Sim|
-         |Scripts do SMS|Modificar|Sim|
+|Categoria|Permissão|Estado|
+|---|---|---|
+|Coleta|Executar Script|Sim|
+|Site|Ler|Sim|
+|Scripts do SMS|Criar|Sim|
+|Scripts do SMS|Ler|Sim|
 
-    **Nome da Função**: Aprovador do Script
-    - **Descrição**: com essas permissões, a função aprova scripts, mas elas não podem criá-los nem executá-los. 
-    - **Permissões:** verifique se as permissões a seguir estão definidas.
 
-         |**Categoria**|**Permissão**|**Estado**|
-         |---|---|---|
-         |Coleta|Executar Script|Não|
-         |Scripts do SMS|Ler|Sim|
-         |Scripts do SMS|Aprovar|Sim|
-         |Scripts do SMS|Modificar|Sim|
+**Nome da Função**: Autores do Script  
+- **Descrição**: com essas permissões, a função cria scripts, mas elas não podem aprová-los nem os executar.  
+- **Permissões**: verifique se as permissões a seguir estão definidas.
+ 
+|Categoria|Permissão|Estado|
+|---|---|---|
+|Coleta|Executar Script|Não|
+|Site|Ler|Sim|
+|Scripts do SMS|Criar|Sim|
+|Scripts do SMS|Ler|Sim|
+|Scripts do SMS|Excluir|Sim|
+|Scripts do SMS|Modificar|Sim|
+
+
+**Nome da Função**: aprovadores do script  
+- **Descrição**: com essas permissões, a função aprova scripts, mas elas não podem criá-los nem executá-los.  
+- **Permissões:** verifique se as permissões a seguir estão definidas.  
+
+|Categoria|Permissão|Estado|
+|---|---|---|
+|Coleta|Executar Script|Não|
+|Site|Ler|Sim|
+|Scripts do SMS|Ler|Sim|
+|Scripts do SMS|Aprovar|Sim|
+|Scripts do SMS|Modificar|Sim|
+
      
-**Exemplo de permissões de Scripts do SMS para a função de criadores de script**
+**Exemplo de permissões de Scripts do SMS para a função de criadores de script**  
 
  ![Exemplo de permissões de Scripts do SMS para a função de criadores de script](./media/run-scripts/script_authors_permissions.png)
 

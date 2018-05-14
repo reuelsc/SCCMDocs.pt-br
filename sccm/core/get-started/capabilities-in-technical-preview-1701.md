@@ -1,25 +1,20 @@
 ---
 title: Recursos no Technical Preview 1701
 titleSuffix: Configuration Manager
-description: "Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1701."
-ms.custom: na
+description: Saiba mais sobre os recursos disponíveis no Technical Preview do System Center Configuration Manager, versão 1701.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 18598eaa-1131-44ff-8f8b-6093e87ac7a1
-caps.latest.revision: "5"
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: 90e5aa799516bf2a7d6715e12bb8f3d1b72737f3
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 894d268151f9c9dfb05ded812eb642f8025dc459
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1701-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1701 do System Center Configuration Manager
 
@@ -122,7 +117,7 @@ Para fazer isso, modifique um arquivo de configuração para apontar para a nuve
       &lt;setting name="FairFaxArmResourceId" serializeAs="String"> &lt;value>https://management.usgovcloudapi.net/&lt;/value>  
       &lt;/setting>
 
-  Altere o valor para o nome da configuração *FairFaxAuthorityResource* para que seja igual a "https://login.microsoftonline.com/"
+  Altere o valor do nome da configuração *FairFaxAuthorityResource* para que seja igual a "https://login.microsoftonline.com/"
 
   - **Original:**&lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
     &lt;value>&lt;/value>

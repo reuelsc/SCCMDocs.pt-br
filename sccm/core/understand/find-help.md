@@ -2,56 +2,45 @@
 title: Encontrar ajuda
 titleSuffix: Configuration Manager
 description: Encontre recursos para ver informações adicionais sobre o System Center Configuration Manager.
-ms.custom: na
-ms.date: 12/22/2017
+ms.date: 04/30/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 86810629-cf2a-43e8-86a2-847444119fc1
-caps.latest.revision: 19
-caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: bcf53c11a30aa2fc3995697f36f00960035bbe57
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+manager: dougeby
+ms.openlocfilehash: 2c9e2f0b570360b730f7a8659791a7f054200d36
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="find-help-for-using-system-center-configuration-manager"></a>Encontrar ajuda para usar o System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este artigo fornece vários recursos para encontrar ajuda para o uso do Configuration Manager.  
+Este artigo fornece as seguintes seções com vários recursos para encontrar ajuda para o uso do Configuration Manager:  
 
-Para obter ajuda com a acessibilidade do produto, consulte [Funcionalidades de acessibilidade no System Center Configuration Manager](../../core/understand/accessibility-features.md).
+- [Documentação do produto](#bkmk_Info)  
+
+- [Compartilhamento de comentários sobre o produto](#product-feedback)  
+
+- [Siga o blog da equipe do Configuration Manager](#BKMK_ProductGroupBlog)  
+
+- [Opções de suporte e recursos da comunidade](#BKMK_SupportOptions)  
+
+Para obter ajuda com a acessibilidade do produto, veja [Funcionalidades de acessibilidade no Configuration Manager](../../core/understand/accessibility-features.md).  
 
 
 ##  <a name="bkmk_Info"></a> Documentação do produto  
- Use os recursos a seguir para ver informações adicionais sobre o Configuration Manager.  
 
--   Para acessar a documentação mais recente do produto, comece no [índice da biblioteca](https://docs.microsoft.com/sccm/)
+Para acessar a documentação mais recente do produto, comece no [índice da biblioteca](https://docs.microsoft.com/sccm/).  
 
--   Para fornecer comentários sobre a documentação, envie-os por meio do [UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/category/112371-documentation)  
+<a name="BKMK_SearchTips"></a>  
 
+Para obter dicas de pesquisa, fornecer comentários e obter mais informações sobre como usar a documentação do produto, veja [Como usar os documentos](/sccm/core/understand/use-docs).  
 
-###  <a name="BKMK_SearchTips"></a> Pesquisar na biblioteca de documentação  
- Use as seguintes dicas de pesquisa para ajudá-lo a encontrar as informações de que você precisa:  
-
--   Ao usar seu mecanismo de pesquisa preferido para localizar conteúdo do Configuration Manager, concentre os resultados da pesquisa na biblioteca de conteúdo atual incluindo os dois termos a seguir, **SCCM** e **Docs**.
-
--   Use termos de pesquisa que correspondam à terminologia da interface do usuário e da documentação online. Evite termos não oficiais ou abreviações que podem ser vistas no conteúdo da comunidade. Por exemplo, procure por "ponto de gerenciamento" e não "PG", "tipo de implantação" e não "TI" e "atualizações de software" e não "SUM".  
-
--   Para pesquisar dentro de um artigo que está sendo exibido atualmente em docs.microsoft.com, selecione Ctrl+F e, em seguida, insira os termos da pesquisa na caixa **Localizar** do navegador. 
-
--   Cada artigo em docs.microsoft.com inclui os seguintes campos para ajudá-lo na pesquisa do conteúdo:
-    - **Pesquisa** no canto superior direito. Para pesquisar todos os artigos, insira termos nesse campo. O artigos da biblioteca do Configuration Manager incluem automaticamente o escopo do “ConfigMgr”.
-    - **Filtro** acima do sumário à esquerda . Para pesquisar o sumário atual, insira termos nesse campo. Esse campo só faz a correspondência de termos que aparecem em títulos de artigo. 
 
 
 ## <a name="product-feedback"></a>Comentários sobre o produto

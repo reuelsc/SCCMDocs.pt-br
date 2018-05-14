@@ -1,25 +1,20 @@
 ---
-title: "Solucionar problemas de integração do Lookout"
+title: Solucionar problemas de integração do Lookout
 titleSuffix: Configuration Manager
-description: "Este tópico descreve a solução de problemas que geralmente ocorrem com a Integração do Lookout."
-ms.custom: na
+description: Este tópico descreve a solução de problemas que geralmente ocorrem com a Integração do Lookout.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: e36b98c7-d0f4-4dd6-bac3-6a6c4b4bf841
-caps.latest.revision: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 244d32e98ad863f6c9ea1747b4f786c3a1279fc0
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: ee978543248e70182e12a3d6234cfd12be80dc98
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="troubleshoot-lookout-integration-with-intune"></a>Solucionar problemas da integração do Lookout ao Intune
 
@@ -35,7 +30,7 @@ Você pode contatar o suporte do Lookout usando os métodos a seguir:
 
 * Email: enterprisesupport@lookout.com
 * Faça logon no [Console do MTP](http://aad.lookout.com) e navegue até o módulo **Suporte**.
-* Acesse: https://enterprise.support.lookout.com/hc/requests e faça uma solicitação de suporte.
+* Vá para: https://enterprise.support.lookout.com/hc/requests e faça uma solicitação de suporte.
 
 ### <a name="unable-to-sign-in"></a>Não é possível entrar
 Você pode ver o seguinte erro quando o usuário administrador global do Azure AD não aceitar a configuração inicial do Lookout.

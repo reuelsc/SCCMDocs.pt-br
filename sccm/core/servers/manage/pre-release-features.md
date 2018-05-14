@@ -2,25 +2,19 @@
 title: Recursos de pré-lançamento
 titleSuffix: Configuration Manager
 description: Os recursos de pré-lançamento são recursos que estão na Ramificação atual para testes iniciais em um ambiente de produção.
-ms.custom: na
-ms.date: 04/10/2018
+ms.date: 05/01/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
-caps.latest.revision: 36
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6e3a6a8dd437238a9dd08b07494b51333283f41c
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+ms.openlocfilehash: d4e9664832b37dd05f001404012acab80fd87a43
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="pre-release-features-in-system-center-configuration-manager"></a>Recursos de pré-lançamento no System Center Configuration Manager
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -50,7 +44,8 @@ Quando você instala uma atualização que inclui recursos de pré-lançamento, 
 
  |Recurso          |Adicionado como pré-lançamento | Adicionado como recurso completo|  
 |------------------|---------------------|---------------------|
-|Implantações em fases<!--1356837-->|[Versão 1802](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence.md)|![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+|Suporte para o Cisco AnyConnect 4.0.07x e posterior para iOS<!--1357393-->|[Versão 1802](/sccm/mdm/deploy-use/create-vpn-profiles)|![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+|Implantações em fases<!--1356837-->|[Versão 1802](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence)|![Ainda não](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Executar Etapa da Sequência de Tarefas <!-- 1261338 --> |  [Versão 1710](/sccm/osd/understand/task-sequence-steps#child-task-sequence) |[Versão 1802](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#add-child-task-sequences-to-a-task-sequence)|
 | Windows Defender Exploit Guard <!-- 1355468 --> |  [Versão 1710](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy) |[Versão 1802](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy)|
 | Avaliação do Atestado de Integridade do Dispositivo para políticas de conformidade de acesso condicional <!-- 1235616 --> |  [Versão 1710](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) |[Versão 1802](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)|

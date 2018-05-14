@@ -2,24 +2,19 @@
 title: Monitorar o status do Endpoint Protection
 titleSuffix: Configuration Manager
 description: Saiba como monitorar o Endpoint Protection na sua hierarquia do System Center Configuration Manager.
-ms.custom: na
 ms.date: 03/13/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: f4a1335c-bb3d-493e-a124-83a32a107dc8
-caps.latest.revision: "8"
-author: NathBarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: 9e6356f8b3814ac49c26bfa4d319c3c9926a4382
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: f4e1ea4cb097381467774af9c3161079419d6840
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-monitor-endpoint-protection-status"></a>Como monitorar o status do Endpoint Protection
 
@@ -38,7 +33,7 @@ Você pode monitorar o Endpoint Protection na sua hierarquia do Microsoft System
     > [!IMPORTANT]  
     >  Coleções estão disponíveis para seleção nos seguintes casos:  
     >   
-    >  -   Quando você seleciona **Exibir esta coleção no painel do Endpoint Protection** na guia **Alertas** da caixa de diálogo *Propriedades\>***<nome da coleção**.  
+    >  -   Quando você seleciona **Exibir esta coleção no painel do Endpoint Protection** na guia **Alertas** da caixa de diálogo ****Propriedades* do \><nome da coleção*.  
     > -   Quando você implanta uma política antimalware do Endpoint Protection à coleção.  
     > -   Quando você habilita e implanta as configurações do cliente do Endpoint Protection na coleção.  
 

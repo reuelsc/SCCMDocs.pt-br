@@ -1,26 +1,20 @@
 ---
-title: "Personalizar imagens de inicialização "
+title: 'Personalizar imagens de inicialização '
 titleSuffix: Configuration Manager
-description: "Aprenda várias maneiras de usar o Configuration Manager ou a ferramenta de linha de comando DISM (Gerenciamento e Manutenção de Imagens de Implantação ) para personalizar uma imagem de inicialização."
-ms.custom: na
+description: Aprenda várias maneiras de usar o Configuration Manager ou a ferramenta de linha de comando DISM (Gerenciamento e Manutenção de Imagens de Implantação ) para personalizar uma imagem de inicialização.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 9cbfc406-d009-446d-8fee-4938de48c919
-caps.latest.revision: "15"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 184768e87406051508c8dcacfa63db5ff85c3732
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 3532e6db7b4ece1676c9b9f41f9336274ac3d117
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="customize-boot-images-with-system-center-configuration-manager"></a>Personalizar imagens de inicialização com o System Center Configuration Manager
 
