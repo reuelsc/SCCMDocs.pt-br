@@ -11,11 +11,11 @@ ms.assetid: 2ff0100c-b7ef-4e09-8c96-fc1898390b6d
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: fe61cecea2b2a4f4083933b937af90dfb61ea5bf
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 6b36da9f98749858829ab591571496532b26f290
+ms.sourcegitcommit: 7198ec49d9ce68c6d55bfb9e2d537b5442a132cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="microsoft-deployment-toolkit-samples-guide"></a>Guia de exemplos do Microsoft Deployment Toolkit  
  Este guia faz parte do MDT (Microsoft® Deployment Toolkit) 2013 e orienta uma equipe de especialistas sobre a implantação de sistemas operacionais Windows e Microsoft Office. Especificamente, este guia foi projetado para fornecer parâmetros de configuração de exemplo para cenários de implantação específicos.  
@@ -1730,7 +1730,7 @@ IF ((Computer Model IS “Contoso 1950”) AND (operating system=2003 OR operati
 
     4.  Clique em **Adicionar**.  
 
-    5.  Na caixa de diálogo **Adicionar pasta a ser replicada**, clique em **Procurar** para ir para a pasta *X:*\RemoteInstall\Boot.  
+    5.  Na caixa de diálogo **Adicionar pasta a ser replicada**, clique em **Procurar** para ir para a pasta *X:* \RemoteInstall\Boot.  
 
     6.  Clique em **Usar nome baseado no caminho**.  
 
@@ -1958,7 +1958,7 @@ IF ((Computer Model IS “Contoso 1950”) AND (operating system=2003 OR operati
 
 4.  Clique na guia **Regras** e, em seguida, modifique o arquivo CustomSettings.ini para configurar as seguintes propriedades:  
 
-    -   Para cada seção do SQL Server adicionada, configure **SQLServer** para usar o nome do servidor **%WDSServer%—**por exemplo, **SQLServer=%WDSServer%**.  
+    -   Para cada seção do SQL Server adicionada, configure **SQLServer** para usar o nome do servidor **%WDSServer%—** por exemplo, **SQLServer=%WDSServer%**.  
 
     -   Se **DeployRoot** for configurado, defina **DeployRoot** para usar a variável **%WDSServer%** – por exemplo, **DeployRoot=\\\\%WDSServer%\Deployment$**.  
 
@@ -3670,9 +3670,11 @@ Remove-item -path "DS002:\Task Sequences\Windows Vista Business Production Build
 -   ```  
     New-PSDrive -Name "DS002" -PSProvider MDTProvider -Root "D:\Production Deployment Share"  
     ```  
-
--   Update\-MDTDeploymentShare \-path "DS002:" \-Verbose  
-
+    
+-   ```
+    Update\-MDTDeploymentShare \-path "DS002:" \-Verbose  
+    ```
+    
 ###  <a name="CreateLinkedDeployShare"></a> Criando um compartilhamento de implantação vinculado  
  Os comandos do Windows PowerShell a seguir criam um compartilhamento de implantação vinculado ao compartilhamento de implantação de Produção e reside no compartilhamento \\\\*remote\_server\_name*\\Deployment$. O perfil de seleção Tudo é usado para determinar qual conteúdo é replicado para o compartilhamento de implantação vinculado. O conteúdo do compartilhamento de implantação de Produção será mesclado com o conteúdo que já existe no compartilhamento \\\\*remote\_server\_name*\\Deployment$.  
 
