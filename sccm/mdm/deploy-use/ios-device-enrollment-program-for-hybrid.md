@@ -10,11 +10,11 @@ ms.assetid: 78d44adc-9b1c-4bc6-b72d-e93873916ea6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a4a6d8d67060dbf7c5bc75892d2f231bce67df8f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 31c94d3632014110302cb1815f72af0c26245dc9
+ms.sourcegitcommit: 95452daa3340d4d0818562bcbb53672cb16f8799
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/11/2018
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registro no DEP (Programa de Registro de Dispositivos) do iOS para implantações híbridas com o Configuration Manager
 
@@ -102,7 +102,10 @@ As empresas podem adquirir dispositivos iOS por meio do programa de registro de 
     > [!NOTE]
     > Na configuração híbrida, a operação de sincronização DEP é disparada manualmente clicando em **Sincronização DEP** no console do Configuration Manager.
 
-4.  **Atribuir perfil DEP**<br>No espaço de trabalho **Ativos e Conformidade**, vá para **Todos os Dispositivos de Propriedade Corporativa** > **iOS** > **Perfis de Registro**. Selecione o perfil de registro DEP, em seguida, na guia **Início**, clique em **Atribuir a dispositivos**. Selecione os dispositivos que usarão esse perfil de registro, clique em **Adicionar** em seguida, clique em **OK**.   
+4.  **Atribuir perfil DEP**<br>No espaço de trabalho **Ativos e Conformidade**, vá para **Todos os Dispositivos de Propriedade Corporativa** > **iOS** > **Perfis de Registro**. Selecione o perfil de registro DEP, em seguida, na guia **Início**, clique em **Atribuir a dispositivos**. Selecione os dispositivos que usarão esse perfil de registro, clique em **Adicionar** em seguida, clique em **OK**.
+
+    > [!NOTE]
+    > Depois que um perfil DEP for atribuído a um dispositivo, você poderá substituir o perfil apenas por outro perfil DEP. No entanto, você não pode remover a atribuição do perfil DEP. Para remover um perfil DEP de um dispositivo, você deve cancelar a inscrição do dispositivo.  
      ![Captura de tela da atribuição de perfil DEP para dispositivos iOS](../media/dep-assign-profile.png)
 
 ## <a name="distribute-devices-to-users"></a>Distribuir dispositivos para usuários

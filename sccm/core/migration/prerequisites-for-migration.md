@@ -2,7 +2,7 @@
 title: Pré-requisitos de migração
 titleSuffix: Configuration Manager
 description: Entenda as versões compatíveis do Configuration Manager, os idiomas com suporte do site de origem e as configurações necessárias para migração.
-ms.date: 3/7/2017
+ms.date: 5/7/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,11 @@ ms.assetid: ec976930-7467-4d3c-b33c-991bf408a74a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fde02837f281a6db182d3144d2009e6b56f0dc69
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: da35641b7e00bfdae025d2978beaa541951487da
+ms.sourcegitcommit: 7198ec49d9ce68c6d55bfb9e2d537b5442a132cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="prerequisites-for-migration-in-system-center-configuration-manager"></a>Pré-requisitos para a migração no System Center Configuration Manager
 
@@ -67,7 +67,7 @@ Para migrar de uma hierarquia de origem com suporte, é necessário ter acesso a
 Quando você migra dados de uma hierarquia do System Center 2012 Configuration Manager ou do System Center Configuration Manager, não há limitações de idioma do site de origem. Os objetos do banco de dados do site de origem já estão em um formato de idioma neutro.  
 
 ##  <a name="BKMK_Required_Configurations"></a> Configurações necessárias para a migração  
-Veja a seguir as configurações necessárias para o uso da migração e de suas operações.  
+Veja a seguir as configurações necessárias para o uso da migração e de suas operações:  
 
 -   **Para configurar, executar e monitorar a migração no console do Configuration Manager:**  
 

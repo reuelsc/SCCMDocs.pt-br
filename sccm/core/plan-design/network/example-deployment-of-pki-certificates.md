@@ -10,11 +10,11 @@ ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0b34163bfb5aea716062882d4c2ebb1360bba2c9
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 376d75a2aed5fe0b14b3af309e48a75d8f392c11
+ms.sourcegitcommit: defdaf493c1dc5a7a380541bc028fbd2b21c1047
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>Exemplo de implantação passo a passo dos certificados PKI para o System Center Configuration Manager: autoridade de certificação do Windows Server 2008
 
@@ -239,6 +239,9 @@ Esta implantação de certificados abrange os seguintes procedimentos:
 8.  Escolha **Adicionar**, insira **Servidores do Site do ConfigMgr** na caixa de texto e escolha **OK**.  
 
 9. Selecione a permissão **Registrar** para este grupo e não desmarque a permissão **Ler** .  
+
+    > [!NOTE]
+    > Verifique se a opção **Tamanho mínimo da chave** na guia **Criptografia** foi configurada para **2048**
 
 10. Escolha **OK** e feche o **Console de Modelos de Certificado**.  
 
