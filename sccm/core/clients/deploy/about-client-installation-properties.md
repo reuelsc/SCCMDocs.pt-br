@@ -1,7 +1,7 @@
 ---
-title: Propriedades de instalação de cliente
+title: Propriedades e parâmetros de instalação do cliente
 titleSuffix: Configuration Manager
-description: Saiba mais sobre as propriedades de linha de comando do ccmsetup para instalar o cliente do Configuration Manager.
+description: Saiba mais sobre os parâmetros e propriedades de linha de comando ccmsetup para instalar o cliente do Configuration Manager.
 ms.date: 03/28/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,17 +10,17 @@ ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 27479bf3db9ab0ed5d842f5cbf9db4e399a4168d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 735a8da57c0225aee533568eb997dc82d9816d6b
+ms.sourcegitcommit: db6074317d5c68ebb5fc478be5bceeb441aa0737
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Sobre as propriedades de instalação do cliente no System Center Configuration Manager
+# <a name="about-client-installation-parameters-and-properties-in-system-center-configuration-manager"></a>Sobre os parâmetros e propriedades de instalação do cliente no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Use o comando CCMSetup.exe para instalar o cliente do Configuration Manager. Se você fornecer essas propriedades de instalação do cliente na linha de comando, elas modificarão o comportamento da instalação.
+Use o comando CCMSetup.exe para instalar o cliente do Configuration Manager. Se você fornecer esses parâmetros de instalação do cliente na linha de comando, eles modificarão o comportamento da instalação. Se você fornecer as propriedades de instalação do cliente na linha de comando, elas modificarão a configuração inicial do agente do cliente instalado.
 
 
 
@@ -38,16 +38,16 @@ Use o comando CCMSetup.exe para instalar o cliente do Configuration Manager. Se 
 > [!NOTE]  
 >  No Configuration Manager, não é possível executar o arquivo Client.msi diretamente.  
 
- O CCMSetup.exe fornece [propriedades de linha de comando](#ccmsetup-exe-command-line-properties) para personalizar a instalação. Também especifique propriedades para modificar o comportamento do client.msi na linha de comando do CCMSetup.exe.  
+ O CCMSetup.exe fornece [parâmetros de linha de comando](#ccmsetup-exe-command-line-parameters) para personalizar a instalação. Os parâmetros são prefixados com uma barra invertida e, por padrão, ficam em letra minúscula. Especifique o valor de um parâmetro, quando for necessário, usando dois-pontos e, logo em seguida, o valor desejado. Também é possível fornecer propriedades para modificar o comportamento do client.msi na linha de comando do CCMSetup.exe. Por padrão, as propriedades estão em maiúsculas. Especifique um valor para uma propriedade usando um sinal de igual seguido imediatamente pelo valor desejado.  
 
 > [!IMPORTANT]  
->  Especifique as propriedades do CCMSetup antes de especificar as propriedades do client.msi.  
+>  Especifique os parâmetros do CCMSetup antes de especificar as propriedades do client.msi.  
 
  CCMSetup.exe e os arquivos de suporte estão localizados no servidor do site na pasta **Client** da pasta de instalação do Configuration Manager. Essa pasta é compartilhada na rede como **&lt;Nome do Servidor do Site\>\SMS_&lt;Código do Site\>\Cliente**.  
 
  No prompt de comando, o comando CCMSetup.exe usa o seguinte formato:  
 
- `CCMSetup.exe [<Ccmsetup properties>] [<client.msi setup properties>]`  
+ `CCMSetup.exe [<Ccmsetup parameters>] [<client.msi setup properties>]`  
 
  Por exemplo:  
 
@@ -64,7 +64,7 @@ Use o comando CCMSetup.exe para instalar o cliente do Configuration Manager. Se 
 -   Instrui o client.msi a usar o ponto de status de fallback chamado SMSFP01.  
 
 > [!NOTE]  
->  Se uma propriedade tiver espaços, coloque-a entre aspas.  
+>  Se um valor de parâmetro tiver espaços, coloque-a entre aspas.  
 
 
 > [!IMPORTANT]  
@@ -72,11 +72,11 @@ Use o comando CCMSetup.exe para instalar o cliente do Configuration Manager. Se 
 
 
 
-##  <a name="ccmsetupexe-command-line-properties"></a>Propriedades de linha de comando do CCMSetup.exe  
+##  <a name="ccmsetupexe-command-line-parameters"></a>Parâmetros de linha de comando do CCMSetup.exe  
 
 ### <a name=""></a>/?  
 
-Abre a caixa de diálogo **CCMSetup** mostrando as propriedades de linha de comando para ccmsetup.exe.  
+Abre a caixa de diálogo **CCMSetup** mostrando os parâmetros de linha de comando para ccmsetup.exe.  
 
 Exemplo: **ccmsetup.exe /?**  
 
@@ -85,7 +85,7 @@ Exemplo: **ccmsetup.exe /?**
  Especifica o local de download do arquivo. Use um caminho local ou UNC. Os arquivos são baixados usando o protocolo SMB. Para usar **/source**, a conta de usuário do Windows da instalação do cliente deve ter permissões de Leitura do local.
 
 > [!NOTE]  
->  Use a propriedade **/source** mais de uma vez em uma linha de comando para especificar locais de download alternativos.  
+>  Use o parâmetro **/source** mais de uma vez em uma linha de comando para especificar locais de download alternativos.  
 
  Exemplo: **ccmsetup.exe /source:"\\\computer\folder"**  
 
@@ -94,39 +94,39 @@ Exemplo: **ccmsetup.exe /?**
  Especifica um ponto de gerenciamento de origem ao qual os computadores se conectam. Os computadores usam esse ponto de gerenciamento para encontrar o ponto de distribuição mais próximo para os arquivos de instalação. Se não houver pontos de distribuição ou os computadores não conseguirem baixar os arquivos dos pontos de distribuição após quatro horas, eles baixarão os arquivos do ponto de gerenciamento especificado.  
 
 > [!IMPORTANT]  
->  Essa propriedade é usada para especificar um ponto de gerenciamento inicial para os computadores encontrarem uma fonte de download e pode ser qualquer ponto de gerenciamento em qualquer site. Ela não *atribui* o cliente a um ponto de gerenciamento.   
+>  Esse parâmetro é usado para especificar um ponto de gerenciamento inicial para os computadores encontrarem uma fonte de download e pode ser qualquer ponto de gerenciamento em qualquer site. Ela não *atribui* o cliente a um ponto de gerenciamento.   
 
  Os computadores baixarão os arquivos por meio de uma conexão HTTP ou HTTPS, dependendo da configuração da função do sistema de site para as conexões do cliente. Se estiver configurado, o download usará a limitação do BITS. Se todos os pontos de distribuição e de gerenciamento estiverem configurados somente para conexões HTTPS do cliente, verifique se o computador cliente tem um certificado do cliente válido.  
 
-Use a propriedade de linha de comando **/mp** para especificar mais de um ponto de gerenciamento. Se o computador não conseguir se conectar ao primeiro, ele tentará o próximo na lista especificada. Ao especificar vários pontos de gerenciamento, separe os valores por ponto-e-vírgula.
+Use o parâmetro de linha de comando **/mp** para especificar mais de um ponto de gerenciamento. Se o computador não conseguir se conectar ao primeiro, ele tentará o próximo na lista especificada. Ao especificar vários pontos de gerenciamento, separe os valores por ponto-e-vírgula.
 
-Se o cliente se conectar a um ponto de gerenciamento usando HTTPS, normalmente, será necessário especificar o FQDN, não o nome do computador. O valor deve corresponder ao Nome Alternativo da Entidade ou à Entidade do certificado PKI do ponto de gerenciamento. O Configuration Manager é compatível com o uso de um nome do computador no certificado para conexões na intranet, no entanto, o uso de um FQDN é a melhor prática de segurança recomendada.
+Se o cliente se conectar a um ponto de gerenciamento usando HTTPS, normalmente, será necessário especificar o FQDN, não o nome do computador. O valor deve corresponder ao Nome Alternativo da Entidade ou à Entidade do certificado PKI do ponto de gerenciamento. Embora o Configuration Manager dê suporte ao uso de um nome do computador no certificado para conexões na intranet, recomendamos um FQDN.
 
 Exemplo de uso do nome do computador: `ccmsetup.exe /mp:SMSMP01`  
 
 Exemplo de uso do FQDN: `ccmsetup.exe /mp:smsmp01.contoso.com`  
 
-Essa propriedade pode especificar a URL de um gateway de gerenciamento de nuvem. Use essa URL para instalar o cliente em um dispositivo baseado na Internet. Para obter o valor dessa propriedade, use as seguintes etapas:
+Esse parâmetro pode especificar a URL de um gateway de gerenciamento de nuvem. Use essa URL para instalar o cliente em um dispositivo baseado na Internet. Para obter o valor desse parâmetro, use as seguintes etapas:
 - Criar um gateway de gerenciamento de nuvem.
 - Em um cliente ativo, abra um prompt de comando do Windows PowerShell como administrador. 
 - Execute o seguinte comando: `(Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate | Where-Object {$_.Type -eq "Internet"}).MP`
-- Acrescente o prefixo "https://" para usar com a propriedade **/mp**.
+- Acrescente o prefixo "https://" para usar com o parâmetro **/mp**.
 
 Exemplo de quando usar a URL do gateway de gerenciamento de nuvem: `ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
  > [!Important]
- > Ao especificar a URL de um gateway de gerenciamento de nuvem para a propriedade **/mp**, ela deverá começar com **https://**.
+ > Ao especificar a URL de um gateway de gerenciamento de nuvem para o parâmetro **/mp**, ela deverá começar com **https://**.
 
 
 ### <a name="retryltminutes"></a>/retry:&lt;Minutos\>
 
-O intervalo de repetição se o CCMSetup.exe falhar ao baixar os arquivos de instalação. O CCMSetup continuará tentando até atingir o limite especificado na propriedade **downloadtimeout**.  
+O intervalo de repetição se o CCMSetup.exe falhar ao baixar os arquivos de instalação. O CCMSetup continuará tentando até atingir o limite especificado no parâmetro **downloadtimeout**.  
 
 Exemplo: `ccmsetup.exe /retry:20`  
 
 ### <a name="noservice"></a>/noservice
 
-Impede que o CCMSetup seja executado como um serviço, que é o padrão. Quando o CCMSetup é executado como um serviço, ele é executado no contexto da conta Sistema Local do computador. Essa conta pode não ter direitos suficientes para acessar os recursos de rede necessários para a instalação. Com **/noservice**, o CCMSetup.exe é executado no contexto da conta de usuário usada para iniciar a instalação. Além disso, se você estiver usando um script para executar o CCMSetup.exe com a propriedade **/service**, o CCMSetup.exe será fechado após a inicialização do serviço e poderá não relatar os detalhes da instalação corretamente.   
+Impede que o CCMSetup seja executado como um serviço, que é o padrão. Quando o CCMSetup é executado como um serviço, ele é executado no contexto da conta Sistema Local do computador. Essa conta pode não ter direitos suficientes para acessar os recursos de rede necessários para a instalação. Com **/noservice**, o CCMSetup.exe é executado no contexto da conta de usuário usada para iniciar a instalação. Além disso, se você estiver usando um script para executar o CCMSetup.exe com o parâmetro **/service**, o CCMSetup.exe será fechado após a inicialização do serviço e poderá não relatar os detalhes da instalação corretamente.   
 
 Exemplo: `ccmsetup.exe /noservice`  
 
@@ -144,13 +144,13 @@ Exemplo: `ccmsetup.exe /uninstall`
 
 ### <a name="logon"></a>/logon
 
-Se uma versão do cliente já está instalada, essa propriedade especifica que a instalação do cliente deve ser interrompida.  
+Se uma versão do cliente já está instalada, esse parâmetro especifica que a instalação do cliente deve ser interrompida.  
 
 Exemplo: `ccmsetup.exe /logon`  
 
 ### <a name="forcereboot"></a>/forcereboot
 
- Especifica se o CCMSetup deverá forçar o computador cliente a ser reiniciado se isso for necessário para concluir a instalação. Se essa propriedade não for especificada, o CCMSetup será fechado quando uma reinicialização for necessária. Em seguida, ele continuará após a próxima reinicialização manual.  
+ Especifica se o CCMSetup deverá forçar o computador cliente a ser reiniciado se isso for necessário para concluir a instalação. Se esse parâmetro não for especificado, o CCMSetup será fechado quando uma reinicialização for necessária. Em seguida, ele continuará após a próxima reinicialização manual.  
 
  Exemplo: `CCMSetup.exe /forcereboot`  
 
@@ -178,10 +178,10 @@ Exemplo: `ccmsetup.exe /downloadtimeout:100`
 
 ### <a name="usepkicert"></a>/UsePKICert
 
- Quando especificado, o cliente usa um certificado PKI que inclui a autenticação de cliente, se disponível. Se o cliente não puder encontrar um certificado válido, ele usará uma conexão HTTP com um certificado autoassinado. Esse comportamento é o mesmo quando essa propriedade não é usada.
+Quando especificado, o cliente usa um certificado PKI que inclui a autenticação de cliente, se disponível. Se o cliente não puder encontrar um certificado válido, ele usará uma conexão HTTP com um certificado autoassinado. Esse comportamento é o mesmo quando esse parâmetro não é usado.
 
 > [!NOTE]  
->  Em alguns cenários, você não precisa especificar essa propriedade ao instalar um cliente e ainda usar um certificado do cliente. Esses cenários incluem a instalação de um cliente usando a instalação do cliente por push e a instalação do cliente baseada em ponto de atualização de software. No entanto, será necessário especificar essa propriedade sempre que instalar um cliente e usar a propriedade **/mp** para especificar um ponto de gerenciamento que seja configurado para aceitar somente conexões de clientes via HTTPS. Você também precisa especificar essa propriedade ao instalar um cliente para a comunicação apenas pela Internet. Use a propriedade CCMALWAYSINF=1 junto com as propriedades para o ponto de gerenciamento baseado na Internet e o código do site. Para obter mais informações sobre o gerenciamento de clientes baseado na Internet, consulte [Considerações sobre a comunicação do cliente pela Internet ou por uma floresta não confiável](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
+>  Em alguns cenários, você não precisa especificar esse parâmetro ao instalar um cliente e ainda usar um certificado do cliente. Esses cenários incluem a instalação de um cliente usando a instalação do cliente por push e a instalação do cliente baseada em ponto de atualização de software. No entanto, será necessário especificar esse parâmetro sempre que instalar um cliente e usar o parâmetro **/mp** para especificar um ponto de gerenciamento que seja configurado para aceitar somente conexões de clientes via HTTPS. Você também precisa especificar esse parâmetro ao instalar um cliente para a comunicação apenas pela Internet. Use a propriedade CCMALWAYSINF=1 junto com as propriedades para o ponto de gerenciamento baseado na Internet (CCMHOSTNAME) e o código do site (SMSSITECODE). Para obter mais informações sobre o gerenciamento de clientes baseado na Internet, consulte [Considerações sobre a comunicação do cliente pela Internet ou por uma floresta não confiável](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
 
  Exemplo: `CCMSetup.exe /UsePKICert`  
 
@@ -199,8 +199,8 @@ Exemplo: `ccmsetup.exe /downloadtimeout:100`
 
 Especifica o nome de um arquivo de texto que lista as propriedades de instalação do cliente.
 
-- Se a propriedade **/noservice** do CCMSetup não for especificada, esse arquivo deverá estar localizado na pasta do CCMSetup, que é %Windir%\\Ccmsetup nos sistemas operacionais de 32 e 64 bits.
-- Se você especificar a propriedade **/noservice** , esse arquivo será localizado na mesma pasta em que o CCMSetup.exe será executado.  
+- Se o parâmetro **/noservice** do CCMSetup não for especificado, esse arquivo deverá estar localizado na pasta do CCMSetup, que é %Windir%\\Ccmsetup nos sistemas operacionais de 32 e 64 bits.
+- Se você especificar o parâmetro **/noservice**, esse arquivo será localizado na mesma pasta em que o CCMSetup.exe será executado.  
 
 Exemplo: `CCMSetup.exe /config:&lt;Configuration File Name.txt\>`  
 
@@ -210,7 +210,7 @@ Entrada de seção de exemplo [Instalação do Cliente]: `Install=INSTALL=ALL SM
 
 ### <a name="skipprereqltfilename"></a>/skipprereq:&lt;nome do arquivo\>
 
- Especifica que o CCMSetup.exe não deve instalar o programa de pré-requisitos especificado durante a instalação do cliente do Configuration Manager. Essa propriedade é compatível com a inserção de mais de um valor. Use o caractere ponto-e-vírgula (;) para separar cada valor.  
+ Especifica que o CCMSetup.exe não deve instalar o programa de pré-requisitos especificado durante a instalação do cliente do Configuration Manager. Esse parâmetro é compatível com a inserção de mais de um valor. Use o caractere ponto-e-vírgula (;) para separar cada valor.  
 
 
  Exemplos: `CCMSetup.exe /skipprereq:dotnetfx40_client_x86_x64.exe` ou `CCMSetup.exe /skipprereq:dotnetfx40_client_x86_x64.exe;windowsupdateagent30_x86.exe`  
@@ -226,7 +226,7 @@ Especifica que o CCMSetup.exe não instala o recurso especificado quando ele ins
 Exemplo: o `CCMSetup.exe /ExcludeFeatures:ClientUI` não instala o Centro de Software no cliente.  
 
 > [!NOTE]  
->  **ClientUI** é o único valor compatível com a propriedade **/ExcludeFeatures**.  
+>  **ClientUI** é o único valor compatível com o parâmetro **/ExcludeFeatures**.  
 
 
 
@@ -249,7 +249,7 @@ Exemplo: o `CCMSetup.exe /ExcludeFeatures:ClientUI` não instala o Centro de Sof
 
 ### <a name="ccmsetupcmd"></a>CCMSETUPCMD 
 
-Especifica as propriedades de linha de comando que são passadas para ccmsetup.exe depois que ele é instalado por ccmsetup.msi. Inclua outras propriedades dentro das aspas. Use essa propriedade ao inicializar o cliente do Configuration Manager usando o método de instalação do MDM do Intune. 
+Especifica os parâmetros de linha de comando que são passados para ccmsetup.exe depois que ele é instalado por ccmsetup.msi. Inclua outras propriedades dentro das aspas. Use essa propriedade ao inicializar o cliente do Configuration Manager usando o método de instalação do MDM do Intune. 
 
 Exemplo: `ccmsetup.msi CCMSETUPCMD="/mp:https://mp.contoso.com CCMHOSTNAME=mp.contoso.com"`
 
@@ -320,7 +320,7 @@ Exemplo: **CCMSetup.exe  CCMALLOWSILENTREBOOT**
 
  Definido como **1** para especificar que o cliente é sempre baseado na Internet e nunca se conecta à intranet. O tipo de conexão do cliente exibe **Sempre Internet**.  
 
- Use essa propriedade em conjunto com CCMHOSTNAME, que especifica o FQDN do ponto de gerenciamento baseado na Internet. Use-o também com a propriedade /UsePKICert do CCMSetup e com o código do site.  
+ Use essa propriedade em conjunto com CCMHOSTNAME, que especifica o FQDN do ponto de gerenciamento baseado na Internet. Use-o também com o parâmetro /UsePKICert do CCMSetup e com o código do site.  
 
  Para obter mais informações sobre o gerenciamento de clientes baseado na Internet, consulte [Considerações sobre a comunicação do cliente pela Internet ou por uma floresta não confiável](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
 
