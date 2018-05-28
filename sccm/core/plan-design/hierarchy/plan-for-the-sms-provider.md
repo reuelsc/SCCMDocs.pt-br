@@ -39,7 +39,7 @@ Usuários administrativos do Configuration Manager usam um provedor de SMS para 
 > [!IMPORTANT]  
 >  Quando os computadores que contêm um Provedor de SMS de um site estão offline, os consoles do Configuration Manager não conseguem se conectar ao banco de dados desse site.  
 
- Para obter mais informações sobre como gerenciar o provedor de SMS, veja [Manage the SMS Provider](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ManageSMSprovider) em [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md).  
+ Para obter mais informações sobre como gerenciar o provedor de SMS, veja [Manage the SMS Provider](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ManageSMSprovider) em [Modificar a infraestrutura do System Center Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md).  
 
 ## <a name="prerequisites-to-install-the-sms-provider"></a>Pré-requisitos para instalar o provedor de SMS  
 
@@ -164,7 +164,7 @@ Depois que o usuário faz uma conexão bem-sucedida com o Provedor de SMS, a adm
 É possível exibir e configurar os direitos e as permissões do grupo de Administradores de SMS usando o snap-in do MMC do Controle WMI. Por padrão, a opção **Todos** tem as permissões **Executar Métodos**, **Gravação do Provedor**e **Habilitar Conta** . Quando um usuário se conecta ao Provedor de SMS, é concedido a ele acesso aos dados do banco de dados do site com base em seus direitos de segurança administrativa baseados em função definidos no console do Configuration Manager. O grupo de administradores de SMS recebe explicitamente as permissões **Habilitar conta** e **Habilitação remota** no namespace **Root\SMS**.  
 
 > [!NOTE]  
->  Cada usuário administrativo que usa um console remoto do Configuration Manager requer permissões DCOM de ativação remota no computador do servidor do site e no computador Provedor de SMS. Embora você possa conceder esses direitos a qualquer usuário ou grupo, como prática recomendada, atribua-os ao grupo de administradores de SMS para simplificar a administração. Para obter mais informações, veja a seção [Configure DCOM Permissions for Remote Configuration Manager Console Connections](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) no tópico [Manage Site and Hierarchy Configurations](../../../core/servers/manage/modify-your-infrastructure.md) .  
+>  Cada usuário administrativo que usa um console remoto do Configuration Manager requer permissões DCOM de ativação remota no computador do servidor do site e no computador Provedor de SMS. Embora você possa conceder esses direitos a qualquer usuário ou grupo, como prática recomendada, atribua-os ao grupo de administradores de SMS para simplificar a administração. Para obter mais informações, veja a seção [Configurar permissões DCOM para consoles remotos do Gerenciador de Configurações](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) no tópico [Modificar a infraestrutura do System Center Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md) .  
 
 
 ##  <a name="BKMK_SMSProvNamespace"></a> Sobre o namespace do Provedor de SMS  

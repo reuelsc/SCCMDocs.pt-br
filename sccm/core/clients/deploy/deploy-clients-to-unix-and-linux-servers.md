@@ -111,7 +111,7 @@ Cada pacote de instalação de cliente contém todos os arquivos necessários pa
 
      Opcional. Especifica o FQDN, o servidor de ponto de status de fallback que o cliente usa para enviar mensagens de estado.  
 
-     Para obter mais informações sobre o ponto de status de fallback, consulte [Determine Whether You Require a Fallback Status Point](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients#determine-if-you-need-a-fallback-status-point) .  
+     Para obter mais informações sobre o ponto de status de fallback, consulte [Determinar se você precisa de um ponto de status de fallback](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients#determine-if-you-need-a-fallback-status-point) .  
 
 
 -   **-dir &lt;diretório\>**  
