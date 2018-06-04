@@ -1,27 +1,21 @@
 ---
-title: Planejando a implantação do cliente em dispositivos Windows Embedded | Microsoft Docs
+title: Planejar a implantação de cliente em dispositivos Windows Embedded
+titleSuffix: Configuration Manager
 description: Planeje a implantação de cliente em dispositivos do Windows Embedded no System Center Configuration Manager.
-ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 038e61f9-f49d-41d1-9a9f-87bec9e00d5d
-caps.latest.revision: 7
-caps.handback.revision: 0
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 513dcb2a224a6e60553fdc602813e9fe47116235
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 6ca987411775ec3a6fbe626d4b34f83313673f5b
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
-ms.locfileid: "22103597"
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "32334820"
 ---
 # <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>Planejando a implantação de cliente em dispositivos do Windows Embedded no System Center Configuration Manager
 
@@ -31,7 +25,7 @@ ms.locfileid: "22103597"
 
  É importante lembrar que quando os filtros são desabilitados, os drivers de filtro não devem ser desabilitados. Normalmente, estes drivers são iniciados automaticamente quando o computador é iniciado. Desabilitar os drivers impedirá a instalação do cliente ou interferirá na orquestração de filtro de gravação que fará com que as operações de cliente falhem. Estes são os serviços associados a cada tipo de filtro de gravação que devem permanecer em execução:  
 
-|Tipo de filtro de gravação|Driver|Tipo|Descrição|  
+|Tipo de filtro de gravação|Driver|Digite|Descrição|  
 |-----------------------|------------|----------|-----------------|  
 |EWF|EWF|Kernel|Implementa o redirecionamento de E/S de nível de setor nos volumes protegidos.|  
 |FBWF|FBWF|Sistema de arquivos|Implementa o redirecionamento de E/S de nível de arquivo nos volumes protegidos.|  
@@ -65,7 +59,7 @@ ms.locfileid: "22103597"
 >
 > **Somente para dispositivos que usam FBWF** ‑ defina as seguintes exceções para manter o estado do cliente e os dados do inventário entre as reinicializações do dispositivo:  
 >   
->  -   CCMINSTALLDIR\\*.sdf  
+>  -   CCMINSTALLDIR\\\*.sdf  
 > -   CCMINSTALLDIR\ServiceData  
 > -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\StateSystem  
 >   

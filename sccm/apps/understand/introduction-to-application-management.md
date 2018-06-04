@@ -1,5 +1,6 @@
 ---
-title: Introdução ao gerenciamento de aplicativos | Microsoft Docs
+title: Introdução ao gerenciamento de aplicativos
+titleSuffix: Configuration Manager
 description: Descubra as informações básicas de que você precisará para gerenciar e implantar aplicativos do System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/23/2016
@@ -12,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
 caps.latest.revision: 18
-author: robstackmsft
-ms.author: robstack
+author: mattbriggs
+ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 959a36413d06bb225f260bd44c1d3d59efd44e69
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: a8a66169f3c187f8fa0319548ddde23b399811f3
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2017
-ms.locfileid: "20784584"
+ms.lasthandoff: 03/27/2018
+ms.locfileid: "23137057"
 ---
 # <a name="introduction-to-application-management-in-system-center-configuration-manager"></a>Introdução ao gerenciamento de aplicativos no System Center Configuration Manager
 
