@@ -10,16 +10,18 @@ manager: dougeby
 ms.date: 03/22/2018
 ms.topic: conceptual
 ms.assetid: 60e2022f-a4f9-40dd-af01-9ecb37b43878
-ms.openlocfilehash: 439e4e26c08b5a2710da0978ed2407d715bc86bd
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: ceb4004c7f4cc24ff17f0e9648cddb29cb26d898
+ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34569639"
 ---
 # <a name="switch-configuration-manager-workloads-to-intune"></a>Mudar as cargas de trabalho do Configuration Manager para o Intune
 Em [Preparar dispositivos Windows 10 para cogerenciamento](co-management-prepare.md), você preparou dispositivos Windows 10 para o cogerenciamento. Esses dispositivos ingressaram no AD e no Azure AD, estão registrados no Intune e têm o cliente do Configuration Manager. Provavelmente ainda há dispositivos Windows 10 que ingressaram no AD e têm o cliente do Configuration Manager, mas que não ingressaram no Azure AD e não estão registrados no Intune. O procedimento a seguir fornece as etapas para habilitar o cogerenciamento e preparar o restante dos dispositivos Windows 10 (clientes do Configuration Manager sem registro no Intune) para o cogerenciamento e permite que você comece a mudar cargas de trabalho do Configuration Manager específicas para o Intune.
 
 1. No console do Configuration Manager, acesse **Administração** > **Visão Geral** > **Serviços de Nuvem** > **Cogerenciamento**.    
+
 2. Na guia Início, no grupo Gerenciar, escolha  **Configurar cogerenciamento** para abrir o Assistente para Configuração de Cogerenciamento.    
 3. Na página Assinatura, clique em **Entrar**, entre no seu locatário do Intune e, em seguida, clique em **Avançar**.   
 4. Na página Habilitação, escolha **Piloto** ou **Todos** para habilitar o Registro automático do Intune e, em seguida, clique em **Avançar**. Quando você escolhe **Piloto**, somente os clientes do Configuration Manager que são membros do grupo piloto são registrados automaticamente no Intune. Com essa opção, você pode habilitar o cogerenciamento em um subconjunto de clientes para testar inicialmente o cogerenciamento e distribuí-lo usando uma abordagem em fases. A linha de comando pode ser usada para implantar o cliente do Configuration Manager como um aplicativo no Intune para dispositivos já registrados no Intune. Para obter detalhes, consulte [Dispositivos Windows 10 registrados no Intune](co-management-prepare.md#windows-10-devices-enrolled-in-intune).
@@ -55,8 +57,8 @@ Algumas cargas de trabalho estão disponíveis para serem transferidas para o In
       - Controle de Aplicativos do Windows Defender
       - Central de Segurança do Windows Defender
       - Proteção Avançada contra Ameaças do Windows Defender
-
-
+      - Windows Information Protection
+      
 
 ## <a name="monitor-co-management"></a>Monitorar o cogerenciamento
 Depois de habilitar o cogerenciamento, você poderá monitorar dispositivos de cogerenciamento usando os seguintes métodos:
