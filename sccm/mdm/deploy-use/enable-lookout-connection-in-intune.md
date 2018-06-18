@@ -1,8 +1,8 @@
 ---
-title: Habilitar o Lookout MTP no Intune
+title: Habilitar o Lookout MTD no Intune
 titleSuffix: Configuration Manager
-description: Habilite o Lookout Mobile Threat Protection no console de administração do Intune.
-ms.date: 03/05/2017
+description: Habilite o Lookout MTD (defesa contra ameaças móveis) no portal do Microsoft Intune.
+ms.date: 05/31/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,26 +10,58 @@ ms.assetid: 7e4ada34-63bf-4b9f-8246-31816aa44196
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 79a583237d882101d70442cbf6b55a5e3c0e9b11
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0de1859d97eed804eced58028d6459ab682f9b3f
+ms.sourcegitcommit: 9cff0702c2cc0f214173b47ec241f7e5a40f84e6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34745428"
 ---
-# <a name="enable-lookout-mtp-connection-in-the-intune-admin-console"></a>Habilitar a conexão do Lookout MTP no console do Intune
+# <a name="enable-lookout-mtd-connection-in-the-intune-admin-console"></a>Habilitar a conexão com o Lookout MTD no console do administrador do Intune
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este tópico mostra como habilitar a conexão do Lookout MTP no Intune. Você já deve ter configurado o Conector do Intune no console do Lookout antes de realizar essa etapa.  Se você ainda não o fez, siga as etapas descritas em [Set up your subscription with Lookout mobile threat protection](set-up-your-subscription-with-lookout.md) (Configurar sua assinatura no Lookout Mobile Threat Protection).
+Este artigo mostra como habilitar a conexão com o Lookout MTD (defesa contra ameaças móveis) no Microsoft Intune. Você já deve ter configurado o Conector do Intune no console do Lookout antes de realizar essa etapa. Siga as etapas descritas em [Configurar sua assinatura com a defesa contra ameaças móveis do Lookout](set-up-your-subscription-with-lookout.md), caso você ainda não tenha feito isso.
 
-Para habilitar a conexão do Lookout MTP no Intune, na página **Administração** no [Console do administrador do Microsoft Intune](https://manage.microsoft.com), escolha **Integração de Serviço de Terceiros**. Escolha **Status da consulta** e habilite **Sincronização com MTP** usando o botão de alternância.
 
-![captura de tela da página de sincronização do Lookout com o botão de alternância Habilitar realçado](media/lookout-intune-synchronization.png)
 
-Isso conclui a configuração da integração do Lookout e do Intune no console do administrador do Intune.  As próximas etapas para implementar essa solução envolvem a implantação de [Aplicativos Lookout for Work](configure-and-deploy-lookout-for-work-apps.md) e a configuração da política de [conformidade](enable-device-threat-protection-rule-compliance-policy.md).
+## <a name="enable-the-lookout-mtd-connector"></a>Habilitar o conector do Lookout MTD
 
->[!IMPORTANT]
-> Você **deve** configurar o aplicativo Lookout for Work antes de criar regras de política de conformidade e configurar o acesso condicional. Isso garante que o aplicativo está pronto e disponível para os usuários finais instalarem antes que possam ter acesso ao email ou outros recursos da empresa.
+1. Acesse o [portal do Azure](https://portal.azure.com) e entre com suas credenciais do Intune. Depois que você entrar com êxito, o **Painel do Azure** será exibido.  
+
+2. No **Painel do Azure**, escolha **Todos os serviços** no menu à esquerda, em seguida, digite **Intune** no filtro da caixa de texto.  
+
+3. Escolha **Intune**. O **Painel do Intune** será aberto.  
+
+4. No **Painel do Intune**, escolha **Conformidade do dispositivo** e selecione **Defesa Contra Ameaças Móveis** na seção **Instalação**.  
+
+5. No painel **Defesa Contra Ameaças Móveis**, escolha **Adicionar**.  
+
+6. Escolha **Lookout** como o **Conector de Defesa Contra Ameaças Móveis a ser instalado** na lista suspensa.  
+
+7. Habilite as opções de alternância de acordo com os requisitos da sua organização.  
+
+
+
+## <a name="mtd-toggle-options"></a>Opções de alternância de MTD
+
+Você pode decidir quais opções de alternância de MTD você precisa habilitar de acordo com os requisitos da sua organização. Aqui estão mais detalhes:
+
+- **Conectar dispositivos Android 4.1 ou superiores à MTD do Lookout for Work**: quando você habilitar essa opção, os dispositivos Android 4.1 ou superiores poderão relatar riscos de segurança para o Intune.  
+    - **Marcar como não compatível, se nenhum dado for recebido**: se o Intune não receber nenhum dado sobre um dispositivo nessa plataforma do Lookout, considere o dispositivo como não compatível.  
+
+- **Conectar dispositivos iOS 8.0 ou superiores à MTD do Lookout for Work**: quando você habilitar essa opção, os dispositivos Android 4.1 ou superiores poderão relatar riscos de segurança para o Intune.
+    - **Marcar como não compatível, se nenhum dado for recebido**: se o Intune não receber nenhum dado sobre um dispositivo nessa plataforma do Lookout, considere o dispositivo como não compatível.  
+
+> [!TIP]  
+> Você pode ver o **Status de conexão** e o horário da **Última sincronização** entre o Intune e o Lookout no painel Defesa Contra Ameaças Móveis.
+
+
 
 ## <a name="next-steps"></a>Próximas etapas
-[Configurar aplicativo Lookout for Work ](configure-and-deploy-lookout-for-work-apps.md)
+Isso conclui a instalação da integração do Lookout e do Intune. As próximas etapas para implementar essa solução envolvem a implantação de [Aplicativos Lookout for Work](configure-and-deploy-lookout-for-work-apps.md) e a configuração da política de [conformidade](enable-device-threat-protection-rule-compliance-policy.md).
+
+>[!IMPORTANT]
+> Você *deve* configurar o aplicativo Lookout for Work antes de criar regras de política de conformidade e configurar o acesso condicional. Essa ação garante que o aplicativo esteja pronto e disponível para ser instalado pelos usuários finais antes que eles possam ter acesso ao email ou outros recursos da empresa.
+
+[Configurar o aplicativo Lookout for Work](configure-and-deploy-lookout-for-work-apps.md)

@@ -9,11 +9,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: e62b748596aba1404d6b097e5aa0bf74266f055b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: fbae44d1344dd36d3c0a6faf2e50727dfa830ba0
+ms.sourcegitcommit: 8060ea520fb08629e1d5f249daffe825536673a5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35232363"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificados para o gateway de gerenciamento de nuvem
 
@@ -41,7 +42,7 @@ O CMG cria um serviço HTTPS ao qual os clientes baseados na Internet se conecta
 ### <a name="cmg-trusted-root-certificate-to-clients"></a>Certificado raiz confiável do CMG para clientes
 
 Os clientes devem confiar no certificado de autenticação de servidor do CMG. Há dois métodos para estabelecer essa relação de confiança:
-- Use um certificado de um provedor de certificados público e globalmente confiável. Por exemplo, entre outros, VeriSign ou Thawte. Os clientes do Windows incluem ACs (autoridades de certificação) raiz confiáveis desses provedores. Usando um certificado de autenticação de servidor emitido por um desses provedores, os clientes automaticamente confiam nele. 
+- Use um certificado de um provedor de certificados público e globalmente confiável. Por exemplo, DigiCert, Thawte ou VeriSign, entre outros. Os clientes do Windows incluem ACs (autoridades de certificação) raiz confiáveis desses provedores. Usando um certificado de autenticação de servidor emitido por um desses provedores, os clientes automaticamente confiam nele. 
 - Use um certificado emitido por uma AC corporativa da PKI (infraestrutura de chave pública). A maioria das implementações de PKI corporativo adiciona autoridades de certificação raiz confiáveis aos clientes do Windows. Por exemplo, usando os Serviços de Certificados do Active Directory com a política de grupo. Se você emitir o certificado de autenticação de servidor do CMG de uma AC na qual os clientes não confiam automaticamente, precisará adicionar o certificado raiz confiável da AC aos clientes baseados na Internet.
     - Também use perfis de certificado do Configuration Manager para provisionar certificados em clientes. Para obter mais informações, consulte [Introdução aos perfis de certificado](/sccm/protect/deploy-use/introduction-to-certificate-profiles).
 

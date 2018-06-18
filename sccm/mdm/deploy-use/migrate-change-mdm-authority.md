@@ -9,11 +9,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: be503ec9-5324-4f7c-bcf5-77204328e99c
-ms.openlocfilehash: b8bc778f4bcede45d3035b8b119fc3e4a4df4978
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b295dad503b801ff9d04767f75c1688107016d0b
+ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34569673"
 ---
 # <a name="change-your-mdm-authority-to-intune-standalone"></a>Alterar a autoridade de MDM para o Intune autônomo
 
@@ -53,7 +54,9 @@ Use o procedimento a seguir para alterar a autoridade de MDM no nível de locat�
 3.  Entre no locatário do Intune que você usou originalmente quando definiu a autoridade de MDM no Configuration Manager.
 4.  Clique em **Próximo** e conclua o assistente.
 5.  A autoridade de MDM agora está redefinida. A Assinatura do Intune não é mais exibida no nó Assinaturas do Microsoft Intune do console do Configuration Manager.
-6.  Faça logon no [Intune no portal do Azure](https://portal.azure.com/#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview) usando o mesmo locatário do Intune utilizado antes.    
+6.  Faça logon no [Portal do Intune](https://aka.ms/IntunePortal).
+7.  Na folha do Microsoft Intune, clique em **Registro de dispositivo**.
+8.  Na folha Visão geral de registro de dispositivo, confira a propriedade **Autoridade de MDM**.
 
   > [!Important]    
   > Não use o console clássico do Intune. Você deve fazer logon no Intune no portal do Azure.

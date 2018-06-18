@@ -10,11 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 3a667ae075ac688d4b49789ed88f858c2ff39397
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9324126014245b586ba8fed87c670ac829f6cb81
+ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34703461"
 ---
 # <a name="co-management-for-windows-10-devices"></a>Cogerenciamento para dispositivos Windows 10    
  Com atualizações anteriores do Windows 10, você pode associar um dispositivo com Windows 10 ao Active Directory (AD) local e ao Azure AD baseado em nuvem ao mesmo tempo (Azure AD híbrido). A partir do Configuration Manager versão 1710, o cogerenciamento usufrui dessa melhoria e permite gerenciar dispositivos Windows 10 versão 1709 simultaneamente usando o Configuration Manager e o Intune. <!-- 1350871 -->
@@ -60,7 +61,7 @@ Há dois caminhos principais para usar o cogerenciamento. Um é o cogerenciament
 ### <a name="enable-co-management"></a>Habilitar cogerenciamento 
  No console do Configuration Manager, acesse **Administração** > **Visão Geral** > **Serviços de Nuvem** > **Cogerenciamento**. Escolha **Configurar o cogerenciamento** na faixa de opções para abrir o **Assistente para Integração de Cogerenciamento** 
    
-1. Na página **Assinatura**, clique em **Entrar**, entre no seu locatário do Intune e, em seguida, clique em **Avançar**.    
+1. Na página **Assinatura**, clique em **Entrar**, entre no seu locatário do Intune e, em seguida, clique em **Avançar**. Verifique se a conta usada para entrar no seu locatário tem uma licença do Intune atribuída, caso contrário, ela falhará com a mensagem de erro "Usuário não reconhecido".   
 2. Na página **Habilitação**, escolha sua configuração **Registro automático no Intune**. Copie a linha de comando para dispositivos já inscritos no Intune, se necessário. 
 3. Na página **Cargas de Trabalho**, para cada carga de trabalho, escolha qual grupo de dispositivos mover para gerenciamento com o Intune.
 4. Na página **Preparo**, selecione uma coleção de dispositivos para ser a **Coleção Piloto**. Verifique o **Resumo** e conclua o assistente. 

@@ -1,8 +1,8 @@
 ---
-title: Lista de verificação para o 1802 | System Center Configuration Manager
+title: Lista de verificação da 1802
 titleSuffix: Configuration Manager
 description: Conheça as ações a serem executadas antes de atualizar para o System Center Configuration Manager versão 1802.
-ms.date: 03/22/2018
+ms.date: 06/08/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,12 @@ ms.assetid: 6af92de2-b2c7-4d5c-affd-6cce81979fb5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5f16f69e7b359112a03bb26c964ac0a6990c0b24
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 74fa4e9240cf4a3d369d6b20bcb9233fb6319a8d
+ms.sourcegitcommit: 690f64bd02139f893bd0b45e2e0f00ed6bb4e1c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35259291"
 ---
 # <a name="checklist-for-installing-update-1802-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1802 do System Center Configuration Manager
 
@@ -22,7 +23,7 @@ ms.lasthandoff: 05/03/2018
 
 Ao usar o branch atual do System Center Configuration Manager, você pode instalar a atualização no console da versão 1802 para atualizar a hierarquia de uma versão anterior. <!-- baseline only statement: -->(Como a versão 1802 também está disponível como uma [mídia de linha de base](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions), você pode usar a mídia de instalação para instalar o primeiro site de uma nova hierarquia.)
 
-Para obter a atualização para a versão 1802, use uma função do sistema de sites do ponto de conexão de serviço no site de nível superior da hierarquia. Isso pode ser no modo online ou offline. Depois que a hierarquia baixar o pacote de atualização da Microsoft, você o encontrará no console em **Administração &gt; Visão Geral &gt; Serviços de Nuvem &gt; Atualizações e Manutenção**.
+Para obter a atualização da versão 1802, você precisa usar um ponto de conexão de serviço no site de nível superior da hierarquia. Essa função do sistema de sites pode estar no modo online ou offline. Depois que a hierarquia baixar o pacote de atualização da Microsoft, você poderá encontrá-lo no console no espaço de trabalho **Administração** no nó **Atualizações e Manutenção**.
 
 -   Quando a atualização for listada como **Disponível**, ela estará pronta para ser instalada. Antes de instalar a versão 1802, examine as informações a seguir [sobre como instalar a atualização 1802](#about-installing-update-1802) e a [lista de verificação](#checklist) para saber quais configurações devem ser feitas antes do início da atualização.
 
@@ -141,10 +142,14 @@ Use períodos de serviço para definir um período durante o qual as atualizaç�
 
 Isso pode ajudar a controlar quando os sites em sua hierarquia instalam a atualização. Para obter mais informações, consulte [Service windows for site servers](/sccm/core/servers/manage/service-windows) (Períodos de serviço para servidores do site).
 
+**Examine as extensões com suporte:**   
+<!--SCCMdocs#587-->   
+Se você ampliar o Configuration Manager com outros produtos da Microsoft ou de parceiros da Microsoft, confirme se eles são compatíveis com a versão 1802. Solicite essas informações ao fornecedor do produto. Por exemplo, confira as [notas de versão](/sccm/mdt/release-notes) do Microsoft Deployment Toolkit.
+
 **Execute o verificador de pré-requisitos de instalação:**   
 Quando a atualização está listada no console como **Disponível**, você pode executar o verificador de pré-requisitos independentemente antes de instalar a atualização. (Ao instalar a atualização no site, o verificador de pré-requisitos é executado novamente).
 
-Para executar um verificador de pré-requisitos a partir do console, vá para **Administração > Visão geral > Serviços de Nuvem > Atualizações e Manutenção.** Em seguida, clique com o botão direito do mouse em **Pacote de atualização do Configuration Manager 1802** e, em seguida, escolha **Executar verificação de pré-requisitos**.
+Para executar uma verificação de pré-requisitos usando o console, acesse o espaço de trabalho **Administração** e selecione **Atualizações e Manutenção**. Selecione o pacote de atualização **Configuration Manager 1802** e, em seguida, clique em **Executar verificação de pré-requisitos** na faixa de opções.
 
 Para saber mais sobre como iniciar e monitorar a verificação de pré-requisitos, veja **Etapa 3: executar o verificador de pré-requisitos antes de instalar uma atualização** no tópico [Instalações de atualizações para o System Center Configuration Manager](/sccm/core/servers/manage/install-in-console-updates).
 
@@ -167,3 +172,4 @@ Examine as seguintes ações a serem executadas depois que a instalação da atu
 3.  Reconfigure as réplicas de banco de dados para pontos de gerenciamento em sites primários que você desabilitou antes de iniciar a atualização.
 4.  Reconfigure as tarefas de manutenção de banco de dados que foram desabilitadas antes de iniciar a atualização.
 5.  Se você configurou o piloto de cliente antes de instalar a atualização, atualize os clientes de acordo com o plano que você criou.
+6.  Se você usa alguma extensão do Configuration Manager, atualize-a para a versão mais recente para dar suporte a essa atualização do Configuration Manager. 

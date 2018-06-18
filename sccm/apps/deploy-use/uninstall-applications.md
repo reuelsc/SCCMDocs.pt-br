@@ -10,11 +10,12 @@ ms.assetid: 0ea3edaa-27c6-4391-9896-cd97d9c5d06d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7587fa6d96d6f8737921c9e5edae992cdd0ea614
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: e5b0ee5cb677cff5e57f24a20122fb017aea056c
+ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34569656"
 ---
 # <a name="uninstall-applications-with-system-center-configuration-manager"></a>Desinstalar aplicativos com o System Center Configuration Manager
 
@@ -41,7 +42,7 @@ Execute as seguintes ações para desinstalar um aplicativo implantado anteriorm
 -   Uma implantação com a finalidade da implantação de **Desinstalar** não verifica as regras de requisito. Se o aplicativo estiver instalado no computador em que a implantação é executada, ele será desinstalado.  
 
 > [!IMPORTANT]  
-> Exclua quaisquer implantações ou implantações simuladas existentes de um aplicativo para uma coleção para implantar o aplicativo com uma ação de implantação de **Desinstalar**.  
+> Para implantar o aplicativo com a ação Desinstalar, primeiro você precisa excluir todas as implantações existentes do aplicativo, as implantações simuladas ou as implantações de sequência de tarefas que incluem esse aplicativo. 
 
  Para obter mais informações sobre como criar tipos de implantação, consulte [Criar aplicativos](../../apps/deploy-use/create-applications.md).  
 

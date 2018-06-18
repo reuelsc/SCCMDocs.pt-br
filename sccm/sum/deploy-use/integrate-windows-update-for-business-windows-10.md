@@ -10,11 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
-ms.openlocfilehash: 3dd5a7f9717843244ab8477a09b109261618f9aa
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 07616a1c03c0383e9001418043dc6cd7ec117c1d
+ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34703478"
 ---
 # <a name="integration-with-windows-update-for-business-in-windows-10"></a>Integração com o Windows Update for Business no Windows 10
 
@@ -72,7 +73,8 @@ A partir do Configuration Manager versão 1706, você pode configurar as políti
 >A partir do Configuration Manager versão 1802, você pode definir políticas de adiamento para o programa Windows Insider. <!--507201-->Para obter mais informações sobre o programa Windows Insider, consulte [Introdução ao programa Windows Insider para Empresas](https://docs.microsoft.com/windows/deployment/update/waas-windows-insider-for-business).
 
 ### <a name="prerequisites"></a>Pré-requisitos
-Os dispositivos com Windows 10 gerenciados pelo Windows Update for Business devem ter conectividade com a Internet.
+-   Windows 10 versão 1703 ou posterior
+-   Os dispositivos Windows 10 gerenciados pelo Windows Update para Empresas precisam ter conectividade com a Internet
 
 #### <a name="to-create-a-windows-update-for-business-deferral-policy"></a>Para criar uma política de adiamento do Windows Update for Business
 1. Em **Biblioteca de Software** > **Manutenção do Windows 10** > **Políticas do Windows Update for Business**

@@ -1,54 +1,55 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "Documentação do Microsoft Deployment Toolkit"
+title: Documentação do Microsoft Deployment Toolkit
 metadata:
   document_id: bfb05467-f6ec-4cb2-b108-254972de2d06
-  title: "Documentação do Microsoft Deployment Toolkit"
-  description: "O Microsoft Deployment Toolkit oferece uma coleção unificada de ferramentas, processos e orientações para automatizar as implantações de área de trabalho e servidor."
-  keywords: "freeware, ferramenta, processo, fluxo de trabalho, automação, implantação, automatizado, distribuição"
-  author: arob98
-  ms.author: angrobe
-  manager: angrobe
-  ms.date: 12/27/2017
+  title: Documentação do Microsoft Deployment Toolkit
+  description: O Microsoft Deployment Toolkit oferece uma coleção unificada de ferramentas, processos e orientações para automatizar as implantações de área de trabalho e servidor.
+  keywords: freeware, ferramenta, processo, fluxo de trabalho, automação, implantação, automatizado, distribuição
+  author: aczechowski
+  ms.author: aaroncz
+  manager: dougeby
+  ms.date: 06/04/2018
   ms.topic: landing-page
   ms.devlang: na
   ms.prod: configuration-manager
-  ms.openlocfilehash: 56462ae538a2336f94a1883d099ad7b45c714633
-  ms.sourcegitcommit: 32bbc006a41868a6d9a708db5f7b372d9c71d985
+  ms.openlocfilehash: e02afe511d0c9f240bba68161551857d13d33de0
+  ms.sourcegitcommit: 10b3a571e2a822bbd7b58a25840ee1e6f703a7a2
   ms.translationtype: HT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 03/08/2018
+  ms.lasthandoff: 06/06/2018
+  ms.locfileid: "34814215"
 sections:
 - items:
   - type: markdown
-    text: "O Microsoft Deployment Toolkit oferece uma coleção unificada de ferramentas, processos e orientações para automatizar as implantações de área de trabalho e servidor."
+    text: O Microsoft Deployment Toolkit oferece uma coleção unificada de ferramentas, processos e orientações para automatizar as implantações de área de trabalho e servidor.
 - items:
   - type: list
     style: cards
     className: cardsM
     columns: 2
     items:
-    - href: whats-new-in-mdt.md
-      html: <p>Veja as novidades.</p>
+    - href: https://aka.ms/mdtdownload
+      html: <p>Baixe o MDT mais recente.</p>
       image:
-        src: https://docs.microsoft.com/media/common/i_whats-new.svg
-      title: Novidades
+        src: https://docs.microsoft.com/media/common/i_download-generic.svg
+      title: Baixar MDT
     - href: release-notes.md
-      html: "<p>Detalhes sobre correções e bugs incluídos nesta versão.</p>"
+      html: <p>Detalhes sobre correções e bugs incluídos nesta versão.</p>
       image:
         src: https://docs.microsoft.com/media/common/i_whats-new.svg
-      title: "Notas de versão"
+      title: Notas de versão
     - href: samples-guide.md
-      html: "<p>Exemplo de definições de configuração para cenários de implantação específicos.</p>"
+      html: <p>Exemplo de definições de configuração para cenários de implantação específicos.</p>
       image:
         src: https://docs.microsoft.com/media/common/i_code-samples.svg
       title: Guia de exemplos
-    - href: user-driven-installation-developers-guide.md
-      html: "<p>Personalize a instalação orientada ao usuário da sua organização.</p>"
+    - href: use-the-mdt.md
+      html: <p>Execute as implantações do Windows usando instalações LTI (lite-touch), ZTI (zero-touch) ou UDI (controladas pelo usuário).</p>
       image:
-        src: https://docs.microsoft.com/media/common/i_architecture.svg
-      title: Guia do desenvolvedor
-- title: "Início rápido"
+        src: https://docs.microsoft.com/media/common/i_api-reference.svg
+      title: Como usar o Microsoft Deployment Toolkit
+- title: Início rápido
   items:
   - type: list
     style: cards
@@ -56,11 +57,11 @@ sections:
     columns: 3
     items:
     - href: lite-touch-installation-guide.md
-      title: "Instalar usando uma mídia inicializável"
+      title: Instalar usando uma mídia inicializável
       image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
     - href: user-driven-installation-guide.md
-      title: "Implantar com instalação orientada ao usuário"
+      title: Implantar com instalação orientada ao usuário
       image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
     - href: sccm-guide.md
@@ -74,15 +75,15 @@ sections:
     className: cardsM
     columns: 3
     items:
-    - href: use-the-mdt.md
-      title: "Executar implantações usando o Lite-Touch, Zero-Touch e implantações de Instalação Controladas pelo Usuário."
-      image:
-        src: https://docs.microsoft.com/media/common/i_api-reference.svg
     - href: toolkit-reference.md
-      title: "Definições de configuração que ajudam com implantações."
+      title: Definições de configuração que ajudam com implantações.
       image:
         src: https://docs.microsoft.com/media/common/i_download-install.svg
     - href: troubleshooting-reference.md
-      title: "Arquivos de log, códigos de erro e outros detalhes de solução de problemas."
+      title: Arquivos de log, códigos de erro e outros detalhes de solução de problemas.
       image:
         src: https://docs.microsoft.com/media/common/i_support.svg
+    - href: user-driven-installation-developers-guide.md
+      title: Personalize a instalação orientada ao usuário da sua organização.
+      image:
+        src: https://docs.microsoft.com/media/common/i_architecture.svg

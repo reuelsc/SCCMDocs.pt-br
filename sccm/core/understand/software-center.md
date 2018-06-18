@@ -10,11 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
-ms.openlocfilehash: 4c45da7b5a4b7f8945b23d03d0fd551276205ee2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: ff40af9dd40921b63f8b8bd13ba5c287c3bf9972
+ms.sourcegitcommit: e35d07870656eadd29faacc378ecd091ff3bdcfb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848655"
 ---
 # <a name="software-center-user-guide"></a>Guia do usuário do Centro de Software
 
@@ -45,7 +46,7 @@ Clique na guia **Aplicativos** para encontrar e instalar aplicativos implantados
 - **Filtros**: o administrador de TI pode criar categorias de aplicativos. Se estiver disponível, clique na lista suspensa para filtrar a exibição somente com os aplicativos de uma categoria específica. Selecione **Todos** para mostrar todos os aplicativos.
 - **Classificar por**: reorganize a lista de aplicativos. Por padrão, essa lista é classificada pelo **Mais recente**.
 - **Pesquisar**: ainda não está encontrando o que procura? Insira palavras-chave na caixa de pesquisa para encontrá-lo!
--  Alternar a exibição: clique nos ícones para alternar entre a exibição de lista e a de bloco. Por padrão, a lista de aplicativos é mostrada como blocos gráficos. 
+-  **Alternar a exibição**: clique nos ícones para alternar a exibição entre a exibição de lista e a exibição de bloco. Por padrão, a lista de aplicativos é mostrada como blocos gráficos. 
     - Exibição de bloco: o administrador de TI pode personalizar os ícones. Abaixo de cada bloco, são exibidos o nome do aplicativo, o distribuidor e a versão. 
     - Exibição de lista: essa exibição mostra o ícone do aplicativo, o nome, o distribuidor, a versão e o status. 
 
