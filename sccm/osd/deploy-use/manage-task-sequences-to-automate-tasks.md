@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32351846"
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Gerenciar sequências de tarefas para automatizar tarefas no System Center Configuration Manager
 

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32337234"
 ---
 # <a name="manage-network-bandwidth-for-content"></a>Gerenciar largura de banda de rede para o conteúdo
 Para ajudar a gerenciar a largura de banda de rede usada no processo de gerenciamento de conteúdo do System Center Configuration Manager, você pode usar controles internos para agendamento e limitação. Você também pode usar conteúdo pré-testado. As seções a seguir descrevem essas opções mais detalhadamente.

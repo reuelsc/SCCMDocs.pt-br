@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32353140"
 ---
 # <a name="manage-operating-system-upgrade-packages-with-system-center-configuration-manager"></a>Gerenciar pacotes de atualização do sistema operacional com o System Center Configuration Manager
 

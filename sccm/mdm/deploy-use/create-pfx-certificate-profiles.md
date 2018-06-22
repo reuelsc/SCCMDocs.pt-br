@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32350955"
 ---
 # <a name="how-to-create-pfx-certificate-profiles-using-a-certificate-authority"></a>Como criar perfis de certificado PFX usando uma autoridade de certificação
 

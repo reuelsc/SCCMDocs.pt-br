@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32342504"
 ---
 # <a name="use-alerts-and-the-status-system-for-system-center-configuration-manager"></a>Usar alertas e o sistema de status para o System Center Configuration Manager
 

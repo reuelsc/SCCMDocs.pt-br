@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32331726"
 ---
 # <a name="planning-considerations-for-deploying-clients-in-system-center-configuration-manager"></a>Considerações sobre planejamento para implantação de clientes no System Center Configuration Manager
 

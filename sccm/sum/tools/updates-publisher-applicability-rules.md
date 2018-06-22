@@ -16,6 +16,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32351421"
 ---
 # <a name="manage-applicability-rules-in-updates-publisher"></a>Gerenciar regras de aplicabilidade para o Updates Publisher
 

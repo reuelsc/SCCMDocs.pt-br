@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32350639"
 ---
 # <a name="create-an-endpoint-protection-point-site-system-role"></a>Criar uma função do sistema de site do ponto do Endpoint Protection
 

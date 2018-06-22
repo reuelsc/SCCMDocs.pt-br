@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32349177"
 ---
 # <a name="security-and-privacy-for-software-updates-in-system-center-configuration-manager"></a>Segurança e privacidade das atualizações de software no System Center Configuration Manager
 

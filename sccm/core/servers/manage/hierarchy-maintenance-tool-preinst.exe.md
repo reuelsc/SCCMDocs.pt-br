@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32340770"
 ---
 # <a name="hierarchy-maintenance-tool-preinstexe-for-system-center-configuration-manager"></a>Ferramenta de Manutenção de Hierarquia (Preinst.exe) para o System Center Configuration Manager
 

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32344408"
 ---
 # <a name="about-upgrade-update-and-install-for-site-and-hierarchy-infrastructure"></a>Sobre upgrade, atualização e instalação para infraestrutura de site e hierarquia
 

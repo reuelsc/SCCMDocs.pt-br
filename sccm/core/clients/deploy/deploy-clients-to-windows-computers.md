@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32342368"
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-system-center-configuration-manager"></a>Como implantar clientes em computadores Windows no System Center Configuration Manager
 

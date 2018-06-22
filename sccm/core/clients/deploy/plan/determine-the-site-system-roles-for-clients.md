@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32334068"
 ---
 # <a name="determine-the-site-system-roles-for-system-center-configuration-manager-clients"></a>Adicionar as funções do sistema de sites para os clientes do System Center Configuration Manager
 

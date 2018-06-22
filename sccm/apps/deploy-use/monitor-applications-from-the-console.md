@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32343881"
 ---
 # <a name="monitor-applications-from-the-system-center-configuration-manager-console"></a>Monitorar aplicativos no console do System Center Configuration Manager
 

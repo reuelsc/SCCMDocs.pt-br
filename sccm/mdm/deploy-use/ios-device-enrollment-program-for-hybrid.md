@@ -15,6 +15,7 @@ ms.sourcegitcommit: 95452daa3340d4d0818562bcbb53672cb16f8799
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/11/2018
+ms.locfileid: "34063625"
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registro no DEP (Programa de Registro de Dispositivos) do iOS para implantações híbridas com o Configuration Manager
 

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32349510"
 ---
 # <a name="change-your-mdm-authority"></a>Alterar sua autoridade de MDM
 Você pode alterar sua autoridade de MDM sem precisar contatar o Suporte da Microsoft nem cancelar o registro dos dispositivos gerenciados existentes e registrá-los novamente. Este artigo fornece as etapas para alterar um locatário existente do Microsoft Intune configurado pelo console do Configuration Manager (híbrido) para o Intune autônomo. Quando você concluir as etapas neste artigo, os dispositivos serão gerenciados pelo Microsoft Intune no [Portal do Azure](https://portal.azure.com). 

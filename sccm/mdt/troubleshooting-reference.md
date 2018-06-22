@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/27/2018
+ms.locfileid: "27821010"
 ---
 # <a name="troubleshooting-reference-for-the-microsoft-deployment-toolkit"></a>Referência de solução de problemas para o Microsoft Deployment Toolkit
  A implantação de sistemas operacionais e aplicativos, bem como a migração de estado do usuário pode ser um esforço desafiador, mesmo quando você está munido das ferramentas e diretrizes adequadas. Esta referência, que faz parte do MDT (Microsoft® Deployment Toolkit) 2013, fornece informações sobre problemas conhecidos atuais, soluções alternativas para esses problemas e diretrizes de solução de problemas.  

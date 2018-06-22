@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/27/2018
+ms.locfileid: "27821080"
 ---
 # <a name="user-driven-installation---developers-guide"></a>Instalação controlada pelo usuário – Guia para desenvolvedores
 A UDI (Instalação controlada pelo usuário) ajuda a simplificar a implantação dos sistemas operacionais cliente do Windows®, como o Windows 8.1, em computadores que usam o recurso OSD (implantação de sistema operacional) no in Microsoft® System Center 2012 R2 Configuration Manager. A UDI faz parte do MDT (Microsoft Deployment Toolkit).  
@@ -3982,7 +3983,7 @@ A Tabela 84 fornece informações sobre o elemento [DLLs](#DLLs).
 |-|-|  
 |**Estado**|Especifica o estado de retorno de uma tarefa que encontrou um erro. Normalmente, o valor desse atributo é definido como Erro. Esse valor é exibido na coluna **Estado** na página de assistente no Assistente de UDI.|  
 |**Text**|Especifica o texto descritivo sobre a condição de erro que a tarefa encontrou.|  
-|**Tipo**|Especifica se esse elemento representa um erro, aviso ou êxito. O valor especificado em **Type** deve ser exclusivo dentro de um elemento [ExitCodes](#ExitCodes). Estes são os valores válidos para este elemento:<br /><br /> -   **0.**O elemento representa um êxito.<br />-   **1.** O elemento representa um aviso.<br />-   **-1.** O elemento representa um erro.|  
+|**Tipo**|Especifica se esse elemento representa um erro, aviso ou êxito. O valor especificado em **Type** deve ser exclusivo dentro de um elemento [ExitCodes](#ExitCodes). Estes são os valores válidos para este elemento:<br /><br /> -   **0.** O elemento representa um êxito.<br />-   **1.** O elemento representa um aviso.<br />-   **-1.** O elemento representa um erro.|  
 |**Valor**|Especifica o valor do código que a tarefa retornou como um valor numérico. Especificar o valor de um asterisco (*) indica o elemento padrão para códigos de retorno que não estão listados em outros elementos [Error](#Error).|  
 
 ##### <a name="remarks"></a>Comentários  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32346542"
 ---
 # <a name="enroll-company-owned-devices-for-hybrid-deployments-with-configuration-manager"></a>Registrar dispositivos da empresa para implantações híbridas com o Configuration Manager
 
