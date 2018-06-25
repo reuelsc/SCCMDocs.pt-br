@@ -2,7 +2,7 @@
 title: Hardware recomendado
 titleSuffix: Configuration Manager
 description: Obtenha recomendações de hardware para ajudar você a dimensionar o ambiente do System Center Configuration Manager, além de uma implantação básica.
-ms.date: 03/22/2018
+ms.date: 05/23/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,12 @@ ms.assetid: 5267f0af-34d3-47a0-9ab8-986c41276e6c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ae2ba43c8e5c97dd0b8b9ba43c3e3fde1eb259f4
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 51d3a537fd7aa874fb2662bb6ec15fcfaa2124e5
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "34474319"
 ---
 # <a name="recommended-hardware-for-system-center-configuration-manager"></a>Hardware recomendado para o System Center Configuration Manager
 
@@ -23,6 +24,7 @@ ms.lasthandoff: 05/03/2018
 As recomendações a seguir são diretrizes para ajudar a dimensionar seu ambiente do System Center Configuration Manager para dar suporte a mais de uma implantação muito básica de sites, sistemas de sites e clientes. Elas não têm a finalidade de abordar todos os sites e configurações de hierarquia possíveis.  
 
  Use as informações nas seções a seguir como um guia para ajudar a planejar o hardware que pode atender aos volumes de processamento de clientes e sites que usam os recursos do Configuration Manager disponíveis com as configurações padrão.  
+
 
 
 ##  <a name="bkmk_ScaleSieSystems"></a> Sistemas de sites  
@@ -113,11 +115,11 @@ Para obter um melhor desempenho, use as configurações de RAID 10 para todas as
 
 -   **Espaço em disco:** 500 MB de espaço em disco disponível, com 5 GB recomendados para o cache do cliente do Configuration Manager. Menos espaço em disco será necessário se você usar as configurações personalizadas para instalar o cliente do Configuration Manager:  
 
-    -   Use a propriedade de linha de comando /skipprereq do CCMSetup para evitar a instalação de arquivos não solicitados pelo cliente. Por exemplo, execute o **CCMSetup.exe /skipprereq:silverlight.exe** se o cliente não usar o catálogo de aplicativos. A partir do Configuration Manager 1802, o Silverlight deixa de ser instalado automaticamente.  
+    -   Use a propriedade de linha de comando /skipprereq do CCMSetup para evitar a instalação de arquivos não solicitados pelo cliente. Por exemplo, execute `CCMSetup.exe /skipprereq:silverlight.exe` se o cliente não usar o Catálogo de Aplicativos. A partir do Configuration Manager 1802, o Silverlight deixa de ser instalado automaticamente.  
 
-    -   Use a propriedade SMSCACHESIZE do Client.msi para definir um arquivo de cache que seja menor do que o padrão de 5.120 MB. O tamanho mínimo é 1 MB. Por exemplo, o **CCMSetup.exe SMSCachesize=2** cria um cache que é de 2 MB de tamanho.  
+    -   Use a propriedade SMSCACHESIZE do Client.msi para definir um arquivo de cache que seja menor do que o padrão de 5.120 MB. O tamanho mínimo é 1 MB. Por exemplo, o `CCMSetup.exe SMSCachesize=2` cria um cache que é de 2 MB de tamanho.  
 
-    Para obter mais informações sobre essas configurações de instalação do cliente, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+    Para obter mais informações sobre essas configurações de instalação do cliente, consulte [Sobre as propriedades de instalação do cliente](../../../core/clients/deploy/about-client-installation-properties.md).  
 
     > [!TIP]  
     >  Instalar o cliente com espaço em disco mínimo é útil para dispositivos com Windows Embedded que normalmente têm tamanhos menores de disco que computadores com Windows padrão.  
@@ -173,6 +175,6 @@ Além do PowerShell, há suporte para o Windows Management Framework (WMF) vers�
 
 |Função|CPU (núcleos)|Memória (GB)|Espaço em disco (GB)|  
 |----------|---------------|-------------------|-----------------------|  
-|Servidor de banco de dados e site|2 - 4|7 - 12|100|  
+|Servidor de banco de dados e site|2 - 4|8 – 12|100|  
 |Servidor do sistema de site|1 - 4|2 - 4|50|  
 |Cliente|1 - 2|1 - 3|30|  

@@ -1,8 +1,8 @@
 ---
 title: Ativação de clientes
 titleSuffix: Configuration Manager
-description: Planeje a ativação de clientes no System Center Configuration Manager.
-ms.date: 04/23/2017
+description: Planejar a ativação de clientes no System Center Configuration Manager usando o Wake On LAN (WOL).
+ms.date: 05/23/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,31 +10,32 @@ ms.assetid: 52ee82b2-0b91-4829-89df-80a6abc0e63a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: aa5a0b30526f66add7dfb87fa988ed502cca1ee1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 2f36ff6c28bd8a3fa23599652aff82ef0c721cad
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "34474133"
 ---
 # <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>Planejar a ativação de clientes no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
- O Configuration Manager dá suporte a duas tecnologias LAN (rede local) que ativam os computadores no modo de suspensão quando você deseja instalar o software necessário, como atualizações de software e aplicativos: pacotes de ativação tradicionais e comandos de ativação AMT.  
+ O Configuration Manager oferece suporte a pacotes de ativação que ativam computadores em modo de suspensão quando você quer instalar o software necessário, como atualizações de software e aplicativos.  
 
 Você pode completar o método tradicional do pacote de ativação usando as configurações de proxy de ativação do cliente. Proxy de ativação usa um protocolo ponto a ponto e computadores selecionados para verificar se outros computadores na sub-rede estão ativos e ativá-los, se necessário. Quando o site está configurado para Wake on LAN e os clientes são configurados para proxy de ativação, o processo funciona da seguinte forma:  
 
-1.  Computadores com o cliente do Configuration Manager instalado e que não estão em suspensão na sub-rede verificam se outros computadores na sub-rede estão ativos. Eles fazem isso enviando uns aos outros um comando ping do TCP/IP a cada 5 segundos.  
+1.  Computadores com o cliente do Configuration Manager instalado e que não estão em suspensão na sub-rede verificam se outros computadores na sub-rede estão ativos. Eles fazem essa verificação enviando uns aos outros um comando ping do TCP/IP a cada cinco segundos.  
 
 2.  Se não houver resposta de outros computadores, supõe-se que estarão em modo de suspensão. Os computadores ativos tornam-se *computadores gerenciadores* da sub-rede.  
 
      É possível que um computador não responda por outro motivo que não seja a suspensão (por exemplo, está desligado, removido da rede, ou a configuração de proxy de ativação do cliente não é mais aplicada), por isso recebem um pacote de ativação todos os dias às 14h. hora local. Computadores que não respondem não serão mais considerados como em suspensão e não serão despertados pelo proxy de ativação.  
 
-     Para oferecer suporte ao proxy de ativação, pelo menos três computadores devem estar ativos em cada sub-rede. Para conseguir isso, três computadores, de forma não determinista, são escolhidos para serem *computadores guardiões* da sub-rede. Isso significa que permanecem ativos, apesar de qualquer política de ativação configurada para suspensão ou hibernação após um período de inatividade. Computadores guardiões respeitam comandos de desligamento ou reinicialização, por exemplo, como resultado de tarefas de manutenção. Se isso acontecer, os computadores guardiões restantes ativarão outro computador na sub-rede, de modo que a sub-rede continuará a ter três computadores guardiões.  
+     Para oferecer suporte ao proxy de ativação, pelo menos três computadores devem estar ativos em cada sub-rede. Para atingir este requisito, três computadores, de forma não determinista, são escolhidos para serem *computadores guardiões* da sub-rede. Este estado significa que eles permanecem ativos apesar de eventuais políticas de energia configuradas para suspensão ou hibernação após um período de inatividade. Computadores guardiões respeitam comandos de desligamento ou reinicialização, por exemplo, como resultado de tarefas de manutenção. Se esta ação acontecer, os computadores guardiões restantes ativarão outro computador na sub-rede, de modo que a sub-rede continuará a ter três computadores guardiões.  
 
 3.  Computadores gerenciadores solicitam comutador de rede para redirecionar tráfego de rede dos computadores em suspensão para si mesmos.  
 
-     O redirecionamento é alcançado pela transmissão, por parte do computador gerenciador, de uma estrutura de Ethernet que usa o endereço MAC do computador em suspensão como endereço de origem. Isso faz com que o comutador de rede se comporte como se o computador em suspensão tivesse se movido para a mesma porta do computador gerenciador. O computador gerenciador também envia pacotes ARP para os computadores em suspensão, para manter a entrada como nova no cache ARP. O computador gerenciador também responderá a solicitações de ARP em nome do computador em suspensão e responderá com o endereço MAC do computador em suspensão.  
+     O redirecionamento é alcançado pela transmissão, por parte do computador gerenciador, de uma estrutura de Ethernet que usa o endereço MAC do computador em suspensão como endereço de origem. Este comportamento faz com que o comutador de rede se comporte como se o computador em suspensão tivesse se movido para a mesma porta do computador gerenciador. O computador gerenciador também envia pacotes ARP para os computadores em suspensão, para manter a entrada como nova no cache ARP. O computador gerenciador também responde a solicitações de ARP em nome do computador em suspensão e responde com o endereço MAC do computador em suspensão.  
 
     > [!WARNING]  
     >  Durante esse processo, o mapeamento IP-MAC para o computador em suspensão permanece o mesmo. O proxy de ativação funciona informando ao comutador de rede que um adaptador de rede diferente está usando a porta registrada por outro adaptador de rede. No entanto, esse comportamento é conhecido como flap de MAC e é incomum em operação de rede padrão. Algumas ferramentas de monitoramento de rede procuram esse comportamento e podem supor que algo está errado. Consequentemente, essas ferramentas de monitoramento podem gerar alertas ou fechar portas quando você usa o proxy de ativação.  
@@ -50,7 +51,7 @@ Você pode completar o método tradicional do pacote de ativação usando as con
 > [!IMPORTANT]  
 >  Se você dispõe de uma equipe separada responsável pela infraestrutura e pelos serviços de rede, notifique e inclua essa equipe durante o período de avaliação e teste. Por exemplo, em uma rede que usa o controle de acesso de rede 802.1X, o proxy de ativação não funciona e pode interromper o serviço de rede. Além disso, o proxy de ativação pode fazer com que algumas ferramentas de monitoramento de rede gerem alertas quando detectam o tráfego para ativar outros computadores.  
 
--   Os clientes com suporte são Windows 7, 8 do Windows, Windows Server 2008 R2, Windows Server 2012.  
+-   Todos os sistemas operacionais Windows listados como clientes compatíveis em [Sistemas operacionais compatíveis para clientes e dispositivos](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices) são compatíveis com a implantação do Wake On LAN.  
 
 -   Não há suporte para sistemas operacionais convidados executados em uma máquina virtual.  
 
@@ -60,7 +61,7 @@ Você pode completar o método tradicional do pacote de ativação usando as con
 
 -   Se um computador tiver mais de um adaptador de rede, não será possível configurar qual adaptador usar para o proxy de ativação; a escolha é não determinista. No entanto, o adaptador escolhido é registrado no arquivo SleepAgent_<DOMAIN\>@SYSTEM_0.log.  
 
--   A rede deve permitir solicitações de eco ICMP (pelo menos dentro da sub-rede). Não é possível configurar o intervalo de 5 segundos usado para enviar os comandos de ping ICMP.  
+-   A rede deve permitir solicitações de eco ICMP (pelo menos dentro da sub-rede). Não é possível configurar o intervalo de cinco segundos usado para enviar os comandos de ping ICMP.  
 
 -   A comunicação é descriptografada e não autenticada e não há suporte para IPsec.  
 
@@ -80,7 +81,7 @@ Se você desejar ativar computadores para instalação de software agendada, dev
 
  Para usar proxy de ativação, você deve implantar as configurações de cliente do proxy de ativação do Gerenciamento de Energia, além de configurar o site primário.  
 
-Você também deve decidir se pretende usar pacotes de difusão para sub-rede, ou pacotes unicast, e que número da porta UDP usar. Por padrão, pacotes de ativação profissionais são transmitidos usando a porta UDP 9, mas para ajudar a aumentar a segurança, você pode selecionar uma porta alternativa para o site se essa porta alternativa tiver suporte para roteadores e firewalls intermediários.  
+Decidir se pretende usar pacotes de difusão para sub-rede, ou pacotes unicast, e que número da porta UDP usar. Por padrão, pacotes de ativação profissionais são transmitidos usando a porta UDP 9, mas para ajudar a aumentar a segurança, você pode selecionar uma porta alternativa para o site se essa porta alternativa tiver suporte para roteadores e firewalls intermediários.  
 
 ### <a name="choose-between-unicast-and-subnet-directed-broadcast-for-wake-on-lan"></a>Escolha entre as transmissões unicast e de sub-rede para Wake on LAN  
  Se você escolher ativar computadores enviando pacotes de ativação tradicionais, deve decidir se quer transmitir pacotes unicast ou pacotes de transmissão direcionados à sub-rede. Se você utilizar proxy de ativação, deverá usar pacotes unicast. Caso contrário, use a tabela a seguir para ajudá-lo a determinar qual método de transmissão escolher.  

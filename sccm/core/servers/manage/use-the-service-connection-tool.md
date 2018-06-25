@@ -10,11 +10,12 @@ ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 906b39f01b05600d86a045e07d3e28184e9360e8
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 1faabd64d11eeef8e825f22f7f661112813f5459
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "34474302"
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usar a ferramenta de conexão de serviço do System Center Configuration Manager
 
@@ -101,7 +102,13 @@ Você pode usar os seguintes parâmetros opcionais para especificar um servidor 
 A partir da versão 1706, o comportamento padrão dos downloads de ferramentas foi alterado e a ferramenta dá suporte a opções para controlar quais arquivos são baixados.
 -   Por padrão, a ferramenta baixa somente a atualização mais recente disponível que se aplica à versão do seu site. Ela não baixa os hotfixes.
 
-Para modificar esse comportamento, use um dos parâmetros a seguir para alterar quais arquivos são baixados. A versão do seu site é determinada pelos dados no arquivo .cab que é carregado quando a ferramenta é executada.
+Para modificar esse comportamento, use um dos parâmetros a seguir para alterar quais arquivos são baixados. 
+
+> [!NOTE]
+> A versão do seu site é determinada pelos dados no arquivo .cab que é carregado quando a ferramenta é executada.
+>
+> Você pode verificar a versão procurando o arquivo *SiteVersion*. txt no arquivo .cab.
+
 -   **-downloadall** Essa opção baixa tudo, incluindo atualizações e hotfixes, independentemente da versão do seu site.
 -   **-downloadhotfix** Essa opção baixa todos os hotfixes, independentemente da versão do seu site.
 -   **-downloadsiteversion** Essa opção baixa atualizações e hotfixes com uma versão maior do que a do seu site.
@@ -160,8 +167,19 @@ Linha de comando de exemplo que usa *-downloadsiteversion*:
 
  Para obter informações sobre a instalação de atualizações, consulte [Install in-console updates for System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md) (Instalar atualizações no console para o System Center Configuration Manager).  
 
+## <a name="bkmk_cmd"></a> Arquivos de log
+
+**ServiceConnectionTool.log**
+
+Cada vez que você executar a ferramenta de conexão de serviço, será gerado um arquivo de log no mesmo local da ferramenta chamada **ServiceConnectionTool.log**.  Esse arquivo de log fornece detalhes simples sobre a execução da ferramenta com base em quais comandos foram usados.  Um arquivo de log existente será substituído sempre que você executar a ferramenta.
+
+**ConfigMgrSetup.log**
+
+Ao usar a ferramenta para conectar e baixar atualizações, um arquivo de log será gravado na raiz da unidade do sistema chamado **ConfigMgrSetup.log**.  Esse arquivo de log fornece informações mais detalhadas, como quais arquivos são baixados, extraídos e se a verificação de hash foi bem-sucedida.
+
 ## <a name="bkmk_cmd"></a> Opções de linha de comando  
  Para exibir informações de ajuda para a ferramenta de ponto de conexão de serviço, abra um prompt de comando para a pasta que contém a ferramenta e execute o comando:  **serviceconnectiontool.exe**.  
+
 
 |Opções de linha de comando|Detalhes|  
 |---------------------------|-------------|  
