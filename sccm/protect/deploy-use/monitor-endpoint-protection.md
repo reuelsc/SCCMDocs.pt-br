@@ -34,7 +34,7 @@ Você pode monitorar o Endpoint Protection na sua hierarquia do Microsoft System
     > [!IMPORTANT]  
     >  Coleções estão disponíveis para seleção nos seguintes casos:  
     >   
-    >  -   Quando você seleciona **Exibir esta coleção no painel do Endpoint Protection** na guia **Alertas** da caixa de diálogo ****Propriedades* do \><nome da coleção*.  
+    >  -   Quando você seleciona **Exibir esta coleção no painel do Endpoint Protection** na guia **Alertas** da caixa de diálogo **Propriedades** do *<nome da coleção\>*.  
     > -   Quando você implanta uma política antimalware do Endpoint Protection à coleção.  
     > -   Quando você habilita e implanta as configurações do cliente do Endpoint Protection na coleção.  
 

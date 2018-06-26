@@ -248,7 +248,7 @@ Com o Technical Preview 1606, foram introduzidas várias ações que se aplicam 
   Além disso, agora há informações mais detalhadas para cada etapa, incluindo qual arquivo de log você pode exibir para obter mais informações.  
 -   **Nova opção para repetir as falhas de pré-requisito:**
 
-    Nos espaços de trabalho **Administração** e **Monitoramento**, o nó **Atualizações e Manutenção** inclui um novo botão na Faixa de opções chamado **	Ignorar avisos de pré-requisito**.
+    Nos espaços de trabalho **Administração** e **Monitoramento**, o nó **Atualizações e Manutenção** inclui um novo botão na Faixa de opções chamado **Ignorar avisos de pré-requisito**.
 
     Ao instalar atualizações sem usar a opção de Ignorar avisos de pré-requisito (de dentro do Assistente de Atualizações), e a instalação da atualização for interrompida com um estado de **Prereq warning (Aviso de pré-requisito)**, você poderá selecionar **Ignorar avisos de pré-requisito** na faixa de opções para disparar uma continuação automática da instalação da atualização que ignora os avisos de pré-requisito.  
 
