@@ -47,7 +47,7 @@ O gerenciamento de energia no System Center Configuration Manager permite que vo
 
 3.  Na lista **Coleções de Dispositivos** , clique na coleção à qual deseja aplicar as configurações de gerenciamento de energia e, na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  Na guia **Gerenciamento de Energia** da caixa de diálogo ****Propriedades\>* do <nome da coleção*, selecione **Especificar configurações de gerenciamento de energia para esta coleção**.  
+4.  Na guia **Gerenciamento de Energia** da caixa de diálogo *Propriedades do <nome da coleção\>*, selecione **Especificar configurações de gerenciamento de energia para esta coleção**.  
 
     > [!NOTE]  
     >  Você também pode clicar em **Procurar** e copiar as configurações do gerenciamento de energia de uma coleção selecionada para a coleção selecionada.  
