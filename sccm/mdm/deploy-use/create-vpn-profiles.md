@@ -2,7 +2,7 @@
 title: Perfis de VPN
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os perfis de VPN em dispositivos móveis no Configuration Manager.
-ms.date: 05/01/2018
+ms.date: 06/12/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,11 +10,12 @@ ms.assetid: 45388103-2410-4c7e-b4cf-73a1bda485fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1b59c413fdd857db3aadd94b9851ad0778937a0a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9409b6cc71ea238755f40baf75e6211c447b547f
+ms.sourcegitcommit: 826e9ec385d6a1c1f3aa86ac202883154e0c1285
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37116489"
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Perfis de VPN em dispositivos móveis no System Center Configuration Manager
 
@@ -55,9 +56,12 @@ Esta tabela mostra o tipo de conexão com suporte em cada plataforma de disposit
    - Use a opção **Cisco AnyConnect** para perfis de VPN nas seguintes versões:
        - iOS com Cisco AnyConnect versão 4.0.7 ou posterior
 
-     > [!Note]  
-     > O Cisco AnyConnect 4.0.07x e posterior para iOS é um recurso de pré-lançamento. Para habilitá-lo, veja [Recursos de pré-lançamento](/sccm/core/servers/manage/pre-release-features).  
-
+     > [!Tip]  
+     > O Cisco AnyConnect 4.0.07x e posterior para iOS foi introduzido na versão 1802, como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). Na [atualização 4163547](https://support.microsoft.com/help/4163547) da versão 1802, esse recurso deixou de ser um recurso de pré-lançamento.  
+  
+  
+> [!Note]  
+> Não há suporte para F5 Access 2018 para perfis de VPN no MDM híbrido.  
 
 
 ## <a name="windows-10-vpn-features-available-when-using-configuration-manager-with-intune"></a>Recursos de VPN do Windows 10, disponíveis ao usar o Configuration Manager com o Intune  

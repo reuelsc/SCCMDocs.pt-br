@@ -2,7 +2,7 @@
 title: Conceitos básicos do gerenciamento de conteúdo
 titleSuffix: Configuration Manager
 description: Use as ferramentas e as opções do Configuration Manager para gerenciar o conteúdo implantado.
-ms.date: 03/22/2018
+ms.date: 06/15/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,13 +10,14 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5dfe33e7182eae158c15afb848d3a9f1702678ba
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 4419a563a65ab9d98a76dcf58b48ae00e0763dab
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36260727"
 ---
-# <a name="fundamental-concepts-for-content-management-in-system-center-configuration-manager"></a>Conceitos fundamentais para o gerenciamento de conteúdo no System Center Configuration Manager
+# <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Conceitos fundamentais para o gerenciamento de conteúdo no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -69,7 +70,7 @@ Aplicativos sempre usam replicação diferencial binária. A BDR é opcional par
 
 
 ## <a name="branchcache"></a>BranchCache  
- O [BranchCache](/windows-server/networking/branchcache/branchcache) é uma tecnologia do Windows. Os clientes que dão suporte ao BranchCache e baixaram uma implantação configurada para o Branch Cache servem, em seguida, como uma fonte de conteúdo para outros clientes habilitados para o BranchCache.  
+ O [BranchCache](https://docs.microsoft.com/windows-server/networking/branchcache/branchcache) é uma tecnologia do Windows. Os clientes que dão suporte ao BranchCache e baixaram uma implantação configurada para o BranchCache servem como uma fonte de conteúdo para outros clientes habilitados para o BranchCache.  
 
  Por exemplo, você tem um ponto de distribuição que executa o Windows Server 2012 ou posterior e é configurado como um servidor do BranchCache. Quando o primeiro cliente habilitado para BranchCache solicita o conteúdo desse servidor, o cliente baixa esse conteúdo e armazena-o em cache.  
 
@@ -77,20 +78,23 @@ Aplicativos sempre usam replicação diferencial binária. A BDR é opcional par
 - Os outros clientes na mesma sub-rede não precisam baixar o conteúdo do ponto de distribuição.  
 - O conteúdo é distribuído entre vários clientes para transferências futuras.  
 
+Para saber mais, confira [Suporte para o Windows BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#bkmk_branchcache).
+
 
 
 ## <a name="delivery-optimization"></a>Otimização de Entrega
-<!-- 1324696 -->
-Você usa os grupos de limites do Configuration Manager para definir e regular a distribuição de conteúdo em sua rede corporativa e para escritórios remotos. A [Otimização de Entrega do Windows](/windows/deployment/update/waas-delivery-optimization) é uma tecnologia ponto-a-ponto baseada na nuvem para compartilhar conteúdo entre dispositivos do Windows 10. A partir da versão 1802, configure a Otimização de Entrega para que ela use os grupos de limites ao compartilhar o conteúdo entre pares. As configurações do cliente aplicam o identificador do grupo de limites como o identificador do grupo da Otimização de Entrega no cliente. Quando o cliente se comunica com o serviço de nuvem da Otimização de Entrega, ele usa esse identificador para localizar os pares com o conteúdo desejado. Para obter mais informações, consulte as configurações do cliente [Otimização de entrega](/sccm/core/clients/deploy/about-client-settings#delivery-optimization).
+<!-- 1324696 --> Você usa os grupos de limites do Configuration Manager para definir e regular a distribuição de conteúdo em sua rede corporativa e para escritórios remotos. A [Otimização de Entrega do Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) é uma tecnologia ponto-a-ponto baseada na nuvem para compartilhar conteúdo entre dispositivos do Windows 10. A partir da versão 1802, configure a Otimização de Entrega para que ela use os grupos de limites ao compartilhar o conteúdo entre pares. As configurações do cliente aplicam o identificador do grupo de limites como o identificador do grupo da Otimização de Entrega no cliente. Quando o cliente se comunica com o serviço de nuvem da Otimização de Entrega, ele usa esse identificador para localizar os pares com o conteúdo desejado. Para obter mais informações, consulte as configurações do cliente [Otimização de entrega](/sccm/core/clients/deploy/about-client-settings#delivery-optimization).
+
+A Otimização de Entrega é a tecnologia recomendada para [otimizar a distribuição de atualização do Windows 10](/sccm/sum/deploy-use/optimize-windows-10-update-delivery) dos arquivos de instalação expressa para atualizações de qualidade do Windows 10.
 
 
 
-## <a name="peer-cache"></a>Cache de Pares
+## <a name="peer-cache"></a>Cache de pares
 O cache par do cliente ajuda você a gerenciar a implantação de conteúdo nos clientes em locais remotos. O cache par é uma solução interna do Configuration Manager que o os clientes podem usar para compartilhar conteúdo com outros clientes diretamente do cache local.
 
 Depois de implantar as configurações do cliente que habilitam o cache par em uma coleção, os membros dessa coleção podem atuar como uma fonte de conteúdo par para outros clientes no mesmo grupo de limites.
 
-Para obter mais informações, consulte [Cache de pares para clientes do Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).
+Para saber mais, confira [Cache par para clientes do Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).
 
 
 

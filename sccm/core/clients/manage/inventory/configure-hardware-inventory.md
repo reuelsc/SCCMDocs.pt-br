@@ -10,12 +10,12 @@ ms.assetid: 0e45290e-f8f7-4335-801e-570225d12c2b
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 7b282fdb2f7cf3a200950484e4da5b9505c5b71c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a2051088b70c721250842548f877792adc84b38f
+ms.sourcegitcommit: 59afe6f05333d4150afaf88ab0a85a979818e3fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32332147"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36957773"
 ---
 # <a name="how-to-configure-hardware-inventory-in-system-center-configuration-manager"></a>How to configure hardware inventory in System Center Configuration Manager
 
@@ -36,7 +36,7 @@ Este procedimento define as configurações do cliente para o inventário de har
 
 6.  Na lista **Configurações do Dispositivo** , configure o seguinte:  
 
-    -   **Habilitar o inventário de hardware em clientes** – selecione **True**.  
+    -   **Habilitar o inventário de hardware em clientes** – selecione **Sim**.  
 
     -   **Agendamento de inventário de hardware** – clique em **Agendamento** para especificar o intervalo no qual os clientes coletam o inventário de hardware.  
 

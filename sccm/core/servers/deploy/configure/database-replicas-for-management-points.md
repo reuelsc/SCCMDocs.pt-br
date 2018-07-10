@@ -10,11 +10,12 @@ ms.assetid: b06f781b-ab25-4d9a-b128-02cbd7cbcffe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0893df43f7979fa3c36ba90ab400e399f96e6228
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 5ab632367e6cc30210db00a61ee4d3b9c414fdbd
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36260805"
 ---
 # <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Réplicas de banco de dados para pontos de gerenciamento para o System Center Configuration Manager
 
@@ -78,7 +79,7 @@ Os sites primários do System Center Configuration Manager podem usar uma répli
 
     -   [Mover um banco de dados de servidor de site que publique uma réplica de banco de dados](#BKMK_DBReplicaOps_Move)  
 
--   **Atualizações para o System Center Configuration Manager**: antes de atualizar um site do System Center 2012 Configuration Manager para o System Center Configuration Manager, você deve desabilitar as réplicas de banco de dados para os pontos de gerenciamento.  Depois de atualizar seu site, você pode reconfigurar as réplicas de banco de dados de pontos de gerenciamento.  
+-   **Atualizações do System Center Configuration Manager**: antes de atualizar um site, do System Center 2012 Configuration Manager para o System Center Configuration Manager Current Branch ou atualizar o Configuration Manager Current Branch para a versão mais recente, você deve desabilitar réplicas de banco de dados para pontos de gerenciamento.  Depois de atualizar seu site, você pode reconfigurar as réplicas de banco de dados de pontos de gerenciamento.  
 
 -   **Várias réplicas em um único SQL Server:** se você configurar um servidor de réplica de banco de dados para hospedar várias réplicas de banco de dados para pontos de gerenciamento (cada réplica deve estar em uma instância separada), deverá usar um script de configuração modificado (da Etapa 4 da seção a seguir) para evitar a substituição do certificado autoassinado em uso pelas réplicas de banco de dados previamente configuradas no servidor.  
 
