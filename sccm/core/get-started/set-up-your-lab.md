@@ -10,12 +10,12 @@ ms.assetid: b1970688-0cd2-404f-a17f-9e2aa4a78758
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: a1799dcffa55de80c0c700a56301d7d71f3b4a48
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 14251bb062423a31bcf74d2079b2e1b667f61ba9
+ms.sourcegitcommit: 06d490d526070e17d77e86bc6c200899ded911cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341960"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967157"
 ---
 # <a name="set-up-your-system-center-configuration-manager-lab"></a>Configurar seu laboratório do System Center Configuration Manager
 
@@ -30,7 +30,7 @@ Ao seguir as orientações descritas neste tópico, você poderá configurar um 
 
      Você pode baixar uma versão de avaliação do Windows Server 2012 R2 no [Centro de Avaliação do TechNet](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012).  
 
-     Considere modificar ou desabilitar a Configuração de Segurança Reforçada do Internet Explorer para acessar com mais facilidade alguns dos downloads mencionados ao longo destes exercícios. Leia [Internet Explorer: configuração de segurança avançada](https://technet.microsoft.com/en-us/library/dd883248\(v=ws.10\).aspx) para obter mais informações.  
+     Considere modificar ou desabilitar a Configuração de Segurança Reforçada do Internet Explorer para acessar com mais facilidade alguns dos downloads mencionados ao longo destes exercícios. Leia [Internet Explorer: configuração de segurança avançada](https://technet.microsoft.com/library/dd883248\(v=ws.10\).aspx) para obter mais informações.  
 
 -   **O ambiente de laboratório usa o SQL Server 2012 SP2** como o banco de dados do site.  
 
@@ -58,11 +58,11 @@ Ao seguir as orientações descritas neste tópico, você poderá configurar um 
 
 -   **O controlador de domínio usa o Windows Server 2008 R2** com o Active Directory Domain Services instalado. O controlador de domínio também funciona como o host para os servidores DHCP e DNS para uso com um nome de domínio totalmente qualificado.  
 
-     Para obter mais informações, consulte esta [Visão geral do Active Directory Domain Services](https://technet.microsoft.com/en-us/library/hh831484).  
+     Para obter mais informações, consulte esta [Visão geral do Active Directory Domain Services](https://technet.microsoft.com/library/hh831484).  
 
 -   **O Hyper-V é usado com algumas máquinas virtuais** para verificar se as etapas de gerenciamento executadas nestes exercícios estão funcionando conforme o esperado. Um mínimo de três máquinas virtuais é recomendado, com o Windows 7 (ou posterior) instalado.  
 
-     Para obter mais informações, consulte [Visão geral do Hyper-V](https://technet.microsoft.com/en-us/library/hh831531.aspx).  
+     Para obter mais informações, consulte [Visão geral do Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).  
 
 -   **Serão necessárias permissões de administrador** para todos esses componentes. O  
 
@@ -92,7 +92,7 @@ Depois de instalar todos esses componentes, existem outras etapas necessárias p
 As próximas etapas necessárias para habilitar clientes do Configuration Manager a consultar o Active Directory Domain Services a fim de localizar os recursos do site são listadas nos próximos procedimentos.  
 
 ##  <a name="BKMK_CreateSysMgmtLab"></a> Criar o contêiner do System Management  
- O Configuration Manager não criará automaticamente o contêiner necessário do System Management no Active Directory Domain Services quando o esquema é estendido. Portanto, você vai criá-lo para o laboratório. Essa etapa exigirá a [instalação do Editor ADSI.](https://technet.microsoft.com/en-us/library/cc773354\(WS.10\).aspx#BKMK_InstallingADSIEdit)  
+ O Configuration Manager não criará automaticamente o contêiner necessário do System Management no Active Directory Domain Services quando o esquema é estendido. Portanto, você vai criá-lo para o laboratório. Essa etapa exigirá a [instalação do Editor ADSI.](https://technet.microsoft.com/library/cc773354\(WS.10\).aspx#BKMK_InstallingADSIEdit)  
 
  Verifique se você está conectado com uma conta que tem a permissão **Criar Todos os Objetos Filho** no Contêiner **Sistema** dos Serviços de Domínio do Active Directory.  
 
@@ -136,7 +136,7 @@ As próximas etapas necessárias para habilitar clientes do Configuration Manage
 
 #### <a name="to-extend-the-active-directory-schema-using-extadschexe"></a>Para estender o esquema do Active Directory usando o extadsch.exe:  
 
-1.  Crie um backup do estado do sistema do controlador de domínio do mestre de esquema. Para obter mais informações sobre como fazer backup do controlador de domínio mestre, veja [Backup do Windows Server](https://technet.microsoft.com/en-us/library/cc770757.aspx)  
+1.  Crie um backup do estado do sistema do controlador de domínio do mestre de esquema. Para obter mais informações sobre como fazer backup do controlador de domínio mestre, veja [Backup do Windows Server](https://technet.microsoft.com/library/cc770757.aspx)  
 
 2.  Navegue até **\SMSSETUP\BIN\X64** na mídia de instalação.  
 
@@ -155,7 +155,7 @@ As próximas etapas necessárias para habilitar clientes do Configuration Manage
 
  **Instalar o .NET e ativar o Windows Communication Foundation**  
 
- Você precisará instalar duas versões do .NET Framework: primeiro, .NET 3.5.1 e, em seguida, .NET 4.5.2+. Você também precisará ativar o WCF (Windows Communication Foundation). O WCF foi projetado para oferecer uma abordagem gerenciável para a computação distribuída, uma ampla interoperabilidade e o suporte direto para a orientação de serviços, além de simplificar o desenvolvimento de aplicativos conectados por meio de um modelo de programação orientado a serviços. Leia [O que é o Windows Communication Foundation?](https://technet.microsoft.com/en-us/subscriptions/ms731082\(v=vs.90\).aspx) para obter mais informações sobre o WCF.  
+ Você precisará instalar duas versões do .NET Framework: primeiro, .NET 3.5.1 e, em seguida, .NET 4.5.2+. Você também precisará ativar o WCF (Windows Communication Foundation). O WCF foi projetado para oferecer uma abordagem gerenciável para a computação distribuída, uma ampla interoperabilidade e o suporte direto para a orientação de serviços, além de simplificar o desenvolvimento de aplicativos conectados por meio de um modelo de programação orientado a serviços. Leia [O que é o Windows Communication Foundation?](https://technet.microsoft.com/subscriptions/ms731082\(v=vs.90\).aspx) para obter mais informações sobre o WCF.  
 
 #### <a name="to-install-net-and-activate-windows-communication-foundation"></a>Para instalar o .NET e ativar o Windows Communication Foundation:  
 
@@ -197,25 +197,25 @@ As próximas etapas necessárias para habilitar clientes do Configuration Manage
 
 Para obter mais informações, veja os seguintes artigos para saber por que essas versões do .NET Framework são necessárias:  
 
--   [Versões e dependências do .NET Framework](https://technet.microsoft.com/en-us/library/bb822049.aspx)  
+-   [Versões e dependências do .NET Framework](https://technet.microsoft.com/library/bb822049.aspx)  
 
--   [Tutorial passo a passo da compatibilidade do aplicativo do .NET Framework 4 RTM](https://technet.microsoft.com/en-us/library/dd889541.aspx)  
+-   [Tutorial passo a passo da compatibilidade do aplicativo do .NET Framework 4 RTM](https://technet.microsoft.com/library/dd889541.aspx)  
 
--   [Como: atualizar um aplicativo Web ASP.NET para o ASP.NET 4](https://technet.microsoft.com/en-us/library/dd483478\(VS.100\).aspx)  
+-   [Como: atualizar um aplicativo Web ASP.NET para o ASP.NET 4](https://technet.microsoft.com/library/dd483478\(VS.100\).aspx)  
 
 -   [Perguntas frequentes sobre a Política de ciclo de vida de suporte do Microsoft .NET Framework](https://support.microsoft.com/en-us/gp/framework_faq?WT.mc_id=azurebg_email_Trans_943_NET452_Update)  
 
--   [Tudo sobre o CLR – Em processo e lado a lado](https://msdn.microsoft.com/en-us/magazine/ee819091.aspx)  
+-   [Tudo sobre o CLR – Em processo e lado a lado](https://msdn.microsoft.com/magazine/ee819091.aspx)  
 
 **Habilitar BITS, IIS e RDC**  
 
-O [BITS (Serviço de Transferência Inteligente em Segundo Plano)](https://technet.microsoft.com/en-us/library/dn282296.aspx) é usado para aplicativos que precisam transferir arquivos de forma assíncrona entre um cliente e um servidor. Com a medição do fluxo das transferências em primeiro e segundo planos, o BITS preserva a capacidade de resposta de outros aplicativos de rede. Ele continuará automaticamente retomando as transferências de arquivos se uma sessão de transferência for interrompida.  
+O [BITS (Serviço de Transferência Inteligente em Segundo Plano)](https://technet.microsoft.com/library/dn282296.aspx) é usado para aplicativos que precisam transferir arquivos de forma assíncrona entre um cliente e um servidor. Com a medição do fluxo das transferências em primeiro e segundo planos, o BITS preserva a capacidade de resposta de outros aplicativos de rede. Ele continuará automaticamente retomando as transferências de arquivos se uma sessão de transferência for interrompida.  
 
 Você instalará o BITS para este laboratório, pois este servidor do site também será usado como um ponto de gerenciamento.  
 
 O IIS (Serviços de Informações da Internet) é um servidor Web flexível e escalonável que pode ser usado para hospedar qualquer coisa na Web. Ele é usado pelo Configuration Manager para diversas funções do sistema de sites. Para obter informações adicionais sobre o IIS, consulte [Sites para servidores de sistema de sites no System Center Configuration Manager](../../core/plan-design/network/websites-for-site-system-servers.md).  
 
-[RDC (Compactação Diferencial Remota)](https://technet.microsoft.com/en-us/library/cc754372.aspx) é um conjunto de APIs que os aplicativos podem usar para determinar se quaisquer alterações foram feitas em um conjunto de arquivos. O RDC permite que o aplicativo replique somente as partes alteradas de um arquivo, reduzindo ao mínimo o tráfego de rede.  
+[RDC (Compactação Diferencial Remota)](https://technet.microsoft.com/library/cc754372.aspx) é um conjunto de APIs que os aplicativos podem usar para determinar se quaisquer alterações foram feitas em um conjunto de arquivos. O RDC permite que o aplicativo replique somente as partes alteradas de um arquivo, reduzindo ao mínimo o tráfego de rede.  
 
 #### <a name="to-enable-bits-iis-and-rdc-site-server-roles"></a>Para habilitar as funções do servidor do site do BITS, IIS e RDC:  
 
