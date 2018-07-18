@@ -1,6 +1,5 @@
 ---
 title: Habilitar o Lookout MTD no Intune
-titleSuffix: Configuration Manager
 description: Habilite o Lookout MTD (defesa contra ameaças móveis) no portal do Microsoft Intune.
 ms.date: 05/31/2018
 ms.prod: configuration-manager
@@ -10,12 +9,12 @@ ms.assetid: 7e4ada34-63bf-4b9f-8246-31816aa44196
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0de1859d97eed804eced58028d6459ab682f9b3f
-ms.sourcegitcommit: 9cff0702c2cc0f214173b47ec241f7e5a40f84e6
+ms.openlocfilehash: 179aae5fdbd8d6c09a34dca6dd01437d5f61f7b8
+ms.sourcegitcommit: 0a4556820fabe004d45a82b0ee1176f6891ac9f0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34745428"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37949587"
 ---
 # <a name="enable-lookout-mtd-connection-in-the-intune-admin-console"></a>Habilitar a conexão com o Lookout MTD no console do administrador do Intune
 
@@ -50,7 +49,7 @@ Você pode decidir quais opções de alternância de MTD você precisa habilitar
 - **Conectar dispositivos Android 4.1 ou superiores à MTD do Lookout for Work**: quando você habilitar essa opção, os dispositivos Android 4.1 ou superiores poderão relatar riscos de segurança para o Intune.  
     - **Marcar como não compatível, se nenhum dado for recebido**: se o Intune não receber nenhum dado sobre um dispositivo nessa plataforma do Lookout, considere o dispositivo como não compatível.  
 
-- **Conectar dispositivos iOS 8.0 ou superiores à MTD do Lookout for Work**: quando você habilitar essa opção, os dispositivos Android 4.1 ou superiores poderão relatar riscos de segurança para o Intune.
+- **Conectar dispositivos iOS 8.0 ou superiores à MTD do Lookout for Work**: quando você habilitar essa opção, os dispositivos iOS 8.0 ou superiores poderão relatar riscos de segurança para o Intune.
     - **Marcar como não compatível, se nenhum dado for recebido**: se o Intune não receber nenhum dado sobre um dispositivo nessa plataforma do Lookout, considere o dispositivo como não compatível.  
 
 > [!TIP]  
