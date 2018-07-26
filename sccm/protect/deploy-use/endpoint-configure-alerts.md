@@ -10,12 +10,12 @@ ms.assetid: f504de3e-4caf-455c-80d7-a63f13f4c5d9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 275ce06520174adf10100b77a8034620b072c93f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 514404119044bbf994eb88c5705bb5051281ee9f
+ms.sourcegitcommit: cea5152422a60e61601fdaeae1519300001fe6ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348660"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39175214"
 ---
 #  <a name="configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Configurar alertas para o Endpoint Protection no Configuration Manager
 
@@ -87,7 +87,7 @@ ms.locfileid: "32348660"
 
 ## <a name="alert-for-outdated-malware-client"></a>Alerta de cliente de malware desatualizado
 
-A partir do Configuration Manager versão 1702, você poderá configurar um alerta para garantir que os clientes do Endpoint Protection não estejam desatualizados. Agora você pode exibir a **Versão do Cliente Antimalware** e o **Status de Implantação do Endpoint Protection** acessando **Ativos e Conformidade** > **Visão Geral** > **Dispositivos** > **Todos os Clientes de Desktops e Servidores**. Para verificar se há um alerta, exiba **Alertas** no espaço de trabalho **Monitoramento**. Se mais de 20% dos clientes gerenciados estiver executando uma versão expirada do software antimalware, o alerta de que o cliente antimalware está desatualizado será exibido. Esse alerta não aparece na guia **Monitoramento** > **Visão Geral**. Para atualizar clientes antimalware expirados, habilite as atualizações de software para clientes antimalware.
+A partir do Configuration Manager versão 1702, você poderá configurar um alerta para garantir que os clientes do Endpoint Protection não estejam desatualizados. Agora você pode exibir a **Versão do Cliente Antimalware** e o **Status de Implantação do Endpoint Protection** acessando **Ativos e Conformidade** > **Visão Geral** > **Coleção de Dispositivos** > **Todos os Clientes de Desktops e Servidores**. Para verificar se há um alerta, exiba **Alertas** no espaço de trabalho **Monitoramento**. Se mais de 20% dos clientes gerenciados estiver executando uma versão expirada do software antimalware, o alerta de que o cliente antimalware está desatualizado será exibido. Esse alerta não aparece na guia **Monitoramento** > **Visão Geral**. Para atualizar clientes antimalware expirados, habilite as atualizações de software para clientes antimalware.
 
 Para configurar o percentual em que o alerta é gerado, expanda **Monitoramento** > **Alertas** > **Todos os Alertas**, clique duas vezes em **Clientes antimalware desatualizados** e modifique a opção **Acionar alerta se o percentual de clientes gerenciados com uma versão desatualizada do cliente antimalware for de mais de**.
 

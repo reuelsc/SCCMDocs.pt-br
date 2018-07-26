@@ -10,12 +10,12 @@ ms.assetid: caad0507-9913-415a-b13d-d36f8f0a1b80
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 6f34fd322e5f94550602d7883a0303d10059b702
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 4815695ad67ac86491da9ea3274fd7db660c8190
+ms.sourcegitcommit: 7c26485b600544a64a5cf2edca6f2f8f29fecde9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341943"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130639"
 ---
 # <a name="packages-and-programs-in-system-center-configuration-manager"></a>Pacotes e programas no System Center Configuration Manager
 
@@ -212,6 +212,9 @@ Os pacotes podem usar alguns recursos novos do Configuration Manager, incluindo 
 
         -   **Obrigatória**: o pacote e o programa são implantados automaticamente, de acordo com o agendamento configurado. No entanto, um usuário pode acompanhar o status de implantação de pacote e programa e instalá-lo antes do prazo final usando o Centro de Software.  
 
+        >  [!NOTE]  
+        >  Se vários usuários estiverem conectados ao dispositivo, as implantações de pacote e sequência de tarefas talvez não sejam exibidas no Centro de Software.
+        
     -   **Enviar pacotes de ativação**: se a finalidade da implantação estiver definida como **Obrigatória** e essa opção estiver selecionada, um pacote de ativação será enviado aos computadores antes que a implantação seja instalada para ativar o computador da suspensão na hora limite da instalação. Antes de usar essa opção, os computadores devem ser configurados para Wake On LAN.  
 
     -  **Permitir que os clientes com uma conexão de Internet limitada baixem conteúdo após a hora limite da instalação, o que poderá incorrer custos adicionais**: selecione essa opção, se necessário.  

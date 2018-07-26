@@ -10,12 +10,12 @@ ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 26d43b1ee065f3ae0b1221ca81e69f6cb1da6f6c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 983b6b73c79c51792bf015c74d40466231fbaf3d
+ms.sourcegitcommit: 7c26485b600544a64a5cf2edca6f2f8f29fecde9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351846"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130663"
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Gerenciar sequências de tarefas para automatizar tarefas no System Center Configuration Manager
 
@@ -262,6 +262,9 @@ A mensagem de notificação a seguir é exibida quando o usuário final abre a i
 
         -   **Necessária**: a sequência de tarefas é implantada automaticamente, de acordo com o agendamento configurado. Se a sequência de tarefas não estiver oculta, um usuário ainda poderá acompanhar seu status de implantação. Ele também poderá instalar a sequência de tarefas antes da data limite usando o Centro de Software.  
 
+        >  [!NOTE]  
+        >  Se vários usuários estiverem conectados ao dispositivo, as implantações de pacote e sequência de tarefas talvez não sejam exibidas no Centro de Software.
+
     -   **Implantar automaticamente, de acordo com o agendamento, com ou sem um usuário conectado**: essa opção não está disponível quando uma sequência de tarefas é implantada.  
 
     -   **Enviar pacotes de ativação**: se a finalidade da implantação for definida como **Obrigatória** e essa opção estiver selecionada, o site enviará um pacote de ativação aos computadores antes da execução da implantação. Esse pacote ativa os computadores na hora limite da instalação. Para usar essa opção, os computadores e as redes devem ser configurados para Wake on LAN.  
@@ -478,8 +481,7 @@ Por exemplo, se a coleção ABC tiver uma variável atribuída a ela e o computa
 6.  Depois de adicionar todas as variáveis à coleção, clique em **OK**.  
 
 ## <a name="add-child-task-sequences-to-a-task-sequence"></a>Adicionar sequências de tarefas filho a uma sequência de tarefas
-<!--1261338-->
-Começando com o Configuration Manager versão 1710, você pode adicionar uma nova etapa de sequência de tarefas que executa outra sequência de tarefas. Essa etapa cria um relacionamento pai-filho entre as sequências de tarefas. O uso dessa etapa permite que você crie sequências de tarefas mais modulares que podem ser usadas novamente.  
+<!--1261338--> Começando com o Configuration Manager versão 1710, você pode adicionar uma nova etapa de sequência de tarefas que executa outra sequência de tarefas. Essa etapa cria um relacionamento pai-filho entre as sequências de tarefas. O uso dessa etapa permite que você crie sequências de tarefas mais modulares que podem ser usadas novamente.  
 
 > [!Note]  
 > O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, veja [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
