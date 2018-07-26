@@ -10,12 +10,12 @@ ms.assetid: 2629c376-ec43-4f0e-a78b-4223cc9302bf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8a89c9d5a0fa4ea57a7824fe16b24120347ddaac
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: ed6174bcb3c99461b00ec5fc57d4508b9390747d
+ms.sourcegitcommit: acad0674b2743193f87990fb50194c4f17823a8e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338026"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39146921"
 ---
 # <a name="deploy-applications-with-system-center-configuration-manager"></a>Implantar aplicativos com o System Center Configuration Manager
 
@@ -102,7 +102,7 @@ Na página **Configurações de Implantação** do Assistente para Implantar Sof
 - **Atualizar automaticamente qualquer versão substituída deste aplicativo**: o cliente atualiza a versão substituída do aplicativo pelo aplicativo substituto.    
 
     > [!NOTE]  
-    > A partir da versão 1802, para uma finalidade de instalação **Disponível** ou **Obrigatória**, você pode habilitar ou desabilitar essa opção. <!--1351266--> 
+    > A partir da versão 1802, para uma finalidade de instalação **Disponível**, você pode habilitar ou desabilitar essa opção. <!--1351266--> 
 
 
 ### <a name="specify-scheduling-settings-for-the-deployment"></a>Especificar configurações de agendamento para a implantação
@@ -195,8 +195,7 @@ Depois que os clientes recebem a implantação, o seguinte comportamento se apli
 
 
 ## <a name="deploy-user-available-applications-on-azure-ad-joined-devices"></a>Implantar aplicativos disponíveis para o usuário em dispositivos ingressados no Azure AD
-<!-- 1322613 -->
-Se você implantar aplicativos como disponíveis para os usuários, a partir da versão 1802, eles poderão procurá-los e instalá-los por meio do Centro de Software nos dispositivos Azure AD (Azure Active Directory).  
+<!-- 1322613 --> Se você implantar aplicativos como disponíveis para os usuários, a partir da versão 1802, eles poderão procurá-los e instalá-los por meio do Centro de Software nos dispositivos Azure AD (Azure Active Directory).  
 
 #### <a name="prerequisites"></a>Pré-requisitos
 
