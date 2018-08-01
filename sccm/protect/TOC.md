@@ -1,12 +1,7 @@
 # Entender e explorar
 ## [Visão geral](understand\protect-data-and-site-infrastructure.md)
-## [Fazer backup de sites](understand/backup-and-recovery.md)
-## [Recuperar sites](understand/recover-sites.md)
-## [Recuperação autônoma de sites](understand/unattended-recovery.md)
-## [Opções de alta disponibilidade](understand/high-availability-options.md)
-## [Gerenciar implantações de alto risco](understand/settings-to-manage-high-risk-deployments.md)
 
-# Planejamento e design
+# Plano e design
 ## [Pré-requisitos para perfis de certificado](plan-design/prerequisites-for-certificate-profiles.md)
 ### [Permissões de modelo de certificado para perfis de certificado](plan-design/planning-for-certificate-template-permissions.md)
 ### [Segurança e privacidade de perfis de certificado](plan-design/security-and-privacy-for-certificate-profiles.md)
