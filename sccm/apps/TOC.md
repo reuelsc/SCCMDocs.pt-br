@@ -20,12 +20,14 @@
 
 ## Implantar aplicativos
 ### [Implantar aplicativos](deploy-use/deploy-applications.md)
+### [Criar uma implantação em fases](../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json)
 ### [Compartilhar um aplicativo](deploy-use/share-applications.md)
 ### [Simular implantações de aplicativos](deploy-use/simulate-application-deployments.md)
 ### [Implantar aplicativos virtuais do App-V](get-started/deploying-app-v-virtual-applications.md)
 
 ## Monitorar aplicativos
 ### [Monitorar aplicativos do console](deploy-use/monitor-applications-from-the-console.md)
+### [Gerenciar e monitorar as implantações em fases](../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json)
 ### [Monitorar o uso de aplicativos com a medição de software](deploy-use/monitor-app-usage-with-software-metering.md)
 
 ## Gerenciar aplicativos
