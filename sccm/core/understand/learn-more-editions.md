@@ -10,12 +10,12 @@ ms.assetid: 495b87ae-41a4-49ba-abe2-d4f7d22ac0d4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a8ce492aa34fa130a11bde0d5823252a9d782960
-ms.sourcegitcommit: e35d07870656eadd29faacc378ecd091ff3bdcfb
+ms.openlocfilehash: 33cd99fd51bd7fabc1ae7f8379bcf2a69a5c4898
+ms.sourcegitcommit: f195190347a98b6c5be957564d33b6c4dfb610d7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848621"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39309367"
 ---
 # <a name="licensing-and-branches-for-system-center-configuration-manager"></a>Licenciamento e branches do System Center Configuration Manager
 
@@ -28,7 +28,7 @@ Os clientes com SA (Software Assurance) ativo para as licenças do System Center
 
 
 **Especificações de licenciamento:**  
-[Os termos e condições completos dos produtos que você compra por meio dos programas de licenciamento por volume da Microsoft podem ser encontrados aqui](http://go.microsoft.com/fwlink/?LinkId=800052).
+[Os termos e condições completos dos produtos que você compra por meio dos programas de licenciamento por volume da Microsoft podem ser encontrados aqui](https://go.microsoft.com/fwlink/?LinkId=800052).
 
 
 ## <a name="system-center-configuration-manager-licensed-branches"></a>Branches licenciados do System Center Configuration Manager  
@@ -95,16 +95,15 @@ Para obter mais informações sobre o licenciamento do Software Assurance e o Br
 Use os links a seguir para saber mais sobre os detalhes do licenciamento de produtos.
 
 **Links do VLSC (Centro de Serviços de Licenciamento por Volume) da Microsoft:**
-- Visão geral do VLSC: [https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx).
+- [Visão geral do VLSC](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx)
 
-- Termos do Produto do Licenciamento por Volume da Microsoft: [http://go.microsoft.com/fwlink/?LinkId=800052](http://go.microsoft.com/fwlink/?LinkId=800052).
+- [Termos do Produto do Licenciamento por Volume da Microsoft](https://go.microsoft.com/fwlink/?LinkId=800052)
 
-- Os clientes de licença de volume podem obter um resumo das suas licenças aqui: [https://www.microsoft.com/Licensing/servicecenter/default.aspx](https://www.microsoft.com/Licensing/servicecenter/default.aspx).  
-  Vá até o menu **Licenças** e clique em **Resumo das Licenças** para ter uma visão geral das licenças.
+- Os clientes de licença de volume podem obter um resumo das suas licenças no [Centro de serviços de licença de volume](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Vá até o menu **Licenças** e clique em **Resumo das Licenças** para ter uma visão geral das licenças.
 
 **Vídeos sobre o VLSC:**
-- Vídeos de treinamento sobre o funcionamento do VLSC: m[https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2).
+- [Vídeos de treinamento sobre o funcionamento do VLSC](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2)  
 
-- Onde procurar seu contrato de Software Assurance ativado (começando em torno de 43 segundos): [https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0](https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0).
+- [Onde procurar seu contrato de Software Assurance ativado](https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0) (começando em torno de 43 segundos)  
 
-- Como obter as permissões do VLSC: [https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4](https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4).  Você pode delegar permissões de leitura e gravação no VLSC para outras pessoas de sua organização.
+- [Como obter as permissões do VLSC](https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4). Você pode delegar permissões de leitura e gravação no VLSC para outras pessoas de sua organização.

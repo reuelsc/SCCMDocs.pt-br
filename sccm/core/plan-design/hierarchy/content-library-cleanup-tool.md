@@ -10,12 +10,12 @@ ms.assetid: 226cbbb2-9afa-4e2e-a472-be989c0f0e11
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5d83b23673d8eea6e98f21ea30b6b802eb7e5595
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a3a091a526a385fadf0353073048d33ae704cd76
+ms.sourcegitcommit: f9b11bb0942cd3d03d90005b1681e9a14dc052a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338373"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39229364"
 ---
 # <a name="the-content-library-cleanup-tool-for-system-center-configuration-manager"></a>A ferramenta de limpeza da biblioteca de conteúdo no System Center Configuration Manager
 
@@ -60,7 +60,7 @@ Para executar a ferramenta:
 **Problema conhecido** Quando a ferramenta é executada, um erro semelhante ao seguinte pode ser retornado quando qualquer pacote ou implantação tiver falhado ou estiver em andamento:
 -  *System.InvalidOperationException: esta biblioteca de conteúdo não pode ser limpa no momento porque o pacote <packageID> não está totalmente instalado.*
 
-**Solução alternativa:** nenhuma. A ferramenta não é confiável para identificar arquivos órfãos quando o conteúdo está em andamento ou não pôde ser implantado. Portanto, a ferramenta não permitirá que você limpe conteúdo até que esse problema seja resolvido.
+**Solução alternativa:** nenhuma. A ferramenta não pode identificar com segurança os arquivos órfãos quando o conteúdo está em andamento ou não pôde ser implantado. Portanto, a ferramenta não permitirá que você limpe conteúdo até que esse problema seja resolvido.
 
 ### <a name="command-line-switches"></a>Opções de linha de comando  
 As opções de linha de comando a seguir podem ser usadas em qualquer ordem.   
