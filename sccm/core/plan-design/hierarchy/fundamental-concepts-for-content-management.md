@@ -2,7 +2,7 @@
 title: Conceitos básicos do gerenciamento de conteúdo
 titleSuffix: Configuration Manager
 description: Use as ferramentas e as opções do Configuration Manager para gerenciar o conteúdo implantado.
-ms.date: 06/15/2018
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,18 +10,18 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4419a563a65ab9d98a76dcf58b48ae00e0763dab
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.openlocfilehash: a8f4d93c7bfa73b04ed2c760db17b27e8f1f6de2
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36260727"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385245"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Conceitos fundamentais para o gerenciamento de conteúdo no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-O Configuration Manager dá suporte a um sistema robusto de ferramentas e opções para gerenciar o conteúdo implantado como aplicativos, pacotes, atualizações de software e implantações de sistema operacional. O Configuration Manager armazena o conteúdo em servidores do site e pontos de distribuição. Esse conteúdo exige uma grande quantidade de largura de banda da rede quando está sendo transferido entre locais. Para planejar e usar a infraestrutura de gerenciamento de conteúdo com eficiência, recomendamos que você entenda as opções e configurações disponíveis. Em seguida, considere como usá-las para que elas sejam ajustadas da melhor forma às suas necessidades de implantação de conteúdo e ambiente de rede.  
+O Configuration Manager dá suporte a um sistema robusto de ferramentas e opções para gerenciar o conteúdo de software. As implantações de software, como aplicativos, pacotes, atualizações de software e implantações de sistema operacional, precisam de conteúdo. O Configuration Manager armazena o conteúdo em servidores do site e pontos de distribuição. Esse conteúdo exige uma grande quantidade de largura de banda da rede quando está sendo transferido entre locais. Para planejar e usar a infraestrutura de gerenciamento de conteúdo com eficiência, primeiro entenda as opções e configurações disponíveis. Em seguida, considere como usá-las para que elas sejam ajustadas da melhor forma às suas necessidades de implantação de conteúdo e ambiente de rede.  
 
 > [!TIP]    
 > Para obter mais informações sobre o processo de distribuição de conteúdo e para encontrar ajuda no diagnóstico e na resolução de problemas gerais de distribuição de conteúdo, consulte [Noções básicas e solução de problemas de distribuição de conteúdo no Microsoft Configuration Manager ](https://support.microsoft.com/help/4000401/content-distribution-in-mcm).
@@ -41,7 +41,7 @@ Os tópicos a seguir são os principais conceitos do gerenciamento de conteúdo.
 
 -   **Conta de conexão multicast**: usada para implantações de sistema operacional.  
 
-Para obter mais informações sobre essas contas, consulte [Gerenciar contas para acessar conteúdo](../../../core/plan-design/hierarchy/manage-accounts-to-access-content.md).
+Para obter mais informações sobre essas contas, consulte [Gerenciar contas para acessar conteúdo](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content).
 
 
 
@@ -59,11 +59,11 @@ Para obter mais informações sobre essas contas, consulte [Gerenciar contas par
 
  Quando a BDR é usada, o Configuration Manager identifica as alterações ocorridas nos arquivos de origem em cada conjunto de conteúdo distribuído anteriormente.  
 
--   Quando os arquivos no conteúdo de origem são alterados, o site cria uma nova versão incremental do conjunto de conteúdo. Ele então replica apenas os arquivos alterados nos sites e pontos de distribuição de destino. Um arquivo é considerado alterado se ele é renomeado ou movido, ou se o conteúdo dele é alterado. Por exemplo, se você substituir um único arquivo de driver de um pacote de driver distribuído anteriormente para vários sites, apenas o arquivo de driver alterado será replicado.  
+-   Quando os arquivos no conteúdo da fonte são alterados, o site cria uma nova versão incremental do conteúdo. Ele então replica apenas os arquivos alterados nos sites e pontos de distribuição de destino. Um arquivo é considerado alterado se ele é renomeado ou movido, ou se o conteúdo dele é alterado. Por exemplo, se você substituir um único arquivo de driver de um pacote de driver distribuído anteriormente para vários sites, apenas o arquivo de driver alterado será replicado.  
 
 -   O Configuration Manager dá suporte a até cinco versões incrementais de um conjunto de conteúdo antes de reenviar o todo o conjunto do conteúdo. Após a quinta atualização, a próxima alteração no conjunto de conteúdo faz com que o site crie uma nova versão do conjunto de conteúdo. O Configuration Manager distribui a nova versão do conteúdo definido para substituir o conjunto anterior e qualquer uma de suas versões incrementais. Depois que o novo conjunto de conteúdo é distribuído, as alterações incrementais seguintes nos arquivos de origem são novamente replicadas pela BDR.  
 
-A BDR tem suporte entre cada site pai e filho de uma hierarquia. Há suporte para a BDR em um site entre o servidor do site e seus pontos de distribuição normais. No entanto, os pontos de distribuição pull e os pontos de distribuição baseados em nuvem não dão suporte à BDR para transferência de conteúdo. Os pontos de distribuição pull dão suporte a deltas de nível de arquivo, transferindo novos arquivos, mas não os blocos em um arquivo.
+A BDR tem suporte entre cada site pai e filho de uma hierarquia. Há suporte para a BDR em um site entre o servidor do site e seus pontos de distribuição normais. No entanto, os pontos de distribuição por pull e os pontos de distribuição na nuvem não dão suporte à BDR para transferência de conteúdo. Os pontos de distribuição pull dão suporte a deltas de nível de arquivo, transferindo novos arquivos, mas não os blocos em um arquivo.
 
 Aplicativos sempre usam replicação diferencial binária. A BDR é opcional para pacotes e não está habilitada por padrão. Para usar a BDR para pacotes, habilite essa funcionalidade em cada pacote. Selecione a opção **Habilitar replicação diferencial binária** ao criar ou editar um pacote.   
 
@@ -89,10 +89,21 @@ A Otimização de Entrega é a tecnologia recomendada para [otimizar a distribui
 
 
 
+## <a name="windows-ledbat"></a>LEDBAT do Windows
+<!--1358112--> O LEDBAT (Low Extra Delay Background Transport) do Windows é um recurso de controle de congestionamento de rede do Windows Server para ajudar a gerenciar as transferências na rede em segundo plano. Para pontos de distribuição em execução nas versões com suporte do Windows Server, habilite uma opção para ajudar a ajustar o tráfego da rede. Assim, os clientes usam a largura de banda de rede somente quando ela está disponível. 
+
+Para obter mais informações sobre o LEDBAT do Windows em geral, confira a postagem no blog [New transport advancements](https://blogs.technet.microsoft.com/networking/2016/07/18/announcing-new-transport-advancements-in-the-anniversary-update-for-windows-10-and-windows-server-2016/) (Novos avanços de transporte).
+
+Para obter mais informações de como usar o LEDBAT do Windows com pontos de distribuição do Configuration Manager, confira a configuração para **Ajustar a velocidade do download para usar a largura de banda de rede não utilizada (LEDBAT do Windows)** quando você [Definir as configurações gerais de um ponto de distribuição](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_config-general).
+
+
+
 ## <a name="peer-cache"></a>Cache de pares
 O cache par do cliente ajuda você a gerenciar a implantação de conteúdo nos clientes em locais remotos. O cache par é uma solução interna do Configuration Manager que o os clientes podem usar para compartilhar conteúdo com outros clientes diretamente do cache local.
 
-Depois de implantar as configurações do cliente que habilitam o cache par em uma coleção, os membros dessa coleção podem atuar como uma fonte de conteúdo par para outros clientes no mesmo grupo de limites.
+Primeiro, implante as configurações do cliente que habilitam o cache par para uma coleção. Assim, os membros dessa coleção poderão agir como uma fonte de conteúdo par para outros clientes no mesmo grupo de limites.
+
+Começando na versão 1806, as fontes de cache par do cliente podem dividir o conteúdo em partes. Essas partes minimizam a transferência de rede para reduzir a utilização de WAN. O ponto de gerenciamento fornece acompanhamento mais detalhado das partes do conteúdo. Ele tenta eliminar mais de um download do mesmo conteúdo por grupo de limites.<!--1357346-->
 
 Para saber mais, confira [Cache par para clientes do Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).
 
@@ -101,7 +112,7 @@ Para saber mais, confira [Cache par para clientes do Configuration Manager](/scc
 ## <a name="windows-pe-peer-cache"></a>Cache de sistemas pares do Windows PE
 Quando você implanta um novo sistema operacional com o Configuration Manager, os computadores que executam a sequência de tarefas podem usar o cache par do Windows PE. Eles baixam o conteúdo de uma origem de cache par, em vez de um ponto de distribuição. Esse comportamento ajuda a minimizar o tráfego de WAN em cenários de filial em que não há nenhum ponto de distribuição local.
 
-Para obter mais informações, consulte [Cache de pares do Windows PE](../../../osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md).
+Para obter mais informações, consulte [Cache de pares do Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic).
 
 
 
@@ -112,26 +123,45 @@ Para obter mais informações, consulte [Cache de pares do Windows PE](../../../
 
     -   Pontos de distribuição podem usar HTTP ou HTTPs.  
 
-    -   Apenas use um ponto de distribuição baseado em nuvem para fallback quando os pontos de distribuição locais estiverem indisponíveis.  
+    -   Apenas use um ponto de distribuição na nuvem para fallback quando não houver pontos de distribuição locais disponíveis.  
 
 -   **Internet**:  
 
-    -   Requer que os pontos de distribuição aceitem HTTPS.  
+    -   Requer que os pontos de distribuição para Internet aceitem HTTPS.  
 
-    -   Pode usar um ponto de distribuição baseado em nuvem para fallback.  
+    -   Pode usar um ponto de distribuição na nuvem.  
 
 -   **Grupo de trabalho**:  
 
     -   Requer que os pontos de distribuição aceitem HTTPS.  
 
-    -   Pode usar um ponto de distribuição baseado em nuvem para fallback.  
+    -   Pode usar um ponto de distribuição na nuvem.  
+
+
+
+## <a name="content-source-priority"></a>Prioridade da fonte de conteúdo
+
+Quando um cliente precisa de conteúdo, ele faz uma solicitação de local de conteúdo ao ponto de gerenciamento. O ponto de gerenciamento retorna uma lista de locais de fonte que são válidos para o conteúdo solicitado. Essa lista varia de acordo com o cenário específico, as tecnologias em uso, o design de site, os grupos de limites e as configurações de implantação. A lista a seguir contém todos os locais de fonte de conteúdo possíveis que um cliente pode usar, na ordem em que ele os prioriza:  
+
+1.  O ponto de distribuição no mesmo computador que o cliente
+2.  Uma fonte par na mesma sub-rede da rede
+3.  Um ponto de distribuição na mesma sub-rede da rede
+4.  Uma fonte par no mesmo site do Active Directory
+5.  Um ponto de distribuição no mesmo site do Active Directory
+6.  Uma fonte par no mesmo grupo de limites
+7.  Um ponto de distribuição no grupo de limites atual
+8.  Um ponto de distribuição em um grupo de limites vizinho configurado para fallback
+9.  Um ponto de distribuição no grupo de limites do site padrão 
+10. O serviço de nuvem do Windows Update
+11. Um ponto de distribuição para Internet
+12. Um ponto de distribuição na nuvem no Azure
 
 
 
 ## <a name="content-library"></a>Biblioteca de conteúdo  
  A biblioteca de conteúdo é o armazenamento de instância única do conteúdo no Configuration Manager. Essa biblioteca reduz o tamanho geral do conteúdo distribuído.  
 
-- Saiba mais sobre a [biblioteca de conteúdo](../../../core/plan-design/hierarchy/the-content-library.md).
+- Saiba mais sobre a [biblioteca de conteúdo](/sccm/core/plan-design/hierarchy/the-content-library).
 - Use a [ferramenta de limpeza da biblioteca de conteúdo](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) para remover o conteúdo que não está mais associado a um aplicativo.  
 
 
@@ -143,26 +173,29 @@ Para obter mais informações, consulte [Cache de pares do Windows PE](../../../
 
 -   **Ponto de distribuição de pull**: uma variação de um ponto de distribuição em que o ponto de distribuição obtém conteúdo de outro ponto de distribuição (um ponto de distribuição de origem). Esse processo é semelhante a como os clientes baixam o conteúdo dos pontos de distribuição. Os pontos de distribuição de pull podem ajudar a evitar gargalos de largura de banda de rede que ocorrem quando o servidor do site deve distribuir conteúdo diretamente para cada ponto de distribuição. [Use um ponto de distribuição pull](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point).
 
--   **Ponto de distribuição baseado em nuvem**: uma variação de um ponto de distribuição instalado no Microsoft Azure. [Saiba como planejar o uso de um ponto de distribuição baseado em nuvem](../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md).  
+-   **Ponto de distribuição na nuvem**: uma variação de ponto de distribuição que é instalado no Microsoft Azure. [Saiba como usar um ponto de distribuição na nuvem](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point).  
 
 
 Os pontos de distribuição padrão dão suporte a uma variedade de recursos e configurações:  
 
 - Use controles como **agendamentos** ou **limitação da largura de banda** para ajudar a controlar essa transferência.  
-- Use outras opções, incluindo **conteúdo pré-teste** e **pontos de distribuição pull**, para minimizar e controlar o consumo de rede. 
+
+- Use outras opções, incluindo **conteúdo pré-teste** e **pontos de distribuição pull**, para minimizar e controlar o consumo de rede.  
+
 - O **BranchCache**, o **cache par** e a **Otimização de Entrega** são tecnologias ponto a ponto para reduzir a largura de banda da rede usada quando o conteúdo é implantado.  
-- Existem diferentes configurações para implantações de sistema operacional, como **[PXE](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint)** e **[Multicast](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_DPMulticast)**
+
+- Existem diferentes configurações para implantações de sistema operacional, como **[PXE](/sccm/osd/get-started/prepare-site-system-roles-for-operating-system-deployments#BKMK_PXEDistributionPoint)** e **[Multicast](/sccm/osd/get-started/prepare-site-system-roles-for-operating-system-deployments#BKMK_DPMulticast)**  
+
 - Opções de **dispositivos móveis**   
   
-  
-Pontos de distribuição de pull em baseados em nuvem dão suporte a muitas dessas mesmas configurações, mas têm limitações específicas a cada variação de ponto de distribuição.  
+Os pontos de distribuição por pull e em nuvem dão suporte a muitas dessas mesmas configurações, mas têm limitações específicas de cada variação de ponto de distribuição.  
 
 
 
 ## <a name="distribution-point-groups"></a>Grupos de pontos de distribuição  
  Os grupos de pontos de distribuição são agrupamentos lógicos de pontos de distribuição que podem simplificar a distribuição de conteúdo.  
 
- Para obter mais informações, consulte [Gerenciar grupos de pontos de distribuição](../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage).
+ Para obter mais informações, consulte [Gerenciar grupos de pontos de distribuição](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_manage).
 
 
 
@@ -173,7 +206,7 @@ Pontos de distribuição de pull em baseados em nuvem dão suporte a muitas dess
 
 -   Quando você distribui o conteúdo para vários pontos de distribuição ao mesmo tempo, ou para um grupo de pontos de distribuição, o site envia primeiro o conteúdo para o servidor com a prioridade mais alta. Em seguida, ele envia esse mesmo conteúdo a um ponto de distribuição com uma prioridade mais baixa.  
 
--   A prioridade de ponto de distribuição não substitui a prioridade de distribuição para pacotes. A prioridade de pacote continua sendo o fator decisivo de quando o site envia um conteúdo diferente.  
+-   A prioridade do ponto de distribuição não substitui a prioridade de distribuição dos pacotes. A prioridade de pacote continua sendo o fator decisivo de quando o site envia um conteúdo diferente.  
 
 Por exemplo, você tem um pacote que tem uma alta prioridade de pacote. Distribua-o para um servidor com uma prioridade baixa de ponto de distribuição. Esse pacote com prioridade alta sempre é transferido antes de um pacote que tem uma prioridade mais baixa. A prioridade de pacote se aplica mesmo se o site distribui os pacotes de prioridade mais baixa para servidores com prioridades mais altas de ponto de distribuição.
 
@@ -196,17 +229,6 @@ Os conceitos de pontos de distribuição preferenciais não são mais usados e a
 
 Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
 
-<!--
-**Version 1511, 1602, and 1606**   
-Fallback settings are related to the use of **preferred distribution points** and to content source locations that are used by clients.
-
--   By default, clients only download content from a preferred distribution point (one that is associated with the client's boundary groups).  
-
--   However, when a distribution point is configured with **Allow clients to use this site system as a fallback source location for content**, that distribution point is only offered as a valid content source to any client that can't get a deployment from one of its preferred distribution points.  
-
-For information about the different content location and fallback scenarios, see [Content source location scenarios](../../../core/plan-design/hierarchy/content-source-location-scenarios.md). For information about boundary groups, see [Boundary groups for versions 1511,1602, and 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606).
--->
-
 
 
 ## <a name="network-bandwidth"></a>Largura de banda da rede  
@@ -227,19 +249,6 @@ Velocidades de conexão de rede que definem um ponto de distribuição como **R�
 
 Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
 
-<!--
-**Version 1511, 1602, and 1606**   
- You can configure the network connection speed of each distribution point in a boundary group:  
-
--   Clients use this value when they connect to the distribution point.
-
--   By default, the network connection speed is configured as **Fast**, but it can also be set as **Slow**.  
-
--   The **network connection speed**, along with the configuration of a deployment, determine if a client can download content from a distribution point when the client is in an associated boundary group  
-
-For information about the different content location and fallback scenarios, see [Content source location scenarios](../../../core/plan-design/hierarchy/content-source-location-scenarios.md). For information about boundary groups, see [Boundary groups for versions 1511,1602, and 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606).
--->
-
 
 
 ## <a name="on-demand-content-distribution"></a>Distribuição de conteúdo sob demanda  
@@ -247,39 +256,18 @@ For information about the different content location and fallback scenarios, see
 
 -   Para habilitar essa configuração em uma implantação, habilite **Distribuir o conteúdo deste pacote para pontos de distribuição preferenciais**.  
 
--   Quando essa opção é habilitada para uma implantação e um cliente tenta solicitar esse conteúdo, mas ele não está disponível em nenhum um dos pontos de distribuição preferenciais de clientes, o Configuration Manager distribui automaticamente esse conteúdo aos pontos de distribuição preferenciais de clientes.  
+-   Quando você habilita essa opção para uma implantação e um cliente solicita esse conteúdo, mas ele não está disponível em nenhum dos pontos de distribuição preferenciais do cliente, o Configuration Manager distribui automaticamente esse conteúdo para os pontos de distribuição preferenciais do cliente.  
 
 -   Embora isso acione o Configuration Manager para distribuir automaticamente o conteúdo para os pontos de distribuição preferenciais daqueles clientes, o cliente pode obter o conteúdo de outros pontos de distribuição antes dos pontos de distribuição preferenciais para o cliente receber a implantação. Quando esse comportamento ocorrer, o conteúdo estará presente no ponto de distribuição para uso pelo próximo cliente que busca essa implantação.  
 
 Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
-
-<!--
-If you use version 1511, 1602, or 1606, see  [Content source location scenarios](../../../core/plan-design/hierarchy/content-source-location-scenarios.md) for information about the different content location and fallback scenarios.
--->
 
 
 
 ## <a name="package-transfer-manager"></a>Gerenciador de transferência de pacote  
  O gerenciador de transferência de pacote é o componente do servidor do site que transfere o conteúdo para os pontos de distribuição em outros computadores.  
 
- Para obter mais informações, consulte [Gerenciador de transferência de pacote](../../../core/plan-design/hierarchy/package-transfer-manager.md).  
-
-
-
-<!--
-## Preferred distribution point  
- A preferred distribution point includes any distribution points that are associated with a client's current boundary groups.  
-
- You have the option to associate each distribution point with one or more boundary groups:  
-
--   This association helps the client identify distribution points from which it can download content.  
--   By default, clients can only download content from a preferred distribution point.  
-
-
-For more information:
- - If you use version 1610 or later, see [Boundary groups](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
- - If you use version 1511, 1602, or 1606, see [Content source location scenarios](../../../core/plan-design/hierarchy/content-source-location-scenarios.md).
--->
+ Para obter mais informações, consulte [Gerenciador de transferência de pacote](/sccm/core/plan-design/hierarchy/package-transfer-manager).  
 
 
 

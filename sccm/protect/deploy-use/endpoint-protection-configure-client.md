@@ -1,8 +1,8 @@
 ---
-title: Configurar cliente do Endpoint Protection
+title: Configurar Endpoint Protection
 titleSuffix: Configuration Manager
-description: Saiba como definir configurações personalizadas do cliente para o Endpoint Protection que podem ser implantadas em coleções do computador em sua hierarquia.
-ms.date: 03/22/2018
+description: Saiba como definir configurações personalizadas do cliente do Endpoint Protection.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -10,163 +10,164 @@ ms.assetid: e63f2394-6eb1-4a33-bec5-8377fc62a34e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 10572c367dcdc70bf9c708d3a6bb514c0afa2b24
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: e909f6d291816125415ef712bb00822f23951099
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351210"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384341"
 ---
 # <a name="configure-custom-client-settings-for-endpoint-protection"></a>Definir configurações personalizadas do cliente para o Endpoint Protection
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este procedimento define as configurações personalizadas de cliente do Endpoint Protection, que podem ser implantadas em coleções de computadores na hierarquia.
+Esse procedimento define as configurações personalizadas do cliente do Endpoint Protection, que você pode implantar em coleções de dispositivos em sua hierarquia.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 >  Defina apenas as configurações padrão do cliente do Endpoint Protection, caso tenha certeza de que deseja aplicá-las a todos os computadores na hierarquia. 
+
+
 
 ## <a name="to-enable-endpoint-protection-and-configure-custom-client-settings"></a>Para habilitar o Endpoint Protection e definir configurações personalizadas do cliente
 
-1.  No console do Configuration Manager, clique em **Administração**.
+1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , clique em **Configurações do Cliente**.
+2.  No espaço de trabalho **Administração** , clique em **Configurações do Cliente**.  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Configurações Personalizadas do Dispositivo do Cliente**.
+3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Configurações Personalizadas do Dispositivo do Cliente**.  
 
-4.  Na caixa de diálogo **Criar Configurações Personalizadas do Dispositivo do Cliente** , forneça um nome e uma descrição para o grupo de configurações e selecione **Endpoint Protection**.
+4.  Na caixa de diálogo **Criar Configurações Personalizadas do Dispositivo do Cliente** , forneça um nome e uma descrição para o grupo de configurações e selecione **Endpoint Protection**.  
 
-5.  Defina as configurações do cliente do Endpoint Protection necessárias. Para obter uma lista completa das configurações de cliente do Endpoint Protection que você pode configurar, consulte a seção Endpoint Protection em [Sobre as configurações de cliente no System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md).
+5.  Defina as configurações do cliente do Endpoint Protection necessárias. Para obter uma lista completa das configurações do cliente do Endpoint Protection que você pode definir, confira a seção Endpoint Protection em [Sobre as configurações do cliente](/sccm/core/clients/deploy/about-client-settings#endpoint-protection).  
 
-   > [!IMPORTANT]
-   >  Você deve instalar a função do sistema de sites do Endpoint Protection antes de definir as configurações do cliente do Endpoint Protection.
+   > [!IMPORTANT]  
+   >  Instale a função de sistema de sites do Endpoint Protection antes de definir as configurações de cliente do Endpoint Protection.  
 
-6.  Clique em **OK** para fechar a caixa de diálogo **Criar Configurações Personalizadas do Dispositivo do Cliente** . As novas configurações do cliente são exibidas no nó **Configurações do Cliente** do espaço de trabalho **Administração** .
+6.  Clique em **OK** para fechar a caixa de diálogo **Criar Configurações Personalizadas do Dispositivo do Cliente** . As novas configurações do cliente são exibidas no nó **Configurações do Cliente** do espaço de trabalho **Administração** .  
 
-7.  Antes de usar as configurações personalizadas do cliente, você deve implantá-las em uma coleção. Selecione as configurações personalizadas do cliente que você deseja implantar e, na guia **Início** , no grupo **Configurações do Cliente** , clique em **Implantar**.
+7.  Em seguida, implante as configurações personalizadas do cliente em uma coleção. Selecione as configurações personalizadas do cliente que você deseja implantar. Na guia **Início**, no grupo **Configurações do Cliente**, clique em **Implantar**.  
 
-8.  Na caixa de diálogo **Selecionar Coleção** , escolha a coleção na qual você deseja implantar as configurações do cliente e clique em **OK**. A nova implantação é mostrada na guia **Implantações** do painel de detalhes.
+8.  Na caixa de diálogo **Selecionar Coleção** , escolha a coleção na qual você deseja implantar as configurações do cliente e clique em **OK**. A nova implantação é mostrada na guia **Implantações** do painel de detalhes.  
 
-Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um único cliente, veja a seção Iniciar recuperação de política de um cliente do Configuration Manager em [Como gerenciar clientes no System Center Configuration Manager](../../core/clients/manage/manage-clients.md).
+Os clientes serão definidos com essas configurações quando baixarem a próxima política do cliente. Para obter mais informações, confira [Iniciar recuperação de política para um cliente do Configuration Manager](/sccm/core/clients/manage/manage-clients#BKMK_PolicyRetrieval).  
 
-## <a name="how-to-provision-the-endpoint-protection-client-in-a-disk-image-in-configuration-manager"></a>Como configurar o cliente do Endpoint Protection em uma imagem de disco no Configuration Manager
-É possível instalar o cliente do Endpoint Protection em um computador que você queira usar como origem da imagem de disco para implantação do sistema operacional do Configuration Manager. Normalmente, esse computador é chamado de computador de referência. Depois de criar a imagem do sistema operacional, você poderá usar a implantação do sistema operacional do Configuration Manager para implantar a imagem que pode conter pacotes de software, incluindo o Endpoint Protection, nos seus computadores cliente.
 
-Use os procedimentos deste artigo para ajudá-lo a instalar e configurar o cliente do Endpoint Protection em um computador de referência
 
-### <a name="prerequisites-for-installing-the-endpoint-protection-client-on-the-reference-computer"></a>Pré-requisitos para instalação cliente do Endpoint Protection no computador de referência
+## <a name="how-to-provision-the-endpoint-protection-client-in-a-disk-image"></a>Como provisionar o cliente do Endpoint Protection em uma imagem de disco
+
+Instale o cliente do Endpoint Protection em um computador que você pretende usar como origem da imagem de disco para a implantação do sistema operacional do Configuration Manager. Normalmente, esse computador é chamado de computador de referência. Depois de criar a imagem do sistema operacional, use a implantação do sistema operacional do Configuration Manager para implantar a imagem.
+
+> [!Important]  
+> O Windows 10 e o Windows Server 2016 já têm o Windows Defender instalado por padrão. Esse procedimento não é necessário nessas versões do Windows.  
+
+Use os procedimentos a seguir para ajudá-lo a instalar e configurar o cliente do Endpoint Protection em um computador de referência.
+
+
+### <a name="prerequisites"></a>Pré-requisitos
+
 A lista a seguir contém os pré-requisitos necessários para instalar o software cliente do Endpoint Protection em um computador de referência.
 
--   Você deve ter acesso ao pacote de instalação de cliente do Endpoint Protection, **scepinstall.exe**. Esse pacote pode ser encontrado na pasta **Cliente** da pasta de instalação do Microsoft System Center Configuration Manager no servidor do site. O Windows 10 e o Windows Server 2016 têm o Windows Defender instalado. 
+-   Você deve ter acesso ao pacote de instalação de cliente do Endpoint Protection, **scepinstall.exe**. Localize esse pacote na pasta **Cliente** da pasta de instalação do Configuration Manager no servidor do site.  
 
--   Para verificar se o cliente do Endpoint Protection está implantado com a configuração necessária na sua organização, crie um política antimalware e exporte essa política. Em seguida, você pode especificar a política antimalware a ser usada quando você instala manualmente o cliente do Endpoint Protection. Para mais informações, consulte [Como criar e implantar políticas antimalware para o Endpoint Protection no System Center Configuration Manager](endpoint-antimalware-policies.md).
+-   Para implantar o cliente do Endpoint Protection com a configuração necessária para sua organização, crie e exporte uma política de antimalware. Ao instalar manualmente o cliente do Endpoint Protection, especifique essa política. Para obter mais informações, confira [Como criar e implantar políticas antimalware](/sccm/protect/deploy-use/endpoint-antimalware-policies).  
 
-   > [!NOTE]
-   >  A **Política Antimalware do Cliente Padrão** não pode ser exportada.
+   > [!NOTE]  
+   >  Não é possível exportar a **Política antimalware do cliente padrão**.  
 
--   Se desejar instalar o cliente do Endpoint Protection com as definições mais recentes, baixe-as no [Centro de Proteção contra Malware da Microsoft](http://go.microsoft.com/fwlink/?LinkID=200965).
+-   Se você quiser instalar o cliente do Endpoint Protection com as definições mais recentes, baixe-o de [Windows Defender Security Intelligence](https://www.microsoft.com/wdsi) (Inteligência em segurança do Windows Defender).  
 
->[!NOTE]
-> A partir do Configuration Manager 1802, os dispositivos Windows 10 não precisam ter o agente do Endpoint Protection (SCEPInstall) instalado. Se ele já estiver instalado nos dispositivos Windows 10, o Configuration Manager não o removerá. Os administradores podem remover o agente do Endpoint Protection dos dispositivos Windows 10 que executam, no mínimo, a versão de cliente 1802. O SCEPInstall.exe ainda pode estar presente no C:\Windows\ccmsetup em alguns computadores, mas não deve ser baixado em novas instalações de cliente. <!--503654-->
-### <a name="how-to-install-the-endpoint-protection-client-software-on-the-reference-computer"></a>Como instalar o software cliente do Endpoint Protection no computador de referência
-Você pode instalar o cliente do Endpoint Protection localmente no computador de referência de um prompt de comando. Para fazer isso, primeiro é necessário obter o arquivo de instalação **scepinstall.exe**. Além disso, você pode instalar o cliente com uma política antimalware pré-configurada ou com uma política antimalware exportada anteriormente.
+> [!NOTE]  
+> Começando no Configuration Manager 1802, você não precisa mais instalar o agente do Endpoint Protection (SCEPInstall) em dispositivos Windows 10. Se ele já estiver instalado nos dispositivos Windows 10, o Configuration Manager não o removerá. Os administradores podem remover o agente do Endpoint Protection dos dispositivos Windows 10 que executam, no mínimo, a versão de cliente 1802. O SCEPInstall.exe ainda poderá estar presente no C:\Windows\ccmsetup em alguns computadores, mas as novas instalações do cliente não o baixarão. <!--503654-->
 
-## <a name="to-install-the-endpoint-protection-client-from-a-command-prompt"></a>Para instalar o cliente do Endpoint Protection a partir de um prompt de comando
 
-1.  Copie **scepinstall.exe** da pasta **Cliente** na mídia de instalação do System Center Configuration Manager para o computador no qual você deseja instalar o software cliente do Endpoint Protection.
+### <a name="how-to-install-the-endpoint-protection-client-on-the-reference-computer"></a>Como instalar o cliente do Endpoint Protection no computador de referência
 
-2.  Abra um prompt de comando com privilégios de administrador, navegue para a pasta em que o **scepinstall.exe** está localizado e, em seguida, execute o seguinte comando, adicionando outras propriedades de linha de comando necessárias:
+Instale o cliente do Endpoint Protection localmente no computador de referência usando um prompt de comando. Primeiro, obtenha o arquivo de instalação **scepinstall.exe**. Para obter mais informações, confira [Instalar o cliente do Endpoint Protection usando um prompt de comando](#bkmk_manual-install).
 
-   ```
-   scepinstall.exe
-   ```
+Se necessário, também inclua uma política antimalware pré-configurada ou uma política antimalware que você já tenha exportado. 
 
-    Você pode especificar uma das seguintes propriedades de linha de comando:
+
+
+## <a name="bkmk_manual-install"></a> Para instalar o cliente do Endpoint Protection usando um prompt de comando
+
+1.  Copie **scepinstall.exe** da pasta **Cliente** da pasta de instalação do Configuration Manager para o computador no qual você deseja instalar o software cliente do Endpoint Protection.  
+
+2.  Abra um prompt de comando como administrador. Mude de diretório para a pasta que contém o instalador. Em seguida, execute `scepinstall.exe`, adicionando todas as propriedades de linha de comando adicionais necessárias:
 
    |Propriedade|Descrição|
    |--------------|-----------------|
-   |/s|Especifica que uma instalação silenciosa será executada.|
-   |/q|Especifica que uma extração silenciosa dos arquivos de instalação será executada.|
-   |/i|Especifica que deve ser realizada uma instalação normal.|
-   |/noreplace|Especifica que o software antimalware de terceiros não é desinstalado durante a instalação.|
-   |/policy|Especifica um arquivo de política antimalware a ser usado para configurar o cliente durante a instalação.|
-   |/sqmoptin|Especifica que a instalação do software cliente foi aceita pelo Programa de Aperfeiçoamento da Experiência do Usuário da Microsoft.|
+   |`/s`|Execute o instalador silenciosamente|
+   |`/q`|Extraia os arquivos de instalação silenciosamente|
+   |`/i`|Execute o instalador normalmente|
+   |`/policy`|Especifique um arquivo de política antimalware para configurar o cliente durante a instalação|
+   |`/sqmoptin`|Aceite o CEIP (Programa de Aperfeiçoamento da Experiência do Usuário) da Microsoft|
 
-3.  Siga as instruções na tela para concluir a instalação cliente.
+3.  Siga as instruções na tela para concluir a instalação do cliente.  
 
-4.  Se você tiver baixado o pacote de definição com atualização mais recente, copie o pacote para o computador cliente e clique duas vezes no pacote de definição para instalá-lo.
+4.  Se você tiver baixado o pacote de definição com atualização mais recente, copie o pacote para o computador cliente e clique duas vezes no pacote de definição para instalá-lo.  
 
-   > [!NOTE]
-   >  Depois que a instalação cliente do Endpoint Protection estiver concluída, o cliente executa automaticamente uma verificação de atualização da definição. Se essa verificação de atualização for bem-sucedida, você não precisará instalar manualmente o último pacote de atualização da definição.
+   > [!NOTE]  
+   >  Depois que a instalação cliente do Endpoint Protection for concluída, o cliente executará automaticamente uma verificação de atualização da definição. Se essa verificação de atualização for bem-sucedida, você não precisará instalar manualmente o último pacote de atualização da definição.  
 
-## <a name="to-install-the-client-software-with-an-antimalware-policy-from-the-command-prompt"></a>Para instalar o software cliente com uma política antimalware do prompt de comando
+#### <a name="example-install-the-client-with-an-antimalware-policy"></a>Exemplo: instalar o cliente com uma política antimalware
 
-1.  Copie **scepinstall.exe** e a política antimalware exportada ou pré-configurada para o computador no qual você deseja instalar o software cliente do Endpoint Protection.
+`scepinstall.exe /policy <full path>\<policy file>`
 
-2.  Abra um prompt de comando com os privilégios de administrador, navegue até a pasta onde **scepinstall.exe** e a política antimalware estão localizados e execute o seguinte comando:
 
-   ```
-   scepinstall.exe /policy <full path>\<policy file>
-   ```
 
-3.  Siga as instruções na tela para concluir a instalação cliente.
+## <a name="verify-the-endpoint-protection-client-installation"></a>Verificar a instalação do cliente do Endpoint Protection
 
-4.  Se você tiver baixado o pacote de definição mais recente, copie o pacote para o computador cliente e clique duas vezes no pacote de definição para instalá-lo.
-
-   > [!NOTE]
-   >  Depois que a instalação cliente do Endpoint Protection estiver concluída, o cliente executa automaticamente uma verificação de atualização da definição. Se essa verificação de atualização for bem-sucedida, você não precisará instalar manualmente o último pacote de atualização da definição.
-
-## <a name="verify-that-the-endpoint-protection-client-is-installed-correctly"></a>Verificar se o cliente do Endpoint Protection está instalado corretamente
 Depois de instalar o cliente do Endpoint Protection no seu computador de referência, verifique se o cliente está funcionando corretamente.
 
-### <a name="to-verify-that-the-endpoint-protection-client-is-installed-correctly"></a>Para verificar se o cliente do Endpoint Protection está instalado corretamente
+1.  No computador de referência, abra **System Center Endpoint Protection** na área de notificação do Windows.  
 
-1.  No computador de referência, abra **System Center Endpoint Protection** na área de notificação do Windows.
+2.  Na guia **Início** da caixa de diálogo **System Center Endpoint Protection**, verifique se **Proteção em tempo real** está definido como **Ativo**.  
 
-2.  Na guia **Início** da caixa de diálogo **System Center Endpoint Protection**, verifique se **Proteção em tempo real** está definido como **Ativo**.
+3.  Verifique se a opção **Atualizado** é exibida para **Definições de vírus e spyware**.  
 
-3.  Verifique se a opção **Atualizado** é exibida para **Definições de vírus e spyware**.
-
-4.  Para ajudar a confirmar se seu computador de referência está pronto para geração de imagens, em **Opções de verificação**, selecione **Completa**e clique em **Verificar agora**.
-
-### <a name="how-to-prepare-the-endpoint-protection-client-for-imaging"></a>Como preparar o cliente do Endpoint Protection para geração de imagens
-Depois de verificar se o cliente do Endpoint Protection está instalado corretamente no computador de referência, você poderá preparar o computador para geração de imagens. Execute as seguintes etapas para preparar o cliente do Endpoint Protection para geração de imagens.
+4.  Para confirmar se o computador de referência está pronto para geração de imagens, em **Opções de verificação**, selecione **Completa** e clique em **Verificar agora**.  
 
 
-Para obter mais informações sobre implantação de sistema operacional no Configuration Manager, consulte [Gerenciar imagens do sistema operacional com o System Center Configuration Manager](/sccm/osd/get-started/manage-operating-system-images).
 
-### <a name="to-prepare-the-endpoint-protection-client-for-imaging"></a>Para preparar o cliente do Endpoint Protection para geração de imagens
+## <a name="prepare-the-endpoint-protection-client-for-imaging"></a>Preparar o cliente do Endpoint Protection para geração de imagens
 
-1.  No computador de referência, faça logon como um usuário com privilégios administrativos.
+Execute as seguintes etapas para preparar o cliente do Endpoint Protection para geração de imagens:
 
-2.  Baixe e instale **PsTools** do [Site Windows SysInternals](http://go.microsoft.com/fwlink/?LinkId=215263) na TechNet.
+1.  No computador de referência, entre como um administrador.  
 
-3.  Abra um prompt de comando elevado, navegue até a pasta na qual você instalou PsTools e digite o seguinte comando
+2.  Baixe e instale **PsExec** de [Windows SysInternals](https://docs.microsoft.com/sysinternals/downloads/psexec).  
 
-   ```
-   Psexec.exe -s -i regedit.exe
-   ```
+3.  Execute um prompt de comando como administrador, mude de diretório para a pasta na qual você instalou o PsTools e, em seguida, digite o seguinte comando:  
 
-   > [!IMPORTANT]
-   >  Tenha cuidado ao executar o Editor do Registro dessa maneira; a opção -s no PsExec.exe executa o Editor do Registro com privilégios do LocalSystem.
+   `psexec.exe -s -i regedit.exe`  
 
-4.  No Editor do Registro, navegue até cada uma das seguintes chaves do Registro e exclua-as.
+   > [!IMPORTANT]  
+   >  Tenha cuidado ao executar o Editor do Registro dessa maneira. O PsExec.exe o executará no contexto do LocalSystem.  
 
-   > [!IMPORTANT]
-   >  Você deve excluir as chaves do Registro como última etapa antes da geração de imagens do computador de referência. As chaves do Registro são recriadas quando o cliente do Endpoint Protection é iniciado. Se você reiniciar o computador de referência, deverá excluir as chaves do Registro novamente.
+4.  No Editor do Registro, exclua as seguintes chaves do Registro:  
 
-   -   **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Antimalware\InstallTime**
+   > [!IMPORTANT]  
+   >  Exclua essas chaves do Registro como última etapa antes da geração de imagens do computador de referência. O cliente do Endpoint Protection recriará essas chaves ao ser iniciado. Se você reiniciar o computador de referência, exclua as chaves do Registro novamente.  
 
-   -   **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Antimalware\Scan\LastScanRun**
+   -   `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Antimalware\InstallTime`  
 
-   -   **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Antimalware\Scan\LastScanType**
+   -   `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Antimalware\Scan\LastScanRun`  
 
-   -   **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Antimalware\Scan\LastQuickScanID**
+   -   `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Antimalware\Scan\LastScanType`  
 
-   -   **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Antimalware\Scan\LastFullScanID**
+   -   `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Antimalware\Scan\LastQuickScanID`   
 
-   -   **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\RemovalTools\MRT\GUID**
+   -   `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Antimalware\Scan\LastFullScanID`  
 
-Depois de concluir as etapas anteriores, você poderá preparar o computador de referência para geração de imagens. Para obter mais informações sobre implantação de sistema operacional no Configuration Manager, consulte [Gerenciar imagens do sistema operacional com o System Center Configuration Manager](/sccm/osd/get-started/manage-operating-system-images).
+   -   `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\RemovalTools\MRT\GUID`
 
-Quando uma imagem que contém o software cliente do Endpoint Protection é implantada, o cliente do Endpoint Protection reporta automaticamente as informações para o site do Configuration Manager ao qual o computador está atribuído, e a política aplicável ao computador cliente é baixada e aplicada.
+Agora você está pronto para preparar o computador de referência para geração de imagens.
+
+Quando você implanta uma imagem do sistema operacional que contém o cliente do Endpoint Protection, ele relata informações automaticamente para o site do Configuration Manager atribuído ao dispositivo. O cliente baixa e aplica todas as políticas antimalware necessárias.  
+
+
+
+## <a name="see-also"></a>Consulte também
+
+Para obter mais informações sobre a implantação do sistema operacional no Configuration Manager, confira [Gerenciar imagens do sistema operacional](/sccm/osd/get-started/manage-operating-system-images).
+

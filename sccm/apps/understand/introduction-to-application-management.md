@@ -1,8 +1,8 @@
 ---
 title: Introdução ao gerenciamento de aplicativos
 titleSuffix: Configuration Manager
-description: Descubra as informações básicas de que você precisará para gerenciar e implantar aplicativos do System Center Configuration Manager.
-ms.date: 12/23/2016
+description: Descubra as informações básicas que você precisará para gerenciar e implantar aplicativos do Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,97 +10,199 @@ ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bcdc5800a1c280c99289528c40e0efee8acf5ad5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 70ab4136f39b4bf559c3d460ca1528bb4de0f6e1
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336163"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384283"
 ---
-# <a name="introduction-to-application-management-in-system-center-configuration-manager"></a>Introdução ao gerenciamento de aplicativos no System Center Configuration Manager
+# <a name="introduction-to-application-management-in-configuration-manager"></a>Introdução ao gerenciamento de aplicativos no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Neste tópico, você aprenderá as noções básicas que você precisa saber antes de começar a trabalhar com os aplicativos do System Center Configuration Manager.  
+Neste artigo, você aprenderá os conceitos básicos para começar a trabalhar com aplicativos do Configuration Manager.  
 
 > [!TIP]  
->  Se você já está familiarizado com a maneira de gerenciar aplicativos no Configuration Manager, pule este tópico e siga para a criação de um aplicativo de exemplo. Consulte [Criar e implantar um aplicativo com o System Center Configuration Manager](../../apps/get-started/create-and-deploy-an-application.md).  
+>  Se você já sabe como gerenciar aplicativos no Configuration Manager, ignore este artigo. Passe para a criação de um aplicativo de exemplo: [Criar e implantar um aplicativo](/sccm/apps/get-started/create-and-deploy-an-application).  
+
+
 
 ## <a name="what-is-an-application"></a>O que é um aplicativo?  
- Embora *aplicativo* seja um termo amplamente usado em computação, no Configuration Manager, isso significa algo diferente. Pense em um aplicativo como uma caixa. Essa caixa contém um ou mais conjuntos de arquivos de instalação para um pacote de software (conhecido como um **tipo de implantação**), além de instruções sobre como implantar o software.  
 
- Quando o aplicativo é implantado em dispositivos, os **requisitos** decidem qual tipo de implantação está instalada no dispositivo.  
+Embora *aplicativo* seja um termo amplamente usado em computação, no Configuration Manager ele tem um significado específico. Pense em um aplicativo como uma caixa. Essa caixa contém um ou mais conjuntos de arquivos de instalação para um pacote de software (conhecido como um *tipo de implantação*), além de instruções sobre como implantar o software.  
 
- Você pode fazer muito mais com um aplicativo. Você saberá mais à medida que lê este guia. A tabela a seguir apresenta alguns conceitos que você precisará saber antes de começar a obter detalhes:  
+Quando você implanta o aplicativo em dispositivos, os **requisitos** decidem que tipo de implantação o Configuration Manager instalará no dispositivo.  
 
-|Conceito|Descrição|    
-|-|-|  
-|**Requirements**|Nas versões anteriores do Configuration Manager, geralmente você deve criar uma coleção que contém os dispositivos que você desejava implantar em um aplicativo. Embora você ainda possa criar uma coleção, com os requisitos você pode especificar critérios mais detalhados para uma implantação de aplicativo.<br /><br /> Por exemplo, você pode especificar que um aplicativo pode instalar somente em dispositivos que executam o Windows 10. Em seguida, você pode implantar o aplicativo em todos os seus dispositivos, mas ele será instalado somente em dispositivos que executam o Windows 10.<br /><br /> O cliente do Configuration Manager avalia os requisitos para determinar se um aplicativo e qualquer de seus tipos de implantação serão instalados. Em seguida, ele determina o tipo de implantação correto pelo qual instalar um aplicativo. A cada sete dias, por padrão, as regras de requisitos são reavaliadas para garantir a conformidade de acordo com a configuração do cliente **Agendar a reavaliação de implantações**.<br /><br /> Para obter detalhes, consulte [Create and deploy an application (Criar e implantar um aplicativo)](../../apps/get-started/create-and-deploy-an-application.md).|  
-|**Condições globais**|Enquanto que os requisitos são usados com um tipo de implantação específica em um único aplicativo, você também pode criar condições globais. Essas são bibliotecas de requisitos predefinidos, que você pode usar com qualquer aplicativo e qualquer tipo de implantação.<br /><br /> O Configuration Manager contém um conjunto de condições globais internas e você também pode criar os seus próprios conjuntos.<br /><br /> Para obter detalhes, consulte [Create global conditions (Criar condições globais)](../../apps/deploy-use/create-global-conditions.md).|  
-|**Implantação simulada**|Avalia os requisitos, o método de detecção e as dependências para um aplicativo. Relata os resultados sem realmente instalar o aplicativo.<br /><br /> Para obter detalhes, consulte [Simulate application deployments (Simular implantações de aplicativos)](../../apps/deploy-use/simulate-application-deployments.md).|  
-|**Ação de implantação**|Especifica se você deseja instalar ou desinstalar (quando há suporte) o aplicativo que você está implantando.<br /><br /> Para obter detalhes, consulte [Deploy applications (Implantar aplicativos)](../../apps/deploy-use/deploy-applications.md).|  
-|**Finalidade da implantação**|Especifica se o aplicativo de implantação será **Necessária**ou **Disponível**.<br /><br /> **Necessário** significa que o aplicativo é implantado automaticamente de acordo com o agendamento que foi configurado. No entanto, o usuário poderá acompanhar o status da implantação do aplicativo, se não estiver oculto, e instalar o aplicativo antes da data limite usando o Centro de Software.<br /><br /> **Disponível** significa que se o aplicativo for implantado em um usuário, o usuário verá o aplicativo publicado no Centro de Software e poderá instalá-lo sob demanda.<br /><br /> Para obter detalhes, consulte [Deploy applications (Implantar aplicativos)](../../apps/deploy-use/deploy-applications.md).|  
-|**Revisões**|Quando você faz revisões em um aplicativo ou em um tipo de implantação contido em um aplicativo, o Configuration Manager cria uma nova versão do aplicativo. É possível exibir o histórico de revisão de cada aplicativo, exibir suas propriedades, restaurar uma versão anterior de um aplicativo ou excluir uma versão antiga.<br /><br /> Para obter detalhes, consulte [Update and retire applications (Atualizar e desativar aplicativos)](../../apps/deploy-use/update-and-retire-applications.md).|  
-|**Método de detecção**|Métodos de detecção são usados para descobrir se um aplicativo implantado já está instalado. Se o método de detecção indica que o aplicativo está instalado, o Configuration Manager não tenta instalá-lo novamente.<br /><br /> Para obter detalhes, consulte [Create applications (Criar aplicativos)](../../apps/deploy-use/create-applications.md).|  
-|**Dependências**|As dependências definem um ou mais tipos de implantação de outro aplicativo que deve ser instalado antes um tipo de implantação ser instalado. Você pode configurar os tipos de implantação dependentes para instalar automaticamente antes que um tipo de implantação seja instalado.<br /><br /> Para obter detalhes, consulte [Create applications (Criar aplicativos)](../../apps/deploy-use/create-applications.md).|  
-|**Substituição**|O Configuration Manager permite que você atualize ou substitua os aplicativos existentes usando uma relação de substituição. Quando você substitui um aplicativo, é possível especificar um novo tipo de implantação para substituir o tipo de implantação do aplicativo substituído. Também é possível decidir se atualiza ou desinstala o aplicativo substituído antes que o aplicativo substituto seja instalado.<br /><br /> Para obter detalhes, consulte [Create applications (Criar aplicativos)](../../apps/deploy-use/create-applications.md).|  
-|**Gerenciamento centrado no usuário**|Os aplicativos do Configuration Manager dão suporte ao gerenciamento voltado ao usuário, o que permite associar usuários específicos a dispositivos específicos. Em vez de ter de lembrar o nome do dispositivo de um usuário, você pode implantar aplicativos para o usuário e para o dispositivo. Essa funcionalidade pode ajudá-lo a garantir que os aplicativos mais importantes estejam sempre disponíveis em cada dispositivo acessado por um usuário específico. Se um usuário adquire um novo computador, você pode instalar automaticamente os aplicativos do usuário no dispositivo antes que ele entre.<br /><br /> Para obter detalhes, consulte [Vincular usuários e dispositivos com a afinidade de dispositivo de usuário](../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md).|  
+Você pode fazer muito mais com um aplicativo. Você saberá mais à medida que lê este guia. As seções a seguir apresentam alguns conceitos que você precisará saber antes de começar a obter detalhes:  
+
+#### <a name="deployment-type"></a>Tipo de implantação
+Se o *aplicativo* é a caixa, o *tipo de implantação* é o conjunto de conteúdo na caixa. Um aplicativo precisa de pelo menos um tipo de implantação, pois ela determina como instalar o aplicativo. Use mais de um tipo de implantação para configurar um conteúdo e um programa de instalação diferentes para o mesmo aplicativo. 
+
+Por exemplo, sua empresa tem um aplicativo de linha de negócios chamado Astoria. Os desenvolvedores do aplicativo fornecem uma das seguintes maneiras de instalar o aplicativo:
+- Pacote do Windows Installer para funcionalidade completa em dispositivos Windows 10
+- Um pacote do App-V para ser usado no farm de servidores de terminal
+- Um pacote do aplicativo do Android para usuários móveis  
+
+Você cria um único aplicativo para o Astoria no Configuration Manager. O aplicativo define os metadados de alto nível sobre o aplicativo que são comuns a todos os métodos de instalação e plataformas. Em seguida, você cria três tipos de implantação para os métodos de instalação disponíveis e implanta o aplicativo para todos os usuários. Com base nos requisitos e em outras configurações dos tipos de implantação, o Configuration Manager determina o método certo em cada caso de uso. 
+
+Para obter mais informações, consulte [Criar tipos de implantação para o aplicativo](/sccm/apps/deploy-use/create-applications#bkmk_create-dt).
+
+#### <a name="requirements"></a>requisitos
+Nas versões anteriores do Configuration Manager, criava-se uma coleção de dispositivos na qual o aplicativo era implantado. Embora você ainda possa criar uma coleção, use os *requisitos* para especificar critérios mais detalhados para uma implantação de aplicativo.
+
+Por exemplo, especificar que um aplicativo só pode ser instalado em dispositivos que executam o Windows 10. Quando você implantar o aplicativo em todos os seus dispositivos, ele somente será instalado nos dispositivos que executam o Windows 10.
+
+O Configuration Manager avalia os requisitos para determinar se ele deve instalar um aplicativo e seus tipos de implantação. Em seguida, ele determina o tipo de implantação correto pelo qual instalar um aplicativo. A cada sete dias, por padrão, o cliente do Configuration Manager reavalia as regras de requisitos para determinar a conformidade de acordo com a configuração do cliente **Agendar reavaliação de implantações**.
+
+Para obter mais informações, confira [Criar e implantar um aplicativo](/sccm/apps/get-started/create-and-deploy-an-application) e [Requisitos de tipo de implantação](/sccm/apps/deploy-use/create-applications#bkmk_dt-require).
+
+#### <a name="global-conditions"></a>Condições globais
+Embora os requisitos sejam usados com um tipo de implantação específico em um único aplicativo, também é possível criar *condições globais*. Essas condições são uma biblioteca de requisitos predefinidos que você pode usar com qualquer aplicativo e o tipo de implantação. O Configuration Manager inclui um conjunto de condições globais internas ou você também pode criar suas próprias condições. 
+
+Para obter mais informações, confira [Criar condições globais](/sccm/apps/deploy-use/create-global-conditions).
+
+#### <a name="simulated-deployment"></a>Implantação simulada
+Uma *implantação simulada* avalia os requisitos, o método de detecção e as dependências de um aplicativo. Um cliente relata os resultados sem realmente instalar o aplicativo. 
+
+Para saber mais, confira [Simular implantações de aplicativos](/sccm/apps/deploy-use/simulate-application-deployments).  
+
+#### <a name="deployment-action"></a>Ação de implantação
+Uma *ação de implantação* especifica se você deseja instalar ou desinstalar o aplicativo que está implantando. Nem todos os tipos de implantação dão suporte para a ação de desinstalação. 
+
+Para obter informações, confira [Deploy applications](/sccm/apps/deploy-use/deploy-applications) (Implantar aplicativos).  
+
+#### <a name="deployment-purpose"></a>Finalidade da implantação
+A *finalidade da implantação* especifica se o aplicativo de implantação é **Obrigatório** ou está **Disponível**:  
+
+- O cliente instala automaticamente uma implantação *Obrigatória* de acordo com o agendamento que você define. Quando o aplicativo não está oculto, os usuários podem acompanhar o status da implantação. Eles também podem usar o Centro de Software para instalar o aplicativo antes da data limite.  
+
+- Se você implantar o aplicativo para um usuário como *Disponível*, o usuário o verá no Centro de Software e poderá solicitá-lo sob demanda.  
+
+Para obter informações, confira [Deploy applications](/sccm/apps/deploy-use/deploy-applications) (Implantar aplicativos).  
+
+#### <a name="revisions"></a>Revisões
+Quando você faz *revisões* em um aplicativo ou tipo de implantação, o Configuration Manager cria uma nova versão do aplicativo. Execute as seguintes ações no console do Configuration Manager: 
+- Exibir o histórico de cada revisão do aplicativo
+- Exibir suas propriedades
+- Restaurar uma versão anterior de um aplicativo
+- Excluir uma versão antiga
+
+Para obter mais informações, confira [Atualizar e desativar aplicativos](/sccm/apps/deploy-use/update-and-retire-applications).  
+
+#### <a name="detection-method"></a>Método de detecção
+Use *métodos de detecção* para descobrir se um dispositivo já instalou um aplicativo. Se o método de detecção indica que o aplicativo já está instalado, o Configuration Manager não tenta instalá-lo novamente.
+
+Para obter mais informações, confira [Opções de método de detecção de tipo de implantação](/sccm/apps/deploy-use/create-applications##bkmk_dt-detect).
+
+#### <a name="dependencies"></a>Dependências
+As *dependências* definem um ou mais tipos de implantação de outro aplicativo que o cliente precisa instalar antes de instalar esse tipo de implantação. 
+
+Para obter mais informações, confira [Dependências de tipo de implantação](/sccm/apps/deploy-use/create-applications#bkmk_dt-depend).  
+
+#### <a name="supersedence"></a>Substituição
+O Configuration Manager permite atualizar ou substituir os aplicativos existentes usando uma relação de *substituição*. Ao substituir um aplicativo, você especifica um novo tipo de implantação para substituir o tipo de implantação do aplicativo substituído. Você também pode decidir se atualiza ou desinstala o aplicativo substituído antes que o cliente instale o aplicativo substituto.
+
+Para mais informações, consulte [Substituição de aplicativos](/sccm/apps/deploy-use/revise-and-supersede-applications#application-supersedence).  
+
+#### <a name="user-centric-management"></a>Gerenciamento centrado no usuário
+Os aplicativos do Configuration Manager dão suporte ao *gerenciamento centrado em usuário*, o que permite associar usuários específicos a dispositivos específicos. Em vez de precisar se lembrar do nome de um dispositivo do usuário, implante aplicativos para o usuário e para o dispositivo. Essa funcionalidade ajuda a garantir que os aplicativos mais importantes estejam sempre disponíveis em cada um dos dispositivos do usuário. Se um usuário adquire um novo computador, o Configuration Manager instala automaticamente seus aplicativos no dispositivo antes que ele entre. 
+
+Para obter mais informações, confira [Vincular usuários e dispositivos com afinidade de dispositivo de usuário](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity).  
+
+
 
 ## <a name="what-application-types-can-you-deploy"></a>Quais tipos de aplicativos posso implantar?  
- O Configuration Manager permite que você implante os seguintes tipos de aplicativos:  
 
-- Windows Installer (arquivo *.msi)
-- Pacote de aplicativos do Windows (\*.appx, \*.appxbundle)
-- Pacote de aplicativo Windows (na Windows Store)
-- Microsoft Application Virtualization 4
-- Microsoft Application Virtualization 5
-- Gabinete do Windows Mobile
+O Configuration Manager permite que você implante os seguintes tipos de aplicativos:  
+
+- Windows Installer (MSI)  
+
+- Pacote do aplicativo do Windows (appx ou. appxbundle)  
+
+    > [!Note]  
+    > Começando na versão 1806, esse tipo inclui os novos formatos de pacote do aplicativo (msix) e lote de aplicativo (msixbundle) do Windows 10.<!--1357427-->  
+
+- Pacote do aplicativo do Windows na Microsoft Store  
+
+- Microsoft App-V v4 e v5  
+
 - macOS  
 
 
-Além disso, quando você gerencia dispositivos por meio do gerenciamento de dispositivo local do Microsoft Intune ou do Configuration Manager, é possível gerenciar mais estes tipos de aplicativos:
+Além disso, quando você gerencia dispositivos por meio do gerenciamento de dispositivo local do Microsoft Intune ou do Configuration Manager, é possível gerenciar mais estes tipos de aplicativo:  
 
-- Pacote de aplicativos do Windows Phone (arquivo *.xap)
-- Pacote de aplicativo para iOS (arquivo *.ipa)
-- Pacote de aplicativo para Android (arquivo *.apk)
-- Pacote do aplicativo para Android no Google Play
-- Pacote de aplicativo do Windows Phone (na Windows Store)
-- Windows Installer por meio do MDM
-- Aplicativo da Web
+- Pacote do aplicativo do Windows Phone (xap)  
+
+- Pacote do aplicativo do Windows Phone na Microsoft Store  
+
+- Pacote do aplicativo para iOS (ipa)  
+
+- Pacote do aplicativo para iOS da Loja de Aplicativos  
+
+- Pacote do aplicativo para Android (APK)  
+
+- Pacote de aplicativo para Android no Google Play  
+
+- Windows Installer por meio do MDM (MSI)  
+
+- Aplicativo Web
 
 
 
 ## <a name="state-based-applications"></a>Aplicativos baseados em estado  
- Os aplicativos do Configuration Manager usam monitoramento baseado em estado, o que permite a você controlar o estado da última implantação de aplicativo para usuários e dispositivos. Essas mensagens de estado exibem informações sobre dispositivos individuais. Por exemplo, se um aplicativo for implantado em um conjunto de usuários, será possível exibir o estado de conformidade e a finalidade da implantação no console do Configuration Manager. É possível monitorar a implantação de todo o software usando o espaço de trabalho **Monitoramento** no console do Configuration Manager. Implantações de software incluem atualizações de software, configurações de conformidade, aplicativos, sequências de tarefas e pacotes e programas. Para obter mais informações, consulte [Monitor applications (Monitorar aplicativos)](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
 
- Implantações de aplicativos são regularmente reavaliadas pelo Configuration Manager. Por exemplo:  
+Os aplicativos do Configuration Manager usam monitoramento baseado em estado. Você pode acompanhar o último estado de implantação de aplicativo de usuários e dispositivos. Essas mensagens de estado exibem informações sobre dispositivos individuais. Por exemplo, ao implantar um aplicativo em uma coleção de usuários, você pode exibir o estado de conformidade da implantação e a finalidade da implantação no console do Configuration Manager. Monitore a implantação de software do espaço de trabalho **monitoramento** no console do Configuration Manager. Para obter mais informações, consulte [Monitor applications (Monitorar aplicativos)](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
 
--   Um aplicativo implantado será desinstalado pelo usuário final. No próximo ciclo de avaliação, o Configuration Manager detectará se o aplicativo não estiver presente e o reinstalará.  
+Regularmente, o cliente do Configuration Manager reavalia as implantações de aplicativos. Por exemplo:  
 
--   Um aplicativo não foi instalado em um dispositivo porque ele não conseguiu atender aos requisitos. Mais adiante, uma alteração é feita ao dispositivo e agora ele atende aos requisitos. O Configuration Manager detecta esta alteração e o aplicativo é instalado.  
+- Um usuário desinstala um aplicativo implantado. No próximo ciclo de avaliação, o Configuration Manager detecta que o aplicativo não está presente. O cliente reinstala o aplicativo automaticamente.  
+
+- O Configuration Manager não instalou um aplicativo em um dispositivo porque ele não atendeu aos requisitos. Mais adiante, uma alteração é feita ao dispositivo e agora ele atende aos requisitos. O Configuration Manager detecta essa alteração e o cliente instala o aplicativo.  
+
+Você pode definir o intervalo de reavaliação de implantações de aplicativo. Use a configuração do cliente **Agendar reavaliação de implantações** no grupo **Implantação de software**. Para obter mais informações, consulte [Sobre as configurações do cliente](/sccm/core/clients/deploy/about-client-settings#software-deployment).  
 
 
- Você pode configurar o intervalo de reavaliação de implantações de aplicativos usando a configuração do cliente **Agendar a reavaliação de implantações**. Para obter mais informações, consulte [Sobre as configurações do cliente](../../core/clients/deploy/about-client-settings.md).  
 
 ## <a name="get-started-creating-an-application"></a>Introdução à criação de um aplicativo  
- Se deseja começar imediatamente e iniciar a criação de um aplicativo, você encontrará um passo a passo para criar um aplicativo simples no tópico [Create and deploy an application (Criar e implantar um aplicativo)](../../apps/get-started/create-and-deploy-an-application.md).  
 
- Se você está familiarizado com as noções básicas e deseja obter mais informações de referência sobre todas as opções disponíveis, comece por [Create applications (Criar aplicativos)](/sccm/apps/deploy-use/create-applications).  
+Se você quiser começar imediatamente a criar um aplicativo, acesse um passo a passo no artigo [Criar e implantar um aplicativo](/sccm/apps/get-started/create-and-deploy-an-application).  
 
-## <a name="software-center-and-the-application-catalog"></a>Centro de Software e o Catálogo de Aplicativos  
- Nas versões anteriores do Configuration Manager, o Centro de Software foi usado para instalar e agendar instalações de software, definir configurações de controle remoto e instalar o gerenciamento de energia. Os usuários podem se conectar ao Catálogo de Aplicativos para procurar e solicitar software, definir algumas preferências e apagar remotamente seus dispositivos móveis.  
+Se você já está familiarizado com os conceitos básicos e deseja obter mais informações de referência sobre todas as opções disponíveis, comece a [Criar aplicativos](/sccm/apps/deploy-use/create-applications).  
 
- Embora essas configurações ainda estejam disponíveis no System Center Configuration Manager, agora há uma nova versão do Centro de Software disponível, que permite procurar aplicativos. Você não precisa usar o Catálogo de Aplicativos, o que requer um navegador da Web habilitado para Silverlight. No entanto, as funções do sistema de sites do ponto de sites da Web do catálogo de aplicativos e do ponto de serviços Web do catálogo de aplicativos ainda são necessárias para que os aplicativos disponíveis para o usuário sejam exibidos no Centro de Software.  
 
- Para obter mais informações, consulte [Plan for and configure application management (Planejar e configurar o gerenciamento de aplicativos)](../../apps/plan-design/plan-for-and-configure-application-management.md).  
 
-## <a name="configuration-manager-packages-and-programs"></a>Pacotes e programas do Configuration Manager  
- O Configuration Manager continua dando suporte a pacotes e programas usados nas versões anteriores do produto. Uma implantação que usa pacotes e programas pode ser mais adequada do que uma implantação que usa um aplicativo quando você implanta um dos seguintes:  
+## <a name="software-center"></a>Centro de software  
 
--   Scripts que não instalam um aplicativo em um computador, como um script para desfragmentar a unidade de disco do computador.  
+O Centro de Software é um aplicativo do Windows instalado com o cliente do Configuration Manager. Use-o para as seguintes ações:  
+- Procurar e solicitar aplicativos implantados no dispositivo ou no usuário
+- Instalar e agendar instalações de software
+- Exibir o status de instalação de aplicativos, as atualizações de software e os sistemas operacionais
+- Definir as configurações de controle remoto
+- Configurar o gerenciamento de energia
 
--   "Únicos" scripts que não precisam ser monitorados continuamente.  
+Para obter mais informações, consulte os seguintes artigos:  
+- [Planejar e configurar o gerenciamento de aplicativos](/sccm/apps/plan-design/plan-for-and-configure-application-management)
+- [Guia do usuário do Centro de Software](/sccm/core/understand/software-center)
 
--   Scripts que são executados em um agendamento recorrente e que não usam a avaliação global.
+> [!Note]  
+> A função de ponto de serviços Web do catálogo de aplicativos não é mais necessária no 1806, mas ainda é uma função com suporte. 
+> 
+> Não há suporte para a função de site do Catálogo de Aplicativos na versão 1806. Para saber mais, consulte [Recursos removidos e preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
 
- Para obter mais informações, consulte [Pacotes e programas](../../apps/deploy-use/packages-and-programs.md).  
+
+
+## <a name="packages-and-programs"></a>Pacotes e programas  
+
+O Configuration Manager continua dando suporte a pacotes e programas usados nas versões anteriores do produto. 
+
+Para obter mais informações, consulte [Pacotes e programas](/sccm/apps/deploy-use/packages-and-programs).  
+
+
+
+## <a name="next-steps"></a>Próximas etapas
+
+Agora que você entende os conceitos básicos do gerenciamento de aplicativos no Configuration Manager, continue nos os seguintes artigos:
+- [Criar e implantar um aplicativo de exemplo](/sccm/apps/get-started/create-and-deploy-an-application)
+- [Planejar e configurar o gerenciamento de aplicativos](/sccm/apps/plan-design/plan-for-and-configure-application-management)
+- [Criar aplicativos](/sccm/apps/deploy-use/create-applications)

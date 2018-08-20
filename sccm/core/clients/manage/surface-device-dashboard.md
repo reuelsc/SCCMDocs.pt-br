@@ -5,17 +5,17 @@ description: Examine as informações sobre os dispositivos Surface usando o pai
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 03/22/2018
+ms.date: 07/30/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7397fc17-3ae8-4525-8386-aea8a9cffa06
-ms.openlocfilehash: db5df73db6a973ca689def785ee99a40425303fa
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 96bca886b25cbe5f6ae1c2f06cbc823b4f017075
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334548"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39383908"
 ---
 # <a name="surface-device-dashboard-in-system-center-configuration-manager"></a>Painel de dispositivos Surface no System Center Configuration Manager
 
@@ -51,8 +51,7 @@ O painel de dispositivos Surface mostra três grafos para o ambiente.
         ![Lista de dispositivos com o modelo Surface](media\Surface-Model-Device-List.PNG)
 
 - **Cinco principais versões de firmware** – exibe um gráfico com os cinco principais modelos de firmware no ambiente. 
-    - Focalizar uma seção do grafo fornecerá o número de dispositivos Surface com a versão de firmware selecionada. 
-       ![Lista de dispositivos com o modelo Surface](media\Surface-Firmware-Hover.PNG)
+    - Focalizar uma seção do grafo fornecerá o número de dispositivos Surface com a versão de firmware selecionada. Começando com o Configuration Manager versão 1806, quando você clica em uma seção do grafo, uma lista de dispositivos relevantes é exibida. <!--1358654--> ![Lista de dispositivos de modelo do Surface](media\Surface-Firmware-Hover.PNG)
 
 
 ## <a name="more-information"></a>Mais informações

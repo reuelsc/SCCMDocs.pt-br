@@ -2,7 +2,7 @@
 title: Pré-requisitos de implantação do cliente Windows
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os pré-requisitos para implantação do cliente do Configuration Manager em computadores Windows.
-ms.date: 03/22/2018
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,66 +10,65 @@ ms.assetid: 1a2a9b48-a95b-4643-b00c-b3079584ae2e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bf929e605a7d44ac2f29226177d3ab962eb8fba0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 025edee312e1c67eba9f9e4f812b03806f51dbbb
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336843"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384307"
 ---
-# <a name="prerequisites-for-deploying-clients-to-windows-computers-in-system-center-configuration-manager"></a>Pré-requisitos para a implantação de clientes em computadores com Windows no System Center Configuration Manager
+# <a name="prerequisites-for-deploying-clients-to-windows-computers-in-configuration-manager"></a>Pré-requisitos para a implantação de clientes em computadores Windows no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 A implantação de clientes do Configuration Manager em seu ambiente tem as seguintes dependências externas e dependências no produto. Além disso, cada método de implantação do cliente tem suas próprias dependências que devem ser atendidas para que as instalações do cliente sejam bem-sucedidas.  
 
-  Examine também [Configurações compatíveis](../../../core/plan-design/configs/supported-configurations.md) para confirmar se os dispositivos atendem aos requisitos mínimos de hardware e de sistema operacional do cliente do Configuration Manager.  
-
- Para obter informações sobre os pré-requisitos do cliente do Configuration Manager para Linux e UNIX, consulte [Planejando a implantação de cliente em computadores Linux e UNIX](../../../core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md).  
+Para obter mais informações sobre os requisitos mínimos de hardware e de sistema operacional do cliente do Configuration Manager, confira [Configurações com suporte](/sccm/core/plan-design/configs/supported-configurations).  
 
 > [!NOTE]  
 >  Os números de versão de software mostrados neste artigo listam somente os números de versão mínimos.  
 
 
 
-##  <a name="BKMK_prereqs_computers"></a> Pré-requisitos para clientes de computadores  
- Use as informações a seguir para determinar os pré-requisitos ao instalar o cliente do Configuration Manager em computadores.  
+##  <a name="BKMK_prereqs_computers"></a> Pré-requisitos para clientes do Windows  
+
+Use as seguintes informações para determinar os pré-requisitos ao instalar o cliente do Configuration Manager em dispositivos Windows.  
 
 ### <a name="dependencies-external-to-configuration-manager"></a>Dependências externas ao Configuration Manager  
 
-|||  
-|-|-|  
+|Componente|Descrição|  
+|---|---|  
 |Windows Installer versão 3.1.4000.2435|Necessário para oferecer suporte ao uso dos arquivos de atualização (. msp) do Windows Installer para pacotes e atualizações de software.|  
-|[KB2552033](https://go.microsoft.com/fwlink/p/?LinkId=240048)|Instale esse hotfix nos servidores do site que executam o Windows Server 2008 R2 quando a instalação do cliente por push for habilitada.|  
-|Serviço de Transferência Inteligente em Segundo Plano (BITS) da Microsoft versão 2.5|Necessário para permitir transferências de dados limitadas entre o computador cliente e os sistemas de sites do Configuration Manager. O BITS não é baixado automaticamente durante a instalação do cliente. Quando o BITS é instalado em computadores, normalmente é necessário reinicializar para concluir a instalação.<br /><br /> A maioria dos sistemas operacionais inclui o BITS, mas se eles não o incluem (por exemplo, Windows Server 2003 R2 SP2), é necessário instalar o BITS antes de instalar o cliente do Configuration Manager.|  
+|Serviço de Transferência Inteligente em Segundo Plano (BITS) da Microsoft versão 2.5|Necessário para permitir transferências de dados limitadas entre o computador cliente e os sistemas de sites do Configuration Manager. O BITS não é baixado automaticamente durante a instalação do cliente. Quando o BITS é instalado em computadores, normalmente é necessário reinicializar para concluir a instalação.<br /><br /> A maioria dos sistemas operacionais inclui o BITS. Caso contrário, instale o BITS antes de instalar o cliente do Configuration Manager.|  
 |Agendador de Tarefas Microsoft|Habilite esse serviço no cliente para que a instalação do cliente seja concluída.|  
 
+
 ### <a name="bkmk_ExternalDependencies"></a> Dependências externas ao Configuration Manager e baixadas automaticamente durante a instalação  
- O cliente do Configuration Manager tem algumas dependências externas potenciais. Essas dependências dependem do sistema operacional e do software instalado no computador cliente.  
 
- Se essas dependências são necessárias para concluir a instalação do cliente, elas são instaladas automaticamente com o software cliente.  
+O cliente do Configuration Manager tem dependências externas. Essas dependências dependem da versão do sistema operacional e do software instalado no computador cliente.  
 
-|||  
-|-|-|  
+Se o cliente exigir essas dependências para concluir a instalação, ele as instalará automaticamente.  
+
+|Componente|Descrição|  
+|---|---|  
 |Windows Update Agent versão 7.0.6000.363|Necessário para o Windows a fim de oferecer suporte à detecção de atualização e implantação.|  
 |Microsoft Core XML Services (MSXML) versão 6.20.5002 ou posterior|Necessário para oferecer suporte ao processamento de documentos XML no Windows.|  
 |Compactação Diferencial Remota da Microsoft (RDC)|Necessário para otimizar a transmissão de dados pela rede.|  
-|Microsoft Visual C++ 2013 Redistribuível versão 12.0.21005.1|Necessário para oferecer suporte às operações do cliente. Quando esta atualização é instalada em computadores cliente, pode ser necessário reinicializar para concluir a instalação.|  
+|Microsoft Visual C++ 2013 Redistribuível versão 12.0.21005.1|Necessário para oferecer suporte às operações do cliente. Quando você instala essa atualização em computadores cliente, pode ser necessário reiniciar para concluir a instalação.|  
 |Microsoft Visual C++ 2005 Redistribuível versão 8.0.50727.42|Para a versão 1606 e anteriores, necessário para dar suporte a operações do Microsoft SQL Server Compact.|  
 |APIs do Windows Imaging 6.0.6001.18000|Necessário para permitir que o Configuration Manager gerencie arquivos de imagem (.wim) do Windows.|  
 |Microsoft Policy Platform 1.2.3514.0|Necessário para permitir que clientes avaliem as configurações de conformidade.|  
-|Microsoft Silverlight 5.1.41212.0|Necessário para oferecer suporte à experiência do usuário de site da Web do catálogo de aplicativos. A partir do Configuration Manager 1802, o Silverlight deixa de ser instalado automaticamente. A principal funcionalidade do Catálogo de Aplicativos agora está incluída no Centro de Software. O suporte para o site do Catálogo de Aplicativos termina com a primeira atualização liberada após 1º de junho de 2018.<!--1356195-->|  
-|Microsoft .NET Framework versão 4.5.2|Necessário para oferecer suporte às operações do cliente. Instalado automaticamente no computador cliente se ele não contém o Microsoft .NET Framework versão 4.5 ou posterior instalado. Para obter mais informações, consulte [Detalhes adicionais sobre o Microsoft .NET Framework versão 4.5.2](#dotNet).|  
+|Microsoft Silverlight 5.1.41212.0|Necessário para oferecer suporte à experiência do usuário de site da Web do catálogo de aplicativos. Começando no Configuration Manager 1802, o cliente não instala o Silverlight automaticamente. A principal funcionalidade do Catálogo de Aplicativos agora está incluída no Centro de Software. O suporte ao site Catálogo de Aplicativos termina na versão 1806.<!--1356195-->|  
+|Microsoft .NET Framework versão 4.5.2|Necessário para oferecer suporte às operações do cliente. Instalado automaticamente no computador cliente se o Microsoft .NET Framework versão 4.5 ou posterior não estiver instalado. Para obter mais informações, consulte [Detalhes adicionais sobre o Microsoft .NET Framework versão 4.5.2](#dotNet).|  
 |Componentes do Microsoft SQL Server Compact 3.5 SP2|Necessário para armazenar informações relacionadas às operações do cliente.|  
-|Componentes do Microsoft Windows Imaging|Necessários para o Microsoft .NET Framework 4.0 para o Windows Server 2003 ou o Windows XP SP2 para computadores de 64 bits.|
-|Cliente de software do computador do Microsoft Intune|Você não pode executar o cliente de software do computador do Intune e o cliente do Configuration Manager no mesmo computador. Remova o cliente do Intune antes de instalar o cliente do Configuration Manager.|
+
 
 ####  <a name="dotNet"></a> Detalhes adicionais sobre o Microsoft .NET Framework versão 4.5.2  
 
 > [!NOTE]  
->  Em 12 de janeiro de 2016, o suporte para o .NET 4.0, 4.5 e 4.5.1 expirou. Para obter mais informações, consulte [Perguntas frequentes sobre a política do ciclo de vida de suporte do .NET Framework](https://support.microsoft.com/gp/framework_faq?WT.mc_id=azurebg_email_Trans_943_NET452_Update).  
+>  Não há mais suporte para o .NET 4.0, 4.5 e 4.5.1. Para obter mais informações, consulte [Perguntas frequentes sobre a política do ciclo de vida de suporte do .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework).  
 
- Uma reinicialização pode ser necessária para concluir a instalação do Microsoft .NET Framework versão 4.5.2. O usuário verá a notificação **Reinicialização necessária** na bandeja do sistema. Cenários comuns que exigem a reinicialização dos computadores cliente:  
+O Microsoft .NET Framework versão 4.5.2 pode exigir uma reinicialização para concluir a instalação. O usuário verá a notificação **Reinicialização necessária** na bandeja do sistema. Os cenários comuns a seguir exigem que os computadores cliente sejam reiniciados:  
 
 -   Há aplicativos ou serviços do .NET em execução no computador.  
 
@@ -77,82 +76,89 @@ A implantação de clientes do Configuration Manager em seu ambiente tem as segu
 
 -   O computador está aguardando uma reinicialização da instalação anterior das atualizações de software do .NET Framework.  
 
- Após a instalação do .NET Framework 4.5.2, atualizações adicionais podem ser instaladas posteriormente, o que pode exigir outra reinicialização do computador.  
+
+Depois que o .NET Framework 4.5.2 for instalado, ele poderá exigir atualizações adicionais. Essas atualizações posteriores poderão exigir mais reinicializações do computador.  
+
 
 ### <a name="configuration-manager-dependencies"></a>Dependências do Configuration Manager  
- Para obter mais informações, consulte [Determinar as funções do sistema de sites para clientes](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md)  
 
-|||  
-|-|-|  
-|Ponto de gerenciamento|Apesar de o ponto de gerenciamento não ser necessário para implantar o cliente do Configuration Manager, será necessário ter um ponto de gerenciamento para transferir informações entre os computadores cliente e os servidores do Configuration Manager. Sem um ponto de gerenciamento não é possível gerenciar computadores cliente.|  
-|Ponto de distribuição|O ponto de distribuição é uma função do sistema de site opcional, mas recomendável, para a implantação de clientes. Todos os pontos de distribuição hospedam os arquivos de origem do cliente, o que permite que computadores encontrem o ponto de distribuição mais próximo do qual baixar os arquivos de origem do cliente durante a implantação do cliente. Se o site não possui um ponto de distribuição, os computadores baixam os arquivos de origem de cliente de seu ponto de gerenciamento.|  
-|Ponto de status de fallback|O ponto de status de fallback é uma função do sistema de site opcional, mas recomendável, para a implantação de clientes. O ponto de status de fallback controla a implantação do cliente e habilita computadores no site do Configuration Manager para enviar mensagens de estado quando eles não podem se comunicar com um ponto de gerenciamento.|  
-|Ponto do Reporting Services|O ponto do Reporting Services é uma função do sistema de site opcional, mas recomendável, que pode exibir relatórios relacionados a implantação e gerenciamento do cliente. Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../../core/servers/manage/reporting.md).|  
+Para obter mais informações, consulte [Determinar as funções do sistema de sites para clientes](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients).  
+
+|Componente|Descrição|  
+|---|---|  
+|Ponto de gerenciamento|Para implantar o cliente do Configuration Manager, você não precisa de um ponto de gerenciamento. Os clientes exigem um ponto de gerenciamento para transferir informações com o site. Sem um ponto de gerenciamento, você não pode gerenciar computadores cliente.|  
+|Ponto de distribuição|O ponto de distribuição é uma função do sistema de sites opcional, mas recomendada, para a implantação e o gerenciamento de clientes. Todos os pontos de distribuição hospedam os arquivos de origem do cliente. Os clientes encontram o ponto de distribuição mais próximo para baixar os arquivos de origem durante a implantação ou a atualização do cliente. Quando o site não tem um ponto de distribuição, os computadores baixam os arquivos de origem do cliente de seu ponto de gerenciamento.|  
+|Ponto de status de fallback|O ponto de status de fallback é uma função do sistema de site opcional, mas recomendável, para a implantação de clientes. O ponto de status de fallback controla a implantação do cliente e permite que os computadores no site do Configuration Manager enviem mensagens de estado quando eles não podem se comunicar com um ponto de gerenciamento.|  
+|Ponto do Reporting Services|O ponto do Reporting Services é uma função do sistema de sites opcional, mas recomendada. Ele exibe relatórios relacionados à implantação e ao gerenciamento do cliente. Para obter mais informações, confira [Reporting in Configuration Manager](/sccm/core/servers/manage/reporting) (Relatórios no Configuration Manager).|  
+
 
 ### <a name="installation-method-dependencies"></a>Dependências do método de instalação  
- Os pré-requisitos a seguir são específicos para os diversos métodos de instalação do cliente.  
+
+Os pré-requisitos a seguir são específicos para os diversos métodos de instalação do cliente.  
 
 #### <a name="client-push-installation"></a>Instalação do cliente por push  
 
-   -   As contas de instalação do cliente por push são usadas para conectar computadores para instalar o cliente e são especificadas na guia **Contas** da caixa de diálogo **Propriedades da Instalação do Cliente por Push** . A conta deve ser membro do grupo local de administradores no computador de destino.  
+   -   O site usa contas de instalação do cliente por push para conectar-se aos computadores para instalar o cliente. Especifique essas contas na guia **Contas** das propriedades de instalação do cliente por push. A conta deve ser membro do grupo local de administradores no computador de destino.  
 
-         Se você não especifica uma conta de instalação do cliente por push, a conta de computador do servidor do site é usada.  
+         Se você não especificar uma conta de instalação do cliente por push, o servidor do site usará sua conta do computador.  
 
-   -   O computador no qual se está instalando o cliente precisa ter sido descoberto por ao menos um método de descoberta do Configuration Manager.  
+   -   O site precisa descobrir o computador no qual você está instalando o cliente. É necessário pelo menos um método de descoberta do Configuration Manager.  
 
    -   O computador tem um compartilhamento Admin$.  
 
-   -   **Habilitar a instalação do cliente por push para recursos atribuídos** deve estar selecionado na caixa de diálogo **Propriedades da Instalação do Cliente por Push** se você deseja usar automaticamente o cliente do Configuration Manager por push para recursos descobertos.  
+   -   Para efetuar push automaticamente do cliente do Configuration Manager para os recursos descobertos, selecione a opção para **Habilitar a instalação do cliente por push para recursos atribuídos** nas propriedades da instalação do cliente por push.  
 
-   -   O computador cliente deve ser capaz de contatar um ponto de distribuição ou um ponto de gerenciamento para baixar os arquivos de suporte.  
+   -   O computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento para baixar os arquivos de origem.  
 
-
-É necessário ter as seguintes permissões de segurança para instalar o cliente do Configuration Manager usando o push de clientes:  
-
-   -   Para configurar a conta de Instalação do Cliente por Push: permissão **Modificar** e Ler para o objeto **Site** .  
-
-   -   Para usar o cliente por push para instalar coleções, dispositivos e consultas: permissão **Modificar Recurso** e **Ler** para o objeto de Coleção.  
+   -   Começando na versão 1806, quando houver necessidade de autenticação mútua do Kerberos, os clientes precisarão estar em uma floresta confiável do Active Directory. O Kerberos no Windows depende do Active Directory para autenticação mútua.<!--1358204-->  
 
 
-A função de segurança **Administrador de Infraestrutura** inclui as permissões necessárias para gerenciar a instalação do cliente por push.  
+Para usar o cliente por push, você precisará das seguintes permissões de segurança:  
+
+   -   Para configurar a conta de instalação do cliente por push: permissões **Modificar** e **Ler** para o objeto **Site**.  
+
+   -   Para usar o cliente por push para instalar o cliente em coleções, dispositivos e consultas: permissões **Modificar Recurso** e **Ler** para o objeto **Coleção**.  
+
+
+A função de segurança padrão **Administrador de Infraestrutura** inclui as permissões necessárias para gerenciar instalações do cliente por push.  
 
 
 #### <a name="software-update-point-based-installation"></a>Instalação baseada em ponto de atualização de software  
 
-   -   Se o esquema do Active Directory não foi estendido ou você está instalando clientes de outra floresta, as propriedades da instalação para o CCMSetup.exe devem ser provisionadas no Registro do computador usando a política de grupo. Para obter mais informações, consulte [Como provisionar as propriedades de instalação do cliente (política de grupo e instalação do cliente baseada em atualização de software)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision).  
+   -   Se você não estendeu o esquema do Active Directory ou se você está instalando clientes de outra floresta, use a política de grupo para provisionar os parâmetros de instalação do CCMSetup.exe. Para obter mais informações, confira [Como provisionar propriedades de instalação do cliente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
 
-   -   O cliente do Configuration Manager deve ser publicado no ponto de atualização de software.  
+   -   Publique o cliente do Configuration Manager no ponto de atualização de software.  
 
-   -   O computador cliente deve ser capaz de contatar um ponto de distribuição ou um ponto de gerenciamento a fim de baixar os arquivos de suporte.  
+   -   Para baixar os arquivos de origem, o computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento.  
 
 
-Para conhecer as permissões de segurança necessárias para gerenciar as atualizações de software do Configuration Manager, consulte [Pré-requisitos para atualizações de software](../../../sum/plan-design/prerequisites-for-software-updates.md).  
+Para conhecer as permissões de segurança necessárias para gerenciar as atualizações de software do Configuration Manager, consulte [Pré-requisitos para atualizações de software](/sccm/sum/plan-design/prerequisites-for-software-updates).  
 
 
 #### <a name="group-policy-based-installation"></a>Instalação baseada na política de grupo  
 
-   -   Se o esquema do Active Directory não foi estendido ou você está instalando clientes de outra floresta, as propriedades da instalação para o CCMSetup.exe devem ser provisionadas no Registro do computador usando a política de grupo. Para obter mais informações, consulte [Como provisionar as propriedades de instalação do cliente (política de grupo e instalação do cliente baseada em atualização de software)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision).  
+   -   Se você não estendeu o esquema do Active Directory ou se você está instalando clientes de outra floresta, use a política de grupo para provisionar os parâmetros de instalação do CCMSetup.exe. Para obter mais informações, confira [Como provisionar propriedades de instalação do cliente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
 
-   -   O computador cliente deve ser capaz de contatar um ponto de gerenciamento para baixar os arquivos de suporte.  
+   -   Para baixar os arquivos de origem, o computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento.  
 
 
 #### <a name="logon-script-based-installation"></a>Instalação baseada em script de logon  
 
-O computador cliente deve ser capaz de contatar um ponto de distribuição ou um ponto de gerenciamento a fim de baixar os arquivos de suporte. A menos que você especificou o CCMSetup.exe com a propriedade de linha de comando **ccmsetup /source**.  
+Para baixar os arquivos de origem, o computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento. A não ser que tenha especificado o CCMSetup.exe com o parâmetro de linha de comando a seguir: `ccmsetup /source`  
 
 
 #### <a name="manual-installation"></a>Instalação manual  
 
-O computador cliente deve ser capaz de contatar um ponto de distribuição ou um ponto de gerenciamento a fim de baixar os arquivos de suporte. A menos que você especificou o CCMSetup.exe com a propriedade de linha de comando **ccmsetup /source**.  
+Para baixar os arquivos de origem, o computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento. A não ser que tenha especificado o CCMSetup.exe com o parâmetro de linha de comando a seguir: `ccmsetup /source`  
 
 
 #### <a name="microsoft-intune-mdm-installation"></a>Instalação do Microsoft Intune MDM
 
  - Exige uma assinatura do Microsoft Intune e as licenças apropriadas.  
 
- - Exige que o dispositivo tenha acesso à Internet, mesmo se não for baseado na Internet.  
+ - Requer que o dispositivo tenha acesso à Internet, mesmo se ele não for baseado na Internet.  
 
- - Dependendo do caso de uso, também pode exigir uma ou ambas as seguintes tecnologias:  
+ - Dependendo do caso de uso, também poderá ser necessário usar uma das tecnologias a seguir ou ambas:  
 
      - Azure Active Directory  
 
@@ -161,19 +167,19 @@ O computador cliente deve ser capaz de contatar um ponto de distribuição ou um
 
 #### <a name="workgroup-computer-installation"></a>Instalação de computador do grupo de trabalho  
 
-Para acessar os recursos no domínio do servidor do site do Configuration Manager, a conta de acesso à rede deve ser configurada para o site.  
+Para acessar recursos no domínio do servidor do site do Configuration Manager, configure uma conta de acesso à rede para o site.  
 
-Para obter mais informações sobre como configurar a conta de acesso à rede, consulte [Conceitos fundamentais para o gerenciamento de conteúdo](../../plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
+Para obter mais informações sobre como configurar a conta de acesso à rede, consulte [Conceitos fundamentais para o gerenciamento de conteúdo](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management).  
 
 
 #### <a name="software-distribution-based-installation-for-upgrades-only"></a>Instalação baseada em distribuição de software (somente para atualizações)  
 
-   -   Se o esquema do Active Directory não foi estendido ou você está instalando clientes de outra floresta, as propriedades da instalação para o CCMSetup.exe devem ser provisionadas no Registro do computador usando a política de grupo. Para obter mais informações, consulte [Como provisionar as propriedades de instalação do cliente (política de grupo e instalação do cliente baseada em atualização de software)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision).  
+   -   Se você não estendeu o esquema do Active Directory ou se você está instalando clientes de outra floresta, use a política de grupo para provisionar os parâmetros de instalação do CCMSetup.exe. Para obter mais informações, confira [Como provisionar propriedades de instalação do cliente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).   
 
-   -   O computador cliente deve ser capaz de contatar um ponto de distribuição ou um ponto de gerenciamento para baixar os arquivos de suporte.  
+   -   Para baixar os arquivos de origem, o computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento.  
 
 
-Para conhecer as permissões de segurança necessárias para atualizar o cliente do Configuration Manager usando o gerenciamento de aplicativos, consulte [Segurança e privacidade para gerenciamento de aplicativos no Configuration Manager](../../../apps/plan-design/security-and-privacy-for-application-management.md).  
+Para conhecer as permissões de segurança necessárias para atualizar o cliente do Configuration Manager usando o gerenciamento de aplicativos, consulte [Segurança e privacidade para gerenciamento de aplicativos no Configuration Manager](/sccm/apps/plan-design/security-and-privacy-for-application-management).  
 
 
 #### <a name="automatic-client-upgrades"></a>Atualizações automáticas do cliente  
@@ -183,7 +189,7 @@ Você deve ser um membro da função de segurança **Administrador Completo** pa
 
 ### <a name="firewall-requirements"></a>Requisitos de firewall  
 
-Se houver um firewall entre os servidores do sistema de sites e os computadores nos quais você deseja instalar o cliente do Configuration Manager, consulte [Configurações do Firewall do Windows e de porta para clientes](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md).  
+Se houver um firewall entre os servidores do sistema de sites e os computadores nos quais você deseja instalar o cliente do Configuration Manager, confira [Configurações do Firewall do Windows e de porta para clientes](/sccm/core/clients/deploy/windows-firewall-and-port-settings-for-clients).  
 
 
 
@@ -197,7 +203,7 @@ Ao instalar o cliente do Configuration Manager em dispositivos móveis e os regi
 
      Uma AC emissora deve aprovar automaticamente as solicitações de certificados de usuários de dispositivos móveis durante o processo de registro.  
 
-     Para obter mais informações sobre os requisitos de certificado, consulte [Segurança e privacidade de perfis de certificado](../../../protect/plan-design/security-and-privacy-for-certificate-profiles.md).  
+     Para obter mais informações sobre os requisitos de certificado, consulte [Segurança e privacidade de perfis de certificado](/sccm/protect/plan-design/security-and-privacy-for-certificate-profiles).  
 
 -   Um grupo de segurança que contém os usuários que podem registrar seus dispositivos móveis.  
 
@@ -209,12 +215,14 @@ Ao instalar o cliente do Configuration Manager em dispositivos móveis e os regi
 
 -   Dependências da função do sistema de sites para os computadores que executam as funções do sistema de sites do ponto de registro e do ponto proxy do registro.  
 
-     Consulte [Sistemas operacionais com suporte para servidores de sistema de sites](../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md).  
+     Para obter mais informações, confira [Sistemas operacionais com suporte para servidores do sistema de sites](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers).  
+
 
 ### <a name="configuration-manager-dependencies"></a>Dependências do Configuration Manager  
- Para obter mais informações, consulte [Determinar as funções do sistema de sites para clientes](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md).  
 
--   Ponto de gerenciamento que está configurado para conexões de clientes HTTP e habilitado para dispositivos móveis  
+Para obter mais informações, consulte [Determinar as funções do sistema de sites para clientes](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients).  
+
+-   Um ponto de gerenciamento configurado para conexões de cliente HTTPS e habilitado para dispositivos móveis  
 
      Um ponto de gerenciamento é sempre necessário para instalar o cliente do Configuration Manager em dispositivos móveis. Além dos requisitos de configuração do HTTPS e de estar habilitado para dispositivos móveis, o ponto de gerenciamento deve ser configurado com um FQDN de Internet e aceitar conexões de cliente da Internet.  
 
@@ -230,7 +238,7 @@ Ao instalar o cliente do Configuration Manager em dispositivos móveis e os regi
 
      O ponto do Reporting Services é uma função do sistema de site opcional, mas recomendada, que pode exibir relatórios relacionados ao registro de dispositivo móvel e gerenciamento de clientes.  
 
-     Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../../core/servers/manage/reporting.md).  
+     Para obter mais informações, confira [Reporting in Configuration Manager](/sccm/core/servers/manage/reporting) (Relatórios no Configuration Manager).  
 
 -   Para configurar o registro para dispositivos móveis, você deve ter as seguintes permissões de segurança:  
 
@@ -238,7 +246,7 @@ Ao instalar o cliente do Configuration Manager em dispositivos móveis e os regi
 
     -   Para definir as configurações de cliente para registro: as configurações de cliente padrão exigem a permissão **Modificar** para o objeto de **Site** , e as configurações de cliente personalizadas exigem as permissões de **Agente cliente**  .  
 
-     A função de segurança **Administrador Completo** inclui as permissões necessárias para configurar as funções do sistema de site de registro.  
+     A função de segurança padrão **Administrador Completo** inclui as permissões necessárias para configurar as funções do sistema de sites de registro.  
 
      Para gerenciar os dispositivos móveis inscritos, você deve ter as seguintes permissões de segurança:  
 
@@ -250,11 +258,13 @@ Ao instalar o cliente do Configuration Manager em dispositivos móveis e os regi
 
     -   Para um bloqueio remoto ou redefinição de senha em um dispositivo móvel: **Modificar** recurso para o objeto de **Coleção** .  
 
-     A função de segurança **Administrador de Operações** inclui as permissões necessárias para gerenciar dispositivos móveis.  
+     A função de segurança padrão **Administrador de Operações** inclui as permissões necessárias para gerenciar dispositivos móveis.  
 
-     Para obter mais informações sobre como configurar permissões de segurança, consulte [Fundamentos da administração baseada em funções](../../../core/understand/fundamentals-of-role-based-administration.md) e [Configurar administração baseada em funções](../../../core/servers/deploy/configure/configure-role-based-administration.md).  
+     Para obter mais informações sobre como configurar permissões de segurança, consulte [Fundamentos da administração baseada em funções](/sccm/core/understand/fundamentals-of-role-based-administration) e [Configurar administração baseada em funções](/sccm/core/servers/deploy/configure/configure-role-based-administration).  
+
 
 ### <a name="firewall-requirements"></a>Requisitos de firewall  
+
 Os dispositivos de rede intermediária, como roteadores e firewalls, e Windows Firewall, se aplicável, devem permitir o tráfego associado ao registro de dispositivo móvel:  
 
 -   Entre os dispositivos móveis e o ponto proxy do registro: HTTPS (por padrão, TCP 443)  
@@ -262,4 +272,4 @@ Os dispositivos de rede intermediária, como roteadores e firewalls, e Windows F
 -   Entre o ponto proxy do registro e o ponto de registro: HTTPS (por padrão, TCP 443)  
 
 
-Se você usar um servidor Web proxy, ele deverá ser configurado para túnel SSL; a ponte SSL não tem suporte para dispositivos móveis.  
+Se você usar um servidor Web proxy, ele precisará ser configurado para o túnel SSL. Não há suporte para SSL em dispositivos móveis.  

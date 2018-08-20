@@ -1,8 +1,8 @@
 ---
 title: Criar aplicativos do Windows Phone
 titleSuffix: Configuration Manager
-description: Consulte quais considerações você deverá levar em conta ao criar e implantar aplicativos para dispositivos Windows Phone.
-ms.date: 03/05/2017
+description: Como criar e implantar aplicativos para dispositivos Windows Phone no Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,53 +10,30 @@ ms.assetid: 68fe11fa-5fb2-4b81-b0f5-b6f2392fb4ad
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c755db47c9d3acb9c858ecb5bed14bb36055663b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 77eb0b750934641ceb66b2c8aa611544c654f54f
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347222"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385432"
 ---
-# <a name="create-windows-phone-applications-with-system-center-configuration-manager"></a>Criar aplicativos do Windows Phone com o System Center Configuration Manager
+# <a name="create-windows-phone-applications-in-configuration-manager"></a>Criar aplicativos do Windows Phone no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Um aplicativo do System Center Configuration Manager tem um ou mais tipos de implantação que abrangem os arquivos de instalação e as informações necessárias para implantar o software em um dispositivo. Um tipo de implantação também tem regras que especificam quando e como o software é implantado.  
+Um aplicativo do Configuration Manager tem um ou mais tipos de implantação. O tipo de implantação inclui os arquivos de instalação e as informações necessárias para implantar o software em um dispositivo. Um tipo de implantação também tem regras que especificam quando e como o software é implantado.  
 
- Você pode criar aplicativos com os seguintes métodos:  
+Confira [Criar um aplicativo](/sccm/apps/deploy-use/create-applications#bkmk_create) para obter as etapas para criar aplicativos do Configuration Manager e tipos de implantação. 
 
--   Crie automaticamente os aplicativos e tipos de implantação, lendo os arquivos de instalação do aplicativo.  
+Lembre-se também das seguintes considerações ao criar e implantar aplicativos para dispositivos Windows Phone:  
 
--   Crie manualmente o aplicativo e adicione tipos de implantação posteriormente.  
 
--   Importe um aplicativo de um arquivo.  
-
-Veja [Iniciar o assistente para criar aplicativo](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard) e conheça as etapas necessárias para criar os aplicativos do Configuration Manager e os tipos de implantação. Além disso, lembre-se das seguintes considerações ao criar e implantar aplicativos para dispositivos com Windows Phone.  
-
-## <a name="general-considerations"></a>Considerações gerais  
- O Configuration Manager dá suporte à implantação dos seguintes tipos arquivo de aplicativo:  
+O Configuration Manager dá suporte à implantação dos seguintes tipos arquivo de aplicativo:  
 
 |Tipo de dispositivo|Tipos de arquivos com suporte|  
 |-----------------|---------------------|  
-|Windows Phone 8|.xap|  
-|Windows Phone 8.1|.xap, .appx, .appxbundle|
-|Windows 10 Mobile|.xap, .appx, .appxbundle|
+|Windows Phone 8|xap|  
+|Windows Phone 8.1|xap, appx, appxbundle|
+|Windows 10 Mobile|xap, appx, appxbundle|
 
- Há suporte para as seguintes ações de implantação:  
-
-|Tipo de dispositivo|Ações com suporte|  
-|-----------------|-----------------------|  
-|Windows Phone 8, Windows Phone 8.1 e Windows 10 Mobile|Disponível, Necessário, Desinstalar|  
-
-## <a name="steps-to-deploy-the-latest-windows-phone-company-portal-app-with-supersedence"></a>Etapas para implantar o aplicativo do portal da empresa mais recente do Windows Phone com substituição  
- A tabela a seguir fornece as etapas, os detalhes e informações adicionais para criar e implantar aplicativos do portal da empresa do Windows Phone 8 mais recentes.  
-
-|Etapa|Mais informações|  
-|----------|----------------------|  
-|**Etapa 1:** obtenha o aplicativo mais recente do portal da empresa.|Baixe o [Windows Phone 8 company portal app (Aplicativo do Portal da Empresa do Windows Phone 8)](http://go.microsoft.com/fwlink/?LinkId=268440).|  
-|**Etapa 2:** assine o aplicativo do portal da empresa com o seu certificado da Symantec.|Para obter informações sobre como assinar o aplicativo do portal da empresa, consulte [Configurar o gerenciamento de dispositivo móvel híbrido do Windows Phone e Windows 10 Mobile com o System Center Configuration Manager e o Microsoft Intune](../../mdm/deploy-use/enroll-hybrid-windows.md).|  
-|**Etapa 3:** criar um novo aplicativo com a versão mais recente do aplicativo do portal da empresa e especificar uma relação de substituição.|Para mais informações, consulte [Criar aplicativos](../../apps/deploy-use/create-applications.md) e [Revisar e substituir aplicativos](../../apps/deploy-use/revise-and-supersede-applications.md).|  
-|**Etapa 4:** Adicionar o aplicativo ao Assistente de Assinatura do Microsoft Intune.|Para mais informações, consulte [Configurar o gerenciamento de dispositivo móvel híbrido do Windows Phone e Windows 10 Mobile com o System Center Configuration Manager e o Microsoft Intune](../../mdm/deploy-use/enroll-hybrid-windows.md).|  
-|**Etapa 5:** Excluir a implantação que foi automaticamente criada quando você adicionou a aplicativo do portal da empresa ao Assistente de Assinatura do Microsoft Intune.|A assinatura do Microsoft Intune criou uma implantação automática desse aplicativo, já que essa implantação não oferece suporte a substituições.|  
-|**Etapa 6:** criar uma nova implantação do aplicativo. Na página **Configurações de Implantação** do **Assistente de Implantação de Software**, marque a opção **Atualizar automaticamente todas as versões substituídas deste aplicativo**.|Crie uma nova implantação com substituição com o aplicativo que você criou com a relação de substituição.|  
-|**Etapa 7 (opcional):** por padrão, os aplicativos substitutos são instalados nos dispositivos após 7 dias. Para implantar o aplicativo do portal da empresa antes disso em dispositivos registrados anteriormente, altere a configuração **agendar a reavaliação para implantações** para um valor mais baixo.<br /><br /> Se você definir essa configuração para um valor mais baixo, isso poderá afetar negativamente o desempenho da rede e dos computadores cliente.|Nenhuma informação adicional.|  
+Implante os aplicativos Windows Phone como **Disponíveis** ou **Obrigatórios**. Também use implantações para desinstalar aplicativos.  

@@ -2,7 +2,7 @@
 title: Arquivos de log para solução de problemas
 titleSuffix: Configuration Manager
 description: Use arquivos de log para solucionar problemas com clientes e sistemas de sites do Configuration Manager.
-ms.date: 03/22/2018
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,14 +10,14 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c068ea5a079d43148191e41dc9a2b4fb7a2e00c7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 2bd3f76b982356fc444681d1990bee08e90b32fc
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342657"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385279"
 ---
-# <a name="log-files-in-system-center-configuration-manager"></a>Arquivos de log no System Center Configuration Manager
+# <a name="log-files-in-configuration-manager"></a>Arquivos de log no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -116,7 +116,7 @@ No Configuration Manager, os componentes cliente e de servidor do site registram
 ##  <a name="BKMK_AboutLogs"></a> Sobre arquivos de log do Configuration Manager  
  A maioria dos processos do Configuration Manager grava informações operacionais em um arquivo de log dedicado ao processo em questão. Estes arquivos de log são identificados pelas extensões de arquivo **.log** ou **.lo_**. O Configuration Manager grava no arquivo .log até que o log atinja seu tamanho máximo. Quando o log está cheio, o arquivo .log é copiado em um arquivo com o mesmo nome mas com extensão .lo_ e o processo ou componente continua a gravar no arquivo .log. Quando o arquivo .log atinge novamente seu tamanho máximo, o arquivo .lo_ é substituído e o processo se repete. Alguns componentes criam um histórico de arquivos de log acrescentando uma data ou o carimbo de data/hora ao nome do arquivo de log e ao manter a extensão .log. Uma exceção ao tamanho máximo e uso do arquivo .lo_ é o cliente para Linux e UNIX. Para saber mais sobre como o cliente do Linux e UNIX usa arquivos de log, consulte [Gerenciar arquivos de log do cliente para Linux e UNIX](#BKMK_ManageLinuxLogs) neste artigo.  
 
- Para exibir os logs, use a ferramenta de visualizador de log do Configuration Manager, CMTrace, localizada na pasta \\SMSSetup\\Tools da mídia de origem do Configuration Manager. A ferramenta CMTrace é adicionada a todas as imagens de inicialização adicionadas à Biblioteca de Software.  
+ Para exibir os logs, use a ferramenta de visualizador de log do Configuration Manager, CMTrace, localizada na pasta \\SMSSetup\\Tools da mídia de origem do Configuration Manager. A ferramenta CMTrace é adicionada a todas as imagens de inicialização adicionadas à Biblioteca de Software. Começando na versão 1806, a ferramenta de visualização de log CMTrace é instalada automaticamente junto com o cliente do Configuration Manager.<!--1357971--> Para obter mais informações, confira [CMTrace](/sccm/core/support/cmtrace). 
 
 ###  <a name="BKMK_LogOptions"></a> Configurar opções de log usando o Configuration Manager Service Manager  
  Altere o local em que o Configuration Manager armazena os arquivos de log e seu tamanho.  
@@ -333,6 +333,7 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 |sitecomp.log|Registra detalhes sobre a manutenção dos componentes do site instalados em todos os servidores do sistema de site no site.|Servidor do site|  
 |sitectrl.log|Registra as alterações de configuração de site feitas para objetos de controle de site no banco de dados.|Servidor do site|  
 |sitestat.log|Registra disponibilidade e espaço em disco monitorando o processo de todos os sistemas de site.|Servidor do site|
+|SMS_ISVUPDATES_SYNCAGENT.log| Arquivo de log para a sincronização de atualizações de software de terceiros, começando no Configuration Manager versão 1806.| Ponto de atualização de software de nível superior na hierarquia do Configuration Manager.|
 |SMS_PhasedDeployment.log| Arquivo de log para implantações em fases, um recurso de pré-lançamento disponível a partir do Configuration Manager versão 1802.|Site de nível superior na hierarquia do Configuration Manager|   
 |SmsAdminUI.log|Registra atividades do console do Configuration Manager.|Computador que executa o console do Configuration Manager|  
 |SMSAWEBSVCSetup.log|Registra as atividades de instalação do serviço da Web de catálogo do aplicativo.|Servidor do sistema de site|  
@@ -411,7 +412,8 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 |--------------|-----------------|----------------------------|  
 |objreplmgr.log|Registra detalhes sobre a replicação de arquivos de notificação de atualizações de software de um site pai para sites filho.|Servidor do site|  
 |PatchDownloader.log|Registra detalhes sobre o processo de baixar atualizações de software da fonte de atualizações para o destino de download no servidor de site.|O computador que hospeda o console do Configuration Manager no qual os downloads são iniciados|  
-|ruleengine.log|Registra detalhes sobre regras de implantação automática para identificação, download de conteúdo, grupo de atualização de software e criação de implantação.|Servidor do site|  
+|ruleengine.log|Registra detalhes sobre regras de implantação automática para identificação, download de conteúdo, grupo de atualização de software e criação de implantação.|Servidor do site| 
+|SMS_ISVUPDATES_SYNCAGENT.log| Arquivo de log para a sincronização de atualizações de software de terceiros, começando no Configuration Manager versão 1806.| Ponto de atualização de software de nível superior na hierarquia do Configuration Manager.| 
 |SUPSetup.log|Registra os detalhes sobre a instalação do ponto de atualização de software. Quando a instalação do ponto de atualização de software é concluída, **Installation was successful** é gravado nesse arquivo de log.|Servidor do sistema de site|  
 |WCM.log|Registra os detalhes sobre a configuração do ponto de atualização de software e conexões ao servidor WSUS para categorias de atualização assinadas, classificações e idiomas.|Servidor do site que se conecta ao servidor do WSUS|  
 |WSUSCtrl.log|Registra os detalhes sobre a configuração, a conectividade de banco de dados e a integridade do servidor do WSUS para o site.|Servidor do sistema de site|  
@@ -777,7 +779,8 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |RebootCoordinator.log|Registra os detalhes sobre a coordenação da reinicialização do sistema em computadores cliente após as instalações de atualização de software.|Cliente|  
 |ScanAgent.log|Registra os detalhes sobre as solicitações de verificação de atualizações de software, a localização do WSUS e ações relacionadas.|Cliente|  
 |SdmAgent.log|Registra os detalhes sobre o controle de correção e conformidade. No entanto, o arquivo de log das atualizações de software, o Updateshandler.log, fornece mais informações sobre a instalação das atualizações de software necessárias à conformidade.<br /><br /> Esse arquivo de log é compartilhado com configurações de conformidade.|Cliente|  
-|ServiceWindowManager.log|Registra os detalhes sobre a avaliação de janelas de manutenção.|Cliente|  
+|ServiceWindowManager.log|Registra os detalhes sobre a avaliação de janelas de manutenção.|Cliente|
+|SMS_ISVUPDATES_SYNCAGENT.log| Arquivo de log para a sincronização de atualizações de software de terceiros, começando no Configuration Manager versão 1806.| Ponto de atualização de software de nível superior na hierarquia do Configuration Manager.|  
 |SmsWusHandler.log|Registra os detalhes sobre o processo de digitalização para a ferramenta de inventário do Microsoft Updates.|Cliente|  
 |StateMessage.log|Registra os detalhes sobre as mensagens de estado de atualizações de software criadas e enviadas ao ponto de gerenciamento.|Cliente|  
 |SUPSetup.log|Registra os detalhes sobre a instalação do ponto de atualização de software. Quando a instalação do ponto de atualização de software é concluída, **Installation was successful** é gravado nesse arquivo de log.|Servidor do sistema de site|  

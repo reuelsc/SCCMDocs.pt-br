@@ -1,8 +1,8 @@
 ---
-title: 'Cenário: Endpoint Protection protege computadores contra malware'
+title: Proteger computadores contra malware
 titleSuffix: Configuration Manager
 description: Aprenda a implementar o Endpoint Protection no Configuration Manager para proteger computadores contra ataques de malware.
-ms.date: 03/22/2018
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,22 +10,31 @@ ms.assetid: 539c7a89-3c03-4571-9cb4-02d455064eeb
 author: aczechowski
 ms.author: aaroncz
 manager: doubeby
-ms.openlocfilehash: 40fe2c9e16c2828b2c575e8401a80f3cf2eac969
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 7d4d5d9479029af180120edc3daba3ff13a7e4d0
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352559"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39383860"
 ---
-# <a name="example-scenario-using-system-center-endpoint-protection-to-protect-computers-from-malware-in-system-center-configuration-manager"></a>Cenário de exemplo: usar o System Center Endpoint Protection para proteger os computadores contra malware no System Center Configuration Manager
+# <a name="example-scenario-use-endpoint-protection-to-protect-computers-from-malware"></a>Cenário de exemplo: usar o Endpoint Protection para proteger computadores contra malware
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este artigo fornece um cenário de exemplo de como você pode implementar o Endpoint Protection no Configuration Manager para proteger os computadores de uma organização contra ataques de malware.  
+Este artigo fornece um cenário de exemplo de como você pode implementar o Endpoint Protection no Configuration Manager para proteger os computadores em sua organização contra ataques de malware.  
 
- João é o administrador do Configuration Manager no Banco Woodgrove. O banco atualmente usa o System Center Endpoint Protection para proteger os computadores contra ataques de malware. Além disso, o banco usa a Política de Grupo do Windows para garantir que o Firewall do Windows esteja habilitado em todos os computadores da empresa e que os usuários sejam notificados quando o Firewall do Windows bloqueia um novo programa.  
 
- João recebeu um pedido para atualizar o software antimalware do Banco Woodgrove para o System Center Endpoint Protection, para que o banco possa se beneficiar dos recursos antimalware mais recentes e possa gerenciar centralmente a solução antimalware do console do Configuration Manager. Essa implementação tem os seguintes requisitos:  
+
+## <a name="scenario-overview"></a>Visão geral do cenário
+
+João é o administrador do Configuration Manager no Banco Woodgrove. O banco atualmente usa o System Center Endpoint Protection para proteger os computadores contra ataques de malware. Além disso, o banco usa a Política de Grupo do Windows para garantir que o Firewall do Windows esteja habilitado em todos os computadores da empresa e que os usuários sejam notificados quando o Firewall do Windows bloqueia um novo programa.  
+
+João recebeu um pedido para atualizar o software antimalware do Banco Woodgrove para o System Center Endpoint Protection, para que o banco possa se beneficiar dos recursos antimalware mais recentes e possa gerenciar centralmente a solução antimalware do console do Configuration Manager. 
+
+
+## <a name="business-requirements"></a>Requisitos de negócios
+
+Essa implementação tem os seguintes requisitos:  
 
 -   Usar o Configuration Manager para gerenciar configurações do Firewall do Windows que atualmente são gerenciadas pela Política de Grupo.  
 
@@ -43,9 +52,9 @@ Este artigo fornece um cenário de exemplo de como você pode implementar o Endp
 
     -   Mais de três tipos diferentes de malware são detectados em um período de 24 horas  
 
--   Desinstalar a solução antimalware existente.  
-
  Julio executa as seguintes etapas para implementar o Endpoint Protection:  
+
+
 
 ##  <a name="steps-to-implement-endpoint-protection"></a>Etapas para implementar a proteção de ponto de extremidade  
 
@@ -63,7 +72,7 @@ Este artigo fornece um cenário de exemplo de como você pode implementar o Endp
 |João cria uma política antimalware personalizada chamada **política de servidor do Woodgrove Bank**. Ele adiciona somente as configurações das **verificações agendadas** e faz as seguintes alterações:<br /><br /> **Tipo de varredura**:  **completa**<br /><br /> **Dia da varredura**:  **sábado**<br /><br /> **Horário da varredura**: **1:00**<br /><br /> **Executar uma verificação rápida diária nos computadores cliente**:  **Não**.|Consulte [Como criar e implantar políticas antimalware para o Endpoint Protection no System Center Configuration Manager](endpoint-antimalware-policies.md).|  
 |João implanta a política personalizada antimalware chamada **Política de Servidor do Woodgrove Bank** na coleção **Servidores do Woodgrove Bank** .|Consulte "Para implantar uma política antimalware em computadores cliente" no artigo [Como criar e implantar políticas antimalware para o Endpoint Protection](endpoint-antimalware-policies.md).|  
 |João cria um novo conjunto de configurações personalizadas de dispositivo do cliente para o Endpoint Protection e o denomina **Configurações do Endpoint Protection do Banco Woodgrove**.<br /><br /> **Observação:** se você não quiser instalar e habilitar o Endpoint Protection em todos os clientes de sua hierarquia, verifique se as opções **Gerenciar cliente do Endpoint Protection nos computadores cliente** e **Instalar o cliente do Endpoint Protection nos computadores cliente** foram definidas como **Não** nas configurações padrão do cliente.|Para obter mais informações, consulte [Definir configurações personalizadas do cliente para o Endpoint Protection](endpoint-protection-configure-client.md).|  
-|Ele define as seguintes configurações para o Endpoint Protection:<br /><br /> **Gerenciar cliente do Endpoint Protection nos computadores cliente**:  **Sim**<br /><br /> A configuração e o valor garantem que qualquer cliente existente do Endpoint Protection que for instalado será gerenciado por Configuration Manager.<br /><br /> **Instalar o cliente do Endpoint Protection em computadores cliente**:  **Sim**.</br></br>**Observação** A partir do Configuration Manager 1802, os dispositivos Windows 10 não precisam ter o agente do Endpoint Protection instalado. Se ele já estiver instalado nos dispositivos Windows 10, o Configuration Manager não o removerá. Os administradores podem remover o agente do Endpoint Protection dos dispositivos Windows 10 que executam, no mínimo, a versão de cliente 1802.<br /><br /> **Remover automaticamente o software antimalware já instalado antes de instalar o Endpoint Protection**:  **Sim**.<br /><br /> A configuração e o valor atendem ao requisito de negócios de que o software antimalware existente seja removido antes que o Endpoint Protection seja instalado e habilitado.|Para obter mais informações, consulte [Definir configurações personalizadas do cliente para o Endpoint Protection](endpoint-protection-configure-client.md).|  
+|Ele define as seguintes configurações para o Endpoint Protection:<br /><br /> **Gerenciar cliente do Endpoint Protection nos computadores cliente**:  **Sim**<br /><br /> A configuração e o valor garantem que qualquer cliente existente do Endpoint Protection que for instalado será gerenciado por Configuration Manager.<br /><br /> **Instalar o cliente do Endpoint Protection em computadores cliente**:  **Sim**.</br></br>**Observação** A partir do Configuration Manager 1802, os dispositivos Windows 10 não precisam ter o agente do Endpoint Protection instalado. Se ele já estiver instalado nos dispositivos Windows 10, o Configuration Manager não o removerá. Os administradores podem remover o agente do Endpoint Protection dos dispositivos Windows 10 que executam, no mínimo, a versão de cliente 1802.|Para obter mais informações, consulte [Definir configurações personalizadas do cliente para o Endpoint Protection](endpoint-protection-configure-client.md).|  
 |João implanta as **Configurações do Endpoint Protection do Banco Woodgrove** do cliente na coleção **Todos os computadores protegidos pelo Endpoint Protection**.|Consulte “Definir configurações personalizadas do cliente para o Endpoint Protection” em [Configurando o Endpoint Protection no Configuration Manager](endpoint-antimalware-policies.md).|  
 |João usa o assistente Criar Política de Firewall do Windows para criar uma política, definindo as seguintes configurações para o perfil de domínio:<br /><br /> 1) **Habilitar o Firewall do Windows**: **Sim**<br /><br /> 2)<br />                    **Notificar o usuário quando o Firewall do Windows bloquear um novo programa**: **Sim**|Consulte [Como criar e implantar políticas do Firewall do Windows para o Endpoint Protection no System Center Configuration Manager](../../protect/deploy-use/create-windows-firewall-policies.md)|  
 |João implanta a nova política de firewall na coleção **Todos os computadores protegidos pelo Endpoint Protection** que criou anteriormente.|Consulte "Para implantar uma política de Firewall do Windows" em [Como criar e implantar políticas do Firewall do Windows para o Endpoint Protection no System Center Configuration Manager](create-windows-firewall-policies.md)|  

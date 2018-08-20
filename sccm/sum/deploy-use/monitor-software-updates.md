@@ -5,17 +5,17 @@ description: O console do System Center Configuration Manager fornece alertas e 
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 11/20/2016
+ms.date: 07/30/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 9afd7b0f-5c8e-48bc-9a65-1f7d74103688
-ms.openlocfilehash: bc594fe6b870e1054033601a67209aa9ad72ccef
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: e51e2c8236b014063efe9734baf338ebe70d1eb3
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351847"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384476"
 ---
 # <a name="monitor-software-updates-in-system-center-configuration-manager"></a>Monitorar atualizações de software no System Center Configuration Manager
 
@@ -61,6 +61,26 @@ Depois de definir as configurações de alerta, se ocorrerem as condições espe
 
 ##  <a name="BKMK_SUReports"></a> Relatórios de atualizações de software  
  As mensagens de estado para atualizações de software fornecem informações sobre a conformidade de atualizações de software e sobre a avaliação e o estado de imposição das implantações de atualização de software. Você pode executar relatórios de atualização de software para exibir essas mensagens de estado. Há mais de 30 relatórios de atualização de software predefinidos disponíveis. Eles estão organizados em diversas categorias e podem ser usados para reportar informações específicas sobre atualizações de software e implantações. Além de usar relatórios pré-configurados, você também pode criar relatórios de atualização de software personalizados, de acordo com as necessidades de sua empresa. Para mais informações, consulte [Operações e manutenção de relatórios](../../core/servers/manage/operations-and-maintenance-for-reporting.md).  
+
+### <a name="recommended-software-updates-reports"></a>Relatórios de atualizações de software recomendados
+A seguir há alguns dos relatórios que são úteis para a identificação de possíveis problemas: 
+
+#### <a name="compliance-9---overall-health-and-compliance-starting-in-version-1806"></a>Conformidade 9 – integridade e conformidade gerais (começando na versão 1806)
+O relatório inclui as seguintes partes:
+
+- **Clientes Íntegro vs Total de Clientes**: esse gráfico de barras compara os clientes "íntegros" que se comunicaram com o site no período de tempo especificado em relação ao número total de clientes na coleção especificada.
+- **Visão Geral de Conformidade**: esse gráfico de pizza mostra o estado de conformidade geral do grupo de atualização de software específico em clientes ativos na coleção especificada.
+- **Cinco principais atualizações sem conformidade por ID de artigo**: esse gráfico de barras exibe as cinco principais atualizações de software no grupo especificado que estão fora de conformidade em clientes ativos na coleção especificada.
+- A parte inferior do relatório é uma tabela com mais detalhes, que lista as atualizações de software no grupo especificado.
+
+#### <a name="management-2---updates-required-but-not-deployed"></a>gerenciamento 2 - Atualizações necessárias, mas não implantadas
+
+Este relatório exibe as atualizações de software específicas do fornecedor em uma classificação de atualizações específicas que foram detectadas como obrigatórias nos clientes, mas que não foram implantadas em uma coleção específica. 
+
+#### <a name="troubleshooting-2---deployment-errors"></a>Solução de problemas 2 – erros de implantação
+
+Este relatório retorna os erros de implantação no site e uma contagem dos computadores que apresentaram cada erro. 
+
 
 ##  <a name="BKMK_MonitorContent"></a> Monitorar o conteúdo  
  Você pode monitorar o conteúdo no console do Configuration Manager para revisar o status de todos os tipos de pacotes em relação aos pontos de distribuição associados. Isso pode incluir o status de validação do conteúdo para o conteúdo no pacote, o status do conteúdo atribuído a um grupo de ponto de distribuição específico, o estado do conteúdo atribuído a um ponto de distribuição e o status de recursos opcionais para cada ponto de distribuição (validação de conteúdo, PXE e multicast).  

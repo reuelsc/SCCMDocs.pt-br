@@ -2,7 +2,7 @@
 title: Ponto de Conexão de Serviço
 titleSuffix: Configuration Manager
 description: Saiba mais sobre essa função do sistema de sites do Configuration Manager, bem como entenda e planeje seus diversos usos.
-ms.date: 07/05/2018
+ms.date: 08/01/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: bc2282d5-0571-465b-9528-a555855eaacd
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6002c077ae0a8e34f35a9d0e36d02f5950946bde
-ms.sourcegitcommit: 73b241a72db8f8f3bd7e269fc81ad49e14f01058
+ms.openlocfilehash: 560fa3480f00811f325eb22dda439facac36e6e4
+ms.sourcegitcommit: 6e0e5b4b7779ce03e2b56b3b5f68f4ace1acedd8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843280"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39467667"
 ---
 # <a name="about-the-service-connection-point-in-system-center-configuration-manager"></a>Sobre o ponto de conexão de serviço no System Center Configuration Manager
 
@@ -80,6 +80,9 @@ Para usar o Configuration Manager Service Manager, no console, navegue para **Mo
 
 ##  <a name="bkmk_urls"></a> Requisitos de acesso à Internet  
 Para habilitar a operação, o computador que hospeda o ponto de conexão de serviço e qualquer firewall entre esse computador e a Internet deve passar as comunicações pela porta de saída **TCP 443** para HTTPS e pela porta de saída **TCP 80** para HTTP para os locais da Internet abaixo. O ponto de conexão de serviço também dá suporte ao uso de um proxy da Web (com ou sem autenticação) para acessar esses locais.  Se você precisar configurar uma conta de proxy da Web, consulte: [Suporte do servidor proxy no System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
+
+> [!TIP]
+> O Ponto de Conexão de Serviço usa o serviço Microsoft Intune ao se conectar ao http://go.Microsoft.com ou ao http://manage.Microsoft.com. Há um problema conhecido em que o Conector do Intune apresenta problemas de conectividade se o Certificado Raiz do Baltimore CyberTrust não está instalado, expirou ou está corrompido no Sistema de Sites do Configuration Manager que tem a função de Ponto de Conexão de Serviço instalada. Para obter mais informações, veja [O Ponto de Conexão de Serviço do Configuration Manager não baixar atualizações](https://support.microsoft.com/help/3187516).
 
 **Atualizações e manutenção**  
 

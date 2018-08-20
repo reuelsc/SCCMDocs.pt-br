@@ -1,8 +1,8 @@
 ---
 title: Painel do Ciclo de Vida do Produto
 titleSuffix: Configuration Manager
-description: Obtenha informações sobre o Painel do Ciclo de Vida do Produto no System Center Configuration Manager.
-ms.date: 02/13/2018
+description: Exiba a Política de Ciclo de Vida da Microsoft com o painel de ciclo de vida do produto no Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,71 +10,82 @@ ms.assetid: 8b5b144a-0e5f-4fcc-87b2-33b9bcdb5655
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: noindex,nofollow
-ms.openlocfilehash: 8f24fcd2d75d34e2d2d69c9c54f4f47991be7301
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f99aeba109ed4de3ef1b88b721b59eebb4653cb6
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335534"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384624"
 ---
-# <a name="use-the-product-lifecycle-dashboard-to-manage-microsoft-lifecycle-policy-in-system-center-configuration-manager"></a>Use o Painel do Ciclo de Vida do Produto para gerenciar a Política de Ciclo de Vida da Microsoft no System Center Configuration Manager
+# <a name="manage-microsoft-lifecycle-policy-with-configuration-manager"></a>Gerenciar a Política de Ciclo de Vida da Microsoft com o Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Technical Preview)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-A partir da [versão Technical Preview 1802](/sccm/core/get-started/capabilities-in-technical-preview-1802), você pode usar o Painel do Ciclo de Vida do Produto do Configuration Manager. O painel mostra o estado da política do Ciclo de Vida do Produto da Microsoft para produtos da Microsoft instalados em dispositivos gerenciados com o Configuration Manager. O painel fornece informações sobre produtos da Microsoft em seu ambiente, estado de capacidade de suporte e datas de término do suporte. Você pode usar o painel para entender a disponibilidade de suporte para cada produto. Ajudando você a planejar quando atualizar os produtos da Microsoft que você usa antes do término de seu período de suporte.  
+Começando com a versão 1806, você pode usar o painel de ciclo de vida do produto do Configuration Manager para exibir a Política de Ciclo de Vida da Microsoft. O painel mostra o estado da Política de Ciclo de Vida da Microsoft para produtos da Microsoft instalados em dispositivos gerenciados com o Configuration Manager. Ele também fornece informações sobre os produtos da Microsoft em seu ambiente, o estado da capacidade de suporte e as datas de término do suporte. Use o painel para entender a disponibilidade do suporte para cada produto. Essas informações ajudam a planejar quando atualizar os produtos da Microsoft que você usa, antes que eles atinjam o término do suporte atual.  
 
-Para saber mais sobre a Política do Ciclo de Vida do Produto da Microsoft, confira [Política do Ciclo de Vida da Microsoft](https://support.microsoft.com/en-us/lifecycle).
+Para obter mais informações, confira [Política de Ciclo de Vida da Microsoft](https://support.microsoft.com/lifecycle).
+
+
 
 ## <a name="prerequisites"></a>Pré-requisitos 
 
- Para ver os dados no Painel do Ciclo de Vida do Produto, são necessários os seguintes: 
-- O Internet Explorer 9 ou posterior deve estar instalado no computador que executa o console do Configuration Manager. 
-- É necessário um Ponto de Serviços de Relatórios para a funcionalidade de hiperlink no painel, uma vez que eles se vinculam a um relatório do SQL Server Reporting Services (SSRS). Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](/sccm/core/servers/manage/reporting). 
-- O ponto de sincronização do Asset Intelligence deve ser configurado e sincronizado. Para mais informações, consulte [Configurar o Asset Intelligence no System Center Configuration Manager](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence).
+ Para ver os dados no painel do ciclo de vida do produto, são necessários os seguintes componentes:  
 
-Os dados no painel dependem de ter o ponto de sincronização do Asset Intelligence instalado. O painel usa o catálogo do Asset Intelligence como metadados para títulos de produtos. Os metadados são comparados com dados de inventário em sua hierarquia. 
+- O Internet Explorer 9 ou posterior deve estar instalado no computador que executa o console do Configuration Manager.  
 
->[!NOTE]
->Se você estiver configurando o ponto de serviço do Asset Intelligence pela primeira vez, certifique-se de [Habilitar as classes de inventário de hardware do Asset Intelligence](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence#BKMK_EnableAssetIntelligence). O Painel do Ciclo de Vida é dependente das classes de inventário de hardware do Asset Intelligence e não exibirá dados até que os clientes tenham verificado e devolvido o inventário de hardware.  
+- Um ponto do Reporting Services é necessário para a funcionalidade de hiperlink no painel. Os links do painel para relatórios do SSRS (SQL Server Reporting Services). Para obter mais informações, confira [Reporting in Configuration Manager](/sccm/core/servers/manage/reporting) (Relatórios no Configuration Manager).  
 
-## <a name="use-the-microsoft-product-lifecycle-dashboard"></a>Use o Painel do Ciclo de Vida do Produto da Microsoft
+- O ponto de sincronização do Asset Intelligence precisa ser configurado e sincronizado. O painel usa o catálogo do Asset Intelligence como metadados para títulos de produtos. Os metadados são comparados com dados de inventário em sua hierarquia. Para obter mais informações, confira [Configurar o Asset Intelligence no Configuration Manager](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence).  
 
-Com base nos dados de inventário coletados em dispositivos gerenciados, o painel exibe informações sobre todos os produtos atuais. No entanto, as informações exibidas para sistemas operacionais e SQL Server estão limitadas às seguintes versões:
+     > [!NOTE]  
+     > Se você estiver configurando o ponto de serviço do Asset Intelligence pela primeira vez, escolha a opção [Habilitar classes de inventário de hardware do Asset Intelligence](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence#BKMK_EnableAssetIntelligence). O painel do ciclo de vida depende dessas classes de inventário de hardware do Asset Intelligence. O painel não exibirá dados até que os clientes tenham examinado e retornado o inventário de hardware.  
+
+
+
+## <a name="use-the-product-lifecycle-dashboard"></a>Usar o painel do ciclo de vida do produto
+
+Com base nos dados de inventário que o site coleta dos dispositivos gerenciados, o painel exibe informações sobre todos os produtos atuais. No entanto, as informações exibidas para sistemas operacionais e SQL Server estão limitadas às seguintes versões:
 
 - Windows Server 2008 e posterior
 - Windows XP e posterior
 - SQL Server 2008 e posterior
 
-Para acessar o Painel do Ciclo de Vida, no console do Configuration Manager, vá para **Ativos e conformidade** > **Asset Intelligence** > **Ciclo de Vida do Produto**.
+Para acessar o painel do ciclo de vida no console do Configuration Manager, acesse o espaço de trabalho **Ativos e Conformidade**, expanda **Asset Intelligence** e selecione o nó **Ciclo de Vida do Produto**.
 
->[!NOTE]
->Os dados no painel são baseados no site ao qual o console do Configuration Manager se conecta. Se o console se conectar ao seu site de nível superior, você verá dados para toda a hierarquia. Quando conectado a um site primário filho, apenas os dados desse site são exibidos.
+> [!NOTE]  
+> Os dados no painel são baseados no site ao qual o console do Configuration Manager se conecta. Se o console se conectar ao seu site de nível superior, você verá dados para toda a hierarquia. Quando conectado a um site primário filho, apenas os dados desse site são exibidos.
 
 ### <a name="product-lifecycle-dashboard"></a>Painel do Ciclo de Vida do Produto
 
-![Painel do Ciclo de Vida do Produto](/sccm/core/clients/manage/asset-intelligence/media/product-lifecycle-dashboard.png)
+![Captura de tela do painel do ciclo de vida do produto no console](media/product-lifecycle-dashboard.png)
 
-O painel contém os seguintes blocos: 
-- **Os cinco principais produtos após o fim da vida útil:** Este bloco é uma visão de dados consolidada de produtos encontrados em seu ambiente após o fim de sua vida útil. O gráfico mostra o software instalado que expirou quando comparado com o ciclo de vida do suporte para sistemas operacionais e produtos do SQL Server.  
-- **Os cinco principais produtos que se aproximam ao fim da vida útil:** Este bloco é uma visão de dados consolidada de produtos encontrados em seu ambiente que estão perto do fim da vida útil. O gráfico mostra o software instalado que está dentro do período de seis meses do ciclo de vida quando comparado com o ciclo de vida do suporte para sistemas operacionais e produtos do SQL Server.
-- **Dados do ciclo de vida para produtos instalados:** Este bloco dá uma ideia geral de quando um produto transita do estado de “com suporte” para o estado “expirado”. O gráfico fornece uma especificação do número de clientes onde o produto está instalado, o estado de disponibilidade do suporte, juntamente com um link para saber mais sobre os próximos passos a serem realizados. A seguinte informação está incluída no gráfico:     
+O painel contém os seguintes blocos:  
+
+- **Cinco principais produtos após o fim da vida útil**: esse bloco é uma exibição de dados consolidada de produtos encontrados em seu ambiente após o fim da vida. O grafo mostra o software instalado que expirou quando comparado com o ciclo de vida do suporte para sistemas operacionais e produtos do SQL Server.  
+
+- **Cinco principais produtos que se aproximam do fim da vida útil:** esse bloco é uma exibição de dados consolidada de produtos encontrados em seu ambiente que estão perto do fim da vida útil nos próximos seis meses. O grafo mostra o software instalado que está dentro do período de seis meses para o fim da vida útil, em comparação com o ciclo de vida do suporte para sistemas operacionais e produtos do SQL Server.  
+
+- **Dados de ciclo de vida dos produtos instalados**: esse bloco oferece uma ideia geral de quando um produto passará do estado com suporte para o estado expirado. O gráfico fornece um detalhamento do número de clientes em que o produto está instalado, o estado de disponibilidade do suporte e um link para saber mais sobre os próximos passos a serem realizados. A seguinte informação está incluída no gráfico:     
     - Tempo de suporte restante
     - Número no ambiente 
     - Data de término principal do suporte
     - Data de término prolongada do suporte
-    - Próximas etapas 
+    - Próximas etapas  
 
->[!IMPORTANT]
->As informações apresentadas neste painel são fornecidas para sua conveniência e somente para uso interno em sua empresa. Você não deve depender exclusivamente dessas informações para confirmar a conformidade. Não deixe de verificar a precisão das informações fornecidas para você, juntamente com a disponibilidade de informações de suporte acessando https://support.microsoft.com/en-us/lifecycle.
+> [!IMPORTANT]  
+> As informações apresentadas neste painel são fornecidas para sua conveniência e somente para uso interno em sua empresa. Você não deve depender exclusivamente dessas informações para confirmar a conformidade. Verifique a precisão das informações fornecidas, juntamente com a disponibilidade das informações de suporte acessando a [Política de Ciclo de Vida da Microsoft](https://support.microsoft.com/lifecycle).  
+
+
 
 ## <a name="reporting"></a>Relatórios
-Os seguintes novos relatórios são adicionados na categoria **Ciclo de Vida do Produto**:
-- **Visão geral do Ciclo de Vida do Produto:** Veja uma lista de ciclos de vida de produtos. A lista pode ser filtrada pelo nome do produto e pelos dias até a expiração definível pelo usuário. 
-- **Computadores com um produto de software específico:** Veja uma lista de computadores na qual um produto especificado é detectado.
-- **Lista de produtos expirados encontrados na organização:** Veja detalhes de produtos em seu ambiente cujas datas do ciclo de vida tenham expirado. 
-- **Lista de máquinas com produtos expirados na organização:** Veja computadores que têm produtos expirados neles. Você pode filtrar este relatório pelo nome do produto.
 
-## <a name="next-steps"></a>Próximas etapas
-Para obter informações de como instalar ou atualizar o branch da technical preview, consulte [Technical Preview do System Center Configuration Manager](/sccm/core/get-started/technical-preview).  
+Também há relatórios adicionais disponíveis. No console do Configuration Manager, acesse o espaço de trabalho **Monitoramento**, expanda **Relatório** e, em seguida, expanda **Relatórios**. Os seguintes novos relatórios são adicionados na categoria **Ciclo de Vida do Produto**:  
+
+- **Visão geral do Ciclo de Vida do Produto:** exiba uma lista de ciclos de vida de produtos. Filtre a lista por nome do produto e dias para expiração.  
+
+- **Computadores com um produto de software específico**: exiba uma lista de computadores em que um produto especificado é detectado.  
+
+- **Lista de produtos expirados encontrados na organização**: veja detalhes de produtos em seu ambiente que têm datas de ciclo de vida expiradas.  
+
+- **Lista de computadores com produtos expirados na organização**: veja os computadores que contêm produtos expirados. Você pode filtrar este relatório pelo nome do produto.
 

@@ -5,17 +5,17 @@ description: Saiba mais sobre os recursos e as funcionalidades do Centro de Soft
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 03/22/2018
+ms.date: 07/30/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
-ms.openlocfilehash: ff40af9dd40921b63f8b8bd13ba5c287c3bf9972
-ms.sourcegitcommit: e35d07870656eadd29faacc378ecd091ff3bdcfb
+ms.openlocfilehash: bcdc6298a7b1c429888acf2b7257cec072e9b878
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848655"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39383413"
 ---
 # <a name="software-center-user-guide"></a>Guia do usuário do Centro de Software
 
@@ -52,8 +52,7 @@ Clique na guia **Aplicativos** para encontrar e instalar aplicativos implantados
 
 
 ### <a name="install-multiple-applications"></a>Instalar vários aplicativos 
-<!-- 1357126 -->
-Instale mais de um aplicativo por vez, em vez de aguardar a conclusão de um antes de iniciar o próximo. Nem todos os aplicativos são qualificados:
+<!-- 1357126 --> Instale mais de um aplicativo por vez, sem precisar esperar a conclusão de um para iniciar o próximo. Nem todos os aplicativos são qualificados:
 - O aplicativo está visível para você
 - O aplicativo ainda não está instalado ou sendo baixado
 - O administrador de TI não exige aprovação para instalar o aplicativo
@@ -96,8 +95,11 @@ Clique na guia **Status da instalação** para exibir o status dos aplicativos. 
 - **Instalado**: o Centro de Software já instalou esse aplicativo nesse computador.
 - **Baixando**: o Centro de Software está baixando o software a ser instalado nesse computador.
 - **Com Falha**: o Centro de Software encontrou um erro ao tentar instalar o software.
+- **Agendado para instalar depois**: mostra a data e hora da próxima janela de manutenção do dispositivo para instalar software no futuro. As janelas de manutenção são definidas pelo administrador de TI.<!--1358131-->
+    - O status pode ser visto na guia **Todos** e **Futuros**. 
+    - Você pode instalar antes do tempo da janela de manutenção clicando no botão **Instalar Agora**. 
 
-
+O administrador de TI pode permitir que você exiba os aplicativos do site do Catálogo de Aplicativos. Para exibir o site, clique em **Abrir o site do Catálogo de Aplicativos** no canto superior direito. <!--1358214-->
 
 ## <a name="device-compliance"></a>Conformidade do dispositivo
 
@@ -134,3 +136,5 @@ Especificar como o Centro de Software aplica as alterações no software antes d
 - **Suspender as atividades do Centro de Software quando meu computador estiver no modo de apresentação**: essa configuração está habilitada por padrão.
 - **Política de Sincronização**: clique nesse botão quando instruído pelo administrador de TI. Esse computador verifica com os servidores se há algo novo, como aplicativos, atualizações de software ou sistemas operacionais.
 
+## <a name="custom-tab-in-software-center"></a>Guia personalizada no Centro de Software
+O administrador de TI pode ter adicionado uma guia adicional no Centro de Software. Essa guia é nomeada pelo seu administrador e leva a um site especificado por ele. Por exemplo, pode haver uma guia chamada "Suporte Técnico" que leva ao site de suporte técnico da sua organização. <!--1358132-->

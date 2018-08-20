@@ -1,8 +1,8 @@
 ---
-title: A ferramenta de limpeza da biblioteca de conteúdo
+title: Ferramenta de limpeza da biblioteca de conteúdo
 titleSuffix: Configuration Manager
-description: Use a ferramenta de limpeza da biblioteca de conteúdo para remover conteúdo órfão não associado a uma implantação do System Center Configuration Manager.
-ms.date: 4/7/2017
+description: Use a ferramenta de limpeza da biblioteca de conteúdo para remover conteúdo órfão não associado a uma implantação do Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,66 +10,127 @@ ms.assetid: 226cbbb2-9afa-4e2e-a472-be989c0f0e11
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a3a091a526a385fadf0353073048d33ae704cd76
-ms.sourcegitcommit: f9b11bb0942cd3d03d90005b1681e9a14dc052a1
+ms.openlocfilehash: 1e71b95642160d519f222a50a66bc8f636628d6e
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39229364"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39383516"
 ---
-# <a name="the-content-library-cleanup-tool-for-system-center-configuration-manager"></a>A ferramenta de limpeza da biblioteca de conteúdo no System Center Configuration Manager
+# <a name="content-library-cleanup-tool"></a>Ferramenta de limpeza da biblioteca de conteúdo
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
- A partir da versão 1702, você pode usar uma ferramenta de linha de comando (**ContentLibraryCleanup.exe**) para remover o conteúdo que não está mais associado a nenhum pacote ou aplicativo de um ponto de distribuição (conteúdo órfão). Essa ferramenta é chamada de ferramenta de limpeza da biblioteca de conteúdo e substitui as versões mais antigas de ferramentas semelhantes lançadas para os últimos produtos do Configuration Manager.  
+Use a ferramenta de linha de comando de limpeza da biblioteca de conteúdo para remover conteúdo não está mais associado a nenhum pacote ou aplicativo em um ponto de distribuição. Esse tipo de conteúdo é chamado de *conteúdo órfão*. Essa ferramenta substitui as versões mais antigas de ferramentas semelhantes lançadas para produtos antigos do Configuration Manager.  
 
 A ferramenta só afeta o conteúdo no ponto de distribuição que você especificar ao executá-la. A ferramenta não pode remover o conteúdo da biblioteca de conteúdo no servidor do site.
 
-Você poderá encontrar o **ContentLibraryCleanup.exe** na pasta *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* no servidor do site no site de administração central ou site primário.
+Encontre **ContentLibraryCleanup.exe** em `CD.Latest\SMSSETUP\TOOLS\ContentLibraryCleanup` no servidor do site.
+
+
 
 ## <a name="requirements"></a>requisitos  
- A ferramenta só pode ser executada em um único ponto de distribuição por vez.  
- - Ela pode ser executada diretamente no computador que hospeda o ponto de distribuição que você quer limpar, ou remotamente de outro servidor.
- - A conta de usuário que executa a ferramenta diretamente deve ter permissões de administração baseada em funções equivalentes a um Administrador Completo na hierarquia do Configuration Manager. A ferramenta não funcionará quando a conta receber essas permissões como um membro de um grupo de segurança do Windows que contém as permissões de Administrador Completo.
+
+- Execute a ferramenta apenas em relação a um único ponto de distribuição por vez.  
+
+- Execute-a diretamente no computador que hospeda o ponto de distribuição que receberá a limpeza ou remotamente de outro computador.  
+
+- A conta de usuário que executa a ferramenta precisa ter permissões iguais às da função de segurança de **Administrador Completo** no Configuration Manager.  
+
+
 
 ## <a name="modes-of-operation"></a>Modos de operação
-Você pode executar a ferramenta nos dois modos a seguir. Recomendamos que você execute a ferramenta no modo de *hipóteses (What-If)* para poder examinar os resultados antes de executar a ferramenta no *modo de exclusão*:
-  1.    **Modo de hipóteses**:   
-      Se você não especifica a opção **/delete**, a ferramenta é executada no modo de hipóteses e identifica o conteúdo que seria excluído do ponto de distribuição.
-   - Quando executada nesse modo, a ferramenta não exclui os dados.
-   - As informações sobre o conteúdo que seria excluído são gravadas no arquivo de log da ferramenta e você não precisará confirmar cada exclusão potencial.  
-      </br>   
 
-  2. **Modo de exclusão**:   
-    quando você executa a ferramenta com a opção **/delete**, ela é executada no modo de exclusão.
+Execute a ferramenta nos dois modos a seguir: [Hipóteses](#what-if-mode) e [Exclusão](#delete-mode).
 
-     - Quando ela é executada nesse modo, o conteúdo órfão encontrado no ponto de distribuição especificado pode ser excluído da biblioteca de conteúdo do ponto de distribuição.
-     -  Antes de excluir cada arquivo, você deverá confirmar se o arquivo deve ser excluído.  Você pode selecionar, **Y** para sim, **N** para não ou **Sim para todos** para ignorar as futuras solicitações e excluir todo o conteúdo órfão.  
-     </br>
+> [!Tip]  
+> Comece com o modo *Hipóteses*. Quando estiver satisfeito com os resultados, execute a ferramenta no modo *Exclusão*.  
 
-Quando a ferramenta é executada em um desses modos, ela cria automaticamente um log com um nome que inclui o modo no qual ela foi executada, o nome do ponto de distribuição, a data e a hora da operação. O arquivo de log é aberto automaticamente quando a ferramenta é concluída.
 
-Por padrão, o arquivo de log é gravado na pasta temporária da conta de usuário que executa a ferramenta, no computador em que a ferramenta é executada. Você pode usar a opção **/log** para redirecionar o arquivo de log para outro local, incluindo um compartilhamento de rede.
+### <a name="what-if-mode"></a>Modo de Hipóteses   
+
+Se você não especificar o parâmetro `/delete`, a ferramenta será executada no modo de hipóteses. Esse modo identifica o conteúdo que seria excluído do ponto de distribuição.
+
+- Quando executada nesse modo, a ferramenta não exclui nenhum dado.  
+
+- A ferramenta grava no arquivo de log as informações sobre o conteúdo que ela excluiria. Não há nenhuma solicitação de confirmação para cada possível exclusão.  
+
+
+### <a name="delete-mode"></a>Modo de exclusão   
+
+Quando você executa a ferramenta com o parâmetro `/delete`, ela é executada no modo de exclusão.
+
+- Quando ela é executada nesse modo, o conteúdo órfão encontrado no ponto de distribuição especificado pode ser excluído da biblioteca de conteúdo do ponto de distribuição.  
+
+- Antes de excluir cada arquivo, confirme que a ferramenta deve excluí-lo. Selecione **S** para Sim, **N** para não ou **Sim para tudo** para ignorar as próximas solicitações e excluir todo o conteúdo órfão.  
+
+
+### <a name="log-file"></a>Arquivo de log
+
+Independentemente do modo em que a ferramenta é executada, ela sempre cria um log automaticamente. Ele nomeia o arquivo de log com as seguintes informações: 
+- O modo em que a ferramenta é executada  
+- O nome do ponto de distribuição  
+- A data e hora da operação  
+
+Quando a ferramenta é concluída, ele abre automaticamente o arquivo de log no Windows. 
+
+Por padrão, a ferramenta grava o arquivo de log na pasta temporária da conta de usuário que a executa. Esse local fica no computador em que você executa a ferramenta, que nem sempre é o destino da ferramenta. Use o parâmetro `/log` para redirecionar o arquivo de log para outro local, incluindo um compartilhamento de rede.
+
 
 
 ## <a name="run-the-tool"></a>Executar a ferramenta
-Para executar a ferramenta:
-1. abra um prompt de comando administrativo para uma pasta que contém **ContentLibraryCleanup.exe**.  
-2. Em seguida, insira uma linha de comando que inclui as opções de linha de comando necessárias e os comutadores opcionais que você deseja usar.
 
-**Problema conhecido** Quando a ferramenta é executada, um erro semelhante ao seguinte pode ser retornado quando qualquer pacote ou implantação tiver falhado ou estiver em andamento:
--  *System.InvalidOperationException: esta biblioteca de conteúdo não pode ser limpa no momento porque o pacote <packageID> não está totalmente instalado.*
+Para executar a ferramenta: 
 
-**Solução alternativa:** nenhuma. A ferramenta não pode identificar com segurança os arquivos órfãos quando o conteúdo está em andamento ou não pôde ser implantado. Portanto, a ferramenta não permitirá que você limpe conteúdo até que esse problema seja resolvido.
+1. Abra um prompt de comando como administrador. Mude de diretório para a pasta que contém **ContentLibraryCleanup.exe**.  
 
-### <a name="command-line-switches"></a>Opções de linha de comando  
-As opções de linha de comando a seguir podem ser usadas em qualquer ordem.   
+2. Insira uma linha de comando que inclua os [parâmetros de linha de comando](#bkmk_params) necessários e os parâmetros opcionais que você deseja usar.
 
-|Alternar|Detalhes|
+
+
+## <a name="bkmk_params"></a> Parâmetros de linha de comando  
+
+Use esses parâmetros de linha de comando em qualquer ordem.   
+
+### <a name="required-parameters"></a>Parâmetros necessários
+|Parâmetro|Detalhes|
 |---------|-------|
-|**/delete**  |**Opcional** </br> Use essa opção quando você desejar excluir o conteúdo do ponto de distribuição. Você será perguntado antes do conteúdo ser efetivamente excluído. </br></br> Quando essa opção não for usada, a ferramenta registra os resultados de qual conteúdo seria excluído, mas não exclui conteúdo do ponto de distribuição. </br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /delete*** |
-| **/q**       |**Opcional** </br> Essa opção executa a ferramenta no modo silencioso, o qual suprime todos os avisos (como os avisos para excluir conteúdo) e não abre automaticamente o arquivo de log. </br></br> Exemplo: ***ContentLibraryCleanup.exe /q /dp server1.contoso.com*** |
-| **/dp &lt;FQDN do ponto de distribuição>**  | **Necessária** </br> Especifique o FQDN (nome de domínio totalmente qualificado) do ponto de distribuição que você deseja limpar. </br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com***|
-| **/ps &lt;FQDN do site primário>**       | **Opcional** ao limpar o conteúdo de um ponto de distribuição em um site primário.</br>**Obrigatório** ao limpar o conteúdo de um ponto de distribuição em um site secundário. </br></br>A ferramenta se conecta ao site primário pai para executar consultas no SMS_Provider. Essas consultas permitem à ferramenta determinar qual conteúdo deve estar no ponto de distribuição, a fim de identificar o conteúdo órfão e removê-lo. Essa conexão ao site primário pai deve ser feita para pontos de distribuição em um site secundário, pois os detalhes necessários não estão disponíveis diretamente do site secundário.</br></br> Especifique o FQDN do site primário ao qual o ponto de distribuição pertence, ou do pai primário quando o ponto de distribuição estiver em um site secundário. </br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
-| **/sc &lt;código do site primário>**  | **Opcional** ao limpar o conteúdo de um ponto de distribuição em um site primário.</br>**Obrigatório** ao limpar o conteúdo de um ponto de distribuição em um site secundário. </br></br> Especifique o código do site primário ao qual o ponto de distribuição pertence, ou do site pai primário quando o ponto de distribuição estiver em um site secundário.</br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
-| **/log <log file directory>**       |**Opcional** </br> Especifique o local onde a ferramenta grava o arquivo de log. Ele pode ser uma unidade local ou um compartilhamento de rede.</br></br> Quando essa opção não for usada, o arquivo de log será colocado na pasta temp do usuário, no computador em que a ferramenta é executada.</br></br> Exemplo de unidade local: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>Exemplo de compartilhamento de rede: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\&lt;share>\&lt;folder>***|
+| `/dp <distribution point FQDN>`  | Especifique o FQDN (nome de domínio totalmente qualificado) do ponto de distribuição que deseja limpar. |
+| `/ps <primary site FQDN>` | *Necessário* somente ao limpar o conteúdo de um ponto de distribuição em um site secundário. A ferramenta conecta-se ao site primário pai para executar consultas no provedor de SMS. Essas consultas permitem que a ferramenta determine qual conteúdo deve estar no ponto de distribuição. Em seguida, ela pode identificar o conteúdo órfão a ser removido. Essa conexão com o site primário pai precisa ser feita para os pontos de distribuição em um site secundário porque os detalhes necessários não estão disponíveis diretamente no site secundário.|
+| `/sc <primary site code>`  | *Necessário* somente ao limpar o conteúdo de um ponto de distribuição em um site secundário. Especifique o código do site primário pai. |
+
+#### <a name="example-scan-and-log-what-content-it-would-delete-what-if"></a>Exemplo: verificar e registrar qual conteúdo seria excluído (hipóteses)
+`ContentLibraryCleanup.exe /dp server1.contoso.com`
+
+#### <a name="example-scan-and-log-content-for-a-dp-at-a-secondary-site"></a>Exemplo: verificar e registrar o conteúdo de um DP em um site secundário
+`ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com /sc ABC` 
+
+
+### <a name="optional-parameters"></a>Parâmetros opcionais
+
+|Parâmetro|Detalhes|
+|---------|-------|
+|`/delete`| Use esse parâmetro quando estiver pronto para excluir o conteúdo do ponto de distribuição. Um aviso é exibido antes da exclusão do conteúdo. </br></br> Quando você não usa esse parâmetro, a ferramenta registra os resultados de qual conteúdo seria excluído. Sem esse parâmetro, ela não exclui nenhum conteúdo do ponto de distribuição. |
+| `/q` | Esse parâmetro executa a ferramenta no modo silencioso que suprime todos os avisos. Essas solicitações incluem quando ela exclui o conteúdo. Ela também não abre o arquivo de log automaticamente. |
+| `/ps <primary site FQDN>` | Opcional somente ao limpar o conteúdo de um ponto de distribuição em um site primário. Especifique o FQDN do site primário ao qual o ponto de distribuição pertence. |
+| `/sc <primary site code>` | Opcional somente ao limpar o conteúdo de um ponto de distribuição em um site primário. Especifique o código do site primário ao qual o ponto de distribuição pertence. |
+| `/log <log file directory>` | Especifique o local onde a ferramenta grava o arquivo de log. Esse local pode ser uma unidade local ou um compartilhamento de rede.</br></br> Quando você não usa esse parâmetro, a ferramenta coloca o arquivo de log no diretório temporário do usuário no computador em que a ferramenta é executada.|
+
+#### <a name="example-delete-content"></a>Exemplo: excluir conteúdo 
+`ContentLibraryCleanup.exe /dp server1.contoso.com /delete`
+
+#### <a name="example-delete-content-without-prompts"></a>Exemplo: excluir conteúdo sem avisos
+`ContentLibraryCleanup.exe /q /dp server1.contoso.com /delete` 
+
+#### <a name="example-log-to-local-drive"></a>Exemplo: registrar na unidade local
+`ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop` 
+
+#### <a name="example-log-to-network-share"></a>Exemplo: registrar no compartilhamento de rede
+`ContentLibraryCleanup.exe /dp server1.contoso.com /log \\server\share`
+
+
+### <a name="known-issue"></a>Problema conhecido
+
+Quando algum pacote ou implantação falha ou está em andamento, a ferramenta pode retornar o seguinte erro: `System.InvalidOperationException: This content library cannot be cleaned up right now because package <packageID> is not fully installed.`
+
+Não há nenhuma solução alternativa para esse problema. A ferramenta não consegue identificar com segurança os arquivos órfãos quando o conteúdo está em andamento ou não pôde ser implantado. A ferramenta não permitirá a limpeza do conteúdo até que você resolva esse problema.

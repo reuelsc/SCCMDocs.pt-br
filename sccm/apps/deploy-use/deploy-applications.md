@@ -2,7 +2,7 @@
 title: Implantar aplicativos
 titleSuffix: Configuration Manager
 description: Criar ou simular uma implantação de um aplicativo em uma coleção de dispositivos ou usuários
-ms.date: 03/22/2018
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,14 +10,14 @@ ms.assetid: 2629c376-ec43-4f0e-a78b-4223cc9302bf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ed6174bcb3c99461b00ec5fc57d4508b9390747d
-ms.sourcegitcommit: acad0674b2743193f87990fb50194c4f17823a8e
+ms.openlocfilehash: d23c5ee5b81264a9725c4654cd1717b30302c708
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39146921"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384813"
 ---
-# <a name="deploy-applications-with-system-center-configuration-manager"></a>Implantar aplicativos com o System Center Configuration Manager
+# <a name="deploy-applications-with-configuration-manager"></a>Implantar aplicativos com o Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -25,148 +25,218 @@ Crie ou simule uma implantação de um aplicativo em uma coleção de dispositiv
 
 Antes de implantar um aplicativo, crie, pelo menos, um tipo de implantação para o aplicativo. Para mais informações, consulte [Criar aplicativos](/sccm/apps/deploy-use/create-applications).
 
- Você também pode simular uma implantação de aplicativo. Essa simulação testa a aplicabilidade de uma implantação sem instalar ou desinstalar o aplicativo. Uma implantação simulada avalia o método de detecção, os requisitos e as dependências para um tipo de implantação e relata os resultados no nó **Implantações** do espaço de trabalho **Monitoramento**. Para saber mais, confira [Simular implantações de aplicativos](/sccm/apps/deploy-use/simulate-application-deployments).
+Você também pode simular uma implantação de aplicativo. Essa simulação testa a aplicabilidade de uma implantação sem instalar ou desinstalar o aplicativo. Uma implantação simulada avalia o método de detecção, os requisitos e as dependências para um tipo de implantação e relata os resultados no nó **Implantações** do espaço de trabalho **Monitoramento**. Para saber mais, confira [Simular implantações de aplicativos](/sccm/apps/deploy-use/simulate-application-deployments).
 
-> [!IMPORTANT]
->  Simule a implantação de aplicativos obrigatórios, mas não pacotes nem atualizações de software.   
+> [!Note]
+>  Você só pode simular a implantação de aplicativos obrigatórios, mas não de pacotes ou atualizações de software.   
+> 
 >  Os dispositivos registrados em MDM não dão suporte às configurações de agendamento, de experiência do usuário nem de implantações simuladas.
 
 
 
-## <a name="deploy-an-application"></a>Implantar um aplicativo
+## <a name="bkmk_deploy"></a> Implantar um aplicativo
 
-1.  No console do Configuration Manager, vá para **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Aplicativos**.
+1.  No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.  
 
-2.  Na lista **Aplicativos** , selecione o aplicativo a implantar. Na guia **Início** , no grupo **Implantação** , clique em **Implantar**.
+2.  Na lista **Aplicativos**, selecione um aplicativo a ser implantado. Na faixa de opções, clique em **Implantar**.  
 
-### <a name="specify-general-information-about-the-deployment"></a>Especificar informações gerais sobre a implantação
+> [!Note]  
+> Quando você exibe as propriedades de uma implantação existente, as seções a seguir correspondem às guias da janela Propriedades da implantação:  
+> - [Geral](#bkmk_deploy-general)
+> - [Conteúdo](#bkmk_deploy-content)
+> - [Configurações de Implantação](#bkmk_deploy-settings)
+> - [Agendamento](#bkmk_deploy-sched)
+> - [Experiência do Usuário](#bkmk_deploy-ux)
+> - [Alertas](#bkmk_deploy-alerts)
+> - [iOS: Políticas de Configuração de Aplicativo](#bkmk_deploy-ios)
 
-Na página **Geral** do Assistente para Implantar Software, especifique as seguintes informações:
 
-- **Software**: esse valor exibe o aplicativo a ser implantado. Clique em **Procurar** para selecionar outro aplicativo.
-- **Coleção**: clique em **Procurar** para selecionar a coleção na qual implantar o aplicativo.
-- **Usar grupos de pontos de distribuição padrão associados a esta coleção**: armazene o conteúdo do aplicativo no grupo de pontos de distribuição padrão da coleção. Se você não tiver associado a coleção selecionada a um grupo de pontos de distribuição, essa opção estará indisponível.
-- **Distribuir o conteúdo automaticamente para dependências**: se um dos tipos de implantação no aplicativo contiver dependências, o site também enviará o conteúdo do aplicativo dependente aos pontos de distribuição.
+### <a name="bkmk_deploy-general"></a> Informações **Gerais** da Implantação 
 
-    >[!IMPORTANT]
-    > Se você atualizar o aplicativo dependente após a implantação do aplicativo primário, o site não distribuirá automaticamente nenhum conteúdo novo para a dependência.
+Na página **Geral** do Assistente para Implantar Software, especifique as seguintes informações:  
 
-- **Comentários (opcional)**: opcionalmente, insira uma descrição para essa implantação.
+- **Software**: esse valor exibe o aplicativo a ser implantado. Clique em **Procurar** para selecionar outro aplicativo.  
 
-### <a name="specify-content-options-for-the-deployment"></a>Especificar as opções de conteúdo para a implantação
+- **Coleção**: clique em **Procurar** para selecionar a coleção na qual implantar o aplicativo.  
 
-Na página **Conteúdo**, clique em **Adicionar** para adicionar o conteúdo associado a essa implantação aos pontos de distribuição ou aos grupos de pontos de distribuição. Se você selecionar **Usar os pontos de distribuição padrão associados a esta coleção** na página **Geral**, em seguida, essa opção será populada automaticamente. Somente um membro da função de segurança Administrador de Aplicativos pode modificá-la.
+- **Usar grupos de pontos de distribuição padrão associados a esta coleção**: armazene o conteúdo do aplicativo no grupo de pontos de distribuição padrão da coleção. Se você não tiver associado a coleção selecionada a um grupo de pontos de distribuição, essa opção estará desabilitada.  
 
-### <a name="specify-deployment-settings"></a>Especificar configurações da implantação
+- **Distribuir o conteúdo automaticamente para dependências**: se um dos tipos de implantação no aplicativo contiver dependências, o site também enviará o conteúdo do aplicativo dependente aos pontos de distribuição.  
 
-Na página **Configurações de Implantação** do Assistente para Implantar Software, especifique as seguintes informações:
+    >[!Note]  
+    > Se você atualizar o aplicativo dependente após a implantação do aplicativo primário, o site não distribuirá automaticamente nenhum conteúdo novo para a dependência.  
 
-- **Ação**: na lista suspensa, escolha se essa implantação tem a finalidade de **Instalar** ou **Desinstalar** o aplicativo.
+- **Comentários (opcional)**: opcionalmente, insira uma descrição para essa implantação.  
 
-    > [!NOTE]
-    >  Se um aplicativo é implantado duas vezes em um dispositivo, uma vez com a ação de **Instalar** e uma vez com a ação de **Desinstalar**, a implantação do aplicativo com a ação de **Instalar** torna-se prioridade.
 
-  Não é possível alterar a ação de uma implantação após sua criação.
+### <a name="bkmk_deploy-content"></a> Opções de **Conteúdo** da implantação
+
+Na página **Conteúdo**, clique em **Adicionar** para distribuir o conteúdo desse aplicativo a um ponto de distribuição ou a um grupo de pontos de distribuição. 
+
+Se você tiver selecionado a opção **Usar pontos de distribuição padrão associados a essa coleção** na página Geral, essa opção será populada automaticamente. Somente um membro da função de segurança **Administrador de Aplicativos** pode modificá-lo.
+
+Se o conteúdo do aplicativo já estiver distribuído, ele aparecerá aqui. 
+
+
+### <a name="bkmk_deploy-settings"></a> **Configurações de Implantação**
+
+Na página **Configurações da implantação**, especifique as seguintes informações:  
+
+- **Ação**: na lista suspensa, escolha se essa implantação tem a finalidade de **Instalar** ou **Desinstalar** o aplicativo.  
+
+    > [!NOTE]  
+    >  Se você criar uma implantação para **Instalar** um aplicativo e outra implantação para **Desinstalar** o mesmo aplicativo no mesmo dispositivo, a implantação para **Instalar** terá prioridade.  
+
+    Você não pode alterar a ação de uma implantação depois de criá-la.  
 
 - **Finalidade**: na lista suspensa, escolha uma das seguintes opções:  
-    - **Disponível**: se o aplicativo for implantado em um usuário, o usuário verá o aplicativo publicado no Centro de Software e poderá instalá-lo sob demanda.
-    - **Obrigatório**: o aplicativo é implantado automaticamente de acordo com o agendamento. Se o status de implantação de aplicativo não estiver oculto, qualquer pessoa que usar o aplicativo poderá acompanhar o status de implantação e instalar o aplicativo do Centro de Software antes da data limite.
+
+    - **Disponível**: o usuário vê o aplicativo no Centro de Software. Ele pode instalar o aplicativo sob demanda.  
+
+    - **Obrigatório**: o cliente instala o aplicativo automaticamente de acordo com o agendamento que você define. Quando o aplicativo não está oculto, os usuários podem acompanhar o status da implantação. Eles também podem usar o Centro de Software para instalar o aplicativo antes da data limite.  
 
     > [!NOTE]   
-    >  Quando a ação de implantação é definida como **Desinstalar**, a finalidade da implantação é definida automaticamente como **Obrigatória**. Não é possível alterar esse comportamento.  
+    >  Quando você define a ação de implantação como **Desinstalar**, a finalidade da implantação é definida automaticamente como **Obrigatória**. Não é possível alterar esse comportamento.  
 
-- **Implantar automaticamente de acordo com o agendamento com ou sem um usuário conectado**: se a implantação for para um usuário, selecione essa opção para implantar o aplicativo nos dispositivos primários do usuário. Esta configuração não requer que o usuário faça logon antes de executar a implantação. Não selecione essa opção se o usuário precisar interagir com a instalação. Essa opção está disponível somente quando a implantação tem a finalidade de **Necessária**.
+- **Pré-implantar o software no dispositivo primário do usuário**: se a implantação for para um usuário, selecione essa opção para implantar o aplicativo no dispositivo primário do usuário. Essa configuração não exige que o usuário entre para que a implantação seja executada. Se o usuário precisar interagir com a instalação, não selecione essa opção. Essa opção só está disponível quando a implantação é **Obrigatória**.  
 
-- **Enviar pacotes de ativação**: se a finalidade da implantação for **Obrigatória**, um pacote de ativação será enviado aos computadores antes de o cliente executar a implantação. Esse pacote ativa os computadores na data limite da instalação. Antes de usar essa opção, os computadores e as redes devem ser configurados para Wake On LAN.
-- **Permitir que os clientes com um plano de Internet limitado baixem o conteúdo após a data limite da instalação, o que pode incorrer em custos adicionais**: essa opção está disponível somente para implantações com a finalidade **Obrigatória**.
-- **Fechar automaticamente os arquivos executáveis em execução especificados na guia de comportamento da instalação da caixa de diálogo de propriedades do tipo de implantação**: para obter mais informações, consulte [Verificar arquivos executáveis em execução antes de instalar um aplicativo](#how-to-check-for-running-executable-files-before-installing-an-application).
+- **Enviar pacotes de ativação**: se a implantação for **Obrigatória**, o Configuration Manager enviará um pacote de ativação aos computadores antes que o cliente execute a implantação. Esse pacote ativa os computadores na data limite da instalação. Antes de usar essa opção, os computadores e as redes devem ser configurados para Wake On LAN. Para obter mais informações, confira [Planejar como ativar clientes](/sccm/core/clients/deploy/plan/plan-wake-up-clients).  
 
-- **Exigir a aprovação do administrador se os usuários solicitarem este aplicativo**: para as versões 1710 e anterior, o administrador aprova as solicitações do usuário para o aplicativo antes de o usuário o instalar. Essa opção fica esmaecida quando a finalidade da implantação é **Obrigatória** ou quando o aplicativo é implantado em uma coleção de dispositivos.  
+- **Permitir que os clientes com um plano de Internet limitado baixem o conteúdo após a data limite da instalação, o que pode incorrer em custos adicionais**: essa opção está disponível somente para implantações com a finalidade **Obrigatória**.  
 
-    > [!NOTE]
-    >  As solicitações de aprovação do aplicativo são exibidas no nó **Solicitações de Aprovação** , no **Gerenciamento de Aplicativos** no espaço de trabalho **Biblioteca de Software** . Se uma solicitação não é aprovada no prazo de 45 dias, ela é removida. A reinstalação do cliente pode cancelar as solicitações de aprovação pendentes.  
-    >  Depois de aprovar um aplicativo para instalação, você pode **Negar** a solicitação no console do Configuration Manager. Essa ação não faz com que o aplicativo seja desinstalado de nenhum dispositivo, mas impede que os usuários instalem novas cópias do aplicativo por meio do Centro de Software.
-
-- **Um administrador deve aprovar uma solicitação para este aplicativo no dispositivo**: a partir da versão 1802, o administrador aprova as solicitações do usuário para o aplicativo antes de o usuário instalá-lo no dispositivo solicitado. Se o administrador aprova o pedido, o usuário só poderá instalar o aplicativo nesse dispositivo. O usuário deve enviar outro pedido para instalar o aplicativo em outro dispositivo. Essa opção fica esmaecida quando a finalidade da implantação é **Obrigatória** ou quando o aplicativo é implantado em uma coleção de dispositivos. <!--1357015-->  
-
-    Esse é um recurso opcional. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options). Se esse recurso não estiver habilitado, você verá a experiência anterior.  
-
-    > [!Important]  
-    > O cliente do Configuration Manager também deve estar na versão 1802. Você também deve usar o novo Centro de Software.  
+- **Atualizar automaticamente qualquer versão substituída deste aplicativo**: o cliente atualiza a versão substituída do aplicativo pelo aplicativo substituto. 
 
     > [!Note]  
-    > Exiba **Solicitações de aprovação**, no **Gerenciamento de aplicativos**, no espaço de trabalho **Biblioteca de software** do console do Configuration Manager. Agora há uma coluna **Dispositivo** na lista para cada solicitação. Quando você toma ação no pedido, a caixa de diálogo Solicitação de Aplicativo também inclui o nome do dispositivo do qual o usuário enviou a solicitação.  
-    >  Se uma solicitação não é aprovada no prazo de 45 dias, ela é removida. A reinstalação do cliente pode cancelar as solicitações de aprovação pendentes.  
-    >  Depois de aprovar um aplicativo para instalação, você pode **Negar** a solicitação no console do Configuration Manager. Essa ação não faz com que o aplicativo seja desinstalado de nenhum dispositivo, mas impede que os usuários instalem novas cópias do aplicativo por meio do Centro de Software.
-
-- **Atualizar automaticamente qualquer versão substituída deste aplicativo**: o cliente atualiza a versão substituída do aplicativo pelo aplicativo substituto.    
+    > Essa opção funciona independentemente da aprovação do administrador. Se um administrador já aprovou a versão substituída, a versão substituta não precisa ser aprovada. A aprovação é apenas para novas solicitações, não para atualizações substitutas.<!--515824-->  
 
     > [!NOTE]  
     > A partir da versão 1802, para uma finalidade de instalação **Disponível**, você pode habilitar ou desabilitar essa opção. <!--1351266--> 
 
 
-### <a name="specify-scheduling-settings-for-the-deployment"></a>Especificar configurações de agendamento para a implantação
+#### <a name="bkmk_approval"></a> Configurações de aprovação
+Uma das seguintes configurações de aprovação é exibida, dependendo da versão do Configuration Manager:
 
-Na página **Agendamento** do Assistente para Implantar Software, defina a hora em que este aplicativo será implantado ou ficará disponível para os dispositivos cliente.
-As opções nesta página diferem dependendo a definição da implantação como **Disponível** ou **Obrigatória**.
+- **Exigir a aprovação do administrador se os usuários solicitarem este aplicativo**: para as versões 1710 e anterior, o administrador aprova as solicitações do usuário para o aplicativo antes de o usuário o instalar. Essa opção fica desabilitada quando a finalidade da implantação é **Obrigatória** ou quando o aplicativo é implantado em uma coleção de dispositivos.  
 
-Em alguns casos, talvez você queira conceder aos usuários mais tempo instalar as atualizações de software ou as implantações de aplicativo obrigatórias além das datas limite definidas. Esse comportamento geralmente é necessário quando um computador fica desativado por um longo tempo e precisa instalar muitos aplicativos. Por exemplo, se um usuário voltou de férias, ele terá que aguardar um longo período enquanto as implantações de aplicativo atrasadas são instaladas. Para ajudar a resolver esse problema, agora você pode definir um período de carência para a imposição implantando configurações de cliente do Configuration Manager para uma coleção.
+    As solicitações de aprovação do aplicativo são exibidas no nó **Solicitações de Aprovação** , no **Gerenciamento de Aplicativos** no espaço de trabalho **Biblioteca de Software** . Se uma solicitação não é aprovada no prazo de 45 dias, ela é removida. A reinstalação do cliente pode cancelar as solicitações de aprovação pendentes.  
 
-Para configurar o período de carência, execute as seguintes ações:
+    Depois de aprovar um aplicativo para instalação, você pode **Negar** a solicitação no console do Configuration Manager. Essa ação não faz com que o cliente desinstale o aplicativo de todos os dispositivos. Ela impede que os usuários instalem novas cópias do aplicativo pelo Centro de Software.  
 
-- Na página **Agente de Computador** das configurações do cliente, configure a nova propriedade **Período de carência para a imposição após a data limite da implantação (horas):** com um valor entre **1** e **120** horas.
-- Na página **Agendamento** de uma implantação de aplicativo obrigatória, escolha **Atrasar a imposição desta implantação de acordo com as preferências do usuário, até o período de cortesia definido nas configurações do cliente**. O período de cortesia de imposição se aplica a todas as implantações com essa opção habilitada e direcionadas aos dispositivos nos quais você implantou também a configuração do cliente.
+- **Um administrador deve aprovar uma solicitação para este aplicativo no dispositivo**: a partir da versão 1802, o administrador aprova as solicitações do usuário para o aplicativo antes de o usuário instalá-lo no dispositivo solicitado. Se o administrador aprova o pedido, o usuário só poderá instalar o aplicativo nesse dispositivo. O usuário deve enviar outro pedido para instalar o aplicativo em outro dispositivo. Essa opção fica desabilitada quando a finalidade da implantação é **Obrigatória** ou quando o aplicativo é implantado em uma coleção de dispositivos. <!--1357015-->  
 
-Depois que a data limite de instalação do aplicativo for atingida, o cliente instalará o aplicativo na primeira janela fora do horário comercial que o usuário configurou até o período de cortesia. No entanto, o usuário ainda poderá abrir o Centro de Software e instalar o aplicativo a qualquer momento que desejar. Depois que o período de carência expirar, a imposição retorna ao comportamento normal para implantações atrasadas.
+    Esse recurso é opcional. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options). Se você não habilitar esse recurso, a experiência anterior será exibida.  
 
-Se o aplicativo que estiver sendo implantado substituir outro aplicativo, você poderá definir a data limite de instalação quando os usuários receberem o novo aplicativo. Defina a **Data Limite de Instalação** para atualizar os usuários com o aplicativo substituído.
+    > [!Note]  
+    > Para aproveitar os novos recursos do Configuration Manager, primeiro atualize os clientes para a versão mais recente. Embora a nova funcionalidade seja exibida no console do Configuration Manager quando você atualiza o site e o console, o cenário completo só funcionará quando a versão do cliente também for a mais recente.<!--SCCMDocs issue 646-->  
 
-### <a name="specify-user-experience-settings-for-the-deployment"></a>Especificar as configurações de experiência do usuário para a implantação
+    Exiba **Solicitações de aprovação**, no **Gerenciamento de aplicativos**, no espaço de trabalho **Biblioteca de software** do console do Configuration Manager. Agora há uma coluna **Dispositivo** na lista de cada solicitação. Quando você toma ação no pedido, a caixa de diálogo Solicitação de Aplicativo também inclui o nome do dispositivo do qual o usuário enviou a solicitação.  
 
-Na página **Experiência do Usuário** do Assistente para Implantar Software, especifique as informações sobre como os usuários podem interagir com a instalação do aplicativo.
+    Se uma solicitação não é aprovada no prazo de 45 dias, ela é removida. A reinstalação do cliente pode cancelar as solicitações de aprovação pendentes.  
 
-Ao implantar aplicativos em dispositivos Windows Embedded habilitados para filtro de gravação, especifique para instalar o aplicativo na sobreposição temporária e confirmar as alterações mais tarde. Especifique também a confirmação das alterações na data limite de instalação ou durante uma janela de manutenção. Se você confirmar as alterações na data limite de instalação ou durante uma janela de manutenção, precisará reiniciar o dispositivo. As alterações permanecem no dispositivo.
+    Depois de aprovar um aplicativo para instalação, você pode **Negar** a solicitação no console do Configuration Manager. Essa ação não faz com que o cliente desinstale o aplicativo de todos os dispositivos. Ela impede que os usuários instalem novas cópias do aplicativo pelo Centro de Software.  
 
->[!NOTE]
-    >  Ao implantar um aplicativo em um dispositivo Windows Embedded, verifique se ele é membro de uma coleção com uma janela de manutenção. Para obter mais informações sobre janelas de manutenção e dispositivos Windows Embedded, consulte [Criar aplicativos Windows Embedded](../../apps/get-started/creating-windows-embedded-applications.md).
-    > As opções **Instalação de software** e **Reinicialização do sistema (se necessário para conclusão da instalação)** não são usadas se a finalidade de implantação está definida como **Disponível**. É possível configurar o nível de notificação que um usuário vê quando o aplicativo está instalado.
+    > [!Important]  
+    > Começando na versão 1806, *o comportamento mudou* para casos em que você revoga a aprovação de um aplicativo que já foi aprovado e instalado. Agora quando você **Nega** a solicitação do aplicativo, o cliente desinstala o aplicativo do dispositivo do usuário.<!--1357891-->  
 
-### <a name="specify-alert-options-for-the-deployment"></a>Especificar as opções de alerta para a implantação
 
-Na página **Alertas** do Assistente para Implantar Software, defina como o Configuration Manager e o System Center Operations Manager geram alertas para essa implantação. É possível configurar limites para relatar alertas e desativar o relatório para a duração da implantação.
+#### <a name="deployment-properties-deployment-settings"></a>**Configurações da implantação** das propriedades de implantação
+Quando você exibir as propriedades de uma implantação, se houver suporte da tecnologia do tipo de implantação, a opção a seguir aparecerá na guia **Configurações da Implantação**:
 
-### <a name="associate-the-deployment-with-an-ios-app-configuration-policy"></a>Associar a implantação a uma política de configuração de aplicativo iOS
-
-Na página **Políticas de Configuração de Aplicativo**, clique em **Novo** para associar essa implantação a uma política de configuração de aplicativo iOS (se você tiver criado uma). Para obter mais informações sobre este tipo de política, consulte [Configurar aplicativos do iOS com as políticas de configuração de aplicativo](../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md).
-
-### <a name="deployment-properties"></a>Propriedades de implantação
-
-Encontre a nova implantação no nó **Implantações** do espaço de trabalho **Monitoramento**. É possível editar as propriedades dessa implantação ou excluir a implantação na guia **Implantações** do painel de detalhes do aplicativo.
+**Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação**. Para obter mais informações, confira [verificar se há arquivos executáveis antes de instalar um aplicativo](#bkmk_exe-check).
 
 
 
-## <a name="delete-an-application-deployment"></a>Excluir uma implantação de aplicativo
+### <a name="bkmk_deploy-sched"></a> Configurações de **Agendamento** da implantação
 
-1.  No console do Configuration Manager, vá para **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Aplicativos**.
-3.  Na lista **Aplicativos**, selecione o aplicativo que inclui a implantação excluída.
-4.  Na guia **Implantações** da lista *<nome do aplicativo\>*, selecione a implantação do aplicativo que será excluída. Na guia **Implantação**, no grupo **Implantação**, clique em **Excluir**.
+Na página **Agendamento**, defina a hora em que este aplicativo será implantado ou ficará disponível para os dispositivos clientes.
 
-Ao excluir uma implantação de aplicativo, as instâncias do aplicativo que já foram instaladas não serão removidas. Para remover esses aplicativos, é necessário implantar o aplicativo em computadores com **Desinstalar**. Se você excluir uma implantação de aplicativo ou remover um recurso da coleção na qual está implantando, o aplicativo não estará mais visível no Centro de Software.
+Por padrão, o Configuration Manager disponibiliza a política de implantação para os clientes imediatamente. Se você quiser criar a implantação, mas não disponibilizá-la aos clientes até uma data posterior, configure a opção para **Agendar a disponibilidade do aplicativo**. Em seguida, selecione a data e hora, incluindo se está em UTC ou na hora do local do cliente. 
+
+Se a implantação for **Obrigatória**, especifique também a **Data limite da instalação**. Por padrão, essa data limite é o quanto antes. 
+
+Por exemplo, você precisa implantar um novo aplicativo de linha de negócios. Todos os usuários precisam instalá-lo até um determinado prazo, mas você quer dar a eles a opção de aceitar antes. Você também precisa verificar se o site distribuiu o conteúdo a todos os pontos de distribuição. Você agenda o aplicativo para ficar disponível daqui a cinco dias a partir de hoje. Esse agendamento permite que haja tempo para distribuir o conteúdo e confirmar seu status. Em seguida, você define a data limite da instalação para um mês a partir de hoje. Os usuários verão o aplicativo no Centro de Software quando ele ficar disponível daqui a cinco dias. Se eles não fizerem nada, o cliente instalará automaticamente o aplicativo na data limite da instalação. 
+
+Se o aplicativo que você está implantando substitui outro aplicativo, defina a data limite da instalação para quando os usuários receberem o novo aplicativo. Defina a **Data Limite de Instalação** para atualizar os usuários com o aplicativo substituído.
+
+
+#### <a name="delay-enforcement-with-a-grace-period"></a>Imposição de atraso com um período de cortesia
+Talvez você queira dar aos usuários mais tempo para instalar os aplicativos obrigatórios *além das* datas limites definidas. Esse comportamento geralmente é necessário quando um computador fica desligado por um longo tempo e precisa instalar muitos aplicativos. Por exemplo, quando um usuário retorna de férias, ele precisa esperar bastante tempo para que o cliente instale as implantações vencidas. Para ajudar a resolver esse problema, defina um período de carência de imposição.
+
+- Primeiro, configure esse período de carência com a propriedade **Período de carência para imposição após a data limite da implantação (horas)** nas configurações do cliente. Para obter mais informações, confira o grupo [Agente de computador](/sccm/core/clients/deploy/about-client-settings#computer-agent). Especifique um valor entre **1** e **120** horas.  
+
+- Na página **Agendamento** de uma implantação de aplicativo obrigatória, habilite a opção **Atrasar a imposição desta implantação de acordo com as preferências do usuário, até o período de carência definido nas configurações do cliente**. O período de cortesia de imposição se aplica a todas as implantações com essa opção habilitada e direcionadas aos dispositivos nos quais você implantou também a configuração do cliente.
+
+Após a data limite, o cliente instala o aplicativo no primeiro período fora do horário comercial, que o usuário configurou, até esse período de carência. No entanto, o usuário ainda poderá abrir o Centro de Software e instalar o aplicativo a qualquer momento que desejar. Depois que o período de carência expirar, a imposição retorna ao comportamento normal para implantações atrasadas.
+
+
+### <a name="bkmk_deploy-ux"></a> Configurações da **Experiência do Usuário** da implantação
+
+Na página **Experiência do Usuário**, especifique as informações de como os usuários podem interagir com a instalação do aplicativo.
+
+- **Notificações do usuário**: especifique se deseja exibir notificações no Centro de Software no horário de disponibilidade configurado. Essa configuração também controla se os usuários devem ser notificados nos computadores cliente. Para implantações disponíveis, você não pode selecionar a opção **Ocultar no Centro de Software e em todas as notificações**.  
+
+- **Instalação de Software** e **Reinicialização do sistema**: apenas defina essas configurações para as implantações obrigatórias. Elas especificam os comportamentos quando a implantação atinge a data limite fora de uma janela de manutenção definida. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+
+- **Tratamento de filtro de gravação para dispositivos Windows Embedded com filtro de gravação**: essa configuração controla o comportamento da instalação em dispositivos Windows Embedded habilitados com um filtro de gravação. Escolha a opção para confirmar as alterações na data limite da instalação ou durante uma janela de manutenção. Quando você seleciona essa opção, a reinicialização é necessária e as alterações permanecem no dispositivo. Caso contrário, o aplicativo é instalado na sobreposição temporária e confirmado mais tarde.  
+
+    - Ao implantar uma atualização de software em um dispositivo Windows Embedded, verifique se o dispositivo é membro de uma coleção que tem uma janela de manutenção configurada. Para obter mais informações sobre janelas de manutenção e dispositivos Windows Embedded, consulte [Criar aplicativos Windows Embedded](/sccm/apps/get-started/creating-windows-embedded-applications).  
+
+
+### <a name="bkmk_deploy-alerts"></a> **Alertas** de implantação
+
+Na página **Alertas**, configure como o Configuration Manager gera alertas para essa implantação. Se você também estiver usando o System Center Operations Manager, configure seus alertas. Você só pode configurar alguns alertas para implantações obrigatórias. 
+
+
+### <a name="bkmk_deploy-ios"></a> iOS: **Políticas de Configuração de Aplicativo**
+
+Durante a implantação de um tipo de implantação do iOS, você também verá a página **Políticas de Configuração de Aplicativo**. Se você já tiver criado uma política de configuração de aplicativo iOS, clique em **Novo** para associar essa implantação com a política. Para obter mais informações sobre este tipo de política, consulte [Configurar aplicativos do iOS com as políticas de configuração de aplicativo](/sccm/apps/deploy-use/configure-ios-apps-with-app-configuration-policies).
 
 
 
-## <a name="user-notifications-for-required-deployments"></a>Notificações do usuário para implantações necessárias
-Quando receber software necessário, na configuração **Suspender e lembrar dentro de**, você pode selecionar na seguinte lista suspensa de valores:
-- **Mais tarde**: especifica que as notificações são agendadas com base nas configurações de notificação definidas nas configurações do cliente.
-- **Horário fixo**: especifica que a notificação é agendada para ser exibida novamente após o horário selecionado. Por exemplo, se você selecionar 30 minutos, a notificação será exibida novamente em 30 minutos.
+## <a name="bkmk_phased"></a> Criar uma implantação em fases
+<!--1358147--> Começando na versão 1806, é possível criar uma implantação em fases para um aplicativo. As implantações em fases permitem que você coordene uma distribuição coordenada e sequenciada do software com base em grupos e critérios personalizáveis. Por exemplo, implante o aplicativo em uma coleção piloto e, em seguida, continue automaticamente a distribuição com base nos critérios de sucesso. 
+
+Para obter mais informações, consulte os seguintes artigos:  
+
+- [Criar uma implantação em fases](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json)  
+
+- [Gerenciar e monitorar as implantações em fases](/sccm/osd/deploy-use/manage-monitor-phased-deployments?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json)  
+
+
+
+## <a name="bkmk_delete"></a> Excluir uma implantação
+
+1.  No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.  
+
+2.  Na lista **Aplicativos**, selecione o aplicativo que inclui a implantação que será excluída.  
+
+3.  Mude para a guia **Implantações** do painel de detalhes e selecione a implantação do aplicativo.  
+
+4. Na faixa de opções, na guia **Implantação** e no grupo de **Implantação**, clique em **Excluir**.  
+
+Quando você exclui uma implantação de aplicativo, as instâncias do aplicativo que os clientes já têm instaladas não são removidas. Para remover esses aplicativos, implante o aplicativo nos computadores para **Desinstalar**. Se você excluir uma implantação de aplicativo ou remover um recurso da coleção na qual está implantando, o aplicativo não será mais exibido no Centro de Software.
+
+
+
+## <a name="bkmk_notify"></a> Notificações do usuário sobre implantações obrigatórias
+
+Quando os usuários recebem o software obrigatório e selecionam a configuração **Adiar e lembrar-me**, eles podem escolher entre as seguintes opções:  
+
+- **Mais tarde**: especifica que as notificações são agendadas com base nas configurações de notificação definidas nas configurações do cliente.  
+
+- **Horário fixo**: especifica que a notificação é agendada para ser exibida novamente após o horário selecionado. Por exemplo, se você selecionar 30 minutos, a notificação será exibida novamente em 30 minutos.  
 
 ![Grupo do Agente de Computador nas configurações padrão do cliente](media/ComputerAgentSettings.png)
 
-O tempo máximo de adiamento sempre se baseia nos valores de notificação definidos nas configurações do cliente em cada horário na linha do tempo de implantação. Por exemplo:
-- Defina a configuração **Data limite da implantação superior a 24 horas, lembrar os usuários a cada (horas)** na página **Agente do Computador** com 10 horas.
-- O cliente exibe a caixa de diálogo de notificação com um prazo superior a 24 horas antes da data limite de implantação.
-- A caixa de diálogo mostra as opções de adiamento até um período de 10 horas, mas nunca superior a esse período. 
-- À medida que a data limite de implantação se aproxima, a caixa de diálogo mostra menos opções. Essas opções são consistentes com as configurações do cliente relevantes para cada componente da linha do tempo da implantação.
+O tempo máximo de adiamento sempre se baseia nos valores de notificação definidos nas configurações do cliente em cada horário na linha do tempo de implantação. Por exemplo:  
+
+- Defina a configuração **Data limite da implantação superior a 24 horas, lembrar os usuários a cada (horas)** na página **Agente do Computador** com 10 horas.  
+
+- O cliente exibe a caixa de diálogo de notificação com um prazo superior a 24 horas antes da data limite de implantação.  
+
+- A caixa de diálogo mostra as opções de adiamento até um período de 10 horas, mas nunca superior a esse período.   
+
+- À medida que a data limite de implantação se aproxima, a caixa de diálogo mostra menos opções. Essas opções são consistentes com as configurações do cliente relevantes para cada componente da linha do tempo da implantação.  
 
 Para uma implantação de alto risco, como uma sequência de tarefas que implanta um sistema operacional, a experiência de notificação do usuário é mais invasiva. Em vez de uma notificação transitória na barra de tarefas, uma caixa de diálogo como a seguinte é exibida sempre que você é notificado de que uma manutenção de software crítica é necessária:
 
@@ -174,23 +244,34 @@ Para uma implantação de alto risco, como uma sequência de tarefas que implant
 
 
 
-## <a name="how-to-check-for-running-executable-files-before-installing-an-application"></a>Como verificar se há arquivos executáveis antes de instalar um aplicativo
+## <a name="bkmk_exe-check"></a> Verificar arquivos executáveis
 
-Na caixa de diálogo **Propriedades** de um tipo de implantação, na guia **Comportamento da Instalação**, especifique um ou mais arquivos executáveis. Se um desses arquivos executáveis estiver em execução no cliente, ele bloqueará a instalação do tipo de implantação. O usuário deve fechar o arquivo executável em execução para que o cliente possa instalar o tipo de implantação. Para implantações com a finalidade obrigatória, o cliente pode fechar automaticamente o arquivo executável em execução.
+Configure uma implantação para verificar se determinados arquivos executáveis estão em execução no cliente. Use essa opção para verificar se há processos que possam interromper a instalação do aplicativo. Se um desses arquivos executáveis estiver em execução, o cliente bloqueará a instalação do tipo de implantação. O usuário deve fechar o arquivo executável em execução para que o cliente possa instalar o tipo de implantação. Para implantações com a finalidade obrigatória, o cliente pode fechar automaticamente o arquivo executável em execução.
 
-1. Abra a caixa de diálogo **Propriedades** para qualquer tipo de implantação.
-2. Na guia **Comportamento da Instalação** da caixa de diálogo *<deployment type name>* **Propriedades**, clique em **Adicionar**.
-3. Na caixa de diálogo **Adicionar ou Editar Arquivo Executável**, digite o nome do arquivo executável que, se estiver em execução, bloqueará a instalação do aplicativo. Opcionalmente, você também pode inserir um nome amigável para o aplicativo para ajudar a identificá-lo na lista.
-4. Clique em **OK** e feche a caixa de diálogo *<deployment type name>* **Propriedades**.
-5. Ao implantar o aplicativo, na página **Configurações de Implantação** do Assistente de Implantação de Software, selecione **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento da instalação da caixa de diálogo de propriedades do tipo de implantação**.
+1. Abra a caixa de diálogo **Propriedades** do tipo de implantação.  
 
-Depois que os clientes recebem a implantação, o seguinte comportamento se aplica:
+2. Mude para a guia **Comportamento da Instalação** e, em seguida, clique em **Adicionar**.  
 
-- Se você implantar o aplicativo como **Disponível** e um usuário final tentar instalá-lo, o cliente solicitará ao usuário o fechamento dos arquivos executáveis em execução especificados antes de continuar com a instalação.
+3. Na caixa de diálogo **Adicionar Arquivo Executável**, digite o nome do arquivo executável de destino. Opcionalmente, insira um nome amigável para o aplicativo para ajudar a identificá-lo na lista.  
 
-- Se você implantar o aplicativo como **Obrigatório** e especificar a opção **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação**, o usuário verá uma caixa de diálogo informando que os arquivos executáveis especificados serão fechados automaticamente quando a data limite de instalação for atingida. Você pode agendar essas caixas de diálogo em **Configurações do Cliente** > **Agente de Computador**. Se você não quiser que o usuário final veja essas mensagens, selecione **Ocultar no Centro de Software e todas as notificações** na guia **Experiência do Usuário** das propriedades da implantação.
+4. Clique em **OK** e, em seguida, em **OK** novamente para fechar a janela Propriedades do tipo de implantação.  
 
-- Se você implantar o aplicativo como **Obrigatório** e não especificar a opção **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação**, a instalação do aplicativo falhará se um ou mais dos aplicativos especificados estarão em execução.
+5. Ao implantar o aplicativo, selecione a opção para **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação**. Essa opção está na guia **Configurações de Implantação** das propriedades da implantação.  
+
+
+### <a name="client-behaviors-and-user-notifications"></a>Comportamentos do cliente e notificações do usuário
+
+Depois que os clientes recebem a implantação, o seguinte comportamento se aplica:  
+
+- Se você implantar o aplicativo como **Disponível** e um usuário final tentar instalá-lo, o cliente solicitará ao usuário o fechamento dos arquivos executáveis em execução especificados antes de continuar a instalação.  
+
+- Se você implantar o aplicativo como **Obrigatório** e especificar a opção **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação**, o cliente exibirá uma notificação. Ela informará ao usuário que os arquivos executáveis especificados serão fechados automaticamente quando a data limite da instalação do aplicativo for atingida.  
+
+    - Agende essas caixas de diálogo no grupo **Agente de Computador** das configurações do cliente. Para obter mais informações, confira [Agente de computador](/sccm/core/clients/deploy/about-client-settings#computer-agent).  
+
+    - Se você não quiser que o usuário veja essas mensagens, selecione a opção para **Ocultar no Centro de Software e todas as notificações** na guia **Experiência do Usuário** das propriedades da implantação. Para obter mais informações, confira [Configurações de experiência do usuário da implantação](#bkmk_deploy-ux).  
+
+- Se você implantar o aplicativo como **Obrigatório** e não especificar a opção **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação**, a instalação do aplicativo falhará se um ou mais dos aplicativos especificados estarão em execução.  
 
 
 
@@ -223,13 +304,12 @@ Depois que os clientes recebem a implantação, o seguinte comportamento se apli
 
     - Adicione o ponto de distribuição da nuvem a um grupo de limites usado pelos clientes  
 
-    - Os clientes devem ser capazes de resolver o nome de domínio totalmente qualificado (FQDN) do ponto de gerenciamento habilitado para HTTPS  
+    - Os clientes precisam ser capazes de resolver o FQDN (nome de domínio totalmente qualificado) do ponto de gerenciamento habilitado para HTTPS  
 
 
 
 ## <a name="next-steps"></a>Próximas etapas
-
-   -  [Configurações para gerenciar implantações de alto risco](../../protect/understand/settings-to-manage-high-risk-deployments.md)  
-   -  [Como definir as configurações do cliente](../../core/clients/deploy/configure-client-settings.md)
-   -  [Guia do usuário do Centro de Software](/sccm/core/understand/software-center)
+ - [Monitorar aplicativos](/sccm/apps/deploy-use/monitor-applications-from-the-console)
+ - [Tarefas de gerenciamento de aplicativos](/sccm/apps/deploy-use/management-tasks-applications)
+ - [Guia do usuário do Centro de Software](/sccm/core/understand/software-center)
 

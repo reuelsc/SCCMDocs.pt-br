@@ -2,7 +2,7 @@
 title: Configurações do cliente
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as configurações padrão e personalizadas para controlar os comportamentos do cliente
-ms.date: 03/22/2018
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,18 +10,18 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a60e54ffac3ae029f07c2df555e905b55ca7b0b5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 38306efc9fbd7b38a5c5f0dad57fbd1a1b2c0557
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342878"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385398"
 ---
-# <a name="about-client-settings-in-system-center-configuration-manager"></a>Sobre as configurações do cliente no System Center Configuration Manager
+# <a name="about-client-settings-in-configuration-manager"></a>Sobre as configurações do cliente no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Gerencie todas as configurações de cliente no console do Configuration Manager por meio do nó **Configurações de Cliente** no espaço de trabalho **Administração**. O Configuration Manager é fornecido com um conjunto de configurações padrão. Quando você altera as configurações padrão do cliente, essas configurações são aplicadas a todos os clientes na hierarquia. Você também pode configurar configurações personalizadas do cliente, que substituem as configurações padrão do cliente ao atribuí-las a coleções. Para obter mais informações, consulte [Como definir as configurações de cliente](../../../core/clients/deploy/configure-client-settings.md).
+Gerencie todas as configurações de cliente no console do Configuration Manager por meio do nó **Configurações de Cliente** no espaço de trabalho **Administração**. O Configuration Manager é fornecido com um conjunto de configurações padrão. Quando você altera as configurações padrão do cliente, essas configurações são aplicadas a todos os clientes na hierarquia. Você também pode configurar configurações personalizadas do cliente, que substituem as configurações padrão do cliente ao atribuí-las a coleções. Para obter mais informações, consulte [Como definir as configurações de cliente](/sccm/core/clients/deploy/configure-client-settings).
 
 As seções a seguir descrevem as configurações e as opções com mais detalhes.  
  
@@ -88,45 +88,45 @@ Especifica a frequência com que os seguintes clientes do Configuration Manager 
 
 ### <a name="enable-user-policy-on-clients"></a>Habilitar política de usuário em clientes
 
-Quando você define essa opção como **Sim** e usa a [descoberta de usuário](../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser), os clientes recebem aplicativos e programas direcionados ao usuário conectado.  
+Quando você define essa opção como **Sim** e usa a [descoberta de usuário](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser), os clientes recebem aplicativos e programas direcionados ao usuário conectado.  
 
 O Catálogo de Aplicativos recebe a lista de softwares disponíveis para usuários do servidor do site. Assim, essa configuração não precisa ser **Sim** para que os usuários vejam e solicitem aplicativos do Catálogo de Aplicativos. Se essa configuração for **Não**, os seguintes comportamentos não funcionarão quando os usuários usarem o Catálogo de Aplicativos:  
 
--   Os usuários não podem instalar os aplicativos que veem no Catálogo de Aplicativos.  
+-   Os usuários não podem instalar os aplicativos que eles veem no Catálogo de Aplicativos.  
 
 -   Os usuários não veem as notificações sobre suas solicitações de aprovação de aplicativo. Em vez disso, eles devem atualizar o catálogo de aplicativos e verificar o status de aprovação.  
 
--   Os usuários não recebem as revisões e atualizações para aplicativos publicadas no Catálogo de Aplicativos. O usuários veem as alterações nas informações do aplicativo no Catálogo de Aplicativos.  
+-   Os usuários não recebem as revisões e as atualizações para aplicativos publicadas no Catálogo de Aplicativos. O usuários veem as alterações nas informações do aplicativo no Catálogo de Aplicativos.  
 
 -   Se você remover uma implantação de aplicativo depois que o cliente instalar o aplicativo por meio do Catálogo de Aplicativos, os clientes continuarão verificando se o aplicativo está instalado por até dois dias.  
 
-Além disso, se essa configuração for **Não**, os usuários não receberão os aplicativos obrigatórios implantados em usuários. Os usuários também não recebem outras tarefas de gerenciamento em políticas de usuário.  
+Além disso, se essa configuração for **Não**, os usuários não receberão os aplicativos necessários que você implanta para os usuários. Os usuários também não receberão outras tarefas de gerenciamento em políticas de usuário.  
 
 Essa configuração se aplica aos usuários quando o computador está na intranet ou Internet. Ela deverá ser **Sim** se você desejar habilitar políticas de usuário pela Internet.  
 
 ### <a name="enable-user-policy-requests-from-internet-clients"></a>Ativar solicitações de política de usuário de clientes da Internet
 
-Defina isso como **Sim** para que os usuários recebam a política de usuário em computadores baseados na Internet. Os seguintes requisitos também se aplicam:  
+Defina essa opção como **Sim** para que os usuários recebam a política de usuário em computadores baseados na Internet. Os seguintes requisitos também se aplicam:  
 
 -   O cliente e o site são configurados para o [gerenciamento de clientes baseado na Internet](/sccm/core/clients/manage/plan-internet-based-client-management) ou um [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).  
 
 -   A configuração **Habilitar política de usuário em clientes** é **Sim**.  
 
--   O ponto de gerenciamento baseado na Internet autentica com êxito o usuário usando a autenticação do Windows (Kerberos ou NTLM). Para obter mais informações, consulte [Considerações sobre a comunicação do cliente pela Internet](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
+-   O ponto de gerenciamento baseado na Internet autentica com êxito o usuário usando a autenticação do Windows (Kerberos ou NTLM). Para obter mais informações, consulte [Considerações sobre a comunicação do cliente pela Internet](/sccm/core/plan-design/hierarchy/communications-between-endpoints#BKMK_clientspan).  
 
 -   A partir da versão 1710, o gateway de gerenciamento de nuvem autentica o usuário com êxito usando o Azure Active Directory. Para obter mais informações, consulte [Implantar aplicativos disponíveis para o usuário em dispositivos ingressados no Azure AD](\sccm\apps\deploy-use\deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices).  
 
-Se você definir essa opção como **Não** ou se um dos requisitos anteriores não forem atendidos, um computador na Internet receberá somente as políticas do computador. Nesse cenário, os usuários ainda podem ver, solicitar e instalar aplicativos de um catálogo de aplicativos baseados na Internet. Se essa configuração for **Não**, mas **Habilitar política de usuário em clientes** for **Sim**, os usuários não receberão as políticas de usuário até que o computador esteja conectado à intranet.  
+Se você definir essa opção como **Não** ou se um dos requisitos anteriores não for atendido, um computador na Internet receberá somente as políticas do computador. Nesse cenário, os usuários ainda podem ver, solicitar e instalar aplicativos de um catálogo de aplicativos baseados na Internet. Se essa configuração for **Não**, mas **Habilitar política do usuário em clientes** for **Sim**, os usuários não receberão as políticas de usuário até que o computador esteja conectado à intranet.  
 
 > [!NOTE]  
->  Para o gerenciamento de clientes baseado na Internet, as solicitações de aprovação de aplicativo dos usuários não exigem a autenticação de usuário nem políticas de usuário. O gateway de gerenciamento de nuvem não dá suporte a solicitações de aprovação de aplicativo.   
+>  Para o gerenciamento de clientes baseado na Internet, as solicitações de aprovação de aplicativo dos usuários não exigem a autenticação de usuário nem políticas de usuário. O Gateway de Gerenciamento de Nuvem não dá suporte a solicitações de aprovação de aplicativo.   
 
 
 
 ## <a name="cloud-services"></a>Serviços de Nuvem
 
 ### <a name="allow-access-to-cloud-distribution-point"></a>Permitir acesso ao ponto de distribuição na nuvem
-Defina isso como **Sim** para que os clientes obtenham o conteúdo de um ponto de distribuição na nuvem. Essa configuração não exige que o dispositivo seja baseado na Internet.
+Defina essa opção como **Sim** para que os clientes obtenham o conteúdo de um ponto de distribuição na nuvem. Essa configuração não exige que o dispositivo seja baseado na Internet.
 
 ### <a name="automatically-register-new-windows-10-domain-joined-devices-with-azure-active-directory"></a>Registrar automaticamente novos dispositivos ingressados em domínio do Windows 10 com o Azure Active Directory 
 Quando você configura o Azure Active Directory para dar suporte à junção híbrida, o Configuration Manager configura dispositivos Windows 10 para essa funcionalidade. Para obter mais informações, consulte [Como configurar dispositivos híbridos ingressados no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup).
@@ -139,13 +139,13 @@ Por padrão, todos os clientes de roaming na Internet usam qualquer [gateway de 
 ##  <a name="compliance-settings"></a>Configurações de conformidade  
 
 ### <a name="enable-compliance-evaluation-on-clients"></a>Habilitar a avaliação de conformidade em clientes
-Defina isso como **Sim** para definir as outras configurações nesse grupo.
+Defina essa opção como **Sim** para definir as outras configurações nesse grupo.
  
 ### <a name="schedule-compliance-evaluation"></a>Agendar a avaliação da conformidade
 Selecione **Agendamento** para criar o agendamento padrão para as implantações de linha de base de configuração. Esse valor é configurável para cada linha de base na caixa de diálogo **Implantar Linha de Base de Configuração**.  
 
 ### <a name="enable-user-data-and-profiles"></a>Habilitar perfis e dados do usuário
-Escolha **Sim** se deseja implantar itens de configuração de [perfis e dados de usuário](../../../compliance/deploy-use/create-user-data-and-profiles-configuration-items.md).
+Escolha **Sim** se deseja implantar itens de configuração de [perfis e dados de usuário](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items).
 
 
 
@@ -169,13 +169,13 @@ O Configuration Manager usa essa configuração para conectar usuários ao Catá
 
 -   O ponto de gerenciamento fornece um ponto de sites da Web do Catálogo de Aplicativos baseado na Internet a clientes baseados na Internet. O ponto de gerenciamento fornece um ponto de sites da Web do Catálogo de Aplicativos baseado na intranet a clientes baseados na intranet.  
 
-A detecção automática não garante que os clientes receberão o ponto de sites da Web do Catálogo de Aplicativos mais próximo. Você pode decidir por não usar a **Detecção automática** pelos seguintes motivos:  
+A detecção automática não garante que os clientes receberão o ponto de site do Catálogo de Aplicativos mais próximo. Você pode decidir não usar a opção **Detecção automática** pelos seguintes motivos:  
 
 -   Você deseja configurar manualmente o servidor mais próximo para clientes ou garantir que eles não se conectem a um servidor em uma conexão de rede lenta.  
 
 -   Você deseja controlar quais clientes se conectam a qual servidor. Essa configuração pode ser por motivos comerciais, de desempenho ou teste.  
 
--   Você não quer esperar até 25 horas ou uma alteração de rede para que os clientes usem outro ponto de sites da Web do Catálogo de Aplicativos.  
+-   Você não quer esperar até 25 horas ou por uma alteração de rede para que os clientes usem um ponto de sites da Web do catálogo de aplicativos.  
 
 Se você especificar o ponto de sites da Web do catálogo de aplicativos em vez de usa a detecção automática, especifique o nome NetBIOS em vez do FQDN da intranet. Essa configuração reduz a probabilidade de que o navegador da Web solicite aos usuários as credenciais quando ele acessar um Catálogo de Aplicativos baseado na intranet. Para usar o nome NetBIOS, as seguintes condições devem ser aplicáveis:  
 
@@ -190,7 +190,7 @@ Geralmente, os usuários apresentam credenciais quando a URL contém um FQDN, ma
 > [!NOTE]  
 >  Eis como funciona a detecção automática:  
 >   
->  O cliente faz uma solicitação de local de serviço para um ponto de gerenciamento. Se houver um ponto de sites da Web do catálogo de aplicativos no mesmo site do cliente, o servidor é fornecido ao cliente como o servidor do catálogo de aplicativos a ser usado. Quando mais de um ponto de sites da Web do catálogo de aplicativos está disponível no site, um servidor habilitado para HTTPS tem prioridade sobre um servidor não habilitado para HTTPS. Após esta filtragem, todos os clientes recebem um dos servidores para serem usados como Catálogo de Aplicativos. O Configuration Manager não faz balanceamento de carga entre vários servidores. Quando o site do cliente não contém um ponto de sites da Web do catálogo de aplicativos, o ponto de gerenciamento retorna de forma não determinística um ponto de sites da Web do catálogo de aplicativos da hierarquia.  
+>  O cliente faz uma solicitação de local de serviço para um ponto de gerenciamento. Se houver um ponto de sites da Web do catálogo de aplicativos no mesmo site do cliente, o servidor é fornecido ao cliente como o servidor do catálogo de aplicativos a ser usado. Quando mais de um ponto de sites da Web Catálogo de Aplicativos está disponível no site, um servidor habilitado para HTTPS tem prioridade sobre um servidor não habilitado para HTTPS. Após esta filtragem, todos os clientes recebem um dos servidores para serem usados como Catálogo de Aplicativos. O Configuration Manager não faz balanceamento de carga entre vários servidores. Quando o site do cliente não contém um ponto de sites da Web do catálogo de aplicativos, o ponto de gerenciamento retorna de modo não determinístico um ponto de sites da Web do catálogo de aplicativos da hierarquia.  
 >   
 >  Para clientes baseados na intranet, se você configurar o ponto de sites da Web do Catálogo de Aplicativos com um nome NetBIOS para a URL do Catálogo de Aplicativos, o ponto de gerenciamento usa isso. Ele não usa o FQDN da intranet. Para clientes baseados na Internet, o ponto de gerenciamento só fornece o FQDN da Internet ao cliente.  
 >   
@@ -200,7 +200,7 @@ Geralmente, os usuários apresentam credenciais quando a URL contém um FQDN, ma
 
 Se essa opção for **Sim**, o cliente adicionará automaticamente a URL padrão atual do site do Catálogo de Aplicativos à zona de sites confiáveis do Internet Explorer.  
 
-Essa definição garante que a configuração do Internet Explorer para Modo Protegido não está habilitada. Se o Modo Protegido estiver habilitado, o cliente do Configuration Manager poderá não conseguir instalar aplicativos do Catálogo de Aplicativos. Por padrão, a zona de sites confiáveis oferece suporte à entrada de usuário para o catálogo de aplicativos, o que requer autenticação do Windows.  
+Essa configuração garante que a configuração do Internet Explorer para Modo Protegido não esteja habilitada. Se o Modo Protegido estiver habilitado, o cliente do Configuration Manager poderá não conseguir instalar aplicativos do Catálogo de Aplicativos. Por padrão, a zona de sites confiáveis oferece suporte à entrada de usuário para o catálogo de aplicativos, o que requer autenticação do Windows.  
 
 Se você deixar essa opção como **Não**, o cliente do Configuration Manager poderá não conseguir instalar aplicativos por meio do Catálogo de Aplicativos. Um método alternativo é definir essas configurações do Internet Explorer em outra zona para a URL do Catálogo de Aplicativos usada pelos clientes.  
 
@@ -215,7 +215,7 @@ Essa configuração deve ser **Sim** para que os usuários usem o Catálogo de A
 
 Se você alterar essa configuração, ela terá efeito quando o usuário carregar o navegador da próxima vez ou atualizar a janela do navegador aberta no momento.  
 
-Para obter mais informações sobre essa configuração, consulte [Certificados para o Microsoft Silverlight 5 e modo de confiança elevada necessários para o catálogo de aplicativos](../../../apps/plan-design/security-and-privacy-for-application-management.md#BKMK_CertificatesSilverlight5).  
+Para obter mais informações sobre essa configuração, consulte [Certificados para o Microsoft Silverlight 5 e modo de confiança elevada necessários para o catálogo de aplicativos](/sccm/apps/plan-design/security-and-privacy-for-application-management#BKMK_CertificatesSilverlight5).  
 
 ### <a name="organization-name-displayed-in-software-center"></a>Nome da organização exibido no Centro de Software
 
@@ -223,19 +223,19 @@ Digite o nome que os usuários veem no Centro de Software. Essa informação de 
 
 ### <a name="use-new-software-center"></a>Usar o novo Centro de Software
 
-Se você definir isso como **Sim**, todos os computadores clientes usam o Centro de Software. O Centro de Software mostra os aplicativos disponíveis para o usuário que estavam acessíveis anteriormente apenas no Catálogo de Aplicativos. O Catálogo de Aplicativos exige o Silverlight, que não é um pré-requisito para o Centro de Software. A partir do Configuration Manager 1802, a configuração padrão é **Sim**.  
+Se você definir essa opção como **Sim**, todos os computadores cliente usarão o Centro de Software. O Centro de Software mostra os aplicativos disponíveis para o usuário que estavam acessíveis anteriormente apenas no Catálogo de Aplicativos. O Catálogo de Aplicativos exige o Silverlight, que não é um pré-requisito para o Centro de Software. A partir do Configuration Manager 1802, a configuração padrão é **Sim**.  
 
 As funções do sistema de sites do ponto de sites da Web do catálogo de aplicativos e do ponto de serviços Web do catálogo de aplicativos ainda são necessárias para que os aplicativos disponíveis para o usuário sejam exibidos no Centro de Software.  
 
-Para obter mais informações, consulte [Plan for and configure application management (Planejar e configurar o gerenciamento de aplicativos)](../../../apps/plan-design/plan-for-and-configure-application-management.md).  
+Para obter mais informações, consulte [Plan for and configure application management (Planejar e configurar o gerenciamento de aplicativos)](/sccm/apps/plan-design/plan-for-and-configure-application-management).  
 
 ### <a name="enable-communication-with-health-attestation-service"></a>Habilitar comunicação com o Serviço de Atestado de Integridade
 
-Defina isso como **Sim** para que os dispositivos Windows 10 usem o [Atestado de integridade](/sccm/core/servers/manage/health-attestation). Quando você habilitar essa configuração, a configuração a seguir também estará disponível para configuração.
+Defina essa opção como **Sim** para que os dispositivos Windows 10 usem o [Atestado de integridade](/sccm/core/servers/manage/health-attestation). Quando você habilitar essa configuração, a configuração a seguir também estará disponível para configuração.
 
 ### <a name="use-on-premises-health-attestation-service"></a>Usar o Serviço de Atestado de Integridade local
 
-Defina isso como **Sim** para que os dispositivos usem um serviço local. Defina como **Não** para que os dispositivos usem o serviço da Microsoft baseado em nuvem.  
+Defina essa opção como **Sim** para que os dispositivos usem um serviço local. Defina como **Não** para que os dispositivos usem o serviço da Microsoft baseado em nuvem.  
 
 ### <a name="install-permissions"></a>Permissões de instalação
 
@@ -304,7 +304,7 @@ Se os clientes precisarem instalar as atualizações de software obrigatórias a
 
 ### <a name="grace-period-for-enforcement-after-deployment-deadline-hours"></a>Período de carência para a imposição após a data limite da implantação (horas)
 
-Caso deseje oferecer aos usuários mais tempo para instalar as implantações de atualização de software ou os aplicativos obrigatórios além da data limite, defina isso como **Sim**. Esse período de carência destina-se a um computador desativado por um período estendido e o usuário precisa instalar vários aplicativos ou implantações de atualização. Por exemplo, essa configuração é útil se um usuário retorna de férias e precisa esperar muito tempo enquanto o cliente instala as implantações de aplicativo vencidas. 
+Caso deseje oferecer aos usuários mais tempo para instalar as implantações de atualização de software ou os aplicativos obrigatórios além da data limite, defina essa opção como **Sim**. Esse período de carência destina-se a um computador desativado por um período estendido e o usuário precisa instalar vários aplicativos ou implantações de atualização. Por exemplo, essa configuração é útil se um usuário retorna de férias e precisa esperar muito tempo enquanto o cliente instala as implantações de aplicativo vencidas. 
 
 Defina um período de carência entre 1 e 120 horas. Use essa configuração em conjunto com a propriedade de implantação **Atrasar a imposição dessa implantação de acordo com as preferências do usuário**. Para obter informações, confira [Deploy applications](/sccm/apps/deploy-use/deploy-applications) (Implantar aplicativos).
 
@@ -315,14 +315,13 @@ As configurações a seguir devem ter uma duração mais curta do que a menor ja
 -   **Exibir uma notificação temporária para o usuário que indica o intervalo antes que o usuário seja desconectado ou o computador seja reiniciado (minutos)**
 -   **Exibir uma caixa de diálogo que o usuário não pode fechar, que exibe o intervalo de contagem regressiva antes que o usuário seja desconectado ou o computador seja reiniciado (minutos)**
 
-Para obter mais informações sobre as janelas de manutenção, consulte [Como usar janelas de manutenção no System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).
+Para obter mais informações sobre as janelas de manutenção, consulte [Como usar janelas de manutenção no System Center Configuration Manager](/sccm/core/clients/manage/collections/use-maintenance-windows).
 
 
 
 ## <a name="delivery-optimization"></a>Otimização de Entrega
 
-<!-- 1324696 -->
-Você usa os grupos de limites do Configuration Manager para definir e regular a distribuição de conteúdo em sua rede corporativa e para escritórios remotos. A [Otimização de Entrega do Windows](/windows/deployment/update/waas-delivery-optimization) é uma tecnologia ponto-a-ponto baseada na nuvem para compartilhar conteúdo entre dispositivos do Windows 10. A partir da versão 1802, configure a Otimização de Entrega para que ela use os grupos de limites ao compartilhar o conteúdo entre pares.
+<!-- 1324696 --> Você usa os grupos de limites do Configuration Manager para definir e regular a distribuição de conteúdo em sua rede corporativa e para escritórios remotos. A [Otimização de Entrega do Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) é uma tecnologia ponto-a-ponto baseada na nuvem para compartilhar conteúdo entre dispositivos do Windows 10. A partir da versão 1802, configure a Otimização de Entrega para que ela use os grupos de limites ao compartilhar o conteúdo entre pares.
 
  > [!Note]
  > A Otimização de Entrega está disponível apenas em clientes do Windows 10
@@ -334,28 +333,30 @@ Você usa os grupos de limites do Configuration Manager para definir e regular a
 
 ##  <a name="endpoint-protection"></a>Endpoint Protection  
 >  [!Tip]   
-> Além das informações a seguir, você pode encontrar detalhes de como usar as configurações do cliente do Endpoint Protection no [Cenário de exemplo: usar o System Center Endpoint Protection para proteger os computadores contra malware no System Center Configuration Manager](/sccm/protect/deploy-use/scenarios-endpoint-protection).
+> Além das informações a seguir, você pode encontrar detalhes de como usar as configurações do cliente do Endpoint Protection no [Cenário de exemplo: como usar o Endpoint Protection para proteger os computadores contra malware](/sccm/protect/deploy-use/scenarios-endpoint-protection).
 
 ### <a name="manage-endpoint-protection-client-on-client-computers"></a>Gerenciar o cliente Endpoint Protection em computadores cliente
 
 Escolha **Sim** se deseja gerenciar clientes existentes do Endpoint Protection e do Windows Defender em computadores da hierarquia.  
 
-Escolha esta opção se você já tiver instalado o cliente Endpoint Protection e desejar gerenciá-lo com o Configuration Manager. Essa instalação separada inclui um processo com script que usa um aplicativo do Configuration Manager ou um pacote e programa. A partir do Configuration Manager 1802, os dispositivos Windows 10 não precisam ter o agente do Endpoint Protection instalado. No entanto, esses dispositivos ainda precisarão ter a opção **Gerenciar o cliente do Endpoint Protection em computadores cliente** habilitada. <!--503654-->
+Escolha esta opção se você já tiver instalado o cliente Endpoint Protection e desejar gerenciá-lo com o Configuration Manager. Essa instalação separada inclui um processo com script que usa um aplicativo do Configuration Manager ou um pacote e programa. No Configuration Manager 1802, os dispositivos Windows 10 não precisam ter o agente do Endpoint Protection instalado. No entanto, esses dispositivos ainda precisarão ter a opção **Gerenciar o cliente do Endpoint Protection em computadores cliente** habilitada. <!--503654-->
 
 ### <a name="install-endpoint-protection-client-on-client-computers"></a>Instalar o cliente do Endpoint Protection em computadores cliente
 
-Escolha **Sim** para instalar e habilitar o cliente Endpoint Protection em computadores cliente que ainda não executam o cliente. A partir do Configuration Manager 1802, os clientes do Windows 10 não precisam ter o agente do Endpoint Protection instalado.  
+Escolha **Sim** para instalar e habilitar o cliente Endpoint Protection em computadores cliente que ainda não estão executando o cliente. Do Configuration Manager 1802 em diante, os clientes do Windows 10 não precisam ter o agente do Endpoint Protection instalado.  
 
 > [!NOTE]  
 >  Se o cliente do Endpoint Protection já estiver instalado, escolher **Não** não o desinstalará. Para desinstalar o cliente do Endpoint Protection, defina a configuração do cliente **Gerenciar cliente do Endpoint Protection em computadores cliente** como **Não**. Em seguida, implante um pacote e programa para desinstalar o cliente do Endpoint Protection.  
 
-### <a name="automatically-remove-previously-installed-antimalware-software-before-endpoint-protection-is-installed"></a>Remover automaticamente software antimalware já instalado antes que o Endpoint Protection seja instalado
+<!-- removed in 1806, SMS 511544
+### Automatically remove previously installed antimalware software before Endpoint Protection is installed
 
-Defina isso como **Sim** para que o cliente do Endpoint Protection tente desinstalar outros aplicativos antimalware. Vários clientes de antimalware no mesmo dispositivo podem entrar em conflito e afetar o desempenho do sistema.
+Set this option to **Yes** for the Endpoint Protection client to attempt to uninstall other antimalware applications. Multiple antimalware clients on the same device can conflict, and impact system performance.
+-->
 
 ### <a name="allow-endpoint-protection-client-installation-and-restarts-outside-maintenance-windows-maintenance-windows-must-be-at-least-30-minutes-long-for-client-installation"></a>Permitir a instalação do cliente do Endpoint Protection e reiniciar fora das janelas de manutenção. As janelas de manutenção devem ter, pelo menos, 30 minutos para a instalação do cliente
 
-Defina isso como **Sim** para substituir os comportamentos de instalação típicos por janelas de manutenção. A configuração atende aos requisitos de negócios para a prioridade de manutenção do sistema para fins de segurança. 
+Defina essa opção como **Sim** para substituir os comportamentos de instalação típicos por janelas de manutenção. A configuração atende aos requisitos de negócios para a prioridade de manutenção do sistema para fins de segurança. 
 
 ### <a name="for-windows-embedded-devices-with-write-filters-commit-endpoint-protection-client-installation-requires-restarts"></a>Para dispositivos Windows Embedded com filtros de gravação, confirme a instalação do cliente do Endpoint Protection (exige reinicialização)
 
@@ -389,13 +390,13 @@ Selecione **Definir Intervalo** para especificar o período, em minutos ou horas
 Insira o número de minutos durante os quais os dispositivos modernos sondam para a política. Essa configuração destina-se a dispositivos Windows 10 gerenciados por meio do gerenciamento de dispositivo móvel local.
 
 ### <a name="allow-users-to-enroll-mobile-devices-and-mac-computers"></a>Permitir que os usuários registrem dispositivos móveis e computadores Mac
-Para habilitar o registro baseado em usuário de dispositivos herdados, defina isso como **Sim** e, em seguida, defina a seguinte configuração:
+Para habilitar o registro baseado em usuário de dispositivos herdados, defina essa opção como **Sim** e, em seguida, defina a seguinte configuração:
 
 -   **Perfil de registro** </br>
 Selecione **Definir Perfil** para criar ou selecionar um perfil de registro. Para obter mais informações, consulte [Definir as configurações do cliente para o registro](/sccm/core/clients/deploy/deploy-clients-to-macs#configure-client-settings-for-enrollment).
 
 ### <a name="allow-users-to-enroll-modern-devices"></a>Permitir que os usuários registrem dispositivos modernos
-Para habilitar o registro baseado em usuário de dispositivos modernos, defina isso como **Sim** e, em seguida, defina a seguinte configuração:
+Para habilitar o registro baseado em usuário de dispositivos modernos, defina essa opção como **Sim** e, em seguida, defina a seguinte configuração:
 
 -   **Perfil de registro de dispositivo moderno** </br>
 Selecione **Definir Perfil** para criar ou selecionar um perfil de registro. Para obter mais informações, consulte [Criar um perfil de registro que permite que os usuários registrem dispositivos modernos](/sccm/mdm/get-started/set-up-device-enrollment-on-premises-mdm#bkmk_createProf).
@@ -418,14 +419,14 @@ Especifique o número máximo de minutos até o qual o cliente do Configuration 
 
 ### <a name="maximum-custom-mif-file-size-kb"></a>Tamanho máximo de arquivo MIF personalizado (KB)
 
-Especifique o tamanho máximo, em KB (quilobytes), permitido para cada arquivo personalizado MIF (Formato de Informações de Gerenciamento) que será coletado por um cliente durante um ciclo de inventário de hardware. O agente de inventário de hardware do Configuration Manager não processa nenhum arquivo MIF personalizado que excede esse tamanho. É possível especificar um tamanho de 1 a 5.120 KB. Por padrão, esse valor é definido como 250 KB. Essa configuração não afeta o tamanho do arquivo de dados de inventário de hardware regular.  
+Especifique o tamanho máximo, em KB (quilobytes), permitido para cada arquivo personalizado MIF (Formato de Informações de Gerenciamento) que será coletado por um cliente durante um ciclo de inventário de hardware. O agente de inventário de hardware do Configuration Manager não processa nenhum arquivo MIF personalizado que excede esse tamanho. É possível especificar um tamanho de 1 a 5.120 KB. Por padrão, esse valor é definido como 250 KB. Essa configuração não afeta o tamanho do arquivo de dados de inventário de hardware normal.  
 
 > [!NOTE]  
 >  Essa definição só está disponível nas configurações do cliente padrão.  
 
 ### <a name="hardware-inventory-classes"></a>Classes de inventário de hardware
 
-Selecione **Definir Classes** para estender as informações de hardware coletadas dos clientes sem editar manualmente o arquivo sms_def.mof. Para obter informações, consulte [Como configurar o inventário de hardware](../../../core/clients/manage/inventory/configure-hardware-inventory.md).  
+Selecione **Definir Classes** para estender as informações de hardware coletadas dos clientes sem editar manualmente o arquivo sms_def.mof. Para obter informações, consulte [Como configurar o inventário de hardware](/sccm/core/clients/manage/inventory/configure-hardware-inventory).  
 
 ### <a name="collect-mif-files"></a>Coletar arquivos MIF
 
@@ -448,7 +449,7 @@ Para que um arquivo MIF seja coletado pelo inventário de hardware, ele deve est
 > [!NOTE]  
 >  A configuração de cliente definida não é aplicada nos seguintes cenários:  
 >   
-> -   Se computador estiver em uma conexão de dados em roaming, o cliente do Configuration Manager não executa tarefas que exigem que os dados sejam transferidos para sites do Configuration Manager.  
+> -   Se computador estiver em uma conexão de dados em roaming, o cliente do Configuration Manager não executará tarefas que exijam a transferência de dados para sites do Configuration Manager.  
 > -   Se as propriedades de conexão de rede do Windows são configuradas como ilimitadas, o cliente do Configuration Manager se comporta como se a conexão fosse ilimitada e, por isso, transfere os dados para o site.  
 
 ### <a name="client-communication-on-metered-internet-connections"></a>Comunicação de cliente em conexões de Internet limitadas
@@ -472,7 +473,7 @@ Escolha uma das seguintes opções para essa configuração:
 
     Se o cliente atingir o limite de transferência de dados para a conexão da Internet limitada, o cliente não tentará mais se comunicar com os sites do Configuration Manager.  
 
--   **Bloquear**: o cliente do Configuration Manager não tenta se comunicar com os sites do Configuration Manager quando ele está em uma conexão de Internet limitada. Esta é a opção padrão.  
+-   **Bloquear**: o cliente do Configuration Manager não tenta se comunicar com os sites do Configuration Manager quando ele está em uma conexão de Internet limitada. Essa opção é o padrão.  
 
 
 
@@ -480,7 +481,7 @@ Escolha uma das seguintes opções para essa configuração:
 
 ### <a name="allow-power-management-of-devices"></a>Permitir o gerenciamento de energia de dispositivos
 
-Defina isso como **Sim** para habilitar o gerenciamento de energia nos clientes. Para mais informações, consulte [Introdução ao gerenciamento de energia](/sccm/core/clients/manage/power/introduction-to-power-management).
+Defina essa opção como **Sim** para habilitar o gerenciamento de energia nos clientes. Para mais informações, consulte [Introdução ao gerenciamento de energia](/sccm/core/clients/manage/power/introduction-to-power-management).
 
 ### <a name="allow-users-to-exclude-their-device-from-power-management"></a>Permitir que os usuários excluam seu dispositivo do gerenciamento de energia
 
@@ -488,31 +489,27 @@ Escolha **Sim** para permitir que usuários do Centro de Software excluam seus c
 
 ### <a name="enable-wake-up-proxy"></a>Habilitar proxy de ativação
 
-Especifique **Sim** para complementar a configuração Wake On LAN do site quando estiver definida para pacotes unicast.  
+Especifique **Sim** para complementar a configuração Wake On LAN do site quando ela estiver definida para pacotes unicast.  
 
-Para mais informações sobre o proxy de ativação, confira [Planejar a ativação de clientes no System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md).  
+Para obter mais informações sobre o proxy de ativação, veja [Planejar como ativar clientes](/sccm/core/clients/deploy/plan/plan-wake-up-clients).  
 
 > [!WARNING]  
 >  Não habilite o proxy de ativação em uma rede de produção sem primeiro entender como ele funciona e avaliá-lo em um ambiente de teste.  
 
 Em seguida, defina as seguintes configurações adicionais, conforme necessário:
 
--   **Número de porta proxy de ativação (UDP)**  </br>
-         O número da porta que os clientes usam para enviar pacotes de ativação para computadores suspensos. Mantenha a porta padrão 25536 ou altere o número para um valor de sua escolha.  
+-   **Número da porta de proxy de ativação (UDP)**: o número da porta que os clientes usam para enviar pacotes de ativação para computadores suspensos. Mantenha a porta padrão 25536 ou altere o número para um valor de sua escolha.  
 
--   **Número de porta Wake On LAN (UDP)** </br> 
-         Mantenha o valor padrão 9, a menos que você tenha alterado o número da porta Wake On LAN (UDP) na guia **Portas** das **Propriedades** do site.  
+-   **Número da porta Wake On LAN (UDP)**: mantenha o valor padrão de 9, a menos que tenha alterado o número da porta Wake On LAN (UDP) na guia **Portas** das **Propriedades** do site.  
 
     > [!IMPORTANT]  
     >  Esse número deve corresponder ao número nas **Propriedades**do site. Se você alterar esse número em um só lugar, ele não será atualizado automaticamente em outro lugar.  
 
--   **Exceção do Windows Defender Firewall para proxy de ativação** </br>
-         O cliente do Configuration Manager configura automaticamente o número da porta do proxy de ativação em dispositivos que executam o Windows Defender Firewall. Selecione **Configurar** para especificar os perfis de firewall desejados.
+-   **Exceção do Windows Defender Firewall para proxy de ativação**: o cliente Configuration Manager configura automaticamente o número da porta proxy de ativação em dispositivos que executam o Windows Defender Firewall. Selecione **Configurar** para especificar os perfis de firewall desejados.
 
-    Se os clientes executarem outro firewall, você deverá configurá-lo manualmente para permitir o **Número da porta do proxy de ativação (UDP)**.  
+    Se os clientes executarem outro firewall, configure-o manualmente para permitir o **Número da porta do proxy de ativação (UDP)**.  
         
--   **Prefixos IPv6, se necessário, para DirectAccess ou outros dispositivos de rede intermediários. Use uma vírgula para especificar várias entradas** </br>
-        Insira os prefixos IPv6 necessários para que o proxy de ativação funcione na rede.
+-   **Prefixos IPv6, se necessário, para DirectAccess ou outros dispositivos de rede intermediários. Use uma vírgula para especificar várias entradas**: insira os prefixos IPv6 necessários para o proxy de ativação funcionar na sua rede.
 
 
 
@@ -525,7 +522,7 @@ Selecione **Configurar** para habilitar o recurso de controle remoto do Configur
 O controle remoto está desativado por padrão.  
 
 > [!IMPORTANT]  
->  Se as configurações de firewall não estiverem definidas, o controle remoto poderá não funcionar corretamente.  
+>  Se você não definir as configurações de firewall, o controle remoto poderá não funcionar corretamente.  
 
 ### <a name="users-can-change-policy-or-notification-settings-in-software-center"></a>Os usuários podem alterar as configurações de política ou notificação no Centro de Software
 
@@ -541,7 +538,7 @@ Escolha se o computador cliente mostra uma mensagem solicitando a permissão do 
 
 ### <a name="prompt-user-for-permission-to-transfer-content-from-shared-clipboard"></a>Solicitar ao usuário permissão para transferir conteúdo da área de transferência compartilhada
 
-Conceda aos usuários a oportunidade de aceitar ou negar transferências de arquivo antes de transferir conteúdo da área de transferência compartilhada em uma seção de controle remoto. Os usuários precisam apenas conceder permissão uma vez por sessão e o visualizador não terá a capacidade de conceder a si mesmo a permissão de continuar a transferência de arquivo.
+Antes de transferir conteúdo da área de transferência compartilhada em uma sessão de controle remoto, dê aos seus usuários a oportunidade de aceitar ou negar transferências de arquivo. Os usuários precisam apenas conceder permissão uma vez por sessão. O visualizador não pode atribuir permissão para transferir o arquivo a si mesmo.
 
 ### <a name="grant-remote-control-permission-to-local-administrators-group"></a>Conceder permissão de Controle Remoto para o grupo local de administradores
 
@@ -564,11 +561,11 @@ Defina essa configuração como **Sim** para mostrar um ícone na barra de taref
 
 ### <a name="show-session-connection-bar"></a>Mostrar barra de conexão da sessão
 
-Defina isso como **Sim** para mostrar a barra de conexão de sessão de alta visibilidade em clientes para indicar uma sessão de controle remoto ativa.  
+Defina essa opção como **Sim** para mostrar a barra de conexão de sessão de alta visibilidade em clientes para indicar uma sessão de controle remoto ativa.  
 
 ### <a name="play-a-sound-on-client"></a>Tocar um som no cliente
 
-Selecione isso para usar som para indicar quando uma sessão de controle remoto está ativa em um computador cliente. Selecione uma das seguintes opções:
+Defina esta opção para usar som para indicar quando uma sessão de controle remoto está ativa em um computador cliente. Selecione uma das seguintes opções:
 - **Sem som**
 - **Início e envio de sessão** (padrão)
 - **Várias vezes durante a sessão**  
@@ -581,7 +578,7 @@ Em uma sessão de Assistência Remota não solicitada, o usuário no computador 
 
 ### <a name="manage-solicited-remote-assistance-settings"></a>Gerenciar configurações de assistência remota solicitada
 
-Defina isso para **Sim** para permitir que o Configuration Manager gerencie sessões de assistência remota solicitada.  
+Defina essa opção como **Sim** para permitir que o Configuration Manager gerencie sessões de Assistência Remota solicitadas.  
 
 Em uma sessão de Assistência Remota solicitada, o usuário no computador cliente enviou uma solicitação de assistência remota ao administrador.  
 
@@ -597,36 +594,39 @@ Escolha o nível de acesso a ser atribuído às sessões de Assistência Remota 
 
 ### <a name="manage-remote-desktop-settings"></a>Gerenciar configurações da Área de Trabalho Remota
 
-Defina isso para **Sim** para permitir que o Configuration Manager gerencie sessões da Área de Trabalho Remota para computadores.  
+Defina essa opção como **Sim** para permitir que o Configuration Manager gerencie sessões da Área de Trabalho Remota para computadores.  
 
 ### <a name="allow-permitted-viewers-to-connect-by-using-remote-desktop-connection"></a>Permitir que os visualizadores autorizados se conectem usando a conexão de Área de Trabalho Remota
 
-Defina isso como **Sim** para adicionar os usuários especificados na lista de visualizadores permitidos ao grupo local de usuários da Área de Trabalho Remota em clientes.  
+Defina essa opção como **Sim** para adicionar os usuários especificados na lista de visualizadores permitidos ao grupo local de usuários da Área de Trabalho Remota em clientes.  
 
 ### <a name="require-network-level-authentication-on-computers-that-run-windows-vista-operating-system-and-later-versions"></a>Exigir autenticação no nível da rede em computadores que executam o sistema operacional Windows Vista e versões posteriores
 
-Defina isso como **Sim** para usar a NLA (autenticação no nível da rede) para estabelecer conexões de Área de Trabalho Remota com computadores cliente. A NLA inicialmente exige menos recursos do computador remoto, pois conclui a autenticação de usuário antes de estabelecer uma conexão de Área de Trabalho Remota. O uso da NLA é uma configuração mais segura. A NLA ajuda a proteger o computador contra usuários ou software mal-intencionados e reduz o risco de ataques de negação de serviço.  
+Defina essa opção como **Sim** para usar a NLA (autenticação no nível da rede) para estabelecer conexões de Área de Trabalho Remota com computadores cliente. A NLA inicialmente exige menos recursos do computador remoto, pois conclui a autenticação de usuário antes de estabelecer uma conexão de Área de Trabalho Remota. O uso da NLA é uma configuração mais segura. A NLA ajuda a proteger o computador contra usuários ou software mal-intencionados e reduz o risco de ataques de negação de serviço.  
 
 
 
 ## <a name="software-center"></a>Centro de software
 
 ### <a name="select-these-new-settings-to-specify-company-information"></a>Selecionar estas novas configurações para especificar as informações da empresa
-Defina isso como **Sim** e, em seguida, especifique as seguintes configurações para criar uma identidade visual do Centro de Software para sua organização:
+Defina essa opção como **Sim** e, em seguida, especifique as seguintes configurações para criar uma identidade visual do Centro de Software para sua organização:
 
-- **Nome da empresa** </br>
-Insira o nome da organização que os usuários veem no Centro de Software.
-- **Esquema de cores para o Centro de Software** </br>
-Selecione **Selecionar Cor** para definir a cor primária usada pelo Centro de Software.
-- **Selecionar um logotipo para o Centro de Software** </br>
-Selecione **Procurar** para selecionar uma imagem a ser exibida no Centro de Software. O logotipo deve ser um JPEG, PNG ou BMP de 400 x 100 pixels com tamanho máximo de 750 KB. O nome do arquivo de logotipo não deve conter espaços.  
+- **Nome da empresa**: insira o nome da organização que os usuários veem no Centro de Software.  
+
+- **Esquema de cores para Centro de Software**: clique em **Selecionar Cor** para definir a cor primária usada pelo Centro de Software.  
+
+- **Selecione um logotipo para o Centro de Software**: clique em **Procurar** para selecionar uma imagem a ser exibida no Centro de Software. O logotipo deve ser um JPEG, PNG ou BMP de 400 x 100 pixels com tamanho máximo de 750 KB. O nome do arquivo de logotipo não deve conter espaços.  
          
 ### <a name="bkmk_HideUnapproved"></a> Ocultar os aplicativos não aprovados no Centro de Software
-A partir do Configuration Manager versão 1802, quando essa opção é habilitada, os aplicativos disponíveis para o usuário que exigem aprovação são ocultos no Centro de Software.   <!--1355146-->
+Do Configuration Manager versão 1802 em diante, quando você habilita essa opção, os aplicativos disponíveis para o usuário que exigem aprovação são ocultos no Centro de Software.   <!--1355146-->
 
 ### <a name="bkmk_HideInstalled"></a> Ocultar os aplicativos instalados no Centro de Software
-A partir do Configuration Manager versão 1802, os aplicativos que já estão instalados não são mais exibidos na guia Aplicativos quando essa opção é habilitada. Essa opção é definida como o padrão quando você instala ou atualiza para o Configuration Manager 1802.  Os aplicativos instalados ainda ficam disponíveis para exame na guia de status da instalação. <!--1357592-->   
-  
+Do Configuration Manager versão 1802 em diante, quando você habilita essa opção, os aplicativos que já estão instalados não são mais exibidos na guia Aplicativos. Essa opção é definida como o padrão quando você instala ou atualiza para o Configuration Manager 1802. Os aplicativos instalados ainda ficam disponíveis para exame na guia de status da instalação. <!--1357592-->   
+ 
+### <a name="bkmk_HideAppCat"></a> Ocultar o link do Catálogo de Aplicativos no Centro de Software
+Do Configuration Manager versão 1806 em diante, você pode especificar a visibilidade do link de site do Catálogo de Aplicativos no Centro de Software. Quando essa opção está definida, os usuários não verão o link de site do Catálogo de Aplicativos no nó de status de instalação do Centro de Software. <!--1358214-->
+
+
 ### <a name="software-center-tab-visibility"></a>Visibilidade da guias do Centro de Software
 Defina as configurações adicionais nesse grupo como **Sim** para tornar as seguintes guias visíveis no Centro de Software:
 - **Aplicativos**
@@ -635,6 +635,12 @@ Defina as configurações adicionais nesse grupo como **Sim** para tornar as seg
 - **Status da Instalação**
 - **Conformidade do Dispositivo**
 - **Opções**
+- **Especificar uma guia personalizada para o Centro de Software** (começando na versão 1806) <!--1358132-->
+    - **Nome da guia**
+    - **URL de conteúdo**
+
+>[!NOTE]
+> Alguns recursos de site podem não funcionar ao usá-los como uma guia personalizada no Centro de Software. Teste os resultados antes de implantar nos clientes. <!--519659-->
 
 Por exemplo, caso sua organização não use políticas de conformidade e você deseje ocultar a guia Conformidade do Dispositivo no Centro de Software, defina **Habilitar guia Conformidade do Dispositivo** como **Não**.
 
@@ -646,7 +652,7 @@ Por exemplo, caso sua organização não use políticas de conformidade e você 
 Configure um agendamento para quando o Configuration Manager reavalia as regras de requisito para todas as implantações. O valor padrão é um intervalo de sete dias.  
 
 > [!IMPORTANT]  
->  É recomendável que você não altere esse valor para um valor menor do que o padrão. Um agendamento de reavaliação mais agressivo afeta negativamente o desempenho da rede e dos computadores cliente.  
+>  Não altere esse valor para um valor menor que o padrão. Um agendamento de reavaliação mais agressivo afeta negativamente o desempenho da rede e dos computadores cliente.  
 
 Inicie essa ação em um cliente da seguinte maneira: no painel de controle **Configuration Manager**, na guia **Ações**, selecione **Ciclo de avaliação de implantação de aplicativo**.  
 
@@ -656,7 +662,7 @@ Inicie essa ação em um cliente da seguinte maneira: no painel de controle **Co
 
 ### <a name="enable-software-inventory-on-clients"></a>Habilitar inventário de software em clientes
 
-Isso é definido como **Sim** por padrão. Para obter mais informações, consulte [Introdução ao inventário de software](/sccm/core/clients/manage/inventory/introduction-to-software-inventory).
+Essa opção é definida como **Sim** por padrão. Para obter mais informações, consulte [Introdução ao inventário de software](/sccm/core/clients/manage/inventory/introduction-to-software-inventory).
 
 ### <a name="schedule-software-inventory-and-file-collection"></a>Agendar inventário de software e coleta de arquivos
 
@@ -684,7 +690,7 @@ Se desejar especificar os tipos de arquivo a serem inventariados, selecione **De
 
     -   **Excluir arquivos criptografados e compactados**: quando você escolhe essa opção, os arquivos compactados ou criptografados não são inventariados.  
 
-    -   **Excluir arquivos da pasta do Windows**: quando você seleciona essa opção, os arquivos da pasta do Windows e suas subpastas não são inventariados.  
+    -   **Excluir arquivos da pasta do Windows**: quando você escolhe essa opção, os arquivos da pasta do Windows e suas subpastas não são inventariados.  
 
     Selecione **OK** para fechar a caixa de diálogo **Propriedades de Arquivo Inventariado**. Adicione todos os arquivos que você deseja inventariar e, em seguida, selecione **OK** para fechar a caixa de diálogo **Definir Configuração do Cliente**.  
 
@@ -708,7 +714,7 @@ Se você deseja coletar arquivos de computadores cliente, selecione **Definir Ar
     -   **Parar a coleta de arquivos quando o tamanho total dos arquivos exceder (KB)**: especifique o tamanho do arquivo, em KB (quilobytes), após o qual o cliente interromperá a coleta dos arquivos especificados.  
 
     > [!NOTE]  
-    >  O servidor do site coleta as cinco versões alteradas mais recentemente de arquivos coletados e as armazena no *&lt;Diretório de instalação do ConfigMgr\>* \Inboxes\Sinv.box\Filecol. Se um arquivo não foi alterado desde o último ciclo de inventário de software, o arquivo não será coletado novamente.  
+    >  O servidor do site coleta as cinco versões alteradas mais recentemente de arquivos coletados e as armazena no diretório `<ConfigMgr installation directory>\Inboxes\Sinv.box\Filecol`. Se um arquivo não tiver sido alterado desde o último ciclo de inventário de software, o arquivo não será coletado novamente.  
     >   
     >  O inventário de software não coleta arquivos maiores que 20 MB.  
     >   
@@ -717,7 +723,7 @@ Se você deseja coletar arquivos de computadores cliente, selecione **Definir Ar
     > [!IMPORTANT]
     >  Se você configurar o inventário de software para coletar muitos arquivos grandes, essa configuração pode afetar negativamente o desempenho da rede e do servidor do site.  
 
-    Para obter informações sobre como exibir os arquivos coletados, consulte [Como usar o Gerenciador de Recursos para exibir o inventário de software](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md).  
+    Para obter informações sobre como exibir os arquivos coletados, consulte [Como usar o Gerenciador de Recursos para exibir o inventário de software](/sccm/core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory).  
 
     Selecione **OK** para fechar a caixa de diálogo **Propriedades do Arquivo Coletado**. Adicione todos os arquivos que você deseja coletar e, em seguida, selecione **OK** para fechar a caixa de diálogo **Definir Configuração do Cliente**.  
 
@@ -747,14 +753,14 @@ Selecione **Agendamento** para ajustar a frequência com que os clientes executa
 
 ### <a name="enable-software-updates-on-clients"></a>Habilitar atualizações de software em clientes
 
-Use essa configuração para habilitar atualizações de software em clientes do Configuration Manager. Ao desabilitar essa configuração, o Configuration Manager removerá as políticas de implantação existentes do cliente. Quando você reativa essa configuração, o cliente baixa a política de implantação atual.  
+Use essa configuração para habilitar atualizações de software em clientes do Configuration Manager. Ao desabilitar essa configuração, o Configuration Manager removerá as políticas de implantação existentes dos clientes. Quando você reativa essa configuração, o cliente baixa a política de implantação atual.  
 
 > [!IMPORTANT]  
 >  Quando você desabilitar essa configuração, as políticas de conformidade que dependem das atualizações de software não funcionarão mais.  
 
 ### <a name="software-update-scan-schedule"></a>Agendamento de verificação de atualização de software
 
-Selecione **Agendamento** para especificar a frequência com que o cliente inicia uma verificação de avaliação de conformidade. Essa verificação determina o estado das atualizações de software no cliente (por exemplo, obrigatórias ou instaladas). Para mais informações sobre a avaliação de conformidade, confira [Software updates compliance assessment](../../../sum/understand/software-updates-introduction.md#BKMK_SUMCompliance) (Avaliação de conformidade de atualizações de software).  
+Selecione **Agendamento** para especificar a frequência com que o cliente inicia uma verificação de avaliação de conformidade. Essa verificação determina o estado das atualizações de software no cliente (por exemplo, obrigatórias ou instaladas). Para mais informações sobre a avaliação de conformidade, confira [Software updates compliance assessment](/sccm/sum/understand/software-updates-introduction#BKMK_SUMCompliance) (Avaliação de conformidade de atualizações de software).  
 
 Por padrão, essa verificação usa um agendamento simples a ser iniciado a cada sete dias. Você pode criar um agendamento personalizado. Você pode especificar uma data e hora exatas de início, usar o UTC (Horário Coordenado Universal) ou a hora local, e configurar o intervalo recorrente para um dia específico da semana.  
 
@@ -775,17 +781,18 @@ Ajuste esse agendamento com base na política da empresa para conformidade de at
 
 ### <a name="when-any-software-update-deployment-deadline-is-reached-install-all-other-software-update-deployments-with-deadline-coming-within-a-specified-period-of-time"></a>Quando a data limite de implantação da atualização de software for alcançada, instalar todas as outras implantações de atualização de software com a data limite dentro de um período especificado
 
-Defina isso como **Sim** para instalar todas as atualizações de software de implantações obrigatórias com datas limite que ocorrem dentro de um período especificado. Quando uma implantação de atualização de software obrigatória alcança uma data limite, o cliente inicia a instalação das atualizações de software na implantação. Essa configuração determina se devem ser instaladas as atualizações de software de outras implantações obrigatórias que têm uma data limite dentro do tempo especificado.  
+Defina essa opção como **Sim** para instalar todas as atualizações de software de implantações obrigatórias com datas limite que ocorrem dentro de um período especificado. Quando uma implantação de atualização de software obrigatória alcança uma data limite, o cliente inicia a instalação das atualizações de software na implantação. Essa configuração determina se devem ser instaladas as atualizações de software de outras implantações obrigatórias que têm uma data limite dentro do tempo especificado.  
 
 Use essa configuração para agilizar a instalação de atualizações de software obrigatórias. Essa configuração também tem o potencial de aumentar a segurança do cliente, diminuir as notificações para o usuário e reduzir as reinicializações do cliente. Por padrão, essa configuração é definida como **Não**.  
 
 ### <a name="period-of-time-for-which-all-pending-deployments-with-deadline-in-this-time-will-also-be-installed"></a>Período de tempo para o qual todas as implantações pendentes com prazo nesse período também serão instaladas
 
-Use essa configuração para especificar o período da configuração anterior. Você pode inserir um valor entre 1 e 23 horas e de 1 a 365 dias. Por padrão, essa configuração é definida para 7 dias.  
+Use essa configuração para especificar o período da configuração anterior. Você pode inserir um valor entre 1 e 23 horas e de 1 a 365 dias. Por padrão, essa configuração é definida para sete dias.  
 
 ### <a name="enable-installation-of-express-installation-files-on-clients"></a>Habilitar instalação dos arquivos de instalação do Express em clientes
 
-Defina isso como **Sim** para permitir que os clientes usem os arquivos da instalação expressa. Para saber mais, confira [Gerenciar os arquivos de instalação expressa para atualizações do Windows 10](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates).
+Defina essa opção como **Sim** para permitir que os clientes usem os arquivos da instalação expressa. Para saber mais, confira [Gerenciar os arquivos de instalação expressa para atualizações do Windows 10](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates). 
+
 
 ### <a name="port-used-to-download-content-for-express-installation-files"></a>Porta usada para baixar conteúdo para arquivos de instalação do Express
 
@@ -793,11 +800,14 @@ Essa configuração define a porta local para que o ouvinte HTTP baixe o conteú
 
 ### <a name="enable-management-of-the-office-365-client-agent"></a>Habilitar o gerenciamento do Agente Cliente do Office 365
 
-Quando você configura isso como **Sim**, ele habilita a definição das configurações de instalação do Office 365. Ele também permite o download de arquivos das Redes de Distribuição de Conteúdo (CDNs) do Office e a implantação dos arquivos como um aplicativo no Configuration Manager. Para obter mais informações, consulte [Gerenciar o Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates).
+Quando você configura essa opção como **Sim**, ela habilita a definição das configurações de instalação do Office 365. Ele também permite o download de arquivos das Redes de Distribuição de Conteúdo (CDNs) do Office e a implantação dos arquivos como um aplicativo no Configuration Manager. Para obter mais informações, consulte [Gerenciar o Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates).
 
 ### <a name="enable-third-party-software-updates"></a>Habilitar atualizações do software de terceiros 
 
-Quando você define como **Sim**, ele define a política para 'Permitir atualizações assinadas para um local de serviço de atualização da Microsoft da intranet’ e instala o certificado de autenticação para o repositório Fornecedores Confiáveis no cliente. Essa configuração de cliente foi adicionada ao Configuration Manager versão 1802.
+Quando você define essa opção como **Sim**, ela define a política para “Permitir atualizações assinadas para um local do serviço Microsoft Update da intranet” e instala o certificado de autenticação para o repositório Fornecedores Confiáveis no cliente. Essa configuração de cliente foi adicionada ao Configuration Manager versão 1802.
+
+
+
 ## <a name="state-messaging"></a>Mensagem de Estado
 
 ### <a name="state-message-reporting-cycle-minutes"></a>Ciclo de relatórios de mensagens de estado (minutos)
@@ -808,10 +818,10 @@ Especifica a frequência com que os clientes relatam mensagens de estado. Essa c
 ##  <a name="user-and-device-affinity"></a>Afinidade de dispositivo e de usuário  
 
 ### <a name="user-device-affinity-usage-threshold-minutes"></a>Limite de uso de afinidade de dispositivo do usuário (minutos)
-Especifique o número de minutos antes que o Configuration Manager crie um mapeamento de afinidade de dispositivo de usuário.  Por padrão, esse valor é de 2880 minutos (dois dias).
+Especifique o número de minutos antes que o Configuration Manager crie um mapeamento de afinidade de dispositivo de usuário. Por padrão, esse valor é de 2880 minutos (dois dias).
 
 ### <a name="user-device-affinity-usage-threshold-days"></a>Limite de uso de afinidade de dispositivo do usuário (dias)
-Especifique o número de dias durante os quais o cliente mede o limite de afinidade de dispositivo baseado no uso.  Por padrão, esse valor é de 30 dias.
+Especifique o número de dias durante os quais o cliente mede o limite de afinidade de dispositivo baseado no uso. Por padrão, esse valor é de 30 dias.
 
 > [!NOTE]  
 >  Por exemplo, especifique **Limite de uso da afinidade de dispositivo de usuário (minutos)** como **60** minutos e **Limite de uso da afinidade de dispositivo de usuário (dias)** como **5** dias. Em seguida, o usuário deve usar o dispositivo por 60 minutos em um período de cinco dias para criar a afinidade automática com o dispositivo.  

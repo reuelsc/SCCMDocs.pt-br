@@ -1,8 +1,8 @@
 ---
-title: Sobre as extensões do SCAP (Protocolo de Automação do Conteúdo de Segurança)
+title: Extensões SCAP
 titleSuffix: Configuraton Manager
-description: Saiba mais sobre as extensões do SCAP (Protocolo de Automação do Conteúdo de Segurança)
-ms.date: 03/27/2018
+description: Saiba mais sobre as extensões SCAP (Security Content Automation Protocol) para o Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
@@ -10,130 +10,149 @@ ms.assetid: a315489d-5e12-46d6-903e-3a35235b72c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: noindex,nofollow
-ms.openlocfilehash: 18463e4f87c60135bdc29d0f7ce4cb2f80a0eea7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0992b3853776cc487c6c0a88d80cbce21bf79782
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336180"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384847"
 ---
 # <a name="about-the-security-content-automation-protocol-scap-extensions"></a>Sobre as extensões do SCAP (Protocolo de Automação de Conteúdo de Segurança)
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-> [!Tip]  
-> Esse recurso foi introduzido pela primeira vez na versão Technical Preview 1803 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). Esta versão de pré-lançamento das extensões do SCAP pode ser instalada em todas as versões compatíveis no momento do branch atual do Configuration Manager e o LTSB 1606. O arquivo de instalação está localizado em cd.latest\SMSSETUP\TOOLS\ConfigMgrSCAPExtension\ConfigMgrExtensionsForSCAP.msi a partir da Technical Preview 1803. 
+As extensões SCAP para o Configuration Manager ajudam você a analisar e avaliar seu ambiente de rede em relação à conformidade com o SCAP (Security Content Automation Protocol). O SCAP é definido e mantido pelo NIST (National Institute of Standards and Technology) dos EUA. Para obter mais informações, confira a [visão geral do projeto SCAP](https://csrc.nist.gov/projects/security-content-automation-protocol).
 
-As Extensões do SCAP para o Microsoft System Center Configuration Manager ajudam você a analisar e avaliar seu ambiente de rede para fins de conformidade com o SCAP (Protocolo de Automação do Conteúdo de Segurança). O SCAP é definido e mantido pelo NIST (National Institute of Standards and Technology) dos EUA.
+As extensões SCAP para o Configuration Manager usam o recurso de configurações de conformidade para primeiro verificar os computadores em seu ambiente. Em seguida, ele documenta seu nível de conformidade com o USGCB (United States Government Configuration Baseline).
 
-As Extensões do SCAP para Microsoft System Center Configuration Manager usam o recurso Configurações de conformidade no Microsoft System Center Configuration Manager para verificar os computadores em seu ambiente e documentar seu nível de conformidade com o mandato da USGCB (Linha de Base de Configuração do Governo dos Estados Unidos).
+As extensões permitem que o Configuration Manager consuma fluxos de dados SCAP, avalie os sistemas quanto à conformidade e gere resultados de relatório no formato SCAP. Sua organização pode usar a infraestrutura existente do Configuration Manager para ajudar a garantir que os computadores gerenciados atendam a esse requisito de conformidade federal. O Configuration Manager também pode ser usado para gerar os relatórios do USGCB exigidos pelo NIST e o OMB (Gabinete de Gestão e Orçamento).
 
-As extensões permitem que o Configuration Manager consuma fluxos de dados do SCAP (Security Content Automation Protocol), avalie sistemas quanto à conformidade e gere resultados de relatório no formato SCAP. Sua organização pode usar a infraestrutura existente do Configuration Manager para ajudar a garantir que os computadores gerenciados atendam a este requisito de conformidade federal e gerem os relatórios do USGCB de requisito para o NIST (National Institute of Standards and Technology) e o OMB (Bureau de Gerenciamento e Orçamento) dos EUA.
-
-Este guia fornece informações para ajudá-lo a instalar, configurar e executar as Extensões do SCAP em sua infraestrutura do System Center Configuration Manager.
+Este artigo fornece informações para ajudá-lo a instalar, configurar e executar as extensões SCAP em sua infraestrutura do Configuration Manager.
 
 
 
-# <a name="what39s-new-in-scap-extensions-prerelease-for-microsoft-system-center-configuration-manager"></a>Novidades no pré-lançamento das Extensões do SCAP para Microsoft System Center Configuration Manager
+## <a name="whats-new"></a>Novidades
 
-Use esta seção para conhecer as novidades na versão mais recente.
+Esta versão das extensões do protocolo SCEP para o Configuration Manager inclui e dá suporte aos seguintes recursos:  
 
-Pré-lançamento de extensões do SCAP para o System Center Configuration Manager:
+- Uma extensão de console do Configuration Manager, que dá suporte para conversão de conteúdo SCAP nas linhas de base de configurações de conformidade.  
 
-- Inclui uma extensão do Console do Configuration Manager que dá suporte completo à conversão de Conteúdo do SCAP para linhas de base de configurações de conformidade para o branch atual do System Center Configuration Manager
-- Dá suporte ao SCAP versão 1.2 e é compatível com o SCAP versões 1.1 e 1.0.
+- SCAP versão 1.2, que inclui os seguintes componentes:  
+
+  - XCCDF (Extensible Configuration Checklist Description Format) versão 1.2
+  - OVAL (Open Vulnerability and Assessment Language) versões até a 5.10
+  - geração de relatórios ARF (Asset Reporting Format) 1.1
+  - CPE (Common Platform Enumeration) 2.3
+  - CVE (Common Vulnerabilities and Exposures)
+  - CCE (Common Configuration Enumeration) versão 5
+  - USGCB Internet Explorer 8, USGCB Windows 7 e USGCB do Firewall do Windows 7  
+
+- Compatibilidade com as versões anteriores do SCAP 1.1 e 1.0.  
+
+- Um assistente de console para importar o conteúdo SCAP 1.2/1.1/1.0 e OVAL para conversão em linhas de base de configuração.  
+
+  - Permite a seleção de fluxos de dados de origem SCAP e parâmetros de comparação e perfis XCCDF para conversão.
+
+- Um assistente de console para exportar os resultados da avaliação de configuração para o relatório XML no formato SCAP.  
+
+  - Exibe o arquivo de origem, o fluxo de dados SCAP, o parâmetro de comparação XCCDF e o perfil XCCDF usados para gerar a linha de base.
+  - Gera o relatório LASR (Cyberscope Lightweight Asset Summary Results).  
+
+- Gera relatórios do SCAP com base na implantação da linha de base de configuração. Esse componente inclui um novo painel para visualizar a conformidade do cliente e a conformidade com a regra do XCCDF. O painel dá suporte ao detalhamento para relatórios mais avançados em que é possível pesquisar e filtrar.  
+
+- Melhora o desempenho de vários tipos de itens de configuração convertidos de testes OVAL, permitindo uma avaliação mais rápida.  
+
+- Corrige diversos problemas encontrados no conteúdo do Windows 10 DESA v1r3.  
 
 
-  - Dá suporte ao XCCDF (Extensible Configuration Checklist Description Format) versão 1.2.
-  - Dá suporte ao OVAL (Open Vulnerability and Assessment Language) versões até 5.10.
-  - Dá suporte à geração de relatórios ARF (Asset Reporting Format) 1.1
-  - Dá suporte ao CPE (Common Platform Enumeration) 2.3
-  - Dá suporte ao CVE (Common Vulnerabilities and Exposures)
-  - Dá suporte ao CCE (Common Configuration Enumeration) versão 5
-  - Dá suporte à USGCB Internet Explorer 8, USGCB Windows 7 e à USGCB do Firewall do Windows 7.
 
-- Inclui um Assistente de interface do usuário para importar o conteúdo do SCAP 1.2/1.1/1.0 e OVAL para conversão em linhas de base de configuração.
+## <a name="terms"></a>Termos
 
+- **ID OVAL:** um identificador para uma definição OVAL específica que está em conformidade com o formato de IDs OVAL.  
 
-  - Permite a seleção de Fluxos de dados de origem do SCAP e parâmetros de comparação e perfis do XCCDF para conversão.
+- **Fluxo de dados de resultado SCAP:** um pacote de componentes SCAP e os mapeamentos de referências entre os componentes SCAP que armazenam o conteúdo de saída (resultado).  
 
-- Inclui um Assistente de interface do usuário para exportar os resultados da avaliação de configuração para o relatório em formato XML do SCAP
+- **Fluxo de dados de origem SCAP:** um pacote de componentes SCAP e os mapeamentos de referências entre componentes SCAP que armazenam o conteúdo de entrada (fonte).
 
 
-  - Exibe o arquivo de origem, o fluxo de dados do SCAP, o parâmetro de comparação XCCDF e o perfil do XCCDF usado para gerar a linha de base.
-  - Dá suporte à geração de relatórios LASR (Cyberscope Lightweight Asset Summary Results).
 
-- Dá suporte à geração de relatórios do SCAP com base na implantação de linha de base de configuração. Inclui um novo painel para visualizar a conformidade do cliente, bem como conformidade da regra do XCCDF. O painel dá suporte ao detalhamento para relatórios mais avançados em que é possível pesquisar e filtrar.
-- Melhora o desempenho de vários tipos de que itens de configuração convertidos de testes OVAL, permitindo que a avaliação mais rápida.
+## <a name="deployment-process"></a>Processo de implantação
 
-- Corrige diversos problemas encontrados no conteúdo do Windows 10 DESA v1r3.
+Aqui está um resumo do processo geral de implantação:  
 
-# <a name="scap-extensions-for-microsoft-system-center-configuration-manager-deployment-process"></a>Extensões do SCAP para o processo de implantação do Microsoft System Center Configuration Manager
+- [Preparar a infraestrutura](#bkmk_prepare) para usar as extensões  
 
-Este guia descreve como analisar, avaliar e emitir relatórios sobre a conformidade com o SCAP usando as Extensões do SCAP para o Microsoft System Center Configuration Manager. Veja um breve resumo dos procedimentos que você seguirá:
+- [Instalar e configurar as extensões SCAP](/sccm/compliance/plan-design/scap/install-configure-scap#bkmk_install) para o Configuration Manager  
 
-- Prepare a infraestrutura de pré-requisito para usufruir as extensões.
-- Instalar e configurar as Extensões do SCAP para o Microsoft System Center Configuration Manager
-- Baixe, instale e configure os arquivos de fluxo de dados do SCAP da [NVD](http://nvd.nist.gov) (National Vulnerability Database).
-- Converta e importe os arquivos de fluxo de dados do SCAP diretamente para uma linha de base de configurações de conformidade do System Center Configuration Manager usando o Assistente de Importação **ou** por meio de um arquivo de gabinete (.cab) usando a ferramenta de linha de comando Microsoft.Sces.ScapToDcm.exe.
-- Exporte resultados de conformidade para o formato do SCAP usando o Assistente de Exportação ou a ferramenta de linha de comando Microsoft.Sces.DcmToScap.exe.
+- [Baixar e instalar os arquivos de fluxo de dados SCAP](/sccm/compliance/plan-design/scap/install-configure-scap#bkmk_scap-data-stream-files) do NIST  
 
-# <a name="terms"></a>Termos
+- Converta e importe os arquivos de fluxo de dados SCAP em uma linha de base de configurações de conformidade do Configuration Manager. Use um dos dois métodos a seguir:   
 
-**ID do OVAL:** um identificador para uma definição de OVAL específica que está em conformidade com o formato para as IDs de OVAL.
+    - [Processo manual](/sccm/compliance/plan-design/scap/install-configure-scap#bkmk_convert-and-import) usando o assistente de importação no console do Configuration Manager  
 
-**Fluxo de dados de resultado do SCAP:** um pacote de componentes do SCAP, junto com os mapeamentos de referências entre componentes do SCAP, que armazenam o conteúdo de saída (resultado).
+    - [Processo automatizado](/sccm/compliance/plan-design/scap/install-configure-scap#bkmk_auto-convert-and-import) com a ferramenta de linha de comando Microsoft.Sces.ScapToDcm.exe  
 
-**Fluxo de dados de origem do SCAP:** um pacote de componentes do SCAP, junto com os mapeamentos de referências entre componentes do SCAP, que armazenam o conteúdo de entrada (origem).
+- [Implantar](/sccm/compliance/plan-design/scap/deploy-monitor-export#bkmk_deploy) as linhas de base de configuração nas coleções  
 
-# <a name="prepare-the-prerequisite-infrastructure"></a>Preparar a infraestrutura de pré-requisito
+- [Monitorar](/sccm/compliance/plan-design/scap/deploy-monitor-export#bkmk_monitor) os dados de conformidade  
 
-Certifique-se de que os seguintes requisitos de software e hardware são atendidos para usufruir as Extensões do SCAP para o Microsoft System Center Configuration Manager.
+- Exporte os resultados de conformidade para o formato SCAP usando um dos dois métodos a seguir:  
 
-## <a name="software-requirements"></a>Requisitos de software
+    - [Processo manual](/sccm/compliance/plan-design/scap/deploy-monitor-export#bkmk_export) usando o assistente de exportação no console  
 
-Para instalar, configurar e executar as Extensões do SCAP para o Microsoft System Center Configuration Manager, você precisa de um computador com o seguinte software:
+    - [Processo automatizado](/sccm/compliance/plan-design/scap/deploy-monitor-export#bkmk_auto-export) usando a ferramenta de linha de comando Microsoft.Sces.DcmToScap.exe  
 
-- Uma [versão compatível](/sccm/core/servers/manage/current-branch-versions-supported) do console de branch atual do System Center Configuration Manager.
-- Um sistema operacional compatível com o console do System Center Configuration Manager. Para obter uma lista de sistemas operacionais compatíveis, consulte o artigo [Sistemas operacionais com suporte para consoles do System Center Configuration Manager](/sccm/core/plan-design/configs/supported-operating-systems-consoles).
 
-Além do computador que executa as extensões do SCAP, você precisará também dos seguintes itens:
 
-- Uma infraestrutura de branch atual do System Center Configuration Manager. Para obter mais informações sobre os requisitos para uma implantação do Configuration Manager, veja o artigo [Configurações compatíveis para o Configuration Manager](/sccm/core/plan-design/configs/supported-configurations).
+## <a name="bkmk_prepare"></a> Preparar a infraestrutura
+
+### <a name="software-requirements"></a>Requisitos de software
+
+Para instalar, configurar e executar as extensões SCAP para o Center Configuration Manager, você precisa de um computador com o seguinte software:
+
+- Uma [versão compatível](/sccm/core/servers/manage/current-branch-versions-supported) do console do branch atual do Configuration Manager.  
+
+- Uma versão de sistema operacional compatível com o console do Configuration Manager. Para obter mais informações, confira [Sistemas operacionais com suporte para consoles do Configuration Manager](/sccm/core/plan-design/configs/supported-operating-systems-consoles).  
+
+Além do computador que executa as extensões SCAP, você também precisa dos seguintes itens:
+
+- Uma infraestrutura do branch atual do Configuration Manager. Para obter mais informações sobre os requisitos para uma implantação do Configuration Manager, veja o artigo [Configurações compatíveis para o Configuration Manager](/sccm/core/plan-design/configs/supported-configurations).  
 
 Os computadores que você deseja avaliar quanto à conformidade do SCAP precisam das seguintes configurações e software:
 
-- O componente Gerenciamento de Conformidade e Configurações habilitado no cliente do Configuration Manager.
-- Windows PowerShell 2.0 ou superior.
-- A política de execução do PowerShell do Configuration Manager definida como **Ignorar**. Para obter mais informações, consulte o artigo [Política de execução do PowerShell](/sccm/core/clients/deploy/about-client-settings#computer-agent).
-- Um dos seguintes sistemas operacionais
-  - Versão da liberação do Windows 7 ou SP1, 32 ou 64 bits
-  - Windows 10 32 bits ou 64 bits
+- O cliente do Configuration Manager.  
+
+- Windows PowerShell 2.0 ou superior.  
+
+- A política de execução do PowerShell do Configuration Manager definida como **Ignorar**. Para obter mais informações, consulte o artigo [Política de execução do PowerShell](/sccm/core/clients/deploy/about-client-settings#computer-agent).  
+
+- Um dos seguintes sistemas operacionais:  
+  - Windows 7 SP1, de 32 bits ou 64 bits
+  - Windows 10, de 32 bits ou 64 bits
   - Windows Server 2012 R2
 
-## <a name="hardware-requirements"></a>Requisitos de hardware
+### <a name="hardware-requirements"></a>Requisitos de hardware
 
-Os requisitos mínimos do sistema são fornecidos aqui:
-
-[Planejando as configurações de hardware para o Configuration Manager](/sccm/core/plan-design/configs/recommended-hardware)
+Para obter mais informações sobre os requisitos mínimos do sistema para o Configuration Manager, confira [Planejando as configurações de hardware do Configuration Manager](/sccm/core/plan-design/configs/recommended-hardware).
 
 
 
 ## <a name="accessibility-features"></a>Recursos de acessibilidade
 
-As Extensões do SCAP para o System Center Configuration Manager incluem ferramentas de linha de comando do Windows que podem usufruir os recursos e as ferramentas de acessibilidade no Windows.
+As extensões SCAP para o Configuration Manager incluem as ferramentas de linha de comando do Windows. Essas ferramentas permitem aproveitar os recursos e as ferramentas de acessibilidade do Windows.
 
-- Os parâmetros de linha de comando são documentados neste guia do usuário para Microsoft.Sces.ScapToDcm.exe e Microsoft.Sces.DcmToScap.exe.
-- -help e -? imprimirão o uso da ferramenta na tela, em que ela estará disponível para leitores de tela e outras tecnologias de assistência.
-- [Acessibilidade](http://windows.microsoft.com/windows/help/accessibility) do Windows
+- Os parâmetros de linha de comando são documentados para Microsoft.Sces.ScapToDcm.exe e Microsoft.Sces.DcmToScap.exe. Para obter mais informações, confira [Parâmetros de linha de comando do Microsoft.Sces.ScapToDcm.exe](/sccm/compliance/plan-design/scap/install-configure-scap#microsoftscesscaptodcmexe-command-line-parameters) e [Parâmetros de linha de comando do Microsoft.Sces.DcmToScap.exe](/sccm/compliance/plan-design/scap/import-scap-compliance-settings#microsoftscesdcmtoscapexe-command-line-parameters).  
 
-As Extensões do SCAP também utilizam os recursos do System Center Configuration Manager.  O Configuration Manager inclui recursos que tornam o produto mais acessível para pessoas com deficiências.
+- Os parâmetros de linha de comando `-help` e `-?` de cada ferramenta imprimem o uso na tela. Em seguida, esses detalhes de uso ficam disponíveis para os leitores de tela e outras tecnologias adaptativas.  
 
-- [Recursos de acessibilidade no System Center Configuration Manager](/sccm/core/understand/accessibility-features)
+- Para obter mais informações, confira [Acessibilidade do Windows](http://windows.microsoft.com/windows/help/accessibility).
 
-Para informações gerais sobre produtos e serviços de acessibilidade da Microsoft, visite o site da Web [Microsoft Accessibility](http://go.microsoft.com/fwlink/p/?LinkId=9212).
+As extensões SCAP também usam os recursos de acessibilidade do Configuration Manager. Para obter mais informações, confira [Recursos de acessibilidade no Configuration Manager](/sccm/core/understand/accessibility-features).
+
+Para obter mais informações sobre os produtos e serviços de acessibilidade da Microsoft, confira o [site Microsoft Accessibility](http://go.microsoft.com/fwlink/p/?LinkId=9212) (Acessibilidade da Microsoft).
+
+
 
 ## <a name="next-step"></a>Próximas etapas
 > [!div class="nextstepaction"]
-> [Instalar e configurar as Extensões do SCAP](/sccm/compliance/plan-design/scap/install-configure-scap)
+> [Instalar e configurar as extensões do SCAP](/sccm/compliance/plan-design/scap/install-configure-scap)

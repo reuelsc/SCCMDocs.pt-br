@@ -5,24 +5,23 @@ description: Definir as configurações do navegador da Web Microsoft Edge em cl
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 03/28/2018
+ms.date: 07/30/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.assetid: 76477b4d-df41-4b25-8318-7d18d46ca2c6
-ms.openlocfilehash: 81bd0a59a24cab446668911f714548581c1347df
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 2b0b553b7281015bfee89f8409fd6c5e255d753c
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343757"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384136"
 ---
 # <a name="configure-microsoft-edge-settings-in-system-center-configuration-manager"></a>Definir as configurações do Microsoft Edge no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-<!-- 1357310 -->
-A partir da versão 1802, para os clientes que utilizam o navegador da Web [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) em clientes do Windows 10, crie uma política de configurações de conformidade do Configuration Manager para definir várias configurações do Microsoft Edge. 
+<!-- 1357310 --> Começando na versão 1802, para clientes que usam o navegador da Web [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) em clientes Windows 10, é possível criar uma política de configurações de conformidade do Configuration Manager para definir várias configurações do Microsoft Edge. 
 
 Essa política se aplica somente aos clientes no Windows 10, versão 1703 ou posterior. <!--511552-->
 
@@ -44,14 +43,23 @@ Esta política atualmente inclui as seguintes configurações:
 - **Permitir extensões**: para obter mais informações, confira a [política de navegador AllowExtensions](/windows/client-management/mdm/policy-csp-browser#browser-allowextensions).
 
 
+### <a name="configure-windows-defender-smartscreen-settings-for-microsoft-edge"></a>Definir as configurações do Windows Defender SmartScreen para o Microsoft Edge
+<!--1353701--> Começando na versão 1806, essa política adiciona três configurações ao [Windows Defender SmartScreen](/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview). Agora, a política inclui as seguintes configurações adicionais na página **Configurações do SmartScreen**:
+
+- **Permitir SmartScreen**: especifica se o Windows Defender SmartScreen é permitido. Para obter mais informações, confira a [Política do navegador AllowSmartScreen](/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen).
+- **Os usuários podem substituir o aviso do SmartScreen para sites**: especifica se os usuários podem substituir os avisos do Filtro do Windows Defender SmartScreen sobre sites possivelmente mal-intencionados. Para obter mais informações, confira a [Política do navegador PreventSmartScreenPromptOverride](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride).
+- **Os usuários podem substituir o aviso do SmartScreen para arquivos**: especifica se os usuários podem substituir os avisos do Filtro do Windows Defender SmartScreen sobre o download de arquivos não verificados. Para obter mais informações, confira a [Política do navegador PreventSmartScreenPromptOverrideForFiles](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles).
+
+
 
 ## <a name="create-the-microsoft-edge-browser-profile"></a>Criar o perfil do navegador Microsoft Edge
 
-1. No console do Configuration Manager, vá até o espaço de trabalho **Ativos e conformidade**. Expanda as **Configurações de conformidade** e selecione o novo nó **Perfis de navegador do Microsoft Edge**. Clique na opção da faixa de opções para **Criar a política do navegador do Microsoft Edge**.
+1. No console do Configuration Manager, vá até o espaço de trabalho **Ativos e conformidade**. Expanda **Configurações de Conformidade** e selecione o nó **Perfis de Navegador do Microsoft Edge**. Na faixa de opções, clique na opção **Criar perfil do Microsoft Edge**.
 2. Especifique um **Nome** para a política, digite opcionalmente a **Descrição** e clique em **Avançar**.
-3. Na página **Configurações**, altere o valor para **Configurado** para que as configurações sejam incluídas nesta política e clique em **Avançar**.
-4. Na página **Plataformas com suporte**, selecione as versões e arquiteturas do sistema operacional às quais esta política se aplica e clique em **Avançar**. 
-5. Conclua o assistente.
+3. Na página **Configurações Gerais**, altere o valor para **Configurado** para que as configurações sejam incluídas nesta política e clique em **Avançar**. Para continuar, é necessário definir a configuração **Configurar o Navegador Edge como o padrão**.
+4. Na versão 1806 e posterior, defina as configurações na página **Configurações do SmartScreen** e, em seguida, clique em **Avançar**. 
+5. Na página **Plataformas com Suporte**, selecione as versões e arquiteturas do sistema operacional às quais esta política se aplica e clique em **Avançar**. 
+6. Conclua o assistente.
 
 
 
@@ -59,9 +67,9 @@ Esta política atualmente inclui as seguintes configurações:
 
 1. Selecione sua política e clique na opção da faixa de opções para **Implantar**.
 2. Clique em **Procurar** para selecionar a coleção de usuário ou dispositivo para a qual implantar a política. 
-3. Selecione as opções adicionais conforme necessário. 
-    a. Gerar alertas quando a política não for compatível. 
-    b. Defina o agendamento pelo qual o cliente avalia a conformidade do dispositivo com esta política.
+3. Selecione as opções adicionais conforme necessário.  
+     a. Gerar alertas quando a política não for compatível.  
+     b. Defina o agendamento pelo qual o cliente avalia a conformidade do dispositivo com esta política. 
 4. Clique em **OK** para criar a implantação.
 
 

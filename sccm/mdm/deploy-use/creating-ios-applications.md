@@ -1,8 +1,8 @@
 ---
 title: Criar aplicativos para iOS
 titleSuffix: Configuration Manager
-description: Consulte quais considerações você deverá levar em conta ao criar e implantar aplicativos para dispositivos iOS.
-ms.date: 03/05/2017
+description: Como criar e implantar aplicativos para dispositivos iOS no Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,41 +10,26 @@ ms.assetid: ff633013-5313-4cd3-949c-56d45e777280
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 985a8177602bd32da0b6134eeddb564a44749d65
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 246ca26b8fab3a1006e8d72b803c298fe48df9df
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32346423"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385228"
 ---
-# <a name="create-ios-applications-with-system-center-configuration-manager"></a>Criar aplicativos iOS com o System Center Configuration Manager
+# <a name="create-ios-applications-in-configuration-manager"></a>Criar aplicativos iOS no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Um aplicativo do System Center Configuration Manager tem um ou mais tipos de implantação que abrangem os arquivos de instalação e as informações necessárias para implantar o software em um dispositivo. Um tipo de implantação também tem regras que especificam quando e como o software é implantado.  
+Um aplicativo do Configuration Manager tem um ou mais tipos de implantação que abrangem os arquivos de instalação e as informações necessárias para implantar o software em um dispositivo. Um tipo de implantação também tem regras que especificam quando e como o software é implantado.  
 
- Você pode criar aplicativos com os seguintes métodos:  
+Confira [Criar um aplicativo](/sccm/apps/deploy-use/create-applications#bkmk_create) para obter as etapas para criar aplicativos do Configuration Manager e tipos de implantação. 
 
--   Crie automaticamente os aplicativos e tipos de implantação, lendo os arquivos de instalação do aplicativo.  
+Lembre-se das seguintes considerações ao criar e implantar aplicativos para dispositivos iOS:  
 
--   Crie manualmente o aplicativo e adicione tipos de implantação posteriormente.  
+- O Configuration Manager dá suporte à implantação de pacotes .ipa do iOS. Não é necessário especificar um arquivo (.plist) de lista de propriedade ao importar um aplicativo iOS. 
 
--   Importe um aplicativo de um arquivo.  
-
-Veja [Iniciar o assistente para criar aplicativo](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard) e conheça as etapas necessárias para criar os aplicativos do Configuration Manager e os tipos de implantação. Além disso, lembre-se das seguintes considerações ao criar e implantar aplicativos para dispositivos iOS.  
-
-## <a name="general-considerations"></a>Considerações gerais  
- O Configuration Manager dá suporte à implantação dos seguintes tipos de aplicativo:  
-
-|Tipo de dispositivo|Arquivos com suporte|  
-|-----------------|---------------------|  
-|iOS|*.ipa<br /><br /> No System Center Configuration Manager, não é necessário especificar um arquivo (.plist) de lista de propriedade ao importar um aplicativo iOS.|  
-
- Há suporte para as seguintes ações de implantação:  
-
-|Tipo de dispositivo|Ações com suporte|  
-|-----------------|-----------------------|  
-|iOS|**Disponível**, **Necessário**. O usuário deve concordar com a instalação e com a desinstalação.
+- Implante aplicativos iOS como **Disponível** ou **Obrigatório**. O usuário deve concordar com a instalação e com a desinstalação.
 
 > [!IMPORTANT]  
->  No momento, os usuários finais não conseguem instalar aplicativos corporativos do aplicativo de Portal da Empresa do Microsoft Intune para iOS. Isso ocorre porque há restrições colocadas em aplicativos que são publicados na iOS App Store (consulte Diretrizes de análise da App Store, seção 2). Os usuários podem instalar aplicativos corporativos (incluindo aplicativos gerenciados da App Store e pacotes de aplicativos de linha de negócios) navegando até o Portal da Web do Intune no dispositivo deles (portal.manage.microsoft.com). Para obter mais informações sobre os recursos de gerenciamento móvel que são habilitados pelo aplicativo do Portal da Empresa do Intune, consulte [Recursos de gerenciamento de dispositivo registrado do Microsoft Intune](https://technet.microsoft.com/library/dn600287.aspx).  
+>  No momento, os usuários finais não conseguem instalar aplicativos corporativos usando o aplicativo Portal da Empresa do Microsoft Intune para iOS. Essa limitação existe porque há restrições para aplicativos publicados na iOS App Store. [Confira as App Store Review Guidelines (Diretrizes de Revisão da App Store), seção 2]. Os usuários podem instalar aplicativos corporativos navegando até o portal do Intune em seu dispositivo. Esses aplicativos incluem pacotes de aplicativos de linha de negócios e de aplicativos da App Store gerenciados. Para obter mais informações sobre as funcionalidades de gerenciamento móvel habilitadas pelo aplicativo Portal da Empresa do Intune, confira [Funcionalidades de gerenciamento de dispositivo registrado no Microsoft Intune](https://docs.microsoft.com/intune/device-enrollment).  

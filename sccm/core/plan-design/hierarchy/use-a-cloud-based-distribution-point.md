@@ -1,8 +1,8 @@
 ---
-title: Ponto de distribuição baseado em nuvem
+title: Ponto de distribuição na nuvem
 titleSuffix: Configuration Manager
-description: Saiba mais sobre as configurações e limitações para usar um ponto de distribuição baseado em nuvem com o System Center Configuration Manager.
-ms.date: 3/27/2017
+description: Planeje e projete a distribuição de conteúdo de software por meio do Microsoft Azure com pontos de distribuição na nuvem no Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,201 +10,363 @@ ms.assetid: 3cd9c725-6b42-427d-9191-86e67f84e48c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fd3e8c58b358093ebf9d90478920c45e127e382e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0c41fddef794049456529d9577275a21668717f5
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341586"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385449"
 ---
-# <a name="use-a-cloud-based-distribution-point-with-system-center-configuration-manager"></a>Use um ponto de distribuição baseado em nuvem com o System Center Configuration Manager
+# <a name="use-a-cloud-distribution-point-in-configuration-manager"></a>Usar um ponto de distribuição na nuvem no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Um ponto de distribuição baseado em nuvem é um ponto de distribuição do System Center Configuration Manager que é hospedado no Microsoft Azure. As informações a seguir têm o objetivo de ajudá-lo a saber mais sobre as configurações e limitações de uso de um ponto de distribuição baseado em nuvem.
+Um ponto de distribuição na nuvem é um ponto de distribuição do Configuration Manager hospedado como uma PaaS (plataforma como serviço) no Microsoft Azure. Esse serviço dá suporte aos seguintes cenários:  
 
-Após instalar um site primário e quando estiver pronto para instalar um ponto de distribuição baseado em nuvem, confira [Instalar pontos de distribuição baseados em nuvem no Azure](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md).
+- Fornecer conteúdo de software a clientes baseados na Internet sem infraestrutura local adicional  
 
+- Habilitar seu sistema de distribuição de conteúdo para a nuvem  
 
-## <a name="plan-to-use-a-cloud-based-distribution-point"></a>Planejar o uso de ponto de distribuição baseado em nuvem
-Ao usar pontos de distribuição baseados em nuvem, você:  
-
--   **Define configurações do cliente** para permitir que usuários e dispositivos acessem o conteúdo.  
-
--   **Especifica um site primário para gerenciar a transferência de conteúdo** ao ponto de distribuição.  
-
--   **Especifica limites** para o volume de conteúdo que você deseja armazenar no ponto de distribuição e o volume de conteúdo que deseja permitir que os clientes transfiram do ponto de distribuição.  
+- Reduzir a necessidade de pontos de distribuição tradicionais  
 
 
-Com base nos limites configurados, o Configuration Manager pode acionar alertas que avisam quando o volume combinado de conteúdo que você armazenou no ponto de distribuição está próximo do volume de armazenamento especificado ou quando as transferências de dados pelos clientes estão próximas aos limites definidos.  
-
-Os pontos de distribuição baseado em nuvem dão suporte a vários recursos que também são oferecidos pelos pontos de distribuição local:  
-
--   Gerenciamento de pontos de distribuição com base em nuvem individualmente ou como membros de grupos de pontos de distribuição.  
-
--   Uso de um ponto de distribuição com base em nuvem como local de conteúdo de fallback.  
-
--   Recebimento de suporte para clientes baseados na Internet e em intranet.  
-
-
-Pontos de distribuição com base em nuvem oferecem os seguintes benefícios adicionais:  
-
--   O conteúdo enviado a um ponto de distribuição baseado em nuvem é criptografado pelo Configuration Manager antes que o Configuration Manager o envie ao Azure.  
-
--   No Azure, você pode dimensionar manualmente o serviço de nuvem para atender a demandas de alteração de solicitação de conteúdo de clientes, sem a necessidade de instalar e provisionar pontos de distribuição adicionais.  
-
--   O ponto de distribuição com base em nuvem oferece suporte para o download de conteúdo por clientes configurados para o Windows BranchCache.  
+Este artigo ajuda você a saber mais sobre o ponto de distribuição na nuvem, planejar o uso e projetar sua implementação. Ele inclui as seguintes seções:
+- [Recursos e benefícios](#bkmk_features)
+- [Design da topologia](#bkmk_topology)
+- [Requirements](#bkmk_requirements)
+- [Especificações](#bkmk_spec)
+- [Custo](#bkmk_cost)
+- [Desempenho e escala](#bkmk_perf)
+- [Portas e fluxo de dados](#bkmk_dataflow)
+- [Certificados](#bkmk_certs)
+- [Perguntas frequentes](#bkmk_faq)
 
 
-Os pontos de distribuição baseados em nuvem têm as seguintes limitações:  
 
--  Antes de usar a versão 1610 com o Hotfix KB4010155, você não pode usar um ponto de distribuição baseado em nuvem para hospedar pacotes de atualização de software. Esse problema foi corrigido a partir da versão 1702.  
+## <a name="bkmk_features"></a> Recursos e benefícios
 
--   Você não pode usar um ponto de distribuição com base em nuvem para PXE ou implantações habilitadas para multicast.  
+### <a name="features"></a>Recursos
 
--   Não é oferecido um ponto de distribuição baseado em nuvem aos clientes como local de conteúdo para uma sequência de tarefas implantada usando a opção de implantação **Baixar conteúdo localmente quando necessário, executando a sequência de tarefas**. No entanto, as sequências de tarefas implantadas com a opção de implantação **Baixar todo o conteúdo localmente antes de iniciar a sequência de tarefas** podem usar um ponto de distribuição baseado em nuvem como um local de conteúdo válido.  
+O ponto de distribuição na nuvem dá suporte a vários recursos que também são oferecidos pelos pontos de distribuição locais:  
 
--   Não oferecem suporte a pacotes executados no ponto de distribuição. Todo o conteúdo deve ser baixado pelo cliente e, depois, executado localmente.  
+-   Gerencie pontos de distribuição na nuvem individualmente ou como membros de grupos de pontos de distribuição  
 
--   Não oferecem suporte a aplicativos de streaming usando o Application Virtualization ou programas semelhantes.  
+-   Usar um ponto de distribuição na nuvem como local de conteúdo de fallback  
 
--   Não oferecem suporte a conteúdo pré-configurado. O gerente de distribuição do site primário que gerencia o ponto de distribuição transfere todo o conteúdo para o ponto de distribuição.  
-
--   Os pontos de distribuição baseados em nuvem não podem ser configurados como pontos de distribuição de recepção.  
-
-##  <a name="BKMK_PrereqsCloudDP"></a> Pré-requisitos para pontos de distribuição baseados em nuvem  
- Estes são os pré-requisitos para o uso de pontos de distribuição baseados em nuvem:  
-
--   Uma assinatura do Azure (confira [Sobre assinaturas e certificados](#BKMK_CloudDPCerts) neste tópico).
-
--   Um certificado de gerenciamento de PKI (infraestrutura de chave pública) ou autoassinada para a comunicação de um servidor de site primário do Configuration Manager para o serviço de nuvem no Azure (confira [Sobre assinaturas e certificados](#BKMK_CloudDPCerts) neste tópico).
-
--   Um certificado de serviço (PKI) que os clientes do Configuration Manager usam para se conectar a pontos de distribuição baseados em nuvem e baixar conteúdo usando HTTPS.  
-
--  Um dispositivo ou usuário deve ter **Permitir Acesso a pontos de distribuição em nuvem** definido como **Sim** na configuração do cliente para **Serviços de Nuvem** para que um dispositivo ou usuário possa acessar o conteúdo de um ponto de distribuição baseado em nuvem. Por padrão, esse valor é definido como **Não**.  
-
--   Os clientes devem ser capazes de resolver o nome do serviço de nuvem, que requer um alias DNS (Sistema de Nomes de Domínio) e um registro CNAME em seu namespace de DNS.  
-
--   Os clientes devem ser capazes de acessar a Internet para usar o ponto de distribuição baseado em nuvem.  
-
-##  <a name="BKMK_CloudDPCost"></a> Custo da utilização de uma distribuição baseada em nuvem  
- Quando você usa um ponto de distribuição baseado em nuvem, planeje o custo de armazenamento de dados e das transferências de download que os clientes do Configuration Manager executarão.  
-
- O Configuration Manager inclui opções para ajudar a controlar os custos e monitorar o acesso a dados:  
-
--   Você pode controlar e monitorar a quantidade de conteúdo armazenado em um serviço de nuvem.  
-
--   Você pode configurar o Configuration Manager para alertá-lo quando os **limites** para downloads do cliente atingirem ou excederem o limite mensal.  
-
--   Além disso, você pode usar o cache de sistemas pares (Windows BranchCache) para reduzir o número de transferências de dados de pontos de distribuição baseados em nuvem por clientes. Por padrão, os clientes do Configuration Manager configurados para o BranchCache podem transferir conteúdo usando pontos de distribuição baseados em nuvem.  
+-   Dá suporte para clientes tanto baseados na Internet quanto na intranet  
 
 
-**Opções:**  
+### <a name="benefits"></a>Benefícios
 
--   **Configurações do Cliente para Nuvem**: você controla o acesso a todos os pontos de distribuição baseados em nuvem em uma hierarquia usando as **Configurações do Cliente**.  
+O ponto de distribuição na nuvem oferece os seguintes benefícios adicionais:  
 
-     Nas **Configurações do Cliente**, a categoria **Configurações de Nuvem** dá suporte à configuração **Permitir acesso aos pontos de distribuição na nuvem**. Por padrão, essa configuração é definida como **Não**. Você pode habilitar essa configuração para usuários e dispositivos.  
+-   O site criptografa o conteúdo antes de enviá-la para o ponto de distribuição na nuvem no Azure.  
 
--   **Limites para transferências de dados**: é possível configurar limites para o volume de dados que você deseja armazenar no ponto de distribuição e para o volume de dados que os clientes baixam do ponto de distribuição.  
+-   Para atender às demandas inconstantes de solicitações de conteúdo por clientes, dimensione manualmente o serviço de nuvem no Azure. Essa ação não exige que você instale e provisione pontos de distribuição adicionais no Configuration Manager.  
 
-     Os limites para pontos de distribuição baseados em nuvem incluem:  
+-   Dá suporte ao download de conteúdo de clientes configurados para outras tecnologias de conteúdo, como Windows BranchCache e provedores de conteúdo alternativo.  
 
-    -   **Limite de alerta de armazenamento**: Um limite de alerta de armazenamento define um limite superior no volume de dados ou conteúdo que você deseja armazenar no ponto de distribuição baseado em nuvem. O Configuration Manager pode gerar um alerta de aviso quando o espaço livre restante atinge o nível especificado.  
+-   Da versão 1806 em diante, use pontos de distribuição na nuvem como locais de origem para os pontos de distribuição por pull.  
 
-    -   **Limite de alerta de transferência**: Um limite de alerta de transferência ajuda a monitorar o volume de conteúdo que você transfere do ponto de distribuição para clientes num período de 30 dias. O limite de alerta de transferência monitora a transferência de dados dos 30 dias anteriores e pode emitir um alerta de aviso e um crítico quando as transferências atingem os valores definidos.  
 
-        > [!IMPORTANT]  
-        >  O Configuration Manager monitora a transferência de dados, mas não interrompe a transferência de dados que está além do limite de alerta de transferência especificado.  
+## <a name="bkmk_topology"></a> Design da topologia
 
- Você pode especificar limites para cada ponto de distribuição baseado em nuvem durante a instalação do ponto de distribuição, ou pode editar as propriedades de cada ponto de distribuição baseado em nuvem após ele ser instalado.  
+A implantação e a operação de ponto de distribuição na nuvem inclui os seguintes componentes:  
 
--   **Alertas**: é possível configurar o Configuration Manager para emitir alertas sobre transferências bidirecionais de dados em cada ponto de distribuição baseado em nuvem, de acordo com os limites de transferência de dados que você especificar. Esses alertas servem como auxílio no monitoramento de transferências de dados e podem ajudar a decidir quando parar o serviço de nuvem, ajustar o conteúdo armazenado no ponto de distribuição ou modificar quais clientes podem usar os pontos de distribuição baseados em nuvem.  
+- Um **serviço de nuvem** no Azure. O site distribui conteúdo para esse serviço, que o armazena no armazenamento em nuvem do Azure. O ponto de gerenciamento fornece aos clientes esse local de conteúdo na lista de fontes disponíveis conforme apropriado.  
 
-     Em um ciclo por hora, o site primário que monitora o ponto de distribuição baseado em nuvem baixa dados de transação do Azure e os armazena em CloudDP-&lt;ServiceName\>.log no servidor do site. O Configuration Manager avalia estas informações em relação às cotas de armazenamento e transferência para cada ponto de distribuição baseado em nuvem. Quando a transferência de dados atingir ou exceder o volume especificado para avisos ou alertas críticos, o Configuration Manager gerará o alerta apropriado.  
+- Uma função do sistema de sites do **ponto de gerenciamento** atende às solicitações do cliente de modo habitual.  
 
-    > [!WARNING]  
-    >  Como as informações sobre transferências de dados são baixadas do Azure a cada hora, esse uso de dados pode exceder um limite de aviso ou crítico antes que o Configuration Manager possa acessar os dados e emitir um alerta.  
+    - Clientes locais normalmente usam um ponto de gerenciamento local.  
+
+    - Clientes baseados na Internet usam um [Gateway de Gerenciamento de Nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) ou um [ponto de gerenciamento baseado na Internet](/sccm/core/clients/manage/plan-internet-based-client-management).  
+
+- O ponto de distribuição na nuvem usa um serviço Web **HTTPS baseado em certificado** para ajudar a proteger a comunicação de rede com clientes. Os clientes devem confiar nesse certificado.  
+
+
+### <a name="azure-resource-manager"></a>Azure Resource Manager
+<!--1322209--> Da versão 1806 em diante, crie um ponto de distribuição na nuvem usando uma **implantação do Azure Resource Manager**. O [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) é uma plataforma moderna para gerenciar todos os recursos da solução como uma única entidade, chamado [grupo de recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). Ao implantar o ponto de distribuição na nuvem com o Azure Resource Manager, o site usa o Azure Active Directory (Azure AD) para autenticar e criar os recursos necessários para a nuvem. Essa implantação modernizada não exige o certificado de gerenciamento do Azure clássico.  
+
+O assistente do ponto de distribuição na nuvem ainda fornece a opção para uma **implantação de serviço clássico** usando um certificado de gerenciamento do Azure. Para simplificar a implantação e o gerenciamento de recursos, a Microsoft recomenda usar o Modelo de implantação do Azure Resource Manager para todos os novos pontos de distribuição na nuvem. Se possível, reimplante os pontos de distribuição na nuvem existentes por meio do Gerenciador de Recursos.
+
+O Configuration Manager não migra os pontos de distribuição na nuvem clássicos existentes para o Modelo de implantação do Azure Resource Manager. Crie novos pontos de distribuição de nuvem usando implantações do Azure Resource Manager e remova os pontos de distribuição de nuvem clássicos. 
+
+> [!IMPORTANT]  
+> Esse recurso não habilita o suporte para CSPs (Provedores de Serviços de Nuvem) do Azure. A implantação do ponto de distribuição na nuvem com o Azure Resource Manager continua a usar o serviço de nuvem clássico, ao qual o CSP não oferece suporte. Para saber mais, confira os [serviços do Azure disponíveis no CSP do Azure](/azure/cloud-solution-provider/overview/azure-csp-available-services).  
+
+
+### <a name="hierarchy-design"></a>Design de hierarquia
+
+O local em que você cria o ponto de distribuição na nuvem depende de quais clientes precisam acessar o conteúdo. Da versão 1806 em diante, há três tipos de pontos de distribuição na nuvem:  
+
+- Implantação de serviço clássico: crie esse tipo apenas em um site primário.  
+
+- Implantação do Azure Resource Manager: crie esse tipo em um site primário ou no site de administração central.  
+
+- O Gateway de Gerenciamento de Nuvem também pode fornecer conteúdo aos clientes. Essa funcionalidade reduz os certificados necessários e o custo das VMs do Azure. Para obter mais informações, veja [Planejar o Gateway de Gerenciamento de Nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).<!--1358651-->  
+
+
+Para determinar se é necessário incluir os pontos de distribuição na nuvem em grupos de limites, considere os seguintes comportamentos:  
+
+- Clientes baseados na Internet não confiam em grupos de limites. Eles usam apenas pontos de distribuição voltados para a Internet ou pontos de distribuição na nuvem. Se você estiver usando apenas os pontos de distribuição na nuvem para atender a esses tipos de clientes, não precisará incluí-los em grupos de limites.  
+
+- Se você quiser que os clientes em sua rede interna usem um ponto de distribuição na nuvem, ele precisará estar no mesmo grupo de limite que os clientes. Os clientes priorizam os pontos de distribuição na nuvem por último na lista de fontes de conteúdo, porque há um custo associado a baixar conteúdo do Azure. Portanto, um ponto de distribuição na nuvem normalmente é usado como uma origem de fallback para clientes baseados na intranet. Se você quiser um design primeiro na nuvem, crie os grupos de limites para atender a esse requisito de negócios. Para obter mais informações, consulte [Configurar grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups).  
+
+
+Mesmo que você instale pontos de distribuição na nuvem em regiões específicas do Azure, os clientes não estarão cientes das regiões do Azure. Eles selecionam aleatoriamente um ponto de distribuição na nuvem. Se você instalar pontos de distribuição na nuvem em várias regiões e um cliente receber mais de um na lista local de conteúdo, o cliente não poderá usar um ponto de distribuição na nuvem da mesma região do Azure.  
+
+
+### <a name="backup-and-recovery"></a>Backup e descoberta  
+
+Quando você usa um ponto de distribuição na nuvem em sua hierarquia, use as seguintes informações para ajudá-lo a planejar-se para backup e recuperação:  
+
+- Quando você usa a tarefa de manutenção **Servidor do Site de Backup**, o Configuration Manager inclui automaticamente as configurações do ponto de distribuição na nuvem.  
+
+- Faça o backup e salve uma cópia do certificado de autenticação de servidor. Se você usar a implantação de serviço clássico no Azure, também faça backup e salve uma cópia do certificado de gerenciamento do Azure. Quando você restaurar o site primário do Configuration Manager para um servidor diferente, deve reimportar os certificados.  
+
+
+
+##  <a name="bkmk_requirements"></a> Requisitos
+
+- Você precisa de uma **assinatura do Azure** para hospedar o serviço.  
+
+    - Um **administrador do Azure** precisa participar da criação inicial de alguns componentes, dependendo do design. Essa persona não precisa de permissões no Configuration Manager.  
+
+- O servidor do site exige **acesso à Internet** para implantar e gerenciar o serviço de nuvem.  
+
+- Se você estiver usando o método clássico de implantação do Azure, precisará usar um **certificado de gerenciamento do Azure**. Para obter mais informações, consulte a seção [Certificados](#bkmk_certs) abaixo.   
+
+    > [!TIP]  
+    > Do Configuration Manager versão 1806 em diante, use o Modelo de implantação do **Azure Resource Manager**. Ele não exige esse certificado de gerenciamento.  
+
+- Se você estiver usando o método de implantação do **Azure Resource Manager**, integre o Configuration Manager ao [Azure AD](/sccm/core/clients/deploy/deploy-clients-cmg-azure). A descoberta de usuário do Azure AD não é necessária.  
+
+- Um **certificado de autenticação de servidor**. Para obter mais informações, consulte a seção [Certificados](#bkmk_certs) abaixo.  
+
+    - Para reduzir a complexidade, a Microsoft recomenda o uso de um provedor de certificado público para o certificado de autenticação de servidor. Ao fazer isso, você também precisa de um **alias de DNS CNAME** para clientes resolverem o nome do serviço de nuvem.  
+
+- Defina a configuração do cliente, **Permitir acesso aos pontos de distribuição na nuvem**, como **Sim** no grupo **Serviços de Nuvem**. Por padrão, esse valor é definido como **Não**.  
+
+- Os dispositivos de cliente requerem **conectividade com a Internet** e devem usar **IPv4**.  
+
+
+
+## <a name="bkmk_spec"></a> Especificações
+
+- O ponto de distribuição na nuvem dá suporte a todas as versões do Windows listadas em [Sistemas operacionais compatíveis para clientes e dispositivos](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices).  
+
+- Um administrador distribui os seguintes tipos de conteúdo de software com suporte:  
+    - Aplicativos
+    - Pacotes
+    - Pacotes de atualização do sistema operacional
+    - Atualizações de software de terceiros  
+
+    > [!Important]  
+    > Embora o console do Configuration Manager não bloqueie a distribuição de atualizações de software da Microsoft para um ponto de distribuição na nuvem, você está pagando os custos do Azure para armazenar o conteúdo que os clientes não usam. Clientes baseados na Internet sempre obtêm conteúdo de atualização de software da Microsoft do serviço de nuvem do Microsoft Update. Não distribua as atualizações de software da Microsoft para um ponto de distribuição na nuvem.    
+
+- Da versão 1806 em diante, configure um ponto de distribuição por pull para usar um ponto de distribuição na nuvem como origem. Para obter mais informações, veja [Sobre pontos de distribuição de origem](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point#about-source-distribution-points).<!--1321554-->  
+
+
+### <a name="deployment-settings"></a>Configurações da implantação
+
+- Quando você implanta uma sequência de tarefas com a opção de **Baixar conteúdo localmente quando necessário executando uma sequência de tarefas**, o ponto de gerenciamento não inclui um ponto de distribuição na nuvem como local de conteúdo. Implante a sequência de tarefas com a opção de **Baixar todo o conteúdo localmente antes de iniciar a sequência de tarefas** para os clientes usarem um ponto de distribuição na nuvem.  
+
+- Um ponto de distribuição na nuvem não dá suporte a implantações de pacote com a opção de **Executar programa do ponto de distribuição**. Use a opção de implantação para **Baixar conteúdo do ponto de distribuição e executar localmente**.  
+
+
+### <a name="limitations"></a>Limitações  
+
+- Você não pode usar um ponto de distribuição na nuvem para PXE ou implantações habilitadas para multicast.  
+
+- Um ponto de distribuição na nuvem não dá suporte a aplicativos de streaming do App-V.  
+
+- Não é possível [pré-configurar conteúdo](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent) em um ponto de distribuição na nuvem. O gerente de distribuição do site primário que gerencia o ponto de distribuição na nuvem transfere todo o conteúdo.  
+
+- Não é possível configurar um ponto de distribuição na nuvem como um ponto de distribuição por pull.  
+
+
+
+##  <a name="bkmk_cost"></a> Custo   
+<!--501018-->
+> [!IMPORTANT]  
+> As seguintes informações de custo são apenas uma estimativa. Seu ambiente pode ter outras variáveis que afetam o custo geral do uso de um ponto de distribuição na nuvem.  
+
+O Configuration Manager inclui as seguintes opções para ajudar a controlar os custos e monitorar o acesso a dados:  
+
+- Controle e monitore a quantidade de conteúdo armazenado em um serviço de nuvem. Para obter mais informações, veja [Monitorar pontos de distribuição na nuvem](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure#bkmk_monitor).  
+
+- Configure o Configuration Manager para alertá-lo quando os limites para downloads do cliente atingirem ou excederem o limite mensal. Para obter mais informações, veja [Alertas de limite de transferência de dados](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure#bkmk_alerts).   
+
+- Para ajudar a reduzir o número de transferências de dados de pontos de distribuição na nuvem por clientes, use uma das seguinte tecnologias de cache de par:  
+    - Cache par do Configuration Manager
+    - Windows BranchCache
+    - Otimização de Entrega do Windows 10  
+
+   Para mais informações, consulte [Conceitos fundamentais para o gerenciamento de conteúdo](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management).   
+
+
+### <a name="components"></a>Componentes
+
+Um ponto de distribuição na nuvem usa os seguintes componentes do Azure, que incorrem em encargos para a conta de assinatura do Azure:  
+
+> [!Tip]  
+> Da versão 1806 em diante, o Gateway de Gerenciamento de Nuvem também pode veicular conteúdo aos clientes. Essa funcionalidade reduz o custo consolidando as VMs do Azure. Para obter mais informações, veja [Custo para Gateway de Gerenciamento de Nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#cost).  
+
+#### <a name="virtual-machine"></a>Máquina virtual
+- O ponto de distribuição na nuvem usa a PaaS (plataforma como serviço) dos Serviços de Nuvem do Azure. Esse serviço usa VMs (máquinas virtuais) que incorrem em custos de computação.  
+
+- Cada serviço de ponto de distribuição na nuvem usa duas VMs A0 padrão.  
+
+- Consulte a [Calculadora de preços do Azure](https://azure.microsoft.com/pricing/calculator/) para ajudar a determinar os possíveis custos.
 
     > [!NOTE]  
-    >  Os alertas de um ponto de distribuição baseado em nuvem dependem de estatísticas de uso do Azure e podem levar 24 horas para ficar disponíveis. Para saber mais sobre Análise de Armazenamento do Azure, inclusive com que frequência o Azure atualiza as estatísticas de uso, confira [Análise de Armazenamento](http://go.microsoft.com/fwlink/p/?LinkID=275111) na Biblioteca MSDN.  
+    > Os custos de máquina virtual variam de acordo com a região.
 
+#### <a name="outbound-data-transfer"></a>Transferência de dados de saída
+- Quaisquer fluxos de dados para o Azure são gratuitos (entrada ou upload). Distribuição de conteúdo do site para o ponto de distribuição na nuvem que está carregando para o Azure.  
 
--   **Interromper ou iniciar o serviço de nuvem sob demanda**: é possível usar a opção de interromper ou iniciar o serviço de nuvem a qualquer momento, a fim de evitar que clientes usem o serviço continuamente. Quando você interrompe o serviço de nuvem, os clientes imediatamente são impedidos de baixar conteúdo adicional do serviço. Além disso, você pode reiniciar o serviço de nuvem para restaurar o acesso para clientes. Por exemplo, talvez você queira parar um serviço de nuvem quando os limites de dados são atingidos.  
+- Os encargos baseiam-se nos dados que fluem para fora do Azure (saída ou download). Fluxos de dados do ponto de distribuição na nuvem fora do Azure consistem em conteúdo de software que os clientes baixam.  
 
-     Quando você para um serviço de nuvem, ele não exclui o conteúdo do ponto de distribuição e não impede que o servidor de site transfira conteúdo adicional para o ponto de distribuição baseado em nuvem.  
+- Para obter mais informações, veja [Monitorar pontos de distribuição na nuvem](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure#bkmk_monitor).  
 
-     Para interromper um serviço de nuvem, no console do Configuration Manager, selecione o ponto de distribuição no nó **Pontos de Distribuição em Nuvem**, em **Serviços em Nuvem**, no espaço de trabalho **Administração**. Em seguida, escolha **Parar serviço** para interromper o serviço de nuvem que é executado no Azure.  
+- Consulte os [Detalhes de preços de largura de banda do Azure](https://azure.microsoft.com/pricing/details/bandwidth/) para ajudar a determinar os possíveis custos. O preço da transferência de dados é calculado por camadas. Quanto mais você utilizar, menos você paga por gigabyte.  
 
-##  <a name="BKMK_CloudDPCerts"></a> Sobre assinaturas e certificados para pontos de distribuição baseados em nuvem  
- Pontos de distribuição baseados em nuvem requerem certificados para habilitar o Configuration Manager a gerenciar o serviço de nuvem que hospeda o ponto de distribuição, e para os clientes acessarem o conteúdo do ponto de distribuição. As informações a seguir fornecem uma visão geral desses certificados. Para obter informações mais detalhadas, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
+#### <a name="content-storage"></a>Armazenamento de conteúdo
+- Clientes baseados na Internet obtêm conteúdo de atualização de software Microsoft do serviço de nuvem do Microsoft Update sem custo adicional. Não distribua pacotes de implantação de atualização de software com atualizações de software da Microsoft para um ponto de distribuição na nuvem. Caso contrário, você incorrerá em custos de armazenamento de dados para conteúdo que os clientes nunca usarão.  
 
- **Certificados**  
+- Pontos de distribuição em nuvem usam o seguinte Armazenamento de Blobs padrão dependendo do modelo de implantação:  
 
--   **Certificado de gerenciamento para comunicação do servidor do site com o ponto de distribuição**: o certificado de gerenciamento estabelece uma relação de confiança entre a API de gerenciamento do Azure e o Configuration Manager. Esta autenticação permite que o Configuration Manager chame a API do Azure quando você executa tarefas como implantação de conteúdo ou inicialização e interrupção do serviço de nuvem. Usando o Azure, você pode criar seus próprios certificados de gerenciamento, que podem ser certificados autoassinados ou certificados emitidos por uma CA (autoridade de certificação):  
+    - Uma implantação clássica usa o GRS (armazenamento com redundância geográfica) do Azure. Para obter mais informações, veja [Armazenamento com redundância geográfica](https://docs.microsoft.com/azure/storage/common/storage-redundancy-grs).  
 
-    -   Forneça o arquivo .cer do certificado de gerenciamento do Azure ao configurar o Azure para o Configuration Manager. O arquivo. cer contém a chave pública do certificado de gerenciamento. Você deve carregar esse certificado no Azure antes de instalar um ponto de distribuição baseado em nuvem. Este certificado permite que o Configuration Manager acesse a API do Azure.  
+    - Uma implantação do Azure Resource Manager usa o LRS (armazenamento localmente redundante) do Azure. Essa alteração reduz o custo da conta de armazenamento. A implantação clássica não estava usando os recursos adicionais do GRS. Para obter mais informações, veja [Armazenamento com redundância local](https://docs.microsoft.com/azure/storage/common/storage-redundancy-lrs).  
 
-    -   Forneça o arquivo .pfx do certificado de gerenciamento ao Configuration Manager ao instalar um ponto de distribuição baseado em nuvem. O arquivo .pfx contém a chave privada do certificado de gerenciamento. O Configuration Manager armazena este certificado no banco de dados do site. Como o arquivo .pfx contém a chave privada, você deve fornecer a senha para importar esse arquivo de certificado para o banco de dados do Configuration Manager.  
-
-    Se criar um certificado autoassinado, primeiro você deverá exportar o certificado como um arquivo .cer e, depois, exportá-lo novamente como um arquivo .pfx.  
-
-    Opcionalmente, você pode especificar um arquivo de versão **.publishsettings** do Azure SDK 1.7. Para saber mais sobre arquivos .publishsettings, confira a documentação do Azure.  
-
-    Para saber mais, confira [Como criar um certificado de gerenciamento](http://go.microsoft.com/fwlink/p/?LinkId=220281) e [Como adicionar um certificado de gerenciamento a uma assinatura do Azure](http://go.microsoft.com/fwlink/p/?LinkId=241722) na seção da plataforma do Azure da Biblioteca MSDN.  
-
--   **Certificado de serviço para comunicação do cliente com o ponto de distribuição**: o certificado de serviço do ponto de distribuição baseado em nuvem do Configuration Manager estabelece uma relação de confiança entre os clientes do Configuration Manager e esse ponto de distribuição, além de proteger os dados que os clientes baixam dele usando SSL por HTTPS.  
-
-    > [!IMPORTANT]  
-    >  O nome comum indicado na caixa de entidade do certificado de serviço deve ser exclusivo no seu domínio e não deve corresponder a nenhum dispositivo ingressado no domínio.  
-
-   Para obter um exemplo de implantação deste certificado, confira a seção **Implantando o certificado de serviço em pontos de distribuição baseados em nuvem** no tópico [Exemplo passo a passo de implantação dos certificados PKI para o System Center Configuration Manager: Autoridade de certificação do Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
-
-##  <a name="bkmk_Tasks"></a> Tarefas comuns de gerenciamento para pontos de distribuição baseados em nuvem  
-
--   **Comunicação do servidor do site com o ponto de distribuição baseado em nuvem**: quando instalar um ponto de distribuição baseado em nuvem, atribua um site primário para gerenciar a transferência de conteúdo para o serviço de nuvem. Essa ação equivale a instalar a função do sistema de site do ponto de distribuição em um site específico.  
-
--   **Comunicação do cliente com o ponto de distribuição baseado em nuvem**: quando um dispositivo ou o usuário de um dispositivo estiver configurado com a opção de cliente que permite o uso de um ponto de distribuição baseado em nuvem, ele poderá receber esse ponto de distribuição como um local de conteúdo válido:  
-
-    -   O ponto de distribuição baseado em nuvem é considerado um ponto de distribuição remoto quando um cliente avalia os locais de conteúdo disponíveis.  
-
-    -   Clientes na intranet só usam pontos de distribuição baseados em nuvem como uma opção de fallback se os pontos de distribuição no local de distribuição não estiverem disponíveis.  
-
-    Mesmo que você instale pontos de distribuição baseados em nuvem em regiões específicas do Azure, os clientes que usam esses pontos de distribuição não reconhecem as regiões do Azure e selecionam de forma não determinística um ponto de distribuição baseado em nuvem.
-
-Isso significa que, se você instalar pontos de distribuição baseados em nuvem em várias regiões, e um cliente receber vários pontos de distribuição baseados em nuvem como locais de conteúdo, ele não poderá usar um ponto de distribuição de uma região do Azure igual à dele.  
-
-Clientes que usam pontos de distribuição baseados em nuvem usam a sequência a seguir para solicitações de localização de conteúdo:  
-
-1.  Um cliente configurado para usar pontos de distribuição baseados em nuvem sempre tentará obter o conteúdo de um ponto de distribuição preferencial primeiro.  
-
-2.  Quando um ponto de distribuição preferencial não estiver disponível, o cliente usará um ponto de distribuição remoto, se a implantação oferecer suporte a essa opção e se houver um ponto de distribuição remoto disponível.  
-
-3.  Quando um ponto de distribuição preferencial ou remoto não está disponível, o cliente pode, então, retornar para obter o conteúdo de um ponto de distribuição baseado em nuvem.  
+#### <a name="other-costs"></a>Outros custos
+- Cada serviço de nuvem tem um endereço IP dinâmico. Cada ponto de distribuição na nuvem distinto usa um novo endereço IP dinâmico. A adição de outras VMs por serviço de nuvem não aumenta esses endereços.  
 
 
 
-  Quando um cliente usa um ponto de distribuição baseado em nuvem como um local de conteúdo, ele se autentica para esse ponto de distribuição usando o token de acesso ao Configuration Manager. Se o cliente confiar no certificado do ponto de distribuição baseado em nuvem do Configuration Manager, ele poderá baixar o conteúdo solicitado.  
+##  <a name="bkmk_dataflow"></a> Portas e fluxo de dados   
 
--   **Monitorar pontos de distribuição baseados em nuvem**: é possível monitorar o conteúdo que você implanta em cada ponto de distribuição baseado em nuvem, bem como monitorar o serviço de nuvem que hospeda o ponto de distribuição.  
+Há dois fluxos de dados primários para o ponto de distribuição na nuvem:  
 
-    -   **Conteúdo**: você monitora o conteúdo que implanta em um ponto de distribuição baseado em nuvem da mesma maneira como implanta conteúdo em pontos de distribuição locais.  
+- O servidor do site se conecta ao Azure para configurar o serviço de ponto de distribuição na nuvem  
 
-    -   **Serviço de nuvem**: o Configuration Manager verificará periodicamente o serviço do Azure e emitirá um alerta se o serviço não estiver ativo ou se houver problemas de assinatura ou de certificado. Também é possível ver detalhes sobre o ponto de distribuição no nó **Pontos de Distribuição de Nuvem** em **Serviços de Nuvem** no espaço de trabalho **Administração** do console do Configuration Manager. Nesse local, você exibe informações de alto nível sobre o ponto de distribuição. Você pode também selecionar um ponto de distribuição e editar as propriedades.  
+- Um cliente se conecta ao ponto de distribuição na nuvem para baixar conteúdo  
 
-    Quando você edita as propriedades de um ponto de distribuição baseado em nuvem, você pode:  
 
-    -   Ajustar os limites de dados para armazenamento e alertas.  
+### <a name="site-server-to-azure"></a>Servidor do site para o Azure
 
-    -   Gerenciar conteúdo como faria em um ponto de distribuição local.  
+Você não precisa abrir nenhuma porta de entrada para a rede local. O servidor do site inicia todas as comunicações com o Azure e o ponto de distribuição na nuvem para implantar, atualizar e gerenciar o serviço de nuvem. O servidor do site deve ser capaz de criar conexões de saída para a nuvem da Microsoft. Essa ação equivale a instalar a função do sistema de site do ponto de distribuição em um site específico.  
 
-    Finalmente, para cada ponto de distribuição baseado em nuvem, é possível exibir, mas não editar, a ID da assinatura, o nome de serviço e outros detalhes relacionados que são especificados quando a distribuição baseada em nuvem é instalada.  
 
--   **Backup e recuperação de pontos de distribuição baseados em nuvem**: quando usar um ponto de distribuição baseado em nuvem em sua hierarquia, use as informações a seguir como auxílio para fazer backup ou recuperar o ponto de distribuição:  
+### <a name="client-to-cloud-distribution-point"></a>Ponto de distribuição do cliente para a nuvem
 
-    -   Quando você utiliza a tarefa de manutenção predefinida **Servidor do Site de Backup**, o Configuration Manager inclui automaticamente as configurações do ponto de distribuição baseado em nuvem.  
+Você não precisa abrir nenhuma porta de entrada para a rede local. Clientes baseados na Internet comunicam-se diretamente com o serviço do Azure. Clientes que usam um ponto de distribuição na nuvem em sua rede interna devem ser capazes de se conectar à nuvem da Microsoft. 
 
-    -   É prática recomendada fazer backup e salvar uma cópia dos certificados de gerenciamento e de serviço em uso com um ponto de distribuição baseado em nuvem. Se você restaurar o site primário do Configuration Manager que gerencia o ponto de distribuição baseado em nuvem para um computador diferente, reimporte os certificados para continuar a usá-los.  
+Para obter mais informações sobre a prioridade de localização de conteúdo e quando clientes baseados na intranet usam um ponto de distribuição na nuvem, veja [Prioridade da fonte de conteúdo](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#content-source-priority).
 
--   **Desinstalar um ponto de distribuição baseado em nuvem**: para desinstalar um ponto de distribuição baseado em nuvem, selecione o ponto de distribuição no console do Configuration Manager e selecione **Excluir**.  
+Quando um cliente usa um ponto de distribuição na nuvem como local de conteúdo:  
 
-    Quando um ponto de distribuição baseado em nuvem é excluído de uma hierarquia, o Configuration Manager remove o conteúdo do serviço de nuvem no Azure.  
+1. O ponto de gerenciamento dá ao cliente um token de acesso, juntamente com a lista de fontes de conteúdo. Esse token é válido por 24 horas e dá ao cliente acesso ao ponto de distribuição na nuvem.  
+
+2. O ponto de gerenciamento responde à solicitação de local do cliente com o **FQDN do Serviço** do ponto de distribuição na nuvem. Essa propriedade é igual ao nome comum do certificado de autenticação de servidor.  
+
+    Se você estiver usando seu nome de domínio, por exemplo, WallaceFalls.contoso.com, o cliente primeiro tentará resolver esse FQDN. Você precisa de um alias de CNAME no DNS voltado para a Internet do seu domínio para clientes resolverem o nome de serviço do Azure, por exemplo: WallaceFalls.cloudapp.net.  
+
+3. Em seguida, o cliente resolve o nome do serviço do Azure, por exemplo, WallaceFalls.cloudapp.net, para um endereço IP válido. Essa resposta deve ser tratada pelo DNS do Azure.  
+
+4. O cliente conecta-se ao ponto de distribuição na nuvem. O Azure faz o balanceia a carga da conexão para uma das instâncias da VM. O cliente autentica-se usando o token de acesso.  
+
+5. O ponto de distribuição na nuvem autentica o token de acesso do cliente e, em seguida, dá ao cliente o local exato do conteúdo no armazenamento do Azure.  
+
+6. Se o cliente confiar no certificado de autenticação de servidor do ponto de distribuição na nuvem, ele se conectará ao armazenamento do Azure para baixar o conteúdo. 
+
+
+
+##  <a name="bkmk_perf"></a> Desempenho e escala   
+<!--494872-->
+
+Como com qualquer design de ponto de distribuição, considere os seguintes fatores:  
+- Número de conexões de cliente simultâneas
+- O tamanho do conteúdo que os clientes baixam
+- O tempo permitido para atender às suas necessidades de negócios 
+
+Dependendo do seu [design de topologia](#bkmk_topology), se os clientes tiverem a opção de mais de um ponto de distribuição na nuvem para qualquer conteúdo em questão, eles naturalmente usarão esses serviços de nuvem de modo aleatório. Se você distribuir apenas uma determinada parte do conteúdo para um ponto de distribuição na nuvem único, e um grande número de clientes tentar baixar esse conteúdo ao mesmo tempo, essa atividade imporá uma carga maior àquele ponto de distribuição na nuvem único. Adicionar um ponto de distribuição na nuvem extra também inclui um serviço de armazenamento do Azure separado. Para obter mais informações sobre como o cliente se comunica com os componentes do ponto de distribuição na nuvem e baixa conteúdo, veja [Portas e fluxo de dados](#bkmk_dataflow).  
+
+O ponto de distribuição na nuvem usa duas VMs do Azure como o front-end para o armazenamento do Azure. Essa implantação padrão atende à maioria das necessidades do cliente. Em algumas circunstâncias extremas, com um grande número de conexões de cliente simultâneas (por exemplo, 150 mil clientes), a capacidade de processamento das VMs do Azure não consegue acompanhar as solicitações do cliente. Você não pode redimensionar as VMs do Azure usadas para o ponto de distribuição na nuvem. Embora você não possa configurar o número de instâncias de VM para o ponto de distribuição na nuvem no Configuration Manager, se necessário, reconfigure o serviço de nuvem no portal do Azure. Adicione mais instâncias de VM manualmente ou configure r o serviço para dimensionar automaticamente. 
+
+> [!Important]  
+> Quando você atualiza o Configuration Manager, o site reimplanta o serviço de nuvem. Se você reconfigurar manualmente o serviço de nuvem no portal do Azure, o número de instâncias será redefinido para o padrão de dois.  
+
+O serviço de armazenamento do Azure dá suporte a 500 solicitações por segundo para um único arquivo. Teste de desempenho de um ponto de distribuição na nuvem única deu suporte para a distribuição de um único arquivo de 100 MB para 50 mil clientes em 24 horas.<!--512106-->  
+
+
+
+##  <a name="bkmk_certs"></a> Certificados  
+
+Dependendo do design do ponto de distribuição na nuvem, você precisa de um ou mais certificados digitais.  
+
+
+### <a name="azure-management-certificate"></a>Certificado de gerenciamento do Azure
+
+*Esse certificado é obrigatório para implantações de serviço clássico. Não é necessário para implantações do Azure Resource Manager.*
+
+Se você estiver usando o método clássico de implantação do Azure, precisará usar um **certificado de gerenciamento do Azure**. Para obter mais informações, veja a seção [Certificado de gerenciamento do Azure](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#azure-management-certificate) do artigo de certificados de Gateway de Gerenciamento de Nuvem. O servidor do site do Configuration Manager usa esse certificado para autenticar com o Azure para criar e gerenciar a implantação clássica.  
+
+> [!TIP]  
+> Do Configuration Manager versão 1806 em diante, use o Modelo de implantação do **Azure Resource Manager**. Ele não exige esse certificado de gerenciamento.  
+
+Para reduzir a complexidade, use o mesmo certificado de gerenciamento do Azure para todas as implantações clássicas de pontos de distribuição na nuvem e gateways de gerenciamento em nuvem em todas as assinaturas do Azure e todos os sites do Configuration Manager.
+
+
+### <a name="server-authentication-certificate"></a>Certificado de autenticação de servidor
+
+*Esse certificado é obrigatório para todas as implantações de ponto de distribuição na nuvem.*
+
+Para obter mais informações, veja [Certificado de autenticação de servidor do CMG](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#cmg-server-authentication-certificate) e as subseções a seguir, conforme necessário:  
+- Certificado raiz confiável do CMG para clientes
+- Certificado de autenticação de servidor emitido por um provedor público
+- Certificado de autenticação de servidor emitido pelo PKI corporativo
+
+O ponto de distribuição na nuvem usa esse tipo de certificado da mesma forma que o Gateway de Gerenciamento de Nuvem. Os clientes também precisam confiar nesse certificado. Para reduzir a complexidade, a Microsoft recomenda o uso de um certificado emitido por um provedor público. 
+
+A menos que você use um certificado curinga, não reutilize o mesmo certificado. Cada instância do ponto de distribuição na nuvem e o Gateway de Gerenciamento de Nuvem requer um certificado de autenticação de servidor exclusivo. 
+
+Para obter mais informações sobre como criar esse certificado de uma PKI, veja [Implantar o certificado de serviço para pontos de distribuição na nuvem](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012).  
+
+
+
+##  <a name="bkmk_faq"></a> Perguntas frequentes   
+
+### <a name="does-a-client-need-a-certificate-to-download-content-from-a-cloud-distribution-point"></a>Um cliente precisa de um certificado para baixar o conteúdo de um ponto de distribuição na nuvem?
+
+Um certificado de autenticação de cliente não é necessário. O cliente precisa confiar no certificado de autenticação de servidor usado pelo ponto de distribuição na nuvem. Se esse certificado for emitido por um provedor de certificado público, a maioria dos dispositivos do Windows já incluirá certificados raiz confiáveis para esses provedores. Se você emitir um certificado de autenticação de servidor da PKI da sua organização, os clientes precisarão confiar nos certificados de emissão em toda a cadeia. Esta cadeia inclui a autoridade de certificação raiz e qualquer autoridade de certificação intermediária. Dependendo do design de PKI, esse certificado poderá introduzir complexidade adicional à implantação do ponto de distribuição na nuvem. Para evitar essa complexidade, a Microsoft recomenda o uso de um provedor de certificado público em que os clientes já confiam.  
+
+
+### <a name="can-my-on-premises-clients-use-a-cloud-distribution-point"></a>Meus clientes locais podem usar um ponto de distribuição na nuvem?
+
+Sim. Se você quiser que os clientes em sua rede interna usem um ponto de distribuição na nuvem, ele precisará estar no mesmo grupo de limite que os clientes. Os clientes priorizam os pontos de distribuição na nuvem por último na lista de fontes de conteúdo, porque há um custo associado a baixar conteúdo do Azure. Assim, um ponto de distribuição na nuvem normalmente é usado como uma origem de fallback para clientes baseados na intranet. Se você quiser um design primeiro na nuvem, crie os grupos de limites adequadamente. Para obter mais informações, consulte [Configurar grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups).  
+
+
+### <a name="do-i-need-azure-expressroute"></a>O Azure ExpressRoute é necessário?
+
+O [Azure ExpressRoute](/azure/expressroute/expressroute-introduction) possibilita que você estenda a rede local para a nuvem da Microsoft. O ExpressRoute, ou outras conexões de rede virtual desse tipo, não é necessário para o ponto de distribuição na nuvem do Configuration Manager.  
+
+Se a sua organização usar o ExpressRoute, isole a assinatura do Azure para o ponto de distribuição na nuvem da assinatura que usa o ExpressRoute. Essa configuração garante que o ponto de distribuição na nuvem não seja conectado acidentalmente dessa maneira.  
+
+
+### <a name="do-i-need-to-maintain-the-azure-virtual-machines"></a>É necessário manter as máquinas virtuais do Azure?
+
+Nenhuma manutenção é necessária. O design do ponto de distribuição na nuvem usa a PaaS (plataforma como serviço) do Azure. Usando a assinatura fornecida, o Configuration Manager cria as VMs, o armazenamento e a rede necessários. O Azure protege e atualiza a máquinas virtuais. Essas VMs não fazem parte do ambiente local, como é o caso do IaaS (infraestrutura como serviço). O ponto de distribuição na nuvem é uma PaaS que estende seu ambiente do Configuration Manager para a nuvem. Para obter mais informações, veja [Vantagens de segurança de um modelo de serviço de nuvem PaaS](https://docs.microsoft.com/azure/security/security-paas-deployments#security-advantages-of-a-paas-cloud-service-model).  
+
+
+### <a name="does-the-cloud-distribution-point-use-azure-cdn"></a>O ponto de distribuição na nuvem usa a CDN do Azure?
+
+A CDN (Rede de Distribuição de Conteúdo) do Azure é uma solução global para fornecer rapidamente conteúdo de alta largura de banda armazenando em cache o conteúdo em nós estrategicamente posicionados no mundo inteiro. Para obter mais informações, veja [O que é a CDN do Azure?](https://docs.microsoft.com/azure/cdn/cdn-overview).
+
+O ponto de distribuição na nuvem do Configuration Manager atualmente não dá suporte para a CDN do Azure.
+
+
+
+## <a name="next-steps"></a>Próximas etapas
+[Instalar pontos de distribuição na nuvem](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure)

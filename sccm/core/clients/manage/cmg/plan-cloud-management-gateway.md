@@ -2,26 +2,25 @@
 title: Plano para o gateway de gerenciamento de nuvem
 titleSuffix: Configuration Manager
 description: Planeje e projete o CMG (gateway de gerenciamento de nuvem) para simplificar o gerenciamento de clientes baseados na Internet.
-ms.date: 04/10/2018
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6e5274398b1a53b5a8dce8b854bccbe0e0d92081
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 78300528fde4a75f8ff816fb5ac2bb8549c2571c
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340848"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39383755"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planejar o gateway de gerenciamento de nuvem no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
  
-<!--1101764-->
-O CMG (gateway de gerenciamento de nuvem) fornece uma maneira simples de gerenciar clientes do Configuration Manager na Internet. Implantando o CMG como um serviço de nuvem no Microsoft Azure, você pode gerenciar clientes tradicionais que usam um perfil móvel na Internet sem infraestrutura adicional. Você também não precisa expor sua infraestrutura local para a Internet. 
+<!--1101764--> O CMG (Gateway de Gerenciamento de Nuvem) fornece uma maneira simples de gerenciar clientes do Configuration Manager na Internet. Implantando o CMG como um serviço de nuvem no Microsoft Azure, você pode gerenciar clientes tradicionais que usam um perfil móvel na Internet sem infraestrutura adicional. Você também não precisa expor sua infraestrutura local para a Internet. 
 
 > [!Tip]  
 > Esse recurso foi introduzido na versão 1610 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1802, esse recurso deixa de ser um recurso de pré-lançamento.  
@@ -96,8 +95,7 @@ A implantação e a operação do CMG incluem os seguintes componentes:
 
 
 ### <a name="azure-resource-manager"></a>Azure Resource Manager
-<!-- 1324735 -->
-A partir da versão 1802, você pode criar o CMG usando uma **implantação do Azure Resource Manager**. O [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) é uma plataforma moderna para gerenciar todos os recursos da solução como uma única entidade, chamado [grupo de recursos](/azure/azure-resource-manager/resource-group-overview#resource-groups). Ao implantar o CMG com o Azure Resource Manager, o site usa o Azure Active Directory (Azure AD) para autenticar e criar os recursos necessários para a nuvem. Esta implantação modernizada não requer o certificado de gerenciamento do Azure clássico.  
+<!-- 1324735 --> Começando na versão 1802, você pode criar o CMG usando uma **implantação do Azure Resource Manager**. O [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) é uma plataforma moderna para gerenciar todos os recursos da solução como uma única entidade, chamado [grupo de recursos](/azure/azure-resource-manager/resource-group-overview#resource-groups). Ao implantar o CMG com o Azure Resource Manager, o site usa o Azure Active Directory (Azure AD) para autenticar e criar os recursos necessários para a nuvem. Esta implantação modernizada não requer o certificado de gerenciamento do Azure clássico.  
 
 O assistente do CMG ainda fornece a opção para uma **implantação de serviço clássico** usando um certificado de gerenciamento do Azure. Para simplificar a implantação e o gerenciamento de recursos, o uso do modelo de implantação do Azure Resource Manager é recomendado para todas as novas instâncias do CMG. Se possível, reimplante as instâncias CMG existentes por meio do Resource Manager. Para obter mais informações, consulte [Modificar um CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg).
 
@@ -199,6 +197,7 @@ A seguinte tabela lista o suporte do CMG para recursos do Configuration Manager:
 | Distribuição de software (direcionada ao usuário, obrigatória)</br>(com integração com o Azure AD)     | ![Com suporte](media/green_check.png)  (1710) |
 | Distribuição de software (direcionada ao usuário, disponível)</br>([todos os requisitos](/sccm/apps/deploy-use/deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices)) | ![Com suporte](media/green_check.png)  (1802) |
 | Sequência de tarefas de atualização in-loco do Windows 10     | ![Com suporte](media/green_check.png)  (1802) |
+| CMPivot     | ![Com suporte](media/green_check.png)  (1806) |
 | Outros cenários de sequência de tarefas     | ![Sem suporte](media/Red_X.png) |
 | Push de cliente     | ![Sem suporte](media/Red_X.png) |
 | Atribuição automática de site     | ![Sem suporte](media/Red_X.png) |
@@ -264,9 +263,9 @@ O CMG usa os seguintes componentes do Azure, que incorrem em encargos para a con
 
 - Os clientes baseados na Internet recebem o conteúdo da atualização de software da Microsoft do Windows Update sem custo adicional. Não distribua pacotes de atualização com o conteúdo do Microsoft Update para um ponto de distribuição na nuvem; caso contrário, você poderá incorrer em custos de armazenamento e de saída de dados.  
 
-- Para outros tipos de conteúdo necessários, como atualizações de aplicativos ou de software de terceiros, é necessário distribuí-los para um ponto de distribuição baseado em nuvem. Atualmente, o CMG é compatível apenas com o ponto de distribuição baseado em nuvem para o envio de conteúdo para clientes.  
+- Para outros tipos de conteúdo necessários, como atualizações de aplicativos ou de software de terceiros, é necessário distribuí-los para um ponto de distribuição na nuvem. Atualmente, o CMG dá suporte apenas ao ponto de distribuição na nuvem para enviar conteúdo aos clientes.  
 
-- Para obter mais informações, consulte o custo do uso da [distribuição baseada em nuvem](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#cost-of-using-cloud-based-distribution).  
+- Para obter mais informações, confira o custo de utilização de [pontos de distribuição na nuvem](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_cost).  
 
 #### <a name="other-costs"></a>Outros custos
 

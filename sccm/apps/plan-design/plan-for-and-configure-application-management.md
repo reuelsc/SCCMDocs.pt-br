@@ -2,7 +2,7 @@
 title: Planejar e configurar o gerenciamento de aplicativos
 titleSuffix: Configuration Manager
 description: Implemente e configure as dependências necessárias para implantar aplicativos no System Center Configuration Manager.
-ms.date: 11/07/2017
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 2be84a1d-ebb9-47ae-8982-c66d5b92a52a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 18d9fe80a1c5525457579dadbfeaeafa3425202d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 626fbb8d431857b1b672fffd9f3ba0df8b2a3da0
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340141"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385194"
 ---
 # <a name="plan-for-and-configure-application-management-in-system-center-configuration-manager"></a>Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager
 
@@ -183,8 +183,7 @@ A identidade visual personalizada do Centro de Software é aplicada de acordo co
 3. Se uma assinatura do Microsoft Intune estiver configurada e conectada ao Configuration Manager, o Centro de Software exibirá o nome da organização, a cor e o logotipo da empresa especificados nas propriedades de assinatura do Intune. Para obter mais informações, consulte [Configuring the Microsoft Intune subscription](https://docs.microsoft.com/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription).
 
 #### <a name="to-manually-set-software-center-branding"></a>Para definir manualmente a identidade visual do Centro de Software
-<!-- 1351224 -->
-Com a versão 1710, você pode adicionar elementos de identidade visual da empresa e especificar a visibilidade das guias no Centro de Software manualmente. Você pode adicionar o nome específico da empresa do Centro de Software, definir um tema de cores de configuração do Centro de Software, definir um logotipo da empresa e definir as guias visíveis para os dispositivos cliente.
+<!-- 1351224 --> Com a versão 1710, você pode adicionar elementos de identidade visual da empresa e especificar a visibilidade das guias no Centro de Software manualmente. Você pode adicionar o nome específico da empresa do Centro de Software, definir um tema de cores de configuração do Centro de Software, definir um logotipo da empresa e definir as guias visíveis para os dispositivos cliente.
 
 1. No console do **Configuration Manager**, escolha **Administração** > **Configurações do Cliente**. Clique na instância de configuração de cliente desejada.
 2. Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.
@@ -201,9 +200,13 @@ Com a versão 1710, você pode adicionar elementos de identidade visual da empre
     -  Habilitar a guia Status de Instalação
     -  Habilitar a guia Conformidade do dispositivo
     -  Habilitar a guia Opções
+    -  Especificar uma guia personalizada para o Centro de Software (começando na versão 1806) <!--1358132 -->
+        - Nome da guia
+        - URL de conteúdo
 
 > [!IMPORTANT]  
->  A identidade visual do Centro de Software é sincronizada com o serviço Intune a cada 14 dias. Portanto, pode ocorrer um atraso antes que as alterações feitas no Intune sejam exibidas no Configuration Manager.
+> - Alguns recursos de site podem não funcionar ao usá-los como uma guia personalizada no Centro de Software. Teste os resultados antes de implantar nos clientes. <!--519659--> 
+> - A identidade visual do Centro de Software é sincronizada com o serviço Intune a cada 14 dias. Portanto, pode ocorrer um atraso antes que as alterações feitas no Intune sejam exibidas no Configuration Manager.
 
 ###  <a name="step-5-verify-that-the-application-catalog-is-operational"></a>Etapa 5: Verificar se o Catálogo de Aplicativos está funcionando  
  Use os procedimentos a seguir para verificar se o catálogo de aplicativos está operacional. Você pode usar o Catálogo de Aplicativos diretamente de um navegador ou do Centro de Software.  
