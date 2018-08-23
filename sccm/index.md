@@ -4,12 +4,12 @@ hide_bc: true
 title: Documentação do System Center Configuration Manager
 description: Saiba como usar o System Center Configuration Manager.
 ms.topic: hub-page
-ms.openlocfilehash: 250f5cf0793f5afd396a82f96389c937ed9be14b
-ms.sourcegitcommit: e3f7bb8cec4b37a311bc86098297534cab947de8
+ms.openlocfilehash: 9288732db8771d9ae83c006b1865683fe58ebc0e
+ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "29781755"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42587879"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -70,8 +70,8 @@ ms.locfileid: "29781755"
                                             <div class="cardText">
                                                 <h3>Gerenciamento de dispositivos móveis</h3>
                                                 <p><a href="/sccm/mdm/understand/hybrid-mobile-device-management">Noções básicas sobre o gerenciamento de dispositivo móvel híbrido</a></p>
-                                                <p><a href="/sccm/mdm/deploy-use/setup-hybrid-mdm">Configurar o MDM híbrido com o Intune</a></p>
-                                                <p><a href="/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management">Escolha entre o MDM híbrido e independente do Intune com o Configuration Manager</a></p>
+                                                <p><a href="/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa">Migrar usuários e dispositivos do MDM híbrido para o Intune autônomo</a></p>
+                                                <p><a href="/sccm/mdm/understand/whats-new-in-hybrid-mobile-device-management">Novidades no MDM híbrido</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -344,7 +344,7 @@ ms.locfileid: "29781755"
                                 </a>
                             </li>
                             <li>
-                                <a href="/sccm/mdm/deploy-use/setup-hybrid-mdm">
+                                <a href="/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -354,8 +354,8 @@ ms.locfileid: "29781755"
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Configurar o MDM híbrido com o Intune</h3>
-                                                <p>Habilite seus cenários de BYOD e atenda aos pré-requisitos da maioria das estratégias de gerenciamento de dispositivos de propriedade da empresa.</p>
+                                                <h3>Migrar usuários e dispositivos do MDM híbrido para o Intune autônomo</h3>
+                                                <p>Use uma abordagem em fases para migrar do MDM híbrido para a solução do Intune autônomo recomendada.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -363,7 +363,7 @@ ms.locfileid: "29781755"
                                 </a>
                             </li>
                             <li>
-                                <a href="/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management">
+                                <a href="/sccm/mdm/understand/whats-new-in-hybrid-mobile-device-management">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -373,8 +373,8 @@ ms.locfileid: "29781755"
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Escolha entre o MDM híbrido e independente do Intune com o Configuration Manager</h3>
-                                                <p>MDM independente ou híbrido do Intune? Por que escolher um em detrimento do outro? </p>
+                                                <h3>Novidades no MDM híbrido</h3>
+                                                <p>Saiba mais sobre os novos recursos do Intune que são compatíveis com o MDM híbrido.</p>
                                             </div>
                                         </div>
                                     </div>

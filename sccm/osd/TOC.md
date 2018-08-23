@@ -56,7 +56,7 @@
 ### [Criar uma sequência de tarefas para capturar e restaurar o estado do usuário](deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md)
 ### [Usar uma sequência de tarefas para gerenciar discos rígidos virtuais](deploy-use/use-a-task-sequence-to-manage-virtual-hard-disks.md)
 
-## [Cenários de sequência de tarefas personalizadas](deploy-use/custom-task-sequence-scenarios.md)
+## Cenários de sequência de tarefas personalizada
 ### [Criar uma sequência de tarefas personalizada](deploy-use/create-a-custom-task-sequence.md)
 ### [Criar uma sequência de tarefas para implantações que não são de sistema operacional](deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md)
 ### [Etapas de sequência de tarefas para gerenciar o BIOS para a conversão de UEFI](deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md)
