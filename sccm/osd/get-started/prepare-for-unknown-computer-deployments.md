@@ -78,4 +78,4 @@ Use as informações neste tópico para implantar sistemas operacionais em compu
 
 -   **Mídia em pré-teste**  
 
-     Marque a caixa de seleção **Habilitar suporte a computadores desconhecidos** , na página **Segurança** do Assistente para Criar Mídia de Sequência de Tarefas. Para obter mais informações, consulte [Create prestaged media with System Center Configuration Manager](../deploy-use/create-prestaged-media.md).  
+     Marque a caixa de seleção **Habilitar suporte a computadores desconhecidos** , na página **Segurança** do Assistente para Criar Mídia de Sequência de Tarefas. Para obter mais informações, consulte [Criar mídia pré-configurada com o System Center Configuration Manager](../deploy-use/create-prestaged-media.md).  
