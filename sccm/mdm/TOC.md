@@ -1,6 +1,5 @@
 # Visão geral
 ## [O que é um MDM híbrido?](understand/hybrid-mobile-device-management.md)
-## [Escolher Intune autônomo ou MDM híbrido](understand/choose-between-standalone-intune-and-hybrid-mobile-device-management.md)
 ## [Novidades no MDM híbrido](understand/whats-new-in-hybrid-mobile-device-management.md)
 
 # [Planejamento e design](plan-design/plan-hybrid-mobile-device-management.md)
