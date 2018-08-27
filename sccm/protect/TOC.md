@@ -29,7 +29,6 @@
 ## [Perfis de certificado](deploy-use/introduction-to-certificate-profiles.md)
 ### [Criar perfis de certificado](deploy-use/create-certificate-profiles.md)
 ### [Configurar infraestrutura de certificado](deploy-use/certificate-infrastructure.md)
-### [Referência técnica de controles de criptografia](deploy-use/cryptographic-controls-technical-reference.md)
 
 ## [Endpoint Protection](deploy-use/endpoint-protection.md)
 ### [Configurar Endpoint Protection](deploy-use/endpoint-protection-configure.md)
