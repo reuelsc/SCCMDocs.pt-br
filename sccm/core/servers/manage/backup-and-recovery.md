@@ -2,7 +2,7 @@
 title: Sites de backup
 titleSuffix: Configuration Manager
 description: Saiba como fazer o backup de seus sites antes do evento de falha ou perda de dados no Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 08/24/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: f7832d83-9ae2-4530-8a77-790e0845e12f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 39af53c6ddfdb58f340432aa3392a046cdeef428
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 85ce1c4b5201c29ffa3543357f50a379c1b11e7f
+ms.sourcegitcommit: 84afecee44200e27d1d5bb5ed2d54fd6a8c51617
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39386207"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43053874"
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Fazer backup de um site do Configuration Manager
 
@@ -129,7 +129,7 @@ Mantenha vários arquivos do instantâneo de backup pelos seguintes motivos:
 
 
 ## <a name="using-the-afterbackupbat-file"></a>Usando o arquivo AfterBackup.bat  
-Após o backup bem-sucedido do site, a tarefa de backup tenta automaticamente executar um script chamado **AfterBackup.bat**. Crie manualmente o arquivo AfterBackup.bat no servidor do site em `<ConfigMgrInstallationFolder>\Inboxes\Smsbkup`. Se existir um arquivo AfterBackup.bat na pasta correta, ele será executado automaticamente depois que a tarefa de backup for concluída.
+Após o backup bem-sucedido do site, a tarefa de backup tenta automaticamente executar um script chamado **AfterBackup.bat**. Crie manualmente o arquivo AfterBackup.bat no servidor do site em `<ConfigMgrInstallationFolder>\Inboxes\Smsbkup.box`. Se existir um arquivo AfterBackup.bat na pasta correta, ele será executado automaticamente depois que a tarefa de backup for concluída.
 
 O arquivo AfterBackup.bat permite arquivar o instantâneo de backup ao final de cada operação de backup. Ele pode realizar automaticamente outras tarefas pós-backup que não fazem parte da tarefa de manutenção do Servidor do Site de Backup. O arquivo AfterBackup.bat integra o arquivo e as operações de backup, garantindo assim que cada novo instantâneo de backup seja arquivado.
 
