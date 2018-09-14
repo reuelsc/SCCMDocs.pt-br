@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: fbae44d1344dd36d3c0a6faf2e50727dfa830ba0
-ms.sourcegitcommit: 8060ea520fb08629e1d5f249daffe825536673a5
+ms.openlocfilehash: 02a830d10263164e26902247856f999523092c76
+ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35232363"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "42584455"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificados para o gateway de gerenciamento de nuvem
 
@@ -63,7 +63,8 @@ Por exemplo, a Contoso usa **GraniteFalls.Contoso.com** para o CN do certificado
 
 Crie um certificado SSL personalizado para o CMG da mesma maneira que para um ponto de distribuição na nuvem. Siga as instruções em [Implantando o certificado de serviço em pontos de distribuição baseados em nuvem](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012), mas realize o seguinte de forma diferente:
 
-- Ao solicitar o certificado do servidor Web personalizado, forneça um FQDN para o nome comum do certificado. Para usar o CMG na nuvem pública do Azure, use um nome que termina com **cloudapp.net** ou **usgovcloudapp.net** para a nuvem do Azure US Government.
+- Ao solicitar o certificado do servidor Web personalizado, forneça um FQDN para o nome comum do certificado. Isso pode ser um nome de domínio público que você tem ou é possível utilizar o domínio cloudapp.net. Se estiver usando seu próprio domínio público, consulte o processo acima para criar um alias de DNS no DNS público de sua organização.
+- Ao usar o domínio público cloudapp.net para o certificado do servidor Web CMG na nuvem pública do Azure, use um nome que termina em **cloudapp.net** ou **usgovcloudapp.net** para a nuvem do Governo dos EUA do Azure.
 
 
 

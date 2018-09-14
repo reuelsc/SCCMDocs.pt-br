@@ -10,12 +10,12 @@ ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 00a79e099255b9ec19660914825334dc95b30682
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: c3dc6189f73b939f632581a8b50f05a72310111d
+ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383843"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42755989"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Cache par para clientes do Configuration Manager
 
@@ -45,7 +45,7 @@ O cliente do Configuration Manager usa o cache par para fornecer todo tipo de co
 O cache par não substitui o uso de outras soluções, como o Windows BranchCache ou a Otimização de Entrega. O cache par funciona juntamente com outras soluções. Essas tecnologias oferecem mais opções para estender as soluções tradicionais de implantação de conteúdo, como os pontos de distribuição. O cache par é uma solução personalizada que não depende do BranchCache. Se você não habilitar nem usar o BranchCache, o cache par ainda funcionará.  
 
   > [!Note]  
-  > Começando na versão 1802, o Windows BranchCache está sempre habilitado nos clientes. A configuração para **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede** foi removida. Os clientes usam o BranchCache quando o ponto de distribuição permite.<!--SCCMDocs issue 539-->  
+  > A partir da versão 1802, o Windows BranchCache está sempre ativado nas implantações. A configuração **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede** foi removida.<!--SCCMDocs issue 539--> Se o ponto de distribuição oferecer suporte e estiver habilitado nas configurações do cliente, os clientes usarão o BranchCache. Para saber mais, confira [Configurar o BranchCache](/sccm/core/clients/deploy/about-client-settings#configure-branchcache).<!--SCCMDocs issue 735-->   
 
 
 
@@ -175,7 +175,7 @@ Para vê-los tratando o download do conteúdo em partes, examine o **ContentTran
 
 - O cliente da fonte de cache par atualiza o horário da última referência ao conteúdo no cache quando um par o baixa. O cliente usa esse carimbo de data/hora quando mantém automaticamente seu cache, removendo o conteúdo mais antigo primeiro. Portanto, ele deve esperar para remover o conteúdo que os clientes do cache par mais baixam, caso haja algum.  
 
-- Se necessário, durante uma sequência de tarefas de implantação de sistema operacional, use a variável **SMSTSPreserveContent** para manter o conteúdo no cache do cliente. Para obter mais informações, confira [variáveis internas de sequência de tarefas](/sccm/osd/understand/task-sequence-built-in-variables).  
+- Se necessário, durante uma sequência de tarefas de implantação de sistema operacional, use a variável **SMSTSPreserveContent** para manter o conteúdo no cache do cliente. Para saber mais, confira [Variáveis de sequência de tarefas](/sccm/osd/understand/task-sequence-variables#SMSTSPreserveContent).  
 
 - Se necessário, ao criar o software a seguir, use a opção para **Persistir conteúdo no cache do cliente**:  
     - Aplicativos

@@ -10,12 +10,12 @@ ms.assetid: bda87fc5-2e4c-4992-98a4-01770365038c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f8948556ebee069e4ea1c8bf16302ef92fe7b3c1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 1b29fb48d8d8abc2e0c6693725b65c90a0cf1cd1
+ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344054"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "42584510"
 ---
 # <a name="setup-downloader-for-system-center-configuration-manager"></a>Downloader de Instalação para System Center Configuration Manager
 
@@ -69,7 +69,7 @@ Você tem duas opções para executar o Downloader de Instalação:
 
     Comandos de exemplo:
 
-    -   **setupd &lt;DownloadPath\>**  
+    -   **setupdl &lt;DownloadPath\>**  
 
         -   O Downloader de Instalação inicia, verifica os arquivos na pasta de download especificada e baixa apenas os arquivos ausentes ou que têm versões mais recentes do que os arquivos existentes.     
 

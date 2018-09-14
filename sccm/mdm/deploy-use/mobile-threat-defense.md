@@ -2,7 +2,7 @@
 title: Restringir o acesso com base em riscos
 titleSuffix: Configuration Manager
 description: Restrinja o acesso aos recursos da empresa com base em risco de dispositivo, rede e aplicativo.
-ms.date: 04/25/2017
+ms.date: 08/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,29 +10,39 @@ ms.assetid: 9083c571-f4fc-4a78-adc5-8aec84dabcbd
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e921e6ab90eb57caf031b49d375d0017ea9a2930
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a00a4e8140548c4f503e3467626b8d6cbab69ee3
+ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32346441"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42584632"
 ---
 # <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>Gerenciar o acesso aos recursos da empresa com base em risco de dispositivo, rede e aplicativo
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Os conectores de Defesa contra Ameaças Móveis permitem aproveitar o fornecedor da Defesa contra Ameaças Móveis escolhido como uma fonte de informações para as políticas de conformidade e regras de acesso condicional. Isso permite que os Administradores de TI adicionem uma camada de proteção aos seus recursos corporativos, como Exchange e Sharepoint, especificamente de dispositivos móveis comprometidos.
+Os conectores de Defesa contra Ameaças Móveis permitem aproveitar o fornecedor da Defesa contra Ameaças Móveis escolhido como uma fonte de informações para as políticas de conformidade e regras de acesso condicional. Isso possibilita adicionar uma camada de proteção aos seus recursos organizacionais, como Exchange e Sharepoint, especificamente de dispositivos móveis comprometidos.
+
+> [!Important]  
+> A partir de 14 de agosto de 2018, o gerenciamento híbrido de dispositivos móveis é um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+
+
 
 ## <a name="what-problem-does-this-solve"></a>Qual problema isso resolve?
 
-As empresas precisam proteger dados confidenciais contra ameaças emergentes, incluindo ameaças físicas, baseadas em aplicativo e em rede, bem como vulnerabilidades do sistema operacional.
-Historicamente, as empresas têm sido proativas ao proteger computadores contra ataques, enquanto os dispositivos móveis ficam sem monitoramento e proteção. Plataformas móveis têm proteção interna, como isolamento de aplicativo e lojas de aplicativos de consumidor verificadas, mas permanecerão vulneráveis a ataques sofisticados. Hoje, um número maior de funcionários usa dispositivos para o trabalho e precisam ter acesso a informações confidenciais. Os dispositivos precisam ser protegidos contra ataques cada vez mais sofisticados.
+As organizações precisam proteger dados confidenciais contra ameaças emergentes que incluem ameaças físicas, baseadas em aplicativo e em rede, além de vulnerabilidades do sistema operacional.
 
-A [implantação de MDM híbrida (SCCM com o Intune)](https://docs.microsoft.com/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management) oferece a capacidade de controlar o acesso aos recursos e dados da empresa com base na avaliação de risco que os parceiros de soluções de Proteção contra Ameaças do Dispositivo fornecem, como a Defesa contra Ameaças Móveis.
+Historicamente, as organizações têm sido proativas ao proteger computadores contra ataques, enquanto os dispositivos móveis ficam sem monitoramento e proteção. Plataformas móveis têm proteção interna, como isolamento de aplicativo e lojas de aplicativos de consumidor verificadas, mas permanecerão vulneráveis a ataques sofisticados. Hoje, um número maior de funcionários usa dispositivos para o trabalho e precisam ter acesso a informações confidenciais. Os dispositivos precisam ser protegidos contra ataques cada vez mais sofisticados.
+
+
 
 ## <a name="how-the-intune-mobile-threat-defense-connectors-work"></a>Como funcionam os conectores da Defesa contra Ameaças Móveis do Intune?
 
-O conector protege recursos da empresa criando um canal de comunicação entre o Intune e o fornecedor de Defesa contra Ameaças Móveis escolhido. Parceiros de Defesa contra Ameaças Móveis do Intune oferecem aplicativos intuitivos e fáceis de implantar para dispositivos móveis que examinam e analisam ativamente informações sobre ameaças para compartilhar com o Intune, para fins de relatórios ou imposição. Por exemplo, se um aplicativo de Defesa contra Ameaças Móveis conectado informar ao fornecedor de Defesa contra Ameaças Móveis que um telefone em sua rede está conectado a uma rede vulnerável aos ataques de intermediários, essas informações serão compartilhadas e categorizadas em um nível apropriado de risco (baixo/médio/grande) – que, em seguida, pode ser comparado com suas concessões de nível de risco configuradas no Intune, a fim de determinar se o acesso a determinados recursos de sua escolha deve ser revogado enquanto o dispositivo estiver comprometido.
+O conector protege recursos organizacionais criando um canal de comunicação entre o Intune e o fornecedor de Defesa contra Ameaças Móveis escolhido. Parceiros de Defesa contra Ameaças Móveis do Intune oferecem aplicativos intuitivos e fáceis de implantar para dispositivos móveis, que examinam e analisam ativamente informações sobre ameaças para compartilhar com o Intune. Use essas informações para fins de relatório ou imposição. 
+
+Por exemplo, um aplicativo de Defesa contra Ameaças Móveis conectado informa ao fornecedor da Defesa contra Ameaças Móveis que um dispositivo está atualmente conectado a uma rede vulnerável a ataques de interceptação. Essas informações são compartilhadas e categorizadas em um nível de risco apropriado: baixo, médio ou alto. Compare esse risco com as permissões de nível de risco configuradas no Intune para determinar se o acesso a determinados recursos de sua escolha deve ser revogado enquanto o dispositivo estiver comprometido.
+
+
 
 ## <a name="sample-scenarios"></a>Exemplo de cenários
 
@@ -43,6 +53,8 @@ Quando um dispositivo é considerado infectado pela solução de Defesa contra A
 O acesso é concedido quando o dispositivo é corrigido:
 
 ![Acesso concedido à Defesa contra Ameaças Móveis](../media/mtp/MTD-image-2.png)
+
+
 
 ## <a name="next-steps"></a>Próximas etapas
 

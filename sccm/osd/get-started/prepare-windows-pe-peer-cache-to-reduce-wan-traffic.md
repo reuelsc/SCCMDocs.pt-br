@@ -10,12 +10,12 @@ ms.assetid: 6c64f276-b88c-4b1e-8073-331876a03038
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 90eaaec52076e4ac4fbaddf6cc07cf20359b5a68
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 69d8db3cceff45319ed4f2fc0b2962c3bb50b0f2
+ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353630"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42756165"
 ---
 # <a name="prepare-windows-pe-peer-cache-to-reduce-wan-traffic-in-system-center-configuration-manager"></a>Preparar o cache par do Windows PE para reduzir o tráfego da WAN no System Center Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "32353630"
 
 Ao implantar um novo sistema operacional no System Center Configuration Manager, os computadores que executam a sequência de tarefas podem usar o Cache Par do Windows PE para obter o conteúdo de um par local (uma fonte de cache par), em vez de baixar o conteúdo de um ponto de distribuição. Isso ajuda a minimizar o tráfego de WAN (rede de longa distância) em cenários de filial em que não há nenhum ponto de distribuição local.  
 
- O Cache par do Windows PE é semelhante ao [Windows BranchCache](http://technet.microsoft.com/library/mt617255\(TechNet.10\).aspx#bkmk_branchcache), mas funciona no Windows PE (Ambiente de Pré-Instalação do Windows). Os seguintes termos são usados para descrever os clientes que usam o Cache par do Windows PE:  
+ O Cache par do Windows PE é semelhante ao [Windows BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#bkmk_branchcache), mas funciona no Windows PE (Ambiente de Pré-Instalação do Windows). Os seguintes termos são usados para descrever os clientes que usam o Cache par do Windows PE:  
 
 -   Um **cliente de cache de sistemas pares** é um computador configurado para usar o Cache de sistemas pares do Windows PE.  
 
@@ -70,7 +70,7 @@ Use as seções a seguir para gerenciar o Cache Par.
         > [!TIP]  
         >  Os clientes usarão HTTPS para baixar o conteúdo quando ele estiver disponível. No entanto, o mesmo número da porta será usado para HTTP ou HTTPS.  
 
--   [Configurar o cache de cliente para clientes do Configuration Manager](../../core/clients/manage/manage-clients.md#BKMK_ClientCache) nos clientes para garantir que eles têm espaço suficiente para manter e armazenar as imagens de implantação. O Cache par do Windows PE não afeta a configuração ou o comportamento do cache do cliente.  
+-   [Configurar o cache de cliente para clientes do Configuration Manager](/sccm/core/clients/manage/manage-clients#BKMK_ClientCache) nos clientes para garantir que eles têm espaço suficiente para manter e armazenar as imagens de implantação. O Cache par do Windows PE não afeta a configuração ou o comportamento do cache do cliente.  
 
 -   As opções de implantação para a implantação de sequência de tarefas devem ser configuradas como Baixar conteúdo localmente quando necessário por sequência de tarefas.  
 
@@ -81,7 +81,7 @@ Use as seções a seguir para gerenciar o Cache Par.
 
 -   Um cliente de cache de sistemas pares pode obter o conteúdo de outro cliente de cache de sistemas pares (uma fonte de cache de sistemas pares).  Como o cliente está configurado para o cache de sistemas pares, quando ele executa uma sequência de tarefas configurada para preservar o conteúdo em cache, o cliente torna-se uma fonte de cache de sistemas pares.  
 
--   Um cliente executa uma sequência de tarefas que inclui a etapa opcional, [Download Package Content](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent), que é usada para pré-configurar o conteúdo relevante que é incluído na sequência de tarefas de Cache par do Windows PE. Ao usar este método:  
+-   Um cliente executa uma sequência de tarefas que inclui a etapa opcional, [Download Package Content](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent), que é usada para pré-configurar o conteúdo relevante que é incluído na sequência de tarefas de Cache par do Windows PE. Ao usar este método:  
 
     -   O cliente não precisa instalar a imagem que está sendo implantada.  
 
@@ -129,7 +129,7 @@ Use as seções a seguir para gerenciar o Cache Par.
 
      Isso sinaliza o conteúdo na sequência de tarefas a ser mantido no cache do cliente do Configuration Manager após a implantação. Isso é diferente de usar SMSTSPersisContent, que apenas preserva o conteúdo durante a sequência de tarefas e usa o cache da sequência de tarefas, e não o cache do cliente do Configuration Manager.  
 
- Para obter mais informações, consulte [Variáveis internas da sequência de tarefas](../understand/task-sequence-built-in-variables.md).  
+ Para saber mais, confira [Variáveis de sequência de tarefas](/sccm/osd/understand/task-sequence-variables).  
 
 ###  <a name="BKMK_PeerCacheValidate"></a> Validar o sucesso do uso de Cache par do Windows PE  
  Depois de usar o Cache par do Windows PE para implantar e instalar uma sequência de tarefas, é possível confirmar se o cache par foi usado com êxito no processo ao exibir o **smsts.log** no cliente que executou a sequência de tarefas.  

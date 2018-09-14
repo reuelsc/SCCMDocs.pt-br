@@ -1,7 +1,7 @@
 ---
 title: Configurar administração baseada em funções
 titleSuffix: Configuration Manager
-ms.date: 2/14/2017
+ms.date: 08/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -9,20 +9,20 @@ ms.assetid: 57413dd3-b2f8-4a5f-b27f-8464d357caff
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 44472640b6982e850b840a407e0c30059a3e189b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f5a0601af46d4d5f835822d3e5c551096512ceb3
+ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341484"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42590869"
 ---
-# <a name="configure-role-based-administration-for-system-center-configuration-manager"></a>Configurar administração baseada em função para o System Center Configuration Manager   
+# <a name="configure-role-based-administration-for-configuration-manager"></a>Configurar administração baseada em funções para o Configuration Manager   
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-No System Center Configuration Manager, a administração baseada em funções combina funções de segurança, escopos de segurança e coleções atribuídas para definir o escopo administrativo para cada usuário administrativo. Um escopo administrativo inclui os objetos que um usuário administrativo pode exibir no console do Configuration Manager e as tarefas relacionadas a esses objetos que o usuário administrativo tem permissão para realizar. As configurações de administração baseada em funções são aplicadas em cada site de uma hierarquia.  
+No Configuration Manager, a administração baseada em funções combina funções de segurança, escopos de segurança e coleções atribuídas para definir o escopo administrativo de cada usuário administrativo. Um escopo administrativo inclui os objetos que um usuário administrativo pode exibir no console do Configuration Manager e as tarefas relacionadas a esses objetos que o usuário administrativo tem permissão para realizar. As configurações de administração baseada em funções são aplicadas em cada site de uma hierarquia.  
 
- Se ainda não estiver familiarizado com os conceitos da administração baseada em funções, confira [Fundamentos da administração baseada em funções para o System Center Configuration Manager](../../../../core/understand/fundamentals-of-role-based-administration.md).  
+ Se ainda não estiver familiarizado com os conceitos da administração baseada em funções, consulte [Fundamentos da administração baseada em funções](/sccm/core/understand/fundamentals-of-role-based-administration).  
 
  As informações contidas nos procedimentos a seguir podem ajudá-lo a criar e configurar a administração baseada em funções e as configurações de segurança relacionadas:  
 
@@ -55,7 +55,7 @@ No System Center Configuration Manager, a administração baseada em funções c
 
         1.  Selecione uma função de segurança existente para usar como origem para a nova função de segurança.  
 
-        2.  Na guia **Início**, no grupo **Função de Segurança**, escolha **Copiar**. Isso criará uma cópia da função de segurança de origem.  
+        2.  Na guia **Início**, no grupo **Função de Segurança**, escolha **Copiar**. Essa ação criará uma cópia da função de segurança original.  
 
         3.  No assistente Copiar Função de Segurança, especifique um **Nome** para a nova função de segurança personalizada.  
 
@@ -106,7 +106,7 @@ No System Center Configuration Manager, a administração baseada em funções c
 ##  <a name="BKMK_ConfigSecScope"></a> Configurar escopos de segurança para um objeto  
  Você gerencia a associação de um escopo de segurança para um objeto por meio do objeto, não por meio do escopo de segurança. As únicas configurações diretas para as quais os escopos de segurança oferecem suporte são as alterações de nome e descrição. Para alterar o nome e a descrição de um escopo de segurança ao exibir as propriedades dele, é necessário ter a permissão **Modificar** para o objeto protegível dos **Escopos de Segurança** .  
 
- Quando você cria um objeto no Configuration Manager, esse novo objeto é associado a cada escopo de segurança que está associado às funções de segurança da conta usada para criar o objeto quando essas funções de segurança fornecem a permissão **Criar** ou **Definir Escopo de Segurança**. Você só pode alterar os escopos de segurança aos quais o objeto está associado após sua criação.  
+ Ao criar um novo objeto no Configuration Manager, ele é associado a cada escopo de segurança que está vinculado às funções de segurança da conta usada para criar o objeto. Esse comportamento ocorre quando essas funções de segurança fornecem as permissões **Criar** ou **Definir Escopo de Segurança**. Você pode alterar os escopos de segurança do objeto após sua criação.  
 
  Por exemplo, foi atribuída a você uma função de segurança que lhe concede permissão para criar um novo grupo de limites. Quando você cria um novo grupo de limites, você não tem opção à qual você possa atribuir escopos de segurança específicos. Em vez disso, os escopos de segurança disponíveis nas funções de segurança às quais você está associado são automaticamente atribuídos ao novo grupo de limites. Após salvar o novo grupo de limites, você poderá editar os escopos de segurança associados a ele.  
 
@@ -128,9 +128,9 @@ No System Center Configuration Manager, a administração baseada em funções c
 ##  <a name="BKMK_ConfigColl"></a> Configurar coleções para gerenciar a segurança  
  Não existem procedimentos para configurar coleções para a administração baseada em funções. As coleções não têm uma configuração de administração baseada em função. Em vez disso, você atribui coleções a um usuário administrativo ao configurar o usuário administrativo. As operações de segurança da coleção permitidas nas funções de segurança atribuídas aos usuários determinam as permissões que um usuário administrativo tem para coleções e recursos da coleção (membros da coleção).  
 
- Quando um usuário administrativo possui permissões para uma coleção, ele também tem permissões para coleções que estão limitadas a essa coleção. Por exemplo, a sua organização usa uma coleção chamada Todos os Desktops, e lá há uma coleção chamada Todos os Desktops da América do Norte que está limitada à coleção Todos os Desktops. Se um usuário administrativo tiver permissões para Todos os Desktops, ele também terá as mesmas permissões para a coleção Todos os Desktops da América do Norte.
+ Quando um usuário administrativo possui permissões para uma coleção, ele também tem permissões para coleções que estão limitadas a essa coleção. Por exemplo, sua organização usa uma coleção chamada Todos os Desktops. Também há uma coleção chamada Todos os Desktops da América do Norte, que está limitada à coleção Todos os Desktops. Se um usuário administrativo tiver permissões para Todos os Desktops, ele também terá as mesmas permissões para a coleção Todos os Desktops da América do Norte.
 
- Além disso, um usuário administrativo não pode usar a permissão **Excluir** ou **Modificar** em uma coleção que está diretamente atribuída a ele. Porém, podem usar essas permissões nas coleções que estão limitadas a essa coleção. No exemplo anterior, o usuário administrativo pode excluir ou modificar a coleção Todos os Desktops da América do Norte, mas não pode excluir ou modificar a coleção Todos os Desktops.  
+ Além disso, um usuário administrativo não pode usar as permissões **Excluir** ou **Modificar** em uma coleção que está diretamente atribuída a ele. Porém, podem usar essas permissões nas coleções que estão limitadas a essa coleção. No exemplo anterior, o usuário administrativo pode excluir ou modificar a coleção Todos os Desktops da América do Norte, mas não pode excluir ou modificar a coleção Todos os Desktops.  
 
 ##  <a name="BKMK_Create_AdminUser"></a> Criar um novo usuário administrativo  
  Para conceder acesso para gerenciar o Configuration Manager a indivíduos ou membros de um grupo de segurança, crie um usuário administrativo no Configuration Manager e especifique a conta do Windows do Usuário ou Grupo de Usuários. Cada usuário administrativo no Configuration Manager deve receber a atribuição de pelo menos uma função de segurança e um escopo de segurança. Você também pode atribuir coleções para limitar o escopo administrativo do usuário administrativo.  
@@ -154,29 +154,29 @@ No System Center Configuration Manager, a administração baseada em funções c
 
 6.  Escolha uma das duas opções a seguir para definir o comportamento de objeto protegível para o novo usuário:  
 
-    -   **Todos os objetos protegíveis que são relevantes para suas funções de segurança associadas**: essa opção associa o usuário administrativo ao escopo de segurança **Todos** e a coleções de nível raiz integradas a **Todos os sistemas**e **Todos os usuários e Grupos de usuários**. As funções de segurança que são atribuídas ao usuário definem o acesso a objetos. Os novos objetos que esse usuário administrativo cria são atribuídos ao escopo de segurança **Padrão** .  
+    -   **Todas as instâncias dos objetos relacionados às funções de segurança atribuídas**: essa opção associa o usuário administrativo ao escopo de segurança **Todos** e às coleções **Todos os Sistemas** e **Todos os Usuários e Grupos de Usuários**. As funções de segurança que são atribuídas ao usuário definem o acesso a objetos. Os novos objetos que esse usuário administrativo cria são atribuídos ao escopo de segurança **Padrão** .  
 
-    -   **Somente objetos protegíveis em escopos de segurança especificados ou coleções**: por padrão, essa opção associa o usuário administrativo ao escopo de segurança **Padrão** e a coleções de **Todos os sistemas** e **Todos os usuários e Grupos de usuários**. No entanto, os escopos de segurança e as coleções atuais são limitados aos que estão associados à conta que você usou para criar o novo usuário administrativo. Essa opção oferece suporte à adição ou remoção de escopos de segurança e coleções para personalizar o escopo administrativo do usuário administrativo.  
+    -   **Somente instâncias de objetos atribuídas aos escopos e coleções de segurança especificados**: por padrão, essa opção associa o usuário administrativo ao escopo de segurança **Padrão** e às coleções **Todos os Sistemas** e **Todos os Usuários e Grupos de Usuários**. No entanto, os escopos de segurança e as coleções atuais são limitados aos que estão associados à conta que você usou para criar o novo usuário administrativo. Essa opção oferece suporte à adição ou remoção de escopos de segurança e coleções para personalizar o escopo administrativo do usuário administrativo.  
 
     > [!IMPORTANT]  
-    >  As opções anteriores associam cada escopo de segurança e coleção associados a cada função de segurança atribuída ao usuário administrativo. Você pode usar uma terceira opção, **Somente objetos protegíveis como determinado pelas funções de segurança do usuário administrativo**, para associar funções de segurança individuais a escopos de segurança e coleções específicos. Essa terceira opção fica disponível com a criação do novo usuário administrativo, quando você modifica o usuário administrativo.  
+    >  As opções anteriores associam cada escopo de segurança e coleção associados a cada função de segurança atribuída ao usuário administrativo. Você pode usar uma terceira opção, **Associar funções de segurança atribuídas a escopos e coleções de segurança específicos**, para associar funções de segurança individuais a escopos e coleções de segurança específicos. Essa terceira opção fica disponível com a criação do novo usuário administrativo, quando você modifica o usuário administrativo.  
 
 7.  Dependendo da sua seleção na etapa 6, execute a seguinte ação:  
 
-    -   Se você tiver selecionado **Todos os objetos protegíveis que são relevantes para suas funções de segurança associadas**, escolha **OK** para concluir esse procedimento.  
+    -   Se tiver selecionado **Todas as instâncias dos objetos relacionados às funções de segurança atribuídas**, escolha **OK** para concluir esse procedimento.  
 
-    -   Se tiver selecionado **Somente objetos protegíveis em escopos de segurança ou coleções especificadas**, poderá escolher **Adicionar** para selecionar coleções e escopos de segurança adicionais. Ou selecione um ou mais objetos na lista e escolha **Remover** para removê-los. Escolha **OK** para concluir esse procedimento.  
+    -   Se tiver selecionado **Somente instâncias de objetos atribuídas aos escopos e às coleções de segurança especificados**, é possível escolher **Adicionar** para selecionar coleções e escopos de segurança adicionais. Ou selecione um ou mais objetos na lista e escolha **Remover** para removê-los. Escolha **OK** para concluir esse procedimento.  
 
 ##  <a name="BKMK_ModAdminUser"></a> Modificar o escopo administrativo de um usuário administrativo  
  É possível modificar o escopo administrativo de um usuário administrativo ao adicionar ou remover funções de segurança, escopos de segurança e coleções que estão associados ao usuário. Cada usuário administrativo deve ser associado a pelo menos uma função de segurança e um escopo de segurança. Talvez você precise atribuir uma ou mais coleções para o escopo administrativo do usuário. A maioria das funções de segurança interage com as coleções e não funciona corretamente sem uma coleção atribuída.  
 
  Ao modificar um usuário administrativo, você pode alterar o comportamento de como os objetos protegíveis são associados às funções de segurança atribuídas. Os três comportamentos que podem ser selecionados são:  
 
--   **Todos os objetos protegíveis relevantes para suas funções de segurança associadas**: essa opção associa o usuário administrativo ao escopo **Todos** e a coleções de nível raiz integradas a **Todos os Sistemas**e **Todos os Usuários e Grupos de Usuários**. As funções de segurança que são atribuídas ao usuário definem o acesso a objetos.  
+-   **Todas as instâncias dos objetos relacionados às funções de segurança atribuídas**: essa opção associa o usuário administrativo ao escopo **Todos** e às coleções **Todos os Sistemas** e **Todos os Usuários e Grupos de Usuários**. As funções de segurança que são atribuídas ao usuário definem o acesso a objetos.  
 
--   **Somente objetos protegíveis em escopos de segurança especificados ou coleções**: essa opção associa o usuário administrativo aos mesmos escopos de segurança e coleções associados à conta usada para configurar o usuário administrativo. Essa opção oferece suporte à adição ou remoção de funções de segurança e coleções para personalizar o escopo administrativo do usuário administrativo.  
+-   **Somente instâncias de objetos atribuídas aos escopos e às coleções de segurança especificados**: essa opção associa o usuário administrativo aos mesmos escopos e coleções de segurança associados à conta que você usa para configurar o usuário administrativo. Essa opção oferece suporte à adição ou remoção de funções de segurança e coleções para personalizar o escopo administrativo do usuário administrativo.  
 
--   **Somente objetos protegíveis conforme determinados pelas funções de segurança do usuário administrativo**: essa opção permite criar as associações específicas entre as funções de segurança individuais e escopos de segurança específicos e coleções para o usuário.  
+-   **Associar funções de segurança atribuídas a escopos e coleções de segurança específicos**: essa opção permite criar associações específicas entre funções individuais de segurança e escopos e coleções de segurança específicos do usuário.  
 
     > [!NOTE]  
     >  Essa opção está disponível somente quando você modifica as propriedades de um usuário administrativo.  
@@ -201,9 +201,9 @@ Use o procedimento a seguir para exibir e gerenciar a configuração de objetos 
 
 7.  Escolha **OK** para concluir o procedimento.  
 
-Use o procedimento a seguir para modificar um usuário administrativo que têm o comportamento de objeto protegível definido como **Todos os objetos protegíveis que são relevantes para suas funções de segurança associadas**.  
+Use o procedimento a seguir para modificar um usuário administrativo que tem o comportamento de objeto passível de proteção definido como **Todas as instâncias de objetos relacionadas às funções de segurança atribuídas**.  
 
-#### <a name="for-option-all-securable-objects-that-are-relevant-to-their-associated-security-roles"></a>Como opção: todos os objetos protegíveis que são relevantes para suas funções de segurança associadas  
+#### <a name="for-option-all-instances-of-the-objects-that-are-related-to-the-assigned-security-roles"></a>Para a opção: Todas as instâncias de objetos relacionadas às funções de segurança atribuídas  
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
@@ -213,7 +213,7 @@ Use o procedimento a seguir para modificar um usuário administrativo que têm o
 
 4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-5.  Escolha a guia **Escopos de Segurança** para confirmar se o usuário administrativo está configurado para **Todos os objetos protegíveis que são relevantes para suas funções de segurança associadas**.  
+5.  Escolha a guia **Escopos de Segurança** para confirmar se o usuário administrativo está configurado para **Todas as instâncias de objetos relacionadas às funções de segurança atribuídas**.  
 
 6.  Para modificar as funções de segurança atribuídas, escolha a guia **Funções de Segurança**.  
 
@@ -224,13 +224,13 @@ Use o procedimento a seguir para modificar um usuário administrativo que têm o
 7.  Para modificar o comportamento de objeto protegível, escolha a guia **Escopos de Segurança** e escolha a nova opção para o comportamento de objeto protegível. Após alterar essa configuração, confira o procedimento apropriado para obter diretrizes sobre como configurar os escopos de segurança, as coleções e as funções de segurança para esse usuário administrativo.  
 
     > [!NOTE]  
-    >  Quando o comportamento de objeto protegível está definido como **Todos os objetos protegíveis que são relevantes para suas funções de segurança associadas**, você não pode adicionar ou remover escopos de segurança e coleções específicas.  
+    >  Quando o comportamento de objeto passível de proteção está definido como **Todas as instâncias de objetos relacionadas às funções de segurança atribuídas**, você não pode adicionar ou remover coleções e escopos de segurança específicos.  
 
 8.  Escolha **OK** para concluir esse procedimento.  
 
-Use o procedimento a seguir para modificar um usuário administrativo que tem o comportamento de objeto protegível definido como **Somente objetos protegíveis em escopos de segurança ou coleções especificadas**.  
+Use o procedimento a seguir para modificar um usuário administrativo que tem o comportamento de objeto passível de proteção definido como **Somente instâncias de objetos atribuídas aos escopos e às coleções de segurança especificadas**.  
 
-#### <a name="for-option-only-securable-objects-in-specified-security-scopes-or-collections"></a>Como opção: somente objetos protegíveis em escopos de segurança ou coleções especificadas  
+#### <a name="for-option-only-the-instances-of-objects-that-are-assigned-to-the-specified-security-scopes-and-collections"></a>Para a opção: Somente instâncias de objetos atribuídas aos escopos ou às coleções de segurança especificados  
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
@@ -240,7 +240,7 @@ Use o procedimento a seguir para modificar um usuário administrativo que tem o 
 
 4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-5.  Escolha a guia **Escopos de Segurança** para confirmar se o usuário está configurado para **Somente objetos protegíveis em escopos de segurança ou coleções especificadas**.  
+5.  Escolha a guia **Escopos de Segurança** para confirmar se o usuário está configurado para **Somente instâncias de objetos atribuídas aos escopos e às coleções de segurança especificadas**.  
 
 6.  Para modificar as funções de segurança atribuídas, escolha a guia **Funções de Segurança**.  
 
@@ -256,9 +256,9 @@ Use o procedimento a seguir para modificar um usuário administrativo que tem o 
 
 8.  Escolha **OK** para concluir esse procedimento.  
 
-Use o procedimento a seguir para modificar um usuário administrativo que tem o comportamento de objeto protegível definido como **Somente objetos protegíveis como determinado pelas funções de segurança do usuário administrativo**.  
+Use o procedimento a seguir para modificar um usuário administrativo que tem o comportamento de objeto passível de proteção definido como **Associar funções de segurança atribuídas a escopos e coleções de segurança específicos**.  
 
-#### <a name="for-option-only-securable-objects-as-determined-by-the-security-roles-of-the-administrative-user"></a>Como opção: somente objetos protegíveis como determinado pelas funções de segurança do usuário administrativo  
+#### <a name="for-option-associate-assigned-security-roles-with-specific-security-scopes-and-collections"></a>Para a opção: Associar funções de segurança atribuídas a escopos e coleções de segurança específicos  
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
@@ -268,7 +268,7 @@ Use o procedimento a seguir para modificar um usuário administrativo que tem o 
 
 4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-5.  Escolha a guia **Escopos de Segurança** para confirmar se o usuário administrativo está configurado para **Somente objetos protegíveis em escopos de segurança ou coleções especificadas**.  
+5.  Escolha a guia **Escopos de Segurança** para confirmar se o usuário administrativo está configurado para **Associar funções de segurança atribuídas a escopos e coleções de segurança específicos**.  
 
 6.  Para modificar as funções de segurança atribuídas, escolha a guia **Funções de Segurança**.  
 

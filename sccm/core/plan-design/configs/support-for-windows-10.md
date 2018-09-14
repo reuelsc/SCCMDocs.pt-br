@@ -10,12 +10,12 @@ ms.assetid: a1626a65-da22-49e0-9564-d2f752ea3f4b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f5aac395c71b76a0b83826e8f7c9de1e656aa884
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 588eeefc8f383a52150dc91e9837e51a718af33c
+ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383626"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42755853"
 ---
 # <a name="support-for-windows-10-in-configuration-manager"></a>Suporte para Windows 10 no Configuration Manager  
 
@@ -85,3 +85,6 @@ A tabela a seguir enumera as versões do ADK do Windows 10 que você pode usar c
 
  > [!Note]  
  > O Configuration Manager é compatível apenas com os componentes x86 e amd64 do Windows 10 ADK. Atualmente, ele não dá suporte aos componentes ARM ou ARM64. 
+
+> [!Tip]
+> Suporte à versão do ADK para a implantação do SO do servidor: builds do Windows Server têm o mesmo requisito do ADK que a versão associada do Windows 10. Por exemplo, o Windows Server 2016 é a mesma versão de build do Windows 10 LTSB 2016.

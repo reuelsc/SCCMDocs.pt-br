@@ -2,7 +2,7 @@
 title: Plataformas de dispositivo com suporte para MDM híbrido
 titleSuffix: Configuration Manager
 description: Plataformas de dispositivo com suporte para MDM híbrido.
-ms.date: 09/22/2017
+ms.date: 08/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 6b0732c8-1be8-44ba-8f8e-6fb2b67782e1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 16cb6655a05c6f52cdf92f6900af3a63d46067bb
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 07c08ce756c70ec4ab96c63de49a87514f9c3cea
+ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32345930"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42584602"
 ---
 # <a name="supported-device-platforms-for-hybrid-mdm"></a>Plataformas de dispositivo com suporte para MDM híbrido
 
@@ -25,4 +25,9 @@ O gerenciamento de dispositivo móvel com o Configuration Manager usando o Micro
 
 [!INCLUDE[../includes/mdm-supported-devices](../includes/mdm-supported-devices.md)]
 
-Você só pode usar uma solução de gerenciamento, a autoridade de gerenciamento de dispositivo móvel, para gerenciar seus dispositivos móveis. Antes de criar essa configuração você deve [escolher entre o gerenciamento de dispositivo móvel híbrido e independente do Microsoft Intune com o Configuration Manager](../understand/choose-between-standalone-intune-and-hybrid-mobile-device-management.md)
+> [!Important]  
+> A partir de 14 de agosto de 2018, o gerenciamento híbrido de dispositivos móveis é um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+
+
+Você só pode usar uma solução de gerenciamento, a autoridade de gerenciamento de dispositivo móvel, para gerenciar seus dispositivos móveis. O Intune no Azure é a solução de MDM recomendada pela Microsoft. 
+

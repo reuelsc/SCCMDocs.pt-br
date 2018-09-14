@@ -10,12 +10,12 @@ ms.assetid: 7b04727b-d563-422f-8d59-4dd66215d0b3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f354647ba9376ff18db1a4b63944ef31272308e1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9091c233ad18b2ab9ddea32819a37f3cc9484036
+ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350571"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "42584631"
 ---
 # <a name="manage-access-to-services-in-system-center-configuration-manager"></a>Gerenciar o acesso a serviços no System Center Configuration Manager
 
@@ -126,7 +126,7 @@ O acesso condicional ao Exchange Local dá suporte a:
 
 
 ## <a name="requirements-for-skype-for-business-online"></a>Requisitos para o Skype for Business Online
-O Acesso condicional ao SharePoint Online dá suporte a dispositivos que executam:
+O acesso condicional ao Skype Online oferece suporte a dispositivos que executam:
  -   iOS 7.1 e posterior
  -   Android 4.0 e posterior
  -   Samsung KNOX Standard 4.0 ou posterior

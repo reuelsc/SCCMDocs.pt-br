@@ -1,8 +1,8 @@
 ---
-title: Criar uma sequência de tarefas para capturar e restaurar o estado do usuário
+title: Capturar e restaurar o estado do usuário
 titleSuffix: Configuration Manager
-description: Use as sequências da tarefas do System Center Configuration Manager para capturar e restaurar dados de estado do usuário em cenários de implantação de sistema operacional.
-ms.date: 06/07/2017
+description: Use as sequências de tarefas do Gerenciador de Configurações para capturar e restaurar os dados de estado do usuário em cenários de implantação do sistema operacional.
+ms.date: 08/17/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,157 +10,85 @@ ms.assetid: d566d85c-bf7a-40e7-8239-57640a1db5f4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ab5cbaf481842cf814d5f1b90af4f6743bb8a803
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: bffbb3373fbcd1a9a34f526a7c73faff68ccae49
+ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351761"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42756102"
 ---
-# <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-system-center-configuration-manager"></a>Criar uma sequência de tarefas para capturar e restaurar o estado de usuário no System Center Configuration Manager
+# <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-configuration-manager"></a>Criar uma sequência de tarefas para capturar e restaurar o estado do usuário no Gerenciador de Configurações
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+ *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Você pode usar as sequências da tarefas do System Center Configuration Manager para capturar e restaurar dados de estado do usuário em cenários de implantação de sistema operacional no qual você deseja manter o estado do usuário do sistema operacional atual. Dependendo do tipo de sequência de tarefas criado, as etapas de captura e restauração podem ser adicionadas automaticamente como parte da sequência de tarefas. Em outros cenários, talvez seja necessário adicionar manualmente as etapas de captura e restauração à sequência de tarefas. Este tópico fornece as etapas que devem ser adicionadas a uma sequência de tarefas existente para capturar e restaurar dados de estado do usuário.  
+ Use as sequências de tarefas do Gerenciador de Configurações para capturar e restaurar os dados de estado do usuário em cenários de implantação do sistema operacional. Nesses cenários, convém manter o estado do usuário do sistema operacional atual. Dependendo do tipo de sequência de tarefas criado, as etapas de captura e restauração podem ser adicionadas automaticamente como parte da sequência de tarefas. Em outros cenários, talvez seja necessário adicionar manualmente as etapas de captura e restauração à sequência de tarefas. Este artigo fornece as etapas que devem ser adicionadas a uma sequência de tarefas existente para capturar e restaurar dados de estado do usuário.  
 
-##  <a name="BKMK_CaptureRestoreUserState"></a> Como capturar e restaurar dados de estado do usuário  
- Para capturar e restaurar o estado do usuário, é necessário adicionar as seguintes etapas à sequência de tarefas:  
 
--   **Solicitar Armazenamento de Estado**: essa etapa é necessária somente se você armazenar o estado do usuário no ponto de migração de estado.  
 
--   **Capturar Estado do Usuário**: essa etapa captura os dados de estado do usuário e os armazena no ponto de migração de estado ou localmente usando links.  
+## <a name="task-sequence-steps"></a>Etapas da sequência de tarefas  
 
--   **Restaurar Estado do Usuário**: essa etapa restaura os dados de estado do usuário no computador de destino. Ele pode recuperar os dados de um ponto de migração de estado do usuário ou do computador de destino.  
+ Para capturar e restaurar o estado do usuário, adicione as seguintes etapas à sequência de tarefas:  
 
--   **Liberar Armazenamento de Estado**: essa etapa é necessária somente se você armazenar o estado do usuário no ponto de migração de estado. Essa etapa remove dados do ponto de migração de estado.  
+ - [Solicitar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_RequestStateStore): essa etapa é necessária se você armazenar o estado do usuário no ponto de migração de estado.  
 
- Use os procedimentos a seguir para adicionar as etapas de sequência de tarefas necessárias para capturar e restaurar o estado do usuário. Para obter mais informações sobre a criação de sequências de tarefas, consulte [Gerenciar sequências de tarefas para automatizar tarefas](manage-task-sequences-to-automate-tasks.md).  
+- [Capturar Estado do Usuário](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureUserState): essa etapa captura os dados de estado do usuário. Em seguida, os armazena no ponto de migração de estado ou no disco local usando links físicos.  
 
-#### <a name="to-add-task-sequence-steps-to-capture-the-user-state"></a>Para adicionar etapas da sequência de tarefas para capturar o estado do usuário  
+- [Restaurar Estado do Usuário](/sccm/osd/understand/task-sequence-steps#BKMK_RestoreUserState): essa etapa restaura os dados de estado do usuário no computador de destino. Ela pode recuperar os dados de um ponto de migração de estado ou se houver um link físico no disco local.  
 
-1.  Na lista **Sequência de Tarefa** , selecione uma sequência de tarefas e clique em **Editar**.  
+- [Liberar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_ReleaseStateStore): essa etapa é necessária se você armazenar o estado do usuário no ponto de migração de estado. Ela remove os dados do ponto de migração de estado.  
 
-2.  Se você estiver usando um ponto de migração de estado para armazenar o estado do usuário, adicione a etapa **Solicitar Armazenamento de Estado** à sequência de tarefas. Na caixa de diálogo **Editor de Sequência de Tarefas** , clique em **Adicionar**, aponte para **Estado do Usuário**e clique em **Solicitar Armazenamento de Estado**. Especifique as propriedades e opções a seguir para a etapa **Solicitar Armazenamento de Estado** e clique em **Aplicar**.  
 
-     Na guia **Propriedades** , especifique as seguintes opções:  
+ Use os procedimentos a seguir para adicionar as etapas de sequência de tarefas necessárias para capturar e restaurar o estado do usuário. Para saber mais sobre a criação de sequências de tarefas em [Gerenciar sequências de tarefas para automatizar tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks).  
 
-    -   Digite um nome e uma descrição para a etapa.  
 
-    -   Clique em **Capturar estado do computador**.  
 
-    -   Na caixa **Número de tentativas** , especifique o número de vezes que a sequência de tarefas tentará capturar os dados de estado do usuário caso ocorra um erro.  
+## <a name="capture-the-user-state"></a>Capturar o estado do usuário  
 
-    -   Na caixa **Atraso na repetição (em segundos)** , especifique quantos segundos a sequência de tarefas aguardará antes de repetir a captura dos dados.  
+ Use os seguintes passos para adicionar etapas de sequência de tarefas para capturar o estado do usuário:
 
-    -   Marque a caixa de seleção **Se a conta do computador não conseguir se conectar ao armazenamento de estado, use a conta de Acesso à Rede** para especificar se deseja usar a [Conta de Acesso à Rede](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#bkmk_NAA) do Configuration Manager para se conectar ao repositório de estado.  
+1.  Na lista **Sequência de Tarefa**, selecione uma sequência de tarefas e clique em **Editar**.  
 
-     Na guia **Opções** , especifique as seguintes opções:  
+2.  Se estiver usando um ponto de migração de estado para armazenar o estado do usuário, adicione a etapa **Solicitar Armazenamento de Estado** à sequência de tarefas. No **Editor de Sequência de Tarefas**, clique em **Adicionar**. Aponte para **Estado do Usuário**e clique em **Solicitar Armazenamento de Estado**. Configure as propriedades e opções para esta etapa e clique em **Aplicar**. Para saber mais sobre as configurações disponíveis em [Solicitar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_RequestStateStore).  
 
-    -   Marque a caixa de seleção **Continuar se houver erro** se quiser que a sequência de tarefas passe para a próxima etapa se a etapa atual falhar.  
-
-    -   Especifique as condições que devem ser atendidas antes de continuar a sequência de tarefas se ocorrer um erro.  
-
-3.  Adicione a etapa **Captura Estado do Usuário** à sequência de tarefas. Na caixa de diálogo **Editor de Sequência de Tarefas** , clique em **Adicionar**, aponte para **Estado do Usuário**e clique em **Capturar Estado do Usuário**. Especifique as propriedades e opções a seguir para a etapa **Capturar Estado do Usuário** e clique em **OK**.  
+3.  Adicione a etapa **Captura Estado do Usuário** à sequência de tarefas. No **Editor de Sequência de Tarefas**, clique em **Adicionar**. Aponte para **Estado do Usuário**e clique em **Capturar Estado do Usuário**. Configure as propriedades e opções para esta etapa e clique em **Aplicar**. Para saber mais sobre as configurações disponíveis em [Capturar Estado do Usuário](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureUserState).  
 
     > [!IMPORTANT]  
-    >  Quando você adicionar essa etapa à sequência de tarefas, configure também a variável de sequência de tarefas **OSDStateStorePath** para especificar onde os dados de estado do usuário são armazenados. Se você armazenar o estado do usuário localmente, não especifique uma pasta raiz, pois isso pode causar a falha da sequência de tarefas. Quando você armazenar os dados do usuário localmente, use sempre uma pasta ou subpasta. Para obter informações sobre essa variável, consulte [Capturar variáveis de ação da sequência de tarefas de estado de usuário](../understand/task-sequence-action-variables.md#BKMK_CaptureUserState).  
+    >  Ao adicionar essa etapa à sequência de tarefas, configure também a variável de sequência de tarefas **OSDStateStorePath** para especificar onde armazenar os dados de estado do usuário. Se você armazenar o estado do usuário localmente, não especifique uma pasta raiz, pois isso pode causar falha da sequência de tarefas. Quando você armazenar os dados do usuário localmente, use sempre uma pasta ou subpasta. Para saber mais sobre esta variável em [Variáveis de sequência de tarefas](/sccm/osd/understand/task-sequence-variables#OSDStateStorePath).  
 
-     Na guia **Propriedades** , especifique as seguintes opções:  
-
-    -   Digite um nome e uma descrição para a etapa.  
-
-    -   Especifique o pacote que contém o arquivo de origem da USMT usado para capturar os dados de estado do usuário.  
-
-    -   Especifique os perfis de usuário a serem capturados:  
-
-        -   Clique em **Capturar todos os perfis de usuário usando as opções padrão** para capturar todos os perfis de usuário.  
-
-        -   Clique em **Personalizar captura de perfis de usuário** para especificar perfis de usuário individuais para capturar. Selecione o arquivo de configuração (miguser.xml, migsys.xml ou migapp.xml) que contém as informações de perfil do usuário. Você não pode usar o arquivo de configuração config.xml aqui, mas pode adicioná-lo manualmente à linha de comando do USMT usando as variáveis OSDMigrageAdditionalCaptureOptions e OSDMigrateAdditionalRestoreOptions.
-
-    -   Selecione **Habilitar log detalhado** para especificar a quantidade de informações a serem gravadas nos arquivos de log em caso de erro.  
-
-    -   Selecione **Ignorar arquivos que usam o sistema de arquivos com criptografia (EFS)**.  
-
-    -   Selecione **Copiar usando o acesso ao sistema de arquivos** para especificar as seguintes definições:  
-
-        -   **Continuar se alguns arquivos não puderem ser capturados**: essa configuração permite que a etapa da sequência de tarefas continue o processo de migração, mesmo que alguns arquivos não possam ser capturados. Se você desabilitar essa opção e um arquivo não puder ser capturado, a etapa da sequência falhará. Essa opção é habilitada por padrão.  
-
-        -   **Capturar localmente usando links em vez de copiar arquivos**: essa configuração permite que você use o recurso de migração de link físico que está disponível no USMT 4.0. Essa configuração será ignorada se você usar versões do USMT anteriores ao USMT 4.0.  
-
-        -   **Capturar em modo off-line (somente Windows PE)**: essa configuração permite que você capture o estado de uso do Windows PE sem inicializar o sistema operacional existente. Essa configuração será ignorada se você usar versões do USMT anteriores ao USMT 4.0.  
-
-    -   Selecione **Capturar usando o VSS (Serviços de Cópias de Sombra de Volume)**. Essa configuração será ignorada se você usar versões do USMT anteriores ao USMT 4.0.  
-
-     Na guia **Opções** , especifique as seguintes opções:  
-
-    -   Marque a caixa de seleção **Continuar se houver erro** se quiser que a sequência de tarefas passe para a próxima etapa se a etapa atual falhar.  
-
-    -   Especifique as condições que devem ser atendidas antes de continuar a sequência de tarefas se ocorrer um erro.  
-
-4.  Se estiver usando um ponto de migração de estado para armazenar o estado do usuário, adicione a etapa [Liberar Repositório de Estado](../understand/task-sequence-steps.md#BKMK_ReleaseStateStore) à sequência de tarefas. Na caixa de diálogo **Editor de Sequência de Tarefas** , clique em **Adicionar**, aponte para **Estado do Usuário**e clique em **Liberar Armazenamento de Estado**. Especifique as propriedades e opções a seguir para a etapa **Liberar Armazenamento de Estado** e clique em **OK**.  
+4.  Se estiver usando um ponto de migração de estado, adicione à sequência de tarefas a etapa **Liberar Armazenamento de Estado**. No **Editor de Sequência de Tarefas**, clique em **Adicionar**. Aponte para **Estado do Usuário** e clique em **Liberar Armazenamento de Estado**. Configure as propriedades e opções para esta etapa e clique em **Aplicar**. Para saber mais sobre as configurações disponíveis em [Liberar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_ReleaseStateStore).  
 
     > [!IMPORTANT]  
-    >  A ação de sequência de tarefas executada antes da etapa **Liberar Armazenamento de Estado** deve ser bem-sucedida antes que a etapa **Liberar Armazenamento de Estado** seja iniciada.  
+    >  A ação de sequência de tarefas executada antes da etapa **Liberar Armazenamento de Estado** deve ser bem-sucedida para que a etapa **Liberar Armazenamento de Estado** seja iniciada.  
 
-     Na guia **Propriedades** , insira um nome e uma descrição para a etapa.  
 
-     Na guia **Opções** , especifique as seguintes opções:  
+ Implante essa sequência de tarefas para capturar o estado do usuário em um computador de destino. Para obter informações sobre como implantar sequências de tarefas, consulte [Implantar uma sequência de tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  
 
-    -   Marque a caixa de seleção **Continuar se houver erro** se quiser que a sequência de tarefas passe para a próxima etapa se a etapa atual falhar.  
 
-    -   Especifique as condições que devem ser atendidas para que a sequência de tarefas possa continuar se ocorrer um erro.  
 
- Implante essa sequência de tarefas para capturar o estado do usuário em um computador de destino. Para obter informações sobre como implantar sequências de tarefas, consulte [Implantar uma sequência de tarefas](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
+## <a name="restore-the-user-state"></a>Restaurar o estado do usuário  
 
-#### <a name="to-add-task-sequence-steps-to-restore-the-user-state"></a>Para adicionar etapas da sequência de tarefas para restaurar o estado do usuário  
+ Use os passos seguintes para adicionar etapas de sequência de tarefas para restaurar o estado do usuário:
 
-1.  Na lista **Sequência de Tarefa** , selecione uma sequência de tarefas e clique em **Editar**.  
+ 1.  Na lista **Sequência de Tarefa** , selecione uma sequência de tarefas e clique em **Editar**.  
 
-2.  Adicionar a etapa [Restaurar Estado do Usuário](../understand/task-sequence-steps.md#BKMK_RestoreUserState) à sequência de tarefas. Na caixa de diálogo **Editor de Sequência de Tarefas** , clique em **Adicionar**, aponte para **Estado do Usuário**e clique em **Restaurar Estado do Usuário**. Essa etapa estabelece uma conexão com o ponto de migração de estado. Especifique as propriedades e opções a seguir para a etapa **Restaurar Estado do Usuário** e clique em **OK**.  
+ 2.  Adicionar a etapa **Restaurar Estado do Usuário** à sequência de tarefas. No **Editor de Sequência de Tarefas**, clique em **Adicionar**. Aponte para **Estado do Usuário**e clique em **Restaurar Estado do Usuário**. Essa etapa estabelece uma conexão com o ponto de migração de estado, se necessário. Configure as propriedades e opções para esta etapa e clique em **Aplicar**. Para saber mais sobre as configurações disponíveis em [Restaurar Estado do Usuário](/sccm/osd/understand/task-sequence-steps#BKMK_RestoreUserState).  
 
-     Na guia **Propriedades** , especifique as seguintes propriedades:  
+    > [!Important]  
+    >  Quando você usa a etapa [Capturar Estado do Usuário](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureUserState) com a opção de **Capturar todos os perfis de usuário com opções padrão**, você deve selecionar a configuração **Restaurar perfis de usuário do computador local** na etapa **Restaurar Estado do Usuário**. Caso contrário, a sequência de tarefas não funcionará.  
 
-    -   Digite um nome e uma descrição para a etapa.  
+    > [!Note]  
+    > Se você armazenar o estado do usuário usando links físicos locais e a restauração não for bem-sucedida, você poderá excluir manualmente os links físicos que foram criados para armazenar os dados. A sequência de tarefas pode executar a ferramenta USMTUtils para automatizar esta ação com uma etapa [Executar linha de comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine). Se você usar o USMTUtils para excluir links físicos, adicione uma etapa [Reiniciar Computador](/sccm/osd/understand/task-sequence-steps#BKMK_RestartComputer) depois de executar o USMTUtils.  
 
-    -   Especifique o pacote que contém a USMT para restaurar os dados de estado do usuário.  
-
-    -   Especifique os perfis de usuário a serem restaurados:  
-
-        -   Clique em **Restaurar todos os perfis de usuário usando as opções padrão** para restaurar todos os perfis de usuário.  
-
-        -   Clique em **Personalizar restauração de perfil do usuário** para restaurar perfis de usuário individuais. Selecione o arquivo de configuração (miguser.xml, migsys.xml ou migapp.xml) que contém as informações de perfil do usuário. Você não pode usar o arquivo de configuração config.xml aqui, mas pode adicioná-lo manualmente à linha de comando do USMT usando as variáveis OSDMigrageAdditionalCaptureOptions e OSDMigrateAdditionalRestoreOptions.
-
-    -   Selecione **Restaurar perfis de usuário do computador local** para fornecer uma nova senha para os perfis restaurados. Não é possível migrar senhas para perfis locais.  
-
-        > [!NOTE]  
-        >  Quando houver contas de usuário local e a etapa [Capturar Estado do Usuário](../understand/task-sequence-steps.md#BKMK_CaptureUserState) for usada com a opção **Capturar todos os perfis de usuário com opções padrão** marcada, é necessário selecionar a configuração **Restaurar perfis de usuário do computador local** na etapa [Restaurar Estado do Usuário](../understand/task-sequence-steps.md#BKMK_RestoreUserState); caso contrário, a sequência de tarefas falhará.  
-
-    -   Selecione **Continuar, se alguns arquivos não forem restaurados** se quiser que a etapa **Restaurar Estado do Usuário** para continuar se um arquivo não puder ser restaurado.  
-
-         Se você armazenar o estado do usuário usando links locais e a restauração não for bem-sucedida, o usuário administrativo poderá excluir manualmente os links físicos criados para armazenar os dados ou a sequência de tarefas pode executar a ferramenta USMTUtils. Se você usar o USMTUtils para excluir link físico, adicione uma etapa [Reiniciar Computador](../understand/task-sequence-steps.md#BKMK_RestartComputer) depois de executar USMTUtils.  
-
-    -   Selecione **Habilitar log detalhado** para especificar a quantidade de informações a serem gravadas nos arquivos de log em caso de erro.  
-
-     Na guia **Opções** , especifique as seguintes opções:  
-
-    -   Marque a caixa de seleção **Continuar se houver erro** se quiser que a sequência de tarefas passe para a próxima etapa se a etapa atual falhar.  
-
-    -   Especifique as condições que devem ser atendidas antes de continuar a sequência de tarefas se ocorrer um erro.  
-
-3.  Se estiver usando um ponto de migração de estado para armazenar o estado do usuário, adicione a etapa [Liberar Repositório de Estado](../understand/task-sequence-steps.md#BKMK_ReleaseStateStore) à sequência de tarefas. Na caixa de diálogo **Editor de Sequência de Tarefas** , clique em **Adicionar**, aponte para **Estado do Usuário**e clique em **Liberar Armazenamento de Estado**. Especifique as propriedades e opções a seguir para a etapa **Liberar Armazenamento de Estado** e clique em **OK**.  
+ 3.  Se estiver usando um ponto de migração de estado para armazenar o estado do usuário, adicione à sequência de tarefas a etapa **Liberar Armazenamento de Estado**. No **Editor de Sequência de Tarefas**, clique em **Adicionar**. Aponte para **Estado do Usuário** e clique em **Liberar Armazenamento de Estado**. Configure as propriedades e opções para esta etapa e clique em **Aplicar**. Para saber mais sobre as configurações disponíveis em [Liberar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_ReleaseStateStore).  
 
     > [!IMPORTANT]  
-    >  A ação de sequência de tarefas executada antes da etapa **Liberar Armazenamento de Estado** deve ser bem-sucedida antes que a etapa **Liberar Armazenamento de Estado** seja iniciada.  
+    >  A ação de sequência de tarefas executada antes da etapa **Liberar Armazenamento de Estado** deve ser bem-sucedida para que a etapa **Liberar Armazenamento de Estado** seja iniciada.  
 
-     Na guia **Propriedades** , insira um nome e uma descrição para a etapa.  
 
-     Na guia **Opções** , especifique as seguintes opções:  
+ Implante essa sequência de tarefas para restaurar o estado do usuário em um computador de destino. Para obter mais informações sobre como implantar sequências de tarefas, consulte [Implantar uma sequência de tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  
 
-    -   Marque a caixa de seleção **Continuar se houver erro** se quiser que a sequência de tarefas passe para a próxima etapa se a etapa atual falhar.  
 
-    -   Especifique as condições que devem ser atendidas para que a sequência de tarefas possa continuar se ocorrer um erro.  
-
- Implante essa sequência de tarefas para restaurar o estado do usuário em um computador de destino. Para obter mais informações sobre como implantar sequências de tarefas, consulte [Implantar uma sequência de tarefas](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
 
 ## <a name="next-steps"></a>Próximas etapas
-[Monitorar a implantação da sequência de tarefas](monitor-operating-system-deployments.md#BKMK_TSDeployStatus)
+
+[Monitorar a implantação da sequência de tarefas](/sccm/osd/deploy-use/monitor-operating-system-deployments#BKMK_TSDeployStatus)

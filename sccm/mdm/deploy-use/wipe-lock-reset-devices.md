@@ -1,8 +1,8 @@
 ---
 title: Proteger dados com apagamento remoto, bloqueio ou redefinição de senha
 titleSuffix: Configuration Manager
-description: Proteja os dados do dispositivo com uma limpeza completa, limpeza seletiva, bloqueio remoto ou redefinição de senha usando o System Center Configuration Manager.
-ms.date: 10/27/2017
+description: Proteja os dados do dispositivo com um apagamento completo, um apagamento seletivo, um bloqueio remoto ou uma redefinição de senha usando o Configuration Manager.
+ms.date: 08/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,28 +10,34 @@ ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 670667c21e85d7e5c174c051b6adbdca3eba55a8
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 21fed8dbba8cc5c8e96218459288b57364fe350e
+ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352994"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42584938"
 ---
-# <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>Proteger os dados com a limpeza remota, bloqueio ou redefinição de senha usando o System Center Configuration Manager
+# <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-configuration-manager"></a>Proteja os dados com a limpeza remota, o bloqueio ou a redefinição de senha usando o Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-O System Center Configuration Manager fornece os recursos de limpeza seletiva, limpeza completa, bloqueio remoto e redefinição de senha. Os dispositivos móveis podem armazenar dados corporativos confidenciais e fornecer acesso a muitos recursos corporativos. Para ajudar a proteger os dispositivos, você pode emitir:  
+O Configuration Manager fornece recursos de apagamento seletivo, apagamento completo, bloqueio remoto e redefinição de senha. Os dispositivos móveis podem armazenar dados corporativos confidenciais e fornecer acesso a muitos recursos corporativos. Para ajudar a proteger os dispositivos, você pode emitir:  
 
-- Um apagamento completo para restaurar as configurações de fábrica do dispositivo.  
+- Um apagamento completo para restaurar o dispositivo às configurações de fábrica  
 
-- Um apagamento seletivo para remover somente os dados da empresa.  
+- Um apagamento seletivo para remover somente os dados da empresa  
 
-- Um bloqueio remoto para ajudar a proteger um dispositivo que pode estar perdido.  
+- Um bloqueio remoto para ajudar a proteger um dispositivo que pode estar perdido  
 
-- Uma redefinição de senha do dispositivo.  
+- Uma redefinição da senha do dispositivo  
+
+> [!Important]  
+> A partir de 14 de agosto de 2018, o gerenciamento híbrido de dispositivos móveis é um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+
+
 
 ## <a name="full-wipe"></a>Apagamento completo  
+
 Você pode emitir um comando de apagamento para um dispositivo quando precisar proteger um dispositivo perdido ou quando desativar um dispositivo de seu uso ativo.  
 
 Emita um **apagamento completo** para um dispositivo para restaurá-lo às suas configurações de fábrica. Isso remove todos os dados da empresa e do usuário e configurações. É possível fazer um apagamento completo em dispositivos Windows Phone, iOS, Android e Windows 10.  
@@ -50,7 +56,10 @@ Emita um **apagamento completo** para um dispositivo para restaurá-lo às suas 
 
 3. Clique em **Ações do Dispositivo Remoto** no **Grupo de Dispositivos**e escolha **Desativar/Limpar**.  
 
+
+
 ## <a name="selective-wipe"></a>Limpeza seletiva  
+
 Emita um **apagamento seletivo** para um dispositivo para remover apenas os dados da empresa. A tabela a seguir descreve, por plataforma, qual dado foi removido e o efeito nos dados que permaneceram no dispositivo após a limpeza seletiva.  
 
 **iOS**  
@@ -136,7 +145,10 @@ As configurações a seguir também são removidas dos dispositivos Windows 10 M
 
 3. Clique em **Ações do Dispositivo Remoto** no **Grupo de Dispositivos**e escolha **Desativar/Limpar**.  
 
+
+
 ## <a name="wiping-efs-enabled-content"></a>Apagar conteúdo habilitado para EFS  
+
 O Windows 8.1 e o Windows RT 8.1 suportam a limpeza seletiva do conteúdo criptografado do Sistema de Arquivos com Criptografia (EFS). O exemplo a seguir se aplica a um apagamento seletivo de conteúdo habilitado para EFS:  
 
 - Somente os aplicativos e os dados protegidos por EFS, com o mesmo domínio de Internet da conta do Intune, são apagados de forma seletiva. Para obter mais informações, consulte [Apagamento Seletivo do Windows para Gerenciamento de Dados do Dispositivo](http://technet.microsoft.com/library/dn486874.aspx).  
@@ -153,6 +165,7 @@ Os dados e os aplicativos que atualmente têm suporte da limpeza seletiva do EFS
 
 - Pastas e arquivos criptografados pelo EFS. Para obter mais informações, consulte as [Práticas recomendadas para criptografia de sistema de arquivos](http://support.microsoft.com/kb/223316).  
 
+
 ### <a name="best-practices-for-selective-wipe"></a>Práticas recomendadas para a limpeza seletiva  
 
 - Para limpar o email com êxito, configure perfis de email para os dispositivos iOS e Windows Phone 8.1.  
@@ -163,7 +176,10 @@ Os dados e os aplicativos que atualmente têm suporte da limpeza seletiva do EFS
 
 - Se uma conta for desativada, depois de um ano ela será desativada pelo Intune e uma limpeza seletiva será executada.  
 
+
+
 ##  <a name="passcode-reset"></a>Redefinição de senha  
+
 Se um usuário esquecer sua senha, você poderá ajudá-lo removendo a senha de um dispositivo ou impondo uma nova senha temporária em um dispositivo. A tabela abaixo lista como a redefinição da senha funciona em diferentes plataformas móveis.  
 
 | Plataforma                              | Redefinição de senha                                                                               |
@@ -197,7 +213,10 @@ Se um usuário esquecer sua senha, você poderá ajudá-lo removendo a senha de 
 
 3. Clique em **Ações do Dispositivo Remoto** no **Grupo de Dispositivos**e escolha **Mostrar Estado da Senha**.  
 
+
+
 ## <a name="remote-lock"></a>Bloqueio remoto  
+
 Se um usuário perder o dispositivo, você poderá bloqueá-lo remotamente. A tabela abaixo lista como o bloqueio remoto funciona em diferentes plataformas móveis.  
 
 |Plataforma|Bloqueio remoto|  
@@ -228,5 +247,8 @@ Se um usuário perder o dispositivo, você poderá bloqueá-lo remotamente. A ta
 
 3. Escolha **Ações do Dispositivo Remoto** no **Grupo de Dispositivos**e escolha **Mostrar Estado do Bloqueio Remoto**.  
 
-### <a name="see-also"></a>Consulte também  
+
+
+## <a name="see-also"></a>Consulte também  
+
 [Apagamento Seletivo do Windows para Gerenciamento de Dados do Dispositivo](http://technet.microsoft.com/library/dn486874.aspx)   

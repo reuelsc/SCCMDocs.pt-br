@@ -2,7 +2,7 @@
 title: Versões do Technical Preview
 titleSuffix: Configuration Manager
 description: Saiba mais sobre o branch de visualização técnica para fazer o test drive das novas funcionalidades e recursos no Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 08/17/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b60ebcf0ce94dfdc25466b31c9a64d0d556e1ac6
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 4be568e997a85acf49c3c86971f8d678d916aef0
+ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385381"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42589518"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Visualização técnica do Configuration Manager
 
@@ -124,15 +124,10 @@ Os seguintes recursos estão disponíveis com a visualização técnica mais rec
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-1807"></a>Visualização técnica versão 1807
+### <a name="technical-preview-version-1808"></a>Versão da visualização técnica 1808
 
-- [Hub da comunidade](capabilities-in-technical-preview-1807.md#bkmk_hub) <!--1357766-->
-- [Especificar a unidade para manutenção offline de imagem do sistema operacional](capabilities-in-technical-preview-1807.md#bkmk_osd) <!--1358924-->
-- [Atividade de sincronização de dispositivo cogerenciado com o Intune](capabilities-in-technical-preview-1807.md#bkmk_comgmt) <!--1358565-->
-- [Reparar aplicativos](capabilities-in-technical-preview-1807.md#bkmk_app-repair) <!--1357866-->
-- [Aprovar solicitações de aplicativo por email](capabilities-in-technical-preview-1807.md#bkmk_email-approve) <!--1321550-->
-- [Melhoria na saída do script](capabilities-in-technical-preview-1807.md#bkmk_script) <!--1236459-->
-- [Melhoria nas atualizações de software de terceiros](capabilities-in-technical-preview-1807.md#bkmk_3pupdate) <!--1358714-->
+- [Implantação em fases de atualizações de software](capabilities-in-technical-preview-1808.md#bkmk_pod) <!--1358146-->
+- [Melhorias no reparo de aplicativos](capabilities-in-technical-preview-1808.md#bkmk_repair) <!--1357866-->
 
 
 > [!Note]  
@@ -151,6 +146,13 @@ Then remove the bottom of this list and/or move individual items not in CB to th
 
  |Recurso |Versão da visualização técnica |Versão do branch atual|  
  |----------------|---------------------|--------------------|
+ | Hub de Comunidade <!--1357766--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_hub) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Especifique a unidade para manutenção offline da imagem do sistema operacional <!--1358924--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_osd) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Atividade de sincronização de dispositivo cogerenciados com o Intune <!--1358565--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_comgmt) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Reparar aplicativos <!--1357866--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_app-repair) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Aprovar solicitações de aplicativo por email <!--1321550--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_email-approve) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Melhoria na saída do script <!--1236459--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_script) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Melhoria nas atualizações de software de terceiros <!--1358714--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_3pupdate) | ![Não foi adicionado](media/Red_X.gif) | 
  | Melhorias para implantações em fases <!--1358577,1358147,1358578--> | [Tech Preview 1806.2](capabilities-in-technical-preview-1806-2.md#bkmk_pod)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
  | Suporte para novos formatos do pacote de aplicativo do Windows <!--1357427--> | [Tech Preview 1806.2](capabilities-in-technical-preview-1806-2.md#bkmk_msix)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
  | Melhoria de segurança do cliente por push <!--1358204--> | [Tech Preview 1806.2](capabilities-in-technical-preview-1806-2.md#bkmk_client-push)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
@@ -190,23 +192,7 @@ Then remove the bottom of this list and/or move individual items not in CB to th
  | Melhoria no inventário de hardware para grandes valores inteiros <!--1357880--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#improvement-to-hardware-inventory-for-large-integer-values)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
  | Melhoria na manutenção do WSUS <!--1357898--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#improvement-to-wsus-maintenance)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
  | Melhoria no suporte para certificados CNG <!--1357314--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#improvement-to-support-for-cng-certificates)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Configurar uma biblioteca de conteúdo remoto para o servidor do site<!--1357525--> | [Tech Preview 1804](capabilities-in-technical-preview-1804.md#configure-a-remote-content-library-for-the-site-server)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | Enviar comentários do console do Configuration Manager <!--1357542--> | [Tech Preview 1804](capabilities-in-technical-preview-1804.md#bkmk_feedback)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | Centro de Suporte<!--1357489--> | [Tech Preview 1804](capabilities-in-technical-preview-1804.md#support-center)  | ![Não foi adicionado](media/Red_X.gif) | 
- | Kit de ferramentas do Configuration Manager <!--1357145--> | [Tech Preview 1804](capabilities-in-technical-preview-1804.md#configuration-manager-toolkit)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | Desinstalar o aplicativo na revogação da aprovação <!--1357891--> | [Tech Preview 1804](capabilities-in-technical-preview-1804.md#uninstall-application-on-approval-revocation)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | Excluir contêineres do Active Directory da descoberta <!--1358143--> | [Tech Preview 1804](capabilities-in-technical-preview-1804.md#exclude-active-directory-containers-from-discovery)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | Especificar a visibilidade do link de site do Catálogo de Aplicativos no Centro de Software <!--1358214--> | [Tech Preview 1804](capabilities-in-technical-preview-1804.md#specify-the-visibility-of-the-application-catalog-website-link-in-software-center)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | Filtrar regras de implantação automática pela arquitetura de atualização de software <!--1322266--> | [Tech Preview 1804](capabilities-in-technical-preview-1804.md#filter-automatic-deployment-rules-by-software-update-architecture)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | Melhorias na implantação do sistema operacional <!--1358330,1358493--> | [Tech Preview 1804](capabilities-in-technical-preview-1804.md#improvements-to-os-deployment) | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | Os pontos de distribuição por pull são compatíveis com os pontos de distribuição de nuvem como origem <!--1321554--> | [Tech Preview 1803](capabilities-in-technical-preview-1803.md#pull-distribution-points-support-cloud-distribution-points-as-source)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | O suporte parcial de download no cache de par de cliente para reduzir a utilização de WAN <!--1357346--> | [Tech Preview 1803](capabilities-in-technical-preview-1803.md#partial-download-support-in-client-peer-cache-to-reduce-wan-utilization)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | Janelas de manutenção no Centro de Software <!--1358131--> | [Tech Preview 1803](capabilities-in-technical-preview-1803.md#maintenance-windows-in-software-center)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | Guia personalizada para página da Web no Centro de Software <!--1358132--> | [Tech Preview 1803](capabilities-in-technical-preview-1803.md#custom-tab-for-webpage-in-software-center)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | Habilitar o suporte de atualização de software de terceiros em clientes <!--1357605--> | [Tech Preview 1803](capabilities-in-technical-preview-1803.md#enable-third-party-software-update-support-on-clients)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | Habilitar copiar/colar de detalhes do ativo das exibições de monitoramento <!--1357552--> | [Tech Preview 1803](capabilities-in-technical-preview-1803.md#enable-copypaste-of-asset-details-from-monitoring-views)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | Extensões do SCAP <!--1357552--> | [Tech Preview 1803](capabilities-in-technical-preview-1803.md#scap-extensions)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- 
+
   
 
 ## <a name="features-in-previous-technical-previews"></a>Recursos em visualização técnicas anteriores
@@ -221,19 +207,14 @@ With each CB release, review and remove from this list for anything that's now a
 
 |Recurso |Versão do Technical Preview |  
 |----------------|---------------------|
-| Serviço de respondente PXE baseado no cliente <!-- 1357148 --> | [Tech Preview 1712](capabilities-in-technical-preview-1712.md#client-based-pxe-responder-service) |
+|Centro de Suporte<!--1357489--> | [Tech Preview 1804](capabilities-in-technical-preview-1804.md#support-center)  | 
+|Serviço de respondente PXE baseado no cliente <!-- 1357148 --> | [Tech Preview 1712](capabilities-in-technical-preview-1712.md#client-based-pxe-responder-service) |
 |Suporte de inicialização de rede PXE para IPv6 <!-- 1269793 --> |[Visualização Técnica 1706](capabilities-in-technical-preview-1706.md#pxe-network-boot-support-for-ipv6)|
 |Usar o Azure Active Directory <!-- 1322145? --> | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#azurediscovery) |
 |Avaliação de conformidade para atualizações do Windows Update para Empresas <!-- 1235390 --> | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#compliance-assessment-for-windows-update-for-business-updates) |
 |Acesso a dados do ponto de extremidade OData <!-- 1321523 --> |[Tech Preview 1612](capabilities-in-technical-preview-1612.md#odata-endpoint-data-access)|
 |Melhorias no Asset Intelligence <!-- 1307390 --> |[Tech Preview 1608](capabilities-in-technical-preview-1608.md#improvements-to-asset-intelligence)|
 |Os usuários finais podem instalar aplicativos por meio do Portal da Empresa <!-- 1037233? --> |[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_End)|
-
-<!--Removed for 1806 CB:
- |Site server role high availability <!-- 1128774  |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#site-server-role-high-availability) |
- | Product lifecycle dashboard <!--1319632  | [Tech Preview 1802](capabilities-in-technical-preview-1802.md#product-lifecycle-dashboard) | 
- | Improvements to PXE-enabled distribution points <!-- 1357580  | [Tech Preview 1802](capabilities-in-technical-preview-1802.md#improvements-to-pxe-enabled-distribution-points) | 
--->
 
 
 

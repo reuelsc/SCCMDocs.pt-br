@@ -5,17 +5,17 @@ description: Implante as atualizações de software automaticamente por meio das
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 07/30/2018
+ms.date: 08/21/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
-ms.openlocfilehash: 2ae76e9bca172b4f45a39444800a0fe152104aa4
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 6c23dc7328e2618d42b70f12bf7df8aa22fddb91
+ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383592"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42589019"
 ---
 #  <a name="automatically-deploy-software-updates"></a>Implantar atualizações de software automaticamente  
 
@@ -177,7 +177,7 @@ Aprove e implante atualizações de software automaticamente usando uma ADR. Sem
 
         -  **Descrição**: especifique uma descrição que forneça informações sobre o pacote de implantação. A descrição opcional é limitada a 127 caracteres.  
 
-        -  **Origem do pacote**: especifica o local dos arquivos de origem de atualização do software. Digite um caminho de rede para o local de origem, por exemplo, `\\server\sharename\path` ou clique em **Procurar** para encontrar o local de rede. Crie a pasta compartilhada para os arquivos de origem do pacote de implantação antes de ir para a próxima página.  
+        -  **Origem do pacote**: especifica o local dos arquivos de origem de atualização do software. Digite um caminho de rede para o local de origem, por exemplo, `\\server\sharename\path`, ou clique em **Procurar** para encontrar o local de rede. Crie a pasta compartilhada para os arquivos de origem do pacote de implantação antes de ir para a próxima página.  
 
             - Não é possível usar o local especificado como a origem de outro pacote de implantação de software.  
 
@@ -190,6 +190,9 @@ Aprove e implante atualizações de software automaticamente usando uma ADR. Sem
         - **Habilitar replicação diferencial binária**: habilite essa configuração para minimizar o tráfego de rede entre os sites. A BDR (replicação diferencial binária) atualiza apenas o conteúdo que foi alterado no pacote, em vez de atualizar o conteúdo do pacote inteiro. Para obter mais informações, confira [Replicação diferencial binária](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#binary-differential-replication).  
 
     - **Nenhum pacote de implantação**: começando com a versão 1806, é possível implantar atualizações de software em dispositivos sem precisar primeiro fazer o download e distribuir o conteúdo para pontos de distribuição. Essa configuração é útil ao lidar com um conteúdo de atualização muito grande. Use-a também quando desejar que os clientes sempre obtenham o conteúdo do serviço de nuvem do Microsoft Update. Os clientes nesse cenário também podem baixar o conteúdo de pares que já tenham o conteúdo necessário. O cliente do Configuration Manager continua a gerenciar o download de conteúdo, portanto, é possível usar o recurso de cache par do Configuration Manager ou outras tecnologias, como a Otimização de Entrega. Esse recurso dá suporte a qualquer tipo de atualização com suporte do gerenciamento de atualizações de software do Configuration Manager, incluindo as atualizações do Windows e do Office.<!--1357933-->  
+
+        > [!Note]  
+        > Essa opção destina-se somente a novas regras de implantação automática. Você não pode modificar as regras existentes com essa configuração.<!--SCCMDocs issue 741-->  
 
 12. Na página **Pontos de Distribuição**, especifique os pontos de distribuição ou os grupos de pontos de distribuição para hospedar os arquivos de atualização de software. Para obter mais informações sobre pontos de distribuição, consulte [Configurações de ponto de distribuição](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_configs). A página está disponível somente quando você cria um novo pacote de implantação de atualização de software.  
   

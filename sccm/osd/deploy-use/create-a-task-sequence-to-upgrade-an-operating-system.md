@@ -10,12 +10,12 @@ ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 483b5f8b285fb256005e31e01a0786cef6c8e11d
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: bddcd356a3ee221d5b67935a5be91bbe89d2afc2
+ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383078"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42756047"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Criar uma sequência de tarefas para atualizar um sistema operacional no Configuration Manager
 
@@ -155,7 +155,7 @@ A partir da versão 1802, o modelo de sequência de tarefas padrão para o atual
 
 - **Remover/suspender segurança de terceiros**: adicione etapas neste grupo para remover ou suspender programas de segurança de terceiros, como antivírus.  
 
-   - Se você estiver usando um programa de criptografia de disco de terceiros, forneça seu driver de criptografia à Instalação do Windows com a [opção de linha de comando](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#23)`/ReflectDrivers`. Adicione uma etapa [Definir variável de sequência de tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) para a sequência de tarefas neste grupo. Defina a variável de sequência de tarefas como **OSDSetupAdditionalUpgradeOptions**. Defina o valor como `/ReflectDrivers` com o caminho para o driver. Esta [variável de ação de sequências de tarefas](/sccm/osd/understand/task-sequence-action-variables#upgrade-operating-system) anexa a linha de comando da Instalação do Windows usada pela sequência de tarefas. Entre em contato com o fornecedor do software para obter qualquer orientação adicional sobre este processo.  
+   - Se você estiver usando um programa de criptografia de disco de terceiros, forneça seu driver de criptografia à Instalação do Windows com a [opção de linha de comando](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#23)`/ReflectDrivers`. Adicione uma etapa [Definir variável de sequência de tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) para a sequência de tarefas neste grupo. Defina a variável de sequência de tarefas como **OSDSetupAdditionalUpgradeOptions**. Defina o valor como `/ReflectDrivers` com o caminho para o driver. Esta [variável de sequências de tarefas](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) anexa a linha de comando da Instalação do Windows usada pela sequência de tarefas. Entre em contato com o fornecedor do software para obter qualquer orientação adicional sobre este processo.  
 
 
 ### <a name="download-package-content-task-sequence-step"></a>Baixar etapa de sequência de tarefas do conteúdo do pacote  
@@ -215,7 +215,7 @@ Começando na versão 1806, o modelo de sequência de tarefas padrão para a atu
 
     - Para obter mais informações sobre os logs do cliente do Configuration Manager, confira [Logs do cliente do Configuration Manager](/sccm/core/plan-design/hierarchy/log-files#BKMK_ClientLogs).  
 
-    - Para saber mais sobre _SMSTSLogPath e outras variáveis ​​úteis, confira [Variáveis ​​internas da sequência de tarefas](/sccm/osd/understand/task-sequence-built-in-variables).  
+    - Para saber mais sobre **_SMSTSLogPath** e outras variáveis ​​úteis, consulte [Variáveis ​​da sequência de tarefas](/sccm/osd/understand/task-sequence-variables).  
 
 - **Executar as ferramentas de diagnóstico**: para executar ferramentas de diagnóstico adicionais, adicione etapas neste grupo. Automatize essas ferramentas para coletar informações adicionais do sistema logo após a falha.  
 
@@ -234,18 +234,18 @@ Começando na versão 1806, o modelo de sequência de tarefas padrão para a atu
 
 - Na etapa padrão **Verificar a prontidão**, ative  **Verificar o espaço mínimo em disco (MB)**. Defina o valor para pelo menos **16384** (16 GB) para um pacote de upgrade do SO de 32 bits ou **20480** (20 GB) de 64 bits.  
 
-- Use a [variável de sequência de tarefas interna](/sccm/osd/understand/task-sequence-built-in-variables) **SMSTSDownloadRetryCount** para repetir a política de download. Atualmente, por padrão, o cliente tenta novamente duas vezes; essa variável é definida como dois (2). Se os clientes não estiverem conectados por uma conexão de rede de intranet com fio, haverá tentativas adicionais para ajudar o cliente a obter uma política. O uso dessa variável não causa nenhum efeito colateral negativo, além de uma falha em atraso caso a política não possa ser baixada.<!--501016--> Além disso, aumente a variável **SMSTSDownloadRetryDelay** dos 15 segundos padrão.  
+- Use a **variável de sequência de tarefas** [SMSTSDownloadRetryCount](/sccm/osd/understand/task-sequence-variables#SMSTSDownloadRetryCount) para repetir a política de download. Atualmente, por padrão, o cliente tenta novamente duas vezes; essa variável é definida como dois (2). Se os clientes não estiverem conectados por uma conexão de rede de intranet com fio, haverá tentativas adicionais para ajudar o cliente a obter uma política. O uso dessa variável não causa nenhum efeito colateral negativo, além de uma falha em atraso caso a política não possa ser baixada.<!--501016--> Além disso, aumente a variável **SMSTSDownloadRetryDelay** dos 15 segundos padrão.  
 
 - Execute uma avaliação de compatibilidade embutida:  
 
    - Adicione uma segunda etapa **Atualizar sistema operacional** no início do grupo **Preparar para Upgrade**. Chame-o de *Avaliação de upgrade*. Especifique o mesmo pacote de upgrade e, em seguida, ative a opção para **Executar verificação de compatibilidade da Instalação do Windows sem iniciar o upgrade**. Habilite **Continuar em caso de erro** na guia Opções.  
 
-   - Imediatamente após esta etapa *Avaliação do upgrade*, adicione uma etapa **Executar linha de comando**. Especifique a seguinte linha de comando:</br> `cmd /c exit %_SMSTSOSUpgradeActionReturnCode%`</br>Na guia **Opções**, adicione as seguintes condições: </br>`Task Sequence Variable _SMSTSOSUpgradeActionReturnCode not equals 3247440400` </br>Este código de retorno é o equivalente decimal de MOSETUP_E_COMPAT_SCANONLY (0xC1900210), que é uma verificação de compatibilidade bem-sucedida sem problemas. Quando a etapa *Avaliação de Atualização* é bem-sucedida e retorna esse código, a sequência de tarefas ignora esta etapa. Caso contrário, se a etapa de avaliação retornar qualquer outro código de retorno, esta etapa falha na sequência de tarefas com o código de retorno da verificação de compatibilidade da Instalação do Windows.  
+   - Imediatamente após esta etapa *Avaliação do upgrade*, adicione uma etapa **Executar linha de comando**. Especifique a seguinte linha de comando:</br> `cmd /c exit %_SMSTSOSUpgradeActionReturnCode%`</br>Na guia **Opções**, adicione as seguintes condições: </br>`Task Sequence Variable _SMSTSOSUpgradeActionReturnCode not equals 3247440400` </br>Este código de retorno é o equivalente decimal de MOSETUP_E_COMPAT_SCANONLY (0xC1900210), que é uma verificação de compatibilidade bem-sucedida sem problemas. Quando a etapa *Avaliação de Atualização* é bem-sucedida e retorna esse código, a sequência de tarefas ignora esta etapa. Caso contrário, se a etapa de avaliação retornar qualquer outro código de retorno, esta etapa falha na sequência de tarefas com o código de retorno da verificação de compatibilidade da Instalação do Windows. Para saber mais sobre **_SMSTSOSUpgradeActionReturnCode**, consulte [Variáveis ​​da sequência de tarefas](/sccm/osd/understand/task-sequence-variables#SMSTSOSUpgradeActionReturnCode).  
 
    - Para saber mais, confira [Upgrade do sistema operacional](/sccm/osd/understand/task-sequence-steps#BKMK_UpgradeOS).  
 
 - Se você quiser mudar o dispositivo do BIOS para UEFI durante esta sequência de tarefas, veja [Converter de BIOS para UEFI durante um upgrade in-loco](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).  
 
-- Se você estiver usando a criptografia de disco do BitLocker, por padrão, a Instalação do Windows a suspenderá automaticamente durante a atualização. Começando no Windows 10 versão 1803, a Instalação do Windows inclui o parâmetro de linha de comando `/BitLocker` para controlar esse comportamento. Se os requisitos de segurança exigirem a criptografia de disco sempre ativa, use a variável de sequência de tarefas **OSDSetupAdditionalUpgradeOptions** no grupo **Preparar para Atualização** para incluir `/BitLocker TryKeepActive`. Para obter mais informações, confira [Opções de linha de comando da Instalação do Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#33).<!--SCCMDocs issue #494-->  
+- Se você estiver usando a criptografia de disco do BitLocker, por padrão, a Instalação do Windows a suspenderá automaticamente durante a atualização. Começando no Windows 10 versão 1803, a Instalação do Windows inclui o parâmetro de linha de comando `/BitLocker` para controlar esse comportamento. Se os requisitos de segurança exigirem a criptografia de disco sempre ativa, use a [variável de sequência de tarefas](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) **OSDSetupAdditionalUpgradeOptions** no grupo **Preparar para Atualização** para incluir `/BitLocker TryKeepActive`. Para obter mais informações, confira [Opções de linha de comando da Instalação do Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#33).<!--SCCMDocs issue #494-->  
 
 - Alguns clientes removem os aplicativos padrão provisionados no Windows 10. Por exemplo, o aplicativo Bing Meteorologia ou o Microsoft Solitaire Collection. Em algumas situações, esses aplicativos retornam após a atualização do Windows 10. Para obter mais informações, confira [Como manter os aplicativos removidos do Windows 10](https://docs.microsoft.com/windows/application-management/remove-provisioned-apps-during-update). Adicione uma etapa **Executar Linha de Comando** à sequência de tarefas no grupo **Preparar para Atualização**. Especifique uma linha de comando semelhante ao exemplo a seguir:</br> `cmd /c reg delete "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\Microsoft.BingWeather_8wekyb3d8bbwe" /f` <!--SCCMDocs issue #526-->  

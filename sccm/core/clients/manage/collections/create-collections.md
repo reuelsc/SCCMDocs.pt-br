@@ -10,12 +10,12 @@ ms.assetid: 1401a35e-4312-4d3b-8ceb-0abbb10d4f05
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 76796cdb56a7106ac709866a9df7c2a08bc6b7bc
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: c314cba909929ee49355eab59dfc813aab7e393e
+ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337081"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "42584407"
 ---
 # <a name="how-to-create-collections-in-system-center-configuration-manager"></a>Como criar coleções no System Center Configuration Manager
 
@@ -88,7 +88,7 @@ Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que voc�
 
 Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja excluir da nova coleção e, em seguida, escolha **OK**.  
 
--   **Usar atualizações incrementais para esta coleção** – Selecione esta opção para examinar periodicamente apenas recursos novos ou alterados da avaliação da coleção anterior, independentemente de uma avaliação completa da coleção. Atualizações incrementais ocorrem em intervalos de 10 minutos.  
+-   **Usar atualizações incrementais para esta coleção** – Selecione esta opção para examinar periodicamente apenas recursos novos ou alterados da avaliação da coleção anterior, independentemente de uma avaliação completa da coleção. Por padrão, atualizações incrementais ocorrem em intervalos de 5 minutos.  
 
 > [!IMPORTANT]  
 >  As coleções configuradas usando regras de consulta que usam as seguintes classes não dão suporte a atualizações incrementais:  
@@ -160,7 +160,7 @@ Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que voc�
 Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja excluir da nova coleção e, em seguida, escolha **OK**.  
 
 
--   **Usar atualizações incrementais para esta coleção** – Selecione esta opção para examinar periodicamente apenas recursos novos ou alterados da avaliação da coleção anterior, independentemente de uma avaliação completa da coleção. Atualizações incrementais ocorrem em intervalos de 10 minutos.  
+-   **Usar atualizações incrementais para esta coleção** – Selecione esta opção para examinar periodicamente apenas recursos novos ou alterados da avaliação da coleção anterior, independentemente de uma avaliação completa da coleção. Por padrão, atualizações incrementais ocorrem em intervalos de 5 minutos.  
 
 > [!IMPORTANT]  
 >  As coleções configuradas usando regras de consulta que usam as seguintes classes não dão suporte a atualizações incrementais:  
