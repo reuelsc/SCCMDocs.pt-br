@@ -10,12 +10,12 @@ ms.assetid: e83a7b0d-b381-4b4a-8eca-850385abbebb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cdf073aa3e9ca3be6062ea0e5e0528bb97937989
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a3d4cbbf78639a135e9e36e3402f9920a6ef71ed
+ms.sourcegitcommit: 78d2dce465e3500653b252583a6903a006784c26
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333395"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46448779"
 ---
 # <a name="co-management-dashboard-in-system-center-configuration-manager"></a>Painel de cogerenciamento no System Center Configuration Manager
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -76,7 +76,7 @@ O painel de cogerenciamento mostra quatro grafos para o ambiente.
 ## <a name="next-steps"></a>Próximas etapas
 
 Para obter mais informações sobre o cogerenciamento, consulte:
- - [Cogerenciamento de dispositivos Windows 10](/sccm/core/clients/manage/co-management-overview.md)
- - [Preparar dispositivos Windows 10 para cogerenciamento](/sccm/core/clients/manage/co-management-prepare.md)
+ - [Cogerenciamento de dispositivos Windows 10](/sccm/core/clients/manage/co-management-overview)
+ - [Preparar dispositivos Windows 10 para cogerenciamento](/sccm/core/clients/manage/co-management-prepare)
 
     

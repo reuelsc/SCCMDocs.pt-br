@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 304a83ea-0f72-437d-9688-2e6e0c7526dd
-ms.openlocfilehash: cefdaec6aff16f0159f9811b6deb7379ab69a4ec
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 7c775df2446dbd0da1d9317982fc752dbfe5120a
+ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350537"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46533806"
 ---
 # <a name="service-a-server-group"></a>Realização de serviços em um grupo de servidores
 
@@ -63,7 +63,7 @@ As configurações do grupo do servidores são definidas nas propriedades de uma
     >   
     >  `Write-Output "Universal Time: " + $a.ToUniversalTime()  |`  
     >   
-    >  `Out-File C:\temp\start.txt`  
+    >  `Out-File C:\Windows\Temp\start.txt`  
     >   
     >  **Pós-implantação**  
     >   
@@ -73,7 +73,7 @@ As configurações do grupo do servidores são definidas nas propriedades de uma
     >   
     >  `Write-Output "Universal Time: " + $a.ToUniversalTime()  |`  
     >   
-    >  `Out-File C:\temp\end.txt`  
+    >  `Out-File C:\Windows\Temp\end.txt`  
 
 ## <a name="deploy-software-updates-to-the-server-group-and-monitor-status"></a>Implantar atualizações de software no grupo de servidores e monitorar o status  
 Implante atualizações de software na coleção do grupo de servidores usando o processo típico de implantação. Após implantar as atualizações de software, você pode monitorar a implantação da atualização de software no console do Configuration Manager.
