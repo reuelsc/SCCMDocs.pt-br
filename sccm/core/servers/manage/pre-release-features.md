@@ -10,12 +10,12 @@ ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e72cdf667f96828fb6730cf3294c8d20ec553130
-ms.sourcegitcommit: 759098de944b8f7d5eedfc2bae2cb9a6ba15276f
+ms.openlocfilehash: 7b82bdfcbe69c7e9d59185fc6af20a85e65a6e7d
+ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43289247"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893559"
 ---
 # <a name="pre-release-features-in-configuration-manager"></a>Recursos pré-lançamento no Configuration Manager
 
@@ -91,7 +91,7 @@ Ao habilitar um recurso de pré-lançamento, o gerenciador de hierarquia (HMAN) 
 | Ponto de serviço do Data Warehouse <!-- 1277922 --> |  [Versão 1702](/sccm/core/servers/manage/data-warehouse) |[Versão 1706](/sccm/core/servers/manage/data-warehouse)|
 | Cache de Pares para distribuição de conteúdo para clientes <!-- 1101436 --> |  [Versão 1610](/sccm/core/plan-design/hierarchy/client-peer-cache) | [Versão 1710](/sccm/core/plan-design/hierarchy/client-peer-cache)|
 | Gateway de gerenciamento de nuvem <!-- 1101764 --> |  [Versão 1610](/sccm/core/clients/manage/plan-cloud-management-gateway) |[Versão 1802](/sccm/core/clients/manage/plan-cloud-management-gateway)|
-| Conector do Microsoft Operations Management Suite <!-- 1236739 --> | [Versão 1606](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) |[Versão 1802](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite)|
+| Conector do Log Analytics <!-- 1236739 --> | [Versão 1606](/sccm/core/clients/manage/sync-data-log-analytics) |[Versão 1802](/sccm/core/clients/manage/sync-data-log-analytics)|
 | Realização de serviços em uma coleção com reconhecimento de cluster (realização de serviços em um grupo de servidores) <!-- 1081776 --> | [Versão 1602](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_ServerGroups)|![Ainda não](media/red_x.png)|
 | Acesso condicional para PCs gerenciados pelo System Center Configuration Manager <!--  --> | [Versão 1602](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)     | [Versão 1702](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)                     |
 <!--Image used = ![Not yet](media/red_x.png) -->

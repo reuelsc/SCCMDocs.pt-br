@@ -10,12 +10,12 @@ ms.assetid: b670cfaf-96a4-4fcb-9caa-0f2e8c2c6198
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7e445cd6e49617afde6f8acf043eeb4c707e1480
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.openlocfilehash: 801cd2cd35d370fbe469b16613da7f7592feff6e
+ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36261002"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893801"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Otimizar a entrega de atualizações do Windows 10 com o Configuration Manager
 
@@ -89,7 +89,7 @@ A seleção da tecnologia certa de cache de pares para arquivos de instalação 
 | Tamanho do cache no controle de disco | Sim | Sim | Sim |
 | Descoberta de uma fonte de pares | Automática | Manual (configuração do agente cliente) | Automática |
 | Descoberta de pares | Por meio do serviço de nuvem de Otimização de Entrega (requer acesso à Internet) | Por meio do ponto de gerenciamento (com base em grupos de limites do cliente) | Transmissão |
-| Relatórios | Sim (usando o Microsoft Operations Management Suite) | Painel de fontes de dados do cliente do ConfigMgr | Painel de fontes de dados do cliente do ConfigMgr |
+| Relatórios | Sim (usando o Windows Analytics) | Painel de fontes de dados do cliente do ConfigMgr | Painel de fontes de dados do cliente do ConfigMgr |
 | Controle de uso de WAN | Sim (nativo, pode ser controlado por meio de configurações de política de grupo) | Grupos de limites | Suporte apenas para sub-rede |
 | Tipos de conteúdo com suporte | - Atualizações expressas (por meio do ConfigMgr)</br> - Atualizações do Windows e de segurança</br> - Drivers</br> --Aplicativos da Windows Store</br> Aplicativos da Windows Store para Empresas | Todos os tipos de conteúdo do ConfigMgr, inclusive imagens baixadas no [Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic) | Todos os tipos de conteúdo do ConfigMgr, exceto imagens |
 | Gerenciamento por meio de ConfigMgr | Parcial (configuração do agente cliente) | Sim (configuração do agente do cliente) | Sim (configuração do agente do cliente) |

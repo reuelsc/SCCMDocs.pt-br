@@ -1,7 +1,7 @@
 ---
 title: Configurar serviços do Azure
 titleSuffix: Configuration Manager
-description: Conecte o ambiente do Configuration Manager aos serviços do Azure para o gerenciamento de nuvem, ao Upgrade Readiness, à Microsoft Store para Empresas e ao Operations Management Suite.
+description: Conecte o ambiente do Configuration Manager aos serviços do Azure para o gerenciamento de nuvem, ao Upgrade Readiness, à Microsoft Store para Empresas e ao Log Analytics.
 ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,12 +10,12 @@ ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5607402171a3b771560ff439b1f1f99a6a947e83
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 1ea47941be51d1bf38de53203aad00c02d0a11d3
+ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383289"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893763"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurar serviços do Azure para uso com o Configuration Manager
 
@@ -37,7 +37,10 @@ Configure os seguintes serviços do Azure usando esse assistente:
 
     - Suporte a alguns [cenários do gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#scenarios)  
 
--   **Conector do OMS**: [Conecte-se ao OMS](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) (Operations Management Suite). Sincronizar dados, como coleções, com o Log Analytics do OMS.  
+-   **Conector do Log Analytics**: [conecte-se ao Azure Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics). Sincronize dados de coleta para o Log Analytics.  
+
+    > [!Note]  
+    > Este artigo refere-se ao *Conector do Log Analytics*, que antes era chamado de *Conector do OMS*. Não há diferença funcional. Para saber mais, veja [Gerenciamento do Azure - Monitoramento](https://docs.microsoft.com/azure/monitoring/#operations-management-suite).  
 
 -   **Conector do Upgrade Readiness**: conecte-se ao [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics) do Windows Analytics. Exiba os dados de compatibilidade da atualização do cliente.  
 
@@ -61,7 +64,7 @@ A tabela a seguir lista os detalhes sobre cada um dos serviços.
 |Serviço  |Locatários  |Nuvens  |Aplicativo Web  |Aplicativo nativo  |Ações  |
 |---------|---------|---------|---------|---------|---------|
 |Gerenciamento de nuvem com</br>Descoberta de usuários do Azure AD | Vários | Público | ![Com suporte](media/green_check.png) | ![Com suporte](media/green_check.png) | Importar, criar |
-|Conector do OMS | Um | Público, privado | ![Com suporte](media/green_check.png) | ![Sem suporte](media/Red_X.png) | Importar |
+|Conector do Log Analytics | Um | Público, privado | ![Com suporte](media/green_check.png) | ![Sem suporte](media/Red_X.png) | Importar |
 |Upgrade Readiness | Um | Público | ![Com suporte](media/green_check.png) | ![Sem suporte](media/Red_X.png) | Importar |
 |Microsoft Store para</br>Negócios | Um | Público | ![Com suporte](media/green_check.png) | ![Sem suporte](media/Red_X.png) | Importar, criar |
 
@@ -90,7 +93,7 @@ Para obter mais informações sobre os aplicativos do Azure, comece com os segui
 
 Depois de decidir sobre o serviço ao qual você deseja se conectar, consulte a tabela em [Detalhes do serviço](#service-details). Esta tabela fornece as informações necessárias para concluir o Assistente de Serviço do Azure. Converse antecipadamente com o administrador do Azure AD. Decida se você criará manualmente os aplicativos com antecedência no portal do Azure e, em seguida, importará os detalhes do aplicativo para o Configuration Manager. Se preferir, use o Configuration Manager para criar os aplicativos diretamente no Azure AD. Para coletar os dados necessários do Azure AD, examine as informações nas outras seções deste artigo.
 
-Alguns serviços exigem que os aplicativos do Azure AD tenham permissões específicas. Examine as informações de cada serviço para determinar as permissões necessárias. Por exemplo, antes de importar um aplicativo Web, um administrador do Azure deve primeiro criá-lo no [portal do Azure](https://portal.azure.com). Ao configurar o Upgrade Readiness ou o Conector do OMS, você precisa conceder ao aplicativo Web recém-registrado a permissão *Colaborador* no grupo de recursos que contém o espaço de trabalho do OMS relevante. Com essa permissão, o Configuration Manager pode acessar esse espaço de trabalho. Ao atribuir a permissão, procure o nome do registro do aplicativo na área **Adicionar usuários** do portal do Azure. Esse processo é o mesmo que ao [fornecer ao Configuration Manager as permissões para o OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms). Um administrador do Azure deve atribuir essas permissões antes que você importe o aplicativo para o Configuration Manager.
+Alguns serviços exigem que os aplicativos do Azure AD tenham permissões específicas. Examine as informações de cada serviço para determinar as permissões necessárias. Por exemplo, antes de importar um aplicativo Web, um administrador do Azure deve primeiro criá-lo no [portal do Azure](https://portal.azure.com). Ao configurar o Upgrade Readiness ou o Conector do Log Analytics, você precisa conceder ao aplicativo Web recém-registrado a permissão *Colaborador* no grupo de recursos que contém o espaço de trabalho relevante. Com essa permissão, o Configuration Manager pode acessar esse espaço de trabalho. Ao atribuir a permissão, procure o nome do registro do aplicativo na área **Adicionar usuários** do portal do Azure. Esse processo é semelhante a quando você [fornece ao Configuration Manager as permissões para o Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#grant-configuration-manager-with-permissions-to-log-analytics). Um administrador do Azure deve atribuir essas permissões antes que você importe o aplicativo para o Configuration Manager.
 
 
 
@@ -209,7 +212,7 @@ Depois de especificar os aplicativos Web e nativos na página Aplicativos, o Ass
 
 -   Serviço **Gerenciamento de Nuvem**, página **Descoberta**: [Configure a descoberta de usuários do Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc)  
 
--   Serviço **Conector do OMS**, página **Configuração**: [Configure a conexão com o OMS](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite#use-the-azure-services-wizard-to-configure-the-connection-to-oms)  
+-   Serviço **Conector do Log Analytics**, página **Configuração**: [configure a conexão com o Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics#configure-the-connection-to-log-analytics)  
 
 -   Serviço **Conector do Upgrade Readiness**, página **Configuração**: [Usar o Assistente do Azure para criar a conexão](/sccm/core/clients/manage/upgrade/upgrade-analytics#use-the-azure-wizard-to-create-the-connection)  
 

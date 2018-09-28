@@ -2,7 +2,7 @@
 title: Configurações do cliente
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as configurações padrão e personalizadas para controlar os comportamentos do cliente
-ms.date: 07/30/2018
+ms.date: 08/31/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 38306efc9fbd7b38a5c5f0dad57fbd1a1b2c0557
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: ff4cdcc52e9be329fcfa0fd2127c43255c73ad65
+ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385398"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893865"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Sobre as configurações do cliente no Configuration Manager
 
@@ -90,15 +90,7 @@ Especifica a frequência com que os seguintes clientes do Configuration Manager 
 
 Quando você define essa opção como **Sim** e usa a [descoberta de usuário](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser), os clientes recebem aplicativos e programas direcionados ao usuário conectado.  
 
-O Catálogo de Aplicativos recebe a lista de softwares disponíveis para usuários do servidor do site. Assim, essa configuração não precisa ser **Sim** para que os usuários vejam e solicitem aplicativos do Catálogo de Aplicativos. Se essa configuração for **Não**, os seguintes comportamentos não funcionarão quando os usuários usarem o Catálogo de Aplicativos:  
-
--   Os usuários não podem instalar os aplicativos que eles veem no Catálogo de Aplicativos.  
-
--   Os usuários não veem as notificações sobre suas solicitações de aprovação de aplicativo. Em vez disso, eles devem atualizar o catálogo de aplicativos e verificar o status de aprovação.  
-
--   Os usuários não recebem as revisões e as atualizações para aplicativos publicadas no Catálogo de Aplicativos. O usuários veem as alterações nas informações do aplicativo no Catálogo de Aplicativos.  
-
--   Se você remover uma implantação de aplicativo depois que o cliente instalar o aplicativo por meio do Catálogo de Aplicativos, os clientes continuarão verificando se o aplicativo está instalado por até dois dias.  
+O Catálogo de Aplicativos recebe a lista de softwares disponíveis para usuários do servidor do site. Assim, essa configuração não precisa ser **Sim** para que os usuários vejam e solicitem aplicativos do Catálogo de Aplicativos. Se essa configuração for **Não**, os usuários não poderão instalar os aplicativos que eles veem no Catálogo de Aplicativos.  
 
 Além disso, se essa configuração for **Não**, os usuários não receberão os aplicativos necessários que você implanta para os usuários. Os usuários também não receberão outras tarefas de gerenciamento em políticas de usuário.  
 
@@ -161,42 +153,19 @@ Para obter mais informações sobre as três seguintes configurações, consulte
 
 ### <a name="default-application-catalog-website-point"></a>Ponto de sites da Web do Catálogo de Aplicativos padrão
 
-O Configuration Manager usa essa configuração para conectar usuários ao Catálogo de Aplicativos do Centro de Software. Selecione **Definir Site** para especificar um servidor que hospeda o ponto de sites da Web do Catálogo de Aplicativos. Insira seu nome NetBIOS ou FQDN, especifique a detecção automática ou uma URL para implantações personalizadas. Na maioria dos casos, a detecção automática é a melhor opção porque oferece os seguintes benefícios:  
+> [!Note]  
+> A partir da versão 1806, o ponto de site do catálogo de aplicativos não será mais *necessário*, mas ainda será *compatível*. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex). 
+> 
+> Não há mais suporte para a **experiência do usuário do Silverlight** para o ponto do site do Catálogo de Aplicativos. Para saber mais, consulte [Recursos removidos e preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
 
--   Se o site tiver um ponto de sites da Web do Catálogo de Aplicativos, os clientes receberão automaticamente um ponto de sites da Web do Catálogo de Aplicativos em seus sites.  
-
--   O cliente prefere pontos de sites da Web do Catálogo de Aplicativos habilitados para HTTPS na intranet em servidores somente HTTP. Essa funcionalidade ajuda a proteger contra um servidor não autorizado.
-
--   O ponto de gerenciamento fornece um ponto de sites da Web do Catálogo de Aplicativos baseado na Internet a clientes baseados na Internet. O ponto de gerenciamento fornece um ponto de sites da Web do Catálogo de Aplicativos baseado na intranet a clientes baseados na intranet.  
-
-A detecção automática não garante que os clientes receberão o ponto de site do Catálogo de Aplicativos mais próximo. Você pode decidir não usar a opção **Detecção automática** pelos seguintes motivos:  
-
--   Você deseja configurar manualmente o servidor mais próximo para clientes ou garantir que eles não se conectem a um servidor em uma conexão de rede lenta.  
-
--   Você deseja controlar quais clientes se conectam a qual servidor. Essa configuração pode ser por motivos comerciais, de desempenho ou teste.  
-
--   Você não quer esperar até 25 horas ou por uma alteração de rede para que os clientes usem um ponto de sites da Web do catálogo de aplicativos.  
-
-Se você especificar o ponto de sites da Web do catálogo de aplicativos em vez de usa a detecção automática, especifique o nome NetBIOS em vez do FQDN da intranet. Essa configuração reduz a probabilidade de que o navegador da Web solicite aos usuários as credenciais quando ele acessar um Catálogo de Aplicativos baseado na intranet. Para usar o nome NetBIOS, as seguintes condições devem ser aplicáveis:  
-
--   O nome NetBIOS é especificado nas propriedades do ponto de sites da Web do catálogo de aplicativos.  
-
--   Você usa o WINS ou todos os clientes estão no mesmo domínio do ponto de sites da Web do catálogo de aplicativos.  
-
--   Configure o ponto de sites da Web do Catálogo de Aplicativos para conexões do cliente HTTP ou configure o servidor para HTTPS e o certificado do servidor Web contém o nome NetBIOS.  
-
-Geralmente, os usuários apresentam credenciais quando a URL contém um FQDN, mas não quando a URL é um nome NetBIOS. Espere que os usuários sempre sejam solicitados quando eles se conectam à Internet, pois essa conexão deve usar o FQDN de Internet. Para um cliente baseado na Internet, quando o navegador da Web solicita aos usuários as credenciais, verifique se o ponto de Sites da Web do Catálogo de Aplicativos pode se conectar a um controlador de domínio para a conta do usuário. Essa configuração permite que o usuário seja autenticado usando o Kerberos.  
-
-> [!NOTE]  
->  Eis como funciona a detecção automática:  
->   
->  O cliente faz uma solicitação de local de serviço para um ponto de gerenciamento. Se houver um ponto de sites da Web do catálogo de aplicativos no mesmo site do cliente, o servidor é fornecido ao cliente como o servidor do catálogo de aplicativos a ser usado. Quando mais de um ponto de sites da Web Catálogo de Aplicativos está disponível no site, um servidor habilitado para HTTPS tem prioridade sobre um servidor não habilitado para HTTPS. Após esta filtragem, todos os clientes recebem um dos servidores para serem usados como Catálogo de Aplicativos. O Configuration Manager não faz balanceamento de carga entre vários servidores. Quando o site do cliente não contém um ponto de sites da Web do catálogo de aplicativos, o ponto de gerenciamento retorna de modo não determinístico um ponto de sites da Web do catálogo de aplicativos da hierarquia.  
->   
->  Para clientes baseados na intranet, se você configurar o ponto de sites da Web do Catálogo de Aplicativos com um nome NetBIOS para a URL do Catálogo de Aplicativos, o ponto de gerenciamento usa isso. Ele não usa o FQDN da intranet. Para clientes baseados na Internet, o ponto de gerenciamento só fornece o FQDN da Internet ao cliente.  
->   
->  O cliente faz a solicitação de local de serviço a cada 25 horas ou sempre que detecta uma alteração de rede. Por exemplo, se o cliente muda da intranet para a Internet, isso é uma mudança de rede. Se o cliente localizar um ponto de gerenciamento baseado na Internet, o ponto de gerenciamento baseado na Internet fornece servidores de ponto de sites da Web do Catálogo de Aplicativos baseados na Internet para os clientes.  
+O Configuration Manager usa essa configuração para conectar usuários ao Catálogo de Aplicativos do Centro de Software. Selecione **Definir Site** para especificar um servidor que hospeda o ponto de sites da Web do Catálogo de Aplicativos. Insira seu nome NetBIOS ou FQDN, especifique a detecção automática ou uma URL para implantações personalizadas. Na maioria dos casos, a detecção automática é a melhor opção.
 
 ### <a name="add-default-application-catalog-website-to-internet-explorer-trusted-sites-zone"></a>Adicionar sites da Web do Catálogo de Aplicativos padrão à zona de sites confiáveis do Internet Explorer
+
+> [!Note]  
+> A partir da versão 1806, o ponto de site do catálogo de aplicativos não será mais *necessário*, mas ainda será *compatível*. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex). 
+> 
+> Não há mais suporte para a **experiência do usuário do Silverlight** para o ponto do site do Catálogo de Aplicativos. Para saber mais, consulte [Recursos removidos e preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
 
 Se essa opção for **Sim**, o cliente adicionará automaticamente a URL padrão atual do site do Catálogo de Aplicativos à zona de sites confiáveis do Internet Explorer.  
 
@@ -204,12 +173,12 @@ Essa configuração garante que a configuração do Internet Explorer para Modo 
 
 Se você deixar essa opção como **Não**, o cliente do Configuration Manager poderá não conseguir instalar aplicativos por meio do Catálogo de Aplicativos. Um método alternativo é definir essas configurações do Internet Explorer em outra zona para a URL do Catálogo de Aplicativos usada pelos clientes.  
 
-> [!NOTE]  
->  Sempre que o Configuration Manager adiciona uma URL de Catálogo de Aplicativos padrão à zona de sites confiáveis, ele remove as URLs do Catálogo de Aplicativos adicionadas anteriormente.  
->   
->  Se a URL já estiver especificada em uma das zonas de segurança, o Configuration Manager não poderá adicionar a URL. Nesse cenário, você deve remover a URL da outra zona ou definir manualmente as configurações necessárias do Internet Explorer.  
-
 ### <a name="allow-silverlight-applications-to-run-in-elevated-trust-mode"></a>Permitir que os aplicativos Silverlight sejam executados no modo de confiança elevada
+
+> [!Important]  
+> A partir do Configuration Manager versão 1802, o cliente não instala o Silverlight automaticamente.
+> 
+> A partir da versão 1806, não há mais suporte para a **experiência do usuário do Silverlight** para o ponto do site do Catálogo de Aplicativos. Os usuários devem usar o novo Centro de Software. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).  
 
 Essa configuração deve ser **Sim** para que os usuários usem o Catálogo de Aplicativos.  
 
@@ -219,15 +188,18 @@ Para obter mais informações sobre essa configuração, consulte [Certificados 
 
 ### <a name="organization-name-displayed-in-software-center"></a>Nome da organização exibido no Centro de Software
 
-Digite o nome que os usuários veem no Centro de Software. Essa informação de identidade visual ajuda os usuários a identificarem este aplicativo como uma fonte confiável.  
+Digite o nome que os usuários veem no Centro de Software. Essa informação de identidade visual ajuda os usuários a identificarem este aplicativo como uma fonte confiável. Para saber mais sobre a prioridade dessa configuração, veja [Centro de Software de identidade visual](/sccm/apps/plan-design/plan-for-and-configure-application-management#branding-software-center).  
 
 ### <a name="use-new-software-center"></a>Usar o novo Centro de Software
 
-Se você definir essa opção como **Sim**, todos os computadores cliente usarão o Centro de Software. O Centro de Software mostra os aplicativos disponíveis para o usuário que estavam acessíveis anteriormente apenas no Catálogo de Aplicativos. O Catálogo de Aplicativos exige o Silverlight, que não é um pré-requisito para o Centro de Software. A partir do Configuration Manager 1802, a configuração padrão é **Sim**.  
+A partir do Configuration Manager 1802, a configuração padrão é **Sim**.
 
-As funções do sistema de sites do ponto de sites da Web do catálogo de aplicativos e do ponto de serviços Web do catálogo de aplicativos ainda são necessárias para que os aplicativos disponíveis para o usuário sejam exibidos no Centro de Software.  
+Se você definir essa opção como **Sim**, todos os computadores cliente usarão o Centro de Software. O Centro de Software mostra os aplicativos disponíveis para o usuário que estavam acessíveis anteriormente apenas no Catálogo de Aplicativos. O Catálogo de Aplicativos exige o Silverlight, que não é um pré-requisito para o Centro de Software.   
 
-Para obter mais informações, consulte [Plan for and configure application management (Planejar e configurar o gerenciamento de aplicativos)](/sccm/apps/plan-design/plan-for-and-configure-application-management).  
+A partir da versão 1806, as funções de ponto de site do catálogo de aplicativos e ponto de serviço Web não são mais *necessária*, mas ainda são *compatíveis*. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex). 
+ 
+> [!Note]  
+> Não há mais suporte para a **experiência do usuário do Silverlight** para o ponto do site do Catálogo de Aplicativos. Para saber mais, consulte [Recursos removidos e preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
 
 ### <a name="enable-communication-with-health-attestation-service"></a>Habilitar comunicação com o Serviço de Atestado de Integridade
 

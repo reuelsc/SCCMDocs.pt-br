@@ -1,8 +1,8 @@
 ---
 title: Introdução ao gerenciamento de aplicativos
 titleSuffix: Configuration Manager
-description: Descubra as informações básicas que você precisará para gerenciar e implantar aplicativos do Configuration Manager.
-ms.date: 07/30/2018
+description: Descubra as informações básicas de que você precisará para gerenciar e implantar aplicativos no Configuration Manager.
+ms.date: 08/31/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 70ab4136f39b4bf559c3d460ca1528bb4de0f6e1
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 0d4e83cbcb1c95303719b1d86ffc9a8969c16998
+ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384283"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893899"
 ---
 # <a name="introduction-to-application-management-in-configuration-manager"></a>Introdução ao gerenciamento de aplicativos no Configuration Manager
 
@@ -186,9 +186,9 @@ Para obter mais informações, consulte os seguintes artigos:
 - [Guia do usuário do Centro de Software](/sccm/core/understand/software-center)
 
 > [!Note]  
-> A função de ponto de serviços Web do catálogo de aplicativos não é mais necessária no 1806, mas ainda é uma função com suporte. 
+> As funções de ponto de site do catálogo de aplicativos e ponto de serviço Web não são mais *necessária* na versão 1806, mas ainda são funções *compatíveis*. 
 > 
-> Não há suporte para a função de site do Catálogo de Aplicativos na versão 1806. Para saber mais, consulte [Recursos removidos e preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
+> Não há mais suporte para a **experiência do usuário do Silverlight** para o ponto do site do Catálogo de Aplicativos. Para saber mais, consulte [Recursos removidos e preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
 
 
 
