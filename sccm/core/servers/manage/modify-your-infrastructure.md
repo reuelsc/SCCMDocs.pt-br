@@ -171,7 +171,7 @@ Por exemplo, considere um cenário em que você instala o console do Configurati
 
 
 > [!IMPORTANT]  
->  Antes de mover um banco de dados que possui uma ou mais réplicas de banco de dados para pontos de gerenciamento, primeiro remova as réplicas do banco de dados. Depois de concluir a movimentação do banco de dados, você poderá reconfigurar suas réplicas. Para obter mais informações, consulte [Database replicas for management points for System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
+>  Antes de mover um banco de dados que possui uma ou mais réplicas de banco de dados para pontos de gerenciamento, primeiro remova as réplicas do banco de dados. Depois de concluir a movimentação do banco de dados, você poderá reconfigurar suas réplicas. Para saber mais, veja [Réplicas de banco de dados para pontos de gerenciamento no System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
 ##  <a name="bkmk_SPN"></a> Gerenciar o SPN para o servidor de banco de dados do site  
 Você pode escolher a conta que executa os serviços do SQL para o banco de dados do site:  
