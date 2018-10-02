@@ -10,12 +10,12 @@ ms.assetid: 32e2d6b9-148f-45e2-8083-98c656473f82
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0429c62f68a111bc7f620d1c954d5c8cf944d1c1
-ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
+ms.openlocfilehash: 2e0f74790437b34d1c5cd5dc00767ec782a51b45
+ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42590049"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47229289"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>O CMPivot para dados em tempo real no Configuration Manager
 
@@ -78,7 +78,7 @@ Os seguintes componentes são necessários para usar o CMPivot:
 
      - Clique em uma das **Entidades** para adicioná-la à cadeia de caracteres de consulta.  
 
-     - Os links para **Operadores de Tabela**, **Funções de Agregação** e **Funções Escalares** abrem a documentação de referência da linguagem no navegador da Web. O CMPivot usa a mesma linguagem de consulta do [Azure Log Analytics](https://docs.loganalytics.io/docs/Language-Reference/Change-log).  
+     - Os links para **Operadores de Tabela**, **Funções de Agregação** e **Funções Escalares** abrem a documentação de referência da linguagem no navegador da Web. O CMPivot usa a mesma linguagem de consulta do [Azure Log Analytics](https://docs.microsoft.com/azure/kusto/query/).  
 
 3. Mantenha a janela do CMPivot aberta para exibir os resultados de clientes. Quando você fecha a janela do CMPivot, a sessão é concluída.  
 
@@ -113,7 +113,7 @@ A janela do CMPivot contém os seguintes elementos:
 
 5. É no painel de consulta que você compila ou digita uma consulta a ser executada em clientes na coleção.  
 
-    - O CMPivot usa um subconjunto da mesma linguagem de consulta que o [Azure Log Analytics](https://docs.loganalytics.io/docs/Language-Reference/Change-log).  
+    - O CMPivot usa um subconjunto da mesma linguagem de consulta que o [Azure Log Analytics](https://docs.microsoft.com/azure/kusto/query/).  
 
     - Corte, copie ou cole o conteúdo no painel de consulta.  
 
