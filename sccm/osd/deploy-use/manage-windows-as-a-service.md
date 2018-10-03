@@ -33,7 +33,7 @@ ms.locfileid: "32351635"
 ##  <a name="BKMK_Prerequisites"></a> Pré-requisitos  
  Para ver os dados no painel de serviço do Windows 10, realize as seguintes ações:  
 
--   Computadores Windows 10 devem usar as atualizações de software do Configuration Manager com o WSUS (Windows Server Update Services) para o gerenciamento de atualização de software. Quando os computadores usarem o Windows Update para Empresas (ou Windows Insiders) para o gerenciamento de atualizações de software, o computador não será avaliado nos planos de serviço do Windows 10. Para obter mais informações, consulte [Integration with Windows Update for Business in Windows 10](../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md).  
+-   Computadores Windows 10 devem usar as atualizações de software do Configuration Manager com o WSUS (Windows Server Update Services) para o gerenciamento de atualização de software. Quando os computadores usarem o Windows Update para Empresas (ou Windows Insiders) para o gerenciamento de atualizações de software, o computador não será avaliado nos planos de serviço do Windows 10. Para obter mais informações, consulte [Integração com o Windows Update for Business no Windows 10](../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md).  
 
 -   O WSUS 4.0 com o [hotfix 3095113](https://support.microsoft.com/kb/3095113) deve ser instalado em seus pontos de atualização de software e servidores do site. Esse hotfix adiciona a classificação de atualização de software **Atualizações**. Para obter mais informações, consulte [Pré-requisitos para atualizações de software](../../sum/plan-design/prerequisites-for-software-updates.md).  
 

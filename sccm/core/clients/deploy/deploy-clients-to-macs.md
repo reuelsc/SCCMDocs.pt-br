@@ -146,7 +146,7 @@ Use este procedimento para automação da instalação do cliente e solicitaçã
 
 4.  Na pasta Ferramentas no computador Mac, digite o seguinte: **sudo ./CMEnroll -s &lt;nome_servidor_proxy_registro> -ignorecertchainvalidation -u &lt;'nome de usuário'>**  
 
-    Após a instalação do cliente, o assistente de Registro de Computador Mac é aberto para ajudá-lo a registrar o computador Mac. Para registrar o cliente por esse método, consulte [To enroll the client by using the Mac Computer Enrollment Wizard](#BKMK_EnrollR2) neste tópico.  
+    Após a instalação do cliente, o assistente de Registro de Computador Mac é aberto para ajudá-lo a registrar o computador Mac. Para registrar o cliente por esse método, consulte [Para registrar o cliente usando o Assistente de Registro de Computador Mac](#BKMK_EnrollR2) neste tópico.  
 
 5. Digite a senha para a conta de usuário do Active Directory.  Quando você digitar esse comando, serão solicitadas duas senhas: o primeiro prompt destina-se à conta de superusuário para executar o comando. O segundo prompt destina-se à conta de usuário do Active Directory. Os prompts parecem idênticos, portanto certifique-se de especificá-los na sequência correta.  
 

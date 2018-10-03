@@ -120,7 +120,7 @@ Conceda acesso administrativo ao Configuration Manager somente a usuários em qu
 
 Periodicamente, audite atribuições do usuário administrativo e seu nível de autorização para verificar as alterações necessárias.  
 
-Para obter mais informações sobre a configuração da administração baseada em funções, consulte [Configure role-based administration for System Center Configuration Manager](../../../core/servers/deploy/configure/configure-role-based-administration.md).  
+Para obter mais informações sobre a configuração da administração baseada em funções, consulte [Configurar administração baseada em função para o System Center Configuration Manager](../../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
 **Proteja backups do Configuration Manager e o canal de comunicação ao fazer backup e restaurar.**  
 
@@ -301,7 +301,7 @@ Identifique e siga as práticas recomendadas para a sua versão do Servidor IIS.
 ##  <a name="BKMK_Security_FSP"></a> Práticas recomendadas de segurança para o ponto de status de fallback  
  Use as práticas recomendadas de segurança a seguir ao instalar um ponto de status de fallback no Configuration Manager.  
 
- Para obter mais informações sobre considerações de segurança ao instalar um ponto de status de fallback, consulte [Determine Whether You Require a Fallback Status Point](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md#determine-if-you-need-a-fallback-status-point).  
+ Para obter mais informações sobre considerações de segurança ao instalar um ponto de status de fallback, consulte [Determinar se você precisa de um ponto de status de fallback](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md#determine-if-you-need-a-fallback-status-point).  
 
 
 **Não execute outras funções do sistema de sites no sistema de sites e não instale o ponto de fallback de status em um controlador de domínio.**  
