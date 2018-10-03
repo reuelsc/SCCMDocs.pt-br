@@ -45,7 +45,7 @@ Permitir que os usuários registrem seus próprios dispositivos no Gerenciamento
 5.  Em Criar Perfil de Registro, digite um nome para o perfil de registro e escolha o código do site de gerenciamento que deseja que os usuários com o perfil de registro usem. Clique em **OK** várias vezes para sair da página Configurações Padrão.  
 
 > [!NOTE]  
->  Se você deseja implantar o perfil de registro para um subconjunto de usuários descobertos, você pode usar uma coleção de usuários e criar configurações personalizadas para implantar nessa coleção. Para obter informações sobre como criar configurações personalizadas do cliente, veja [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md)  
+>  Se você deseja implantar o perfil de registro para um subconjunto de usuários descobertos, você pode usar uma coleção de usuários e criar configurações personalizadas para implantar nessa coleção. Para obter informações sobre como criar configurações personalizadas do cliente, veja [Como definir as configurações do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md)  
 
 ##  <a name="bkmk_addClient"></a> Configurar definições de cliente adicionais para dispositivos registrados  
  Além de configurar o perfil de registro para dispositivos modernos, você pode configurar definições de cliente adicionais para configurar dispositivos quando eles estiverem registrados.  Para obter informações sobre como definir configurações do cliente, veja [Como definir as configurações do cliente no System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  

@@ -91,7 +91,7 @@ O Conector do OMS é um recurso de pré-lançamento. Para habilitá-lo, confira 
 
 ### <a name="support-for-cache-size-in-client-settings"></a>Suporte para o tamanho do cache nas Configurações do Cliente
 
-Agora é possível configurar o tamanho da pasta de cache em computadores cliente com as **Configurações do Cliente** no console do Configuration Manager. Anteriormente, era possível definir o tamanho do cache do cliente apenas ao instalar ou reinstalar o software cliente. Agora é possível especificar o tamanho do cache como uma configuração do cliente (padrão ou personalizada) e, depois, aplicar essas configurações com a próxima atualização da política no cliente, sem a necessidade de reinstalar o cliente. Para obter mais informações, consulte [Configure the Client Cache for Configuration Manager Clients](../../../core/clients/manage/manage-clients.md#BKMK_ClientCache).
+Agora é possível configurar o tamanho da pasta de cache em computadores cliente com as **Configurações do Cliente** no console do Configuration Manager. Anteriormente, era possível definir o tamanho do cache do cliente apenas ao instalar ou reinstalar o software cliente. Agora é possível especificar o tamanho do cache como uma configuração do cliente (padrão ou personalizada) e, depois, aplicar essas configurações com a próxima atualização da política no cliente, sem a necessidade de reinstalar o cliente. Para obter mais informações, consulte [Configurar o cache de cliente para clientes do Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_ClientCache).
 
 ## <a name="on-premises-mobile-device-management"></a>Gerenciamento de dispositivo móvel local
 
