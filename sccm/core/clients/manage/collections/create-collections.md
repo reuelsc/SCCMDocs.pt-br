@@ -77,7 +77,7 @@ Coleções são grupos de usuários ou dispositivos. Use coleções para tarefas
 
 -   **Classe de recurso:** selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione um dos valores de **Recursos do Sistema** para pesquisar dados de inventário retornados de computadores cliente ou **Computador Desconhecido** para selecionar valores retornados por computadores desconhecidos.  
 
--   **Editar Instrução de Consulta** – Abre a caixa de diálogo **	Propriedades da Instrução da Consulta**, em que é possível criar uma consulta a ser usada como a regra para a coleção. Para obter mais informações sobre consultas, consulte [Referência técnica de consultas no System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md).  
+-   **Editar Instrução de Consulta** – Abre a caixa de diálogo **Propriedades da Instrução da Consulta**, em que é possível criar uma consulta a ser usada como a regra para a coleção. Para obter mais informações sobre consultas, consulte [Referência técnica de consultas no System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md).  
 
     
 ##### <a name="to-configure-an-include-collection-rule"></a>Para configurar uma regra de coleção de inclusão  
