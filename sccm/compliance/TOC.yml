@@ -1,0 +1,73 @@
+items:
+- name: Entender e explorar
+  items:
+  - name: Garanta a conformidade do dispositivo
+    href: understand/ensure-device-compliance.md
+- name: Introdução
+  items:
+  - name: Introdução às configurações de conformidade
+    href: get-started/get-started-with-compliance-settings.md
+- name: Plano e design
+  items:
+  - name: Planejar e definir as configurações de conformidade
+    href: plan-design/plan-for-and-configure-compliance-settings.md
+  - name: Tarefas comuns para gerenciar a conformidade
+    href: plan-design/common-tasks-for-managing-compliance.md
+    items:
+    - name: Dispositivos com o cliente do Configuration Manager
+      href: plan-design/common-tasks-for-managing-compliance-on-devices-with-the-client.md
+    - name: Criar e implantar linhas de base de configuração
+      href: plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md
+  - name: Segurança e privacidade
+    href: plan-design/security-and-privacy-for-compliance-settings.md
+  - name: Extensões do SCAP (Protocolo de Automação de Conteúdo de Segurança)
+    href: plan-design/scap/about-scap.md
+    items:
+    - name: Instalar e configurar extensões SCAP
+      href: plan-design/scap/install-configure-scap.md
+    - name: Implantar e monitorar a conformidade com SCAP
+      href: plan-design/scap/deploy-monitor-export.md
+    - name: Solucionar problemas de extensões do SCAP
+      href: plan-design/scap/troubleshooting-scap.md
+- name: Implantar e usar
+  items:
+  - name: Criar itens de configuração
+    href: deploy-use/create-configuration-items.md
+    items:
+    - name: Dispositivos gerenciados com o cliente do Configuration Manager
+      href: deploy-use/configuration-items-for-devices-managed-with-the-client.md
+      items:
+      - name: Windows 10
+        href: deploy-use/create-configuration-items-for-windows-10-devices-managed-with-the-client.md
+      - name: Mac OS X
+        href: deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md
+      - name: Windows Desktop e Windows Server (personalizados)
+        href: deploy-use/create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-client.md
+  - name: Criar itens de configuração filho
+    href: deploy-use/create-child-configuration-items.md
+  - name: Criar linhas de base de configuração
+    href: deploy-use/create-configuration-baselines.md
+  - name: Implantar linhas de base de configuração
+    href: deploy-use/deploy-configuration-baselines.md
+  - name: Gerenciar dados de configuração
+    items:
+    - name: Gerenciar dados de configuração
+      href: deploy-use/management-tasks-for-configuration-data.md
+    - name: Importar dados de configuração
+      href: deploy-use/import-configuration-data.md
+  - name: Criar itens de configuração de perfis e dados de usuário
+    href: deploy-use/create-user-data-and-profiles-configuration-items.md
+  - name: Criar perfis de conexão remota
+    href: deploy-use/create-remote-connection-profiles.md
+  - name: Atualizar dispositivos do Windows para uma nova edição
+    href: deploy-use/upgrade-windows-version.md
+  - name: Definir as configurações do Microsoft Edge
+    href: deploy-use/browser-profiles.md
+  - name: Monitorar as configurações de conformidade
+    href: deploy-use/monitor-compliance-settings.md
+ms.openlocfilehash: 38815fd56a9eb9f3f8054ed4518981d9d8938eb9
+ms.sourcegitcommit: 8661f10596f565ca2b7bdb5951388b44b3b622ee
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "48817538"

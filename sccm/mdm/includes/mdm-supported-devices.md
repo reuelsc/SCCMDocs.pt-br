@@ -5,7 +5,7 @@
 - Computadores que executam o Windows 10 (versões Home, Pro, Education e Enterprise)
 - Dispositivos que executam o Windows 10 IoT Enterprise (x86, x64)
 - Dispositivos que executam o Windows 10 IoT Mobile Enterprise
-- Windows Holographic e Windows Holographic Enterprise
+- Windows Holographic for Business
 - Mac OS X 10.9 e posterior
 - Windows Phone 8.1, computadores que executam o Windows 8.1 e o Windows 8.1 RT estão no modo de sustentação (não há suporte para o Windows Embedded 8.1 Handheld)
 
