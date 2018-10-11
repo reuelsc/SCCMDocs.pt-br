@@ -1,8 +1,8 @@
 ---
-title: Versões do Technical Preview
+title: Versões de visualização técnica
 titleSuffix: Configuration Manager
 description: Saiba mais sobre o branch de visualização técnica para fazer o test drive das novas funcionalidades e recursos no Configuration Manager.
-ms.date: 08/17/2018
+ms.date: 09/12/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,14 +10,14 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4be568e997a85acf49c3c86971f8d678d916aef0
-ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
+ms.openlocfilehash: e49f39f2c9a052ef583b172c1ccad7b2963d300a
+ms.sourcegitcommit: a7254f265098ae8e83b4fa1fac312e9cc3c4f897
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42589518"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "44961068"
 ---
-# <a name="technical-preview-for-configuration-manager"></a>Visualização técnica do Configuration Manager
+# <a name="technical-preview-for-configuration-manager"></a>Visualização técnica para o Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Technical Preview)*
 
@@ -124,10 +124,12 @@ Os seguintes recursos estão disponíveis com a visualização técnica mais rec
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-1808"></a>Versão da visualização técnica 1808
+### <a name="technical-preview-version-1809"></a>Versão da visualização técnica 1809
 
-- [Implantação em fases de atualizações de software](capabilities-in-technical-preview-1808.md#bkmk_pod) <!--1358146-->
-- [Melhorias no reparo de aplicativos](capabilities-in-technical-preview-1808.md#bkmk_repair) <!--1357866-->
+- [Melhorias ao CMPivot](capabilities-in-technical-preview-1809.md#bkmk_cmpivot) <!--1359068-->
+- [Melhoria ao painel do ciclo de vida](capabilities-in-technical-preview-1809.md#bkmk_lifecycle) <!--1358702-->
+- [Melhoria ao data warehouse](capabilities-in-technical-preview-1809.md#bkmk_dataw) <!--1358870-->
+- [Melhoria de janelas de manutenção para atualizações de software](capabilities-in-technical-preview-1809.md#bkmk_sum-mw) <!--vso2839307-->
 
 
 > [!Note]  
@@ -146,6 +148,8 @@ Then remove the bottom of this list and/or move individual items not in CB to th
 
  |Recurso |Versão da visualização técnica |Versão do branch atual|  
  |----------------|---------------------|--------------------|
+ | Implantação em fases de atualizações de software <!--1358146--> | [Visualização técnica 1808](capabilities-in-technical-preview-1808.md#bkmk_pod) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Melhorias no reparo de aplicativos <!--1357866--> | [Visualização técnica 1808](capabilities-in-technical-preview-1808.md#bkmk_repair) | ![Não foi adicionado](media/Red_X.gif) | 
  | Hub de Comunidade <!--1357766--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_hub) | ![Não foi adicionado](media/Red_X.gif) | 
  | Especifique a unidade para manutenção offline da imagem do sistema operacional <!--1358924--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_osd) | ![Não foi adicionado](media/Red_X.gif) | 
  | Atividade de sincronização de dispositivo cogerenciados com o Intune <!--1358565--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_comgmt) | ![Não foi adicionado](media/Red_X.gif) | 
@@ -175,25 +179,8 @@ Then remove the bottom of this list and/or move individual items not in CB to th
  | Provisionar pacotes de aplicativos do Windows para todos os usuários em um dispositivo <!--1358310--> | [Tech Preview 1806](capabilities-in-technical-preview-1806.md#provision-windows-app-packages-for-all-users-on-a-device)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
  | Melhorias no painel do Surface <!--1358654--> | [Tech Preview 1806](capabilities-in-technical-preview-1806.md#improvements-to-the-surface-dashboard)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
  | Revisão da unidade padrão do inventário de hardware <!--514442--> | [Tech Preview 1806](capabilities-in-technical-preview-1806.md#hardware-inventory-default-unit-revision)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Criar uma implantação em fases com fases configuradas manualmente para uma sequência de tarefas <!--1358148--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#create-a-phased-deployment-with-manually-configured-phases-for-a-task-sequence)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Suporte de ponto de distribuição na nuvem para o Azure Resource Manager<!--1322209--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#cloud-distribution-point-support-for-azure-resource-manager)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Executar ações com base em insights de gerenciamento <!--1357930--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#take-actions-based-on-management-insights)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Fazer a transição da carga de trabalho de configuração do dispositivo para o Intune usando o cogerenciamento <!--1357903--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#transition-device-configuration-workload-to-intune-using-co-management)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Habilitar os pontos de distribuição para usar o controle de congestionamento de rede <!--1358112--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#enable-distribution-points-to-use-network-congestion-control)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Painel de gerenciamento de nuvem <!--1358461--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#cloud-management-dashboard)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | CMPivot <!--1358456--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#cmpivot)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Melhorias nas comunicações seguras com o cliente <!--1356889,1358228,1358460--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#improved-secure-client-communications)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Melhorias para habilitar o suporte de atualização de software de terceiros <!--1357605--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#improvements-for-enabling-third-party-software-update-support)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Melhorias na sequência de tarefas de atualização in-loco do Windows 10 <!--1358500--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#improvements-to-windows-10-in-place-upgrade-task-sequence)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | CMTrace instalado com o cliente <!--1357971--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#cmtrace-installed-with-client)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Melhoria no console do Configuration Manager <!--1358202--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#improvement-to-the-configuration-manager-console)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Melhorias nos comentários do console <!--1357542--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#improvements-to-console-feedback)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Melhorias em pontos de distribuição habilitados para PXE <!--1357580--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#improvements-to-pxe-enabled-distribution-points)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Melhoria no inventário de hardware para grandes valores inteiros <!--1357880--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#improvement-to-hardware-inventory-for-large-integer-values)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Melhoria na manutenção do WSUS <!--1357898--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#improvement-to-wsus-maintenance)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
- | Melhoria no suporte para certificados CNG <!--1357314--> | [Visualização técnica 1805](capabilities-in-technical-preview-1805.md#improvement-to-support-for-cng-certificates)  | [Versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806) |  
 
-  
+
 
 ## <a name="features-in-previous-technical-previews"></a>Recursos em visualização técnicas anteriores
 

@@ -10,12 +10,12 @@ ms.assetid: 946b0f74-0794-4e8f-a6af-9737d877179b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3c31b950ef59147f6f3f46c1cba7780b7789948c
-ms.sourcegitcommit: 4b7812b505e80f79fc90dfa8a6db06eea79a3550
+ms.openlocfilehash: fbcf7a7d76146cc11dd4bb57b86fe4752c694e02
+ms.sourcegitcommit: 1e782268d6c0211bd854b5860de72cfd6c6985c6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42584590"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44697031"
 ---
 # <a name="enable-third-party-updates"></a>Habilitar atualizações de terceiros 
 
@@ -36,13 +36,13 @@ Da versão 1806 em diante, o nó **Catálogos de Atualização de Software de Te
 
 ## <a name="additional-requirements-when-the-sup-is-remote-from-the-top-level-site-server"></a>Requisitos adicionais quando SUP é remoto do servidor do site de nível superior 
 
-1. SSL deverá ser habilitado no SUP quando ele for remoto. 
+1. SSL deverá ser habilitado no SUP quando ele for remoto. Isso requer um certificado de autenticação de servidor gerado de uma autoridade de certificação interna ou por meio de um provedor público.
     - [Configurar SSL no WSUS](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#bkmk_2.5.ConfigSSL)
         - Quando você configura SSL no WSUS, observe alguns dos serviços Web e os diretórios virtuais são sempre HTTP, e não HTTPS. 
         - O Configuration Manager baixa o conteúdo de terceiros para pacotes de atualização de software do seu diretório de conteúdo do WSUS por HTTP.   
     - [Configurar SSL no SUP](../get-started/install-a-software-update-point.md#configure-ssl-communications-to-wsus)
 
-2. Para permitir a criação do certificado autoassinados do WSUS: 
+2. Ao definir a configuração do certificado de assinatura WSUS de atualizações de terceiros como **Configuration Manager gerencia as atualizações** nas Propriedades de Componente do Ponto de Atualização de Software, as configurações a seguir são necessárias para permitir a criação do certificado de autenticação WSUS autoassinado: 
    - O Registro remoto deve ser habilitado no servidor SUP.
    -  A **conta de conexão de servidor do WSUS** deve ter permissões de registro remoto no servidor WSUS/SUP. 
 
@@ -50,7 +50,7 @@ Da versão 1806 em diante, o nó **Catálogos de Atualização de Software de Te
 3. Crie a seguinte chave do Registro no servidor do site do Configuration Manager: 
     - `HKLM\Software\Microsoft\Update Services\Server\Setup`, crie um novo DWORD chamado **EnableSelfSignedCertificates** com um valor de `1`. 
 
-4. Para habilitar a instalação do certificado nos repositórios de Fornecedores Confiáveis e de Raiz Confiável no servidor SUP remoto:
+4. Para habilitar a instalação do certificado de assinatura WSUS autoassinado nos repositórios de Fornecedores Confiáveis e de Raiz Confiável no servidor SUP remoto:
    - A **conta de conexão de servidor do WSUS** deve ter permissões de administração remota no servidor SUP.
 
     Se esse item não for possível, exporte o certificado do repositório WSUS do computador local para os repositórios de Fornecedor Confiável e de Raiz confiável. 
@@ -69,7 +69,7 @@ Se você habilitar essa opção, poderá assinar os catálogos de atualizações
 
 
 ## <a name="configure-the-wsus-signing-certificate"></a>Configurar o certificado de autenticação do WSUS
-Você precisará decidir se deseja que o Configuration Manager gerencie automaticamente o certificado de autenticação do WSUS de terceiros ou se precisa configurar manualmente o certificado. 
+Você precisará decidir se deseja que o Configuration Manager gerencie automaticamente o certificado de autenticação do WSUS de terceiros usando um certificado autoassinado ou se precisa configurar manualmente o certificado. 
 
 ### <a name="automatically-manage-the-wsus-signing-certificate"></a>Gerenciar automaticamente o certificado de autenticação do WSUS
 Se você não tiver um requisito para usar certificados PKI, poderá optar por gerenciar automaticamente os certificados de autenticação para atualizações de terceiros. O gerenciamento de certificados do WSUS é feito como parte do ciclo de sincronização e é registrado em log em `wsyncmgr.log`. 

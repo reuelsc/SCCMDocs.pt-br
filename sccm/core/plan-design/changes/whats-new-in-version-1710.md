@@ -3,18 +3,19 @@ title: Nova versão 1710 | Microsoft Docs
 titleSuffix: Configuration Manager
 description: Veja os detalhes das alterações e dos novos recursos introduzidos na versão 1710 do System Center Configuration Manager.
 ms.date: 1/08/2018
+ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e33a56a2d7fe395265d76c668db91492c410046f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 821c7f32799020948630cd873fead144ae21e39e
+ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337404"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47229255"
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Novidades da versão 1710 do System Center Configuration Manager
 
@@ -63,8 +64,7 @@ Como os dispositivos agora incluem discos rígidos com tamanhos em escalas de GB
 ## <a name="client-management"></a>Gerenciamento de cliente
 
 ### <a name="co-management-for-windows-10-devices"></a>Cogerenciamento para dispositivos Windows 10    
-<!-- 1350871 -->
-Em atualizações anteriores do Windows 10, você pode associar um dispositivo com Windows 10 ao Active Directory (AD) local e ao Azure AD baseado em nuvem ao mesmo tempo (Azure AD híbrido). A partir do Configuration Manager versão 1710, o cogerenciamento usufrui dessa melhoria e permite gerenciar dispositivos Windows 10, versão 1709 (também conhecido como Fall Creators Update) simultaneamente usando o Configuration Manager e o Intune. É uma solução que fornece uma ponte do gerenciamento tradicional para o moderno e fornece um caminho para fazer a transição usando uma abordagem em fases. Para obter detalhes, confira [Cogerenciamento para dispositivos com Windows 10](/sccm/core/clients/manage/co-management-overview).
+<!-- 1350871 --> Em atualizações anteriores do Windows 10, você pode associar um dispositivo com Windows 10 ao Active Directory (AD) local e ao Azure AD baseado em nuvem ao mesmo tempo (Azure AD híbrido). A partir do Configuration Manager versão 1710, o cogerenciamento usufrui dessa melhoria e permite gerenciar dispositivos Windows 10, versão 1709 (também conhecido como Fall Creators Update) simultaneamente usando o Configuration Manager e o Intune. É uma solução que fornece uma ponte do gerenciamento tradicional para o moderno e fornece um caminho para fazer a transição usando uma abordagem em fases. Para obter detalhes, confira [Cogerenciamento para dispositivos com Windows 10](/sccm/core/clients/manage/co-management-overview).
 
 ### <a name="restart-computers-from-the-configuration-manager-console-----1356283---"></a>Reinicie os computadores do console do Configuration Manager <!-- 1356283 -->
 A partir desta versão, você pode usar o console do Configuration Manager para identificar os dispositivos cliente que exigem uma reinicialização e, em seguida, usar uma ação de notificação do cliente para reiniciá-los.
@@ -87,8 +87,7 @@ As melhorias incluem:
 Para obter mais informações de como usar o recurso Executar Scripts, consulte [Criar e executar scripts](../../../apps/deploy-use/create-deploy-scripts.md).
 
 ### <a name="new-mobile-application-management-policy-settings"></a>Novas configurações de política de gerenciamento de aplicativo móvel
-<!-- 1324760 -->
-As configurações a seguir foram adicionadas nas configurações de política de gerenciamento de aplicativos móveis:
+<!-- 1324760 --> As configurações a seguir foram adicionadas nas configurações de política de gerenciamento de aplicativos móveis:
 - **Desabilitar sincronização de contato**: impede que o aplicativo salve dados no aplicativo Contatos nativo do dispositivo.
 - **Desabilitar impressão**: impede que o aplicativo imprima dados corporativos ou de estudante.
 
@@ -101,8 +100,7 @@ Para adicionar um ícone para seu aplicativo no Centro de Software, consulte [Cr
 
 ## <a name="operating-system-deployment"></a>Implantação de sistema operacional
  > [!TIP]   
- > <!-- 1354281 -->
- > A partir do Windows 10, versão 1709 (também conhecido como Fall Creators Update), a mídia do Windows inclui várias edições. Ao configurar uma sequência de tarefas para usar um pacote de atualização do sistema operacional ou imagem do sistema operacional, selecione uma [edição com suporte para uso no Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
+ > <!-- 1354281 --> Do Windows 10 versão 1709 (também conhecido como Fall Creators Update) em diante, a mídia do Windows inclui várias edições. Ao configurar uma sequência de tarefas para usar um pacote de atualização do sistema operacional ou imagem do sistema operacional, selecione uma [edição com suporte para uso no Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
 
 ### <a name="add-child-task-sequences-to-a-task-sequence"></a>Adicionar sequências de tarefas filho a uma sequência de tarefas
 <!-- 1261338 -->
@@ -112,8 +110,7 @@ Você pode adicionar uma nova etapa de sequência de tarefas que executa outra s
 Para saber mais sobre a sequência de tarefas filha, consulte [Sequência de tarefas filha](/sccm/osd/understand/task-sequence-steps#child-task-sequence).
 
 ## <a name="software-center-customization"></a>Personalização do Centro de Software
-<!-- 1351224 -->
-Você pode adicionar elementos de identidade visual corporativa e especificar a visibilidade das guias no Centro de Software. Você pode adicionar o nome específico da empresa do Centro de Software, definir um tema de cores de configuração do Centro de Software, definir um logotipo da empresa e definir as guias visíveis para os dispositivos cliente.
+<!-- 1351224 --> Você pode adicionar elementos de identidade visual empresarial e especificar a visibilidade das guias no Centro de Software. Você pode adicionar o nome específico da empresa do Centro de Software, definir um tema de cores de configuração do Centro de Software, definir um logotipo da empresa e definir as guias visíveis para os dispositivos cliente.
 
 Para obter mais informações, consulte [Planejar e configurar o gerenciamento de aplicativos no System Center Configuration Manager](/sccm/apps/plan-design/plan-for-and-configure-application-management).
 
@@ -201,8 +198,7 @@ Você pode [criar e implantar políticas](/sccm/protect/deploy-use/create-deploy
 Você pode [criar e implantar políticas do Windows Defender Application Guard](/sccm/protect/deploy-use/create-deploy-application-guard-policy) usando a proteção de ponto de extremidade do Configuration Manager.
 
 ### <a name="device-guard-policy-changes"></a>Alterações de política do Device Guard
-<!-- 1355092 -->
-As três alterações a seguir foram feitas em relação às políticas do Device Guard:
+<!-- 1355092 --> As três alterações a seguir foram feitas em relação às políticas do Device Guard:
 
 - Políticas do Device Guard que foram renomeadas para políticas de Controle de Aplicativo do Windows Defender. Então, por exemplo, o **Assistente para Criar política do Device Guard** foi nomeado para **Assistente para Criar política de controle de aplicativo do Windows Defender**.
 - Os dispositivos que usam o Fall Creators Update da versão 1709 do Windows não exigem uma reinicialização para aplicar as políticas do Windows Defender Application Control. Reiniciar ainda é o padrão, mas você pode [desligar as reinicializações](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager).

@@ -10,12 +10,12 @@ ms.assetid: 91f9de33-b277-4500-acd6-e7d90a2947c9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: c41a04d82edb46a234b6e5bd10d796e6544cbfad
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 27e8e3ef78947eb6623a56e670e176aaa2800f68
+ms.sourcegitcommit: 78d2dce465e3500653b252583a6903a006784c26
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340175"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46448898"
 ---
 # <a name="health-attestation-for-system-center-configuration-manager"></a>Atestado de integridade do System Center Configuration Manager
 
@@ -56,8 +56,9 @@ A partir do Configuration Manager 1702, a URL do serviço de atestado de integri
 2. Clique com o botão direito no site primário ou secundário com o ponto de gerenciamento que oferece suporte a clientes de atestado de integridade do dispositivo no local e selecione **Configurar componentes do site** > **Ponto de Gerenciamento**. A página **Propriedades de componente do ponto de gerenciamento** é aberta.
 3. Na guia **Opções Avançadas**, selecione **Adicionar** e especifique uma URL válida de serviço de atestado de integridade do dispositivo no local. Você pode adicionar várias URLs. Se forem especificadas várias URLs no local, os clientes receberão o conjunto completo e escolherão qual usar aleatoriamente.
 4.  No console do Configuration Manager, escolha **Administração** > **Visão Geral** > **Configurações do Cliente**.  Selecione a guia de configurações do **Agente de Computador** .  
-5.  Na caixa de diálogo **Configurações Padrão**, selecione **Agente de Computador** e role a tela para baixo até **Usar o serviço de atestado de integridade local** e defina como **Sim**.
-6. Direcione para as coleções de dispositivos que devem relatar a integridade do dispositivo com as configurações de agente do cliente para habilitar o relatório de atestado de integridade do dispositivo.
+5.  Role para baixo até **Habilitar a comunicação com o serviço de atestado de integridade** e definido como **Sim**.
+7.  Clique na opção **Usar serviço de Atestado de Integridade local** e defina-a como **Sim**.
+8. Direcione para as coleções de dispositivos que devem relatar a integridade do dispositivo com as configurações de agente do cliente para habilitar o relatório de atestado de integridade do dispositivo.
 
 Você também pode **Editar** ou **Remover** as URLs de serviço de atestado de integridade do dispositivo.
 

@@ -2,7 +2,7 @@
 title: A biblioteca de conteúdo
 titleSuffix: Configuration Manager
 description: Saiba mais sobre a biblioteca de conteúdo que o Configuration Manager usa para reduzir o tamanho geral do conteúdo distribuído.
-ms.date: 07/30/2018
+ms.date: 09/19/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 65c88e54-3574-48b0-a127-9cc914a89dca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 05c49f78d24599c574828cee59118c069b7c4ee8
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 5f063034ed7cdc22a92df8d07d8be03ece12f663
+ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384946"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46533738"
 ---
 # <a name="the-content-library-in-configuration-manager"></a>A biblioteca de conteúdo no Configuration Manager
 
@@ -82,7 +82,9 @@ A biblioteca de conteúdo remota é um pré-requisito para [alta disponibilidade
 > Essa ação só move a biblioteca de conteúdo no servidor do site. Ela não afeta a localização da biblioteca de conteúdo nos pontos de distribuição. 
 
 > [!Tip]  
-> Além disso, planeje o gerenciamento de conteúdo da origem do pacote, que é externo à biblioteca de conteúdo. Cada objeto de software no Configuration Manager tem uma fonte de pacote em um compartilhamento de rede. Considere a centralização de todas as fontes em um único compartilhamento, mas verifique se esse local é redundante e altamente disponível. Se você mover a biblioteca de conteúdo para o mesmo volume de armazenamento que as fontes de pacote e esse volume der suporte à eliminação de duplicação de conteúdo, esse design poderá economizar a quantidade de armazenamento necessário.  
+> Além disso, planeje o gerenciamento de conteúdo da origem do pacote, que é externo à biblioteca de conteúdo. Cada objeto de software no Configuration Manager tem uma fonte de pacote em um compartilhamento de rede. Considere a centralização de todas as fontes em um único compartilhamento, mas verifique se esse local é redundante e altamente disponível. 
+> 
+> Se você mover a biblioteca de conteúdo para o mesmo volume de armazenamento que suas origens de pacote, não poderá marcar este volume para eliminação de duplicação de dados. Embora a biblioteca de conteúdo tenha suporte para eliminação de duplicação de dados, o volume de fontes de pacote não dá suporte a isso. Para obter mais informações, veja [Eliminação de duplicação de dados](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#bkmmk_datadedup).<!--SCCMDOcs issue #831-->  
 
 
 ### <a name="prerequisites"></a>Pré-requisitos  
@@ -98,6 +100,9 @@ A biblioteca de conteúdo remota é um pré-requisito para [alta disponibilidade
 ### <a name="process-to-manage-the-content-library"></a>Processo para gerenciar a biblioteca de conteúdo
 
 1. Crie uma pasta em um compartilhamento de rede como o destino da biblioteca de conteúdo. Por exemplo, `\\server\share\folder`.  
+
+    > [!Warning]  
+    > Não reutilize uma pasta existente com conteúdo. Por exemplo, não use a mesma pasta que suas fontes de pacote. Antes de copiar a biblioteca de conteúdo, o Configuration Manager remove qualquer conteúdo existente do local especificado.  
 
 2. No console do Configuration Manager, alterne para o espaço de trabalho **Administração**. Expanda **Configuração do Site**, selecione o nó **Sites** e selecione o site. Na guia **Resumo** na parte inferior do painel de detalhes, observe uma nova coluna para a **Biblioteca de Conteúdo**.  
 

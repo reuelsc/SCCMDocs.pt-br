@@ -2,7 +2,7 @@
 title: Arquivos de log para solução de problemas
 titleSuffix: Configuration Manager
 description: Use arquivos de log para solucionar problemas com clientes e sistemas de sites do Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 09/10/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2bd3f76b982356fc444681d1990bee08e90b32fc
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 4435d39dd736db1058b06d09e5722a80a173bf6e
+ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385279"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45601204"
 ---
 # <a name="log-files-in-configuration-manager"></a>Arquivos de log no Configuration Manager
 
@@ -517,9 +517,10 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |--------------|-----------------|----------------------------|  
 |CloudMgr.log|Registra os detalhes sobre como implantar o serviço do gateway de gerenciamento de nuvem, status do serviço contínuo e dados de uso associados ao serviço.<br>Configure o nível de log editando o valor **Nível de log** na chave do Registro HKLM\SOFTWARE\ Microsoft\SMS\COMPONENTS\ SMS_CLOUD_ SERVICES_MANAGER|A pasta *installdir* no servidor do site primário ou autoridades de certificação.|
 |CMGSetup.log<sup>1</sup>|Registra os detalhes sobre a segunda fase da implantação do gateway de gerenciamento de nuvem (implantação local no Azure)<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
-|CMGHttpHandler.log<sup>1</sup>|Registra os detalhes sobre a associação do manipulador de http do gateway de gerenciamento de nuvem com os Serviços de informações da Internet no Azure<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
+|CMGHttpHandler.log<sup>1</sup>|Registra os detalhes sobre a associação do manipulador de http do gateway de gerenciamento de nuvem com os Serviços de informações da Internet no Azure<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.<br>Da versão 1806 em diante, este log não existe. A funcionalidade do componente é mesclada no componente do serviço CMG. Veja o CMGService.log em vez disso.<!--SCCMDocs-pr issue #2822-->|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
 |CMGService.log<sup>1</sup>|Registra os detalhes sobre o componente de núcleo do serviço de gateway de gerenciamento de nuvem no Azure<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
-|SMS_Cloud_</br>ProxyConnector.log|Registra os detalhes sobre como configurar conexões entre o serviço do gateway de gerenciamento de nuvem e o ponto de conexão do gateway de gerenciamento de nuvem.|Servidor do sistema de site|
+|SMS_Cloud_<br>ProxyConnector.log|Registra os detalhes sobre como configurar conexões entre o serviço do gateway de gerenciamento de nuvem e o ponto de conexão do gateway de gerenciamento de nuvem.|Servidor do sistema de site|
+|CMGContentService.log<sup>1</sup>|<!--SCCMDocs-pr issue #2822-->Começando na versão 1806, quando você habilita um CMG para também veicular conteúdo do armazenamento do Azure, esse log registra os detalhes desse serviço.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
 
 <sup>1</sup> Esses são arquivos de log locais do Configuration Manager que o gerenciador de serviço de nuvem sincroniza com o armazenamento do Azure a cada cinco minutos. O gateway de gerenciamento de nuvem envia os logs por push para o armazenamento do Azure a cada cinco minutos. Portanto, o atraso máximo é de 10 minutos. Comutadores detalhados afetam os logs locais e remotos. Os nomes de arquivo reais incluem o nome do serviço e o identificador da instância de função. Por exemplo, CMG-*ServiceName*-*RoleInstanceID*-CMGSetup.log
 

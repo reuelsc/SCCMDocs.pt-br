@@ -2,7 +2,7 @@
 title: Cache de pares do cliente
 titleSuffix: Configuration Manager
 description: Use o cache par do cliente como locais de fonte durante a implantação de conteúdo com o Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 09/19/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c3dc6189f73b939f632581a8b50f05a72310111d
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: b1d4e2b7dca44db7ddc5976edde59a04bc3cb45e
+ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42755989"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46533755"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Cache par para clientes do Configuration Manager
 
@@ -59,6 +59,8 @@ Para habilitar o cache par, implante as [configurações do cliente](#bkmk_setti
 
  -  Como de costume, o cliente que está procurando o conteúdo seleciona uma fonte na lista fornecida. O cliente tenta então obter o conteúdo.  
 
+Da versão 1806 em diante, os grupos de limites incluem configurações adicionais para dar a você mais controle sobre a distribuição de conteúdo em seu ambiente. Para saber mais, confira [Opções de grupo de limites para downloads de pares](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).<!--1356193-->
+
 > [!NOTE]  
 > Se o cliente fizer fallback para um grupo de limites vizinho para buscar o conteúdo, o ponto de gerenciamento não adicionará as fontes de cache par do grupo de limites vizinho à lista de possíveis locais de fontes de conteúdo.  
 
@@ -98,9 +100,12 @@ Quando a fonte do cache par rejeita uma solicitação de conteúdo, o cliente de
 
     - Quando necessário, a fonte de cache par usa a conta de acesso à rede para autenticar as solicitações de download do par. Essa conta requer somente permissões de usuário de domínio para essa finalidade.  
 
-- O último envio de descoberta de pulsação do cliente determina o limite atual de uma fonte de cache par. Um cliente que usa um perfil móvel em um grupo de limites diferente ainda pode ser membro de seu grupo de limites anterior para fins de cache par. Esse comportamento faz com que seja oferecida ao cliente uma fonte de cache par que não está em seu local de rede imediato. Não habilite a clientes que usam perfil móvel como uma fonte de cache par.<!--SCCMDocs issue 641-->  
+- Com a versão 1802 e anteriores, o último envio de descoberta de pulsação do cliente determina o limite atual de uma fonte de cache par. Um cliente que usa um perfil móvel em um grupo de limites diferente ainda pode ser membro de seu grupo de limites anterior para fins de cache par. Esse comportamento faz com que seja oferecida ao cliente uma fonte de cache par que não está em seu local de rede imediato. Não habilite a clientes que usam perfil móvel como uma fonte de cache par.<!--SCCMDocs issue 641-->  
 
-- Antes de tentar baixar conteúdo, o cliente de cache par primeiro valida se a fonte de cache par está online.<!--sms.498675--> Essa validação ocorre por meio do "canal rápido" de notificação do cliente, que usa a porta TCP 10123.<!--511673-->  
+    > [!Important]  
+    > Da versão 1806 em diante, o Configuration Manager é mais eficiente em determinar se uma fonte de cache par fez roaming para outro local. Esse comportamento garante que o ponto de gerenciamento ofereça-o como uma fonte de conteúdo aos clientes no novo local, e não no local antigo. Se você estiver usando o recurso de cache par com as fontes de cache par de roaming, depois de atualizar o site para a versão 1806, também atualize todas as fontes de cache par para a versão mais recente do cliente. O ponto de gerenciamento não inclui essas fontes de cache par na lista de locais de conteúdo até que eles sejam atualizadas pelo menos para a versão 1806.<!--SCCMDocs issue 850-->  
+
+- Antes de tentar baixar conteúdo, o ponto de gerenciamento primeiro valida que a fonte de cache par está online.<!--sms.498675--> Essa validação ocorre por meio do "canal rápido" de notificação do cliente, que usa a porta TCP 10123.<!--511673-->  
 
 > [!Note]  
 > Para aproveitar os novos recursos do Configuration Manager, primeiro atualize os clientes para a versão mais recente. Embora a nova funcionalidade seja exibida no console do Configuration Manager quando você atualiza o site e o console, o cenário completo só funcionará quando a versão do cliente também for a mais recente.  

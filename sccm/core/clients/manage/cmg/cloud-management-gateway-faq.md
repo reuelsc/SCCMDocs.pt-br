@@ -4,17 +4,17 @@ description: Use este artigo para responder a perguntas frequentes sobre o gatew
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 03/22/2018
+ms.date: 09/10/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 4c1a128d-22fb-49f1-8e0b-36513a8dc117
-ms.openlocfilehash: 3b178ce27b91701d52d5ea350de85216e1250442
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 16cb80efe5ad082d8624452c01dcd54a5eca27f2
+ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333215"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45600932"
 ---
 # <a name="frequently-asked-questions-about-the-cloud-management-gateway"></a>Perguntas frequentes sobre o gateway de gerenciamento de nuvem
 
@@ -32,9 +32,9 @@ Para obter informações mais detalhadas, consulte [Certificados do gateway de g
 
 ### <a name="do-i-need-azure-expressroute"></a>O Azure ExpressRoute é necessário?
 
-O [Azure ExpressRoute](/azure/expressroute/expressroute-introduction) possibilita que você estenda a rede local para a nuvem da Microsoft. O ExpressRoute, ou outras conexões de rede virtual desse tipo, não é necessário para o gateway de gerenciamento de nuvem do Configuration Manager. O design do gateway de gerenciamento de nuvem permite que os clientes baseados na Internet se comuniquem por meio do serviço do Azure com os sistemas de sites locais sem nenhuma configuração de rede adicional. Para obter mais informações, consulte [Planejar o gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway)
+O [Azure ExpressRoute](/azure/expressroute/expressroute-introduction) possibilita que você estenda a rede local para a nuvem da Microsoft. O ExpressRoute, ou outras conexões de rede virtual desse tipo, não é necessário para o Gateway de Gerenciamento de Nuvem do Configuration Manager. O design do gateway de gerenciamento de nuvem permite que os clientes baseados na Internet se comuniquem por meio do serviço do Azure com os sistemas de sites locais sem nenhuma configuração de rede adicional. Para obter mais informações, consulte [Planejar o gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway)
 
-Caso sua organização use o ExpressRoute, uma melhor prática de segurança é isolar a assinatura do Azure para o gateway de gerenciamento de nuvem. Essa configuração garante que o serviço de gateway de gerenciamento de nuvem não está conectado acidentalmente dessa maneira. Para obter mais informações, consulte [Segurança e privacidade do gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/security-and-privacy-for-cloud-management-gateway).
+Caso sua organização use o ExpressRoute, uma melhor prática de segurança é isolar a assinatura do Azure para o gateway de gerenciamento de nuvem. Essa configuração garante que o serviço de Gateway de Gerenciamento de Nuvem não seja conectado acidentalmente dessa maneira. Para obter mais informações, consulte [Segurança e privacidade do gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/security-and-privacy-for-cloud-management-gateway).
 
 
 ### <a name="do-i-need-to-maintain-the-azure-virtual-machines"></a>É necessário manter as máquinas virtuais do Azure?
@@ -45,6 +45,21 @@ Nenhuma manutenção é necessária. O design do gateway de gerenciamento de nuv
 ### <a name="im-already-using-ibcm-if-i-add-cmg-how-do-clients-behave"></a>Já estou usando o IBCM. Se eu adicionar o CMG, como os clientes se comportarão?
 
 Se você já implantou o [IBCM](/sccm/core/clients/manage/plan-internet-based-client-management) (gerenciamento de clientes baseado na Internet), implante também o gateway de gerenciamento de nuvem. Os clientes recebem a política para ambos os serviços. Conforme eles usam um perfil móvel na Internet, eles aleatoriamente selecionam e usam um desses serviços baseados na Internet.
+
+
+### <a name="do-the-user-accounts-have-to-be-in-the-same-azure-subscription-as-the-subscription-that-hosts-the-cmg-cloud-service"></a>As contas de usuário precisam estar na mesma assinatura que a assinatura do Azure que hospeda o serviço de nuvem CMG?
+<!--SCCMDocs-pr issue #2873--> Se o ambiente tiver mais de uma assinatura, você poderá implantar o CMG em qualquer assinaturas que possa hospedar serviços de nuvem do Azure. 
+
+Essa pergunta é comum nos seguintes cenários:  
+
+- Quando você tem ambientes do Azure AD e do Active Directory de teste e produção distintos, mas uma única assinatura de hospedagem do Azure centralizada  
+
+- Seu uso do Azure cresceu organicamente entre diferentes equipes  
+
+Quando você estiver usando uma implantação do Resource Manager, integre o locatário associado do Azure AD. Essa conexão permite que o Configuration Manager autentique-se no Azure para criar, implantar e gerenciar o CMG.  
+
+Se você está usando a autenticação do Azure AD para os usuários e dispositivos gerenciados sobre o CMG, integre esse locatário do Azure AD. Para obter mais informações sobre os serviços do Azure para gerenciamento de nuvem, veja [Configurar serviços do Azure](/sccm/core/servers/deploy/configure/azure-services-wizard). Ao integrar cada locatário do Azure AD, um único CMG pode fornecer a autenticação do Azure AD para vários locatários, não importa o local de hospedagem.
+
 
 
 ## <a name="next-steps"></a>Próximas etapas

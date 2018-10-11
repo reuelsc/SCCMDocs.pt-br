@@ -4,17 +4,17 @@ description: Saiba mais sobre os diferentes certificados digitais para uso com o
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 03/22/2018
+ms.date: 09/10/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: 02a830d10263164e26902247856f999523092c76
-ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
+ms.openlocfilehash: 052210b53ec330a75d73508ae41218231bd75153
+ms.sourcegitcommit: 65423b94f0fee5dc5026804d88f13416872b93d4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "42584455"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47173471"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificados para o gateway de gerenciamento de nuvem
 
@@ -23,48 +23,85 @@ ms.locfileid: "42584455"
 Dependendo do cenário usado para gerenciar clientes na Internet com o CMG (gateway de gerenciamento de nuvem), você precisa de um ou mais certificados digitais. Para obter mais informações sobre os diferentes cenários, consulte [Planejar o gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).
 
 
+### <a name="general-information"></a>Informações gerais
+<!--SCCMDocs issue #779--> Certificados para o Gateway de Gerenciamento de Nuvem têm suporte para as seguintes configurações:  
+
+- **Comprimento de chave de 4.096 bits**  
+
+- Da versão 1710 em diante, suporte para certificados da **Versão 3**. Para obter mais informações, consulte [Visão geral dos certificados CNG](/sccm/core/plan-design/network/cng-certificates-overview).  
+
+- Da versão 1802 em diante, quando você configura Windows com a seguinte política: **Criptografia do sistema: usar algoritmos em conformidade com FIPS para criptografia, hash e assinatura**  
+
+- Da versão 1802 em diante, suporte para **TLS 1.2**. Para obter mais informações, veja [Referência técnica para controles de criptografia](/sccm/core/plan-design/security/cryptographic-controls-technical-reference#about-ssl-vulnerabilities).  
+
+
+
 ## <a name="cmg-server-authentication-certificate"></a>Certificado de autenticação de servidor do CMG
 
 *Este certificado é obrigatório em todos os cenários.*
 
 Você fornece esse certificado ao criar o CMG no console do Configuration Manager.
 
-O CMG cria um serviço HTTPS ao qual os clientes baseados na Internet se conectam. O servidor exige um certificado de autenticação de servidor para criar o canal de segurança. Compre um certificado para essa finalidade de um provedor público ou emita-o por meio da PKI (infraestrutura de chave pública). Para obter mais informações, consulte [Certificado raiz confiável do CMG para clientes](#cmg-trusted-root-certificate-to-clients).
+O CMG cria um serviço HTTPS ao qual os clientes baseados na Internet se conectam. O servidor exige um certificado de autenticação de servidor para criar o canal de segurança. Adquira um certificado para essa finalidade de um provedor público ou emita-o por meio da PKI (infraestrutura de chave pública). Para obter mais informações, consulte [Certificado raiz confiável do CMG para clientes](#cmg-trusted-root-certificate-to-clients).
 
  > [!TIP]
- > Esse certificado exige um nome exclusivo para identificar o serviço no Azure. Antes de solicitar um certificado, confirme se o nome de domínio do Azure desejado é exclusivo. Por exemplo, *GraniteFalls.CloudApp.Net*. Faça logon no [portal do Microsoft Azure](https://portal.azure.com). Clique em **Criar um recurso**, selecione a categoria **Computação** e, em seguida, clique em **Serviço de Nuvem**. No campo **Nome DNS**, digite o prefixo desejado, por exemplo, *GraniteFalls*. A interface reflete se o nome de domínio está disponível ou se já está em uso por outro serviço. Não crie o serviço no portal; apenas use esse processo para verificar a disponibilidade do nome. 
+ > Esse certificado exige um nome exclusivo para identificar o serviço no Azure. Antes de solicitar um certificado, confirme se o nome de domínio do Azure desejado é exclusivo. Por exemplo, *GraniteFalls.CloudApp.Net*. Faça logon no [portal do Microsoft Azure](https://portal.azure.com). Selecione **Criar um recurso**, escolha a categoria **Computação** e, em seguida, selecione **Serviço de Nuvem**. No campo **Nome DNS**, digite o prefixo desejado, por exemplo, *GraniteFalls*. A interface reflete se o nome de domínio está disponível ou se já está em uso por outro serviço. Não crie o serviço no portal; apenas use esse processo para verificar a disponibilidade do nome. 
   
  > [!NOTE]
- > A partir da versão 1802, o certificado de autenticação de servidor do CMG é compatível com caracteres curinga. Algumas autoridades de certificação emitem certificados usando um caractere curinga para o nome do host. Por exemplo, **\*.contoso.com**. Algumas organizações usam certificados curinga para simplificar sua PKI e reduzir os custos de manutenção.
- <!--491233-->
+ > A partir da versão 1802, o certificado de autenticação de servidor do CMG é compatível com caracteres curinga. Algumas autoridades de certificação emitem certificados usando um caractere curinga para o nome do host. Por exemplo, **\*.contoso.com**. Algumas organizações usam certificados curinga para simplificar sua PKI e reduzir os custos de manutenção.<!--491233-->  
+ > 
+ > Para obter mais informações sobre como usar um certificado curinga com um CMG, veja [Configurar um CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#set-up-a-cmg).<!--SCCMDocs issue #565-->  
 
 
 ### <a name="cmg-trusted-root-certificate-to-clients"></a>Certificado raiz confiável do CMG para clientes
 
-Os clientes devem confiar no certificado de autenticação de servidor do CMG. Há dois métodos para estabelecer essa relação de confiança:
-- Use um certificado de um provedor de certificados público e globalmente confiável. Por exemplo, DigiCert, Thawte ou VeriSign, entre outros. Os clientes do Windows incluem ACs (autoridades de certificação) raiz confiáveis desses provedores. Usando um certificado de autenticação de servidor emitido por um desses provedores, os clientes automaticamente confiam nele. 
-- Use um certificado emitido por uma AC corporativa da PKI (infraestrutura de chave pública). A maioria das implementações de PKI corporativo adiciona autoridades de certificação raiz confiáveis aos clientes do Windows. Por exemplo, usando os Serviços de Certificados do Active Directory com a política de grupo. Se você emitir o certificado de autenticação de servidor do CMG de uma AC na qual os clientes não confiam automaticamente, precisará adicionar o certificado raiz confiável da AC aos clientes baseados na Internet.
-    - Também use perfis de certificado do Configuration Manager para provisionar certificados em clientes. Para obter mais informações, consulte [Introdução aos perfis de certificado](/sccm/protect/deploy-use/introduction-to-certificate-profiles).
+Os clientes devem confiar no certificado de autenticação de servidor do CMG. Há dois métodos para estabelecer essa relação de confiança: 
+
+- Use um certificado de um provedor de certificados público e globalmente confiável. Por exemplo, DigiCert, Thawte ou VeriSign, entre outros. Os clientes do Windows incluem ACs (autoridades de certificação) raiz confiáveis desses provedores. Ao usar um certificado de autenticação de servidor emitido por um desses provedores, os clientes automaticamente confiam nele.  
+
+- Use um certificado emitido por uma AC corporativa da PKI (infraestrutura de chave pública). A maioria das implementações de PKI corporativo adiciona autoridades de certificação raiz confiáveis aos clientes do Windows. Por exemplo, usando os Serviços de Certificados do Active Directory com a política de grupo. Se você emitir o certificado de autenticação de servidor do CMG de uma AC na qual os clientes não confiam automaticamente, adicione o certificado raiz confiável da AC aos clientes baseados na Internet.  
+
+    - Também use perfis de certificado do Configuration Manager para provisionar certificados em clientes. Para obter mais informações, consulte [Introdução aos perfis de certificado](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
+
+> [!Note]  
+> Da versão 1806 em diante, ao criar um CMG, não é mais necessário fornecer um certificado raiz confiável na página Configurações. Esse certificado não é necessário ao usar o Azure AD (Azure Active Directory) para autenticação do cliente, mas costumava ser necessário no assistente. Se você estiver usando certificados de autenticação de cliente de PKI, ainda será necessário adicionar um certificado raiz confiável para o CMG.<!--SCCMDocs-pr issue #2872-->  
+
 
 ### <a name="server-authentication-certificate-issued-by-public-provider"></a>Certificado de autenticação de servidor emitido por um provedor público
 
-Ao usar esse método, os clientes confiam automaticamente no certificado e você não precisa criar um certificado personalizado por conta própria. O Configuration Manager cria o serviço no Azure com o domínio cloudapp.net. Um provedor de certificado público não pode emitir para você um certificado com esse nome. Use o seguinte processo para criar um alias DNS:
+Um provedor de certificados de terceiros não pode criar um certificado para CloudApp.net, pois esse domínio pertence à Microsoft. Você só pode obter um certificado emitido para um domínio de sua propriedade. O principal motivo para adquirir um certificado de um provedor de terceiros é que os clientes já confiam no certificado raiz daquele provedor.
+
+Use o seguinte processo para criar um alias DNS:
 
 1. Crie um registro de nome canônico (CNAME) no DNS público de sua organização. Esse registro cria um alias para o CMG com um nome amigável que você usa no certificado público.
-Por exemplo, a Contoso nomeia seu CMG **GraniteFalls**, que se torna **GraniteFalls.CloudApp.Net** no Azure. No namespace contoso.com do DNS público da Contoso, o administrador de DNS cria um novo registro CNAME para **GraniteFalls.Contoso.com** para o nome do host real **GraniteFalls.CloudApp.net**.
+
+    Por exemplo, a Contoso nomeia seu CMG **GraniteFalls**, que se torna **GraniteFalls.CloudApp.Net** no Azure. No namespace contoso.com do DNS público da Contoso, o administrador de DNS cria um novo registro CNAME para **GraniteFalls.Contoso.com** para o nome do host real **GraniteFalls.CloudApp.net**.  
+
 2. Solicite um certificado de autenticação de servidor de um provedor público usando o CN (Nome Comum) do alias CNAME.
-Por exemplo, a Contoso usa **GraniteFalls.Contoso.com** para o CN do certificado.
-3. Crie o CMG no console do Configuration Manager usando esse certificado. Na página **Configurações** do Assistente para Criação de Gateway de Gerenciamento de Nuvem: 
-    - Quando você adiciona o certificado do servidor a esse serviço de nuvem (por meio do **Arquivo de certificado**), o assistente extrai o nome do host do CN do certificado como o nome do serviço. 
-    - Em seguida, ele acrescenta esse nome do host a **cloudapp.net** ou **usgovcloudapp.net** para a nuvem do Azure US Government, como o FQDN do Serviço para criar o serviço no Azure.
-    - Por exemplo, quando a Contoso cria o CMG, o Configuration Manager extrai o nome do host **GraniteFalls** do CN do certificado. O Azure cria o serviço real como **GraniteFalls.CloudApp.net**.
+Por exemplo, a Contoso usa **GraniteFalls.Contoso.com** para o CN do certificado.  
+
+3. Crie o CMG no console do Configuration Manager usando esse certificado. Na página **Configurações** do Assistente para Criação de Gateway de Gerenciamento de Nuvem:   
+
+    - Quando você adiciona o certificado do servidor a esse serviço de nuvem (por meio do **Arquivo de certificado**), o assistente extrai o nome do host do CN do certificado como o nome do serviço.  
+
+    - Em seguida, ele acrescenta esse nome do host a **cloudapp.net** ou **usgovcloudapp.net** para a nuvem do Azure US Government, como o FQDN do Serviço para criar o serviço no Azure.  
+
+    - Por exemplo, quando a Contoso cria o CMG, o Configuration Manager extrai o nome do host **GraniteFalls** do CN do certificado. O Azure cria o serviço real como **GraniteFalls.CloudApp.net**.  
+
+Quando você cria a instância do CMG no Configuration Manager, embora o certificado tenha GraniteFalls.Contoso.com, o Configuration Manager só extrai o nome do host, por exemplo: GraniteFalls. Ele acrescenta esse nome de host ao CloudApp.net, que o Azure requer durante a criação de um serviço de nuvem. O alias CNAME no namespace DNS para seu domínio, Contoso.com, mapeia juntos esses dois FQDNs. O Configuration Manager fornece aos clientes uma política para acessar esse CMG, e o mapeamento de DNS as vincula para que eles possam acessar com segurança o serviço no Azure.<!--SCCMDocs issue #565-->  
+
 
 ### <a name="server-authentication-certificate-issued-from-enterprise-pki"></a>Certificado de autenticação de servidor emitido pelo PKI corporativo
 
 Crie um certificado SSL personalizado para o CMG da mesma maneira que para um ponto de distribuição na nuvem. Siga as instruções em [Implantando o certificado de serviço em pontos de distribuição baseados em nuvem](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012), mas realize o seguinte de forma diferente:
 
-- Ao solicitar o certificado do servidor Web personalizado, forneça um FQDN para o nome comum do certificado. Isso pode ser um nome de domínio público que você tem ou é possível utilizar o domínio cloudapp.net. Se estiver usando seu próprio domínio público, consulte o processo acima para criar um alias de DNS no DNS público de sua organização.
-- Ao usar o domínio público cloudapp.net para o certificado do servidor Web CMG na nuvem pública do Azure, use um nome que termina em **cloudapp.net** ou **usgovcloudapp.net** para a nuvem do Governo dos EUA do Azure.
+- Ao solicitar o certificado do servidor Web personalizado, forneça um FQDN para o nome comum do certificado. Esse nome pode ser um nome de domínio público que você tem ou é possível usar o domínio cloudapp.net. Se estiver usando seu próprio domínio público, consulte o processo acima para criar um alias de DNS no DNS público de sua organização.  
+
+- Ao usar o domínio cloudapp.net público para o certificado do servidor Web do CMG:  
+
+    - Na nuvem pública do Azure, use um nome que termine em **cloudapp.net**  
+
+    - Use um nome que termine em **usgovcloudapp.net** para a nuvem do Governo dos EUA do Azure  
 
 
 
@@ -78,9 +115,9 @@ Para criar o CMG no Azure, o ponto de conexão de serviço do Configuration Mana
 
 Para obter mais informações e instruções sobre como carregar um certificado de gerenciamento, consulte os artigos a seguir na documentação do Azure:
 
-- [Serviços de nuvem e certificados de gerenciamento](/azure/cloud-services/cloud-services-certs-create#what-are-management-certificates)
+- [Serviços de nuvem e certificados de gerenciamento](https://docs.microsoft.com/azure/cloud-services/cloud-services-certs-create#what-are-management-certificates)  
 
-- [Carregar um certificado de gerenciamento de serviço do Azure](/azure/azure-api-management-certs)
+- [Carregar um certificado de gerenciamento de serviço do Azure](https://docs.microsoft.com/azure/azure-api-management-certs)  
 
 > [!IMPORTANT]
 > Certifique-se de copiar a ID da assinatura associada ao certificado de gerenciamento. Use-o para criar o CMG no console do Configuration Manager.
@@ -109,35 +146,45 @@ O CMG deve confiar nos certificados de autenticação de cliente. Para estabelec
 
 Depois de emitir um certificado de autenticação de cliente para um computador, use esse processo nesse computador para exportar a raiz confiável.
 
-1.  Abra o menu Iniciar. Digite "executar" para abrir a janela Executar. Abra **mmc**. 
+1.  Abra o menu Iniciar. Digite "executar" para abrir a janela Executar. Abra `mmc`.  
 
-2.  No menu Arquivo, escolha **Adicionar/Remover Snap-in...**.
+2.  No menu Arquivo, escolha **Adicionar/Remover Snap-in...**.  
 
-3.  Na caixa de diálogo Adicionar ou Remover Snap-ins, selecione **Certificados** e, em seguida, clique em **Adicionar**. 
-    a. Na caixa de diálogo Snap-in dos certificados, selecione **Conta de computador** e, em seguida, clique em **Avançar**. 
-    b. Na caixa de diálogo Selecionar Computador, selecione **Computador local** e, em seguida, clique em **Concluir**. 
-    c. Na caixa de diálogo Adicionar ou Remover Snap-ins, clique em **OK**.
+3.  Na caixa de diálogo Adicionar ou Remover Snap-ins, selecione **Certificados** e, em seguida, selecione **Adicionar**.  
 
-4.  Expanda **Certificados**, expanda **Pessoais** e selecione **Certificados**.
+    a. Na caixa de diálogo Snap-in dos certificados, selecione **Conta de computador** e, em seguida, selecione em **Avançar**.  
 
-5.  Selecione um certificado cuja Finalidade Pretendida é a **Autenticação de Cliente**. 
-    a. No menu Ação, selecione **Abrir**. 
-    b. Alterne para a guia **Caminho de Certificação**. c. Selecione o próximo certificado na cadeia e, em seguida, clique em **Exibir Certificado**.
+    b. Na caixa de diálogo Selecionar Computador, selecione **Computador local** e, em seguida, selecione em **Concluir**.  
 
-6.  Nessa nova caixa de diálogo Certificado, alterne para a guia **Detalhes**. Clique em **Copiar para Arquivo…**.
+    c. Na caixa de diálogo Adicionar ou Remover Snap-ins, selecione **OK**.  
 
-7.  Conclua o Assistente para Exportação de Certificados usando o formato de certificado padrão, **X.509 binário codificado em DER (.CER)**. Anote o nome e o local do certificado exportado.
+4.  Expanda **Certificados**, expanda **Pessoais** e selecione **Certificados**.  
 
-8. Exporte todos os certificados no caminho de certificação do certificado de autenticação de cliente original. Anote quais certificados exportados são ACs intermediárias e quais são ACs raiz confiáveis.
+5.  Selecione um certificado cuja Finalidade Pretendida é a **Autenticação de Cliente**.  
+
+    a. No menu Ação, selecione **Abrir**.  
+
+    b. Vá para a guia **Caminho de Certificação**.  
+
+    c. Selecione o próximo certificado na cadeia e, em seguida, selecione **Exibir Certificado**.  
+
+6.  Nessa nova caixa de diálogo Certificado, mude para a guia **Detalhes**. Selecione **Copiar para Arquivo...**.  
+
+7.  Conclua o Assistente para Exportação de Certificados usando o formato de certificado padrão, **X.509 binário codificado em DER (.CER)**. Anote o nome e o local do certificado exportado.  
+
+8. Exporte todos os certificados no caminho de certificação do certificado de autenticação de cliente original. Anote quais certificados exportados são ACs intermediárias e quais são ACs raiz confiáveis.  
 
 
 
 ## <a name="enable-management-point-for-https"></a>Habilitar o ponto de gerenciamento para HTTPS
 
 *Requisitos de certificado*
-- Nas versões 1706 ou 1710, ao gerenciar clientes tradicionais com a identidade local usando um certificado de autenticação de cliente, esse certificado é recomendado, mas não é obrigatório.
-- Na versão 1710, ao gerenciar clientes do Windows 10 ingressados no Azure AD, esse certificado é obrigatório para os pontos de gerenciamento. 
-- A partir da versão 1802, esse certificado é obrigatório em todos os cenários. Somente os pontos de gerenciamento que você habilitar para CMG devem ser HTTPS. Essa alteração no comportamento fornece melhor suporte para autenticação baseada em token do Azure AD. 
+
+- Nas versões 1706 ou 1710, ao gerenciar clientes tradicionais com a identidade local usando um certificado de autenticação de cliente, esse certificado é recomendado, mas não é obrigatório.  
+
+- Na versão 1710, ao gerenciar clientes do Windows 10 ingressados no Azure AD, esse certificado é obrigatório para os pontos de gerenciamento.  
+
+- A partir da versão 1802, esse certificado é obrigatório em todos os cenários. Somente os pontos de gerenciamento que você habilitar para CMG devem ser HTTPS. Essa alteração no comportamento fornece melhor suporte para autenticação baseada em token do Azure AD.  
 
 Provisione esse certificado fora do contexto do Configuration Manager. Por exemplo, use os Serviços de Certificados do Active Directory e a política de grupo para emitir um certificado do servidor Web. Para obter mais informações, consulte [Requisitos de certificado PKI](/sccm/core/plan-design/network/pki-certificate-requirements) e [Implantar o certificado do servidor Web em sistemas de sites que executam o IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).
 

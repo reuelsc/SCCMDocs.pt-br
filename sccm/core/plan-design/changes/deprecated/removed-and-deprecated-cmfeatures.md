@@ -2,7 +2,7 @@
 title: Recursos preteridos
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os recursos que não são mais compatíveis com o Configuration Manager.
-ms.date: 08/14/2018
+ms.date: 08/31/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 287a6324-ae65-4d38-b2ef-198d47c91231
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a84d25203fc0addc32271446e1375c9013c0bb6e
-ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
+ms.openlocfilehash: dbebfa1ef5d4851cfd6bbc118c2d7bab30f0b01f
+ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42584420"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893443"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Recursos removidos e preteridos do Configuration Manager
 
@@ -32,8 +32,8 @@ Essas informações estão sujeitas a alterações em versões futuras. Elas pod
 |Recurso|Substituição anunciada pela primeira vez|Suporte&nbsp;removido|  
 |-----------|---|--------------|  
 |Gerenciamento híbrido de dispositivos móveis. Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->|14 de agosto de 2018|1º de setembro de 2019|
-|Não há mais suporte para a **experiência do usuário do Silverlight** para o ponto do site do Catálogo de Aplicativos. Os usuários devem usar o novo Centro de Software. Observação: ainda há suporte para as funções de ponto de site do Catálogo de Aplicativos e de ponto de serviço Web. Em alguns cenários, o novo Centro de Software comunica-se com o ponto de site do Catálogo de Aplicativos.|11 de agosto de 2017| Versão 1806|
-|A versão anterior do Centro de Software.<br><br>Para saber mais sobre o novo Centro de Software, veja [Planejar e configurar o gerenciamento de aplicativos](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only).|13 de dezembro de 2016|Versão 1802|
+|Não há mais suporte para a **experiência do usuário do Silverlight** para o ponto do site do Catálogo de Aplicativos. Os usuários devem usar o novo Centro de Software. Observação: ainda há suporte para as funções de ponto de site do Catálogo de Aplicativos e de ponto de serviço Web. Em alguns cenários, o novo Centro de Software comunica-se com o ponto de site do Catálogo de Aplicativos. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).<!--1358309-->|11 de agosto de 2017| Versão 1806|
+|A versão anterior do Centro de Software.<br><br>Para saber mais sobre o novo Centro de Software, veja [Planejar e configurar o gerenciamento de aplicativos](/sccm/apps/plan-design/plan-for-and-configure-application-management##bkmk_userex).|13 de dezembro de 2016|Versão 1802|
 |Gerenciamento de VHDs (discos de rígidos virtuais) com o Configuration Manager. </br></br>Essa reprovação inclui a remoção de opções para criar um novo VHD ou gerenciar um VHD usando uma sequência de tarefas, e a remoção do nó de discos rígidos virtuais no console do Configuration Manager. </br></br>VHDs existentes não são excluídos, mas não são mais acessíveis de dentro do console do Configuration Manager.  |6 de janeiro de 2017 |Versão 1710|
 |Sequências de tarefas: <br /> – Converter Disco em Dinâmico <br /> – Instalar Ferramentas de Implantação |18 de novembro de 2016|Versão 1710|
 |Ferramenta de avaliação de atualização do System Center Configuration Manager. </br></br>A Ferramenta de Avaliação de Atualização depende do System Center Configuration Manager e do Application Compatibility Toolkit (ACT) 6.x. A versão final do ACT foi entregue no Windows 10 v1511 ADK. Como não há atualizações adicionais para o ACT, o suporte para a Ferramenta de Avaliação de Atualização será descontinuado. </br></br>A Ferramenta de Avaliação de Atualização foi substituída pelo recurso [Preparação para atualização](/sccm/core/clients/manage/upgrade/upgrade-analytics). O aviso de substituição foi adicionado à [página de download para UAT](https://www.microsoft.com/download/details.aspx?id=37145) em 12 de setembro de 2016. | 12 de setembro 2016  | 11 de julho de 2017 |
