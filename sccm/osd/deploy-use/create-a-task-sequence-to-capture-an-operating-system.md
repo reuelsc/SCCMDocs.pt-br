@@ -10,12 +10,12 @@ ms.assetid: 25e4ac68-0e78-4bbe-b8fc-3898b372c4e8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a1ef2883bfeb61df55ff045b76e9bc45a11b4da2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 34536114e6cb1be8f256da385b3d69d07c17f676
+ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352162"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48862474"
 ---
 # <a name="create-a-task-sequence-to-capture-an-operating-system-in-system-center-configuration-manager"></a>Criar uma sequência de tarefas para capturar um sistema operacional no System Center Configuration Manager
 
@@ -217,7 +217,7 @@ Quando você usa uma sequência de tarefas para implantar um sistema operacional
 |Aplicar Sistema Operacional|Use essa etapa de sequência de tarefas para instalar uma imagem especificada de sistema operacional no computador de destino. Essa etapa se aplica a todas as imagens de volume contidas no arquivo WIM para o volume de disco sequencial correspondente no computador de destino após o primeiro excluir todos os arquivos no volume (com exceção de arquivos de controle específicos do Configuration Manager).|  
 |Aplicar as Configurações do Windows|Use essa etapa de sequência de tarefas para ajustar as informações de definição das configurações do Windows no computador de destino.|  
 |Aplicar Configurações de Rede|Use esta etapa para especificar as informações de configuração de rede ou grupo de trabalho do computador de destino.|  
-|Aplicar Drivers de Dispositivo|Use esta etapa para corresponder e instalar unidades como parte da implantação do sistema operacional. Você pode permitir que a Instalação do Windows pesquise todas as categorias de driver existentes selecionando a opção **Considerar drivers de todas as categorias** ou limitar quais categorias de driver de Instalação do Windows pesquisarão ao selecionar a opção **Limitar a correspondência de driver para considerar somente os drivers em categorias selecionadas**.<br /><br /> Esta etapa usa somente leitura **_SMSTSMediaType** variável de sequência de tarefas. Se o valor associado não for igual a **FullMedia** , essa etapa será executada.|  
+|Aplicar Drivers de Dispositivo|Use esta etapa de sequência de tarefas para corresponder e instalar unidades como parte da implantação do sistema operacional. Você pode permitir que a Instalação do Windows pesquise todas as categorias de driver existentes selecionando a opção **Considerar drivers de todas as categorias** ou limitar quais categorias de driver de Instalação do Windows pesquisarão ao selecionar a opção **Limitar a correspondência de driver para considerar somente os drivers em categorias selecionadas**.<br /><br /> Esta etapa usa somente leitura **_SMSTSMediaType** variável de sequência de tarefas. Se o valor associado não for igual a **FullMedia** , essa etapa será executada.|  
 |Instalar Windows e ConfigMgr|Use essa etapa de sequência de tarefas para instalar o software cliente do Configuration Manager. O Configuration Manager instala e registra o GUID do cliente do Configuration Manager. Você pode atribuir os parâmetros necessários para a instalação na janela **Propriedades de instalação** .|  
 |Instalar atualizações|Use esta etapa de sequência de tarefas para especificar como as atualizações de software serão instaladas no computador de destino. O computador de destino não é avaliado para atualizações de software aplicáveis até que essa etapa de sequência de tarefas seja executada. Nesse momento, o computador de destino é avaliado para atualizações de software semelhantes a qualquer outro cliente gerenciado do Configuration Manager.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSMediaType** somente leitura. Se o valor associado não for igual a **FullMedia** , essa etapa será executada.|  
 |Capture o computador de referência - **(novo grupo de sequências de tarefas)**|Crie outro grupo de sequências de tarefas. Esse grupo contém as etapas necessárias para preparar e capturar um computador de referência.|  

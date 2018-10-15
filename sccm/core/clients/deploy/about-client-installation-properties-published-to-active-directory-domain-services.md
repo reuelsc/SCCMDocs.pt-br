@@ -10,12 +10,12 @@ ms.assetid: 101d7d4d-92db-419d-b2ae-3c1c1dea68e9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 585aa6ea6874ac6d6a5264b0f75d8dbcf39ddd0a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 46ede93e8366b4ae387f7e04b83dcb33ce854c5e
+ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334276"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48862508"
 ---
 # <a name="about-client-installation-properties-published-to-active-directory-domain-services"></a>Sobre as propriedades de instalação de cliente publicadas nos Serviços de Domínio do Active Directory
 
@@ -73,12 +73,13 @@ A instalação de cliente (CCMSetup) utilizará as propriedades publicadas no Ac
 ## <a name="client-push-installation"></a>Instalação do cliente por push  
  A instalação do cliente por push não usa os Serviços de Domínio Active Directory para obter as propriedades de instalação.  
 
- Em vez disso, é possível especificar propriedades de instalação cliente na guia **Cliente** da caixa de diálogo **Propriedades da Instalação do Cliente por Push** . Essas opções e configurações relacionadas ao cliente estão armazenadas em um arquivo que o cliente lê durante a instalação de cliente.  
+ Em vez disso, é possível especificar propriedades de instalação cliente na guia **Propriedades da Instalação** da caixa de diálogo **Propriedades da Instalação do Cliente por Push**. Essas opções e configurações relacionadas ao cliente estão armazenadas em um arquivo que o cliente lê durante a instalação de cliente.  
 
 > [!NOTE]  
->  Não é necessário especificar nenhuma propriedade do CCMSetup para a instalação do cliente por push, ou o ponto de status de fallback, ou a chave de raiz confiável na guia **Cliente** . Essas configurações são fornecidas automaticamente para os clientes quando eles são instalados pela instalação de cliente por push.  
+>  Não é necessário especificar nenhuma propriedade do CCMSetup para a instalação do cliente por push, ou o ponto de status de fallback, ou a chave de raiz confiável na guia **Propriedades da Instalação**. Essas configurações são fornecidas automaticamente para os clientes quando eles são instalados pela instalação de cliente por push.
+Além das propriedades de Client.msi, o CCMSetup dá suporte aos seguintes parâmetros: /forcereboot, /skipprereq, /logon, /BITSPriority, /downloadtimeout, /forceinstall
 
- Qualquer propriedade especificada na guia **Cliente** será publicada nos Active Directory Domain Services se o site for publicado nos Active Directory Domain Services. Essas configurações são lidas por instalações de cliente nas quais o CCMSetup é executado sem propriedades de instalação.  
+ Quaisquer propriedades especificadas na guia **Propriedades da Instalação** serão publicadas no Active Directory Domain Services se o site for publicado no Active Directory Domain Services. Essas configurações são lidas por instalações de cliente nas quais o CCMSetup é executado sem propriedades de instalação.  
 
 ## <a name="software-update-point-based-installation"></a>Instalação baseada em ponto de atualização de software  
  O método de instalação baseado em ponto de atualização de software não oferece suporte à adição de propriedades de instalação à linha de comando CCMSetup.  

@@ -2,7 +2,7 @@
 title: Novidades no MDM híbrido
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune.
-ms.date: 08/29/2018
+ms.date: 09/18/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 87a40300cfe13ec097d155093fbb7b70af3b459c
-ms.sourcegitcommit: 8661f10596f565ca2b7bdb5951388b44b3b622ee
+ms.openlocfilehash: 195fb8c4ae584b9b5ccb2401b145d9c78a0be781
+ms.sourcegitcommit: 78d2dce465e3500653b252583a6903a006784c26
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43193911"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46448864"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -460,6 +460,54 @@ Peça aos usuários finais no Windows 10 versão 1607 ou posterior para atualiza
 
 
 ## <a name="notices"></a>Avisos
+
+### <a name="plan-for-change-intune-supports-macos-1012-and-higher-in-december"></a>Plano de mudança: o Intune dará suporte ao macOS 10.12 e superior em dezembro 
+<!--2970975--> 
+
+A Apple lançou o macOS 10.14, portanto, a partir de dezembro de 2018, o Intune será compatível com macOS 10.12 e posterior. 
+
+#### <a name="how-does-this-affect-me"></a>Como isso me afeta?
+
+A partir de dezembro, os usuários em dispositivos com macOS 10.11 e anteriores não poderão usar o Portal da Empresa para se registrar no Intune. Para continuar recebendo suporte e novos recursos, eles precisarão atualizar seu dispositivo para o macOS 10.12 ou superior, e atualizar o aplicativo Portal da Empresa para a versão mais recente. 
+
+No momento, o macOS versões 10.12 e posterior são compatíveis com o: 
+- MacBook (fim de 2009 ou mais recente)  
+- iMac (fim de 2009 ou mais recente)
+- MacBook Air (fim de 2010 ou mais recente)  
+- MacBook Pro (fim de 2010 ou mais recente)  
+- Mac Mini (fim de 2010 ou mais recente)  
+- Mac Pro (fim de 2010 ou mais recente)  
+
+Após dezembro, os usuários finais que têm dispositivos diferente dos listados acima não poderão acessar a versão mais recente do aplicativo Portal da Empresa para macOS. É possível continuar gerenciando os dispositivos registrados que executam versões sem suporte abaixo do macOS 10.12.
+
+#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>O que preciso fazer para me preparar para essa alteração?
+
+- Solicite que seus usuários atualizem seus dispositivos para uma versão do sistema operacional compatível antes de dezembro de 2018.  
+- Verifique o relatório do Intune no portal do Azure, para ver quais dispositivos ou usuários podem ser afetados. Vá para **Dispositivos** > **Todos os dispositivos** e filtrar por **sistema operacional**. É possível adicionar mais colunas para ajudar a identificar quem em sua organização tem dispositivos que executam o macOS 10.11.  
+- Se estiver usando o MDM (gerenciamento de dispositivo móvel) híbrido, no console do Configuration Manager, acesse o workspace **Ativos e Conformidade** e selecione o nó **Dispositivos**. Clique com o botão direito do mouse nas colunas para adicionar as colunas **Sistema Operacional** e **Versão do cliente**. Em seguida, classifique pela versão do sistema operacional. Observe que agora o MDM híbrido foi preterido e você deve migrar para o Intune no Azure assim que possível. 
+ 
+#### <a name="additional-information"></a>Informações adicionais
+Para obter mais informações, confira [Registrar seu dispositivo macOS no Intune com o aplicativo Portal da Empresa](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos-cp).
+
+
+### <a name="plan-for-change-new-intune-support-experience-for-premier-customers"></a>Plano de mudança: nova experiência de suporte do Intune para clientes Premier 
+<!--2828727--> Como cliente Premier da Microsoft, é possível usar, no momento, o [portal do MPO (Microsoft Premier Online)](https://premier.microsoft.com) e o [Intune no Azure](https://portal.azure.com) para criar solicitações de suporte para Intune. A partir de 3 de dezembro de 2018, para continuar aprimorando a experiência do Suporte Premier, será possível criar solicitações de suporte apenas no Intune no Azure.
+
+#### <a name="how-does-this-affect-me"></a>Como isso me afeta?
+Após 3 de dezembro, não será possível criar solicitações de suporte no MPO. Se você tentar, verá um prompt que informa que não é possível ignorar seu redirecionamento para o Intune no Azure. Quando você cria uma solicitação de suporte no portal do Azure, ela é roteada para o Suporte da Microsoft dedicado ao Intune. Eles diagnosticarão e resolverão seu problema oportunamente. Se você criar uma solicitação de suporte no portal do MPO, não poderá exibi-la no portal do Azure. Comece a criar somente as solicitações de suporte no Intune no Azure.  
+
+Se você usar o MDM (gerenciamento de dispositivo móvel) híbrido ou usar o cogerenciamento, continue usando o MPO para criar solicitações de suporte para o Configuration Manager, mas use o portal do Azure para criar solicitações de suporte para Intune. Como um lembrete, o MDM híbrido foi preterido, e você deve planejar migrar para o Intune no Azure assim que possível. Para obter mais informações, confira [Migrar do Gerenciamento de Dispositivo Móvel Híbrido para o Intune no Azure](https://aka.ms/hybrid_notification).
+
+Observe que apenas os usuários com funções de Administrador Global, de Administrador de Serviços do Intune e de Administrador de Suporte de Serviço podem criar tíquetes de suporte no portal do Azure.
+
+#### <a name="what-can-i-do-to-prepare-for-this-change"></a>O que fazer para me preparar para essa mudança?
+- Para de usar o MPO para solicitações de suporte relacionadas ao Intune. Use o Intune no Azure para criar e gerenciar todas as solicitações de suporte do Intune.  
+- Notifique a documentação de assistência técnica e atualização se necessário.  
+- Se você tiver usuários sem as funções de Administrador Global ou de Administrador de Serviços do Intune no momento criando solicitações de suporte no MPO, atribua a função de Administrador de Suporte de Serviço no Azure Active Directory. Os usuários exigem uma dessas funções para criar tíquetes de suporte no portal do Azure.  
+
+#### <a name="additional-information"></a>Informações adicionais
+Para saber mais, confira a [postagem no blog da equipe de suporte do Microsoft Intune](https://aka.ms/IntuneSupport_MPO_to_Azure).
+
 
 ### <a name="plan-for-change-use-intune-on-azure-now-for-your-mdm-management"></a>Planeje a mudança: use o Intune no Azure agora para o gerenciamento MDM 
 <!--1227338--> Há mais de um ano, foi anunciada a [versão prévia pública do Intune no Azure](https://cloudblogs.microsoft.com/enterprisemobility/2016/12/07/public-preview-of-intune-on-azure/) e, após seis meses, a [disponibilidade geral da nova experiência de administração](https://cloudblogs.microsoft.com/enterprisemobility/2017/06/08/the-new-intune-and-conditional-access-admin-consoles-are-ga/) para o Intune. No dia 31 de agosto de 2018, o MDM (gerenciamento de dispositivo móvel) será desabilitado no console do Silverlight clássico para os clientes que usam o Intune autônomo. Nesse caso, use o [Intune no Azure](https://aka.ms/Intune_on_Azure) para atender às suas necessidades de MDM. Se você ainda estiver usando o console clássico do MDM, deixe de usá-lo e familiarize-se com o Intune no Azure. Não esperamos que haja nenhum impacto para o usuário final com essa alteração. O gerenciamento de computador clássico com o Intune permanece no Silverlight. Para saber mais, confira [a postagem no blog da equipe de suporte do Intune](https://aka.ms/Intune_on_Azure_mdm).

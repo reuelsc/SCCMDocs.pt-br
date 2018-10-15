@@ -2,7 +2,7 @@
 title: Novidades na versão 1806
 titleSuffix: Configuration Manager
 description: Obtenha os detalhes sobre as alterações e as novas funcionalidades introduzidas na versão 1806 do branch atual do Configuration Manager.
-ms.date: 08/29/2018
+ms.date: 09/19/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 0249dbd3-1e85-4d05-a9e5-420fbe44d850
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 89742711f17997487fec403d51c89a42ceff34ec
-ms.sourcegitcommit: 52ec30245ba559596d2f88a3eff70c467b4a056f
+ms.openlocfilehash: 3b5cb217b9351f5d2491070b447d0a96efe0aa29
+ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43381033"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46533772"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novidades na versão 1806 do branch atual do Configuration Manager
 
@@ -29,6 +29,8 @@ Sempre examine a lista de verificação mais recente para instalar essa atualiza
 > Atualmente, esse artigo lista todos os recursos importantes nesta versão. No entanto, nem todas as seções ainda se vinculam ao conteúdo atualizado com informações adicionais sobre os novos recursos. Continue verificando esta página regularmente para ver se há atualizações. As alterações são indicadas com a marcação ***[Atualizado]***. Essa observação será removida quando o conteúdo for finalizado.  
 
 Além de novos recursos, este lançamento inclui outras alterações, como correções de bugs. Para saber mais, veja [Resumo das alterações no Branch Atual do System Center Configuration Manager, versão 1806](https://support.microsoft.com/help/4459701).
+
+Para saber mais sobre alterações nos cmdlets do Windows PowerShell para Configuration Manager, confira [Notas sobre a versão 1806 do PowerShell](https://docs.microsoft.com/powershell/sccm/1806_release_notes?view=sccm-ps).
 
 <!--
 The following additional updates to this release are also now available:
@@ -141,6 +143,13 @@ Para obter mais informações, veja [Suporte parcial a download](/sccm/core/plan
 Para saber mais, confira [Opções de grupo de limites para downloads de pares](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).
 
 
+### <a name="improvement-to-peer-cache-source-location-status"></a>Melhoria no status do local das fontes de cache par
+<!--SCCMDocs issue 850-->
+ ***[Atualizado]*** O Configuration Manager é mais eficiente em determinar se uma fonte de cache par fez roaming para outro local. Esse comportamento garante que o ponto de gerenciamento ofereça-o como uma fonte de conteúdo aos clientes no novo local, e não no local antigo. Se você estiver usando o recurso de cache par com as fontes de cache par de roaming, depois de atualizar o site para a versão 1806, também atualize todas as fontes de cache par para a versão mais recente do cliente. O ponto de gerenciamento não inclui essas fontes de cache par na lista de locais de conteúdo até que eles sejam atualizadas pelo menos para a versão 1806.
+
+Para saber mais, confira [Requirements for peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache#requirements) (Requisitos para cache par).
+
+
 
 <!-- ## Migration  -->
 
@@ -177,9 +186,14 @@ Para obter mais informações, confira [CMTrace](/sccm/core/support/cmtrace).
 
 
 ### <a name="cloud-management-dashboard"></a>Painel de gerenciamento de nuvem
-<!--1358461--> O novo painel de gerenciamento de nuvem fornece uma exibição centralizada do uso do CMG (Gateway de Gerenciamento de Nuvem). Quando o site é integrado ao Azure AD, ele também exibe dados sobre usuários e dispositivos da nuvem. No console do Configuration Manager, acesse o espaço de trabalho **Monitoramento**. Selecione o nó **Gerenciamento de Nuvem** e visualize os blocos do painel.  
+<!--1358461-->
+ ***[Atualizado]*** O novo painel de gerenciamento de nuvem fornece uma exibição centralizada do uso do CMG (Gateway de Gerenciamento de Nuvem). Quando o site é integrado ao Azure AD, ele também exibe dados sobre usuários e dispositivos da nuvem.   
 
-Esse recurso também inclui o **Analisador de conexão CMG** para verificação em tempo real para auxiliar na solução de problemas. O utilitário no console verifica o status atual do serviço e o canal de comunicação por meio da conexão CMG aponta para os pontos de gerenciamento que permitem o tráfego CMG. No console do Configuration Manager, acesse o espaço de trabalho **Administração**. Expanda **Serviços de Nuvem** e selecione **Gateway de Gerenciamento de Nuvem**. Selecione a instância CMG de destino e, em seguida, selecione **Analisador de conexão** na faixa de opções.
+Esse recurso também inclui o **Analisador de conexão CMG** para verificação em tempo real para auxiliar na solução de problemas. O utilitário no console verifica o status atual do serviço e o canal de comunicação por meio da conexão CMG aponta para os pontos de gerenciamento que permitem o tráfego CMG. 
+
+Para obter mais informações, confira as seguintes seções do artigo [Monitorar CMG](/sccm/core/clients/manage/cmg/monitor-clients-cloud-management-gateway):  
+- [Painel de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/monitor-clients-cloud-management-gateway#cloud-management-dashboard)  
+- [Analisador de conexão](/sccm/core/clients/manage/cmg/monitor-clients-cloud-management-gateway#connection-analyzer)  
 
 
 ### <a name="improvements-to-cloud-management-gateway"></a>Melhorias no gateway de gerenciamento de nuvem
@@ -187,26 +201,16 @@ Esse recurso também inclui o **Analisador de conexão CMG** para verificação 
 A versão 1806 inclui as seguintes melhorias ao CMG (Gateway de Gerenciamento de Nuvem):
 
 #### <a name="simplified-client-bootstrap-command-line"></a>Linha de comando de inicialização de cliente simplificada
-<!--1358215--> Ao instalar o cliente do Configuration Manager na Internet por meio de um CMG, a linha de comando agora requer menos propriedades. Essa melhoria reduz o tamanho da linha de comando usada no Microsoft Intune ao se preparar para o cogerenciamento. 
+<!--1358215-->
+ ***[Atualizado]*** Ao instalar o cliente do Configuration Manager na Internet por meio de um CMG, a linha de comando agora requer menos propriedades. Essa melhoria reduz o tamanho da linha de comando usada no Microsoft Intune ao se preparar para o cogerenciamento. 
 
-As propriedades de linha de comando a seguir são necessárias em todos os cenários:
-  - CCMHOSTNAME  
-  - SMSSITECODE  
-
-As propriedades a seguir são necessárias ao usar o Azure AD para autenticação de cliente em vez de certificados de autenticação de cliente baseados em PKI:
-  - AADCLIENTAPPID  
-  - AADRESOURCEURI  
-
-A propriedade a seguir será necessária se o cliente for retornar para a Intranet:
-  - SMSMP  
-
-O exemplo a seguir inclui todas as propriedades acima:   
-`ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver SMSMP=https://mp1.contoso.com`
-
-<!--For more information, see [Client installation properties](/sccm/core/clients/deploy/about-client-installation-properties).-->
+Para obter mais informações, veja [Preparar dispositivos Windows 10 para cogerenciamento](/sccm/core/clients/manage/co-management-prepare#command-line-to-install-configuration-manager-client).
 
 #### <a name="download-content-from-a-cmg"></a>Baixar o conteúdo de um CMG
-<!--1358651--> Anteriormente, era necessário implantar um ponto de distribuição na nuvem e um CMG como funções separadas. Um CMG agora também pode fornecer conteúdo aos clientes. Essa funcionalidade reduz os certificados necessários e o custo das VMs do Azure. Para habilitar esse recurso, habilite a nova opção para **Permitir que o CMG funcione como um ponto de distribuição na nuvem e entregue conteúdo do armazenamento do Azure** na guia **Configurações** das propriedades do CMG. 
+<!--1358651-->
+ ***[Atualizado]*** Anteriormente, era necessário implantar um ponto de distribuição na nuvem e um CMG como funções separadas. Um CMG agora também pode fornecer conteúdo aos clientes. Essa funcionalidade reduz os certificados necessários e o custo das VMs do Azure. 
+
+Para obter mais informações, consulte [Modificar um CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg).
 
 #### <a name="trusted-root-certificate-isnt-required-with-azure-ad"></a>O certificado raiz confiável não é necessário com o Azure AD
 <!--503899--> Ao criar um CMG, não é mais necessário fornecer um [certificado raiz confiável](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#cmg-trusted-root-certificate-to-clients) na página Configurações. Esse certificado não é necessário ao usar o Azure AD (Azure Active Directory) para autenticação do cliente, mas costumava ser necessário no assistente. Se você estiver usando certificados de autenticação de cliente de PKI, ainda será necessário adicionar um certificado raiz confiável para o CMG.
@@ -296,7 +300,7 @@ Para obter mais informações, confira [Criar aplicativos Windows](/sccm/apps/ge
 Para obter informações, confira [Deploy applications](/sccm/apps/deploy-use/deploy-applications#bkmk_approval) (Implantar aplicativos).
 
 
-### <a name="package-conversion-manager"></a>Gerenciador de Conversão de Pacotes 
+### <a name="package-conversion-manager"></a>Package Conversion Manager 
 <!--1357861-->
  ***[Atualizado]*** Agora, o Gerenciador de Conversão de Pacotes é uma ferramenta integrada que permite a conversão de pacotes herdados para os aplicativos do branch atual do Configuration Manager. Em seguida, você pode usar recursos de aplicativos como dependências, regras de requisitos e afinidade de dispositivo de usuário.
 
@@ -385,8 +389,15 @@ Essas sequências de tarefas podem ser usadas para implantação de sistema oper
 
 ## <a name="software-center"></a>Centro de software
 
+> [!Important]  
+> Para aproveitar os novos recursos do Configuration Manager, primeiro atualize os clientes para a versão mais recente. Embora a nova funcionalidade seja exibida no console do Configuration Manager quando você atualiza o site e o console, o cenário completo só funcionará quando a versão do cliente também for a mais recente.
+
+
 ### <a name="software-center-infrastructure-improvements"></a>Melhorias na infraestrutura do Centro de Software
-<!--1358309--> Funções do catálogo de aplicativos não são mais necessárias para exibir aplicativos disponíveis ao usuário no Centro de Software. Essa alteração ajuda a reduzir a infraestrutura de servidor necessária para fornecer aplicativos aos usuários. O Centro de Software agora depende do ponto de gerenciamento para obter essas informações, o que ajuda ambientes maiores a serem melhor dimensionados por meio de suas atribuições a [grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups#management-points).
+<!--1358309-->
+ ***[Atualizado]*** Funções do catálogo de aplicativos não são mais necessárias para exibir aplicativos disponíveis ao usuário no Centro de Software. Essa alteração ajuda a reduzir a infraestrutura de servidor necessária para fornecer aplicativos aos usuários. O Centro de Software agora depende do ponto de gerenciamento para obter essas informações, o que ajuda ambientes maiores a serem melhor dimensionados por meio de suas atribuições a [grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups#management-points).
+
+Para obter mais informações, confira [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex)  
 
 > [!Note]  
 > As funções de ponto de site do catálogo de aplicativos e ponto de serviço Web não são mais *necessária* na versão 1806, mas ainda são funções *compatíveis*. 

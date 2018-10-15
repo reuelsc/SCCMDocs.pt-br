@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 884859f9968f6d7f72e0aef3448eab42a3751ec5
-ms.sourcegitcommit: a17be6f5e4659ba3f38c7732b43f3afafcb95171
+ms.openlocfilehash: aa92f935984b52458a3d7daf17a11077c519da84
+ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42906411"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48862525"
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Referência técnica de controles de criptografia
 
@@ -120,7 +120,7 @@ O System Center Configuration Manager usa a assinatura e a criptografia para aju
  Se você habilitar inventário de hardware para dispositivos móveis, o Configuration Manager ou o Intune também preparará inventários dos certificados instalados no dispositivo móvel.   
 
 ### <a name="operating-system-deployment-and-pki-certificates"></a>Implantação do sistema operacional e certificados PKI  
- Quando você usa o Configuration Manager para implantar sistemas operacionais e um ponto de gerenciamento exigir conexões de cliente HTTPS, o computador cliente também deve ter um certificado para se comunicar com o ponto de gerenciamento, mesmo que seja em uma fase de transição, como a inicialização de mídia de sequência de tarefas ou um ponto de distribuição habilitado para PXE. Para dar suporte a este cenário, você deve criar um certificado de autenticação de cliente PKI, exportá-lo com a chave privada e, em seguida, importá-lo para as propriedades do servidor do site, além de adicionar o certificado de AC raiz confiável do ponto de gerenciamentoâ€™.  
+ Quando você usa o Configuration Manager para implantar sistemas operacionais e um ponto de gerenciamento exigir conexões de cliente HTTPS, o computador cliente também deve ter um certificado para se comunicar com o ponto de gerenciamento, mesmo que seja em uma fase de transição, como a inicialização de mídia de sequência de tarefas ou um ponto de distribuição habilitado para PXE. Para dar suporte a este cenário, é necessário criar um certificado de autenticação de cliente PKI, exportá-lo com a chave privada e, em seguida, importá-lo para as propriedades do servidor do site, além de adicionar o certificado AC raiz confiável do ponto de gerenciamento.  
 
  Se você criar uma mídia inicializável, importe o certificado de autenticação de cliente durante a criação da mídia inicializável. Configure uma senha na mídia inicializável para ajudar a proteger a chave privada e outros dados confidenciais configurados na sequência de tarefas. Cada computador que inicia por meio da mídia inicializável apresentará o mesmo certificado ao ponto de gerenciamento, conforme exigido para as funções de cliente, como a solicitação da política do cliente.  
 

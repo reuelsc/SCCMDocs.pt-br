@@ -2,7 +2,7 @@
 title: Requisitos de infraestrutura para implantação de sistema operacional
 titleSuffix: Configuration Manager
 description: Conheça as dependências externas e do produto e os requisitos para implantação do sistema operacional no Configuration Manager
-ms.date: 07/30/2018
+ms.date: 10/02/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 1dc74219-7ff5-4e3b-b4f6-5aad663bb75b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4e54c6c7d8f827a17c69f4e166aeb4dccca4272f
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 03ec9c046e1b32f137777f15393b5d26b49e5520
+ms.sourcegitcommit: 265d38d55ca0db043e3a7131a56f123e1d98aa5b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39382911"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48236150"
 ---
 # <a name="infrastructure-requirements-for-os-deployment-in-configuration-manager"></a>Requisitos de infraestrutura para implantação de sistema operacional no Configuration Manager
 
@@ -33,21 +33,6 @@ Esta seção fornece informações sobre ferramentas externas, kits de instalaç
 
 O Windows ADK (Kit de Avaliação e Implantação) é um conjunto de ferramentas e documentação que dá suporte à configuração e implantação do Windows. O Configuration Manager usa o Windows ADK para automatizar ações como instalação do Windows, captura de imagens e migração de dados e perfis de usuário.  
 
-Os seguintes recursos do Windows ADK devem ser instalados no servidor do site de nível superior da hierarquia, no servidor de cada site primário da hierarquia e no servidor do sistema de sites do Provedor de SMS:  
-
--   USMT (Ferramenta de Migração do Usuário) <sup>1</sup>  
-
--   Windows Deployment Tools  
-
--   Ambiente de Pré-Instalação do Windows (Windows PE)  
-
-Para obter uma lista das versões do Windows 10 ADK que podem ser usadas com diferentes versões do Configuration Manager, consulte [Suporte para o Windows 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk).
-
- <sup>1</sup> A USMT não é obrigatória no servidor do sistema de sites do Provedor de SMS.  
-
-> [!NOTE]  
->  É necessário instalar manualmente o Windows ADK em cada servidor do site antes de instalar o site do Configuration Manager.  
-
 Para obter mais informações, consulte os seguintes artigos:  
 
 - [Cenários do Windows ADK para Windows 10 para Profissionais de TI](https://docs.microsoft.com/windows/deployment/windows-adk-scenarios-for-it-pros)  
@@ -55,6 +40,37 @@ Para obter mais informações, consulte os seguintes artigos:
 - [Baixar o Windows ADK para Windows 10](https://docs.microsoft.com/windows-hardware/get-started/adk-install)  
 
 - [Suporte para Windows 10](/sccm/core/plan-design/configs/support-for-windows-10)  
+
+
+#### <a name="site-systems"></a>Sistema de sites
+O Windows ADK é um pré-requisito para os seguintes servidores de sistemas de site:
+
+- O servidor do site de nível superior na hierarquia  
+
+- O servidor do site de cada site primário na hierarquia  
+
+- Cada instância do Provedor de SMS  
+
+
+> [!NOTE]  
+> Instale manualmente o Windows ADK em cada servidor do site antes de instalar o site do Configuration Manager.  
+
+#### <a name="windows-adk-features"></a>Recursos do Windows ADK
+Instale os recursos a seguir do Windows ADK:  
+
+-   USMT (Ferramenta de Migração do Usuário)  
+
+    > [!Note]  
+    > A USMT não é obrigatória no Provedor de SMS.
+
+-   Windows Deployment Tools  
+
+-   Ambiente de Pré-Instalação do Windows (Windows PE)  
+
+    > [!Important]  
+    > Começando com o Windows 10 versão 1809, o Windows PE é um instalador separado. Caso contrário, não há diferença funcional.<!--SCCMDocs-pr issue 2908-->  
+
+Para obter uma lista das versões do Windows 10 ADK que podem ser usadas com diferentes versões do Configuration Manager, confira [Suporte para o Windows 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk).
 
 
 ### <a name="user-state-migration-tool-usmt"></a>USMT (Ferramenta de Migração do Usuário)  
@@ -113,7 +129,7 @@ Para obter mais informações sobre as versões do sistema operacional e as conf
 
 ### <a name="windows-device-drivers"></a>Drivers de dispositivos Windows  
 
-Os drivers de dispositivo do Windows podem ser usados durante a instalação do sistema operacional no computador de destino. Eles também são usados durante a execução do Windows PE em uma imagem de inicialização. Para mais informações, consulte [Manage drivers (Gerenciar drivers)](/sccm/osd/get-started/manage-drivers).  
+Os drivers de dispositivo do Windows podem ser usados durante a instalação do sistema operacional no computador de destino. Eles também são usados quando você executa o Windows PE em uma imagem de inicialização. Para mais informações, consulte [Manage drivers (Gerenciar drivers)](/sccm/osd/get-started/manage-drivers).  
 
 
 

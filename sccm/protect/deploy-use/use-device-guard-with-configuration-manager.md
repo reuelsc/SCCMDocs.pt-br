@@ -10,12 +10,12 @@ ms.assetid: 5e5d854c-9cc1-4dd8-b33f-0fcac675b395
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3750e91d96c1ca3eda1ad0ca2fc67b5f627c7a03
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 2ccc918bf5f15798c201ed491dd3824bb20b2ebb
+ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353545"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48862559"
 ---
 # <a name="device-guard-management-with-configuration-manager"></a>Gerenciamento de Proteção do Dispositivo com Configuration Manager
 
@@ -148,7 +148,7 @@ Nesta situação, o software pode continuar tendo permissão para ser executado 
 - Não implante uma política com **Imposição Habilitada**, então, implante uma política com **Somente Auditoria** no mesmo dispositivo. Essa configuração pode resultar em um software não confiável com permissão para ser executado.
 - Quando você usa o Configuration Manager para habilitar o Controle de Aplicativos do Windows Defender em computadores cliente, a política não impede que os usuários com direitos de administrador local desviem das políticas do Controle de Aplicativos ou executem um software não confiável. 
 - A única maneira de impedir que os usuários com direitos de administrador local desabilitem o Controle de Aplicativos é implantar uma política binária assinada. Essa implantação é possível por meio da Política de Grupo, mas não tem suporte no momento no Configuration Manager.
-- A configuração do Configuration Manager como um Instalador Gerenciado nos PCs clientes usa a política AppLocker. A AppLocker é usada somente para identificar os Instaladores Gerenciados e toda a imposição acontece com o Aplicativo. 
+- A configuração do Configuration Manager como um Instalador Gerenciado nos PCs clientes usa a política AppLocker. A AppLocker é usada somente para identificar os Instaladores Gerenciados e toda a imposição acontece com o Controle de Aplicativo do Windows Defender. 
 
 
 
