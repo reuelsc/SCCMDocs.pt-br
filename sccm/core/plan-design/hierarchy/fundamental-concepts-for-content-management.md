@@ -10,12 +10,12 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a8f4d93c7bfa73b04ed2c760db17b27e8f1f6de2
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 5c3af900bae26262ba402ea258b8859ba07b999b
+ms.sourcegitcommit: 4f05517f7b284696a492a1b184cc5f25c5cda5e6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385245"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48891207"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Conceitos fundamentais para o gerenciamento de conteúdo no Configuration Manager
 
@@ -146,11 +146,9 @@ Quando um cliente precisa de conteúdo, ele faz uma solicitação de local de co
 1.  O ponto de distribuição no mesmo computador que o cliente
 2.  Uma fonte par na mesma sub-rede da rede
 3.  Um ponto de distribuição na mesma sub-rede da rede
-4.  Uma fonte par no mesmo site do Active Directory
-5.  Um ponto de distribuição no mesmo site do Active Directory
-6.  Uma fonte par no mesmo grupo de limites
-7.  Um ponto de distribuição no grupo de limites atual
-8.  Um ponto de distribuição em um grupo de limites vizinho configurado para fallback
+4.  Uma fonte par no mesmo grupo de limites
+5.  Um ponto de distribuição no grupo de limites atual
+6.  Um ponto de distribuição em um grupo de limites vizinho configurado para fallback
 9.  Um ponto de distribuição no grupo de limites do site padrão 
 10. O serviço de nuvem do Windows Update
 11. Um ponto de distribuição para Internet
