@@ -10,12 +10,12 @@ ms.assetid: 868049d3-3209-47ec-b34a-9cc26941893a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6ba7adf52ce084d640bf53aef32678576d5828f5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 12dd7a4d806a82e3c55898e249d1caa2a6ffb508
+ms.sourcegitcommit: 19fc4f27667d51502fc9d7d02d164f2837d65dae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340192"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49461283"
 ---
 # <a name="how-to-create-queries-in-system-center-configuration-manager"></a>Como criar consultas no System Center Configuration Manager
 
@@ -30,7 +30,7 @@ Você pode usar este tópico para ajudar a criar ou a importar consultas no Syst
 
 1.  No console do Configuration Manager, escolha **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento**, escolha **Consultas**. Em seguida, na guia **Início**, no grupo **Criar**, escolha **Criar Consulta**.  
+2.  No workspace **Monitoramento**, escolha **Consultas**. Em seguida, na guia **Início**, no grupo **Criar**, escolha **Criar Consulta**.  
 
 3.  Na guia **Geral** do **Assistente para Criar Consulta**, especifique um nome exclusivo e um comentário opcional para a consulta.  
 
@@ -75,7 +75,7 @@ Você pode usar este tópico para ajudar a criar ou a importar consultas no Syst
 
 11. Na guia **Geral** do **Assistente para Criar Consulta**, especifique se os resultados dessa consulta não são limitados aos membros de uma coleção, se são limitados aos membros de uma coleção especificada ou se indicam uma coleção sempre que a consulta é executada.  
 
-12. Conclua o assistente para criar a consulta. A nova consulta é exibida no nó **Consultas** do espaço de trabalho **Monitoramento** .  
+12. Conclua o assistente para criar a consulta. A nova consulta é exibida no nó **Consultas** do workspace **Monitoramento**.  
 
 ##  <a name="BKMK_Import"></a> Como importar consultas  
  Use este procedimento para ajudar a importar uma consulta para o Configuration Manager. Para obter informações sobre como exportar consultas, consulte [Como gerenciar consultas no System Center Configuration Manager](../../../core/servers/manage/manage-queries.md).  
@@ -84,11 +84,11 @@ Você pode usar este tópico para ajudar a criar ou a importar consultas no Syst
 
 1.  No console do Configuration Manager, escolha **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento**, escolha **Consultas**. Na guia **Início**, no grupo **Criar**, escolha **Importar Objetos**.  
+2.  No workspace **Monitoramento**, escolha **Consultas**. Na guia **Início**, no grupo **Criar**, escolha **Importar Objetos**.  
 
 3.  Na página **Nome do Arquivo MOF** do **Assistente para Importar Objetos**, escolha **Procurar** para selecionar o arquivo MOF (Managed Object Format) que contém a consulta que você deseja importar.  
 
-4.  Reveja as informações sobre a consulta a ser importadas e conclua o assistente. A nova consulta é exibida no nó **Consultas** do espaço de trabalho **Monitoramento**.  
+4.  Reveja as informações sobre a consulta a ser importadas e conclua o assistente. A nova consulta é exibida no nó **Consultas** do workspace **Monitoramento**.  
 
 ##  <a name="BKMK_Example"></a> Example WQL queries
 
@@ -113,7 +113,7 @@ SMS_R_System.OperatingSystemNameandVersion like "%Workstation 6.1%"
 
 ### <a name="computers-with-a-specific-software-package-installed"></a>Computadores com um pacote de software específico instalado  
 
-Use a consulta a seguir para retornar o nome NetBIOS e o nome do pacote de software de todos os computadores que têm um pacote de software específico instalado. Este exemplo exibe todos os computadores com uma versão do Microsoft Visio instalada. Substitua `%Visio%` pelo pacote de software que você deseja consultar.  
+Use a consulta a seguir para retornar o nome NetBIOS e o nome do pacote de software de todos os computadores que têm um pacote de software específico instalado. Este exemplo exibe todos os computadores com uma versão do Microsoft Visio instalada. Substitua `Microsoft%Visio%` pelo pacote de software que você deseja consultar.  
 
 > [!TIP]  
 > Essa consulta pesquisa o pacote de software usando os nomes que são exibidos na lista de programas no Painel de Controle do Windows.  
@@ -124,7 +124,7 @@ SMS_G_System_ADD_REMOVE_PROGRAMS.DisplayName from
 SMS_R_System inner join SMS_G_System_ADD_REMOVE_PROGRAMS on   
 SMS_G_System_ADD_REMOVE_PROGRAMS.ResourceId =   
 SMS_R_System.ResourceId where   
-SMS_G_System_ADD_REMOVE_PROGRAMS.DisplayName like "%Visio%"  
+SMS_G_System_ADD_REMOVE_PROGRAMS.DisplayName like "Microsoft%Visio%"  
 ```  
 
 ### <a name="computers-that-are-in-a-specific-active-directory-domain-services-organizational-unit"></a>Computadores que estão em uma unidade organizacional específica dos Serviços de Domínio do Active Directory
