@@ -31,13 +31,13 @@ Localize a biblioteca de documentação para a versão do produto que você usa:
 
 -   [Start using System Center Configuration Manager](https://technet.microsoft.com/library/mt608544.aspx)  
 
--   [Manage enterprise operating systems with System Center Configuration Manager](https://technet.microsoft.com/library/mt627933.aspx)  
+-   [Gerenciar sistemas operacionais de empresa com o System Center Configuration Manager](https://technet.microsoft.com/library/mt627933.aspx)  
 
--   [Deploy and manage applications with System Center Configuration Manager](https://technet.microsoft.com/library/mt627959.aspx)  
+-   [Implantar e gerenciar aplicativos com o System Center Configuration Manager](https://technet.microsoft.com/library/mt627959.aspx)  
 
--   [Deploy and manage software updates in System Center Configuration Manager](https://technet.microsoft.com/library/mt634340.aspx)  
+-   [Implantar e gerenciar atualizações de software no System Center Configuration Manager](https://technet.microsoft.com/library/mt634340.aspx)  
 
--   [Ensure device compliance with System Center Configuration Manager](https://technet.microsoft.com/library/mt595717.aspx)  
+-   [Garantir a conformidade do dispositivo com o System Center Configuration Manager](https://technet.microsoft.com/library/mt595717.aspx)  
 
 -   [Protect data and site infrastructure with System Center Configuration Manager](https://technet.microsoft.com/library/mt613161.aspx)  
 
