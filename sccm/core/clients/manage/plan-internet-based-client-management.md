@@ -10,12 +10,12 @@ ms.assetid: 83a7c934-3b11-435d-ba22-cbc274951e83
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f31a221151239b6a72a750652731dca7e4557649
-ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
+ms.openlocfilehash: aaa033fb64c3b525eff3ca54537df6dcdf773502
+ms.sourcegitcommit: dfb2cb01c1608b848f2f2fee7c84500e7adcb7a4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "42584734"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49101255"
 ---
 # <a name="plan-for-internet-based-client-management-in-system-center-configuration-manager"></a>Planejar o gerenciamento de clientes baseados na Internet no System Center Configuration Manager
 
@@ -47,6 +47,9 @@ O gerenciamento de clientes baseado na Internet (às vezes chamado de IBCM) perm
  Além disso, o gerenciamento de clientes baseado na Internet não oferece suporte a roaming. O roaming permite que os clientes sempre localizem os pontos de distribuição mais próximos para baixar conteúdo. Clientes que são gerenciados na Internet comunicam-se com sistemas de site por meio de seu site atribuído quando esses sistemas são configurados para usar um FQDN de Internet e as funções do sistema de site permitem conexões do cliente por meio da Internet. Clientes, de forma não determinista, selecionam um dos sistemas de áreas baseados na Internet, independentemente da largura de banda ou local físico.  
 
  Quando você tem um ponto de atualização de software configurado para aceitar conexões da Internet, os clientes baseados na Internet do Configuration Manager sempre são verificados em relação a esse ponto de atualização de software, para determinar quais atualizações de software são necessárias. No entanto, quando esses clientes estão na Internet, primeiro tentam baixar as atualizações de software do Microsoft Update, em vez de fazer isso de um ponto de distribuição baseado na Internet. Somente se isso falhar, eles tentarão baixar as atualizações de software necessárias de um ponto de distribuição baseado na Internet. Clientes que não estão configurados para gerenciamento de clientes baseado na Internet nunca tentam baixar atualizações de software do Microsoft Update, mas sempre usam os pontos de distribuição do Configuration Manager.  
+ 
+[!Tip]  
+O cliente do Configuration Manager determina automaticamente se ele está na intranet ou na Internet. Se o cliente pode contatar um controlador de domínio ou um ponto de gerenciamento local, ele define seu tipo de conexão como Atualmente intranet. Caso contrário, ele alterna para Atualmente Internet, e o cliente usa os pontos de gerenciamento, pontos de atualização de software e pontos de distribuição atribuídos ao site para comunicação.
 
 ##  <a name="considerations-for-client-communications-from-the-internet-or-untrusted-forest"></a>Considerações sobre a comunicação do cliente da Internet ou de uma floresta não confiável  
  As seguintes funções de sistema de site instaladas em sites primários oferecem suporte a conexões de clientes que estão em locais não confiáveis, como a Internet ou uma floresta não confiável (sites secundários não oferecem suporte a conexões de clientes em locais não confiáveis):  

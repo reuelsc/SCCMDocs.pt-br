@@ -10,12 +10,12 @@ ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1faabd64d11eeef8e825f22f7f661112813f5459
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.openlocfilehash: e0051b00f9c9540291db94c79a81c600c87ad59c
+ms.sourcegitcommit: 4f05517f7b284696a492a1b184cc5f25c5cda5e6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "34474302"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48891190"
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usar a ferramenta de conexão de serviço do System Center Configuration Manager
 
@@ -95,7 +95,7 @@ A partir da versão 1606, ao se conectar à Microsoft, você pode carregar vári
 
 #### <a name="to-specify-a-proxy-server"></a>Para especificar um servidor proxy
 Você pode usar os seguintes parâmetros opcionais para especificar um servidor proxy (mais informações sobre como usar esses parâmetros estão disponíveis na seção Parâmetros de linha de comando neste tópico):
-  - **-proxyserveruri [FQDN_do_servidor_proxy]**  Use este parâmetro para especificar o servidor proxy a ser usado para esta conexão.
+  - **-proxyserveruri [FQDN_do_servidor_proxy]** Use este parâmetro para especificar o servidor proxy a ser usado para esta conexão.
   -  **-proxyusername [nome de usuário]**  Use este parâmetro quando precisar especificar um usuário para o servidor proxy.
 
 #### <a name="specify-the-type-of-updates-to-download"></a>Especifique o tipo de atualizações a serem baixadas

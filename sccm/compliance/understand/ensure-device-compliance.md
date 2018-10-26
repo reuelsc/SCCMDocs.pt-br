@@ -10,12 +10,12 @@ ms.assetid: 7568c9aa-b99e-4466-bfc8-0301aa376930
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 42b3925fa94ae1672e4241a3cddc66cdc1774aaf
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 081e485211e3bb5b2b0d8e6a9606c4037c29d4e3
+ms.sourcegitcommit: 2deba3d3aaba47a532273bcd377da8e60f7b1a68
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333052"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49169593"
 ---
 # <a name="ensure-device-compliance-with-system-center-configuration-manager"></a>Ensure device compliance with System Center Configuration Manager
 
@@ -44,7 +44,7 @@ As configurações de conformidade do System Center Configuration Manager fornec
  [Introdução às configurações de conformidade](../../compliance/get-started/get-started-with-compliance-settings.md)  
 
 ## <a name="plan-and-design"></a>Plano e design  
- Antes de começar a trabalhar com as configurações de conformidade, certifique-se de que você implementou os pré-requisitos necessários que você encontrará neste tópico.  
+ Antes de começar a trabalhar com as configurações de conformidade, verifique se você implementou os pré-requisitos necessários que você encontrará neste tópico.  
 
  [Planejar e definir as configurações de conformidade](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)  
 
@@ -54,12 +54,12 @@ As configurações de conformidade do System Center Configuration Manager fornec
  [Tarefas comuns para gerenciar a conformidade](../../compliance/plan-design/common-tasks-for-managing-compliance.md)  
 
 ## <a name="remote-connection-profiles"></a>Perfis de conexão remota  
- Esse tipo de item de configuração permite configurar os computadores de seus usuários para se conectarem remotamente a computadores de trabalho quando não estiverem conectados ao domínio ou se seus computadores pessoais estiverem conectados pela Internet.  
+ Esse tipo de item de configuração permite configurar os computadores de seus usuários para se conectarem remotamente a computadores de trabalho quando não estiverem conectados ao domínio ou se os computadores pessoais estiverem conectados pela Internet.  
 
  [Criar perfis de conexão remota](/sccm/compliance/deploy-use/create-remote-connection-profiles)  
 
 ## <a name="user-data-and-profiles"></a>Perfis e dados do usuário  
- O tipo de item de configuração contém configurações que podem gerenciar o redirecionamento de pasta, arquivos offline e perfis móveis em computadores que executam o Windows 8 e posterior para usuários em sua hierarquia.  
+ Este tipo de item de configuração contém configurações que podem gerenciar o redirecionamento de pasta, arquivos offline e perfis móveis em computadores que executam o Windows 8 e posterior para usuários em sua hierarquia.  
 
  [Criar itens de configuração de perfis e dados de usuário](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items)  
 
