@@ -10,12 +10,12 @@ ms.assetid: 463ce307-59dd-4abd-87b8-42ca9db178d7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 793ba0f05c7a188a6bda9649c9d25922ce27d42c
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: f936cf1c1317940f28691863eafdb4aa883fc1cb
+ms.sourcegitcommit: aa91f0d376de03b614b70d5fc513cb384ff58db4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862457"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50216907"
 ---
 # <a name="using-the-system-center-configuration-manager-console"></a>Uso do console do System Center Configuration Manager
 
@@ -35,28 +35,28 @@ O console conecta-se ao seu servidor do site de administração central ou aos s
 ## <a name="navigate-the-console"></a>Navegar no console
 Algumas opções no console podem não estar visíveis, dependendo da sua função de segurança atribuída. Para obter mais informações sobre funções, veja [Fundamentos da administração baseada em funções](../../understand/fundamentals-of-role-based-administration.md). 
 
-### <a name="workspaces"></a>Espaços de trabalho
-O console do Configuration Manager tem quatro **espaços de trabalho**: 
+### <a name="workspaces"></a>Workspaces
+O console do Configuration Manager tem quatro **workspaces**: 
    - **Ativos e Conformidade**
    - **Biblioteca de Software**
    - **Monitoramento**
    - **Administração**
 
- ![Espaços de trabalho do Configuration Manager](media/configuration-manager-workspaces.png)
+ ![Workspaces do Configuration Manager](media/configuration-manager-workspaces.png)
 
-Reordene os botões de espaço de trabalho clicando na seta para baixo e selecionando **Opções do Painel de Navegação**. Selecione um item para **Mover para Cima** ou **Mover para Baixo**. Clique em **Redefinir** para restaurar a ordem de botões padrão. 
+Reordene os botões de workspace clicando na seta para baixo e selecionando **Opções do Painel de Navegação**. Selecione um item para **Mover para Cima** ou **Mover para Baixo**. Clique em **Redefinir** para restaurar a ordem de botões padrão. 
 
- ![Reordenar espaços de trabalho do Configuration Manager](media/navigation-pane-options.png)
+ ![Reordenar workspaces do Configuration Manager](media/navigation-pane-options.png)
 
-Você pode minimizar um botão do espaço de trabalho selecionando **Mostrar Menos Botões**. O último espaço de trabalho na lista de espaços de trabalho é minimizado primeiro. Clicar em um botão minimizado e selecionar **Mostrar Mais Botões** restaura o botão ao seu tamanho original.  
+Você pode minimizar um botão do workspace selecionando **Mostrar Menos Botões**. O último workspace na lista de workspaces é minimizado primeiro. Clicar em um botão minimizado e selecionar **Mostrar Mais Botões** restaura o botão ao seu tamanho original.  
 
-![Espaços de trabalho do Configuration Manager](media/workspace-buttons.png)
+![Workspaces do Configuration Manager](media/workspace-buttons.png)
 
 
 ### <a name="nodes"></a>Nós
-Os espaços de trabalho são uma coleção de **nós**. Um exemplo de um nó é o nó **Grupos de Atualização de Software**. Quando você está em um nó, pode clicar na seta para minimizar o painel de navegação. 
+Os workspaces são uma coleção de **nós**. Um exemplo de um nó é o nó **Grupos de Atualização de Software**. Quando você está em um nó, pode clicar na seta para minimizar o painel de navegação. 
 
-![Espaços de trabalho do Configuration Manager](media/software-update-groups-node.png)
+![Workspaces do Configuration Manager](media/software-update-groups-node.png)
 
 Você pode usar a **barra de navegação** para percorrer o console quando o painel de navegação é minimizado. 
 
@@ -116,5 +116,5 @@ No Configuration Manager versão 1806, as seguintes melhorias do console foram a
 
 ## <a name="next-steps"></a>Próximas etapas
 > [!div class="nextstepaction"]
-> [Recursos de Acessibilidade](/sccm/core/understand/accessibility-features.md)
+> [Recursos de Acessibilidade](../../understand/accessibility-features.md)
 
