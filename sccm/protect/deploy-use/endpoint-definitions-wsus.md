@@ -10,12 +10,12 @@ author: aczechowski
 description: Saiba como configurar o Windows Server Updates Services para aprovação automática de atualizações de definição.
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: b1c79a839ad1c83c96d7fe4583b46f6a3edbffba
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 5aa857141b047fc0f9929ca72041980a8bc8b6a7
+ms.sourcegitcommit: 19fc4f27667d51502fc9d7d02d164f2837d65dae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349850"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49461249"
 ---
 # <a name="enable-endpoint-protection-malware-definitions-to-download-from-windows-server-update-services-wsus-for-configuration-manager"></a>Habilitar o download das definições de malware do Endpoint Protection do WSUS (Windows Server Update Services) para o Configuration Manager
 
@@ -27,7 +27,7 @@ ms.locfileid: "32349850"
 
 1.  No console do Configuration Manager, clique em **Administração**.
 
-2.  No espaço de trabalho **Administração** , expanda **Configuração do Site**e clique em **Sites**.
+2.  No workspace **Administração**, expanda **Configuração do Site** e clique em **Sites**.
 
 3.  Selecione o site que contém o ponto de atualização de software. No grupo **Configurações** , clique em **Configurar Componentes do Site**e clique em **Ponto de Atualização de Software**.
 
@@ -37,7 +37,7 @@ ms.locfileid: "32349850"
 
     -   Para Windows 8.1 e versões anteriores, na guia **Produtos** da caixa de diálogo **Propriedades do Componente de Ponto de Atualização de Software** , marque a caixa de seleção **Forefront Endpoint Protection 2010** .
 
-    -   Para o Windows 10 e posteriores, na guia **Produtos** da caixa de diálogo **Propriedades do Componente de Ponto de Atualização de Software** , marque as caixas de seleção **Windows Defender** e **Windows Technical Preview 2** .
+    -   Para o Windows 10 e posteriores, na guia **Produtos** da caixa de diálogo **Propriedades do Componente de Ponto de Atualização de Software**, marque a caixa de seleção **Windows Defender**.
 
 6.  Clique em **OK** para fechar a caixa de diálogo **Propriedades do Componente de Ponto de Atualização de Software** .
 
@@ -51,7 +51,7 @@ ms.locfileid: "32349850"
 
     -   Para Windows 8.1 e versões anteriores, na guia **Produtos** da caixa de diálogo **Propriedades do Componente de Ponto de Atualização de Software** , marque a caixa de seleção **Forefront Endpoint Protection 2010** .
 
-    -   Para o Windows 10 e posteriores, na guia **Produtos** da caixa de diálogo **Propriedades do Componente de Ponto de Atualização de Software** , marque as caixas de seleção **Windows Defender** e **Windows Technical Preview 2** .
+    -   Para o Windows 10 e posteriores, na guia **Produtos** da caixa de diálogo **Propriedades do Componente de Ponto de Atualização de Software**, marque a caixa de seleção **Windows Defender**.
 
 3.  Na guia **Classificações** da caixa de diálogo **Produtos e Classificações** , marque as caixas de seleção **Atualizações de Definições** e **Atualizações** .
 

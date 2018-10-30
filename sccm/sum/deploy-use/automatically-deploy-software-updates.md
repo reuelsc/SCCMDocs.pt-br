@@ -5,17 +5,17 @@ description: Implante as atualizações de software automaticamente por meio das
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 08/21/2018
+ms.date: 10/02/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
-ms.openlocfilehash: 6c23dc7328e2618d42b70f12bf7df8aa22fddb91
-ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
+ms.openlocfilehash: 01c6de94fd4cb0d05b482c1c05df2f09780db7fd
+ms.sourcegitcommit: 8827ffaea108678da968a3623f072876990c830c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42589019"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49411286"
 ---
 #  <a name="automatically-deploy-software-updates"></a>Implantar atualizações de software automaticamente  
 
@@ -33,7 +33,7 @@ Aprove e implante atualizações de software automaticamente usando uma ADR. Sem
 
 ### <a name="bkmk_adr-process"></a> Processo para criar uma ADR  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Atualizações de Software** e selecione o nó **Regras de Implantação Automática**.  
+1.  No console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Atualizações de Software** e selecione o nó **Regras de Implantação Automática**.  
 
 2.  Na faixa de opções, clique em **Criar Regra de Implantação Automática**.  
 
@@ -72,7 +72,7 @@ Aprove e implante atualizações de software automaticamente usando uma ADR. Sem
 
     -   **Configuração dos termos da licença**: especifique se deseja implantar automaticamente atualizações de software com os termos de licença associados. Algumas atualizações de software incluem termos de licença. Quando você implanta atualizações de software automaticamente, os termos de licença não são exibidos e não há nenhuma opção para aceitá-los. Opte por implantar automaticamente todas as atualizações de software, independentemente de haver termos de licença associados, ou implante apenas as atualizações que não têm termos de licença associados.  
 
-         - Para examinar os termos de licença de uma atualização de software, selecione a atualização de software no nó **Todas as Atualizações de Software** do espaço de trabalho **Biblioteca de Software**. Na faixa de opções, clique em **Examinar Licença**.    
+         - Para examinar os termos de licença de uma atualização de software, selecione a atualização de software no nó **Todas as Atualizações de Software** do workspace **Biblioteca de Software**. Na faixa de opções, clique em **Examinar Licença**.    
 
          - Para encontrar atualizações de software com os termos de licença associados, adicione a coluna **Termos de Licença** ao painel de resultados ano nó **Todas as Atualizações de Software**. Clique no título da coluna para classificar as atualizações de software com os termos de licença.  
 
@@ -150,7 +150,7 @@ Aprove e implante atualizações de software automaticamente usando uma ADR. Sem
 
     - **Comportamento de reavaliação da implantação de atualizações de software na reinicialização**: selecione essa configuração para definir as implantações de atualização de software para que os clientes executem uma verificação de conformidade das atualizações de software imediatamente depois que um cliente instalar atualizações de software e for reiniciado. Essa configuração permite que o cliente verifique se há atualizações adicionais que se tornam aplicáveis depois que o cliente é reiniciado e, em seguida, instala-as durante a mesma janela de manutenção.  
 
-9. Na página **Alertas**, configure como o Configuration Manager gera alertas para essa implantação. Examine os alertas de atualizações de software recentes do Configuration Manager no nó **Atualizações de Software** do espaço de trabalho **Biblioteca de Software**. Se você também estiver usando o System Center Operations Manager, configure seus alertas.  
+9. Na página **Alertas**, configure como o Configuration Manager gera alertas para essa implantação. Examine os alertas de atualizações de software recentes do Configuration Manager no nó **Atualizações de Software** do workspace **Biblioteca de Software**. Se você também estiver usando o System Center Operations Manager, configure seus alertas.  
 
 10. Na página **Configurações de Download**, defina as seguintes configurações:  
 
@@ -222,7 +222,7 @@ Depois de criar uma ADR, adicione mais implantações à regra. Essa ação ajud
 
 ### <a name="process-to-add-a-new-deployment-to-an-existing-adr"></a>Processo para adicionar uma nova implantação a uma ADR existente  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Atualizações de Software**, selecione o nó **Regras de Implantação Automática** e, em seguida, selecione a regra desejada.  
+1.  No console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Atualizações de Software**, selecione o nó **Regras de Implantação Automática** e, em seguida, selecione a regra desejada.  
 
 2.  Na faixa de opções, clique em **Adicionar Implantação**.   
 
@@ -234,9 +234,9 @@ Depois de criar uma ADR, adicione mais implantações à regra. Essa ação ajud
      - Alertas
      - Configurações de download  
 
+Implantações também podem ser adicionadas via programação usando os cmdlets do Windows PowerShell. Confira uma descrição completa sobre o uso desse método em [New-CMSoftwareUpdateDeployment](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmsoftwareupdatedeployment) .
 
 Para obter mais informações sobre o processo de implantação, veja [Software update deployment process](/sccm/sum/understand/software-updates-introduction#BKMK_DeploymentProcess).
-
 
 
 ## <a name="next-steps"></a>Próximas etapas

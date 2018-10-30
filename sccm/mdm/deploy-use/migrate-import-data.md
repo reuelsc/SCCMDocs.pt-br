@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: b552391d-abc0-48a2-a429-93605a13a66a
-ms.openlocfilehash: 89db0abe9a60e6850ae36e619483e0dcdc3e5360
-ms.sourcegitcommit: 316899b08f2ef372993909e08e069f7edfed1d33
+ms.openlocfilehash: 655d7663a6597ce1b13fb26a5340d482be1ba7ed
+ms.sourcegitcommit: 8827ffaea108678da968a3623f072876990c830c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44111137"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49411303"
 ---
 # <a name="import-configuration-manager-data-to-microsoft-intune"></a>Importar dados do Configuration Manager para o Microsoft Intune 
 
@@ -55,6 +55,7 @@ A ferramenta de importação pode coletar informações sobre os seguintes tipos
 - A ferramenta tentará fornecer um motivo pelo qual algum objeto não pode ser importado. Em alguns casos, antes de importar objetos para o Intune, você pode acessar o console do Configuration Manager, corrigir o problema, iniciar a verificação de descoberta de objetos do Configuration Manager novamente e, em seguida, importar os objetos. Às vezes, pode ser necessário ou você pode querer recriar esses objetos manualmente no Intune.
 - Há alguns perfis que dependem de outros objetos. Se você quiser importar um perfil que dependa de outro objeto, como um perfil de email que dependa de um certificado, você deverá importar os dois objetos ao mesmo tempo, a menos que tenha importado anteriormente o outro objeto do mesmo computador, com o mesmo usuário.  
 - Depois que você executar a ferramenta, poderá ser necessário executar etapas manuais adicionais. Por exemplo, direcionar aplicativos e políticas para grupos do AAD. 
+- Se algum aplicativo Web (às vezes chamado de clipe Web) tiver sido atribuído a usuários, você deve remover esses aplicativos Web antes de migrar seus usuários e reatribuir os aplicativos Web assim que a migração for concluída. Se isso não for feito, os clipes Web se tornarão não gerenciáveis ​​após a migração.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 - Configuration Manager versão 1610 ou posterior – é recomendável que você especifique o site de nível superior e execute a ferramenta com um usuário que tenha acesso a todos os objetos na hierarquia do site. A ferramenta só descobre os objetos que são acessíveis para o usuário que executa a ferramenta. 

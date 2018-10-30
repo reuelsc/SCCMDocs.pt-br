@@ -10,20 +10,21 @@ ms.assetid: bb95154b-f63e-4491-896e-41d732c802f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9f65c7665d5c055fc2a1636a1c9556b4ff75a4f7
-ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
+ms.openlocfilehash: 22e685889f51f3b35c3ba58e94d161816424b2a3
+ms.sourcegitcommit: dd785ad7146b8491c98ccd7804d0959a5c1fb034
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42584633"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49383007"
 ---
 # <a name="hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>MDM híbrido com o Configuration Manager e o Microsoft Intune
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 > [!Important]  
-> A partir de 14 de agosto de 2018, o gerenciamento híbrido de dispositivos móveis é um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).
-> <!--Intune feature 2683117--> Desde o lançamento no Azure há mais de um ano, o Intune adicionou centenas de novos recursos de serviço solicitados pelo cliente e líderes de mercado. Agora, ele oferece muito mais recursos do que os oferecidos pelo gerenciamento de dispositivos móveis híbrido (MDM). O Intune no Azure oferece uma experiência administrativa mais integrada e simplificada para suas necessidades de mobilidade corporativa.
+> O gerenciamento híbrido de dispositivos móveis é um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures) desde 14 de agosto de 2018.
+> <!--Intune feature 2683117-->  
+> Desde o lançamento no Azure há mais de um ano, o Intune adicionou centenas de novos recursos de serviço solicitados pelo cliente e líderes de mercado. Agora, ele oferece muito mais recursos do que os oferecidos pelo gerenciamento de dispositivos móveis híbrido (MDM). O Intune no Azure oferece uma experiência administrativa mais integrada e simplificada para suas necessidades de mobilidade corporativa.
 > 
 > Como resultado, a maioria dos clientes escolhe o Intune no Azure ao invés do MDM híbrido. A quantidade de clientes que usa o MDM híbrido continua a diminuir à medida que mais clientes migram para a nuvem. Portanto, em 1º de setembro de 2019, a Microsoft aposentará a oferta de serviço do MDM híbrido. Planeje sua [migração para o Intune no Azure](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa) para suas necessidades de MDM. 
 > 
