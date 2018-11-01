@@ -133,8 +133,6 @@ items:
         href: plan-design/hierarchy/manage-content-library-flowchart.md
       - name: Ferramenta de limpeza da biblioteca de conteúdo
         href: plan-design/hierarchy/content-library-cleanup-tool.md
-      - name: Gerenciar contas para acessar o conteúdo
-        href: plan-design/hierarchy/manage-accounts-to-access-content.md
       - name: Cache de pares para clientes do Configuration Manager
         href: plan-design/hierarchy/client-peer-cache.md
       - name: Gerenciador de transferência de pacote
@@ -362,6 +360,8 @@ items:
       href: plan-design/hierarchy/accounts.md
     - name: Comunicação entre pontos de extremidade
       href: plan-design/hierarchy/communications-between-endpoints.md
+    - name: Sistemas de sites de HTTP aprimorado
+      href: plan-design/hierarchy/enhanced-http.md
     - name: Ferramenta de manutenção de hierarquia
       href: servers/manage/hierarchy-maintenance-tool-preinst.exe.md
     - name: Suporte internacional
@@ -745,9 +745,9 @@ items:
       href: clients/manage/upgrade/upgrade-clients-for-linux-and-unix-servers.md
     - name: Atualizar clientes Mac
       href: clients/manage/upgrade/upgrade-clients-on-mac-computers.md
-ms.openlocfilehash: b92780c4012bde570aec2c74d3803a0e81065119
-ms.sourcegitcommit: 73dbd2146bd581a1b668b22b84b7cda68a487d05
+ms.openlocfilehash: 3b0eef7092583e2b5558e324069cbb48fbefe17b
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49390608"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411350"
