@@ -10,12 +10,12 @@ ms.assetid: abd45393-d84e-4583-bc80-74bbb3709577
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ec8989a2e7b71d09198e03f2e263364bebc6b169
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a17bb43d91d26cf10da0e1d3da5d8f6e4a2af2a7
+ms.sourcegitcommit: 5b3ff56018cfc6bda9643c9f1bebc575173f61bc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344153"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50083778"
 ---
 # <a name="considerations-for-managing-system-center-configuration-manager-clients--in-a-virtual-desktop-infrastructure-vdi"></a>Considerações para gerenciar clientes do System Center Configuration Manager em uma VDI (Virtual Desktop Infrastructure)
 
@@ -42,4 +42,4 @@ O System Center Configuration Manager dá suporte à instalação de cliente do 
 > [!NOTE]  
 >  Com exceção de clientes Windows Embedded em modo de manutenção, os clientes do Configuration Manager que não são executados em ambientes virtualizados também usam esse atraso aleatório. Quando você têm muitos clientes implantados, esse comportamento ajuda a evitar picos na largura de banda de rede e reduz o requisito de processamento da CPU nos sistemas de site do Configuration Manager, como o ponto de gerenciamento e o servidor do site. O intervalo de atraso varia de acordo com a capacidade do Configuration Manager.  
 >   
->  O atraso aleatório é desabilitado por padrão para atualizações de software e implantações de aplicativos necessárias usando a seguinte configuração do cliente: **Agente de Computador**: **Desabilitar data limite aleatória**.
+>  O atraso aleatório é desabilitado por padrão para atualizações de software necessárias usando a seguinte configuração do cliente: **Agente de Computador**: **Desabilitar data limite aleatória**.

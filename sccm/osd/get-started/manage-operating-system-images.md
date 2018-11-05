@@ -10,12 +10,12 @@ ms.assetid: fab13949-371c-4a4c-978e-471db1e54966
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3b0931671c05604a0115c14a5e7fc5d9c6767b7c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 82909cced6783f73608f155e64b7dd30b4087b06
+ms.sourcegitcommit: a52255da16c9f8b0b60a6c299a369347c7e01bef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350095"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49989154"
 ---
 # <a name="manage-operating-system-images-with-system-center-configuration-manager"></a>Gerenciar imagens do sistema operacional com o System Center Configuration Manager
 
@@ -58,7 +58,7 @@ Para as etapas de criação de uma imagem personalizada do sistema operacional, 
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Imagens do Sistema Operacional**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Imagens do Sistema Operacional**.  
 
 3.  Na guia **Início** , no grupo **Criar** , clique em **Adicionar Imagem do Sistema Operacional** para iniciar o Assistente para Adicionar Imagem do Sistema Operacional.  
 
@@ -90,7 +90,7 @@ Para as etapas de criação de uma imagem personalizada do sistema operacional, 
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Imagens do Sistema Operacional**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Imagens do Sistema Operacional**.  
 
 3.  Selecione a imagem do sistema operacional a qual deseja aplicar atualizações de software.  
 
@@ -110,6 +110,9 @@ Para as etapas de criação de uma imagem personalizada do sistema operacional, 
 
 8.  Na página **Conclusão** , verifique se as atualizações de software foram aplicadas com êxito à imagem do sistema operacional.  
 
+> [!NOTE]  
+>  Para minimizar o tamanho do conteúdo, a manutenção dos pacotes de atualização do sistema operacional e das imagens do sistema operacional remove a versão mais antiga.  
+
 ##  <a name="BKMK_OSImageMulticast"></a> Preparar a imagem do sistema operacional para implantações multicast  
  Use implantações multicast para permitir que vários computadores baixem simultaneamente uma imagem do sistema operacional. A imagem é difundida via multicast para clientes pelo ponto de distribuição, em vez de o ponto de distribuição enviar uma cópia da imagem para cada cliente por uma conexão separada. Ao escolher o método de implantação de sistema operacional como [Usar o multicast para implantar o Windows pela rede](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md), é necessário configurar o pacote da imagem do sistema operacional para dar suporte a multicast antes de distribuir a imagem do sistema operacional para um ponto de distribuição habilitado para multicast. Use o procedimento a seguir para configurar as opções de multicast para um pacote de imagens do sistema operacional existente.  
 
@@ -117,7 +120,7 @@ Para as etapas de criação de uma imagem personalizada do sistema operacional, 
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Imagens do Sistema Operacional**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Imagens do Sistema Operacional**.  
 
 3.  Selecione a imagem do sistema operacional que deseja distribuir para o ponto de distribuição habilitado para multicast.  
 

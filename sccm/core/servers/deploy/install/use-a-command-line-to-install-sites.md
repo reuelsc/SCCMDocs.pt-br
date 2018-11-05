@@ -10,12 +10,12 @@ ms.assetid: e7cdb1a9-140a-436e-ac71-72d083110223
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3df559dc151950834aab4d909811cb42ec4822d0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 4a6c989b1eabe47f3360ceec660d5eba32811d60
+ms.sourcegitcommit: ee434c53b3695a039b56298082b6f61f1006d9dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338934"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49943284"
 ---
 # <a name="use-a-command-line-to-install-system-center-configuration-manager-sites"></a>Usar a linha de comando para instalar sites do System Center Configuration Manager
 
@@ -84,7 +84,7 @@ Quando você usa mídia da pasta CD.Latest para executar uma instalação com sc
 - Recuperar um site de administração central
 - Recuperar um site primário
 
-Esse valor não é suportado para uso com mídia de instalação que você obtém do site de Licenciamento por Volume da Microsoft.
+Não há suporte para esse para uso com mídia de instalação que você obtém do site de Licença de Volume da Microsoft.
 Veja as [opções de linha de comando](/sccm/core/servers/deploy/install/command-line-options-for-setup) para obter informações sobre como usar esse nome de chave no arquivo de script.
 
 

@@ -10,18 +10,18 @@ ms.assetid: f504de3e-4caf-455c-80d7-a63f13f4c5d9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 78afa39b173abc79c4ed1cadc79f41ab32150ecf
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: 626c52b827e38a53ed3b8982963496f29f11acb5
+ms.sourcegitcommit: 5b3ff56018cfc6bda9643c9f1bebc575173f61bc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862355"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50083761"
 ---
 #  <a name="configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Configurar alertas para o Endpoint Protection no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
- É possível configurar alertas do Endpoint Protection no Microsoft System Center Configuration Manager para notificar os usuários administrativos quando ocorrem eventos específicos, como uma infecção por malware, em sua hierarquia. As notificações são exibidas no painel do Endpoint Protection no console do Configuration Manager no nó **Alertas** do espaço de trabalho **Monitoramento** ou podem ser enviadas por email para os usuários especificados.
+ É possível configurar alertas do Endpoint Protection no Microsoft System Center Configuration Manager para notificar os usuários administrativos quando ocorrem eventos específicos, como uma infecção por malware, em sua hierarquia. As notificações são exibidas no painel do Endpoint Protection no console do Configuration Manager no nó **Alertas** do workspace **Monitoramento** ou podem ser enviadas por email para os usuários especificados.
 
  Use as seguintes etapas e os procedimentos complementares neste tópico para configurar alertas para o Endpoint Protection no Configuration Manager.
 
@@ -32,19 +32,19 @@ ms.locfileid: "48862355"
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.
 
-2.  No espaço de trabalho **Ativos e Conformidade** , clique em **Coleções de Dispositivos**.
+2.  No workspace **Ativos e Conformidade**, clique em **Coleções de Dispositivos**.
 
 3.  Na lista **Coleções de Dispositivos** , selecione a coleção para a qual deseja configurar alertas e, na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.
 
     > [!NOTE]
     >  Você não pode configurar alertas para coleções de usuário.
 
-4.  Na guia **Alertas** da caixa de diálogo ****Propriedades do <nome da coleção\>*, selecione **Exibir esta coleção no painel do Endpoint Protection** se você desejar ver detalhes sobre operações antimalware para esta coleção no espaço de trabalho **Monitoramento** do console do Configuration Manager.
+4.  Na guia **Alertas** da caixa de diálogo _<Nome da Coleção\>_ **Propriedades**, selecione **Exibir esta coleção no painel do Endpoint Protection** se você desejar exibir detalhes sobre operações antimalware para esta coleção no workspace **Monitoramento** do console do Configuration Manager.
 
     > [!NOTE]
     >  Essa opção não está disponível para a coleção **Todos os Sistemas** .
 
-5.  Na guia **Alertas** da caixa de diálogo ****Propriedades do <nome da Coleção\>*, clique em **Adicionar**.
+5.  Na guia **Alertas** da caixa de diálogo _<Nome da Coleção\>_ **Propriedades**, clique em **Adicionar**.
 
 6.  Na caixa de diálogo **Adicionar Novos Alertas da Coleção**, na seção **Gerar um alerta quando estas condições se aplicarem**, selecione os alertas que você deseja que o Configuration Manager gere quando os eventos especificados do Endpoint Protection ocorrerem e clique em **OK**.
 
@@ -83,11 +83,11 @@ ms.locfileid: "48862355"
 
         -   **Intervalo de detecção (horas):** especifique o intervalo de detecção, em horas, no qual o número de detecções de malware deve ocorrer. Especifique um número de **1** a **168**.
 
-9. Clique em **OK** para fechar a caixa de diálogo ****Propriedades do \><nome da coleção*.  
+9. Clique em **OK** para fechar a caixa de diálogo _<Nome da Coleção\>_ **Propriedades**.  
 
 ## <a name="alert-for-outdated-malware-client"></a>Alerta de cliente de malware desatualizado
 
-A partir do Configuration Manager versão 1702, você poderá configurar um alerta para garantir que os clientes do Endpoint Protection não estejam desatualizados. Em qualquer coleção de dispositivos, agora é possível adicionar colunas à lista dos seguintes atributos **Versão do cliente antimalware** e **Estado de implantação da proteção do Endpoint Protection**. Por exemplo, no console, navegue até **Ativos e Conformidade** > **Visão geral** > **Coleções de dispositivos** > **Todos os clientes de servidor e desktop**. Clique com o botão direito do mouse no cabeçalho da coluna e selecione as colunas a serem adicionadas. Para verificar se há um alerta, exiba **Alertas** no espaço de trabalho **Monitoramento**. Se mais de 20% dos clientes gerenciados estiver executando uma versão expirada do software antimalware, o alerta de que o cliente antimalware está desatualizado será exibido. Esse alerta não aparece na guia **Monitoramento** > **Visão Geral**. Para atualizar clientes antimalware expirados, habilite as atualizações de software para clientes antimalware.
+A partir do Configuration Manager versão 1702, você poderá configurar um alerta para garantir que os clientes do Endpoint Protection não estejam desatualizados. Em qualquer coleção de dispositivos, agora é possível adicionar colunas à lista dos seguintes atributos **Versão do cliente antimalware** e **Estado de implantação da proteção do Endpoint Protection**. Por exemplo, no console, navegue até **Ativos e Conformidade** > **Visão geral** > **Coleções de dispositivos** > **Todos os clientes de servidor e desktop**. Clique com o botão direito do mouse no cabeçalho da coluna e selecione as colunas a serem adicionadas. Para verificar se há um alerta, exiba **Alertas** no workspace **Monitoramento**. Se mais de 20% dos clientes gerenciados estiver executando uma versão expirada do software antimalware, o alerta de que o cliente antimalware está desatualizado será exibido. Esse alerta não aparece na guia **Monitoramento** > **Visão Geral**. Para atualizar clientes antimalware expirados, habilite as atualizações de software para clientes antimalware.
 
 Para configurar o percentual em que o alerta é gerado, expanda **Monitoramento** > **Alertas** > **Todos os Alertas**, clique duas vezes em **Clientes antimalware desatualizados** e modifique a opção **Acionar alerta se o percentual de clientes gerenciados com uma versão desatualizada do cliente antimalware for de mais de**.
 

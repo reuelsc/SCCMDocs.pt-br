@@ -10,12 +10,12 @@ ms.assetid: da5f8b61-2386-4530-ad54-1a5c51911f07
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4c6069f81c9a5d086ef7c3ed13312d4f878d524a
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 1efd4197e63ddc12c0afc9e37b633c38d0df0f14
+ms.sourcegitcommit: a52255da16c9f8b0b60a6c299a369347c7e01bef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384084"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49989137"
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-configuration-manager"></a>Usar o PXE para implantar o Windows pela rede com o Configuration Manager
 
@@ -40,7 +40,8 @@ Conclua as etapas de um dos cenários de implantação de sistema operacional e,
 
 Para implantar sistemas operacionais em clientes do Configuration Manager que fazem solicitações de inicialização PXE, você deve configurar um ou mais pontos de distribuição para aceitar solicitações PXE. Depois de configurar o ponto de distribuição, ele responde às solicitações de inicialização PXE e determina a ação de implantação apropriada a ser tomada. Para mais informações, consulte [Instalar ou modificar um ponto de distribuição](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_config-pxe).  
 
-
+> [!NOTE]  
+>  Ao configurar um único ponto de distribuição habilitado para PXE para dar suporte a várias sub-redes, não há suporte para usar opções de DHCP. Configure auxiliares de IP nos roteadores para permitir solicitações PXE sejam encaminhadas para os pontos de distribuição habilitados para PXE.
 
 ## <a name="prepare-a-pxe-enabled-boot-image"></a>Preparar uma imagem de inicialização habilitada para PXE
 

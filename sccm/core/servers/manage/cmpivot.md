@@ -10,12 +10,12 @@ ms.assetid: 32e2d6b9-148f-45e2-8083-98c656473f82
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2e0f74790437b34d1c5cd5dc00767ec782a51b45
-ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
+ms.openlocfilehash: 29b0f577ad291899467d9c6fd305af9ef6b892eb
+ms.sourcegitcommit: 5b3ff56018cfc6bda9643c9f1bebc575173f61bc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47229289"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50083795"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>O CMPivot para dados em tempo real no Configuration Manager
 
@@ -35,7 +35,7 @@ Os seguintes componentes são necessários para usar o CMPivot:
 
 - Atualize os dispositivos de destino para a versão mais recente do cliente do Configuration Manager.  
 
-- O administrador do Configuration Manager precisa da permissão de **Leitura** no objeto **Scripts do SMS** e a permissão **Executar Scripts** no objeto **Coleção**. A função **Executor de Scripts** tem essas permissões. Para saber mais, veja [Funções de segurança para scripts](/sccm/apps/deploy-use/create-deploy-scripts#bkmk_ScriptRoles).  
+- O administrador do Configuration Manager precisa da permissão para **Ler** no objeto **Scripts do SMS** e da permissão para **Executar Scripts** no objeto **Coleção**, além do escopo padrão. A função **Executor de Scripts** tem essas permissões. Para saber mais, veja [Funções de segurança para scripts](/sccm/apps/deploy-use/create-deploy-scripts#bkmk_ScriptRoles).  
 
 - Para coletar dados para as entidades a seguir, os clientes de destino exigem o PowerShell versão 5.0:  
     - Administradores
@@ -63,7 +63,7 @@ Os seguintes componentes são necessários para usar o CMPivot:
 
 ## <a name="start-cmpivot"></a>Iniciar o CMPivot
 
-1. No console do Configuration Manager, conecte-se ao site primário. Vá para o espaço de trabalho **Ativos e Conformidade** e selecione o nó **Coleções de Dispositivos**. Selecione uma coleção de destino e clique em **Iniciar CMPivot** na faixa de opções para iniciar a ferramenta.  
+1. No console do Configuration Manager, conecte-se ao site primário. Vá para o workspace **Ativos e Conformidade** e selecione o nó **Coleções de Dispositivos**. Selecione uma coleção de destino e clique em **Iniciar CMPivot** na faixa de opções para iniciar a ferramenta.  
 
     > [!Tip]  
     > Se você não visualizar essa opção, verifique as seguintes configurações:  

@@ -10,12 +10,12 @@ ms.assetid: b9b22655-b8c1-461f-8047-3a7e906f647a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e323fa8df7d8ae88d6526a5d1777ceb8fa27c2de
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 1caaf1b63a5773e61c3e8d7b500e9d0acfca1010
+ms.sourcegitcommit: a52255da16c9f8b0b60a6c299a369347c7e01bef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353140"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49989120"
 ---
 # <a name="manage-operating-system-upgrade-packages-with-system-center-configuration-manager"></a>Gerenciar pacotes de atualização do sistema operacional com o System Center Configuration Manager
 
@@ -30,7 +30,7 @@ Um pacote de atualização no System Center Configuration Manager contém os arq
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Pacotes de atualização do Sistema Operacional**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Pacotes de atualização do Sistema Operacional**.  
 
 3.  Na guia **Início** , no grupo **Criar** , clique em **Adicionar Pacote de Atualização do Sistema Operacional** para iniciar o Assistente para Adicionar Atualização do Sistema Operacional.  
 
@@ -68,7 +68,7 @@ Um pacote de atualização no System Center Configuration Manager contém os arq
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Pacotes de atualização do Sistema Operacional**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Pacotes de atualização do Sistema Operacional**.  
 
 3.  Selecione o pacote de atualização do sistema operacional ao qual deseja aplicar as atualizações de software.  
 
@@ -87,3 +87,6 @@ Um pacote de atualização no System Center Configuration Manager contém os arq
 7.  Na página **Resumo** , verifique as seguintes informações e clique em **Próximo**.  
 
 8.  Na página **Conclusão** , verifique se as atualizações de software foram aplicadas com êxito à imagem do sistema operacional.  
+
+> [!NOTE]  
+>  Para minimizar o tamanho do conteúdo, a manutenção dos pacotes de atualização do sistema operacional e das imagens do sistema operacional remove a versão mais antiga. 

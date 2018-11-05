@@ -10,12 +10,12 @@ ms.assetid: 8cc13635-85d6-4b07-a3ec-c42188bc5c74
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d82ae79ae3466eff753e92c232b2cdd40fbcb2cb
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 94f0da3fa9f4aa43ce4818b7b6edf752df53d66a
+ms.sourcegitcommit: ee434c53b3695a039b56298082b6f61f1006d9dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338475"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49943267"
 ---
 # <a name="use-the-update-registration-tool-to-import-hotfixes-to-system-center-configuration-manager"></a>Usar a Ferramenta de Registro de Atualização para importar hotfixes para o System Center Configuration Manager
 
@@ -57,7 +57,7 @@ Quando for preciso instalar uma versão fora de banda e o nome do arquivo da atu
 
     Depois que o hotfix for registrado, ele aparecerá como uma nova atualização no console em até 24 horas.  Você pode acelerar o processo:
 
-    - Abra o console do Configuration Manager, vá até **Administração** > **Atualizações e Manutenção** e clique em **Verificar Atualizações**. (Antes da versão 1702, Atualizações e Manutenção ficava em **Administração** > **Serviços de Nuvem**.) 
+    - Abra o console do Configuration Manager e vá até **Administração** > **Atualizações e Manutenção** e clique em **Verificar Atualizações**. (Antes da versão 1702, Atualizações e Manutenção ficava em **Administração** > **Serviços de Nuvem**.) 
 
     A ferramenta de registro de atualização registra suas ações em um arquivo .log no computador local. O arquivo de log tem o mesmo nome do arquivo .exe do hotfix e é gravado na pasta **%SystemRoot%/Temp**.  
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: aa92f935984b52458a3d7daf17a11077c519da84
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: cc98ee85ffe4fd419ccc2a2e16bf566144f8b670
+ms.sourcegitcommit: ee434c53b3695a039b56298082b6f61f1006d9dd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862525"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49943301"
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Referência técnica de controles de criptografia
 
@@ -90,7 +90,7 @@ O System Center Configuration Manager usa a assinatura e a criptografia para aju
  Quando você importa dados de configuração, o Configuration Manager verifica a assinatura digital do arquivo. Se os arquivos não foram assinados, ou se a verificação da assinatura digital falhar, você será avisado e consultado se deseja continuar a importação. Continue a importar os dados de configuração somente se você confiar totalmente no editor e na integridade dos arquivos.  
 
 ### <a name="encryption-and-hashing-for-client-notification"></a>Criptografia e hash para notificação do cliente  
- Se você usa notificação do cliente, todas as comunicações usam TLS e a criptografia máxima que o servidor e os sistemas operacionais do cliente podem negociar. Por exemplo, um computador cliente que executa Windows 7 e um ponto de gerenciamento que executa o Windows Server 2008 R2 podem oferecer suporte à criptografia AES de 128 bits, enquanto um computador cliente que executa Vista para o mesmo ponto de gerenciamento, mas irá negociar para a criptografia 3DES. A mesma negociação ocorre para misturar os pacotes que são transferidos durante a notificação do cliente, que usa SHA-1 ou SHA-2.  
+ Se você usa notificação do cliente, todas as comunicações usam TLS e a criptografia máxima que o servidor e os sistemas operacionais do cliente podem negociar. Por exemplo, um computador cliente que executa Windows 7 e um ponto de gerenciamento que executa o Windows Server 2008 R2 podem oferecer suporte à criptografia AES de 128 bits, enquanto um computador cliente que executa Vista para o mesmo ponto de gerenciamento negociará para a criptografia 3DES. A mesma negociação ocorre para misturar os pacotes que são transferidos durante a notificação do cliente, que usa SHA-1 ou SHA-2.  
 
 ##  <a name="certificates-used-by-configuration-manager"></a>Certificados usados pelo Configuration Manager  
  Para ver uma lista de certificados de PKI (infraestrutura de chave pública) que podem ser usados pelo Configuration Manager, requisitos especiais ou limitações e saber como os certificados são usados, veja os [requisitos de certificado PKI](/sccm/core/plan-design/network/pki-certificate-requirements). Essa lista inclui os algoritmos de hash e os comprimentos de chave com suporte. A maioria dos certificados tem suporte a SHA-256 e 2048 bits de comprimento de chave.  
@@ -126,14 +126,14 @@ O System Center Configuration Manager usa a assinatura e a criptografia para aju
 
  Se você usar inicialização PXE, importará o certificado de autenticação do cliente para o ponto de distribuição habilitado para PXE e ele usará o mesmo certificado para cada cliente que iniciar por meio daquele ponto de distribuição habilitado para PXE. Como prática recomendada de segurança, peça que os usuários que conectam seus computadores a um serviço PXE para fornecer uma senha para ajudar a proteger a chave privada e outros dados confidenciais nas sequências de tarefas.  
 
- Se um desses certificados de autenticação do cliente estiver comprometido, bloqueie os certificados no nó **Certificados** no espaço de trabalho **Administração** , no nó **Segurança** . Para gerenciar esses certificados, você deve ter direitos para **Gerenciar certificado de implantação de sistema operacional** .  
+ Se um desses certificados de autenticação do cliente estiver comprometido, bloqueie os certificados no nó **Certificados** no workspace **Administração**, no nó **Segurança**. Para gerenciar esses certificados, você deve ter direitos para **Gerenciar certificado de implantação de sistema operacional** .  
 
  Depois que o sistema operacional for implantado e o Configuration Manager for instalado, o cliente exigirá seu próprio certificado de autenticação de cliente PKI para comunicação do cliente HTTPS.  
 
 ### <a name="isv-proxy-solutions-and-pki-certificates"></a>Soluções de proxy de ISV e certificados PKI  
  ISVs (Fornecedores Independentes de Software) podem criar aplicativos que estendem o Configuration Manager. Por exemplo, um ISV ​​pode criar extensões para dar suporte a plataformas de cliente não Windows, como computadores Macintosh ou UNIX. No entanto, se os sistemas de sites exigirem conexões de cliente HTTPS, esses clientes também devem usar certificados PKI para a comunicação com o site. O Configuration Manager inclui a capacidade de atribuir um certificado ao proxy de ISV que habilita a comunicação entre os clientes de proxy de ISV e o ponto de gerenciamento. Se você usa extensões que requerem certificados de proxy de ISV, consulte a documentação do produto. Para mais informações sobre como criar certificados de proxy de ISV, consulte o SDK (Software Developer Kit) do Configuration Manager.  
 
- Se um desses certificados ISV estiver comprometido, bloqueie os certificados no nó **Certificados** no espaço de trabalho **Administração** , no nó **Segurança** .  
+ Se um desses certificados ISV estiver comprometido, bloqueie os certificados no nó **Certificados** no workspace **Administração**, no nó **Segurança**.  
 
 ### <a name="asset-intelligence-and-certificates"></a>Asset Intelligence e certificados  
  O Configuration Manager instala um certificado X.509 usado pelo ponto de sincronização do Asset Intelligence para se conectar à Microsoft. O Configuration Manager usa este certificado para solicitar um certificado de autenticação de cliente do serviço de certificado da Microsoft. O certificado de autenticação do cliente é instalado no servidor de sistema de site do ponto de sincronização do Asset Intelligence e é usado para autenticar o servidor na Microsoft. O Configuration Manager usa o certificado de autenticação do cliente para baixar o catálogo do Asset Intelligence e carregar os títulos do software.  
@@ -256,7 +256,7 @@ O System Center Configuration Manager usa a assinatura e a criptografia para aju
  Quando os clientes usam comunicação HTTP para funções do sistema de sites, eles podem usar certificados PKI para autenticação do cliente, ou certificados autoassinados que o Configuration Manager gera. Quando o Configuration Manager gera certificados autoassinados, eles têm um identificador de objeto personalizado para assinatura e criptografia e esses certificados são usados exclusivamente para identificar o cliente. Para todos os sistemas operacionais com suporte exceto o Windows Server 2003, esses certificados autoassinados usam o SHA-256 e têm comprimento de chave de 2048 bits. Para o Windows Server 2003, o SHA1 é usado com um comprimento de chave de 1024 bits.  
 
 ### <a name="operating-system-deployment-and-self-signed-certificates"></a>Implantação do sistema operacional e certificados autoassinados  
- Quando você usa o Configuration Manager para implantar sistemas operacionais com certificados autoassinados, o computador cliente também deve ter um certificado para se comunicar com o ponto de gerenciamento, mesmo que o computador esteja em uma fase de transição, como inicialização de mídia de sequência de tarefas ou um ponto de distribuição habilitado para PXE. Para dar suporte a este cenário para conexões de cliente HTTP, o Configuration Manager gera certificados autoassinados que têm um identificador de objeto personalizado para assinatura e criptografia e esses certificados são usados exclusivamente para identificar o cliente. Para todos os sistemas operacionais com suporte exceto o Windows Server 2003, esses certificados autoassinados usam o SHA-256 e têm comprimento de chave de 2048 bits. Para o Windows Server 2003, o SHA1 é usado com um comprimento de chave de 1024 bits. Se esses certificados autoassinados estiverem comprometidos, para evitar que invasores os usem para representar clientes confiáveis​​, será necessário bloquear os certificados no nó **Certificados** no espaço de trabalho **Administração** , nó **Segurança** .  
+ Quando você usa o Configuration Manager para implantar sistemas operacionais com certificados autoassinados, o computador cliente também deve ter um certificado para se comunicar com o ponto de gerenciamento, mesmo que o computador esteja em uma fase de transição, como inicialização de mídia de sequência de tarefas ou um ponto de distribuição habilitado para PXE. Para dar suporte a este cenário para conexões de cliente HTTP, o Configuration Manager gera certificados autoassinados que têm um identificador de objeto personalizado para assinatura e criptografia e esses certificados são usados exclusivamente para identificar o cliente. Para todos os sistemas operacionais com suporte exceto o Windows Server 2003, esses certificados autoassinados usam o SHA-256 e têm comprimento de chave de 2048 bits. Para o Windows Server 2003, o SHA1 é usado com um comprimento de chave de 1024 bits. Se esses certificados autoassinados estiverem comprometidos, para evitar que invasores os usem para representar clientes confiáveis​​, será necessário bloquear os certificados no nó **Certificados** no workspace **Administração**, nó **Segurança**.  
 
 ### <a name="client-and-server-authentication"></a>Autenticação de servidor e cliente  
  Quando os clientes se conectam via HTTP, eles autenticam os pontos de gerenciamento usando o Active Directory Domain Services ou usando a chave de raiz confiável do Configuration Manager. Clientes não autenticam outras funções do sistema de site, como pontos de migração de estado ou pontos de atualização de software.  
