@@ -10,12 +10,12 @@ ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b1d4e2b7dca44db7ddc5976edde59a04bc3cb45e
-ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
+ms.openlocfilehash: e5099be5ff6b34bcbc232e78056f1937a9508c4f
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46533755"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411418"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Cache par para clientes do Configuration Manager
 
@@ -94,7 +94,7 @@ Quando a fonte do cache par rejeita uma solicitação de conteúdo, o cliente de
 
 - Os clientes só podem baixar conteúdo de fontes de cache par no grupo de limites atual.  
 
-- Não é necessário usar uma [conta de acesso à rede](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account), com a seguinte exceção:  
+- Não é necessário usar uma [conta de acesso à rede](/sccm/core/plan-design/hierarchy/accounts#network-access-account), com a seguinte exceção:  
 
     - Configure uma conta de acesso à rede no site quando um cliente habilitado para cache par executar uma sequência de tarefas no Centro de Software e reinicializar a imagem de inicialização. Quando o dispositivo está no Windows PE, ele usa a conta de acesso à rede para obter o conteúdo da fonte de cache par.  
 
@@ -158,7 +158,7 @@ A Contoso tem um único site primário com dois grupos de limites: HQ (Matriz) e
 
 1. Configure [grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups) e fontes de cache par como de costume.  
 
-2. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione **Sites**. Clique em **Configurações da hierarquia**  na faixa de opções.  
+2. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione **Sites**. Clique em **Configurações da hierarquia**  na faixa de opções.  
 
 3. Na guia **Geral**, habilite a opção de **Configurar fontes de cache par de cliente para dividir o conteúdo em partes**.  
 
@@ -195,7 +195,7 @@ Para vê-los tratando o download do conteúdo em partes, examine o **ContentTran
 
 Para ajudá-lo a entender o uso do cache par, exiba o painel **Fontes de Dados do Cliente**. Para obter mais informações, confira [Painel de fontes de dados do cliente](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard).
 
-Além disso, use relatórios para exibir o uso do cache par. No console, acesse o espaço de trabalho **Monitoramento**, expanda **Relatório** e selecione o nó **Relatórios**. Todos os seguintes relatórios têm o tipo **Conteúdo de Distribuição de Software**:  
+Além disso, use relatórios para exibir o uso do cache par. No console, acesse o workspace **Monitoramento**, expanda **Relatório** e selecione o nó **Relatórios**. Todos os seguintes relatórios têm o tipo **Conteúdo de Distribuição de Software**:  
 
 1.  **Rejeição de conteúdo de fonte do cache par**: a frequência em que as fontes de cache par em um grupo de limites rejeitam uma solicitação de conteúdo.  
 
@@ -216,5 +216,5 @@ Além disso, use relatórios para exibir o uso do cache par. No console, acesse 
     > 
     > 1. Localizar o nome do computador que é exibido como a *Origem de cache par* nos resultados da **Rejeição de conteúdo de fonte de cache par por condição**.  
     > 
-    > 2. Acesse o espaço de trabalho **Ativos e Conformidade**, selecione o nó **Dispositivos** e pesquise o nome do computador. Use o valor da coluna de ID de Recurso.  
+    > 2. Acesse o workspace **Ativos e Conformidade**, selecione o nó **Dispositivos** e pesquise o nome do computador. Use o valor da coluna de ID de Recurso.  
 

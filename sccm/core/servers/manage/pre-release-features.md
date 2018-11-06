@@ -2,7 +2,7 @@
 title: Recursos de pré-lançamento
 titleSuffix: Configuration Manager
 description: Os recursos de pré-lançamento são recursos que estão na Ramificação atual para testes iniciais em um ambiente de produção.
-ms.date: 07/30/2018
+ms.date: 10/24/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7b82bdfcbe69c7e9d59185fc6af20a85e65a6e7d
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: e3b3b31c31725c6b9931d0c2cc67324c4b39f974
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893559"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411129"
 ---
 # <a name="pre-release-features-in-configuration-manager"></a>Recursos pré-lançamento no Configuration Manager
 
@@ -29,7 +29,7 @@ Os recursos de pré-lançamento são aqueles no branch atual para testes iniciai
 
 Antes de usar recursos de pré-lançamento, dê consentimento para usá-los. Dar o consentimento é uma ação única por hierarquia que não pode ser desfeita. Até dar o consentimento, você não pode habilitar novos recursos de pré-lançamento incluídos com a atualização. Após ativar um recurso de pré-lançamento, não é possível desativá-lo.
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
+1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
 
 2. Clique em **Configurações da hierarquia**  na faixa de opções.  
 
@@ -44,7 +44,7 @@ Quando você instala uma atualização que inclui recursos de pré-lançamento, 
 #### <a name="if-you-have-given-consent"></a>Se você tiver consentido
 No Assistente de Atualizações e Manutenção, habilite recursos de pré-lançamento. Selecione os recursos de pré-lançamento como faria com qualquer outro recurso.     
 
-Opcionalmente, espere para habilitar recursos de pré-lançamento mais tarde usando o nó **Recursos** em **Atualizações e manutenção** no espaço de trabalho **Administração**. Selecione um recurso e, em seguida, clique em **Ativar** na faixa de opções. Até você dar consentimento, essa opção não está disponível para uso.
+Opcionalmente, espere para habilitar recursos de pré-lançamento mais tarde usando o nó **Recursos** em **Atualizações e manutenção** no workspace **Administração**. Selecione um recurso e, em seguida, clique em **Ativar** na faixa de opções. Até você dar consentimento, essa opção não está disponível para uso.
 
 #### <a name="if-you-havent-given-consent"></a>Se você ainda não tiver consentido
 No Assistente de Atualizações e Manutenção, recursos pré-lançamento estão visíveis, mas você não pode habilitá-los. Após a atualização ser instalada, esses recursos ficarão visíveis no nó **Recursos**. No entanto, você não poderá habilitá-los até dar consentimento.
@@ -75,7 +75,7 @@ Ao habilitar um recurso de pré-lançamento, o gerenciador de hierarquia (HMAN) 
 
 | Recurso          | Adicionado como pré-lançamento | Adicionado como recurso completo |  
 |------------------|----------------------|-------------------------|
-| Sistema de sites HTTP aprimorado<!--1356889,1358228-->|Versão 1806|![Ainda não](media/red_x.png)|
+| Sistema de sites HTTP aprimorado<!--1356889,1358228-->|[Versão 1806](/sccm/core/plan-design/hierarchy/enhanced-http)|![Ainda não](media/red_x.png)|
 | Aplicativos móveis para dispositivos cogerenciados<!--1357892-->|[Versão 1806](/sccm/core/clients/manage/co-management-switch-workloads#workloads-able-to-be-transitioned-to-intune)|![Ainda não](media/red_x.png)|
 | Gerenciador de Conversão de Pacote<!--1357861-->|[Versão 1806](/sccm/apps/pcm/package-conversion-manager)|![Ainda não](media/red_x.png)|
 | Suporte para o Cisco AnyConnect 4.0.07x e posterior para iOS<!--1357393-->|[Versão 1802](/sccm/mdm/deploy-use/create-vpn-profiles)| [Versão 1802 com a atualização 4163547](/sccm/mdm/deploy-use/create-vpn-profiles) |
