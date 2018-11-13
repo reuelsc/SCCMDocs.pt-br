@@ -10,12 +10,12 @@ ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3e0b70a2b024555bd67f63b3a31a6408b07c273b
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: bec95b13ecba5ae5238d758ae06566042a95d939
+ms.sourcegitcommit: 303d826f45c8fd9a05d8883afc1ca645e56bd576
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42756070"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51269239"
 ---
 # <a name="task-sequence-steps-in-configuration-manager"></a>Etapas de sequência de tarefas no Configuration Manager
 
@@ -134,7 +134,7 @@ ms.locfileid: "42756070"
 
  Use essa etapa para especificar as informações de configuração de rede ou grupo de trabalho do computador de destino. A sequência de tarefas armazena esses valores no arquivo de resposta apropriado. A Instalação do Windows usa esse arquivo de resposta durante a ação **Instalação do Windows e ConfigMgr**.  
 
- Essa etapa da sequência de tarefas é executada no sistema operacional completo ou no Windows PE. 
+ Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não é executada no sistema operacional completo. 
 
  Use as variáveis de sequência de tarefas seguintes com esta etapa:  
  - [OSDAdapter](/sccm/osd/understand/task-sequence-variables#OSDAdapter)  

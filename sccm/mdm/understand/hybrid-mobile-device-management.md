@@ -2,7 +2,7 @@
 title: MDM híbrido com o Microsoft Intune
 titleSuffix: Configuration Manager
 description: Saiba mais sobre o MDM (gerenciamento de dispositivos móveis) híbrido com o Configuration Manager e o Microsoft Intune.
-ms.date: 08/14/2018
+ms.date: 11/02/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: bb95154b-f63e-4491-896e-41d732c802f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 22e685889f51f3b35c3ba58e94d161816424b2a3
-ms.sourcegitcommit: dd785ad7146b8491c98ccd7804d0959a5c1fb034
+ms.openlocfilehash: f3d25120701c12b547727259002fc58a8f8f0780
+ms.sourcegitcommit: 97083c51057e2c4e0fe12c3b1f1b512250874c6a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49383007"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50968128"
 ---
 # <a name="hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>MDM híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -38,7 +38,7 @@ ms.locfileid: "49383007"
 > 
 > - O licenciamento continua o mesmo. As licenças do Intune no Azure estão inclusas no MDM híbrido.  
 > 
-> - A Microsoft começará a bloquear a integração de novos clientes do MDM híbrido a partir de novembro de 2018.  
+> - O acesso condicional e os recursos de MDM locais no Configuration Manager não são preteridos. Alterações futuras para o Configuration Manager permitirão que esses recursos funcionem sem MDM híbrido. 
 > 
 > - No dia 1º de setembro de 2019, todos os dispositivos com MDM híbrido restantes deixarão de receber políticas, aplicativos ou atualizações de segurança.  
 > 

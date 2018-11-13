@@ -10,19 +10,18 @@ ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fcf3bc335efc4c7436842b29d30c67c118ceb05d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 4435802ad67857ad9f79168f96aa046eae8f7097
+ms.sourcegitcommit: 471cf13bc1ff7543c3d32465df9eecff9aaaa5be
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339019"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50753642"
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Criar e executar scripts do PowerShell do console do Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-<!--1236459-->
-O System Center Configuration Manager tem uma capacidade integrada para executar scripts do PowerShell. O PowerShell oferece a vantagem de criar scripts automatizados sofisticados que são entendidos e compartilhados com uma comunidade maior. Os scripts simplificam a criação de ferramentas personalizadas para administrar o software e permitem realizar tarefas rotineiras rapidamente, possibilitando concluir trabalhos grandes com mais facilidade e consistência.  
+<!--1236459--> O System Center Configuration Manager tem uma capacidade integrada para executar scripts do PowerShell. O PowerShell oferece a vantagem de criar scripts automatizados sofisticados que são entendidos e compartilhados com uma comunidade maior. Os scripts simplificam a criação de ferramentas personalizadas para administrar o software e permitem realizar tarefas rotineiras rapidamente, possibilitando concluir trabalhos grandes com mais facilidade e consistência.  
 
 > [!TIP]  
 > Esse recurso foi introduzido pela primeira vez na versão 1706 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1802, esse recurso deixa de ser um recurso de pré-lançamento.  
@@ -82,7 +81,7 @@ Por padrão, os usuários não podem aprovar um script que criaram. Como os scri
 Os scripts precisam ser aprovados pela função *aprovador de script*, antes de serem executados. Para aprovar um script:
 
 1. No console do Configuration Manager, clique em **Biblioteca de Software**.
-2. No espaço de trabalho **Biblioteca de Software**, clique em **Scripts**.
+2. No workspace **Biblioteca de Software**, clique em **Scripts**.
 3. Na lista **Script**, escolha o script que você quer aprovar ou negar e, na guia **Início**, no grupo **Script**, clique em **Aprovar/Negar**.
 4. Na caixa de diálogo **Aprovar ou negar o script**, selecione **Aprovar** ou **Negar** para o script. Opcionalmente, insira um comentário sobre sua decisão.  Se você negar um script, ele não poderá ser executado em dispositivos cliente. <br>
 ![Script – Aprovação](./media/run-scripts/RS-approval.png)
@@ -93,9 +92,9 @@ Os scripts precisam ser aprovados pela função *aprovador de script*, antes de 
 Essa aprovação é usada principalmente para a fase de teste do desenvolvimento do script.
 
 1. No console do Configuration Manager, clique em **Administração**.
-2. No espaço de trabalho **Administração** , expanda **Configuração do Site**e clique em **Sites**.
+2. No workspace **Administração**, expanda **Configuração do Site** e clique em **Sites**.
 3. Na lista de sites, escolha seu site e, depois, na guia **Início**, no grupo **Sites**, clique em **Configurações de Hierarquia**.
-4. Na guia **Geral** da caixa de diálogo **Propriedades das Configurações de Hierarquia**, desmarque a caixa de seleção **Não permitir que os autores de script aprovem seus próprios scripts**.
+4. Na guia **Geral** da caixa de diálogo **Propriedades de configurações de hierarquia**, desmarque a caixa de seleção **Autores de scripts exigem um aprovador de script adicional**.
 
 >[!IMPORTANT]
 >Como prática recomendada, você não deve permitir que um autor de script aprove seus próprios scripts. Isso deve ser permitido somente em uma configuração de laboratório. Considere atentamente o possível impacto de alterar essa configuração em um ambiente de produção.
@@ -162,7 +161,7 @@ As três funções de segurança usadas para executar scripts não são criadas 
 ## <a name="create-a-script"></a>Criar um script
 
 1. No console do Configuration Manager, clique em **Biblioteca de Software**.
-2. No espaço de trabalho **Biblioteca de Software**, clique em **Scripts**.
+2. No workspace **Biblioteca de Software**, clique em **Scripts**.
 3. Na guia **Início**, no grupo **Criar**, clique em **Criar Script**.
 4. Na página **Script** do assistente para Criar **Script**, configure o seguinte:
     - **Nome do Script** - insira um nome para o script. Embora você possa criar vários scripts com o mesmo nome, o uso de nomes duplicados dificultará mais a localização do script necessário no console do Configuration Manager.
@@ -249,7 +248,7 @@ Após a aprovação de um script, ele poderá ser executado em um dispositivo ú
 Para selecionar uma coleção de destinos para seu script:
 
 1. No console do Configuration Manager, clique em **Ativos e Conformidade**.
-2. No espaço de trabalho Ativos e Conformidade, clique em **Coleções de Dispositivos**.
+2. No workspace Ativos e Conformidade, clique em **Coleções de Dispositivos**.
 3. Na lista **Coleções de Dispositivos**, clique na coleção de dispositivos na qual você deseja executar o script.
 4. Selecione uma coleção de sua escolha, clique em **Executar Script**.
 5. Na página **Script** do assistente **Executar Script**, escolha um script na lista. Somente scripts aprovados são exibidos.
@@ -269,7 +268,7 @@ Depois de iniciar a execução de um script em uma coleção de dispositivos, us
 ![Monitor de script – Status da Execução do Script](./media/run-scripts/RS-monitoring-three-bar.png)
 
 1. No console do Configuration Manager, clique em **Monitoramento**.
-2. No espaço de trabalho **Monitoramento**, clique em **Status do Script**.
+2. No workspace **Monitoramento**, clique em **Status do Script**.
 3. Na lista **Status do Script**, veja os resultados de cada script executado em dispositivos cliente. Um código de saída do script de **0** geralmente indica que o script foi executado com êxito.
     - A partir do Configuration Manager 1802, a saída de script é truncada em 4 KB para permitir uma melhor experiência de exibição.  <!--510013-->
       ![Monitor de script – script truncado](./media/run-scripts/Script-monitoring-truncated.png) 

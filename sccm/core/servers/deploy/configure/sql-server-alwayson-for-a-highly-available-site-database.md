@@ -10,12 +10,12 @@ ms.assetid: 58d52fdc-bd18-494d-9f3b-ccfc13ea3d35
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9657cbbf60a90f21f0daa8bb5ef3d5cf80f7da4e
-ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
+ms.openlocfilehash: 0cb94f8d14ff525687909290085e16ecd47fa39f
+ms.sourcegitcommit: 22257e35a7d7263939a6802602050190897412a8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42589387"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51562041"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparar para usar os grupos de disponibilidade AlwaysOn do SQL Server com o Configuration Manager
 
@@ -171,7 +171,7 @@ Faça essas configurações apenas em uma réplica primária. Para configurar um
 
 Execute o script de SQL a seguir para verificar as configurações de banco de dados para réplicas primárias e secundárias. Antes de corrigir um problema em uma réplica secundária, altere essa réplica secundária para ser a réplica primária.
 
-``` SQL
+```SQL
     SET NOCOUNT ON
 
     DECLARE @dbname NVARCHAR(128)
@@ -182,7 +182,7 @@ Execute o script de SQL a seguir para verificar as configurações de banco de d
     RAISERROR(N'ERROR: Script is targetting a system database.  It should be targeting the DB you created instead.', 0, 1)
     GOTO Branch_Exit;
     END ELSE
-    PRINT N'INFO: Targetted database is ' + @dbname + N'.'
+    PRINT N'INFO: Targeted database is ' + @dbname + N'.'
 
     PRINT N'INFO: Running verifications....'
 
@@ -307,7 +307,7 @@ O ponto do Reporting Services não é compatível com o uso do nome virtual do o
 
 ### <a name="switch-the-reporting-services-point-used-by-the-console"></a>Alternar o ponto do Reporting Services usado pelo console
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Monitoramento**.  
+1. No console do Configuration Manager, acesse o workspace **Monitoramento**.  
 
 2. Expanda **Reporting** e selecione **Relatórios**.  
 

@@ -1,7 +1,7 @@
 ---
 title: Implantar o Windows to Go
 titleSuffix: Configuration Manager
-description: Saiba como provisionar o Windows To Go no System Center Configuration Manager para criar um espaço de trabalho do Windows To Go que é inicializado de uma unidade externa.
+description: Saiba como provisionar o Windows To Go no System Center Configuration Manager para criar um workspace do Windows To Go que é inicializado de uma unidade externa.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
@@ -10,18 +10,18 @@ ms.assetid: 8eed50f5-80a4-422e-8aa6-a7ccb2171475
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 12b7a28ff5ea0e2e1870c0c37edd8e056930b09f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: afc76b59d594c6b8f52062add480874ba5c5686d
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351880"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411486"
 ---
 # <a name="deploy-windows-to-go-with-system-center-configuration-manager"></a>Implantar o Windows to Go com o System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este tópico fornece as etapas para provisionar o Windows To Go no System Center Configuration Manager. O Windows To Go é um recurso para empresas do Windows 8 que permite a criação de um espaço de trabalho do Windows To Go que pode ser inicializado a partir de uma unidade conectada por USB em computadores que atendem aos requisitos de certificação do Windows 7 ou do Windows 8, independentemente do sistema operacional em execução no computador. Os espaços de trabalho do Windows To Go podem usar a mesma imagem que as empresas usam para seus desktops e laptops e podem ser gerenciados da mesma forma.  
+Este tópico fornece as etapas para provisionar o Windows To Go no System Center Configuration Manager. O Windows To Go é um recurso para empresas do Windows 8 que permite a criação de um workspace do Windows To Go que pode ser inicializado a partir de uma unidade conectada por USB em computadores que atendem aos requisitos de certificação do Windows 7 ou do Windows 8, independentemente do sistema operacional em execução no computador. Os workspaces do Windows To Go podem usar a mesma imagem que as empresas usam para seus desktops e laptops e podem ser gerenciados da mesma forma.  
 
  Para obter mais informações sobre o Windows To Go, consulte [Visão geral do recurso Windows To Go](http://go.microsoft.com/fwlink/p/?LinkId=263433).  
 
@@ -78,7 +78,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
 3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Mídia de Sequência de Tarefas** para iniciar o Assistente para Criar Mídia de Sequência de Tarefas.  
 
@@ -151,7 +151,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
     -   **Ponto de distribuição**: especifique o ponto de distribuição que hospeda a imagem de inicialização. O assistente recupera a imagem de inicialização do ponto de distribuição e a grava na mídia.  
 
         > [!NOTE]  
-        >  O usuário administrativo deve ter direitos de acesso para **Ler** o conteúdo da imagem de inicialização no ponto de distribuição. Para mais informações, consulte [Gerenciar contas para acessar o conteúdo](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md).  
+        >  O usuário administrativo deve ter direitos de acesso para **Ler** o conteúdo da imagem de inicialização no ponto de distribuição. Para obter mais informações, confira [Conta de acesso de pacote](/sccm/core/plan-design/hierarchy/accounts#package-access-account).  
 
     -   Se você selecionar **Mídia de site** na página **Gerenciamento de Mídia** desse assistente, na caixa **Ponto de gerenciamento** , especifique um ponto de gerenciamento de um site primário.  
 
@@ -166,7 +166,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
     -   **Ponto de distribuição**: especifique o ponto de distribuição que hospeda o pacote da imagem do sistema operacional. O assistente recupera a imagem do sistema operacional do ponto de distribuição e a grava na mídia.  
 
         > [!NOTE]  
-        >  O usuário administrativo deve ter direitos de acesso para **Ler** o conteúdo da imagem do sistema operacional no ponto de distribuição. Para mais informações, consulte [Gerenciar contas para acessar o conteúdo](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md).  
+        >  O usuário administrativo deve ter direitos de acesso para **Ler** o conteúdo da imagem do sistema operacional no ponto de distribuição. Para obter mais informações, confira [Conta de acesso de pacote](/sccm/core/plan-design/hierarchy/accounts#package-access-account).  
 
 11. Na página **Selecionar Aplicativo** , selecione o conteúdo do aplicativo a ser incluído no arquivo de mídia e clique em **Próximo**.  
 
@@ -226,7 +226,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 5.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-6.  No espaço de trabalho **Biblioteca de Software** , expanda o **Gerenciamento de Aplicativos**e clique em **Pacotes**.  
+6.  No workspace **Biblioteca de Software**, expanda o **Gerenciamento de Aplicativos** e clique em **Pacotes**.  
 
 7.  Na guia **Início** , no grupo **Criar** , clique em **Criar Pacote**.  
 
@@ -285,7 +285,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda o **Gerenciamento de Aplicativos**e clique em **Pacotes**.  
+2.  No workspace **Biblioteca de Software**, expanda o **Gerenciamento de Aplicativos** e clique em **Pacotes**.  
 
 3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Pacote**.  
 
@@ -299,7 +299,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 8.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-9. No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+9. No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
 10. Selecione a sequência de tarefas do Windows 8 a que você faz referência na mídia em pré-teste.  
 
@@ -343,7 +343,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda o **Gerenciamento de Aplicativos**e clique em **Pacotes**.  
+2.  No workspace **Biblioteca de Software**, expanda o **Gerenciamento de Aplicativos** e clique em **Pacotes**.  
 
 3.  Selecione o pacote do Windows To Go criado na etapa [Criar um pacote do Windows To Go Creator](#BKMK_CreatePackage) .  
 
@@ -393,7 +393,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
 3.  Selecione a sequência de tarefas do Windows 8 que você criou na etapa [Prerequisites to provision Windows To Go](#BKMK_Prereqs) .  
 

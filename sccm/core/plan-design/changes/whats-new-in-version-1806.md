@@ -2,7 +2,7 @@
 title: Novidades na versão 1806
 titleSuffix: Configuration Manager
 description: Obtenha os detalhes sobre as alterações e as novas funcionalidades introduzidas na versão 1806 do branch atual do Configuration Manager.
-ms.date: 09/19/2018
+ms.date: 10/26/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 0249dbd3-1e85-4d05-a9e5-420fbe44d850
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3b5cb217b9351f5d2491070b447d0a96efe0aa29
-ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
+ms.openlocfilehash: e5fd7c26c190407ba5e497068582704b03c71f00
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46533772"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411503"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novidades na versão 1806 do branch atual do Configuration Manager
 
@@ -25,17 +25,17 @@ A atualização do 1806 para o branch atual do Configuration Manager está dispo
 
 Sempre examine a lista de verificação mais recente para instalar essa atualização. Para saber mais, confira [Lista de verificação para instalar a atualização 1806](/sccm/core/servers/manage/checklist-for-installing-update-1806). Depois de atualizar um site, examine também a [Lista de verificação pós-atualização](/sccm/core/servers/manage/checklist-for-installing-update-1806#post-update-checklist).
 
+<!--
 > [!Important]  
-> Atualmente, esse artigo lista todos os recursos importantes nesta versão. No entanto, nem todas as seções ainda se vinculam ao conteúdo atualizado com informações adicionais sobre os novos recursos. Continue verificando esta página regularmente para ver se há atualizações. As alterações são indicadas com a marcação ***[Atualizado]***. Essa observação será removida quando o conteúdo for finalizado.  
+> This article currently lists all significant features in this version. However, not all sections yet link to updated content with further information on the new features. Keep checking this page regularly for updates. Changes are noted with the ***[Updated]*** tag. This note will be removed when the content is finalized.  
+-->
 
-Além de novos recursos, este lançamento inclui outras alterações, como correções de bugs. Para saber mais, veja [Resumo das alterações no Branch Atual do System Center Configuration Manager, versão 1806](https://support.microsoft.com/help/4459701).
+Além de novos recursos, este lançamento inclui outras alterações, como correções de bugs. Para saber mais, confira [Resumo das alterações no Branch Atual do Configuration Manager, versão 1806](https://support.microsoft.com/help/4459701).
 
 Para saber mais sobre alterações nos cmdlets do Windows PowerShell para Configuration Manager, confira [Notas sobre a versão 1806 do PowerShell](https://docs.microsoft.com/powershell/sccm/1806_release_notes?view=sccm-ps).
 
-<!--
-The following additional updates to this release are also now available:
-- [Update rollup for System Center Configuration Manager current branch, version 1806](https://support.microsoft.com/help/4057517)
--->
+As atualizações adicionais a seguir também já estão disponíveis neste lançamento:
+- [Pacote cumulativo de atualizações para o branch atual do Configuration Manager, versão 1806](https://support.microsoft.com/help/4462978)
 
 
 As seções a seguir apresentam detalhes sobre as alterações e os novos recurso introduzidos na versão 1806 do branch atual do Configuration Manager.  
@@ -46,7 +46,7 @@ As seções a seguir apresentam detalhes sobre as alterações e os novos recurs
 
 Saiba mais sobre alterações de suporte antes que elas sejam implementadas em [itens removidos e preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated).
 
-***[Atualizado]*** O recurso de gerenciamento de dispositivo móvel híbrido foi preterido em 14 de agosto de 2018. Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+Em 14 de agosto de 2018, o recurso de gerenciamento de dispositivo móvel híbrido foi preterido. Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
 
 <!--
 Version 1806 drops support for the following products:
@@ -89,8 +89,7 @@ Para obter mais informações, veja [Ferramentas do Configuration Manager](/sccm
 
 
 ### <a name="exclude-active-directory-containers-from-discovery"></a>Excluir contêineres do Active Directory da descoberta
-<!--1358143-->
- ***[Atualizado]*** Para reduzir o número de objetos descobertos, exclua os contêineres específicos da descoberta do sistema do Active Directory. 
+<!--1358143--> Para reduzir o número de objetos descobertos, exclua contêineres específicos da descoberta do sistema do Active Directory. 
 
 Para saber mais, confira [Configurar a Descoberta de Sistemas do Active Directory](/sccm/core/servers/deploy/configure/configure-discovery-methods#bkmk_config-adsd).
 
@@ -133,8 +132,7 @@ Para obter mais informações, veja [Suporte parcial a download](/sccm/core/plan
 
 
 ### <a name="boundary-group-options-for-peer-downloads"></a>Opções de grupo de limites para downloads de pares
-<!--1356193-->
- ***[Atualizado]*** Agora, os grupos de limites incluem configurações adicionais para dar a você mais controle sobre a distribuição de conteúdo em seu ambiente. Esta versão adiciona as seguintes opções:  
+<!--1356193--> Os grupos de limites agora incluem configurações adicionais para dar a você mais controle sobre a distribuição de conteúdo em seu ambiente. Esta versão adiciona as seguintes opções:  
 
 - **Permitir download de par neste grupo de limites**: o ponto de gerenciamento fornece aos clientes uma lista de locais de conteúdo que inclui fontes de pares. Essa configuração também afeta a aplicação de IDs de grupo para Otimização de Entrega.  
 
@@ -144,8 +142,7 @@ Para saber mais, confira [Opções de grupo de limites para downloads de pares](
 
 
 ### <a name="improvement-to-peer-cache-source-location-status"></a>Melhoria no status do local das fontes de cache par
-<!--SCCMDocs issue 850-->
- ***[Atualizado]*** O Configuration Manager é mais eficiente em determinar se uma fonte de cache par fez roaming para outro local. Esse comportamento garante que o ponto de gerenciamento ofereça-o como uma fonte de conteúdo aos clientes no novo local, e não no local antigo. Se você estiver usando o recurso de cache par com as fontes de cache par de roaming, depois de atualizar o site para a versão 1806, também atualize todas as fontes de cache par para a versão mais recente do cliente. O ponto de gerenciamento não inclui essas fontes de cache par na lista de locais de conteúdo até que eles sejam atualizadas pelo menos para a versão 1806.
+<!--SCCMDocs issue 850--> O Configuration Manager é mais eficiente em determinar se uma fonte de cache par fez roaming para outra localização. Esse comportamento garante que o ponto de gerenciamento ofereça-o como uma fonte de conteúdo aos clientes no novo local, e não no local antigo. Se você estiver usando o recurso de cache par com as fontes de cache par de roaming, depois de atualizar o site para a versão 1806, também atualize todas as fontes de cache par para a versão mais recente do cliente. O ponto de gerenciamento não inclui essas fontes de cache par na lista de locais de conteúdo até que eles sejam atualizadas pelo menos para a versão 1806.
 
 Para saber mais, confira [Requirements for peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache#requirements) (Requisitos para cache par).
 
@@ -168,15 +165,13 @@ Para obter mais informações, consulte [Como instalar clientes com o push do cl
 
 Esta versão inclui melhorias em como os clientes se comunicam com os sistemas de sites. Nas propriedades do site, guia **Comunicação do Computador Cliente**, selecione a opção para **HTTPS ou HTTP** e, em seguida, habilite a nova opção para **Usar certificados gerados pelo Configuration Manager para sistemas de sites HTTP**. Esse recurso é um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features).
 
-Essa opção é compatível com os seguintes cenários principais:  
-
-- **Cliente para o ponto de gerenciamento HTTP**<!--1356889-->: [os dispositivos associados ao Azure AD](https://docs.microsoft.com/azure/active-directory/device-management-introduction#azure-ad-joined-devices) podem se comunicar por meio de um CMG (Gateway de Gerenciamento de Nuvem) com um ponto de gerenciamento configurado para HTTP. O servidor do site gera um certificado para o ponto de gerenciamento, permitindo que ele se comunique por meio de um canal seguro.   
-
-- **Ponto de distribuição de cliente para HTTP**<!--1358228-->: um cliente associado ao Azure AD ou grupo de trabalho pode baixar o conteúdo por meio de um canal seguro de um ponto de distribuição configurado para HTTP.   
+Para obter mais informações, confira [HTTP aprimorado](/sccm/core/plan-design/hierarchy/enhanced-http).
 
 
 ### <a name="azure-ad-device-identity"></a>Identidade do dispositivo do Azure AD 
 <!--1358460--> Um [dispositivo do Azure AD associado](https://docs.microsoft.com/azure/active-directory/device-management-introduction#azure-ad-joined-devices) ou [híbrido do Azure AD](https://docs.microsoft.com/azure/active-directory/device-management-introduction#hybrid-azure-ad-joined-devices) sem um usuário do Azure AD conectado pode se comunicar com segurança com o site atribuído. A identidade do dispositivo baseado em nuvem agora é suficiente para autenticar com o CMG e o ponto de gerenciamento.  
+
+Para obter mais informações, confira [HTTP aprimorado](/sccm/core/plan-design/hierarchy/enhanced-http).
 
 
 ### <a name="cmtrace-installed-with-client"></a>CMTrace instalado com o cliente
@@ -186,8 +181,7 @@ Para obter mais informações, confira [CMTrace](/sccm/core/support/cmtrace).
 
 
 ### <a name="cloud-management-dashboard"></a>Painel de gerenciamento de nuvem
-<!--1358461-->
- ***[Atualizado]*** O novo painel de gerenciamento de nuvem fornece uma exibição centralizada do uso do CMG (Gateway de Gerenciamento de Nuvem). Quando o site é integrado ao Azure AD, ele também exibe dados sobre usuários e dispositivos da nuvem.   
+<!--1358461--> O novo painel de gerenciamento de nuvem fornece uma exibição centralizada do uso do CMG (Gateway de Gerenciamento de Nuvem). Quando o site é integrado ao Azure AD, ele também exibe dados sobre usuários e dispositivos da nuvem.   
 
 Esse recurso também inclui o **Analisador de conexão CMG** para verificação em tempo real para auxiliar na solução de problemas. O utilitário no console verifica o status atual do serviço e o canal de comunicação por meio da conexão CMG aponta para os pontos de gerenciamento que permitem o tráfego CMG. 
 
@@ -201,14 +195,12 @@ Para obter mais informações, confira as seguintes seções do artigo [Monitora
 A versão 1806 inclui as seguintes melhorias ao CMG (Gateway de Gerenciamento de Nuvem):
 
 #### <a name="simplified-client-bootstrap-command-line"></a>Linha de comando de inicialização de cliente simplificada
-<!--1358215-->
- ***[Atualizado]*** Ao instalar o cliente do Configuration Manager na Internet por meio de um CMG, a linha de comando agora requer menos propriedades. Essa melhoria reduz o tamanho da linha de comando usada no Microsoft Intune ao se preparar para o cogerenciamento. 
+<!--1358215--> Ao instalar o cliente do Configuration Manager na Internet por meio de um CMG, a linha de comando agora requer menos propriedades. Essa melhoria reduz o tamanho da linha de comando usada no Microsoft Intune ao se preparar para o cogerenciamento. 
 
 Para obter mais informações, veja [Preparar dispositivos Windows 10 para cogerenciamento](/sccm/core/clients/manage/co-management-prepare#command-line-to-install-configuration-manager-client).
 
 #### <a name="download-content-from-a-cmg"></a>Baixar o conteúdo de um CMG
-<!--1358651-->
- ***[Atualizado]*** Anteriormente, era necessário implantar um ponto de distribuição na nuvem e um CMG como funções separadas. Um CMG agora também pode fornecer conteúdo aos clientes. Essa funcionalidade reduz os certificados necessários e o custo das VMs do Azure. 
+<!--1358651--> Anteriormente, era necessário implantar um ponto de distribuição na nuvem e um CMG como funções separadas. Um CMG agora também pode fornecer conteúdo aos clientes. Essa funcionalidade reduz os certificados necessários e o custo das VMs do Azure. 
 
 Para obter mais informações, consulte [Modificar um CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg).
 
@@ -301,8 +293,7 @@ Para obter informações, confira [Deploy applications](/sccm/apps/deploy-use/de
 
 
 ### <a name="package-conversion-manager"></a>Package Conversion Manager 
-<!--1357861-->
- ***[Atualizado]*** Agora, o Gerenciador de Conversão de Pacotes é uma ferramenta integrada que permite a conversão de pacotes herdados para os aplicativos do branch atual do Configuration Manager. Em seguida, você pode usar recursos de aplicativos como dependências, regras de requisitos e afinidade de dispositivo de usuário.
+<!--1357861--> Agora, o Gerenciador de Conversão de Pacotes é uma ferramenta integrada que permite a conversão de pacotes herdados para os aplicativos do branch atual do Configuration Manager. Em seguida, você pode usar recursos de aplicativos como dependências, regras de requisitos e afinidade de dispositivo de usuário.
 
 Para saber mais, confira [Gerenciador de Conversão de Pacotes](/sccm/apps/pcm/package-conversion-manager).
 
@@ -320,7 +311,7 @@ Esta versão inclui as seguintes melhorias às implantações em fases:
 Para obter mais informações, veja [Criar uma implantação em fases com fases configuradas manualmente](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence#bkmk_manual).
 
 #### <a name="phased-deployment-status"></a>Status da implantação em fases
-<!--1358577--> As implantações em fases agora têm uma experiência de monitoramento nativa. No nó **Implantações** no espaço de trabalho **Monitoramento**, selecione uma implantação em fases e clique em **Status da Implantação em Fases** na faixa de opções. 
+<!--1358577--> As implantações em fases agora têm uma experiência de monitoramento nativa. No nó **Implantações** no workspace **Monitoramento**, selecione uma implantação em fases e clique em **Status da Implantação em Fases** na faixa de opções. 
 
 Para obter mais informações, veja [Gerenciar e monitorar implantações em fases](/sccm/osd/deploy-use/manage-monitor-phased-deployments).  
 
@@ -350,36 +341,38 @@ Para obter mais informações, veja [Habilitar o PXE no ponto de distribuição]
 
 Essas sequências de tarefas podem ser usadas para implantação de sistema operacional ou personalização. Também é compatível com computadores de grupo de trabalho.
 
+Para obter mais informações, confira [Sequências de tarefas e a conta de acesso à rede](/sccm/osd/plan-design/planning-considerations-for-automating-tasks#BKMK_TSNetworkAccessAccount).
+
 
 ### <a name="other-improvements-to-os-deployment"></a>Outras melhorias à implantação do sistema operacional
 
 #### <a name="mask-sensitive-data-stored-in-task-sequence-variables"></a>Mascarar dados confidenciais armazenados nas variáveis da sequência de tarefas
- <!--1358330--> ***[Atualizado]*** Na etapa **Definir Variável de Sequência de Tarefas**, selecione a nova opção **Não exibir esse valor**. 
+ <!--1358330--> Na etapa **Definir Variável de Sequência de Tarefas**, selecione a nova opção **Não exibir esse valor**. 
 
  Para saber mais, confira [Definir Variáveis de Sequência de Tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable). 
 
 #### <a name="mask-program-name-during-run-command-step-of-a-task-sequence"></a>Mascarar o nome do programa durante a Etapa de Execução de Comando de uma sequência de tarefas
- <!--1358493--> ***[Atualizado]*** Para impedir que os dados potencialmente confidenciais sejam exibidos ou registrados, configure a variável de sequência de tarefas **OSDDoNotLogCommand**.  
+ <!--1358493--> Para impedir que os dados potencialmente confidenciais sejam exibidos ou registrados, configure a variável de sequência de tarefas **OSDDoNotLogCommand**.  
 
  Para saber mais, confira [Variáveis de sequência de tarefas](/sccm/osd/understand/task-sequence-variables#OSDDoNotLogCommand). 
 
 #### <a name="task-sequence-variable-for-dism-parameters-when-installing-drivers"></a>Variável de sequência de tarefas para os parâmetros do DISM ao instalar drivers
- <!--516679/2840016--> ***[Atualizado]*** Para especificar parâmetros de linha de comando adicionais para o DISM, use a nova variável de sequência de tarefas **OSDInstallDriversAdditionalOptions**. 
+ <!--516679/2840016--> Para especificar parâmetros de linha de comando adicionais para o DISM, use a nova variável de sequência de tarefas **OSDInstallDriversAdditionalOptions**. 
 
  Para saber mais, confira [Variáveis de sequência de tarefas](/sccm/osd/understand/task-sequence-variables#OSDInstallDriversAdditionalOptions). 
 
 #### <a name="option-to-use-full-disk-encryption"></a>Opção para usar a criptografia de disco cheio
- <!--SCCMDocs-pr issue 2671--> ***[Atualizado]*** As etapas **Habilitar BitLocker** e **Pré-provisionar BitLocker** agora incluem uma opção para **Usar criptografia de disco completo**. Por padrão, essas etapas criptografam o espaço usado na unidade. Esse comportamento padrão é recomendável, pois é mais rápido e eficiente. 
+ <!--SCCMDocs-pr issue 2671--> As etapas **Habilitar BitLocker** e **Pré-provisionar BitLocker** agora incluem uma opção para **Usar criptografia de disco completo**. Por padrão, essas etapas criptografam o espaço usado na unidade. Esse comportamento padrão é recomendável, pois é mais rápido e eficiente. 
 
  Para saber mais, confira [Habilitar o BitLocker](/sccm/osd/understand/task-sequence-steps#BKMK_EnableBitLocker) e [Pré-provisionar o BitLocker](/sccm/osd/understand/task-sequence-steps#BKMK_PreProvisionBitLocker). 
 
 #### <a name="client-provisioning-mode-isnt-enabled-with-windows-10-upgrade-compatibility-scan"></a>O modo de provisionamento de cliente não está habilitado com a verificação de compatibilidade de atualização do Windows 10
- <!--SCCMDocs-pr issue 2812--> ***[Atualizado]*** Agora, quando você habilita a opção **Executar verificação de compatibilidade da Instalação do Windows sem iniciar a atualização**, a etapa da sequência de tarefas **Atualizar Sistema Operacional** não coloca a configuração do cliente do Configuration Manager em modo de provisionamento.
+ <!--SCCMDocs-pr issue 2812--> Agora, quando você habilita a opção **Executar verificação de compatibilidade da Instalação do Windows sem iniciar a atualização**, a etapa da sequência de tarefas **Atualizar Sistema Operacional** não coloca a configuração do cliente do Configuration Manager em modo de provisionamento.
 
  Para obter mais informações, consulte [Fazer Upgrade no Sistema Operacional](/sccm/osd/understand/task-sequence-steps#BKMK_UpgradeOS).
 
 #### <a name="revised-documentation-for-task-sequence-variables"></a>Documentação revisada para variáveis de sequência de tarefas
- ***[Atualizado]***  Agora, dois novos artigos estão disponíveis para entender as variáveis de sequência de tarefas:  
+ Agora, dois novos artigos estão disponíveis para entender as variáveis de sequência de tarefas:  
 
  - [Como usar variáveis de sequência de tarefas](/sccm/osd/understand/using-task-sequence-variables) é um novo artigo que descreve os tipos diferentes de variáveis, métodos para definir as variáveis e como acessá-los.  
 
@@ -394,8 +387,7 @@ Essas sequências de tarefas podem ser usadas para implantação de sistema oper
 
 
 ### <a name="software-center-infrastructure-improvements"></a>Melhorias na infraestrutura do Centro de Software
-<!--1358309-->
- ***[Atualizado]*** Funções do catálogo de aplicativos não são mais necessárias para exibir aplicativos disponíveis ao usuário no Centro de Software. Essa alteração ajuda a reduzir a infraestrutura de servidor necessária para fornecer aplicativos aos usuários. O Centro de Software agora depende do ponto de gerenciamento para obter essas informações, o que ajuda ambientes maiores a serem melhor dimensionados por meio de suas atribuições a [grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups#management-points).
+<!--1358309--> Funções do catálogo de aplicativos não são mais necessárias para exibir aplicativos disponíveis ao usuário no Centro de Software. Essa alteração ajuda a reduzir a infraestrutura de servidor necessária para fornecer aplicativos aos usuários. O Centro de Software agora depende do ponto de gerenciamento para obter essas informações, o que ajuda ambientes maiores a serem melhor dimensionados por meio de suas atribuições a [grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups#management-points).
 
 Para obter mais informações, confira [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex)  
 
@@ -500,7 +492,7 @@ Para obter mais informações, veja [Painel de ciclo de vida do produto](/sccm/c
 
 
 ### <a name="copy-asset-details-from-monitoring-views"></a>Copiar detalhes do ativo das exibições de monitoramento
-<!--1357856--> As seguintes áreas do espaço de trabalho **Monitoramento** agora são compatíveis com cópia de texto:  
+<!--1357856--> As seguintes áreas do workspace **Monitoramento** agora são compatíveis com cópia de texto:  
 
 - No nó **Implantações**, selecione uma implantação e clique em **Exibir Status**. No painel **Detalhes do Ativo** da exibição de Status de Implantação, selecione um ou mais dispositivos.  
 
@@ -526,7 +518,7 @@ Para obter mais informações, veja o [painel do Surface](/sccm/core/clients/man
 
 
 ### <a name="view-the-currently-signed-on-user-for-a-device"></a>Exibir o usuário conectado no momento para um dispositivo
-<!--1358202--> Agora, por padrão, o nó **Dispositivos** do espaço de trabalho **Ativos e Conformidade** exibe uma coluna para o **Usuário Conectado no Momento**. Ele também é exibido para qualquer lista de dispositivos específicos da coleção. Este valor é tão atual quanto o [status do cliente](/sccm/core/clients/manage/monitor-clients#bkmk_indStatus). Quando o usuário faz logoff, o cliente limpa esse valor. Se nenhum usuário estiver conectado, o valor ficará em branco. 
+<!--1358202--> Agora, por padrão, o nó **Dispositivos** do workspace **Ativos e Conformidade** exibe uma coluna para o **Usuário Conectado no Momento**. Ele também é exibido para qualquer lista de dispositivos específicos da coleção. Este valor é tão atual quanto o [status do cliente](/sccm/core/clients/manage/monitor-clients#bkmk_indStatus). Quando o usuário faz logoff, o cliente limpa esse valor. Se nenhum usuário estiver conectado, o valor ficará em branco. 
 
 Para obter mais informações, veja [Melhorias do console na versão 1806](/sccm/core/servers/manage/admin-console#console-improvements-in-version-1806).
 

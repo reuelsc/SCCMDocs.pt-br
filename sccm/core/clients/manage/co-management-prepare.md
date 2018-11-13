@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: d15484ef38264a5c954dc664f9885b800a078ca6
-ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
+ms.openlocfilehash: 9aab4273129e6a3032d7e85d2545e6abc5b616c4
+ms.sourcegitcommit: 8dd9199bfe8e27f62e9df307f1c6ac58a3b81717
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601000"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50237149"
 ---
 # <a name="prepare-windows-10-devices-for-co-management"></a>Preparar dispositivos Windows 10 para o cogerenciamento
 Você pode habilitar o cogerenciamento em dispositivos Windows 10 que foram ingressados no AD e no Azure AD e registrados no Microsoft Intune e em um cliente no Configuration Manager. Para novos dispositivos Windows 10 e dispositivos que já estão registrados no Intune, instale o cliente do Configuration Manager antes que eles possam ser cogerenciados. Para dispositivos Windows 10 que já são clientes do Configuration Manager, você pode registrar os dispositivos no Intune e habilitar o cogerenciamento no console do Configuration Manager.
@@ -68,7 +68,7 @@ Estes são os pré-requisitos gerais para habilitar o cogerenciamento:
 
 - Windows 10, versão 1709 ou posterior  
 
-- [Adicionado ao Azure AD híbrido](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup) (adicionado ao AD e ao Azure AD)  
+- [Ingressado no Azure AD híbrido](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup) (ingressado no AD e no Azure AD) ou ingressado somente no Azure AD (esse tipo é às vezes chamado de "ingressado no domínio da nuvem").
 
 
 ### <a name="additional-prerequisites-for-devices-without-the-configuration-manager-client"></a>Pré-requisitos adicionais para dispositivos sem o cliente do Configuration Manager
@@ -133,7 +133,7 @@ Para obter mais informações, consulte [Propriedades de instalação do cliente
 > [!Tip]
 > Encontre os parâmetros de linha de comando para o seu site usando as seguintes etapas:     
 > 
-> 1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Serviços de Nuvem** e selecione o nó **Cogerenciamento**.  
+> 1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e escolha o nó **Cogerenciamento**.  
 > 
 > 2. Na faixa de opções, clique em **Configurar cogerenciamento** para abrir o Assistente para Integração de Cogerenciamento. (Se você já tiver configurado cogerenciamento, selecione **Propriedades**. Em seguida, vá para a etapa 4.)    
 > 
@@ -155,7 +155,7 @@ Para novos dispositivos Windows 10, você pode usar o serviço AutoPilot para de
 1. Habilite o AutoPilot para os novos dispositivos Windows 10. Para obter detalhes, consulte [Visão geral do Windows AutoPilot](https://docs.microsoft.com/windows/deployment/windows-10-auto-pilot).    
 
    > [!NOTE]   
-   > A partir da versão 1802, use o Configuration Manager para coletar e relatar as informações do dispositivo exigidas pela Microsoft Store para Empresas e Educação. Esta informação inclui o número de série do dispositivo, o identificador de produto do Windows e um identificador de hardware. No console do Configuration Manager, espaço de trabalho **Monitoramento**, expanda o nó **Geração de relatórios**, expanda **Relatórios** e selecione o nó **Hardware - Geral**. Execute o novo relatório, **Informações do dispositivo do Windows AutoPilot** e veja os resultados. No visualizador de relatórios, clique no ícone **Exportar** e selecione a opção **CSV (delimitado por vírgulas)**. Depois de salvar o arquivo, faça o upload dos dados para a Microsoft Store para Empresas e Educação. Para saber mais, confira [adicionar dispositivos na Microsoft Store para Empresas e Educação](https://docs.microsoft.com/microsoft-store/add-profile-to-devices#add-devices-and-apply-autopilot-deployment-profile).
+   > A partir da versão 1802, use o Configuration Manager para coletar e relatar as informações do dispositivo exigidas pela Microsoft Store para Empresas e Educação. Esta informação inclui o número de série do dispositivo, o identificador de produto do Windows e um identificador de hardware. No console do Configuration Manager, workspace **Monitoramento**, expanda o nó **Geração de relatórios**, expanda **Relatórios** e selecione o nó **Hardware - Geral**. Execute o novo relatório, **Informações do dispositivo do Windows AutoPilot** e veja os resultados. No visualizador de relatórios, clique no ícone **Exportar** e selecione a opção **CSV (delimitado por vírgulas)**. Depois de salvar o arquivo, faça o upload dos dados para a Microsoft Store para Empresas e Educação. Para saber mais, confira [adicionar dispositivos na Microsoft Store para Empresas e Educação](https://docs.microsoft.com/microsoft-store/add-profile-to-devices#add-devices-and-apply-autopilot-deployment-profile).
 
 2. Configure o registro automático no Azure AD para que seus dispositivos sejam registrados automaticamente no Intune. Para obter detalhes, consulte  [Registrar os dispositivos Windows no Microsoft Intune](https://docs.microsoft.com/intune/windows-enroll).  
 

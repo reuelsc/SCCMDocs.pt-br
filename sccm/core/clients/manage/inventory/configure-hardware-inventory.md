@@ -10,12 +10,12 @@ ms.assetid: 0e45290e-f8f7-4335-801e-570225d12c2b
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: a2051088b70c721250842548f877792adc84b38f
-ms.sourcegitcommit: 59afe6f05333d4150afaf88ab0a85a979818e3fb
+ms.openlocfilehash: 1b632a9b7b7b20bc8d6653d35b267043dde6660d
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36957773"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50410993"
 ---
 # <a name="how-to-configure-hardware-inventory-in-system-center-configuration-manager"></a>How to configure hardware inventory in System Center Configuration Manager
 
@@ -24,7 +24,10 @@ ms.locfileid: "36957773"
 Este procedimento define as configurações do cliente para o inventário de hardware e se aplica a todos os clientes em sua hierarquia. Se quiser que essas configurações se apliquem somente a alguns clientes, crie uma configuração personalizada do cliente de dispositivo e a atribua a uma coleção que contém os dispositivos nos quais deseja usar o inventário de hardware. Consulte [Como definir as configurações do cliente no System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
 
 > [!NOTE]  
->  Se um dispositivo cliente receber configurações de inventário de hardware de vários conjuntos de configurações do cliente, as classes de inventário de hardware de cada conjunto de configurações serão mescladas quando o cliente relatar o inventário de hardware.  
+>  Se um dispositivo cliente receber configurações de inventário de hardware de vários conjuntos de configurações do cliente, as classes de inventário de hardware de cada conjunto de configurações serão mescladas quando o cliente relatar o inventário de hardware. Além disso, não marcar uma classe em uma configuração com uma prioridade mais alta do cliente personalizado não desabilita a inclusão dessa classe no inventário pelo cliente. 
+
+Para desabilitar uma classe de inventário de hardware específica na maioria dos sistemas, exceto alguns, a classe precisa ser desmarcada nas configurações do cliente padrão. Em seguida, crie uma configuração do cliente personalizada para habilitar a classe e implante-a nos sistemas de destino.
+
 
 ### <a name="to-configure-hardware-inventory"></a>Para configurar o inventário de hardware  
 
