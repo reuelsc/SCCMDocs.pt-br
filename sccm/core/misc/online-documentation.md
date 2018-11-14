@@ -25,7 +25,7 @@ Localize a biblioteca de documentação para a versão do produto que você usa:
 ## <a name="system-center-configuration-manager-current-branch"></a>System Center Configuration Manager (ramificação atual)  
 **Documentação online:** você pode exibir a documentação online para a ramificação atual do System Center Configuration Manager no TechNet:  
 
--   [Introduction to System Center Configuration Manager](https://technet.microsoft.com/library/mt622715.aspx)  
+-   [Introdução ao System Center Configuration Manager](https://technet.microsoft.com/library/mt622715.aspx)  
 
 -   [Prepare-se para o System Center Configuration Manager](https://technet.microsoft.com/library/mt608540.aspx)  
 

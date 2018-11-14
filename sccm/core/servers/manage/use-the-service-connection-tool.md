@@ -10,12 +10,12 @@ ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e0051b00f9c9540291db94c79a81c600c87ad59c
-ms.sourcegitcommit: 4f05517f7b284696a492a1b184cc5f25c5cda5e6
+ms.openlocfilehash: e88d40317fe0c1385d78ab7b5919f0f766254598
+ms.sourcegitcommit: 303d826f45c8fd9a05d8883afc1ca645e56bd576
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48891190"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51269205"
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usar a ferramenta de conexão de serviço do System Center Configuration Manager
 
