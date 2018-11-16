@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
-ms.openlocfilehash: 1c5377096ef67057f3f38bb71fb611b7993ecb6b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: ffe1546e3d7561a0bbda787ef6b1aaeac6e8d2e0
+ms.sourcegitcommit: 2504617dc4db90e205327d06cab32f050e88dbf2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353099"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51505118"
 ---
 # <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>Pré-requisitos para atualizações de software no System Center Configuration Manager
 
@@ -33,8 +33,10 @@ Este artigo lista os pré-requisitos para atualizações de software no System C
  O WSUS (Windows Server Update Services) é necessário para sincronização de atualizações de software e para o exame de aplicabilidade de atualizações de software nos clientes. O servidor WSUS precisa ser instalado antes de se criar a função do ponto de atualização de software. Há suporte para as seguintes versões do WSUS em um ponto de atualização de software:  
 
 -   WSUS 10.0 (função no Windows Server 2016)
--   WSUS 6.2 e 6.3 (função no Windows Server 2012 e Windows Server 2012 R2)  
--   WSUS 3.2 (função no Windows Server 2008 R2)  
+-   WSUS 6.2 e 6.3 (função no Windows Server 2012 e Windows Server 2012 R2)
+
+>[!NOTE]
+>-   Começando com a versão 1702, o Windows Server 2008 R2 não é compatível com a função de ponto de atualização de software. Para obter mais informações, confira [Sistemas operacionais com suporte para servidores do sistema de sites](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers#bkmk_2008r2sp1).  
 
 Quando você tiver diversos pontos de atualização de software em um site, verifique se todos estão executando a mesma versão do WSUS.  
 

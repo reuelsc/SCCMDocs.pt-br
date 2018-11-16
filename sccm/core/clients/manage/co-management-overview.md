@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: a99983583aa8c21f8a987f3e20550752e7b77ba4
-ms.sourcegitcommit: 83806460b6fd88a1d08a2c97f4d72b9e36e04102
+ms.openlocfilehash: 1791217e22e2bcc6d5fd2603abee3aaced816afe
+ms.sourcegitcommit: 1f8731ed8f0308cb2cb576722adb0821a366e9ce
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39495553"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51223731"
 ---
 # <a name="co-management-for-windows-10-devices"></a>Cogerenciamento para dispositivos Windows 10    
 
@@ -72,7 +72,7 @@ Uso imediato dos seguintes recursos do Intune:
 
  - Dispositivos Windows 10 devem ser associados ao Azure AD. Eles podem ser de qualquer um dos seguintes tipos:  
 
-     - [Híbrido ingressado no Azure AD](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup), em que o dispositivo é ingressado do Azure AD e seu domínio local  
+     - [Ingressado no Azure AD híbrido](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup), em que o dispositivo ingressa no seu Active Directory local e é registrado com seu Azure Active Directory.
 
      - Somente ingressado no Azure AD. (Esse tipo é às vezes chamado de "ingressado em domínio de nuvem")<!--SCCMDocs issue 605-->
 
@@ -94,7 +94,7 @@ Uso imediato dos seguintes recursos do Intune:
  > [!Important]  
  > Iniciando na versão 1802, para habilitar o cogerenciamento, sua conta de usuário administrativo no Configuration Manager deverá ser um **Administrador Completo** com **Todos** os escopos de segurança. Para obter mais informações, veja [Fundamentos da administração baseada em funções](/sccm/core/understand/fundamentals-of-role-based-administration).<!--SCCMDoc issue 626-->  
 
- No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Serviços de Nuvem** e selecione o nó **Cogerenciamento**. Clique em **Configurar cogerenciamento** na faixa de opções para abrir o **Assistente para Integração de Cogerenciamento**. 
+ No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e escolha o nó **Cogerenciamento**. Clique em **Configurar cogerenciamento** na faixa de opções para abrir o **Assistente para Integração de Cogerenciamento**. 
    
 1. Na página **Assinatura**, clique em **Entrar**. Entre no seu locatário do Intune e, em seguida, clique em **Avançar**.  
 

@@ -10,12 +10,12 @@ ms.assetid: fab13949-371c-4a4c-978e-471db1e54966
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 82909cced6783f73608f155e64b7dd30b4087b06
-ms.sourcegitcommit: a52255da16c9f8b0b60a6c299a369347c7e01bef
+ms.openlocfilehash: d442955d62989d3bbc7b32e0aba122a0853a3f14
+ms.sourcegitcommit: 1f8731ed8f0308cb2cb576722adb0821a366e9ce
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49989154"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51223663"
 ---
 # <a name="manage-operating-system-images-with-system-center-configuration-manager"></a>Gerenciar imagens do sistema operacional com o System Center Configuration Manager
 
@@ -35,9 +35,9 @@ As imagens do sistema operacional no Configuration Manager são armazenadas em a
 
 -   **Desvantagens**  
 
-    -   A instalação do sistema operacional pode levar mais tempo porque a instalação do aplicativo e outras configurações ocorrem após a conclusão da instalação do sistema operacional.  
+    -   A instalação do sistema operacional pode levar mais tempo porque a instalação do aplicativo e outras configurações ocorrem após a conclusão da instalação do sistema operacional.
 
- **Imagem capturada**  
+**Imagem capturada**  
 
  Para criar uma imagem personalizada do sistema operacional, compile um computador de referência com o sistema operacional desejado, instale aplicativos, configure as configurações, etc. Em seguida, você pode capturar a imagem do sistema operacional do computador de referência para criar o arquivo WIM. É possível compilar o computador de referência manualmente ou usar uma sequência de tarefas para automatizar algumas ou todas as etapas de compilação.   
 Para as etapas de criação de uma imagem personalizada do sistema operacional, consulte [Personalizar imagens do sistema operacional](customize-operating-system-images.md).  
@@ -48,8 +48,9 @@ Para as etapas de criação de uma imagem personalizada do sistema operacional, 
 
 -   **Desvantagens**  
 
-    -   A instalação do sistema operacional pode levar mais tempo porque a instalação do aplicativo e outras configurações ocorrem após a conclusão da instalação do sistema operacional.  
-
+    -   O tamanho da imagem é potencialmente maior que a imagem padrão.
+    
+    -   É preciso criar uma nova imagem quando as atualizações para aplicativos e ferramentas são necessárias.
 
 ##  <a name="BKMK_AddOSImages"></a> Adicionar imagens do sistema operacional ao Configuration Manager  
  Antes de usar uma imagem do sistema operacional, você deve adicionar a imagem a um site do Configuration Manager. Use o procedimento a seguir para adicionar uma imagem do sistema operacional a um site.  
