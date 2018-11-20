@@ -1,8 +1,8 @@
 ---
 title: Endpoint Protection
 titleSuffix: Configuration Manager
-description: Saiba como gerenciar políticas antimalware e a segurança do Firewall do Windows para computadores cliente na sua hierarquia do Configuration Manager.
-ms.date: 02/09/2018
+description: Saiba como gerenciar as políticas antimalware e a segurança do Firewall do Windows para clientes.
+ms.date: 10/26/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 76c90f64-d729-456b-8304-01852cd66fb6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2da4b91411822b6274da3e165ff3e43e8752dc45
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 2a8cf57de0214080a1b581faa044950219d11355
+ms.sourcegitcommit: 3772ece83823714b2aae46ec20523cc094701760
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352000"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51681443"
 ---
 # <a name="endpoint-protection"></a>Endpoint Protection
 
@@ -49,7 +49,7 @@ A partir dos computadores Windows 10 e Windows Server 2016, o Windows Defender j
 
 
 ## <a name="managing-malware-with-endpoint-protection"></a>Gerenciando malware com o Endpoint Protection  
- O Endpoint Protection no Configuration Manager permite que você crie políticas antimalware que contêm configurações para o cliente do Endpoint Protection. Implantar essas políticas antimalware nos computadores cliente. Em seguida, monitore a conformidade no nó **Status do Endpoint Protection** em **Segurança** no espaço de trabalho **Monitoramento**. Use também os relatórios do Endpoint Protection no nó **Relatórios**.  
+ O Endpoint Protection no Configuration Manager permite que você crie políticas antimalware que contêm configurações para o cliente do Endpoint Protection. Implantar essas políticas antimalware nos computadores cliente. Em seguida, monitore a conformidade no nó **Status do Endpoint Protection** em **Segurança** no workspace **Monitoramento**. Use também os relatórios do Endpoint Protection no nó **Relatórios**.  
 
  Informações adicionais:  
 
@@ -85,18 +85,24 @@ O Endpoint Protection gerencia e monitora a ATP (Proteção Avançada contra Ame
 
  ![Fluxo de trabalho do Endpoint Protection](../media/Endpoint-Protection-Workflow.gif)  
 
+
+
 ## <a name="endpoint-protection-client-for-mac-computers-and-linux-servers"></a>Cliente do Endpoint Protection para computadores Mac e servidores Linux  
- O System Center Endpoint Protection inclui um cliente do Endpoint Protection para Linux e para computadores Mac. Esses clientes não são fornecidos com o Configuration Manager. Você precisa baixar os seguintes produtos do [Centro de Serviços de Licenciamento por Volume da Microsoft](https://www.microsoft.com/licensing/servicecenter/default.aspx).  
+
+> [!Important]  
+> O suporte do SCEP (System Center Endpoint Protection) para Mac e Linux (todas as versões) será encerrado em 31 de dezembro de 2018. A disponibilidade de novas definições de vírus do SCEP para Mac e do SCEP para Linux será descontinuada após o encerramento do suporte. Para obter mais informações, consulte a [postagem no blog sobre o encerramento do suporte](https://go.microsoft.com/fwlink/?linkid=870182).  
+
+ O System Center Endpoint Protection inclui um cliente do Endpoint Protection para Linux e para computadores Mac. O Configuration Manager não é fornecido a esses clientes. Baixe os seguintes produtos do [Centro de Serviços de Licenciamento por Volume da Microsoft](https://www.microsoft.com/licensing/servicecenter/default.aspx):  
 
 -   System Center Endpoint Protection para Mac  
 
 -   System Center Endpoint Protection para Linux  
 
 
-> [!IMPORTANT]  
+> [!Note]  
 >  Você deve ser um cliente de Licença de volume da Microsoft para baixar os arquivos de instalação do Endpoint Protection para Linux e Mac.  
 
- Esses produtos não podem ser gerenciados no console do Gerenciador de Configurações. No entanto, um pacote de gerenciamento do System Center Operations Manager é fornecido com os arquivos de instalação, o que permite que você gerencie o cliente para Linux usando o Operations Manager.  
+ Esses produtos não podem ser gerenciados no console do Configuration Manager. Um pacote de gerenciamento do System Center Operations Manager é fornecido com os arquivos de instalação, o que permite que você gerencie o cliente para Linux.  
 
 ### <a name="how-to-get-the-endpoint-protection-client-for-mac-computers-and-linux-servers"></a>Como obter o cliente do Endpoint Protection para computadores Mac e servidores Linux
 
