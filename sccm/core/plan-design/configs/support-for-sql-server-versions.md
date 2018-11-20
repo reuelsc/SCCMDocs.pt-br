@@ -10,12 +10,12 @@ ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: aed8014715431a2fb70647ae77f5009e0c89b3ab
-ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
+ms.openlocfilehash: 962029dc6bc5584e1edf0bd26d4be3fc280d6204
+ms.sourcegitcommit: 147aae8300831c722a559087c735df0f761b2041
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42584824"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51645235"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>Versões do SQL Server compatíveis com o Configuration Manager
 
@@ -104,6 +104,12 @@ Use esta versão do SQL Server sem uma versão de atualização cumulativa míni
 -   Um site primário  
 -   Um site secundário  
 
+### <a name="sql-server-2014-sp3-standard-enterprise"></a>SQL Server 2014 SP3: Standard, Enterprise  
+Use esta versão do SQL Server sem uma versão de atualização cumulativa mínima para os seguintes sites:  
+
+-   Um site de administração central  
+-   Um site primário  
+-   Um site secundário
 
 ### <a name="sql-server-2014-sp2-standard-enterprise"></a>SQL Server 2014 SP2: Standard, Enterprise  
 Use esta versão do SQL Server sem uma versão de atualização cumulativa mínima para os seguintes sites:  
@@ -152,12 +158,15 @@ Use esta versão do SQL Server sem uma versão de atualização cumulativa míni
 Use esta versão do SQL Server sem uma versão de atualização cumulativa mínima para os seguintes sites:
 -   Um site secundário
 
+### <a name="sql-server-2014-express-sp3"></a>SQL Server 2014 Express SP3   
+Use esta versão do SQL Server sem uma versão de atualização cumulativa mínima para os seguintes sites:  
+
+-   Um site secundário  
 
 ### <a name="sql-server-2014-express-sp2"></a>SQL Server 2014 Express SP2   
 Use esta versão do SQL Server sem uma versão de atualização cumulativa mínima para os seguintes sites:  
 
 -   Um site secundário  
-
 
 ### <a name="sql-server-2014-express-sp1"></a>SQL Server 2014 Express SP1   
  Use esta versão do SQL Server sem uma versão de atualização cumulativa mínima para os seguintes sites:  
@@ -177,10 +186,10 @@ Use esta versão do SQL Server sem uma versão de atualização cumulativa míni
 ### <a name="sql-server-architecture-version"></a>Versão da arquitetura do SQL Server  
  O Configuration Manager requer uma versão de 64 bits do SQL Server para hospedar o banco de dados do site.  
 
-### <a name="database-collation"></a>Agrupamento de banco de dados  
- Em cada site, a instância do SQL Server que é usada para o site e o banco de dados do site devem usar o seguinte agrupamento: **SQL_Latin1_General_CP1_CI_AS**.  
+### <a name="database-collation"></a>Ordenação de banco de dados  
+ Em cada site, a instância do SQL Server que é usada para o site e o banco de dados do site devem usar a seguinte ordenação: **SQL_Latin1_General_CP1_CI_AS**.  
 
- O Configuration Manager dá suporte a duas exceções a este agrupamento para atender aos padrões definidos no GB18030 para uso na China. Para saber mais, confira [Suporte internacional](/sccm/core/plan-design/hierarchy/international-support).  
+ O Configuration Manager dá suporte a duas exceções a esta ordenação para atender aos padrões definidos no GB18030 para uso na China. Para saber mais, confira [Suporte internacional](/sccm/core/plan-design/hierarchy/international-support).  
 
 ### <a name="database-compatibility-level"></a>Nível de compatibilidade do banco de dados   
  O Configuration Manager requer que o nível de compatibilidade do banco de dados do site não seja menor do que a versão mais antiga com suporte do SQL Server para sua versão do Configuration Manager. Por exemplo, a começar da versão 1702, você precisará ter um [nível de compatibilidade do banco de dados](https://docs.microsoft.com/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database) maior ou igual a 110. <!-- SMS.506266--> 
