@@ -2,7 +2,7 @@
 title: Clientes e dispositivos com suporte
 titleSuffix: Configuration Manager
 description: Saiba a quais versões de sistema operacional o Configuration Manager oferece suporte para clientes e dispositivos.
-ms.date: 08/21/2018
+ms.date: 10/02/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8abe612272dd8a48a23ffdcb945aa7b6766afdb9
-ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
+ms.openlocfilehash: 82fd328d65e67df2506f31679ed3c1b3abc1262c
+ms.sourcegitcommit: e0209e4549e9828eb74089313dbee323ece1fc2f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42586395"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51598590"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versões de sistema operacional compatíveis com clientes e dispositivos para o Configuration Manager
 
@@ -33,10 +33,24 @@ ms.locfileid: "42586395"
 
 ##  <a name="windows-computers"></a>Computadores com Windows  
 
- Use o cliente incluído no Configuration Manager para gerenciar as seguintes versões do sistema operacional do Windows. Para saber mais, confira [Como implantar clientes em computadores Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).  
+ Para gerenciar as seguintes versões do sistema operacional do Windows, use o cliente incluído no Configuration Manager. Para saber mais, confira [Como implantar clientes em computadores Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).  
 
 
-### <a name="supported-os-versions"></a>Versões compatíveis do sistema operacional  
+### <a name="supported-client-os-versions"></a>Versões de sistema operacional do cliente com suporte
+
+-   **Windows 10**  
+
+    Para obter mais informações, consulte [Suporte para o Windows 10](/sccm/core/plan-design/configs/support-for-windows-10).  
+
+-   **Windows 8.1** (x86, x64): Professional, Enterprise    
+
+-   **Windows 7 com SP1** (x86, x64): Professional, Enterprise e Ultimate    
+
+
+### <a name="supported-server-os-versions"></a>Versões de sistema operacional de servidor com suporte
+
+-  **Windows Server 2019**: Standard, Datacenter <sup>[Observação 1](#bkmk_note1)</sup>  
+    (a partir do Configuration Manager versão 1806.)
 
 -  **Windows Server 2016**: Standard, Datacenter <sup>[Observação 1](#bkmk_note1)</sup>  
 
@@ -56,32 +70,30 @@ ms.locfileid: "42586395"
 
 -   **Windows Server 2008 com SP2** (x86, x64): Standard, Enterprise, Datacenter <sup>[Observação 1](#bkmk_note1)</sup>    
 
--   **Windows 10**  
 
-    Para saber mais sobre as diferentes versões do Windows 10 que são compatíveis com as diferentes versões do Configuration Manager, consulte [Suporte para versões do Windows 10](/sccm/core/plan-design/configs/support-for-windows-10).  
+#### <a name="server-core"></a>Server Core
+As seguintes versões referem especificamente à instalação do Server Core do sistema operacional. <sup>[Observação 3](#bkmk_note3)</sup>  
 
--   **Windows 8.1** (x86, x64): Professional, Enterprise    
+As versões de canal semestral do Windows Server são as instalações do Server Core, por exemplo, Windows Server, versão 1809. Como um cliente do Configuration Manager, elas são compatíveis da mesma forma que a versão associada de canal semestral do Windows 10. Para obter mais informações, consulte [Suporte para o Windows 10](/sccm/core/plan-design/configs/support-for-windows-10).
 
--   **Windows 7 com SP1** (x86, x64): Professional, Enterprise e Ultimate    
 
--   **A instalação Server Core do Windows Server, versão 1709** (x64) <sup>[Observação 2](#bkmk_note2)</sup> <sup>[Observação 3](#bkmk_note3)</sup>  
-    Esta versão do sistema operacional é compatível a partir da versão 1710 do Configuration Manager.  
+-   **Windows Server 2019** (x64) <sup>[Observação 2](#bkmk_note2)</sup>  
 
--   **A instalação Server Core do Windows Server 2016** (x64) <sup>[Observação 2](#bkmk_note2)</sup> <sup>[Observação 3](#bkmk_note3)</sup>  
+-   **Windows Server 2016** (x64) <sup>[Observação 2](#bkmk_note2)</sup>   
 
--   **A instalação Server Core do Windows Server 2012 R2** (x64) <sup>[Observação 2](#bkmk_note2)</sup> <sup>[Observação 3](#bkmk_note3)</sup>    
+-   **Windows Server 2012 R2** (x64) <sup>[Observação 2](#bkmk_note2)</sup>     
 
--   **A instalação Server Core do Windows Server 2012** (x64) <sup>[Observação 2](#bkmk_note2)</sup> <sup>[Observação 3](#bkmk_note3)</sup>    
+-   **Windows Server 2012** (x64) <sup>[Observação 2](#bkmk_note2)</sup>     
 
--   **A instalação Server Core do Windows Server 2008 R2** sem service pack ou com SP1 (x64) <sup>[Observação 3](#bkmk_note3)</sup>    
+-   **Windows Server 2008 R2** sem service pack ou com SP1 (x64)     
 
--   **A instalação Server Core do Windows Server 2008 SP2** (x86, x64) <sup>[Observação 3](#bkmk_note3)</sup>  
+-   **Windows Server 2008 SP2** (x86, x64)   
 
 #### <a name="bkmk_note1"></a> Observação 1
- Há suporte para versões Datacenter, mas sem certificação para o Configuration Manager. O suporte de hotfix não é oferecido para problemas específicos do Windows Server Datacenter Edition.  
+ O Configuration Manager testa e oferece suporte às edições do Windows Server Datacenter, mas não é certificado oficialmente para o Windows Server. O suporte de hotfixes do Configuration Manager não é oferecido para problemas específicos do Windows Server Datacenter Edition. Para obter mais informações sobre o programa de certificação do Windows Server, consulte [Catálogo do Windows Server](https://www.windowsservercatalog.com/). 
 
 #### <a name="bkmk_note2"></a> Observação 2
- Para oferecer suporte à instalação do cliente por push, o computador que executa esta versão do sistema operacional deve executar o serviço de função do Servidor de Arquivos para a função de servidor dos Serviços de Arquivo e Armazenamento. Para saber mais sobre como instalar recursos do Windows em um computador Server Core, consulte [Instalar funções, serviços de função e recursos usando os cmdlets do Windows PowerShell](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#BKMK_installwps).  
+ Para oferecer suporte à [instalação do cliente por push](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation), adicione o serviço Servidor de Arquivos da função de servidor Serviços de Arquivo e Armazenamento. Para obter informações sobre como instalar recursos do Windows em um Server Core, consulte [Instalar funções, serviços de função e recursos, usando os cmdlets do Windows PowerShell](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#BKMK_installwps).  
 
 #### <a name="bkmk_note3"></a> Observação 3
  O novo aplicativo do Centro de Software não conta com suporte em qualquer versão do Windows Server Core.<!--SCCMDocs issue 683-->
@@ -107,8 +119,6 @@ ms.locfileid: "42586395"
 
 -   Não há suporte para o Catálogo de Aplicativos em todos os dispositivos com Windows Embedded.  
 
--   Antes de monitorar malware detectado em dispositivos Windows Embedded baseados no Windows XP, é necessário instalar o pacote de script WMI do Microsoft Windows no dispositivo. Use o Windows Embedded Target Designer para instalar este pacote. Os arquivos **WBEMDISP.DLL** e **WBEMDISP.TLB** devem existir e estar registrados na pasta **%windir%\System32\WBEM** no dispositivo inserido a fim de garantir que o malware detectado seja relatado.  
-
 
 ### <a name="supported-os-versions"></a>Versões compatíveis do sistema operacional  
 
@@ -126,21 +136,6 @@ ms.locfileid: "42586395"
 -   **Windows Embedded POSReady 7** (x86, x64)    
 
 -   **Windows Embedded Standard 7 com SP1** (x86, x64)    
-
-
-### <a name="unsupported-os-versions"></a>Versões incompatíveis do sistema operacional
-
-As seguintes versões de sistema operacional são baseadas no Windows XP Embedded. A partir da versão 1702, não há suporte para essas versões de sistema operacional incorporadas. Para saber mais, confira [Sistemas operacionais cliente preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-client#deprecated-client-operating-systems).  
-
--   **WEPOS 1.1 com SP3** (x86)    
-
--   **Windows Embedded POSReady 2009** (x86)    
-
--   **Windows Fundamentals for Legacy PCs (WinFLP)** (x86)    
-
--   **Windows XP Embedded SP3** (x86)    
-
--   **Windows Embedded Standard 2009** (x86)  
 
 
 
@@ -240,14 +235,14 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 
 #### <a name="aix"></a>AIX  
 
-|Version|Arquivo TAR|  
+|Versão|Arquivo TAR|  
 |-|-|  
 |Versão 6.1 (Power)|ccm-Aix61ppc.&lt;build\>.tar|  
 |Versão 7.1 (Power)|ccm-Aix71ppc.&lt;build\>.tar|  
 
 #### <a name="centos"></a>CentOS  
 
-|Version|Arquivo TAR|  
+|Versão|Arquivo TAR|  
 |-|-|  
 |Versão 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Versão 5 x64|ccm-Universalx64.&lt;build\>.tar|  
@@ -257,7 +252,7 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 
 #### <a name="debian"></a>Debian  
 
-|Version|Arquivo TAR|  
+|Versão|Arquivo TAR|  
 |-|-|  
 |Versão 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Versão 5 x64|ccm-Universalx64.&lt;build\>.tar|  
@@ -270,13 +265,13 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 
 #### <a name="hp-ux"></a>HP-UX  
 
-|Version|Arquivo TAR|  
+|Versão|Arquivo TAR|  
 |-|-|  
 |Versão 11iv3 IA64|ccm-HpuxB.11.31i64.&lt;build\>.tar|  
 
 #### <a name="oracle-linux"></a>Oracle Linux  
 
-|Version|Arquivo TAR|  
+|Versão|Arquivo TAR|  
 |-|-|  
 |Versão 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Versão 5 x64|ccm-Universalx64.&lt;build\>.tar|  
@@ -284,9 +279,9 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 |Versão 6 x64|ccm-Universalx64.&lt;build\>.tar|  
 |Versão 7 x64|ccm-Universalx64.&lt;build\>.tar|  
 
-#### <a name="red-hat-enterprise-linux-rhel"></a>Red Hat Enterprise Linux (RHEL)  
+#### <a name="red-hat-enterprise-linux-rhel"></a>RHEL (Red Hat Enterprise Linux)  
 
-|Version|Arquivo TAR|  
+|Versão|Arquivo TAR|  
 |-|-|  
 |Versão 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Versão 5 x64|ccm-Universalx64.&lt;build\>.tar|  
@@ -296,7 +291,7 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 
 #### <a name="solaris"></a>Solaris  
 
-|Version|Arquivo TAR|  
+|Versão|Arquivo TAR|  
 |-|-|  
 |Versão 10 x86|ccm-Sol10x86.&lt;build\>.tar|  
 |Versão 10 SPARC|ccm-Sol10sparc.&lt;build\>.tar|  
@@ -305,7 +300,7 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 
 #### <a name="suse-linux-enterprise-server-sles"></a>SUSE Linux Enterprise Server (SLES)  
 
-|Version|Arquivo TAR|  
+|Versão|Arquivo TAR|  
 |-|-|  
 |Versão 10 SP1 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Versão 10 SP1 x64|ccm-Universalx64.&lt;build\>.tar|  
@@ -315,7 +310,7 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 
 #### <a name="ubuntu"></a>Ubuntu  
 
-|Version|Arquivo TAR|  
+|Versão|Arquivo TAR|  
 |-|-|  
 |Versão 10.04 LTS x86|ccm-Universalx86.&lt;build\>.tar|  
 |Versão 10.04 LTS x64|ccm-Universalx64.&lt;build\>.tar|  
@@ -325,15 +320,6 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 |Versão 14.04 LTS x64|ccm-Universalx64.&lt;build\>.tar|  
 |Versão 16.04 LTS x86|ccm-Universalx86.&lt;build\>.tar|  
 |Versão 16.04 LTS x64|ccm-Universalx64.&lt;build\>.tar|  
-
-
-
-##  <a name="mobile-devices-enrolled-by-microsoft-intune"></a>Dispositivos móveis registrados pelo Microsoft Intune  
-
- Para saber mais sobre os computadores e dispositivos que você pode gerenciar ao integrar o Microsoft Intune ao Configuration Manager, consulte os artigos a seguir na biblioteca de documentação do Microsoft Intune:  
-
--   [Funcionalidades de gerenciamento de dispositivos móveis do Microsoft Intune](https://docs.microsoft.com/intune/get-started/choose-how-to-manage-devices)  
--   [Recursos de gerenciamento de PC do Windows no Microsoft Intune](https://docs.microsoft.com/intune/get-started/windows-pc-management-capabilities-in-microsoft-intune)  
 
 
 
@@ -368,7 +354,7 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 
 ##  <a name="bkmk_ExSrvConOS"></a> Conector do Exchange Server  
 
-O Configuration Manager dá suporte ao gerenciamento limitado de dispositivos que se conectam ao Exchange Server, sem instalar o cliente do Configuration Manager. Para saber mais, confira [Gerenciar dispositivos móveis com o Configuration Manager e o Exchange](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).  
+O Configuration Manager dá suporte ao gerenciamento limitado de dispositivos que se conectam ao Exchange Server, sem instalar o cliente do Configuration Manager. Para saber mais, confira [Gerenciar dispositivos móveis com o Configuration Manager e o Exchange](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).  
 
 
 ### <a name="supported-versions-of-exchange-server"></a>Versões compatíveis do Exchange Server

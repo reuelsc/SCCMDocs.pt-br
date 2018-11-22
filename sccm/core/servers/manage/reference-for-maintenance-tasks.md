@@ -10,12 +10,12 @@ ms.assetid: 68dc6acd-5848-47a4-b4c1-ffa40e47890b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5492382afdb523846fcdd40b68d498730073eb7e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f8450308f0719903bc4b3f74d6c2ab1ca5e17c59
+ms.sourcegitcommit: e0209e4549e9828eb74089313dbee323ece1fc2f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342436"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51598607"
 ---
 # <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Referência para tarefas de manutenção do System Center Configuration Manager
 
@@ -120,7 +120,7 @@ Este tópico lista detalhes de cada uma das tarefas de manutenção de site do S
 
 **Excluir Dispositivos Registrados Antigos**: começando pela atualização para 1602, essa tarefa é desabilitada por padrão. Você pode usar esta tarefa para excluir do banco de dados os dados antigos sobre dispositivos móveis registrados que não relataram informações ao site por um tempo especificado.
 
-Essa tarefa aplica-se a dispositivos registrados pelo Microsoft Intune (híbrido) ou registrados no gerenciamento de dispositivo móvel local do Configuration Manager. Para saber mais sobre os sistemas operacionais de dispositivos que são registrados pelo Configuration Manager ou pelo Intune, veja a seção [Dispositivos móveis registrados pelo Microsoft Intune](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md#mobile-devices-enrolled-by-microsoft-intune) em [Sistemas operacionais com suporte para clientes e dispositivos para o System Center Configuration Manager](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md).
+Essa tarefa aplica-se a dispositivos registrados pelo Microsoft Intune (híbrido) ou registrados no gerenciamento de dispositivo móvel local do Configuration Manager. Para obter mais informações, consulte [Sistemas operacionais com suporte para clientes e dispositivos](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#bkmk_OnpremOS).
 
 -   Site de administração central: indisponível    
 -   **Site primário**: não habilitado    
@@ -217,7 +217,7 @@ Esta tarefa só opera em recursos que são clientes do Configuration Manager. É
 -   **Site primário**: não habilitado    
 -   Site secundário: indisponível  
 
-**Excluir Alertas Obsoletos**: use essa tarefa para excluir do banco de dados alertas expirados armazenados além do tempo especificado. Para obter mais informações, consulte [Use alerts and the status system for System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+**Excluir Alertas Obsoletos**: use essa tarefa para excluir do banco de dados alertas expirados armazenados além do tempo especificado. Para obter mais informações, consulte [Usar alertas e o sistema de status para o System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
 -   **Site de administração central**: habilitado    
 -   **Site primário**: habilitado    
@@ -299,7 +299,7 @@ Esses mapeamentos são armazenados em uma tabela para referência rápida. Quand
 -   **Site primário**: habilitado    
 -   Site secundário: indisponível  
 
-**Atualizar Tabelas do Catálogo de Aplicativos**: use essa tarefa para sincronizar o cache de banco de dados do site do Catálogo de Aplicativos com as informações mais recentes do aplicativo. Quando você altera a configuração dessa tarefa de manutenção, a configuração se aplica a todo site primário na hierarquia.  
+**Atualizar Tabelas do Catálogo de Aplicativos**: use essa tarefa para sincronizar o cache de banco de dados do site do Catálogo de Aplicativos com as informações mais recentes do aplicativo. Quando você altera a configuração dessa tarefa de manutenção, a configuração se aplica a todos os sites primários na hierarquia.  
 
 -   Site de administração central: indisponível    
 -   **Site primário**: habilitado    
