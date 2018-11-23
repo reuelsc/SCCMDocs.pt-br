@@ -1,6 +1,6 @@
 ---
 title: Criar e implantar uma política do Windows Defender Application Guard
-titleSuffix: Configuraton Manager
+titleSuffix: Configuration Manager
 description: Crie e implante uma política do Windows Defender Application Guard.
 ms.date: 03/22/2018
 ms.prod: configuration-manager
@@ -10,17 +10,16 @@ ms.assetid: 33a6c1d9-4dd8-411c-a748-693a5bd2ea5a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e7f0a1ccb71abb2fec27e0430bd4195dc85aceae
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 82423914b1d1f5cae8fa4ecea3d02ef02d23703a
+ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348065"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52258903"
 ---
 # <a name="create-and-deploy-windows-defender-application-guard-policy"></a>Criar e implantar políticas do Windows Defender Application Guard 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
-<!-- 1351960 -->
-Você pode criar e implantar políticas do [Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview) usando a proteção de ponto de extremidade do Configuration Manager. Essas políticas ajudam a proteger os usuários por meio da abertura de sites não confiáveis em um contêiner isolado seguro que não pode ser acessado pelas outras partes do sistema operacional.
+*Aplica-se a: System Center Configuration Manager (Branch atual)* 
+ <!-- 1351960 --> você pode criar e implantar [Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview) políticas usando o ponto de extremidade do Configuration Manager proteção. Essas políticas ajudam a proteger os usuários por meio da abertura de sites não confiáveis em um contêiner isolado seguro que não pode ser acessado pelas outras partes do sistema operacional.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -30,7 +29,7 @@ Para criar e implantar uma política do Windows Defender Application Guard, é n
 ## <a name="create-a-policy-and-to-browse-the-available-settings"></a>Crie uma política e para procurar as configurações disponíveis:
 
 1. No console do Configuration Manager, escolha **Ativos e Conformidade**.
-2. No espaço de trabalho **Ativos e Conformidade**, escolha **Visão Geral** > **Endpoint Protection** > **Windows Defender Application Guard**.
+2. No workspace **Ativos e Conformidade**, escolha **Visão Geral** > **Endpoint Protection** > **Windows Defender Application Guard**.
 3. Na guia **Início**, no grupo **Criar**, clique em **Criar Política do Windows Defender Application Guard**.
 4. Usando o [artigo](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/configure-wd-app-guard) como referência, você pode procurar e definir as configurações disponíveis. O Configuration Manager permite que você defina algumas configurações de política. Consulte [Configurações de interação de host](#BKMK_HIS) e [Comportamento do aplicativo](#BKMK_AppB).
 5. Na página **Definição de Rede**, especifique a identidade corporativa e defina o limite da rede corporativa.
