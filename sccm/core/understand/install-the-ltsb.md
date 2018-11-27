@@ -10,12 +10,12 @@ ms.assetid: f4f9a5fd-f573-4b99-ad93-b2c76812e922
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e0a4369e9c302c687f15b29b0daafbf4329e22a5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 7d6b957ebcc19dfe8c14dd781f71678db8e160af
+ms.sourcegitcommit: 1a1bac2d5ee0f20ce565d29798ee4dd99aaca044
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342300"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52281899"
 ---
 # <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Instalar e atualizar com uma mídia de linha de base da versão 1606 para o System Center Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "32342300"
 
 Quando você executa a Configuração da mídia de linha de base da versão 1606 para o Configuration Manager, é possível instalar o Branch de Manutenção em Longo Prazo ou o Branch Atual do System Center Configuration Manager.
 
-A mídia de linha de base está disponível em DVD como parte da versão do Microsoft System Center 2016 ou do System Center Configuration Manager (Branch Atual e Branch de Manutenção em Longo Prazo 1606). Para saber mais sobre a mídia de linha de base, confira [Baseline and update versions](/sccm/core/servers/manage/updates#baseline-and-udpate-versions) (Versões de linha de base e atualização).
+A mídia de linha de base está disponível em DVD como parte da versão do Microsoft System Center 2016 ou do System Center Configuration Manager (Branch Atual e Branch de Manutenção em Longo Prazo 1606). Para saber mais sobre a mídia de linha de base, confira [Baseline and update versions](../servers/manage/updates.md#bkmk_Baselines) (Versões de linha de base e atualização).
 
 
 Quando você usa a mídia de linha de base da versão 1606, o site que você instala ou para o qual atualiza é:

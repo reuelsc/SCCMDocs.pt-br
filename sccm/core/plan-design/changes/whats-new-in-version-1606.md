@@ -1,6 +1,6 @@
 ---
 title: Novidades na versão 1606
-titleSuffix: Configuraton Manager
+titleSuffix: Configuration Manager
 description: Veja os detalhes das alterações e os novos recursos introduzidos na versão 1606 do System Center Configuration Manager.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
@@ -10,12 +10,12 @@ ms.assetid: df2e57b9-6445-4067-98e7-ace85d4e6aa6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9aec81239dbfb816cdc6eb66cc17875c5d484e79
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0dcd2db7543d68a97e00244536d2aac218d440e7
+ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340228"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52259056"
 ---
 # <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Novidades da versão 1606 do System Center Configuration Manager
 
@@ -41,7 +41,7 @@ Estas são as alterações no nó Atualizações e Manutenção no console do Co
 
 - **Alteração de nome de nó:**
 
-    No espaço de trabalho **Monitoramento**, o nó **Status de Manutenção do Site** foi renomeado para **Status de Serviço e Atualizações**.
+    No workspace **Monitoramento**, o nó **Status de Manutenção do Site** foi renomeado para **Status de Serviço e Atualizações**.
 - **Mais detalhes do status da instalação:**
 
     Quando você exibe o status da instalação da atualização para um site, agora o console mostra detalhes separados para as seguintes ações:
@@ -53,7 +53,7 @@ Estas são as alterações no nó Atualizações e Manutenção no console do Co
   Além disso, agora há informações mais detalhadas para cada etapa, incluindo qual arquivo de log você pode exibir para obter mais informações.  
 -   **Nova opção para repetir as falhas de pré-requisito:**
 
-    Nos espaços de trabalho **Administração** e **Monitoramento**, o nó **Atualizações e Manutenção** inclui um novo botão na faixa de opções chamado **Ignorar avisos de pré-requisito**.
+    Nos workspaces **Administração** e **Monitoramento**, o nó **Atualizações e Manutenção** inclui um novo botão na faixa de opções chamado **Ignorar avisos de pré-requisito**.
 
     Ao instalar atualizações sem usar a opção para ignorar avisos de pré-requisito (no Assistente de Atualizações) e a instalação da atualização for interrompida devido a um aviso, você poderá selecionar **Ignorar avisos de pré-requisito** na faixa de opções. Isso dispara uma continuação automática da instalação da atualização.  
 
@@ -79,7 +79,7 @@ Após a instalação da atualização 1606, ao instalar uma atualização no sit
 
 
 ## <a name="accessibility"></a> Acessibilidade
-Para navegar entre os diferentes nós de um espaço de trabalho, agora é possível inserir a primeira letra do nome de um nó. Cada pressionamento de tecla move o cursor para o próximo nó que começa com determinada letra. Para os usuários que têm um leitor de tela, o leitor lê o nome do nó. Para mais informações sobre opções de acessibilidade, confira [Accessibility features in System Center Configuration Manager](../../../core/understand/accessibility-features.md) (Recursos de acessibilidade no System Center Configuration Manager).
+Para navegar entre os diferentes nós de um workspace, agora é possível inserir a primeira letra do nome de um nó. Cada pressionamento de tecla move o cursor para o próximo nó que começa com determinada letra. Para os usuários que têm um leitor de tela, o leitor lê o nome do nó. Para mais informações sobre opções de acessibilidade, confira [Accessibility features in System Center Configuration Manager](../../../core/understand/accessibility-features.md) (Recursos de acessibilidade no System Center Configuration Manager).
 
 ## <a name="administration"></a> Administração
 Estas são as alterações para a Administração no console do Configuration Manager:
@@ -221,4 +221,4 @@ Agora é possível habilitar o monitoramento de serviços de Atestado de Integri
 Para obter detalhes, consulte [Atestado de integridade do System Center Configuration Manager](../../../core/servers/manage/health-attestation.md#how-to-enable-health-attestation-service-communication-on-configuration-manager-client-computers).  
 
 ## <a name="remote-control"></a>Controle remoto
-Conceda aos usuários a oportunidade de aceitar ou negar transferências de arquivo antes de transferir conteúdo da área de transferência compartilhada em uma seção de controle remoto. Os usuários precisam apenas conceder permissão uma vez por sessão e o visualizador não terá a capacidade de conceder a si mesmo a permissão de continuar a transferência de arquivo. É possível encontrar essa nova configuração no espaço de trabalho **Administração**. Acesse **Configurações do Cliente** e, em **Configurações Padrão**, abra o painel **Ferramentas Remotas**.
+Conceda aos usuários a oportunidade de aceitar ou negar transferências de arquivo antes de transferir conteúdo da área de transferência compartilhada em uma seção de controle remoto. Os usuários precisam apenas conceder permissão uma vez por sessão e o visualizador não terá a capacidade de conceder a si mesmo a permissão de continuar a transferência de arquivo. É possível encontrar essa nova configuração no workspace **Administração**. Acesse **Configurações do Cliente** e, em **Configurações Padrão**, abra o painel **Ferramentas Remotas**.

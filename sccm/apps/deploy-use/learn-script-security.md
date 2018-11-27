@@ -1,6 +1,6 @@
 ---
 title: Saiba mais sobre a segurança de script do PowerShell
-titleSuffix: Configuraton Manager
+titleSuffix: Configuration Manager
 description: Recursos para ajudar a saber mais sobre a segurança de script do PowerShell.
 ms.date: 03/22/2018
 ms.prod: configuration-manager
@@ -10,12 +10,12 @@ ms.assetid: a0bd093d-67a5-4f74-bf79-dd604889f5ba
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7799ac9737ac3a6a73d2d7241dd8b56325d4e340
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b5f7ac3125b099a764604b3338a92f3f45b10afe
+ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343704"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52258971"
 ---
 # <a name="learn-more-about-powershell-script-security"></a>Saiba mais sobre a segurança de script do PowerShell
 

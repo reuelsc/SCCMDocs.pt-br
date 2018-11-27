@@ -1,6 +1,6 @@
 ---
 title: Painel de cogerenciamento
-titleSuffix: Configuraton Manager
+titleSuffix: Configuration Manager
 description: Examine as informações sobre o cogerenciamento usando o painel.
 ms.date: 03/22/2018
 ms.prod: configuration-manager
@@ -10,12 +10,12 @@ ms.assetid: e83a7b0d-b381-4b4a-8eca-850385abbebb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a3d4cbbf78639a135e9e36e3402f9920a6ef71ed
-ms.sourcegitcommit: 78d2dce465e3500653b252583a6903a006784c26
+ms.openlocfilehash: 72b42aec2b50e229b90e9a642343386e8588aab7
+ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46448779"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52258988"
 ---
 # <a name="co-management-dashboard-in-system-center-configuration-manager"></a>Painel de cogerenciamento no System Center Configuration Manager
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
