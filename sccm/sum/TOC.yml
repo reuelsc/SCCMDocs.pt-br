@@ -44,8 +44,13 @@ items:
       href: deploy-use/manually-deploy-software-updates.md
     - name: Implantar atualizações de software automaticamente
       href: deploy-use/automatically-deploy-software-updates.md
+    - name: Criar uma implantação em fases
+      href: ../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json
   - name: Monitorar atualizações de software
     href: deploy-use/monitor-software-updates.md
+    items:
+    - name: Gerenciar e monitorar implantações em fases
+      href: ../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json
   - name: Manutenção de atualizações de software
     href: deploy-use/software-updates-maintenance.md
   - name: Realização de serviços em um grupo de servidores
@@ -81,9 +86,9 @@ items:
     href: tools/updates-publisher-applicability-rules.md
   - name: Certificados e segurança
     href: tools/updates-publisher-security.md
-ms.openlocfilehash: e31ac565921fcb81342d10df80bb0e9e5bbb9e29
-ms.sourcegitcommit: 8661f10596f565ca2b7bdb5951388b44b3b622ee
+ms.openlocfilehash: 6b31d5a8b3ffcf3f0e411e38d270af22c64b27af
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "48817534"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456865"
