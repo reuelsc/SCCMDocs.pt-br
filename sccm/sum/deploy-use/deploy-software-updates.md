@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
-ms.openlocfilehash: 3a99c2b1310d5e78699b0b9c97a5074c329bac46
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: d456d7232133333bf6cd88374d5288227f6dfea1
+ms.sourcegitcommit: 2ea71b048307a93a2db7898700aea984a8f88824
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383738"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52304275"
 ---
 # <a name="deploy-software-updates"></a>Implantar atualizações de software  
 
@@ -61,7 +61,7 @@ A lista seguinte fornece o fluxo de trabalho geral para implantação manual das
 Para obter mais informações e etapas detalhadas, confira [Implantar atualizações de software manualmente](manually-deploy-software-updates.md).
 
 > [!Tip]  
-> Ao implantar manualmente as atualizações do cliente do Office 365, encontre-as no nó **Atualizações do Office 365** em **Gerenciamento de clientes do Office 365** do espaço de trabalho **Biblioteca de Software**.  
+> Ao implantar manualmente as atualizações do cliente do Office 365, encontre-as no nó **Atualizações do Office 365** em **Gerenciamento de clientes do Office 365** do workspace **Biblioteca de Software**.  
 
 
 

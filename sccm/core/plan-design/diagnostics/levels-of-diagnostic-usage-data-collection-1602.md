@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: noindex,nofollow
-ms.openlocfilehash: 4014e9761529bd47c1fc3b3baccdb8764cf5575c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b399be1a0e0eeea76ac87b8724f3c9f04902d533
+ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338118"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52259022"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1602-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1602 do System Center Configuration Manager
 
@@ -256,7 +256,7 @@ A partir da versão 1602 do System Center Configuration Manager, este nível inc
 
 -   ***[Novo] Atualizações do site:***
 
-    - ***[Novo]*** Versões de hotfixes instalados do Configuration Manager
+    - ***[Novo]*** Versões dos hotfixes do Configuration Manager instalados
 
 ##  <a name="bkmk_level3"></a> Nível 3 - Completo
 O nível Completo inclui todos os dados nos níveis Básico e Avançado. Também inclui informações adicionais sobre o Endpoint Protection, o percentual de conformidade da atualização e as informações de atualização de software. Esse nível também pode incluir informações de diagnóstico avançado, como arquivos do sistema e instantâneos de memória, que podem incluir informações pessoais que existiam na memória ou nos arquivos de log no momento da captura.
