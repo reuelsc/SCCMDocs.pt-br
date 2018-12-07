@@ -2,7 +2,7 @@
 title: Novidades no MDM híbrido
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune.
-ms.date: 10/31/2018
+ms.date: 12/05/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,16 +10,16 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f51e54ede8df8c18ca8614f6a75c82c53bb7916c
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
-ms.translationtype: HT
+ms.openlocfilehash: c637703fc65b6d867dd1670ff40abc8214e6d234
+ms.sourcegitcommit: 4f34250aa850f13f415b7afe975a033d6a00fa9d
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411520"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52978615"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de dispositivo móvel) disponíveis para implantações híbridas com o System Center Configuration Manager e o Microsoft Intune.     
 
@@ -39,11 +39,33 @@ Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de di
 
 Cada seção deste artigo lista recursos híbridos em três categorias diferentes. Use as seguintes diretrizes para determinar a compatibilidade dos recursos em cada categoria com versões diferentes do Configuration Manager:  
 
-|Categorias do recurso|Descrição|
+|Categorias do recurso|Description|
 |-|-|
 |**Novo no Microsoft Intune** | De modo geral, todos os recursos listados nesta categoria devem funcionar com todas as versões do Configuration Manager. Isso inclui versões do System Center 2012 R2 Configuration Manager, uma vez que esses recursos exigem apenas o serviço Intune e não exigem funcionalidades adicionais no Configuration Manager.|
 |**Novo no Configuration Manager Technical Preview**| Todos os recursos listados nessa categoria funcionam apenas com o branch de visualização técnica especificado. Para testar esses recursos, você deve instalar a versão de visualização técnica especificada na descrição do recurso. Para obter mais informações, confira [Visualização técnica para o Configuration Manager](/sccm/core/get-started/technical-preview).|
 |**Novo no Configuration Manager (Branch Atual)**| Todos os recursos listados nessa categoria funcionam apenas com a versão especificada do Configuration Manager (branch atual). Se estiver usando uma versão mais antiga do Configuration Manager para sua implantação híbrida, atualize para a versão do Configuration Manager (branch atual) especificada na descrição do recurso. Para obter mais informações, veja [Atualizar para o Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).|
+
+
+
+## <a name="november-2018"></a>Novembro de 2018
+
+### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+#### <a name="new-intune-device-subscription-sku"></a>Nova assinatura do dispositivo Intune SKU
+<!--3312071--> Para ajudar a reduzir o custo do gerenciamento de dispositivos nas empresas, uma assinatura com base em dispositivo novo SKU agora está disponível. Este dispositivo do Intune SKU é licenciado por dispositivo mensalmente. Preço varia de acordo com o programa de licenciamento. Ele está disponível no canal direto, Enterprise Agreement (EA), Products da Microsoft e serviços de programa (MPSA) e abrir e provedor de solução de nuvem (CSP).
+
+#### <a name="new-apps-support-with-app-protection-policies"></a>Suportam a novos aplicativos com políticas de proteção de aplicativo 
+<!--3330037--> Agora você pode gerenciar os seguintes aplicativos com [políticas de proteção de aplicativo do Intune](https://docs.microsoft.com/intune/app-protection-policies):
+
+- Stream (iOS)  
+- Tarefas pendentes (Android, iOS)  
+- PowerApps (Android, iOS)  
+- Fluxo (Android, iOS)  
+
+Use a políticas de proteção do aplicativo para proteger corporativa transferência de dados de controle e de dados para esses aplicativos, como outro aplicativos gerenciados pela política do Intune. 
+
+> [!Note]  
+> Se o fluxo ainda não está visível no console do, adicionar fluxo ao criar ou editar as políticas de proteção do aplicativo. Selecione **mais aplicativos**e, em seguida, especifique a *ID do aplicativo* para o fluxo no campo de entrada. Para uso do Android `com.microsoft.flow`, e para iOS, use `com.microsoft.procsimo`.  
 
 
 
@@ -125,9 +147,9 @@ Para obter mais informações, consulte os seguintes artigos:
 
 O seguinte texto é um exemplo das melhorias nas mensagens que você vê:  
 
-- Antes: *este dispositivo não havia entrado em contato com o serviço do Intune no período especificado exigido pelo seu administrador de TI. Para resolver esse problema, abra o aplicativo do portal da empresa no seu dispositivo e clique no botão Verificar Conformidade.*  
+- Antes: *Este dispositivo não tiver contatado o serviço do Intune no período de tempo especificado exigido pelo seu administrador de TI. Para resolver esse problema, abra o aplicativo do portal da empresa no seu dispositivo e clique no botão Verificar Conformidade.*  
 
-- Depois: *seu dispositivo não se conecta com a sua organização há algum tempo. Para restabelecer uma conexão, abra o aplicativo Portal da Empresa no dispositivo e toque em Verificar Configurações do seu dispositivo.*  
+- Depois de: *Seu dispositivo não foi marcada com sua organização em instantes. Para restabelecer uma conexão, abra o aplicativo Portal da Empresa no dispositivo e toque em Verificar Configurações do seu dispositivo.*  
 
 #### <a name="select-device-categories-by-using-the-access-work-or-school-settings"></a>Selecionar as categorias de dispositivo usando as configurações de Acessar Trabalho ou Escola 
 <!--1058963--> Se você ativou o [mapeamento de grupo de dispositivos](https://docs.microsoft.com/intune/device-group-mapping), os usuários do Windows 10 agora são solicitados a selecionar uma categoria de dispositivo depois de se inscreverem através do botão **Conectar****Configurações** > **Contas** > **Acessar trabalho ou escola**.  
@@ -167,7 +189,7 @@ Na página **Aplicativos**, exibição **Instalado**, é possível ver detalhes 
 #### <a name="android-for-work-and-lookout-onboarding-moved-to-intune-on-azure"></a>Integração do Android for Work e do Lookout movida para o Intune no Azure
 <!--2355022,2357366--> Com a atualização mais recente do Intune, você pode habilitar e gerenciar a integração do Android for Work e a integração da defesa contra ameaças móveis do Lookout em locatários de gerenciamento de dispositivo móvel híbrido do Intune no portal do Azure. Antes da atualização, essas configurações apenas podiam ser definidas no portal Clássico do Intune (Silverlight).
  
-Observação: o Lookout é único provedor de MTD (defesa contra ameaças móveis) compatível com o híbrido. Se você já tiver realizado a integração com qualquer outro provedor de MTD, ele ainda aparecerá no Intune no portal do Azure. Se você excluir o conector dele, não será mais possível adicioná-lo novamente.
+Observação: Lookout é o provedor MTD (defesa contra) contra ameaças móveis só tem suportado em híbrida. Se você já tiver realizado a integração com qualquer outro provedor de MTD, ele ainda aparecerá no Intune no portal do Azure. Se você excluir o conector dele, não será mais possível adicioná-lo novamente.
  
 Essas alterações não afetam a funcionalidade existente. Continue a usar o console do Configuration Manager para gerenciar os aplicativos relacionados, os relatórios e as políticas.
  
@@ -369,8 +391,8 @@ Peça aos usuários finais no Windows 10 versão 1607 ou posterior para atualiza
 
 - **Novas configurações de política de gerenciamento de aplicativo móvel**     
   As configurações a seguir foram adicionadas nas configurações de política de gerenciamento de aplicativos móveis:
-  - **Desabilitar sincronização de contato**: impede que o aplicativo salve dados no aplicativo Contatos nativo do dispositivo.
-  - **Desabilitar impressão**: impede que o aplicativo imprima dados corporativos ou de estudante.
+  - **Desabilitar sincronização do contato**: Impede que o aplicativo salve dados no aplicativo contatos nativo do dispositivo.
+  - **Desabilitar a impressão**: Impede que o aplicativo de dados de escola ou trabalho de impressão.
   <!-- 1324760 -->    
 
   Veja [proteger aplicativos usando políticas de proteção de aplicativos no Configuration Manager](/sccm/mdm/deploy-use/protect-apps-using-mam-policies) para testar as novas configurações de política de proteção do aplicativo.
@@ -497,7 +519,7 @@ Peça aos usuários finais no Windows 10 versão 1607 ou posterior para atualiza
 
 ## <a name="notices"></a>Avisos
 
-### <a name="plan-for-change-intune-supports-macos-1012-and-higher-in-december"></a>Plano de mudança: o Intune dará suporte ao macOS 10.12 e superior em dezembro 
+### <a name="plan-for-change-intune-supports-macos-1012-and-higher-in-december"></a>Plano para alteração: Intune dá suporte a macOS 10.12 e superior em dezembro 
 <!--2970975--> 
 
 A Apple lançou o macOS 10.14, portanto, a partir de dezembro de 2018, o Intune será compatível com macOS 10.12 e posterior. 
@@ -526,7 +548,7 @@ Após dezembro, os usuários finais que têm dispositivos diferente dos listados
 Para obter mais informações, confira [Registrar seu dispositivo macOS no Intune com o aplicativo Portal da Empresa](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos-cp).
 
 
-### <a name="plan-for-change-new-intune-support-experience-for-premier-customers"></a>Plano de mudança: nova experiência de suporte do Intune para clientes Premier 
+### <a name="plan-for-change-new-intune-support-experience-for-premier-customers"></a>Plano para alteração: Novo suporte do Intune experiência para Premier, os clientes 
 <!--2828727--> Como cliente Premier da Microsoft, é possível usar, no momento, o [portal do MPO (Microsoft Premier Online)](https://premier.microsoft.com) e o [Intune no Azure](https://portal.azure.com) para criar solicitações de suporte para Intune. A partir de 3 de dezembro de 2018, para continuar aprimorando a experiência do Suporte Premier, será possível criar solicitações de suporte apenas no Intune no Azure.
 
 #### <a name="how-does-this-affect-me"></a>Como isso me afeta?
@@ -545,11 +567,11 @@ Observe que apenas os usuários com funções de Administrador Global, de Admini
 Para saber mais, confira a [postagem no blog da equipe de suporte do Microsoft Intune](https://aka.ms/IntuneSupport_MPO_to_Azure).
 
 
-### <a name="plan-for-change-use-intune-on-azure-now-for-your-mdm-management"></a>Planeje a mudança: use o Intune no Azure agora para o gerenciamento MDM 
+### <a name="plan-for-change-use-intune-on-azure-now-for-your-mdm-management"></a>Plano para alteração: Use o Intune no Azure agora para o gerenciamento MDM 
 <!--1227338--> Há mais de um ano, foi anunciada a [versão prévia pública do Intune no Azure](https://cloudblogs.microsoft.com/enterprisemobility/2016/12/07/public-preview-of-intune-on-azure/) e, após seis meses, a [disponibilidade geral da nova experiência de administração](https://cloudblogs.microsoft.com/enterprisemobility/2017/06/08/the-new-intune-and-conditional-access-admin-consoles-are-ga/) para o Intune. No dia 31 de agosto de 2018, o MDM (gerenciamento de dispositivo móvel) será desabilitado no console do Silverlight clássico para os clientes que usam o Intune autônomo. Nesse caso, use o [Intune no Azure](https://aka.ms/Intune_on_Azure) para atender às suas necessidades de MDM. Se você ainda estiver usando o console clássico do MDM, deixe de usá-lo e familiarize-se com o Intune no Azure. Não esperamos que haja nenhum impacto para o usuário final com essa alteração. O gerenciamento de computador clássico com o Intune permanece no Silverlight. Para saber mais, confira [a postagem no blog da equipe de suporte do Intune](https://aka.ms/Intune_on_Azure_mdm).
 
 
-### <a name="plan-for-change-upcoming-macos-and-intune-password-enforcement-change"></a>Planejar a mudança: mudança futura de imposição de senha do macOS e do Intune
+### <a name="plan-for-change-upcoming-macos-and-intune-password-enforcement-change"></a>Plano para alteração: MacOS futuros e alteração de imposição de senha do Intune
 <!--1873216--> Na versão do serviço de setembro, o Intune planeja integrar a configuração "Alterar Senha na Próxima Autenticação" recém-lançada da Apple para dispositivos que executam o macOS versão 10.13 e superiores. Antes de essa configuração ter sido introduzida, provedores de MDM não tinham como verificar se a senha em um dispositivo havia sido alterada para garantir a conformidade. As políticas de configuração e conformidade do Intune apenas validavam que, na próxima vez que uma senha fosse alterada no dispositivo, ela seria marcada como em conformidade. Os usuários do macOS receberão uma solicitação para atualizar a senha quando integrarmos esse novo recurso da Apple, mesmo que a senha já esteja em conformidade.
 
 #### <a name="how-does-this-change-affect-me"></a>Como essa alteração me afeta?
@@ -559,7 +581,7 @@ Essa alteração afetará apenas o clientes do MDM híbrido ou autônomo do Intu
 Você talvez queira informar a assistência técnica. Se você não quiser impor essa política de dispositivo macOS, cancele ou exclua a política existente do macOS. Nossa pesquisa de cliente antes de implementar essa alteração indicou que a maioria dos clientes não será afetada por essa alteração. Normalmente, os usuários finais atualizam sua senha depois de receberem uma solicitação para registrarem-se com uma senha, ou redefinem a senha para permanecerem em conformidade.  
 
 
-### <a name="plan-for-change-intune-moving-to-support-ios-10-and-later-in-september-2018"></a>Plano de alteração: Mudança do Intune para oferecer suporte ao iOS 10 e versões posteriores em setembro de 2018 
+### <a name="plan-for-change-intune-moving-to-support-ios-10-and-later-in-september-2018"></a>Plano para alteração: Intune movendo para dar suporte ao iOS 10 e posterior, em setembro de 2018 
 <!--2454656-->
 
 Em setembro de 2018, a Apple deve lançar o iOS 12. Logo após o lançamento, mudaremos o registro no Intune, o Portal da Empresa e o navegador gerenciado para dar suporte ao iOS 10 e versões posteriores.
@@ -594,7 +616,7 @@ Uma vez no modo de manutenção, esses aplicativos só recebem atualizações cr
 ### <a name="end-of-support-for-ios-80"></a>Fim do suporte para iOS 8.0 
 <!---1164477---> Os aplicativos gerenciados e o aplicativo Portal da Empresa para iOS exigem o iOS 9.0 e superior para acessar os recursos da empresa. Os dispositivos que não forem atualizados até setembro não poderão mais acessar o Portal da Empresa ou esses aplicativos. 
 
-### <a name="platform-support-reminder-windows-phone-81-mainstream-support-ended-july-11-2017"></a>Lembrete de suporte à plataforma: o suporte base do Windows Phone 8.1 terminou em 11 de julho de 2017
+### <a name="platform-support-reminder-windows-phone-81-mainstream-support-ended-july-11-2017"></a>Lembrete de suporte de plataforma: Suporte base do Windows Phone 8.1 terminou em 11 de julho de 2017
 <!-- 1327781 -->
 *11 de julho de 2017*
 
