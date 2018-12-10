@@ -10,12 +10,12 @@ ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 82fd328d65e67df2506f31679ed3c1b3abc1262c
-ms.sourcegitcommit: e0209e4549e9828eb74089313dbee323ece1fc2f
+ms.openlocfilehash: 48eb4abcc328c57fdb35e3511e49500099a68cf2
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51598590"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456474"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versões de sistema operacional compatíveis com clientes e dispositivos para o Configuration Manager
 
@@ -206,6 +206,7 @@ As versões de canal semestral do Windows Server são as instalações do Server
 
 -   **Mac OS X 10.13** (macOS High Sierra)
 
+- **macOS Mojave (10.14)** 
 
 
 ##  <a name="linux-and-unix-servers"></a>Servidores Linux e UNIX  
@@ -235,14 +236,14 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 
 #### <a name="aix"></a>AIX  
 
-|Versão|Arquivo TAR|  
+|Version|Arquivo TAR|  
 |-|-|  
 |Versão 6.1 (Power)|ccm-Aix61ppc.&lt;build\>.tar|  
 |Versão 7.1 (Power)|ccm-Aix71ppc.&lt;build\>.tar|  
 
 #### <a name="centos"></a>CentOS  
 
-|Versão|Arquivo TAR|  
+|Version|Arquivo TAR|  
 |-|-|  
 |Versão 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Versão 5 x64|ccm-Universalx64.&lt;build\>.tar|  
@@ -252,7 +253,7 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 
 #### <a name="debian"></a>Debian  
 
-|Versão|Arquivo TAR|  
+|Version|Arquivo TAR|  
 |-|-|  
 |Versão 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Versão 5 x64|ccm-Universalx64.&lt;build\>.tar|  
@@ -265,13 +266,13 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 
 #### <a name="hp-ux"></a>HP-UX  
 
-|Versão|Arquivo TAR|  
+|Version|Arquivo TAR|  
 |-|-|  
 |Versão 11iv3 IA64|ccm-HpuxB.11.31i64.&lt;build\>.tar|  
 
 #### <a name="oracle-linux"></a>Oracle Linux  
 
-|Versão|Arquivo TAR|  
+|Version|Arquivo TAR|  
 |-|-|  
 |Versão 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Versão 5 x64|ccm-Universalx64.&lt;build\>.tar|  
@@ -279,9 +280,9 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 |Versão 6 x64|ccm-Universalx64.&lt;build\>.tar|  
 |Versão 7 x64|ccm-Universalx64.&lt;build\>.tar|  
 
-#### <a name="red-hat-enterprise-linux-rhel"></a>RHEL (Red Hat Enterprise Linux)  
+#### <a name="red-hat-enterprise-linux-rhel"></a>Red Hat Enterprise Linux (RHEL)  
 
-|Versão|Arquivo TAR|  
+|Version|Arquivo TAR|  
 |-|-|  
 |Versão 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Versão 5 x64|ccm-Universalx64.&lt;build\>.tar|  
@@ -291,7 +292,7 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 
 #### <a name="solaris"></a>Solaris  
 
-|Versão|Arquivo TAR|  
+|Version|Arquivo TAR|  
 |-|-|  
 |Versão 10 x86|ccm-Sol10x86.&lt;build\>.tar|  
 |Versão 10 SPARC|ccm-Sol10sparc.&lt;build\>.tar|  
@@ -300,7 +301,7 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 
 #### <a name="suse-linux-enterprise-server-sles"></a>SUSE Linux Enterprise Server (SLES)  
 
-|Versão|Arquivo TAR|  
+|Version|Arquivo TAR|  
 |-|-|  
 |Versão 10 SP1 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Versão 10 SP1 x64|ccm-Universalx64.&lt;build\>.tar|  
@@ -310,7 +311,7 @@ As versões a seguir têm suporte usando o arquivo .tar indicado.
 
 #### <a name="ubuntu"></a>Ubuntu  
 
-|Versão|Arquivo TAR|  
+|Version|Arquivo TAR|  
 |-|-|  
 |Versão 10.04 LTS x86|ccm-Universalx86.&lt;build\>.tar|  
 |Versão 10.04 LTS x64|ccm-Universalx64.&lt;build\>.tar|  
