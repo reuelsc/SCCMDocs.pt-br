@@ -10,12 +10,12 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c637703fc65b6d867dd1670ff40abc8214e6d234
-ms.sourcegitcommit: 4f34250aa850f13f415b7afe975a033d6a00fa9d
+ms.openlocfilehash: 6ecc3f47b908678b1849e16c2cb2053f100a655a
+ms.sourcegitcommit: 2491fbe98915b7a30c2422a371c929d0d4ebf22f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52978615"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53247519"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -39,7 +39,7 @@ Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de di
 
 Cada seção deste artigo lista recursos híbridos em três categorias diferentes. Use as seguintes diretrizes para determinar a compatibilidade dos recursos em cada categoria com versões diferentes do Configuration Manager:  
 
-|Categorias do recurso|Description|
+|Categorias do recurso|Descrição|
 |-|-|
 |**Novo no Microsoft Intune** | De modo geral, todos os recursos listados nesta categoria devem funcionar com todas as versões do Configuration Manager. Isso inclui versões do System Center 2012 R2 Configuration Manager, uma vez que esses recursos exigem apenas o serviço Intune e não exigem funcionalidades adicionais no Configuration Manager.|
 |**Novo no Configuration Manager Technical Preview**| Todos os recursos listados nessa categoria funcionam apenas com o branch de visualização técnica especificado. Para testar esses recursos, você deve instalar a versão de visualização técnica especificada na descrição do recurso. Para obter mais informações, confira [Visualização técnica para o Configuration Manager](/sccm/core/get-started/technical-preview).|
@@ -489,7 +489,7 @@ Peça aos usuários finais no Windows 10 versão 1607 ou posterior para atualiza
     <!-- 1132468 -->     
 
 - **Mostrar os usuários finais quais informações do dispositivo podem ser vistas para o iOS**   
-    Adicionamos  **Tipo de Propriedade** à tela de detalhes do dispositivo no aplicativo Portal da Empresa para iOS. Essas informações permitem que os usuários obtenham mais informações sobre privacidade diretamente dos documentos do usuário final do Intune. Eles também pode encontrar essas informações na tela Sobre. 
+    Adicionamos **tipo de propriedade** para a tela de detalhes do dispositivo no aplicativo Portal da empresa para iOS. Essas informações permitem que os usuários obtenham mais informações sobre privacidade diretamente dos documentos do usuário final do Intune. Eles também pode encontrar essas informações na tela Sobre. 
     <!--739894-->    
 
 - **Frases mais fáceis de entender para o aplicativo Portal da Empresa para Android**   
