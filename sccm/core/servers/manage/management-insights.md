@@ -2,7 +2,7 @@
 title: Informações de gerenciamento
 titleSuffix: Configuration Manager
 description: Saiba mais sobre a funcionalidade de insights de gerenciamento disponível no console do Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: a79f83be-884c-48e6-94d6-ed0a68c22e2f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 92f82ee7247030d19df63e50b0ac4437f250717a
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 3721c4c35dd22a0d2a59d2300bd25dfbd3c75aeb
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383490"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456304"
 ---
 # <a name="management-insights-in-configuration-manager"></a>Insights de gerenciamento no Configuration Manager
 
@@ -31,11 +31,12 @@ Para exibir as regras, sua conta precisa da permissão de **leitura** no objeto 
 
 1. Abra o Console do Configuration Manager.  
 
-2. Acesse o espaço de trabalho **Administração** e clique em **Insights de Gerenciamento**.  
+2. Vá para o workspace **Administração**, expanda **Insights de gerenciamento** e selecione **Todos os Insights**.  
 
-3. Selecione **Todos os Insights**.  
+    > [!Note]  
+    > Da versão 1810 em diante, quando você seleciona o nó **Insights de Gerenciamento**, ele mostra o [Painel de insights de gerenciamento](#bkmk_insights).  
 
-4. Clique duas vezes no **Nome do Grupo de Insight de Gerenciamento** que deseja examinar. Ou realce-o e clique em **Mostrar Insights** na faixa de opções.  
+3. Abra o nome do grupo de insights de gerenciamento que você deseja examinar. Selecione **Mostrar Insights** na faixa de opções.  
 
 As quatro guias a seguir estão disponíveis para revisão: 
 
@@ -45,7 +46,7 @@ As quatro guias a seguir estão disponíveis para revisão:
 
 - **Em Andamento**: mostra as regras em que alguns, mas nem todos os pré-requisitos foram atendidos.  
 
-- **Ação Necessária**: as regras que precisam de ações executadas são listadas. Clique com o botão direito do mouse e selecione **Mais Detalhes** para recuperar itens específicos nos quais uma ação é necessária.  
+- **Ação Necessária**: as regras que precisam de ações executadas são listadas. Selecione **Mais Detalhes** para recuperar itens específicos nos quais uma ação é necessária.  
 
 O painel **Pré-requisitos** lista os itens necessários para executar a regra.
 
@@ -53,7 +54,7 @@ O painel **Pré-requisitos** lista os itens necessários para executar a regra.
 ![Insights de gerenciamento – Todas as regras e os pré-requisitos do grupo de serviços de nuvem](./media/Management-insights-all-cloud-rules.png)
 
 
-Selecione uma regra e clique em **Mais Detalhes** para ver os detalhes da regra.
+Selecione uma regra e, em seguida, selecione **Mais Detalhes** para ver os detalhes da regra.
 
 
 
@@ -63,7 +64,7 @@ As regras dos insights de gerenciamento reavaliam sua aplicabilidade de acordo c
 
 O arquivo de log das regras de insight de gerenciamento está em **SMS_DataEngine.log** no servidor do site.
 
-<!--1357930--> Começando na versão 1806, algumas regras permitem executar uma ação. Selecione uma regra, clique em **Mais Detalhes** e, se disponível, clique em **Executar ação**. 
+<!--1357930--> Começando na versão 1806, algumas regras permitem executar uma ação. Selecione uma regra, selecione **Mais Detalhes** e, se disponível, selecione **Agir**. 
 
 Dependendo da regra, essa ação tem um dos seguintes comportamentos:  
 
@@ -73,9 +74,45 @@ Dependendo da regra, essa ação tem um dos seguintes comportamentos:
 
 
 
+## <a name="bkmk_insights"></a> Painel de insights de gerenciamento
+<!--1357979-->
+
+Da versão 1810 em diante, o nó **Insights de Gerenciamento** inclui um painel gráfico. Esse painel exibe uma visão geral dos estados de regra, que torna mais fácil mostrar seu progresso. 
+
+Use os filtros a seguir na parte superior do painel para refinar a exibição:
+- Mostrar concluído
+- Opcional
+- Recomendado
+- Crítico
+
+O painel inclui os seguintes blocos:  
+
+- **Índice de insights de gerenciamento**: rastreia o progresso geral nas regras de insights de gerenciamento. O índice é uma média ponderada. As regras críticas valem o máximo. Esse índice dá o menor peso às regras opcionais.  
+
+- **Grupos de insights de gerenciamento**: mostra o percentual de regras em cada grupo, respeitando os filtros. Selecione um grupo para fazer drill down das regras específicas neste grupo.  
+
+- **Prioridade dos insights de gerenciamento**: mostra o percentual das regras por prioridade, respeitando os filtros.   
+
+- **Todos os insights**: uma tabela de insights incluindo a prioridade e o estado. Use o campo **Filtro** na parte superior da tabela para coincidir com cadeias de caracteres em qualquer uma das colunas disponíveis. O painel classifica a tabela na seguinte ordem:
+    - Status: Ação Necessária, Concluído, Desconhecido  
+    - Prioridade: Crítica, Recomendada, Opcional  
+    - Última Alteração: datas mais antigas na parte superior   
+
+![Captura de tela do painel de insights de gerenciamento](media/1357979-management-insights-dashboard.png)
+
+
+
 ## <a name="groups-and-rules"></a>Grupos e regras
 
-As regras são organizadas em diferentes grupos de insights de gerenciamento. Consulte a lista a seguir para saber quais grupos e regras estão disponíveis no momento:
+As regras são organizadas nos seguintes grupos de insight de gerenciamento:
+- [Aplicativos](#applications)  
+- [Serviços de nuvem](#cloud-services)  
+- [Coleções](#collections)  
+- [Manutenção proativa](#proactive-maintenance)  
+- [Security](#security)  
+- [Gerenciamento simplificado](#simplified-management)  
+- [Centro de Software](#software-center)  
+- [Windows 10](#windows-10)  
 
 
 ### <a name="applications"></a>Aplicativos
@@ -85,7 +122,7 @@ Insights do gerenciamento de aplicativos.
 - **Aplicativos sem implantações**: lista os aplicativos em seu ambiente que não têm implantações ativas. Essa regra ajuda você a encontrar e excluir aplicativos não utilizados para simplificar a lista de aplicativos exibidos no console. Para obter informações, confira [Deploy applications](/sccm/apps/deploy-use/deploy-applications) (Implantar aplicativos).  
 
 
-### <a name="cloud-services"></a>Cloud Services
+### <a name="cloud-services"></a>Serviços de Nuvem
 
 Ajuda você a integrar vários serviços de nuvem, o que permite o gerenciamento moderno de seus dispositivos. 
 
@@ -119,6 +156,8 @@ Insights que ajudam a simplificam o gerenciamento limpando e reconfigurando cole
 - **Imagens de inicialização não usadas**: imagens de inicialização não referenciadas para uso de sequência de tarefas ou inicialização PXE. Para obter mais informações, consulte [Gerenciar imagens de inicialização](/sccm/osd/get-started/manage-boot-images).  
 
 - **Itens de configuração não usados**: itens de configuração que não fazem parte de uma linha de base de configuração e têm mais de 30 dias. Para obter mais informações, consulte [Criar linhas de base de configuração](/sccm/compliance/deploy-use/create-configuration-baselines).  
+
+- **Atualizar fontes de cache par para a versão mais recente do cliente do Configuration Manager**: identificar clientes que servem como uma fonte de cache par, mas ainda não atualizaram de uma versão de cliente anterior à 1806. Os clientes anteriores à 1806 não podem ser usados ​​como uma origem do cache par para clientes que executam a versão 1806 ou posterior. Selecione **Executar ação** para abrir um modo de exibição de dispositivo que exiba a lista de clientes.<!--1358008-->  
 
 
 ### <a name="security"></a>Segurança

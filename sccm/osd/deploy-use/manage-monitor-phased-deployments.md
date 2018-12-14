@@ -2,7 +2,7 @@
 title: Gerenciar e monitorar implantações em fases
 titleSuffix: Configuration Manager
 description: Entenda como gerenciar e monitorar implantações em fases para software no Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,18 +10,21 @@ ms.assetid: dc245916-bc11-4983-9c4d-015f655007c1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1889ba3ea19d27676089f2a9a24cef812c9f526c
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 5324e00f17770feca25d40c645d8e344df797f21
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385857"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456321"
 ---
 # <a name="manage-and-monitor-phased-deployments"></a>Gerenciar e monitorar implantações em fases
 
 Este artigo descreve como gerenciar e monitorar implantações em fases. As tarefas de gerenciamento incluem iniciar manualmente a próxima fase e suspender ou retomar uma fase. 
 
-Primeiro, você precisa [criar uma implantação em fases](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence). 
+Primeiro, você precisa criar uma implantação em fases: 
+- [Aplicativo](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json)  
+- [Atualização de software](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json)  
+- [Sequência de tarefas](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence)  
 
 
 
@@ -31,9 +34,16 @@ Quando você seleciona a configuração, **Iniciar manualmente a segunda fase da
 
 1. Como iniciar essa ação varia de acordo com o tipo de software implantado:  
 
-    - **Aplicativo** (somente na versão 1806 ou posteriores): acesse a **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione **Aplicativos**.   
+    - **Aplicativo** (somente na versão 1806 ou posteriores): acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione **Aplicativos**.   
 
-    - **Sequência de tarefas**: acesse o espaço de trabalho **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequência de Tarefas**.   
+    - **Atualização de software** (somente na versão 1810 ou posterior): vá para o workspace **Biblioteca de Software** e, em seguida, selecione um dos seguintes nós:    
+        - Atualizações de software  
+            - **Todas as Atualizações de Software**  
+            - **Grupos de Atualizações de Software**   
+        - Serviço do Windows 10, **Todas as Atualizações do Windows 10**  
+        - Gerenciamento de Cliente do Office 365, **Atualizações do Office 365**  
+
+    - **Sequência de tarefas**: acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequência de Tarefas**.   
 
 2. Selecione o software com a implantação em fases.  
 
@@ -47,13 +57,20 @@ Quando você seleciona a configuração, **Iniciar manualmente a segunda fase da
 
 ## <a name="bkmk_suspend"></a> Suspender e retomar fases 
 
-Talvez você precise suspender ou retomar uma implantação em fases manualmente. Por exemplo, você pode criar uma implantação em fases para uma sequência de tarefas. Enquanto monitora a fase para seu grupo piloto, você observa um grande número de falhas. Você suspende a implantação em fases para impedir que mais dispositivos executem a sequência de tarefas. Depois de resolver o problema, você retoma a implantação em fases para continuar a distribuição. 
+Talvez você precise suspender manualmente ou retomar uma implantação em fases. Por exemplo, você pode criar uma implantação em fases para uma sequência de tarefas. Enquanto monitora a fase para seu grupo piloto, você observa um grande número de falhas. Você suspende a implantação em fases para impedir que mais dispositivos executem a sequência de tarefas. Depois de resolver o problema, você retoma a implantação em fases para continuar a distribuição. 
 
 1. Como iniciar essa ação varia de acordo com o tipo de software implantado:  
 
-    - **Aplicativo** (somente na versão 1806 ou posteriores): acesse a **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione **Aplicativos**.   
+    - **Aplicativo** (somente na versão 1806 ou posteriores): acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione **Aplicativos**.   
 
-    - **Sequência de tarefas**: acesse o espaço de trabalho **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequência de Tarefas**. Selecione uma sequência de tarefas existente e clique em **Criar Implantação em Fases** na faixa de opções.  
+    - **Atualização de software** (somente na versão 1810 ou posterior): vá para o workspace **Biblioteca de Software** e, em seguida, selecione um dos seguintes nós:    
+        - Atualizações de software  
+            - **Todas as Atualizações de Software**  
+            - **Grupos de Atualizações de Software**   
+        - Serviço do Windows 10, **Todas as Atualizações do Windows 10**  
+        - Gerenciamento de Cliente do Office 365, **Atualizações do Office 365**  
+
+    - **Sequência de tarefas**: acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequência de Tarefas**. Selecione uma sequência de tarefas existente e clique em **Criar Implantação em Fases** na faixa de opções.  
 
 2. Selecione o software com a implantação em fases.  
 
@@ -69,7 +86,7 @@ When you suspend a phased deployment, it sets the available and deadline times o
 ## <a name="bkmk_monitor"></a> Monitorar
 <!--1358577-->
 
-Da versão 1806 em diante, as implantações em fases têm uma experiência de monitoramento nativa. No nó **Implantações** no espaço de trabalho **Monitoramento**, selecione uma implantação em fases e clique em **Status da Implantação em Fases** na faixa de opções.
+Da versão 1806 em diante, as implantações em fases têm uma experiência de monitoramento nativa. No nó **Implantações** no workspace **Monitoramento**, selecione uma implantação em fases e clique em **Status da Implantação em Fases** na faixa de opções.
 
 ![Painel de status de implantação em fases, mostrando o status de duas fases](media/1358577-phased-deployment-status.png)
 
@@ -91,7 +108,8 @@ Este painel mostra as seguintes informações para cada fase da implantação:
 
 Use a lista suspensa **Selecionar Fase** para alterar a exibição do bloco **Critérios de Sucesso**. Esse bloco compara a **Meta de Fase** com a conformidade atual da implantação. Com as configurações padrão, a meta da fase é 95%. Esse valor significa que a implantação precisa de 95% de conformidade para ir para a próxima fase. 
 
-Neste exemplo, a meta da fase é 65% e a conformidade atual é de 66,7%. A implantação em fases é movida automaticamente para a segunda fase, pois a primeira cumpriu os critérios de sucesso.
+Neste exemplo, a meta da fase é 65% e a conformidade atual é de 66,7%. A implantação em fases é movida automaticamente para a segunda fase, pois a primeira cumpriu os critérios de sucesso.  
+
 ![Bloco de Critérios de Sucesso de Exemplo do Status da Implantação em Fases](media/pod-status-success-criteria-tile.png)
 
 A meta da fase é igual ao **Percentual de sucesso da implantação** nas Configurações de Fase para a *próxima* fase. Para a implantação em fases iniciar a próxima fase, essa segunda fase define os critérios para o sucesso da primeira fase. Para exibir essa configuração: 

@@ -2,7 +2,7 @@
 title: Configurar grupos de limites
 titleSuffix: Configuration Manager
 description: Ajude os clientes a encontrar os sistemas de sites usando grupos de limites para organizar logicamente os locais de rede relacionados chamados limites
-ms.date: 08/29/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 5db2926f-f03e-49c7-b44b-e89b1a5a6779
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 232dbaa0bca1507d3b743174be649281f46ab52d
-ms.sourcegitcommit: 52ec30245ba559596d2f88a3eff70c467b4a056f
+ms.openlocfilehash: e9b2eaaf3581bdb951b23541c96532c5b049aac1
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43381009"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456355"
 ---
 # <a name="configure-boundary-groups-for-configuration-manager"></a>Configurar grupos de limites para o Configuration Manager
 
@@ -28,7 +28,7 @@ Por padrão, o Configuration Manager cria um grupo de limites de site padrão em
 
 Para configurar grupos de limites, associe limites (locais de rede) e funções do sistema de sites, como pontos de distribuição, ao grupo de limites. Essa configuração ajuda a associar os clientes aos servidores do sistema de sites como pontos de distribuição que estão localizados próximo aos clientes na rede.
 
-Para aumentar a disponibilidade dos servidores dos sistemas de sites a fim de abranger mais locais de rede, atribua o mesmo limite e o mesmo servidor a vários grupos de limites.
+Para aumentar a disponibilidade dos servidores para uma gama mais ampla de locais de rede, atribua o mesmo limite e o mesmo servidor a mais de um grupo de limites.
 
 Os clientes usam grupos de limites para:  
 
@@ -50,15 +50,15 @@ Para cada grupo de limites na sua hierarquia, você pode atribuir:
 
 - Um ou mais limites. O grupo de limites **atual** de um cliente é um local de rede definido como um limite atribuído a um grupo de limites específico. Um cliente pode ter mais de um grupo de limites atual.  
 
-- Uma ou mais funções do sistema de sites. Os clientes podem sempre usar funções de sistema de sites associadas ao seu grupo de limite atual. Dependendo das configurações adicionais, eles poderão usar funções de sistema de sites em grupos de limites adicionais.  
+- Uma ou mais funções do sistema de sites. Os clientes podem sempre usar funções associados ao atual grupo de limites. Dependendo das configurações adicionais, eles podem usar as funções nos grupos de limites adicionais.  
 
 Para cada grupo de limites que você criar, você pode configurar um link unidirecional para outro grupo de limites. O link é chamado de uma **relação**. Os grupos de limites aos quais você vincula são chamados de grupos de limites **vizinhos**. Um grupo de limites pode ter várias relações, cada uma com um grupo de limites vizinho específico.
 
-Quando um cliente não consegue encontrar um servidor do sistema de sites disponível em seu grupo de limites atual, a configuração de cada relação determina quando começar a pesquisar um grupo de limites vizinho. Essa pesquisa de grupos adicionais é chamada de **fallback**.
+Quando um cliente não consegue encontrar um sistema de sites disponível em seu grupo de limites atual, a configuração de cada relação determina quando começar a pesquisar um grupo de limites vizinho. Essa pesquisa de grupos adicionais é chamada de **fallback**.
 
 Para saber mais, confira os procedimentos a seguir:  
-- [Criar um grupo de limites](#bkmk_create)  
-- [Configurar um grupo de limites](#bkmk_config)  
+- [Criar um grupo de limites](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_create)  
+- [Configurar um grupo de limites](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_config)  
 
 
 
@@ -66,7 +66,7 @@ Para saber mais, confira os procedimentos a seguir:
 
 Para evitar problemas quando os clientes não conseguem encontrar um sistema de sites disponível em seu grupo de limites atual, defina a relação entre grupos de limites para o comportamento de fallback. O fallback permite que um cliente expanda sua pesquisa para grupos de limites adicionais para localizar um sistema de sites disponível.
 
-As relações são configuradas na guia **Relações** das propriedades do grupo de limites. Quando você configura uma relação, define um link para um grupo de limites vizinho. Para cada tipo de função do sistema de sites compatível, defina configurações independentes para o fallback nesse grupo de limites vizinho. Para saber mais, confira [Configurar o comportamento de fallback](#bkmk_bg-fallback).
+As relações são configuradas na guia **Relações** das propriedades do grupo de limites. Quando você configura uma relação, define um link para um grupo de limites vizinho. Para cada tipo de função do sistema de sites compatível, defina configurações independentes para o fallback nesse grupo de limites vizinho. Para saber mais, confira [Configurar o comportamento de fallback](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_bg-fallback).
 
 Por exemplo, quando você configura uma relação com um grupo de limites específico, defina o fallback para os pontos de distribuição para que ele ocorra após 20 minutos. O padrão é de 120 minutos. Para obter um exemplo mais abrangente, confira [Exemplo de como usar grupos de limites](#example-of-using-boundary-groups).
 
@@ -74,7 +74,7 @@ Se um cliente não conseguir encontrar uma função do sistema de sites disponí
 
 Quando um cliente não consegue encontrar um sistema de sites disponível, ele começa a pesquisar os locais nos grupos de limites vizinhos. Esse comportamento aumenta o pool de sistemas de sites disponíveis. A configuração de grupos de limites e suas relações define o uso do cliente desse pool de sistemas de sites disponíveis.
 
-- Um grupo de limites pode ter mais de uma relação. Com várias relações, configure o fallback de cada tipo de sistema de sites em vizinhos diferentes para que ele ocorra após períodos diferentes.    
+- Um grupo de limites pode ter mais de uma relação. Com essa configuração, você pode configurar o fallback de cada tipo de sistema de sites em vizinhos diferentes para que ele ocorra após períodos diferentes.    
 
 - Os clientes só executam o fallback em um grupo de limites que seja vizinho direto de seu grupo de limites atual.  
 
@@ -83,7 +83,7 @@ Quando um cliente não consegue encontrar um sistema de sites disponível, ele c
 
 ### <a name="the-default-site-boundary-group"></a>O grupo de limite do site padrão
 
-Além dos grupos de limites que você criar, cada site tem um grupo de limites de site padrão criado pelo Configuration Manager. Esse grupo é denominado **Default-Site-Boundary-Group&lt;sitecode>**. Por exemplo, o grupo para o site ABC seria nomeado **Default-Site-Boundary-Group&lt;ABC>**.
+Você pode criar seus próprios grupos de limites e cada site tem um grupo de limites de site padrão que o Configuration Manager cria. Esse grupo é denominado **Default-Site-Boundary-Group&lt;sitecode>**. Por exemplo, o grupo para o site ABC seria nomeado **Default-Site-Boundary-Group&lt;ABC>**.
 
 Para cada grupo de limites que você criar, o Configuration Manager criará automaticamente um link implícito para cada grupo de limites de site padrão na hierarquia.  
 
@@ -108,7 +108,7 @@ Para gerenciar o fallback para o grupo de limites do site padrão:
 
 -   Depois de atribuir a um site, um cliente não altera a atribuição de site quando altera o local de rede. Por exemplo, um cliente passa para um novo local de rede. Esse local é um limite em um grupo de limites com uma atribuição de site diferente. O site atribuído do cliente não muda.  
 
--   Quando a Descoberta de Sistemas do Active Directory encontra um novo recurso, o site avalia as informações de rede para o recurso descoberto com base nos limites em grupos de limites. Esse processo associa o novo recurso a um site atribuído para uso do método de instalação do cliente por push.  
+-   Quando a Descoberta de Sistemas do Active Directory encontra um novo recurso, o site avalia as informações de rede para o recurso com base nos limites em grupos de limites. Esse processo associa o novo recurso a um site atribuído para uso do método de instalação do cliente por push.  
 
 -   Quando um limite é membro de vários grupos de limites que têm diferentes locais atribuídos, os clientes selecionarão aleatoriamente um desses sites.  
 
@@ -117,29 +117,89 @@ Para gerenciar o fallback para o grupo de limites do site padrão:
 Para saber mais sobre a atribuição de site do cliente, confira [Usar a atribuição automática de site para computadores](/sccm/core/clients/deploy/assign-clients-to-a-site#BKMK_AutomaticAssignment).  
 
 Saiba mais sobre como configurar a atribuição de site nos procedimentos a seguir:
-- [Configurar a atribuição de site e selecionar servidores do sistema de site](#bkmk_references)
-- [Configurar um local de fallback para atribuição automática de site](#bkmk_site-fallback)
+- [Configurar a atribuição de site e selecionar servidores do sistema de site](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_references)
+- [Configurar um local de fallback para atribuição automática de site](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_site-fallback)
 
 
 
 ## <a name="distribution-points"></a>Pontos de distribuição
 
-Quando um cliente solicita o local de um ponto de distribuição, o Configuration Manager envia ao cliente uma lista de sistemas de sites. Esses sistemas de sites são do tipo apropriado associado a cada grupo de limites que inclui o local de rede atual dos clientes:
+Quando um cliente solicita o local de um ponto de distribuição, o Configuration Manager envia ao cliente uma lista de sistemas de sites. Esses sistemas de sites são do tipo apropriado associado a cada grupo de limites que inclui a localização de rede atual dos clientes:
 
 -   **Durante a distribuição de software**, os clientes solicitam um local para implantação de conteúdo em uma fonte de conteúdo válida. Esse local pode ser um ponto de distribuição, ou uma fonte de cache par.  
 
 -   **Durante a implantação do sistema operacional**, os clientes solicitam um local para enviar ou receber suas informações de migração de estado.  
 
-Durante a implantação de conteúdo, se um cliente solicita um conteúdo que não está disponível em uma origem em seu grupo de limites atual, o cliente continua solicitando esse conteúdo. O cliente tenta diferentes fontes de conteúdo em seu grupo de limites atual até atingir o período de fallback de um grupo de limites vizinho ou do grupo de limites do site padrão. Se o cliente ainda não tiver encontrado o conteúdo, expandirá a pesquisa de fontes de conteúdo para incluir os grupos de limites vizinhos.
+    - Começando na versão 1810, os clientes adquirem conteúdo com base em comportamentos do grupo de limites. Para obter mais informações, confira [Suporte de sequência de tarefas para grupos de limites](#bkmk_bgr-osd).  
 
-Se o conteúdo é distribuído sob demanda, mas não fica disponível em um ponto de distribuição quando solicitado por um cliente, o processo de transferência do conteúdo para esse ponto de distribuição é iniciado. É possível que o cliente encontre o servidor como uma fonte de conteúdo antes de fazer fallback para usar um grupo de limites vizinho.
+Durante a implantação de conteúdo, se um cliente solicita um conteúdo que não está disponível em uma origem em seu grupo de limites atual, o cliente continua solicitando esse conteúdo. O cliente tenta diferentes fontes de conteúdo em seu grupo de limites atual até atingir o período de fallback para um vizinho ou o grupo de limites de site padrão. Se o cliente ainda não tiver encontrado o conteúdo, expandirá a pesquisa de fontes de conteúdo para incluir os grupos de limites vizinhos.
+
+Se você configurar o conteúdo a distribuir sob demanda e ele não estiver disponível em um ponto de distribuição quando um cliente o solicita, o site começará a transferir o conteúdo ao ponto de distribuição. É possível que o cliente encontre o servidor como uma fonte de conteúdo antes de fazer fallback para usar um grupo de limites vizinho.
+
+
+### <a name="bkmk_ccmsetup"></a> Instalação do cliente
+<!--1358840-->
+
+Ao instalar o cliente do Configuration Manager, o processo ccmsetup contata o ponto de gerenciamento para localizar o conteúdo necessário. Durante esse processo nas versões 1806 e anteriores, o ponto de gerenciamento retorna apenas os pontos de distribuição no grupo de limites atual do cliente. Se nenhum conteúdo estiver disponível, o processo de instalação regredirá para baixar o conteúdo do ponto de gerenciamento. Não há nenhuma opção de regredir para os pontos de distribuição em outros grupos de limites que podem ter o conteúdo necessário. 
+
+Da versão 1810 em diante, o ponto de gerenciamento retorna pontos de distribuição com base na configuração do grupo de limites. Se você definir relações no grupo de limites, o ponto de gerenciamento retornará pontos de distribuição na seguinte ordem:
+1. Grupo de limites atual  
+2. Grupo de limites vizinho  
+3. O grupo de limites padrão do site  
+
+> [!Note]  
+> O processo de instalação do cliente não usa o tempo de fallback. Para localizar o conteúdo o mais rápido possível, ele regride imediatamente para o próximo grupo de limites.  
+
+
+### <a name="bkmk_bgr-osd"></a> Suporte a sequência de tarefas para grupos de limites
+<!--1359025-->
+
+Da versão 1810 em diante, quando um dispositivo executa uma sequência de tarefas e precisa adquirir conteúdo, ele agora usa comportamentos de grupo de limites semelhantes ao cliente do Configuration Manager.   
+
+Configure esse comportamento usando as configurações a seguir na página **Pontos de Distribuição** da implantação da sequência de tarefas: 
+
+- **Quando nenhum ponto de distribuição local estiver disponível, use um ponto de distribuição remoto**: para essa implantação, a sequência de tarefas pode reverter os pontos de distribuição em um grupo de limite vizinho.  
+
+- **Permitir que clientes usem pontos de distribuição do grupo de limites de site padrão**: para essa implantação, a sequência de tarefas pode ser revertida para pontos de distribuição no grupo de limites de site padrão.  
+
+Para usar esse novo comportamento, certifique-se de atualizar os clientes para a versão mais recente.
+
+#### <a name="location-priority"></a>Prioridade da localização  
+
+A sequência de tarefas tenta adquirir conteúdo na seguinte ordem:  
+
+1. Fontes de cache par  
+
+2. Pontos de distribuição no grupo de limites *atual*  
+
+3. Pontos de distribuição no grupo de limites *vizinho*  
+
+    > [!Important]  
+    > Devido à natureza em tempo real do processamento da sequência de tarefas, ela não aguarda o tempo de failover em um grupo de limites vizinho. Ela usa os tempos de failover para priorizar os grupos de limites vizinhos. Por exemplo, se a sequência de tarefas falhar em adquirir conteúdo de um ponto de distribuição em seu grupo de limites atual, ela tentará imediatamente um ponto de distribuição em um grupo de limites vizinhos com o menor tempo de failover. Se esse processo falhar, então ele fará failover para um ponto de distribuição em um grupo de limites vizinho com um maior tempo de failover.  
+
+4. Pontos de distribuição no grupo de limites de *padrão do site*  
+
+O arquivo de log **smsts.log** da sequência de tarefas mostra a prioridade das fontes de localização que ele usa com base nas propriedades da implantação.
 
 
 ### <a name="bkmk_bgoptions"></a> Opções de grupo de limites para downloads de pares
 
-<!--1356193--> A partir da versão 1806, os grupos de limites incluem configurações adicionais para dar a você mais controle sobre a distribuição de conteúdo em seu ambiente. Para saber mais, confira [Configurar um grupo de limites](#bkmk_config).
+<!--1356193--> Da versão 1806 em diante, os grupos de limites incluem as seguintes configurações adicionais para dar a você mais controle sobre a distribuição de conteúdo em seu ambiente:  
 
-#### <a name="allow-peer-downloads-in-this-boundary-group"></a>Permitir downloads de par neste grupo de limites
+- [Permitir downloads de par neste grupo de limites](#bkmk_bgoptions1)  
+
+- [Durante os downloads de pares, use apenas pares na mesma sub-rede](#bkmk_bgoptions2)  
+
+<!--1358749--> A versão 1810 adiciona as seguintes opções:  
+
+- [Preferir pontos de distribuição a de pares na mesma sub-rede](#bkmk_bgoptions3)  
+
+- [Preferir a pontos de distribuição em nuvem a pontos de distribuição](#bkmk_bgoptions4)  
+
+Para obter mais informações sobre como definir essas configurações, confira [Configurar um grupo de limites](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_config).
+
+
+#### <a name="bkmk_bgoptions1"></a> Permitir downloads de par neste grupo de limites
 Essa configuração é habilitada por padrão. O ponto de gerenciamento fornece aos clientes uma lista de locais de conteúdo que inclui fontes de pares. Essa configuração também afeta a aplicação de IDs de grupo para [Otimização de Entrega](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#delivery-optimization).  
 
 Há dois cenários comuns em que você deve considerar a desabilitação dessa opção:  
@@ -148,8 +208,8 @@ Há dois cenários comuns em que você deve considerar a desabilitação dessa o
 
 - Se você usar um grupo de limites único e grande para a atribuição de site que não faça referência a nenhum ponto de distribuição.  
 
-#### <a name="during-peer-downloads-only-use-peers-within-the-same-subnet"></a>Durante os downloads de pares, use apenas pares na mesma sub-rede
-Essa configuração depende do que foi mostrado acima. Se você habilitar essa opção, o ponto de gerenciamento incluirá apenas as origens de pares de lista do local do conteúdo que estão na mesma sub-rede que o cliente.
+#### <a name="bkmk_bgoptions2"></a> Durante os downloads de pares, use apenas pares na mesma sub-rede
+Essa configuração depende da opção anterior. Se você habilitar essa opção, o ponto de gerenciamento incluirá apenas as origens de pares de lista do local do conteúdo que estão na mesma sub-rede que o cliente.
 
 Cenários comuns para habilitar essa opção:
 
@@ -157,6 +217,11 @@ Cenários comuns para habilitar essa opção:
 
 - Você tem um grupo de limites grande e único para todos os locais remotos. Habilite esta opção e os clientes só compartilharão conteúdo dentro da sub-rede no local remoto, em vez de colocar em risco o compartilhamento de conteúdo entre os locais.
 
+#### <a name="bkmk_bgoptions3"></a> Preferir pontos de distribuição a de pares na mesma sub-rede
+Por padrão, o ponto de gerenciamento prioriza as fontes de cache par na parte superior da lista de locais de conteúdo. Essa configuração reverte essa prioridade para clientes que estão na mesma sub-rede que a fonte de cache par.  
+
+#### <a name="bkmk_bgoptions4"></a> Preferir a pontos de distribuição em nuvem a pontos de distribuição
+Se você tiver uma filial com um link da Internet mais rápido, poderá priorizar o conteúdo de nuvem.  
 
 
 
@@ -187,7 +252,6 @@ Depois de 120 minutos, se o cliente não tiver estabelecido contato, ele começa
 
 ### <a name="fallback-configurations-for-software-update-points"></a>Configurações de fallback para pontos de atualização de software
 
-#### <a name="beginning-with-version-1706"></a>A partir da versão 1706   
 Você pode configurar **Tempos de Fallback (em minutos)** para pontos de atualização de software como menos de 120 minutos. No entanto, o cliente ainda tenta atingir seu ponto de atualização de software original de 120 minutos. Em seguida, ele expande sua pesquisa para outros servidores. Os tempos de fallback do grupo de limites começam quando o cliente não consegue acessar primeiro seu servidor original. Quando o cliente expande sua pesquisa, o site fornece os grupos de limites configurados com menos de 120 minutos.
 
 Para bloquear o fallback de um ponto de atualização de software em um grupo de limites vizinho, defina a configuração para **Nunca fazer fallback**.
@@ -202,16 +266,6 @@ Configure os pontos de atualização de software no grupo de limites *A* para fa
 - Depois de tentar contatar o ponto de atualização de software original por 120 minutos, o cliente expandirá sua pesquisa. Ele adiciona servidores ao pool disponível de pontos de atualização de software que estão em seu grupo de limites atual e em grupos de limites vizinhos configurados com 120 minutos ou menos. Esse pool inclui os servidores no grupo de limites A, que foram adicionados anteriormente ao pool de servidores disponíveis.  
 
 - Após mais 10 minutos, o cliente expande a pesquisa a fim de incluir os pontos de atualização de software do grupo de limites B. Esse período é de 130 minutos no total após a primeira falha do cliente em acessar seu último ponto de atualização de software válido.  
-
-
-#### <a name="versions-1702-and-earlier"></a>Versão 1702 e anteriores
-Com a versão 1702 e anteriores, as configurações de fallbacks para pontos de atualização de software não dão suporte a um tempo configurável em minutos. Em vez disso, o comportamento de fallback é limitado às opções a seguir:
-
-- **Tempos de fallback (em minutos):** essa opção é definida como 120 minutos. Não é possível configurá-lo.  
-
-- **Nunca realizar fallback** Bloqueie o fallback de um ponto de atualização de software para um grupo de limites vizinho.  
-
-Quando um cliente que já tem um ponto de atualização de software não consegue acessá-lo, o cliente pode então fazer fallback para encontrar outro. Ao usar o fallback, o cliente recebe uma lista de todos os pontos de atualização de software do grupo de limites atual. Se ele não consegue encontrar um servidor disponível em 120 minutos, ele faz fallback em seus grupos de limites vizinhos e no grupo de limites do site padrão. O fallback para ambos os grupos de limites ocorre ao mesmo tempo. O tempo de fallback do ponto de atualização de software para grupos vizinhos é definido como 120 minutos. Não é possível alterar esse tempo de fallback. Esse tempo de 120 minutos também é o período padrão de fallback para o grupo de limites de site padrão. Quando um cliente faz fallback para um grupo de site padrão vizinho e padrão, o cliente tentará contatar os pontos de atualização de software do grupo de limites de vizinho antes de tentar usar um do grupo de limites do site padrão.
 
 
 ### <a name="manually-switch-to-a-new-software-update-point"></a>Mudar manualmente para um novo ponto de atualização de software
@@ -238,12 +292,14 @@ Se um cliente estiver em um grupo de limites sem um ponto de gerenciamento atrib
 
 O fallback do grupo de limites do ponto de gerenciamento não altera o comportamento durante a instalação do cliente (ccmsetup.exe). Se a linha de comando não especificar o ponto de gerenciamento inicial usando o parâmetro /MP, o novo cliente recebe a lista completa de pontos de gerenciamento disponíveis. Para o processo inicial de inicialização, o cliente usa o primeiro ponto de gerenciamento que ele pode acessar. Uma vez que o cliente estiver registrado no site, ele recebe a lista de pontos de gerenciamento ordenada corretamente com esse novo comportamento. 
 
+Para obter mais informações sobre o comportamento do cliente para adquirir conteúdo durante a instalação, confira [Instalação do cliente](#bkmk_ccmsetup).
+
 Durante a atualização do cliente, se você não especificar o parâmetro de linha de comando /MP, o cliente consultará fontes como o Active Directory e o WMI em busca de qualquer ponto de gerenciamento disponível. A atualização do cliente não respeita a configuração do grupo de limites. <!--VSO 2841292-->  
 
 Para que os clientes usem essa funcionalidade, habilite a seguinte configuração: **Os clientes preferem usar os pontos de gerenciamento especificados nos grupos de limites** em **Configurações da Hierarquia**. 
 
 > [!Note]  
-> Os processos de implantação de sistema operacional não estão conscientes dos grupos de limites.  
+> Processos de implantação de sistema operacional não estão cientes dos grupos de limites para pontos de gerenciamento.  
 
 
 ### <a name="troubleshooting"></a>Solução de problemas
@@ -256,7 +312,7 @@ Novas entradas aparecem no **LocationServices.log**. O atributo **Localidade** i
 
 - **2**: o ponto de gerenciamento especificado está em um grupo de limites remoto ou vizinho. Quando o ponto de gerenciamento está em um grupo vizinho ou em grupos de limites padrão do site, a localidade é 2.  
 
-- **3**: o ponto de gerenciamento especificado está no grupo de limites local ou atual. Quando o ponto de gerenciamento está no grupo de limites atual, bem como em um grupo vizinho ou em um grupo de limites padrão do site, a localidade é 3. Se você não habilitar a configuração de pontos de gerenciamento preferenciais nas Configurações de Hierarquia, a localidade será sempre 3, independentemente do grupo de limites em que o ponto de gerenciamento esteja.  
+- **3**: o ponto de gerenciamento especificado está no grupo de limites local ou atual. Quando o ponto de gerenciamento está no grupo de limites atual, bem como em um grupo vizinho ou no grupo de limites padrão do site, a localidade é 3. Se você não habilitar a configuração de pontos de gerenciamento preferenciais nas Configurações de Hierarquia, a localidade será sempre 3, independentemente do grupo de limites em que o ponto de gerenciamento esteja.  
 
 Os clientes usam os pontos de gerenciamento local primeiro (localidade 3), em seguida os remotos (localidade 2) e depois os fallbacks (localidade 1). 
 
@@ -273,7 +329,7 @@ Quando um cliente recebe cinco erros em 10 minutos e não se comunica com um pon
 
 - Um cliente tenta usar um ponto de gerenciamento preferencial de seu site atribuído antes de usar um não configurado como preferencial de seu site atribuído.  
 
-- Para usar essa opção, habilite a configuração **Os clientes preferem usar os pontos de gerenciamento especificados em grupos de limites** em **Configurações da Hierarquia**. Em seguida, configure grupos de limites em sites primários individuais. Inclua os pontos de gerenciamento que devem ser associados aos limites associados do grupo de limites. Saiba mais em [Habilitar o uso de pontos de gerenciamento preferenciais](#bkmk_proc-prefer).  
+- Para usar essa opção, habilite a configuração **Os clientes preferem usar os pontos de gerenciamento especificados em grupos de limites** em **Configurações da Hierarquia**. Em seguida, configure grupos de limites em sites primários individuais. Inclua os pontos de gerenciamento que devem ser associados aos limites associados do grupo de limites. Saiba mais em [Habilitar o uso de pontos de gerenciamento preferenciais](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_proc-prefer).  
 
 - Quando você configura os pontos de gerenciamento preferenciais e um cliente organiza sua lista de pontos de gerenciamento, o cliente coloca os pontos de gerenciamento preferenciais no início da lista. Essa lista inclui todos os pontos de gerenciamento do site atribuído do cliente.  
 
@@ -387,114 +443,10 @@ Quando um cliente pesquisa um local de fonte de conteúdo, ele tenta acessar cad
 
 
 
-## <a name="procedures-for-boundary-groups"></a>Procedimentos para grupos de limites
+## <a name="see-also"></a>Consulte também
 
+- [Procedimentos para grupos de limites](/sccm/core/servers/deploy/configure/boundary-group-procedures)  
 
-### <a name="bkmk_create"></a> Criar um grupo de limites  
+- [Sobre limites](/sccm/core/servers/deploy/configure/boundaries)  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda a **Configuração da Hierarquia** e selecione o nó **Grupos de Limite**.  
-
-2.  Na guia **Início**, no grupo **Criar**, selecione **Criar Grupo de Limites**.  
-
-3.  Na caixa de diálogo **Criar Grupo de Limites**, na guia **Geral** e especifique um **Nome** para esse grupo de limites. Opcionalmente, inclua uma **Descrição**.  
-
-4.  Selecione **OK** para salvar o novo grupo de limites, ou continue na próxima seção para configurar o grupo de limites.  
-
-
-### <a name="bkmk_config"></a> Configurar um grupo de limites  
-
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda a **Configuração da Hierarquia** e selecione o nó **Grupos de Limite**.  
-
-2.  Selecione o grupo de limites que você deseja modificar e, em seguida, selecione **Propriedades** na faixa de opções. Essa ação abre a janela Propriedades do grupo de limites.  
-
-Defina as seguintes configurações:  
-- [Adicionar ou remover limites](#bkmk_add)  
-- [Configurar a atribuição de site e selecionar servidores do sistema de site](#bkmk_references)  
-- [Configurar o comportamento de fallback](#bkmk_bg-fallback)  
-- [Configurar as opções de grupo de limites](#bkmk_options)  
-
-#### <a name="bkmk_add"></a> Adicionar ou remover limites
-
-Na janela Propriedades do grupo de limites, use a guia **Geral** para modificar os limites membros desse grupo de limites:  
-
-- Para adicionar limites, selecione **Adicionar**. Na janela Adicionar Limites, marque a caixa de seleção de um ou mais limites e selecione **OK**.  
-
-- Para remover limites, selecione o limite na lista e selecione **Remover**.  
-
-
-#### <a name="bkmk_references"></a> Configurar a atribuição de site e selecionar servidores do sistema de site
-
-Mara modificar a atribuição de site e a configuração do servidor do sistema de sites associado, alterne para a guia **Referências** na janela Propriedades do grupo de limites.  
-
-- Para habilitar esse grupo de limites para uso pelos clientes para atribuição de site, selecione **Usar este grupo de limites para a atribuição de site**. Em seguida, selecione um site na lista suspensa **Site atribuído**. Para saber mais, confira [Atribuição de site](#site-assignment).  
-
-- Para associar os servidores do sistema de sites disponíveis a este grupo de limites, selecione **Adicionar**. A janela Adicionar Sistemas de Site lista apenas os servidores com suporte para funções do sistema de site. Marque a caixa de seleção de um ou mais servidores e selecione **OK**. Isso os adiciona como servidores do sistema de sites associados a este grupo de limites.  
-
-    > [!NOTE]  
-    >  É possível selecionar qualquer combinação de sistemas de sites disponíveis de qualquer site na hierarquia. Os sistemas de site selecionados são listados na guia **Sistemas de Site** nas propriedades de cada limite membro desse grupo de limites.  
-
-- Para remover um servidor deste grupo de limites, selecione o servidor e selecione **Remover**.  
-
-    > [!NOTE]  
-    >  Para interromper o uso desse grupo de limites para a associação de sistemas de sites, remova todos os servidores listados como servidores do sistema de sites associados.  
-
-
-#### <a name="bkmk_bg-fallback"></a> Configurar o comportamento de fallback
-
-Para configurar o comportamento de fallback, alterne para a guia **Relações** na janela Propriedades do grupo de limites.  
-
-- Para criar uma relação com outro grupo de limites:  
-
-    - Selecione **Adicionar**. Na janela Grupos de Limites de Fallback, selecione o grupo de limites para configuração.  
-
-    - Defina o tempo de fallback para as seguintes funções do sistema de site:  
-        - Ponto de distribuição  
-        - Ponto de atualização de software  
-        - Ponto de gerenciamento  
-
-        > [!Note]  
-        > Por exemplo, abra a janela Propriedades do grupo de limites Filial. Na janela Grupos de Limites de Fallback, selecione o grupo de limites Escritório Principal. Defina o tempo de fallback do ponto de distribuição como `20`. Ao salvar essa configuração, os clientes no grupo de limites Filial começam a pesquisar o conteúdo dos pontos de distribuição no grupo de limites Escritório Principal após 20 minutos.  
-
-    - Para evitar o fallback para um grupo de limites específico, selecione o grupo de limites e selecione **Nunca fazer fallback** para o tipo de função do sistema de site. Essa ação pode incluir o *grupo de limites de site padrão*.  
-
-- Para modificar a configuração de uma relação existente, selecione o grupo de limites na lista e selecione **Alterar**. Essa ação abre a janela Grupos de Limite de Fallback apenas para este grupo de limites.  
- 
-- Para remover uma relação, selecione o grupo de limites na lista e selecione **Remover**.  
-
-Para saber mais, confira [Fallback](#fallback). 
-
-
-#### <a name="bkmk_options"></a> Configurar as opções de grupo de limites
-<!--1356193--> A partir da versão 1806, para configurar outras opções para clientes nesse grupo de limites, alterne para a guia **Opções**. Para saber mais, confira [Opções de grupo de limites para downloads de pares](#bkmk_bgoptions).
-
-- **Permitir downloads de pares nesse grupo de limites**: essa opção está habilitada por padrão. O ponto de gerenciamento fornece aos clientes uma lista de locais de conteúdo que inclui fontes de pares.  
-
-    - **Durante downloads de pares, use apenas pares na mesma sub-rede**: essa configuração depende daquela mostrada acima. Se você habilitar essa opção, o ponto de gerenciamento incluirá apenas as origens de pares de lista do local do conteúdo que estão na mesma sub-rede que o cliente.  
-
-
-### <a name="bkmk_site-fallback"></a> Configurar um local de fallback para atribuição automática de site  
-
-Se os clientes não estiverem em um grupo de limites com um site atribuído, atribua-os a esse site após a instalação.
-
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
-
-2.  Na guia **Início** da faixa de opções, no grupo **Sites**, selecione **Configurações de Hierarquia**.  
-
-3.  Na guia **Geral**, marque a caixa de seleção para **Usar um local de fallback**. Depois, selecione um site na lista suspensa **Local de fallback**.  
-
-4.  Selecione **OK** para salvar a configuração.  
-
-Para saber mais, confira [Atribuição de site](#site-assignment).
-
-
-### <a name="bkmk_proc-prefer"></a> Habilitar o uso de pontos de gerenciamento preferenciais  
-
-Para saber mais, confira [Pontos de gerenciamento preferidos](#bkmk_preferred).
-
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
-
-2. Na guia **Início** da faixa de opções, no grupo **Sites**, selecione **Configurações de Hierarquia**.  
-
-3. Na guia **Geral**, selecione **Os clientes preferem usar os pontos de gerenciamento especificados em grupos de limite**.  
-
-4. Selecione **OK** para salvar a configuração.  
+- [Conceitos fundamentais para o gerenciamento de conteúdo](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management)  

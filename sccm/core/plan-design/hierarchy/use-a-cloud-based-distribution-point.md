@@ -2,7 +2,7 @@
 title: Ponto de distribuição na nuvem
 titleSuffix: Configuration Manager
 description: Planeje e projete a distribuição de conteúdo de software por meio do Microsoft Azure com pontos de distribuição na nuvem no Configuration Manager.
-ms.date: 09/10/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 3cd9c725-6b42-427d-9191-86e67f84e48c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 79b17ba00274459401dc81035833163e75939be0
-ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
+ms.openlocfilehash: 4673da59da7fede2f425948472c31a620d13a258
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601136"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456287"
 ---
 # <a name="use-a-cloud-distribution-point-in-configuration-manager"></a>Usar um ponto de distribuição na nuvem no Configuration Manager
 
@@ -87,12 +87,15 @@ A implantação e a operação de ponto de distribuição na nuvem inclui os seg
 ### <a name="azure-resource-manager"></a>Azure Resource Manager
 <!--1322209--> Da versão 1806 em diante, crie um ponto de distribuição na nuvem usando uma **implantação do Azure Resource Manager**. O [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) é uma plataforma moderna para gerenciar todos os recursos da solução como uma única entidade, chamado [grupo de recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). Ao implantar o ponto de distribuição na nuvem com o Azure Resource Manager, o site usa o Azure Active Directory (Azure AD) para autenticar e criar os recursos necessários para a nuvem. Essa implantação modernizada não exige o certificado de gerenciamento do Azure clássico.  
 
+> [!Note]  
+> Esse recurso não habilita o suporte para CSPs (Provedores de Serviços de Nuvem) do Azure. A implantação do ponto de distribuição na nuvem com o Azure Resource Manager continua a usar o serviço de nuvem clássico, ao qual o CSP não oferece suporte. Para saber mais, confira os [serviços do Azure disponíveis no CSP do Azure](/azure/cloud-solution-provider/overview/azure-csp-available-services).  
+
 O assistente do ponto de distribuição na nuvem ainda fornece a opção para uma **implantação de serviço clássico** usando um certificado de gerenciamento do Azure. Para simplificar a implantação e o gerenciamento de recursos, a Microsoft recomenda usar o Modelo de implantação do Azure Resource Manager para todos os novos pontos de distribuição na nuvem. Se possível, reimplante os pontos de distribuição na nuvem existentes por meio do Gerenciador de Recursos.
 
-O Configuration Manager não migra os pontos de distribuição na nuvem clássicos existentes para o Modelo de implantação do Azure Resource Manager. Crie novos pontos de distribuição de nuvem usando implantações do Azure Resource Manager e remova os pontos de distribuição de nuvem clássicos. 
+> [!Important]  
+> Da versão 1810, a implantação de serviço clássico no Azure é preterida para uso no Configuration Manager. Esta versão é a última a dar suporte à criação dessas implantações do Azure. Essa funcionalidade será removida na primeira versão do Configuration Manager lançada após 1º de julho de 2019. Mova seus pontos de distribuição do CMG e da nuvem para implantações do Azure Resource Manager antes dessa hora. <!--SCCMDocs-pr issue #2993-->  
 
-> [!IMPORTANT]  
-> Esse recurso não habilita o suporte para CSPs (Provedores de Serviços de Nuvem) do Azure. A implantação do ponto de distribuição na nuvem com o Azure Resource Manager continua a usar o serviço de nuvem clássico, ao qual o CSP não oferece suporte. Para saber mais, confira os [serviços do Azure disponíveis no CSP do Azure](/azure/cloud-solution-provider/overview/azure-csp-available-services).  
+O Configuration Manager não migra os pontos de distribuição na nuvem clássicos existentes para o Modelo de implantação do Azure Resource Manager. Crie novos pontos de distribuição de nuvem usando implantações do Azure Resource Manager e remova os pontos de distribuição de nuvem clássicos. 
 
 
 ### <a name="hierarchy-design"></a>Design de hierarquia
@@ -134,12 +137,14 @@ Quando você usa um ponto de distribuição na nuvem em sua hierarquia, use as s
 
 - O servidor do site exige **acesso à Internet** para implantar e gerenciar o serviço de nuvem.  
 
+- Ao usar o método de implantação do **Azure Resource Manager**, integre o Configuration Manager ao [Azure AD](/sccm/core/servers/deploy/configure/azure-services-wizard) para **Gerenciamento de Nuvem**. A *descoberta de usuário* do Azure AD não é necessária.  
+
 - Se você estiver usando o método clássico de implantação do Azure, precisará usar um **certificado de gerenciamento do Azure**. Para obter mais informações, consulte a seção [Certificados](#bkmk_certs) abaixo.   
 
     > [!TIP]  
     > Do Configuration Manager versão 1806 em diante, use o Modelo de implantação do **Azure Resource Manager**. Ele não exige esse certificado de gerenciamento.  
-
-- Se você estiver usando o método de implantação do **Azure Resource Manager**, integre o Configuration Manager ao [Azure AD](/sccm/core/clients/deploy/deploy-clients-cmg-azure). A descoberta de usuário do Azure AD não é necessária.  
+    > 
+    > O método de implantação clássico foi preterido da versão 1810 em diante.   
 
 - Um **certificado de autenticação de servidor**. Para obter mais informações, consulte a seção [Certificados](#bkmk_certs) abaixo.  
 
@@ -327,6 +332,8 @@ Se você estiver usando o método clássico de implantação do Azure, precisar�
 
 > [!TIP]  
 > Do Configuration Manager versão 1806 em diante, use o Modelo de implantação do **Azure Resource Manager**. Ele não exige esse certificado de gerenciamento.  
+> 
+> O método de implantação clássico foi preterido da versão 1810 em diante.   
 
 Para reduzir a complexidade, use o mesmo certificado de gerenciamento do Azure para todas as implantações clássicas de pontos de distribuição na nuvem e gateways de gerenciamento em nuvem em todas as assinaturas do Azure e todos os sites do Configuration Manager.
 

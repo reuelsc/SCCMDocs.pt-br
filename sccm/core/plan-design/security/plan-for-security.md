@@ -2,7 +2,7 @@
 title: Planejar a segurança
 titleSuffix: Configuration Manager
 description: Veja as práticas recomendadas de segurança e informações sobre segurança no Configuration Manager.
-ms.date: 10/22/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e03c2b53044225eeb790d70474868e337a4cc997
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: 5332fa778b343a5eaae93a08db0826823fffce42
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411452"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456372"
 ---
 # <a name="plan-for-security-in-configuration-manager"></a>Planejar a segurança no Configuration Manager
 
@@ -40,6 +40,8 @@ Este artigo descreve os conceitos a serem consideradas ao planejar a segurança 
 - [Planejar-se para a administração baseada em funções](#BKMK_PlanningForRBA)  
 
 - [Planejar-se para o Azure Active Directory](#bkmk_planazuread)  
+
+- [Plano para autenticação do provedor de SMS](#bkmk_auth)
 
 
 
@@ -409,6 +411,25 @@ A cadeia de caracteres retornada é a chave de raiz confiável. Verifique se cor
 
 
  Para obter mais informações sobre o Azure AD, confira [Documentação do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/).
+
+
+
+## <a name="bkmk_auth"></a> Plano para autenticação do provedor de SMS
+<!--1357013--> 
+
+Da versão 1810 em diante, você pode especificar o nível mínimo de autenticação para os administradores acessarem sites do Configuration Manager. Esse recurso faz com que os administradores entrem no Windows com o nível necessário. Isso se aplica a todos os componentes que acessam o Provedor de SMS. Por exemplo, o console do Configuration Manager, os métodos do SDK e os cmdlets do Windows PowerShell. 
+
+Essa configuração é uma configuração de toda a hierarquia. Antes de alterar essa configuração, verifique se todos os administradores do Configuration Manager podem entrar no Windows com o nível de autenticação necessário. 
+
+Os seguintes níveis estão disponíveis:
+
+- **Autenticação do Windows**: exige autenticação com credenciais de domínio do Active Directory.   
+
+- **Autenticação de certificado**: exige autenticação com um certificado válido emitido por uma autoridade de certificação PKI confiável.  
+
+- **Autenticação do Windows Hello para Empresas**: exige autenticação com autenticação forte de dois fatores que esteja vinculada a um dispositivo e use biometria ou PIN.  
+
+Para obter mais informações, veja [Planejar para o provedor de SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_auth). 
 
 
 

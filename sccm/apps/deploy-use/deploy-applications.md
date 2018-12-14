@@ -2,7 +2,7 @@
 title: Implantar aplicativos
 titleSuffix: Configuration Manager
 description: Criar ou simular uma implantação de um aplicativo em uma coleção de dispositivos ou usuários
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 2629c376-ec43-4f0e-a78b-4223cc9302bf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d23c5ee5b81264a9725c4654cd1717b30302c708
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 5b70c651186a35e0f1c5a5da8b9c7dffe0abc7da
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384813"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456576"
 ---
 # <a name="deploy-applications-with-configuration-manager"></a>Implantar aplicativos com o Configuration Manager
 
@@ -25,7 +25,7 @@ Crie ou simule uma implantação de um aplicativo em uma coleção de dispositiv
 
 Antes de implantar um aplicativo, crie, pelo menos, um tipo de implantação para o aplicativo. Para mais informações, consulte [Criar aplicativos](/sccm/apps/deploy-use/create-applications).
 
-Você também pode simular uma implantação de aplicativo. Essa simulação testa a aplicabilidade de uma implantação sem instalar ou desinstalar o aplicativo. Uma implantação simulada avalia o método de detecção, os requisitos e as dependências para um tipo de implantação e relata os resultados no nó **Implantações** do espaço de trabalho **Monitoramento**. Para saber mais, confira [Simular implantações de aplicativos](/sccm/apps/deploy-use/simulate-application-deployments).
+Você também pode simular uma implantação de aplicativo. Essa simulação testa a aplicabilidade de uma implantação sem instalar ou desinstalar o aplicativo. Uma implantação simulada avalia o método de detecção, os requisitos e as dependências para um tipo de implantação e relata os resultados no nó **Implantações** do workspace **Monitoramento**. Para saber mais, confira [Simular implantações de aplicativos](/sccm/apps/deploy-use/simulate-application-deployments).
 
 > [!Note]
 >  Você só pode simular a implantação de aplicativos obrigatórios, mas não de pacotes ou atualizações de software.   
@@ -36,7 +36,7 @@ Você também pode simular uma implantação de aplicativo. Essa simulação tes
 
 ## <a name="bkmk_deploy"></a> Implantar um aplicativo
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.  
+1.  No console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.  
 
 2.  Na lista **Aplicativos**, selecione um aplicativo a ser implantado. Na faixa de opções, clique em **Implantar**.  
 
@@ -98,6 +98,8 @@ Na página **Configurações da implantação**, especifique as seguintes inform
     > [!NOTE]   
     >  Quando você define a ação de implantação como **Desinstalar**, a finalidade da implantação é definida automaticamente como **Obrigatória**. Não é possível alterar esse comportamento.  
 
+- **Permita que os usuários finais tentem reparar esse aplicativo**: da versão 1810 em diante, se você tiver criado o aplicativo com uma linha de comando de reparo, habilite esta opção. Os usuários veem uma opção no Software Center para **Reparar** o aplicativo.<!--1357866-->  
+
 - **Pré-implantar o software no dispositivo primário do usuário**: se a implantação for para um usuário, selecione essa opção para implantar o aplicativo no dispositivo primário do usuário. Essa configuração não exige que o usuário entre para que a implantação seja executada. Se o usuário precisar interagir com a instalação, não selecione essa opção. Essa opção só está disponível quando a implantação é **Obrigatória**.  
 
 - **Enviar pacotes de ativação**: se a implantação for **Obrigatória**, o Configuration Manager enviará um pacote de ativação aos computadores antes que o cliente execute a implantação. Esse pacote ativa os computadores na data limite da instalação. Antes de usar essa opção, os computadores e as redes devem ser configurados para Wake On LAN. Para obter mais informações, confira [Planejar como ativar clientes](/sccm/core/clients/deploy/plan/plan-wake-up-clients).  
@@ -118,25 +120,9 @@ Uma das seguintes configurações de aprovação é exibida, dependendo da vers�
 
 - **Exigir a aprovação do administrador se os usuários solicitarem este aplicativo**: para as versões 1710 e anterior, o administrador aprova as solicitações do usuário para o aplicativo antes de o usuário o instalar. Essa opção fica desabilitada quando a finalidade da implantação é **Obrigatória** ou quando o aplicativo é implantado em uma coleção de dispositivos.  
 
-    As solicitações de aprovação do aplicativo são exibidas no nó **Solicitações de Aprovação** , no **Gerenciamento de Aplicativos** no espaço de trabalho **Biblioteca de Software** . Se uma solicitação não é aprovada no prazo de 45 dias, ela é removida. A reinstalação do cliente pode cancelar as solicitações de aprovação pendentes.  
-
-    Depois de aprovar um aplicativo para instalação, você pode **Negar** a solicitação no console do Configuration Manager. Essa ação não faz com que o cliente desinstale o aplicativo de todos os dispositivos. Ela impede que os usuários instalem novas cópias do aplicativo pelo Centro de Software.  
-
 - **Um administrador deve aprovar uma solicitação para este aplicativo no dispositivo**: a partir da versão 1802, o administrador aprova as solicitações do usuário para o aplicativo antes de o usuário instalá-lo no dispositivo solicitado. Se o administrador aprova o pedido, o usuário só poderá instalar o aplicativo nesse dispositivo. O usuário deve enviar outro pedido para instalar o aplicativo em outro dispositivo. Essa opção fica desabilitada quando a finalidade da implantação é **Obrigatória** ou quando o aplicativo é implantado em uma coleção de dispositivos. <!--1357015-->  
 
-    Esse recurso é opcional. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options). Se você não habilitar esse recurso, a experiência anterior será exibida.  
-
-    > [!Note]  
-    > Para aproveitar os novos recursos do Configuration Manager, primeiro atualize os clientes para a versão mais recente. Embora a nova funcionalidade seja exibida no console do Configuration Manager quando você atualiza o site e o console, o cenário completo só funcionará quando a versão do cliente também for a mais recente.<!--SCCMDocs issue 646-->  
-
-    Exiba **Solicitações de aprovação**, no **Gerenciamento de aplicativos**, no espaço de trabalho **Biblioteca de software** do console do Configuration Manager. Agora há uma coluna **Dispositivo** na lista de cada solicitação. Quando você toma ação no pedido, a caixa de diálogo Solicitação de Aplicativo também inclui o nome do dispositivo do qual o usuário enviou a solicitação.  
-
-    Se uma solicitação não é aprovada no prazo de 45 dias, ela é removida. A reinstalação do cliente pode cancelar as solicitações de aprovação pendentes.  
-
-    Depois de aprovar um aplicativo para instalação, você pode **Negar** a solicitação no console do Configuration Manager. Essa ação não faz com que o cliente desinstale o aplicativo de todos os dispositivos. Ela impede que os usuários instalem novas cópias do aplicativo pelo Centro de Software.  
-
-    > [!Important]  
-    > Começando na versão 1806, *o comportamento mudou* para casos em que você revoga a aprovação de um aplicativo que já foi aprovado e instalado. Agora quando você **Nega** a solicitação do aplicativo, o cliente desinstala o aplicativo do dispositivo do usuário.<!--1357891-->  
+Para obter mais informações, confira [Aprovar aplicativos](/sccm/apps/deploy-use/app-approval).
 
 
 #### <a name="deployment-properties-deployment-settings"></a>**Configurações da implantação** das propriedades de implantação
@@ -206,7 +192,7 @@ Para obter mais informações, consulte os seguintes artigos:
 
 ## <a name="bkmk_delete"></a> Excluir uma implantação
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.  
+1.  No console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.  
 
 2.  Na lista **Aplicativos**, selecione o aplicativo que inclui a implantação que será excluída.  
 

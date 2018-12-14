@@ -2,7 +2,7 @@
 title: Arquivos de log para solução de problemas
 titleSuffix: Configuration Manager
 description: Use arquivos de log para solucionar problemas com clientes e sistemas de sites do Configuration Manager.
-ms.date: 09/10/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4435d39dd736db1058b06d09e5722a80a173bf6e
-ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
+ms.openlocfilehash: cf7ca86dd04d60f1ff914294a7430d9f4a7a2fb7
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601204"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456695"
 ---
 # <a name="log-files-in-configuration-manager"></a>Arquivos de log no Configuration Manager
 
@@ -314,6 +314,7 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 |mpMSI.log|Registra detalhes sobre a instalação do ponto de gerenciamento.|Servidor do site|  
 |MPSetup.log|Registra o processo de wrapper de instalação do ponto de gerenciamento.|Servidor do site|  
 |netdisc.log|Registra ações de descoberta de rede.|Servidor do site|  
+|NotiCtrl.log|Notificações de solicitação do aplicativo.|Servidor do site|  
 |ntsvrdis.log|Registra a atividade de descoberta dos servidores do sistema de site.|Servidor do site|  
 |Objreplmgr|Registra o processamento de notificações de alteração de objeto para replicação.|Servidor do site|  
 |offermgr.log|Registra atualizações de anúncio.|Servidor do site|  
@@ -334,7 +335,7 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 |sitectrl.log|Registra as alterações de configuração de site feitas para objetos de controle de site no banco de dados.|Servidor do site|  
 |sitestat.log|Registra disponibilidade e espaço em disco monitorando o processo de todos os sistemas de site.|Servidor do site|
 |SMS_ISVUPDATES_SYNCAGENT.log| Arquivo de log para a sincronização de atualizações de software de terceiros, começando no Configuration Manager versão 1806.| Ponto de atualização de software de nível superior na hierarquia do Configuration Manager.|
-|SMS_PhasedDeployment.log| Arquivo de log para implantações em fases, um recurso de pré-lançamento disponível a partir do Configuration Manager versão 1802.|Site de nível superior na hierarquia do Configuration Manager|   
+|SMS_PhasedDeployment.log| Arquivo de log para implantações em fases|Site de nível superior na hierarquia do Configuration Manager|   
 |SmsAdminUI.log|Registra atividades do console do Configuration Manager.|Computador que executa o console do Configuration Manager|  
 |SMSAWEBSVCSetup.log|Registra as atividades de instalação do serviço da Web de catálogo do aplicativo.|Servidor do sistema de site|  
 |smsbkup.log|Registra a saída do processo de backup do site.|Servidor do site|  
@@ -436,6 +437,7 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 |CCMSDKProvider.log|Registra as atividades do SDK do gerenciamento de aplicativos.|Cliente|  
 |colleval.log|Registra detalhes sobre quando as coleções são criadas, alteradas e excluídas pelo Collection Evaluator.|Servidor do sistema de site|  
 |ConfigMgrSoftwareCatalog.log|Registra a atividade do catálogo de aplicativos, inclusive o uso de Silverlight.|Cliente|  
+|NotiCtrl.log|Notificações de solicitação do aplicativo.|Servidor do site|  
 |portlctl.log|Registra as atividades de monitoramento da função do sistema de site do ponto de sites da Web do catálogo de aplicativos.|Servidor do sistema de site|  
 |portlwebMSI.log|Registra a atividade da instalação MSI para a função de sites da Web do catálogo de aplicativos.|Servidor do sistema de site|  
 |PrestageContent.log|Registra detalhes sobre o uso da ferramenta ExtractContent.exe em um ponto de distribuição em pré-teste remoto. Essa ferramenta extrai o conteúdo exportado para um arquivo.|Servidor do sistema de site|  
@@ -708,7 +710,7 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |smpperf.log|Registra as atualizações do contador de desempenho do ponto de migração de estado.|Servidor do sistema de site|  
 |smspxe.log|Registra os detalhes das respostas a clientes que usam a inicialização por PXE e detalhes da expansão de imagens e arquivos de inicialização.|Servidor do sistema de site|  
 |smssmpsetup.log|Registra os detalhes de instalação e configuração do ponto de migração de estado.|Servidor do sistema de site|
-| SMS_PhasedDeployment.log| Arquivo de log para implantações em fases, um recurso de pré-lançamento disponível a partir do Configuration Manager versão 1802.|Site de nível superior na hierarquia do Configuration Manager| 
+| SMS_PhasedDeployment.log| Arquivo de log para implantações em fases|Site de nível superior na hierarquia do Configuration Manager| 
 |Smsts.log|Registra as atividades de sequência de tarefas.|Cliente|  
 |TSAgent.log|Registra o resultado das dependências da sequência de tarefas antes de iniciar uma sequência de tarefas.|Cliente|  
 |TaskSequenceProvider.log|Registra os detalhes das sequências de tarefas quando elas são importadas, exportadas ou editadas.|Servidor do sistema de site|  

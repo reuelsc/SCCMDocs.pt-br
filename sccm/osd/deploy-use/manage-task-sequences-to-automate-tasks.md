@@ -2,7 +2,7 @@
 title: Gerenciar sequências de tarefas
 titleSuffix: Configuration Manager
 description: Crie, edite, implante, importe e exporte sequências de tarefas para gerenciá-las e automatizar tarefas em seu ambiente.
-ms.date: 08/17/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,18 +10,18 @@ ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a6c1fb447719a36bd3c0cb7e2c91daf6a58d85ff
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: 44cfb06c8d92568a4468c1f46b90ceeb259c3c1f
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42755917"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456627"
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-configuration-manager"></a>Gerenciar sequências de tarefas para automatizar tarefas no Gerenciador de Configurações
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Use sequências de tarefas para automatizar as etapas em seu ambiente do Configuration Manager. Essas etapas podem implantar uma imagem do sistema operacional em um computador de destino, compilar e capturar uma imagem do sistema operacional de um conjunto de arquivos de instalação do sistema operacional, além de capturar e restaurar as informações de estado do usuário. As sequências de tarefas estão localizadas no console do Configuration Manager. No espaço de trabalho **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**. O nó **Sequências de Tarefas**, incluindo as subpastas criadas, é replicado em toda a hierarquia do Configuration Manager. Para obter informações sobre planejamento, consulte [Planning considerations for automating tasks (Considerações de planejamento para automatizar tarefas)](/sccm/osd/plan-design/planning-considerations-for-automating-tasks).  
+Use sequências de tarefas para automatizar as etapas em seu ambiente do Configuration Manager. Essas etapas podem implantar uma imagem do sistema operacional em um computador de destino, compilar e capturar uma imagem do sistema operacional de um conjunto de arquivos de instalação do sistema operacional, além de capturar e restaurar as informações de estado do usuário. As sequências de tarefas estão localizadas no console do Configuration Manager. No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**. O nó **Sequências de Tarefas**, incluindo as subpastas criadas, é replicado em toda a hierarquia do Configuration Manager. Para obter informações sobre planejamento, consulte [Planning considerations for automating tasks (Considerações de planejamento para automatizar tarefas)](/sccm/osd/plan-design/planning-considerations-for-automating-tasks).  
 
 
 
@@ -60,7 +60,7 @@ Você pode retornar a uma página anterior quando executar uma sequência de tar
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
 3.  Na lista **Sequência de Tarefas** , selecione a sequência de tarefas a editar.  
 
@@ -85,7 +85,7 @@ Você pode retornar a uma página anterior quando executar uma sequência de tar
 
  Use o procedimento a seguir para configurar os detalhes da sequência de tarefas exibida no Centro de Software. Esses detalhes são apenas para fins informativos.  
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**.  
+1. No console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**.  
 
 2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.  
 
@@ -103,7 +103,7 @@ Você pode retornar a uma página anterior quando executar uma sequência de tar
 
  Use o procedimento a seguir para configurar o comportamento da sequência de tarefas no cliente do Gerenciador de Configurações.  
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**.  
+1. No console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**.  
 
 2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.  
 
@@ -156,7 +156,7 @@ Você pode retornar a uma página anterior quando executar uma sequência de tar
 > [!NOTE]    
 > Qualquer sequência de tarefas que atender a determinadas condições será automaticamente definida como de alto impacto. Para obter mais informações, consulte [Gerenciar implantações de alto risco](/sccm/protect/understand/settings-to-manage-high-risk-deployments).
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**.  
+1. No console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**.  
 
 2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.  
 
@@ -167,7 +167,7 @@ Você pode retornar a uma página anterior quando executar uma sequência de tar
 
  Use o procedimento a seguir para criar uma notificação personalizada para implantações de alto impacto.
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**.  
+1. No console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**.  
 
 2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.  
 
@@ -210,7 +210,7 @@ A mensagem de notificação a seguir é exibida quando o usuário final abre a i
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
 3.  Na lista **Sequência de Tarefas** , selecione a sequência de tarefas a distribuir.  
 
@@ -246,7 +246,7 @@ A mensagem de notificação a seguir é exibida quando o usuário final abre a i
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
 3.  Na lista **Sequência de Tarefas** , selecione a sequência de tarefas a implantar.  
 
@@ -392,6 +392,9 @@ A mensagem de notificação a seguir é exibida quando o usuário final abre a i
 
     - **Permitir que os clientes usem pontos de distribuição do grupo de limites do site padrão**: especifique se os clientes devem baixar o conteúdo de um ponto de distribuição no grupo de limites do site padrão, quando o conteúdo não estiver disponível em um ponto de distribuição nos grupos de limites atuais ou vizinhos.  
 
+        > [!Note]  
+        > Da versão 1810 em diante, quando um dispositivo executa uma sequência de tarefas e precisa adquirir conteúdo, ele usa comportamentos de grupo de limites semelhantes ao cliente do Configuration Manager. Para obter mais informações, confira [Suporte de sequência de tarefas para grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgr-osd).<!--1359025-->  
+
 11. A partir do Configuration Manager 1802, na guia **Resumo**, clique em **Salvar Como Modelo** se desejar salvar as configurações para serem usadas novamente. Forneça um nome para o modelo e selecione as configurações a serem salvas.  
 
 12. Conclua o assistente.  
@@ -440,7 +443,7 @@ Ao implantar uma sequência de tarefas de upgrade, use as seguintes configuraç�
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
 3.  Na lista **Sequência de Tarefas** , selecione a sequência de tarefas a exportar. Se você selecionar mais de uma sequência de tarefas, todas serão armazenadas em um arquivo de exportação.  
 
@@ -473,7 +476,7 @@ Ao implantar uma sequência de tarefas de upgrade, use as seguintes configuraç�
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
 3.  Na guia **Início** , no grupo **Criar** , clique em **Importar Sequência de Tarefas** para iniciar o Assistente para Importar Sequência de Tarefas.  
 
@@ -556,7 +559,7 @@ Ao implantar uma sequência de tarefas de upgrade, use as seguintes configuraç�
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
 3.  Na lista **Sequência de Tarefas** , selecione a sequência de tarefas que deseja gerenciar e selecione uma das opções disponíveis.  
 

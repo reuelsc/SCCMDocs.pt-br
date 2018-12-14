@@ -5,17 +5,17 @@ description: Saiba como implantar manual ou automaticamente as atualizações de
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
-ms.openlocfilehash: d456d7232133333bf6cd88374d5288227f6dfea1
-ms.sourcegitcommit: 2ea71b048307a93a2db7898700aea984a8f88824
+ms.openlocfilehash: f59ca099325028ccf29904a2108939d0047df745
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52304275"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52455931"
 ---
 # <a name="deploy-software-updates"></a>Implantar atualizações de software  
 
@@ -36,7 +36,15 @@ Depois de criar a implantação, o site envia uma política de atualização de 
 
 Se você configurar uma implantação de atualização de software necessária, as atualizações de software serão instaladas automaticamente no prazo agendado. Como alternativa, o usuário no computador cliente pode agendar ou iniciar a instalação da atualização de software antes do prazo. Após a tentativa de instalação, os computadores cliente enviam mensagens de estado de volta para o servidor do site para relatar se a instalação da atualização de software teve êxito. Para obter mais informações sobre implantações de atualização de software, veja [Software update deployment workflows](/sccm/sum/understand/software-updates-introduction#BKMK_DeploymentWorkflows).  
 
-Há dois cenários principais para implantar atualizações de software: implantação manual e implantação automática. Geralmente, você começa implantando as atualizações de software manualmente para criar uma linha de base para seus clientes e, em seguida, passa a gerenciar as atualizações de software nos clientes usando a implantação automática.  
+Há três cenários principais para implantar atualizações de software: 
+- [Implantação manual](#BKMK_ManualDeployment)  
+- [Implantação automática](#bkmk_auto)  
+- [Implantação em fases](#bkmk_phased)  
+
+Geralmente, você começa implantando as atualizações de software manualmente para criar uma linha de base para seus clientes e, em seguida, passa a gerenciar as atualizações de software nos clientes usando uma implantação automática ou em fases.  
+
+> [!Note]  
+> Você não pode usar uma regra de implantação automática com uma implantação em fases.
 
 
 
@@ -65,7 +73,7 @@ Para obter mais informações e etapas detalhadas, confira [Implantar atualizaç
 
 
 
-## <a name="automatically-deploy-software-updates"></a>Implantar atualizações de software automaticamente
+## <a name="bkmk_auto"></a> Implantar atualizações de software automaticamente
 
 Configure implantação de atualizações automáticas de software usando uma ADR (regra de implantação automática). Esse método de implantação é comum de atualizações de software mensais (conhecidas como "Patch Tuesday") e para o gerenciamento de atualizações de definição. Você define os critérios de uma ADR para automatizar o processo de implantação. A lista a seguir fornece o fluxo de trabalho geral para implantação automática das atualizações de software:  
 
@@ -100,4 +108,12 @@ Cada nova implantação que você adicionar:
 
 
 Para obter mais informações e etapas detalhadas, confira [Implantar atualizações de software automaticamente](automatically-deploy-software-updates.md)
+
+
+
+## <a name="bkmk_phased"></a> Implantar atualizações de software em fases
+
+<!--1358146--> Começando na versão 1810, crie implantações em fases das atualizações de software. As implantações em fases permitem que você coordene uma distribuição coordenada e sequenciada do software com base em grupos e critérios personalizáveis.
+
+Saiba mais em [Criar implantações em fases](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json).
 

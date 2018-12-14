@@ -10,12 +10,12 @@ ms.assetid: ec5b54cf-62b7-4ed1-9bb3-e8c63b9641c8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2c739f52553aca8680328e581e183a5ca974ffdf
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f1683f69ae065d0523719edd3d24da52d499341b
+ms.sourcegitcommit: 1439817f1309658b31008d7bafaab32fc5ef8789
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337499"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "52819992"
 ---
 # <a name="upgrade-the-long-term-servicing-branch-to-the-current-branch"></a>Atualizar a ramificação de manutenção de longo prazo para a ramificação atual
 
@@ -46,6 +46,6 @@ Se seu site executar o LTSB, será possível usar a opção a seguir no console 
 
  1. No console, vá para **Administração** > **Configuração do Site** > **Sites** e abra **Configurações da Hierarquia**.  
 
- 2. Selecione a opção de converter para a Ramificação Atual e, em seguida, clique em **Aplicar**.  
+ 2. Em **Configurações da Hierarquia**, mude para a guia **Licenciamento**. Selecione a opção **Converter para o Branch Atual** e, em seguida, clique em **Aplicar**.  
 
 Quando o seu site for convertido para a Ramificação Atual, os recursos anteriormente indisponíveis estarão disponíveis para uso.

@@ -2,7 +2,7 @@
 title: Criar aplicativos
 titleSuffix: Configuration Manager
 description: Crie aplicativos com tipos de implantação, métodos de detecção e requisitos para instalação do software.
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 848b81ee9e1d6d9ebc189a2d8cb0126648f91be0
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 947dfac82db43e5cb21d8304d31be23219bb83aa
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385177"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456644"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Criar aplicativos no Configuration Manager
 
@@ -47,7 +47,7 @@ Este artigo também inclui as seguintes informações para configurar um tipo de
 
 ## <a name="bkmk_create"></a> Criar um aplicativo  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.  
+1.  No console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.  
 
 2.  Na guia **Início** da faixa de opções, no grupo **Criar**, clique em **Criar Aplicativo**.  
 
@@ -168,7 +168,7 @@ Se você [detectar automaticamente as informações do aplicativo](#bkmk_auto-ap
 
 Há três maneiras de iniciar o Assistente para Criar Tipo de Implantação:
 
-- **No nó Aplicativos**: no console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**. Selecione um aplicativo e, em seguida, clique em **Criar Tipo de Implantação** na faixa de opções.  
+- **No nó Aplicativos**: no console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**. Selecione um aplicativo e, em seguida, clique em **Criar Tipo de Implantação** na faixa de opções.  
 
 - **Ao criar um aplicativo**: quando você [Especificar manualmente as informações do aplicativo](#bkmk_manual-app) no assistente para Criar Aplicativo, clique em **Adicionar** na página Tipos de Implantação.  
 
@@ -241,6 +241,10 @@ Na página **Conteúdo**, especifique as seguintes informações:
 - **Desinstalar programa**: opcionalmente, especifique o nome do programa de desinstalação e os parâmetros necessários.  
 
     - **A desinstalação é iniciada em**: opcionalmente, especifique a pasta que contém o programa de desinstalação para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente. Também pode ser um caminho relativo em um ponto de distribuição da pasta com o pacote.  
+
+- **Reparar o programa**: opcionalmente, começando na versão 1810, para tipos de implantação do Windows Installer e o instalador de Script, especifique o nome do programa reparo e todos os parâmetros necessários.<!--1357866-->  
+
+    - **Reparo inicia em**: opcionalmente, especifique a pasta que contém o programa de reparo para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente. Também pode ser um caminho relativo em um ponto de distribuição da pasta com o pacote.  
 
 - **Execute o programa de instalação e desinstalação como um processo de 32 bits em clientes de 64 bits**: use o arquivo de 32 bits e os locais de Registro em computadores Windows para executar o programa de instalação para o tipo de implantação.  
 
@@ -575,7 +579,7 @@ Configure opções adicionais que são exclusivas para tipos de implantação Ap
 
 ### <a name="bkmk_appv-content"></a> Opções de **Conteúdo** do tipo de implantação App-V  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.  
+1.  No console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.  
 
 2.  Selecione um aplicativo com um tipo de implantação App-V e, em seguida, clique em **Propriedades**.  
 
@@ -592,7 +596,7 @@ Configure opções adicionais que são exclusivas para tipos de implantação Ap
 
 ### <a name="bkmk_appv-pub"></a> Opções de **Publicação** do tipo de implantação App-V   
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.  
+1.  No console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.  
 
 2.  Selecione um aplicativo com um tipo de implantação App-V e, em seguida, clique em **Propriedades**.  
 
@@ -608,7 +612,7 @@ Configure opções adicionais que são exclusivas para tipos de implantação Ap
 
 Use o procedimento a seguir para importar um aplicativo no Configuration Manager: 
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.   
+1.  No console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**.   
 
 2.  Na faixa de opções, na guia **Início** e no grupo **Criar**, clique em **Importar Aplicativo**.  
 

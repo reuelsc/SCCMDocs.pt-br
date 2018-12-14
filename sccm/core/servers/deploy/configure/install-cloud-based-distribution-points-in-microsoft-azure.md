@@ -2,7 +2,7 @@
 title: Instalar pontos de distribuição na nuvem
 titleSuffix: Configuration Manager
 description: Use estas etapas para configurar um ponto de distribuição na nuvem no Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: bb83ac87-9914-4a35-b633-ad070031aa6e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ef8bfead4bb73871f990a455aef87971413701ba
-ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
+ms.openlocfilehash: a2d39617db7f2ea9a61e73a3c21cc2509fed2f07
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601102"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456610"
 ---
 # <a name="install-a-cloud-distribution-point-for-configuration-manager"></a>Instalar um ponto de distribuição na nuvem do Configuration Manager
 
@@ -43,7 +43,7 @@ Use a seguinte lista de verificação para verificar se você tem as informaçõ
 
 - O **ambiente do Azure** a ser usado. Por exemplo, a Nuvem Pública do Azure ou a Nuvem do Azure US Government.  
 
-- Começando na versão 1806 e *recomendado*, se você planeja usar a **implantação do Azure Resource Manager**, é necessário atender aos seguintes requisitos:<!--1322209-->  
+- Da versão 1806 e *recomendada* em diante, use a **implantação do Azure Resource Manager**. Ela tem os seguintes requisitos: <!--1322209-->  
 
     - Integração com o [Azure Active Directory](/sccm/core/servers/deploy/configure/azure-services-wizard) para **Gerenciamento de Nuvem**. A descoberta de usuário do Azure AD não é necessária.  
 
@@ -54,6 +54,8 @@ Use a seguinte lista de verificação para verificar se você tem as informaçõ
     - Um **conta do administrador de assinatura** precisa entrar durante a execução do assistente.  
 
 - Se você planeja usar a **implantação de serviço clássico** do Azure, é necessário atender ao seguintes requisitos:  
+    > [!Important]  
+    > Da versão 1810 em diante, implantações de serviço clássico no Azure são preteridas no Configuration Manager. Comece a usar as implantações do Azure Resource Manager para o gateway de gerenciamento de nuvem. Para obter mais informações, confira [Planejar para CMG](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).  
 
     - A **ID da assinatura** do Azure.  
 
@@ -64,7 +66,7 @@ Use a seguinte lista de verificação para verificar se você tem as informaçõ
 - Um **nome do serviço** global exclusivo para o ponto de distribuição na nuvem.  
 
     > [!TIP]  
-    > Antes de solicitar o certificado de autenticação de servidor que usa esse nome de serviço, confirme se o nome de domínio do Azure desejado é exclusivo. Por exemplo, *WallaceFalls.CloudApp.Net*. Faça logon no [portal do Microsoft Azure](https://portal.azure.com). Clique em **Criar um recurso**, selecione a categoria **Computação** e, em seguida, clique em **Serviço de Nuvem**. No campo **Nome DNS**, digite o prefixo desejado, por exemplo, *WallaceFalls*. A interface reflete se o nome de domínio está disponível ou se já está em uso por outro serviço. Não crie o serviço no portal. Use esse processo apenas para verificar a disponibilidade do nome.  
+    > Antes de solicitar o certificado de autenticação de servidor que usa esse nome de serviço, confirme se o nome de domínio do Azure desejado é exclusivo. Por exemplo, *WallaceFalls.CloudApp.Net*. Entre no [portal do Microsoft Azure](https://portal.azure.com). Selecione **Criar um recurso**, escolha a categoria **Computação** e, em seguida, selecione **Serviço de Nuvem**. No campo **Nome DNS**, digite o prefixo desejado, por exemplo, *WallaceFalls*. A interface reflete se o nome de domínio está disponível ou se já está em uso por outro serviço. Não crie o serviço no portal. Use esse processo apenas para verificar a disponibilidade do nome.  
  
 - A **região** do Azure para essa implantação.  
 
@@ -74,21 +76,22 @@ Use a seguinte lista de verificação para verificar se você tem as informaçõ
 
 Execute este procedimento no site para hospedar esse ponto de distribuição na nuvem de acordo com seu [design](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_topology).  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Serviços de Nuvem** e selecione **Pontos de Distribuição na Nuvem**. Na faixa de opções, clique em **Criar Ponto de Distribuição em Nuvem**.  
+1.  No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e selecione **Pontos de Distribuição na Nuvem**. Na faixa de opções, selecione **Criar Ponto de Distribuição em Nuvem**.  
 
 2.  Na página **Geral** do Assistente para Criar Ponto de Distribuição em Nuvem, configure:  
 
-    a. Especifique primeiro o **ambiente do Azure**.  
+    1. Especifique primeiro o **ambiente do Azure**.  
 
-    b. Escolha o método de implantação do Azure e, em seguida, defina as configurações associadas.  
+    2. Da versão 1806 e *recomendada* em diante, selecione **Implantação do Azure Resource Manager** como o método de implantação. Selecione **Entrar** para autenticar-se com a conta do administrador de assinatura do Azure. O assistente popula automaticamente os campos restantes com as informações armazenadas durante o pré-requisito de integração do Azure AD. Se você tem várias assinaturas, selecione a **ID da Assinatura** da assinatura que deseja usar.  
 
-       - **Implantação do Azure Resource Manager** (começando na versão 1806, e *recomendado*): clique em **Entrar** para autenticar com uma conta do administrador da assinatura do Azure. O assistente popula automaticamente os campos restantes com as informações armazenadas durante o pré-requisito de integração do Azure AD. Se você tem várias assinaturas, selecione a **ID da Assinatura** da assinatura que deseja usar.  
+    > [!Note]  
+    > Da versão 1810 em diante, implantações de serviço clássico no Azure são preteridas no Configuration Manager. 
+    > 
+    > Se você precisar usar uma implantação de serviço clássica, selecione essa opção nesta página. Primeiro insira sua **ID de assinatura** do Azure. Em seguida, selecione **Procurar** e selecione o arquivo .PFX para o certificado de gerenciamento do Azure.  
 
-       - **Implantação de serviço clássico** (e no Configuration Manager versão 1802 e anteriores): insira sua **ID da assinatura** do Azure. Em seguida, clique em **Procurar** e selecione o arquivo .PFX do certificado de gerenciamento do Azure.  
+3.  Selecione **Avançar**. Aguarde enquanto o site testa a conexão com o Azure.  
 
-3.  Clique em **Avançar**. Aguarde enquanto o site testa a conexão com o Azure.  
-
-4.  Na página **Geral**, especifique as seguintes configurações e clique em **Avançar**:  
+4.  Na página **Configurações**, especifique as seguintes configurações e selecione **Avançar**:  
 
     - **Região**: selecione a região do Azure em que você deseja criar o ponto de distribuição na nuvem.  
 
@@ -100,12 +103,12 @@ Execute este procedimento no site para hospedar esse ponto de distribuição na 
 
     - **Site primário**: selecione o site primário para distribuir conteúdo a esse ponto de distribuição.
 
-    - **Arquivo de certificado**: clique em **Procurar** e selecione o arquivo PFX do certificado de autenticação de servidor desse ponto de distribuição na nuvem. O nome comum desse certificado popula os campos obrigatórios **FQDN do serviço** e **Nome do serviço**.  
+    - **Arquivo de certificado**: selecione **Procurar** e selecione o arquivo PFX do certificado de autenticação de servidor desse ponto de distribuição na nuvem. O nome comum desse certificado popula os campos obrigatórios **FQDN do serviço** e **Nome do serviço**.  
 
         > [!NOTE]  
         > O certificado de autenticação de servidor do ponto de distribuição na nuvem permite o uso de caracteres curinga. Se você usar um certificado curinga, substitua o asterisco (*) no campo **FQDN do serviço** pelo nome do host desejado para o serviço.  
 
-5. Na página **Alertas**, configure as cotas de armazenamento, cotas de transferência e com qual percentual dessas cotas que você deseja que o Configuration Manager gere alertas. Clique em **Avançar**.  
+5. Na página **Alertas**, configure as cotas de armazenamento, cotas de transferência e com qual percentual dessas cotas que você deseja que o Configuration Manager gere alertas. Em seguida, selecione **Avançar**.  
 
 6. Conclua o assistente.  
 
@@ -124,9 +127,9 @@ O site começa a criar um serviço hospedado para o ponto de distribuição na n
 
 Verifique se a instalação de ponto de distribuição na nuvem foi concluída, usando os seguintes métodos:  
 
-- No console do Configuration Manager, acesse o espaço de trabalho **Administração**. Expanda **Serviços de Nuvem** e selecione o nó **Pontos de Distribuição na Nuvem**. Localize o novo ponto de distribuição na nuvem na lista. A coluna Status deve ser **Pronto**.  
+- No console do Configuration Manager, acesse o workspace **Administração**. Expanda **Serviços de Nuvem** e selecione o nó **Pontos de Distribuição na Nuvem**. Localize o novo ponto de distribuição na nuvem na lista. A coluna Status deve ser **Pronto**.  
 
-- No console do Configuration Manager, acesse o espaço de trabalho **Monitoramento**. Expanda **Status do Sistema** e selecione o nó **Status do Componente**. Exiba todas as mensagens do componente **SMS_CLOUD_SERVICES_MANAGER** e procure a ID da mensagem de status **9409**.  
+- No console do Configuration Manager, acesse o workspace **Monitoramento**. Expanda **Status do Sistema** e selecione o nó **Status do Componente**. Exiba todas as mensagens do componente **SMS_CLOUD_SERVICES_MANAGER** e procure a ID da mensagem de status **9409**.  
 
 - Se necessário, acesse o portal do Azure. A **Implantação** do ponto de distribuição na nuvem exibe o status **Pronto**.  
 
@@ -222,7 +225,7 @@ Em um ciclo de hora em hora, o site primário que monitora o ponto de distribui�
 
 ## <a name="bkmk_modify"></a> Modificar
 
-Exiba informações de alto nível sobre o ponto de distribuição no nó **Pontos de Distribuição na Nuvem** em **Serviços de Nuvem** no espaço de trabalho **Administração** do console do Configuration Manager. Selecione um ponto de distribuição e clique em **Propriedades** para ver mais detalhes.  
+Exiba informações de alto nível sobre o ponto de distribuição no nó **Pontos de Distribuição na Nuvem** em **Serviços de Nuvem** no workspace **Administração** do console do Configuration Manager. Selecione um ponto de distribuição e selecione **Propriedades** para ver mais detalhes.  
 
 Quando você edita as propriedades de um ponto de distribuição de nuvem, as seguintes guias incluem configurações a serem editadas:  
 
@@ -280,11 +283,11 @@ Quando você para um ponto de distribuição na nuvem, o serviço de nuvem não 
 
 Use o procedimento a seguir para parar um ponto de distribuição na nuvem:  
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**. Expanda **Serviços de Nuvem** e selecione o nó **Pontos de Distribuição na Nuvem**.  
+1. No console do Configuration Manager, acesse o workspace **Administração**. Expanda **Serviços de Nuvem** e selecione o nó **Pontos de Distribuição na Nuvem**.  
 
-2. Selecione o ponto de distribuição na nuvem. Para parar o serviço de nuvem que é executado no Azure, clique em **Parar serviço** na faixa de opções.  
+2. Selecione o ponto de distribuição na nuvem. Para parar o serviço de nuvem que é executado no Azure, selecione **Parar serviço** na faixa de opções.  
 
-3. Clique em **Iniciar serviço** para reiniciar o ponto de distribuição na nuvem.  
+3. Selecione **Iniciar serviço** para reiniciar o ponto de distribuição na nuvem.  
 
 
 ### <a name="delete-a-cloud-distribution-point"></a>Excluir um ponto de distribuição na nuvem

@@ -2,7 +2,7 @@
 title: Atualização no console
 titleSuffix: Configuration Manager
 description: Instalar as atualizações do Configuration Manager por meio da nuvem da Microsoft
-ms.date: 08/22/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c14a3607-253b-41fb-8381-ae2d534a9022
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 503255c571288fa0da0b0b81f3a76fc2b38bbb19
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: 7635dce325a2612c144c6eaa9c733b7dffc7c251
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893916"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456202"
 ---
 # <a name="install-in-console-updates-for-configuration-manager"></a>Instalar atualizações no console para o Configuration Manager
 
@@ -31,7 +31,7 @@ O site baixa apenas as atualizações que se aplicam à sua infraestrutura e ver
 
 -   No **modo online**, o ponto de conexão de serviço se conecta automaticamente ao serviço de nuvem da Microsoft e baixa as atualizações aplicáveis.  
 
-     Por padrão, o Configuration Manager verifica se há novas atualizações a cada 24 horas. Verifique manualmente se há atualizações no console do Configuration Manager. Vá para o espaço de trabalho **Administração**, selecione o nó **Atualizações e Manutenção** e clique em **Verificar se há Atualizações** na faixa de opções.  
+     Por padrão, o Configuration Manager verifica se há novas atualizações a cada 24 horas. Verifique manualmente se há atualizações no console do Configuration Manager. Vá para o workspace **Administração**, selecione o nó **Atualizações e Manutenção** e clique em **Verificar se há Atualizações** na faixa de opções.  
 
 -   No **modo offline**, o ponto de conexão de serviço não se conecta ao serviço de nuvem da Microsoft. Para baixar e, em seguida, importar as atualizações disponíveis, [use a Ferramenta de Conexão de serviço](/sccm/core/servers/manage/use-the-service-connection-tool).  
 
@@ -39,7 +39,7 @@ O site baixa apenas as atualizações que se aplicam à sua infraestrutura e ver
 > Se necessário, você pode importar correções fora da banda para o seu console. Para fazer isso, use a [ferramenta de registro de atualização](/sccm/core/servers/manage/use-the-update-registration-tool-to-import-hotfixes). Essas correções fora de banda complementam as atualizações que você obtém quando sincroniza com o serviço de nuvem da Microsoft.  
 
 
-Após a sincronização das atualizações, exiba-as no console do Configuration Manager. Vá para o espaço de trabalho **Administração** e selecione o nó **Atualizações e Manutenção**.  
+Após a sincronização das atualizações, exiba-as no console do Configuration Manager. Vá para o workspace **Administração** e selecione o nó **Atualizações e Manutenção**.  
 
 -   As atualizações que você não instalou são exibidas como **Disponíveis**.  
 
@@ -105,11 +105,11 @@ Examine as etapas a seguir antes de instalar atualizações de dentro do console
 
 Examine a lista de verificação de atualização aplicável de ações a serem executadas antes de iniciar a atualização:
 
+- [Lista de verificação para instalar a atualização 1810](/sccm/core/servers/manage/checklist-for-installing-update-1810)  
+
 - [Lista de verificação para instalar a atualização 1806](/sccm/core/servers/manage/checklist-for-installing-update-1806)  
 
 - [Lista de verificação para instalar a atualização 1802](/sccm/core/servers/manage/checklist-for-installing-update-1802)
-
-- [Lista de verificação para instalar a atualização 1710](/sccm/core/servers/manage/checklist-for-installing-update-1710)  
 
 
 ###  <a name="bkmk_step2"></a> Etapa 2: executar o verificador de pré-requisitos antes de instalar uma atualização  
@@ -127,7 +127,7 @@ Posteriormente, quando você instalar a atualização, poderá configurá-la par
 
 #### <a name="to-run-the-prerequisite-checker-before-installing-an-update"></a>Para executar o verificador de pré-requisitos antes de instalar uma atualização  
 
-1.  No console do Configuration Manager, vá até o espaço de trabalho **Administração** e selecione o nó **Atualizações e Manutenção**.   
+1.  No console do Configuration Manager, vá até o workspace **Administração** e selecione o nó **Atualizações e Manutenção**.   
 
 2.  Selecione o pacote de atualização para o qual você deseja executar a verificação de pré-requisitos.  
 
@@ -137,7 +137,7 @@ Posteriormente, quando você instalar a atualização, poderá configurá-la par
 
 4.  Para exibir os resultados da verificação de pré-requisitos:  
 
-    1. No console do Configuration Manager, acesse o espaço de trabalho **Monitoramento**.  
+    1. No console do Configuration Manager, acesse o workspace **Monitoramento**.  
 
     2. Selecione o nó **Status de Atualizações e Manutenção** nó e procure o status do pré-requisito.  
 
@@ -173,7 +173,7 @@ Será apresentado a você um Assistente de Atualizações que exibe uma lista da
 
     -   **Ignorar os avisos de verificação de pré-requisitos e instalar esta atualização, independentemente dos requisitos ausentes**: defina uma condição para que a instalação da atualização ignore os avisos de pré-requisitos. Essa opção permite que a instalação da atualização continue. Se você não selecionar essa opção, a instalação de atualização será interrompida quando o processo de encontrar um aviso. A menos que você tenha executado anteriormente a verificação de pré-requisitos e corrigido os avisos de pré-requisito para um site, não use essa opção.  
 
-      Nos espaços de trabalho **Administração** e **Monitoramento**, o nó Atualizações e Manutenção inclui um botão na faixa de opções chamado **Ignorar avisos de pré-requisito**. Esse botão fica disponível quando um pacote de atualização falha ao concluir a instalação devido a avisos de verificação de pré-requisitos. Por exemplo, você instala uma atualização sem usar a opção para ignorar os avisos de pré-requisitos (de dentro do Assistente de atualizações). A instalação da atualização é interrompida com um estado de aviso de pré-requisito, mas sem erros. Mais tarde, você clica em **Ignorar avisos de pré-requisito** na faixa de opções. Essa ação dispara uma continuação automática daquela instalação da atualização, que ignora os avisos de pré-requisito. Quando você usa essa opção, a instalação da atualização continua automaticamente depois de alguns minutos.  
+      Nos workspaces **Administração** e **Monitoramento**, o nó Atualizações e Manutenção inclui um botão na faixa de opções chamado **Ignorar avisos de pré-requisito**. Esse botão fica disponível quando um pacote de atualização falha ao concluir a instalação devido a avisos de verificação de pré-requisitos. Por exemplo, você instala uma atualização sem usar a opção para ignorar os avisos de pré-requisitos (de dentro do Assistente de atualizações). A instalação da atualização é interrompida com um estado de aviso de pré-requisito, mas sem erros. Mais tarde, você clica em **Ignorar avisos de pré-requisito** na faixa de opções. Essa ação dispara uma continuação automática daquela instalação da atualização, que ignora os avisos de pré-requisito. Quando você usa essa opção, a instalação da atualização continua automaticamente depois de alguns minutos.  
 
 
 -   Quando uma atualização é aplicável ao cliente do Configuration Manager, escolha testar a atualização do cliente com um conjunto limitado de clientes. Para obter mais informações, consulte [Como testar atualizações do cliente em uma coleção de pré-produção](/sccm/core/clients/manage/upgrade/test-client-upgrades).  
@@ -195,9 +195,9 @@ Como parte da instalação da atualização, o Configuration Manager executa as 
 #### <a name="3-monitor-the-progress-of-updates-as-they-install"></a>3. Monitorar o andamento de atualizações durante a instalação  
 Siga estas etapas para monitorar o progresso:  
 
--   No console do Configuration Manager, vá até o espaço de trabalho **Administração** e selecione o nó **Atualizações e Manutenção**. Esse nó mostra o status da instalação para todos os pacotes de atualização.  
+-   No console do Configuration Manager, vá até o workspace **Administração** e selecione o nó **Atualizações e Manutenção**. Esse nó mostra o status da instalação para todos os pacotes de atualização.  
 
--   No console do Configuration Manager, vá até o espaço de trabalho **Monitoramento** e selecione o nó **Status de Atualizações e Manutenção**. Esse nó mostra o status de instalação somente do pacote de atualização que o site está instalando.  
+-   No console do Configuration Manager, vá até o workspace **Monitoramento** e selecione o nó **Status de Atualizações e Manutenção**. Esse nó mostra o status de instalação somente do pacote de atualização que o site está instalando.  
 
     A instalação da atualização é dividida em várias fases para facilitar o monitoramento. Para cada uma das seguintes fases, detalhes adicionais no status de instalação incluem qual arquivo de log exibir para obter mais informações:  
 
@@ -242,14 +242,14 @@ Depois que o console tiver sido atualizado, verifique se as versões do console 
 
 ###  <a name="bkmk_toptier"></a> Para iniciar a instalação da atualização no site de nível superior  
 
-No site de nível superior da sua hierarquia, no console do Configuration Manager, vá para o espaço de trabalho **Administração** e selecione o nó **Atualizações e manutenção**. Selecione uma atualização com o estado **Disponível** e, em seguida, clique em **Instalar Pacote de Atualização** na faixa de opções.  
+No site de nível superior da sua hierarquia, no console do Configuration Manager, vá para o workspace **Administração** e selecione o nó **Atualizações e manutenção**. Selecione uma atualização com o estado **Disponível** e, em seguida, clique em **Instalar Pacote de Atualização** na faixa de opções.  
 
 
 ###  <a name="bkmk_secondary"></a> Para iniciar a instalação da atualização em um site secundário  
 
 Após a atualização do site primário pai de um site secundário, atualize o site secundário do de dentro do console do Configuration Manager. Para fazer isso, use o **Assistente de Atualização de Site Secundário**.  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**. Selecione o site secundário que você deseja atualizar e, em seguida, clique em **Atualizar** na faixa de opções.  
+1.  No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**. Selecione o site secundário que você deseja atualizar e, em seguida, clique em **Atualizar** na faixa de opções.  
 
 2.  Clique em **Sim** para iniciar a atualização do site secundário.  
 
@@ -340,7 +340,7 @@ Repita a instalação de uma atualização para toda a hierarquia quando essa at
 
   -   Falha na replicação do conteúdo para o site   
 
-Vá para o espaço de trabalho **Administração** e selecione o nó **Atualizações e Manutenção**. Selecione a atualização e, em seguida, escolha uma das seguintes opções:  
+Vá para o workspace **Administração** e selecione o nó **Atualizações e Manutenção**. Selecione a atualização e, em seguida, escolha uma das seguintes opções:  
 
   -   **Repetir** – quando você executar **Repetir** de **Atualizações e Manutenção**, a instalação da atualização começará novamente e ignorará automaticamente os avisos de pré-requisito. Se a replicação de conteúdo tiver falhado anteriormente, o conteúdo para a atualização será replicado novamente.  
 
@@ -355,7 +355,7 @@ Repita a instalação de uma atualização em um site específico quando essa at
 
   -   Falha na instalação    
 
-Vá para o espaço de trabalho **Monitoramento** e selecione o nó **Status de Manutenção do Site**. Selecione a atualização e, em seguida, clique em uma das seguintes opções:  
+Vá para o workspace **Monitoramento** e selecione o nó **Status de Manutenção do Site**. Selecione a atualização e, em seguida, clique em uma das seguintes opções:  
 
   - **Repetir**: quando você **Repete** do **Status de Manutenção do Site**, você reinicia a instalação da atualização somente nesse site. Diferentemente de quando **Repetir** é executado do nó **Atualizações e Manutenção**, essa repetição não ignora os avisos de pré-requisito.  
 
@@ -367,11 +367,11 @@ Vá para o espaço de trabalho **Monitoramento** e selecione o nó **Status de M
 
 Depois que o site for atualizado, examine a lista de verificação pós-atualização para a versão aplicável:  
 
+- [Lista de verificação pós-atualização da versão 1810](/sccm/core/servers/manage/checklist-for-installing-update-1810#post-update-checklist)  
+
 - [Lista de verificação pós-atualização da versão 1806](/sccm/core/servers/manage/checklist-for-installing-update-1806#post-update-checklist)  
 
 - [Lista de verificação pós-atualização da versão 1802](/sccm/core/servers/manage/checklist-for-installing-update-1802#post-update-checklist)  
-
-- [Lista de verificação pós-atualização da versão 1710](/sccm/core/servers/manage/checklist-for-installing-update-1710#post-update-checklist)  
 
 
 
@@ -379,7 +379,7 @@ Depois que o site for atualizado, examine a lista de verificação pós-atualiza
 
 Quando uma atualização inclui um ou mais recursos opcionais, você tem a oportunidade de habilitar esses recursos em sua hierarquia. Habilite recursos quando a atualização for instalada ou retorne ao console posteriormente para habilitar os recursos opcionais.
 
-Para exibir recursos disponíveis e seus status, no console, vá para o espaço de trabalho **Administração**, expanda **Atualizações e manutenção** e selecione o nó **Recursos**.
+Para exibir recursos disponíveis e seus status, no console, vá para o workspace **Administração**, expanda **Atualizações e manutenção** e selecione o nó **Recursos**.
 
 Quando um recurso não é opcional, ele é instalado automaticamente. Ele não aparece no nó **Recursos**.  
 
@@ -399,23 +399,23 @@ Os recursos a seguir são opcionais na versão mais recente do Configuration Man
 
 -->
 
-- [Alta disponibilidade do servidor do site](/sccm/core/servers/deploy/configure/site-server-high-availability)<!--1128774-->
+- [Gerenciador de conversão de pacote](/sccm/apps/pcm/package-conversion-manager) <!--1357861-->
 - [Atualizações de software de terceiros](/sccm/sum/deploy-use/third-party-software-updates)<!--1357605,1352101,1358714-->
 - [Aprovar pedidos de aplicativos para usuários por dispositivo](/sccm/apps/deploy-use/deploy-applications#specify-deployment-settings) <!--1357015-->  
 - [Suporte para o Cisco AnyConnect 4.0.07x e posterior para iOS](/sccm/mdm/deploy-use/create-vpn-profiles)<!--1357393-->
-- [Avaliação do Atestado de Integridade do Dispositivo para políticas de conformidade para acesso condicional](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--1235616-->
+- [Avaliação do atestado de Integridade do dispositivo para políticas de conformidade para acesso condicional](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--1235616-->
 - [Criar e executar scripts](/sccm/apps/deploy-use/create-deploy-scripts) <!--1236459-->
 - [Executar etapa da sequência de tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#add-child-task-sequences-to-a-task-sequence) <!--1261338-->
 - [Pré-cache do conteúdo de sequência de tarefas](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content) <!--1021244-->
 - [Atualizações de driver do Surface](/sccm/sum/get-started/configure-classifications-and-products) <!--1098490-->
-- [Gateway de Gerenciamento de Nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) <!--1101764-->
+- [Gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) <!--1101764-->
 - [Ponto de serviço do Data Warehouse](/sccm/core/servers/manage/data-warehouse) <!--1277922-->
-- [Cache de pares do cliente](/sccm/core/plan-design/hierarchy/client-peer-cache) <!--1101436-->
+- [Cache par do cliente](/sccm/core/plan-design/hierarchy/client-peer-cache) <!--1101436-->
 - [Criação de PFX](/sccm/protect/deploy-use/introduction-to-certificate-profiles) <!--1321368-->
 - [Conector do Azure Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics) <!--1258052-->
 - [Política do Windows Defender Exploit Guard](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy) <!--1355468-->
 - [VPN para Windows 10](/sccm/protect/deploy-use/vpn-profiles) <!--1283610-->
-- O [Passport for Work](/sccm/protect/deploy-use/windows-hello-for-business-settings) (também conhecido como *Windows Hello para Empresas*) <!--1245704-->
+- [Windows Hello para Empresas](/sccm/protect/deploy-use/windows-hello-for-business-settings) (anteriormente conhecido como *Passport for Work*) <!--1245704-->
 - [Acesso condicional para PCs gerenciados](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)  <!--1191496-->
 
 

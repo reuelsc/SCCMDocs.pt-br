@@ -2,7 +2,7 @@
 title: Lista de relatórios
 titleSuffix: Configuration Manager
 description: Veja uma lista de relatórios que são fornecidos com o Configuration Manager. Os relatórios aparecem em várias categorias.
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,25 +10,26 @@ ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9d292d85ce5a30e56d7909d74b986ac408d29346
-ms.sourcegitcommit: 849391d3985b057027cae610bd3a79fdaa708b94
+ms.openlocfilehash: 01112dac89ba0fe9e18dabe186353506d9476213
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "42584936"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456763"
 ---
-# <a name="list-of-reports-in-system-center-configuration-manager"></a>Lista de relatórios no System Center Configuration Manager
+# <a name="list-of-reports-in-configuration-manager"></a>Lista de relatórios no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-O Configuration Manager fornece muitos relatórios internos que abrangem muitas das tarefas de relatório que você pode desejar executar. Você também pode usar as instruções SQL nestes relatórios para ajudá-lo a escrever seus próprios relatórios.   
+O Configuration Manager fornece muitos relatórios internos que abrangem muitas das tarefas de relatório que você pode desejar realizar. Você também pode usar as instruções SQL nestes relatórios para ajudá-lo a escrever seus próprios relatórios.   
 
 Os relatórios a seguir estão incluídos no Configuration Manager. Os relatórios aparecem em várias categorias.  
 
 
 
 ## <a name="administrative-security"></a>Segurança administrativa  
- Os seis relatórios a seguir são listados na categoria **Segurança administrativa**.  
+
+Os seis relatórios a seguir são listados na categoria **Segurança administrativa**.  
 
 |Nome do relatório|Descrição|  
 |-----------------|-----------------|  
@@ -42,7 +43,9 @@ Os relatórios a seguir estão incluídos no Configuration Manager. Os relatóri
 
 
 ## <a name="alerts"></a>Alertas  
+
 Os dois relatórios a seguir são listados na categoria **Alertas**.  
+
 |Nome do relatório|Descrição|  
 |-----------------|-----------------|  
 |**Scorecard de alerta**|Exibe um resumo de todos os alertas adiados que foram gerados entre as datas de início e de término especificadas.|  
@@ -51,14 +54,15 @@ Os dois relatórios a seguir são listados na categoria **Alertas**.
 
 
 ## <a name="asset-intelligence"></a>Asset Intelligence  
-Os 66 relatórios a seguir estão listados na categoria **Asset Intelligence**.  
+
+Os 67 relatórios a seguir estão listados na categoria **Asset Intelligence**.  
 
 |Nome do relatório|Descrição|  
 |-----------------|-----------------|  
 |**Hardware 01A – Resumo dos computadores em uma coleção específica**|Exibe uma exibição de resumo do Asset Intelligence de computadores em uma coleção especificada.|  
 |**Hardware 03A – Usuários primários de computador**|Exibe os usuários e a contagem de computadores em que eles são o usuário primário.|  
 |**Hardware 03B – Computadores para um usuário de console primário específico**|Exibe todos os computadores dos quais um usuário especificado é o usuário primário do console.|  
-|**Hardware 04A – Computadores com vários usuários (compartilhados)**|Exibe os computadores que não têm um usuário primário, pois nenhum usuário tem uma % de tempo de logon no console maior que 66%.|  
+|**Hardware 04A – Computadores com vários usuários (compartilhados)**|Exibe os computadores que não têm um usuário primário, pois nenhum usuário tem um tempo de logon conectado maior que 66%.|  
 |**Hardware 05A – Usuários do console em um computador específico**|Exibe todos os usuários do console em um computador especificado.|  
 |**Hardware 06A – Computadores para os quais não foi possível determinar os usuários do console**|Ajuda os usuários administrativos a identificar os computadores que precisam ter o registro em log de segurança ativado.|  
 |**Hardware 07A – Dispositivos USB por fabricante**|Exibe os dispositivos USB, agrupados por fabricante.|  
@@ -79,13 +83,13 @@ Os 66 relatórios a seguir estão listados na categoria **Asset Intelligence**.
 |**Licença 03A – Contagem de licenças por status de licença**|Exibe os produtos, por status de licença, que têm suas licenças gerenciadas pelo Serviço de Licenciamento de Software.|  
 |**Licença 03B – Computadores com um status de licença específico**|Exibe os produtos com um status de licença especificado, cujas licenças são gerenciadas pelo Serviço de Licenciamento de Software.|  
 |**Licença 04A – Contagem de produtos gerenciados pelo licenciamento de software**|Exibe uma contagem dos produtos que têm suas licenças gerenciadas pelo Serviço de Licenciamento de Software.|  
-|**Licença 04B – Computadores com um Produto Específico Gerenciado por Serviço de Licenciamento de Software**|Exibe os computadores, gerenciados pelo Serviço de Licenciamento de Software, que contêm um produto especificado.|  
+|**Licença 04B – Computadores com um Produto Específico Gerenciado por Serviço de Licenciamento de Software**|Exibe os computadores, gerenciados pelo Serviço de Licenciamento de Software, que inclui um produto especificado.|  
 |**Licença 05A – Computadores que fornecem Serviço de Gerenciamento de Chaves**|Exibe os computadores que atuam como Servidores de Gerenciamento de Chaves.|  
 |**Licença 06A – Contagens de processador de produtos licenciados por processador**|Exibe o número de processadores em computadores que usam os produtos da Microsoft que dão suporte ao licenciamento por processador.|  
 |**Licença 06B – Computadores com um produto específico que dá suporte ao licenciamento por processador**|Exibe uma lista de computadores em que um produto da Microsoft especificado que dá suporte ao licenciamento por processador está instalado.|  
-|**Licença 14A – Relatório de reconciliação de Licenciamento por Volume da Microsoft**|Exibe a reconciliação de licenças de software adquiridas por meio do Contrato de Licença por Volume da Microsoft e a contagem real de inventário.|  
+|**Licença 14A – Relatório de reconciliação de Licenciamento por Volume da Microsoft**|Exibe a reconciliação de licenças de software compradas por meio do Contrato de Licença por Volume da Microsoft e a contagem real de inventário.|  
 |**Licença 14B – Lista de inventário de software da Microsoft não encontrado no MVLS**|Este relatório exibe os títulos de software da Microsoft em uso que não são encontrados no Contrato de Licença por Volume da Microsoft.|  
-|**Licença 15A – Relatório de reconciliação de licença geral**|Exibe a reconciliação de licenças de software geral adquiridas e a contagem real de inventário.|  
+|**Licença 15A – Relatório de reconciliação de licença geral**|Exibe a reconciliação de licenças de software geral compradas e a contagem real de inventário.|  
 |**Licença 15B – Relatório de reconciliação de licença geral por computador**|Exibe os computadores que instalaram o produto licenciado com uma versão especificada.|  
 |**Software 01A – Resumo de software instalado em uma coleção específica**|Exibe um resumo do software instalado ordenado pelo número de instâncias encontradas no inventário.|  
 |**Software 02A – Famílias de produtos para uma coleção específica**|Exibe as famílias de produtos e a contagem de software na família para uma coleção especificada.|  
@@ -121,10 +125,12 @@ Os 66 relatórios a seguir estão listados na categoria **Asset Intelligence**.
 |**Ciclo de vida 02A: lista de máquinas com produtos expirados na organização**|Veja os computadores que apresentam produtos expirados. Você pode filtrar este relatório pelo nome do produto.|
 |**Ciclo de vida 03A: lista de produtos expirados encontrados na organização**|Veja detalhes de produtos em seu ambiente que apresentam datas de ciclo de vida expiradas.|
 |**Ciclo de vida 04A: visão geral do ciclo de vida de produtos**|Veja uma lista de ciclos de vida de produtos. Filtre a lista por nome do produto e dias para expiração.|
+|**Ciclo de vida 05A – painel de ciclo de vida do produto**|Começando na versão 1810, esse relatório inclui informações semelhantes às do painel no console.|
 
 
 
-## <a name="client-push"></a>Push do cliente  
+## <a name="client-push"></a>Push de cliente  
+
 Os quatro relatórios a seguir são listados na categoria **Push de cliente**.  
 
 |Nome do relatório|Descrição|  
@@ -137,6 +143,7 @@ Os quatro relatórios a seguir são listados na categoria **Push de cliente**.
 
 
 ## <a name="client-status"></a>Status do cliente  
+
 Os sete relatórios a seguir são listados na categoria **Status do cliente**.  
 
 |Nome do relatório|Descrição|  
@@ -152,6 +159,7 @@ Os sete relatórios a seguir são listados na categoria **Status do cliente**.
 
 
 ## <a name="company-resource-access"></a>Acesso de recursos da empresa  
+
 Os três relatórios a seguir são listados na categoria **Acesso aos recursos da empresa**. 
 
 |Nome do relatório|Descrição|  
@@ -162,7 +170,8 @@ Os três relatórios a seguir são listados na categoria **Acesso aos recursos d
 
 
 
-## <a name="compliance-and-settings-management"></a>Gerenciamento de Conformidade e Configurações  
+## <a name="compliance-and-settings-management"></a>Gerenciamento de conformidade e configurações  
+
 Os 22 relatórios a seguir são listados na categoria **Gerenciamento de conformidade e configurações**. 
 
 |Nome do relatório|Descrição|  
@@ -172,7 +181,7 @@ Os 22 relatórios a seguir são listados na categoria **Gerenciamento de conform
 |**Conformidade de Acesso Condicional para Usuário**|Exibe a conformidade de acesso condicional detalhada para um usuário específico.|
 |**Relatório de Conformidade de Acesso Condicional**|Um relatório de conformidade de acesso condicional para cada política de conformidade direcionada.|
 |**Detalhes das regras compatíveis de itens de configuração em uma linha de base de configuração para um ativo**|Exibe informações sobre as regras avaliadas como em conformidade para um item de configuração especificado, para um dispositivo ou usuário especificado.|  
-|**Detalhes das regras conflitantes dos itens de configuração em uma linha de base de configuração para um ativo**|Exibe informações sobre as regras em um item de configuração implantado que entram em conflito com outras regras. As outras regras podem estar contidas no mesmo ou em outro item de configuração implantado.|  
+|**Detalhes das regras conflitantes dos itens de configuração em uma linha de base de configuração para um ativo**|Exibe informações sobre as regras em um item de configuração implantado que entram em conflito com outras regras. Inclua outras regras no mesmo item de configuração implantado ou outro.|  
 |**Detalhes de erros de itens de configuração em uma linha de base de configuração para um ativo**|Exibe informações sobre os erros gerados por um item de configuração especificado para um dispositivo ou usuário especificado.|  
 |**Detalhes de regras não compatíveis de itens de configuração em uma linha de base de configuração para um ativo**|Exibe informações sobre as regras que foram avaliadas como não compatíveis para um item de configuração especificado, para um dispositivo ou usuário especificado.|  
 |**Detalhes das regras corrigidas de itens de configuração em uma linha de base de configuração para um ativo**|Exibe informações sobre as regras que foram corrigidas por um item de configuração especificado para um dispositivo ou usuário especificado.|  
@@ -187,10 +196,13 @@ Os 22 relatórios a seguir são listados na categoria **Gerenciamento de conform
 |**Conformidade de resumo por itens de configuração para uma linha de base de configuração**|Exibe um resumo da conformidade de itens de configuração em uma linha de base de configuração especificada.|  
 |**Resumo da conformidade por políticas de configuração**|Exibe um resumo da conformidade das políticas de configuração.|  
 |**Conformidade de resumo de uma linha de base de configuração para uma coleção**|Exibe um resumo da conformidade geral de uma linha de base de configuração especificada. O item de configuração deve ser implantado na coleção especificada.|  
-|**Resumo de Usuários com Aplicativos Não Compatíveis**|Exibe informações sobre os usuários que têm aplicativos instalados que não são compatíveis com uma política especificada.|  
+|**Resumo de Usuários com Aplicativos Não Compatíveis**|Exibe informações sobre os usuários que têm aplicativos instalados que não estão em conformidade com uma política especificada.|  
 |**Aceitação dos Termos e Condições**|Exibe itens de Termos e Condições e a versão aceita por usuário.|  
 
+
+
 ## <a name="data-warehouse"></a>Data warehouse  
+
 Os sete relatórios a seguir estão listados na categoria **Data Warehouse**. 
 
 |Nome do relatório|Descrição|  
@@ -204,7 +216,8 @@ Os sete relatórios a seguir estão listados na categoria **Data Warehouse**.
 |**Resumo de distribuição de software**|Histórico: um resumo da distribuição de software para um anúncio e computador específicos.|
 
 
-## <a name="device-management"></a>Gerenciamento de Dispositivo  
+## <a name="device-management"></a>Gerenciamento de dispositivo  
+
 Os 37 relatórios a seguir são listados na categoria **Gerenciamento de dispositivos**. 
 
 |Nome do relatório|Descrição|  
@@ -249,7 +262,8 @@ Os 37 relatórios a seguir são listados na categoria **Gerenciamento de disposi
 
 
 
-## <a name="driver-management"></a>Gerenciamento de drivers  
+## <a name="driver-management"></a>Gerenciamento de driver  
+
 Os 13 relatórios a seguir são listados na categoria **Gerenciamento de drivers**. 
 
 |Nome do relatório|Descrição|  
@@ -271,7 +285,9 @@ Os 13 relatórios a seguir são listados na categoria **Gerenciamento de drivers
 
 
 ## <a name="endpoint-protection"></a>Endpoint Protection  
+
 Os seis relatórios a seguir são listados na categoria **Endpoint Protection**. 
+
 |Nome do relatório|Descrição|  
 |-----------------|-----------------|  
 |**Relatório de atividade antimalware**|Exibe uma visão geral da atividade de antimalware.|  
@@ -284,7 +300,9 @@ Os seis relatórios a seguir são listados na categoria **Endpoint Protection**.
 
 
 ## <a name="hardware---cd-rom"></a>Hardware – CD-ROM  
+
 Os quatro relatórios a seguir são listados na categoria **Hardware – CD-ROM**. 
+
 |Nome do relatório|Descrição|  
 |-----------------|-----------------|  
 |**Informações de CD-ROM para um computador específico**|Exibe informações sobre as unidades de CD-ROM em um computador especificado.|  
@@ -295,6 +313,7 @@ Os quatro relatórios a seguir são listados na categoria **Hardware – CD-ROM*
 
 
 ## <a name="hardware---disk"></a>Hardware – Disco  
+
 Os oito relatórios a seguir são listados na categoria **Hardware – Disco**. 
 
 |Nome do relatório|Descrição|  
@@ -311,6 +330,7 @@ Os oito relatórios a seguir são listados na categoria **Hardware – Disco**.
 
 
 ## <a name="hardware---general"></a>Hardware – Geral  
+
 Os cinco relatórios a seguir são listados na categoria **Hardware – Geral**.
 
 |Nome do relatório|Descrição|  
@@ -324,6 +344,7 @@ Os cinco relatórios a seguir são listados na categoria **Hardware – Geral**.
 
 
 ## <a name="hardware---memory"></a>Hardware – Memória  
+
 Os cinco relatórios a seguir são listados na categoria **Hardware – Memória**.
 
 |Nome do relatório|Descrição|  
@@ -337,6 +358,7 @@ Os cinco relatórios a seguir são listados na categoria **Hardware – Memória
 
 
 ## <a name="hardware---modem"></a>Hardware – Modem  
+
 Os três relatórios a seguir são listados na categoria **Hardware – Modem**.
 
 |Nome do relatório|Descrição|  
@@ -347,7 +369,8 @@ Os três relatórios a seguir são listados na categoria **Hardware – Modem**.
 
 
 
-## <a name="hardware---network-adapter"></a>Hardware – Adaptador de rede  
+## <a name="hardware---network-adapter"></a>Hardware – adaptador de rede  
+
 Os três relatórios a seguir são listados na categoria **Hardware – Adaptador de rede**.
 
 |Nome do relatório|Descrição|  
@@ -359,6 +382,7 @@ Os três relatórios a seguir são listados na categoria **Hardware – Adaptado
 
 
 ## <a name="hardware---processor"></a>Hardware – Processador  
+
 Os cinco relatórios a seguir são listados na categoria **Hardware – Processador**.
 
 |Nome do relatório|Descrição|  
@@ -372,6 +396,7 @@ Os cinco relatórios a seguir são listados na categoria **Hardware – Processa
 
 
 ## <a name="hardware---scsi"></a>Hardware – SCSI  
+
 Os cinco relatórios a seguir são listados na categoria **Hardware – SCSI**.
 
 |Nome do relatório|Descrição|  
@@ -383,6 +408,7 @@ Os cinco relatórios a seguir são listados na categoria **Hardware – SCSI**.
 
 
 ## <a name="hardware---security"></a>Hardware – Segurança
+
 O relatório a seguir está listado na categoria **Hardware – Segurança**.
 
 |Nome do relatório|Descrição|  
@@ -391,7 +417,8 @@ O relatório a seguir está listado na categoria **Hardware – Segurança**.
 
 
 
-## <a name="hardware---sound-card"></a>Hardware – Placa de som  
+## <a name="hardware---sound-card"></a>Hardware – placa de som  
+
 Os três relatórios a seguir são listados na categoria **Hardware – SCSI**.
 
 |Nome do relatório|Descrição|  
@@ -402,7 +429,8 @@ Os três relatórios a seguir são listados na categoria **Hardware – SCSI**.
 
 
 
-## <a name="hardware---video-card"></a>Hardware – Placa de vídeo  
+## <a name="hardware---video-card"></a>Hardware – placa de vídeo  
+
 Os três relatórios a seguir são listados na categoria **Hardware – Placa de vídeo**.
 
 |Nome do relatório|Descrição|  
@@ -446,7 +474,6 @@ Os seis relatórios a seguir são listados na categoria **Rede**.
 
 Os dez relatórios a seguir são listados na categoria **Sistema operacional**.
 
-
 |Nome do relatório|Descrição|  
 |-----------------|-----------------|  
 |**Histórico de versão do sistema operacional do computador**|Exibe o histórico de inventário do sistema operacional em um computador especificado.|  
@@ -461,7 +488,7 @@ Os dez relatórios a seguir são listados na categoria **Sistema operacional**.
 |**Computadores com Windows Server**|Exibe uma lista de computadores que executam sistemas operacionais Windows Server.|  
 
 
-## <a name="power-management"></a>Gerenciamento de energia  
+## <a name="power-management"></a>Gerenciamento de Energia  
 
 Os 18 relatórios a seguir são listados na categoria **Gerenciamento de energia**.
 
@@ -489,6 +516,7 @@ Os 18 relatórios a seguir são listados na categoria **Gerenciamento de energia
 
 
 ## <a name="replication-traffic"></a>Tráfego de replicação  
+
 Os dez relatórios a seguir são listados na categoria **Tráfego de replicação**.
 
 |Nome do relatório|Descrição|  
@@ -506,7 +534,8 @@ Os dez relatórios a seguir são listados na categoria **Tráfego de replicaçã
 
 
 
-## <a name="site---client-information"></a>Site – Informações do cliente  
+## <a name="site---client-information"></a>Site – informações do cliente  
+
 Os 19 relatórios a seguir são listados na categoria **Site – Informações do cliente**.
 
 |Nome do relatório|Descrição|  
@@ -522,7 +551,7 @@ Os 19 relatórios a seguir são listados na categoria **Site – Informações d
 |**Computadores atribuídos, mas não instalados para um determinado site**|Exibe uma lista de computadores atribuídos a um site especificado, mas que não estão relatando para esse site.|  
 |**Computadores com uma versão cliente do Configuration Manager específica**|Exibe uma lista de computadores que estão executando uma versão especificada do software cliente do Configuration Manager.|  
 |**Contagem de clientes e protocolo usado para comunicação**|Exibe um resumo dos métodos de comunicação usado pelos clientes (HTTP ou HTTPS).|  
-|**Contagem de clientes atribuídos e instalados para cada site**|Exibe o número de computadores atribuídos e instalados para cada site. Os clientes com um local de rede associado a vários sites são contados somente como instalados se eles estiverem relatando a esse site.|  
+|**Contagem de clientes atribuídos e instalados para cada site**|Exibe o número de computadores atribuídos e instalados para cada site. Os clientes com uma localização de rede associada a vários sites serão contados somente como instalados se eles estiverem relatando a esse site.|  
 |**Contagem de clientes capazes de comunicação HTTPS**|Exibe informações detalhadas sobre cada cliente que executa a HTTPS Communication Readiness Tool e relata sua capacidade ou falta de capacidade de se comunicar por HTTPS.|  
 |**Contagem de clientes para cada site**|Exibe o número de clientes do Configuration Manager instalados por código do site.|  
 |**Contagem de clientes do Configuration Manager por versões do cliente**|Exibe o número de computadores descobertos pela versão do cliente do Configuration Manager.|  
@@ -533,7 +562,8 @@ Os 19 relatórios a seguir são listados na categoria **Site – Informações d
 
 
 
-## <a name="site---discovery-and-inventory-information"></a>Site – Informações de Descoberta e Inventário  
+## <a name="site---discovery-and-inventory-information"></a>Site – informações de descoberta e inventário  
+
 Os dez relatórios a seguir são listados na categoria **Site – Informações de descoberta e inventário**.
 
 |Nome do relatório|Descrição|  
@@ -542,7 +572,7 @@ Os dez relatórios a seguir são listados na categoria **Site – Informações 
 |**Computadores descobertos por um site específico**|Exibe uma lista de todos os computadores descobertos pelo site especificado. Também mostra a data da descoberta mais recente.|  
 |**Computadores descobertos recentemente pelo método de descoberta**|Exibe uma lista dos computadores descobertos pelo site no número especificado de dias. Também lista os agentes que os descobriram. Se vários agentes descobriram um computador, ele poderá ser exibido mais de uma vez na lista.|  
 |**Computadores não descobertos recentemente (em um número especificado de dias)**|Exibe uma lista dos computadores que o site não descobriu recentemente. Também mostra o número de dias desde que o site descobriu o computador.|  
-|**Computadores não inventariados recentemente (em um número especificado de dias)**|Exibe uma lista dos computadores que o site não inventariou recentemente. Também mostra as últimas vezes que o cliente inventariou o computador.|  
+|**Computadores não inventariados recentemente (em um número especificado de dias)**|Exibe uma lista dos computadores que o site não inventariado recentemente. Também mostra as últimas vezes que o cliente inventariou o computador.|  
 |**Computadores que podem compartilhar o mesmo identificador exclusivo do Configuration Manager**|Exibe uma lista de computadores que tiveram seus nomes alterados. Uma alteração no nome é um possível sintoma de que um computador compartilha um Identificador Exclusivo do Configuration Manager com outro computador.|  
 |**Computadores com endereços MAC duplicados**|Exibe os computadores que compartilham um endereço MAC.|  
 |**Contar computadores em domínios de recursos ou grupos de trabalho**|Exibe o número de computadores em cada domínio de recurso ou grupo de trabalho.|  
@@ -552,6 +582,7 @@ Os dez relatórios a seguir são listados na categoria **Site – Informações 
 
 
 ## <a name="site---general"></a>Site – Geral  
+
 Os três relatórios a seguir são listados na categoria **Site – Geral**.
 
 |Nome do relatório|Descrição|  
@@ -562,7 +593,8 @@ Os três relatórios a seguir são listados na categoria **Site – Geral**.
 
 
 
-## <a name="site---server-information"></a>Site – Informações do servidor  
+## <a name="site---server-information"></a>Site – informações do servidor  
+
 O relatório a seguir é listado na categoria **Site – Informações do servidor**.
 
 |Nome do relatório|Descrição|  
@@ -571,7 +603,8 @@ O relatório a seguir é listado na categoria **Site – Informações do servid
 
 
 
-## <a name="software---companies-and-products"></a>Software – Empresas e Produtos  
+## <a name="software---companies-and-products"></a>Software – empresas e produtos  
+
 Os 15 relatórios a seguir são listados na categoria **Software – Empresas e produtos**.
 
 |Nome do relatório|Descrição|  
@@ -579,14 +612,14 @@ Os 15 relatórios a seguir são listados na categoria **Software – Empresas e 
 |**Todos os produtos inventariados para uma empresa de software específica**|Exibe uma lista dos produtos e versões de software inventariados de uma empresa de software especificada.|  
 |**Todas as empresas de software**|Exibe uma lista de todas as empresas que fabricam software inventariado.|  
 |**Todos os aplicativos do Windows**|Exibe um resumo dos aplicativos do Windows instalados. Ele pesquisa usando os seguintes critérios: nome do aplicativo, arquitetura ou distribuidor.|  
-|**Computadores com um produto específico**|Exibe uma lista dos computadores nos quais um produto especificado é inventariado, bem como as versões desse produto.|  
+|**Computadores com um produto específico**|Exibe uma lista dos computadores nos quais um produto especificado é inventariado e as versões desse produto.|  
 |**Computadores com um nome e versão de produto específicos**|Exibe uma lista dos computadores nos quais uma versão especificada de um produto é inventariada.|  
 |**Computadores com software específico registrado em Adicionar ou Remover Programas**|Exibe um resumo de todos os computadores com software especificado registrado em Adicionar ou Remover Programas ou Programas e Recursos.|  
 |**Contar todos os produtos e versões inventariados**|Exibe uma lista de produtos e versões de software inventariados e o número de computadores em que cada um está instalado.|  
 |**Contagem de produtos inventariados e versões de um produto específico**|Exibe uma lista das versões inventariadas de um produto especificado e o número de computadores em que cada um está instalado.|  
 |**Contagem de todas as instâncias de software registradas com Adicionar ou Remover Programas**|Exibe um resumo de todas as instâncias de software instaladas e registradas com Adicionar ou Remover Programas ou Programas e Recursos em computadores na coleção especificada.|  
 |**Contagem de instâncias de software específico registradas com Adicionar ou Remover Programas**|Exibe uma contagem de instâncias de pacotes de software especificados instalados e registrados com Adicionar ou Remover Programas ou Programas e Recursos.|  
-|**Contagens de Navegador padrão**|Mostra a contagem de clientes com um navegador da Web específico como o padrão do Windows. </br>Use a seguinte referência para BrowserProgIDs comuns:</br> - AppXq0fevzme2pys62n3e0fbqa7peapykr8v: Microsoft Edge</br> - IE.HTTP: Microsoft Internet Explorer</br> - ChromeHTML: Google Chrome</br> - OperaStable: Opera Software</br> - FirefoxURL-308046B0AF4A39CB: Mozilla Firefox</br> – Desconhecido: o sistema operacional do cliente não dá suporte à consulta, a consulta não foi executada ou um usuário não fez logon|
+|**Contagens de Navegador padrão**|Mostra a contagem de clientes com um navegador da Web específico como o padrão do Windows. <br>Use a seguinte referência para BrowserProgIDs comuns:<br> - AppXq0fevzme2pys62n3e0fbqa7peapykr8v: Microsoft Edge<br> - IE.HTTP: Microsoft Internet Explorer<br> - ChromeHTML: Google Chrome<br> - OperaStable: Opera Software<br> - FirefoxURL-308046B0AF4A39CB: Mozilla Firefox<br> – Desconhecido: o sistema operacional do cliente não dá suporte à consulta, a consulta não foi executada ou um usuário não fez logon|
 |**Instalações dos aplicativos do Windows especificados**|Este relatório lista todos os computadores com um aplicativo do Windows especificado.|  
 |**Produtos em um computador específico**|Exibe um resumo dos produtos de software inventariados e seus fabricantes em um computador especificado.|  
 |**Software registrado em Adicionar ou Remover Programas em um computador específico**|Exibe um resumo do software instalado em um computador especificado que é registrado em Adicionar ou Remover Programas ou Programas e Recursos.|  
@@ -595,6 +628,7 @@ Os 15 relatórios a seguir são listados na categoria **Software – Empresas e 
 
 
 ## <a name="software---files"></a>Software – Arquivos  
+
 Os cinco relatórios a seguir são listados na categoria **Software – Arquivos**.
 
 |Nome do relatório|Descrição|  
@@ -607,7 +641,8 @@ Os cinco relatórios a seguir são listados na categoria **Software – Arquivos
 
 
 
-## <a name="software-distribution---application-monitoring"></a>Distribuição de software – Monitoramento de aplicativos  
+## <a name="software-distribution---application-monitoring"></a>Distribuição de software – monitoramento de aplicativos  
+
 Os dez relatórios a seguir são listados na categoria **Distribuição de software – Monitoramento de aplicativos**.
 
 |Nome do relatório|Descrição|  
@@ -625,7 +660,8 @@ Os dez relatórios a seguir são listados na categoria **Distribuição de softw
 
 
 
-## <a name="software-distribution---collections"></a>Distribuição de software – Coleções  
+## <a name="software-distribution---collections"></a>Distribuição de software – coleções  
+
 Os três relatórios a seguir são listados na categoria **Distribuição de Software – Coleções**.
 
 |Nome do relatório|Descrição|  
@@ -636,7 +672,8 @@ Os três relatórios a seguir são listados na categoria **Distribuição de Sof
 
 
 
-## <a name="software-distribution---content"></a>Distribuição de software – Conteúdo  
+## <a name="software-distribution---content"></a>Distribuição de software – conteúdo  
+
 Os 16 relatórios a seguir são listados na categoria **Distribuição de software – Conteúdo**.
 
 |Nome do relatório|Descrição|  
@@ -660,7 +697,8 @@ Os 16 relatórios a seguir são listados na categoria **Distribuição de softwa
 
 
 
-## <a name="software-distribution---package-and-program-deployment"></a>Distribuição de software – Implantação de pacote e programa 
+## <a name="software-distribution---package-and-program-deployment"></a>Distribuição de software – implantação de pacote e programa 
+
 Os cinco relatórios a seguir são listados na categoria **Distribuição de software – Implantação de pacote e programa**.
 
 |Nome do relatório|Descrição|  
@@ -673,7 +711,8 @@ Os cinco relatórios a seguir são listados na categoria **Distribuição de sof
 
 
 
-## <a name="software-distribution---package-and-program-deployment-status"></a>Distribuição de software – Status de implantação de pacote e programa  
+## <a name="software-distribution---package-and-program-deployment-status"></a>Distribuição de software – status de implantação de pacote e programa  
+
 Os cinco relatórios a seguir são listados na categoria **Distribuição de software – Status de implantação de pacote e programa**.
 
 |Nome do relatório|Descrição|  
@@ -687,12 +726,13 @@ Os cinco relatórios a seguir são listados na categoria **Distribuição de sof
 
 
 ## <a name="software-metering"></a>Medição de software  
+
 Os 13 relatórios a seguir são listados na categoria **Medição de software**.
 
 |Nome do relatório|Descrição|  
 |-----------------|-----------------|  
 |**Todas as regras de medição de software aplicadas ao site**|Exibe uma lista de todas as regras de medição de software no site.|  
-|**Computadores que têm um programa medido instalado mas não executaram o programa desde uma data especificada**|Exibe todos os computadores com o aplicativo limitado especificado, mas cujo programa nenhum usuário executou desde a data especificada.|  
+|**Computadores que têm um programa medido instalado, mas não executaram o programa desde uma data especificada**|Exibe todos os computadores com o aplicativo limitado especificado, mas cujo programa nenhum usuário executou desde a data especificada.|  
 |**Computadores que executaram um programa de software medido específico**|Exibe uma lista de computadores que executaram programas que correspondem à regra de medição de software especificada no mês e ano especificados.|  
 |**Uso simultâneo de todos os programas de software medidos**|Exibe o número máximo de usuários que executaram simultaneamente cada programa de software medido durante o mês e ano especificados.|  
 |**Análise de tendência de uso simultâneo de um programa de software medido especificado**|Exibe o número máximo de usuários que executaram simultaneamente o programa de software medido especificado durante cada mês do ano passado.|  
@@ -707,7 +747,8 @@ Os 13 relatórios a seguir são listados na categoria **Medição de software**.
 
 
 
-## <a name="software-updates---a-compliance"></a>Atualizações de software – A Conformidade  
+## <a name="software-updates---a-compliance"></a>Atualizações de software – conformidade A  
+
 Os oito relatórios a seguir são listados na categoria **Atualizações de software – Conformidade A**.
 
 |Nome do relatório|Descrição|  
@@ -723,23 +764,25 @@ Os oito relatórios a seguir são listados na categoria **Atualizações de soft
 |**Conformidade 9 – integridade e conformidade gerais**|Exibe os dados gerais de integridade e conformidade de um grupo de atualização de software. (começando na versão 1806)| 
 
 
-## <a name="software-updates---b-deployment-management"></a>Atualizações de software – B Gerenciamento de implantação  
+## <a name="software-updates---b-deployment-management"></a>Atualizações de software – gerenciamento de implantação B  
+
 Os oito relatórios a seguir são listados na categoria **Atualizações de software – Gerenciamento de implantação B**.
 
 |Nome do relatório|Descrição|  
 |-----------------|-----------------|  
-|**Gerenciamento 1 – Implantações de um grupo de atualização**|Exibe todas as implantações que contêm todas as atualizações de software definidas em um grupo de atualização de software especificado.|  
+|**Gerenciamento 1 – Implantações de um grupo de atualização**|Exibe todas as implantações que incluem todas as atualizações de software definidas em um grupo de atualização de software especificado.|  
 |**Gerenciamento 2 – Atualizações necessárias, mas não implantadas**|Exibe todas as atualizações de software específicas ao fornecedor que os clientes detectam como obrigatórias, mas que um administrador não implantou em uma coleção especificada.|  
 |**Gerenciamento 3 – Atualizações em uma implantação**|Exibe as atualizações de software contidas em uma implantação especificada.|  
 |**Gerenciamento 4 – Implantações destinadas a uma coleção**|Exibe todas as implantações de atualização de software destinadas a uma coleção especificada.|  
 |**Gerenciamento 5 – Implantações destinadas a um computador**|Exibe todas as implantações de atualização de software implantadas em um computador especificado.|  
-|**Gerenciamento 6 – Implantações que contêm uma atualização específica**|Exibe todas as implantações que contêm uma atualização de software especificada e a coleção de destino associada para a implantação.|  
+|**Gerenciamento 6 – Implantações que contêm uma atualização específica**|Exibe todas as implantações que incluem uma atualização de software especificada e a coleção de destino associada para a implantação.|  
 |**Gerenciamento 7 – Atualizações em uma implantação com conteúdo ausente**|Exibe as atualizações de software em uma implantação especificada que não têm todo o conteúdo associado recuperado. Esse estado impede que os clientes instalem a atualização, o que impede que a implantação atinja 100% de conformidade.|  
 |**Gerenciamento 8 – Computadores com conteúdo ausente (secundário)**|Exibe todos os computadores que exigem a atualização de software especificada, mas cujo conteúdo associado ainda não foi distribuído para um ponto de distribuição.|  
 
 
 
-## <a name="software-updates---c-deployment-states"></a>Atualizações de software – C Estados de implantação  
+## <a name="software-updates---c-deployment-states"></a>Atualizações de software – estados de implantação C  
+
 Os seis relatórios a seguir são listados na categoria **Atualizações de software – Estados de implantação C**.
 
 |Nome do relatório|Descrição|  
@@ -753,7 +796,8 @@ Os seis relatórios a seguir são listados na categoria **Atualizações de soft
 
 
 
-## <a name="software-updates---d-scan"></a>Atualizações de software – D Verificação  
+## <a name="software-updates---d-scan"></a>Atualizações de software – verificação D  
+
 Os quatro relatórios a seguir são listados na categoria **Atualizações de software – Verificação D**.
 
 |Nome do relatório|Descrição|  
@@ -765,7 +809,7 @@ Os quatro relatórios a seguir são listados na categoria **Atualizações de so
 
 
 
-## <a name="software-updates---e-troubleshooting"></a>Atualizações de software – E Solução de problemas  
+## <a name="software-updates---e-troubleshooting"></a>Atualizações de software – solução de problemas E  
 
 Os quatro relatórios a seguir são listados na categoria **Atualizações de software – Solução de problemas E**.
 
@@ -779,6 +823,7 @@ Os quatro relatórios a seguir são listados na categoria **Atualizações de so
 
 
 ## <a name="state-migration"></a>Migração de estado  
+
 Os três relatórios a seguir são listados na categoria **Migração de estado**.
 
 |Nome do relatório|Descrição|  
@@ -790,6 +835,7 @@ Os três relatórios a seguir são listados na categoria **Migração de estado*
 
 
 ## <a name="status-messages"></a>Mensagens de status  
+
 Os 12 relatórios a seguir são listados na categoria **Mensagens de status**.
 
 |Nome do relatório|Descrição|  
@@ -809,7 +855,7 @@ Os 12 relatórios a seguir são listados na categoria **Mensagens de status**.
 
 
 
-## <a name="status-messages---audit"></a>Mensagens de status – Auditoria  
+## <a name="status-messages---audit"></a>Mensagens de status – auditoria  
 
 Os três relatórios a seguir são listados na categoria **Mensagens de status – Auditoria**.
 
@@ -821,7 +867,8 @@ Os três relatórios a seguir são listados na categoria **Mensagens de status �
 
 
 
-## <a name="task-sequence---deployment-status"></a>Sequência de tarefas – Status da implantação  
+## <a name="task-sequence---deployment-status"></a>Sequência de tarefas – status da implantação  
+
 Os 11 relatórios a seguir são listados na categoria **Sequência de tarefas – Status de implantação**.
 
 |Nome do relatório|Descrição|  
@@ -840,7 +887,8 @@ Os 11 relatórios a seguir são listados na categoria **Sequência de tarefas �
 
 
 
-## <a name="task-sequence---deployments"></a>Sequência de tarefas – Implantações  
+## <a name="task-sequence---deployments"></a>Sequência de tarefas – implantações  
+
 Os 11 relatórios a seguir são listados na categoria **Sequência de tarefas – Implantações**.
 
 |Nome do relatório|Descrição|  
@@ -859,7 +907,8 @@ Os 11 relatórios a seguir são listados na categoria **Sequência de tarefas �
 
 
 
-## <a name="task-sequence---progress"></a>Sequência de tarefas – Progresso  
+## <a name="task-sequence---progress"></a>Sequência de tarefas – progresso  
+
 Os cinco relatórios a seguir são listados na categoria **Sequência de tarefas – Progresso**.
 
 |Nome do relatório|Descrição|  
@@ -872,7 +921,8 @@ Os cinco relatórios a seguir são listados na categoria **Sequência de tarefas
 
 
 
-## <a name="task-sequences---references"></a>Sequências de tarefas – Referências  
+## <a name="task-sequences---references"></a>Sequências de tarefas – referências  
+
 O relatório a seguir é listado na categoria **Sequências de tarefas – Referências**.
 
 |Nome do relatório|Descrição|  
@@ -902,7 +952,7 @@ The following 11 reports are listed under the **Upgrade Assessment** category.
 
 
 
-## <a name="user---device-affinity"></a>Usuário – Afinidade do dispositivo  
+## <a name="user---device-affinity"></a>Usuário – afinidade do dispositivo  
 
 Os dois relatórios a seguir são listados na categoria **Usuário – Afinidade de dispositivo**.
 
@@ -913,7 +963,8 @@ Os dois relatórios a seguir são listados na categoria **Usuário – Afinidade
 
 
 
-## <a name="user-data-and-profiles-health"></a>Integridade de dados e perfis do usuário  
+## <a name="user-data-and-profiles-health"></a>Dados do usuário e integridade de perfis  
+
 Os quatro relatórios a seguir são listados na categoria **Integridade de dados e perfis do usuário**.
 
 |Nome do relatório|Descrição|  
@@ -926,6 +977,7 @@ Os quatro relatórios a seguir são listados na categoria **Integridade de dados
 
 
 ## <a name="users"></a>Usuários  
+
 Os três relatórios a seguir são listados na categoria **Usuários**.
 
 |Nome do relatório|Descrição|  
@@ -937,6 +989,7 @@ Os três relatórios a seguir são listados na categoria **Usuários**.
 
 
 ## <a name="virtual-applications"></a>Aplicativos virtuais  
+
 Os sete relatórios a seguir são listados na categoria **Aplicativos virtuais**.
 
 |Nome do relatório|Descrição|  
@@ -951,8 +1004,9 @@ Os sete relatórios a seguir são listados na categoria **Aplicativos virtuais**
 
 
 
-## <a name="volume-purchase-programs---apple"></a>Volume Purchase Programs – Apple
-O relatório a seguir está listado na categoria **Programas de Compra de Volume – Apple**.
+## <a name="volume-purchase-programs---apple"></a>Programas de compra por volume – Apple
+
+O relatório a seguir está listado na categoria **Programas de Compra por Volume – Apple**.
 
 |Nome do relatório|Descrição|  
 |-----------------|-----------------|  
@@ -960,7 +1014,8 @@ O relatório a seguir está listado na categoria **Programas de Compra de Volume
 
 
 
-## <a name="vulnerability-assessment"></a>Avaliação de Vulnerabilidade
+## <a name="vulnerability-assessment"></a>Avaliação de vulnerabilidade
+
 O relatório a seguir está listado na categoria **Avaliação de Vulnerabilidade**.
 
 |Nome do relatório|Descrição|  
@@ -970,6 +1025,7 @@ O relatório a seguir está listado na categoria **Avaliação de Vulnerabilidad
 
 
 ## <a name="wake-on-lan"></a>Wake On LAN  
+
 Os sete relatórios a seguir são listados na categoria **Wake On LAN**.
 
 |Nome do relatório|Descrição|  

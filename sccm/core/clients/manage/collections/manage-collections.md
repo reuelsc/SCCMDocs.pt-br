@@ -10,12 +10,12 @@ ms.assetid: e102fd1a-76df-4d8e-b1b0-10ee18318f67
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5d7c967ce02c009cd9659c7956f7ca79f4a34faf
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: 03b34c09a5fef63316bb1d9d1a94dbbfc3ccf69f
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42755965"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456253"
 ---
 # <a name="how-to-manage-collections-in-configuration-manager"></a>Como gerenciar coleções no Configuration Manager
 
@@ -30,7 +30,7 @@ Use as informações de visão geral contidas neste artigo para ajudá-lo a exec
 
 ## <a name="bkmk_device"></a> Como gerenciar coleções de dispositivos  
 
- No espaço de trabalho **Ativos e Conformidade** , selecione **Coleções de Dispositivos**, selecione a coleção a ser gerenciada e uma tarefa de gerenciamento.  
+ No workspace **Ativos e Conformidade**, selecione **Coleções de Dispositivos**, selecione a coleção a ser gerenciada e uma tarefa de gerenciamento.  
 
 
 #### <a name="show-members"></a>Mostrar Membros
@@ -73,40 +73,11 @@ Use as informações de visão geral contidas neste artigo para ajudá-lo a exec
 
 
 #### <a name="client-notification"></a>Notificação de Cliente
- Instrui todos os clientes na coleção de dispositivos selecionada a executar imediatamente uma das seguintes ações:
-
- - **Fazer download da política do computador**: atualizar a política de dispositivo. Para obter mais informações, confira [Iniciar recuperação de política para um cliente do Configuration Manager](/sccm/core/clients/manage/manage-clients#BKMK_PolicyRetrieval).  
-
- - **Fazer download da política do usuário**: atualizar a política de usuário.  
-
- - **Coletar dados de descoberta**: acionar os clientes para enviar um registro dos dados de descoberta (DDR). Para saber mais, confira [Descoberta de pulsação](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutHeartbeat).  
-
- - **Coletar inventário de software**: acionar os clientes para executar um ciclo de inventário de software. Para obter mais informações, consulte [Introdução ao inventário de software](/sccm/core/clients/manage/inventory/introduction-to-software-inventory).  
-
- - **Coletar inventário de hardware**: acionar os clientes para executar um ciclo de inventário de hardware. Para obter mais informações, consulte [Introdução ao inventário de hardware](/sccm/core/clients/manage/inventory/introduction-to-hardware-inventory).  
-
- - **Avaliar implantações de aplicativo**: acionar os clientes para executar um ciclo de avaliação de implantação de aplicativos. Para saber mais, confira [Reavaliação de agendamento para implantações](/sccm/core/clients/deploy/about-client-settings#schedule-re-evaluation-for-deployments).  
-
- - **Avaliar implantações de atualização de software**: acionar os clientes para executar um ciclo de avaliação de implantação de atualizações de software. Para saber mais, confira [Introdução às atualizações de software](/sccm/sum/understand/software-updates-introduction).  
-
- - **Alternar para o próximo Ponto de atualização de software**: acionar os clientes para alternar para o próximo ponto de atualização de software disponível. Para saber mais, confira [Mudança do ponto de atualização de software](/sccm/sum/plan-design/plan-for-software-updates#BKMK_SUPSwitching).  
-
- - **Avaliar o Atestado de Integridade do Dispositivo**: acionar os clientes do Windows 10 para verificar e enviar o estado de integridade do dispositivo mais recente. Para obter mais informações, consulte [Atestado de integridade](/sccm/core/servers/manage/health-attestation).  
-
- - **Verificar a conformidade de Acesso Condicional**: acionar os clientes para verificar sua conformidade com o acesso condicional. Para saber mais, confira [Gerenciar o acesso aos serviços do O365 para computadores](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm).  
+ Para obter mais informações, confira [Notificações do cliente](/sccm/core/clients/manage/client-notification).
 
 
 #### <a name="endpoint-protection"></a>Endpoint Protection
- Instrui todos os clientes na coleção de dispositivos selecionada a executar imediatamente uma das seguintes ações:
-
- - **Verificação completa**: acione o Endpoint Protection ou o Windows Defender para executar uma verificação antimalware *completa*  
-
- - **Verificação rápida**: acione o Endpoint Protection ou o Windows Defender para executar uma verificação antimalware *rápida*  
-
- - **Fazer download da definição**: acione o Endpoint Protection ou o Windows Defender para baixar as definições antimalware mais recentes  
-
-
- Para obter mais informações, confira [Endpoint Protection no Configuration Manager](/sccm/protect/deploy-use/endpoint-protection).
+ Para obter mais informações, confira [Notificações do cliente](/sccm/core/clients/manage/client-notification).
 
 
 #### <a name="export"></a>Exportar
@@ -160,7 +131,7 @@ Use as informações de visão geral contidas neste artigo para ajudá-lo a exec
 
 ## <a name="bkmk_user"></a> Como gerenciar coleções de usuários  
 
- No espaço de trabalho **Ativos e Conformidade** , selecione **Coleções de Usuários**, selecione a coleção a ser gerenciada e uma tarefa de gerenciamento.  
+ No workspace **Ativos e Conformidade**, selecione **Coleções de Usuários**, selecione a coleção a ser gerenciada e uma tarefa de gerenciamento.  
 
  > [!Note]  
  > As ações a seguir estão disponíveis nas coleções de usuários, mas os comportamentos são os mesmos das coleções de dispositivos. Exceto pelo que se aplica a coleções de usuários e aos usuários ali contidos. Para saber mais, confira a ação correspondente em [Como gerenciar coleções de dispositivos](#bkmk_device).  

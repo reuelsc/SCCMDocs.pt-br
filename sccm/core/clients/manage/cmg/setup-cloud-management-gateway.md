@@ -5,17 +5,17 @@ description: Use este processo passo a passo para configurar um CMG (gateway de 
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 09/10/2018
+ms.date: 11/27/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: a5f356eef4d72040bd069fc17dd20fdbc3587cd6
-ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
+ms.openlocfilehash: 041ea28e91b77545b8984742b4199782d1edb6b7
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601051"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456525"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurar o gateway de gerenciamento de nuvem para o Configuration Manager
 
@@ -38,13 +38,16 @@ Use a seguinte lista de verificação para verificar se você tem as informaçõ
 
 - Um ou mais certificados são necessários para o CMG, dependendo do design. Para obter mais informações, consulte [Certificados do gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway).  
 
-- A partir da versão 1802, escolha se usará a **implantação do Azure Resource Manager** ou uma **implantação de serviço clássico**. Para obter mais informações, consulte [Azure Resource Manager](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager). Você precisa dos seguintes requisitos para uma implantação do Azure Resource Manager do CMG:  
+- Iniciando na versão 1802, selecione a **Implantação do Azure Resource Manager**. Para obter mais informações, consulte [Azure Resource Manager](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager). Você precisa dos seguintes requisitos para uma implantação do Azure Resource Manager do CMG:  
 
     - Integração com o [Azure AD](/sccm/core/servers/deploy/configure/azure-services-wizard) para o **Gerenciamento de Nuvem**. A descoberta de usuário do Azure AD não é necessária.  
 
     - Um administrador da assinatura precisa entrar.  
 
 - Você precisa dos seguintes requisitos para uma implantação de serviço clássico do CMG:  
+
+    > [!Important]  
+    > Da versão 1810 em diante, implantações de serviço clássico no Azure são preteridas no Configuration Manager. Comece a usar as implantações do Azure Resource Manager para o gateway de gerenciamento de nuvem. Para obter mais informações, confira [Planejar para CMG](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).  
 
     - ID de assinatura do Azure  
 
@@ -62,15 +65,18 @@ Use a seguinte lista de verificação para verificar se você tem as informaçõ
 
 Execute esse procedimento no site de nível superior. Esse site é um site primário autônomo ou o site de administração central.
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Serviços de Nuvem** e selecione **Gateway de Gerenciamento de Nuvem**.  
+1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e selecione **Gateway de Gerenciamento de Nuvem**.  
 
 2. Selecione **Criar Gateway de Gerenciamento de Nuvem** na faixa de opções.  
 
-3. A partir da versão 1802, na página Geral do assistente, primeiro escolha o método de implantação do CMG, **Implantação do Azure Resource Manager** ou **Implantação de serviço clássico**.  
+3. Iniciando na versão 1802, na página geral do assistente, selecione **Implantação do Azure Resource Manager** como o método de implantação do CMG.  
 
-    1. Para a **implantação do Azure Resource Manager**: selecione **Entrar** para se autenticar com uma conta de administrador da assinatura do Azure. O assistente popula automaticamente os campos restantes com as informações armazenadas durante o pré-requisito de integração do Azure AD. Se você tem várias assinaturas, selecione a **ID da Assinatura** da assinatura que deseja usar.  
+    Selecione **Entrar** para autenticar-se com uma conta de administrador de assinatura do Azure. O assistente popula automaticamente os campos restantes com as informações armazenadas durante o pré-requisito de integração do Azure AD. Se você tem várias assinaturas, selecione a **ID da Assinatura** da assinatura que deseja usar.
 
-    2. Para a **implantação de serviço clássico** *e o Configuration Manager versões 1706 e 1710*: insira sua **ID da Assinatura** do Azure. Em seguida, selecione **Procurar** e escolha o arquivo .PFX do certificado de gerenciamento do Azure. 
+    > [!Note]  
+    > Da versão 1810 em diante, implantações de serviço clássico no Azure são preteridas no Configuration Manager. 
+    > 
+    > Se você precisar usar uma implantação de serviço clássica, selecione essa opção nesta página. Primeiro insira sua **ID de assinatura** do Azure. Em seguida, selecione **Procurar** e escolha o arquivo .PFX do certificado de gerenciamento do Azure. 
 
 4. Especifique o **ambiente do Azure** para esse CMG. As opções da lista suspensa podem variar conforme o método de implantação.  
 
@@ -114,7 +120,7 @@ Execute esse procedimento no site de nível superior. Esse site é um site prim�
 
 Se estiver usando [certificados de autenticação de cliente](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#client-authentication-certificate) para que os clientes se autentiquem no CMG, siga este procedimento para configurar cada site primário.  
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione **Sites**.  
+1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione **Sites**.  
 
 2. Selecione o site primário ao qual os clientes baseados na Internet são atribuídos e escolha **Propriedades**.  
 
@@ -140,7 +146,7 @@ O ponto de conexão do CMG é a função de sistema de sites para comunicação 
 
 Configure os sistemas de sites do ponto de gerenciamento e do ponto de atualização de software para que eles aceitem o tráfego do CMG. Execute este procedimento no site primário, para todos os pontos de gerenciamento e os pontos de atualização de software que atendem a clientes baseados na Internet.  
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Funções do Sistema de Sites e Servidores**. Na guia Página Inicial da faixa de opções, no grupo de modo de exibição, selecione **Servidores com Função**. Em seguida, selecione **Ponto de gerenciamento** na lista.  
+1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione o nó **Funções do Sistema de Sites e Servidores**. Na guia Página Inicial da faixa de opções, no grupo de modo de exibição, selecione **Servidores com Função**. Em seguida, selecione **Ponto de gerenciamento** na lista.  
 
 2. Selecione o servidor do sistema de sites que deseja configurar para o tráfego do CMG. Selecione a função **Ponto de gerenciamento** no painel de detalhes e, em seguida, selecione **Propriedades** na faixa de opções.  
 

@@ -1,5 +1,5 @@
 ---
-title: Gerenciador de Conversão de Pacotes
+title: Package Conversion Manager
 titleSuffix: Configuration Manager
 description: Saiba mais sobre o Gerenciador de Conversão de Pacotes para converter pacotes em aplicativos no Configuration Manager.
 ms.date: 08/24/2018
@@ -10,14 +10,14 @@ ms.assetid: f053fa73-c553-4522-a6b9-f885f23fe57c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7057084ba976408f189a0d4fbb96f176bc0c6656
-ms.sourcegitcommit: 759098de944b8f7d5eedfc2bae2cb9a6ba15276f
+ms.openlocfilehash: 41dd6ad6f8a0292fdb16a0d727665b17e038f87b
+ms.sourcegitcommit: 1439817f1309658b31008d7bafaab32fc5ef8789
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43297191"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "52820034"
 ---
-# <a name="package-conversion-manager"></a>Gerenciador de Conversão de Pacotes
+# <a name="package-conversion-manager"></a>Package Conversion Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
@@ -25,8 +25,9 @@ ms.locfileid: "43297191"
 
 A partir da versão 1806, o Gerenciador de Conversão de Pacotes ajuda a converter pacotes legados do Configuration Manager em aplicativos. Os aplicativos apresentam benefícios adicionais, como dependências, regras de requisitos, métodos de detecção e afinidade de dispositivo de usuário.
 
-> [!Note]  
-> Nesta versão do Configuration Manager, o Gerenciador de Conversão de Pacotes é um recurso de pré-lançamento. Para habilitá-lo, veja [Recursos de pré-lançamento](/sccm/core/servers/manage/pre-release-features).  
+> [!Tip]  
+> Esse recurso foi introduzido pela primeira vez na versão 1806 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). Na versão 1810, esse recurso deixou de ser um recurso de pré-lançamento.  
+
 
 Um aplicativo do Configuration Manager contém arquivos e programas que você implementa em dispositivos clientes. No entanto, diferentemente dos pacotes e programas legados, um aplicativo fornece funcionalidade adicional centrada no usuário. Por exemplo, um aplicativo pode conter tipos de implantação para uma instalação local de um pacote de software, um pacote de aplicativos virtuais ou uma versão do aplicativo para dispositivos móveis.
 
@@ -35,7 +36,7 @@ Para obter mais informações, consulte os seguintes artigos:
 - [Pacotes e programas](/sccm/apps/deploy-use/packages-and-programs)  
 
 > [!Important]  
-> Se você já tiver instalado uma versão mais antiga do Gerenciador de Conversão de Pacotes, desinstale-a antes de atualizar seu site. Essa versão integrada não requer a instalação, mas pode entrar em conflito com as versões existentes.  
+> Se você já tiver instalado uma versão mais antiga do Gerenciador de Conversão de Pacote, desinstale-a antes de atualizar seu site. Essa versão integrada não requer a instalação, mas pode entrar em conflito com as versões existentes.  
 
 Essa versão integrada do Gerenciador de Conversão de Pacotes funciona em pacotes no branch atual do Configuration Manager. Não é uma ferramenta autônoma. Se você tiver pacotes e programas em uma versão mais antiga do Configuration Manager, primeiro migre os pacotes para o seu branch atual. Para saber mais, confira [Migrar dados entre hierarquias](/sccm/core/migration/migrate-data-between-hierarchies).
 

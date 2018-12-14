@@ -2,7 +2,7 @@
 title: Versões de visualização técnica
 titleSuffix: Configuration Manager
 description: Saiba mais sobre o branch de visualização técnica para fazer o test drive das novas funcionalidades e recursos no Configuration Manager.
-ms.date: 10/16/2018
+ms.date: 12/03/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f19e998e803bdaeed2b72dac84ae866930ad0003
-ms.sourcegitcommit: 73dbd2146bd581a1b668b22b84b7cda68a487d05
+ms.openlocfilehash: 9381980f490d543b3018c206359d4a68b9ca69e4
+ms.sourcegitcommit: 6126dfdf5c879db7d12c3eec019a88fa44521361
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49390625"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52830482"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Visualização técnica para o Configuration Manager
 
@@ -124,16 +124,15 @@ Os seguintes recursos estão disponíveis com a visualização técnica mais rec
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-18102"></a>Visualização técnica, versão 1810.2
+### <a name="technical-preview-version-1811"></a>Technical Preview versão 1811
 
-<!--capabilities-in-technical-preview-1810-2.md#bkmk_anchor-->
+<!--capabilities-in-technical-preview-1811.md#bkmk_anchor-->
 
-- [Melhorias da avaliação de coleção](capabilities-in-technical-preview-1810-2.md#bkmk_colleval)<!--1358981-->
-- [Autenticação de administrador do Configuration Manager](capabilities-in-technical-preview-1810-2.md#bkmk_auth)<!--1357013-->
-- [Regras de insights de gerenciamento para origem do cache par](capabilities-in-technical-preview-1810-2.md#bkmk_insights)<!--1358008-->
-- [Melhorias da configuração de cliente baseado na Internet](capabilities-in-technical-preview-1810-2.md#bkmk_cmg)<!--1359181-->
-- [Converter aplicativos em MSIX](capabilities-in-technical-preview-1810-2.md#bkmk_msix) <!--1359029-->
-- [Alterações à ação de notificação de cliente para ativação de dispositivo](capabilities-in-technical-preview-1810-2.md#bkmk_wakeup)<!--1317364-->
+- [Não carregar perfis do Windows PowerShell](capabilities-in-technical-preview-1811.md#bkmk_noprofile) <!--1359239-->
+- [Uma conexão do Intune não é mais necessária para o MDM local](capabilities-in-technical-preview-1811.md#bkmk_opmdm) <!--1359124-->
+- [Notificações do Console do Configuration Manager](capabilities-in-technical-preview-1811.md#bkmk_notify) <!--1318035-->
+- [Melhorias na criação de mídia da sequência de tarefas](capabilities-in-technical-preview-1811.md#bkmk_tsmedia) <!--1359388-->
+- [Melhoria para à etapa de sequência de tarefas de Executar Script do PowerShell](capabilities-in-technical-preview-1811.md#bkmk_posh) <!--1359389-->
 
 
 > [!Note]  
@@ -150,27 +149,30 @@ Each month, add features from the list above to the top of this table.
 Then remove the bottom of this list and/or move individual items not in CB to the third table below.
 -->
 
- |Recurso |Versão da visualização técnica |Versão do branch atual|  
- |----------------|---------------------|--------------------|
- | Melhoria à instalação do cliente <!--1358840--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_ccmsetup) | ![Não foi adicionado](media/Red_X.gif) | 
- | Política de conformidade de aplicativo necessária para dispositivos cogerenciados <!--1358196--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_app-compliance) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhoria ao painel de cogerenciamento <!--1358980--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_comgmt-report) | ![Não foi adicionado](media/Red_X.gif) | 
- | Opções do novo grupo de limites <!--1358749--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_bgoptions) | ![Não foi adicionado](media/Red_X.gif) | 
- | Sistema de sites no nó de cluster do Windows <!--1359132--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_cluster) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhorias ao CMPivot <!--1359068--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_cmpivot) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhorias nos scripts <!--1358239--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_scripts) | ![Não foi adicionado](media/Red_X.gif) | 
- | Nova ação de notificação de cliente para ativação de dispositivo <!--1317364--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_wakeup) | ![Não foi adicionado](media/Red_X.gif) | 
- | Suporte à sequência de tarefas para grupos de limites <!--1359025--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_bgr-osd) | ![Não foi adicionado](media/Red_X.gif) | 
- | Painel de insights de gerenciamento <!--1357979--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_insights) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Recurso | Versão da visualização técnica | Versão do branch atual |  
+ |---------|---------------------------|------------------------|
+ | Melhorias na avaliação de coleção <!--1358981--> | [Tech Preview 1810.2](capabilities-in-technical-preview-1810-2.md#bkmk_colleval) | Versão 1810 | 
+ | Autenticação de administrador do Configuration Manager <!--1357013--> | [Tech Preview 1810.2](capabilities-in-technical-preview-1810-2.md#bkmk_auth) | Versão 1810 | 
+ | Regra de insights de gerenciamento para a versão do cliente da origem do cache par <!--1358008--> | [Tech Preview 1810.2](capabilities-in-technical-preview-1810-2.md#bkmk_insights) | Versão 1810 | 
+ | Melhorias na configuração de clientes baseados na Internet <!--1359181--> | [Tech Preview 1810.2](capabilities-in-technical-preview-1810-2.md#bkmk_cmg) | Versão 1810 | 
+ | Converter aplicativos em MSIX <!--1359029--> | [Tech Preview 1810.2](capabilities-in-technical-preview-1810-2.md#bkmk_msix) | Versão 1810 | 
+ | Melhoria à instalação do cliente <!--1358840--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_ccmsetup) | Versão 1810 | 
+ | Política de conformidade de aplicativo necessária para dispositivos cogerenciados <!--1358196--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_app-compliance) | Versão 1810 | 
+ | Melhoria ao painel de cogerenciamento <!--1358980--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_comgmt-report) | Versão 1810 | 
+ | Opções do novo grupo de limites <!--1358749--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_bgoptions) | Versão 1810 | 
+ | Sistema de sites no nó de cluster do Windows <!--1359132--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_cluster) | Versão 1810 | 
+ | Melhorias ao CMPivot <!--1359068--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_cmpivot) | Versão 1810 | 
+ | Melhorias nos scripts <!--1358239--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_scripts) | Versão 1810 | 
+ | Nova ação de notificação de cliente para ativação de dispositivo <!--1317364--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_wakeup) | Versão 1810 | 
+ | Suporte à sequência de tarefas para grupos de limites <!--1359025--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_bgr-osd) | Versão 1810 | 
+ | Painel de insights de gerenciamento <!--1357979--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_insights) | Versão 1810 | 
  | Painel de documentação no console <!--1357546--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_doc-dashboard) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhorias na manutenção do driver <!--1358270--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_drivers) | ![Não foi adicionado](media/Red_X.gif) | 
- | Suporte à sequência de tarefas do Windows AutoPilot para dispositivos existentes <!--1358333--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_autopilot) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhorias ao CMPivot <!--1359068--> | [Visualização técnica 1809](capabilities-in-technical-preview-1809.md#bkmk_cmpivot) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhoria ao painel do ciclo de vida <!--1358702--> | [Visualização técnica 1809](capabilities-in-technical-preview-1809.md#bkmk_lifecycle) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhoria ao data warehouse <!--1358870--> | [Visualização técnica 1809](capabilities-in-technical-preview-1809.md#bkmk_dataw) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhoria de janelas de manutenção para atualizações de software <!--vso2839307--> | [Visualização técnica 1809](capabilities-in-technical-preview-1809.md#bkmk_sum-mw) | ![Não foi adicionado](media/Red_X.gif) | 
- | Implantação em fases de atualizações de software <!--1358146--> | [Visualização técnica 1808](capabilities-in-technical-preview-1808.md#bkmk_pod) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhorias no reparo de aplicativos <!--1357866--> | [Visualização técnica 1808](capabilities-in-technical-preview-1808.md#bkmk_repair) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Melhorias na manutenção do driver <!--1358270--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_drivers) | Versão 1810 | 
+ | Suporte à sequência de tarefas do Windows AutoPilot para dispositivos existentes <!--1358333--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_autopilot) | Versão 1810 | 
+ | Melhorias ao CMPivot <!--1359068--> | [Visualização técnica 1809](capabilities-in-technical-preview-1809.md#bkmk_cmpivot) | Versão 1810 | 
+ | Melhoria ao painel do ciclo de vida <!--1358702--> | [Visualização técnica 1809](capabilities-in-technical-preview-1809.md#bkmk_lifecycle) | Versão 1810 | 
+ | Melhoria ao data warehouse <!--1358870--> | [Visualização técnica 1809](capabilities-in-technical-preview-1809.md#bkmk_dataw) | Versão 1810 | 
+ | Melhoria de janelas de manutenção para atualizações de software <!--vso2839307--> | [Visualização técnica 1809](capabilities-in-technical-preview-1809.md#bkmk_sum-mw) | Versão 1810 | 
 
 
 
@@ -184,23 +186,16 @@ Copy from the bottom of the list above any individual feature that is still in T
 With each CB release, review and remove from this list for anything that's now available in CB. 
 -->
 
-|Recurso |Versão do Technical Preview |  
-|----------------|---------------------|
+| Recurso        | Versão da visualização técnica |  
+|----------------|---------------------------|
 | Hub de Comunidade <!--1357766--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_hub) | 
-| Especifique a unidade para manutenção offline da imagem do sistema operacional <!--1358924--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_osd) | 
 | Atividade de sincronização de dispositivo cogerenciados com o Intune <!--1358565--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_comgmt) | 
-| Reparar aplicativos <!--1357866--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_app-repair) | 
-| Aprovar solicitações de aplicativo por email <!--1321550--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_email-approve) | 
-| Melhoria na saída do script <!--1236459--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_script) | 
-| Melhoria nas atualizações de software de terceiros <!--1358714--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_3pupdate) |
-|Centro de Suporte<!--1357489--> | [Tech Preview 1804](capabilities-in-technical-preview-1804.md#support-center)  | 
-|Serviço de respondente PXE baseado no cliente <!-- 1357148 --> | [Tech Preview 1712](capabilities-in-technical-preview-1712.md#client-based-pxe-responder-service) |
-|Suporte de inicialização de rede PXE para IPv6 <!-- 1269793 --> |[Visualização Técnica 1706](capabilities-in-technical-preview-1706.md#pxe-network-boot-support-for-ipv6)|
-|Usar o Azure Active Directory <!-- 1322145? --> | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#azurediscovery) |
-|Avaliação de conformidade para atualizações do Windows Update para Empresas <!-- 1235390 --> | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#compliance-assessment-for-windows-update-for-business-updates) |
-|Acesso a dados do ponto de extremidade OData <!-- 1321523 --> |[Tech Preview 1612](capabilities-in-technical-preview-1612.md#odata-endpoint-data-access)|
-|Melhorias no Asset Intelligence <!-- 1307390 --> |[Tech Preview 1608](capabilities-in-technical-preview-1608.md#improvements-to-asset-intelligence)|
-|Os usuários finais podem instalar aplicativos por meio do Portal da Empresa <!-- 1037233? --> |[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_End)|
+| Serviço de respondente PXE baseado no cliente <!--1357148--> | [Tech Preview 1712](capabilities-in-technical-preview-1712.md#client-based-pxe-responder-service) |
+| Suporte de inicialização de rede PXE para IPv6 <!--1269793--> |[Visualização Técnica 1706](capabilities-in-technical-preview-1706.md#pxe-network-boot-support-for-ipv6)|
+| Usar o Azure Active Directory <!--1322145--> | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#azurediscovery) |
+| Avaliação de conformidade para atualizações do Windows Update para Empresas <!--1235390--> | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#compliance-assessment-for-windows-update-for-business-updates) |
+| Melhorias no Asset Intelligence <!--1307390--> | [Tech Preview 1608](capabilities-in-technical-preview-1608.md#improvements-to-asset-intelligence) |
+| Os usuários finais podem instalar aplicativos por meio do Portal da Empresa <!--1037233?--> | [Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_End) |
 
 
 

@@ -2,7 +2,7 @@
 title: Referência da variável de sequência de tarefas
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as variáveis para controlar e personalizar uma sequência de tarefas do Configuration Manager.
-ms.date: 08/17/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 62f15230-d3a6-4afc-abd4-1e07e7ba6c97
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cfecd7441abd206bdff1d2f6618d763a30dddc51
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: cde62242fc4db99d762d670037aad22bd25d6c00
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42756275"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456729"
 ---
 # <a name="task-sequence-variables-in-configuration-manager"></a>Variáveis de sequência de tarefas no Configuration Manager
 
@@ -124,6 +124,12 @@ Para saber mais, confira [Uso de variáveis de sequência de tarefas](/sccm/osd/
  *Aplica-se à etapa [Definir Variáveis Dinâmicas](task-sequence-steps.md#BKMK_SetDynamicVariables).*
 
  Especifica os endereços IP usados pelo computador.
+
+
+### <a name="SMSTSLastActionName"></a> _SMSTSLastActionName
+ *Da versão 1810 em diante*  
+
+ Armazena o nome da última ação executada. Esta variável está relacionada a **_SMSTSLastActionRetCode**. A sequência de tarefas registra esses valores no arquivo smsts.log. Essa variável é útil ao solucionar problemas de uma sequência de tarefas. Quando uma etapa falha, um script personalizado pode incluir o nome da etapa junto com o código de retorno.
 
 
 ### <a name="SMSTSLastActionRetCode"></a> _SMSTSLastActionRetCode
