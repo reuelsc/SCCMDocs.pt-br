@@ -12,7 +12,7 @@ ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 6ecc3f47b908678b1849e16c2cb2053f100a655a
 ms.sourcegitcommit: 2491fbe98915b7a30c2422a371c929d0d4ebf22f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 12/11/2018
 ms.locfileid: "53247519"
@@ -152,7 +152,7 @@ O seguinte texto é um exemplo das melhorias nas mensagens que você vê:
 - Depois de: *Seu dispositivo não foi marcada com sua organização em instantes. Para restabelecer uma conexão, abra o aplicativo Portal da Empresa no dispositivo e toque em Verificar Configurações do seu dispositivo.*  
 
 #### <a name="select-device-categories-by-using-the-access-work-or-school-settings"></a>Selecionar as categorias de dispositivo usando as configurações de Acessar Trabalho ou Escola 
-<!--1058963--> Se você ativou o [mapeamento de grupo de dispositivos](https://docs.microsoft.com/intune/device-group-mapping), os usuários do Windows 10 agora são solicitados a selecionar uma categoria de dispositivo depois de se inscreverem através do botão **Conectar****Configurações** > **Contas** > **Acessar trabalho ou escola**.  
+<!--1058963--> Se você ativou o [mapeamento de grupo de dispositivos](https://docs.microsoft.com/intune/device-group-mapping), os usuários do Windows 10 agora são solicitados a selecionar uma categoria de dispositivo depois de se inscreverem através do botão **Conectar** **Configurações** > **Contas** > **Acessar trabalho ou escola**.  
 
 #### <a name="new-browsing-experiences-in-the-company-portal-app-for-windows"></a>Novas experiências de navegação no aplicativo Portal da Empresa para Windows 
 <!--2317227--> Agora, ao navegar ou pesquisar aplicativos no aplicativo Portal da Empresa para Windows, alterne entre a exibição **Blocos** existente e a exibição **Detalhes** recém-adicionada. A nova exibição lista detalhes do aplicativo, como nome, editor, data de publicação e status da instalação. 
