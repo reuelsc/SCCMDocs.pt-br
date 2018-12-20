@@ -56,7 +56,7 @@ Esta política atualmente inclui as seguintes configurações:
 
 1. No console do Configuration Manager, vá até o espaço de trabalho **Ativos e conformidade**. Expanda **Configurações de Conformidade** e selecione o nó **Perfis de Navegador do Microsoft Edge**. Na faixa de opções, clique na opção **Criar perfil do Microsoft Edge**.
 2. Especifique um **Nome** para a política, digite opcionalmente a **Descrição** e clique em **Avançar**.
-3. Na página **Configurações Gerais**, altere o valor para **Configurado** para que as configurações sejam incluídas nesta política e clique em **Avançar**. Para continuar, é necessário definir a configuração **Configurar o Navegador Edge como o padrão**.
+3. Na página **Configurações Gerais**, altere o valor para **Configurado** para que as configurações sejam incluídas nesta política e clique em **Avançar**. Para continuar, é necessário definir a configuração **Configurar o Navegador Microsoft Edge como o padrão**.
 4. Na versão 1806 e posterior, defina as configurações na página **Configurações do SmartScreen** e, em seguida, clique em **Avançar**. 
 5. Na página **Plataformas com Suporte**, selecione as versões e arquiteturas do sistema operacional às quais esta política se aplica e clique em **Avançar**. 
 6. Conclua o assistente.
