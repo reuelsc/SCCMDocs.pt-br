@@ -10,16 +10,16 @@ ms.assetid: 5eae4400-58ca-4c71-804c-6a585cd3df5d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9407180df12902c17f4de8e52be13229ce35c60b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: a1357c54b0f848374ea15727bb6265f68400f88c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348820"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422361"
 ---
 # <a name="set-up-ios-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurar o gerenciamento de dispositivo híbrido do iOS com o System Center Configuration Manager e o Microsoft Intune
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Com o Configuration Manager e o Intune, você habilita o registro do dispositivo do iOS e macOS para dar acesso ao email da empresa e aos recursos para os usuários do iPhone, iPad e Mac. Depois que os usuários instalam o aplicativo do portal da empresa do Intune, seus dispositivos podem ser afetados pela política. Para poder gerenciar dispositivos iOS e Mac, você precisará importar um certificado APNs (Apple Push Notification Service). Este certificado permite que o Intune gerencie dispositivos iOS e Mac estabelecendo uma conexão com o serviço de gerenciamento de dispositivos da Apple.  
 
@@ -33,7 +33,7 @@ Para dar suporte ao registro de dispositivos iOS, siga estas etapas:
 ## <a name="download-a-certificate-signing-request"></a>Baixar uma solicitação de assinatura de certificado
 Um arquivo de solicitação de assinatura de certificado é necessário para solicitar um certificado APNs da Apple.  
 
-1.  No console do Configuration Manager, no espaço de trabalho **Administração** , acesse **Serviços de Nuvem**> **Assinaturas do Microsoft Intune**.  
+1.  No console do Configuration Manager, no workspace **Administração**, acesse **Serviços de Nuvem**> **Assinaturas do Microsoft Intune**.  
 
 2.  Na guia **Início** , clique em **Criar solicitação de certificado APNs**. A caixa de diálogo **Solicitar Solicitação de Assinatura de Certificado Apple Push Notification Service** é aberta.  
 
@@ -54,7 +54,7 @@ O certificado Push MDM é usado para estabelecer uma relação de confiança ent
 ## <a name="enable-enrollment-and-upload-the-mdm-push-certificate"></a>Habilitar o registro e carregar o certificado Push MDM
 Para habilitar o registro do iOS, carregue o certificado APNs.  
 
-1.  No console do Configuration Manager, no espaço de trabalho **Administração** , acesse **Serviços de Nuvem** > **Assinatura do Microsoft Intune**.  
+1.  No console do Configuration Manager, no workspace **Administração**, acesse **Serviços de Nuvem** > **Assinatura do Microsoft Intune**.  
 
 2.  Na guia **Início** do grupo **Assinatura** , clique em **Configurar Plataformas** > **IOS**.  
 
@@ -72,9 +72,9 @@ Você pode limitar os dispositivos que podem ser registrados bloqueando disposit
 - Dispositivos registrados com uma [conta de gerenciador de registro do dispositivo](enroll-devices-with-device-enrollment-manager.md)
 
 ### <a name="to-enable-enrollment-restrictions"></a>Para habilitar as restrições de registro
-1.  No console do Configuration Manager, no espaço de trabalho **Administração** , acesse **Serviços de Nuvem** > **Assinatura do Microsoft Intune**.
+1.  No console do Configuration Manager, no workspace **Administração**, acesse **Serviços de Nuvem** > **Assinatura do Microsoft Intune**.
 2.  Na guia **Início** do grupo **Assinatura** , clique em **Configurar Plataformas** > **IOS**.
 3.  Escolha **Bloquear dispositivos de propriedade pessoal** para limitar o registro a dispositivos da empresa.
 
 > [!div class="button"]
-[< Etapa anterior](create-service-connection-point.md)  [Próxima etapa >](set-up-additional-management.md)
+> [< Etapa anterior](create-service-connection-point.md)  [Próxima etapa >](set-up-additional-management.md)

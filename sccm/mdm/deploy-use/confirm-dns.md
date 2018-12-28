@@ -10,41 +10,41 @@ ms.assetid: 522c2e82-20eb-4f38-859b-d55640b24e32
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f82f8e782446035ffdf3910cb591e07f61fbfb47
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 6e5aeb6a23231af19280d9eae58945bd76ee5ccd
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32345896"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414626"
 ---
 # <a name="confirm-domain-name-requirements-with-system-center-configuration-manager-and-microsoft-intune"></a>Confirmar requisitos de nome de domínio com o System Center Configuration Manager e o Microsoft Intune
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Se for necessário, execute as seguintes etapas para satisfazer quaisquer dependências externas para o Configuration Manager:
 
 1. Cada usuário deve ter uma licença do Intune atribuída para registrar dispositivos. Para associar as licenças do Intune aos usuários, cada usuário deve ter um nome UPN que possa ser publicamente resolvido (por exemplo, johndoe@contoso.com) ou uma ID de logon alternativa configurada no Azure Active Directory. A configuração de uma ID de logon alternativa permite que os usuários se conectem com um endereço de email, por exemplo, mesmo se seu UPN está em um formato de NetBIOS (por exemplo, CONTOSO\johndoe).
 
-  - Se sua empresa usa UPNs resolvíveis publicamente (ou seja, johndoe@contoso.com), nenhuma configuração adicional é necessária.
-  - Se sua empresa usa um UPN não resolvível (ou seja, CONTOSO\johndoe), você deve [configurar uma ID alternativa no Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-get-started-custom/#pages-under-the-section-sync).
+   - Se sua empresa usa UPNs resolvíveis publicamente (ou seja, johndoe@contoso.com), nenhuma configuração adicional é necessária.
+   - Se sua empresa usa um UPN não resolvível (ou seja, CONTOSO\johndoe), você deve [configurar uma ID alternativa no Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-get-started-custom/#pages-under-the-section-sync).
 
-2.  Implante e configure os Serviços de Federação do Active Directory (AD FS). (Opcional)
+2. Implante e configure os Serviços de Federação do Active Directory (AD FS). (Opcional)
 
-     Quando você configura logon único, seus usuários podem se conectar com as credenciais corporativas deles para acessar os serviços no Intune.
+    Quando você configura logon único, seus usuários podem se conectar com as credenciais corporativas deles para acessar os serviços no Intune.
 
-     Para mais informações, consulte os seguintes tópicos:
-    -   [Preparar-se para o logon único](http://go.microsoft.com/fwlink/?LinkID=271124)
-    -   [Planejar e implantar o AD FS 2.0 para uso com logon único](http://go.microsoft.com/fwlink/?LinkID=271125)
+    Para mais informações, consulte os seguintes tópicos:
+   -   [Preparar-se para o logon único](http://go.microsoft.com/fwlink/?LinkID=271124)
+   -   [Planejar e implantar o AD FS 2.0 para uso com logon único](http://go.microsoft.com/fwlink/?LinkID=271125)
 
-3.  Implantar e configurar a sincronização de diretório.
+3. Implantar e configurar a sincronização de diretório.
 
-     A sincronização de diretório permite que você popule o Intune com contas de usuário sincronizadas. As contas de usuários sincronizadas e os grupos de segurança são adicionados ao Intune. A falha ao habilitar a Sincronização de Diretório é uma causa comum de os dispositivos não poderem ser registrados na configuração do MDM do Configuration Manager com o Microsoft Intune.
+    A sincronização de diretório permite que você popule o Intune com contas de usuário sincronizadas. As contas de usuários sincronizadas e os grupos de segurança são adicionados ao Intune. A falha ao habilitar a Sincronização de Diretório é uma causa comum de os dispositivos não poderem ser registrados na configuração do MDM do Configuration Manager com o Microsoft Intune.
 
-     Para mais informações, consulte [Integração de diretório](http://go.microsoft.com/fwlink/?LinkID=271120) na biblioteca de documentação do Active Directory.
+    Para mais informações, consulte [Integração de diretório](http://go.microsoft.com/fwlink/?LinkID=271120) na biblioteca de documentação do Active Directory.
 
-4.  Opcional, não recomendado: se não estiver usando os Serviços de Federação do Active Directory (AD FS), redefina as senhas dos usuários do Microsoft Online.
+4. Opcional, mas não recomendado: Se você não estiver usando os serviços de Federação do Active Directory, redefina as senhas dos usuários Online da Microsoft.
 
-     Se você não estiver usando o AD FS, você deve definir uma senha online da Microsoft para cada usuário.
+    Se você não estiver usando o AD FS, você deve definir uma senha online da Microsoft para cada usuário.
 
 > [!div class="button"]
-[< Etapa anterior](create-mdm-collection.md)  [Próxima etapa >](configure-intune-subscription.md)
+> [< Etapa anterior](create-mdm-collection.md)  [Próxima etapa >](configure-intune-subscription.md)

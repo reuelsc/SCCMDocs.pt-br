@@ -10,16 +10,16 @@ ms.assetid: d1b4337f-85e8-45e6-8bbe-9f18b49041c7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d271499baf48364fe24a8961cae767c46d05a332
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 8aba9fb658072ce4eaa2e4b2a364cf2b52f9c51b
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32346297"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414643"
 ---
 # <a name="create-an-mdm-collection-with-system-center-configuration-manager-and-microsoft-intune"></a>Criar uma coleção de MDM usando o System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 É necessária uma coleção de usuários do Configuration Manager para especificar os usuários que podem registrar dispositivos no gerenciamento. Você pode usar apenas coleções de usuário (em vez de coleções de dispositivos) porque as licenças do Intune são atribuídas por usuário.
 
@@ -31,4 +31,4 @@ Para fins de teste você pode configurar uma **regra direta** e adicionar usuár
 ![Criar uma coleção de usuários para MDM](../media/mdm-create-user-collection.png)
 
 > [!div class="button"]
-[Próxima etapa >](confirm-dns.md)
+> [Próxima etapa >](confirm-dns.md)

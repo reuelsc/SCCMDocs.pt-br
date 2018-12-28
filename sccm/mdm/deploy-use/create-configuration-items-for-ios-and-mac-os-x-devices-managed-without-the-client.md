@@ -10,36 +10,36 @@ ms.assetid: 613a48ac-c55d-4c4a-94ea-d3747a1b10cb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0a6925cdc1f3b3a5018cc4895820019d88254bd3
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: bf5f580d10c48bb44b3c202832ffff3a06c5c37f
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353334"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416173"
 ---
 # <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Como criar itens de configuração para dispositivos com iOS e Mac OS X gerenciados com o Intune
 Use o item de configuração **iOS e Mac OS X** do System Center Configuration Manager para gerenciar as configurações para dispositivos iOS e Mac OS X que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  
   
 ### <a name="to-create-an-ios-and-mac-os-x-configuration-item"></a>Para criar um item de configuração do iOS e Mac OS X  
   
-1.  No console do Configuration Manager, clique em **Ativos e conformidade**.  
+1. No console do Configuration Manager, clique em **Ativos e conformidade**.  
   
-2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**e clique em **Itens de Configuração**.  
+2. No workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade** e clique em **Itens de Configuração**.  
   
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
+3. Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
   
-4.  Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.  
+4. Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.  
   
-5.  Em **Especificar o tipo de item de configuração que deseja criar**, selecione **iOS e Mac OS X**.  
+5. Em **Especificar o tipo de item de configuração que deseja criar**, selecione **iOS e Mac OS X**.  
   
-6.  Se você criar e atribuir categorias, clique em **Categorias** para ajudá-lo a pesquisar e filtrar itens de configuração no console do Configuration Manager.  
+6. Se você criar e atribuir categorias, clique em **Categorias** para ajudá-lo a pesquisar e filtrar itens de configuração no console do Configuration Manager.  
   
-7.  Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do iOS ou Mac OS X que avaliarão o item de configuração.  
+7. Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do iOS ou Mac OS X que avaliarão o item de configuração.  
   
-8.  Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Referência de configurações do item de configuração para iOS e Mac OS X](#BKMK_Setref) neste tópico para obter detalhes e clique **Avançar**.  
+8. Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Referência de configurações do item de configuração para iOS e Mac OS X](#BKMK_Setref) neste tópico para obter detalhes e clique **Avançar**.  
   
-    > [!TIP]  
-    >  Se a configuração desejada não estiver na lista, marque a **caixa de seleção Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
+   > [!TIP]  
+   >  Se a configuração desejada não estiver na lista, marque a **caixa de seleção Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
   
 9. Em cada página de configurações, defina as configurações necessárias e se deseja corrigi-las quando não forem compatíveis nos dispositivos (quando houver suporte para essa opção).  
   
@@ -62,7 +62,7 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
   
 12. Conclua o assistente.  
   
- Você pode exibir o novo item de configuração no nó **Itens de Configuração** do espaço de trabalho **Ativos e Conformidade** .  
+    Você pode exibir o novo item de configuração no nó **Itens de Configuração** do workspace **Ativos e Conformidade**.  
   
 ##  <a name="ios-and-mac-os-x-configuration-item-settings-reference"></a>Referência de configurações do item de configuração para iOS e Mac OS X  
   
@@ -226,35 +226,35 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
   
 #### <a name="to-specify-the-compliant-or-noncompliant-apps-list"></a>Para especificar a lista de aplicativos compatíveis ou não compatíveis  
   
-1.  Na página **Aplicativos Compatíveis e Não Compatíveis (iOS)** , especifique as seguintes informações:  
+1. Na página **Aplicativos Compatíveis e Não Compatíveis (iOS)** , especifique as seguintes informações:  
   
-    -   **Lista de aplicativos não compatíveis**: escolha essa opção se desejar especificar uma lista de aplicativos que serão relatados como não compatíveis se forem instalados pelos usuários.  
+   -   **Lista de aplicativos não compatíveis**: escolha essa opção se desejar especificar uma lista de aplicativos que serão relatados como não compatíveis se forem instalados pelos usuários.  
   
-    -   **Lista de aplicativos compatíveis**: escolha essa opção se desejar especificar uma lista de aplicativos que os usuários têm permissão para instalar. Todos os outros aplicativos instalados serão relatados como não compatíveis.  
+   -   **Lista de aplicativos compatíveis**: escolha essa opção se desejar especificar uma lista de aplicativos que os usuários têm permissão para instalar. Todos os outros aplicativos instalados serão relatados como não compatíveis.  
   
-    -   **Adicionar** – adiciona um aplicativo à lista selecionada. Especifique um nome da sua preferência, opcionalmente o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.  
+   -   **Adicionar** – adiciona um aplicativo à lista selecionada. Especifique um nome da sua preferência, opcionalmente o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.  
   
-         Para especificar a URL, na iTunes App Store, procure o aplicativo que deseja usar.  
+        Para especificar a URL, na iTunes App Store, procure o aplicativo que deseja usar.  
   
-         Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar essa URL na lista de aplicativos compatíveis ou incompatíveis.  
+        Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar essa URL na lista de aplicativos compatíveis ou incompatíveis.  
   
-         **Exemplo:** pesquise o aplicativo **Microsoft Word para iPad** na loja. A URL usada será **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+        **Exemplo:** Pesquise o **Microsoft Word para iPad** aplicativo. A URL usada será **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
   
-    -   **Editar** – permite editar o nome, o fornecedor e a URL do aplicativo selecionado.  
+   -   **Editar** – permite editar o nome, o fornecedor e a URL do aplicativo selecionado.  
   
-    -   **Remover** – exclui o aplicativo selecionado da lista.  
+   -   **Remover** – exclui o aplicativo selecionado da lista.  
   
-    -   **Importar** – importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, editor e a URL do aplicativo no arquivo.  
+   -   **Importar** – importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, editor e a URL do aplicativo no arquivo.  
   
-2.  Quando tiver terminado, clique em **Avançar**.  
+2. Quando tiver terminado, clique em **Avançar**.  
   
- Você pode usar um dos seguintes relatórios para monitorar aplicativos compatíveis e não compatíveis:  
+   Você pode usar um dos seguintes relatórios para monitorar aplicativos compatíveis e não compatíveis:  
   
--   **Lista e dispositivos de aplicativos não compatíveis para um usuário especificado** – Exibe informações sobre usuários e dispositivos que têm aplicativos instalados que não são compatíveis com uma política especificada.  
+- **Lista e dispositivos de aplicativos não compatíveis para um usuário especificado** – Exibe informações sobre usuários e dispositivos que têm aplicativos instalados que não são compatíveis com uma política especificada.  
   
--   **Resumo de usuários que têm aplicativos não compatíveis** – Exibe informações sobre usuários que têm aplicativos instalados que não são compatíveis com uma política especificada.  
+- **Resumo de usuários que têm aplicativos não compatíveis** – Exibe informações sobre usuários que têm aplicativos instalados que não são compatíveis com uma política especificada.  
   
- Para obter informações sobre como usar relatórios, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+  Para obter informações sobre como usar relatórios, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
   
 ###  <a name="compliant-and-noncompliant-apps-mac-os-x"></a>Aplicativos compatíveis e não compatíveis (Mac OS X)  
  Permite especificar uma lista de aplicativos do Mac OS X que são compatíveis ou não compatíveis em sua empresa. Em seguida, você pode usar os relatórios para exibir os dispositivos que contêm aplicativos não compatíveis instalados e o usuário associado.  
@@ -263,39 +263,39 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
   
 #### <a name="to-specify-the-compliant-or-noncompliant-apps-list"></a>Para especificar a lista de aplicativos compatíveis ou não compatíveis  
   
-1.  Na página **Aplicativos Compatíveis e Não Compatíveis (Mac OS X)** , especifique as seguintes informações:  
+1. Na página **Aplicativos Compatíveis e Não Compatíveis (Mac OS X)** , especifique as seguintes informações:  
   
-    -   **Lista de aplicativos não compatíveis**: escolha essa opção se desejar especificar uma lista de aplicativos que serão relatados como não compatíveis se forem instalados pelos usuários.  
+   - **Lista de aplicativos não compatíveis**: escolha essa opção se desejar especificar uma lista de aplicativos que serão relatados como não compatíveis se forem instalados pelos usuários.  
   
-    -   **Lista de aplicativos compatíveis**: escolha essa opção se desejar especificar uma lista de aplicativos que os usuários têm permissão para instalar. Todos os outros aplicativos instalados serão relatados como não compatíveis.  
+   - **Lista de aplicativos compatíveis**: escolha essa opção se desejar especificar uma lista de aplicativos que os usuários têm permissão para instalar. Todos os outros aplicativos instalados serão relatados como não compatíveis.  
   
-    -   **Adicionar** – adiciona um aplicativo à lista selecionada. Especifique um nome de sua preferência, opcionalmente, o fornecedor do aplicativo e a ID do pacote do aplicativo.  
+   - **Adicionar** – adiciona um aplicativo à lista selecionada. Especifique um nome de sua preferência, opcionalmente, o fornecedor do aplicativo e a ID do pacote do aplicativo.  
   
-        > [!TIP]  
-        >  Para localizar a ID do pacote de um aplicativo, use as seguintes etapas em um computador Mac que tem o aplicativo instalado:  
-        >   
-        >  1.  Abra a pasta na qual o aplicativo está instalado (por exemplo, **/Aplicativos**)  
-        > 2.  Selecione o pacote *<nome do aplicativo\>***.app** e escolha **Mostrar Conteúdo do Pacote**  
-        > 3.  Abra o arquivo **Info.plist**  
-        > 4.  Verifique o valor associado à chave **CFBundleIdentifier**  
-        >   
-        >  O formato para a ID do Pacote é **com.contoso.nomeaplicativo**  
+     > [!TIP]
+     >  Para localizar a ID do pacote de um aplicativo, use as seguintes etapas em um computador Mac que tem o aplicativo instalado:  
+     > 
+     > 1. Abra a pasta na qual o aplicativo está instalado (por exemplo, **/Aplicativos**)  
+     >    2.  Selecione o pacote *<nome do aplicativo\>***.app** e escolha **Mostrar Conteúdo do Pacote**  
+     >    3.  Abra o arquivo **Info.plist**  
+     >    4.  Verifique o valor associado à chave **CFBundleIdentifier**  
+     > 
+     >    O formato para a ID do Pacote é **com.contoso.nomeaplicativo**  
   
-    -   **Editar** – permite editar o nome, o fornecedor e a ID do pacote do aplicativo selecionado.  
+   - **Editar** – permite editar o nome, o fornecedor e a ID do pacote do aplicativo selecionado.  
   
-    -   **Remover** – exclui o aplicativo selecionado da lista.  
+   - **Remover** – exclui o aplicativo selecionado da lista.  
   
-    -   **Importar** – importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, fornecedor e ID de lote de aplicativo encontrados no arquivo.  
+   - **Importar** – importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, fornecedor e ID de lote de aplicativo encontrados no arquivo.  
   
-2.  Quando tiver terminado, clique em **Avançar**.  
+2. Quando tiver terminado, clique em **Avançar**.  
   
- Você pode usar um dos seguintes relatórios para monitorar aplicativos compatíveis e não compatíveis:  
+   Você pode usar um dos seguintes relatórios para monitorar aplicativos compatíveis e não compatíveis:  
   
--   **Lista e dispositivos de aplicativos não compatíveis para um usuário especificado** – Exibe informações sobre usuários e dispositivos que têm aplicativos instalados que não são compatíveis com uma política especificada.  
+- **Lista e dispositivos de aplicativos não compatíveis para um usuário especificado** – Exibe informações sobre usuários e dispositivos que têm aplicativos instalados que não são compatíveis com uma política especificada.  
   
--   **Resumo de usuários que têm aplicativos não compatíveis** – Exibe informações sobre usuários que têm aplicativos instalados que não são compatíveis com uma política especificada.  
+- **Resumo de usuários que têm aplicativos não compatíveis** – Exibe informações sobre usuários que têm aplicativos instalados que não são compatíveis com uma política especificada.  
   
- Para obter informações sobre como usar relatórios, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+  Para obter informações sobre como usar relatórios, consulte [Relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
   
 ### <a name="ios-and-mac-os-x-custom-profile-settings"></a>Configurações de perfil personalizado para iOS e Mac OS X  
  Use **Perfis Personalizados do iOS e Mac OS X** para implantar as configurações criadas com a [ferramenta Apple Configurator](https://itunes.apple.com/us/app/apple-configurator-2/id1037126344?mt=12) em dispositivos iOS e Mac OS X. Essa ferramenta permite que você crie várias configurações que controlam a operação desses dispositivos e as exporte para um perfil de configuração. Em seguida, você poderá importar este perfil de configuração para um perfil personalizado do iOS e Mac OS X e implantar as configurações em usuários e dispositivos em sua organização.  
@@ -344,67 +344,67 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
   
 #### <a name="to-configure-kiosk-mode-for-ios-devices"></a>Para configurar o modo de quiosque para dispositivos iOS  
   
-1.  Na página **Definir configurações do modo de quiosque para dispositivos iOS** do **Assistente para Criar Item de Configuração**, especifique as seguintes informações:  
+1. Na página **Definir configurações do modo de quiosque para dispositivos iOS** do **Assistente para Criar Item de Configuração**, especifique as seguintes informações:  
   
-    -   **Selecionar Aplicativo** – escolha o aplicativo que terá permissão para ser executado quando o dispositivo estiver no modo de quiosque. Nenhum outro aplicativo poderá ser executado no dispositivo. Escolha:  
+   - **Selecionar Aplicativo** – escolha o aplicativo que terá permissão para ser executado quando o dispositivo estiver no modo de quiosque. Nenhum outro aplicativo poderá ser executado no dispositivo. Escolha:  
   
-        -   **Aplicativo Gerenciado** – Clique em Procurar e selecione um aplicativo gerenciado.  
+     - **Aplicativo Gerenciado** – Clique em Procurar e selecione um aplicativo gerenciado.  
   
-        -   **Aplicativo da Loja** – Especifique a URL para um aplicativo na loja de aplicativos e clique em **Obter a ID do aplicativo** para preencher o campo **ID de aplicativo** .  
+     - **Aplicativo da Loja** – Especifique a URL para um aplicativo na loja de aplicativos e clique em **Obter a ID do aplicativo** para preencher o campo **ID de aplicativo** .  
   
-         Para encontrar a URL do aplicativo:  
+       Para encontrar a URL do aplicativo:  
   
-        -   Usando um mecanismo de pesquisa, encontre o aplicativo que você deseja usar na iTunes App Store e abra a página do aplicativo.  
+     - Usando um mecanismo de pesquisa, encontre o aplicativo que você deseja usar na iTunes App Store e abra a página do aplicativo.  
   
-        -   Copie a URL da página e use-a como a URL para especificar o aplicativo que você deseja executar no modo de quiosque.  
+     - Copie a URL da página e use-a como a URL para especificar o aplicativo que você deseja executar no modo de quiosque.  
   
-        -   **Exemplo:** procure **Microsoft Word para iPad**. A URL usada será **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+     - **Exemplo:** Pesquise **Microsoft Word para iPad**. A URL usada será **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
   
-    -   **Toque** – habilita ou desabilita a tela touch no dispositivo.  
+   - **Toque** – habilita ou desabilita a tela touch no dispositivo.  
   
-    -   **Rotação da tela** – habilita ou desabilita a alteração da orientação da tela quando você gira o dispositivo.  
+   - **Rotação da tela** – habilita ou desabilita a alteração da orientação da tela quando você gira o dispositivo.  
   
-    -   **Botões de volume** – habilita ou desabilita o uso dos botões de volume no dispositivo.  
+   - **Botões de volume** – habilita ou desabilita o uso dos botões de volume no dispositivo.  
   
-    -   **Botão de toque** – habilita ou desabilita o botão toque (mudo) no dispositivo.  
+   - **Botão de toque** – habilita ou desabilita o botão toque (mudo) no dispositivo.  
   
-    -   **Botão de suspensão e ativação da tela** – habilita ou desabilita o botão de ativação e suspensão da tela no dispositivo.  
+   - **Botão de suspensão e ativação da tela** – habilita ou desabilita o botão de ativação e suspensão da tela no dispositivo.  
   
-    -   **Bloqueio automático** – habilita ou desabilita o bloqueio automático do dispositivo.  
+   - **Bloqueio automático** – habilita ou desabilita o bloqueio automático do dispositivo.  
   
-    -   **Áudio mono** – habilita ou desabilita a configuração de acessibilidade **Áudio mono**.  
+   - **Áudio mono** – habilita ou desabilita a configuração de acessibilidade **Áudio mono**.  
   
-    -   **Comando de voz** – habilita ou desabilita a configuração de acessibilidade **VoiceOver** que lê em voz alta o texto na tela do dispositivo.  
+   - **Comando de voz** – habilita ou desabilita a configuração de acessibilidade **VoiceOver** que lê em voz alta o texto na tela do dispositivo.  
   
-    -   **Ajustes do comando de voz** – habilita ou desabilita os ajustes do comando de voz que permitem ajustar a função VoiceOver (por exemplo, a velocidade em que o texto na tela é lido em voz alta).  
+   - **Ajustes do comando de voz** – habilita ou desabilita os ajustes do comando de voz que permitem ajustar a função VoiceOver (por exemplo, a velocidade em que o texto na tela é lido em voz alta).  
   
-    -   **Zoom** – habilita ou desabilita a opção de acessibilidade **Zoom**, que permite usar o toque para ampliar a tela do dispositivo de acessibilidade.  
+   - **Zoom** – habilita ou desabilita a opção de acessibilidade **Zoom**, que permite usar o toque para ampliar a tela do dispositivo de acessibilidade.  
   
-    -   **Ajustes de zoom** – habilita ou desabilita os ajustes de zoom que permitem ajustar a função de zoom.  
+   - **Ajustes de zoom** – habilita ou desabilita os ajustes de zoom que permitem ajustar a função de zoom.  
   
-    -   **Inverter cores** – habilita ou desabilita a opção de acessibilidade **Inverter Cores** que ajusta a exibição para ajudar os usuários com deficiências visuais.  
+   - **Inverter cores** – habilita ou desabilita a opção de acessibilidade **Inverter Cores** que ajusta a exibição para ajudar os usuários com deficiências visuais.  
   
-    -   **Ajustes de cores invertidas** – habilita ou desabilita ajustes de cores invertidas, que permitem ajustar a função de cores invertidas.  
+   - **Ajustes de cores invertidas** – habilita ou desabilita ajustes de cores invertidas, que permitem ajustar a função de cores invertidas.  
   
-    -   **Toque assistencial** – habilita ou desabilita a opção de acessibilidade **Toque Assistencial**, que ajuda os usuários a executar gestos na tela que podem ser difíceis de executar.  
+   - **Toque assistencial** – habilita ou desabilita a opção de acessibilidade **Toque Assistencial**, que ajuda os usuários a executar gestos na tela que podem ser difíceis de executar.  
   
-    -   **Ajuste do toque assistencial** – habilita ou desabilita os ajustes de toque assistencial, que permitem ajustar a função de toque assistencial.  
+   - **Ajuste do toque assistencial** – habilita ou desabilita os ajustes de toque assistencial, que permitem ajustar a função de toque assistencial.  
   
-    -   **Seleção de fala** – habilita ou desabilita as configurações de acessibilidade **Seleção de Fala**, que podem ler em voz alta o texto que você selecionar.  
+   - **Seleção de fala** – habilita ou desabilita as configurações de acessibilidade **Seleção de Fala**, que podem ler em voz alta o texto que você selecionar.  
   
-    -   **Corrigir configurações não compatíveis** – escolha se deseja corrigir configurações não compatíveis (quando houver suporte).  
+   - **Corrigir configurações não compatíveis** – escolha se deseja corrigir configurações não compatíveis (quando houver suporte).  
   
-    -   **Severidade de não conformidade dos relatórios** – especifique o nível de severidade que será relatado se esta política de conformidade for avaliada como não compatível. Os níveis de severidade disponíveis são:  
+   - **Severidade de não conformidade dos relatórios** – especifique o nível de severidade que será relatado se esta política de conformidade for avaliada como não compatível. Os níveis de severidade disponíveis são:  
   
-        -   **Nenhum** dispositivos que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
+     -   **Nenhum** dispositivos que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
   
-        -   **Informações** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações** em relatórios do Configuration Manager.  
+     -   **Informações** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações** em relatórios do Configuration Manager.  
   
-        -   **Aviso** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso** em relatórios do Configuration Manager.  
+     -   **Aviso** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso** em relatórios do Configuration Manager.  
   
-        -   **Crítico** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager.  
+     -   **Crítico** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager.  
   
-        -   **Crítico com evento** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico com evento** em relatórios do Configuration Manager. Este nível de severidade também é registrado como um evento do Windows no log de eventos do aplicativo.  
+     -   **Crítico com evento** dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico com evento** em relatórios do Configuration Manager. Este nível de severidade também é registrado como um evento do Windows no log de eventos do aplicativo.  
   
 ## <a name="see-also"></a>Consulte também  
  [Itens de configuração de dispositivos gerenciados sem o cliente do System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

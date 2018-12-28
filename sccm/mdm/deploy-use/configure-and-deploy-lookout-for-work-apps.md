@@ -10,16 +10,16 @@ ms.assetid: 3f62b763-4347-453d-b0a7-1f4a0d1d4105
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 87ad7a768128cb11a1fc361c90a6eccac454a28c
-ms.sourcegitcommit: 9cff0702c2cc0f214173b47ec241f7e5a40f84e6
-ms.translationtype: HT
+ms.openlocfilehash: 00fa7e538f6156f0dacee00feeb4b767a3c83a5c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34752583"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417602"
 ---
 # <a name="configure-and-deploy-lookout-for-work-apps"></a>Configurar e implantar aplicativos Lookout for Work
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Este artigo explica como configurar e implantar o aplicativo Lookout for Work em dispositivos Android e iOS.
 
@@ -31,10 +31,10 @@ Este artigo explica como configurar e implantar o aplicativo Lookout for Work em
 2.  Na página **Geral** do Assistente para Implantar Software, especifique as seguintes informações:  
     - Tipo: selecione **Pacote do aplicativo para Android no Google Play**.
     - Local: copie o link do aplicativo Lookout for Work da Google Play Store e cole-o aqui
-    - Editor: Lookout Mobile Security
+    - Publicador: Lookout Mobile Security
     - Nome: Lookout for Work
-    - Descrição: o Lookout oferece a melhor proteção contra ameaças a dispositivos móveis para proteger o seu dispositivo. Quando aplicativo Lookout é instalado, ele protege seu dispositivo contra ameaças. Se encontrar qualquer ameaça, ele o alertará você e seu administrador de TI.
-    - Categoria administrativa: gerenciamento de computador  
+    - Descrição: o Lookout oferece a melhor proteção contra ameaças móveis para proteger o seu dispositivo. Quando aplicativo Lookout é instalado, ele protege seu dispositivo contra ameaças. Se encontrar qualquer ameaça, ele o alertará você e seu administrador de TI.
+    - Categoria administrativa: Gerenciamento do computador  
 
     Após a conclusão com êxito, o aplicativo Lookout for Work aparece na sua lista de aplicativos.  
 
@@ -55,7 +55,7 @@ Este artigo explica como configurar e implantar o aplicativo Lookout for Work em
 3. Habilite a autenticação do Azure AD (Azure Active Directory) para os usuários do iOS.
    1.  Entre na [folha do Azure AD no portal do Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) e navegue até a página de registros de aplicativo.  
    2.  Especifique o Nome como **Aplicativo iOS Lookout for Work** e selecione **Nativo** como o Tipo de Aplicativo.  
-  ![captura de tela da caixa de diálogo para adicionar aplicativos mostrando a opção de aplicativo cliente nativo](media/aad-add-app-reg.png)
+   ![captura de tela da caixa de diálogo para adicionar aplicativos mostrando a opção de aplicativo cliente nativo](media/aad-add-app-reg.png)
 
    3.  Para esse URI de Redirecionamento, use o seguinte formato: `lookoutwork://com.lookout.enterprise.<yourcompanyname>`, substituindo `<yourcompanyname>` pelo nome da sua empresa. Por exemplo: `lookoutwork://com.lookout.enterprise.contoso`
    4. Clique em **Criar** para criar o aplicativo. 
@@ -78,7 +78,7 @@ Este artigo explica como configurar e implantar o aplicativo Lookout for Work em
 
 6. Implante o aplicativo Lookout for Work para os usuários. Para obter informações, confira [Deploy applications](/sccm/apps/deploy-use/deploy-applications) (Implantar aplicativos).  
 
-  Selecione os mesmos usuários que foram adicionados à opção Gerenciamento de Registro no console do Lookout. Escolha a opção **Instalação Obrigatória**. Essa opção requer que o aplicativo Lookout seja instalado no dispositivo do usuário.
+   Selecione os mesmos usuários que foram adicionados à opção Gerenciamento de Registro no console do Lookout. Escolha a opção **Instalação Obrigatória**. Essa opção requer que o aplicativo Lookout seja instalado no dispositivo do usuário.
 
 
 

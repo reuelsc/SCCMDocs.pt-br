@@ -10,67 +10,67 @@ ms.assetid: 23e1e4dc-623a-4521-ad04-ae9482927097
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 639fabbe1e2f51194669fc1f196d88140193a727
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 6a637b7379e4ffa507beece9d9384cb8847402f9
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352094"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420763"
 ---
 # <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-system-center-configuration-manager-client"></a>Como criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados sem o cliente do System Center Configuration Manager
 
-  
+
  Use o item de configuração do **Windows 8.1 e Windows 10** do System Center Configuration Manager para gerenciar as configurações para dispositivos Windows 8.1 e Windows 10 que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  
-  
+
 ### <a name="to-create-a-windows-81-and-windows-10-configuration-item"></a>Para criar um item de configuração do Windows 8.1 e Windows 10  
-  
-1.  No console do Configuration Manager, clique em **Ativos e conformidade**.  
-  
-2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**e clique em **Itens de Configuração**.  
-  
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
-  
-4.  Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.  
-  
-5.  Em **Especificar o tipo de item de configuração que deseja criar**, selecione **Windows 8.1 e Windows 10**.  
-  
-6.  Se você criar e atribuir categorias, clique em **Categorias** para ajudá-lo a pesquisar e filtrar itens de configuração no console do Configuration Manager.  
-  
-7.  Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do Windows que avaliará o item de configuração.  
-  
-8.  Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Referência de configurações do item de configuração do Windows 8.1 e Windows 10](#BKMK_Setref) neste tópico para obter detalhes e clique **Avançar**.  
-  
-    > [!TIP]  
-    >  Se a configuração desejada não estiver na lista, marque a **caixa de seleção Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
-  
+
+1. No console do Configuration Manager, clique em **Ativos e conformidade**.  
+
+2. No workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade** e clique em **Itens de Configuração**.  
+
+3. Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
+
+4. Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.  
+
+5. Em **Especificar o tipo de item de configuração que deseja criar**, selecione **Windows 8.1 e Windows 10**.  
+
+6. Se você criar e atribuir categorias, clique em **Categorias** para ajudá-lo a pesquisar e filtrar itens de configuração no console do Configuration Manager.  
+
+7. Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do Windows que avaliará o item de configuração.  
+
+8. Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Referência de configurações do item de configuração do Windows 8.1 e Windows 10](#BKMK_Setref) neste tópico para obter detalhes e clique **Avançar**.  
+
+   > [!TIP]  
+   >  Se a configuração desejada não estiver na lista, marque a **caixa de seleção Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
+
 9. Em cada página de configurações, defina as configurações necessárias e se deseja corrigi-las quando não forem compatíveis nos dispositivos (quando houver suporte para essa opção).  
-  
+
 10. Para cada grupo de configurações, você também pode configurar a gravidade relatada quando um item de configuração for considerado não compatível de:  
-  
+
     -   **Nenhum** – dispositivos que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
-  
+
     -   **Informações** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações** em relatórios do Configuration Manager.  
-  
+
     -   **Aviso** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso** em relatórios do Configuration Manager.  
-  
+
     -   **Crítico** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager.  
-  
+
     -   **Crítico com evento** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico com evento** em relatórios do Configuration Manager. Este nível de severidade também é registrado como um evento do Windows no log de eventos do aplicativo.  
-  
+
 11. Na página **Aplicabilidade da Plataforma** do assistente, examine as configurações que não são compatíveis com as plataformas com suporte selecionadas anteriormente. Você pode voltar e remover essas configurações ou pode continuar.  
-  
+
     > [!TIP]  
     >  As configurações sem suporte não são avaliadas quanto à conformidade.  
-  
+
 12. Conclua o assistente.  
-  
- Você pode exibir o novo item de configuração no nó **Itens de Configuração** do espaço de trabalho **Ativos e Conformidade** .  
-  
+
+    Você pode exibir o novo item de configuração no nó **Itens de Configuração** do workspace **Ativos e Conformidade**.  
+
 ##  <a name="windows-81-and-windows-10-configuration-item-settings-reference"></a>Referência de configurações do item de configuração do Windows 8.1 e Windows 10  
-  
+
 ### <a name="password"></a>Senha  
  Essas configurações são destinadas somente a dispositivos que executam o Windows 10 e posteriores.  
-  
+
 |Configuração|Detalhes|  
 |-------------|-------------|  
 |**Exigir configurações de senha em dispositivos**|Requer uma senha nos dispositivos com suporte.|  
@@ -83,9 +83,9 @@ ms.locfileid: "32352094"
 |**Qualidade da senha**|Selecione o nível necessário de complexidade de senha e também se dispositivos biométricos podem ser usados.|  
 |**Enviar PIN de recuperação de senha ao Exchange Server**|-|
 |**Criptografia de dispositivo**|Habilite a criptografia em dispositivos de destino.|  
-  
+
 ###  <a name="device"></a>Dispositivo  
-  
+
 |Nome da configuração|Detalhes|  
 |------------------|-------------|  
 |**Captura de tela**|Permite tirar uma captura de tela da tela do dispositivo.<br /><br /> (somente Windows 10)|  
@@ -105,10 +105,10 @@ ms.locfileid: "32352094"
 |**Modificação das configurações de idioma (somente desktop)**|Impede que o usuário altere as configurações de idioma no dispositivo.|
 |**Modificação do horário do sistema**|Impede que o usuário final altere a data e hora do dispositivo.|
 |**Modificação do nome do dispositivo**|Impede que o usuário final altere o nome do dispositivo.|
-  
+
 ### <a name="email-management"></a>Gerenciamento de email  
  Essas configurações são destinadas a dispositivos que executam o Windows 8.1 e o Windows 10.  
-  
+
 |Configuração|Detalhes|  
 |-------------|-------------|  
 |**Email POP e IMAP**|Permite a conexão a contas de email que usam os padrões POP e IMAP.|  
@@ -120,10 +120,10 @@ ms.locfileid: "32352094"
 |**Sincronização de calendário**|Permita a sincronização de calendários com o dispositivo.|  
 |**Conta de email personalizada**|Permita o uso de uma conta que não seja da Microsoft no dispositivo.|  
 |**Tornar a Conta da Microsoft opcional no aplicativo de email do Windows**|Configure essa definição para remover o requisito de uma conta da Microsoft no Windows Mail.|  
-  
+
 ### <a name="store"></a>Repositório  
  Essas configurações são destinadas somente a dispositivos que executam o Windows 10 e posteriores.  
-  
+
 |Configuração|Detalhes|  
 |-------------|-------------|  
 |**Armazenamento de aplicativos**|Permite o acesso a loja de aplicativos no dispositivo.|  
@@ -132,10 +132,10 @@ ms.locfileid: "32352094"
 |**Atualização automática de aplicativos da store**|Permite que aplicativos instalados da Windows Store sejam atualizados automaticamente.|
 |**Usar somente armazenamento particular**|Habilite esta opção para permitir que somente os usuários finais façam download de aplicativos de seu repositório particular.|
 |**Inicialização de aplicativo proveniente do armazenamento**|Usado para desabilitar todos os aplicativos que foram previamente instalados no dispositivo ou baixados da Windows Store.|
-  
+
 ### <a name="browser"></a>Navegador  
  Essas configurações são destinadas a dispositivos que executam o Windows 8.1 e o Windows 10.  
-  
+
 |Configuração|Detalhes|  
 |-------------|-------------|  
 |**Permitir navegador da Web**|Permita o uso do navegador da Web no dispositivo.|  
@@ -145,10 +145,10 @@ ms.locfileid: "32352094"
 |**Bloqueador de pop-up**|Habilita ou desabilita o bloqueador de pop-ups do navegador.|  
 |**Cookies**|Permita que os cookies sejam salvos no dispositivo.|  
 |**Aviso de fraude**|Habilite ou desabilite avisos de sites fraudulentos potenciais.|  
-  
+
 ###  <a name="internet-explorer"></a>Internet Explorer  
  Essas configurações são destinadas a dispositivos que executam o Windows 8.1 e o Windows 10.  
-  
+
 |Nome da configuração|Detalhes|  
 |------------------|-------------|  
 |**Sempre enviar cabeçalho Não Acompanhar**|Impede que as informações de navegação sejam enviadas para sites de terceiros.|  
@@ -162,19 +162,19 @@ ms.locfileid: "32352094"
 |**Opção de menu do Modo Empresarial**|Permita que os usuários ativem e desativem o modo Empresarial no menu **Ferramentas** do Internet Explorer.|  
 |**Local do relatório de registro em log (URL)**|Especifique uma URL na qual os sites visitados serão registrados quando o Modo Empresarial estiver ativo.|  
 |**Local da lista do site do modo Empresarial (URL)**|Especifique o local da lista de sites que usam o Modo Empresarial quando ele estiver ativo.|  
-  
+
 ###  <a name="cloud"></a>Nuvem  
  Essas configurações são destinadas a dispositivos que executam o Windows 8.1 e o Windows 10.  
-  
+
 |Nome da configuração|Detalhes|Windows 8.1|Windows 10|  
 |------------------|-------------|-----------------|----------------|  
 |**Sincronização de configurações**|Permite a sincronização de configurações entre dispositivos.|Sim|Sim|  
 |**Sincronização de credenciais**|Permite a sincronização de credenciais entre dispositivos.|Sim|Sim|  
 |**Conta da Microsoft**|Permita o uso de uma conta da Microsoft no dispositivo.|Sim|Sim|  
 |**Sincronização de configurações em conexões medidas**|Permita que as configurações sejam sincronizadas durante a medição da conexão com a Internet.|Sim|Sim|  
-  
+
 ###  <a name="security"></a>Segurança  
-  
+
 |Nome da configuração|Detalhes|  
 |------------------|-------------|  
 |**Instalação de arquivo não assinado**|Permite o carregamento de arquivos não assinados.<br /><br /> (somente Windows 10)|  
@@ -188,18 +188,18 @@ ms.locfileid: "32352094"
 |**Arquivo de perfil**|Provisiona um perfil de VPN para dispositivos com Windows RT.<br /><br /> somente Windows 8.1)|  
 |**Nome do perfil**|Provisiona um perfil de VPN para dispositivos com Windows RT.<br /><br /> somente Windows 8.1)|  
 |**Perfil de todos os usuários**|Provisiona um perfil de VPN para dispositivos com Windows RT.<br /><br /> somente Windows 8.1)|  
-  
+
 ###  <a name="peak-synchronization"></a>Sincronização em horário de pico  
  Essas configurações são destinadas somente a dispositivos que executam o Windows 10 e posteriores.  
-  
+
 |Nome da configuração|Detalhes|  
 |------------------|-------------|  
 |**Especificar o horário de pico**|Configure o horário de pico para sincronização de dispositivo móvel.|  
 |**Frequência de sincronização no horário de pico**|Configure com que frequência a sincronização ocorrerá durante os horários de pico que você configurou.|  
 |**Frequência de sincronização fora do horário de pico**|Configure com que frequência a sincronização ocorrerá fora dos horários de pico que você configurou.|  
-  
+
 ###  <a name="roaming"></a>Roaming  
-  
+
 |Nome da configuração|Detalhes|  
 |------------------|-------------|  
 |**Gerenciamento de dispositivos durante roaming**|Permite que o dispositivo seja gerenciado pelo Configuration Manager durante o roaming.<br /><br /> (somente Windows 10)|  
@@ -208,9 +208,9 @@ ms.locfileid: "32352094"
 |**Roaming de dados**|Permita o roaming entre redes durante o acesso de dados.| 
 |**VPN por celular**|Permite que o dispositivo acesse as conexões VPN enquanto estão conectados a uma rede de celular.<br /><br /> (somente Windows 10)|
 |**Roaming de VPN no celular**|Permite que o dispositivo acesse as conexões VPN enquanto estão em roaming em uma rede de celular.<br /><br /> (somente Windows 10)| 
-  
+
 ###  <a name="encryption"></a>Criptografia  
-  
+
 |Nome da configuração|Detalhes|  
 |------------------|-------------|  
 |**Criptografia de cartão de memória**|Requer que todos os cartões de armazenamento usados com o dispositivo sejam criptografados.<br /><br /> (somente Windows 10)|  
@@ -219,10 +219,10 @@ ms.locfileid: "32352094"
 |**Algoritmo de assinatura**|Selecione o algoritmo de assinatura para os emails assinados.|  
 |**Exigir criptografia de email**|Exige que os emails sejam criptografados antes de ser enviados.|  
 |**Algoritmo de criptografia**|Selecione o algoritmo para criptografar emails.|  
-  
+
 ###  <a name="wireless-communications"></a>Comunicações sem fio  
  Essas configurações são destinadas somente a dispositivos que executam o Windows 10 e posteriores.  
-  
+
 |Nome da configuração|Detalhes|  
 |------------------|-------------|  
 |**Conexão de rede sem fio**|Habilite ou desabilite a funcionalidade de Wi-Fi dos dispositivos.|  
@@ -230,13 +230,13 @@ ms.locfileid: "32352094"
 |**Descarregar dados para Wi-Fi quando possível**|Configure essa opção para usar a conexão Wi-Fi no dispositivo quando possível.|  
 |**Relatórios de ponto de acesso Wi-Fi**|-|  
 |**Configuração manual de Wi-Fi**|-|  
-  
+
 #### <a name="to-configure-a-wireless-network-connection"></a>Para configurar uma conexão de rede sem fio  
-  
+
 1.  Na página **Definir configurações de comunicação sem fio de dispositivos móveis** clique em **Adicionar**.  
-  
+
 2.  Na caixa de diálogo **Conexão de Rede Sem Fio**, especifique as seguintes informações sobre a conexão sem fio provisionada nos dispositivos móveis:  
-  
+
 |Configuração|Mais informações|  
 |-------------|----------------------|  
 |**Nome da rede (SSID)**|Insira o nome da rede Wi-Fi.|  
@@ -248,46 +248,46 @@ ms.locfileid: "32352094"
 |**Configurações do servidor proxy**|Especifique, conforme necessário, as configurações de **Servidor** e **Porta** para **HTTP**, **WAP** e **Soquetes**.|  
 |**Habilitar acesso à rede 802.1X**|Selecione esta opção se desejar proteger a conexão com a especificação de um tipo de EAP.|  
 |**Tipo de EAP**|Escolha o tipo de EAP a ser usado do:<br /><br /> - **PEAP**<br> - **Cartão inteligente ou certificado**|  
-  
-  
-  
+
+
+
 ### <a name="certificates"></a>Certificados  
  Permite importar certificados a serem instalados em dispositivos móveis.  
-  
+
  Clique em **Importação**e especifique os seguintes valores:  
-  
+
 -   **Arquivo de certificado** – Clique em Procurar e selecione o arquivo de certificado com a extensão **.cer** que deseja importar.  
-  
+
 -   **Repositório de destino** – Escolha um ou mais repositórios de destino nos quais o certificado importado será adicionado ao dispositivo móvel de:  
-  
+
     -   **Root**  
-  
+
     -   **AC**  
-  
+
     -   **Normal**  
-  
+
     -   **Com privilégios**  
-  
+
     -   **SPC**  
-  
+
     -   **Par**  
-  
+
 -   **Função** – Se **SPC** (Certificado do Fornecedor de Software) estiver selecionado como o repositório de destino, escolha a função que será associada ao certificado por meio de:  
-  
+
     -   **Operador Móvel**  
-  
+
     -   **Gerenciador**  
-  
+
     -   **Usuário autenticado**  
-  
+
     -   **Administrador de TI**  
-  
+
     -   **Usuário não autenticado**  
-  
+
     -   **Servidor de provisionamento confiável**  
-  
+
 ### <a name="system-security"></a>Segurança do sistema  
-  
+
 |Configuração|Detalhes|  
 |-------------|-------------|  
 |**Controle de conta de usuário**|Habilita ou desabilita o Controle de Conta de Usuário do Windows no dispositivo.|  
@@ -303,45 +303,47 @@ ms.locfileid: "32352094"
 |**Recursos de pré-lançamento**|Permite que a Microsoft implante configurações e recursos de pré-lançamento no dispositivo.<br /><br /> (somente Windows 10)|  
 |**Instalação manual de certificado raiz**|(somente Windows 10)| 
 |**Permitir cancelamento de registro manual**|Permite que o usuário cancelar seu próprio registro de gerenciamento por uma solução MDM.| 
-  
+
 ###  <a name="windows-server-work-folders"></a>Pastas de Trabalho do Windows Server  
  Essas configurações são destinadas a dispositivos que executam o Windows 8.1 e o Windows 10.  
-  
+
 |Nome da configuração|Detalhes|  
 |------------------|-------------|  
 |**URL de pastas de trabalho**|Configura o local de uma pasta de trabalho do Windows Server com as qual os usuários podem se conectar por meio de seus dispositivos.|  
-  
+
 ### <a name="allowed-and-blocked-apps-windows-phone-only"></a>Aplicativos permitidos e bloqueados (somente no Windows Phone)  
  Permite especificar uma lista de aplicativos gerenciados pelo Intune que são compatíveis ou não compatíveis em sua empresa. O Windows Phone pode permitir ou bloquear a instalação desses aplicativos.  
-  
+
  Não é possível especificar aplicativos compatíveis e não compatíveis no mesmo item de configuração.  
-  
+
 #### <a name="to-specify-apps-that-are-allowed-or-blocked"></a>Para especificar os aplicativos que serão permitidos ou bloqueados  
-  
+
 Na página **Lista de Aplicativos Permitidos e Bloqueados**, especifique as seguintes informações:  
-  
-|Configuração|Mais informações|  
-    |-------------|----------------------|  
-    |**Lista de aplicativos bloqueados**|Escolha essa opção se quiser especificar uma lista de aplicativos que os usuários não têm permissão para instalar.|  
-    |**Lista de aplicativos permitidos**|Selecione esta opção se desejar especificar uma lista de aplicativos que os usuários têm permissão para instalar. Qualquer outro aplicativo será impedido de ser instalado.|  
-    |**Adicionar**|Adiciona um aplicativo à lista selecionada. Especifique um nome da sua preferência, opcionalmente o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.<br /><br /> Para especificar a URL, na Windows Store, procure o aplicativo que você quer usar.<br /><br /> Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar isso como a URL em uma lista de aplicativos permitidos ou bloqueados.<br /><br /> **Exemplo:** procure o aplicativo **Skype** na loja. A URL usada será **http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51**.|  
-    |**Editarar**|Permite editar o nome, editor e a URL do aplicativo selecionado.|  
-    |**Removerr**|Exclui o aplicativo selecionado da lista.|  
-    |**Importarar**|Importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, editor e a URL do aplicativo no arquivo.|  
-  
+
+
+|        Configuração        |                                                                                                                                                                                                                                                                        Mais informações                                                                                                                                                                                                                                                                         |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Lista de aplicativos bloqueados** |                                                                                                                                                                                                                                 Escolha essa opção se quiser especificar uma lista de aplicativos que os usuários não têm permissão para instalar.                                                                                                                                                                                                                                 |
+| **Lista de aplicativos permitidos** |                                                                                                                                                                                                             Selecione esta opção se desejar especificar uma lista de aplicativos que os usuários têm permissão para instalar. Qualquer outro aplicativo será impedido de ser instalado.                                                                                                                                                                                                             |
+|        **Adicionar**        | Adiciona um aplicativo à lista selecionada. Especifique um nome da sua preferência, opcionalmente o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.<br /><br /> Para especificar a URL, na Windows Store, procure o aplicativo que você quer usar.<br /><br /> Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar isso como a URL em uma lista de aplicativos permitidos ou bloqueados.<br /><br /> **Exemplo:** Pesquise o **Skype** aplicativo. A URL usada será **<http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51>**. |
+|       **Editarar**        |                                                                                                                                                                                                                                                 Permite editar o nome, editor e a URL do aplicativo selecionado.                                                                                                                                                                                                                                                 |
+|      **Removerr**       |                                                                                                                                                                                                                                                             Exclui o aplicativo selecionado da lista.                                                                                                                                                                                                                                                             |
+|      **Importarar**       |                                                                                                                                                                                                          Importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, editor e a URL do aplicativo no arquivo.                                                                                                                                                                                                          |
+
 ### <a name="windows-10-team"></a>Windows 10 Team  
  Essas configurações são destinadas somente a dispositivos que executam o Windows 10 Team.  
-  
-|Nome da configuração|Detalhes|  
-|------------------|-------------|  
-|**Permitir que a tela seja ativada automaticamente quando sensores detectarem alguém na sala**|Permite que o dispositivo seja ativado automaticamente quando o sensor detectar a alguém na sala.|  
-|**PIN exigido para projeção sem fio**|Especifica se você deve inserir um PIN antes de poder usar os recursos de projeção sem fio do dispositivo.|  
-|**Janela de Manutenção**|Configura a o intervalo em que atualizações podem ocorrer no dispositivo. Você pode configurar a hora de início do intervalo e sua duração (de 1 a 5 horas).|
-|**Azure Operational Insights**|O Azure Operational Insights, parte do pacote Microsoft Operations Manager coleta, armazena e analisa os dados de arquivo de log de dispositivos do Windows 10 Team.<br>Para conectar-se ao Azure Operational Insights, especifique uma ID de Espaço de Trabalho e uma Chave de Espaço de Trabalho.| 
-|**Projeção sem fio Miracast**|Habilite esta opção se você quiser permitir que o dispositivo Windows 10 Team use dispositivos habilitados para Miracast para o projeto.<br>Se você habilitar essa opção, em **Escolher canal Miracast**, selecione o canal do Miracast usado para o conteúdo do projeto.|
-|**Informações sobre a reunião exibidas na tela de boas-vindas**|Se você habilitar essa opção, escolha as informações que serão exibidas no bloco **Reuniões** da tela de **Boas-Vindas**. Você pode:<br><br>- **Mostrar somente organizador e hora**<br>- **Mostrar organizador, hora e entidade (a entidade é oculta para reuniões particulares)**|
-|**URL da imagem de tela de fundo da tela de bloqueio**|Use essa configuração para exibir um plano de fundo personalizado na tela **Boas-Vindas** dos dispositivos com Windows 10 Team a partir da URL especificada.<br>A imagem deve estar no formato PNG, e a URL deve começar com **https://**.| 
-  
+
+
+|                                  Nome da configuração                                  |                                                                                                                              Detalhes                                                                                                                               |
+|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Permitir que a tela seja ativada automaticamente quando sensores detectarem alguém na sala** |                                                                                        Permite que o dispositivo seja ativado automaticamente quando o sensor detectar a alguém na sala.                                                                                        |
+|                    **PIN exigido para projeção sem fio**                    |                                                                           Especifica se você deve inserir um PIN antes de poder usar os recursos de projeção sem fio do dispositivo.                                                                            |
+|                             **Janela de Manutenção**                             |                                                         Configura a o intervalo em que atualizações podem ocorrer no dispositivo. Você pode configurar a hora de início do intervalo e sua duração (de 1 a 5 horas).                                                         |
+|                         **Azure Operational Insights**                         |      O Azure Operational Insights, parte do pacote Microsoft Operations Manager coleta, armazena e analisa os dados de arquivo de log de dispositivos do Windows 10 Team.<br>Para conectar-se ao Azure Operational Insights, especifique uma ID de Workspace e uma Chave de Workspace.       |
+|                        **Projeção sem fio Miracast**                        |                   Habilite esta opção se você quiser permitir que o dispositivo Windows 10 Team use dispositivos habilitados para Miracast para o projeto.<br>Se você habilitar essa opção, em **Escolher canal Miracast**, selecione o canal do Miracast usado para o conteúdo do projeto.                    |
+|              **Informações sobre a reunião exibidas na tela de boas-vindas**               | Se você habilitar essa opção, escolha as informações que serão exibidas no bloco **Reuniões** da tela de **Boas-Vindas**. Você pode:<br><br>- **Mostrar somente organizador e hora**<br>- **Mostrar organizador, hora e entidade (a entidade é oculta para reuniões particulares)** |
+|                      **URL da imagem de tela de fundo da tela de bloqueio**                       |                            Use essa configuração para exibir um plano de fundo personalizado na tela **Boas-Vindas** dos dispositivos com Windows 10 Team a partir da URL especificada.<br>A imagem deve estar no formato PNG, e a URL deve começar com **https://**.                             |
+
 ### <a name="windows-information-protection"></a>Windows Information Protection  
 
 Com o aumento do uso de dispositivos de funcionário dentro da empresa, aumenta também o risco de vazamentos acidentais de dados por meio de aplicativos e serviços, como email, mídia social e nuvem pública, que estão fora do controle da empresa. Por exemplo, quando um funcionário envia as imagens mais recentes de engenharia da sua conta de email pessoal, copia e cola informações do produto em um tweet ou salva um relatório de vendas em andamento no armazenamento de nuvem pública.
@@ -355,7 +357,7 @@ Para obter informações sobre como configurar a proteção de dados empresariai
 
 ### <a name="microsoft-edge"></a>Microsoft Edge  
 Essas configurações são destinadas a dispositivos que executam o Windows 10 e posteriores.  
-  
+
 |Nome da configuração|Detalhes|  
 |------------------|-------------| 
 |Microsoft Edge|Permita o uso do navegador da Web Edge no dispositivo.| 
@@ -379,7 +381,7 @@ Essas configurações são destinadas a dispositivos que executam o Windows 10 e
 
 ### <a name="windows-defender"></a>Windows Defender
 Essas configurações são destinadas a dispositivos que executam o Windows 10 e posteriores.
- 
+
 |Nome da configuração|Detalhes|  
 |------------------|-------------|  
 |**Permitir monitoramento em tempo real**|Habilita a verificação em tempo real de malware, spyware e outros softwares indesejados.|
@@ -406,6 +408,6 @@ Essas configurações são destinadas a dispositivos que executam o Windows 10 e
 |**Exclusões de extensão de arquivo**|Adicione uma ou mais extensões de arquivo, como jpg ou txt, à lista de exclusões. Qualquer arquivo com essas extensões não serão incluídos em verificações em tempo real ou programadas.|
 |**Exclusões de processo**|Adiciona um ou mais processos do tipo .exe, .com ou .scr à lista de exclusões. Esses processos não estão incluídos em verificações em tempo real ou programadas.|
 
-  
+
 ## <a name="see-also"></a>Consulte também  
  [Itens de configuração de dispositivos gerenciados sem o cliente do System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

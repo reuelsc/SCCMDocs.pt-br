@@ -10,16 +10,16 @@ ms.assetid: 94ecfada-97d9-4d5f-bb04-63550dda5f47
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3c2d212268c2c9b875890bfe8e0640f68b7d831e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 2d57965a75d602b81da7b19d6732ac7db6e7abe0
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32345957"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420805"
 ---
 # <a name="verify-mdm-configuration-with-system-center-configuration-manager"></a>Verificar uma configuração de MDM com o System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Você pode verificar determinados componentes do gerenciamento de dispositivo examinando os seguintes arquivos de log:
 
@@ -30,4 +30,4 @@ Você pode verificar determinados componentes do gerenciamento de dispositivo ex
 Examine os [Arquivos de log no System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md##BKMK_FunctionLogs) para saber mais sobre esses arquivos de log específicos e como exibi-los. 
 
 > [!div class="button"]
-[< Etapa anterior](set-up-additional-management.md)
+> [< Etapa anterior](set-up-additional-management.md)

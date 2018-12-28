@@ -10,16 +10,16 @@ ms.assetid: 4877d674-6bbc-4e16-810c-daad70c74daa
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 58a61dffbdd9b04d3e872e23f88ddc0ac864f99d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 8c2ded7509c8097ae219aa594e56fda3f0c35ccd
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32346338"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417130"
 ---
 # <a name="set-up-additional-management-with-system-center-configuration-manager"></a>Configurar o gerenciamento adicional usando o System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 (Opcional) Você pode configurar o gerenciamento adicional antes dos dispositivos serem registrados. Essas soluções de gerenciamento podem ser criadas e implantadas após a dispositivos serem registrados, embora muitas empresas prefiram implantá-las conforme os dispositivos são trazidos para o gerenciamento.
 
@@ -46,4 +46,4 @@ O **Acesso condicional** permite que você gerencie o acesso aos recursos da emp
 Anteriormente, você tinha que ir para o console do Intune ou para o console do Configuration Manager para definir o MFA para inscrições do Intune. Agora, faça logon no [Portal do Microsoft Azure](https://manage.windowsazure.com) usando suas credenciais do Intune e defina as configurações da MFA por meio do Azure AD. Saiba mais em[Autenticação Multifator para o Microsoft Intune](https://aka.ms/mfa_ad).
 
 > [!div class="button"]
-[< Etapa anterior](enable-platform-enrollment.md)  [Próxima etapa >](verify-mdm-configuration.md)
+> [< Etapa anterior](enable-platform-enrollment.md)  [Próxima etapa >](verify-mdm-configuration.md)

@@ -10,16 +10,16 @@ ms.assetid: aba688d9-fd5b-4c42-8cb4-f7e1b161ef50
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5bdc881d6d6423aa357cf8916f54f1b5f31120f2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 98b573dcf72f4bbf3cde73cb9a5cd7905b8a0248
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353252"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417312"
 ---
 # <a name="manage-mobile-devices-with-system-center-configuration-manager-and-exchange"></a>Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Use o conector do Exchange Server no System Center Configuration Manager quando desejar gerenciar dispositivos móveis que se conectam ao Exchange Server (local ou online) usando o protocolo Microsoft Exchange ActiveSync e quando não for possível registrá-los com o Configuration Manager. É possível configurar os recursos de gerenciamento de dispositivo móvel do Exchange, como apagamento remoto de dados no dispositivo e controle de configurações para vários servidores Exchange, no console do Configuration Manager.  
 
@@ -30,7 +30,7 @@ Use o conector do Exchange Server no System Center Configuration Manager quando 
 > [!IMPORTANT]  
 >  Antes de instalar o conector do Exchange Server, verifique se o Configuration Manager dá suporte à versão do Microsoft Exchange que você está usando. Para obter mais informações, consulte “conector do Exchange Server” em [Supported operating systems for sites and clients for System Center Configuration Manager (Sistemas operacionais com suporte para sites e clientes do System Center Configuration Manager)](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers).  
 
- Ao usar o conector do Exchange Server, os dispositivos móveis podem ser gerenciados pelas configurações definidas no Configuration Manager em vez de gerenciados pelas políticas de caixa de correio padrão do Exchange ActiveSync. Defina as configurações que você quer usar nas seguintes configurações de grupo: **Geral**, **Senha**, **Gerenciamento de email**, **Segurança**e **Aplicativo**. Por exemplo, na configuração de grupo **Senha** , você pode definir se os dispositivos móveis exigem uma senha, o tamanho mínimo da senha, a sua complexidade e se é permitido recuperá-la.  
+ Ao usar o conector do Exchange Server, os dispositivos móveis podem ser gerenciados pelas configurações definidas no Configuration Manager em vez de gerenciados pelas políticas de caixa de correio padrão do Exchange ActiveSync. Defina as configurações que você deseja usar nas configurações de grupo a seguir: **Gerais**, **senha**, **gerenciamento de Email**, **segurança**, e **aplicativo**. Por exemplo, na configuração de grupo **Senha** , você pode definir se os dispositivos móveis exigem uma senha, o tamanho mínimo da senha, a sua complexidade e se é permitido recuperá-la.  
 
  Ao definir pelo menos uma configuração no grupo, o Configuration Manager gerencia todas as configurações no grupo para dispositivos móveis. Se você não definir uma configuração em um grupo, o Exchange continuará a gerenciar os dispositivos móveis com base nessas configurações. As políticas de caixa de correio do Exchange ActiveSync que são configuradas no Exchange Server e atribuídas a usuários ainda serão aplicadas.  
 
@@ -44,23 +44,23 @@ Use o conector do Exchange Server no System Center Configuration Manager quando 
 ## <a name="required-security-permissions"></a>Permissões de segurança necessárias  
  Você deve ter as seguintes permissões de segurança para configurar o conector do Exchange Server:  
 
--   Para adicionar, modificar e excluir o conector do Exchange Server: **Modificar** permissão para o objeto **Site** .  
+- Para adicionar, modificar e excluir o conector do Exchange Server: **Modifique** permissão para o **Site** objeto.  
 
--   Para definir as configurações de dispositivo móvel: permissão **ModifyConnectorPolicy** para o objeto **Site** .  
+- Para definir as configurações de dispositivo móvel: **ModifyConnectorPolicy** permissão para o **Site** objeto.  
 
- A função de segurança **Administrador Completo** inclui as permissões necessárias para configurar o conector do Exchange Server.  
+  A função de segurança **Administrador Completo** inclui as permissões necessárias para configurar o conector do Exchange Server.  
 
- Você deve ter as seguintes permissões de segurança para gerenciar dispositivos móveis:  
+  Você deve ter as seguintes permissões de segurança para gerenciar dispositivos móveis:  
 
--   Para desativar um dispositivo móvel: **Excluir recurso** para o objeto **Coleção** .  
+- Para apagar um dispositivo móvel: **Excluir recurso** para o **coleção** objeto.  
 
--   Para cancelar um comando de apagar: **Excluir recurso** para o objeto **Coleção** .  
+- Para cancelar um comando de apagamento: **Modificar recurso** para o **coleção** objeto.  
 
--   Para permitir e bloquear dispositivos móveis: **Modificar recurso** para o objeto de **Coleção** .  
+- Para permitir e bloquear dispositivos móveis: **Modificar recurso** para o **coleção** objeto.  
 
- A função de segurança **Administrador de Operações** inclui as permissões necessárias para gerenciar dispositivos móveis usando o conector do Exchange Server.  
+  A função de segurança **Administrador de Operações** inclui as permissões necessárias para gerenciar dispositivos móveis usando o conector do Exchange Server.  
 
- Para obter mais informações sobre como configurar permissões de segurança, consulte [Configurar a administração baseada em funções do System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
+  Para obter mais informações sobre como configurar permissões de segurança, consulte [Configurar a administração baseada em funções do System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
 ## <a name="installing-and-configuring-an-exchange-server-connector"></a>Instalando e configurando um conector do Exchange Server  
  Use o procedimento a seguir para instalar e configurar um conector do Exchange Server para gerenciar dispositivos móveis. O Configuration Manager dá suporte apenas a um conector em uma organização do Exchange. Concluídas essas etapas, é possível monitorar os dispositivos móveis encontrados e gerenciados pelo conector visualizando as coleções que exibem os dispositivos móveis e usando os relatórios pertinentes a eles.  
@@ -111,14 +111,14 @@ Use o conector do Exchange Server no System Center Configuration Manager quando 
     -   **Set-ActiveSyncOrganizationSettings**  
 
     > [!NOTE]  
-    >  As seguintes funções de gerenciamento do Exchange Server incluem esses cmdlets: Gerenciamento de destinatários, Gerenciamento de organização somente para exibição e Gerenciamento de servidor. Para obter mais informações sobre grupos de funções de gerenciamento do Microsoft Exchange Server 2010, consulte [Entendendo os Grupos de Função de Gerenciamento](http://go.microsoft.com/fwlink/p/?LinkId=212914).  
+    >  As seguintes funções de gerenciamento do Exchange Server incluem esses cmdlets: Gerenciamento de destinatários, gerenciamento de organização somente para exibição e gerenciamento de servidor. Para obter mais informações sobre grupos de funções de gerenciamento do Microsoft Exchange Server 2010, consulte [Entendendo os Grupos de Função de Gerenciamento](http://go.microsoft.com/fwlink/p/?LinkId=212914).  
 
     > [!TIP]  
     >  Se você tentar instalar ou o usar o conector do Exchange Server sem os cmdlets necessários, verá um erro registrado com a mensagem `Invoking cmdlet <cmdlet> failed` no arquivo EasDisc.log, no computador do servidor do site.  
 
 2.  No console do Configuration Manager, clique em **Administração**.  
 
-3.  No espaço de trabalho **Administração** , expanda **Configuração da Hierarquia**e clique em **Conectores do Exchange Server**.  
+3.  No workspace **Administração**, expanda **Configuração da Hierarquia**e clique em **Conectores do Exchange Server**.  
 
 4.  Na guia **Início** , no grupo **Criar** , clique em **Adicionar Exchange Server**.  
 

@@ -10,16 +10,16 @@ ms.assetid: f0a78038-ea22-4826-9c07-1771b7dd2e8d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e5d00b1efd02d3b096a0b64033b450f0da949eeb
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 19b55204566c49c95e76a3eff3f88206df553e13
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349452"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416156"
 ---
 # <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Aplicar configurações a aplicativos iOS com políticas de configuração de aplicativo no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 
 Você pode usar políticas de configuração de aplicativo no System Center Configuration Manager (Configuration Manager) para distribuir as configurações que podem ser necessárias quando um usuário executa um aplicativo. Por exemplo, um aplicativo pode exigir que um usuário especifique estes detalhes:
@@ -44,11 +44,11 @@ Para obter mais informações sobre os tipos de instalação de aplicativos, con
 1. No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Políticas de Configuração de Aplicativo**.
 2. Na guia **Início**, no grupo **Políticas de Configuração de Aplicativo**, escolha **Criar Nova Política de Configuração de Aplicativo**.
 3. No Assistente para Criar Política de Configuração de Aplicativo, na página **Geral** defina estas informações de política:
-  - **Nome**. Insira um nome exclusivo para a política.
-  - **Descrição**. (Opcional) Para facilitar a identificação da política, você pode adicionar uma descrição.
-  - **Categorias atribuídas para melhorar a pesquisa e a filtragem**. (Opcional) Para criar e atribuir categorias para a política, escolha **Categorias**. As categorias facilitam a classificação e a localização de itens no console do Configuration Manager.
+   - **Nome**. Insira um nome exclusivo para a política.
+   - **Descrição**. (Opcional) Para facilitar a identificação da política, você pode adicionar uma descrição.
+   - **Categorias atribuídas para melhorar a pesquisa e a filtragem**. (Opcional) Para criar e atribuir categorias para a política, escolha **Categorias**. As categorias facilitam a classificação e a localização de itens no console do Configuration Manager.
 4. Na página **Política do iOS**, escolha como definir as informações da política de configuração:
-  - **Especificar pares nome-valor**. Você pode usar essa opção para arquivos de lista de propriedades que não usam aninhamento.
+   - **Especificar pares nome-valor**. Você pode usar essa opção para arquivos de lista de propriedades que não usam aninhamento.
 
       *Para especificar um par nome-valor*
         1. Para adicionar um novo par, escolha **Novo**.
@@ -57,13 +57,13 @@ Para obter mais informações sobre os tipos de instalação de aplicativos, con
             - **Nome**. Insira o nome da chave de lista de propriedades para o qual deseja especificar um valor.
             - **Valor**. Insira o valor que será aplicado à chave inserida.
 
-  - **Procure um arquivo de lista de propriedades**. Use essa opção se você já tiver um arquivo XML de configuração de aplicativo ou para arquivos mais complexos que usam aninhamento.
+   - **Procure um arquivo de lista de propriedades**. Use essa opção se você já tiver um arquivo XML de configuração de aplicativo ou para arquivos mais complexos que usam aninhamento.
 
-    *Para procurar um arquivo de lista de propriedades*
+     *Para procurar um arquivo de lista de propriedades*
 
-      1.  No campo **Política de configuração do aplicativo**, insira as informações da lista de propriedades no formato XML correto.
+     1. No campo **Política de configuração do aplicativo**, insira as informações da lista de propriedades no formato XML correto.
 
-      Para obter mais informações sobre listas de propriedades XML, consulte [Noções básicas sobre listas de propriedades XML](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/PropertyLists/UnderstandXMLPlist/UnderstandXMLPlist.html) na biblioteca do desenvolvedor do iOS.
+        Para obter mais informações sobre listas de propriedades XML, consulte [Noções básicas sobre listas de propriedades XML](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/PropertyLists/UnderstandXMLPlist/UnderstandXMLPlist.html) na biblioteca do desenvolvedor do iOS.
 
 O formato da lista de propriedades XML varia dependendo do aplicativo que você está configurando. Entre em contato com o fornecedor do aplicativo para obter detalhes sobre o formato a ser usado.
 O Intune dá suporte aos seguintes tipos de dados em uma lista de propriedades:
@@ -97,7 +97,7 @@ Os caracteres {{ e }} são usados apenas por tipos de token e não devem ser usa
 6. Escolha **Próxima**. Se houver erros no código XML, você precisará corrigi-los antes de continuar.
 7. Conclua as etapas mostradas no assistente.
 
-A nova política de configuração de aplicativo é mostrada no espaço de trabalho **Biblioteca de Software**, no nó **Políticas de Configuração de Aplicativo**.
+A nova política de configuração de aplicativo é mostrada no workspace **Biblioteca de Software**, no nó **Políticas de Configuração de Aplicativo**.
 
 ## <a name="associate-an-app-configuration-policy-with-a-configuration-manager-application"></a>Associar uma política de configuração de aplicativo a um aplicativo do Gerenciador de Configurações
 

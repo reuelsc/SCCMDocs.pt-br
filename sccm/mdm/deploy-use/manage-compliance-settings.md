@@ -10,16 +10,16 @@ ms.assetid: 9e83007f-e81c-4b7e-b47e-b01d7b19cfbc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 012539cd5879691f0e42910c72cb03052e77b722
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 5f6ee6ae8d059905e8cda08fec3d75deff177163
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351438"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418536"
 ---
 # <a name="managing-compliance-on-devices-managed-with-intune"></a>Gerenciar a conformidade em dispositivos gerenciados com o Intune
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Esses cenários oferecem uma introdução ao uso das configurações de conformidade do System Center Configuration Manager, apresentando alguns cenários comuns que podem ser encontrados.  
 
@@ -40,83 +40,83 @@ Esses cenários oferecem uma introdução ao uso das configurações de conformi
 
 ## <a name="scenarios-for-windows-81-and-windows-10-devices-managed-with-intune"></a>Cenários para dispositivos com Windows 8.1 e Windows 10 gerenciados com o Intune  
 
-### <a name="scenario-restrict-access-to-the-app-store-on-all-windows-pcs"></a>Cenário: restringir o acesso à loja de aplicativos em todos os computadores com Windows  
+### <a name="scenario-restrict-access-to-the-app-store-on-all-windows-pcs"></a>Cenário: Restringir o acesso à loja de aplicativos em todos os computadores com Windows  
  Nesse cenário, você é o administrador de TI de uma empresa que lida com informações altamente confidenciais. Por isso, você restringe os aplicativos que os usuários podem instalar. Você deseja impedir que os usuários de todos os computadores com Windows 10 baixem aplicativos da Windows Store; para isso, você executa as seguintes ações.  
 
-1.  Na página **Geral** do Assistente de Criação de Item de Configuração, selecione o tipo de item de configuração **Windows 8.1 e Windows 10** e clique em **Avançar**.  
+1. Na página **Geral** do Assistente de Criação de Item de Configuração, selecione o tipo de item de configuração **Windows 8.1 e Windows 10** e clique em **Avançar**.  
 
-2.  Na página **Plataformas com Suporte**, selecione todas as plataformas Windows 10.  
+2. Na página **Plataformas com Suporte**, selecione todas as plataformas Windows 10.  
 
-3.  Na página **Configurações do Dispositivo** , selecione **Loja**e clique em **Avançar**.  
+3. Na página **Configurações do Dispositivo** , selecione **Loja**e clique em **Avançar**.  
 
-4.  Na página **Loja** , selecione **Proibido** como o valor para **Loja de aplicativos**.  
+4. Na página **Loja** , selecione **Proibido** como o valor para **Loja de aplicativos**.  
 
-5.  Selecione **Corrigir configurações não compatíveis** para garantir que a alteração será aplicada a todos os computadores.  
+5. Selecione **Corrigir configurações não compatíveis** para garantir que a alteração será aplicada a todos os computadores.  
 
-6.  Conclua o assistente para criar o item de configuração.  
+6. Conclua o assistente para criar o item de configuração.  
 
- Agora você pode usar as informações do tópico [Tarefas comuns para criar e implantar linhas de base de configuração](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) para ajudar a implantar nos dispositivos a configuração que você criou.  
+   Agora você pode usar as informações do tópico [Tarefas comuns para criar e implantar linhas de base de configuração](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) para ajudar a implantar nos dispositivos a configuração que você criou.  
 
 ## <a name="scenarios-for-windows-phone-devices-managed-with-intune"></a>Cenários para dispositivos com Windows Phone gerenciados com o Intune  
 
-### <a name="scenario-disable-the-use-of-screen-capture-on-a-windows-phone"></a>Cenário: desabilitar o uso da captura de tela em um Windows Phone  
+### <a name="scenario-disable-the-use-of-screen-capture-on-a-windows-phone"></a>Cenário: Desabilitar o uso da captura de tela em um Windows Phone  
  Nesse cenário, você usa dispositivos Windows Phone 8.1 em sua empresa. Esses dispositivos executam um aplicativo de vendas que contém informações confidenciais. Para proteger sua empresa, você deseja desabilitar o uso da captura de tela no dispositivo, que poderia ser usada para transmitir informações confidenciais para fora de sua empresa.  
 
-1.  Na página **Geral** do Assistente de Criação de Item de Configuração, selecione o tipo de item de configuração **Windows Phone** e clique em **Avançar**.  
+1. Na página **Geral** do Assistente de Criação de Item de Configuração, selecione o tipo de item de configuração **Windows Phone** e clique em **Avançar**.  
 
-2.  Na página **Plataformas com Suporte**, selecione **Todas as plataformas Windows 8.1**.  
+2. Na página **Plataformas com Suporte**, selecione **Todas as plataformas Windows 8.1**.  
 
-3.  Na página **Configurações do Dispositivo** , selecione **Dispositivo**e clique em **Avançar**.  
+3. Na página **Configurações do Dispositivo** , selecione **Dispositivo**e clique em **Avançar**.  
 
-4.  Na página **Dispositivo** , selecione **Desabilitado** como o valor para **Captura de tela**.  
+4. Na página **Dispositivo** , selecione **Desabilitado** como o valor para **Captura de tela**.  
 
-5.  Selecione **Corrigir configurações não compatíveis** para garantir que a alteração será aplicada a todos os dispositivos Windows Phone 8.1.  
+5. Selecione **Corrigir configurações não compatíveis** para garantir que a alteração será aplicada a todos os dispositivos Windows Phone 8.1.  
 
-6.  Conclua o assistente para criar o item de configuração.  
+6. Conclua o assistente para criar o item de configuração.  
 
- Agora você pode usar as informações do tópico [Tarefas comuns para criar e implantar linhas de base de configuração com o System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) para ajudar a implantar nos dispositivos a configuração que você criou.  
+   Agora você pode usar as informações do tópico [Tarefas comuns para criar e implantar linhas de base de configuração com o System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) para ajudar a implantar nos dispositivos a configuração que você criou.  
 
 ## <a name="scenarios-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Cenários para dispositivos com iOS e Mac OS X gerenciados com o Intune  
 
-### <a name="scenario-disable-the-camera-on-ios-devices"></a>Cenário: desabilitar a câmera em dispositivos iOS  
+### <a name="scenario-disable-the-camera-on-ios-devices"></a>Cenário: Desabilitar a câmera em dispositivos iOS  
  Nesse cenário, sua empresa produz planos gráficos para novos designs de produtos. Eles contêm informações confidenciais que não devem ser vazadas. Como sua empresa emite iPhones ou iPads para todos os funcionários, você deseja desabilitar o uso da câmera nesses dispositivos para evitar que elas sejam usadas para fotografar os planos gráficos.  
 
-1.  Na página **Geral** do Assistente de Criação de Item de Configuração, selecione o tipo de item de configuração **iOS e Mac OS X** e clique em **Avançar**.  
+1. Na página **Geral** do Assistente de Criação de Item de Configuração, selecione o tipo de item de configuração **iOS e Mac OS X** e clique em **Avançar**.  
 
-2.  Na página **Plataformas com Suporte**, selecione todas as plataformas de dispositivos iPhone e iPad.  
+2. Na página **Plataformas com Suporte**, selecione todas as plataformas de dispositivos iPhone e iPad.  
 
-3.  Na página **Configurações do Dispositivo** , selecione **Segurança**e clique em **Avançar**.  
+3. Na página **Configurações do Dispositivo** , selecione **Segurança**e clique em **Avançar**.  
 
-4.  Na página **Segurança** , selecione **Proibido** como o valor para **Câmera**.  
+4. Na página **Segurança** , selecione **Proibido** como o valor para **Câmera**.  
 
-5.  Selecione **Corrigir configurações não compatíveis** para garantir que a alteração será aplicada a todos os dispositivos iOS.  
+5. Selecione **Corrigir configurações não compatíveis** para garantir que a alteração será aplicada a todos os dispositivos iOS.  
 
-6.  Conclua o assistente para criar o item de configuração.  
+6. Conclua o assistente para criar o item de configuração.  
 
- Agora você pode usar as informações do tópico [Tarefas comuns para criar e implantar linhas de base de configuração com o System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) para ajudar a implantar nos dispositivos a configuração que você criou.  
+   Agora você pode usar as informações do tópico [Tarefas comuns para criar e implantar linhas de base de configuração com o System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) para ajudar a implantar nos dispositivos a configuração que você criou.  
 
 ## <a name="scenarios-for-android-and-samsung-knox-standard-devices-managed-with-intune"></a>Cenários para dispositivos Android e Samsung KNOX Standard gerenciados com o Intune  
 
-### <a name="scenario-require-a-password-on-all-android-5-devices"></a>Cenário: exigir uma senha em todos os dispositivos Android 5  
+### <a name="scenario-require-a-password-on-all-android-5-devices"></a>Cenário: Exigir uma senha em todos os dispositivos Android 5  
  Nesse cenário, você criará um item de configuração apenas para dispositivos Android 5 que exige que os usuários configurem uma senha de, pelo menos, 6 caracteres em seus dispositivos. Além disso, se um usuário inserir uma senha incorreta cinco vezes, o dispositivo será apagado.  
 
-1.  Na página **Geral** do Assistente de Criação de Item de Configuração, selecione o tipo de item de configuração **Android e Samsung KNOX** e clique em **Avançar**.  
+1. Na página **Geral** do Assistente de Criação de Item de Configuração, selecione o tipo de item de configuração **Android e Samsung KNOX** e clique em **Avançar**.  
 
-2.  Na página **Plataformas com Suporte**, selecione apenas **Android 5** (para garantir que as configurações só serão aplicadas a essa plataforma).  
+2. Na página **Plataformas com Suporte**, selecione apenas **Android 5** (para garantir que as configurações só serão aplicadas a essa plataforma).  
 
-3.  Na página **Configurações do Dispositivo** , selecione **Senha**e clique em **Avançar**.  
+3. Na página **Configurações do Dispositivo** , selecione **Senha**e clique em **Avançar**.  
 
-4.  Na página **Senha** , defina as seguintes configurações:  
+4. Na página **Senha** , defina as seguintes configurações:  
 
-    -   **Exigir configurações de senha em dispositivos** > **Necessário**  
+   -   **Exigir configurações de senha em dispositivos** > **Necessário**  
 
-    -   **Comprimento mínimo da senha (caracteres)** > **6**  
+   -   **Comprimento mínimo da senha (caracteres)** > **6**  
 
-    -   **Número de tentativas de logon com falha antes de o dispositivo ser apagado** > **5**  
+   -   **Número de tentativas de logon com falha antes de o dispositivo ser apagado** > **5**  
 
-5.  Conclua o assistente para criar o item de configuração.  
+5. Conclua o assistente para criar o item de configuração.  
 
- Agora você pode usar as informações do tópico [Tarefas comuns para criar e implantar linhas de base de configuração](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) para ajudar a implantar nos dispositivos a configuração que você criou.  
+   Agora você pode usar as informações do tópico [Tarefas comuns para criar e implantar linhas de base de configuração](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) para ajudar a implantar nos dispositivos a configuração que você criou.  
 
 ## <a name="configuration-items-for-devices-managed-with-intune"></a>Itens de configuração para dispositivos gerenciados com o Intune
 

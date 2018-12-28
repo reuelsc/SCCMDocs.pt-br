@@ -10,16 +10,16 @@ ms.assetid: 8e25e00c-c9a8-473f-bcb7-ea989f6ca3c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9fe64aef541a4e6405b0fbf6308afc6269d88f56
-ms.sourcegitcommit: f03cb34693b9806e9fecd3c0162de70cc8cb4b1e
-ms.translationtype: HT
+ms.openlocfilehash: 2483a15286a2784f2fb8a4256029004374a313dc
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37886477"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419777"
 ---
 # <a name="manage-internet-access-using-managed-browser-policies-with-system-center-configuration-manager"></a>Gerenciar o acesso à Internet usando políticas de navegador gerenciado com o System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 No System Center Configuration Manager, é possível implantar o Intune Managed Browser (um aplicativo de navegação na Web) e associá-lo a uma política de navegador gerenciado. A política de navegador gerenciado configura uma lista de sites permitidos ou bloqueados que restringe os sites que os usuários do navegador gerenciado podem acessar.  
 
@@ -63,7 +63,7 @@ No System Center Configuration Manager, é possível implantar o Intune Managed 
 
 6.  Conclua o assistente.  
 
-A nova política é exibida no nó **Políticas de Gerenciamento de Aplicativos** no espaço de trabalho **Biblioteca de Software** .  
+A nova política é exibida no nó **Políticas de Gerenciamento de Aplicativos** no workspace **Biblioteca de Software**.  
 
 ## <a name="create-a-software-deployment-for-the-managed-browser-app"></a>Crie uma implantação de software para o aplicativo de navegador gerenciado  
  Depois de criar a política de navegador gerenciado, é possível criar um tipo de implantação de software para o aplicativo de navegador gerenciado. É necessário associar uma política geral e uma política de navegador gerenciado para o aplicativo de navegador gerenciado.  
@@ -86,52 +86,54 @@ A nova política é exibida no nó **Políticas de Gerenciamento de Aplicativos*
 
 Use as informações a seguir para saber mais sobre os formatos permitidos e caracteres curinga que você pode usar ao especificar URLs para as listas permitidas e bloqueadas.  
 
--   Use o símbolo de caractere curinga `*` (asterisco) de acordo com as regras na lista de padrões permitidos abaixo.  
+- Use o símbolo de caractere curinga `*` (asterisco) de acordo com as regras na lista de padrões permitidos abaixo.  
 
--   Prefixe todas as URLs com **http** ou **https** ao inseri-las na lista.  
+- Prefixe todas as URLs com **http** ou **https** ao inseri-las na lista.  
 
--   Especifique os números de porta no endereço. Se você não especificar um número de porta, os seguintes valores serão usados:  
+- Especifique os números de porta no endereço. Se você não especificar um número de porta, os seguintes valores serão usados:  
 
-    -   Porta 80 para https  
+  - Porta 80 para https  
 
-    -   Porta 443 para https  
+  - Porta 443 para https  
 
-     Não use curingas para o número da porta, não há suporte para isso. Por exemplo, `http://www.contoso.com:*`   
+    Não use curingas para o número da porta, não há suporte para isso. Por exemplo, `http://www.contoso.com:*`   
 
--   Use a tabela a seguir para aprender sobre os padrões permitidos que você pode usar para especificar URLs:  
+- Use a tabela a seguir para aprender sobre os padrões permitidos que você pode usar para especificar URLs:  
 
-    |URL|Corresponde a|Não corresponde a|  
-    |---------|-------------|--------------------|  
-    |`http://www.contoso.com`<br /><br /> Corresponde a uma única página|`www.contoso.com`|`host.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `contoso.com/`|  
-    |`http://contoso.com`<br /><br /> Corresponde a uma única página|`contoso.com`|`host.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `www.contoso.com`|  
-    |`http://www.contoso.com/*`<br /><br /> Corresponde a todas as URLs iniciadas por `www.contoso.com`|`www.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `www.contoso.com/videos/tvshows`|`host.contoso.com`<br /><br /> `host.contoso.com/images`|  
-    |`http://*.contoso.com/*`<br /><br /> Corresponde a todos os subdomínios em contoso.com|`developer.contoso.com/resources`<br /><br /> `news.contoso.com/images`<br /><br /> `news.contoso.com/videos`|`contoso.host.com`|  
-    |`http://www.contoso.com/images`<br /><br /> Corresponde a uma única pasta|`www.contoso.com/images`|`www.contoso.com/images/dogs`|  
-    |`http://www.contoso.com:80`<br /><br /> Corresponde a uma única página, usando um número de porta|`http://www.contoso.com:80`||  
-    |`https://www.contoso.com`<br /><br /> Corresponde a uma única página segura|`https://www.contoso.com`|`http://www.contoso.com`|  
-    |`http://www.contoso.com/images/*`<br /><br /> Corresponde a uma única pasta e todas as subpastas|`www.contoso.com/images/dogs`<br /><br /> `www.contoso.com/images/cats`|`www.contoso.com/videos`|  
 
--   Seguem exemplos de algumas das entradas que você não pode especificar:  
+  |                                           URL                                            |                                                    Corresponde a                                                    |                                    Não corresponde a                                     |
+  |------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+  |                `http://www.contoso.com`<br /><br /> Corresponde a uma única página                |                                               `www.contoso.com`                                               |  `host.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `contoso.com/`   |
+  |                  `http://contoso.com`<br /><br /> Corresponde a uma única página                  |                                                 `contoso.com`                                                 | `host.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `www.contoso.com` |
+  | `http://www.contoso.com/*`<br /><br /> Corresponde a todas as URLs iniciadas por `www.contoso.com` |      `www.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `www.contoso.com/videos/tvshows`      |               `host.contoso.com`<br /><br /> `host.contoso.com/images`                |
+  |      `http://*.contoso.com/*`<br /><br /> Corresponde a todos os subdomínios em contoso.com      | `developer.contoso.com/resources`<br /><br /> `news.contoso.com/images`<br /><br /> `news.contoso.com/videos` |                                  `contoso.host.com`                                   |
+  |           `http://www.contoso.com/images`<br /><br /> Corresponde a uma única pasta            |                                           `www.contoso.com/images`                                            |                             `www.contoso.com/images/dogs`                             |
+  |    `http://www.contoso.com:80`<br /><br /> Corresponde a uma única página, usando um número de porta    |                                          `http://www.contoso.com:80`                                          |                                                                                       |
+  |           `https://www.contoso.com`<br /><br /> Corresponde a uma única página segura            |                                           `https://www.contoso.com`                                           |                               `http://www.contoso.com`                                |
+  | `http://www.contoso.com/images/*`<br /><br /> Corresponde a uma única pasta e todas as subpastas |                    `www.contoso.com/images/dogs`<br /><br /> `www.contoso.com/images/cats`                    |                               `www.contoso.com/videos`                                |
 
-    -   `*.com`  
 
-    -   `*.contoso/*`  
+- Seguem exemplos de algumas das entradas que você não pode especificar:  
 
-    -   `www.contoso.com/*images`  
+  -   `*.com`  
 
-    -   `www.contoso.com/*images*pigs`  
+  -   `*.contoso/*`  
 
-    -   `www.contoso.com/page*`  
+  -   `www.contoso.com/*images`  
 
-    -   Endereços IP  
+  -   `www.contoso.com/*images*pigs`  
 
-    -   `https://*`  
+  -   `www.contoso.com/page*`  
 
-    -   `http://*`  
+  -   Endereços IP  
 
-    -   `http://www.contoso.com:*`  
+  -   `https://*`  
 
-    -   `http://www.contoso.com: /*`  
+  -   `http://*`  
+
+  -   `http://www.contoso.com:*`  
+
+  -   `http://www.contoso.com: /*`  
 
 > [!NOTE]  
 >  `*.microsoft.com` é sempre permitido.  
@@ -143,6 +145,6 @@ Use as informações a seguir para saber mais sobre os formatos permitidos e car
 
 -   Se os modos de cada política forem diferentes, mas as listas de URLs forem as mesmas, as URLs não serão impostas no dispositivo.  
 
--   Se um dispositivo estiver recebendo políticas de navegador gerenciado pela primeira vez e houver conflito entre duas políticas, as URLs não serão impostas ao dispositivo. Use o nó **Conflitos de Política** do espaço de trabalho **Política** para ver os conflitos.  
+-   Se um dispositivo estiver recebendo políticas de navegador gerenciado pela primeira vez e houver conflito entre duas políticas, as URLs não serão impostas ao dispositivo. Use o nó **Conflitos de Política** do workspace **Política** para ver os conflitos.  
 
--   Se um dispositivo já tiver recebido uma política de navegador gerenciado e uma segunda política for implantada com configurações conflitantes, as configurações originais permanecerão no dispositivo. Use o nó **Conflitos de Política** do espaço de trabalho **Política** para ver os conflitos.  
+-   Se um dispositivo já tiver recebido uma política de navegador gerenciado e uma segunda política for implantada com configurações conflitantes, as configurações originais permanecerão no dispositivo. Use o nó **Conflitos de Política** do workspace **Política** para ver os conflitos.  

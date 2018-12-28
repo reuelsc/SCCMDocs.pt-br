@@ -10,16 +10,16 @@ ms.assetid: 120442be-179e-450c-a0c4-284046895da3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5ee29053f69eaf624079f42a33efa5cdba9d1de9
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: decd16a03a0381718ada3e4c977d10c159c6be25
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352593"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417057"
 ---
 # <a name="exchange-activesync-email-profiles-in-system-center-configuration-manager"></a>Perfis de email do Exchange ActiveSync no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Usando o Microsoft Intune e o Exchange ActiveSync, você pode configurar dispositivos com restrições e perfis de email. Isso permite que os usuários acessem o email corporativo em seus dispositivos com uma configuração mínima exigida de sua parte.  
 
@@ -45,71 +45,71 @@ Para implantar perfis de email nos dispositivos, você deve registrar os disposi
 
 Para criar um perfil, use o Assistente para Criar Perfil de Email do Exchange ActiveSync. 
 
-1.  No console do Configuration Manager, escolha **Ativos e Conformidade**.  
+1. No console do Configuration Manager, escolha **Ativos e Conformidade**.  
 
-2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**, expanda **Acesso aos Recursos da Empresa**e escolha **Perfis de Email**.  
+2. No workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade**, expanda **Acesso aos Recursos da Empresa**e escolha **Perfis de Email**.  
 
-3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Perfil de Email do Exchange ActiveSync** para iniciar o assistente.
+3. Na guia **Início**, no grupo **Criar**, escolha **Criar Perfil de Email do Exchange ActiveSync** para iniciar o assistente.
 
-4.  Na página **Geral** do assistente, configure o seguinte:
+4. Na página **Geral** do assistente, configure o seguinte:
 
-    - **Nome**. Forneça um nome descritivo para o perfil de email.
+   - **Nome**. Forneça um nome descritivo para o perfil de email.
 
-    - **Descrição**. Opcionalmente, forneça uma descrição para o perfil de email que ajudará a identificá-lo no console do Configuration Manager.
+   - **Descrição**. Opcionalmente, forneça uma descrição para o perfil de email que ajudará a identificá-lo no console do Configuration Manager.
 
-    - **Este perfil de email é para o Android for Work**. Escolha esta opção se você implantar o perfil de email para os dispositivos Android for Work somente. Se marcar esta caixa, a página do assistente de **Plataformas Suportadas** não será exibida. Apenas perfis de email do Android for Work são configurados.
+   - **Este perfil de email é para o Android for Work**. Escolha esta opção se você implantar o perfil de email para os dispositivos Android for Work somente. Se marcar esta caixa, a página do assistente de **Plataformas Suportadas** não será exibida. Apenas perfis de email do Android for Work são configurados.
 
-4.  Na página **Exchange ActiveSync** do assistente, especifique as seguintes informações:  
+5. Na página **Exchange ActiveSync** do assistente, especifique as seguintes informações:  
 
-    -   **Host do Exchange ActiveSync**. Especifique o nome de host do servidor Exchange da empresa que hospeda os serviços do Exchange ActiveSync.  
+   - **Host do Exchange ActiveSync**. Especifique o nome de host do servidor Exchange da empresa que hospeda os serviços do Exchange ActiveSync.  
 
-    -   **Nome da conta**. Especifique o nome de exibição para a conta de email, como será exibido para os usuários em seus dispositivos.  
+   - **Nome da conta**. Especifique o nome de exibição para a conta de email, como será exibido para os usuários em seus dispositivos.  
 
-    -   **Nome de usuário da conta**. Escolha como o nome de usuário da conta de email é configurado nos dispositivos cliente. Você pode escolher uma das seguintes opções na lista suspensa:  
+   - **Nome de usuário da conta**. Escolha como o nome de usuário da conta de email é configurado nos dispositivos cliente. Você pode escolher uma das seguintes opções na lista suspensa:  
 
-        -   **Nome Principal do Usuário**. Use o nome principal do usuário completo para entrar no Exchange.  
+     -   **Nome Principal do Usuário**. Use o nome principal do usuário completo para entrar no Exchange.  
 
-        -   **AccountName**. Use o nome da conta de usuário completo no Active Directory.
+     -   **AccountName**. Use o nome da conta de usuário completo no Active Directory.
 
-        -   **Endereço SMTP Primário**. Use o endereço SMTP primário do usuário para entrar no Exchange.  
+     -   **Endereço SMTP Primário**. Use o endereço SMTP primário do usuário para entrar no Exchange.  
 
-    -   **Endereço de email**. Escolha como o endereço de email do usuário em cada dispositivo cliente é gerado. Você pode escolher uma das seguintes opções na lista suspensa:  
+   - **Endereço de email**. Escolha como o endereço de email do usuário em cada dispositivo cliente é gerado. Você pode escolher uma das seguintes opções na lista suspensa:  
 
-        -   **Endereço SMTP Primário**. Use o endereço SMTP primário do usuário para entrar no Exchange.  
+     -   **Endereço SMTP Primário**. Use o endereço SMTP primário do usuário para entrar no Exchange.  
 
-        -   **Nome Principal do Usuário**. Use o nome principal do usuário completo como o endereço de email.  
+     -   **Nome Principal do Usuário**. Use o nome principal do usuário completo como o endereço de email.  
 
-    -   **Domínio da conta**. Selecione uma das seguintes opções:  
+   - **Domínio da conta**. Selecione uma das seguintes opções:  
 
-        -   **Obter do Active Directory**  
+     - **Obter do Active Directory**  
 
-        -   **Personalizado**  
+     - **Personalizado**  
 
-         Esse campo só será aplicável se **sAMAccountName** for selecionado na lista suspensa **Nome de usuário da conta**.  
+       Esse campo só será aplicável se **sAMAccountName** for selecionado na lista suspensa **Nome de usuário da conta**.  
 
-    -   **Método de autenticação**. Escolha um dos seguintes métodos de autenticação que serão usados para autenticar a conexão com o Exchange ActiveSync:  
+   - **Método de autenticação**. Escolha um dos seguintes métodos de autenticação que serão usados para autenticar a conexão com o Exchange ActiveSync:  
 
-        -   **Certificados**. Um certificado de identidade será usado para autenticar a conexão do Exchange ActiveSync.  
+     -   **Certificados**. Um certificado de identidade será usado para autenticar a conexão do Exchange ActiveSync.  
 
-        -   **Nome de usuário e Senha**. O usuário do dispositivo deve fornecer uma senha para conectar o Exchange ActiveSync. (O nome de usuário é configurado como parte do perfil de email.)  
+     -   **Nome de usuário e Senha**. O usuário do dispositivo deve fornecer uma senha para conectar o Exchange ActiveSync. (O nome de usuário é configurado como parte do perfil de email.)  
 
-    -   **Certificado de identidade**. Escolha **Selecionar**, em seguida, escolha um certificado a ser usado para a identidade.  
+   - **Certificado de identidade**. Escolha **Selecionar**, em seguida, escolha um certificado a ser usado para a identidade.  
 
-         Os certificados de identidade devem ser certificados SCEP; não é possível usar um certificado PFX.  Para saber mais, confira [Perfis de certificado no System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
+      Os certificados de identidade devem ser certificados SCEP; não é possível usar um certificado PFX.  Para saber mais, confira [Perfis de certificado no System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
-         Essa opção só estará disponível se você escolheu **Certificados** no **Método de autenticação**.  
+      Essa opção só estará disponível se você escolheu **Certificados** no **Método de autenticação**.  
 
-    -   **Use S/MIME**. Envie um email de saída usando a criptografia S/MIME. Essa opção é aplicável somente a dispositivos iOS. Escolha dentre as seguintes opções:
+   - **Use S/MIME**. Envie um email de saída usando a criptografia S/MIME. Essa opção é aplicável somente a dispositivos iOS. Escolha dentre as seguintes opções:
 
-        -   **Certificados de assinatura**.  Escolha **Selecionar**, depois, escolha um perfil de certificado para usar para criptografia.  
+     - **Certificados de assinatura**.  Escolha **Selecionar**, depois, escolha um perfil de certificado para usar para criptografia.  
 
-            O perfil pode ser um certificado SCEP ou PFX.  No entanto, se a assinatura e a criptografia forem usadas, você deverá selecionar os perfis de certificado PFX para *assinatura e criptografia*.
+       O perfil pode ser um certificado SCEP ou PFX.  No entanto, se a assinatura e a criptografia forem usadas, você deverá selecionar os perfis de certificado PFX para *assinatura e criptografia*.
 
-        -   **Certificados de criptografia**. Escolha **Selecionar**, em seguida, escolha um certificado a usar para a criptografia. Você só pode escolher um certificado PFX para usar como um certificado de criptografia.
+     - **Certificados de criptografia**. Escolha **Selecionar**, em seguida, escolha um certificado a usar para a criptografia. Você só pode escolher um certificado PFX para usar como um certificado de criptografia.
 
-        -   Para criptografar todas as mensagens em dispositivos iOS, marque a caixa de seleção **Exigir criptografia**.    
+     - Para criptografar todas as mensagens em dispositivos iOS, marque a caixa de seleção **Exigir criptografia**.    
 
-         Você deve criar perfis de certificado antes de poder escolhê-los aqui.  Para saber mais, confira [Perfis de certificado no System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
+       Você deve criar perfis de certificado antes de poder escolhê-los aqui.  Para saber mais, confira [Perfis de certificado no System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
 ## <a name="configure-synchronization-settings-for-the-exchange-activesync-email-profile"></a>Defina as configurações de sincronização para o perfil de email do Exchange ActiveSync  
 

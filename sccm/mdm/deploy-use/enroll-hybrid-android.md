@@ -10,16 +10,16 @@ ms.assetid: c517fe34-0130-465b-a020-bdb555878778
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f833a28a22e4b3ffd2c8fc237effec94e26e69e8
-ms.sourcegitcommit: 10b3a571e2a822bbd7b58a25840ee1e6f703a7a2
-ms.translationtype: HT
+ms.openlocfilehash: fb488ccfc186fcc56ea91c30b6c0319aead5208e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34814249"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416972"
 ---
 # <a name="set-up-android-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurar o gerenciamento de dispositivo híbrido do Android com o System Center Configuration Manager e o Microsoft Intune
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Este artigo ajuda você a habilitar o registro híbrido de dispositivos Android e Android for Work. Em seguida, você pode usar o Configuration Manager para gerenciar os dispositivos por meio de uma assinatura do Microsoft Intune configurada. Os usuários podem baixar o aplicativo Android do portal da empresa no Google Play, que permite registrar dispositivos Android (incluindo Samsung KNOX Standard) e Android for Work.
 
@@ -31,11 +31,11 @@ Com o Configuration Manager, você pode gerenciar as configurações de conformi
 As etapas a seguir permitem que o Configuration Manager gerencie dispositivos Android sem um perfil de trabalho, ou seja, o registro "Android clássico".
 
 1. Antes de configurar o registro para qualquer plataforma, conclua os pré-requisitos e procedimentos em [Configurar MDM híbrido](setup-hybrid-mdm.md).  
-2. No console do Configuration Manager, no espaço de trabalho **Administração**, escolha **Visão Geral** > **Serviços de Nuvem** > **Assinatura do Microsoft Intune** e escolha sua assinatura do Intune.  
+2. No console do Configuration Manager, no workspace **Administração**, escolha **Visão Geral** > **Serviços de Nuvem** > **Assinatura do Microsoft Intune** e escolha sua assinatura do Intune.  
 3. Na guia **Início** do grupo **Assinatura**, escolha **Configurar Plataformas** > **Android**.  
 4. Na caixa de diálogo **Propriedades da Assinatura do Microsoft Intune**, escolha a guia **Android** e clique para marcar a caixa de seleção **Habilitar registro do Android**. Escolha **Bloquear dispositivos de propriedade pessoal** para limitar o registro a [dispositivos pré-declarados](predeclare-devices-with-hardware-id.md).
 
- Após a configuração, será necessário permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](/intune/end-user-educate). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.
+   Após a configuração, será necessário permitir que os usuários saibam como registrar seus dispositivos. Consulte [O que dizer aos usuários sobre o registro de seus dispositivos](/intune/end-user-educate). Essas informações se aplicam a dispositivos móveis gerenciados pelo Microsoft Intune e pelo Configuration Manager.
 
 
 
@@ -44,7 +44,7 @@ As etapas a seguir permitem que o Configuration Manager gerencie dispositivos An
 
 1. [Crie uma conta do Google](https://accounts.google.com/SignUp) a ser usada como a conta do administrador do Android for Work. Também é possível entrar com a conta associada a todas as tarefas de gerenciamento do Android for Work nesse locatário do Intune. Essa conta pode ser do Google compartilhada entre os administradores que gerenciam dispositivos Android. Essa é a conta do Google que sua organização usa para gerenciar e publicar aplicativos no console do Play for Work. Você usará essa conta para aprovar os aplicativos na loja do Play for Work, portanto, mantenha o controle do nome da conta e senha.
 2. Habilite o registro do Android associando a conta do Google ao locatário do Intune gerenciado no Configuration Manager:
-   1. No console do Configuration Manager, no espaço de trabalho **Administração**, escolha **Visão Geral** > **Serviços de Nuvem** > **Assinaturas do Microsoft Intune** e escolha sua assinatura do Intune.
+   1. No console do Configuration Manager, no workspace **Administração**, escolha **Visão Geral** > **Serviços de Nuvem** > **Assinaturas do Microsoft Intune** e escolha sua assinatura do Intune.
    2. Na guia **Início** do grupo **Assinatura**, escolha **Configurar Plataformas** > **Android for Work**.
    3. Na caixa de diálogo, escolha **Configurar Android for Work no console do Intune**. O console do Intune é aberto no navegador da Web.
    4. Use suas credenciais de administrador do Intune para entrar no Intune pelo portal do Azure.
@@ -80,4 +80,4 @@ Após habilitar o registro do Android for Work, será possível executar as segu
 - [Apagar seletivamente o perfil de trabalho](/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe)
 
 > [!div class="button"]
-[< Etapa anterior](create-service-connection-point.md)  [Próxima etapa >](set-up-additional-management.md)
+> [< Etapa anterior](create-service-connection-point.md)  [Próxima etapa >](set-up-additional-management.md)

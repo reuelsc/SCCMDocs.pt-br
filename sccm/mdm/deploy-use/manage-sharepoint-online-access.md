@@ -10,16 +10,16 @@ ms.assetid: 49cec466-1676-4fe2-a2fe-5004f01d735e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f723110abdb94dd96fb2ed7f52af681d27fccf87
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 4d00973704ce49a949c89a37e89ed2d39064cbec
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351897"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422905"
 ---
 # <a name="manage-sharepoint-online-access-in-system-center-configuration-manager"></a>Gerenciar o acesso ao SharePoint Online no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 
 A política de acesso condicional do Configuration Manager para **SharePoint Online** gerencia o acesso ao OneDrive para arquivos comerciais, que são armazenados no SharePoint Online. O acesso é baseado nas condições especificadas.
@@ -54,37 +54,37 @@ Os aplicativos de área de trabalho do Office podem acessar o SharePoint Online 
 
  Para conectar-se aos arquivos necessários, o dispositivo que executa o OneDrive deve:  
 
--   Estar registrado no Microsoft Intune ou em um computador ingressado no domínio.  
+- Estar registrado no Microsoft Intune ou em um computador ingressado no domínio.  
 
--   Registre o dispositivo no Azure AD (Azure Active Directory). Esse registro ocorre automaticamente quando o dispositivo é registrado com o Intune.  
+- Registre o dispositivo no Azure AD (Azure Active Directory). Esse registro ocorre automaticamente quando o dispositivo é registrado com o Intune.  
 
-     Para computadores ingressados no domínio, você deve configurá-los para se [registrarem automaticamente](/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup) com o Azure AD.  
+   Para computadores ingressados no domínio, você deve configurá-los para se [registrarem automaticamente](/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup) com o Azure AD.  
 
--   Ser compatível com todas as políticas de conformidade do Configuration Manager implantadas  
+- Ser compatível com todas as políticas de conformidade do Configuration Manager implantadas  
 
-    O Azure AD armazena o estado do dispositivo. Ele concede ou bloqueia o acesso a arquivos, com base nas condições especificadas.  
+  O Azure AD armazena o estado do dispositivo. Ele concede ou bloqueia o acesso a arquivos, com base nas condições especificadas.  
 
-    Se uma condição não for atendida, o usuário receberá uma das seguintes mensagens de erro ao fazer logon:  
+  Se uma condição não for atendida, o usuário receberá uma das seguintes mensagens de erro ao fazer logon:  
 
--   Se o dispositivo não estiver registrado com o Intune ou não estiver registrado no Azure AD, será exibida uma mensagem com instruções sobre como instalar o aplicativo de Portal da Empresa e registrá-lo.  
+- Se o dispositivo não estiver registrado com o Intune ou não estiver registrado no Azure AD, será exibida uma mensagem com instruções sobre como instalar o aplicativo de Portal da Empresa e registrá-lo.  
 
--   Se o dispositivo não estiver em conformidade, será exibida uma mensagem que direciona o usuário para o portal da Web do Intune. Lá, ele pode encontrar informações sobre o problema e como corrigi-lo.  
+- Se o dispositivo não estiver em conformidade, será exibida uma mensagem que direciona o usuário para o portal da Web do Intune. Lá, ele pode encontrar informações sobre o problema e como corrigi-lo.  
 
 - Para dispositivos móveis:
 
   Você pode restringir o acesso ao SharePoint Online quando o acesso é feito por meio de um navegador em dispositivos **iOS** e **Android**. O acesso é permitido somente de navegadores com suporte em dispositivos em conformidade:  
-    - Safari (iOS)
-    - Chrome (Android)
-    - Navegador gerenciado (iOS e Android)  
+  - Safari (iOS)
+  - Chrome (Android)
+  - Navegador gerenciado (iOS e Android)  
 
     Navegadores incompatíveis são bloqueados.  
 
--   Para um PC:  
+- Para um PC:  
 
 
-    -   Se a política estiver definida para exigir o ingresso no domínio e o PC não tiver ingressado no domínio, uma mensagem será exibida para que o usuário entre em contato com o administrador de TI.  
+  -   Se a política estiver definida para exigir o ingresso no domínio e o PC não tiver ingressado no domínio, uma mensagem será exibida para que o usuário entre em contato com o administrador de TI.  
 
-    -   Se a política estiver definida para exigir ingresso no domínio ou conformidade e o PC não atender a nenhum dos dois requisitos, será exibida uma mensagem com instruções sobre como instalar o aplicativo do Portal da Empresa e realizar o registro.  
+  -   Se a política estiver definida para exigir ingresso no domínio ou conformidade e o PC não atender a nenhum dos dois requisitos, será exibida uma mensagem com instruções sobre como instalar o aplicativo do Portal da Empresa e realizar o registro.  
 
 É possível bloquear o acesso ao SharePoint Online por meio dos seguintes aplicativos:  
 
@@ -109,11 +109,11 @@ Os aplicativos de área de trabalho do Office podem acessar o SharePoint Online 
 
  Você pode especificar dois tipos de grupo em uma política do SharePoint Online:  
 
--   **Grupos de destino**: contém grupos de usuários aos quais a política se aplica  
+- **Grupos de destino**: Contém grupos de usuários aos quais a política se aplica  
 
--   **Grupos isentos**: contém grupos de usuários isentos da política (opcional)  
+- **Grupos isentos**: Contém grupos de usuários isentos da política (opcional)  
 
- Se um usuário estiver nos dois grupos, ele ficará isento da política.  
+  Se um usuário estiver nos dois grupos, ele ficará isento da política.  
 
 ### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Etapa 2: Configurar e implantar uma política de conformidade  
  Crie e implante uma política de conformidade para todos os dispositivos aos quais a política do SharePoint Online é direcionada.  
@@ -135,65 +135,65 @@ Os aplicativos de área de trabalho do Office podem acessar o SharePoint Online 
  >[!NOTE]
  >Você também pode criar a política de acesso condicional no console de gerenciamento do Azure AD. O console de gerenciamento do Azure AD permite que você crie políticas de acesso condicional do dispositivo do Intune. O Azure AD se refere a essas políticas como política de acesso condicional baseada em dispositivo. Você também pode criar outras políticas de acesso condicional, como autenticação multifator. No portal, você pode definir políticas de acesso condicional para aplicativos corporativos de terceiros com suporte pelo Azure AD, como o Salesforce e o Box. Para obter mais detalhes, consulte [Como definir a política de acesso condicional com base no dispositivo do Azure Active Directory para controle de acesso dos aplicativos conectados no Azure AD](/azure/active-directory/active-directory-conditional-access-policy-connected-applications).  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
+1. No console do Configuration Manager, clique em **Ativos e Conformidade**.  
 
-2.  Selecione **Habilitar política de acesso condicional para o SharePoint Online**.  
+2. Selecione **Habilitar política de acesso condicional para o SharePoint Online**.  
 
-     ![IntuneSASharePointOnlineCAPolicy](media/IntuneSASharePointOnlineCAPolicy.png)  
+    ![IntuneSASharePointOnlineCAPolicy](media/IntuneSASharePointOnlineCAPolicy.png)  
 
-3.  Em **Acesso do aplicativo** para o Outlook e aplicativos que usam autenticação moderna, você pode optar por restringir o acesso apenas para dispositivos compatíveis para cada plataforma.  
+3. Em **Acesso do aplicativo** para o Outlook e aplicativos que usam autenticação moderna, você pode optar por restringir o acesso apenas para dispositivos compatíveis para cada plataforma.  
 
-    > [!TIP]  
-    >  **Autenticação moderna** traz a entrada baseada no ADAL (Active Directory Authentication Library) para clientes Office.  
-    >   
-    >  -   A autenticação com base em ADAL permite que os clientes Office participem de autenticação baseada em navegador (também conhecida como autenticação passiva). Para autenticar, o usuário é direcionado a uma página da Web de entrada.  
-    > -   Esse novo método de entrada permite novos cenários, como acesso condicional, com base em **conformidade do dispositivo** e se a **autenticação multifator** foi executada.  
-    >   
-    >  Para obter mais informações, consulte [Como a autenticação moderna funciona para aplicativos de cliente do Office 2013 e Office 2016](https://support.office.com/article/How-modern-authentication-works-for-Office-2013-and-Office-2016-client-apps-e4c45989-4b1a-462e-a81b-2a13191cf517).  
+   > [!TIP]
+   >  **Autenticação moderna** traz a entrada baseada no ADAL (Active Directory Authentication Library) para clientes Office.  
+   > 
+   > - A autenticação com base em ADAL permite que os clientes Office participem de autenticação baseada em navegador (também conhecida como autenticação passiva). Para autenticar, o usuário é direcionado a uma página da Web de entrada.  
+   >   -   Esse novo método de entrada permite novos cenários, como acesso condicional, com base em **conformidade do dispositivo** e se a **autenticação multifator** foi executada.  
+   > 
+   >   Para obter mais informações, consulte [Como a autenticação moderna funciona para aplicativos de cliente do Office 2013 e Office 2016](https://support.office.com/article/How-modern-authentication-works-for-Office-2013-and-Office-2016-client-apps-e4c45989-4b1a-462e-a81b-2a13191cf517).  
 
-     Para computadores Windows, este deve estar ingressado no domínio ou então ser registrado no Intune e ser compatível. Você pode definir os seguintes requisitos:  
+    Para computadores Windows, este deve estar ingressado no domínio ou então ser registrado no Intune e ser compatível. Você pode definir os seguintes requisitos:  
 
-    -   **Os dispositivos devem estar em conformidade ou ingressados no domínio**: os computadores devem estar em conformidade ou estar ingressados no domínio com as políticas definidas no Intune. Se o computador não atender a esses requisitos, será solicitado que o usuário registre o dispositivo no Intune.  
+   -   **Dispositivos devem estar ingressados no domínio ou em conformidade**: Os PCs devem estar ingressados no domínio ou em conformidade com as políticas definidas no Intune. Se o computador não atender a esses requisitos, será solicitado que o usuário registre o dispositivo no Intune.  
 
-    -   **Os dispositivos devem estar ingressados no domínio**: os computadores devem estar ingressados no domínio para acessar o Exchange Online. Se o PC não estiver ingressado no domínio, o acesso ao email será bloqueado e será solicitado que o usuário entre em contato com o administrador de TI.  
+   -   **Dispositivos devem estar ingressados no domínio**: Os PCs devem estar ingressados no domínio para acessar o Exchange Online. Se o PC não estiver ingressado no domínio, o acesso ao email será bloqueado e será solicitado que o usuário entre em contato com o administrador de TI.  
 
-    -   **Os dispositivos devem estar em conformidade**: os computadores devem estar registrados no Intune e em conformidade. Se o computador não estiver registrado, será exibida uma mensagem com instruções sobre como registrá-lo.  
+   -   **Dispositivos devem ser compatíveis**: Os PCs devem estar registrados no Intune e compatíveis. Se o computador não estiver registrado, será exibida uma mensagem com instruções sobre como registrá-lo.  
 
-4.  Em **Acesso do navegador** para o SharePoint Online e o OneDrive for Business, você pode optar por permitir o acesso somente ao Exchange Online por meio dos navegadores com suporte: Safari (iOS) e Chrome (Android). O acesso de outros navegadores será bloqueado. As mesmas restrições de plataforma selecionadas para Acesso do aplicativo para o OneDrive também se aplicarão aqui.
+4. Sob **acesso do navegador** ao SharePoint Online e OneDrive for Business, você pode optar por permitir o acesso ao Exchange Online somente por meio de navegadores com suporte: Safari (iOS) e Chrome (Android). O acesso de outros navegadores será bloqueado. As mesmas restrições de plataforma selecionadas para Acesso do aplicativo para o OneDrive também se aplicarão aqui.
 
-    Em dispositivos **Android**, os usuários devem habilitar a opção **Habilitar o Acesso do Navegador** no dispositivo registrado, da seguinte maneira:
-    1.  Inicie o **aplicativo do Portal da Empresa**.
-    2.  Vá para a página **Configurações** por meio dos três pontos (...) ou do botão de menu do hardware.
-    3.  Pressione o botão **Habilitar o Acesso do Navegador** .
-    4.  No navegador Chrome, saia do Office 365 e reinicie o Chrome.
+   Em dispositivos **Android**, os usuários devem habilitar a opção **Habilitar o Acesso do Navegador** no dispositivo registrado, da seguinte maneira:
+   1.  Inicie o **aplicativo do Portal da Empresa**.
+   2.  Vá para a página **Configurações** por meio dos três pontos (...) ou do botão de menu do hardware.
+   3.  Pressione o botão **Habilitar o Acesso do Navegador** .
+   4.  No navegador Chrome, saia do Office 365 e reinicie o Chrome.
 
-    Em plataformas **iOS e Android**, para identificar o dispositivo que é usado para acessar o serviço, o Azure AD emite um certificado TLS para o dispositivo. O dispositivo exibe o certificado com um prompt para o usuário final para selecionar o certificado conforme visto nas capturas de tela seguir: O usuário final deve selecionar este certificado antes que eles podem continuar a usar o navegador.
+   Em plataformas **iOS e Android**, para identificar o dispositivo que é usado para acessar o serviço, o Azure AD emite um certificado TLS para o dispositivo. O dispositivo exibe o certificado com um prompt ao usuário final para selecionar o certificado conforme visto nas capturas de tela seguir: O usuário final deve selecionar este certificado antes que eles podem continuar a usar o navegador.
 
-     **iOS**
+    **iOS**
 
-     ![captura de tela do prompt do certificado em um iPad](media/mdm-browser-ca-ios-cert-prompt_v2.png)
+    ![captura de tela do prompt do certificado em um iPad](media/mdm-browser-ca-ios-cert-prompt_v2.png)
 
-     **Android**
+    **Android**
 
-      ![captura de tela do prompt do certificado em um dispositivo Android](media/mdm-browser-ca-android-cert-prompt.png)
+     ![captura de tela do prompt do certificado em um dispositivo Android](media/mdm-browser-ca-android-cert-prompt.png)
 
-4.  Na guia **Início** , no grupo **Links** , clique em **Configurar Política de Acesso Condicional no Console do Intune**. Talvez seja necessário fornecer o nome de usuário e a senha da conta usada para conectar o Configuration Manager ao Intune.  
+5. Na guia **Início** , no grupo **Links** , clique em **Configurar Política de Acesso Condicional no Console do Intune**. Talvez seja necessário fornecer o nome de usuário e a senha da conta usada para conectar o Configuration Manager ao Intune.  
 
-     O console de administração do Intune é aberto.  
+    O console de administração do Intune é aberto.  
 
-5.  No console do [Console de Administração do Microsoft Intune](https://manage.microsoft.com), clique em **Política** > **Acesso Condicional** > **SharePoint Online Política**.  
+6. No console do [Console de Administração do Microsoft Intune](https://manage.microsoft.com), clique em **Política** > **Acesso Condicional** > **SharePoint Online Política**.  
 
-6.  Selecione **Bloquear o acesso de aplicativos ao SharePoint Online se o dispositivo for incompatível**.  
+7. Selecione **Bloquear o acesso de aplicativos ao SharePoint Online se o dispositivo for incompatível**.  
 
-7.  Em **Grupos Direcionados**, clique em **Modificar** para selecionar os grupos de segurança do Azure AD aos quais a política se aplica.  
+8. Em **Grupos Direcionados**, clique em **Modificar** para selecionar os grupos de segurança do Azure AD aos quais a política se aplica.  
 
-8.  Opcionalmente, em **Grupos isentos**, clique em **Modificar** para selecionar os grupos de segurança do Azure AD que são isentos dessa política.  
+9. Opcionalmente, em **Grupos isentos**, clique em **Modificar** para selecionar os grupos de segurança do Azure AD que são isentos dessa política.  
 
-9. Quando terminar, clique em **Salvar**.  
+10. Quando terminar, clique em **Salvar**.  
 
- Você não precisa implantar a política de acesso condicional; ela entra em vigor imediatamente.  
+    Você não precisa implantar a política de acesso condicional; ela entra em vigor imediatamente.  
 
- Consulte [Gerenciar o acesso do SharePoint Online com o Microsoft Intune](/intune-classic/deploy-use/restrict-access-to-sharepoint-online-with-microsoft-intune) para obter informações sobre como você pode monitorar a política no console do Intune.  
+    Consulte [Gerenciar o acesso do SharePoint Online com o Microsoft Intune](/intune-classic/deploy-use/restrict-access-to-sharepoint-online-with-microsoft-intune) para obter informações sobre como você pode monitorar a política no console do Intune.  
 
 ### <a name="see-also"></a>Consulte também  
 

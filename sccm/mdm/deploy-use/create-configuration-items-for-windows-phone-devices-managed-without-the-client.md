@@ -9,36 +9,36 @@ ms.assetid: df10dc4d-c9ff-4574-bb33-8d30eb14cfe3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4590077b303d5676aa72a816d785a0864fe2205f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 6cfeae4ddc582d1d641d1065f2542319d5519b5e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351965"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416415"
 ---
 # <a name="how-to-create-configuration-items-for-windows-phone-devices-managed-without-the-system-center-configuration-manager-client"></a>Como criar itens de configuração para dispositivos Windows Phone gerenciados sem o cliente do System Center Configuration Manager
 Use o item de configuração do **Windows Phone** do System Center Configuration Manager para gerenciar as configurações para dispositivos Windows Phone que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  
   
 ### <a name="to-create-a-windows-phone-configuration-item"></a>Para criar um item de configuração do Windows Phone  
   
-1.  No console do Configuration Manager, clique em **Ativos e conformidade**.  
+1. No console do Configuration Manager, clique em **Ativos e conformidade**.  
   
-2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**e clique em **Itens de Configuração**.  
+2. No workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade** e clique em **Itens de Configuração**.  
   
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
+3. Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
   
-4.  Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.  
+4. Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.  
   
-5.  Em **Especificar o tipo de item de configuração que deseja criar**, selecione **Windows Phone**.  
+5. Em **Especificar o tipo de item de configuração que deseja criar**, selecione **Windows Phone**.  
   
-6.  Se você criar e atribuir categorias, clique em **Categorias** para ajudá-lo a pesquisar e filtrar itens de configuração no console do Configuration Manager.  
+6. Se você criar e atribuir categorias, clique em **Categorias** para ajudá-lo a pesquisar e filtrar itens de configuração no console do Configuration Manager.  
   
-7.  Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do Windows Phone que avaliarão o item de configuração.  
+7. Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do Windows Phone que avaliarão o item de configuração.  
   
-8.  Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Referência de configurações do item de configuração do Windows Phone](#BKMK_Setref) neste tópico para obter detalhes e clique **Avançar**.  
+8. Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Referência de configurações do item de configuração do Windows Phone](#BKMK_Setref) neste tópico para obter detalhes e clique **Avançar**.  
   
-    > [!TIP]  
-    >  Se a configuração desejada não estiver na lista, marque a **caixa de seleção Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
+   > [!TIP]  
+   >  Se a configuração desejada não estiver na lista, marque a **caixa de seleção Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
   
 9. Em cada página de configurações, defina as configurações necessárias e se deseja corrigi-las quando não forem compatíveis nos dispositivos (quando houver suporte para essa opção).  
   
@@ -61,7 +61,7 @@ Use o item de configuração do **Windows Phone** do System Center Configuration
   
 12. Conclua o assistente.  
   
- Você pode exibir o novo item de configuração no nó **Itens de Configuração** do espaço de trabalho **Ativos e Conformidade** .  
+    Você pode exibir o novo item de configuração no nó **Itens de Configuração** do workspace **Ativos e Conformidade**.  
   
 ##  <a name="windows-phone-configuration-item-settings-reference"></a>Referência de configurações do item de configuração do Windows Phone  
   
@@ -293,7 +293,7 @@ Use o item de configuração do **Windows Phone** do System Center Configuration
 |Configuração|Mais informações|  
 |**Lista de aplicativos bloqueados**|Selecione esta opção se desejar especificar uma lista de aplicativos que os usuários não terão permissão de instalar.|  
 |**Lista de aplicativos permitidos**|Selecione esta opção se desejar especificar uma lista de aplicativos que os usuários têm permissão para instalar.|  
-|**Adicionar**|Adiciona um aplicativo à lista selecionada. Especifique um nome de sua preferência, ou o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.<br /><br /> Para especificar a URL, na página da Loja do Windows Phone, procure o aplicativo que deseja usar.<br /><br /> **Exemplo:** procure o aplicativo **Skype** na loja. A URL usada será http://www.windowsphone.com/en-us/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51.<br /><br /> Para o aplicativo do portal da empresa ou para os aplicativos de linha de negócios, não é necessário especificar uma URL completa, somente o GUID do aplicativo.|  
+|**Adicionar**|Adiciona um aplicativo à lista selecionada. Especifique um nome de sua preferência, ou o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.<br /><br /> Para especificar a URL, na página da Loja do Windows Phone, procure o aplicativo que deseja usar.<br /><br /> **Exemplo:** Pesquise o **Skype** aplicativo. A URL usada será http://www.windowsphone.com/en-us/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51.<br /><br /> Para o aplicativo do portal da empresa ou para os aplicativos de linha de negócios, não é necessário especificar uma URL completa, somente o GUID do aplicativo.|  
 |**Editarar**|Permite editar o nome, editor e a URL do aplicativo selecionado.|  
 |**Removerr**|Exclui o aplicativo selecionado da lista.|  
 |**Importarar**|Importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, editor e a URL do aplicativo no arquivo.|  

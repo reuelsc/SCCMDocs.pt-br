@@ -10,16 +10,16 @@ ms.assetid: 02979fb8-ea7e-4ec6-b7e0-ecbfda73e52d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 10cddac80b9a7ea4bd912e2f52585cdcef7e70da
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 35170f4584f9c327c542ac35d2f63803163330ba
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351234"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422276"
 ---
 # <a name="plan-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Planejar o gerenciamento de dispositivo móvel local no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Considere os seguintes requisitos antes de preparar a infraestrutura do Configuration Manager para manipular o Gerenciamento de dispositivo móvel local.
 
@@ -52,54 +52,54 @@ Considere os seguintes requisitos antes de preparar a infraestrutura do Configur
 ##  <a name="bkmk_roles"></a> Funções do sistema de sites necessárias  
  O Gerenciamento de Dispositivo Móvel local requer, pelo menos, uma de cada uma das seguintes funções do sistema de sites:  
 
--   **Ponto proxy do registro** para dar suporte a solicitações de registro.  
+- **Ponto proxy do registro** para dar suporte a solicitações de registro.  
 
--   **Ponto de registro** para dar suporte ao registro de dispositivo.  
+- **Ponto de registro** para dar suporte ao registro de dispositivo.  
 
--   **Ponto de gerenciamento de dispositivos** para a entrega da política. Essa função do sistema de sites é uma variação da função do ponto de gerenciamento que foi configurada para permitir o gerenciamento de dispositivo móvel.  
+- **Ponto de gerenciamento de dispositivos** para a entrega da política. Essa função do sistema de sites é uma variação da função do ponto de gerenciamento que foi configurada para permitir o gerenciamento de dispositivo móvel.  
 
--   **Ponto de distribuição** para entrega do conteúdo.  
+- **Ponto de distribuição** para entrega do conteúdo.  
 
--   **Ponto de conexão de serviço** para se conectar ao Intune para notificar dispositivos fora do firewall.  
+- **Ponto de conexão de serviço** para se conectar ao Intune para notificar dispositivos fora do firewall.  
 
- Essas funções do sistema de sites podem ser instaladas no único servidor de sistema de sites ou podem ser executadas separadamente em servidores diferentes de acordo com as necessidades de sua organização. Cada servidor do sistema de sites usado para o Gerenciamento de Dispositivo Móvel local deve ser configurado como um ponto de extremidade HTTPS para a comunicação com dispositivos confiáveis. Para obter mais informações, consulte [Comunicação confiável necessária](#bkmk_trustedComs).  
+  Essas funções do sistema de sites podem ser instaladas no único servidor de sistema de sites ou podem ser executadas separadamente em servidores diferentes de acordo com as necessidades de sua organização. Cada servidor do sistema de sites usado para o Gerenciamento de Dispositivo Móvel local deve ser configurado como um ponto de extremidade HTTPS para a comunicação com dispositivos confiáveis. Para obter mais informações, consulte [Comunicação confiável necessária](#bkmk_trustedComs).  
 
- Para obter mais informações sobre como planejar funções do sistema de sites, veja [Planejamento para servidores de sistema de sites e funções de sistema de sites no System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).  
+  Para obter mais informações sobre como planejar funções do sistema de sites, veja [Planejamento para servidores de sistema de sites e funções de sistema de sites no System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).  
 
- Para obter mais informações sobre como adicionar as funções do sistema de sites necessárias, veja [Instalar funções do sistema de sites para o gerenciamento de dispositivo móvel local no System Center Configuration Manager](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md).  
+  Para obter mais informações sobre como adicionar as funções do sistema de sites necessárias, veja [Instalar funções do sistema de sites para o gerenciamento de dispositivo móvel local no System Center Configuration Manager](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md).  
 
 ##  <a name="bkmk_trustedComs"></a> Comunicação confiável necessária  
  O Gerenciamento de Dispositivo Móvel local exige que as funções do sistema de sites sejam habilitadas para a comunicação HTTPS. Dependendo de suas necessidades, é possível usar a AC (autoridade de certificação) de sua empresa para estabelecer as conexões confiáveis entre servidores e dispositivos ou usar uma AC disponível publicamente para ser a autoridade confiável.  De qualquer forma, você precisará que um certificado de servidor Web seja configurado com o IIS nos servidores do sistema de sites que hospedam as funções do sistema de sites necessárias; além disso, você precisará do certificado raiz da AC instalado nos dispositivos que precisam se conectar aos servidores.  
 
  Se você usar a AC de sua empresa para estabelecer uma comunicação confiável, será necessário realizar as seguintes tarefas:  
 
--   Crie e emita o modelo de certificado do servidor Web na AC.  
+- Crie e emita o modelo de certificado do servidor Web na AC.  
 
--   Solicite um certificado do servidor Web para cada servidor do sistema de sites que hospeda uma função do sistema de sites necessária.  
+- Solicite um certificado do servidor Web para cada servidor do sistema de sites que hospeda uma função do sistema de sites necessária.  
 
--   Configure o IIS no servidor do sistema de sites para usar o certificado de servidor Web solicitado.  
+- Configure o IIS no servidor do sistema de sites para usar o certificado de servidor Web solicitado.  
 
- Para dispositivos ingressados no domínio do Active Directory corporativo, o certificado raiz da AC corporativa já está disponível no dispositivo para conexões confiáveis. Isso significa que os dispositivos ingressados no domínio (como computadores desktop) serão automaticamente confiáveis para conexões HTTPS com os servidores do sistema de sites. No entanto, dispositivos não ingressados no domínio (normalmente móveis) não terão o certificado raiz necessário instalado. Esses dispositivos exigirão a instalação manual do certificado raiz para que eles se comuniquem com êxito com os servidores do sistema de sites que dão suporte ao Gerenciamento de Dispositivo Móvel local.  
+  Para dispositivos ingressados no domínio do Active Directory corporativo, o certificado raiz da AC corporativa já está disponível no dispositivo para conexões confiáveis. Isso significa que os dispositivos ingressados no domínio (como computadores desktop) serão automaticamente confiáveis para conexões HTTPS com os servidores do sistema de sites. No entanto, dispositivos não ingressados no domínio (normalmente móveis) não terão o certificado raiz necessário instalado. Esses dispositivos exigirão a instalação manual do certificado raiz para que eles se comuniquem com êxito com os servidores do sistema de sites que dão suporte ao Gerenciamento de Dispositivo Móvel local.  
 
- É necessário exportar o certificado raiz da AC emissora para uso pelos dispositivos individuais. Para obter o arquivo do certificado raiz, é possível exportá-lo usando a AC; outro método mais simples é usar o certificado do servidor Web emitido pela AC para extrair a raiz e criar um arquivo do certificado raiz.   Em seguida, o certificado raiz deve ser entregue ao dispositivo.  Alguns métodos de entrega de exemplo incluem  
+  É necessário exportar o certificado raiz da AC emissora para uso pelos dispositivos individuais. Para obter o arquivo do certificado raiz, é possível exportá-lo usando a AC; outro método mais simples é usar o certificado do servidor Web emitido pela AC para extrair a raiz e criar um arquivo do certificado raiz.   Em seguida, o certificado raiz deve ser entregue ao dispositivo.  Alguns métodos de entrega de exemplo incluem  
 
--   Sistema de arquivos  
+- Sistema de arquivos  
 
--   Anexo de email  
+- Anexo de email  
 
--   Cartão de memória  
+- Cartão de memória  
 
--   Dispositivo vinculado  
+- Dispositivo vinculado  
 
--   Armazenamento em nuvem (como OneDrive)  
+- Armazenamento em nuvem (como OneDrive)  
 
--   Conexão NFC (comunicação a curta distância)  
+- Conexão NFC (comunicação a curta distância)  
 
--   Scanner de código de barras  
+- Scanner de código de barras  
 
--   Pacote de provisionamento OOBE (tela de apresentação)  
+- Pacote de provisionamento OOBE (tela de apresentação)  
 
- Para obter mais informações, consulte [Configure certificados para comunicações confiáveis do Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager.](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
+  Para obter mais informações, consulte [Configure certificados para comunicações confiáveis do Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager.](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
 
 ##  <a name="bkmk_enrollment"></a> Considerações sobre registro  
  Para habilitar o registro de dispositivo para o Gerenciamento de Dispositivo Móvel local, os usuários devem ter permissão de registro e seus dispositivos devem poder ter uma comunicação confiável com os servidores do sistema de sites que hospedam as funções do sistema de sites necessárias.  

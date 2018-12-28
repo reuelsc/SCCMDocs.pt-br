@@ -10,16 +10,16 @@ ms.assetid: 7c3b9316-247b-490b-a363-8f8553821579
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f94cc80d41eb346cb1d4c2fc314d310005c7b5f2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 86d79a193f09014206b72efcf745212712a3352e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350180"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417229"
 ---
 # <a name="manage-volume-purchased-ios-apps-with-system-center-configuration-manager"></a>Gerenciar aplicativos iOS adquiridos por volume com o System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 
 
@@ -99,24 +99,24 @@ No nó **Tokens do Apple Volume Purchase Program**, você já pode exibir inform
 
 ## <a name="step-2---deploy-a-volume-purchased-app"></a>Etapa 2: implantar um aplicativo comprado por volume  
 
-1.  No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Informações de Licença para Aplicativos da Loja**.  
+1. No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Informações de Licença para Aplicativos da Loja**.  
 
-3.  Escolha o aplicativo que você deseja implantar e, na guia **Início**, no grupo **Criar**, escolha **Criar Aplicativo**.
-O aplicativo do Configuration Manager criado contém o aplicativo Microsoft Store para Empresas. Em seguida, é possível implantar e monitorar o aplicativo, como você faria com qualquer outro aplicativo do Configuration Manager.  
+2. Escolha o aplicativo que você deseja implantar e, na guia **Início**, no grupo **Criar**, escolha **Criar Aplicativo**.
+   O aplicativo do Configuration Manager criado contém o aplicativo Microsoft Store para Empresas. Em seguida, é possível implantar e monitorar o aplicativo, como você faria com qualquer outro aplicativo do Configuration Manager.  
 
-    > [!IMPORTANT]  
-    > É necessário escolher a finalidade da implantação **Obrigatória**. Atualmente, não há suporte para instalações disponíveis.
+   > [!IMPORTANT]  
+   > É necessário escolher a finalidade da implantação **Obrigatória**. Atualmente, não há suporte para instalações disponíveis.
 
- Quando você implantar o aplicativo, uma licença será usada por cada usuário ou para instalações de dispositivo, cada dispositivo que instalar o aplicativo. Se você direcionar uma coleção de dispositivos com um aplicativo que oferece suporte ao licenciamento de dispositivos, uma licença de dispositivo será declarada. Se você direcionar uma coleção de dispositivos com um aplicativo sem suporte para licenciamento de dispositivos, uma licença de usuário será declarada. 
+   Quando você implantar o aplicativo, uma licença será usada por cada usuário ou para instalações de dispositivo, cada dispositivo que instalar o aplicativo. Se você direcionar uma coleção de dispositivos com um aplicativo que oferece suporte ao licenciamento de dispositivos, uma licença de dispositivo será declarada. Se você direcionar uma coleção de dispositivos com um aplicativo sem suporte para licenciamento de dispositivos, uma licença de usuário será declarada. 
 
- Quando você cria um aplicativo a partir do nó **Informações de licença para aplicativos de armazenamento**, o aplicativo é associado a licenças a partir do token para o aplicativo selecionado. Por exemplo, você verá duas versões do mesmo aplicativo no nó. Esse comportamento ocorre porque cada versão do aplicativo está associada a um token do Apple VPP diferente. Em seguida, você pode criar aplicativos de cada token e implantá-los separadamente.
+   Quando você cria um aplicativo a partir do nó **Informações de licença para aplicativos de armazenamento**, o aplicativo é associado a licenças a partir do token para o aplicativo selecionado. Por exemplo, você verá duas versões do mesmo aplicativo no nó. Esse comportamento ocorre porque cada versão do aplicativo está associada a um token do Apple VPP diferente. Em seguida, você pode criar aplicativos de cada token e implantá-los separadamente.
 
- Para recuperar uma licença, crie uma nova implantação para o aplicativo com a ação de implantação **Desinstalar**. Não é possível alterar a ação de implantação na implantação original. A licença é recuperada após a desinstalação do aplicativo.  
+   Para recuperar uma licença, crie uma nova implantação para o aplicativo com a ação de implantação **Desinstalar**. Não é possível alterar a ação de implantação na implantação original. A licença é recuperada após a desinstalação do aplicativo.  
 
 
 
 ## <a name="step-3---monitor-ios-vpp-apps"></a>Etapa 3 - Monitorar aplicativos de VPP iOS  
- O nó **Informações de Licença para Aplicativos da Loja** do espaço de trabalho **Biblioteca de Software** exibe informações sobre os aplicativos iOS adquiridos por volume. As informações incluem o número total de licenças que você tem para cada aplicativo e a quantidade que foi implantada. Além disso, o modo de exibição mostra a qual token de VPP o aplicativo está associado e o tipo do token
+ O nó **Informações de Licença para Aplicativos da Loja** do workspace **Biblioteca de Software** exibe informações sobre os aplicativos iOS adquiridos por volume. As informações incluem o número total de licenças que você tem para cada aplicativo e a quantidade que foi implantada. Além disso, o modo de exibição mostra a qual token de VPP o aplicativo está associado e o tipo do token
 
  Também é possível monitorar o uso de licença de todos os aplicativos VPP adquiridos por meio do relatório **Aplicativos do Apple Volume Purchase Program para iOS com contagens de licença**.  
 
@@ -131,7 +131,7 @@ O aplicativo do Configuration Manager criado contém o aplicativo Microsoft Stor
 
 Use o seguinte processo para excluir um token do Configuration Manager:  
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**. Expanda **Serviços de Nuvem** e selecione **Tokens do Apple Volume Purchase Program**.  
+1. No console do Configuration Manager, acesse o workspace **Administração**. Expanda **Serviços de Nuvem** e selecione **Tokens do Apple Volume Purchase Program**.  
 
 2. Selecione o token que deseja excluir.  
 

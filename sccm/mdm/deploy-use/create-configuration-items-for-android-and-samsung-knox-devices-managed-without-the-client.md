@@ -10,12 +10,12 @@ ms.assetid: 7b66f3c4-e3bb-4f6a-abd5-55be649ff90d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fbfcc2189e2ce06e6348936caad6c68de51f5bdb
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 8a1759013902a75c26ec5004b932a81b536e303e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352060"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416989"
 ---
 # <a name="how-to-create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-system-center-configuration-manager-client"></a>Como criar itens de configuração para dispositivos Android e Samsung KNOX gerenciados sem o cliente do System Center Configuration Manager
 
@@ -25,7 +25,7 @@ Use o item de configuração **Android e Samsung KNOX** do System Center Configu
 
 1. No console do Configuration Manager, escolha **Ativos e Conformidade**.  
 
-2. No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**e escolha em **Itens de Configuração**.  
+2. No workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade**e escolha em **Itens de Configuração**.  
 
 3. Na guia **Início**, no grupo **Criar**, clique em **Criar Item de Configuração**.  
 
@@ -63,7 +63,7 @@ Use o item de configuração **Android e Samsung KNOX** do System Center Configu
 
 12. Conclua o assistente.  
 
- Você pode exibir o novo item de configuração no nó **Itens de Configuração** do espaço de trabalho **Ativos e Conformidade** .  
+    Você pode exibir o novo item de configuração no nó **Itens de Configuração** do workspace **Ativos e Conformidade**.  
 
 ## <a name="android-and-samsung-knox-configuration-item-settings-reference"></a>Referência de configurações do item de configuração para o Android e Samsung KNOX  
 
@@ -84,17 +84,17 @@ Essas configurações se aplicam aos dispositivos Android e Samsung KNOX.
 
 ### <a name="device"></a>Dispositivo   
 
-|Configuração|Detalhes|  
-|------------------|-------------|  
-|**Discagem de voz**|Habilita ou desabilita o recurso de discagem de voz no dispositivo.|
-|**Assistente de voz**|Permite o uso do software Assistente de voz no dispositivo.|
-|**Captura de tela**|Permite ao usuário capturar o conteúdo da tela como uma imagem.|
-|**Envio de dados de diagnóstico**|Permite que o dispositivo envie informações de diagnóstico ao Google.|
-|**Localização geográfica**|Permite que o dispositivo use informações de localização.|
-|**Copiar e colar**|Permite as funções de copiar e colar no dispositivo.|
-|**Redefinição de fábrica**|Permite que o usuário execute uma redefinição de fábrica no dispositivo.|  |
-|**Permitir compartilhamento de área de transferência entre aplicativos**|Permite que o usuário use a área de transferência para copiar e colar entre os aplicativos.|  |
-|**Bluetooth**|Permite o uso de Bluetooth no dispositivo.|
+|                 Configuração                  |                             Detalhes                             |
+|------------------------------------------|-----------------------------------------------------------------|
+|            **Discagem de voz**             |  Habilita ou desabilita o recurso de discagem de voz no dispositivo.   |
+|           **Assistente de voz**            |    Permite o uso do software Assistente de voz no dispositivo.    |
+|            **Captura de tela**            |     Permite ao usuário capturar o conteúdo da tela como uma imagem.      |
+|      **Envio de dados de diagnóstico**      |    Permite que o dispositivo envie informações de diagnóstico ao Google.     |
+|             **Localização geográfica**              |            Permite que o dispositivo use informações de localização.            |
+|            **Copiar e colar**            |         Permite as funções de copiar e colar no dispositivo.          |
+|            **Redefinição de fábrica**             |      Permite que o usuário execute uma redefinição de fábrica no dispositivo.       |
+| **Permitir compartilhamento de área de transferência entre aplicativos** | Permite que o usuário use a área de transferência para copiar e colar entre os aplicativos. |
+|              **Bluetooth**               |           Permite o uso de Bluetooth no dispositivo.            |
 
 ### <a name="store"></a>Repositório
 
@@ -163,14 +163,15 @@ Não é possível especificar aplicativos compatíveis e não compatíveis no me
 
 Na página **Aplicativos Compatíveis e Não Compatíveis (Android)** , especifique as seguintes informações:  
 
-|Configuração|Mais informações|  
-|-------------|----------------------|  
-|**Lista de aplicativos não compatíveis**|Especifica uma lista de aplicativos que serão relatados como em não conformidade se forem instalados pelos usuários.|  
-|**Lista de aplicativos compatíveis**|Especifica uma lista de aplicativos que os usuários têm permissão de instalar. Todos os outros aplicativos instalados serão relatados como não compatíveis.|  
-|**Adicionar**|Adiciona um aplicativo à lista selecionada. Especifique um nome da sua preferência, opcionalmente o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.<br /><br /> Para especificar a URL, na [seção de aplicativos do Google Play](https://play.google.com/store/apps), procure o aplicativo que deseja usar.<br /><br /> Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar essa URL na lista de aplicativos compatíveis ou incompatíveis.<br /><br /> **Exemplo:** pesquise o **Microsoft Office Mobile**na Google Play. A URL usada será **https://play.google.com/store/apps/details?id=com.microsoft.office.officehub**.|  
-|**Editarar**|Permite editar o nome, editor e URL do aplicativo selecionado.|  
-|**Removerr**|Exclui o aplicativo selecionado da lista.|  
-|**Importarar**|Importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, editor e URL do aplicativo no arquivo.|  
+
+|          Configuração           |                                                                                                                                                                                                                                                                                                                 Mais informações                                                                                                                                                                                                                                                                                                                  |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Lista de aplicativos não compatíveis** |                                                                                                                                                                                                                                                                               Especifica uma lista de aplicativos que serão relatados como em não conformidade se forem instalados pelos usuários.                                                                                                                                                                                                                                                                               |
+|  **Lista de aplicativos compatíveis**   |                                                                                                                                                                                                                                                              Especifica uma lista de aplicativos que os usuários têm permissão de instalar. Todos os outros aplicativos instalados serão relatados como não compatíveis.                                                                                                                                                                                                                                                               |
+|          **Adicionar**           | Adiciona um aplicativo à lista selecionada. Especifique um nome da sua preferência, opcionalmente o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.<br /><br /> Para especificar a URL, na [seção de aplicativos do Google Play](https://play.google.com/store/apps), procure o aplicativo que deseja usar.<br /><br /> Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar essa URL na lista de aplicativos compatíveis ou incompatíveis.<br /><br /> **Exemplo:** Procure o Google Play **Microsoft Office Mobile**. A URL usada será **<https://play.google.com/store/apps/details?id=com.microsoft.office.officehub>**. |
+|          **Editarar**          |                                                                                                                                                                                                                                                                                          Permite editar o nome, editor e URL do aplicativo selecionado.                                                                                                                                                                                                                                                                                          |
+|         **Removerr**         |                                                                                                                                                                                                                                                                                                      Exclui o aplicativo selecionado da lista.                                                                                                                                                                                                                                                                                                      |
+|         **Importarar**         |                                                                                                                                                                                                                                                 Importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, editor e URL do aplicativo no arquivo.                                                                                                                                                                                                                                                 |
 
 ## <a name="android-for-work-configuration-items"></a>Itens de configuração do Android for Work
 O Android for Work tem dois grupos de configuração para itens de configuração:

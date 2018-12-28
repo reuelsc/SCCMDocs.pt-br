@@ -10,16 +10,16 @@ ms.assetid: 71c44250-626e-482c-8794-434c6aeb2fb1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4a88706233e85be6960585963c26bd740e9ff6ed
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: f5a03629fdea4a8fc496db624d0b32657d9bec83
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348259"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419097"
 ---
 # <a name="manage-skype-for-business-online-access"></a>Gerenciar o acesso do Skype for Business Online
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 
 Use a política de acesso condicional do Skype for Business Online para gerenciar o acesso ao Skype for Business Online, com base nas condições que você especificar.  
@@ -29,24 +29,24 @@ Use a política de acesso condicional do Skype for Business Online para gerencia
 
 ## <a name="prerequisites"></a>Pré-requisitos  
 
--   Habilite a [autenticação moderna](https://aka.ms/SkypeModernAuth) para o Skype for Business Online.   
+- Habilite a [autenticação moderna](https://aka.ms/SkypeModernAuth) para o Skype for Business Online.   
 
--   Todos os usuários devem usar o Skype for Business Online. Se você tiver uma implantação com o Skype for Business Online e o Skype for Business local, a política de acesso condicional não será aplicada aos usuários locais.  
+- Todos os usuários devem usar o Skype for Business Online. Se você tiver uma implantação com o Skype for Business Online e o Skype for Business local, a política de acesso condicional não será aplicada aos usuários locais.  
 
--   O dispositivo que precisa acessar Skype for Business Online deve:  
+- O dispositivo que precisa acessar Skype for Business Online deve:  
 
-    -   Ser um dispositivo Android ou iOS
+  -   Ser um dispositivo Android ou iOS
 
-    -   Ser registrado no Microsoft Intune
+  -   Ser registrado no Microsoft Intune
 
-    -   Estar em conformidade com qualquer política de conformidade do Microsoft Intune implantada
+  -   Estar em conformidade com qualquer política de conformidade do Microsoft Intune implantada
 
- O Azure Active Directory armazena o estado do dispositivo, que concede ou bloqueia o acesso de acordo com as condições especificadas.  
-Se uma condição não for atendida, o usuário receberá uma das seguintes mensagens ao fazer logon:  
+  O Azure Active Directory armazena o estado do dispositivo, que concede ou bloqueia o acesso de acordo com as condições especificadas.  
+  Se uma condição não for atendida, o usuário receberá uma das seguintes mensagens ao fazer logon:  
 
--   Se o dispositivo não estiver registrado no Microsoft Intune ou se não estiver registrado no Azure Active Directory, o usuário receberá instruções sobre como instalar o aplicativo do Portal da Empresa e registrá-lo.  
+- Se o dispositivo não estiver registrado no Microsoft Intune ou se não estiver registrado no Azure Active Directory, o usuário receberá instruções sobre como instalar o aplicativo do Portal da Empresa e registrá-lo.  
 
--   Se o dispositivo não estiver em conformidade, o usuário verá uma mensagem que o direcionará para o site do Portal da Empresa ou o aplicativo do Portal da Empresa. O Portal da Empresa contém informações sobre o problema e como corrigi-lo.  
+- Se o dispositivo não estiver em conformidade, o usuário verá uma mensagem que o direcionará para o site do Portal da Empresa ou o aplicativo do Portal da Empresa. O Portal da Empresa contém informações sobre o problema e como corrigi-lo.  
 
 ## <a name="configure-conditional-access-for-skype-for-business-online"></a>Configurar o acesso condicional para o Skype for Business Online  
 
@@ -69,31 +69,31 @@ Se uma condição não for atendida, o usuário receberá uma das seguintes mens
 >  Se você não implantou uma política de conformidade e, em seguida, habilitou a política do Skype for Business Online, todos os dispositivos direcionados terão acesso permitido se estiverem registrados no Microsoft Intune.  
 
 
-### <a name="step-3-configure-the-skype-for-business-online-policy"></a>Etapa 3: Configurar a política do Skype for Business Online  
+### <a name="step-3-configure-the-skype-for-business-online-policy"></a>Etapa 3: Configurar o Skype para política Business Online  
  Configure a política para exigir que somente dispositivos gerenciados e em conformidade possam acessar o Skype for Business Online. Essa política é armazenada no Azure Active Directory.  
 
-1.  No [Console de Administração do Microsoft Intune](https://manage.microsoft.com), clique em **Política** > **Acesso Condicional** > **Skype for Business Online Política**.  
+1. No [Console de Administração do Microsoft Intune](https://manage.microsoft.com), clique em **Política** > **Acesso Condicional** > **Skype for Business Online Política**.  
 
-     ![ConditionalAccess&#95;SFBPolicy](media/ConditionalAccess_SFBPolicy.png)  
+    ![ConditionalAccess&#95;SFBPolicy](media/ConditionalAccess_SFBPolicy.png)  
 
-2.  Selecione **Habilitar a política de acesso condicional**.  
+2. Selecione **Habilitar a política de acesso condicional**.  
 
-3.  Em **Acesso do aplicativo**, você pode optar por aplicar a política de acesso condicional a:  
+3. Em **Acesso do aplicativo**, você pode optar por aplicar a política de acesso condicional a:  
 
-    -   iOS  
+   -   iOS  
 
-    -   Android  
+   -   Android  
 
-4.  Em **Grupos Direcionados**, clique em **Modificar** para selecionar os grupos de segurança do Azure Active Directory aos quais a política se aplica. Opte por direcionar essa política a todos os usuários ou apenas a um grupo seleto de usuários.  
+4. Em **Grupos Direcionados**, clique em **Modificar** para selecionar os grupos de segurança do Azure Active Directory aos quais a política se aplica. Opte por direcionar essa política a todos os usuários ou apenas a um grupo seleto de usuários.  
 
-5.  Opcionalmente, em **Grupos isentos**, clique em **Modificar** para selecionar os grupos de segurança do Azure Active Directory que são isentos dessa política.  
+5. Opcionalmente, em **Grupos isentos**, clique em **Modificar** para selecionar os grupos de segurança do Azure Active Directory que são isentos dessa política.  
 
-6.  Quando terminar, clique em **Salvar**.  
+6. Quando terminar, clique em **Salvar**.  
 
- Você configurou o acesso condicional para o Skype for Business Online. Você não precisa implantar a política de acesso condicional, ele entra em vigor imediatamente.  
+   Você configurou o acesso condicional para o Skype for Business Online. Você não precisa implantar a política de acesso condicional, ele entra em vigor imediatamente.  
 
 ## <a name="monitor-the-compliance-and-conditional-access-policies"></a>Monitorar a conformidade e políticas de acesso condicional  
- No espaço de trabalho Grupos, você pode exibir o status de acesso condicional de seus dispositivos.  
+ No workspace Grupos, você pode exibir o status de acesso condicional de seus dispositivos.  
 
  Selecione qualquer grupo de dispositivos móveis e, na guia **Dispositivos** , selecione um dos seguintes **Filtros**:  
 

@@ -10,16 +10,16 @@ ms.assetid: 2bfc4c51-b25c-4c70-b81e-8a3b6ddf02c8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d77dbcf0b8b7853153a0b2ead4b2db3affd03733
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 5e2c8ab4f8dc0b544a79b2113c278f97444357bf
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352769"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420950"
 ---
 # <a name="manage-dynamics-crm-online-access-in-system-center-configuration-manager"></a>Gerenciar o acesso ao Dynamics CRM Online no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Você pode controlar o acesso ao Microsoft Dynamics CRM Online de dispositivos iOS e Android com acesso condicional do Microsoft Intune.  O acesso condicional do Intune tem dois componentes:
 * [Política de conformidade do dispositivo](../../protect/deploy-use/device-compliance-policies.md) que o dispositivo deve cumprir para ser considerado compatível.
@@ -67,22 +67,22 @@ Quando estiver pronto, continue na Etapa 3.
 ### <a name="step-3-configure-the-dynamics-crm-policy"></a>Etapa 3: Configurar a política do Dynamics CRM
 Em seguida, configure a política para exigir que somente dispositivos gerenciados e compatíveis possam acessar o Dynamics CRM. Essa política será armazenada no Active Directory do Azure.
 
-1.  No Console de administração do Microsoft Intune, escolha **Política > Acesso Condicional > Política do Dynamics CRM Online**.
+1. No Console de administração do Microsoft Intune, escolha **Política > Acesso Condicional > Política do Dynamics CRM Online**.
 
-     ![Captura de tela da página de política de acesso condicional do Dynamics CRM Online](media/mdm-ca-dynamics-crm-policy-configuration.png)
+    ![Captura de tela da página de política de acesso condicional do Dynamics CRM Online](media/mdm-ca-dynamics-crm-policy-configuration.png)
 
-2.  Selecione **Habilitar a política de acesso condicional**.
-3.  Em **Acesso do aplicativo**, você pode optar por aplicar a política de acesso condicional a:
-  * **iOS**
-  * **Android**
-4.  Em **Grupos de Destino**, escolha **Modificar** para selecionar os grupos de segurança do Azure Active Directory aos quais a política será aplicada. Você pode escolher aplicar isso a todos os usuários ou apenas a um grupo seleto de usuários.
-5.  Opcionalmente, em **Grupos Isentos**, escolha em **Modificar** para selecionar os grupos de segurança do Azure Active Directory que são isentos dessa política.
-6.  Quando terminar, escolha **Salvar**.
+2. Selecione **Habilitar a política de acesso condicional**.
+3. Em **Acesso do aplicativo**, você pode optar por aplicar a política de acesso condicional a:
+   * **iOS**
+   * **Android**
+4. Em **Grupos de Destino**, escolha **Modificar** para selecionar os grupos de segurança do Azure Active Directory aos quais a política será aplicada. Você pode escolher aplicar isso a todos os usuários ou apenas a um grupo seleto de usuários.
+5. Opcionalmente, em **Grupos Isentos**, escolha em **Modificar** para selecionar os grupos de segurança do Azure Active Directory que são isentos dessa política.
+6. Quando terminar, escolha **Salvar**.
 
 Você configurou o acesso condicional para o Dynamics CRM. Você não precisa implantar a política de acesso condicional, ele entra em vigor imediatamente.
 ##  <a name="monitor-the-compliance-and-conditional-access-policies"></a>Monitorar a conformidade e políticas de acesso condicional
 
-No espaço de trabalho **Grupos**, você pode exibir o status de acesso condicional de seus dispositivos.
+No workspace **Grupos**, você pode exibir o status de acesso condicional de seus dispositivos.
 
 Selecione qualquer grupo de dispositivos móveis e, na guia **Dispositivos** , selecione um dos seguintes **Filtros**:
 * **Dispositivos que não estão registrados no AAD** – esses dispositivos estão bloqueados do Dynamics CRM.

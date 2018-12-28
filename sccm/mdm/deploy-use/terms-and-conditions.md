@@ -10,16 +10,16 @@ ms.assetid: 4d3f9e6b-4d71-4fc4-9b91-47f1bfbd8c70
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cda5f01842f08ccc3e8dfbd17078fe157954d985
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: e7f5eefe532c3a0a48bc0703365bf07028bfae71
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353463"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419624"
 ---
 # <a name="add-terms-and-conditions-with-system-center-configuration-manager"></a>Adicionar Termos e Condições com o System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Você pode implantar os termos e condições do System Center Configuration Manager em grupos de usuários para explicar como o registro do dispositivo, o acesso aos recursos de trabalho e o uso do Portal de Empresa afetam usuários e dispositivos. Os usuários devem aceitar estes termos e condições antes de poderem usar o Portal da Empresa para registrar e acessar o trabalho.  
 
@@ -28,29 +28,29 @@ Você pode implantar os termos e condições do System Center Configuration Mana
 
 ## <a name="to-create-a-terms-and-conditions"></a>Para criar os termos e condições  
 
-1.  No console do Configuration Manager, acesse **Ativos e conformidade** > **Visão geral** > **Configurações de conformidade** > **Termos e condições**.  
+1. No console do Configuration Manager, acesse **Ativos e conformidade** > **Visão geral** > **Configurações de conformidade** > **Termos e condições**.  
 
-2.  Clique em **Criar termos e condições** para criar novos termos e condições.  
+2. Clique em **Criar termos e condições** para criar novos termos e condições.  
 
-3.  Na página **Geral** , especifique as seguintes informações:  
+3. Na página **Geral** , especifique as seguintes informações:  
 
-    -   **Nome** ‑ Um nome exclusivo exibido no console do Configuration Manager  
+   - **Nome** ‑ Um nome exclusivo exibido no console do Configuration Manager  
 
-    -   **Descrição** ‑ Detalhes que ajudam a identificar os termos e condições no console do Configuration Manager  
-
-     Em seguida, clique em **Avançar**.  
-
-4.  Na página **Termos** , especifique as seguintes informações:  
-
-    -   **Título** - O título exibido aos usuários do Portal da Empresa  
-
-    -   **Texto para termos** - Os termos e condições exibidos aos usuários no Portal da empresa  
-
-    -   **Texto para explicar o que significa se o usuário aceitar** - Usuários de rótulo veem de acordo com a aceitação. **Exemplo**: “Eu concordo com os termos e condições”.  
+   - **Descrição** ‑ Detalhes que ajudam a identificar os termos e condições no console do Configuration Manager  
 
      Em seguida, clique em **Avançar**.  
 
-5.  Conclua o assistente para criar novos termos e condições. Os novos termos e condições são exibidos no nó dos Termos e Condições do espaço de trabalho Ativos e Conformidade.  
+4. Na página **Termos** , especifique as seguintes informações:  
+
+   - **Título** - O título exibido aos usuários do Portal da Empresa  
+
+   - **Texto para termos** - Os termos e condições exibidos aos usuários no Portal da empresa  
+
+   - **Texto para explicar o que significa se o usuário aceitar** - Usuários de rótulo veem de acordo com a aceitação. **Exemplo**: "Eu concordo com os termos e condições".  
+
+     Em seguida, clique em **Avançar**.  
+
+5. Conclua o assistente para criar novos termos e condições. Os novos termos e condições são exibidos no nó dos Termos e Condições do workspace Ativos e Conformidade.  
 
 ## <a name="to-deploy-a-terms-and-conditions"></a>Para implantar os termos e condições  
 
@@ -117,4 +117,4 @@ Você pode implantar os termos e condições do System Center Configuration Mana
      É recomendável aumentar o número de versão e exigir aceitação sempre que você fizer alterações significativas em seus termos e condições. Se você estiver corrigindo erros de digitação ou alterando a formatação, por exemplo, mantenha o número de versão atual.
 
 > [!div class="button"]
-[< Etapa anterior](configure-intune-subscription.md)  [Próxima etapa >](create-service-connection-point.md)
+> [< Etapa anterior](configure-intune-subscription.md)  [Próxima etapa >](create-service-connection-point.md)

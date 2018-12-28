@@ -10,16 +10,16 @@ ms.assetid: 617abb22-d22f-41fb-a76b-1c4259e419d2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3dfd02a84cef31c22023b7fc4cb75931dc82160f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 12626a734138094e7558617b714b2b5acdac6450
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32346440"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424293"
 ---
 # <a name="create-a-service-connection-point-with-system-center-configuration-manager-and-microsoft-intune"></a>Criar um ponto de conexão de serviço com o System Center Configuration Manager e o Microsoft Intune
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Depois de criar a assinatura, é possível instalar a função do sistema de sites do ponto de conexão de serviço que permite que você se conecte ao serviço do Intune. Esta função do sistema de sites enviará por push as configurações e os aplicativos ao serviço do Intune.
 
@@ -33,13 +33,13 @@ Depois de criar a assinatura, é possível instalar a função do sistema de sit
 
 1.  No console do Configuration Manager, clique em **Administração**.
 
-2.  No espaço de trabalho **Administração**, expanda **Configuração de Site** e, em seguida, clique em **Funções de Servidores e do Sistema de Sites**.
+2.  No workspace **Administração**, expanda **Configuração de Site** e, em seguida, clique em **Funções de Servidores e do Sistema de Sites**.
 
 3.  Adicione a função do **Ponto de conexão de serviço** a um servidor do sistema de sites novo ou existente usando a etapa associada:
 
-    -   Novo servidor do sistema de sites: na guia **Início** , no grupo **Criar** , clique em **Criar Servidor do Sistema de Site** para iniciar o Assistente para Criar Servidor do Sistema de Site.
+    -   Novo servidor do sistema de site: No **Home** guia da **Create** , clique em **criar servidor do sistema de Site** para iniciar o Assistente para criação de servidor de sistema de Site.
 
-    -   Servidor do sistema de sites existente: clique no servidor no qual deseja instalar a função do ponto de conexão de serviço. Em seguida, na guia **Início** , no grupo **Servidor** , clique em **Adicionar Funções do Sistema de Site** para iniciar o Assistente para Adicionar Funções do Sistema de Site.
+    -   Servidor do sistema de site existente: Clique no servidor no qual você deseja instalar a função de ponto de conexão de serviço. Em seguida, na guia **Início** , no grupo **Servidor** , clique em **Adicionar Funções do Sistema de Site** para iniciar o Assistente para Adicionar Funções do Sistema de Site.
 
 4.  Na página **Seleção de Função do Sistema** , selecione **Ponto de conexão de serviço**e clique em **Avançar**.
 ![Criar um ponto de conexão de serviço](../media/mdm-service-connection-point.png)
@@ -54,4 +54,4 @@ Depois de criar a assinatura, é possível instalar a função do sistema de sit
 2.  O certificado da etapa 1 é instalado na função do site do ponto de conexão de serviço e é usado para autenticar e autorizar toda a comunicação adicional com o serviço do Microsoft Intune.
 
 > [!div class="button"]
-[< Etapa anterior](terms-and-conditions.md)  [Próxima etapa >](enable-platform-enrollment.md)
+> [< Etapa anterior](terms-and-conditions.md)  [Próxima etapa >](enable-platform-enrollment.md)

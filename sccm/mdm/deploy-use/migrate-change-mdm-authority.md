@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: be503ec9-5324-4f7c-bcf5-77204328e99c
-ms.openlocfilehash: d5efcb78ad5e732691cc2f214f81db0b357e0e19
-ms.sourcegitcommit: 316899b08f2ef372993909e08e069f7edfed1d33
-ms.translationtype: HT
+ms.openlocfilehash: 4ded99c2084f274d519680e78fdc54825b3857cb
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44111103"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419505"
 ---
 # <a name="change-your-mdm-authority-to-intune-standalone"></a>Alterar a autoridade de MDM para o Intune autônomo
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*    
+*Aplica-se a: System Center Configuration Manager (Branch atual)*    
 
 Você pode alterar um locatário existente configurado do Microsoft Intune do console do Configuration Manager (MDM híbrido) para o Intune autônomo. Alterar a autoridade de MDM no nível de locatário para o Intune é a fase final do processo de [migrar usuários e dispositivos do MDM híbrido para o Intune autônomo](migrate-hybridmdm-to-intunesa.md) na configuração somente em nuvem.    
 
@@ -48,20 +48,20 @@ Examine as informações a seguir para se preparar para a alteração para a aut
 ## <a name="change-the-mdm-authority-to-intune"></a>Alterar a autoridade de MDM para o Intune
 Use o procedimento a seguir para alterar a autoridade de MDM no nível de locatário para Intune.
 
-1.  No console do Configuration Manager, vá para **Administração** &gt; **Visão Geral** &gt; **Serviços de Nuvem** &gt; **Assinatura do Microsoft Intune** e exclua sua assinatura do Intune.
-2.  Selecione **Alterar a autoridade de MDM para o Microsoft Intune** e, em seguida, clique em **Avançar**.
+1. No console do Configuration Manager, vá para **Administração** &gt; **Visão Geral** &gt; **Serviços de Nuvem** &gt; **Assinatura do Microsoft Intune** e exclua sua assinatura do Intune.
+2. Selecione **Alterar a autoridade de MDM para o Microsoft Intune** e, em seguida, clique em **Avançar**.
 
-    ![Caixa de diálogo Remover assinatura do Microsoft Intune](media/mdm-change-delete-subscription.png)
-3.  Entre no locatário do Intune que você usou originalmente quando definiu a autoridade de MDM no Configuration Manager.
-4.  Clique em **Próximo** e conclua o assistente.
-5.  A autoridade de MDM agora está redefinida. A Assinatura do Intune não é mais exibida no nó Assinaturas do Microsoft Intune do console do Configuration Manager.
-6.  Faça logon no [Portal do Intune](https://aka.ms/IntunePortal).
-7.  Na folha do Microsoft Intune, clique em **Registro de dispositivo**.
-8.  Na folha Visão geral de registro de dispositivo, confira a propriedade **Autoridade de MDM**.
+   ![Caixa de diálogo Remover assinatura do Microsoft Intune](media/mdm-change-delete-subscription.png)
+3. Entre no locatário do Intune que você usou originalmente quando definiu a autoridade de MDM no Configuration Manager.
+4. Clique em **Próximo** e conclua o assistente.
+5. A autoridade de MDM agora está redefinida. A Assinatura do Intune não é mais exibida no nó Assinaturas do Microsoft Intune do console do Configuration Manager.
+6. Faça logon no [Portal do Intune](https://aka.ms/IntunePortal).
+7. Na folha do Microsoft Intune, clique em **Registro de dispositivo**.
+8. Na folha Visão geral de registro de dispositivo, confira a propriedade **Autoridade de MDM**.
 
-  > [!Important]    
-  > Não use o console clássico do Intune. Você deve fazer logon no Intune no portal do Azure.
-7.  Confirme que a autoridade de MDM foi alterada para **Microsoft Intune**. 
+   > [!Important]    
+   > Não use o console clássico do Intune. Você deve fazer logon no Intune no portal do Azure.
+9. Confirme que a autoridade de MDM foi alterada para **Microsoft Intune**. 
 
 ## <a name="next-steps"></a>Próximas etapas
 Após a conclusão da alteração da autoridade de MDM, revise as seguintes informações:

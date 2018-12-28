@@ -10,27 +10,27 @@ ms.assetid: e3bb3e13-3037-4122-93bc-504bfd080a4d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 81847846efe99bbc3ad5f0ff5a074b393c8b140a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 214dcdca927e515f776e99f005f968a4b98f4112
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349544"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418825"
 ---
 # <a name="how-to-create-pfx-certificate-profiles-by-importing-certificate-details"></a>Como criar perfis de certificado PFX importando detalhes do certificado
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 
 Aqui, você aprende a criar um perfil de certificado importando as credenciais de certificados externos.  
 
 [Perfis de certificado](../../protect/deploy-use/introduction-to-certificate-profiles.md) fornecem informações gerais sobre como criar e configurar perfis de certificado. Este tópico destaca algumas informações específicas sobre perfis de certificado relacionados aos certificados PFX.
 
--  O Configuration Manager tem vários repositórios de certificado apropriados para diferentes dispositivos e sistemas operacionais.  Elas incluem:
+- O Configuration Manager tem vários repositórios de certificado apropriados para diferentes dispositivos e sistemas operacionais.  Elas incluem:
 
- -   iOS e MacOS/OSX
- -   Android e Android for Work
- -   Windows 10, incluindo Windows 10 Mobile.
+  -   iOS e MacOS/OSX
+  -   Android e Android for Work
+  -   Windows 10, incluindo Windows 10 Mobile.
 
 Para saber mais, confira [Pré-requisitos para perfis de certificado](../../protect/plan-design/prerequisites-for-certificate-profiles.md).
 
@@ -45,21 +45,21 @@ O System Center Configuration Manager permite que você importe credenciais de c
 ### <a name="get-started"></a>Introdução
 
 1.  No console do System Center Configuration Manager, clique em **Ativos e Conformidade**.  
-2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**, expanda **Acesso ao Recurso da Empresa**e clique em **Perfis de Certificado**.  
+2.  No workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade**, expanda **Acesso ao Recurso da Empresa** e clique em **Perfis de Certificado**.  
 
 3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Perfil Certificado**.
 
 4.  Na página **Geral** do Assistente para **Criar Perfil de Certificado** , especifique as seguintes informações:  
 
-    -   **Nome**: insira um nome exclusivo para o perfil de certificado. Você pode usar no máximo 256 caracteres.  
+    -   **Nome**: Insira um nome exclusivo para o perfil de certificado. Você pode usar no máximo 256 caracteres.  
 
-    -   **Descrição**: forneça uma descrição que ofereça uma visão geral do perfil de certificado e outras informações relevantes que ajudem a identificá-lo no console do System Center Configuration Manager. Você pode usar no máximo 256 caracteres.  
+    -   **Descrição**: Forneça uma descrição que fornece uma visão geral do perfil de certificado e outras informações relevantes que ajudem a identificá-lo no console do System Center Configuration Manager. Você pode usar no máximo 256 caracteres.  
 
-    -   **Especifique o tipo de perfil de certificado que deseja criar**: para certificados PFX, escolha uma das opções a seguir:  
+    -   **Especifique o tipo de perfil de certificado que você deseja criar**: Para certificados PFX, escolha uma das seguintes opções:  
 
-        -   **Configurações de Troca de Informações Pessoais PKCS #12 (PFX) – Importar**: cria um perfil de certificado importando programaticamente as informações de certificados existentes.  
+        -   **Configurações pessoais de informações Exchange PKCS #12 (PFX) – importação**: Cria um perfil de certificado importando programaticamente as informações de certificados existentes.  
 
-        -   **Configurações de Troca de Informações Pessoais – PKCS #12 (PFX) – Criar**: cria um perfil de certificado PFX usando as credenciais fornecidas por uma autoridade de certificação.  Para saber mais, confira [Como criar perfis de certificado PFX usando uma autoridade de certificação](../../mdm/deploy-use/create-pfx-certificate-profiles.md).
+        -   **Troca de informações pessoais – configurações PKCS #12 (PFX) – criar**: Cria um perfil de certificado PFX usando credenciais fornecidas por uma autoridade de certificação.  Para saber mais, confira [Como criar perfis de certificado PFX usando uma autoridade de certificação](../../mdm/deploy-use/create-pfx-certificate-profiles.md).
 
 
 ### <a name="create-a-pfx-certificate-profile-for-the-imported-credentials"></a>Criar um perfil de certificado PFX para as credenciais importadas
@@ -79,8 +79,8 @@ Certificados importados são posteriormente implantados em dispositivos registra
 ### <a name="finish-the-profile"></a>Concluir o perfil
 
 1.  Clique em **Próximo**, examine a página **Resumo** e feche o assistente.  
-2.  O perfil de certificado que contém o arquivo PFX agora está disponível do espaço de trabalho **Perfis de Certificado** . 
-3.  Para implantar o perfil, no espaço de trabalho **Ativos e Conformidade**, abra **Configurações de Conformidade** > **Acesso ao Recurso da Empresa** > **Perfis de Certificado**, clique com o botão direito no certificado desejado e clique em **Implantar**. 
+2.  O perfil de certificado que contém o arquivo PFX agora está disponível do workspace **Perfis de Certificado**. 
+3.  Para implantar o perfil, no workspace **Ativos e Conformidade**, abra **Configurações de Conformidade** > **Acesso ao Recurso da Empresa** > **Perfis de Certificado**, clique com o botão direito no certificado desejado e clique em **Implantar**. 
 
 ### <a name="deploy-a-create-pfx-script"></a>Implantar um script Criar PFX
 

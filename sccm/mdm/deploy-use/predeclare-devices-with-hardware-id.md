@@ -10,16 +10,16 @@ ms.assetid: ddb4c68e-e7f7-475a-89e2-7379a86e44c4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 86ef14c871f476df39923e01e47874702271a08d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 118e9b32d691c228857fc31b2da1e9d9b72b7b58
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348276"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415918"
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Pré-declarar dispositivos com número de série do iOS ou IMEI
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 Você pode identificar os dispositivos corporativos importando seus números IMEI (identidade internacional de equipamento móvel) ou números de série do iOS. Você pode carregar um arquivo .csv (valores separados por vírgula) que contém os números IMEI do dispositivo ou inserir manualmente as informações sobre o dispositivo.  As informações importadas definirão a **Propriedade** dos dispositivos registrados como **Corporativo** nas listas de dispositivos. Uma licença do Intune ainda é necessária para cada usuário que acessa o serviço.  
 
@@ -30,33 +30,33 @@ Quando você carrega os números de série para dispositivos iOS de propriedade 
 
 ## <a name="how-to-predeclare-corporate-owned-devices"></a>Como pré-declarar dispositivos corporativos
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Visão Geral** > **Todos os dispositivos de propriedade corporativa** > **Dispositivos pré-declarados**.
+1. No console do Configuration Manager, clique em **Ativos e Conformidade** > **Visão Geral** > **Todos os dispositivos de propriedade corporativa** > **Dispositivos pré-declarados**.
 
-2.  Clique em **Criar Dispositivos Pré-declarados**. O assistente Criar Dispositivos Pré-declarados abre.
+2. Clique em **Criar Dispositivos Pré-declarados**. O assistente Criar Dispositivos Pré-declarados abre.
 
-3.  Escolha como você deseja adicionar as informações do dispositivo:
+3. Escolha como você deseja adicionar as informações do dispositivo:
 
-     -  **Carregar um arquivo CSV contendo o IMEI ou os números de série e os detalhes**
+    -  **Carregar um arquivo CSV contendo o IMEI ou os números de série e os detalhes**
 
-        Para essa opção, clique em **Procurar** para especificar o arquivo .csv que contém as informações para declarar os dispositivos corporativos. O arquivo. csv deve estar formatado corretamente. Para mais informações, confira [Formato para carregar arquivos .csv](#format-for-uploading-csv-files).
+       Para essa opção, clique em **Procurar** para especificar o arquivo .csv que contém as informações para declarar os dispositivos corporativos. O arquivo. csv deve estar formatado corretamente. Para mais informações, confira [Formato para carregar arquivos .csv](#format-for-uploading-csv-files).
 
-     -  **Adicionar manualmente o IMEI ou os números de série e os detalhes**
+    -  **Adicionar manualmente o IMEI ou os números de série e os detalhes**
 
-        Para inserir manualmente as informações, digite o número IMEI ou o número de série do iOS e os detalhes dos dispositivos. Corrija todos os erros ou avisos antes de continuar.
+       Para inserir manualmente as informações, digite o número IMEI ou o número de série do iOS e os detalhes dos dispositivos. Corrija todos os erros ou avisos antes de continuar.
 
-    Clique em **Avançar**.
+   Clique em **Avançar**.
 
 4. Se você carregou um arquivo. csv, examine os resultados da importação do arquivo. Se um número de dispositivo tiver sido importado anteriormente, o Configuration Manager exibirá os **Detalhes** dos dispositivos e da substituição. Selecione os dispositivos cujos detalhes você deseja substituir. Os detalhes do dispositivo só podem ser modificados importando novamente a identificação do dispositivo ou o número de série.
 
-  Se você optar por inserir manualmente o número, preencha o formulário para os dispositivos que deseja pré-declarar.
+   Se você optar por inserir manualmente o número, preencha o formulário para os dispositivos que deseja pré-declarar.
 
-  Clique em **Próximo** para continuar.
+   Clique em **Próximo** para continuar.
 
-4. Se sua lista incluir números de série iOS, selecione **Perfil de Registro para Atribuir** na lista de perfis disponíveis e clique em **Avançar**.
+5. Se sua lista incluir números de série iOS, selecione **Perfil de Registro para Atribuir** na lista de perfis disponíveis e clique em **Avançar**.
 
-5. Clique em **Avançar** para examinar os detalhes e, em seguida, clique em **Avançar** novamente para carregar os dados.
+6. Clique em **Avançar** para examinar os detalhes e, em seguida, clique em **Avançar** novamente para carregar os dados.
 
-6. Clique em **Fechar** para concluir.
+7. Clique em **Fechar** para concluir.
 
 ## <a name="format-for-uploading-csv-files"></a>Formato para carregar arquivos .csv
 

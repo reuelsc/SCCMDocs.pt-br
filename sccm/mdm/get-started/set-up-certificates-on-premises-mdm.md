@@ -10,16 +10,16 @@ ms.assetid: 2a7d7170-1933-40e9-96d6-74a6eb7278e2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c538c3b7668cc93069f0805b98f29586c3d7c86c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 391ecbd4ff9f863f41454786e8f8232b31a112a5
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351686"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418315"
 ---
 # <a name="set-up-certificates-for-trusted-communications-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Configurar certificados para comunicações confiáveis do Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (Branch atual)*
 
 O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manager exige as funções de sistema de sites ponto de registro, ponto proxy do registro, ponto de distribuição e ponto de gerenciamento de dispositivos para ser configurado para comunicações confiáveis com os dispositivos gerenciados. Qualquer servidor de sistema de sites que hospede uma ou mais dessas funções deve ter um certificado PKI exclusivo associado ao servidor Web nesse sistema. Um certificado com a mesma raiz que o certificado nos servidores também deve ser armazenado nos dispositivos gerenciados para estabelecer comunicação confiável com eles.  
 
@@ -88,7 +88,7 @@ O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manag
     > [!NOTE]  
     >  Se a autoridade de certificação que você está usando estiver no Windows Server 2012, a versão do modelo do certificado não será solicitada quando você clicar em **Modelo Duplicado**. Em vez disso, especifique isso na guia **Compatibilidade** das propriedades do modelo, da seguinte forma:  
     >   
-    >  **Autoridade de Certificação**: **Windows Server 2003**  
+    >  **Autoridade de certificação**: **Windows Server 2003**  
     >   
     >  **Destinatário do certificado**: **Windows XP / Server 2003**  
 
@@ -111,21 +111,21 @@ O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manag
 ##  <a name="bkmk_requestCert"></a> Solicitar o certificado do servidor Web para cada função de sistema de sites  
  Os dispositivos registrados no Gerenciamento de Dispositivo Móvel Local devem confiar nos pontos de extremidade SSL que hospedam o ponto de registro, ponto proxy do registro, ponto de distribuição e ponto de gerenciamento de dispositivos.  As etapas abaixo descrevem como solicitar o certificado do servidor Web para IIS. Você deve fazer isso para cada servidor (ponto de extremidade SSL) que hospeda uma das funções de sistema de sites exigidas para o Gerenciamento de Dispositivo Móvel Local.  
 
-1.  No servidor do site primário, abra o prompt de comando com permissão de administrador, digite **MMC** e pressione **Enter**.  
+1. No servidor do site primário, abra o prompt de comando com permissão de administrador, digite **MMC** e pressione **Enter**.  
 
-2.  No MMC, clique em **Arquivo** > **Adicionar/Remover Snap-in**.  
+2. No MMC, clique em **Arquivo** > **Adicionar/Remover Snap-in**.  
 
-3.  No snap-in de Certificados, escolha **Certificados**, clique em **Adicionar**, escolha **Conta de computador**, clique em **Avançar**, clique em **Concluir** e em **OK** para sair da janela Adicionar ou Remover Snap-in.  
+3. No snap-in de Certificados, escolha **Certificados**, clique em **Adicionar**, escolha **Conta de computador**, clique em **Avançar**, clique em **Concluir** e em **OK** para sair da janela Adicionar ou Remover Snap-in.  
 
-4.  Clique com o botão direito do mouse em **Pessoal** e clique em **Todas as Tarefas** > **Solicitar Novo Certificado**.  
+4. Clique com o botão direito do mouse em **Pessoal** e clique em **Todas as Tarefas** > **Solicitar Novo Certificado**.  
 
-5.  No assistente de Registro de Certificado, clique em **Avançar**, escolha **Política de Registro do Active Directory** e clique em **Avançar**.  
+5. No assistente de Registro de Certificado, clique em **Avançar**, escolha **Política de Registro do Active Directory** e clique em **Avançar**.  
 
-6.  Marque a caixa de seleção próxima ao certificado do servidor Web (**Servidor Web MDM ConfigMgr**) e clique em **Registrar**.  
+6. Marque a caixa de seleção próxima ao certificado do servidor Web (**Servidor Web MDM ConfigMgr**) e clique em **Registrar**.  
 
-7.  Depois que o certificado for registrado, clique em **Concluir**.  
+7. Depois que o certificado for registrado, clique em **Concluir**.  
 
- Como cada servidor precisará de um certificado do servidor Web exclusivo, você precisará repetir esse processo para cada servidor que hospeda uma das funções de sistema de sites exigidas para o Gerenciamento de Dispositivo Móvel Local.  Se um servidor hospedar todas as funções de sistema de sites, você precisará solicitar apenas um certificado de servidor Web.  
+   Como cada servidor precisará de um certificado do servidor Web exclusivo, você precisará repetir esse processo para cada servidor que hospeda uma das funções de sistema de sites exigidas para o Gerenciamento de Dispositivo Móvel Local.  Se um servidor hospedar todas as funções de sistema de sites, você precisará solicitar apenas um certificado de servidor Web.  
 
 ##  <a name="bkmk_bindCert"></a> Associar o certificado ao servidor Web  
  Agora o novo certificado precisa ser associado ao servidor Web de cada servidor do sistema de sites que hospeda as funções de sistema de sites exigidas para o Gerenciamento de Dispositivo Móvel Local. Siga as etapas abaixo para cada servidor que hospeda as funções de sistema de sites ponto de registro e ponto proxy do registro. Se um servidor hospedar todas as funções de sistema de sites, basta seguir essas etapas de uma vez. Você não precisa realizar essa tarefa para as funções de sistema de sites ponto de distribuição e ponto de gerenciamento de dispositivos, uma vez que elas recebem automaticamente o certificado necessário durante o registro.  
