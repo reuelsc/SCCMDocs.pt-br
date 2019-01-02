@@ -10,12 +10,12 @@ ms.assetid: 14226fbe-dd07-4432-910b-130790624a4e
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: bdb48689efba4c6f884d4c36c1a4dee0bbcc6b65
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 319721e18c6571949cf3b1a9d864d9c601f29e39
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334667"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424197"
 ---
 # <a name="how-to-create-configuration-items-for-windows-10-devices-managed-with-the-system-center-configuration-manager-client"></a>Como criar itens de configuração para dispositivos Windows 10 gerenciados com o Cliente do System Center Configuration Manager
 Use o item de configuração do System Center Configuration Manager no **Windows 10** para gerenciar configurações para computadores Windows 10 que são gerenciados pelo cliente do Configuration Manager.  
@@ -27,24 +27,24 @@ Use o item de configuração do System Center Configuration Manager no **Windows
   
 ### <a name="to-create-a-windows-10-configuration-item"></a>Para criar um item de configuração do Windows 10  
   
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
+1. No console do Configuration Manager, clique em **Ativos e Conformidade**.  
   
-2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Configurações de Conformidade**e clique em **Itens de Configuração**.  
+2. No workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade** e clique em **Itens de Configuração**.  
   
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
+3. Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração**.  
   
-4.  Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.  
+4. Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.  
   
-5.  Em **Especificar o tipo de item de configuração que deseja criar**, selecione **Windows 10**.  
+5. Em **Especificar o tipo de item de configuração que deseja criar**, selecione **Windows 10**.  
   
-6.  Se você criar e atribuir categorias, clique em **Categorias** para ajudá-lo a pesquisar e filtrar itens de configuração no console do Configuration Manager.  
+6. Se você criar e atribuir categorias, clique em **Categorias** para ajudá-lo a pesquisar e filtrar itens de configuração no console do Configuration Manager.  
   
-7.  Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do Windows 10 que avaliarão o item de configuração.  
+7. Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do Windows 10 que avaliarão o item de configuração.  
   
-8.  Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Windows 10 configuration item settings reference](#BKMK_Ref) neste tópico para obter detalhes e clique **Avançar**.  
+8. Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Windows 10 configuration item settings reference](#BKMK_Ref) neste tópico para obter detalhes e clique **Avançar**.  
   
-    > [!TIP]  
-    >  Se a configuração desejada não estiver na lista, marque a **caixa de seleção Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
+   > [!TIP]  
+   >  Se a configuração desejada não estiver na lista, marque a **caixa de seleção Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
   
 9. Em cada página de configurações, defina as configurações necessárias e se deseja corrigi-las quando não forem compatíveis nos dispositivos (quando houver suporte para essa opção).  
   
@@ -67,7 +67,7 @@ Use o item de configuração do System Center Configuration Manager no **Windows
   
 12. Conclua o assistente.  
   
- Você pode exibir o novo item de configuração no nó **Itens de Configuração** do espaço de trabalho **Ativos e Conformidade** .  
+    Você pode exibir o novo item de configuração no nó **Itens de Configuração** do workspace **Ativos e Conformidade**.  
   
 ##  <a name="windows-10-configuration-item-settings-reference"></a>Referência de configurações do item de configuração do Windows 10  
   
