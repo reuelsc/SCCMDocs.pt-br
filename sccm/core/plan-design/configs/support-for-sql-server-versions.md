@@ -10,12 +10,12 @@ ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 962029dc6bc5584e1edf0bd26d4be3fc280d6204
-ms.sourcegitcommit: 147aae8300831c722a559087c735df0f761b2041
+ms.openlocfilehash: 43093f38a2769c46d3d96a51afbf47f33ed38b51
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51645235"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423789"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>Versões do SQL Server compatíveis com o Configuration Manager
 
@@ -78,10 +78,10 @@ O suporte para um service pack específico do SQL Server inclui atualizações c
 ### <a name="sql-server-2017-standard-enterprise"></a>SQL Server 2017: Standard, Enterprise  
 Use esta versão do SQL Server, com, no mínimo, a [atualização cumulativa versão 2](https://support.microsoft.com/help/4052574), a partir do [Configuration Manager versão 1710](/sccm/core/plan-design/changes/whats-new-in-version-1710) para os seguintes sites: 
 
--   Um site de administração central  
--   Um site primário  
--   Um site secundário  
-<!--SMS.498506-->
+- Um site de administração central  
+- Um site primário  
+- Um site secundário  
+  <!--SMS.498506-->
 
 ### <a name="sql-server-2016-sp2-standard-enterprise"></a>SQL Server 2016 SP2: Standard, Enterprise  
 <!--514985--> Use esta versão do SQL Server sem uma versão de atualização cumulativa mínima para os seguintes sites:  
@@ -187,7 +187,7 @@ Use esta versão do SQL Server sem uma versão de atualização cumulativa míni
  O Configuration Manager requer uma versão de 64 bits do SQL Server para hospedar o banco de dados do site.  
 
 ### <a name="database-collation"></a>Ordenação de banco de dados  
- Em cada site, a instância do SQL Server que é usada para o site e o banco de dados do site devem usar a seguinte ordenação: **SQL_Latin1_General_CP1_CI_AS**.  
+ Em cada site, a instância do SQL Server usada para o site e o banco de dados do site devem usar a seguinte ordenação: **SQL_Latin1_General_CP1_CI_AS**.  
 
  O Configuration Manager dá suporte a duas exceções a esta ordenação para atender aos padrões definidos no GB18030 para uso na China. Para saber mais, confira [Suporte internacional](/sccm/core/plan-design/hierarchy/international-support).  
 
@@ -208,15 +208,15 @@ Use esta versão do SQL Server sem uma versão de atualização cumulativa míni
 ### <a name="sql-server-memory"></a>Memória do SQL Server  
  Reserve memória para o SQL Server usando o SQL Server Management Studio e definindo a configuração **Memória mínima do servidor** em **Opções de Memória do Servidor**. Para saber mais sobre como definir esta configuração, consulte [Opções de configuração do servidor de memória do SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/server-memory-server-configuration-options).  
 
--   **Para um servidor de banco de dados instalado no mesmo computador que o servidor do site**: limite a memória do SQL Server a 50% a 80% da memória do sistema endereçável disponível.  
+-   **Para um servidor de banco de dados instalado no mesmo computador do que o servidor do site**: Limite a memória do SQL Server a 50-80% da memória de sistema endereçável disponível.  
 
--   **Para um servidor de banco de dados dedicado (remoto desde o servidor do site)**: limite a memória do SQL Server a de 80% a 90% da memória do sistema endereçável disponível.  
+-   **Para um servidor de banco de dados dedicado (remoto do servidor do site)**: Limite a memória do SQL Server a 80-90% da memória de sistema endereçável disponível.  
 
 -   **Para a reserva de memória para o pool de buffers de cada instância do SQL Server em uso**:  
 
-    -   Para um site de administração central: defina um mínimo de 8 GB (gigabytes).  
-    -   Para um site primário: defina um mínimo de 8 GB (gigabytes).  
-    -   Para um site secundário: defina um mínimo de 4 GB (gigabytes).  
+    -   Para um site de administração central: Defina um mínimo de 8 gigabytes (GB).  
+    -   Para um site primário: Defina um mínimo de 8 gigabytes (GB).  
+    -   Para um site secundário: Defina um mínimo de 4 gigabytes (GB).  
 
 ### <a name="sql-nested-triggers"></a>Gatilhos aninhados de SQL  
  Os gatilhos aninhados de SQL devem estar habilitados. Para saber mais, confira [Definir a opção de configuração do servidor de gatilhos aninhados](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-the-nested-triggers-server-configuration-option) 
@@ -252,7 +252,7 @@ Para saber mais sobre como alterar a conta usada pelo serviço SQL Server, confi
 O SQL Server Reporting Services é necessário para a instalação de um ponto do Reporting Services que permite a execução de relatórios.  
 
 > [!IMPORTANT]  
-> Após a atualização do SQL Server de uma versão anterior, você poderá ver o seguinte erro: *Construtor de Relatórios não existe*.  
+> Após a atualização do SQL Server de uma versão anterior, poderá surgir o seguinte erro:  *O Construtor de Relatórios não existe*.  
 > Para resolver esse erro, é necessário reinstalar a função do sistema de sites do ponto do Reporting Services.  
 
 ### <a name="sql-server-ports"></a>Portas do SQL Server  

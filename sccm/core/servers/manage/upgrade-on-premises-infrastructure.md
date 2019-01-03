@@ -10,12 +10,12 @@ ms.assetid: 8ca970dd-e71c-404f-9435-d36e773a0db2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7ff6d885ca635e15c62eddcdfa06abdc1a09cdf8
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 2d51774688b80faf808653cde77aa3b651ea210c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456593"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422582"
 ---
 # <a name="upgrade-on-premises-infrastructure-that-supports-configuration-manager"></a>Atualizar infraestrutura local que dá suporte ao Configuration Manager
 
@@ -55,7 +55,7 @@ Para atualizar um servidor, use os procedimentos de atualização fornecidos pel
 
 - [Opções de atualização e conversão para o Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths)  
 
-- [Opções de Atualização para o Windows Server 2012 R2](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303416\(v=ws.11))   
+- [Opções de Atualização para o Windows Server 2012 R2](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303416(v=ws.11))   
 
 
 ### <a name="bkmk_2016-2019"></a> Atualizar para o Windows Server 2016 ou 2019
@@ -68,7 +68,7 @@ Use as etapas nesta seção para qualquer um dos seguintes cenários de atualiza
 
 
 #### <a name="before-upgrade"></a>Antes da atualização  
-- (Windows Server 2012 ou Windows Server 2012 R2): remova o cliente do SCEP (System Center Endpoint Protection). O Windows Server agora tem o Windows Defender interno, que substitui o cliente do SCEP. A presença do cliente do SCEP pode impedir uma atualização para o Windows Server.  
+- (Windows Server 2012 ou Windows Server 2012 R2): Remova o cliente do SCEP (System Center Endpoint Protection). O Windows Server agora tem o Windows Defender interno, que substitui o cliente do SCEP. A presença do cliente do SCEP pode impedir uma atualização para o Windows Server.  
 
 - Remova a função WSUS do servidor se estiver instalada. Você pode manter o SUSDB e reconectá-lo uma vez que o WSUS for reinstalado.  
 
@@ -128,9 +128,9 @@ Depois de atualizar o servidor do site ou uma instância do provedor de SMS, voc
 Ao atualizar do Windows Server 2008 R2 ou do Windows Server 2012 para Windows Server 2012 R2, as seguintes condições se aplicam:
 
 #### <a name="before-upgrade"></a>Antes da atualização  
-- No Windows Server 2012: remova a função do WSUS do servidor se ela estiver instalada. Você pode manter o SUSDB e reconectá-lo uma vez que o WSUS for reinstalado.  
+- No Windows Server 2012: Remova a função WSUS do servidor se estiver instalada. Você pode manter o SUSDB e reconectá-lo uma vez que o WSUS for reinstalado.  
 
-- No Windows Server 2008 R2: antes de atualizar para o Windows Server 2012 R2, é necessário desinstalar o WSUS 3.2 do servidor. Você pode manter o SUSDB e reconectá-lo uma vez que o WSUS for reinstalado. Para obter mais informações, veja [Visão geral do Windows Server Update Services](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852345\(v=ws.11)#new-and-changed-functionality).  
+- No Windows Server 2008 R2: Antes de atualizar para o Windows Server 2012 R2, é necessário desinstalar o WSUS 3.2 do servidor. Você pode manter o SUSDB e reconectá-lo uma vez que o WSUS for reinstalado. Para saber mais, confira a [Visão geral do Windows Server Update Services](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852345(v=ws.11)#new-and-changed-functionality).  
 
 #### <a name="after-upgrade"></a>Após a atualização  
 - O processo de atualização desabilita os Serviços de Implantação do Windows. Verifique se esse serviço foi iniciado e está em execução para as seguintes funções de sistema de sites:  

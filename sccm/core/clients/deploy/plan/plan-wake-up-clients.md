@@ -10,12 +10,12 @@ ms.assetid: 52ee82b2-0b91-4829-89df-80a6abc0e63a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2f36ff6c28bd8a3fa23599652aff82ef0c721cad
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.openlocfilehash: 7e2726c6264091390e85c4c8ad89d47182d94175
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "34474133"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423976"
 ---
 # <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>Planejar a ativação de clientes no System Center Configuration Manager
 
@@ -25,28 +25,28 @@ ms.locfileid: "34474133"
 
 Você pode completar o método tradicional do pacote de ativação usando as configurações de proxy de ativação do cliente. Proxy de ativação usa um protocolo ponto a ponto e computadores selecionados para verificar se outros computadores na sub-rede estão ativos e ativá-los, se necessário. Quando o site está configurado para Wake on LAN e os clientes são configurados para proxy de ativação, o processo funciona da seguinte forma:  
 
-1.  Computadores com o cliente do Configuration Manager instalado e que não estão em suspensão na sub-rede verificam se outros computadores na sub-rede estão ativos. Eles fazem essa verificação enviando uns aos outros um comando ping do TCP/IP a cada cinco segundos.  
+1. Computadores com o cliente do Configuration Manager instalado e que não estão em suspensão na sub-rede verificam se outros computadores na sub-rede estão ativos. Eles fazem essa verificação enviando uns aos outros um comando ping do TCP/IP a cada cinco segundos.  
 
-2.  Se não houver resposta de outros computadores, supõe-se que estarão em modo de suspensão. Os computadores ativos tornam-se *computadores gerenciadores* da sub-rede.  
+2. Se não houver resposta de outros computadores, supõe-se que estarão em modo de suspensão. Os computadores ativos tornam-se *computadores gerenciadores* da sub-rede.  
 
-     É possível que um computador não responda por outro motivo que não seja a suspensão (por exemplo, está desligado, removido da rede, ou a configuração de proxy de ativação do cliente não é mais aplicada), por isso recebem um pacote de ativação todos os dias às 14h. hora local. Computadores que não respondem não serão mais considerados como em suspensão e não serão despertados pelo proxy de ativação.  
+    É possível que um computador não responda por outro motivo que não seja a suspensão (por exemplo, está desligado, removido da rede, ou a configuração de proxy de ativação do cliente não é mais aplicada), por isso recebem um pacote de ativação todos os dias às 14h. hora local. Computadores que não respondem não serão mais considerados como em suspensão e não serão despertados pelo proxy de ativação.  
 
-     Para oferecer suporte ao proxy de ativação, pelo menos três computadores devem estar ativos em cada sub-rede. Para atingir este requisito, três computadores, de forma não determinista, são escolhidos para serem *computadores guardiões* da sub-rede. Este estado significa que eles permanecem ativos apesar de eventuais políticas de energia configuradas para suspensão ou hibernação após um período de inatividade. Computadores guardiões respeitam comandos de desligamento ou reinicialização, por exemplo, como resultado de tarefas de manutenção. Se esta ação acontecer, os computadores guardiões restantes ativarão outro computador na sub-rede, de modo que a sub-rede continuará a ter três computadores guardiões.  
+    Para oferecer suporte ao proxy de ativação, pelo menos três computadores devem estar ativos em cada sub-rede. Para atingir este requisito, três computadores, de forma não determinista, são escolhidos para serem *computadores guardiões* da sub-rede. Este estado significa que eles permanecem ativos apesar de eventuais políticas de energia configuradas para suspensão ou hibernação após um período de inatividade. Computadores guardiões respeitam comandos de desligamento ou reinicialização, por exemplo, como resultado de tarefas de manutenção. Se esta ação acontecer, os computadores guardiões restantes ativarão outro computador na sub-rede, de modo que a sub-rede continuará a ter três computadores guardiões.  
 
-3.  Computadores gerenciadores solicitam comutador de rede para redirecionar tráfego de rede dos computadores em suspensão para si mesmos.  
+3. Computadores gerenciadores solicitam comutador de rede para redirecionar tráfego de rede dos computadores em suspensão para si mesmos.  
 
-     O redirecionamento é alcançado pela transmissão, por parte do computador gerenciador, de uma estrutura de Ethernet que usa o endereço MAC do computador em suspensão como endereço de origem. Este comportamento faz com que o comutador de rede se comporte como se o computador em suspensão tivesse se movido para a mesma porta do computador gerenciador. O computador gerenciador também envia pacotes ARP para os computadores em suspensão, para manter a entrada como nova no cache ARP. O computador gerenciador também responde a solicitações de ARP em nome do computador em suspensão e responde com o endereço MAC do computador em suspensão.  
+    O redirecionamento é alcançado pela transmissão, por parte do computador gerenciador, de uma estrutura de Ethernet que usa o endereço MAC do computador em suspensão como endereço de origem. Este comportamento faz com que o comutador de rede se comporte como se o computador em suspensão tivesse se movido para a mesma porta do computador gerenciador. O computador gerenciador também envia pacotes ARP para os computadores em suspensão, para manter a entrada como nova no cache ARP. O computador gerenciador também responde a solicitações de ARP em nome do computador em suspensão e responde com o endereço MAC do computador em suspensão.  
 
-    > [!WARNING]  
-    >  Durante esse processo, o mapeamento IP-MAC para o computador em suspensão permanece o mesmo. O proxy de ativação funciona informando ao comutador de rede que um adaptador de rede diferente está usando a porta registrada por outro adaptador de rede. No entanto, esse comportamento é conhecido como flap de MAC e é incomum em operação de rede padrão. Algumas ferramentas de monitoramento de rede procuram esse comportamento e podem supor que algo está errado. Consequentemente, essas ferramentas de monitoramento podem gerar alertas ou fechar portas quando você usa o proxy de ativação.  
-    >   
-    >  Não use proxy de ativação se sua rede de serviços e ferramentas de monitoramento não permitirem flaps de MAC.  
+   > [!WARNING]  
+   >  Durante esse processo, o mapeamento IP-MAC para o computador em suspensão permanece o mesmo. O proxy de ativação funciona informando ao comutador de rede que um adaptador de rede diferente está usando a porta registrada por outro adaptador de rede. No entanto, esse comportamento é conhecido como flap de MAC e é incomum em operação de rede padrão. Algumas ferramentas de monitoramento de rede procuram esse comportamento e podem supor que algo está errado. Consequentemente, essas ferramentas de monitoramento podem gerar alertas ou fechar portas quando você usa o proxy de ativação.  
+   >   
+   >  Não use proxy de ativação se sua rede de serviços e ferramentas de monitoramento não permitirem flaps de MAC.  
 
-4.  Quando um computador gerenciador vê uma nova solicitação de conexão TCP para um computador suspenso e a solicitação é para uma porta que esse computador usava como escuta antes de entrar em suspensão, o computador gerenciador envia um pacote de ativação para o computador suspenso e depois interrompe o redirecionamento de tráfego para esse computador.  
+4. Quando um computador gerenciador vê uma nova solicitação de conexão TCP para um computador suspenso e a solicitação é para uma porta que esse computador usava como escuta antes de entrar em suspensão, o computador gerenciador envia um pacote de ativação para o computador suspenso e depois interrompe o redirecionamento de tráfego para esse computador.  
 
-5.  O computador em suspensão recebe o pacote e é ativado. O computador de envio automaticamente tenta novamente a conexão e desta vez, o computador está ativo e pode responder.  
+5. O computador em suspensão recebe o pacote e é ativado. O computador de envio automaticamente tenta novamente a conexão e desta vez, o computador está ativo e pode responder.  
 
- Proxy de ativação tem os seguintes pré-requisitos e limitações:  
+   Proxy de ativação tem os seguintes pré-requisitos e limitações:  
 
 > [!IMPORTANT]  
 >  Se você dispõe de uma equipe separada responsável pela infraestrutura e pelos serviços de rede, notifique e inclua essa equipe durante o período de avaliação e teste. Por exemplo, em uma rede que usa o controle de acesso de rede 802.1X, o proxy de ativação não funciona e pode interromper o serviço de rede. Além disso, o proxy de ativação pode fazer com que algumas ferramentas de monitoramento de rede gerem alertas quando detectam o tráfego para ativar outros computadores.  
