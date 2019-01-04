@@ -10,12 +10,12 @@ ms.technology: configmgr-sum
 ms.assetid: de78e8d3-043f-4cd3-97e0-4dfb824fd3fb
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 6c4aa062c79a1ed03d32b894ac6764d63c657ddb
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 84d3afdd7f0416e733777cd52165c98128c013a6
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348395"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417788"
 ---
 # <a name="download-software-updates"></a>Baixar atualizações de software  
 
@@ -29,7 +29,8 @@ Existem diversos métodos disponíveis para baixar atualizações de software no
 Use o procedimento a seguir para baixar atualizações de software usando o Assistente para Baixar Atualizações de Software.  
 
 #### <a name="to-download-software-updates"></a>Para baixar atualizações de software  
-[!INCLUDE[downloadupdates](..\includes\downloadupdates.md)]
+[!INCLUDE [downloadupdates](../includes/downloadupdates.md)]
+
 <!---
 1.  In the Configuration Manager console, navigate to **Software Library** > **Software Updates**.  
 
