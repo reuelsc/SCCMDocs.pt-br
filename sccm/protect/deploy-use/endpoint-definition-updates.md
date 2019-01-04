@@ -10,12 +10,12 @@ ms.assetid: 537dd2a7-4e44-4877-b8dd-5e1499407f8d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f650ba7bc703ec4fa0492fc86859cb8742e0510d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: e83f999ccd3e7625b2f83372464569771520632a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347358"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419200"
 ---
 #  <a name="configure-definition-updates-for-endpoint-protection"></a>Configurar atualizações de definição para o Endpoint Protection  
 
@@ -25,17 +25,17 @@ ms.locfileid: "32347358"
 
  Para atualizar as definições antimalware, você pode usar um ou mais dos seguintes métodos:
 
--   [Atualizações distribuídas do Configuration Manager](endpoint-definitions-configmgr.md) – Esse método usa as atualizações de software do Configuration Manager para fornecer atualizações de mecanismos e definições aos computadores na sua hierarquia.
+- [Atualizações distribuídas do Configuration Manager](endpoint-definitions-configmgr.md) – Esse método usa as atualizações de software do Configuration Manager para fornecer atualizações de mecanismos e definições aos computadores na sua hierarquia.
 
--   [Atualizações distribuídas do WSUS (Windows Server Update Services)](endpoint-definitions-wsus.md) – Esse método usa sua infraestrutura do WSUS para fornecer atualizações de definições e de mecanismos aos computadores.
+- [Atualizações distribuídas do WSUS (Windows Server Update Services)](endpoint-definitions-wsus.md) – Esse método usa sua infraestrutura do WSUS para fornecer atualizações de definições e de mecanismos aos computadores.
 
--   [Atualizações distribuídas do Microsoft Update](endpoint-definitions-microsoft-updates.md) – Esse método permite que os computadores se conectem diretamente ao Microsoft Update para baixar atualizações de definições e de mecanismos. Esse método pode ser útil para computadores que não estão frequentemente conectados à rede comercial.
+- [Atualizações distribuídas do Microsoft Update](endpoint-definitions-microsoft-updates.md) – Esse método permite que os computadores se conectem diretamente ao Microsoft Update para baixar atualizações de definições e de mecanismos. Esse método pode ser útil para computadores que não estão frequentemente conectados à rede comercial.
 
--   [Atualizações distribuídas por meio do Centro de Proteção contra Malware da Microsoft](endpoint-definitions-protection-center.md) – Esse método baixará atualizações de definições por meio do Centro de Proteção contra Malware da Microsoft.
+- [Atualizações distribuídas por meio do Centro de Proteção contra Malware da Microsoft](endpoint-definitions-protection-center.md) – Esse método baixará atualizações de definições por meio do Centro de Proteção contra Malware da Microsoft.
 
--   [Atualizações de compartilhamentos de arquivo UNC](endpoint-definitions-network.md) – Com esse método, você pode salvar as atualizações de definições e de mecanismos mais recentes em um compartilhamento na rede. Os clientes podem acessar a rede para instalar as atualizações.
+- [Atualizações de compartilhamentos de arquivo UNC](endpoint-definitions-network.md) – Com esse método, você pode salvar as atualizações de definições e de mecanismos mais recentes em um compartilhamento na rede. Os clientes podem acessar a rede para instalar as atualizações.
 
- Você pode configurar várias origens de atualização de definição e controlar a ordem em que elas são avaliadas e aplicadas. Isso é feito na caixa de diálogo **Configurar Origens de Atualização de Definição** quando você cria uma política antimalware.
+  Você pode configurar várias origens de atualização de definição e controlar a ordem em que elas são avaliadas e aplicadas. Isso é feito na caixa de diálogo **Configurar Origens de Atualização de Definição** quando você cria uma política antimalware.
 
 > [!IMPORTANT]
 >  Para computadores Windows 10, você deve configurar o Endpoint Protection para atualizar as definições de malware para o Windows Defender.
@@ -45,7 +45,7 @@ ms.locfileid: "32347358"
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.
 
-2.  No espaço de trabalho **Ativos e Conformidade** , expanda **Endpoint Protection**e clique em **Políticas Antimalware**.
+2.  No workspace **Ativos e Conformidade**, expanda **Endpoint Protection** e clique em **Políticas Antimalware**.
 
 3.  Abra a página de propriedades da **Política Antimalware Padrão** ou crie uma nova política antimalware. Para obter mais informações sobre como criar políticas antimalware, consulte [Como criar e implantar políticas antimalware para o Endpoint Protection no System Center Configuration Manager](endpoint-antimalware-policies.md).
 

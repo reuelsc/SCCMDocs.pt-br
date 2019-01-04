@@ -10,12 +10,12 @@ ms.assetid: eab0e09d-b09e-4c14-ab14-c5f87472522e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 44be093d079a06ac2cbc7e8fa82392fa3afd4f72
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: be8d8e70267630a048d68f1415928a7245b75368
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349357"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419403"
 ---
 # <a name="planning-for-certificate-template-permissions-for-certificate-profiles-in-system-center-configuration-manager"></a>Planejando permissões de modelo de certificado para perfis de certificado no System Center Configuration Manager
 
@@ -27,15 +27,15 @@ As informações a seguir podem ajudar a planejar como configurar permissões pa
 ## <a name="default-security-permissions-and-considerations"></a>Considerações e permissões de segurança padrão  
  As permissões de segurança padrão necessárias para os modelos de certificado que o System Center Configuration Manager usará ao solicitar certificados para os usuários e dispositivos são as seguintes:  
 
--   Leitura e Registro para a conta usada pelo pool de aplicativos do Serviço de Registro de Dispositivo de Rede  
+- Leitura e Registro para a conta usada pelo pool de aplicativos do Serviço de Registro de Dispositivo de Rede  
 
--   Leitura para a conta que executa o console do System Center Configuration Manager  
+- Leitura para a conta que executa o console do System Center Configuration Manager  
 
- Para saber mais sobre estas permissões de segurança, veja [Configuração de infraestrutura de certificado](../deploy-use/certificate-infrastructure.md).  
+  Para saber mais sobre estas permissões de segurança, veja [Configuração de infraestrutura de certificado](../deploy-use/certificate-infrastructure.md).  
 
- Quando você utiliza essa configuração padrão, os usuários e os dispositivos não podem solicitar diretamente certificados dos modelos de certificado, e todas as solicitações devem ser iniciadas pelo Serviço de Registro de Dispositivo de Rede. Essa é uma restrição importante, pois esses modelos de certificado devem ser configurados com **Fornecer na solicitação** para a Entidade do certificado, o que significa que existe um risco de representação se um usuário não autorizado ou um dispositivo comprometido solicitar um certificado. Na configuração padrão, o Serviço de Registro de Dispositivo de Rede deve iniciar essa solicitação. No entanto, esse risco de representação permanece se o serviço que executa o Serviço de Registro de Dispositivo de Rede está comprometido. Para evitar esse risco, siga todas as práticas recomendadas de segurança para o Serviço de Registro de Dispositivo de Rede e o computador que executa esse serviço de função.  
+  Quando você utiliza essa configuração padrão, os usuários e os dispositivos não podem solicitar diretamente certificados dos modelos de certificado, e todas as solicitações devem ser iniciadas pelo Serviço de Registro de Dispositivo de Rede. Essa é uma restrição importante, pois esses modelos de certificado devem ser configurados com **Fornecer na solicitação** para a Entidade do certificado, o que significa que existe um risco de representação se um usuário não autorizado ou um dispositivo comprometido solicitar um certificado. Na configuração padrão, o Serviço de Registro de Dispositivo de Rede deve iniciar essa solicitação. No entanto, esse risco de representação permanece se o serviço que executa o Serviço de Registro de Dispositivo de Rede está comprometido. Para evitar esse risco, siga todas as práticas recomendadas de segurança para o Serviço de Registro de Dispositivo de Rede e o computador que executa esse serviço de função.  
 
- Se as permissões de segurança padrão não atenderem a seus requisitos de negócios, você terá outra opção para configurar as permissões de segurança nos modelos de certificado: é possível adicionar permissões de Leitura e Registro para usuários e computadores.  
+  Se as permissões de segurança padrão não atenderem a seus requisitos de negócios, você terá outra opção para configurar as permissões de segurança nos modelos de certificado: Você poderá adicionar permissões de Leitura e Registro para usuários e computadores.  
 
 ## <a name="adding-read-and-enroll-permissions-for-users-and-computers"></a>Adicionando permissões de Leitura e Registro para usuários e computadores  
  Este procedimento poderá ser adequado se uma equipe diferente gerenciar sua equipe de infraestrutura de AC (autoridade de certificação) e desejar que o System Center Configuration Manager verifique se os usuários têm uma conta válida do Active Directory Domain Services antes de enviar a eles um perfil de certificado para solicitar um certificado de usuário. Para essa configuração, você deve especificar um ou mais grupos de segurança que contenham os usuários e conceder a esses grupos permissões de Leitura e Registro nos modelos de certificado. Nesse cenário, o administrador de autoridade de certificação gerencia o controle de segurança.  
@@ -50,10 +50,10 @@ As informações a seguir podem ajudar a planejar como configurar permissões pa
 
 #### <a name="to-check-for-read-and-enroll-permissions-for-users-and-domain-member-computers"></a>Para verificar as permissões de Leitura e Registro dos usuários e dos computadores membros do domínio  
 
-1.  No servidor do sistema de sites que hospeda o ponto de registro de certificado, crie a seguinte chave do Registro DWORD para que ela tenha o valor de 0: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheck  
+1.  No servidor do sistema de site que hospeda o ponto de registro de certificado, crie a seguinte chave do Registro DWORD para que tenha o valor 0: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheck  
 
 2.  Se não for possível autenticar uma conta porque não há resposta de um controlador de domínio, e você desejar ignorar a verificação de permissão:  
 
-    -   No servidor do sistema de sites que hospeda o ponto de registro de certificado, crie a seguinte chave do Registro DWORD para que ela tenha o valor de 1: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheckOnlyIfAccountAccessDenied  
+    -   No servidor do sistema de sites que hospeda o ponto de registro de certificado, crie a seguinte chave do Registro DWORD para que ela tenha o valor de 1:  HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheckOnlyIfAccountAccessDenied  
 
 3.  Na autoridade de certificação emissora, na guia **Segurança** , nas propriedades do modelo de certificado, adicione um ou mais grupos de segurança para conceder permissões de Leitura e Registro às contas de usuário ou dispositivo.  
