@@ -10,12 +10,12 @@ ms.assetid: 8ca970dd-e71c-404f-9435-d36e773a0db2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2d51774688b80faf808653cde77aa3b651ea210c
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 8b51685d97aea766757034c6f41afa5d4c8a11ee
+ms.sourcegitcommit: 32a257fafbb29aece8b4f435dd5614fcef305328
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53422582"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54005459"
 ---
 # <a name="upgrade-on-premises-infrastructure-that-supports-configuration-manager"></a>Atualizar infraestrutura local que dá suporte ao Configuration Manager
 
@@ -121,6 +121,12 @@ Depois de atualizar o servidor do site ou uma instância do provedor de SMS, voc
     - Habilitação remota  
 
 5. Salve as permissões para restaurar o acesso do console do Configuration Manager.  
+
+
+#### <a name="known-issue-for-remote-site-systems"></a>Problema conhecido para sistemas de sites remotos
+Depois da atualização de um servidor que hospeda uma função do sistema de sites, o valor `Software\Microsoft\SMS` pode ficar ausente da seguinte chave do Registro: `HKLM\SYSTEM\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedPaths` 
+
+Se esse valor ficar ausente após a atualização do Windows no servidor, adicione-o manualmente. Caso contrário, as funções do sistema de sites podem ter problemas ao carregar arquivos para as caixas de entrada do servidor do site.
 
 
 ### <a name="bkmk_2012r2"></a> Atualizar para o Windows Server 2012 R2
