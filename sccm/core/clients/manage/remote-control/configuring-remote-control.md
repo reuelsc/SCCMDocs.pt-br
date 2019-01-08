@@ -10,12 +10,12 @@ ms.assetid: 45affc27-aa11-4249-9493-082ac23a3a3d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4e4d380319704eda608930ac938232513800b81a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9fac81f08f4750ab6cc133ddc3a3bb9f73780fcd
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32331634"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422531"
 ---
 # <a name="configuring-remote-control-in-system-center-configuration-manager"></a>Configurando o controle remoto no System Center Configuration Manager
 
@@ -27,17 +27,17 @@ Para usar a Assistência Remota ou a Área de Trabalho Remota, ela deve estar in
 
 #### <a name="to-enable-remote-control-and-configure-client-settings"></a>Para habilitar o controle remoto e definir as configurações do cliente  
 
-1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
+1. No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
 
-4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
+2. Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-5.  Na caixa de diálogo **Padrão**, escolha **Ferramentas Remotas**.  
+3. Na caixa de diálogo **Padrão**, escolha **Ferramentas Remotas**.  
 
-6.  Configure o controle remoto e defina as configurações de cliente da Assistência Remota e da Área de Trabalho Remota. Para obter uma lista de configurações do cliente de ferramentas remotas que podem ser definidas, consulte [Ferramentas remotas](../../../../core/clients/deploy/about-client-settings.md#remote-tools).  
+4. Configure o controle remoto e defina as configurações de cliente da Assistência Remota e da Área de Trabalho Remota. Para obter uma lista de configurações do cliente de ferramentas remotas que podem ser definidas, consulte [Ferramentas remotas](../../../../core/clients/deploy/about-client-settings.md#remote-tools).  
 
-    Você pode alterar o nome da empresa que aparece na caixa de diálogo **Controle Remoto do ConfigMgr** configurando um valor para o **Nome da organização exibido no Centro de Software** nas configurações do cliente **Agente Computador** .  
+   Você pode alterar o nome da empresa que aparece na caixa de diálogo **Controle Remoto do ConfigMgr** configurando um valor para o **Nome da organização exibido no Centro de Software** nas configurações do cliente **Agente Computador** .  
 
- Os computadores cliente são definidos com essas configurações na próxima vez que baixarem a política do cliente. Para iniciar a recuperação de política para um cliente individual, veja [Como gerenciar clientes no System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+   Os computadores cliente são definidos com essas configurações na próxima vez que baixarem a política do cliente. Para iniciar a recuperação de política para um cliente individual, veja [Como gerenciar clientes no System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
 
 #### <a name="enable-keyboard-translation"></a>Habilitar a tradução do teclado
 

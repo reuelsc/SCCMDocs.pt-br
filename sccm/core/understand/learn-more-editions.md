@@ -10,12 +10,12 @@ ms.assetid: 495b87ae-41a4-49ba-abe2-d4f7d22ac0d4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 33cd99fd51bd7fabc1ae7f8379bcf2a69a5c4898
-ms.sourcegitcommit: f195190347a98b6c5be957564d33b6c4dfb610d7
+ms.openlocfilehash: 42a19d690e694ad3ca930dbf89fd0420bb5a45b5
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39309367"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416802"
 ---
 # <a name="licensing-and-branches-for-system-center-configuration-manager"></a>Licenciamento e branches do System Center Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "39309367"
 Use este tópico para saber mais sobre os requisitos de licenciamento para as opções de instalação disponíveis com o lançamento de outubro de 2016 do System Center Configuration Manager versão 1606. Essas opções de instalação incluem a versão 1606 do Branch Atual, o LTSB (Branch de Manutenção de Longo Prazo) e a instalação de avaliação do Branch Atual versão 1606.
 
 **Visão geral do licenciamento:**   
-Os clientes com SA (Software Assurance) ativo para as licenças do System Center Configuration Manager ou com direitos de assinatura equivalentes a partir de 1º de outubro de 2016 têm direito de usar a versão 1606, de outubro de 2016, do System Center Configuration Manager. Clientes que adquiriram direitos do System Center Configuration Manager em ou após 1º de outubro de 2016 encontrarão duas opções licenciadas durante a instalação: o Branch Atual e o LTSB (Branch de Manutenção em Longo Prazo).
+Os clientes com SA (Software Assurance) ativo para as licenças do System Center Configuration Manager ou com direitos de assinatura equivalentes a partir de 1º de outubro de 2016 têm direito de usar a versão 1606, de outubro de 2016, do System Center Configuration Manager. Clientes que adquiriram direitos do System Center Configuration Manager em ou após 1º de outubro de 2016 encontrarão duas opções licenciadas durante a instalação: Branch Atual e LTSB (Branch de Manutenção de Longo Prazo).
 
 
 **Especificações de licenciamento:**  
@@ -80,7 +80,7 @@ O LTSB se baseia na versão 1606 do Branch Atual e tem as seguintes limitações
 ### <a name="software-assurance-expiration-date"></a>Data de validade do Software Assurance
 Começando com a versão de outubro de 2016 da mídia de linha de base da versão 1606 do System Center Configuration Manager, você pode especificar a data de validade do contrato do Software Assurance. A **Data de validade do Software Assurance**, que é um valor opcional que você pode especificar como um lembrete conveniente quando executar a instalação do Configuration Manager ou posteriormente no console do Configuration Manager.
 
->  [!NOTE]   
+> [!NOTE]
 >  A Microsoft não valida a data de validade especificada e não usa essa data para validação da licença.  No entanto, você pode usá-la como um lembrete da data de vencimento. Isso é útil porque o Configuration Manager verifica periodicamente se há novas atualizações de software oferecidas online. O status de licença do Software Assurance deve estar atualizado para que você esteja qualificado para usar essas atualizações adicionais.    
 
 **Para especificar a data:**

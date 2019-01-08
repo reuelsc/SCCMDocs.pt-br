@@ -10,12 +10,12 @@ ms.assetid: 19539f4d-1667-4b4c-99a1-9995f12cf5f7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4737acb34de3aebc8560f54d77b6b341c82ebf65
-ms.sourcegitcommit: 6e0e5b4b7779ce03e2b56b3b5f68f4ace1acedd8
+ms.openlocfilehash: b56dd830e2550a14d6b1e44d2aa7fdda7c56bc9b
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39467650"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420491"
 ---
 #  <a name="recover-a-configuration-manager-site"></a>Recuperar um site do Configuration Manager
 
@@ -102,9 +102,9 @@ Use essa opção quando você já tiver recuperado o banco de dados do site do C
 
 - O Configuration Manager pode recuperar o banco de dados do site de qualquer um dos seguintes processos:  
 
-    - A tarefa de manutenção de backup do Configuration Manager  
-    - Um backup de banco de dados do site usando o DPM (Data Protection Manager)  
-    - Outro processo de backup   
+  - A tarefa de manutenção de backup do Configuration Manager  
+  - Um backup de banco de dados do site usando o DPM (Data Protection Manager)  
+  - Outro processo de backup   
 
     Depois de restaurar o banco de dados do site usando um método fora do Configuration Manager, execute a Instalação e selecione essa opção para concluir a recuperação do banco de dados do site.  
 
@@ -121,7 +121,7 @@ Use essa opção quando não ocorrer perda de dados no servidor de banco de dado
 
 O Configuration Manager habilita o controle de alterações para o banco de dados do site no SQL Server. O controle de alterações permite que o Configuration Manager consulte informações sobre as alterações feitas às tabelas do banco de dados após período anterior. O período de retenção especifica por quanto tempo as informações do controle de alterações são mantidas. Por padrão, o banco de dados do site é configurado para ter um período de retenção de cinco dias. Ao recuperar um banco de dados do site, o processo de recuperação procede de maneira diferente quando o backup está dentro ou está fora do período de retenção. Por exemplo, se o SQL Server falhar e seu último backup for de sete dias, ele estará fora do período de retenção.
 
-Para obter mais informações sobre elementos internos de controle de alterações do SQL Server, veja as seguintes postagens no blog da equipe do SQL Server: [Change Tracking Cleanup – part 1](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-1/) (Limpeza de controle de alterações – Parte 1) e [Change Tracking Cleanup – part 2](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-2) (Limpeza de controle de alterações – Parte 2).
+Para obter mais informações sobre elementos internos de controle de alterações do SQL Server, confira a seguinte postagem no blog da equipe do SQL Server: [Change Tracking Cleanup – part 1](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-1/) (Limpeza de Controle de Alterações – parte 1) e [Change Tracking Cleanup – part 2](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-2) (Limpeza de Controle de Alterações – parte 2).
 
 
 ### <a name="reinitialization-of-site-or-global-data"></a>Reinicialização de site ou dados globais
@@ -134,7 +134,7 @@ O processo para reinicializar o site ou dados globais substitui dados existentes
 #### <a name="example-scenario-1-the-primary-site-reinitializes-the-global-data-from-the-central-administration-site"></a>Cenário de exemplo 1: o site primário reinicializa os dados globais do site de administração central  
 o processo de recuperação remove os dados globais existentes do site primário no banco de dados do site primário e substitui os dados pelos dados globais copiados do site de administração central.
 
-#### <a name="example-scenario-2-the-central-administration-site-reinitializes-the-site-data-from-a-primary-site"></a>Cenário de exemplo 2: o site de administração central reinicializa os dados do site de um site primário 
+#### <a name="example-scenario-2-the-central-administration-site-reinitializes-the-site-data-from-a-primary-site"></a>Cenário de exemplo 2: O site de administração central reinicializa os dados do site de um site primário 
 O processo de recuperação remove os dados existentes do site primário do banco de dados do site de administração central. Ele substitui os dados pelos dados copiados do site primário. Os dados do site de outros sites primários não são afetados.
 
 
@@ -145,27 +145,27 @@ Depois que um banco de dados do site é restaurado de um backup, o Configuration
 #### <a name="recovered-site-is-a-central-administration-site"></a>O site recuperado é um site administração central
 - Backup de banco de dados dentro do período de retenção do controle de alterações  
 
-     - **Dados globais**: as alterações aos dados globais após o backup são replicadas de todos os sites primários.  
+     - **Dados globais**: As alterações nos dados globais após o backup são replicadas de todos os sites primários.  
 
-     - **Dados do site**: as alterações aos dados do site após o backup são replicadas de todos os sites primários.  
+     - **Dados do site**: As alterações nos dados do site após o backup são replicadas de todos os sites primários.  
 
 - Backup de banco de dados mais antigo que o período de retenção do controle de alterações  
 
-     - **Dados globais**: o site de administração central reinicializará os dados globais do site primário de referência se você o especificar. Em seguida, todos os outros sites primários reinicializam os dados globais do site de administração central. Se você não especificar um site de referência, todos os sites primários reinicializarão os dados globais do site de administração central. Esses dados são o que você restaurou do backup.  
+     - **Dados globais**: o site de administração central reinicializa os dados globais do site primário de referência, quando especificados. Em seguida, todos os outros sites primários reinicializam os dados globais do site de administração central. Se você não especificar um site de referência, todos os sites primários reinicializarão os dados globais do site de administração central. Esses dados são o que você restaurou do backup.  
 
-     - **Dados do site**: o site de administração central reinicializa os dados do site por meio de cada site primário.  
+     - **Dados do site**: O site de administração central reinicializa os dados do site por meio de cada site primário.  
 
 #### <a name="recovered-site-is-a-primary-site"></a>O site recuperado é um site primário
 - Backup de banco de dados dentro do período de retenção do controle de alterações  
 
-     - **Dados globais**: as alterações aos dados globais após o backup são replicadas do site de administração central.  
+     - **Dados globais**: As alterações dos dados globais após o backup são replicadas no site de administração central.  
 
-     - **Dados do site**: o site de administração central reinicializa os dados do site por meio do site primário. As alterações após o backup são perdidas. Os clientes regeneram a maioria dos dados quando enviam informações para o site primário.  
+     - **Dados do site**: O site de administração central reinicializa os dados do site por meio do site primário. As alterações após o backup são perdidas. Os clientes regeneram a maioria dos dados quando enviam informações para o site primário.  
 
 - Backup de banco de dados mais antigo que o período de retenção do controle de alterações  
-     - **Dados globais**: o site primário reinicializa os dados globais do site de administração central.  
+     - **Dados globais**: O site primário reinicializa os dados globais do site de administração central.  
 
-     - **Dados do site**: o site de administração central reinicializa os dados do site por meio do site primário. As alterações após o backup são perdidas. Os clientes regeneram a maioria dos dados quando enviam informações para o site primário.  
+     - **Dados do site**: O site de administração central reinicializa os dados do site por meio do site primário. As alterações após o backup são perdidas. Os clientes regeneram a maioria dos dados quando enviam informações para o site primário.  
 
 
 
@@ -221,7 +221,7 @@ Após uma recuperação de servidor do site, digite novamente as senhas para tod
 #### <a name="reenter-user-account-passwords-after-site-recovery"></a>Reinsira as senhas de conta de usuário após a recuperação de site
 1. Abra o console do Configuration Manager e conecte-se ao site recuperado.  
 
-2. No espaço de trabalho **Administração**, expanda **Segurança** e clique em **Contas**.  
+2. No workspace **Administração**, expanda **Segurança** e clique em **Contas**.  
 
 3. Para cada conta, execute as seguintes etapas para reinserir a senha:  
 
@@ -271,7 +271,7 @@ Se você não tiver um backup do sistema de arquivos para os arquivos de origem 
 
 Se você não tiver o backup do sistema de arquivos que inclui a biblioteca de conteúdo, terá as seguintes opções de restauração:  
 
-- **Importar um arquivo de conteúdo pré-teste**: em uma hierarquia do Configuration Manager, você pode criar um arquivo de conteúdo pré-teste com todos os pacotes e aplicativos de outro local. Em seguida, importe o arquivo de conteúdo pré-teste para recuperar a biblioteca de conteúdo no servidor do site.  
+- **Importar um arquivo de conteúdo pré-teste**: em uma hierarquia do Configuration Manager, você pode criar um arquivo de conteúdo pré-teste com todos os pacotes e aplicativos de outra localização. Em seguida, importe o arquivo de conteúdo pré-teste para recuperar a biblioteca de conteúdo no servidor do site.  
 
 - **Atualizar conteúdo**: o Configuration Manager copia o conteúdo da origem do pacote para a biblioteca de conteúdo. Para essa ação ser concluída com sucesso, os arquivos de origem do pacote devem estar disponíveis no local de origem. Execute essa ação em cada pacote e aplicativo.
 

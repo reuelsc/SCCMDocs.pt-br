@@ -10,12 +10,12 @@ ms.assetid: ca3b4714-2a16-495e-8a17-1d87991d5556
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2c6ceabc3a3f01ce541d4fbcdeaec5ae3db76c61
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 97d356ee4c9a763732b6e49ef6135a99dccf4c26
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342912"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416734"
 ---
 # <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funcionalidades na Visualização Técnica 1706 do System Center Configuration Manager
 
@@ -52,11 +52,10 @@ Este artigo apresenta os recursos disponíveis na Visualização Técnica do Sys
 -->
 
 ## <a name="improved-boundary-groups-for-software-update-points"></a>Grupos de limites aprimorados para os pontos de atualização de software
-<!-- 1324591 -->
-Esta versão inclui aprimoramentos no funcionamento dos pontos de atualização de software com grupos de limites. O exemplo a seguir resume o novo comportamento de fallback:
--   Agora, o fallback para pontos de atualização de software usa um tempo configurável para fallback para grupos de limites vizinhos, com um tempo mínimo de 120 minutos.
+<!-- 1324591 --> Esta versão inclui aprimoramentos no funcionamento dos pontos de atualização de software com grupos de limites. O exemplo a seguir resume o novo comportamento de fallback:
+- Agora, o fallback para pontos de atualização de software usa um tempo configurável para fallback para grupos de limites vizinhos, com um tempo mínimo de 120 minutos.
 
--   Independentemente da configuração de fallback, um cliente tenta acessar o último ponto de atualização de software usado durante 120 minutos. Após não conseguir acessar o servidor durante 120 minutos, o cliente verifica seu pool de pontos de atualização de software disponíveis, para poder encontrar um novo.
+- Independentemente da configuração de fallback, um cliente tenta acessar o último ponto de atualização de software usado durante 120 minutos. Após não conseguir acessar o servidor durante 120 minutos, o cliente verifica seu pool de pontos de atualização de software disponíveis, para poder encontrar um novo.
 
   -   Todos os pontos de atualização de software no grupo de limites atual do cliente são adicionados imediatamente ao pool do cliente.
 
@@ -64,9 +63,9 @@ Esta versão inclui aprimoramentos no funcionamento dos pontos de atualização 
 
   -   Se o fallback para um grupo vizinho estiver configurado para o mínimo de 120 minutos, os pontos de atualização de software do grupo de limites vizinho fará parte do pool de servidores disponíveis do cliente.
 
--   Após não conseguir acessar o servidor original durante duas horas, o cliente muda para um ciclo mais curto a fim de entrar em contato com um novo ponto de atualização de software.
+- Após não conseguir acessar o servidor original durante duas horas, o cliente muda para um ciclo mais curto a fim de entrar em contato com um novo ponto de atualização de software.
 
-    Isso significa que, se um cliente não conseguir se conectar com um novo servidor, ele selecionará rapidamente o próximo servidor a partir do pool de servidores disponíveis e tentará contatá-lo.
+  Isso significa que, se um cliente não conseguir se conectar com um novo servidor, ele selecionará rapidamente o próximo servidor a partir do pool de servidores disponíveis e tentará contatá-lo.
 
   -   Esse ciclo continuará até que o cliente se conecte a um ponto de atualização de software que possa usar.
   -   Até que o cliente encontre um ponto de atualização de software, outros servidores serão adicionados ao pool de servidores disponíveis quando o tempo de fallback de cada grupo de limites vizinho acabar.
@@ -75,8 +74,7 @@ Para saber mais, confira [pontos de atualização de software](/sccm/core/server
 
 
 ## <a name="site-server-role-high-availability"></a>Alta disponibilidade da função de servidor do site
-<!-- 1128774 -->
-Alta disponibilidade para a função de servidor do site é uma solução com base no Configuration Manager que serve para instalar um servidor do site primário adicional no modo *Passivo*. O servidor do site no modo passivo existe além do servidor do site primário existente, que está no modo *Ativo*. Um servidor do site no modo passivo está disponível para uso imediato, quando for necessário.
+<!-- 1128774 --> A alta disponibilidade para a função de servidor do site é uma solução baseada no Configuration Manager para instalar um servidor do site primário no modo *Passivo*. O servidor do site no modo passivo existe além do servidor do site primário existente, que está no modo *Ativo*. Um servidor do site no modo passivo está disponível para uso imediato, quando for necessário.
 
 Um servidor do site primário no modo passivo:
 -   Usa o mesmo banco de dados do site que o servidor do site ativo.
@@ -184,8 +182,7 @@ Tente concluir as tarefas a seguir e, depois, envie-nos **Comentários** usando 
 
 
 ## <a name="include-trust-for-specific-files-and-folders-in-a-device-guard-policy"></a>Incluir relação de confiança para arquivos e pastas específicos em uma política de Proteção do Dispositivo
-<!-- 1324676 -->
-Nesta versão, adicionamos mais recursos para o gerenciamento de política de [Proteção do Dispositivo](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)
+<!-- 1324676 --> Nesta versão, adicionamos mais recursos para o gerenciamento de política de [Proteção do dispositivo](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)
 
 Agora, você tem a opção de adicionar a relação de confiança para arquivos específicos e pastas em uma política de Proteção do Dispositivo. Isso permite que você:
 
@@ -201,8 +198,7 @@ Agora, você tem a opção de adicionar a relação de confiança para arquivos 
 
 
 ## <a name="hide-task-sequence-progress"></a>Ocultar o progresso da sequência de tarefas
-<!-- 1354291 -->
-Nesta versão, você pode controlar quando o andamento da sequência de tarefas é exibido aos usuários finais por meio de uma nova variável. Em sua sequência de tarefas, use a etapa **Definir Variável de Sequência de Tarefas** para definir o valor para a variável **TSDisableProgressUI** a fim de ocultar ou exibir o andamento da sequência de tarefas. Você pode usar a etapa Definir Variável de Sequência de Tarefas várias vezes em uma sequência de tarefas para alterar o valor da variável. Isso permite que você oculte ou exiba o andamento da sequência de tarefas em diferentes seções da sequência de tarefas.
+<!-- 1354291 --> Nesta versão, é possível controlar quando o andamento da sequência de tarefas é exibido aos usuários finais por meio de uma nova variável. Em sua sequência de tarefas, use a etapa **Definir Variável de Sequência de Tarefas** para definir o valor para a variável **TSDisableProgressUI** a fim de ocultar ou exibir o andamento da sequência de tarefas. Você pode usar a etapa Definir Variável de Sequência de Tarefas várias vezes em uma sequência de tarefas para alterar o valor da variável. Isso permite que você oculte ou exiba o andamento da sequência de tarefas em diferentes seções da sequência de tarefas.
 
 #### <a name="to-hide-task-sequence-progress"></a>Para ocultar o progresso da sequência de tarefas
 No editor de sequência de tarefas, use a etapa [Definir Variável de Sequência de Tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) para definir o valor da variável **TSDisableProgressUI** como **True** a fim de ocultar o andamento da sequência de tarefas.
@@ -211,8 +207,7 @@ No editor de sequência de tarefas, use a etapa [Definir Variável de Sequência
 No editor de sequência de tarefas, use a etapa [Definir Variável de Sequência de Tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) para definir o valor da variável **TSDisableProgressUI** como **False** a fim de exibir o andamento da sequência de tarefas.
 
 ## <a name="specify-a-different-content-location-for-install-content-and-uninstall-content"></a>Especificar um local de conteúdo diferente para instalar e desinstalar o conteúdo
-<!-- 1097546 -->
-Atualmente, no Configuration Manager, você especifica o local de instalação que contém os arquivos de instalação de um aplicativo. Quando você especifica um local de instalação, ele também é usado como o local de desinstalação do conteúdo do aplicativo.
+<!-- 1097546 --> Atualmente, no Configuration Manager, você especifica a localização de instalação que contém os arquivos de instalação de um aplicativo. Quando você especifica um local de instalação, ele também é usado como o local de desinstalação do conteúdo do aplicativo.
 Com base em seus comentários, quando você quer desinstalar um aplicativo implantado, e o conteúdo do aplicativo não está no computador cliente, o cliente baixa todos os arquivos de instalação do aplicativo novamente antes do aplicativo ser desinstalado.
 Para resolver esse problema, agora você pode especificar um local do conteúdo de instalação e um local do conteúdo de desinstalação opcional. Além disso, você pode optar por não especificar um local do conteúdo de desinstalação.
 
@@ -229,8 +224,7 @@ Para resolver esse problema, agora você pode especificar um local do conteúdo 
 
 
 ## <a name="accessibility-improvements"></a>Aprimoramentos na acessibilidade  
-<!--1253000 -->
-Esta visualização apresenta vários aprimoramentos nos [recursos de acessibilidade](/sccm/core/understand/accessibility-features) no console do Configuration Manager. Elas incluem:     
+<!--1253000 --> Esta versão prévia apresenta vários aprimoramentos nos [recursos de acessibilidade](/sccm/core/understand/accessibility-features) no console do Configuration Manager. Elas incluem:     
 
 **Novos atalhos de teclado para movimentar-se pelo console:**
 -   CTRL + M - define o foco no painel principal (central).
@@ -244,14 +238,13 @@ Esta visualização apresenta vários aprimoramentos nos [recursos de acessibili
 -   Melhora a navegação no painel de navegação quando você digita as letras de um nome de nó.
 -   A navegação por teclado no modo de exibição principal e na faixa de opções agora é circular.
 -   Agora, a navegação por teclado no painel de detalhes é circular. Para retornar ao painel ou objeto anterior, use Ctrl + D, depois, Shift + TAB.
--   Depois de atualizar um modo de exibição do Espaço de Trabalho, o foco é definido para o painel principal desse espaço de trabalho.
+-   Depois de atualizar um modo de exibição do Workspace, o foco é definido para o painel principal desse workspace.
 -   Correção de um problema para permitir que os leitores de tela anunciem os nomes dos itens de lista.
 -   Adição de nomes acessíveis para vários controles na página, o que permite aos leitores de tela anunciarem informações importantes.
 
 
 ## <a name="changes-to-the-azure-services-wizard-to-support-upgrade-readiness"></a>Alterações no Assistente dos Serviços do Azure para oferecer suporte ao Upgrade Readiness
-<!-- 1353331 -->
-A partir desta versão, use o Assistente dos Serviços do Azure para configurar uma conexão do Configuration Manager para o [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics). O uso do assistente simplifica a configuração do conector usando um assistente comum para serviços relacionados do Azure.   
+<!-- 1353331 --> Começando nesta versão, use o Assistente dos Serviços do Azure para configurar uma conexão do Configuration Manager com o [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics). O uso do assistente simplifica a configuração do conector usando um assistente comum para serviços relacionados do Azure.   
 
 Embora o método para configurar a conexão tenha mudado, os pré-requisitos de conexão e do modo como você usa o Upgrade Readiness permanecem inalterados.   
 
@@ -280,7 +273,7 @@ Após a configuração dos pré-requisitos, você estará pronto para usar o Ass
     -   Forneça um nome amigável para o Nome de Locatário do Azure AD. Em seguida, especifique a ID do Locatário, o Nome do Aplicativo, a ID do Cliente, a chave secreta para o aplicativo Web do Azure e o URI do ID do Aplicativo.
     -   Clique em **Verificar** e, após o sucesso, clique em **OK** para continuar.
 
-5.   Na página **Configuração**, especifique a assinatura, o grupo de recursos e o Espaço de Trabalho do Windows Analytics que você quer usar com esta conexão com o Upgrade Readiness.  
+5.   Na página **Configuração**, especifique a assinatura, o grupo de recursos e o Workspace do Windows Analytics que você quer usar com esta conexão com o Upgrade Readiness.  
 
 6.  Clique em **Avançar** para acessar a página **Resumo** e, em seguida, conclua o assistente para criar a conexão.
 
@@ -337,7 +330,7 @@ Por padrão, os usuários não podem aprovar um script que criaram. Como os scri
 Para permitir que os usuários aprovem seus próprios scripts:
 
 1. No console do Configuration Manager, clique em **Administração**.
-2. No espaço de trabalho **Administração** , expanda **Configuração do Site**e clique em **Sites**.
+2. No workspace **Administração**, expanda **Configuração do Site** e clique em **Sites**.
 3. Na lista de sites, escolha seu site e, depois, na guia **Início**, no grupo **Sites**, clique em **Configurações de Hierarquia**.
 4. Na guia **Geral** da caixa de diálogo **Propriedades das Configurações de Hierarquia**, desmarque a caixa de seleção **Não permitir que os autores de script aprovem seus próprios scripts**.
 
@@ -347,7 +340,7 @@ Para permitir que os usuários aprovem seus próprios scripts:
 #### <a name="import-and-edit-a-script"></a>Importar e editar um script
 
 1. No console do Configuration Manager, clique em **Biblioteca de Software**.
-2. No espaço de trabalho **Biblioteca de Software**, clique em **Scripts**.
+2. No workspace **Biblioteca de Software**, clique em **Scripts**.
 3. Na guia **Início**, no grupo **Criar**, clique em **Criar Script**.
 4. Na página **Script** do assistente **Criar Script**, configure o seguinte:
     - **Nome do Script** - insira um nome para o script. Embora você possa criar vários scripts com o mesmo nome, isso dificultará mais a localização do script necessário no console do Configuration Manager.
@@ -365,7 +358,7 @@ Para permitir que os usuários aprovem seus próprios scripts:
 Antes de poder executar um script, ele deve ser aprovado. Para aprovar um script:
 
 1. No console do Configuration Manager, clique em **Biblioteca de Software**.
-2. No espaço de trabalho **Biblioteca de Software**, clique em **Scripts**.
+2. No workspace **Biblioteca de Software**, clique em **Scripts**.
 3. Na lista **Script**, escolha o script que você quer aprovar ou negar e, na guia **Início**, no grupo **Script**, clique em **Aprovar/Negar**.
 4. Na caixa de diálogo **Aprovar ou negar script**, **Aprove** ou **Negue** o script e, opcionalmente, insira um comentário sobre a sua decisão. Se você negar um script, ele não poderá ser executado em dispositivos cliente.
 5. Conclua o assistente. Na lista **Script**, você verá a coluna **Estado de Aprovação** mudar dependendo da ação executada.
@@ -375,7 +368,7 @@ Antes de poder executar um script, ele deve ser aprovado. Para aprovar um script
 Após a aprovação de um script, ele poderá ser executado em uma coleção que você escolher.
 
 1. No console do Configuration Manager, clique em **Ativos e Conformidade**.
-2. No espaço de trabalho **Ativos e Conformidade** , clique em **Coleções de Dispositivos**.
+2. No workspace **Ativos e Conformidade**, clique em **Coleções de Dispositivos**.
 3. Na lista **Coleções de Dispositivos**, clique na coleção de dispositivos na qual você deseja executar o script.
 3. Na guia **Início**, no grupo **Todos os Sistemas**, clique em **Executar Script**.
 4. Na página **Script** do assistente **Executar Script**, escolha um script na lista. Somente scripts aprovados são exibidos. Clique em **Avançar** e conclua o assistente.
@@ -385,12 +378,11 @@ Após a aprovação de um script, ele poderá ser executado em uma coleção que
 Depois de executar um script nos dispositivos cliente, use este procedimento para monitorar o sucesso da operação.
 
 1. No console do Configuration Manager, clique em **Monitoramento**.
-2. No espaço de trabalho **Monitoramento**, clique em **Resultados do Script**.
+2. No workspace **Monitoramento**, clique em **Resultados do Script**.
 3. Na lista **Resultados do Script**, veja os resultados de cada script executado em dispositivos cliente. Um código de saída do script **0** geralmente indica que o script foi executado com êxito.
 
 ## <a name="pxe-network-boot-support-for-ipv6"></a>Suporte de inicialização de rede PXE para IPv6
-<!-- 1269793 -->
-Agora você pode habilitar o suporte à inicialização de rede do PXE para IPv6 para iniciar uma sequência de tarefas de implantação de sistema operacional. Quando você usa essa configuração, os pontos de distribuição habilitados para PXE oferecerá suporte para IPv4 e IPv6. Essa opção não exige WDS e interromperá o WDS, se ele estiver presente.
+<!-- 1269793 --> Agora você pode habilitar o suporte à inicialização de rede do PXE para IPv6 para iniciar uma sequência de tarefas de implantação de sistema operacional. Quando você usa essa configuração, os pontos de distribuição habilitados para PXE oferecerá suporte para IPv4 e IPv6. Essa opção não exige WDS e interromperá o WDS, se ele estiver presente.
 
 #### <a name="to-enable-pxe-boot-support-for-ipv6"></a>Para habilitar o suporte à inicialização de PXE para IPv6
 Use o procedimento a seguir para habilitar a opção de suporte a IPv6 para PXE.
@@ -399,8 +391,7 @@ Use o procedimento a seguir para habilitar a opção de suporte a IPv6 para PXE.
 2. Na guia **PXE**, selecione **Suporte a IPv6** para habilitar o suporte a IPv6 para PXE.
 
 ## <a name="manage-microsoft-surface-driver-updates"></a>Gerenciar atualizações de driver do Microsoft Surface
-<!-- 1098490 -->
-Agora você pode usar o Configuration Manager para gerenciar atualizações de driver do Microsoft Surface.
+<!-- 1098490 --> Agora você pode usar o Configuration Manager para gerenciar atualizações de driver do Microsoft Surface.
 
 ### <a name="prerequisites"></a>Pré-requisitos
 Todos os pontos de atualização de software devem executar o Windows Server 2016.
@@ -412,8 +403,7 @@ Tente concluir as tarefas a seguir e, depois, envie-nos **Comentários** usando 
 3. [Implantar os drivers sincronizados do Microsoft Surface](/sccm/sum/deploy-use/deploy-software-updates)
 
 ## <a name="configure-windows-update-for-business-deferral-policies"></a>Configurar as políticas de adiamento do Windows Update for Business
-<!-- 1290890 -->
-Agora você pode configurar as políticas de adiamento para as Atualizações de Recurso do Windows 10 ou Atualizações de Qualidade para dispositivos com Windows 10 gerenciados diretamente pelo Windows Update for Business. Você pode gerenciar as políticas de adiamento no novo nó **Políticas do Windows Update for Business** em **Biblioteca de Software** > **Manutenção do Windows 10**.
+<!-- 1290890 --> Agora você pode configurar as políticas de adiamento para as Atualizações de Recurso do Windows 10 ou Atualizações de Qualidade para dispositivos com Windows 10 gerenciados diretamente pelo Windows Update for Business. Você pode gerenciar as políticas de adiamento no novo nó **Políticas do Windows Update for Business** em **Biblioteca de Software** > **Manutenção do Windows 10**.
 
 ### <a name="prerequisites"></a>Pré-requisitos
 Os dispositivos com Windows 10 gerenciados pelo Windows Update for Business devem ter conectividade com a Internet.
@@ -425,12 +415,12 @@ Os dispositivos com Windows 10 gerenciados pelo Windows Update for Business deve
 4. Na página **Políticas de Adiamento**, defina se deseja adiar ou pausar as Atualizações de Recurso.    
     Normalmente, as Atualizações de Recurso são recursos novos do Windows. Depois de definir a configuração **Nível de preparação do branch**, defina se, e por quanto tempo, você quer adiar o recebimento de Atualizações de Recurso após a disponibilização da Microsoft.
     - **Nível de preparação do branch**: defina o branch para o qual o dispositivo receberá atualizações do Windows (Branch Atual ou Branch Atual para Negócios).
-    - **Período de adiamento (dias)**: especifique o número de dias durante os quais as Atualizações de Recurso serão adiadas. Você pode adiar o recebimento dessas Atualizações de Recurso por um período de 180 dias a partir do lançamento.
-    - **Pausar Atualizações de Recurso a partir de**: selecione se você quer pausar o recebimento de Atualizações de Recursos nos dispositivos durante um período de até 60 dias a partir do momento que você pausar as atualizações. Após o número máximo de dias, a funcionalidade de pausa expirará automaticamente, e o dispositivo verificará no Windows Update se há atualizações aplicáveis. Após essa verificação, você poderá pausar as atualizações novamente. Retome as Atualizações de Recurso desmarcando a caixa de seleção.   
+    - **Período de adiamento (dias)**:  especifique o número de dias durante os quais as Atualizações de Recurso serão adiadas. Você pode adiar o recebimento dessas Atualizações de Recurso por um período de 180 dias a partir do lançamento.
+    - **Pausar atualizações de recursos a partir de**: selecione se você quer pausar o recebimento de Atualizações de Recursos nos dispositivos durante um período de até 60 dias a contar do momento que você pausar as atualizações. Após o número máximo de dias, a funcionalidade de pausa expirará automaticamente, e o dispositivo verificará no Windows Update se há atualizações aplicáveis. Após essa verificação, você poderá pausar as atualizações novamente. Retome as Atualizações de Recurso desmarcando a caixa de seleção.   
 5. Escolha se deseja adiar ou pausar as Atualizações de Qualidade.     
     Normalmente, as Atualizações de Qualidade são correções e aprimoramentos funcionalidades existentes do Windows, e geralmente são publicadas na primeira terça-feira de cada mês, embora possam ser liberadas a qualquer momento pela Microsoft. Você pode definir se, e por quanto tempo, deseja adiar o recebimento das Atualizações de Qualidade após sua disponibilização.
     - **Período de adiamento (dias)**: especifique o número de dias durante os quais as Atualizações de Recurso serão adiadas. Você pode adiar o recebimento dessas Atualizações de Recurso por um período de 180 dias a partir do lançamento.
-    - **Pausar Atualizações de Qualidade a partir de**: selecione se você quer pausar o recebimento de Atualizações de Qualidade nos dispositivos durante um período de até 35 dias a partir do momento que você pausar as atualizações. Após o número máximo de dias, a funcionalidade de pausa expirará automaticamente, e o dispositivo verificará no Windows Update se há atualizações aplicáveis. Após essa verificação, você poderá pausar as atualizações novamente. Retome as Atualizações de Qualidade desmarcando a caixa de seleção.
+    - **Pausar atualizações de qualidade a partir de**: selecione se você quer pausar o recebimento de Atualizações de Qualidade nos dispositivos durante um período de até 35 dias a contar do momento que você pausar as atualizações. Após o número máximo de dias, a funcionalidade de pausa expirará automaticamente, e o dispositivo verificará no Windows Update se há atualizações aplicáveis. Após essa verificação, você poderá pausar as atualizações novamente. Retome as Atualizações de Qualidade desmarcando a caixa de seleção.
 6. Selecione **Instalar as atualizações de outros produtos da Microsoft** para habilitar a configuração da política de grupo que torna as configurações de adiamento aplicáveis ao Microsoft Update, bem como para o Windows Update.
 7. Selecione **Incluir drivers com o Windows Update** para atualizar automaticamente os drivers de Windows Updates. Se você desmarcar essa configuração, as atualizações de driver não serão baixadas do Windows Update.
 8. Conclua o assistente para criar a nova política de adiamento.
@@ -439,24 +429,23 @@ Os dispositivos com Windows 10 gerenciados pelo Windows Update for Business deve
 1. Em **Biblioteca de Software** > **Manutenção do Windows 10** > **Políticas do Windows Update for Business**
 2. Na guia **Início**, no grupo **Implantação**, selecione **Implantar a Política do Windows Update for Business**.
 3. Defina as seguintes configurações:
-    - **Política de configuração para implantação**: selecione a política do Windows Update for Business que você deseja implantar.
-    - **Coleção**: clique em **Procurar** para selecionar a coleção de usuários na qual você deseja implantar a política.
-    - **Corrigir regras não compatíveis quando houver suporte**: selecione para corrigir automaticamente quaisquer regras não compatíveis com o WMI (Instrumentação de Gerenciamento do Windows), o Registro, scripts e todas as configurações de dispositivos móveis registrados pelo Configuration Manager.
+    - **Política de configuração para implantação**: selecione a política do Windows Update para Empresas que você deseja implantar.
+    - **Coleta**: clique em **Procurar** para selecionar a coleção de usuários na qual você deseja implantar a política.
+    - **Corrigir regras não compatíveis quando houver suporte**: selecione para corrigir automaticamente quaisquer regras não compatíveis com o WMI (Instrumentação de Gerenciamento do Windows), o Registro, os scripts e todas as configurações de dispositivos móveis registrados pelo Configuration Manager.
     - **Permitir correção fora da janela de manutenção**: se uma janela de manutenção tiver sido configurada para a coleção na qual você está implantando a política, habilite esta opção para permitir que as configurações de conformidade corrijam o valor fora da janela de manutenção. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](/sccm/core/clients/manage/collections/use-maintenance-windows).
-    - **Gerar um alerta**: configura um alerta gerado se a conformidade da linha de base de configuração for menor que um percentual especificado por uma data e hora determinadas. Você também pode especificar se deseja que um alerta seja enviado para o System Center Operations Manager.
+    - **Gerar um alerta**: configurará um alerta gerado se a conformidade da linha de base de configuração for menor que um percentual especificado por uma data e hora determinadas. Você também pode especificar se deseja que um alerta seja enviado para o System Center Operations Manager.
     - **Atraso aleatório (horas)**: especifica uma janela de atraso para evitar o processamento excessivo no Serviço de Registro de Dispositivo de Rede. O valor padrão é de 64 horas.
-    - **Agenda**: especifique o agendamento de avaliação de conformidade com base no qual o perfil implantado será avaliado em computadores cliente. O agendamento poderá ser simples ou personalizado. O perfil será avaliado por computadores cliente quando o usuário fizer logon.
+    - **Agendamento**: especifique o agendamento de avaliação de conformidade com base no qual o perfil implantado será avaliado em computadores cliente. O agendamento poderá ser simples ou personalizado. O perfil será avaliado por computadores cliente quando o usuário fizer logon.
 4.  Conclua o assistente para implantar o perfil.
 
 
 
 ## <a name="support-for-entrust-certification-authorities"></a>Suporte para autoridades de certificação Entrust
-<!-- 1350740 -->
-Agora, o Configuration Manager dá suporte a autoridades de certificação Entrust; isso permite o envio de certificados PFX para dispositivos registrados no Microsoft Intune.
+<!-- 1350740 --> Agora, o Configuration Manager dá suporte a autoridades de certificação Entrust; isso permite a entrega de certificados PFX a dispositivos registrados no Microsoft Intune.
 
 Você pode configurar o Entrust como a autoridade de certificação ao adicionar a função Ponto de Registro de Certificado no Configuration Manager. Ao adicionar um novo perfil de certificado que emite os certificados PFX, você pode selecionar uma autoridade de certificação Microsoft ou Entrust.
 
-**Problema conhecido**: na visualização técnica 1706, os certificados PFX não são emitidos para autoridades de certificação da Microsoft. Isso não afeta os certificados PFX importados ou perfis SCEP.
+**Problema conhecido**: na Technical Preview 1706, os certificados PFX não são emitidos para autoridades de certificação da Microsoft. Isso não afeta os certificados PFX importados ou perfis SCEP.
 
 
 ## <a name="cisco-ipsec-support-for-ios-vpn-profiles"></a>Suporte do Cisco (IPsec) para perfis VPN do iOS
@@ -503,7 +492,7 @@ Para saber mais sobre configurações de conformidade, veja [Assegurar a conform
 
 ## <a name="new-device-compliance-policy-rules"></a>Novas regras de política de conformidade do dispositivo
 
-* **Tipo de senha necessária**. Especifica se o usuário deve criar uma senha alfanumérica ou numérica. Para senhas alfanuméricas, especifique também o número mínimo de conjuntos de caracteres que a senha deverá conter. Há quatro conjuntos de caracteres: minúsculas, maiúsculas, letras, símbolos e números.
+* **Tipo de senha necessária**. Especifica se o usuário deve criar uma senha alfanumérica ou numérica. Para senhas alfanuméricas, especifique também o número mínimo de conjuntos de caracteres que a senha deverá conter. Os quatro conjuntos de caracteres são: letras minúsculas, maiúsculas, símbolos e números.
 
     **Com suporte em:**
     * Windows Phone 8+
@@ -533,20 +522,19 @@ Confira [criar e implantar uma política de conformidade do dispositivo](https:/
 ## <a name="new-mobile-application-management-policy-settings"></a>Novas configurações de política de gerenciamento de aplicativo móvel
 A partir desta versão, você pode usar três novas configurações de política MAM (gerenciamento de aplicativo móvel):
 
-- **Bloquear captura de tela (somente dispositivos Android):** especifica que as funcionalidades de captura de tela do dispositivo sejam bloqueadas ao usar esse aplicativo.
+- **Bloquear captura de tela (somente para dispositivos Android):** Especifica que as funcionalidades de captura de tela do dispositivo sejam bloqueadas durante o uso do aplicativo.
 
-- **Desabilitar a sincronização de contato:** impede que o aplicativo salve dados no aplicativo de Contatos nativo do dispositivo.
+- **Desabilitar sincronização de contato:** impede que o aplicativo salve dados no aplicativo Contatos nativo do dispositivo.
 
 - **Desabilitar impressão:** impede que o aplicativo imprima dados corporativos ou de estudante.
 
 Veja [proteger aplicativos usando políticas de proteção de aplicativos no Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) para testar as novas configurações de política de proteção do aplicativo.
 
 ## <a name="android-and-ios-enrollment-restrictions"></a>Restrições de inscrição do Android e iOS
-<!-- 1290826 -->
-A partir desta versão, os administradores podem especificar que os usuários não podem inscrever dispositivos Android ou iOS pessoais no ambiente híbrido. Isso permite que você limite os dispositivos inscritos a dispositivos da empresa ou iOS previamente declarados inscritos somente com o Programa de registro do dispositivos.
+<!-- 1290826 --> Começando nessa versão, os administradores podem especificar que os usuários não podem inscrever dispositivos Android ou iOS pessoais no ambiente híbrido. Isso permite que você limite os dispositivos inscritos a dispositivos da empresa ou iOS previamente declarados inscritos somente com o Programa de registro do dispositivos.
 
 ### <a name="try-it-out"></a>Experimente
-1. No console do Configuration Manager, no espaço de trabalho **Administração** , acesse **Serviços de Nuvem** > **Assinatura do Microsoft Intune**.
+1. No console do Configuration Manager, no workspace **Administração**, acesse **Serviços de Nuvem** > **Assinatura do Microsoft Intune**.
 2. Na guia **Início** do grupo **Assinatura**, escolha **Configurar Plataformas** e selecione **Android** ou **iOS**.
 3. Selecione **Bloquear dispositivos de propriedade pessoal**.
 
@@ -555,7 +543,7 @@ Atualizamos as descrições de configuração de itens de configuração do Andr
 
 |Antes da Visualização Técnica 1706 | Nome da nova opção | Comportamento|
 |-|-|-|
-|Impeça compartilhamentos entre limites| Restrições de compartilhamento padrão| Trabalho para pessoal: Padrão (espera-se o bloqueio em todas as versões) <br>Pessoal para trabalho: Padrão (permitido no 6.x+, bloqueado no 5.x)|
+|Impeça compartilhamentos entre limites| Restrições de compartilhamento padrão| Trabalho para pessoal: padrão (espera-se o bloqueio em todas as versões) <br>Pessoal para trabalho: padrão (permitido no 6.x+, bloqueado no 5.x)|
 |Sem restrições|   Aplicativos no perfil pessoal podem lidar com solicitações de compartilhamento do perfil de trabalho| Trabalho para pessoal: Permitido  <br>Pessoal para trabalho: Permitido|
 |Aplicativos no perfil de trabalho podem lidar com solicitações de compartilhamento do perfil pessoal |Aplicativos no perfil de trabalho podem lidar com solicitações de compartilhamento do perfil pessoal |Trabalho para pessoal: Padrão<br>Pessoal para trabalho: Permitido<br>(Útil apenas na 5.x, em que pessoal para trabalho está bloqueado)|
 
@@ -573,8 +561,7 @@ A definição de DisallowCrossProfileCopyPaste como true impede o comportamento 
 4. Selecione o valor para **Permitir o compartilhamento de dados entre perfis pessoais e de trabalho** e conclua o assistente.
 
 ## <a name="device-health-attestation-assessment-for-compliance-policies-for-conditional-access"></a>Avaliação do Atestado de Integridade do Dispositivo para políticas de conformidade para acesso condicional
-<!-- 1097546 -->
-A partir desta versão, você pode usar o status do Atestado de Integridade do Dispositivo como uma regra de política de conformidade para acesso condicional aos recursos da empresa.
+<!-- 1097546 --> Começando nesta versão, você pode usar o status do Atestado de Integridade do Dispositivo como uma regra de política de conformidade para acesso condicional aos recursos da empresa.
 
 ### <a name="try-it-out"></a>Experimente
 Selecione uma regra de Atestado de Integridade do Dispositivo como parte de uma avaliação de política de conformidade.

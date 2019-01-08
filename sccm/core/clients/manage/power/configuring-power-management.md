@@ -10,12 +10,12 @@ ms.assetid: 435c923c-ea30-4dce-8afd-48962ed85502
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: ceb8c07c111818136db7c3815eee58cc87ae75c8
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9b375c7498e0b6d74c326bd51b45a50e0f9d9555
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333477"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422633"
 ---
 # <a name="configuring-power-management-in-system-center-configuration-manager"></a>Configurando o gerenciamento de energia no System Center Configuration Manager
 
@@ -28,25 +28,25 @@ Para poder usar o gerenciamento de energia no System Center Configuration Manage
 
 #### <a name="to-enable-power-management-and-configure-client-settings"></a>Para habilitar o gerenciamento de energia e definir as configurações do cliente  
 
-1.  No console do Configuration Manager, clique em **Administração**.  
+1. No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , clique em **Configurações do Cliente**.  
+2. No workspace **Administração**, clique em **Configurações do Cliente**.  
 
-3.  Clique em **Configurações do Cliente Padrão**.  
+3. Clique em **Configurações do Cliente Padrão**.  
 
-4.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
+4. Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-5.  Na caixa de diálogo **Configurações Padrão do Cliente** , clique em **Gerenciamento de Energia**.  
+5. Na caixa de diálogo **Configurações Padrão do Cliente** , clique em **Gerenciamento de Energia**.  
 
-6.  Defina o seguinte valor para as configurações do cliente de gerenciamento de energia:  
+6. Defina o seguinte valor para as configurações do cliente de gerenciamento de energia:  
 
-    -   **Permitir o gerenciamento de energia de dispositivos** – Na lista suspensa, selecione **True** para habilitar o gerenciamento de energia.  
+   -   **Permitir o gerenciamento de energia de dispositivos** – Na lista suspensa, selecione **True** para habilitar o gerenciamento de energia.  
 
-7.  Defina as configurações do cliente necessárias. Para obter uma lista de configurações do cliente de gerenciamento de energia que podem ser definidas, veja a seção [Gerenciamento de Energia](../../../../core/clients/deploy/about-client-settings.md#power-management) no tópico [Sobre as configurações de cliente no System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md).  
+7. Defina as configurações do cliente necessárias. Para obter uma lista de configurações do cliente de gerenciamento de energia que podem ser definidas, veja a seção [Gerenciamento de Energia](../../../../core/clients/deploy/about-client-settings.md#power-management) no tópico [Sobre as configurações de cliente no System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md).  
 
-8.  Clique em **OK** para fechar a caixa de diálogo **Configurações do Cliente Padrão** .  
+8. Clique em **OK** para fechar a caixa de diálogo **Configurações do Cliente Padrão** .  
 
- Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um cliente individual, veja [Como gerenciar clientes no System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+   Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um cliente individual, veja [Como gerenciar clientes no System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
 
 ## <a name="exclude-computers-from-power-management"></a>Excluir computadores do gerenciamento de energia  
  Você pode impedir que as coleções de computadores recebam as configurações de gerenciamento de energia. Se um computador for membro de qualquer coleção que seja excluída das configurações de gerenciamento de energia, esse computador não aplicará as configurações de gerenciamento de energia mesmo que seja membro de outra coleção que aplica as configurações de gerenciamento de energia.  
@@ -71,12 +71,12 @@ Para poder usar o gerenciamento de energia no System Center Configuration Manage
 
 #### <a name="to-exclude-a-collection-of-computers-from-power-management"></a>Para excluir uma coleção de computadores do gerenciamento de energia  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
+1. No console do Configuration Manager, clique em **Ativos e Conformidade**.  
 
-2.  No espaço de trabalho **Ativos e Conformidade** , clique em **Coleções de Dispositivos**.  
+2. No workspace **Ativos e Conformidade**, clique em **Coleções de Dispositivos**.  
 
-3.  Na lista **Coleções de Dispositivos** , selecione a coleção que deseja excluir do gerenciamento de energia e, na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
+3. Na lista **Coleções de Dispositivos** , selecione a coleção que deseja excluir do gerenciamento de energia e, na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  Na guia **Gerenciamento de Energia** da caixa de diálogo ****Propriedades* do \><nome da coleção*, selecione **Nunca aplicar configurações de gerenciamento de energia aos computadores desta coleção**.  
+4. Na guia **Gerenciamento de Energia** da caixa de diálogo <em>Propriedades\></em>**<nome da coleção**, selecione **Nunca aplicar configurações de gerenciamento de energia aos computadores desta coleção**.  
 
-5.  Clique em **OK** para fechar a caixa de diálogo ****Propriedades* do \><nome da coleção* e salvar as configurações.  
+5. Clique em **OK** para fechar a caixa de diálogo <em>Propriedades\></em>**<Nome da Coleção** e salvar as configurações.  

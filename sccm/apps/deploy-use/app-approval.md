@@ -2,7 +2,7 @@
 title: Aprovar aplicativos
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as configurações e comportamentos para aprovação de aplicativos no Configuration Manager.
-ms.date: 11/27/2018
+ms.date: 12/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 20493c86-6454-4b35-8f22-0d049b68b8bb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f19146da963055ffc20b274e1017802274844698
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 666df71b32ea0dc95411b8ffd58d18f7666d7b23
+ms.sourcegitcommit: d36e4c7082a5144e79035dd8847c8e741fa04667
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52457988"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53444579"
 ---
 # <a name="approve-applications-in-configuration-manager"></a>Aprovar aplicativos no Configuration Manager
 
@@ -45,7 +45,7 @@ Depois de aprovar um aplicativo para instalação, você pode **Negar** a solici
 <a name="bkmk_note1"></a>
 
 > [!Note]  
-> **Observação 1:** o Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options). 
+> **Observação 1**: O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options). 
 > 
 > Se você não habilitar esse recurso, a experiência anterior será exibida.  
 
@@ -80,6 +80,14 @@ Com esses pré-requisitos, os destinatários recebem um email com notificação 
 
 - Configure [notificações por email para alertas](/sccm/core/servers/manage/use-alerts-and-the-status-system#to-configure-email-notification-for-alerts).  
 
+- Habilite o Provedor de SMS para usar um certificado.<!--SCCMDocs-pr issue 3135--> Use uma das seguintes opções:  
+
+    - Habilitar [HTTP aprimorado](/sccm/core/plan-design/hierarchy/enhanced-http) (recomendado)  
+
+        > [!Note]  
+        > Quando o site cria um certificado para o Provedor de SMS, ele não será considerado confiável pelo navegador da Web no cliente. Dependendo de suas configurações de segurança, você poderá ver um aviso de segurança ao responder a uma solicitação do aplicativo.  
+
+    - Associar manualmente um certificado baseado em PKI à porta 443 no IIS no servidor que hospeda a função de Provedor de SMS  
 
 
 #### <a name="to-take-action-from-internet"></a>Para executar a ação da Internet

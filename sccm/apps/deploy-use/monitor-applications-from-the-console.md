@@ -1,7 +1,7 @@
 ---
 title: Monitorar aplicativos do console
 titleSuffix: Configuration Manager
-description: Monitorar a implantação de software, incluindo atualizações, configurações de conformidade e aplicativos usando o espaço de trabalho de monitoramento no Configuration Manager.
+description: Monitorar a implantação de software, incluindo atualizações, configurações de conformidade e aplicativos usando o workspace de monitoramento no Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-app
@@ -10,19 +10,19 @@ ms.assetid: 784c295c-b8b8-4202-ab9f-665908d49d6d
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 4aed4ecda35fded9314ae54b6601deb6f8e07197
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 129223a111085854ede038575653655ad13884dd
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343881"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423806"
 ---
 # <a name="monitor-applications-from-the-system-center-configuration-manager-console"></a>Monitorar aplicativos no console do System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-No System Center Configuration Manager, é possível monitorar a implantação de todo software, inclusive de atualizações de software, configurações de conformidade, aplicativos, sequências de tarefas, pacotes e programas. Você pode monitorar implantações usando o espaço de trabalho **Monitoramento** no console do Configuration Manager ou usando relatórios.  
+No System Center Configuration Manager, é possível monitorar a implantação de todo software, inclusive de atualizações de software, configurações de conformidade, aplicativos, sequências de tarefas, pacotes e programas. Você pode monitorar implantações usando o workspace **Monitoramento** no console do Configuration Manager ou usando relatórios.  
 
  Os aplicativos do Configuration Manager dão suporte ao monitoramento baseado em estado, o que permite acompanhar o último estado de implantação do aplicativo para usuários e dispositivos. Essas mensagens de estado exibem informações sobre dispositivos individuais. Por exemplo, se um aplicativo for implantado em um conjunto de usuários, será possível exibir o estado de conformidade e a finalidade da implantação no console do Configuration Manager.  
 
@@ -41,17 +41,17 @@ No System Center Configuration Manager, é possível monitorar a implantação d
 
 É possível exibir mais informações para cada estado de conformidade, incluindo subcategorias no estado de conformidade e o número de usuários e dispositivos nessa categoria. Por exemplo, o estado de conformidade **Erro** inclui as seguintes subcategorias:  
 
--   Erro na avaliação de requisitos  
+- Erro na avaliação de requisitos  
 
--   Erros relacionados ao conteúdo  
+- Erros relacionados ao conteúdo  
 
--   Erros de instalação  
+- Erros de instalação  
 
- Quando mais de um estado de conformidade se aplica a uma implantação de aplicativo, é possível ver o estado agregado que representa a conformidade inferior. Por exemplo:  
+  Quando mais de um estado de conformidade se aplica a uma implantação de aplicativo, é possível ver o estado agregado que representa a conformidade inferior. Por exemplo:  
 
-    -   Se um usuário se conectar a dois dispositivos e o aplicativo for instalado com êxito em um dos dispositivos, mas falhar no outro, o estado de implantação agregado do aplicativo para esse usuário será exibido como **Erro**.  
+  -   Se um usuário se conectar a dois dispositivos e o aplicativo for instalado com êxito em um dos dispositivos, mas falhar no outro, o estado de implantação agregado do aplicativo para esse usuário será exibido como **Erro**.  
 
-    -   Se um aplicativo for implantado em todos os usuários que se conectarem a um computador, você receberá vários resultados de implantação nesse computador. Se uma das implantações falhar, o estado de implantação agregado exibido para esse computador será **Erro**.  
+  -   Se um aplicativo for implantado em todos os usuários que se conectarem a um computador, você receberá vários resultados de implantação nesse computador. Se uma das implantações falhar, o estado de implantação agregado exibido para esse computador será **Erro**.  
 
 O estado de implantação para implantações de pacote e programa não é agregado.  
 

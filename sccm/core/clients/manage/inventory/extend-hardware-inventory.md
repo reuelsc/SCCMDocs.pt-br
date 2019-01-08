@@ -10,12 +10,12 @@ ms.assetid: d5bfab4f-c55e-4545-877c-5c8db8bc1891
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 317a143ba80607bef46a371c0e93ad9f4027abe4
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f1fa9f1bb2e036e0208a72e744f66da5c1887593
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344272"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423296"
 ---
 # <a name="how-to-extend-hardware-inventory-in-system-center-configuration-manager"></a>Como estender o inventário de hardware no System Center Configuration Manager
 
@@ -67,33 +67,33 @@ Esses procedimentos ajudam a configurar as configurações padrão do cliente de
 
 Você pode adicionar classes de inventário somente do servidor de nível superior da hierarquia modificando as configurações padrão do cliente. Essa opção não está disponível quando você cria configurações personalizadas do dispositivo.
 
-1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
+1. No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
 
-4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
+2. Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-5.  No caixa de diálogo **Configurações do Cliente Padrão**, escolha **Inventário de Hardware**.  
+3. No caixa de diálogo **Configurações do Cliente Padrão**, escolha **Inventário de Hardware**.  
 
-6.  Na lista **Configurações do Dispositivo**, escolha **Definir Classes**.  
+4. Na lista **Configurações do Dispositivo**, escolha **Definir Classes**.  
 
-7.  Na caixa de diálogo **Classes de Inventário de Hardware**, escolha **Adicionar**.  
+5. Na caixa de diálogo **Classes de Inventário de Hardware**, escolha **Adicionar**.  
 
-8.  No **Adicionar classe de inventário de Hardware** caixa de diálogo, clique em **conectar**.  
+6. No **Adicionar classe de inventário de Hardware** caixa de diálogo, clique em **conectar**.  
 
-9. No **conectar ao Windows Management Instrumentation (WMI)** caixa de diálogo, especifique o nome do computador do qual você recuperará as classes WMI e o namespace a ser usado para recuperar as classes WMI. Se você quiser recuperar todas as classes abaixo o namespace WMI que você especificou, clique em **recursiva**. Se o computador que você está se conectando não estiver no computador local, forneça as credenciais de logon para uma conta que tenha permissão para acessar o WMI no computador remoto.  
+7. No **conectar ao Windows Management Instrumentation (WMI)** caixa de diálogo, especifique o nome do computador do qual você recuperará as classes WMI e o namespace a ser usado para recuperar as classes WMI. Se você quiser recuperar todas as classes abaixo o namespace WMI que você especificou, clique em **recursiva**. Se o computador que você está se conectando não estiver no computador local, forneça as credenciais de logon para uma conta que tenha permissão para acessar o WMI no computador remoto.  
 
-10. Escolha **Conectar**.  
+8. Escolha **Conectar**.  
 
-11. Na caixa de diálogo **Adicionar Classe de Inventário de Hardware**, na lista **Classes de inventário**, selecione as classes WMI que deseja adicionar ao inventário de hardware do Configuration Manager.  
+9. Na caixa de diálogo **Adicionar Classe de Inventário de Hardware**, na lista **Classes de inventário**, selecione as classes WMI que deseja adicionar ao inventário de hardware do Configuration Manager.  
 
-12. Se você quiser editar informações sobre a classe WMI selecionada, escolha **Editar** e, na caixa de diálogo **Qualificadores de classe**, forneça as seguintes informações:  
+10. Se você quiser editar informações sobre a classe WMI selecionada, escolha **Editar** e, na caixa de diálogo **Qualificadores de classe**, forneça as seguintes informações:  
 
-    -   **Nome de exibição** – esse nome será exibido no Gerenciador de Recursos.  
+    - **Nome de exibição** – esse nome será exibido no Gerenciador de Recursos.  
 
-    -   **Propriedades** – especifique as unidades em que cada propriedade da classe WMI será exibida.  
+    - **Propriedades** – especifique as unidades em que cada propriedade da classe WMI será exibida.  
 
-     Você também pode designar propriedades como uma propriedade de chave para ajudar a identificar exclusivamente cada instância da classe. Se nenhuma chave estiver definida para a classe e várias instâncias da classe são informadas do cliente, apenas a instância mais recente encontrada é armazenada no banco de dados.  
+      Você também pode designar propriedades como uma propriedade de chave para ajudar a identificar exclusivamente cada instância da classe. Se nenhuma chave estiver definida para a classe e várias instâncias da classe são informadas do cliente, apenas a instância mais recente encontrada é armazenada no banco de dados.  
 
-     Quando terminar de configurar as propriedades, clique em **OK** para fechar a caixa de diálogo **Qualificadores de classe** e as outras caixas de diálogo abertas. 
+      Quando terminar de configurar as propriedades, clique em **OK** para fechar a caixa de diálogo **Qualificadores de classe** e as outras caixas de diálogo abertas. 
 
 ###  <a name="BKMK_Import"></a> Para importar classes de inventário de hardware  
 
@@ -131,7 +131,7 @@ Você só pode importar classes de inventário quando você modifica as configur
 ### <a name="bkmk_GreaterThan255"></a> Configurar o inventário de hardware para coletar cadeias de caracteres com mais de 255 caracteres
 A partir do Configuration Manager 1802, você pode especificar o tamanho das cadeias de caracteres para que tenham mais de 255 caracteres nas propriedades de inventário de hardware. Essa alteração se aplica apenas às classes recém-adicionadas e às propriedades de inventário de hardware que não são chaves. <!-- 1357389 -->
 
-1. No espaço de trabalho **Administração**, clique em **Configurações do Cliente**, realce uma configuração de dispositivo cliente a ser editada, clique com o botão direito do mouse e selecione **Propriedades**.
+1. No workspace **Administração**, clique em **Configurações do Cliente**, realce uma configuração de dispositivo cliente a ser editada, clique com o botão direito do mouse e selecione **Propriedades**.
 
 2. Selecione **Inventário de Hardware** e, em seguida, **Definir Classes** e **Adicionar**.
 

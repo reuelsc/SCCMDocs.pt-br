@@ -10,12 +10,12 @@ ms.technology: configmgr-sum
 ms.assetid: 0d484c1a-e903-4bff-9e9b-e452c62e38a8
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: ad44beeb662cb0cd5cf083b18721d88a5b7360c4
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 74781a574f1c1959212a652a20e2ca4d0e620547
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351608"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420508"
 ---
 #  <a name="BKMK_ManageSUSettings"></a> Gerenciar configurações de atualizações de software  
 
@@ -55,9 +55,9 @@ Use o procedimento a seguir para abrir as propriedades de atualização de softw
 
 #### <a name="to-open-software-update-properties"></a>Para abrir as propriedades de atualização de software  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
-2.  No espaço de trabalho Biblioteca de Software, expanda **Atualizações de Software**e clique em **Todas as Atualizações de Software**.  
-3.  Selecione uma ou mais atualizações de software e clique na guia **Início** e clique em **Propriedades** no grupo **Propriedades** .  
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.  
+2. No workspace Biblioteca de Software, expanda **Atualizações de Software** e clique em **Todas as Atualizações de Software**.  
+3. Selecione uma ou mais atualizações de software e clique na guia **Início** e clique em **Propriedades** no grupo **Propriedades** .  
 
    > [!NOTE]  
    >  No nó **Todas as Atualizações de Software**, o Configuration Manager exibirá somente atualizações de software com classificação **Crítica** e **Segurança** e que foram lançadas nos últimos 30 dias.  
@@ -68,32 +68,32 @@ Nas propriedades de atualização de software, você pode analisar informações
 ####  <a name="BKMK_SoftwareUpdateDetails"></a> Detalhes da atualização de software  
 Na guia **Detalhes da Atualização** , é possível exibir as seguintes informações de resumo sobre a atualização de software selecionada:  
 
-- **ID do Boletim**: especifica a ID do boletim associada às atualizações do software de segurança. Você pode encontrar detalhes do boletim de segurança pesquisando a ID do boletim na página da Web [Pesquisa de boletim de segurança da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=58313) .  
+- **ID do Boletim**: Especifica a ID do boletim associada às atualizações de software de segurança. Você pode encontrar detalhes do boletim de segurança pesquisando a ID do boletim na página da Web [Pesquisa de boletim de segurança da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=58313) .  
 
-- **ID do Artigo**: especifica a ID do artigo para a atualização do software. O artigo referenciado fornece informações mais detalhadas sobre a atualização do software e o problema que essa atualização corrige ou melhora.  
+- **ID do artigo**: Especifica a ID do artigo para a atualização de software. O artigo referenciado fornece informações mais detalhadas sobre a atualização do software e o problema que essa atualização corrige ou melhora.  
 
-- **Data de revisão**: especifica a data em que a atualização de software foi modificada pela última vez.  
+- **Data de revisão**: Especifica a data em que a atualização de software foi modificada pela última vez.  
 
-- **Classificação de severidade máxima**: especifica a classificação de severidade definida pelo fornecedor para a atualização de software.  
+- **Classificação de gravidade máxima**: Especifica a classificação de severidade definida pelo fornecedor para a atualização de software.  
 
-- **Descrição**: fornece uma visão geral sobre qual condição a atualização de software corrige ou melhora.  
+- **Descrição**: Fornece uma visão geral sobre qual condição a atualização de software corrige ou melhora.  
 
-- **Idiomas aplicáveis**: lista os idiomas para os quais a atualização de software é aplicável.  
+- **Linguagens aplicáveis**: Lista os idiomas para os quais a atualização de software é aplicável.  
 
-- **Produtos afetados**: lista os produtos para os quais a atualização de software é aplicável.  
+- **Produtos afetados**: Lista os produtos para os quais a atualização de software é aplicável.  
 
 ####  <a name="BKMK_ContentInformation"></a> Informações de conteúdo  
 Na guia **Informações de Conteúdo** , revise as seguintes informações sobre o conteúdo associado à atualização de software selecionada:  
 
--   **ID do Conteúdo**: especifica a ID do conteúdo de atualização do software.  
+-   **ID de conteúdo**: Especifica a ID de conteúdo para a atualização de software.  
 
--   **Baixado**: indica se o Configuration Manager baixou os arquivos de atualização do software.  
+-   **Baixado**: indica se o Configuration Manager baixou os arquivos de atualização de software.  
 
--   **Idioma**: especifica os idiomas para a atualização do software.  
+-   **Idioma**: Especifica os idiomas para a atualização de software.  
 
--   **Caminho de Origem**: especifica o caminho para os arquivos de origem de atualização do software.  
+-   **Caminho de origem**: Especifica o caminho para os arquivos de origem de atualização de software.  
 
--   **Tamanho (MB)**: especifica o tamanho dos arquivos de origem de atualização do software.  
+-   **Tamanho (MB)**: Especifica o tamanho para os arquivos de origem de atualização de software.  
 
 ####  <a name="BKMK_CustomBundleInformation"></a> Informações do grupo personalizado  
 Na guia **Informações do Grupo Personalizado** , revise as informações do grupo personalizado para a atualização de software. Quando a atualização de software selecionada contém atualizações de software agrupadas que estão contidas no arquivo de atualização de software, elas são exibidas na seção **Informações do grupo** . Essa guia não exibe atualizações de software agrupadas que são exibidas na guia **Informações de Conteúdo** , como arquivos de atualização para idiomas diferentes.  
@@ -101,9 +101,9 @@ Na guia **Informações do Grupo Personalizado** , revise as informações do gr
 ####  <a name="BKMK_SupersedenceInformation"></a> Informações da substituição  
 Na guia **Informações da Substituição** , você pode exibir as seguintes informações sobre a substituição da atualização de software:  
 
-- **Esta atualização foi substituída pelas seguintes atualizações**: especifica as atualizações de software que substituem essa atualização, o que significa que as atualizações listadas são mais recentes. Na maioria dos casos, você implantará uma das atualizações de software que substitui a atualização de software. As atualizações de software exibidas na lista contêm hiperlinks para páginas da Web que fornecem mais informações sobre as atualizações de software. Quando essa atualização não é substituída, **Nenhum** é exibido.  
+- **Essa atualização foi substituída pelas seguintes atualizações**: Especifica as atualizações de software que substituem essa atualização, o que significa que as atualizações listadas são mais recentes. Na maioria dos casos, você implantará uma das atualizações de software que substitui a atualização de software. As atualizações de software exibidas na lista contêm hiperlinks para páginas da Web que fornecem mais informações sobre as atualizações de software. Quando essa atualização não é substituída, **Nenhum** é exibido.  
 
-- **Esta atualização substitui as seguintes atualizações**: especifica as atualizações de software que são substituídas por essa atualização de software, o que significa que essa atualização é mais recente. Na maioria dos casos, você implantará essa atualização de software para substituir as atualizações de software obsoletas. As atualizações de software exibidas na lista contêm hiperlinks para páginas da Web que fornecem mais informações sobre as atualizações de software. Quando essa atualização não substitui nenhuma outra atualização, **Nenhum** é exibido.  
+- **Esta atualização substitui as seguintes atualizações**: Especifica as atualizações de software que são substituídas por essa atualização de software, o que significa que essa atualização é mais recente. Na maioria dos casos, você implantará essa atualização de software para substituir as atualizações de software obsoletas. As atualizações de software exibidas na lista contêm hiperlinks para páginas da Web que fornecem mais informações sobre as atualizações de software. Quando essa atualização não substitui nenhuma outra atualização, **Nenhum** é exibido.  
 
 ###  <a name="BKMK_SoftwareUpdatesSettings"></a> Definir as configurações de atualizações de software  
 Em propriedades, você pode definir as configurações de atualização de software para uma ou mais atualizações de software. Você pode definir a maioria das configurações de atualização de software somente no site de administração central ou no site primário autônomo. As seções a seguir ajudarão você a definir as configurações para atualizações de software.  
@@ -115,7 +115,7 @@ O Configuration Manager também usa essa configuração para determinar se deve 
 
 Na guia **Tempo Máximo de Execução** , você pode exibir e definir as seguintes configurações:  
 
-- **Tempo de execução máximo**: especifica o número máximo de minutos alocado para que uma instalação de atualização de software seja concluída antes que ela deixe de ser monitorada pelo Configuration Manager. Essa configuração também é usada para determinar se há tempo disponível suficiente restante para instalar a atualização antes do final de uma janela de manutenção. A configuração padrão é 60 minutos para service packs. Para outros tipos de atualização de software, o padrão será 10 minutos, se você tiver feito uma instalação nova do Configuration Manager versão 1511 ou posterior e 5 minutos quando você tiver atualizado de uma versão anterior. Os valores podem variar de 5 a 9999 minutos.  
+- **Tempo de execução máximo**: especifica o número máximo de minutos alocados para que uma instalação de atualização de software seja concluída antes que a instalação deixe de ser monitorada pelo Configuration Manager. Essa configuração também é usada para determinar se há tempo disponível suficiente restante para instalar a atualização antes do final de uma janela de manutenção. A configuração padrão é 60 minutos para service packs. Para outros tipos de atualização de software, o padrão será 10 minutos, se você tiver feito uma instalação nova do Configuration Manager versão 1511 ou posterior e 5 minutos quando você tiver atualizado de uma versão anterior. Os valores podem variar de 5 a 9999 minutos.  
 
 > [!IMPORTANT]  
 >  Verifique se você definiu o valor do tempo máximo de execução como inferior ao tempo da janela de manutenção configurada. Caso contrário, a instalação da atualização de software nunca será iniciada.  
@@ -125,7 +125,7 @@ Nas propriedades de uma atualização de software, você pode usar a guia **Seve
 
 Você pode definir as configurações a seguir na guia **Severidade Personalizada** .  
 
-- **Severidade personalizada**: define um valor de severidade personalizada para as atualizações de software. Selecione **Crítico**, **Importante**, **Moderado**ou **Baixo** na lista. Por padrão, o valor da severidade personalizada está vazio.
+- **Gravidade personalizada**: Define um valor de severidade personalizada para as atualizações de software. Selecione **Crítico**, **Importante**, **Moderado**ou **Baixo** na lista. Por padrão, o valor da severidade personalizada está vazio.
 
 ## <a name="crl-checking-for-software-updates"></a>Verificação de CRL para atualizações de software
 Por padrão, a CRL (lista de certificados revogados) não é verificada ao checar a assinatura nas atualizações de software do System Center Configuration Manager. Verificar a CRL sempre que um certificado é usado oferece mais segurança contra o uso de certificado revogado, mas gera atraso de conexão e incorre em processamentos adicionais no computador em que a verificação é executada.  

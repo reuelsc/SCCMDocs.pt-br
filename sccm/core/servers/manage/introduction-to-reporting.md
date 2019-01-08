@@ -10,12 +10,12 @@ ms.assetid: 230be984-d2cd-4d53-bd7a-bc24dd93fc22
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 579e9494a4f44f41a411af88bf58df7dcc5e8075
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 3cdc4ef389e4d46ad1c572b8785cb8ea26d90fcd
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340463"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416649"
 ---
 # <a name="introduction-to-reporting-in-system-center-configuration-manager"></a>Introdução à emissão de relatórios no System Center Configuration Manager
 
@@ -28,17 +28,17 @@ Os relatórios no System Center Configuration Manager fornece um conjunto de fer
 
  O Configuration Manager usa o SQL Server Reporting Services como sua solução de relatórios. A integração com o Reporting Services fornece as seguintes vantagens:  
 
--   Usa um sistema de relatórios padrão para consultar o banco de dados do Configuration Manager.  
+- Usa um sistema de relatórios padrão para consultar o banco de dados do Configuration Manager.  
 
--   Exibe relatórios usando o Visualizador de Relatórios do Configuration Manager ou o Gerenciador de Relatórios, uma conexão baseada na Web com o relatório.  
+- Exibe relatórios usando o Visualizador de Relatórios do Configuration Manager ou o Gerenciador de Relatórios, uma conexão baseada na Web com o relatório.  
 
--   Oferece escalabilidade, disponibilidade e alto desempenho.  
+- Oferece escalabilidade, disponibilidade e alto desempenho.  
 
--   Fornece assinaturas para relatórios que os usuários podem assinar; por exemplo, um gerente pode assinar para receber automaticamente um relatório por email todo dia e que detalhe o status de uma distribuição de atualização de software.  
+- Fornece assinaturas para relatórios que os usuários podem assinar; por exemplo, um gerente pode assinar para receber automaticamente um relatório por email todo dia e que detalhe o status de uma distribuição de atualização de software.  
 
--   Exporta relatórios que os usuários podem selecionar em uma variedade de formatos populares.  
+- Exporta relatórios que os usuários podem selecionar em uma variedade de formatos populares.  
 
- Para obter mais informações sobre o Reporting Services, consulte [SQL Server Reporting Services](http://go.microsoft.com/fwlink/p/?LinkID=212032) nos Manuais Online do SQL Server 2008.  
+  Para obter mais informações sobre o Reporting Services, consulte [SQL Server Reporting Services](http://go.microsoft.com/fwlink/p/?LinkID=212032) nos Manuais Online do SQL Server 2008.  
 
 ##  <a name="BKMK_ReportingServicesPoint"></a> Ponto do Reporting Services  
  O ponto do Reporting Services é uma função do sistema de site que está instalada em um servidor com o Microsoft SQL Server Reporting Services. O ponto do Reporting Services copia as definições de relatório do Configuration Manager para o Reporting Services, cria pastas de relatórios baseadas em categorias de relatório e define políticas de segurança nessas pastas e relatórios com base nas permissões baseadas em funções para usuários administrativos do Configuration Manager. Em um intervalo de 10 minutos, o ponto do Reporting Services conecta-se ao Reporting Services para reaplicar a política de segurança caso ele tenha sido alterada, por exemplo, usando o Gerenciador de Relatórios. Para obter mais informações sobre como planejar e instalar um ponto do Reporting Services, consulte a documentação a seguir:  
@@ -80,30 +80,30 @@ Os relatórios no System Center Configuration Manager fornece um conjunto de fer
 
  A instalação do Construtor de Relatórios adiciona suporte para mais de 20 idiomas. Quando você executa o Construtor de Relatórios, ele exibe dados no idioma do sistema operacional executado no computador local. Se o Construtor de Relatórios não oferecer suporte ao idioma, os dados serão exibidos em inglês. O Construtor de Relatórios oferece suporte a todos os recursos do SQL Server 2008 Reporting Services, que inclui os seguintes recursos:  
 
--   Oferece um ambiente de criação de relatórios intuitivos com uma aparência semelhante ao Microsoft Office.  
+- Oferece um ambiente de criação de relatórios intuitivos com uma aparência semelhante ao Microsoft Office.  
 
--   Oferece o layout flexível de relatório da RDL (Linguagem de Definição de Relatório) do SQL Server 2008.  
+- Oferece o layout flexível de relatório da RDL (Linguagem de Definição de Relatório) do SQL Server 2008.  
 
--   Fornece várias formas de visualização de dados, incluindo gráficos e medidores.  
+- Fornece várias formas de visualização de dados, incluindo gráficos e medidores.  
 
--   Fornece caixas de texto com formatação sofisticada.  
+- Fornece caixas de texto com formatação sofisticada.  
 
--   Exporta para o formato do Microsoft Word.  
+- Exporta para o formato do Microsoft Word.  
 
- Você também pode abrir o Construtor de Relatórios do SQL Server Reporting Services.  
+  Você também pode abrir o Construtor de Relatórios do SQL Server Reporting Services.  
 
 ##  <a name="BKMK_ReportModels"></a> Modelos de relatório no SQL Server Reporting Services  
  O SQL Reporting Services no Configuration Manager usa modelos de relatório para ajudar usuários administrativos a selecionar itens do banco de dados para incluir nos relatórios baseados em modelos. Para o usuário administrativo que está criando o relatório, os modelos de relatório expõem somente exibições e itens especificados dos quais escolher. Para criar relatórios baseados em modelos, pelo menos um modelo de relatório deve estar disponível. Os modelos de relatório têm os seguintes recursos:  
 
--   Você pode dar nomes de negócios lógicos a campos e exibições de banco de dados para facilitar a produção de relatórios. Não é necessário conhecimento da estrutura de banco de dados para produzir relatórios.  
+- Você pode dar nomes de negócios lógicos a campos e exibições de banco de dados para facilitar a produção de relatórios. Não é necessário conhecimento da estrutura de banco de dados para produzir relatórios.  
 
--   Você pode agrupar itens logicamente.  
+- Você pode agrupar itens logicamente.  
 
--   Você pode definir relações entre itens.  
+- Você pode definir relações entre itens.  
 
--   Você pode proteger elementos do modelo para que usuários administrativos possam ver somente os dados aos quais eles têm permissão para ver.  
+- Você pode proteger elementos do modelo para que usuários administrativos possam ver somente os dados aos quais eles têm permissão para ver.  
 
- Embora o Configuration Manager forneça exemplo dos modelos de relatório, também é possível definir modelos de relatório para atender a seus requisitos de negócios. Para obter mais informações sobre como criar modelos de relatório, veja [Creating custom report models for System Center Configuration Manager in SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md) (Criando modelos de relatório personalizados para o System Center Configuration Manager no SQL Server Reporting Services).  
+  Embora o Configuration Manager forneça exemplo dos modelos de relatório, também é possível definir modelos de relatório para atender a seus requisitos de negócios. Para obter mais informações sobre como criar modelos de relatório, veja [Creating custom report models for System Center Configuration Manager in SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md)(Criando modelos de relatório personalizados para o System Center Configuration Manager no SQL Server Reporting Services).  
 
 ## <a name="next-steps"></a>Próximas etapas
 [Planejamento para relatórios](planning-for-reporting.md)

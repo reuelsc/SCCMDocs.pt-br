@@ -10,12 +10,12 @@ ms.assetid: 9f7142e1-c972-4384-853b-2da1568cb3e3
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 480f7a890e82b46e2b2d69180763f39504a47e0c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a08162f36c247136dd346140480e2d29be0c4017
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344476"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424792"
 ---
 # <a name="best-practices-for-power-management-in-system-center-configuration-manager"></a>Práticas recomendadas para o gerenciamento de energia no System Center Configuration Manager
 
@@ -40,17 +40,17 @@ Use as práticas recomendadas para o gerenciamento de energia no System Center C
 
  Exemplos de computadores que você pode desejar excluir do gerenciamento de energia:  
 
--   Computadores que precisam permanecer ligados.  
+- Computadores que precisam permanecer ligados.  
 
--   Computadores aos quais os usuários precisam se conectar usando a Conexão de Área de Trabalho Remota.  
+- Computadores aos quais os usuários precisam se conectar usando a Conexão de Área de Trabalho Remota.  
 
--   Computadores que não podem usar o gerenciamento de energia.  
+- Computadores que não podem usar o gerenciamento de energia.  
 
--   Computadores que têm a função de sistema de sites do ponto de distribuição.  
+- Computadores que têm a função de sistema de sites do ponto de distribuição.  
 
--   Computadores públicos, como computadores de quiosque, telas de informações ou consoles de monitoramento, em que o computador e o monitor devem estar sempre ligados.  
+- Computadores públicos, como computadores de quiosque, telas de informações ou consoles de monitoramento, em que o computador e o monitor devem estar sempre ligados.  
 
- Para mais informações, consulte [Configurar o gerenciamento de energia no System Center Configuration Manager](../../../../core/clients/manage/power/configuring-power-management.md).  
+  Para mais informações, consulte [Configurar o gerenciamento de energia no System Center Configuration Manager](../../../../core/clients/manage/power/configuring-power-management.md).  
 
 ## <a name="first-apply-power-plans-to-a-test-collection-of-computers"></a>Primeiro aplique os planos de energia a uma coleção de teste de computadores  
  Sempre teste o efeito de aplicar um plano de gerenciamento de energia em uma coleção de teste de computadores antes de aplicar o plano de energia a uma coleção maior de computadores.  
@@ -65,9 +65,9 @@ Use as práticas recomendadas para o gerenciamento de energia no System Center C
 
  Se um computador for membro de várias coleções, e a cada um for aplicável um plano de energia diferente, as seguintes ações serão executadas:  
 
--   Plano de energia: se vários valores para as configurações de energia forem aplicados a um computador, o valor menos restritivo será usado.  
+-   Plano de energia: Se vários valores para as configurações de energia forem aplicados a um computador, o valor menos restritivo será usado.  
 
--   Hora de ativação: se várias horas de ativação forem aplicadas a um computador desktop, a hora mais próxima à meia-noite será usada.  
+-   Hora de ativação: Se várias horas de ativação forem aplicadas a um computador desktop, a hora mais próxima à meia-noite será usada.  
 
      Para mais informações, consulte [Computadores com vários planos de energia](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md#BKMK_Multiple) no tópico [Como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md). Para obter mais informações sobre como o gerenciamento de energia resolve conflitos, consulte [Como criar e aplicar planos de energia no System Center Configuration Manager](../../../../core/clients/manage/power/create-and-apply-power-plans.md).  
 

@@ -10,12 +10,12 @@ ms.assetid: 9fcbcc81-cd6f-496e-b075-ef1afa2b8ccc
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: e7d1ee430ef07149b77a4e7b250bc3e19788582a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 1ddefeafdf03a64f5fe50df6a4638616552f818a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335687"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420134"
 ---
 # <a name="create-user-data-and-profiles-configuration-items-in-system-center-configuration-manager"></a>Criar itens de configuração de perfis e dados de usuário no System Center Configuration Manager
 
@@ -23,13 +23,13 @@ ms.locfileid: "32335687"
 
 Os itens de configuração de perfis e dados do usuário no System Center Configuration Manager contêm configurações que podem gerenciar o redirecionamento de pasta, arquivos offline e perfis móveis em computadores que executam o Windows 8 e posterior para usuários em sua hierarquia. Por exemplo, você pode:  
 
--   Redirecionar a pasta de Documentos do usuário para um compartilhamento de rede.  
+- Redirecionar a pasta de Documentos do usuário para um compartilhamento de rede.  
 
--   Garantir que arquivos especificados armazenados na rede estejam disponíveis no computador do usuário quando a conexão de rede não estiver disponível.  
+- Garantir que arquivos especificados armazenados na rede estejam disponíveis no computador do usuário quando a conexão de rede não estiver disponível.  
 
--   Configurar quais arquivos no perfil móvel do usuário são sincronizados com um compartilhamento de rede quando o usuário fizer logon e logoff.  
+- Configurar quais arquivos no perfil móvel do usuário são sincronizados com um compartilhamento de rede quando o usuário fizer logon e logoff.  
 
- Ao contrário de outros itens de configuração no Configuration Manager, você não adiciona itens de configuração de perfis e dados de usuário a uma linha de base de configuração que será implantada. Em vez disso, você implanta o item de configuração diretamente usando a caixa de diálogo **Implantar Item de Configuração de Perfis e Dados de Usuário** .  
+  Ao contrário de outros itens de configuração no Configuration Manager, você não adiciona itens de configuração de perfis e dados de usuário a uma linha de base de configuração que será implantada. Em vez disso, você implanta o item de configuração diretamente usando a caixa de diálogo **Implantar Item de Configuração de Perfis e Dados de Usuário** .  
 
 > [!IMPORTANT]  
 >  Só é possível implantar itens de configuração de perfis e dados de usuário a coleções de usuários.  
@@ -49,40 +49,40 @@ Os itens de configuração de perfis e dados do usuário no System Center Config
 
 ## <a name="create-a-user-data-and-profiles-configuration-item"></a>Criar um item de configuração de perfis e dados de usuário  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Dados e Perfis do Usuário**.  
+1. No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Dados e Perfis do Usuário**.  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração de Perfis e Dados de Usuário**.  
+2. Na guia **Início** , no grupo **Criar** , clique em **Criar Item de Configuração de Perfis e Dados de Usuário**.  
 
-4.  Na página **Geral** do **Assistente para Criar Item de Configuração de Perfis e Dados de Usuário**, especifique as seguintes informações:  
+3. Na página **Geral** do **Assistente para Criar Item de Configuração de Perfis e Dados de Usuário**, especifique as seguintes informações:  
 
-    -   **Nome:** insira um nome exclusivo para o item de configuração. Você pode usar no máximo 256 caracteres.  
+   -   **Nome:** insira um nome exclusivo para o item de configuração. Você pode usar no máximo 256 caracteres.  
 
-    -   **Descrição:** Forneça uma descrição que fornece uma visão geral de como o item de configuração e outras informações relevantes que ajudam a identificá-lo no console do Configuration Manager. Você pode usar no máximo 256 caracteres.  
+   -   **Descrição:** forneça uma descrição que ofereça uma visão geral do item de configuração e outras informações relevantes que ajudam a identificá-lo no console do Configuration Manager. Você pode usar no máximo 256 caracteres.  
 
-    -   **Redirecionamento de pasta:** marque essa caixa de seleção se quiser definir as configurações de redirecionamento de pasta para este item de configuração.  
+   -   **Redirecionamento de pasta:** marque esta caixa se desejar definir as configurações de redirecionamento de pasta para este item de configuração.  
 
-    -   **Arquivos offline:** marque essa caixa de seleção se quiser definir as configurações de arquivos offline para este item de configuração.  
+   -   **Arquivos offline:** marque esta caixa se você desejar definir as configurações de arquivos offline para este item de configuração.  
 
-    -   **Perfis de usuário móveis:** marque essa caixa se desejar definir configurações para perfis de usuário móveis para este item de configuração.  
+   -   **Perfis de usuário móvel:** marque esta caixa se desejar definir as configurações de perfis de usuário móvel para este item de configuração.  
 
-5.  Na página **Redirecionamento de Pasta** do **Assistente para Criar Item de Configuração de Perfis e Dados de Usuário**, especifique como deseja que os computadores cliente dos usuários que recebem esse item de configuração gerenciem o redirecionamento de pasta. Você pode definir configurações para qualquer dispositivo em que o usuário fizer logon ou apenas nos dispositivos primários do usuário. Para obter mais informações sobre o redirecionamento de pasta, veja a documentação do Windows Server.  
+4. Na página **Redirecionamento de Pasta** do **Assistente para Criar Item de Configuração de Perfis e Dados de Usuário**, especifique como deseja que os computadores cliente dos usuários que recebem esse item de configuração gerenciem o redirecionamento de pasta. Você pode definir configurações para qualquer dispositivo em que o usuário fizer logon ou apenas nos dispositivos primários do usuário. Para obter mais informações sobre o redirecionamento de pasta, veja a documentação do Windows Server.  
 
-    > [!NOTE]  
-    >  Esta página será exibida apenas se você tiver marcado **Redirecionamento de pasta** na página **Geral** do assistente.  
+   > [!NOTE]  
+   >  Esta página será exibida apenas se você tiver marcado **Redirecionamento de pasta** na página **Geral** do assistente.  
 
-6.  Na página **Arquivos Offline** do **Assistente para Criar Item de Configuração de Perfis e Dados de Usuário**, é possível habilitar ou desabilitar o uso de arquivos offline para os usuários que recebem esse item de configuração e definir as configurações para o comportamento dos arquivos offline. Você também pode especificar os arquivos offline que sempre estarão disponíveis em qualquer computador que o usuário fizer logon. Para obter mais informações sobre arquivos offline, veja a documentação do Windows Server.  
+5. Na página **Arquivos Offline** do **Assistente para Criar Item de Configuração de Perfis e Dados de Usuário**, é possível habilitar ou desabilitar o uso de arquivos offline para os usuários que recebem esse item de configuração e definir as configurações para o comportamento dos arquivos offline. Você também pode especificar os arquivos offline que sempre estarão disponíveis em qualquer computador que o usuário fizer logon. Para obter mais informações sobre arquivos offline, veja a documentação do Windows Server.  
 
-    > [!NOTE]  
-    >  Esta página será exibida apenas se você tiver marcado **Arquivos offline** na página **Geral** do assistente.  
+   > [!NOTE]  
+   >  Esta página será exibida apenas se você tiver marcado **Arquivos offline** na página **Geral** do assistente.  
 
-7.  Na página **Perfis Móveis** do **Assistente para Criar Item de Configuração de Perfis e Dados de Usuário**, é possível configurar se os perfis móveis estarão disponíveis em computadores que o usuário faz logon e também configurar outras informações sobre o comportamento desses perfis. Para obter mais informações sobre perfis móveis, veja a documentação do Windows Server.  
+6. Na página **Perfis Móveis** do **Assistente para Criar Item de Configuração de Perfis e Dados de Usuário**, é possível configurar se os perfis móveis estarão disponíveis em computadores que o usuário faz logon e também configurar outras informações sobre o comportamento desses perfis. Para obter mais informações sobre perfis móveis, veja a documentação do Windows Server.  
 
-    > [!NOTE]  
-    >  Esta página será exibida apenas se você tiver marcado **Perfis de usuário móvel** na página **Geral** do assistente.  
+   > [!NOTE]  
+   >  Esta página será exibida apenas se você tiver marcado **Perfis de usuário móvel** na página **Geral** do assistente.  
 
-8.  Conclua o assistente.  
+7. Conclua o assistente.  
 
- O novo item de configuração de perfis e dados de usuário é mostrado no nó **Perfis e Dados de Usuário** do espaço de trabalho **Ativos e Conformidade** .  
+   O novo item de configuração de perfis e dados de usuário é mostrado no nó **Perfis e Dados de Usuário** do workspace **Ativos e Conformidade**.  
 
 ## <a name="deploy-a-user-data-and-profiles-configuration-item"></a>Implantar um item de configuração de perfis e dados de usuário  
 

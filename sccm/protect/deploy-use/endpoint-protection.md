@@ -10,12 +10,12 @@ ms.assetid: 76c90f64-d729-456b-8304-01852cd66fb6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3e8c6cb33032b0c4283f3e35cbfa7b68535751ea
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 160713fe480b0a47c2ad57376c4a1dccdbfb00b1
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456100"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418944"
 ---
 # <a name="endpoint-protection"></a>Endpoint Protection
 
@@ -45,7 +45,7 @@ A partir dos computadores Windows 10 e Windows Server 2016, o Windows Defender j
 
  Além disso, você gerencia as configurações do Firewall do Windows com o Endpoint Protection no console do Configuration Manager.  
 
- [Cenário de exemplo: usar o System Center Endpoint Protection para proteger os computadores contra malware no System Center Configuration Manager](scenarios-endpoint-protection.md) Endpoint Protection e o Firewall do Windows.  
+ [Cenário de exemplo: usar o System Center Endpoint Protection para proteger os computadores contra malware no System Center Configuration Manager](scenarios-endpoint-protection.md) Endpoint Protection e no Firewall do Windows.  
 
 
 ## <a name="managing-malware-with-endpoint-protection"></a>Gerenciando malware com o Endpoint Protection  
@@ -90,7 +90,7 @@ O Endpoint Protection gerencia e monitora a ATP (Proteção Avançada contra Ame
 ## <a name="endpoint-protection-client-for-mac-computers-and-linux-servers"></a>Cliente do Endpoint Protection para computadores Mac e servidores Linux  
 
 > [!Important]  
-> O suporte do SCEP (System Center Endpoint Protection) para Mac e Linux (todas as versões) será encerrado em 31 de dezembro de 2018. A disponibilidade de novas definições de vírus do SCEP para Mac e do SCEP para Linux será descontinuada após o encerramento do suporte. Para obter mais informações, consulte a [postagem no blog sobre o encerramento do suporte](https://go.microsoft.com/fwlink/?linkid=870182).  
+> O suporte do SCEP (System Center Endpoint Protection) para Mac e Linux (todas as versões) será encerrado em 31 de dezembro de 2018. A disponibilidade de novas definições de vírus do SCEP para Mac e do SCEP para Linux poderá ser descontinuada após o encerramento do suporte. Para obter mais informações, consulte a [postagem no blog sobre o encerramento do suporte](https://go.microsoft.com/fwlink/?linkid=870182).  
 
  O System Center Endpoint Protection inclui um cliente do Endpoint Protection para Linux e para computadores Mac. O Configuration Manager não é fornecido a esses clientes. Baixe os seguintes produtos do [Centro de Serviços de Licenciamento por Volume da Microsoft](https://www.microsoft.com/licensing/servicecenter/default.aspx):  
 
@@ -111,7 +111,7 @@ Use as etapas a seguir para baixar o arquivo de imagem que contém o software cl
 2. Selecione a guia **Downloads e Chaves** na parte superior do site.
 3. Aplique filtro no produto **System Center Endpoint Protection (branch atual)**.
 4. Clique no link **Download**
-5. Clique em **Continue**. Você verá vários arquivos, incluindo um denominado: **System Center Endpoint Protection (branch atual – versão 1606) para o sistema operacional Linux e o sistema operacional Macintosh Multilanguage 32/64 bits 1878 MB ISO**.
+5. Clique em **Continue**. Você verá vários arquivos, incluindo um denominado: **System Center Endpoint Protection (branch atual – versão 1606) para o sistema operacional Linux e Macintosh OS Multilanguage 32/64 bits 1878 MB ISO**.
 6. Para baixar o arquivo, clique no ícone de seta. O nome do arquivo é **SW_DVD5_Sys_Ctr_Endpnt_Prtctn_1606_MultiLang_-3_EptProt_Lin_Mac_MLF_X21-67050.ISO**.
 
 A atualização de janeiro de 2018 (X21-67050) inclui as seguintes versões:
@@ -119,4 +119,4 @@ A atualização de janeiro de 2018 (X21-67050) inclui as seguintes versões:
 - System Center Endpoint Protection para Mac 4.5.32.0 (suporte para macOS 10.13 High Serra)
 - System Center Endpoint Protection para Linux 4.5.20.0 
 
- Para obter mais informações sobre como instalar e gerenciar clientes do Endpoint Protection em computadores Linux e Mac, use a documentação que acompanha esses produtos. Esta documentação de produto está na pasta **Documentação** do arquivo .ISO.
+  Para obter mais informações sobre como instalar e gerenciar clientes do Endpoint Protection em computadores Linux e Mac, use a documentação que acompanha esses produtos. Esta documentação de produto está na pasta **Documentação** do arquivo .ISO.

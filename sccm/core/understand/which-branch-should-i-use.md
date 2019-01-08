@@ -10,16 +10,16 @@ ms.assetid: a3be4f8f-3d44-4e3c-9fa1-e85f30a36e72
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4331ec4120141ab9aa20301b9a99c3c6ebeef568
-ms.sourcegitcommit: 0305e710f634529793ae73e5aac24168ee4fe02f
+ms.openlocfilehash: 35e1675e74b0df768d143441fa4cbb2dda47affc
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37042738"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418213"
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Qual branch do Configuration Manager devo usar?
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual, Branch de Manutenção em Longo Prazo e Technical Preview)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual, 	Branch de Manutenção de Longo Prazo e Technical Preview)*
 
 
 Há três branches disponíveis do System Center Configuration Manager: branch atual, branch de manutenção em longo prazo e branch technical preview. Use este tópico para ajudar a escolher o branch correto para você.
@@ -43,11 +43,11 @@ Para instalar o Branch Atual como um novo site, use a [mídia de linha de base](
 
 Você também pode usar a mídia de linha de base para instalar um novo site de uma edição de avaliação do branch atual. A edição de avaliação não requer uma licença. Você pode usar a edição de avaliação de 180 dias. Ela dá suporte à atualização para uma edição licenciada do branch atual. Para instalar apenas uma edição de avaliação, é possível obtê-la no [Centro de Avaliação do TechNet](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection).
 
->  [!NOTE]  
+> [!NOTE]
 > Use a mídia de linha de base para instalar sites para uma nova hierarquia do Configuration Manager. Se você instalou uma versão de linha de base anteriormente, use as atualizações no console para atualizar seus sites para uma nova versão.  
->  
+> 
 > Sites que são atualizados usando atualizações no console resultam em sites iguais ao novo site instalado usando a mídia de linha de base.
->
+> 
 > Para obter mais informações, consulte [Atualizações para o System Center Configuration Manager](/sccm/core/servers/manage/updates).  
 
 

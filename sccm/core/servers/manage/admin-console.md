@@ -10,12 +10,12 @@ ms.assetid: 463ce307-59dd-4abd-87b8-42ca9db178d7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 073f908057d459d847cbec6b380e7a4a8683db2b
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 16b56d59e1cba6a36f0bd8189587794a680c3865
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456151"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422871"
 ---
 # <a name="using-the-configuration-manager-console"></a>Usando o console do Configuration Manager
 
@@ -32,9 +32,11 @@ O console conecta-se ao seu servidor do site de administração central ou aos s
 Para conectar-se a um servidor de site diferente, use as etapas a seguir: 
 
 1. Selecione a seta na parte superior da [faixa de opções](#ribbon) e escolha Conectar-se a um **Novo Site**.  
+
     ![Conectar o console a um novo site](media/connect-to-a-new-site.png)  
 
 2. Digite o FQDN do servidor do site. Se você tiver se conectado anteriormente ao servidor do site, selecione o servidor na lista suspensa.  
+
     ![Janela de Conexão do Site, digite o FQDN do servidor do site](media/site-server-fqdn.png)  
 
 3. Selecione **Conectar**.  
@@ -51,18 +53,24 @@ Algumas áreas do console podem não estar visíveis, dependendo da função de 
 
 ### <a name="workspaces"></a>Workspaces
 
-O console do Configuration Manager tem quatro **workspaces**: 
-   - **Ativos e Conformidade**  
-   - **Biblioteca de Software**  
-   - **Monitoramento**  
-   - **Administração**  
+O console do Configuration Manager tem quatro **workspaces**:  
+
+- **Ativos e Conformidade**  
+
+- **Biblioteca de Software**  
+
+- **Monitoramento**  
+
+- **Administração**  
 
 ![Workspaces do Configuration Manager com o menu de contexto](media/configuration-manager-workspaces.png)  
 
 Reordene os botões de workspace selecionando a seta para baixo e escolhendo **Opções do Painel de Navegação**. Selecione um item para **Mover para Cima** ou **Mover para Baixo**. Selecione **Redefinir** para restaurar a ordem de botões padrão.  
+
  ![Janela de Opções do Painel de Navegação para reordenar os workspaces](media/navigation-pane-options.png)  
 
 Minimize um botão do workspace selecionando **Mostrar Menos Botões**. O último workspace na lista é minimizado primeiro. Selecione um botão minimizado e escolha **Mostrar Mais Botões** para restaurar o botão ao seu tamanho original.   
+
 ![Workspaces minimizados no console do Configuration Manager](media/workspace-buttons.png)  
 
 
@@ -71,33 +79,40 @@ Minimize um botão do workspace selecionando **Mostrar Menos Botões**. O últim
 Os workspaces são uma coleção de **nós**. Um exemplo de um nó é o nó **Grupos de Atualização de Software** no workspace da **Biblioteca de Software**. 
 
 Quando você está em um nó, pode selecionar a seta para minimizar o painel de navegação.  
+
 ![Exemplo de nó e realce da seta para minimizar](media/software-update-groups-node.png)  
 
 Use a **barra de navegação** para percorrer o console ao minimizar o painel de navegação.  
+
 ![Painel de navegação minimizado do Configuration Manager](media/minimized-navigation-pane.png)  
 
 No console, os nós às vezes são organizados em pastas. Clicar diretamente na pasta geralmente o leva para um **índice de navegação** ou a um **painel**.  
+
 ![O software Configuration Manager atualiza o índice de navegação](media/software-updates-navigation-index.png)  
 
 
 ### <a name="ribbon"></a>Faixa de opções 
 
 A faixa de opções fica na parte superior do console do Configuration Manager. A faixa de opções pode ter mais de uma guia e ser minimizada usando a seta à direita. Os botões na faixa de opções mudam conforme o nó. A maioria dos botões na faixa de opções também está disponível nos menus de contexto.  
+
 ![Faixa de opções de exemplo, realçando várias guias e seta para minimizar](media/ribbon.png)   
 
 
 ### <a name="details-pane"></a>Painel de detalhes
 
-Você pode obter informações adicionais sobre itens examinando o painel de detalhes. O painel de detalhes pode ter uma ou mais guias. As guias variam conforme o nó. 
+Você pode obter informações adicionais sobre itens examinando o painel de detalhes. O painel de detalhes pode ter uma ou mais guias. As guias variam conforme o nó.  
+
 ![Painel de detalhes de exemplo do Configuration Manager](media/details-pane.png)   
 
 
 ### <a name="columns"></a>Colunas 
 
 Você pode adicionar, remover, reorganizar e redimensionar colunas. Essas ações permitem que você exiba os dados que preferir. As colunas disponíveis variam conforme o nó. Para adicionar ou remover uma coluna do modo de exibição, clique com o botão direito do mouse em um título de coluna existente e selecione um item. Reordene as colunas arrastando o título de coluna para o local em que deseja posicioná-lo.  
+
 ![Coluna adicionar do Configuration Manager](media/add-columns.png)  
 
 Na parte inferior do menu de contexto da coluna, você pode classificar ou agrupar por uma coluna. Além disso, você pode classificar por uma coluna selecionando seu cabeçalho.  
+
 ![O Configuration Manager agrupa por coluna](media/column-group-by.png)  
 
 
@@ -122,10 +137,12 @@ O console do Configuration Manager tem as seguintes opções de linha de comando
 <!--1357542-->
 
 Na versão 1806, envie comentários sobre o produto do console.  
-   
-- **Enviar um Smiley**: envie comentários sobre o que você gostou.
-- **Enviar um rosto triste**: envie comentários sobre o que você não gostou. 
-- **Enviar uma sugestão**: leva você ao UserVoice para compartilhar sua ideia. 
+
+- **Enviar um sorriso**: Enviar comentários sobre o que você gostou  
+
+- **Enviar um rosto triste**: Enviar comentários sobre o que você não gostou  
+
+- **Enviar uma sugestão**: Leva você ao UserVoice para compartilhar sua ideia  
  
 Para obter mais informações, confira [Comentários sobre o Produto](/sccm/core/understand/find-help#BKMK_1806Feedback).
 
@@ -133,8 +150,10 @@ Para obter mais informações, confira [Comentários sobre o Produto](/sccm/core
 ### <a name="assets-and-compliance-workspace"></a>Workspace Ativos e Conformidade
 
 #### <a name="view-users-for-a-device"></a>Exibir usuários para um dispositivo
-Da versão 1806 em diante, as colunas a seguir estão disponíveis no nó **Dispositivos**:
+Da versão 1806 em diante, as colunas a seguir estão disponíveis no nó **Dispositivos**:  
+
 - **Usuários primários** <!--1357280-->  
+
 - **Usuário conectado atualmente** <!--1358202-->  
 
 Para obter mais informações sobre como mostrar uma coluna não padrão, confira [Colunas](#columns).
@@ -143,9 +162,11 @@ Para obter mais informações sobre como mostrar uma coluna não padrão, confir
 ### <a name="monitoring-workspace"></a>Workspace de monitoramento
 
 #### <a name="copy-details-in-monitoring-views"></a>Copiar detalhes em exibições de monitoramento
-<!--1357856--> Começando na versão 1806, copie informações do painel **Detalhes do Ativo** para os seguintes nós de monitoramento: 
-    - **Status da Distribuição de Conteúdo**  
-    - **Status da implantação**  
+<!--1357856--> Começando na versão 1806, copie informações do painel **Detalhes do Ativo** para os seguintes nós de monitoramento:  
+
+- **Status da Distribuição de Conteúdo**  
+
+- **Status da implantação**  
 
 ![Exibição de Status de Implantação, copiar detalhes do ativo](media/1810-deployment-status.PNG)
 

@@ -10,12 +10,12 @@ ms.assetid: ab1aecdd-d943-44f5-b0a9-e8fe7439e5d6
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 3cbb7281cd7dd39a32a71105fe173f868947eef9
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 1ff2b135d38c819804cc7873effa3bff5f9254e7
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338237"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422087"
 ---
 # <a name="create-mac-computer-applications-with-system-center-configuration-manager"></a>Criar aplicativos de computador Mac com o System Center Configuration Manager
 
@@ -46,13 +46,14 @@ Lembre-se das seguintes considerações ao criar e implantar aplicativos para co
 ## <a name="steps-to-create-and-deploy-an-application"></a>Etapas para criar e implantar um aplicativo  
  A tabela a seguir fornece as etapas, os detalhes e as informações para criar e implantar aplicativos para computadores Mac.  
 
-|Etapa|Detalhes|  
-|----------|-------------|  
-|**Etapa 1**: Preparar aplicativos Mac para o Configuration Manager|Antes de criar aplicativos do Configuration Manager por meio dos pacotes de software Mac, é necessário usar a ferramenta **CMAppUtil** em um computador Mac para converter o software Mac em um arquivo **.cmmac** do Configuration Manager.|  
-|**Etapa 2**: Criar um aplicativo do Configuration Manager que contém o software do Mac|Use o **Assistente para Criar Aplicativo** para criar um aplicativo para o software do Mac.|  
-|**Etapa 3**: Criar um tipo de implantação para o aplicativo Mac|Esta etapa é necessária somente se você não importou automaticamente essas informações do aplicativo.|  
-|**Etapa 4**: Implantar o aplicativo Mac|Use o **Assistente de Implantação de Software** para implantar o aplicativo em computadores Mac.|  
-|**Etapa 5**: Monitorar a implantação do aplicativo Mac|Monitore o sucesso das implantações de aplicativos em computadores Mac.|  
+
+|                                         Etapa                                          |                                                                                                             Detalhes                                                                                                              |
+|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|            **Etapa 1**: Preparar aplicativos Mac para o Configuration Manager             | Antes de criar aplicativos do Configuration Manager por meio dos pacotes de software Mac, é necessário usar a ferramenta **CMAppUtil** em um computador Mac para converter o software Mac em um arquivo <strong>.cmmac</strong> do Configuration Manager. |
+| **Etapa 2**: Criar um aplicativo do Configuration Manager que contém o software do Mac |                                                                       Use o **Assistente para Criar Aplicativo** para criar um aplicativo para o software do Mac.                                                                       |
+|             **Etapa 3**: Criar um tipo de implantação para o aplicativo Mac              |                                                              Esta etapa é necessária somente se você não importou automaticamente essas informações do aplicativo.                                                               |
+|                        **Etapa 4**: Implantar o aplicativo Mac                         |                                                                          Use o **Assistente de Implantação de Software** para implantar o aplicativo em computadores Mac.                                                                          |
+|               **Etapa 5**: Monitorar a implantação do aplicativo Mac               |                                                                                 Monitore o sucesso das implantações de aplicativos em computadores Mac.                                                                                 |
 
 ## <a name="supplemental-procedures-to-create-and-deploy-applications-for-mac-computers"></a>Procedimentos complementares para criar e implantar aplicativos para computadores Mac  
  Use os procedimentos a seguir criar e implantar aplicativos para computadores Mac gerenciados pelo Configuration Manager.  

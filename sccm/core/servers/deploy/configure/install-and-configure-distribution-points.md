@@ -10,12 +10,12 @@ ms.assetid: aebafaf9-b3d5-4a0f-9ee5-685758c037a1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bca3e0857ed40d2e2b3f9d739b4c0411e0213d09
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 0ab848051d5eaa85d2b515145ff64471aee81a31
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385364"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415034"
 ---
 # <a name="install-and-configure-distribution-points-in-configuration-manager"></a>Instalar e configurar pontos de distribuição no Configuration Manager
 
@@ -118,7 +118,7 @@ As seções a seguir listam os procedimentos das seguintes ações para gerencia
 
 ### <a name="bkmk_dpgroup-create"></a> Procedimento para criar e configurar um novo grupo de pontos de distribuição  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração** e selecione o nó **Grupos de Pontos de Distribuição**.  
+1.  No console do Configuration Manager, acesse o workspace **Administração** e selecione o nó **Grupos de Pontos de Distribuição**.  
 
 2.  Na faixa de opções, clique em **Criar Grupo**.  
 
@@ -137,7 +137,7 @@ As seções a seguir listam os procedimentos das seguintes ações para gerencia
 
 #### <a name="create-a-new-group-from-an-existing-distribution-point"></a>Criar um grupo usando um ponto de distribuição existente
 
-1.  No console do Configuration Manager, vá até o espaço de trabalho **Administração** e selecione o nó **Pontos de Distribuição**. Selecione um ou mais pontos de distribuição a serem adicionados a um novo grupo de pontos de distribuição.  
+1.  No console do Configuration Manager, vá até o workspace **Administração** e selecione o nó **Pontos de Distribuição**. Selecione um ou mais pontos de distribuição a serem adicionados a um novo grupo de pontos de distribuição.  
 
 2.  Na faixa de opções, clique em **Adicionar Itens Selecionados** e, em seguida, clique em **Adicionar Itens Selecionados ao Novo Grupo de Pontos de Distribuição**.  
 
@@ -146,7 +146,7 @@ Esse processo popula automaticamente a guia **Membros** da janela Criar Grupo de
 
 ### <a name="bkmk_dpgroup-modify"></a> Procedimento para modificar um grupo de pontos de distribuição existente  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração** e selecione o nó **Grupos de Pontos de Distribuição**.  
+1.  No console do Configuration Manager, acesse o workspace **Administração** e selecione o nó **Grupos de Pontos de Distribuição**.  
 
 2.  Selecione um grupo de pontos de distribuição existente a ser modificado. Na faixa de opções, clique em **Propriedades**.  
 
@@ -159,7 +159,7 @@ Esse processo popula automaticamente a guia **Membros** da janela Criar Grupo de
 
 ### <a name="bkmk_dpgroup-addexist"></a> Procedimento para adicionar os pontos de distribuição selecionados aos grupos de pontos de distribuição existentes  
 
-1.  No console do Configuration Manager, vá até o espaço de trabalho **Administração** e selecione o nó **Pontos de Distribuição**. Selecione um ou mais pontos de distribuição a serem adicionados a um grupo existente.  
+1.  No console do Configuration Manager, vá até o workspace **Administração** e selecione o nó **Pontos de Distribuição**. Selecione um ou mais pontos de distribuição a serem adicionados a um grupo existente.  
 
 2.  Na faixa de opções, clique em **Adicionar Itens Selecionados** e, em seguida, clique em **Adicionar Itens Selecionados a Grupos de Pontos de Distribuição Existentes**.  
 
@@ -181,7 +181,7 @@ Siga estas etapas para reatribuir um ponto de distribuição:
 
 1. No console do Configuration Manager, conecte-se ao site de administração central.  
 
-2. Acesse o espaço de trabalho **Administração** e selecione o nó **Pontos de Distribuição**.  
+2. Acesse o workspace **Administração** e selecione o nó **Pontos de Distribuição**.  
 
 3. Clique com o botão direito do mouse no ponto de distribuição de destino e selecione **Reatribuir Ponto de Distribuição**.  
 
@@ -234,7 +234,7 @@ As seções a seguir descrevem as configurações do ponto de distribuição par
 
 #### <a name="bkmk_change-procedure"></a> Procedimento para alterar um ponto de distribuição  
 
-1.  No console do Configuration Manager, vá até o espaço de trabalho **Administração** e selecione o nó **Pontos de Distribuição**.  
+1.  No console do Configuration Manager, vá até o workspace **Administração** e selecione o nó **Pontos de Distribuição**.  
 
 2.  Selecione o ponto de distribuição a ser configurado. Na faixa de opções, clique em **Propriedades**.  
 
@@ -247,20 +247,20 @@ As seções a seguir descrevem as configurações do ponto de distribuição par
 
 As seguintes configurações estão na página **Ponto de distribuição** do assistente para Criar Servidor do Sistema de Sites e na guia **Geral** da janela Propriedades do ponto de distribuição:  
 
--   **Instalar e configurar o IIS se o Configuration Manager exigir**: se o IIS ainda não estiver instalado no servidor, o Configuration Manager fará sua instalação e configuração. O Configuration Manager requer o IIS em todos os pontos de distribuição. Se você não escolher essa configuração e o IIS não estiver instalado no servidor, primeiro instale o IIS para que o Configuration Manager possa instalar o ponto de distribuição com êxito.  
+-   **Instalar e configurar o IIS se exigido pelo Configuration Manager**: Se o IIS ainda não tiver sido instalado no servidor, o Configuration Manager o instalará e o configurará. O Configuration Manager requer o IIS em todos os pontos de distribuição. Se você não escolher essa configuração e o IIS não estiver instalado no servidor, primeiro instale o IIS para que o Configuration Manager possa instalar o ponto de distribuição com êxito.  
 
     > [!NOTE]  
     >  Essa opção é exibida apenas na página **Ponto de distribuição** do assistente para Criar Servidor do Sistema de Sites. Ela está disponível apenas para a [instalação de um novo ponto de distribuição](#bkmk_install-procedure).  
 
-- **Habilitar e configurar o BranchCache para esse ponto de distribuição**: escolha esta configuração permitir que o Configuration Manager configure o Windows BranchCache no servidor do ponto de distribuição. Para obter mais informações, confira [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache).  
+- **Habilitar e configurar o BranchCache para este ponto de distribuição**: escolha esta configuração permitir que o Configuration Manager configure o Windows BranchCache no servidor do ponto de distribuição. Para obter mais informações, confira [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache).  
 
-- **Ajustar a velocidade do download para usar a largura de banda de rede não utilizada (LEDBAT do Windows)**<!--1358112-->: começando na versão 1806, habilite os pontos de distribuição para usar o controle de congestionamento de rede. Para obter mais informações, confira [LEDBAT do Windows](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#windows-ledbat). O ponto de distribuição precisa estar executando o Windows Server, versão 1709. Não há nenhum pré-requisito do cliente.  
+- **Ajustar a velocidade de download para usar a largura de banda de rede não utilizada (Windows LEDBAT)**<!--1358112-->: Começando na versão 1806, habilite os pontos de distribuição para usar o controle de congestionamento de rede. Para obter mais informações, confira [LEDBAT do Windows](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#windows-ledbat). O ponto de distribuição precisa estar executando o Windows Server, versão 1709. Não há nenhum pré-requisito do cliente.  
 
 - **Descrição**: uma descrição opcional para essa função de ponto de distribuição.  
 
--   **Configurar como os dispositivos clientes se comunicam com o ponto de distribuição**: há vantagens e desvantagens de usar **HTTP** ou **HTTPS**. Para obter mais informações, consulte [Melhores práticas de segurança para gerenciamento de conteúdo](/sccm/core/plan-design/hierarchy/security-and-privacy-for-content-management#BKMK_Security_ContentManagement).  
+-   **Configure como os dispositivos cliente se comunicam com o ponto de distribuição**: Há vantagens e desvantagens no uso do **HTTP** ou do **HTTPS**. Para obter mais informações, consulte [Melhores práticas de segurança para gerenciamento de conteúdo](/sccm/core/plan-design/hierarchy/security-and-privacy-for-content-management#BKMK_Security_ContentManagement).  
 
--   **Permitir que os clientes se conectem anonimamente**: essa configuração especifica se o ponto de distribuição permite conexões anônimas de clientes do Configuration Manager com a biblioteca de conteúdo.  
+-   **Permitir que clientes se conectem anonimamente**: essa configuração especifica se o ponto de distribuição permite conexões anônimas de clientes do Configuration Manager com a biblioteca de conteúdo.  
 
     > [!Important]  
     > Se você não usa essa configuração, aplique as alterações descritas no artigo da Base de Dados de Conhecimento Microsoft [2619572](https://support.microsoft.com/help/2619572/) nos clientes Windows 7. Caso contrário, o reparo de aplicativos do Windows Installer poderá falhar.  
@@ -269,7 +269,7 @@ As seguintes configurações estão na página **Ponto de distribuição** do as
     >   
     >  Depois que você instalar a atualização nos clientes e modificar a chave do Registro documentada, o MSIExec acessará o caminho do conteúdo usando a conta de usuário conectada.  
 
--   **Criar um certificado autoassinado ou importar um certificado do cliente de PKI**: o Configuration Manager usa esse certificado para as seguintes finalidades:  
+-   **Criar um certificado autoassinado ou importar um certificado de cliente PKI**: o Configuration Manager usa esse certificado para as seguintes finalidades:  
 
     -   autentica o ponto de distribuição em um ponto de gerenciamento antes que o ponto de distribuição envie mensagens de status.  
 
@@ -290,7 +290,7 @@ As seguintes configurações estão na página **Ponto de distribuição** do as
 
      Para ver um exemplo de implantação desse certificado, confira a seção [Implantando o certificado do cliente para pontos de distribuição](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clientdistributionpoint2008_cm2012).  
 
--   **Habilitar este ponto de distribuição para conteúdo pré-teste**: essa configuração permite que você adicione conteúdo no servidor, antes de distribuir o software. Como os arquivos de conteúdo já estão na biblioteca de conteúdo, eles não são transferidas pela rede quando você distribui o software. Para obter mais informações, confira [Conteúdo pré-teste](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent).  
+-   **Habilitar esse ponto de distribuição para conteúdo pré-teste**: essa configuração permite que você adicione conteúdo no servidor, antes de distribuir o software. Como os arquivos de conteúdo já estão na biblioteca de conteúdo, eles não são transferidas pela rede quando você distribui o software. Para obter mais informações, confira [Conteúdo pré-teste](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent).  
 
 
 ### <a name="bkmk_config-drive"></a> Configurações de unidade  
@@ -302,7 +302,7 @@ Especifique as configurações de unidade para o ponto de distribuição. Config
 
 -   **Reserva de espaço na unidade (MB)**: esse valor determina a quantidade de espaço livre que uma unidade precisa ter para que o Configuration Manager escolha uma outra unidade para continuar processo de cópia. Arquivos de conteúdo podem abranger várias unidades.  
 
--   **Locais de conteúdo**: especifique os locais para o compartilhamento de biblioteca e pacote de conteúdo nesse ponto de distribuição. Por padrão, todos os locais de conteúdo são definidos como **Automático**. O Configuration Manager copia conteúdo para o local de conteúdo primário até que a quantidade de espaço livre atinja o valor especificado para **Reserva de espaço de unidade (MB)**. Quando você seleciona **Automático**, o Configuration Manager define os locais de conteúdo primários como a unidade de disco com mais espaço em disco na instalação. Ele define os locais secundários como a unidade de disco com o segundo maior espaço livre em disco. Quando os locais primários e secundários atingem a reserva de espaço na unidade, o Configuration Manager seleciona outra unidade disponível com o maior espaço livre em disco para continuar o processo de cópia.  
+-   **Localizações de conteúdo**: especifique os locais para o compartilhamento de biblioteca e pacote de conteúdo nesse ponto de distribuição. Por padrão, todos os locais de conteúdo são definidos como **Automático**. O Configuration Manager copia conteúdo para o local de conteúdo primário até que a quantidade de espaço livre atinja o valor especificado para **Reserva de espaço de unidade (MB)**. Quando você seleciona **Automático**, o Configuration Manager define os locais de conteúdo primários como a unidade de disco com mais espaço em disco na instalação. Ele define os locais secundários como a unidade de disco com o segundo maior espaço livre em disco. Quando os locais primários e secundários atingem a reserva de espaço na unidade, o Configuration Manager seleciona outra unidade disponível com o maior espaço livre em disco para continuar o processo de cópia.  
 
 > [!Tip]  
 >  Para impedir que o Configuration Manager instale em uma unidade específica, crie um arquivo vazio chamado **no_sms_on_drive.sms** e copie-o para a pasta raiz da unidade antes de instalar o ponto de distribuição.  
@@ -336,25 +336,25 @@ Selecione a opção para **Habilitar suporte a PXE para clientes** e, em seguida
  >   
  > Se você instalar o WDS e DHCP no mesmo servidor, configure o WDS para escutar em uma porta diferente. Por padrão, o DHCP escuta na mesma porta. Para obter mais informações, consulte [Considerações sobre quando você tem o WDS e DHCP no mesmo servidor](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment#BKMK_WDSandDHCP).  
 
-- **Permitir que este ponto de distribuição responda às solicitações PXE de entrada**: especifique se deseja habilitar o WDS a responder às solicitações de serviço PXE. Use essa configuração para habilitar e desabilitar o serviço sem remover a funcionalidade PXE do ponto de distribuição.  
+- **Permitir que este ponto de distribuição responda às solicitações PXE de entrada**: Especifique se deseja habilitar o WDS para responder a solicitações de serviço PXE. Use essa configuração para habilitar e desabilitar o serviço sem remover a funcionalidade PXE do ponto de distribuição.  
 
-- **Habilitar suporte a computadores desconhecidos**: especifique se deseja habilitar o suporte para computadores que o Configuration Manager não gerencia. Para obter mais informações, consulte [Preparar implantações de computador desconhecido](/sccm/osd/get-started/prepare-for-unknown-computer-deployments).  
+- **Habilitar suporte a computadores desconhecidos**: especifique se deseja habilitar o suporte para computadores não gerenciados pelo Configuration Manager. Para obter mais informações, consulte [Preparar implantações de computador desconhecido](/sccm/osd/get-started/prepare-for-unknown-computer-deployments).  
 
-- **Habilitar um respondente PXE sem o Serviço de Implantação do Windows**: começando na versão 1806, essa opção habilita um respondente PXE no ponto de distribuição, que não exige o WDS. Esse respondente PXE dá suporte a redes IPv6. Se você habilitar essa opção em um ponto de distribuição que já esteja habilitado para PXE, o Configuration Manager suspenderá o serviço WDS. Se você desabilitar essa opção, mas escolher a opção **Habilitar suporte a PXE para clientes**, o ponto de distribuição habilitará o WDS novamente.<!--1357580-->  
+- **Habilitar um respondente PXE sem o Serviço de Implantação do Windows**: começando na versão 1806, essa opção habilita um respondente PXE no ponto de distribuição, que não requer WDS. Esse respondente PXE dá suporte a redes IPv6. Se você habilitar essa opção em um ponto de distribuição que já esteja habilitado para PXE, o Configuration Manager suspenderá o serviço WDS. Se você desabilitar essa opção, mas escolher a opção **Habilitar suporte a PXE para clientes**, o ponto de distribuição habilitará o WDS novamente.<!--1357580-->  
 
 - **Exigir uma senha quando os computadores usarem PXE**: para fornecer segurança adicional para implantações PXE, especifique uma senha forte.  
 
 - **Afinidade de dispositivo de usuário**: especifique como deseja que o ponto de distribuição associe usuários ao computador de destino para implantações PXE. Selecione uma das seguintes opções:  
 
-    - **Permitir afinidade de dispositivo de usuário com aprovação automática**: escolha essa configuração para associar automaticamente os usuários ao computador de destino sem aguardar a aprovação.  
+  - **Permitir afinidade de dispositivo de usuário com aprovação automática**: selecione essa configuração para associar automaticamente os usuários ao computador de destino sem aguardar a aprovação.  
 
-    - **Permitir afinidade de dispositivo de usuário pendente de aprovação de administrador**: escolha essa configuração para aguardar a aprovação de um usuário administrativo antes que os usuários sejam associados ao computador de destino.  
+  - **Permitir afinidade de dispositivo de usuário pendente de aprovação de administrador**: escolha essa configuração para aguardar a aprovação de um usuário administrativo antes que os usuários sejam associados ao computador de destino.  
 
-    - **Não permitir afinidade de dispositivo de usuário**: escolha essa configuração para especificar que os usuários não estão associados ao computador de destino. Essa é a configuração padrão.  
+  - **Não permitir afinidade de dispositivo de usuário**: escolha essa configuração para especificar que os usuários não são associados ao computador de destino. Essa é a configuração padrão.  
 
-     Para obter mais informações sobre afinidade de dispositivo de usuário, consulte [Vincular usuários e dispositivos com a afinidade de dispositivo de usuário](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity).  
+    Para obter mais informações sobre afinidade de dispositivo de usuário, consulte [Vincular usuários e dispositivos com a afinidade de dispositivo de usuário](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity).  
 
-- **Interfaces de rede**: especifique se o ponto de distribuição deve responder às solicitações PXE de todas as interfaces de rede ou de interfaces de rede específicas. Se o ponto de distribuição responde a adaptadores de rede específicos, forneça o endereço MAC de cada adaptador de rede.  
+- **Adaptadores de rede**: especifique se o ponto de distribuição deve responder às solicitações PXE de todas as interfaces de rede ou de interfaces de rede específicas. Se o ponto de distribuição responde a adaptadores de rede específicos, forneça o endereço MAC de cada adaptador de rede.  
 
     > [!Note]  
     > Ao alterar o adaptador de rede, reinicie o serviço do WDS para garantir que ele salve a configuração corretamente. Começando na versão 1806, ao usar o serviço de respondente PXE, reinicie o **Serviço de Respondente PXE do ConfigMgr** (SccmPxe).<!--SCCMDocs issue 642-->  
@@ -370,21 +370,21 @@ Quando você habilita o multicast, o Configuration Manager instala o WDS (Servi�
 
 Selecione a opção para **Habilitar multicast para enviar dados a vários clientes simultaneamente** e, em seguida, defina as seguintes configurações:  
 
-- **Conta de Conexão Multicast**: especifique a conta a ser usada ao configurar as conexões de banco de dados do Configuration Manager para multicast. Para obter mais informações, confira a [Conta de conexão multicast](/sccm/core/plan-design/hierarchy/accounts#multicast-connection-account).  
+- **Conta de conexão multicast**: especifique uma conta a ser usada ao configurar conexões de banco de dados do Configuration Manager para multicast. Para obter mais informações, confira a [Conta de conexão multicast](/sccm/core/plan-design/hierarchy/accounts#multicast-connection-account).  
 
-- **Configurações de endereço multicast**: especifique os endereços IP para enviar dados aos computadores de destino. Por padrão, o endereço IP é obtido de um servidor DHCP que está habilitado para distribuir endereços multicast. Dependendo do ambiente de rede, é possível especificar um intervalo de endereços IP entre 239.0.0.0 e 239.255.255.255.  
+- **Configurações de endereço multicast**: especifique os endereços IP para enviar os dados aos computadores de destino. Por padrão, o endereço IP é obtido de um servidor DHCP que está habilitado para distribuir endereços multicast. Dependendo do ambiente de rede, é possível especificar um intervalo de endereços IP entre 239.0.0.0 e 239.255.255.255.  
 
     > [!IMPORTANT]  
     >  Os endereços IP que você configura precisam ser acessíveis pelos computadores de destino que solicitam a imagem do sistema operacional. Verifique se os roteadores e firewalls permitem tráfego multicast entre o computador de destino e o ponto de distribuição.  
 
-- **Intervalo de portas UDP para multicast**: especifique o intervalo de portas UDP usado para enviar dados aos computadores de destino.  
+- **Intervalo de portas UDP para multicast**: especifique o intervalo de portas UDP usadas para enviar os dados aos computadores de destino.  
 
     > [!IMPORTANT]  
     >  As portas UDP precisam estar acessíveis aos computadores de destino que solicitam a imagem do sistema operacional. Verifique se os roteadores e firewalls permitem o tráfego multicast entre o computador de destino e o servidor do site.  
 
 - **Máximo de clientes**: especifique o número máximo de computadores de destino que pode baixar a imagem do sistema operacional desse ponto de distribuição.  
 
-- **Habilitar multicast agendado**: especifique como o Configuration Manager controla quando iniciar a implantação de sistemas operacionais em computadores de destino. Configure as seguintes opções:  
+- **Habilitar multicast agendado**: especifique como o Configuration Manager é controlado ao iniciar a implantação de sistemas operacionais em computadores de destino. Configure as seguintes opções:  
 
     - **Atraso de início da sessão (minutos)**: especifique o número de minutos que o Configuration Manager espera antes de responder à primeira solicitação de implantação.  
 
@@ -416,18 +416,18 @@ Para remover esse ponto de distribuição de um grupo de pontos de distribuiçã
 
 Gerencie o conteúdo distribuído ao ponto de distribuição. Selecione na lista de pacotes de implantação e execute as seguintes ações:  
 
-- **Validar**: iniciar o processo para validar a integridade dos arquivos de conteúdo para o software. Para exibir os resultados do processo de validação de conteúdo, no espaço de trabalho **Monitoramento**, expanda **Status da Distribuição**e escolha o nó **Status do Conteúdo**. Para obter mais informações, confira [Validar o conteúdo](/sccm/core/servers/deploy/configure/deploy-and-manage-content#validate-content).   
+- **Validar**: inicie o processo para validar a integridade dos arquivos de conteúdo para o software. Para exibir os resultados do processo de validação de conteúdo, no workspace **Monitoramento**, expanda **Status da Distribuição**e escolha o nó **Status do Conteúdo**. Para obter mais informações, confira [Validar o conteúdo](/sccm/core/servers/deploy/configure/deploy-and-manage-content#validate-content).   
 
 - **Redistribuir**: copia todos os arquivos de conteúdo do software selecionado para o ponto de distribuição e substitui os arquivos existentes. Essa ação pode ser usada para reparar arquivos de conteúdo. Para obter mais informações, confira [Redistribuir o conteúdo](/sccm/core/servers/deploy/configure/deploy-and-manage-content#redistribute-content).  
 
--   **Remover**: remove os arquivos de conteúdo do software do ponto de distribuição para o pacote. Para obter mais informações, confira [Remover conteúdo](/sccm/core/servers/deploy/configure/deploy-and-manage-content#remove-content).    
+-   **Remover**: remove os arquivos de conteúdo do software do ponto de distribuição. Para obter mais informações, confira [Remover conteúdo](/sccm/core/servers/deploy/configure/deploy-and-manage-content#remove-content).    
 
 
 ### <a name="bkmk_config-valid"></a> Validação de conteúdo  
 
 Defina um agendamento para validar a integridade dos arquivos de conteúdo no ponto de distribuição. Quando você habilita a validação de conteúdo segundo um agendamento, o Configuration Manager inicia o processo no horário agendado. Ele verifica todo o conteúdo no ponto de distribuição. Também é possível configurar a prioridade da validação de conteúdo. Por padrão, a prioridade é definida como **Mais Baixa**. O aumento da prioridade pode aumentar o uso do processador e do disco no servidor durante o processo de validação, mas o processo é concluído com mais rapidez. 
 
-Para exibir os resultados do processo de validação de conteúdo, no espaço de trabalho **Monitoramento**, expanda **Status da Distribuição**e escolha o nó **Status do Conteúdo**. Ele mostra o conteúdo para cada tipo de software, por exemplo, aplicativo, pacote de atualização de software e imagem de inicialização.  
+Para exibir os resultados do processo de validação de conteúdo, no workspace **Monitoramento**, expanda **Status da Distribuição**e escolha o nó **Status do Conteúdo**. Ele mostra o conteúdo para cada tipo de software, por exemplo, aplicativo, pacote de atualização de software e imagem de inicialização.  
 
 > [!WARNING]  
 >  Embora você especifique o cronograma de validação de conteúdo usando o horário local do computador, o console do Configuration Manager mostra o cronograma em UTC.  
@@ -461,9 +461,9 @@ Para restringir dados, selecione o período de tempo na grade e, em seguida, esc
 
 - **Aberto para todas as prioridades**: o Configuration Manager envia dados para o ponto de distribuição sem restrições. Essa é a configuração padrão para todos os períodos de tempo.  
 
-- **Permitir prioridade média e alta**: o Configuration Manager envia dados somente de prioridade média e alta ao ponto de distribuição.  
+- **Permitir prioridade média e alta**: o Configuration Manager envia somente dados de média e alta prioridade ao ponto de distribuição.  
 
-- **Permitir somente prioridade alta**: o Configuration Manager envia somente dados de alta prioridade ao ponto de distribuição.  
+- **Permitir alta prioridade apenas**: o Configuration Manager envia somente dados de alta prioridade ao ponto de distribuição.  
 
 - **Fechado**: o Configuration Manager não envia dados ao ponto de distribuição.  
 
@@ -482,7 +482,7 @@ Configure a **Prioridade de distribuição** do software na guia **Configuraçõ
 
 Configure limites de taxa para controlar a largura de banda de rede que o Configuration Manager usa para transferir o conteúdo ao ponto de distribuição. Escolha dentre as seguintes opções:  
 
-- **Ilimitado ao enviar para este destino**: o Configuration Manager envia conteúdo ao ponto de distribuição sem restrições de limite de taxa. Essa é a configuração padrão.  
+- **Ilimitado ao enviar para este destino**: o Configuration Manager envia conteúdo ao ponto de distribuição sem restrições de limites de taxas. Essa é a configuração padrão.  
 
 - **Modo de pulso**: essa opção especifica o tamanho dos blocos de dados que o servidor do site envia para o ponto de distribuição. Você também pode especificar um retardo de tempo entre o envio de cada bloco de dados. Use essa opção quando você deve enviar dados através de uma conexão de rede com largura de banda bem baixa para o ponto de distribuição. Por exemplo, é possível especificar a restrição de enviar 1 KB de dados a cada cinco segundos, independentemente da velocidade do link ou de seu uso em um determinado momento.  
 

@@ -10,12 +10,12 @@ ms.assetid: 83a7c934-3b11-435d-ba22-cbc274951e83
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: aaa033fb64c3b525eff3ca54537df6dcdf773502
-ms.sourcegitcommit: dfb2cb01c1608b848f2f2fee7c84500e7adcb7a4
+ms.openlocfilehash: 1ce1596a6882b7756339eff3a9bf65a9420a6cec
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49101255"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424508"
 ---
 # <a name="plan-for-internet-based-client-management-in-system-center-configuration-manager"></a>Planejar o gerenciamento de clientes baseados na Internet no System Center Configuration Manager
 
@@ -32,21 +32,21 @@ O gerenciamento de clientes baseado na Internet (às vezes chamado de IBCM) perm
 
  Os seguintes recursos não têm suporte quando os clientes são gerenciados na Internet:  
 
--   Implantação de cliente na Internet, como a implantação por push e implantação de cliente com base em atualizações de software. Em vez disso, use a instalação manual do cliente.  
+- Implantação de cliente na Internet, como a implantação por push e implantação de cliente com base em atualizações de software. Em vez disso, use a instalação manual do cliente.  
 
--   Atribuição automática de site.  
+- Atribuição automática de site.  
 
--   Wake on LAN.  
+- Wake on LAN.  
 
--   Implantação de sistema operacional. No entanto, você pode implantar sequências de tarefas que não implantam um sistema operacional, por exemplo, sequências de tarefas que executam scripts e tarefas de manutenção em clientes.  
+- Implantação de sistema operacional. No entanto, você pode implantar sequências de tarefas que não implantam um sistema operacional, por exemplo, sequências de tarefas que executam scripts e tarefas de manutenção em clientes.  
 
--   Controle remoto.  
+- Controle remoto.  
 
--   Implantação de software para usuários a menos que o ponto de gerenciamento baseado na Internet possa autenticar o usuário nos Serviços de Domínio Active Directory usando a autenticação do Windows (Kerberos ou NTLM). Isso é possível quando o ponto de gerenciamento baseado na Internet tem uma relação de confiança na floresta onde reside a conta do usuário.  
+- Implantação de software para usuários a menos que o ponto de gerenciamento baseado na Internet possa autenticar o usuário nos Serviços de Domínio Active Directory usando a autenticação do Windows (Kerberos ou NTLM). Isso é possível quando o ponto de gerenciamento baseado na Internet tem uma relação de confiança na floresta onde reside a conta do usuário.  
 
- Além disso, o gerenciamento de clientes baseado na Internet não oferece suporte a roaming. O roaming permite que os clientes sempre localizem os pontos de distribuição mais próximos para baixar conteúdo. Clientes que são gerenciados na Internet comunicam-se com sistemas de site por meio de seu site atribuído quando esses sistemas são configurados para usar um FQDN de Internet e as funções do sistema de site permitem conexões do cliente por meio da Internet. Clientes, de forma não determinista, selecionam um dos sistemas de áreas baseados na Internet, independentemente da largura de banda ou local físico.  
+  Além disso, o gerenciamento de clientes baseado na Internet não oferece suporte a roaming. O roaming permite que os clientes sempre localizem os pontos de distribuição mais próximos para baixar conteúdo. Clientes que são gerenciados na Internet comunicam-se com sistemas de site por meio de seu site atribuído quando esses sistemas são configurados para usar um FQDN de Internet e as funções do sistema de site permitem conexões do cliente por meio da Internet. Clientes, de forma não determinista, selecionam um dos sistemas de áreas baseados na Internet, independentemente da largura de banda ou local físico.  
 
- Quando você tem um ponto de atualização de software configurado para aceitar conexões da Internet, os clientes baseados na Internet do Configuration Manager sempre são verificados em relação a esse ponto de atualização de software, para determinar quais atualizações de software são necessárias. No entanto, quando esses clientes estão na Internet, primeiro tentam baixar as atualizações de software do Microsoft Update, em vez de fazer isso de um ponto de distribuição baseado na Internet. Somente se isso falhar, eles tentarão baixar as atualizações de software necessárias de um ponto de distribuição baseado na Internet. Clientes que não estão configurados para gerenciamento de clientes baseado na Internet nunca tentam baixar atualizações de software do Microsoft Update, mas sempre usam os pontos de distribuição do Configuration Manager.  
+  Quando você tem um ponto de atualização de software configurado para aceitar conexões da Internet, os clientes baseados na Internet do Configuration Manager sempre são verificados em relação a esse ponto de atualização de software, para determinar quais atualizações de software são necessárias. No entanto, quando esses clientes estão na Internet, primeiro tentam baixar as atualizações de software do Microsoft Update, em vez de fazer isso de um ponto de distribuição baseado na Internet. Somente se isso falhar, eles tentarão baixar as atualizações de software necessárias de um ponto de distribuição baseado na Internet. Clientes que não estão configurados para gerenciamento de clientes baseado na Internet nunca tentam baixar atualizações de software do Microsoft Update, mas sempre usam os pontos de distribuição do Configuration Manager.  
  
 [!Tip]  
 O cliente do Configuration Manager determina automaticamente se ele está na intranet ou na Internet. Se o cliente pode contatar um controlador de domínio ou um ponto de gerenciamento local, ele define seu tipo de conexão como Atualmente intranet. Caso contrário, ele alterna para Atualmente Internet, e o cliente usa os pontos de gerenciamento, pontos de atualização de software e pontos de distribuição atribuídos ao site para comunicação.
@@ -54,30 +54,30 @@ O cliente do Configuration Manager determina automaticamente se ele está na int
 ##  <a name="considerations-for-client-communications-from-the-internet-or-untrusted-forest"></a>Considerações sobre a comunicação do cliente da Internet ou de uma floresta não confiável  
  As seguintes funções de sistema de site instaladas em sites primários oferecem suporte a conexões de clientes que estão em locais não confiáveis, como a Internet ou uma floresta não confiável (sites secundários não oferecem suporte a conexões de clientes em locais não confiáveis):  
 
--   Ponto de sites da Web do Catálogo de Aplicativos  
+- Ponto de sites da Web do Catálogo de Aplicativos  
 
--   Módulo de Política do Configuration Manager  
+- Módulo de Política do Configuration Manager  
 
--   Ponto de distribuição (HTTPS é exigido pelos pontos de distribuição baseados em nuvem)  
+- Ponto de distribuição (HTTPS é exigido pelos pontos de distribuição baseados em nuvem)  
 
--   Ponto proxy do registro  
+- Ponto proxy do registro  
 
--   Ponto de status de fallback  
+- Ponto de status de fallback  
 
--   Ponto de gerenciamento  
+- Ponto de gerenciamento  
 
--   Ponto de atualização de software  
+- Ponto de atualização de software  
 
- **Sobre sistemas de site voltados para Internet:**   
-Embora não haja nenhum requisito para haver uma relação de confiança entre a floresta de um cliente e a do servidor do sistema de sites, quando a floresta que contém um sistema de sites da Internet confia na floresta que contém as contas de usuário, essa configuração dá suporte a políticas baseadas no usuário para dispositivos na Internet ao habilitar a configuração do cliente **Habilitar solicitações da política de usuário de clientes da Internet** da **Política do Cliente**.  
+  **Sobre sistemas de site voltados para Internet:**   
+  Embora não haja nenhum requisito para haver uma relação de confiança entre a floresta de um cliente e a do servidor do sistema de sites, quando a floresta que contém um sistema de sites da Internet confia na floresta que contém as contas de usuário, essa configuração dá suporte a políticas baseadas no usuário para dispositivos na Internet ao habilitar a configuração do cliente **Habilitar solicitações da política de usuário de clientes da Internet** da **Política do Cliente**.  
 
- Por exemplo, as configurações seguintes ilustram quando o gerenciamento de cliente baseado na Internet oferece suporte a políticas de usuário para dispositivos na Internet:  
+  Por exemplo, as configurações seguintes ilustram quando o gerenciamento de cliente baseado na Internet oferece suporte a políticas de usuário para dispositivos na Internet:  
 
--   O ponto de gerenciamento baseado na Internet é na rede de perímetro onde um controlador de domínio somente leitura reside, para autenticar o usuário e um firewall intermediário permite pacotes do Active Directory.  
+- O ponto de gerenciamento baseado na Internet é na rede de perímetro onde um controlador de domínio somente leitura reside, para autenticar o usuário e um firewall intermediário permite pacotes do Active Directory.  
 
--   A conta do usuário está na Floresta A (a intranet) e o ponto de gerenciamento baseado na Internet está na Floresta B (a rede de perímetro). A floresta B confia na Floresta A e um firewall intermediário permite pacotes de autenticação.  
+- A conta do usuário está na Floresta A (a intranet) e o ponto de gerenciamento baseado na Internet está na Floresta B (a rede de perímetro). A floresta B confia na Floresta A e um firewall intermediário permite pacotes de autenticação.  
 
--   A conta de usuário e o ponto de gerenciamento baseados na Internet estão na Floresta A (intranet). O ponto de gerenciamento é publicado na Internet usando um servidor de proxy da web (como o Forefront Threat Management Gateway).  
+- A conta de usuário e o ponto de gerenciamento baseados na Internet estão na Floresta A (intranet). O ponto de gerenciamento é publicado na Internet usando um servidor de proxy da web (como o Forefront Threat Management Gateway).  
 
 > [!NOTE]  
 >  Se a autenticação Kerberos falhar, a autenticação NTLM será tentada automaticamente.  
@@ -118,82 +118,82 @@ Embora não haja nenhum requisito para haver uma relação de confiança entre a
 ##  <a name="prerequisites-for-internet-based-client-management"></a>Pré-requisitos para o gerenciamento de clientes baseado na Internet  
  O gerenciamento de clientes baseados na Internet no Configuration Manager tem as seguintes dependências externas:  
 
--   Clientes que serão gerenciados na Internet devem ter uma conexão com a Internet.  
+- Clientes que serão gerenciados na Internet devem ter uma conexão com a Internet.  
 
-     O Configuration Manager usa conexões ISP (Provedor de Serviços de Internet) existentes com a Internet, que podem ser conexões permanentes ou temporárias. Dispositivos móveis de clientes devem ter uma conexão direta com a Internet, mas os computadores cliente podem ter uma conexão direta com a internet ou conectar usando um servidor proxy da Web.  
+   O Configuration Manager usa conexões ISP (Provedor de Serviços de Internet) existentes com a Internet, que podem ser conexões permanentes ou temporárias. Dispositivos móveis de clientes devem ter uma conexão direta com a Internet, mas os computadores cliente podem ter uma conexão direta com a internet ou conectar usando um servidor proxy da Web.  
 
--   Sistemas de site que oferecem suporte a gerenciamento de clientes baseado na Internet devem ter conectividade com a Internet e estar em um domínio Active Directory.  
+- Sistemas de site que oferecem suporte a gerenciamento de clientes baseado na Internet devem ter conectividade com a Internet e estar em um domínio Active Directory.  
 
-     Sistemas de áreas baseados na Internet não requerem uma relação de confiança com a floresta do Active Directory do servidor do site. No entanto, quando o ponto de gerenciamento baseado na Internet pode autenticar o usuário usando a autenticação do Windows, há suporte para as políticas do usuário. Se a autenticação do Windows falhar, somente as políticas do computador terão suporte.  
+   Sistemas de áreas baseados na Internet não requerem uma relação de confiança com a floresta do Active Directory do servidor do site. No entanto, quando o ponto de gerenciamento baseado na Internet pode autenticar o usuário usando a autenticação do Windows, há suporte para as políticas do usuário. Se a autenticação do Windows falhar, somente as políticas do computador terão suporte.  
 
-    > [!NOTE]  
-    >  Para oferecer suporte às políticas de usuário, você também deve definir como **Verdadeiro** as duas configurações de **Política do Cliente** :  
-    >   
-    >  -   **Habilitar sondagem de política de usuário nos clientes**  
-    > -   **Ativar solicitações de política de usuário de clientes da Internet**  
+  > [!NOTE]
+  >  Para oferecer suporte às políticas de usuário, você também deve definir como **Verdadeiro** as duas configurações de **Política do Cliente** :  
+  > 
+  > - **Habilitar sondagem de política de usuário nos clientes**  
+  >   -   **Ativar solicitações de política de usuário de clientes da Internet**  
 
-     Um ponto de site da Web do catálogo de aplicativos também exige a autenticação do Windows para autenticar usuários quando seu computador está na Internet. Esse requisito é independente das políticas do usuário.  
+   Um ponto de site da Web do catálogo de aplicativos também exige a autenticação do Windows para autenticar usuários quando seu computador está na Internet. Esse requisito é independente das políticas do usuário.  
 
--   Você deve ter uma PKI (Infraestrutura de Chave Pública ) que pode implantar e gerenciar os certificados que os clientes precisam e que sejam gerenciados na Internet e em servidores de sistema de áreas baseado na Internet.  
+- Você deve ter uma PKI (Infraestrutura de Chave Pública ) que pode implantar e gerenciar os certificados que os clientes precisam e que sejam gerenciados na Internet e em servidores de sistema de áreas baseado na Internet.  
 
-     Para obter mais informações sobre certificados PKI, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](/sccm/core/plan-design/network/pki-certificate-requirements).  
+   Para obter mais informações sobre certificados PKI, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](/sccm/core/plan-design/network/pki-certificate-requirements).  
 
--   O FQDN (Nome de Domínio Totalmente Qualificado) dos sistemas de site que oferece suporte a gerenciamento de clientes baseado na Internet deve ser registrado como entradas de host em servidores DNS públicos.  
+- O FQDN (Nome de Domínio Totalmente Qualificado) dos sistemas de site que oferece suporte a gerenciamento de clientes baseado na Internet deve ser registrado como entradas de host em servidores DNS públicos.  
 
--   Os firewalls ou os servidores proxy intermediários devem permitir a comunicação do cliente associada a sistemas de sites baseados na Internet.  
+- Os firewalls ou os servidores proxy intermediários devem permitir a comunicação do cliente associada a sistemas de sites baseados na Internet.  
 
-     Requisitos de comunicação do cliente:  
+   Requisitos de comunicação do cliente:  
 
-    -   Oferecer suporte a HTTP 1.1  
+  - Oferecer suporte a HTTP 1.1  
 
-    -   Permitir tipo de conteúdo HTTP de anexo MIME de várias partes (multiparte/misto e aplicativo/octet-stream)  
+  - Permitir tipo de conteúdo HTTP de anexo MIME de várias partes (multiparte/misto e aplicativo/octet-stream)  
 
-    -   Permitir os seguintes verbos para o ponto de gerenciamento baseado na Internet:  
+  - Permitir os seguintes verbos para o ponto de gerenciamento baseado na Internet:  
 
-        -   HEAD  
+    -   HEAD  
 
-        -   CCM_POST  
+    -   CCM_POST  
 
-        -   BITS_POST  
+    -   BITS_POST  
 
-        -   GET  
+    -   GET  
 
-        -   PROPFIND  
+    -   PROPFIND  
 
-    -   Permitir os seguintes verbos para o ponto de distribuição baseado na Internet:  
+  - Permitir os seguintes verbos para o ponto de distribuição baseado na Internet:  
 
-        -   HEAD  
+    -   HEAD  
 
-        -   GET  
+    -   GET  
 
-        -   PROPFIND  
+    -   PROPFIND  
 
-    -   Permitir os seguintes verbos para o ponto de status de fallback baseado na Internet:  
+  - Permitir os seguintes verbos para o ponto de status de fallback baseado na Internet:  
 
-        -   POST  
+    -   POST  
 
-    -   Permitir os seguintes verbos para o ponto de sites da Web do catálogo de aplicativos baseado na Internet:  
+  - Permitir os seguintes verbos para o ponto de sites da Web do catálogo de aplicativos baseado na Internet:  
 
-        -   POST  
+    -   POST  
 
-        -   GET  
+    -   GET  
 
-    -   Permitir os seguintes cabeçalhos HTTP para o ponto de gerenciamento baseado na Internet:  
+  - Permitir os seguintes cabeçalhos HTTP para o ponto de gerenciamento baseado na Internet:  
 
-        -   Intervalo:  
+    -   Intervalo:  
 
-        -   CCMClientID:  
+    -   CCMClientID:  
 
-        -   CCMClientIDSignature:  
+    -   CCMClientIDSignature:  
 
-        -   CCMClientTimestamp:  
+    -   CCMClientTimestamp:  
 
-        -   CCMClientTimestampsSignature:  
+    -   CCMClientTimestampsSignature:  
 
-    -   Permitir o seguinte cabeçalho HTTP para o ponto de distribuição baseado na Internet:  
+  - Permitir o seguinte cabeçalho HTTP para o ponto de distribuição baseado na Internet:  
 
-        -   Intervalo:  
+    -   Intervalo:  
 
-     Para obter informações de configuração de suporte para esses requisitos, consulte a documentação do servidor proxy ou firewall.  
+    Para obter informações de configuração de suporte para esses requisitos, consulte a documentação do servidor proxy ou firewall.  
 
-     Para requisitos de comunicação semelhantes ao usar o ponto de atualização de software para conexões de clientes da Internet, consulte a documentação do WSUS (Windows Server Update Services). Por exemplo, para o WSUS no Windows Server 2003, veja [Apêndice D: Configurações de segurança](http://go.microsoft.com/fwlink/p/?LinkId=143368), o apêndice de implantação para configurações de segurança.
+    Para requisitos de comunicação semelhantes ao usar o ponto de atualização de software para conexões de clientes da Internet, consulte a documentação do WSUS (Windows Server Update Services). Por exemplo, para o WSUS no Windows Server 2003, confira o [Apêndice D: Security Settings (Apêndice D: Configurações de Segurança)](http://go.microsoft.com/fwlink/p/?LinkId=143368), o apêndice de implantação das configurações de segurança.

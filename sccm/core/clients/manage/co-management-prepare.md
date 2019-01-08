@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: 9aab4273129e6a3032d7e85d2545e6abc5b616c4
-ms.sourcegitcommit: 8dd9199bfe8e27f62e9df307f1c6ac58a3b81717
+ms.openlocfilehash: ac7f67a02602473a7635d8c70e4b1b1dc04363bc
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50237149"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417040"
 ---
 # <a name="prepare-windows-10-devices-for-co-management"></a>Preparar dispositivos Windows 10 para o cogerenciamento
 Você pode habilitar o cogerenciamento em dispositivos Windows 10 que foram ingressados no AD e no Azure AD e registrados no Microsoft Intune e em um cliente no Configuration Manager. Para novos dispositivos Windows 10 e dispositivos que já estão registrados no Intune, instale o cliente do Configuration Manager antes que eles possam ser cogerenciados. Para dispositivos Windows 10 que já são clientes do Configuration Manager, você pode registrar os dispositivos no Intune e habilitar o cogerenciamento no console do Configuration Manager.
@@ -46,15 +46,16 @@ Estes são os pré-requisitos gerais para habilitar o cogerenciamento:
 
 - Assinatura do Intune e a autoridade de MDM no Intune definida como **Intune**.  
 
-    - Se você estiver usando [autoridade mista](/sccm/mdm/deploy-use/migrate-mixed-authority), primeiro conclua a migração para o Intune autônomo. Em seguida, defina a autoridade de MDM para o Intune antes de configurar o cogerenciamento.<!--SCCMDocs issue #797-->
+    - Se você estiver usando [autoridade mista](/sccm/mdm/deploy-use/migrate-mixed-authority), primeiro conclua a migração para o Intune autônomo. Em seguida, defina a autoridade de MDM no Intune antes de configurar o cogerenciamento.<!--SCCMDocs issue #797-->
 
 
-> [!Note]  
+> [!NOTE]
 > Se você tiver um ambiente de MDM híbrido (Intune integrado ao Configuration Manager), não será possível habilitar o cogerenciamento. No entanto, você pode iniciar a migração de usuários para o Intune autônomo e, em seguida, habilitar seus dispositivos Windows 10 associados para cogerenciamento. Para obter mais informações sobre como migrar para o Intune autônomo, consulte [Iniciar a migração do MDM híbrido para o Intune autônomo](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
 
 
 ### <a name="prerequisite-azure-resource-manager-roles"></a>Funções de pré-requisito do Azure Resource Manager
 <!--SCCMDocs issue #667--> Para obter mais informações sobre as funções do Azure, confira [Entender as diferentes funções](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles).
+
 |Ação|Função necessária|
 |----|----|
 |Configurar um Gateway de Gerenciamento de Nuvem|Gerenciador de assinatura do Azure|
@@ -68,7 +69,7 @@ Estes são os pré-requisitos gerais para habilitar o cogerenciamento:
 
 - Windows 10, versão 1709 ou posterior  
 
-- [Ingressado no Azure AD híbrido](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup) (ingressado no AD e no Azure AD) ou ingressado somente no Azure AD (esse tipo é às vezes chamado de "ingressado no domínio da nuvem").
+- [Ingressado no Azure AD híbrido](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan) (ingressado no AD e no Azure AD) ou ingressado somente no Azure AD (esse tipo é às vezes chamado de "ingressado no domínio da nuvem").
 
 
 ### <a name="additional-prerequisites-for-devices-without-the-configuration-manager-client"></a>Pré-requisitos adicionais para dispositivos sem o cliente do Configuration Manager
@@ -85,16 +86,22 @@ Estes são os pré-requisitos gerais para habilitar o cogerenciamento:
 
 ## <a name="command-line-to-install-configuration-manager-client"></a>Linha de comando para instalar o cliente do Configuration Manager
 
-Crie um aplicativo no Intune para dispositivos Windows 10 que ainda não são clientes do Configuration Manager. Ao criar o aplicativo nas próximas seções, use a seguinte linha de comando:
+Crie um aplicativo no Intune para dispositivos Windows 10 que ainda não são clientes do Configuration Manager. Para fazer isso, execute estas etapas:
+
+1. Navegue até portal.azure.com e, em seguida, abra a folha do Intune.
+2. Clique em **Aplicativos Clientes** > **Aplicativos** > **Adicionar**. 
+3. Em **Outros**, selecione **Aplicativo de linha de negócios**.
+4. Carregue o arquivo de pacote do aplicativo Ccmsetup.msi. (Esse arquivo é encontrado na seguinte pasta no servidor do site: <*ConfigMgr installation directory*>\bin\i386.) 
+5. Depois que o aplicativo for atualizado, configure as informações do aplicativo executando o seguinte argumento de linha de comando:
 
 `ccmsetup.msi CCMSETUPCMD="/mp:<URL of cloud management gateway mutual auth endpoint> CCMHOSTNAME=<URL of cloud management gateway mutual auth endpoint> SMSSiteCode=<Sitecode> SMSMP=https://<FQDN of MP> AADTENANTID=<AAD tenant ID> AADCLIENTAPPID=<Server AppID for AAD Integration> AADRESOURCEURI=https://<Resource ID>"`
 
-#### <a name="example-command-line"></a>Exemplo de linha de comando
+#### <a name="example-command-line-input"></a>exemplo de entrada de linha de comando
 Se você tiver os seguintes valores:
 
 - **URL do ponto de extremidade de autenticação mútua do Gateway de Gerenciamento de Nuvem**: `https://contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500`    
 
-   >[!Note]    
+   >[!NOTE]    
    >Use o valor **MutualAuthPath** na exibição de SQL **vProxy_Roles** para o valor da **URL do ponto de extremidade de autenticação mútua do gateway de gerenciamento de nuvem**.  
 
 - **FQDN do MP (ponto de gerenciamento)**: `mp1.contoso.com`    
@@ -103,7 +110,7 @@ Se você tiver os seguintes valores:
 - **ID do aplicativo de cliente do Azure AD**: `51e781eb-aac6-4265-8030-4cd1ddaa9dd0`     
 - **URI da ID de Recurso do AAD**: `ConfigMgrServer`    
 
-  > [!Note]    
+  > [!NOTE]    
   > Use o valor **IdentifierUri** encontrado na exibição de SQL **vSMS_AAD_Application_Ex** para o valor do **URI da ID do recurso do AAD**.  
 
 Então use a seguinte linha de comando:
@@ -130,7 +137,7 @@ O exemplo a seguir inclui todas as propriedades acima:
 Para obter mais informações, consulte [Propriedades de instalação do cliente](/sccm/core/clients/deploy/about-client-installation-properties).
 
 
-> [!Tip]
+> [!TIP]
 > Encontre os parâmetros de linha de comando para o seu site usando as seguintes etapas:     
 > 
 > 1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e escolha o nó **Cogerenciamento**.  
@@ -143,7 +150,7 @@ Para obter mais informações, consulte [Propriedades de instalação do cliente
 > 
 > 5. Clique em **Cancelar** para sair do assistente.  
 
-> [!Important]    
+> [!IMPORTANT]    
 > Se você personalizar a linha de comando para instalar o cliente do Configuration Manager, verifique se a linha de comando não excede 1024 caracteres. Quando a linha de comando for maior que 1.024 caracteres, a instalação do cliente falhará.
 
 

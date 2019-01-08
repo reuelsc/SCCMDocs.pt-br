@@ -10,12 +10,12 @@ ms.assetid: 03cec407-0f9f-454f-a360-b005af738d29
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3735e2cc8ac2f7e4a5c05b49783cad3981a04930
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 84345e26f30c1339ad1f386606ad11f1bb127eae
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333827"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421426"
 ---
 # <a name="how-to-configure-client-computers-to-find-management-points-by-using-dns-publishing-in-system-center-configuration-manager"></a>Como configurar computadores cliente para localizar pontos de gerenciamento usando a publicação do DNS no System Center Configuration Manager
 
@@ -38,13 +38,13 @@ Clientes no System Center Configuration Manager devem localizar um ponto de gere
 
 #### <a name="to-configure-clients-for-a-management-point-suffix-during-client-installation"></a>Para configurar os clientes de um sufixo de ponto de gerenciamento durante a instalação do cliente  
 
--   Instale o cliente com a seguinte propriedade CCMSetup Client.msi:  
+- Instale o cliente com a seguinte propriedade CCMSetup Client.msi:  
 
-    -   **DNSSUFFIX=** *&lt;domínio de ponto de gerenciamento\>*  
+  - **DNSSUFFIX=** *&lt;domínio de ponto de gerenciamento\>*  
 
-         Se o site tiver mais de um ponto de gerenciamento e eles estiverem em mais de um domínio, especifique apenas um domínio. Ao conectarem-se a um ponto de gerenciamento nesse domínio, os clientes baixam uma lista de pontos de gerenciamento disponíveis, que incluirá os pontos de gerenciamento de outros domínios.  
+     Se o site tiver mais de um ponto de gerenciamento e eles estiverem em mais de um domínio, especifique apenas um domínio. Ao conectarem-se a um ponto de gerenciamento nesse domínio, os clientes baixam uma lista de pontos de gerenciamento disponíveis, que incluirá os pontos de gerenciamento de outros domínios.  
 
-     Para obter mais informações sobre as propriedade da linha de comando do CCMSetup, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+    Para obter mais informações sobre as propriedade da linha de comando do CCMSetup, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
 #### <a name="to-configure-clients-for-a-management-point-suffix-after-client-installation"></a>Para configurar os clientes de um sufixo de ponto de gerenciamento após a instalação do cliente  
 

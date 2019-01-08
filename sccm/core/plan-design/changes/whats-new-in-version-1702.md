@@ -10,12 +10,12 @@ ms.assetid: 409e26e1-7716-4f1d-a0ee-34feabf20792
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6abf61488a96ec3299b606b10901b0787b82edc9
-ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
+ms.openlocfilehash: bdeed74504611589b36e31eff3c1957725345b8a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47229340"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421834"
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novidades da versão 1702 do System Center Configuration Manager
 
@@ -63,13 +63,13 @@ Veja a seguir as melhorias no uso de pesquisa no console do Configuration Manage
  Você pode usar as opções de comentários no console para enviar comentários diretamente para a equipe de desenvolvimento.
 
  Você pode encontrar a opção **Comentários**:
- -  Na faixa de opções, na extremidade esquerda da guia Página Inicial de cada nó.  
-    ![Faixa de opções](./media/feedback-home.png)
+- Na faixa de opções, na extremidade esquerda da guia Página Inicial de cada nó.  
+  ![Faixa de opções](./media/feedback-home.png)
 
- -  Ao clicar com o botão direito do mouse em qualquer objeto no console.   
-     ![Opção ao clicar com o botão direito do mouse](./media/feedback-option.png)   
+- Ao clicar com o botão direito do mouse em qualquer objeto no console.   
+   ![Opção ao clicar com o botão direito do mouse](./media/feedback-option.png)   
 
- Escolher **Comentários** abre seu navegador para o site de comentários do [UserVoice do Configuration Manager](https://go.microsoft.com/fwlink/?linkid=617029).
+  Escolher **Comentários** abre seu navegador para o site de comentários do [UserVoice do Configuration Manager](https://go.microsoft.com/fwlink/?linkid=617029).
 
 
 ###  <a name="changes-for-updates-and-servicing"></a>Alterações em Atualizações e Manutenção

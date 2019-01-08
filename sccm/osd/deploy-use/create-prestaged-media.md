@@ -10,12 +10,12 @@ ms.assetid: ff6e7267-302a-4563-815e-cdc0d1a4b60f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 61c54ad6c0224dfae03a26784f0b3f61271b172c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 97c4bde7e589e5d3d3c3ee3683055ca8e7412a03
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353055"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419828"
 ---
 # <a name="create-prestaged-media-with-system-center-configuration-manager"></a>Criar mídia pré-configurada com o System Center Configuration Manager
 
@@ -24,13 +24,13 @@ ms.locfileid: "32353055"
 A mídia pré-testada no System Center Configuration Manager é um arquivo em formato WIM (Windows Imaging) que pode ser instalado em um computador bare-metal pelo fabricante ou em um centro de preparo corporativo que não está conectado ao ambiente do Configuration Manager.  
 A mídia em pré-teste contém a imagem de inicialização usada para iniciar o computador de destino e a imagem do sistema operacional aplicada ao computador de destino. Também é possível especificar aplicativos, pacotes e pacotes de driver para incluir como parte da mídia pré-configurada. A sequência de tarefas que implanta o sistema operacional não está incluída na mídia. A mídia pré-testada é aplicada à unidade de disco rígido de um novo computador antes do computador ser enviado ao usuário final. Use mídia pré-testada para os seguintes cenários de implantação de sistema operacional:  
 
--   [Criar uma imagem de um OEM na fábrica ou em um repositório local](../../osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
+- [Criar uma imagem de um OEM na fábrica ou em um repositório local](../../osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
 
--   [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](install-new-windows-version-new-computer-bare-metal.md)  
+- [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Implantar o Windows to Go](deploy-windows-to-go.md)  
+- [Implantar o Windows to Go](deploy-windows-to-go.md)  
 
- Quando o computador é iniciado pela primeira vez depois de a mídia pré-configurada ter sido aplicada, o computador é iniciado com o Windows PE e conecta-se a um ponto de gerenciamento para localizar a sequência de tarefas que conclui o processo de implantação de sistema operacional. Você pode especificar aplicativos, pacotes e pacotes de driver para incluir como parte da mídia pré-testada. Quando você implanta uma sequência de tarefa que utiliza mídia pré-testada, o assistente verifica o cache de sequência de tarefas local quanto a conteúdo válido primeiro, e se o conteúdo não puder ser localizado ou não for revisado, o assistente baixa o conteúdo do ponto de distribuição.  
+  Quando o computador é iniciado pela primeira vez depois de a mídia pré-configurada ter sido aplicada, o computador é iniciado com o Windows PE e conecta-se a um ponto de gerenciamento para localizar a sequência de tarefas que conclui o processo de implantação de sistema operacional. Você pode especificar aplicativos, pacotes e pacotes de driver para incluir como parte da mídia pré-testada. Quando você implanta uma sequência de tarefa que utiliza mídia pré-testada, o assistente verifica o cache de sequência de tarefas local quanto a conteúdo válido primeiro, e se o conteúdo não puder ser localizado ou não for revisado, o assistente baixa o conteúdo do ponto de distribuição.  
 
 ##  <a name="BKMK_CreatePrestagedMedia"></a> Como criar mídia em pré-teste  
  Antes de criar a mídia pré-testada usando o Assistente para Criar Mídia de Sequência de Tarefas, verifique se as seguintes condições foram atendidas:  
@@ -51,7 +51,7 @@ A mídia em pré-teste contém a imagem de inicialização usada para iniciar o 
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
 3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Mídia de Sequência de Tarefas** para iniciar o Assistente para Criar Mídia de Sequência de Tarefas.  
 
@@ -73,7 +73,7 @@ A mídia em pré-teste contém a imagem de inicialização usada para iniciar o 
 
     -   **Versão**: especifique o número de versão da mídia.  
 
-    -   **Comentário**: especifique uma descrição exclusiva da finalidade da mídia.  
+    -   **Comentário**: especifique uma descrição única da finalidade da mídia.  
 
     -   **Arquivo de mídia**: especifique o nome e o caminho dos arquivos de saída. O assistente grava os arquivos de saída nesse local. Por exemplo: **\\\nomedoservidor\pasta\arquivodesaída.wim**  
 
@@ -92,7 +92,7 @@ A mídia em pré-teste contém a imagem de inicialização usada para iniciar o 
 
          Para obter mais informações sobre o certificado de cliente que é usado para imagens de inicialização, consulte [Requisitos do certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
 
-    -   **Afinidade de Dispositivo de Usuário**: para dar suporte ao gerenciamento centrado no usuário no Configuration Manager, especifique como você quer que a mídia associe usuários ao computador de destino. Para obter mais informações sobre como a implantação de sistema operacional dá suporte à afinidade de dispositivo de usuário, consulte [Associar usuários a um computador de destino](../get-started/associate-users-with-a-destination-computer.md).  
+    -   **Afinidade de dispositivo de usuário**: para dar suporte ao gerenciamento centrado no usuário no Configuration Manager, especifique como deseja que a mídia associe usuários ao computador de destino. Para obter mais informações sobre como a implantação de sistema operacional dá suporte à afinidade de dispositivo de usuário, consulte [Associar usuários a um computador de destino](../get-started/associate-users-with-a-destination-computer.md).  
 
         -   Especifique **Permitir afinidade de dispositivo de usuário com aprovação automática** se você quiser que a mídia associe automaticamente os usuários ao computador de destino. Essa funcionalidade é baseada nas ações da sequência de tarefas que implanta o sistema operacional. Nesse cenário, a sequência de tarefas cria uma relação entre os usuários especificados e o computador de destino quando implanta o sistema operacional no computador de destino.  
 

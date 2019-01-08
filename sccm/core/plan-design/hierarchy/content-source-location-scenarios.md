@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: c552c58ca44943f1c5be6e2ffc9efc807c0cc41b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a50e78a65a1c41189baedf877ece24c324abad71
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339988"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423908"
 ---
 # <a name="content-source-location-scenarios-in-system-center-configuration-manager"></a>Cenários de local de origem de conteúdo no System Center Configuration Manager
 
@@ -35,17 +35,17 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 
 **As três configurações a seguir definem o comportamento quando os clientes solicitam conteúdo:**
 
--  **Permitir local de origem de fallback para conteúdo** (habilitada ou não habilitada): essa é uma opção que você pode habilitar na guia **Grupos de Limites** de um ponto de distribuição. Isso permite que o cliente use um ponto de distribuição configurado como um local de fallback quando o conteúdo não estiver disponível em um ponto de distribuição preferencial.  
+- **Permitir localização de origem de fallback para conteúdo** (habilitado ou não habilitado): Essa é uma opção que você pode habilitar na guia **Grupos de Limites** de um ponto de distribuição. Isso permite que o cliente use um ponto de distribuição configurado como um local de fallback quando o conteúdo não estiver disponível em um ponto de distribuição preferencial.  
 
- - **Comportamento de implantação para velocidade de conexão de rede**: cada implantação é configurada com um dos seguintes comportamentos a ser usado quando a conexão com o ponto de distribuição estiver lenta:  
+  - **Comportamento de implantação para velocidade de conexão de rede**: Cada implantação é configurada com um dos seguintes comportamentos a ser usado quando a conexão com o ponto de distribuição estiver lenta:  
 
     -   **Baixar conteúdo do ponto de distribuição e executá-lo localmente**  
 
-    -   **Não baixar conteúdo**: essa opção é usada apenas quando um cliente usa um local de fallback para obter conteúdo.  
+    -   **Não baixar conteúdo**: Essa opção é usada apenas quando um cliente usa uma localização de fallback para obter conteúdo.  
 
     A velocidade da conexão para um ponto de distribuição é configurada na guia **Referências** de um grupo de limites e é específica a esse grupo de limites.  
 
- -  **Distribuição de pacote sob demanda** (a pontos de distribuição preferenciais): isso é habilitado quando você seleciona a opção **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** na guia **Configurações de Distribuição** das propriedades de um pacote ou de um aplicativo. Quando habilitada, essa opção orienta o Configuration Manager a copiar automaticamente o conteúdo para um ponto de distribuição preferencial que ainda não tem o conteúdo depois que um cliente solicita esse conteúdo desse ponto de distribuição.  
+  - **Distribuição de pacotes sob demanda** (para pontos de distribuição preferenciais): Isso é habilitado quando você seleciona a opção **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** na guia **Configurações de Distribuição** das propriedades de um pacote ou de um aplicativo. Quando habilitada, essa opção orienta o Configuration Manager a copiar automaticamente o conteúdo para um ponto de distribuição preferencial que ainda não tem o conteúdo depois que um cliente solicita esse conteúdo desse ponto de distribuição.  
 
 
  **Os seguintes requisitos se aplicam a todos os cenários:**
@@ -61,12 +61,12 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 
 -   **O conteúdo está disponível em um ponto de distribuição preferencial**  
 
--   **Permitir fallback**: não habilitada  
+-   **Permitir fallback**: Não habilitado  
 
--   **Comportamento de implantação para rede lenta**: qualquer configuração  
+-   **Comportamento de implantação para uma rede lenta**: Qualquer configuração  
 
 
-**Detalhes:** (a configuração de distribuição de pacote sob demanda não é relevante nesse cenário).  
+**Detalhes:** (A configuração de distribuição de pacote sob demanda não é relevante nesse cenário.)  
 
 1.  O cliente envia uma solicitação de conteúdo para o ponto de gerenciamento.  
 
@@ -79,12 +79,12 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 
 -   **O conteúdo está disponível em um ponto de distribuição preferencial**  
 
--   **Permitir fallback**: habilitada  
+-   **Permitir fallback**: Habilitada  
 
--   **Comportamento de implantação para rede lenta**: não baixar conteúdo  
+-   **Comportamento de implantação para uma rede lenta**: Não baixar conteúdo  
 
 
-**Detalhes:** (a configuração de distribuição de pacote sob demanda não é relevante nesse cenário).  
+**Detalhes:** (A configuração de distribuição de pacote sob demanda não é relevante nesse cenário.)  
 
 1.  O cliente envia uma solicitação de conteúdo para o ponto de gerenciamento. O cliente inclui um sinalizador com a solicitação que indica que pontos de distribuição de fallback são permitidos.  
 
@@ -97,12 +97,12 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 
 -   **O conteúdo está disponível em um ponto de distribuição preferencial**  
 
--   **Permitir fallback**: habilitada  
+-   **Permitir fallback**: Habilitada  
 
--   **Comportamento de implantação para rede lenta**: baixar e instalar conteúdo  
+-   **Comportamento de implantação para uma rede lenta**: Baixar e instalar o conteúdo  
 
 
-**Detalhes:** (a configuração de distribuição de pacote sob demanda não é relevante nesse cenário).  
+**Detalhes:** (A configuração de distribuição de pacote sob demanda não é relevante nesse cenário.)  
 
 1.  O cliente envia uma solicitação de conteúdo para o ponto de gerenciamento. O cliente inclui um sinalizador com a solicitação que indica que pontos de distribuição de fallback são permitidos.  
 
@@ -117,9 +117,9 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 
 -   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** não está habilitada  
 
--   **Permitir fallback**: não habilitada  
+-   **Permitir fallback**: Não habilitado  
 
--   **Comportamento de implantação para rede lenta**: qualquer configuração  
+-   **Comportamento de implantação para uma rede lenta**: Qualquer configuração  
 
 
 **Detalhes:**  
@@ -137,9 +137,9 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 
 -   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** não está habilitada  
 
--   **Permitir fallback**: habilitada  
+-   **Permitir fallback**: Habilitada  
 
--   **Comportamento de implantação para rede lenta**: não baixar conteúdo  
+-   **Comportamento de implantação para uma rede lenta**: Não baixar conteúdo  
 
 
 **Detalhes:**  
@@ -157,9 +157,9 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 
 -   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** não está habilitada  
 
--   **Permitir fallback**: habilitada  
+-   **Permitir fallback**: Habilitada  
 
--   **Comportamento de implantação para rede lenta**: baixar e instalar conteúdo  
+-   **Comportamento de implantação para uma rede lenta**: Baixar e instalar o conteúdo  
 
 
 **Detalhes:**  
@@ -177,9 +177,9 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 
 -   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** está habilitada  
 
--   **Permitir fallback**: não habilitada  
+-   **Permitir fallback**: Não habilitado  
 
--   **Comportamento de implantação para rede lenta**: qualquer configuração  
+-   **Comportamento de implantação para uma rede lenta**: Qualquer configuração  
 
 
 **Detalhes:**  
@@ -205,9 +205,9 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 
 -   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** está habilitada  
 
--   **Permitir fallback**: habilitada  
+-   **Permitir fallback**: Habilitada  
 
--   **Comportamento de implantação para rede lenta**: não baixar conteúdo  
+-   **Comportamento de implantação para uma rede lenta**: Não baixar conteúdo  
 
 
 **Detalhes:**  
@@ -235,9 +235,9 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 
 -   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** está habilitada  
 
--   **Permitir fallback**: habilitada  
+-   **Permitir fallback**: Habilitada  
 
--   **Comportamento de implantação para rede lenta**: baixar e instalar conteúdo  
+-   **Comportamento de implantação para uma rede lenta**: Baixar e instalar o conteúdo  
 
 
 **Detalhes:**  

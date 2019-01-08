@@ -10,12 +10,12 @@ ms.assetid: 8e68e1fb-a8ec-4543-bb8a-cbbaf184a418
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5fef3c1892c015fcec42197c9af373506d8e426a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 5bd03980c772edf8033ddc4a8ccce336ba924c07
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333103"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423160"
 ---
 # <a name="security-and-privacy-for-software-inventory-in-system-center-configuration-manager"></a>Segurança e privacidade do inventário de software no System Center Configuration Manager
 
@@ -35,17 +35,17 @@ Este tópico contém as informações de segurança e privacidade do inventário
 ### <a name="security-issues-for-software-inventory"></a>Problemas de segurança para o inventário de software  
  A coleta de inventários expõe vulnerabilidades potenciais. Os invasores podem fazer o seguinte:  
 
--   Enviar dados inválidos, que serão aceitos pelo ponto de gerenciamento, mesmo quando a configuração do cliente de inventário de software estiver desabilitada e a coleção de arquivos não estiver habilitada.  
+- Enviar dados inválidos, que serão aceitos pelo ponto de gerenciamento, mesmo quando a configuração do cliente de inventário de software estiver desabilitada e a coleção de arquivos não estiver habilitada.  
 
--   Enviar quantidades de dados excessivamente grandes em um único arquivo e em vários arquivos, o que pode causar uma negação de serviço.  
+- Enviar quantidades de dados excessivamente grandes em um único arquivo e em vários arquivos, o que pode causar uma negação de serviço.  
 
--   Acessar informações de inventário quando forem transferidas para o Configuration Manager.  
+- Acessar informações de inventário quando forem transferidas para o Configuration Manager.  
 
- Se os usuários souberem que podem criar um arquivo oculto chamado **Skpswi.dat** e colocá-lo na raiz de um disco rígido do cliente para excluí-lo do inventário de software, você não poderá coletar dados de inventário de software desse computador.  
+  Se os usuários souberem que podem criar um arquivo oculto chamado **Skpswi.dat** e colocá-lo na raiz de um disco rígido do cliente para excluí-lo do inventário de software, você não poderá coletar dados de inventário de software desse computador.  
 
- Como um usuário com privilégios administrativos locais pode enviar todas as informações como dados de inventário, não considere autoritativos os dados de inventário que são coletados pelo Configuration Manager.  
+  Como um usuário com privilégios administrativos locais pode enviar todas as informações como dados de inventário, não considere autoritativos os dados de inventário que são coletados pelo Configuration Manager.  
 
- O inventário de software é habilitado por padrão como uma configuração do cliente.  
+  O inventário de software é habilitado por padrão como uma configuração do cliente.  
 
 ##  <a name="BKMK_Privacy_HardwareInventory"></a> Informações sobre privacidade para o inventário de software  
  O inventário de hardware permite que você recupere todas as informações armazenadas no Registro e no WMI em clientes do Configuration Manager. O inventário de software permite descobrir todos os arquivos de um tipo especificado ou coletar todos os arquivos especificados de clientes. O Asset Intelligence aprimora os recursos de inventário estendendo o inventário de hardware e software e adicionando novas funcionalidades de gerenciamento de licenças.  

@@ -10,12 +10,12 @@ ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 44cfb06c8d92568a4468c1f46b90ceeb259c3c1f
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: d0db075f652dd77a833f7a3a00f478bae5a5e54f
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456627"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415187"
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-configuration-manager"></a>Gerenciar sequências de tarefas para automatizar tarefas no Gerenciador de Configurações
 
@@ -91,11 +91,11 @@ Você pode retornar a uma página anterior quando executar uma sequência de tar
 
 3. Na guia **Geral**, as seguintes configurações do Centro de Software estão disponíveis:  
 
-  - **Reinicialização Necessária**: permite que o usuário saiba se uma reinicialização é necessária durante a instalação.  
+   - **Reinicialização necessária**: permite que o usuário saiba se uma reinicialização é necessária durante a instalação.  
 
-  - **Tamanho do download (MB)**: especifica quantos megabytes são exibidos no Centro de Software para a sequência de tarefas.  
+   - **Tamanho do download (MB)**: especifica quantos megabytes são exibidos no Centro de Software para a sequência de tarefas.  
 
-  - **Tempo de execução estimado (minutos)**: especifica o tempo de execução estimado em minutos exibido no Centro de Software para a sequência de tarefas.  
+   - **Tempo de execução estimado (minutos)**: especifica o tempo de execução estimado em minutos exibido no Centro de Software para a sequência de tarefas.  
 
 
 
@@ -109,38 +109,38 @@ Você pode retornar a uma página anterior quando executar uma sequência de tar
 
 3. Na guia **Avançado**, as seguintes configurações estão disponíveis:  
 
-    - **Executar outro programa primeiro**: selecione esta opção para executar um programa em outro pacote antes da execução da sequência de tarefas. Por padrão, essa caixa de seleção está desmarcada. Não é necessário implantar separadamente o programa que você especifica para executar primeiro.  
+   - **Executar outro programa primeiro**: selecione esta opção para executar um programa em outro pacote antes da execução da sequência de tarefas. Por padrão, essa caixa de seleção está desmarcada. Não é necessário implantar separadamente o programa que você especifica para executar primeiro.  
 
-        > [!IMPORTANT]     
-        Essa configuração aplica-se apenas às sequências de tarefas que são executadas no sistema operacional completo. O Gerenciador de Configurações ignorará esta configuração se a sequência de tarefas for iniciada usando o PXE ou a mídia de inicialização.  
+     > [!IMPORTANT]
+     >   Essa configuração aplica-se apenas às sequências de tarefas que são executadas no sistema operacional completo. O Gerenciador de Configurações ignorará esta configuração se a sequência de tarefas for iniciada usando o PXE ou a mídia de inicialização.  
 
-        - **Pacote**: procure o pacote que contém o programa para execução antes dessa sequência de tarefas.  
+     - **Pacote**: procure o pacote que contém o programa para execução antes dessa sequência de tarefas.  
 
-        - **Programa**: selecione o programa a ser executado antes dessa sequência de tarefas.  
-
-        > [!NOTE]    
-        > Se o programa selecionado não é executado em um cliente, a sequência de tarefas não é executada. Se o programa selecionado é executado com êxito, ele não é executado novamente, mesmo se a sequência de tarefas é executada novamente no mesmo cliente.  
- 
-    - **Desabilitar esta sequência de tarefas em computadores onde ela é implantada**: se você selecionar essa opção, o Gerenciador de Configurações desabilitará temporariamente todas as implantações que contêm essa sequência de tarefas. Também remove a sequência de tarefas da lista de implantações disponíveis para execução. A sequência de tarefas não será executada até que você a habilite. Por padrão, esta opção está desmarcada.  
-
-    - **Tempo de execução máximo permitido**: especifica o tempo máximo, em minutos, esperado para a execução da sequência de tarefas no computador de destino. Use um número inteiro igual ou maior que zero. Por padrão, esse valor é de 120 minutos.  
-
-        > [!IMPORTANT]    
-        > Se você estiver usando janelas de manutenção para a coleção na qual implanta essa sequência de tarefas, poderá ocorrer um conflito se o **Tempo de execução máximo permitido** for maior do que o tempo da janela de manutenção agendada. Se o tempo de execução máximo for definido como **0**, a sequência de tarefas será iniciada durante a janela de manutenção. Ela continuará sendo executada até ser concluída ou falhar depois que a janela de manutenção for fechada. Como resultado, as sequências de tarefas com um tempo de execução máximo definido como **0** pode ser executado após o término de suas janelas de manutenção. Se você definir o tempo de execução máximo com um período específico (diferente de zero) que excede a duração de qualquer janela de manutenção disponível, essa sequência de tarefas não será executada. Para obter mais informações, consulte [Como usar janelas de manutenção](/sccm/core/clients/manage/collections/use-maintenance-windows).  
- 
-       Se você definir o valor como **0**, o Gerenciador de Configurações avaliará o tempo de execução máximo permitido para **12** horas (720 minutos) para monitoramento do progresso. No entanto, a sequência de tarefas será iniciada, desde que a duração da contagem regressiva não exceda o valor da janela de manutenção.  
+     - **Programa**: selecione o programa a ser executado antes dessa sequência de tarefas.  
 
        > [!NOTE]    
-       > Ao atingir o tempo de execução máximo, o Gerenciador de Configurações interromperá a sequência de tarefas se você tiver definido a opção **Executar com direitos administrativos** e não a opção **Permitir que os usuários interajam com este programa**. Se a sequência de tarefas não for interrompida, o Gerenciador de Configurações parará de monitorar a sequência de tarefas após atingir o tempo de execução máximo permitido.  
+       > Se o programa selecionado não é executado em um cliente, a sequência de tarefas não é executada. Se o programa selecionado é executado com êxito, ele não é executado novamente, mesmo se a sequência de tarefas é executada novamente no mesmo cliente.  
+ 
+   - **Desabilitar esta sequência de tarefas nos computadores nos quais está implantada**: Se você selecionar esta opção, o Configuration Manager desabilitará temporariamente todas as implantações que contêm esta sequência de tarefas. Também remove a sequência de tarefas da lista de implantações disponíveis para execução. A sequência de tarefas não será executada até que você a habilite. Por padrão, esta opção está desmarcada.  
 
-    - **Usar uma imagem de inicialização**: use a imagem de inicialização selecionada quando a sequência de tarefas for executada. Clique em **Procurar** para selecionar uma imagem de inicialização diferente. Desmarque esta opção para desabilitar o uso da imagem de inicialização selecionada quando a sequência de tarefas for executada.  
+   - **Tempo de execução máximo permitido**: especifica o tempo máximo, em minutos, esperado para a execução da sequência de tarefas no computador de destino. Use um número inteiro igual ou maior que zero. Por padrão, esse valor é de 120 minutos.  
 
-    - **Esta sequência de tarefas pode ser executada em qualquer plataforma**: se você selecionar essa opção, o Gerenciador de Configurações não verificará o tipo de plataforma do computador de destino durante a execução da sequência de tarefas. Essa opção é habilitada por padrão.  
+       > [!IMPORTANT]    
+       > Se você estiver usando janelas de manutenção para a coleção na qual implanta essa sequência de tarefas, poderá ocorrer um conflito se o **Tempo de execução máximo permitido** for maior do que o tempo da janela de manutenção agendada. Se o tempo de execução máximo for definido como **0**, a sequência de tarefas será iniciada durante a janela de manutenção. Ela continuará sendo executada até ser concluída ou falhar depois que a janela de manutenção for fechada. Como resultado, as sequências de tarefas com um tempo de execução máximo definido como **0** pode ser executado após o término de suas janelas de manutenção. Se você definir o tempo de execução máximo com um período específico (diferente de zero) que excede a duração de qualquer janela de manutenção disponível, essa sequência de tarefas não será executada. Para obter mais informações, consulte [Como usar janelas de manutenção](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+ 
+      Se você definir o valor como **0**, o Gerenciador de Configurações avaliará o tempo de execução máximo permitido para **12** horas (720 minutos) para monitoramento do progresso. No entanto, a sequência de tarefas será iniciada, desde que a duração da contagem regressiva não exceda o valor da janela de manutenção.  
 
-    - **Esta sequência de tarefas só pode ser executada nas plataformas de cliente especificadas**: essa opção especifica os processadores, as versões de sistema operacional e os service packs nos quais essa sequência de tarefas pode ser executada. Ao selecionar essa opção, selecione pelo menos uma plataforma na lista. Por padrão, nenhuma plataforma é selecionada. O Configuration Manager usa essas informações quando avalia quais computadores de destino em uma coleção recebem a sequência de tarefas implantada.  
+      > [!NOTE]    
+      > Ao atingir o tempo de execução máximo, o Gerenciador de Configurações interromperá a sequência de tarefas se você tiver definido a opção **Executar com direitos administrativos** e não a opção **Permitir que os usuários interajam com este programa**. Se a sequência de tarefas não for interrompida, o Gerenciador de Configurações parará de monitorar a sequência de tarefas após atingir o tempo de execução máximo permitido.  
 
-        > [!NOTE]    
-        > Quando você executa uma sequência de tarefas na mídia de inicialização ou PXE, o Gerenciador de Configurações ignora essa opção. A sequência de tarefas é executada como se a opção **Este programa pode ser executado em qualquer plataforma** estivesse selecionada.  
+   - **Usar uma imagem de inicialização**: use a imagem de inicialização selecionada quando a sequência de tarefas for executada. Clique em **Procurar** para selecionar uma imagem de inicialização diferente. Desmarque esta opção para desabilitar o uso da imagem de inicialização selecionada quando a sequência de tarefas for executada.  
+
+   - **Essa sequência de tarefas pode ser executada em qualquer plataforma**: Se você selecionar essa opção, o Configuration Manager não verificará o tipo de plataforma do computador de destino quando a sequência de tarefas for executada. Essa opção é habilitada por padrão.  
+
+   - **Essa sequência de tarefas pode ser executada somente nas plataformas clientes especificadas**: Essa opção especifica os processadores, as versões de sistema operacional e os service packs nos quais essa sequência de tarefas pode ser executada. Ao selecionar essa opção, selecione pelo menos uma plataforma na lista. Por padrão, nenhuma plataforma é selecionada. O Configuration Manager usa essas informações quando avalia quais computadores de destino em uma coleção recebem a sequência de tarefas implantada.  
+
+       > [!NOTE]    
+       > Quando você executa uma sequência de tarefas na mídia de inicialização ou PXE, o Gerenciador de Configurações ignora essa opção. A sequência de tarefas é executada como se a opção **Este programa pode ser executado em qualquer plataforma** estivesse selecionada.  
 
 
 
@@ -173,32 +173,32 @@ Você pode retornar a uma página anterior quando executar uma sequência de tar
 
 3. Na guia **Notificação do Usuário**, selecione **Usar texto personalizado**.  
 
-    >  [!NOTE]    
-    >  Só é possível definir o texto de notificação do usuário quando a opção **Esta é uma sequência de tarefas de alto impacto** for selecionada.  
+   > [!NOTE]
+   >  Só é possível definir o texto de notificação do usuário quando a opção **Esta é uma sequência de tarefas de alto impacto** for selecionada.  
 
 4. Defina as seguintes configurações:  
 
     > [!Note]  
     > Cada caixa de texto tem um limite máximo de 255 caracteres.  
 
-    **Texto do título da notificação do usuário**: especifica o texto azul exibido na notificação do usuário do Centro de Software. Por exemplo, na notificação de usuário padrão, essa seção contém o texto "Confirme se você deseja atualizar o sistema operacional neste computador".  
+    **Texto do título de notificação ao usuário**: especifica o texto azul exibido na notificação ao usuário do Centro de Software. Por exemplo, na notificação de usuário padrão, essa seção contém o texto "Confirme se você deseja atualizar o sistema operacional neste computador".  
 
-    **Texto da mensagem da notificação do usuário**: há três caixas de texto que fornecem o corpo da notificação personalizada. Todas as caixas de texto exigem que você adicione texto.  
+    **Texto da mensagem de notificação ao usuário**: há três caixas de texto que fornecem o corpo da notificação personalizada. Todas as caixas de texto exigem que você adicione texto.  
 
-    - Primeira caixa de texto: especifica o corpo do texto principal, geralmente, contendo instruções para o usuário. Por exemplo, na notificação de usuário padrão, essa seção contém o texto "A atualização do sistema operacional leva tempo e o computador pode ser reiniciado várias vezes".  
+    - Primeira caixa de texto: especifica o corpo principal do texto, geralmente contendo instruções para o usuário. Por exemplo, na notificação de usuário padrão, essa seção contém o texto "A atualização do sistema operacional leva tempo e o computador pode ser reiniciado várias vezes".  
 
-    - Segunda caixa de texto: especifica o texto em negrito abaixo do corpo do texto principal. Por exemplo, na notificação de usuário padrão, essa seção contém o texto "Esta atualização in-loco instala o novo sistema operacional e migra automaticamente seus aplicativos, dados e configurações".  
+    - Segunda caixa de texto: especifica o texto em negrito abaixo do corpo principal do texto. Por exemplo, na notificação de usuário padrão, essa seção contém o texto "Esta atualização in-loco instala o novo sistema operacional e migra automaticamente seus aplicativos, dados e configurações".  
 
-    - Terceira caixa de texto: especifica a última linha de texto abaixo do texto em negrito. Por exemplo, na notificação de usuário padrão, essa seção contém o texto "Clique em Instalar para começar. Caso contrário, clique em Cancelar”.   
+    - Terceira caixa de texto: especifica a última linha de texto sob o texto em negrito. Por exemplo, na notificação de usuário padrão, essa seção contém o texto "Clique em Instalar para começar. Caso contrário, clique em Cancelar”.   
 
 #### <a name="example"></a>Exemplo
 Digamos que você defina a seguinte notificação personalizada nas propriedades.
 
-![Guia Notificação de Usuário Personalizada das propriedades da sequência de tarefas](..\media\user-notification.png)
+![Guia Notificação de Usuário Personalizada das propriedades da sequência de tarefas](../media/user-notification.png)
 
 A mensagem de notificação a seguir é exibida quando o usuário final abre a instalação no Centro de Software.
 
-![Notificação personalizada de sequência de tarefas para o usuário final no Centro de Software](..\media\user-notification-enduser.png)
+![Notificação personalizada de sequência de tarefas para o usuário final no Centro de Software](../media/user-notification-enduser.png)
 
 
 
@@ -244,134 +244,134 @@ A mensagem de notificação a seguir é exibida quando o usuário final abre a i
 
 #### <a name="to-deploy-a-task-sequence"></a>Para implantar uma sequência de tarefas    
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
+2. No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
-3.  Na lista **Sequência de Tarefas** , selecione a sequência de tarefas a implantar.  
+3. Na lista **Sequência de Tarefas** , selecione a sequência de tarefas a implantar.  
 
-4.  Na guia **Início** , no grupo **Implantação** , clique em **Implantar**.  
+4. Na guia **Início** , no grupo **Implantação** , clique em **Implantar**.  
 
-    > [!NOTE]  
-    >  Se **Implantar** não estiver disponível, a sequência de tarefas terá uma referência que não será válida. Corrija a referência e, em seguida, tente implantar a sequência de tarefas novamente.  
+   > [!NOTE]  
+   >  Se **Implantar** não estiver disponível, a sequência de tarefas terá uma referência que não será válida. Corrija a referência e, em seguida, tente implantar a sequência de tarefas novamente.  
 
-5.  Na página **Geral** , especifique as seguintes informações e clique em **Próximo**.  
+5. Na página **Geral** , especifique as seguintes informações e clique em **Próximo**.  
 
-    -   **Sequência de tarefas**: especifique a sequência de tarefas para implantação. Por padrão, essa caixa exibe a sequência de tarefas selecionada.  
+   - **Sequência de tarefas**: especifique a sequência de tarefas para implantação. Por padrão, essa caixa exibe a sequência de tarefas selecionada.  
 
-    -   **Coleção**: selecione a coleção que contém os computadores que executarão a sequência de tarefas.  
+   - **Coleta**: selecione a coleção que contém os computadores que executarão a sequência de tarefas.  
 
-         Não implante uma sequência de tarefas que instala um sistema operacional em coleções inadequadas, como uma coleção de todos os servidores de data center. A coleção selecionada precisa conter somente os computadores que você quer que executem a sequência de tarefas.  
+      Não implante uma sequência de tarefas que instala um sistema operacional em coleções inadequadas, como uma coleção de todos os servidores de data center. A coleção selecionada precisa conter somente os computadores que você quer que executem a sequência de tarefas.  
 
-        > [!NOTE]  
-        >  Ao executar uma implantação de alto risco, como um sistema operacional, a janela **Selecionar Coleção** exibe somente as coleções personalizadas que atendem às configurações de verificação da implantação definidas nas propriedades do site. As implantações de alto risco sempre estão limitadas às coleções personalizadas criadas e à coleção interna de **Computadores desconhecidos** . Ao criar uma implantação de alto risco, não é possível selecionar uma coleção interna como **Todos os Sistemas**. Desmarque **Ocultar coleções com uma contagem de membros maior que a configuração de tamanho mínimo do site** para ver todas as coleções personalizadas que contêm menos clientes do que o tamanho máximo configurado. Para obter mais informações, consulte [Configurações para gerenciar implantações de alto risco](/sccm/core/servers/manage/settings-to-manage-high-risk-deployments).  
-        >   
-        >  As configurações de verificação de implantação baseiam-se na associação atual da coleção. Depois de implantar a sequência de tarefas, o Gerenciador de Configurações não reavalia a associação à coleção quanto às configurações de implantação de alto risco.  
-        >   
-        >  Por exemplo, suponhamos que você defina **Tamanho padrão** como 100 e o **Tamanho máximo** como 1000. Ao criar uma implantação de alto risco, a janela **Selecionar Coleção** exibe somente as coleções que contêm menos de 100 clientes. Se você desmarcar a configuração **Ocultar coleções com uma contagem de membros maior que a configuração mínima de tamanho do site**, a janela exibirá coleções que contêm menos de 1.000 clientes.  
-        >   
-        >  Ao selecionar uma coleção que contém uma função de site, o seguinte comportamento se aplica:  
-        >   
-        >  -   Se a coleção contiver um servidor do sistema de sites e você definiu as configurações de verificação da implantação para bloquear coleções com servidores do sistema de sites, ocorrerá um erro. Você não poderá continuar criando a implantação.  
-        > -   Se um dos critérios a seguir se aplicar, o Assistente de Implantação de Software exibirá um aviso de alto risco. Para continuar, você precisa concordar em criar uma implantação de alto risco. O site gera uma mensagem de status de auditoria.  
-        >     - Se a coleção contiver um servidor do sistema de sites e você definiu as configurações de verificação da implantação para alertar sobre coleções com servidores do sistema de sites
-        >     - Se a coleção exceder o valor do tamanho padrão
-        >     - Se a coleção contiver um servidor  
+     > [!NOTE]
+     >  Ao executar uma implantação de alto risco, como um sistema operacional, a janela **Selecionar Coleção** exibe somente as coleções personalizadas que atendem às configurações de verificação da implantação definidas nas propriedades do site. As implantações de alto risco sempre estão limitadas às coleções personalizadas criadas e à coleção interna de **Computadores desconhecidos** . Ao criar uma implantação de alto risco, não é possível selecionar uma coleção interna como **Todos os Sistemas**. Desmarque **Ocultar coleções com uma contagem de membros maior que a configuração de tamanho mínimo do site** para ver todas as coleções personalizadas que contêm menos clientes do que o tamanho máximo configurado. Para obter mais informações, consulte [Configurações para gerenciar implantações de alto risco](/sccm/core/servers/manage/settings-to-manage-high-risk-deployments).  
+     > 
+     >  As configurações de verificação de implantação baseiam-se na associação atual da coleção. Depois de implantar a sequência de tarefas, o Gerenciador de Configurações não reavalia a associação à coleção quanto às configurações de implantação de alto risco.  
+     > 
+     >  Por exemplo, suponhamos que você defina **Tamanho padrão** como 100 e o **Tamanho máximo** como 1000. Ao criar uma implantação de alto risco, a janela **Selecionar Coleção** exibe somente as coleções que contêm menos de 100 clientes. Se você desmarcar a configuração **Ocultar coleções com uma contagem de membros maior que a configuração mínima de tamanho do site**, a janela exibirá coleções que contêm menos de 1.000 clientes.  
+     > 
+     >  Ao selecionar uma coleção que contém uma função de site, o seguinte comportamento se aplica:  
+     > 
+     > - Se a coleção contiver um servidor do sistema de sites e você definiu as configurações de verificação da implantação para bloquear coleções com servidores do sistema de sites, ocorrerá um erro. Você não poderá continuar criando a implantação.  
+     >   -   Se um dos critérios a seguir se aplicar, o Assistente de Implantação de Software exibirá um aviso de alto risco. Para continuar, você precisa concordar em criar uma implantação de alto risco. O site gera uma mensagem de status de auditoria.  
+     >   - Se a coleção contiver um servidor do sistema de sites e você definiu as configurações de verificação da implantação para alertar sobre coleções com servidores do sistema de sites
+     >   - Se a coleção exceder o valor do tamanho padrão
+     >   - Se a coleção contiver um servidor  
 
-    - **Usar grupos de pontos de distribuição padrão associados a esta coleção**: armazene o conteúdo da sequência de tarefas no grupo de pontos de distribuição padrão da coleção. Se você não tiver associado a coleção selecionada a um grupo de pontos de distribuição, essa opção estará desabilitada.  
+   - **Usar grupos de pontos de distribuição padrão associados a esta coleção**: Armazene o conteúdo da sequência de tarefas no grupo dos pontos de distribuição padrão das coleções. Se você não tiver associado a coleção selecionada a um grupo de pontos de distribuição, essa opção estará desabilitada.  
 
-    - **Distribuir o conteúdo automaticamente para dependências**: se o conteúdo referenciado tiver dependências, o site também enviará o conteúdo dependente aos pontos de distribuição.  
+   - **Distribuir automaticamente conteúdo para dependências**: se o conteúdo referenciado tiver dependências, o site também enviará o conteúdo dependente aos pontos de distribuição.  
 
-    - **Conteúdo pré-baixado para esta sequência de tarefas**: saiba mais em [Configurar o conteúdo de armazenamento prévio em cache](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).  
+   - **Conteúdo pré-baixado para esta sequência de tarefas**: Para saber mais, confira [Configurar o conteúdo de armazenamento prévio em cache](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).  
 
-    - **Selecionar o Modelo de Implantação**: a partir do Configuration Manager versão 1802, <!--1357391--> você pode salvar e especificar um modelo de implantação para uma sequência de tarefas.     
-
-         > [!IMPORTANT]  
-         > No Gerenciador de Configurações versão 1802, alguns itens não são salvos no modelo.  <!--510610--> Aplique os itens a seguir ao executar o assistente de implantação:  
-         > - Instalação de Software 
-         > - Agendamento 
-         > - Pré-baixar conteúdo
- 
-    -   **Comentários (opcional)**: especifique informações adicionais que descrevem essa implantação da sequência de tarefas.  
-
-6.  Na página **Configurações de Implantação** , especifique as seguintes informações e clique em **Próximo**.  
-
-    -   **Finalidade**: na lista suspensa, escolha uma das seguintes opções:  
-
-        -   **Disponível**: o usuário vê a sequência de tarefas no Centro de Software e poderá instalá-la sob demanda.  
-
-        -   **Obrigatório**: o Gerenciador de Configurações executará automaticamente a sequência de tarefas de acordo com a agenda configurada. Se a sequência de tarefas não estiver oculta, um usuário ainda poderá acompanhar seu status de implantação. Eles também podem usar o Centro de Software para instalar a sequência de tarefas antes do prazo.  
-
-        >  [!NOTE]  
-        >  Se vários usuários estiverem conectados ao dispositivo, as implantações de pacote e sequência de tarefas talvez não sejam exibidas no Centro de Software.  
-
-    -   **Disponibilizar para o seguinte**: especifique se a sequência de tarefas está disponível para um dos tipos a seguir:  
-        - Somente clientes do Gerenciador de Configurações  
-        - Clientes do Configuration Manager, mídia e PXE  
-        - Somente mídia e PXE  
-        - Somente mídia e PXE (oculto)  
+   - **Selecionar o Modelo de Implantação**: começando no Configuration Manager versão 1802,<!--1357391--> é possível salvar e especificar um modelo de implantação para uma sequência de tarefas.     
 
         > [!IMPORTANT]  
-        >  Use a configuração **Somente mídia e PXE (oculto)** para implantações automatizadas de sequência de tarefas. Para que o computador seja inicializado automaticamente para a implantação sem a interação do usuário, selecione **Permitir implantação autônoma de sistema operacional** e defina a variável **SMSTSPreferredAdvertID** como parte da mídia. Para saber mais sobre variáveis de sequência de tarefas, confira [Variáveis de sequência de tarefas](/sccm/osd/understand/task-sequence-variables#SMSTSPreferredAdvertID).  
+        > No Gerenciador de Configurações versão 1802, alguns itens não são salvos no modelo.  <!--510610--> Aplique os itens a seguir ao executar o assistente de implantação:  
+        > - Instalação de Software 
+        > - Agendamento 
+        > - Pré-baixar conteúdo
+ 
+   - **Comentários (opcional)**: especifique informações adicionais que descrevem essa implantação de sequência de tarefas.  
 
-    -   **Enviar pacotes de ativação**: se a implantação for **Obrigatória** e você selecionar essa opção, o site enviará um pacote de ativação aos computadores antes que o cliente execute a implantação. Esse pacote ativa os computadores na hora limite da instalação. Antes de usar essa opção, os computadores e as redes devem ser configurados para Wake On LAN. Para obter mais informações, confira [Planejar como ativar clientes](/sccm/core/clients/deploy/plan/plan-wake-up-clients).  
+6. Na página **Configurações de Implantação** , especifique as seguintes informações e clique em **Próximo**.  
 
-    -   **Permitir que os clientes com um plano de Internet limitado baixem o conteúdo após a data limite da instalação, o que pode incorrer em custos adicionais**: essa opção está disponível somente para implantações **Obrigatórias**. Quando você tem um sequência de tarefas personalizada que instala um aplicativo, mas não implanta um sistema operacional, pode especificar se permite que os clientes baixem conteúdo após o prazo de instalação quando usarem conexões de Internet limitada. Às vezes, os provedores de Internet cobram pela quantidade de dados que você usa quando está em uma conexão de Internet limitada.  
+   - **Finalidade**: Na lista suspensa, escolha uma das seguintes opções:  
 
-        > [!NOTE]  
-        >  Embora o uso de um plano de Internet limitado possa funcionar para sequências de tarefas que não implantam um sistema operacional, não há suporte para esse recurso.  
+     -   **Disponível**: o usuário vê a sequência de tarefas no Centro de Software e poderá instalá-la sob demanda.  
 
-7.  Na página **Agendamento** , especifique as informações a seguir e clique em **Próximo**.  
+     -   **Obrigatório**: o Configuration Manager executa automaticamente a sequência de tarefas de acordo com o agendamento configurado. Se a sequência de tarefas não estiver oculta, um usuário ainda poderá acompanhar seu status de implantação. Eles também podem usar o Centro de Software para instalar a sequência de tarefas antes do prazo.  
 
-    > [!IMPORTANT]  
-    >  Quando um cliente do Windows PE é iniciado pelo PXE ou pela mídia de inicialização, ele não avalia agendas de implantação. Essas agendas incluem os horários de início, expiração e prazo. Somente configure agendamentos em implantações em clientes que iniciam com o sistema operacional Windows completo. Considere usar outros métodos, como janelas de manutenção, para controlar as sequências de tarefas ativas implantadas nos clientes que iniciam por meio do Windows PE.  
+     > [!NOTE]
+     >  Se vários usuários estiverem conectados ao dispositivo, as implantações de pacote e sequência de tarefas talvez não sejam exibidas no Centro de Software.  
 
-    -   **Agendar quando essa implantação estará disponível**: especifique a data e a hora em que a sequência de tarefas estará disponível para ser executada no computador de destino. Quando você marca a caixa de seleção **UTC**, a sequência de tarefas fica disponível para vários computadores ao mesmo tempo. Caso contrário, a implantação ficará disponível em momentos diferentes, acordo com a hora local em cada computador.  
+   - **Disponibilizar para o seguinte**: especifique se a sequência de tarefas está disponível para um dos tipos a seguir:  
+     - Somente clientes do Gerenciador de Configurações  
+     - Clientes do Configuration Manager, mídia e PXE  
+     - Somente mídia e PXE  
+     - Somente mídia e PXE (oculto)  
 
-         Se a hora de início for anterior à hora exigida, o cliente baixará o conteúdo da sequência de tarefas na hora de início.  
+     > [!IMPORTANT]  
+     >  Use a configuração **Somente mídia e PXE (oculto)** para implantações automatizadas de sequência de tarefas. Para que o computador seja inicializado automaticamente para a implantação sem a interação do usuário, selecione **Permitir implantação autônoma de sistema operacional** e defina a variável **SMSTSPreferredAdvertID** como parte da mídia. Para saber mais sobre variáveis de sequência de tarefas, confira [Variáveis de sequência de tarefas](/sccm/osd/understand/task-sequence-variables#SMSTSPreferredAdvertID).  
 
-    -   **Agendar quando essa implantação expirará**: especifique a data e a hora em que a sequência de tarefas expirará no computador de destino. Quando você marca a caixa de seleção **UTC**, a sequência de tarefas expira em vários computadores de destino ao mesmo tempo. Caso contrário, a implantação expira em momentos diferentes, acordo com a hora local em cada computador.  
+   - **Enviar pacotes de ativação**: se a implantação for **Obrigatória** e você selecionar essa opção, o site enviará um pacote de ativação aos computadores antes que o cliente execute a implantação. Esse pacote ativa os computadores na hora limite da instalação. Antes de usar essa opção, os computadores e as redes devem ser configurados para Wake On LAN. Para obter mais informações, confira [Planejar como ativar clientes](/sccm/core/clients/deploy/plan/plan-wake-up-clients).  
 
-    -   **Agendamento da atribuição**: para uma implantação **Obrigatória**, especifique quando o cliente executa a sequência de tarefas. Você pode adicionar vários agendamentos. O agendamento da atribuição pode ter uma das seguintes configurações:   
-        - Data e hora específicas  
-        - Padrão de recorrência mensal, semanal ou personalizado  
-        - O mais breve possível  
-        - Eventos de logon ou logoff  
+   - **Permitir que clientes em uma conexão de Internet limitada baixem conteúdo após o prazo de instalação, o que pode incorrer custos adicionais**: Essa opção só está disponível para implantações **Obrigatórias**. Quando você tem um sequência de tarefas personalizada que instala um aplicativo, mas não implanta um sistema operacional, pode especificar se permite que os clientes baixem conteúdo após o prazo de instalação quando usarem conexões de Internet limitada. Às vezes, os provedores de Internet cobram pela quantidade de dados que você usa quando está em uma conexão de Internet limitada.  
 
-        > [!NOTE]  
-        >  Se você agendar uma hora de início para uma implantação obrigatória anterior à data e hora de disponibilização da sequência de tarefas, o cliente do Gerenciador de Configurações baixará o conteúdo na hora de início atribuída. Esse comportamento ocorre mesmo que você tenha agendado a sequência de tarefas para disponibilização em um momento posterior.<!--SCCMDocs issue 777-->  
+     > [!NOTE]  
+     >  Embora o uso de um plano de Internet limitado possa funcionar para sequências de tarefas que não implantam um sistema operacional, não há suporte para esse recurso.  
 
-    -   **Executar comportamento novamente**: especifique quando a sequência de tarefas precisar ser executada novamente. Selecione uma das seguintes opções:  
+7. Na página **Agendamento** , especifique as informações a seguir e clique em **Próximo**.  
 
-        -   **Nunca executar novamente o programa implantado**: se o cliente executou a sequência de tarefas anteriormente, ele não a executará novamente. A sequência de tarefas não será executada novamente, mesmo se ela falhar originalmente ou se os arquivos da sequência de tarefas forem alterados.  
+   > [!IMPORTANT]  
+   >  Quando um cliente do Windows PE é iniciado pelo PXE ou pela mídia de inicialização, ele não avalia agendas de implantação. Essas agendas incluem os horários de início, expiração e prazo. Somente configure agendamentos em implantações em clientes que iniciam com o sistema operacional Windows completo. Considere usar outros métodos, como janelas de manutenção, para controlar as sequências de tarefas ativas implantadas nos clientes que iniciam por meio do Windows PE.  
 
-        -   **Sempre executar novamente o programa**: a sequência de tarefas sempre executa novamente no cliente quando a implantação é agendada. Executa novamente mesmo se a sequência de tarefas já tiver sido executada com êxito. Essa configuração é útil quando você usa implantações recorrentes nas quais a sequência de tarefas é atualizada regularmente.  
+   -   **Agendar quando essa implantação estará disponível**: especifique a data e a hora em que a sequência de tarefas está disponível para ser executada no computador de destino. Quando você marca a caixa de seleção **UTC**, a sequência de tarefas fica disponível para vários computadores ao mesmo tempo. Caso contrário, a implantação ficará disponível em momentos diferentes, acordo com a hora local em cada computador.  
 
-            > [!IMPORTANT]  
-            >  Essa opção é habilitada por padrão. No entanto, ela não tem efeito até que você atribua uma implantação obrigatória. O usuário sempre pode executar novamente as implantações disponíveis.  
+        Se a hora de início for anterior à hora exigida, o cliente baixará o conteúdo da sequência de tarefas na hora de início.  
 
-        -   **Executar novamente se a tentativa anterior falhar**: a sequência de tarefas será executada novamente quando a implantação for agendada e somente se houver falha na execução anterior. Essa configuração é útil para implantações obrigatórias. Se a última tentativa de execução não for bem-sucedida, uma nova tentativa será feita de acordo com o agendamento de atribuição.  
+   -   **Agendar quando esta implantação expirará**: especifique a data e a hora em que a sequência de tarefas expirará no computador de destino. Quando você marca a caixa de seleção **UTC**, a sequência de tarefas expira em vários computadores de destino ao mesmo tempo. Caso contrário, a implantação expira em momentos diferentes, acordo com a hora local em cada computador.  
 
-        -   **Executar novamente se a tentativa anterior tiver êxito**: a sequência de tarefas será executada novamente somente se a execução anterior tiver êxito no cliente. Essa configuração é útil ao usar implantações recorrentes nas quais a sequência de tarefas é atualizada regularmente, e cada atualização requer que a atualização anterior esteja instalada com êxito.  
+   -   **Agendamento da atribuição**: para uma implantação **Obrigatória**, especifique quando o cliente executa a sequência de tarefas. Você pode adicionar vários agendamentos. O agendamento da atribuição pode ter uma das seguintes configurações:   
+       - Data e hora específicas  
+       - Padrão de recorrência mensal, semanal ou personalizado  
+       - O mais breve possível  
+       - Eventos de logon ou logoff  
 
-        > [!NOTE]  
-        >  Um usuário pode executar novamente uma implantação de sequência de tarefas disponível. Antes de implantar uma sequência de tarefas disponível em um ambiente de produção, teste o que acontece se um usuário executar várias vezes a sequência de tarefas.  
+       > [!NOTE]  
+       >  Se você agendar uma hora de início para uma implantação obrigatória anterior à data e hora de disponibilização da sequência de tarefas, o cliente do Gerenciador de Configurações baixará o conteúdo na hora de início atribuída. Esse comportamento ocorre mesmo que você tenha agendado a sequência de tarefas para disponibilização em um momento posterior.<!--SCCMDocs issue 777-->  
 
-8.  Na página **Experiência do Usuário** , especifique as seguintes informações e clique em **Próximo**.  
+   -   **Executar comportamento novamente**: especifique quando a sequência de tarefas é executada novamente. Selecione uma das seguintes opções:  
 
-    -   **Permitir que o usuário execute o programa de forma independente das atribuições**: especifique se um usuário pode executar uma implantação obrigatória fora do agendamento da atribuição. Essa opção está sempre habilitada para as implantações disponíveis.   
+       -   **Nunca executar novamente o programa implantado**: se o cliente já tiver executado a sequência de tarefas anteriormente, ela não será executada novamente. A sequência de tarefas não será executada novamente, mesmo se ela falhar originalmente ou se os arquivos da sequência de tarefas forem alterados.  
 
-    -   **Mostrar andamento da sequência de tarefas**: especifique se o cliente do Configuration Manager exibe o andamento da sequência de tarefas.  
+       -   **Sempre executar novamente o programa**: a sequência de tarefas sempre é executada novamente no cliente quando a implantação é agendada. Executa novamente mesmo se a sequência de tarefas já tiver sido executada com êxito. Essa configuração é útil quando você usa implantações recorrentes nas quais a sequência de tarefas é atualizada regularmente.  
 
-    -   **Instalação de software**: especifique se o usuário tem permissão para instalar um software fora de uma janela de manutenção configurada após a hora agendada.  
+           > [!IMPORTANT]  
+           >  Essa opção é habilitada por padrão. No entanto, ela não tem efeito até que você atribua uma implantação obrigatória. O usuário sempre pode executar novamente as implantações disponíveis.  
 
-    -   **Reinicialização do sistema (se necessário para conclusão da instalação)**: especifique se o usuário tem permissão para reiniciar o computador após uma instalação de software fora de uma janela de manutenção configurada após a hora de atribuição.  
+       -   **Executar novamente se a tentativa anterior falhar**: a sequência de tarefas será executada novamente quando a implantação for agendada e somente se houver falha na execução anterior. Essa configuração é útil para implantações obrigatórias. Se a última tentativa de execução não for bem-sucedida, uma nova tentativa será feita de acordo com o agendamento de atribuição.  
 
-    - **Tratamento de filtro de gravação para dispositivos Windows Embedded com filtro de gravação**: essa configuração controla o comportamento da instalação em dispositivos Windows Embedded habilitados com um filtro de gravação. Escolha a opção para confirmar as alterações na data limite da instalação ou durante uma janela de manutenção. Quando você seleciona essa opção, a reinicialização é necessária e as alterações permanecem no dispositivo. Caso contrário, o aplicativo é instalado na sobreposição temporária e confirmado mais tarde. Ao implantar uma sequência de tarefas em um dispositivo Windows Embedded, verifique se o dispositivo é membro de uma coleção com uma janela de manutenção configurada.  
+       -   **Executar novamente se a tentativa anterior tiver êxito**: A sequência de tarefas será executada novamente somente se ela tiver sido executada com êxito no cliente. Essa configuração é útil ao usar implantações recorrentes nas quais a sequência de tarefas é atualizada regularmente, e cada atualização requer que a atualização anterior esteja instalada com êxito.  
 
-    -   **Permitir que a sequência de tarefas seja executada para um cliente na Internet**: especifique se a sequência de tarefas tem permissão para ser executada em um cliente baseado na Internet. Não há suporte para operações que instalam o software, como um sistema operacional, nessa configuração. Use essa opção somente para sequências de tarefas baseadas em script genérico que executam operações no sistema operacional padrão.  
+       > [!NOTE]  
+       >  Um usuário pode executar novamente uma implantação de sequência de tarefas disponível. Antes de implantar uma sequência de tarefas disponível em um ambiente de produção, teste o que acontece se um usuário executar várias vezes a sequência de tarefas.  
 
-         - A partir da versão 1802, essa configuração é compatível com implantações de uma sequência de tarefas de atualização in-loco do Windows 10 para clientes baseados na Internet por meio do gateway de gerenciamento de nuvem. Para obter mais informações, consulte [Implantar a atualização in-loco do Windows 10 por meio do CMG](#deploy-windows-10-in-place-upgrade-via-cmg).    
+8. Na página **Experiência do Usuário** , especifique as seguintes informações e clique em **Próximo**.  
+
+   -   **Permitir que o usuário execute o programa de forma independente das atribuições**: especifique se um usuário pode executar uma implantação obrigatória fora do agendamento da atribuição. Essa opção está sempre habilitada para as implantações disponíveis.   
+
+   -   **Mostrar andamento da sequência de tarefas**: especifique se o cliente do Configuration Manager exibe o andamento da sequência de tarefas.  
+
+   -   **Instalação do software**: especifique se o usuário tem permissão para instalar software fora de uma janela de manutenção configurada após a hora agendada.  
+
+   -   **Reinicialização do sistema (se necessário para conclusão da instalação)**: especifique se o usuário tem permissão para reiniciar o computador após uma instalação de software fora de uma janela de manutenção configurada após a hora de atribuição.  
+
+   - **Manuseio de filtro de gravação para dispositivos Windows Embedded**: Essa configuração controla o comportamento da instalação em dispositivos Windows Embedded habilitados com um filtro de gravação. Escolha a opção para confirmar as alterações na data limite da instalação ou durante uma janela de manutenção. Quando você seleciona essa opção, a reinicialização é necessária e as alterações permanecem no dispositivo. Caso contrário, o aplicativo é instalado na sobreposição temporária e confirmado mais tarde. Ao implantar uma sequência de tarefas em um dispositivo Windows Embedded, verifique se o dispositivo é membro de uma coleção com uma janela de manutenção configurada.  
+
+   -   **Permitir que a sequência de tarefas seja executada para cliente na Internet**: especifique se a sequência de tarefas tem permissão para ser executada em um cliente baseado em Internet. Não há suporte para operações que instalam o software, como um sistema operacional, nessa configuração. Use essa opção somente para sequências de tarefas baseadas em script genérico que executam operações no sistema operacional padrão.  
+
+        - A partir da versão 1802, essa configuração é compatível com implantações de uma sequência de tarefas de atualização in-loco do Windows 10 para clientes baseados na Internet por meio do gateway de gerenciamento de nuvem. Para obter mais informações, consulte [Implantar a atualização in-loco do Windows 10 por meio do CMG](#deploy-windows-10-in-place-upgrade-via-cmg).    
 
 9. Na página **Alertas** , especifique as configurações de alerta que você deseja para esta sequência de tarefas e clique em **Próximo**.  
 
@@ -382,15 +382,15 @@ A mensagem de notificação a seguir é exibida quando o usuário final abre a i
         > [!NOTE]  
         >  Ao usar o multicast para implantar um sistema operacional, baixe o conteúdo nos computadores de destino conforme o necessário ou antes da execução da sequência de tarefas.  
 
-        - **Baixar o conteúdo localmente quando necessário executando a sequência de tarefas**: especifique que os clientes baixam conteúdo do ponto de distribuição conforme exigido pela sequência de tarefas. O cliente inicia a sequência de tarefas. Quando uma etapa na sequência de tarefas exigir o conteúdo, ele será baixado antes da execução da etapa.  
+        - **Baixar conteúdo localmente quando necessário pela sequência de tarefas em execução**: especifique se os clientes baixam o conteúdo do ponto de distribuição conforme necessário pela sequência de tarefas. O cliente inicia a sequência de tarefas. Quando uma etapa na sequência de tarefas exigir o conteúdo, ele será baixado antes da execução da etapa.  
 
-        - **Baixar todo o conteúdo localmente antes de iniciar a sequência de tarefas**: especifique que os clientes baixam todo conteúdo do ponto de distribuição antes da execução da sequência de tarefas. Se a sequência de tarefas for disponibilizada para implantações de PXE e de mídia de inicialização na página **Configurações de implantação**, essa opção não aparecerá.  
+        - **Baixar todo o conteúdo localmente antes de iniciar a sequência de tarefas**: especifique se os clientes baixam todo o conteúdo do ponto de distribuição antes da execução da sequência de tarefas. Se a sequência de tarefas for disponibilizada para implantações de PXE e de mídia de inicialização na página **Configurações de implantação**, essa opção não aparecerá.  
 
-        - **Acessar conteúdo diretamente de um ponto de distribuição quando for exigido pela sequência de tarefas em execução**: especifique que os clientes executam o conteúdo do ponto de distribuição. Essa opção só é disponibilizada quando todos os pacotes associados à sequência de tarefas estiverem habilitados para usar um compartilhamento de pacotes no ponto de distribuição. Para habilitar o conteúdo a usar um compartilhamento de pacotes, consulte a guia **Acesso a Dados** nas **Propriedades** de cada pacote.  
+        - **Acessar conteúdo diretamente de um ponto de distribuição quando necessário pela sequência de tarefas em execução**: especifique que os clientes executem o conteúdo do ponto de distribuição. Essa opção só é disponibilizada quando todos os pacotes associados à sequência de tarefas estiverem habilitados para usar um compartilhamento de pacotes no ponto de distribuição. Para habilitar o conteúdo a usar um compartilhamento de pacotes, consulte a guia **Acesso a Dados** nas **Propriedades** de cada pacote.  
 
-    -   **Quando não houver um ponto de distribuição local disponível, use um ponto de distribuição remoto**: especifique se os clientes podem usar pontos de distribuição de um grupo de limite vizinho para baixar o conteúdo exigido pela sequência de tarefas.  
+    -   **Quando não houver nenhum ponto de distribuição local disponível, use um ponto de distribuição remoto**: especifique se os clientes podem usar pontos de distribuição de um grupo de limites vizinho para baixar o conteúdo exigido pela sequência de tarefas.  
 
-    - **Permitir que os clientes usem pontos de distribuição do grupo de limites do site padrão**: especifique se os clientes devem baixar o conteúdo de um ponto de distribuição no grupo de limites do site padrão, quando o conteúdo não estiver disponível em um ponto de distribuição nos grupos de limites atuais ou vizinhos.  
+    - **Permitir que os clientes usem pontos de distribuição do grupo de limites de site padrão**: especifique se os clientes devem baixar conteúdo de um ponto de distribuição no grupo de limites do site padrão quando ele não está disponível em um ponto de distribuição nos grupos de limites atuais ou vizinhos.  
 
         > [!Note]  
         > Da versão 1810 em diante, quando um dispositivo executa uma sequência de tarefas e precisa adquirir conteúdo, ele usa comportamentos de grupo de limites semelhantes ao cliente do Configuration Manager. Para obter mais informações, confira [Suporte de sequência de tarefas para grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgr-osd).<!--1359025-->  

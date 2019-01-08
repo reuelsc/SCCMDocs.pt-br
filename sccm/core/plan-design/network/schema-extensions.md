@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: noindex
-ms.openlocfilehash: ead1eef396e643930e00d3208ed1e821c73906d5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 3454b56e53901668c89062f0910f8ea318f22cf2
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344170"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417652"
 ---
 # <a name="schema-extensions-for-system-center-configuration-manager"></a>Extensões de esquema para o System Center Configuration Manager
 
@@ -65,7 +65,7 @@ Antes de [estender o esquema do Active Directory](https://docs.microsoft.com/scc
 ## <a name="capabilities-that-benefit-from-extending-the-schema"></a>Funcionalidades que se beneficiam da extensão do esquema  
 **Instalação de computador cliente e atribuição de site**: quando um novo cliente é instalado em um computador com Windows, o cliente procura as propriedades de instalação no Active Directory Domain Services.  
 
--   **Soluções alternativas:** se você não estender o esquema, use uma das seguintes opções para fornecer detalhes de configuração que os computadores devem instalar:  
+-   **Soluções alternativas:** se você não estender o esquema, use uma das opções a seguir para fornecer os detalhes de configuração que os computadores precisam instalar:  
 
     -   **Usar instalação do cliente por push**. Antes de usar o método de instalação de cliente, verifique se todos os pré-requisitos foram atendidos. Para saber mais, veja a seção "Dependências do Método de Instalação" em [Pré-requisitos para a implantação de clientes em computadores com Windows](/sccm/core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers).  
 
@@ -87,7 +87,7 @@ Antes de [estender o esquema do Active Directory](https://docs.microsoft.com/scc
 
 **Cenários de implantação de conteúdo** ‑ Quando você cria o conteúdo em um site e implanta esse conteúdo em outro site na hierarquia, o site receptor deve ser capaz de verificar a assinatura dos dados do conteúdo assinado. Isso requer acesso à chave pública do site de origem em que você cria esses dados. Ao estender o esquema do Active Directory para o Configuration Manager, a chave pública do site torna-se disponível para todos os sites na hierarquia.  
 
--   **Solução alternativa:** se não estender o esquema, você poderá usar a ferramenta de manutenção de hierarquia, **preinst.exe**, para trocar informações de chave segura entre os sites.  
+-   **Solução alternativa:** se você não estender o esquema, use a ferramenta de manutenção de hierarquia **preinst.exe** para trocar as informações de chave segura entre sites.  
 
      Por exemplo, se pretende criar conteúdo em um site primário e implantar esse conteúdo em um site secundário abaixo de um site primário diferente, você deve estender o esquema do Active Directory para habilitar o site secundário a obter a chave pública de sites primários de origem, ou deve usar preinst.exe para compartilhar as chaves diretamente entre os dois sites.  
 
@@ -135,12 +135,12 @@ Ao estender o esquema para o System Center Configuration Manager, as seguintes c
 
     -   cn=MS-SMS-Site  
 
-> [!NOTE]  
-
+> [!NOTE]
+> 
 >  As extensões de esquema podem incluir atributos e classes herdadas de versões anteriores do produto, mas que não são usados pelo System Center Configuration Manager. Por exemplo:  
-
->   
->  -   Atributo: cn=MS-SMS-Site-Boundaries  
-> -   Classe: cn=MS-SMS-Server-Locator-Point  
+> 
+> 
+> - Atributo: cn=MS-SMS-Site-Boundaries  
+>   -   Classe: cn=MS-SMS-Server-Locator-Point  
 
 Você pode verificar se a lista anterior é atual exibindo o arquivo **ConfigMgr_ad_schema.LDF** da pasta **\SMSSETUP\BIN\x64** da mídia de instalação do System Center Configuration Manager.  

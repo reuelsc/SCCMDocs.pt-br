@@ -10,12 +10,12 @@ ms.assetid: d827cf91-b18f-4ee7-b538-24ba6f003ab9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 68370a09dda49e16edd05fb545922f2e182f79a5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 2fe6f2490b1ec527b7e6e09e9ce476e66342d7c9
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32331899"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421154"
 ---
 # <a name="how-to-monitor-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>Como monitorar clientes para servidores Linux e UNIX no System Center Configuration Manager
 
@@ -25,13 +25,13 @@ Você pode exibir informações de servidores Linux e UNIX no console do System 
 
  As informações que você pode exibir incluem:  
 
--   Detalhes sobre o status de clientes nos painéis do console do Configuration Manager  
+- Detalhes sobre o status de clientes nos painéis do console do Configuration Manager  
 
--   Detalhes sobre os clientes nos relatórios padrão do Configuration Manager  
+- Detalhes sobre os clientes nos relatórios padrão do Configuration Manager  
 
--   Detalhes sobre inventário no Gerenciador de Recursos  
+- Detalhes sobre inventário no Gerenciador de Recursos  
 
- As seções a seguir descrevem como obter esses detalhes do gerenciador de recursos, bem como relatórios.  
+  As seções a seguir descrevem como obter esses detalhes do gerenciador de recursos, bem como relatórios.  
 
 ##  <a name="BKMK_UseResourceExpforLnU"></a> Usar o gerenciador de recursos para exibir o inventário de servidores Linux e UNIX  
 

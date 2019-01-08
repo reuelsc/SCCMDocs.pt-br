@@ -10,12 +10,12 @@ ms.assetid: 127ce713-d085-430f-ac7b-2701637fe126
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: faa974fda68c9448902f2f5c8e8fcf8ef2f2d386
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0eec065c9b5d4f75e6a66260760ba08e7bb2c481
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340226"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422548"
 ---
 # <a name="select-discovery-methods-to-use-for-system-center-configuration-manager"></a>Selecione os métodos de descoberta para usar com o System Center Configuration Manager
 
@@ -104,22 +104,22 @@ Como a **Descoberta de Pulsação** não é executada em um site específico, n�
 ##  <a name="bkmk_best"></a> Práticas recomendadas para descoberta  
 Para obter melhores resultados com a descoberta, recomendamos o seguinte:
 
- - **Execute a Descoberta de Sistemas do Active Directory e a Descoberta de Usuários do Active Directory antes de executar a Descoberta de Grupos do Active Directory.**  
+- **Execute a Descoberta de Sistemas do Active Directory e a Descoberta de Usuários do Active Directory antes de executar a Descoberta de Grupos do Active Directory.**  
 
- Quando a Descoberta de Grupos do Active Directory identifica um usuário ou um computador não descoberto anteriormente como membro de um grupo, ela tenta descobrir detalhes básicos do usuário ou do computador. Como a Descoberta de Grupos do Active Directory não é otimizada para esse tipo de descoberta, esse processo pode fazer causar a execução lenta. Além disso, a Descoberta de Grupos do Active Directory identifica somente os detalhes básicos sobre os usuários e computadores descobertos, e não cria um registro completo de descoberta de usuários e computadores. Ao executar a Descoberta de Sistemas do Active Directory e a Descoberta de Usuários do Active Directory, os atributos adicionais do Active Directory de cada tipo de objeto ficam disponíveis. Como resultado, a Descoberta de Grupo do Active Directory é executado com mais eficiência.  
+  Quando a Descoberta de Grupos do Active Directory identifica um usuário ou um computador não descoberto anteriormente como membro de um grupo, ela tenta descobrir detalhes básicos do usuário ou do computador. Como a Descoberta de Grupos do Active Directory não é otimizada para esse tipo de descoberta, esse processo pode fazer causar a execução lenta. Além disso, a Descoberta de Grupos do Active Directory identifica somente os detalhes básicos sobre os usuários e computadores descobertos, e não cria um registro completo de descoberta de usuários e computadores. Ao executar a Descoberta de Sistemas do Active Directory e a Descoberta de Usuários do Active Directory, os atributos adicionais do Active Directory de cada tipo de objeto ficam disponíveis. Como resultado, a Descoberta de Grupo do Active Directory é executado com mais eficiência.  
 
 - **Ao configurar a Descoberta de Grupos do Active Directory, especifique apenas os grupos usados com o Configuration Manager.**  
 
- Para ajudar a controlar o uso de recursos pela Descoberta de Grupos do Active Directory, especifique somente os grupos usados com o Configuration Manager. Isso porque a Descoberta de Grupos do Active Directory pesquisa recursivamente usuários, computadores e grupos aninhados em cada grupo descoberto. A pesquisa de cada grupo aninhado pode expandir o escopo da Descoberta de Grupos do Active Directory e reduzir o desempenho. Além disso, ao configurar a descoberta delta para a Descoberta de Grupos do Active Directory, o método de descoberta monitora as alterações de cada grupo. Reduz-se mais ainda o desempenho quando o método deve pesquisar grupos desnecessários.  
+  Para ajudar a controlar o uso de recursos pela Descoberta de Grupos do Active Directory, especifique somente os grupos usados com o Configuration Manager. Isso porque a Descoberta de Grupos do Active Directory pesquisa recursivamente usuários, computadores e grupos aninhados em cada grupo descoberto. A pesquisa de cada grupo aninhado pode expandir o escopo da Descoberta de Grupos do Active Directory e reduzir o desempenho. Além disso, ao configurar a descoberta delta para a Descoberta de Grupos do Active Directory, o método de descoberta monitora as alterações de cada grupo. Reduz-se mais ainda o desempenho quando o método deve pesquisar grupos desnecessários.  
 
 - **Configurar métodos de descoberta com um intervalo mais longo entre a descoberta completa e um período mais frequente de descoberta delta.**  
 
- Como a descoberta delta usa menos recursos do que um ciclo de descoberta completo e pode identificar recursos novos ou modificados no Active Directory, você pode reduzir a frequência de ciclos de descoberta completos para serem executados semanalmente (ou menos). A descoberta delta para Descoberta de Sistemas do Active Directory, Descoberta de Usuários do Active Directory e Descoberta de Grupos do Active Directory identifica quase todas as alterações de objetos do Active Directory e pode manter dados de descoberta precisos para recursos.  
+  Como a descoberta delta usa menos recursos do que um ciclo de descoberta completo e pode identificar recursos novos ou modificados no Active Directory, você pode reduzir a frequência de ciclos de descoberta completos para serem executados semanalmente (ou menos). A descoberta delta para Descoberta de Sistemas do Active Directory, Descoberta de Usuários do Active Directory e Descoberta de Grupos do Active Directory identifica quase todas as alterações de objetos do Active Directory e pode manter dados de descoberta precisos para recursos.  
 
 - **Execute os métodos de descoberta do Active Directory em um site primário que tem um local de rede mais próximo do controlador de domínio do Active Directory.**  
 
- Para melhorar o desempenho da descoberta do Active Directory, é uma boa ideia executar a descoberta em um site primário que tenha uma conexão de rede rápida com os controladores de domínio. Se você executar o mesmo método de descoberta do Active Directory em vários sites, configure cada método de descoberta para evitar sobreposição. Diferente das versões anteriores do Configuration Manager, os dados de descoberta são compartilhados entre sites. Portanto, não é necessário descobrir as mesmas informações em vários sites. Para mais informações, consulte [Os dados de descoberta são compartilhados entre sites](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md#bkmk_shared).  
+  Para melhorar o desempenho da descoberta do Active Directory, é uma boa ideia executar a descoberta em um site primário que tenha uma conexão de rede rápida com os controladores de domínio. Se você executar o mesmo método de descoberta do Active Directory em vários sites, configure cada método de descoberta para evitar sobreposição. Diferente das versões anteriores do Configuration Manager, os dados de descoberta são compartilhados entre sites. Portanto, não é necessário descobrir as mesmas informações em vários sites. Para mais informações, consulte [Os dados de descoberta são compartilhados entre sites](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md#bkmk_shared).  
 
 - **Execute a Descoberta de Florestas do Active Directory em somente um site quando planejar criar limites automaticamente dos dados de descoberta.**  
 
- Se a Descoberta de Florestas do Active Directory for executada em mais de um site em uma hierarquia, será uma boa ideia habilitar somente opções para criar limites automaticamente em um único site. Isso porque quando a Descoberta de Florestas do Active Directory é executada em cada site e cria limites, o Configuration Manager não pode mesclar esses limites em um objeto de limite único. Ao configurar a Descoberta de Florestas do Active Directory para criar limites automaticamente em vários sites, o resultado poderá ser objetos de limite duplicados no console do Configuration Manager.  
+  Se a Descoberta de Florestas do Active Directory for executada em mais de um site em uma hierarquia, será uma boa ideia habilitar somente opções para criar limites automaticamente em um único site. Isso porque quando a Descoberta de Florestas do Active Directory é executada em cada site e cria limites, o Configuration Manager não pode mesclar esses limites em um objeto de limite único. Ao configurar a Descoberta de Florestas do Active Directory para criar limites automaticamente em vários sites, o resultado poderá ser objetos de limite duplicados no console do Configuration Manager.  

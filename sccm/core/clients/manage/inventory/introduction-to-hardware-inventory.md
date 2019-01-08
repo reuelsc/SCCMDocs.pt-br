@@ -10,12 +10,12 @@ ms.assetid: 3969952e-9d05-49c9-82a2-e7e90ccef511
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 688bb6dc57f5d50e1807bff40a1d1a4c66f4b349
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 91bb316c59929898ea18bd1e647cff884f106f1c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333596"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424775"
 ---
 # <a name="introduction-to-hardware-inventory-in-system-center-configuration-manager"></a>Introdução ao inventário de hardware no System Center Configuration Manager
 
@@ -27,17 +27,17 @@ Use o inventário de hardware no System Center Configuration Manager para coleta
 
  Você pode usar vários métodos para exibir os dados de inventário de hardware coletados pelo Configuration Manager. Eles incluem o seguinte:  
 
--   [Crie consultas que retornam dispositivos que se baseiam em uma configuração de hardware específica](../../../../core/servers/manage/queries-technical-reference.md).  
+- [Crie consultas que retornam dispositivos que se baseiam em uma configuração de hardware específica](../../../../core/servers/manage/queries-technical-reference.md).  
 
--   [Crie coleções baseadas em consulta que se baseiam em uma configuração de hardware específica](../../../../core/clients/manage/collections/introduction-to-collections.md). Associações de coleção baseada em consulta são atualizadas automaticamente em um agendamento. Você pode usar coleções para várias tarefas, que incluem a implantação de software. .  
+- [Crie coleções baseadas em consulta que se baseiam em uma configuração de hardware específica](../../../../core/clients/manage/collections/introduction-to-collections.md). Associações de coleção baseada em consulta são atualizadas automaticamente em um agendamento. Você pode usar coleções para várias tarefas, que incluem a implantação de software. .  
 
--   [Execute os relatórios que exibem detalhes específicos sobre as configurações de hardware em sua organização](../../../../core/servers/manage/reporting.md).   
+- [Execute os relatórios que exibem detalhes específicos sobre as configurações de hardware em sua organização](../../../../core/servers/manage/reporting.md).   
 
--   [Usar o Gerenciador de Recursos](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) para exibir informações detalhadas sobre o inventário de hardware que foi coletado dos dispositivos cliente.   
+- [Usar o Gerenciador de Recursos](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) para exibir informações detalhadas sobre o inventário de hardware que foi coletado dos dispositivos cliente.   
 
- Quando o inventário de hardware é executado em um dispositivo cliente, os primeiros dados de inventário retornados pelo cliente são sempre um inventário completo. As informações de inventário posteriores contêm apenas informações de inventário delta. O servidor do site processa informações de inventário delta na ordem em que elas são recebidas. Se as informações delta de um cliente estiverem ausentes, o servidor do site rejeitará as informações delta adicionais e instruirá o cliente a executar um ciclo de inventário completo.  
+  Quando o inventário de hardware é executado em um dispositivo cliente, os primeiros dados de inventário retornados pelo cliente são sempre um inventário completo. As informações de inventário posteriores contêm apenas informações de inventário delta. O servidor do site processa informações de inventário delta na ordem em que elas são recebidas. Se as informações delta de um cliente estiverem ausentes, o servidor do site rejeitará as informações delta adicionais e instruirá o cliente a executar um ciclo de inventário completo.  
 
- O Configuration Manager dá suporte limitado a computadores de inicialização dupla. O Configuration Manager pode descobrir computadores com inicialização dupla, mas só retorna informações de inventário do sistema operacional que estava ativo no momento da execução do ciclo do inventário.  
+  O Configuration Manager dá suporte limitado a computadores de inicialização dupla. O Configuration Manager pode descobrir computadores com inicialização dupla, mas só retorna informações de inventário do sistema operacional que estava ativo no momento da execução do ciclo do inventário.  
 
 > [!NOTE]  
 >  Para obter informações sobre como usar o inventário de hardware com clientes que executam Linux e UNIX, consulte [Inventário de hardware para Linux e UNIX no System Center Configuration Manager](../../../../core/clients/manage/inventory/hardware-inventory-for-linux-and-unix.md).  
@@ -49,4 +49,4 @@ Use o inventário de hardware no System Center Configuration Manager para coleta
 - Use arquivos NOIDMIF para coletar informações sobre dispositivos de cliente que não podem ser inventariados pelo Configuration Manager. Por exemplo, você talvez queira coletar informações de número de ativo dispositivo que existe apenas como um rótulo no dispositivo. Inventário NOIDMIF é associado automaticamente a que foram coletado do dispositivo cliente.  
 - Use arquivos IDMIF para coletar informações sobre os ativos que não estão associados a um cliente do Configuration Manager, por exemplo, projetores, fotocopiadoras e impressoras de rede.  
 
- Para obter mais informações sobre como usar métodos para estender o inventário de hardware do Configuration Manager, consulte [Como configurar o inventário de hardware no System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md).  
+  Para obter mais informações sobre como usar métodos para estender o inventário de hardware do Configuration Manager, consulte [Como configurar o inventário de hardware no System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md).  

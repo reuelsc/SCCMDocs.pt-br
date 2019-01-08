@@ -10,12 +10,12 @@ ms.assetid: ac034143-003e-4629-aac2-99eaffef4db1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7519971f05813edbf601c598b9281bcfdf19c83b
-ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
+ms.openlocfilehash: a9fe9c0b2f779558161e7995a01863e6415838ee
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47229323"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423075"
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novidades da versão 1706 do System Center Configuration Manager
 
@@ -130,30 +130,30 @@ Para obter detalhes de todas as configurações de Windows 10, confira [Como cri
 
 ### <a name="new-device-compliance-policy-rules"></a>Novas regras de política de conformidade do dispositivo
 
-* **Tipo de senha necessária**. Especifica se o usuário deve criar uma senha alfanumérica ou numérica. Para senhas alfanuméricas, especifique também o número mínimo de conjuntos de caracteres que a senha deverá conter. Há quatro conjuntos de caracteres: minúsculas, maiúsculas, letras, símbolos e números.
+* **Tipo de senha necessária**. Especifica se o usuário deve criar uma senha alfanumérica ou numérica. Para senhas alfanuméricas, especifique também o número mínimo de conjuntos de caracteres que a senha deverá conter. Os quatro conjuntos de caracteres são: letras minúsculas, maiúsculas, símbolos e números.
 
- **Com suporte em:**
- * Windows Phone 8+
- * Windows 8.1+
- * iOS 6+
-<br></br>
+  **Com suporte em:**
+  * Windows Phone 8+
+  * Windows 8.1+
+  * iOS 6+
+  <br></br>
 * **Bloquear a depuração de USB no dispositivo**. Você não precisa definir essas configurações, pois a depuração de USB já está desabilitada em dispositivos com Android for Work.
 
- **Com suporte em:**
- * Android 4.0+
- * Samsung KNOX Standard 4.0+
-<br></br>
+  **Com suporte em:**
+  * Android 4.0+
+  * Samsung KNOX Standard 4.0+
+  <br></br>
 * **Bloquear aplicativos de fontes desconhecidas**. Exija que dispositivos impeçam a instalação de aplicativos de fontes desconhecidas. Você não precisa definir essa configuração, pois os dispositivos com Android for Work sempre restringem a instalação de fontes desconhecidas.
 
   **Com suporte em:**
   * Android 4.0+
   * Samsung KNOX Standard 4.0+
-<br></br>
+  <br></br>
 * **Exigir verificação de ameaças em aplicativos**. Essa configuração especifica que o recurso Verificar aplicativos fique habilitado no dispositivo.
 
- **Com suporte em:**
- * Android 4.2 a 4.4
- * Samsung KNOX Standard 4.0+
+  **Com suporte em:**
+  * Android 4.2 a 4.4
+  * Samsung KNOX Standard 4.0+
 
 Confira [criar e implantar uma política de conformidade do dispositivo](https://docs.microsoft.com/sccm/mdm/deploy-use/create-compliance-policy) para experimentar as novas regras de conformidade do dispositivo
 
@@ -175,7 +175,7 @@ Para saber mais, confira [Criar e executar scripts do PowerShell do console do C
 ### <a name="new-mobile-application-management-policy-settings"></a>Novas configurações de política de gerenciamento de aplicativo móvel    
 <!--1324760--> A partir desta versão, você pode usar três novas configurações de política MAM (gerenciamento de aplicativo móvel):
 
-- **Bloquear captura de tela (somente dispositivos Android):** especifica que as funcionalidades de captura de tela do dispositivo sejam bloqueadas ao usar esse aplicativo.
+- **Bloquear captura de tela (somente para dispositivos Android):** Especifica que as funcionalidades de captura de tela do dispositivo sejam bloqueadas durante o uso do aplicativo.
 
 Veja [proteger aplicativos usando políticas de proteção de aplicativos no Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) para testar as novas configurações de política de proteção do aplicativo.
 

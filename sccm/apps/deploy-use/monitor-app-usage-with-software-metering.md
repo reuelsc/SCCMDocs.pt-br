@@ -10,12 +10,12 @@ ms.assetid: b1fdaee2-2816-4447-94cd-609f6948f215
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 66099b45fb04b18c84cd9a3973c1a4d93f0e93a6
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 862555a34d638ad9c1c5c2d0d0de6f2ce1edd3f3
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335755"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419318"
 ---
 # <a name="software-metering-in-system-center-configuration-manager"></a>Medição de software no System Center Configuration Manager
 
@@ -37,21 +37,21 @@ A medição de software não tem dependências externas, apenas dependências in
 ##  <a name="configure-software-metering"></a>Configurar medição de software
  Este procedimento define as configurações padrão do cliente para a medição de software e se aplica a todos os computadores em sua hierarquia. Se quiser que essas configurações se apliquem somente a alguns computadores, crie uma configuração personalizada do cliente de dispositivo e a implante em uma coleção que contém os computadores nos quais deseja usar a medição de software. Para obter mais informações sobre como criar configurações personalizadas do dispositivo, consulte [Definir as configurações do cliente](../../core/clients/deploy/configure-client-settings.md).
 
-1.  No console do Configuration Manager, clique em **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.
+1. No console do Configuration Manager, clique em **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.
 
-2.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.
+2. Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.
 
-3.  Na caixa de diálogo **Configurações Padrão** , clique em **Medição de Software**.
+3. Na caixa de diálogo **Configurações Padrão** , clique em **Medição de Software**.
 
-4.  Na lista **Configurações do Dispositivo** , configure o seguinte:
+4. Na lista **Configurações do Dispositivo** , configure o seguinte:
 
-    -   **Habilitar medição de software em clientes**: selecione **True** para habilitar a medição de software.
+   -   **Habilitar medição de software em clientes**: selecione **True** para habilitar a medição de software.
 
-    -   **Agendar coleta de dados**: configure a frequência com que os dados de medição de software são coletados dos computadores cliente. Use o valor padrão de cada **7 dias** ou clique em **Agendamento** para especificar um agendamento personalizado.
+   -   **Agendar coleta de dados**: configurar a frequência com que os dados de medição de software são coletados dos computadores cliente. Use o valor padrão de cada **7 dias** ou clique em **Agendamento** para especificar um agendamento personalizado.
 
-5.  Clique em **OK** para fechar a caixa de diálogo **Configurações Padrão** .
+5. Clique em **OK** para fechar a caixa de diálogo **Configurações Padrão** .
 
- Os computadores cliente são definidos com essas configurações na próxima vez que baixarem a política do cliente. Para iniciar a recuperação de política para um cliente individual, consulte [Gerenciar clientes](../../core/clients/manage/manage-clients.md).
+   Os computadores cliente são definidos com essas configurações na próxima vez que baixarem a política do cliente. Para iniciar a recuperação de política para um cliente individual, consulte [Gerenciar clientes](../../core/clients/manage/manage-clients.md).
 
 ##  <a name="create-software-metering-rules"></a>Criar regras de medição de software
  Use o assistente para Criar Regra de Medição de Software para criar uma nova regra de medição de software para seu site do Configuration Manager.
@@ -93,7 +93,7 @@ A medição de software não tem dependências externas, apenas dependências in
 
 5.  Para continuar, clique em **Avançar**.
 
-6.  Examine e confirme as configurações e conclua o assistente para criar a regra de medição de software. A nova regra de medição de software é exibida no nó **Medição de Software** do espaço de trabalho **Ativos e Conformidade** .
+6.  Examine e confirme as configurações e conclua o assistente para criar a regra de medição de software. As regras de medição de software novo é exibido no nó **Medição de Software** no workspace **Ativos e Conformidade**.
 
 ##  <a name="configure-automatic-software-metering-rules"></a>Configurar regras de medição de software automáticas
  Você pode configurar a medição de software no Configuration Manager para gerar automaticamente regras de medição de software desabilitadas dos dados de inventário de uso recentes mantidos no banco de dados do site. Você pode configurar esses dados de inventário para que sejam criadas regras de medição somente para os aplicativos que são usados em um percentual especificado de computadores. Você também pode especificar o número máximo de regras de medição de software geradas automaticamente permitidas no site.
@@ -116,7 +116,7 @@ A medição de software não tem dependências externas, apenas dependências in
 4.  Clique em **OK** para fechar a caixa de diálogo **Propriedades de Medição de Software** .
 
 ##  <a name="manage-software-metering-rules"></a>Gerenciar regras de medição de software
- No espaço de trabalho **Ativos e Conformidade** , selecione **Medição de Software**, selecione a regra de medição de software a ser gerenciada e uma tarefa de gerenciamento.
+ No workspace **Ativos e Conformidade**, selecione **Medição de Software**, selecione a regra de medição de software a ser gerenciada e uma tarefa de gerenciamento.
 
  Use a tabela a seguir para obter mais informações sobre as tarefas de gerenciamento que podem requerer informações adicionais antes de você selecioná-las.
 
@@ -154,15 +154,15 @@ A medição de software não tem dependências externas, apenas dependências in
 ## <a name="example-scenario-for-using-software-metering"></a>Cenário de exemplo de uso da medição de software
  Nesta seção, você criará uma regra de medição de software de exemplo que pode ajudá-lo a resolver os seguintes requisitos de negócios:
 
--   Determinar quantas cópias de um determinado aplicativo estão em sua empresa
+- Determinar quantas cópias de um determinado aplicativo estão em sua empresa
 
--   Descobrir quaisquer cópias não utilizadas de um aplicativo
+- Descobrir quaisquer cópias não utilizadas de um aplicativo
 
--   Determinar quais usuários usam um determinado aplicativo regularmente
+- Determinar quais usuários usam um determinado aplicativo regularmente
 
- O Woodgrove Bank implantou o Microsoft Office 2010 como seu conjunto de produtividade do office padrão. No entanto, para dar suporte a um aplicativo herdado, alguns computadores devem continuar executando o Microsoft Office Word 2003. O departamento de TI deseja reduzir os custos de licenciamento e suporte removendo essas cópias do Word 2003 se o aplicativo herdado não for mais utilizado. O suporte técnico também deseja identificar os usuários que usam o aplicativo herdado.
+  O Woodgrove Bank implantou o Microsoft Office 2010 como seu conjunto de produtividade do office padrão. No entanto, para dar suporte a um aplicativo herdado, alguns computadores devem continuar executando o Microsoft Office Word 2003. O departamento de TI deseja reduzir os custos de licenciamento e suporte removendo essas cópias do Word 2003 se o aplicativo herdado não for mais utilizado. O suporte técnico também deseja identificar os usuários que usam o aplicativo herdado.
 
- John é o gerente de sistemas de TI do Woodgrove Bank e usa a medição de software no Configuration Manager para atingir esses objetivos de negócios. Ele executa as seguintes ações:
+  John é o gerente de sistemas de TI do Woodgrove Bank e usa a medição de software no Configuration Manager para atingir esses objetivos de negócios. Ele executa as seguintes ações:
 
 - John verifica os pré-requisitos da medição de software e confirma que o ponto do Reporting Services está instalado e operacional.
 - John define as configurações do cliente padrão para a medição de software:<br>Ele habilita a medição de software e usa a agenda de coleta de dados padrão de uma vez a cada sete dias.<br>Ele configura inventário de software para arquivos de inventário que têm a extensão .exe definindo a configuração do cliente de inventário de software como **Inventariar esses tipos de arquivo**.<br>Ele adiciona um novo regra de medição de software, chamada **woodgrove.exe**, para monitorar o aplicativo herdado.
@@ -172,4 +172,4 @@ A medição de software não tem dependências externas, apenas dependências in
 - John faz algumas verificações adicionais para confirmar que o aplicativo herdado não é necessário nos computadores identificados. Ele desinstala o aplicativo herdado e a cópia do Word 2003 desses computadores.<br>John executa o relatório **Usuários que executaram um programa de software medido específico** para fornecer à assistência técnica uma lista de usuários que continuam usando o aplicativo herdado.
 - John continua verificando os relatórios de medição de software semanalmente e toma medidas corretivas, se necessário.
 
- Como resultado deste curso de ação, os custos de licenciamento e suporte de TI são reduzidos removendo os aplicativos que não são mais necessários. Além disso, o suporte técnico agora tem a lista que gostaria de ter com os usuários que executam o aplicativo herdado.
+  Como resultado deste curso de ação, os custos de licenciamento e suporte de TI são reduzidos removendo os aplicativos que não são mais necessários. Além disso, o suporte técnico agora tem a lista que gostaria de ter com os usuários que executam o aplicativo herdado.

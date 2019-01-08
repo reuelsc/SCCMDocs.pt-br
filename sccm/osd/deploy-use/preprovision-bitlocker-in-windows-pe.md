@@ -10,12 +10,12 @@ ms.assetid: c7c94ba0-d709-4129-8077-075a8abaea1c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ad4bfe99e841af5ccc4f6792fda664b8259a5369
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 10c072c89064472398c068a62079d1af120b1a11
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350520"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416547"
 ---
 # <a name="preprovision-bitlocker-in-windows-pe-with-system-center-configuration-manager"></a>Pré-provisionar o BitLocker no Windows PE com o System Center Configuration Manager
 
@@ -25,20 +25,20 @@ A etapa da sequência de tarefas **Pré-provisionar o BitLocker** do System Cent
 
  Em geral, você deve fazer o seguinte para pré-provisionar com êxito o BitLocker em um computador que instalará o Windows 7:  
 
--   Reinicie o computador no Windows PE  
+- Reinicie o computador no Windows PE  
 
-    > [!IMPORTANT]  
-    >  Você deve usar uma imagem de inicialização com o Windows PE 4 ou posterior para pré-provisionar o BitLocker. Para obter mais informações sobre as versões do Windows PE com suporte no Configuration Manager, consulte [Dependências externas ao Configuration Manager](../plan-design/infrastructure-requirements-for-operating-system-deployment.md#BKMK_ExternalDependencies).  
+  > [!IMPORTANT]  
+  >  Você deve usar uma imagem de inicialização com o Windows PE 4 ou posterior para pré-provisionar o BitLocker. Para obter mais informações sobre as versões do Windows PE com suporte no Configuration Manager, consulte [Dependências externas ao Configuration Manager](../plan-design/infrastructure-requirements-for-operating-system-deployment.md#BKMK_ExternalDependencies).  
 
--   Particione e formate o disco rígido  
+- Particione e formate o disco rígido  
 
--   Pré-provisionar o BitLocker  
+- Pré-provisionar o BitLocker  
 
--   Instale o Windows 7 com as configurações específicas de rede e sistema operacional  
+- Instale o Windows 7 com as configurações específicas de rede e sistema operacional  
 
--   Adicione um protetor de chave ao BitLocker  
+- Adicione um protetor de chave ao BitLocker  
 
- No Configuration Manager, a maneira recomendada de pré-provisionar o BitLocker em um disco rígido e instalar o Windows 7 é criar uma nova sequência de tarefas e selecionar **Instalar um pacote de imagem existente** na página **Criar Nova Sequência de Tarefas** do **Assistente para Criar Sequência de Tarefas**. O assistente cria as etapas da sequência de tarefas listadas na tabela a seguir.  
+  No Configuration Manager, a maneira recomendada de pré-provisionar o BitLocker em um disco rígido e instalar o Windows 7 é criar uma nova sequência de tarefas e selecionar **Instalar um pacote de imagem existente** na página **Criar Nova Sequência de Tarefas** do **Assistente para Criar Sequência de Tarefas**. O assistente cria as etapas da sequência de tarefas listadas na tabela a seguir.  
 
 > [!NOTE]  
 >  A sequência de tarefas poderá ter mais etapas dependendo de como você tiver definido as configurações no assistente. Por exemplo, você poderá ter a etapa **Capturar Configurações do Windows** se tiver selecionado **Configurações do Microsoft Windows capturadas** na página **Migração de Estado** do assistente.  

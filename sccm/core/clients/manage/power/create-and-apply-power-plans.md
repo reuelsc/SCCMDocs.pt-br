@@ -10,12 +10,12 @@ ms.assetid: 738eddaa-52e2-467f-b453-821ef2884d47
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 4504f26f8f6288750d36028d8eb795ae0d839fbc
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: af1d2dd5b3075413cdc661ecc8d75c532443d2ce
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336214"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424843"
 ---
 # <a name="how-to-create-and-apply-power-plans-in-system-center-configuration-manager"></a>Como criar e aplicar planos de energia no System Center Configuration Manager
 
@@ -28,11 +28,11 @@ O gerenciamento de energia no System Center Configuration Manager permite que vo
 
  Se um computador for membro de várias coleções, e a cada um for aplicável um plano de energia diferente, as seguintes ações serão executadas:  
 
--   Plano de energia: se vários valores para as configurações de energia forem aplicados a um computador, o valor menos restritivo será usado.  
+- Plano de energia: Se vários valores para as configurações de energia forem aplicados a um computador, o valor menos restritivo será usado.  
 
--   Hora de ativação: se várias horas de ativação forem aplicadas a um computador desktop, a hora mais próxima à meia-noite será usada.  
+- Hora de ativação: Se várias horas de ativação forem aplicadas a um computador desktop, a hora mais próxima à meia-noite será usada.  
 
- Use o relatório **Computadores com vários planos de energia** para exibir todos os computadores que têm vários planos de energia aplicados a eles. Isso pode ajudá-lo a descobrir os computadores que apresentam conflitos de energia. Para obter mais informações sobre relatórios de gerenciamento de energia, consulte [Como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
+  Use o relatório **Computadores com vários planos de energia** para exibir todos os computadores que têm vários planos de energia aplicados a eles. Isso pode ajudá-lo a descobrir os computadores que apresentam conflitos de energia. Para obter mais informações sobre relatórios de gerenciamento de energia, consulte [Como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
 
 > [!IMPORTANT]  
 >  As configurações de energia definidas usando a Política de Grupo do Windows substituirão as configurações definidas pelo gerenciamento de energia do Configuration Manager.  
@@ -41,48 +41,48 @@ O gerenciamento de energia no System Center Configuration Manager permite que vo
 
 ### <a name="to-create-and-apply-a-power-plan"></a>Para criar e aplicar um plano de energia  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
+1. No console do Configuration Manager, clique em **Ativos e Conformidade**.  
 
-2.  No espaço de trabalho **Ativos e Conformidade** , clique em **Coleções de Dispositivos**.  
+2. No workspace **Ativos e Conformidade**, clique em **Coleções de Dispositivos**.  
 
-3.  Na lista **Coleções de Dispositivos** , clique na coleção à qual deseja aplicar as configurações de gerenciamento de energia e, na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
+3. Na lista **Coleções de Dispositivos** , clique na coleção à qual deseja aplicar as configurações de gerenciamento de energia e, na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  Na guia **Gerenciamento de Energia** da caixa de diálogo *Propriedades do <nome da coleção\>*, selecione **Especificar configurações de gerenciamento de energia para esta coleção**.  
+4. Na guia **Gerenciamento de Energia** da caixa de diálogo <em>Propriedades\></em>**<Nome de Coleção**, selecione **Especificar configurações de gerenciamento de energia para esta coleção**.  
 
-    > [!NOTE]  
-    >  Você também pode clicar em **Procurar** e copiar as configurações do gerenciamento de energia de uma coleção selecionada para a coleção selecionada.  
+   > [!NOTE]  
+   >  Você também pode clicar em **Procurar** e copiar as configurações do gerenciamento de energia de uma coleção selecionada para a coleção selecionada.  
 
-5.  Nos campos **Início** e **Término** , especifique as horas de início e de término do horário de pico (ou comercial).  
+5. Nos campos **Início** e **Término** , especifique as horas de início e de término do horário de pico (ou comercial).  
 
-6.  Habilite a **Hora de ativação (computadores desktops)** para especificar uma hora em que um computador desktop sairá do modo de suspensão ou hibernação para instalar atualizações agendadas ou instalações de software.  
+6. Habilite a **Hora de ativação (computadores desktops)** para especificar uma hora em que um computador desktop sairá do modo de suspensão ou hibernação para instalar atualizações agendadas ou instalações de software.  
 
-    > [!IMPORTANT]  
-    >  O gerenciamento de energia usa o recurso de tempo de ativação interno do Windows para que os computadores saiam do modo de suspensão ou hibernação. As configurações da hora de ativação não são aplicadas a computadores portáteis, para evitar cenários em que possam ser ativados quando não estiverem conectados. O tempo de ativação é aleatório e os computadores serão ativados durante o período de uma hora a partir do horário de ativação especificado.  
+   > [!IMPORTANT]  
+   >  O gerenciamento de energia usa o recurso de tempo de ativação interno do Windows para que os computadores saiam do modo de suspensão ou hibernação. As configurações da hora de ativação não são aplicadas a computadores portáteis, para evitar cenários em que possam ser ativados quando não estiverem conectados. O tempo de ativação é aleatório e os computadores serão ativados durante o período de uma hora a partir do horário de ativação especificado.  
 
-7.  Se quiser configurar um plano de energia personalizado para o horário de pico (ou comercial), selecione **Horário de Pico Personalizado (ConfigMgr)** na lista suspensa **Plano do Horário de Pico** e clique em **Editar**. Se quiser configurar um plano de energia para o horário fora de pico (ou fora do horário comercial), selecione **Horário Fora de Pico Personalizado (ConfigMgr)** na lista suspensa **Plano do Horário Fora de Pico** e clique em **Editar**.  
+7. Se quiser configurar um plano de energia personalizado para o horário de pico (ou comercial), selecione **Horário de Pico Personalizado (ConfigMgr)** na lista suspensa **Plano do Horário de Pico** e clique em **Editar**. Se quiser configurar um plano de energia para o horário fora de pico (ou fora do horário comercial), selecione **Horário Fora de Pico Personalizado (ConfigMgr)** na lista suspensa **Plano do Horário Fora de Pico** e clique em **Editar**.  
 
-    > [!NOTE]  
-    >  Você pode usar o relatório **Atividade do computador** para ajudá-lo a decidir os agendamentos a ser usados para o horário de pico e fora de pico quando aplicar os planos de energia às coleções de computadores. Para mais informações, consulte [Como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
+   > [!NOTE]  
+   >  Você pode usar o relatório **Atividade do computador** para ajudá-lo a decidir os agendamentos a ser usados para o horário de pico e fora de pico quando aplicar os planos de energia às coleções de computadores. Para mais informações, consulte [Como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
 
-     Também é possível selecionar **Equilibrado (ConfigMgr)**, **Alto Desempenho (ConfigMgr)** e **Economia de Energia (ConfigMgr)** nos planos de energia internos e depois clicar em **Exibição** para exibir as propriedades de cada plano de energia.  
+    Também é possível selecionar **Equilibrado (ConfigMgr)**, **Alto Desempenho (ConfigMgr)** e **Economia de Energia (ConfigMgr)** nos planos de energia internos e depois clicar em **Exibição** para exibir as propriedades de cada plano de energia.  
 
-    > [!NOTE]  
-    >  Não é possível modificar os planos de energia internos.  
+   > [!NOTE]  
+   >  Não é possível modificar os planos de energia internos.  
 
-8.  Na caixa de diálogo ****Propriedades* do\><nome do plano de energia*, defina as seguintes configurações:  
+8. Na caixa de diálogo <em>Propriedades\></em>**<nome do plano de energia**, defina as seguintes configurações:  
 
-    -   **Nome:** especifique um nome para esse plano de energia ou use o valor padrão fornecido.  
+   -   **Nome:** Especifique um nome para esse plano de energia ou use o valor padrão fornecido.  
 
-    -   **Descrição:**  especifique uma descrição para esse plano de energia ou use o valor padrão fornecido.  
+   -   **Descrição:**  Especifique uma descrição para esse plano de energia ou use o valor padrão fornecido.  
 
-    -   **Especificar as propriedades para este plano de energia:** configure as propriedades do plano de energia. Para desabilitar uma propriedade, desmarque a caixa de seleção. Para obter mais informações sobre as configurações disponíveis, veja [Available power management plan settings](#BKMK_Plans) neste tópico.  
+   -   **Especifique as propriedades para este plano de energia:** Configure as propriedades do plano de energia. Para desabilitar uma propriedade, desmarque a caixa de seleção. Para obter mais informações sobre as configurações disponíveis, veja [Available power management plan settings](#BKMK_Plans) neste tópico.  
 
-        > [!IMPORTANT]  
-        >  As configurações habilitadas são aplicadas aos computadores quando o plano de energia é aplicado. Se você desmarcar uma caixa de seleção da configuração de energia, o valor no computador cliente não será alterado quando o plano de energia é aplicado. Desmarcar uma caixa de seleção não restaura a configuração de energia para seu valor anterior à aplicação de um plano de energia.  
+       > [!IMPORTANT]  
+       >  As configurações habilitadas são aplicadas aos computadores quando o plano de energia é aplicado. Se você desmarcar uma caixa de seleção da configuração de energia, o valor no computador cliente não será alterado quando o plano de energia é aplicado. Desmarcar uma caixa de seleção não restaura a configuração de energia para seu valor anterior à aplicação de um plano de energia.  
 
-9. Clique em **OK** para fechar a caixa de diálogo ****Propriedades* do\><nome do plano de energia*.  
+9. Clique em **OK** para fechar a caixa de diálogo <em>Propriedades\></em>**<nome do plano de energia**.  
 
-10. Clique em **OK** para fechar a caixa de diálogo ****Configurações* do \><nome da coleção* e aplicar o plano de energia.  
+10. Clique em **OK** para fechar a caixa de diálogo <em>Configurações\></em>**<Nome da Coleção** e aplicar o plano de energia.  
 
 ##  <a name="BKMK_Plans"></a> Available power management plan settings  
  A tabela a seguir lista as configurações de gerenciamento de energia disponíveis no Configuration Manager. Você pode definir configurações separadas para quando o computador estiver conectado ou funcionando com bateria. Dependendo da versão do Windows que você está usando, algumas configurações podem não ser configuráveis.  

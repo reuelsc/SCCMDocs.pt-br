@@ -10,12 +10,12 @@ ms.assetid: d0c6f7a0-dcae-4e6d-aa28-35d464d97ff7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 51bfe17980a7660ecdccfd13a11d6c7bcfd93e5f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: cec99ab9d4e52f2a2db4aaef0de47b5abfb794b5
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344367"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417601"
 ---
 # <a name="security-and-privacy-for-asset-intelligence-in-system-center-configuration-manager"></a>Segurança e privacidade do Asset Intelligence no System Center Configuration Manager
 
@@ -38,18 +38,18 @@ Este tópico contém as informações de segurança e privacidade do Asset Intel
 
  O Asset Intelligence não envia informações sobre os usuários e os computadores ou o uso da licença para a Microsoft. Você pode optar por enviar solicitações ao System Center Online para categorização, o que significa que você pode marcar um ou mais títulos de software não categorizados e enviá-los para o System Center Online para pesquisa e categorização. Depois que um título de software é carregado, os pesquisadores da Microsoft identificam, categorizam e disponibilizam esse conhecimento para todos os clientes que usam o serviço online. É necessário estar ciente das implicações de privacidade do envio de informações ao System Center Online:  
 
--   O upload se aplica somente às informações de título de software genéricas (nome, fornecedor e assim por diante) que você escolher enviar para o System Center Online. As informações de inventário não são enviadas com um upload.  
+- O upload se aplica somente às informações de título de software genéricas (nome, fornecedor e assim por diante) que você escolher enviar para o System Center Online. As informações de inventário não são enviadas com um upload.  
 
--   O upload nunca ocorre automaticamente, e o sistema não foi projetado para a automatização dessa tarefa. Você deve selecionar e aprovar manualmente o carregamento de cada título de software.  
+- O upload nunca ocorre automaticamente, e o sistema não foi projetado para a automatização dessa tarefa. Você deve selecionar e aprovar manualmente o carregamento de cada título de software.  
 
--   Uma caixa de diálogo mostra exatamente quais dados serão carregados, antes do início do processo de upload.  
+- Uma caixa de diálogo mostra exatamente quais dados serão carregados, antes do início do processo de upload.  
 
--   As informações de licença não são enviadas à Microsoft. As informações de licença são armazenadas em uma área separada do banco de dados do Configuration Manager e não podem ser enviadas à Microsoft.  
+- As informações de licença não são enviadas à Microsoft. As informações de licença são armazenadas em uma área separada do banco de dados do Configuration Manager e não podem ser enviadas à Microsoft.  
 
--   Qualquer título de software carregado se torna público, o que significa que o conhecimento desse determinado aplicativo e sua categorização se tornam parte do catálogo do Asset Intelligence do System Center Online e, posteriormente, podem ser baixados para outros consumidores do catálogo.  
+- Qualquer título de software carregado se torna público, o que significa que o conhecimento desse determinado aplicativo e sua categorização se tornam parte do catálogo do Asset Intelligence do System Center Online e, posteriormente, podem ser baixados para outros consumidores do catálogo.  
 
--   A origem do título de software não é registrada no catálogo do Asset Intelligence e não é disponibilizada para outros clientes. No entanto, ainda é necessário se certificar de que nenhum título de aplicativo que contém informações privadas é carregado.  
+- A origem do título de software não é registrada no catálogo do Asset Intelligence e não é disponibilizada para outros clientes. No entanto, ainda é necessário se certificar de que nenhum título de aplicativo que contém informações privadas é carregado.  
 
--   Os dados carregados não podem ser cancelados.  
+- Os dados carregados não podem ser cancelados.  
 
- Antes de configurar a coleção de dados do Asset Intelligence e optar por enviar informações ao System Center Online, considere os requisitos de privacidade de sua organização.  
+  Antes de configurar a coleção de dados do Asset Intelligence e optar por enviar informações ao System Center Online, considere os requisitos de privacidade de sua organização.  

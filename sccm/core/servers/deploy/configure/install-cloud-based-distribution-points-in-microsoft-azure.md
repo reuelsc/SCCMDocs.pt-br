@@ -10,12 +10,12 @@ ms.assetid: bb83ac87-9914-4a35-b633-ad070031aa6e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a2d39617db7f2ea9a61e73a3c21cc2509fed2f07
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 3d6b4215615b6401a9163edfa33893d866e0c2ce
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456610"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424758"
 ---
 # <a name="install-a-cloud-distribution-point-for-configuration-manager"></a>Instalar um ponto de distribuição na nuvem do Configuration Manager
 
@@ -93,20 +93,20 @@ Execute este procedimento no site para hospedar esse ponto de distribuição na 
 
 4.  Na página **Configurações**, especifique as seguintes configurações e selecione **Avançar**:  
 
-    - **Região**: selecione a região do Azure em que você deseja criar o ponto de distribuição na nuvem.  
+    - **Região**: Selecione a região do Azure em que você deseja criar o ponto de distribuição na nuvem.  
 
     - **Grupo de Recursos** (somente no método de implantação do Azure Resource Manager)  
 
-        - **Usar existente**: selecione um grupo de recursos existente na lista suspensa.  
+        - **Usar existente**: Selecione um grupo de recursos existente na lista suspensa.  
 
-        - **Criar**: insira o nome do novo grupo de recursos a ser criado em sua assinatura do Azure.  
+        - **Criar um novo**: Insira o nome do novo grupo de recursos a ser criado em sua assinatura do Azure.  
 
-    - **Site primário**: selecione o site primário para distribuir conteúdo a esse ponto de distribuição.
+    - **Site primário**: Selecione o site primário para distribuir conteúdo a esse ponto de distribuição.
 
-    - **Arquivo de certificado**: selecione **Procurar** e selecione o arquivo PFX do certificado de autenticação de servidor desse ponto de distribuição na nuvem. O nome comum desse certificado popula os campos obrigatórios **FQDN do serviço** e **Nome do serviço**.  
+    - **Arquivo de certificado**: Selecione **Procurar** e selecione o arquivo PFX do certificado de autenticação de servidor desse ponto de distribuição na nuvem. O nome comum desse certificado popula os campos obrigatórios **FQDN do serviço** e **Nome do serviço**.  
 
         > [!NOTE]  
-        > O certificado de autenticação de servidor do ponto de distribuição na nuvem permite o uso de caracteres curinga. Se você usar um certificado curinga, substitua o asterisco (*) no campo **FQDN do serviço** pelo nome do host desejado para o serviço.  
+        > O certificado de autenticação de servidor do ponto de distribuição na nuvem permite o uso de caracteres curinga. Se você usar um certificado curinga, substitua o asterisco (\*) no campo **FQDN do Serviço** pelo nome do host desejado para o serviço.  
 
 5. Na página **Alertas**, configure as cotas de armazenamento, cotas de transferência e com qual percentual dessas cotas que você deseja que o Configuration Manager gere alertas. Em seguida, selecione **Avançar**.  
 
@@ -204,9 +204,9 @@ O Configuration Manager verifica periodicamente o serviço do Azure. Se o servi�
 
 Configure limites para a quantidade de dados que você deseja armazenar no ponto de distribuição na nuvem e para a quantidade de dados que os clientes baixam do ponto de distribuição. Use alertas para esses limites para ajudá-lo a decidir quando parar ou excluir o serviço de nuvem, ajustar o conteúdo que você armazena no ponto de distribuição na nuvem ou modificar quais clientes podem usar o serviço. 
 
-- **Limite de alerta de armazenamento**: o limite de alerta de armazenamento define um limite superior em GB para a quantidade de dados ou o conteúdo que você deseja armazenar no ponto de distribuição na nuvem. Por padrão, esse limite é 2.000 GB. O Configuration Manager gera alertas de aviso e críticos quando o espaço livre restante atinge o nível especificado. Por padrão, esses alertas ocorrem em 50% e 90% do limite.  
+- **Limite de alerta de armazenamento**: O limite de alerta de armazenamento define um limite superior em GB no volume de dados ou conteúdo que você deseja armazenar no ponto de distribuição em nuvem. Por padrão, esse limite é 2.000 GB. O Configuration Manager gera alertas de aviso e críticos quando o espaço livre restante atinge o nível especificado. Por padrão, esses alertas ocorrem em 50% e 90% do limite.  
 
-- **Limite de alerta de transferência mensal**: esse limite ajuda a monitorar a quantidade de conteúdo que você transfere do ponto de distribuição aos clientes em um período de 30 dias. Por padrão, esse limite é 10.000 GB. O site gera alertas de aviso e críticos quando as transferências atingem os valores que você definiu. Por padrão, esses alertas ocorrem em 50% e 90% do limite.  
+- **Limite de alerta de transferência mensal**: O limite de alerta de transferência mensal ajuda a monitorar o volume de conteúdo que você transfere do ponto de distribuição para clientes num período de 30 dias. Por padrão, esse limite é 10.000 GB. O site gera alertas de aviso e críticos quando as transferências atingem os valores que você definiu. Por padrão, esses alertas ocorrem em 50% e 90% do limite.  
 
     > [!IMPORTANT]  
     >  O Configuration Manager monitora a transferência de dados, mas não interrompe a transferência de dados que está além do limite de alerta de transferência especificado.  
@@ -233,7 +233,7 @@ Quando você edita as propriedades de um ponto de distribuição de nuvem, as se
 
 - **Descrição**  
 
-- **Arquivo de certificado**: antes que o certificado de autenticação de servidor expire, emita um novo certificado com o mesmo nome comum. Em seguida, adicione o novo certificado aqui para que o serviço comece a usá-lo. Se o certificado expirar, os clientes não poderão confiar no serviço e usá-lo.  
+- **Arquivo de certificado**: Antes que o certificado de autenticação de servidor expire, emita um novo certificado com o mesmo nome comum. Em seguida, adicione o novo certificado aqui para que o serviço comece a usá-lo. Se o certificado expirar, os clientes não poderão confiar no serviço e usá-lo.  
 
 #### <a name="alerts"></a>Alertas
 Ajuste os limites de dados para alertas de armazenamento e de transferência mensal.  

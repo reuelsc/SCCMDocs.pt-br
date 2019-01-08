@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: b3ce22747cddc1371fb38718cc97b70cda8afcb1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 3632cbf8a512ef39413685f29b769e133fbcee40
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353596"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424268"
 ---
 # <a name="manage-certificates-and-security-for-updates-publisher"></a>Gerenciar certificados e segurança para o Updates Publisher
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Os procedimentos a seguir podem ajudar você a configurar o armazenamento de certificados no servidor de atualização, configurar um certificado autoassinado no computador cliente e configurar a Política de Grupo para permitir que o Windows Update Agent nos computadores verifique se há atualizações de publicação.
+Os procedimentos a seguir podem ajudar você a configurar o repositório de certificados no servidor de atualização, configurar um certificado autoassinado no computador cliente e configurar a Política de Grupo para permitir que o Windows Update Agent nos computadores verifique se há atualizações de publicação.
 
 ## <a name="configure-the-certificate-store-on-the-update-server"></a>Configurar o armazenamento de certificados no servidor de atualização
  O Updates Publisher usa um certificado digital para assinar as atualizações nos catálogos nos quais publica. Antes de publicar um catálogo no servidor de atualização, esse certificado deve estar no repositório de certificados do servidor de atualização e no repositório de certificados do computador do Updates Publisher, se esse computador for remoto com relação ao servidor de atualização.
@@ -60,29 +60,29 @@ Você pode usar um dentre vários métodos para configurar certificados em compu
 Veja a seguir um exemplo de como configurar o certificado de autenticação em computadores cliente.
 
 ### <a name="to-configure-a-self-signing-certificate-on-client-computers"></a>Para configurar um certificado autoassinado em computadores cliente
-1.  Em um computador com acesso ao servidor de atualização, clique em **Iniciar**, em **Executar**, digite **MMC** na caixa de texto e clique em **OK** para abrir o MMC (Console de Gerenciamento da Microsoft).
+1. Em um computador com acesso ao servidor de atualização, clique em **Iniciar**, em **Executar**, digite **MMC** na caixa de texto e clique em **OK** para abrir o MMC (Console de Gerenciamento da Microsoft).
 
-2.  Clique em **Arquivo**, clique em **Adicionar/Remover Snap-in**, clique em **Adicionar**, em **Certificados**, clique em **Adicionar**, selecione **Conta do computador** e clique em **Avançar**.
+2. Clique em **Arquivo**, clique em **Adicionar/Remover Snap-in**, clique em **Adicionar**, em **Certificados**, clique em **Adicionar**, selecione **Conta do computador** e clique em **Avançar**.
 
-3.  Selecione **Outro computador**, digite o nome do servidor de atualização ou clique em **Procurar** para localizar o computador do servidor de atualização, clique em **Concluir**, em **Fechar** e clique em **OK**.
+3. Selecione **Outro computador**, digite o nome do servidor de atualização ou clique em **Procurar** para localizar o computador do servidor de atualização, clique em **Concluir**, em **Fechar** e clique em **OK**.
 
-4.  Expanda **Certificados (*nome do servidor de atualização*)**, expanda **WSUS** e, em seguida, clique em **Certificados**.
+4. Expanda **Certificados (*nome do servidor de atualização*)**, expanda **WSUS** e, em seguida, clique em **Certificados**.
 
-5.  Clique com o botão direito no certificado no painel de resultados, clique em **Todas as Tarefas** e clique em **Exportar**. Complete o **Assistente para Exportar Certificados** usando as configurações padrão para criar um arquivo de certificado de exportação com o nome e o local especificados no assistente.
+5. Clique com o botão direito no certificado no painel de resultados, clique em **Todas as Tarefas** e clique em **Exportar**. Complete o **Assistente para Exportar Certificados** usando as configurações padrão para criar um arquivo de certificado de exportação com o nome e o local especificados no assistente.
 
-6.  Use um dos métodos a seguir para adicionar o certificado usado para assinar o catálogo de atualizações para cada computador cliente que usará o WUA para verificar a existência de atualizações no catálogo. Adicione o certificado no computador cliente da seguinte maneira:
+6. Use um dos métodos a seguir para adicionar o certificado usado para assinar o catálogo de atualizações para cada computador cliente que usará o WUA para verificar a existência de atualizações no catálogo. Adicione o certificado no computador cliente da seguinte maneira:
 
-    -   Para os certificados autoassinados: adicione o certificado aos repositórios de certificado **Autoridades de Certificação Raiz Confiáveis** e **Editores Confiáveis**.
+   -   Para certificados autoassinados: Adicione o certificado aos repositórios de certificados **Autoridades de Certificação Confiáveis** e **Editores Confiáveis**.
 
-    -   Para certificados emitidos por uma CA (autoridade de certificação): adicione o certificado ao repositório de certificados **Editores Confiáveis**.
+   -   Para certificados emitidos por CAs (Autoridades de Certificação): Adicione o certificado ao repositório de certificados **Fornecedores Confiáveis**.
 
-    > [!NOTE]
-    > O WUA também verifica se a configuração **Permitir conteúdo assinado da política de grupo de local do serviço de atualização da intranet da Microsoft** está habilitada no computador local. Essa configuração da política deve ser habilitada para que o WUA procure atualizações que foram criadas e publicadas com o Updates Publisher. Para saber mais sobre como habilitar essa configuração de Política de Grupo, veja [Como configurar a Política de Grupo em computadores cliente] (https://technet.microsoft.com/library/bb530967.aspx(d=robot).
+   > [!NOTE]
+   > O WUA também verifica se a configuração **Permitir conteúdo assinado da política de grupo de local do serviço de atualização da intranet da Microsoft** está habilitada no computador local. Essa configuração da política deve ser habilitada para que o WUA procure atualizações que foram criadas e publicadas com o Updates Publisher. Para saber mais sobre como habilitar essa configuração de Política de Grupo, confira [Como configurar a Política de Grupo em computadores cliente](<https://technet.microsoft.com/library/bb530967.aspx(d=robot>).
 
 
 
-## <a name="configuring-group-policy-to-allow-wua-on-computers-to-scan-for-published-updates"></a>Configurar a Política de Grupo para permitir que o WUA em computadores verifique se há atualizações publicadas
-Antes de o WUA (Windows Update Agent) nos computadores verificarem se há atualizações que foram criadas e publicadas com o Updates Publisher, habilite uma configuração de política para permitir um conteúdo assinado do local do serviço de atualização da intranet da Microsoft. Habilitada a configuração de política, o WUA aceitará as atualizações recebidas através de um local de intranet se as atualizações são assinadas no repositório de certificados de **Editores Confiáveis** no computador local. Há vários métodos para configurar a Política de Grupo em computadores no ambiente.
+## <a name="configuring-group-policy-to-allow-wuaon-computers-to-scan-for-published-updates"></a>Configurar a Política de Grupo para permitir que o WUA em computadores verifique se há atualizações publicadas
+Antes de o WUA (Windows Update Agent) nos computadores verificarem se há atualizações que foram criadas e publicadas com o Updates Publisher, habilite uma configuração de política para permitir um conteúdo assinado da localização do serviço de atualização da intranet da Microsoft. Habilitada a configuração de política, o WUA aceitará as atualizações recebidas através de uma localização de intranet se as atualizações estiverem assinadas no repositório de certificados de **Editores Confiáveis** no computador local. Há vários métodos para configurar a Política de Grupo em computadores no ambiente.
 
 Para computadores que não estão no domínio, é possível configurar uma chave do Registro que permite conteúdo assinado de um local de serviço da intranet do Microsoft Update.
 

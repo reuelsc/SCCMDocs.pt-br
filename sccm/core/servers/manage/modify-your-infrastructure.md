@@ -10,12 +10,12 @@ ms.assetid: a7975dc8-46ab-4dae-86b6-dc3e3cf3b2f0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 13d9e83adcdf0e125d1596ff93fbb1a0fa67c09f
-ms.sourcegitcommit: 8827ffaea108678da968a3623f072876990c830c
+ms.openlocfilehash: 0b65f5fb8790f907699a26e36c1ffe41b7e0eb03
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49411320"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418638"
 ---
 # <a name="modify-your-system-center-configuration-manager-infrastructure"></a>Modificar a infraestrutura do System Center Configuration Manager
 
@@ -29,36 +29,36 @@ Depois de instalar um ou mais sites, talvez você precise modificar configuraç�
 
  Em cada site do Configuration Manager, você pode executar novamente a Instalação para:  
 
--   Adicionar outra instância do Provedor de SMS (cada instância adicional do Provedor de SMS deve estar em um computador separado)  
+- Adicionar outra instância do Provedor de SMS (cada instância adicional do Provedor de SMS deve estar em um computador separado)  
 
--   Remover uma instância do Provedor de SMS (para remover o último Provedor de SMS de um site, é necessário desinstalar o site)  
+- Remover uma instância do Provedor de SMS (para remover o último Provedor de SMS de um site, é necessário desinstalar o site)  
 
- É possível monitorar a instalação ou a remoção do Provedor de SMS exibindo o **ConfigMgrSetup.log** na pasta raiz do servidor de site em que você executa a Instalação.  
+  É possível monitorar a instalação ou a remoção do Provedor de SMS exibindo o **ConfigMgrSetup.log** na pasta raiz do servidor de site em que você executa a Instalação.  
 
- Antes de modificar o Provedor de SMS em um site, familiarize-se com as informações em [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
+  Antes de modificar o Provedor de SMS em um site, familiarize-se com as informações em [Planejar o Provedor de SMS para o System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
 #### <a name="to-manage-the-sms-provider-configuration-for-a-site"></a>Para gerenciar a configuração do Provedor de SMS para um site  
 
-1.  Execute a **Instalação do Configuration Manager** na **&lt;pasta de instalação do site do Configuration Manager\>\BIN\X64\setup.exe**.  
+1. Execute a **Instalação do Configuration Manager** na **&lt;pasta de instalação do site do Configuration Manager\>\BIN\X64\setup.exe**.  
 
-2.  Na página **Introdução** , selecione **Realizar a manutenção do site ou redefinir este site**e clique em **Próximo**.  
+2. Na página **Introdução** , selecione **Realizar a manutenção do site ou redefinir este site**e clique em **Próximo**.  
 
-3.  Na página **Manutenção do Site** , selecione **Modificar configuração do Provedor de SMS**e clique em **Próximo**.  
+3. Na página **Manutenção do Site** , selecione **Modificar configuração do Provedor de SMS**e clique em **Próximo**.  
 
-4.  Na página **Gerenciar Provedores de SMS** , selecione uma das opções a seguir e conclua o assistente usando uma dessas opções:  
+4. Na página **Gerenciar Provedores de SMS** , selecione uma das opções a seguir e conclua o assistente usando uma dessas opções:  
 
-    -   Para adicionar um Provedor de SMS adicional nesse site:  
+   -   Para adicionar um Provedor de SMS adicional nesse site:  
 
-         Selecione **Adicionar um novo Provedor de SMS**, especifique o FQDN para um computador que irá hospedar, mas que atualmente não hospeda, um Provedor de SMS e clique em **Próximo**.  
+        Selecione **Adicionar um novo Provedor de SMS**, especifique o FQDN para um computador que irá hospedar, mas que atualmente não hospeda, um Provedor de SMS e clique em **Próximo**.  
 
-    -   Para remover um Provedor de SMS de um servidor:  
+   -   Para remover um Provedor de SMS de um servidor:  
 
-         Selecione **Desinstalar o Provedor de SMS especificado**, selecione o nome do computador do qual deseja remover o Provedor de SMS, clique em **Próximo**e confirme a ação.  
+        Selecione **Desinstalar o Provedor de SMS especificado**, selecione o nome do computador do qual deseja remover o Provedor de SMS, clique em **Próximo**e confirme a ação.  
 
-        > [!TIP]  
-        >  Para mover o Provedor de SMS entre dois computadores, é necessário instalar o Provedor de SMS no novo computador e removê-lo do local original. Não há opção dedicada para mover o Provedor de SMS entre computadores em um único processo.  
+       > [!TIP]  
+       >  Para mover o Provedor de SMS entre dois computadores, é necessário instalar o Provedor de SMS no novo computador e removê-lo do local original. Não há opção dedicada para mover o Provedor de SMS entre computadores em um único processo.  
 
- Após a conclusão do Assistente de Instalação, a configuração do Provedor de SMS é concluída. Na guia **Geral** , na caixa de diálogo **Propriedades** do site, você pode verificar os computadores que têm um Provedor de SMS instalados para um site.  
+   Após a conclusão do Assistente de Instalação, a configuração do Provedor de SMS é concluída. Na guia **Geral** , na caixa de diálogo **Propriedades** do site, você pode verificar os computadores que têm um Provedor de SMS instalados para um site.  
 
 ##  <a name="bkmk_Console"></a> Gerenciar o console do Configuration Manager  
  Estas são as tarefas que você pode realizar para gerenciar o console do Configuration Manager:  
@@ -110,11 +110,11 @@ Por exemplo, considere um cenário em que você instala o console do Configurati
 ##  <a name="BKMK_ConfigDCOMforRemoteConsole"></a> Configurar permissões DCOM para consoles remotos do Configuration Manager  
  A conta de usuário que executa o console do Configuration Manager requer permissão para acessar o banco de dados do site usando o Provedor de SMS. No entanto, usuários administrativos que usam um console remoto do Configuration Manager também precisam de permissões DCOM de **Ativação Remota** em:  
 
--   o computador do servidor do site  
+- o computador do servidor do site  
 
--   Cada computador que hospeda uma instância do Provedor de SMS  
+- Cada computador que hospeda uma instância do Provedor de SMS  
 
- O grupo de segurança chamado **Administradores de SMS** concede acesso ao Provedor de SMS de um computador e também pode ser usado para conceder as permissões DCOM necessárias. Esse grupo é local para o computador quando o Provedor de SMS é executado em um servidor membro e é um grupo de domínio local quando o Provedor de SMS é executado em um controlador de domínio.  
+  O grupo de segurança chamado **Administradores de SMS** concede acesso ao Provedor de SMS de um computador e também pode ser usado para conceder as permissões DCOM necessárias. Esse grupo é local para o computador quando o Provedor de SMS é executado em um servidor membro e é um grupo de domínio local quando o Provedor de SMS é executado em um controlador de domínio.  
 
 > [!IMPORTANT]  
 >  O console do Configuration Manager usa a WMI (Instrumentação de Gerenciamento do Windows) para se conectar ao Provedor de SMS, e a WMI usa o DCOM internamente. Portanto, o Configuration Manager vai requerer permissões para ativar um servidor DCOM no computador do Provedor de SMS se o console do Configuration Manager estiver sendo executado em um computador que não seja o do Provedor de SMS. Por padrão, a Ativação Remota é concedida somente aos membros do grupo Administradores internos. Se você permitir que o grupo Administradores de SMS tenha permissão de Ativação Remota, um membro desse grupo poderá tentar ataques DCOM contra o computador do Provedor de SMS. Essa configuração também aumenta a superfície sujeita a ataques do computador. Para atenuar essa ameaça, monitore atentamente os membros do grupo Administradores de SMS.  
@@ -123,24 +123,24 @@ Por exemplo, considere um cenário em que você instala o console do Configurati
 
 #### <a name="to-configure-dcom-permissions-for-remote-configuration-manager-console-connections"></a>Para configurar permissões DCOM para conexões remotas do console do Gerenciador de Configurações  
 
-1.  Abra  os  **Serviços de Componentes** executando **Dcomcnfg.exe**.  
+1. Abra  os  **Serviços de Componentes** executando **Dcomcnfg.exe**.  
 
-2.  Em **Serviços de Componentes**, clique em **Raiz do console** >  **Serviços de Componentes** > **Computadores**e clique em **Meu Computador**. No menu **Ação** , clique em **Propriedades**.  
+2. Em **Serviços de Componentes**, clique em **Raiz do console** >  **Serviços de Componentes** > **Computadores**e clique em **Meu Computador**. No menu **Ação** , clique em **Propriedades**.  
 
-3.  Na caixa de diálogo **Propriedades do Meu Computador** , na guia **Segurança COM** , seção **Permissões de Inicialização e Ativação** , clique em **Editar Limites**.  
+3. Na caixa de diálogo **Propriedades do Meu Computador** , na guia **Segurança COM** , seção **Permissões de Inicialização e Ativação** , clique em **Editar Limites**.  
 
-4.  Na caixa de diálogo **Permissões de Inicialização e Ativação** , clique em **Adicionar**.  
+4. Na caixa de diálogo **Permissões de Inicialização e Ativação** , clique em **Adicionar**.  
 
-5.  Na caixa de diálogo **Selecionar Usuário, Computadores, Contas de Serviço ou Grupos** , na caixa **Digite os nomes de objetos a serem selecionados (exemplos)** , digite **SMS Admins**e clique em **OK**.  
+5. Na caixa de diálogo **Selecionar Usuário, Computadores, Contas de Serviço ou Grupos** , na caixa **Digite os nomes de objetos a serem selecionados (exemplos)** , digite **SMS Admins**e clique em **OK**.  
 
-    > [!NOTE]  
-    >  Talvez seja necessário alterar a configuração de **Deste Local** para localizar o grupo Administradores de SMS. Esse grupo é local para o computador quando o Provedor de SMS é executado em um servidor membro e é um grupo de domínio local quando o Provedor de SMS é executado em um controlador de domínio.  
+   > [!NOTE]  
+   >  Talvez seja necessário alterar a configuração de **Deste Local** para localizar o grupo Administradores de SMS. Esse grupo é local para o computador quando o Provedor de SMS é executado em um servidor membro e é um grupo de domínio local quando o Provedor de SMS é executado em um controlador de domínio.  
 
-6.  Na seção **Permissões para Administradores de SMS** , para permitir a ativação remota, marque a caixa de seleção **Ativação Remota** .  
+6. Na seção **Permissões para Administradores de SMS** , para permitir a ativação remota, marque a caixa de seleção **Ativação Remota** .  
 
-7.  Clique em **OK** , clique em **OK** novamente e feche **Gerenciamento de Computador**. Agora, seu computador está configurado para permitir o acesso remoto do console do Configuration Manager a membros do grupo de Administradores de SMS.  
+7. Clique em **OK** , clique em **OK** novamente e feche **Gerenciamento de Computador**. Agora, seu computador está configurado para permitir o acesso remoto do console do Configuration Manager a membros do grupo de Administradores de SMS.  
 
- Repita esse procedimento em cada computador do Provedor de SMS que der suporte a consoles remotos do Configuration Manager.  
+   Repita esse procedimento em cada computador do Provedor de SMS que der suporte a consoles remotos do Configuration Manager.  
 
 ##  <a name="bkmk_dbconfig"></a> Modificar a configuração do banco de dados do site  
  Depois de instalar um site, você pode modificar a configuração do banco de dados e o servidor do banco de dados do site executando a Instalação em um servidor de site de administração central ou no servidor do site primário. Você poderá mover o banco de dados do site para uma nova instância do SQL Server no mesmo computador ou para um computador diferente que execute uma versão do SQL Server com suporte. Não há suporte para essas alterações e outras relacionadas em relação à configuração do banco de dados em sites secundários.  
@@ -164,10 +164,10 @@ Por exemplo, considere um cenário em que você instala o console do Configurati
 
 **Ao mover o banco de dados do site, você deverá configurar o seguinte:**  
 
--   **Configurar o acesso:** ao mover o banco de dados do site para um novo computador, adicione a conta de computador do servidor do site ao grupo **Local de Administradores** no computador que executa o SQL Server. Se usar um cluster do SQL Server para o banco de dados do site, você deverá adicionar a conta de computador ao grupo **Local de administradores** de cada computador do nó de cluster do Windows Server.  
+-   **Configure o acesso:** Ao mover o banco de dados do site para um novo computador, adicione a conta de computador do servidor do site ao grupo **Local de administradores** no computador que executa o SQL Server. Se usar um cluster do SQL Server para o banco de dados do site, você deverá adicionar a conta de computador ao grupo **Local de administradores** de cada computador do nó de cluster do Windows Server.  
 
--   **Habilitar a integração CLR (Common Language Runtime):**  quando você move o banco de dados para uma nova instância do SQL Server, ou para um novo computador SQL Server, é necessário habilitar a integração CLR (Common Language Runtime). Para habilitar o CLR, use o **SQL Server Management Studio** para se conectar à instância do SQL Server que hospeda o banco de dados do site e execute o seguinte procedimento armazenado como uma consulta: **sp_configure ‘clr enabled’,1; reconfigure**.  
--  **Verificar se o novo SQL Server tem acesso ao local de backup:** ao usar um UNC para armazenar o backup do banco de dados do site, depois de mover o banco de dados para um novo servidor, incluindo uma movimentação para um Grupo de Disponibilidade AlwaysOn do SQL Server ou um cluster do SQL Server, garanta que a conta de computador do novo SQL Server tem permissões de **gravação** no local do UNC.  
+-   **Habilite a integração do CLR (Common Language Runtime):**  Quando você move o banco de dados para uma nova instância do SQL Server, ou para um novo computador SQL Server, é necessário habilitar a integração CLR (Common Language Runtime). Para habilitar o CLR, use o **SQL Server Management Studio** para se conectar à instância do SQL Server que hospeda o banco de dados do site e execute o seguinte procedimento armazenado como uma consulta: **sp_configure ‘clr enabled’,1; reconfigure**.  
+-  **Verifique se o novo SQL Server tem acesso à localização de backup:** ao usar um UNC para armazenar o backup do banco de dados do site, depois de mover o banco de dados para um novo servidor, incluindo uma movimentação para um Grupo de Disponibilidade AlwaysOn do SQL Server ou um cluster do SQL Server, garanta que a conta de computador do novo SQL Server tenha permissões de **gravação** na localização do UNC.  
 
 
 > [!IMPORTANT]  
@@ -182,9 +182,9 @@ Você pode escolher a conta que executa os serviços do SQL para o banco de dado
 
 A documentação do SQL Server pode ajudar você a [registrar manualmente o SPN](https://technet.microsoft.com/library/ms191153\(v=sql.120\).aspx)e fornecer informações adicionais sobre conexões SPNs e Kerberos.  
 
-> [!IMPORTANT]  
->  -   Ao criar um SPN para um SQL Server clusterizado, você deverá especificar o nome virtual do cluster do SQL Server como o nome do computador do SQL Server.  
-> -   O comando usado para registrar um SPN para uma instância nomeada do SQL Server é o mesmo usado para registrar um SPN para uma instância padrão, com exceção de que o número da porta deve coincidir com a porta usada pela instância nomeada.  
+> [!IMPORTANT]
+> - Ao criar um SPN para um SQL Server clusterizado, você deverá especificar o nome virtual do cluster do SQL Server como o nome do computador do SQL Server.  
+>   -   O comando usado para registrar um SPN para uma instância nomeada do SQL Server é o mesmo usado para registrar um SPN para uma instância padrão, com exceção de que o número da porta deve coincidir com a porta usada pela instância nomeada.  
 
 Você pode registrar um SPN para a conta de serviço do SQL Server do servidor de banco de dados do site usando a ferramenta **Setspn** . É necessário executar a ferramenta Setspn em um computador que reside no domínio do SQL Server, que deverá usar as credenciais de administrador de domínio para a execução.  
 
@@ -279,9 +279,9 @@ A conta que você usa para executar uma redefinição de site deve ter as seguin
 
 -   A conta que você usa para executar uma redefinição de site deve ter as seguintes permissões:  
 
-    -   **Site de administração central**: a conta que você usa para executar uma redefinição desse site deve ser de administrador local no servidor do site de administração central e deve ter privilégios equivalentes à função de segurança de administração baseada em função de **Administrador Completo** .  
+    -   **Site de administração central**: a conta que você usa para executar uma redefinição desse site precisa ser de administrador local no servidor do site de administração central e ter privilégios equivalentes à função de segurança de administração baseada em função de **Administrador Completo**.  
 
-    -   **Site primário**: a conta que você usa para executar uma redefinição desse site deve ser de administrador local no servidor do site primário e deve ter privilégios equivalentes à função de segurança de administração baseada em função de **Administrador Completo** . Se o site primário estiver em uma hierarquia com um site de administração central, essa conta também deverá ser de administrador local no servidor do site de administração central.  
+    -   **Site primário**: a conta que você usa para executar uma redefinição desse site precisa ser de administrador local no servidor do site primário e ter privilégios equivalentes à função de segurança de administração baseada em função de **Administrador Completo**. Se o site primário estiver em uma hierarquia com um site de administração central, essa conta também deverá ser de administrador local no servidor do site de administração central.  
 
 **Limitações de uma redefinição de site**
   - A partir da versão 1602, você não pode usar uma redefinição de site para alterar os pacotes de idiomas do Cliente ou do Servidor instalados nos sites enquanto a hierarquia estiver configurada para dar suporte para [testar atualizações do cliente em uma coleção de pré-produção](/sccm/core/clients/manage/upgrade/test-client-upgrades).

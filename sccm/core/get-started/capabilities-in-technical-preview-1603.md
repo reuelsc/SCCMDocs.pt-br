@@ -11,12 +11,12 @@ author: aczechowski
 robots: noindex,nofollow
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 6d5ecf4e2d231a596012aa9f7d371f18ef0705a1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: c7a0c1438fe08e1efae9d2bfe5fb608214486031
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343544"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423041"
 ---
 # <a name="capabilities-in-technical-preview-1603-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1603 do System Center Configuration Manager
 
@@ -26,11 +26,11 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
  **Problemas conhecidos nesse Technical Preview:**  
 
--   Essa versão inclui atualizações para recursos lançados anteriormente, mas não introduz novos recursos. Portanto, a página Recursos do Assistente de Atualização estará vazia se você tiver atualizado anteriormente para 1602 e se tiver habilitado todos os recursos incluídos nessa versão.  
+- Essa versão inclui atualizações para recursos lançados anteriormente, mas não introduz novos recursos. Portanto, a página Recursos do Assistente de Atualização estará vazia se você tiver atualizado anteriormente para 1602 e se tiver habilitado todos os recursos incluídos nessa versão.  
 
--   Depois que o servidor do site é atualizado para a Technical Preview 1603, os clientes não poderão usar os recursos de controle remoto até que eles também sejam atualizados para a versão 1603.  
+- Depois que o servidor do site é atualizado para a Technical Preview 1603, os clientes não poderão usar os recursos de controle remoto até que eles também sejam atualizados para a versão 1603.  
 
- **Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
+  **Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
 
 ##  <a name="BKMK_SC1603"></a> Melhorias no Centro de Software  
 
@@ -53,9 +53,9 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
  Na Technical Preview 1603, você pode personalizar o tamanho do bloco e da janela do RamDisk TFTP para pontos de distribuição habilitados para PXE. Se você tiver personalizado sua rede, isso poderá fazer com que o download da imagem de inicialização falhe com um erro de tempo limite devido ao tamanho muito grande do bloco ou da janela. A personalização do tamanho do bloco e da janela do RamDisk TFTP permite otimizar o tráfego TFTP ao usar o PXE para atender aos seus requisitos de rede específicos.   
 Você precisará testar as configurações personalizadas no ambiente para determinar o que é mais eficiente.  
 
--   **Tamanho do bloco do TFTP**: o tamanho do bloco é o tamanho dos pacotes de dados que são enviados pelo servidor ao cliente que está baixando o arquivo (como discutido em RFC 2347). Um tamanho de bloco maior permite que o servidor envie menos pacotes, para que haja menos atrasos de viagem de ida e volta entre o servidor e o cliente. No entanto, um bloco de tamanho grande leva a pacotes fragmentados, com os quais a maioria das implementações do cliente PXE não é compatível.  
+-   **Tamanho do bloco TFTP**: O tamanho do bloco é o tamanho dos pacotes de dados que são enviados pelo servidor ao cliente que está baixando o arquivo (como discutido em RFC 2347). Um tamanho de bloco maior permite que o servidor envie menos pacotes, para que haja menos atrasos de viagem de ida e volta entre o servidor e o cliente. No entanto, um bloco de tamanho grande leva a pacotes fragmentados, com os quais a maioria das implementações do cliente PXE não é compatível.  
 
--   **Tamanho da janela do TFTP**: o TFTP exige um pacote ACK (de confirmação) para cada bloco de dados que é enviado. O servidor não enviará o próximo bloco na sequência enquanto não receber o pacote ACK do bloco anterior. As janelas do TFTP são um recurso nos Serviços de Implantação do Windows que permite definir quantos blocos de dados são necessários para preencher uma janela. O servidor envia os blocos de dados um após o outro até que a janela esteja preenchida; em seguida, o cliente envia um pacote ACK. Aumentar o tamanho da janela reduz o número de atrasos da viagem de ida e volta entre o cliente e o servidor, além de diminuir o tempo total que é necessário para baixar uma imagem de inicialização.  
+-   **Tamanho da janela TFTP**: O TFTP exige um pacote ACK (de confirmação) para cada bloco de dados que é enviado. O servidor não enviará o próximo bloco na sequência enquanto não receber o pacote ACK do bloco anterior. As janelas do TFTP são um recurso nos Serviços de Implantação do Windows que permite definir quantos blocos de dados são necessários para preencher uma janela. O servidor envia os blocos de dados um após o outro até que a janela esteja preenchida; em seguida, o cliente envia um pacote ACK. Aumentar o tamanho da janela reduz o número de atrasos da viagem de ida e volta entre o cliente e o servidor, além de diminuir o tempo total que é necessário para baixar uma imagem de inicialização.  
 
 ### <a name="try-it-out"></a>Experimente!  
  Tente concluir as seguintes tarefas e depois use as informações dos comentários perto da parte superior deste tópico para nos contar como foi:  
@@ -66,26 +66,26 @@ Você precisará testar as configurações personalizadas no ambiente para deter
 
 ### <a name="to-modify-the-ramdisk-tftp-window-size"></a>Para modificar o tamanho da janela do RamDisk TFTP  
 
--   Adicione a seguinte chave do registro nos pontos de distribuição habilitados para PXE para personalizar o tamanho da janela do RamDisk TFTP:  
+- Adicione a seguinte chave do registro nos pontos de distribuição habilitados para PXE para personalizar o tamanho da janela do RamDisk TFTP:  
 
-     **Local**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
-    Nome: RamDiskTFTPWindowSize  
+   **Localização**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
+  Nome: RamDiskTFTPWindowSize  
 
-     **Tipo**: REG_DWORD  
+   **Tipo**: REG_DWORD  
 
-     **Valor**: &lt;tamanho de janela personalizado\>  
+   **Valor**: &lt;tamanho de janela personalizado\>  
 
- O valor padrão é 1 (um bloco de dados preenche a janela)  
+  O valor padrão é 1 (um bloco de dados preenche a janela)  
 
 ### <a name="to-modify-the-ramdisk-tftp-block-size"></a>Para modificar o tamanho do bloco do RamDisk TFTP  
 
--   Adicione a seguinte chave do registro nos pontos de distribuição habilitados para PXE para personalizar o tamanho da janela do RamDisk TFTP:  
+- Adicione a seguinte chave do registro nos pontos de distribuição habilitados para PXE para personalizar o tamanho da janela do RamDisk TFTP:  
 
-     **Local**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
-    Nome: RamDiskTFTPBlockSize  
+   **Localização**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
+  Nome: RamDiskTFTPBlockSize  
 
-     **Tipo**: REG_DWORD  
+   **Tipo**: REG_DWORD  
 
-     **Valor**: &lt;tamanho de bloco personalizado\>  
+   **Valor**: &lt;tamanho de bloco personalizado\>  
 
- O valor padrão é 4096 (4 k).  
+  O valor padrão é 4096 (4 k).  

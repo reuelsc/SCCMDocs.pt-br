@@ -10,12 +10,12 @@ ms.assetid: 5bd637b1-d7a1-411b-877a-c7aae9741173
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0757e7f3fac12c2945a3eab860851b0debf28fd5
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: a0e16c137604480ab23e15b52723692491d1816d
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893882"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414847"
 ---
 # <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Novidades da versão 1802 do System Center Configuration Manager
 
@@ -58,7 +58,7 @@ Version 1802 drops support for the following products:
 <!-- 1353704 --> A partir desta versão, o cliente do Configuration Manager tem suporte nos dispositivos ARM64 do Windows 10. Os recursos existentes de gerenciamento de clientes devem funcionar com esses novos dispositivos. Por exemplo, inventário de hardware e software, atualizações de software e gerenciamento de aplicativos. A implantação de sistema operacional atualmente não tem suporte. 
 
 ### <a name="improved-support-for-cng-certificates"></a>Suporte aprimorado para certificados CNG
-<!-- 1357314 --> O Configuration Manager (branch atual) versão 1710 dá suporte a [Criptografia: certificados de próxima geração (CNG)](/sccm/core/plan-design/network/cng-certificates-overview). A versão 1710 limita o suporte a certificados de clientes em vários cenários. 
+<!-- 1357314 --> O Configuration Manager (branch atual) versão 1710 dá suporte a [certificados CNG (Cryptography Next Generation)](/sccm/core/plan-design/network/cng-certificates-overview). A versão 1710 limita o suporte a certificados de clientes em vários cenários. 
 
 A partir desta versão, use certificados do CNG para as seguintes funções de servidor habilitadas para HTTPS:
 - Ponto de gerenciamento
@@ -147,7 +147,7 @@ Para obter detalhes, consulte o artigo [Painel do Surface](/sccm/core/clients/ma
 <!-- 1357365 --> A carga de trabalho do Endpoint Protection pode ser transferida para o Intune depois de habilitar o cogerenciamento. Para fazer a transição da carga de trabalho do Endpoint Protection, vá para a página de propriedades de cogerenciamento e mova a barra deslizante do Configuration Manager para **Piloto** ou **Todos**. Para obter detalhes sobre as cargas de trabalho, consulte [Cargas de trabalho podem ser transferidas para o Intune](/sccm/core/clients/manage/co-management-switch-workloads#Workloads-able-to-be-transitioned-to-Intune). Para obter mais informações sobre o cogerenciamento, consulte [Cogerenciamento para dispositivos Windows 10](/sccm/core/clients/manage/co-management-overview).
  
 ### <a name="co-management-dashboard-in-system-center-configuration-manager"></a>Painel de cogerenciamento no System Center Configuration Manager
-<!--1356648--> A partir desta versão, você pode exibir um painel com informações sobre o cogerenciamento. O painel ajuda você a analisar os computadores cogerenciados no ambiente. Os gráficos podem ajudar a identificar os dispositivos que podem precisar de atenção. Para obter detalhes, consulte o artigo [Painel de cogerenciamento](\sccm\core\clients\manage\client-management-dashboard). 
+<!--1356648--> A partir desta versão, você pode exibir um painel com informações sobre o cogerenciamento. O painel ajuda você a analisar os computadores cogerenciados no ambiente. Os gráficos podem ajudar a identificar os dispositivos que podem precisar de atenção. Para obter detalhes, consulte o artigo [Painel de cogerenciamento](/sccm/core/clients/manage/client-management-dashboard). 
 
 
 ## <a name="compliance-settings"></a>Configurações de conformidade

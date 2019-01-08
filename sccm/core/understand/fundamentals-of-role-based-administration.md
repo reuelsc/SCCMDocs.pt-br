@@ -10,12 +10,12 @@ ms.assetid: 0a2d6c3f-a4e4-4c19-b087-3caada480de9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3b7916b386cb22f2d1869eface009bd10ff17d18
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: 1103b9e977f3bbef3e07d545b6b3762f6cf59fdd
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862542"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414966"
 ---
 # <a name="fundamentals-of-role-based-administration-for-system-center-configuration-manager"></a>Fundamentos de administração baseada em funções para o System Center Configuration Manager
 
@@ -25,13 +25,13 @@ Com o System Center Configuration Manager, você usa administração baseada em 
 
  O modelo de administração baseada em funções define e gerencia configurações de acesso de segurança de toda a hierarquia para todos os sites e configurações de sites usando o seguinte:  
 
--   *Funções de segurança* são atribuídas a usuários administrativos para fornecer a esses usuários (ou grupos de usuários) permissões para objetos diferentes do Configuration Manager. Por exemplo, permissões para criar ou alterar as configurações de cliente.  
+- *Funções de segurança* são atribuídas a usuários administrativos para fornecer a esses usuários (ou grupos de usuários) permissões para objetos diferentes do Configuration Manager. Por exemplo, permissões para criar ou alterar as configurações de cliente.  
 
--   *Escopos de segurança* são usados para agrupar instâncias específicas de objetos pelas quais um usuário administrativo é responsável por gerenciar, como um aplicativo que instala o Microsoft Office 2010.  
+- *Escopos de segurança* são usados para agrupar instâncias específicas de objetos pelas quais um usuário administrativo é responsável por gerenciar, como um aplicativo que instala o Microsoft Office 2010.  
 
--   *Coleções* são usadas para especificar grupos de recursos de usuários e de dispositivos que o usuário administrativo pode gerenciar.  
+- *Coleções* são usadas para especificar grupos de recursos de usuários e de dispositivos que o usuário administrativo pode gerenciar.  
 
- Com a combinação de funções de segurança, escopos de segurança e coleções, você segrega as atribuições administrativas que atendem aos requisitos da sua organização. Usadas em conjunto, elas definem o escopo administrativo de um usuário, que é o que esse usuário poderá exibir e gerenciar na sua implantação do Configuration Manager.  
+  Com a combinação de funções de segurança, escopos de segurança e coleções, você segrega as atribuições administrativas que atendem aos requisitos da sua organização. Usadas em conjunto, elas definem o escopo administrativo de um usuário, que é o que esse usuário poderá exibir e gerenciar na sua implantação do Configuration Manager.  
 
 ## <a name="benefits-of-role-based-administration"></a>Benefícios da administração baseada em funções  
 
@@ -73,9 +73,9 @@ Ao projetar e implementar a segurança administrativa para o Configuration Manag
 -   *Gerenciador de Atualização de Software* concede permissões para definir e implantar atualizações de software. Usuários administrativos associados a essa função podem criar coleções, grupos de atualização de software, implantações e modelos.  
 
 > [!TIP]  
->  Você pode exibir a lista de funções de segurança internas e funções de segurança personalizadas que você cria, incluindo suas descrições, no console do Configuration Manager. Para exibir as funções, no espaço de trabalho **Administração**, expanda **Segurança** e, em seguida, selecione **Funções de Segurança**.  
+>  Você pode exibir a lista de funções de segurança internas e funções de segurança personalizadas que você cria, incluindo suas descrições, no console do Configuration Manager. Para exibir as funções, no workspace **Administração**, expanda **Segurança** e, em seguida, selecione **Funções de Segurança**.  
 
- Cada função de segurança tem as permissões específicas para diferentes tipos de objeto. Por exemplo, a função de segurança *Autor de Aplicativos* tem as seguintes permissões para aplicativos: Aprovar, Criar, Excluir, Modificar, Modificar Pastas, Mover Objetos, Ler, Executar Relatório e Definir Escopo de Segurança.
+ Cada função de segurança tem as permissões específicas para diferentes tipos de objeto. Por exemplo, a função de segurança *Autor de Aplicativos* tem as seguintes permissões para aplicativos: Aprovar, Criar, Excluir, Modificar, Modificar Pasta, Mover Objeto, Ler, Executar Relatório e Definir Escopo de Segurança.
 
  Você não pode alterar as permissões das funções de segurança internas, mas pode copiar a função, fazer alterações e então salvar essas alterações como uma nova função de segurança personalizada. Também é possível importar funções de segurança que você exportou de outra hierarquia, por exemplo, de uma rede de teste. Examine as funções de segurança e suas permissões para determinar se você usará as funções de segurança internas ou precisará criar suas próprias funções de segurança personalizadas.  
 

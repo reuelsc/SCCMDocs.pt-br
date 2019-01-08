@@ -10,18 +10,18 @@ ms.assetid: 3986a992-c175-4b6f-922e-fc561e3d7cb7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 623d7b6a048b7728e40adb3655dc1017408fb1d7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 488a24284e814effea23db0b221d62b7d25c483e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342215"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419522"
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Como gerenciar clientes no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Quando o cliente do Configuration Manager é instalado e atribuído com êxito a um site, o dispositivo é exibido no espaço de trabalho **Ativos e Conformidade** no nó **Dispositivos** e em uma ou mais coleções no nó **Coleções de Dispositivos**. Quando você seleciona o dispositivo ou uma coleção, pode executar operações de gerenciamento. No entanto, existem outras maneiras de gerenciar o cliente, as quais podem envolver outros espaços de trabalho no console ou tarefas fora do console.  
+Quando o cliente do Configuration Manager é instalado e atribuído com êxito a um site, o dispositivo é exibido no workspace **Ativos e Conformidade** no nó **Dispositivos** e em uma ou mais coleções no nó **Coleções de Dispositivos**. Quando você seleciona o dispositivo ou uma coleção, pode executar operações de gerenciamento. No entanto, existem outras maneiras de gerenciar o cliente, as quais podem envolver outros workspaces no console ou tarefas fora do console.  
 
 > [!NOTE]  
 >  Se o cliente do Configuration Manager estiver instalado, mas ainda não tiver sido atribuído com êxito a um site, ele poderá não ser exibido no console. Depois que o cliente for atribuído a um site, atualize a associação da coleção e a exibição do console.  
@@ -36,119 +36,119 @@ Quando o cliente do Configuration Manager é instalado e atribuído com êxito a
 
 Dependendo do tipo de dispositivo, algumas dessas opções poderão não estar disponíveis.  
 
-1.  No console do Configuration Manager, escolha **Ativos e Conformidade** >  **Dispositivos**.  
+1. No console do Configuration Manager, escolha **Ativos e Conformidade** >  **Dispositivos**.  
 
-3.  Selecione um ou mais dispositivos e depois selecione uma das tarefas de gerenciamento de cliente na faixa de opções ou clique com o botão direito do mouse no dispositivo:  
+2. Selecione um ou mais dispositivos e depois selecione uma das tarefas de gerenciamento de cliente na faixa de opções ou clique com o botão direito do mouse no dispositivo:  
 
-    -   **Gerenciar informações de afinidade do dispositivo do usuário**  
+   - **Gerenciar informações de afinidade do dispositivo do usuário**  
 
-         Configure as associações entre usuários e dispositivos para que você possa implantar o software para os usuários de forma eficiente.  
+      Configure as associações entre usuários e dispositivos para que você possa implantar o software para os usuários de forma eficiente.  
 
-         Consulte [Vincular usuários e dispositivos com a afinidade de dispositivo de usuário no System Center Configuration Manager](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)  
+      Consulte [Vincular usuários e dispositivos com a afinidade de dispositivo de usuário no System Center Configuration Manager](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)  
 
-    -   **Adicionar o dispositivo a uma coleção nova ou existente**  
+   - **Adicionar o dispositivo a uma coleção nova ou existente**  
 
-         Adicione o dispositivo a uma coleção com uma regra direta.  
+      Adicione o dispositivo a uma coleção com uma regra direta.  
 
-    -   **Instalar e reinstalar o cliente usando o Assistente de Push de Cliente**  
+   - **Instalar e reinstalar o cliente usando o Assistente de Push de Cliente**  
 
-         Instale e reinstale o cliente do Configuration Manager para repará-lo ou reconfigurá-lo. Essa opção inclui definições de configuração do site e as propriedades de client.msi definidas para instalação do cliente por push.  
+      Instale e reinstale o cliente do Configuration Manager para repará-lo ou reconfigurá-lo. Essa opção inclui definições de configuração do site e as propriedades de client.msi definidas para instalação do cliente por push.  
 
-        > [!TIP]  
-        >  Há várias maneiras diferentes de instalar (e reinstalar) o cliente do Configuration Manager. Embora o Assistente de Push de Cliente ofereça um método de instalação de cliente conveniente, pois é possível executá-lo do console, esse método tem muitas dependências e não é adequado para todos os ambientes. Para obter mais informações sobre as dependências, consulte [Pré-requisitos para a implantação de clientes em computadores com Windows no System Center Configuration Manager](../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md). Para obter mais informações sobre outros métodos de instalação de cliente, consulte [Métodos de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/plan/client-installation-methods.md).  
+     > [!TIP]  
+     >  Há várias maneiras diferentes de instalar (e reinstalar) o cliente do Configuration Manager. Embora o Assistente de Push de Cliente ofereça um método de instalação de cliente conveniente, pois é possível executá-lo do console, esse método tem muitas dependências e não é adequado para todos os ambientes. Para obter mais informações sobre as dependências, consulte [Pré-requisitos para a implantação de clientes em computadores com Windows no System Center Configuration Manager](../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md). Para obter mais informações sobre outros métodos de instalação de cliente, consulte [Métodos de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/plan/client-installation-methods.md).  
 
-         Consulte [Como instalar clientes do Configuration Manager usando push de cliente](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).  
+      Consulte [Como instalar clientes do Configuration Manager usando push de cliente](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).  
 
-    -   **Transferir Site**  
+   - **Transferir Site**  
 
-         Transfira um ou mais clientes, incluindo dispositivos móveis gerenciados, para outro site primário na hierarquia. Os clientes podem ser reatribuídos individualmente ou podem ser selecionados várias vezes e reatribuídos em massa a um novo site.  
+      Transfira um ou mais clientes, incluindo dispositivos móveis gerenciados, para outro site primário na hierarquia. Os clientes podem ser reatribuídos individualmente ou podem ser selecionados várias vezes e reatribuídos em massa a um novo site.  
 
-    -   **Administrar o cliente remotamente**  
+   - **Administrar o cliente remotamente**  
 
-         Execute o Gerenciador de Recursos para ver as informações de inventário de hardware e software de um cliente do Windows. Administre o dispositivo remotamente usando o Controle Remoto, a Assistência Remota ou a Área de Trabalho Remota.  
+      Execute o Gerenciador de Recursos para ver as informações de inventário de hardware e software de um cliente do Windows. Administre o dispositivo remotamente usando o Controle Remoto, a Assistência Remota ou a Área de Trabalho Remota.  
 
-         Consulte [Como usar o Gerenciador de Recursos para exibir o inventário de hardware](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) e [Como usar o Gerenciador de Recursos para exibir o inventário de software](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md).  
+      Consulte [Como usar o Gerenciador de Recursos para exibir o inventário de hardware](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) e [Como usar o Gerenciador de Recursos para exibir o inventário de software](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md).  
 
-         Consulte [Como administrar remotamente um computador cliente com Windows](../../../core/clients/manage/remote-control/remotely-administer-a-windows-client-computer.md).  
+      Consulte [Como administrar remotamente um computador cliente com Windows](../../../core/clients/manage/remote-control/remotely-administer-a-windows-client-computer.md).  
 
-    -   **Aprovar um cliente**  
+   - **Aprovar um cliente**  
 
-         Quando o cliente se comunica com o sistema de sites usando HTTP e um certificado autoassinado, é necessário aprovar esses clientes para identificá-los como computadores confiáveis. Por padrão, a configuração do site aprova automaticamente clientes da mesma floresta e de florestas confiáveis do Active Directory, para que você não precise aprovar cada cliente manualmente. No entanto, é necessário aprovar manualmente computadores do grupo de trabalho confiáveis e outros computadores não aprovados nos quais você confia.  
+      Quando o cliente se comunica com o sistema de sites usando HTTP e um certificado autoassinado, é necessário aprovar esses clientes para identificá-los como computadores confiáveis. Por padrão, a configuração do site aprova automaticamente clientes da mesma floresta e de florestas confiáveis do Active Directory, para que você não precise aprovar cada cliente manualmente. No entanto, é necessário aprovar manualmente computadores do grupo de trabalho confiáveis e outros computadores não aprovados nos quais você confia.  
 
-        > [!WARNING]  
-        >  Embora algumas funções de gerenciamento possam funcionar para clientes não aprovados, não há suporte para esse cenário no Configuration Manager.  
+     > [!WARNING]  
+     >  Embora algumas funções de gerenciamento possam funcionar para clientes não aprovados, não há suporte para esse cenário no Configuration Manager.  
 
-         Não é necessário aprovar clientes que sempre se comunicam com sistemas de sites usando HTTPS ou clientes que usam um certificado PKI ao se comunicarem com sistemas de sites usando HTTP. Esses clientes estabelecem uma relação de confiança usando os certificados PKI.  
+      Não é necessário aprovar clientes que sempre se comunicam com sistemas de sites usando HTTPS ou clientes que usam um certificado PKI ao se comunicarem com sistemas de sites usando HTTP. Esses clientes estabelecem uma relação de confiança usando os certificados PKI.  
 
-    -   **Bloquear ou desbloquear um cliente**  
+   - **Bloquear ou desbloquear um cliente**  
 
-         Bloqueie um cliente no qual você não confia mais. O bloqueio impede que o cliente receba a política e impede que os sistemas de sites se comuniquem com o cliente.  
+      Bloqueie um cliente no qual você não confia mais. O bloqueio impede que o cliente receba a política e impede que os sistemas de sites se comuniquem com o cliente.  
 
-        > [!WARNING]  
-        >  Bloquear um cliente impede apenas a comunicação dele com os sistemas de sites do Configuration Manager, e não a comunicação dele com outros dispositivos. Além disso, quando o cliente se comunica com sistemas de site usando HTTP em vez de HTTPS, há algumas limitações de segurança.  
+     > [!WARNING]  
+     >  Bloquear um cliente impede apenas a comunicação dele com os sistemas de sites do Configuration Manager, e não a comunicação dele com outros dispositivos. Além disso, quando o cliente se comunica com sistemas de site usando HTTP em vez de HTTPS, há algumas limitações de segurança.  
 
-         Também desbloqueie um cliente que está bloqueado. 
+      Também desbloqueie um cliente que está bloqueado. 
 
-         Consulte [Determinar o bloqueio de clientes no System Center Configuration Manager](../../../core/clients/deploy/plan/determine-whether-to-block-clients.md).  
+      Consulte [Determinar o bloqueio de clientes no System Center Configuration Manager](../../../core/clients/deploy/plan/determine-whether-to-block-clients.md).  
 
-    -   **Limpar implantação PXE necessária**  
+   - **Limpar implantação PXE necessária**  
 
-         Reimplante as implantações PXE necessárias para o computador.  
+      Reimplante as implantações PXE necessárias para o computador.  
 
-         Consulte [Use o PXE para implantar o Windows pela rede com o System Center Configuration Manager](../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+      Consulte [Use o PXE para implantar o Windows pela rede com o System Center Configuration Manager](../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
-    -   **Gerenciar as propriedades do cliente**  
+   - **Gerenciar as propriedades do cliente**  
 
-         Exiba os dados de descoberta e as implantações direcionadas ao cliente. Você também pode configurar variáveis que as sequências de tarefa usam para implantar um sistema operacional no dispositivo.  
+      Exiba os dados de descoberta e as implantações direcionadas ao cliente. Você também pode configurar variáveis que as sequências de tarefa usam para implantar um sistema operacional no dispositivo.  
 
-    -   **Excluir o cliente**  
+   - **Excluir o cliente**  
 
-        > [!WARNING]  
-        >  Não exclua um cliente se você quiser desinstalar o cliente do Configuration Manager ou removê-lo de uma coleção.  
+     > [!WARNING]  
+     >  Não exclua um cliente se você quiser desinstalar o cliente do Configuration Manager ou removê-lo de uma coleção.  
 
-         A ação **Excluir** exclui manualmente o registro do cliente do banco de dados do Configuration Manager e, geralmente, você não deve usar essa ação exceto em cenários de solução de problemas. Se você excluir o registro do cliente, mas o cliente ainda estiver instalado e se comunicando com o site, a Descoberta de Pulsação recriará o registro do cliente. O registro do cliente reaparecerá no console do Configuration Manager, embora o histórico do cliente e suas associações anteriores tenham sido perdidas.  
+      A ação **Excluir** exclui manualmente o registro do cliente do banco de dados do Configuration Manager e, geralmente, você não deve usar essa ação exceto em cenários de solução de problemas. Se você excluir o registro do cliente, mas o cliente ainda estiver instalado e se comunicando com o site, a Descoberta de Pulsação recriará o registro do cliente. O registro do cliente reaparecerá no console do Configuration Manager, embora o histórico do cliente e suas associações anteriores tenham sido perdidas.  
 
-        > [!NOTE]  
-        >  Quando você exclui um cliente de dispositivo móvel registrado pelo Configuration Manager, essa ação também revoga o certificado PKI enviado ao dispositivo móvel e o certificado é rejeitado pelo ponto de gerenciamento, mesmo que o IIS não verifique a CRL. Certificados de clientes herdados de dispositivos móveis não são revogados quando esses clientes são excluídos.  
+     > [!NOTE]  
+     >  Quando você exclui um cliente de dispositivo móvel registrado pelo Configuration Manager, essa ação também revoga o certificado PKI enviado ao dispositivo móvel e o certificado é rejeitado pelo ponto de gerenciamento, mesmo que o IIS não verifique a CRL. Certificados de clientes herdados de dispositivos móveis não são revogados quando esses clientes são excluídos.  
 
-         Para desinstalar o cliente, consulte [Desinstalar o cliente do Configuration Manager](#BKMK_UninstalClient).  
+      Para desinstalar o cliente, consulte [Desinstalar o cliente do Configuration Manager](#BKMK_UninstalClient).  
 
-         Para atribuir o cliente a um novo site primário, consulte [Como atribuir clientes a um site no System Center Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md).  
+      Para atribuir o cliente a um novo site primário, consulte [Como atribuir clientes a um site no System Center Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md).  
 
-         Para remover o cliente de uma coleção, reconfigure as propriedades da coleção. Consulte [Como gerenciar coleções no System Center Configuration Manager](../../../core/clients/manage/collections/manage-collections.md).  
+      Para remover o cliente de uma coleção, reconfigure as propriedades da coleção. Consulte [Como gerenciar coleções no System Center Configuration Manager](../../../core/clients/manage/collections/manage-collections.md).  
 
-    -   **Apagar um dispositivo móvel**  
+   - **Apagar um dispositivo móvel**  
 
-         Você pode apagar os dispositivos móveis que oferecem suporte ao comando de apagamento.  
+      Você pode apagar os dispositivos móveis que oferecem suporte ao comando de apagamento.  
 
-         Essa ação remove permanentemente todos os dados do dispositivo móvel, que incluem dados e configurações pessoais. Geralmente, essa ação restaura os padrões de fábrica do dispositivo móvel. Apague um dispositivo móvel quando o dispositivo móvel não é mais confiável. Por exemplo, se o dispositivo for perdido ou roubado.  
+      Essa ação remove permanentemente todos os dados do dispositivo móvel, que incluem dados e configurações pessoais. Geralmente, essa ação restaura os padrões de fábrica do dispositivo móvel. Apague um dispositivo móvel quando o dispositivo móvel não é mais confiável. Por exemplo, se o dispositivo for perdido ou roubado.  
 
-        > [!TIP]  
-        >  Consulte a documentação do fabricante para obter mais informações sobre como o dispositivo móvel processa um comando de apagamento remoto.  
+     > [!TIP]  
+     >  Consulte a documentação do fabricante para obter mais informações sobre como o dispositivo móvel processa um comando de apagamento remoto.  
 
-         Geralmente há um atraso até que o dispositivo móvel receba o comando de apagamento:  
+      Geralmente há um atraso até que o dispositivo móvel receba o comando de apagamento:  
 
-        -   Se o dispositivo móvel for registrado pelo Configuration Manager ou pelo Microsoft Intune, o cliente receberá o comando quando baixar a política do cliente.  
+     - Se o dispositivo móvel for registrado pelo Configuration Manager ou pelo Microsoft Intune, o cliente receberá o comando quando baixar a política do cliente.  
 
-        -   Se o dispositivo móvel for gerenciado pelo conector do Exchange Server, ele receberá o comando quando fizer a sincronização com o Exchange.  
+     - Se o dispositivo móvel for gerenciado pelo conector do Exchange Server, ele receberá o comando quando fizer a sincronização com o Exchange.  
 
-         Você pode usar a coluna **Apagar Status** para monitorar quando o dispositivo receberá o comando de apagamento. Até que o dispositivo envie um confirmação de apagamento ao Configuration Manager, você poderá cancelar o comando de apagamento.  
+       Você pode usar a coluna **Apagar Status** para monitorar quando o dispositivo receberá o comando de apagamento. Até que o dispositivo envie um confirmação de apagamento ao Configuration Manager, você poderá cancelar o comando de apagamento.  
 
-    -   **Desativar um dispositivo móvel**  
+   - **Desativar um dispositivo móvel**  
 
-         Há suporte para a opção **Desativar** somente em dispositivos móveis registrados pelo Microsoft Intune ou pelo gerenciamento de dispositivo móvel local.  
+      Há suporte para a opção **Desativar** somente em dispositivos móveis registrados pelo Microsoft Intune ou pelo gerenciamento de dispositivo móvel local.  
 
-         Para obter mais informações, veja [Ajude a proteger seus dados com apagamento remoto, bloqueio remoto ou redefinição de senha usando o System Center Configuration Manager](../../../mdm/deploy-use/wipe-lock-reset-devices.md).  
+      Para obter mais informações, veja [Ajude a proteger seus dados com apagamento remoto, bloqueio remoto ou redefinição de senha usando o System Center Configuration Manager](../../../mdm/deploy-use/wipe-lock-reset-devices.md).  
 
-    -   **Alterar a propriedade de um dispositivo**  
+   - **Alterar a propriedade de um dispositivo**  
 
-         Caso um dispositivo não esteja ingressado em domínio e não tiver o cliente do Configuration Manager instalado, use essa opção para alterar a propriedade para **Empresa** ou **Pessoal**.  
+      Caso um dispositivo não esteja ingressado em domínio e não tiver o cliente do Configuration Manager instalado, use essa opção para alterar a propriedade para **Empresa** ou **Pessoal**.  
 
-         É possível usar esse valor nos requisitos de aplicativo para controlar as implantações e para controlar quanto inventário é coletado dos dispositivos dos usuários.  
+      É possível usar esse valor nos requisitos de aplicativo para controlar as implantações e para controlar quanto inventário é coletado dos dispositivos dos usuários.  
 
-        Talvez seja necessário adicionar a coluna **Proprietário do Dispositivo** à exibição clicando com o botão direito do mouse em qualquer título de coluna e selecionando-a.
+     Talvez seja necessário adicionar a coluna **Proprietário do Dispositivo** à exibição clicando com o botão direito do mouse em qualquer título de coluna e selecionando-a.
 
-         Para obter mais informações, consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md) (MDM [gerenciamento de dispositivo móvel] híbrido com o System Center Configuration Manager e o Microsoft Intune).  
+      Para obter mais informações, consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md) (MDM [gerenciamento de dispositivo móvel] híbrido com o System Center Configuration Manager e o Microsoft Intune).  
 
 ##  <a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> Gerenciar clientes no nó Coleções de Dispositivos  
   Muitas das tarefas que estão disponíveis para dispositivos no nó **Dispositivos** também estão disponíveis em coleções. O console aplica automaticamente a operação a todos os dispositivos qualificados da coleção. Essa ação em uma coleção inteira gera pacotes de rede adicionais e aumenta o uso da CPU no servidor do site.  
@@ -184,7 +184,7 @@ Dependendo do tipo de dispositivo, algumas dessas opções poderão não estar d
 
          Use a notificação de cliente para informar aos clientes do Windows selecionados para baixar a política de computador assim que possível, fora do intervalo de sondagem da política do cliente.  
 
-         As tarefas de notificação de cliente são exibidas no nó **Operações Cliente** , no espaço de trabalho **Monitoramento** .  
+         As tarefas de notificação de cliente são exibidas no nó **Operações Cliente**, no workspace **Monitoramento**.  
 
 
 ## <a name="restart-clients"></a>Reiniciar clientes
@@ -193,7 +193,7 @@ A partir da versão 1710, você pode usar o console do Configuration Manager par
 > [!Tip]
 > Também é necessário fazer upgrade dos clientes para a versão 1710 para que essa funcionalidade funcione. Recomendamos que você habilite o upgrade automático do cliente para manter os clientes atualizados com sobrecarga administrativa mínima. Para obter mais informações, consulte [Usar o upgrade automático do cliente](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#use-automatic-client-upgrade).
 
-Para identificar os dispositivos que estão aguardando uma reinicialização, acesse o espaço de trabalho **Ativos e Conformidade** no console do Configuration Manager e selecione o nó **Dispositivos**. Em seguida, exiba o status de cada dispositivo no painel de detalhes em uma nova coluna chamada **Reinicialização Pendente**. Cada dispositivo tem um ou mais dos seguintes valores: 
+Para identificar os dispositivos que estão aguardando uma reinicialização, acesse o workspace **Ativos e Conformidade** no console do Configuration Manager e selecione o nó **Dispositivos**. Em seguida, exiba o status de cada dispositivo no painel de detalhes em uma nova coluna chamada **Reinicialização Pendente**. Cada dispositivo tem um ou mais dos seguintes valores: 
  - **Não**: não há nenhuma reinicialização pendente
  - **Configuration Manager**: esse valor é obtido do componente de coordenador de reinicialização de cliente (RebootCoordinator.log)
  - **Renomeação de arquivo**: esse valor é obtido do Windows que relata uma operação de renomeação de arquivo pendente (HKLM\SYSTEM\CurrentControlSet\Control\Session Manager, PendingFileRenameOperations)
@@ -224,7 +224,7 @@ O cliente do Configuration Manager baixa o conteúdo do software necessário log
 Se o cliente tentar baixar o conteúdo de um programa ou aplicativo que seja maior que o tamanho do cache, a implantação falhará devido ao tamanho do cache insuficiente. O cliente gerará uma mensagem de status 10050 para o tamanho do cache insuficiente. Se você aumentar o tamanho do cache posteriormente, o resultado será:  
 
 -   Para um programa necessário: O cliente não tenta automaticamente baixar o conteúdo novamente. Reimplante o pacote e o programa no cliente.  
--   Para um aplicativo necessário: o cliente automaticamente tentará baixar o conteúdo novamente quando baixar sua política de cliente.  
+-   Para um aplicativo necessário: o cliente tentará novamente baixar o conteúdo automaticamente quando baixar sua política de cliente.  
 
 Se o cliente tenta baixar um pacote menor do que o tamanho do cache, mas o cache estiver cheio, todas as implantações obrigatórias continuarão sendo repetidas até que o espaço do cache esteja disponível, o download atinja o tempo limite ou a contagem de repetição atinja seu limite. Se o tamanho do cache for aumentado posteriormente, o cliente do Configuration Manager tentará baixar o pacote novamente durante o próximo intervalo de repetição. O cliente tenta baixar o conteúdo a cada quatro horas por 18 vezes.  
 
@@ -236,39 +236,39 @@ O conteúdo armazenado em cache não é excluído automaticamente e permanece no
 
 Execute o comando CCMSetup.exe por meio do local de origem da instalação e especifique as seguintes propriedades que precisar, separadas por espaço:  
 
-   -   DISABLECACHEOPT  
+- DISABLECACHEOPT  
 
-    -   SMSCACHEDIR  
+  - SMSCACHEDIR  
 
-    -   SMSCACHEFLAGS  
+  - SMSCACHEFLAGS  
 
-    -   SMSCACHESIZE  
+  - SMSCACHESIZE  
 
-        > [!NOTE]
-        > Para a versão 1606, use as configurações de tamanho de cache disponíveis em **Configurações do Cliente** no console do Configuration Manager em vez de SMSCACHESIZE. Para obter mais informações, consulte [Configurações de cache do cliente](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
+    > [!NOTE]
+    > Para a versão 1606, use as configurações de tamanho de cache disponíveis em **Configurações do Cliente** no console do Configuration Manager em vez de SMSCACHESIZE. Para obter mais informações, consulte [Configurações de cache do cliente](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
 Para obter mais informações sobre como usar essas propriedades de linha de comando para o CCMSetup.exe, consulte [Sobre as propriedades de instalação do cliente](../../../core/clients/deploy/about-client-installation-properties.md).  
 
 ### <a name="to-configure-the-client-cache-folder-when-you-install-clients-by-using-client-push-installation"></a>Para configurar o cache do cliente para a instalação do cliente por push  
 
-1.  No console do Configuration Manager, escolha **Administração** > **Configuração de Site** > **Sites**.  
+1. No console do Configuration Manager, escolha **Administração** > **Configuração de Site** > **Sites**.  
 
-3.  Selecione o site apropriado e, na guia **Início**, no grupo **Configurações**, escolha **Configurações de Instalação do Site** > **guia Propriedades da Instalação**.  
+2. Selecione o site apropriado e, na guia **Início**, no grupo **Configurações**, escolha **Configurações de Instalação do Site** > **guia Propriedades da Instalação**.  
 
-5.  Especifique as propriedades a seguir, separadas por espaços:  
+3. Especifique as propriedades a seguir, separadas por espaços:  
 
-    -   DISABLECACHEOPT  
+   - DISABLECACHEOPT  
 
-    -   SMSCACHEDIR  
+   - SMSCACHEDIR  
 
-    -   SMSCACHEFLAGS  
+   - SMSCACHEFLAGS  
 
-    -   SMSCACHESIZE  
+   - SMSCACHESIZE  
 
-        > [!NOTE]
-        > Para a versão 1606, use as configurações de tamanho de cache disponíveis em **Configurações do Cliente** no console do Configuration Manager em vez de SMSCACHESIZE. Para obter mais informações, consulte [Configurações de cache do cliente](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
+     > [!NOTE]
+     > Para a versão 1606, use as configurações de tamanho de cache disponíveis em **Configurações do Cliente** no console do Configuration Manager em vez de SMSCACHESIZE. Para obter mais informações, consulte [Configurações de cache do cliente](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
-       Para obter mais informações sobre como usar essas propriedades de linha de comando para o CCMSetup.exe, consulte [Sobre as propriedades de instalação do cliente](../../../core/clients/deploy/about-client-installation-properties.md).  
+     Para obter mais informações sobre como usar essas propriedades de linha de comando para o CCMSetup.exe, consulte [Sobre as propriedades de instalação do cliente](../../../core/clients/deploy/about-client-installation-properties.md).  
 
 ### <a name="to-configure-the-client-cache-folder-on-the-client-computer"></a>Para configurar a pasta de cache do cliente no computador do cliente  
 
@@ -285,11 +285,11 @@ Ajuste o tamanho do cache do cliente sem precisar reinstalar o cliente configura
 1. No console do Configuration Manager, vá até **Administração** > **Configurações do Cliente**.
 
 2. Clique duas vezes em **Configurações do Cliente Padrão**.
-  Você também pode criar configurações personalizadas para aplicar o tamanho do cache de forma mais seletiva. Para obter mais informações sobre configurações do cliente padrão e personalizadas, consulte [Como definir as configurações do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
+   Você também pode criar configurações personalizadas para aplicar o tamanho do cache de forma mais seletiva. Para obter mais informações sobre configurações do cliente padrão e personalizadas, consulte [Como definir as configurações do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
 
- 3. Escolha **Configurações de Cache do Cliente** e escolha **Sim** para **Configurar o tamanho do cache do cliente** e use **MB** ou as **configurações de percentual do disco**. O cache é ajustado para o tamanho que for menor.
+   3. Escolha **Configurações de Cache do Cliente** e escolha **Sim** para **Configurar o tamanho do cache do cliente** e use **MB** ou as **configurações de percentual do disco**. O cache é ajustado para o tamanho que for menor.
 
-     O cliente do Configuration Manager configurará o tamanho do cache com essas configurações quando a próxima política de cliente for baixada.
+      O cliente do Configuration Manager configurará o tamanho do cache com essas configurações quando a próxima política de cliente for baixada.
 
 
 

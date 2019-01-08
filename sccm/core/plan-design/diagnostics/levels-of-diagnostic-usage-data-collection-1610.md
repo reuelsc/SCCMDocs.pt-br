@@ -10,12 +10,12 @@ ms.assetid: eb20eb90-bcc0-41de-bfea-638ea470c0dd
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 658d005234469d8729b515e9deeb02e20e94c748
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b29044858bb9a9d57db1c2229c826630d0905860
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340889"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416513"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1610-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1610 do System Center Configuration Manager
 
@@ -40,18 +40,18 @@ Começando com a versão 1610, você altera o nível da coleta de dados no conso
  Para o System Center Configuration Manager versão 1610, esse nível inclui o seguinte:
 
 
--   Informações de Instalação:
-      - Build, tipo de instalação, pacotes de idiomas e recursos habilitados  
+- Informações de Instalação:
+    - Build, tipo de instalação, pacotes de idiomas e recursos habilitados  
 
-      - Status e erros de implantação do pacote de atualização, andamento do download e erros de pré-requisitos    
+    - Status e erros de implantação do pacote de atualização, andamento do download e erros de pré-requisitos    
 
-      - Versão do script pós-atualização
+    - Versão do script pós-atualização
 
-      - Uso do anel rápido de atualização
+    - Uso do anel rápido de atualização
 
-    - ***[Novo]*** Uso pré-lançamento, tipo de mídia de instalação, tipo de branch
+  - ***[Novo]*** Uso pré-lançamento, tipo de mídia de instalação, tipo de branch
 
-    - ***[Novo]*** Data de validade do Software Assurance
+  - ***[Novo]*** Data de validade do Software Assurance
 
 - Métricas de desempenho do banco de dados (informações de processamento de replicação, principais procedimentos armazenados do SQL Server por processador e uso de disco)
 
@@ -90,7 +90,7 @@ Começando com a versão 1610, você altera o nível da coleta de dados no conso
 
      - Estatísticas sobre as conexões do console (versão de sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versões do .NET instaladas e pacotes de idiomas do console)    
 
-- Versão do SQL, nível do service pack, edição, ID de agrupamento e conjunto de caracteres
+- Versão do SQL, nível do service pack, edição, ID de ordenação e conjunto de caracteres
 
 
 ##  <a name="bkmk_level2"></a> Nível 2 - Avançado
@@ -400,7 +400,7 @@ Para o System Center Configuration Manager versão 1610, esse nível inclui o se
 -   Número mínimo/máximo/médio de horas desde a última verificação de atualização de software
 
 -    Produtos de atualização de software sincronizados pelo Ponto de Atualização de Software
--    Configurações de conformidade: detalhes de configuração de: modelo de protocolo SCEP, VPN, Wi-Fi e de Política de Conformidade
+-    Configurações de conformidade: detalhes de configuração de protocolo SCEP, VPN, Wi-Fi e de modelo de política de conformidade
 
 -    Tipo de políticas de Acesso Condicional EAS (bloqueio ou quarentena) para dispositivos que o Intune gerencia
 

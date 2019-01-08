@@ -10,12 +10,12 @@ ms.assetid: 24633725-791a-4df7-8dce-2c24c1a19a03
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 616bf5549c80c94b1dd5d27dc15ea693c86e2ca2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a520e4e43ca2d7de080272c213c5768cbd284501
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335068"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415833"
 ---
 # <a name="choose-a-device-management-solution-for-system-center-configuration-manager"></a>Escolher uma solução de gerenciamento de dispositivo para o System Center Configuration Manager
 
@@ -68,7 +68,7 @@ Use essas soluções de gerenciamento de dispositivo sozinhas ou combinadas umas
 |Windows Phone||Sim||Sim|  
 |Windows Server|Sim|||Sim|  
 
- Para ver uma lista das plataformas com suporte, consulte [Sistemas operacionais com suporte para clientes e dispositivos para o System Center Configuration Manager](configs\supported-operating-systems-for-clients-and-devices.md).
+ Para ver uma lista das plataformas com suporte, consulte [Sistemas operacionais com suporte para clientes e dispositivos para o System Center Configuration Manager](configs/supported-operating-systems-for-clients-and-devices.md).
 
 ##  <a name="bkmk_comp2"></a> Compare as soluções de gerenciamento de dispositivo móvel baseadas na funcionalidade de gerenciamento  
 

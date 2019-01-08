@@ -10,12 +10,12 @@ ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e5099be5ff6b34bcbc232e78056f1937a9508c4f
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: 0650e1aa16f0c1005748c85423c3367a727b1b9b
+ms.sourcegitcommit: 4659946369d5352234f27c7682bce65a0e86c697
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411418"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53303883"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Cache par para clientes do Configuration Manager
 
@@ -64,7 +64,7 @@ Da versão 1806 em diante, os grupos de limites incluem configurações adiciona
 > [!NOTE]  
 > Se o cliente fizer fallback para um grupo de limites vizinho para buscar o conteúdo, o ponto de gerenciamento não adicionará as fontes de cache par do grupo de limites vizinho à lista de possíveis locais de fontes de conteúdo.  
 
-Escolha apenas os clientes mais adequados como fontes de cache par. Avalie a adequação de cliente com base em atributos como tipo de chassi, espaço em disco e conectividade de rede. Para obter mais informações que podem ajudar a selecionar os melhores clientes a serem usados para cache par, confira [este blog de um consultor da Microsoft](https://blogs.technet.microsoft.com/setprice/2016/06/29/pe-peer-cache-custom-reporting-examples/).
+Escolha apenas os clientes mais adequados como fontes de cache par. Avalie a adequação de cliente com base em atributos como tipo de chassi, espaço em disco e conectividade de rede. Para obter mais informações que podem ajudar a selecionar os melhores clientes a serem usados para cache par, confira [este blog de um consultor da Microsoft](https://blogs.technet.microsoft.com/askpfeplat/2018/11/21/configuration-manager-peer-cache-custom-reporting-examples/).
 
 
 ### <a name="limited-access-to-a-peer-cache-source"></a>Acesso limitado a uma fonte de cache par  
@@ -197,17 +197,17 @@ Para ajudá-lo a entender o uso do cache par, exiba o painel **Fontes de Dados d
 
 Além disso, use relatórios para exibir o uso do cache par. No console, acesse o workspace **Monitoramento**, expanda **Relatório** e selecione o nó **Relatórios**. Todos os seguintes relatórios têm o tipo **Conteúdo de Distribuição de Software**:  
 
-1.  **Rejeição de conteúdo de fonte do cache par**: a frequência em que as fontes de cache par em um grupo de limites rejeitam uma solicitação de conteúdo.  
+1.  **Rejeição de conteúdo de origem de cache de pares**: com que frequência as fontes de cache de pares em um grupo de limites rejeitam uma solicitação de conteúdo.  
 
     > [!Note]  
     > **Problema conhecido**<!--486652-->: ao fazer uma busca detalhada nos resultados, como *MaxCPULoad* ou *MaxDiskIO*, você pode receber um erro que sugere que o relatório ou seus detalhes não podem ser encontrados. Para solucionar esse problema, use os outros dois relatórios que mostram os resultados diretamente.  
 
-2. **Rejeição de conteúdo da fonte de cache par por condição**: mostra os detalhes da rejeição de um grupo de limites ou de um tipo de rejeição especificado. 
+2. **Rejeição de conteúdo de origem do cache de pares por condição**: mostra os detalhes de rejeição para um grupo de limites ou tipo de rejeição especificado. 
 
     > [!Note]  
     > **Problema conhecido**<!--486652-->: não é possível selecionar os parâmetros disponíveis; é preciso digitá-los manualmente. Insira os valores de *Nome do Grupo de Limites* e *Tipo de Rejeição* como visto no relatório **Rejeição de conteúdo de fonte de cache par**. Por exemplo, para *Tipo de Rejeição*, você pode inserir *MaxCPULoad* ou *MaxDiskIO*.  
 
-3. **Detalhes da rejeição de conteúdo da fonte de cache par**: mostra o conteúdo que o cliente estava solicitando no momento da rejeição.  
+3. **Detalhes da rejeição de conteúdo de origem de cache de pares**: mostra o conteúdo que o cliente estava solicitando quando ele foi rejeitado.  
 
     > [!Note]  
     > **Problema conhecido**<!--486652-->: não é possível selecionar os parâmetros disponíveis; é preciso digitá-los manualmente. Insira o valor para *Tipo de Rejeição* conforme exibido no relatório de **Rejeição do conteúdo de origem do cache par**. Em seguida, digite a *ID de Recurso* para a fonte de conteúdo sobre a qual você deseja obter mais informações. 

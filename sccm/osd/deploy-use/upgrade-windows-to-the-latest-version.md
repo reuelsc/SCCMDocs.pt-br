@@ -10,12 +10,12 @@ ms.assetid: c21eec87-ad1c-4465-8e45-5feb60b92707
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fbba0306cececebeb7a0e20757e7de3b0d4d0e70
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 35312c92a20f8e3842b5ee47dd3b916631671e45
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348327"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417336"
 ---
 # <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Atualizar o Windows para a versão mais recente com o System Center Configuration Manager
 
@@ -46,21 +46,21 @@ Este artigo fornece as etapas no Configuration Manager para atualizar o sistema 
 
 Examine os seguintes requisitos e limitações para a sequência de tarefas atualizar um sistema operacional, a fim de verificar se ela atende às suas necessidades:  
 
-  -   Adicione apenas as etapas da sequência de tarefas relacionadas à tarefa principal de atualização do sistema operacional. Essas etapas incluem principalmente a instalação de pacotes, aplicativos ou atualizações. Use também as etapas que executam linhas de comando, o PowerShell ou que definem variáveis dinâmicas.  
+- Adicione apenas as etapas da sequência de tarefas relacionadas à tarefa principal de atualização do sistema operacional. Essas etapas incluem principalmente a instalação de pacotes, aplicativos ou atualizações. Use também as etapas que executam linhas de comando, o PowerShell ou que definem variáveis dinâmicas.  
 
-  -   Examine os drivers e os aplicativos que estão instalados nos computadores para garantir que eles são compatíveis com o Windows 10 antes de implantar a sequência de tarefas de atualização.  
+- Examine os drivers e os aplicativos que estão instalados nos computadores para garantir que eles são compatíveis com o Windows 10 antes de implantar a sequência de tarefas de atualização.  
 
-  -   As tarefas a seguir não são compatíveis com a atualização in-loco. Elas exigem o uso de implantações tradicionais de sistema operacional:  
+- As tarefas a seguir não são compatíveis com a atualização in-loco. Elas exigem o uso de implantações tradicionais de sistema operacional:  
 
-     -   Alteração da associação a um domínio do computador ou atualização do grupo local de Administradores.  
+  - Alteração da associação a um domínio do computador ou atualização do grupo local de Administradores.  
 
-     -   Implementação de uma alteração fundamental no computador, como: 
-         - Alteração das partições de disco
-         - Alteração da arquitetura do sistema de x86 para x64
-         - Implementação da UEFI. (Para obter mais informações sobre uma possível opção, consulte [Converter de BIOS em UEFI durante uma atualização in-loco](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).)
-         - Modificação do idioma do sistema operacional base  
+  - Implementação de uma alteração fundamental no computador, como: 
+    - Alteração das partições de disco
+    - Alteração da arquitetura do sistema de x86 para x64
+    - Implementação da UEFI. (Para obter mais informações sobre uma possível opção, consulte [Converter de BIOS em UEFI durante uma atualização in-loco](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).)
+    - Modificação do idioma do sistema operacional base  
 
-     -   Você tem requisitos personalizados, incluindo o uso de uma imagem base personalizada, o uso da criptografia de disco de terceiros ou a solicitação de operações offline do WinPE.  
+  - Você tem requisitos personalizados, incluindo o uso de uma imagem base personalizada, o uso da criptografia de disco de terceiros ou a solicitação de operações offline do WinPE.  
 
 ### <a name="infrastructure-requirements"></a>Requisitos de infraestrutura  
 

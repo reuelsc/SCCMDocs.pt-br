@@ -10,12 +10,12 @@ ms.assetid: 5b30b0d5-722d-4d4b-9ed7-5a43de315461
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 40bab1725b074bc549eeb9e9764ab8a1dd8b83e7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 5343f10fe1e8a7b799454801c764a43619488014
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337710"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421732"
 ---
 # <a name="link-users-and-devices-with-user-device-affinity-in-system-center-configuration-manager"></a>Vincular usuários e dispositivos com a afinidade de dispositivo de usuário no System Center Configuration Manager
 
@@ -52,10 +52,10 @@ A afinidade de dispositivo de usuário no System Center Configuration Manager (C
 ## <a name="automatically-create-user-device-affinities-windows-pcs-only"></a>Criar afinidades de dispositivo de usuário automaticamente (somente PCs com Windows)  
  O Configuration Manager lê os dados sobre logons do usuário no log de Eventos do Windows. Para criar afinidades de dispositivo de usuário automaticamente, é necessário ativar estas duas opções na política de segurança local nos computadores cliente para armazenar os eventos de logon no log de Eventos do Windows:  
 
--   **Eventos de logon de conta de auditoria**  
--   **Eventos de logon de auditoria**  
+- **Eventos de logon de conta de auditoria**  
+- **Eventos de logon de auditoria**  
 
- Para definir essas configurações, use a Política de Grupo do Windows.  
+  Para definir essas configurações, use a Política de Grupo do Windows.  
 
 > [!IMPORTANT]  
 > Se um erro fizer com que o log de eventos do Windows gere um número elevado de entradas, um novo log de eventos poderá ser criado. Se isso ocorrer, os eventos do logon existentes poderão ficar indisponíveis para o Configuration Manager.  
@@ -80,7 +80,7 @@ A afinidade de dispositivo de usuário no System Center Configuration Manager (C
     -   **Configurar automaticamente a afinidade de dispositivo de usuário por meio de dados de uso**. Para permitir que o site crie afinidades de dispositivo de usuário automaticamente, na lista suspensa, selecione **Verdadeiro**. Se você selecionar **Falso**, será necessário aprovar todas as atribuições de afinidade de dispositivo de usuário.  
 
     > [!TIP]  
-    > **Exemplo:** se você definir **Limite de afinidade de dispositivo de usuário (minutos)** como **60** minutos e **Limite de afinidade de dispositivo de usuário (dias)** como **5** dias, o usuário deverá usar o dispositivo durante, pelo menos, 60 minutos em um período de 5 dias para criar uma afinidade de dispositivo de usuário automaticamente.  
+    > **Exemplo:** se você definir o **Limite de afinidade de dispositivo de usuário (minutos)** como **60** minutos e o **Limite de afinidade de dispositivo de usuário (dias)** como**5** dias, o usuário precisará usar o dispositivo durante, pelo menos, 60 minutos em um período de 5 dias para criar uma afinidade de dispositivo de usuário automaticamente.  
 
 Feita a criação de afinidade de dispositivo de usuário automática, o Configuration Manager continua a monitorar os limites de afinidade de dispositivo de usuário. Se a atividade do usuário para o dispositivo estiver abaixo dos limites definidos, a afinidade de dispositivo de usuário será removida. Defina o **Limite de afinidade de dispositivo de usuário (dias)** com o valor mínimo de **7** dias, para evitar situações em que a afinidade de dispositivo de usuário configurada automaticamente possa ser perdida enquanto o usuário não estiver conectado, por exemplo, durante o fim de semana.  
 
@@ -128,7 +128,7 @@ Feita a criação de afinidade de dispositivo de usuário automática, o Configu
 
 1.  No console do Configuration Manager, escolha **Ativos e Conformidade**.  
 
-2.  No espaço de trabalho **Ativos e Conformidade** , selecione a coleção de usuário ou dispositivo para a qual você deseja gerenciar as solicitações de afinidade.  
+2.  No workspace **Ativos e Conformidade**, selecione a coleção de usuário ou dispositivo para a qual você deseja gerenciar as solicitações de afinidade.  
 
 3.  Na guia **Início**, no grupo **Coleção**, escolha **Gerenciar Solicitações de Afinidade**.  
 

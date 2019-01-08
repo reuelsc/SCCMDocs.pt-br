@@ -10,12 +10,12 @@ ms.assetid: 54aa20d5-791e-4416-9db4-5aaea472c0b7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d1f8a8a270bcefb67885d6c0ca88e61a3d6ecd72
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 85d7dbb494f1d6288ad7a45fad98e24a6ad2b393
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334837"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421137"
 ---
 # <a name="define-site-boundaries-and-boundary-groups-for-system-center-configuration-manager"></a>Definir limites de site e grupos de limites para o System Center Configuration Manager
 
@@ -33,8 +33,8 @@ Os limites para o System Center Configuration Manager definem locais de rede na 
 Os clientes da intranet avaliam seu local de rede atual e, em seguida, usam essas informações para identificar grupos de limites aos quais eles pertencem.  
 
  Os clientes usam grupos de limites para:  
--   **Encontrar um site atribuído:** grupos de limites permitem que os clientes localizem um site primário para atribuição do cliente (atribuição automática de site).  
--   **Localizar determinadas funções de sistema de site que eles podem usar:**  quando você associa um grupo de limites com certas funções do sistema de sites, o grupo de limite fornece aos clientes a lista de sistemas de sites para uso durante a localização de conteúdo e como pontos de gerenciamento preferenciais.  
+-   **encontrar um site atribuído:** os grupos de limites permitem que clientes encontrem um site primário para atribuição de cliente (atribuição automática de site).  
+-   **encontrar determinadas funções do sistema de sites que eles possam usar:** quando você associa um grupo de limites com certas funções do sistema de sites, o grupo de limites fornece aos clientes a lista de sistemas de sites a serem usados durante a localização de conteúdo e como pontos de gerenciamento preferenciais.  
 
 Os clientes que estão na Internet ou configurados como clientes somente de Internet não usam informações de limites. Esses clientes não podem usar a atribuição automática de site e sempre podem baixar conteúdo de qualquer ponto de distribuição do site atribuído quando o ponto de distribuição está configurado para permitir conexões de clientes da Internet.  
 
@@ -46,16 +46,16 @@ Os clientes que estão na Internet ou configurados como clientes somente de Inte
 
 ##  <a name="BKMK_BoundaryBestPractices"></a> Práticas recomendadas para limites e grupos de limites  
 
--   **Use uma combinação do menor número de limites que atendem às suas necessidades:**  
-   No passado, era recomendável o uso de alguns tipos de limites em relação a os outros. Com as alterações para melhorar o desempenho, agora é recomendável que você use o tipo ou tipos de limites que escolher que funcionam para seu ambiente e que permitem que você use o menor número de limites possível para simplificar as tarefas de gerenciamento.      
+- **Use uma combinação do menor número de limites que atendem às suas necessidades:**  
+  No passado, era recomendável o uso de alguns tipos de limites em relação a os outros. Com as alterações para melhorar o desempenho, agora é recomendável que você use o tipo ou tipos de limites que escolher que funcionam para seu ambiente e que permitem que você use o menor número de limites possível para simplificar as tarefas de gerenciamento.      
 
--   **Evite a sobreposição de limites para atribuição automática de site:**  
-     Embora cada grupo de limites dê suporte a configurações de atribuição de site e de local de conteúdo, é uma melhor prática para criar um conjunto separado de grupos de limites para usar apenas para atribuição de site. Significado: garanta que cada limite em um grupo de limites não seja membro de outro grupo de limites com uma atribuição de site diferente. Isso ocorre porque:  
+- **Evite a sobreposição de limites para atribuição automática de site:**  
+   Embora cada grupo de limites dê suporte a configurações de atribuição de site e de local de conteúdo, é uma melhor prática para criar um conjunto separado de grupos de limites para usar apenas para atribuição de site. Significado: garanta que cada limite em um grupo de limites não seja membro de outro grupo de limites com uma atribuição de site diferente. Isso ocorre porque:  
 
-    -   Um único limite pode ser incluído em vários grupos de limites  
+  - Um único limite pode ser incluído em vários grupos de limites  
 
-    -   Cada grupo de limite pode ser associado um site primário diferente para atribuição de site  
+  - Cada grupo de limite pode ser associado um site primário diferente para atribuição de site  
 
-    -   Um cliente em um limite que seja membro de dois grupos de limites diferentes com atribuições de site diferente selecionará aleatoriamente um site para ingressar, que pode não ser o site que você pretendia que o cliente ingressasse.  Essa configuração é chamada de limites sobrepostos.  
+  - Um cliente em um limite que seja membro de dois grupos de limites diferentes com atribuições de site diferente selecionará aleatoriamente um site para ingressar, que pode não ser o site que você pretendia que o cliente ingressasse.  Essa configuração é chamada de limites sobrepostos.  
 
-     Os limites sobrepostos não são um problema para o local do conteúdo, em vez disso, geralmente são uma configuração desejada que fornece recursos adicionais de clientes ou locais de conteúdo que eles podem usar.  
+    Os limites sobrepostos não são um problema para o local do conteúdo, em vez disso, geralmente são uma configuração desejada que fornece recursos adicionais de clientes ou locais de conteúdo que eles podem usar.  

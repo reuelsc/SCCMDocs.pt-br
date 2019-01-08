@@ -10,12 +10,12 @@ ms.assetid: 6143fd47-48ec-4bca-b53b-5b9b9f067bc3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9fce0c0a8602b51c3d05e5181023a0f9d05ab0ca
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9fa55c29d6f67132b4d98fd12d8e249093009c67
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335136"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419539"
 ---
 # <a name="how-to-upgrade-clients-for-windows-computers-in-system-center-configuration-manager"></a>Como atualizar clientes para computadores Windows no System Center Configuration Manager
 
@@ -23,17 +23,17 @@ ms.locfileid: "32335136"
 
 É possível atualizar o cliente em computadores Windows usando métodos de instalação do cliente ou os recursos de atualização automática do cliente do Configuration Manager. Os seguintes métodos de instalação do cliente são maneiras válidas de atualizar o software cliente em computadores Windows:  
 
--   Instalação da política de grupo  
+- Instalação da política de grupo  
 
--   Instalação de script de logon  
+- Instalação de script de logon  
 
--   Instalação manual  
+- Instalação manual  
 
--   Instalação da atualização  
+- Instalação da atualização  
 
- Se estiver interessado em atualizar o cliente usando métodos de instalação do cliente, saiba mais sobre como usar esses métodos em [Como implantar clientes em computadores Windows no System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).
+  Se estiver interessado em atualizar o cliente usando métodos de instalação do cliente, saiba mais sobre como usar esses métodos em [Como implantar clientes em computadores Windows no System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).
 
- Começando na versão 1610, você pode excluir os clientes da atualização ao especificar um grupo de exclusão. Para obter mais informações, consulte [Como clientes de atualização para computadores Windows](exclude-clients-windows.md).  
+  Começando na versão 1610, você pode excluir os clientes da atualização ao especificar um grupo de exclusão. Para obter mais informações, consulte [Como clientes de atualização para computadores Windows](exclude-clients-windows.md).  
 
 
 > [!TIP]  
@@ -71,7 +71,7 @@ ms.locfileid: "32335136"
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , expanda **Configuração do Site**e clique em **Sites**.  
+2.  No workspace **Administração**, expanda **Configuração do Site** e clique em **Sites**.  
 
 3.  Na guia **Início** , no grupo **Sites** , clique em **Configurações da Hierarquia**.  
 

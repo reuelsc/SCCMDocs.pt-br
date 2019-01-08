@@ -10,12 +10,12 @@ ms.assetid: f74fdb86-c7c2-447f-91f6-b42df6370d7f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d0beb10dca04fe26fb4add22b64ab61b53154185
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0d8f5cf6b30bb465dea5ae680510f16814287daa
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349160"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419114"
 ---
 # <a name="scenarios-to-deploy-enterprise-operating-systems-with-system-center-configuration-manager"></a>Cenários para implantar sistemas operacionais corporativos com o System Center Configuration Manager
 
@@ -23,13 +23,13 @@ ms.locfileid: "32349160"
 
 Os seguintes cenários de implantação de sistema operacional estão disponíveis no System Center Configuration Manager:  
 
--   [Atualizar o Windows para a versão mais recente](upgrade-windows-to-the-latest-version.md): esse cenário atualiza o sistema operacional em computadores que atualmente executam o Windows 7, Windows 8, Windows 8.1 ou Windows 10. O processo de atualização mantém os aplicativos, as configurações e os dados do usuário no computador. Não há dependências externas, como o Windows ADK, e esse processo é mais rápido e mais resiliente do que as implantações tradicionais de sistema operacional.  
+-   [Atualizar o Windows para a versão mais recente](upgrade-windows-to-the-latest-version.md): esse cenário atualiza o sistema operacional em computadores que executam Windows 7, Windows 8, Windows 8.1 ou Windows 10 no momento. O processo de atualização mantém os aplicativos, as configurações e os dados do usuário no computador. Não há dependências externas, como o Windows ADK, e esse processo é mais rápido e mais resiliente do que as implantações tradicionais de sistema operacional.  
 
--   [Atualizar um computador existente com uma nova versão do Windows usando o System Center Configuration Manager](refresh-an-existing-computer-with-a-new-version-of-windows.md): esse cenário particiona e formata (apaga) um computador existente e instala um novo sistema operacional no computador. É possível migrar configurações e dados do usuário após a instalação do sistema operacional.  
+-   [Atualizar um computador existente com uma nova versão do Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md): esse cenário particiona e formata (apaga) um computador existente e instala um novo sistema operacional no computador. É possível migrar configurações e dados do usuário após a instalação do sistema operacional.  
 
--   [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional) com o System Center Configuration Manager](install-new-windows-version-new-computer-bare-metal.md): esse cenário instala um sistema operacional em um novo computador. Essa é uma nova instalação do sistema operacional e não inclui nenhuma configuração ou migração de dados do usuário.  
+-   [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](install-new-windows-version-new-computer-bare-metal.md): esse cenário instala um sistema operacional em um novo computador. Essa é uma nova instalação do sistema operacional e não inclui nenhuma configuração ou migração de dados do usuário.  
 
--   [Substituir um computador existente e transferir configurações com o System Center Configuration Manager](replace-an-existing-computer-and-transfer-settings.md): esse cenário instala um sistema operacional em um novo computador. Opcionalmente, é possível migrar configurações e dados do usuário do computador antigo para o novo.  
+-   [Substituir um computador existente e transferir configurações](replace-an-existing-computer-and-transfer-settings.md): esse cenário instala um sistema operacional em um novo computador. Opcionalmente, é possível migrar configurações e dados do usuário do computador antigo para o novo.  
 
 ## <a name="things-to-consider-before-you-deploy-operating-system-images"></a>Coisas a considerar antes de implantar imagens do sistema operacional  
  Existem certas coisas que você deve considerar antes de implantar um sistema operacional.  
@@ -51,12 +51,12 @@ Os seguintes cenários de implantação de sistema operacional estão disponíve
 ## <a name="task-sequence-deployments"></a>Implantações de sequência de tarefas  
  A sequência de tarefas criada pode implantar a imagem do sistema operacional em um computador cliente do Configuration Manager de uma das seguintes maneiras:  
 
--   Baixar a imagem e seu conteúdo primeiramente no cache do cliente do Configuration Manager de um ponto de distribuição e instalá-la.  
+- Baixar a imagem e seu conteúdo primeiramente no cache do cliente do Configuration Manager de um ponto de distribuição e instalá-la.  
 
--   Instalar a imagem e seu conteúdo diretamente do ponto de distribuição.  
+- Instalar a imagem e seu conteúdo diretamente do ponto de distribuição.  
 
--   Instalar a imagem e seu conteúdo conforme necessário a partir do ponto de distribuição.  
+- Instalar a imagem e seu conteúdo conforme necessário a partir do ponto de distribuição.  
 
- Por padrão, ao criar a implantação de uma sequência de tarefas, a imagem é baixada primeiramente no cache do cliente do Configuration Manager e instalada em seguida. Se você optar por baixar a imagem no cache do cliente do Configuration Manager antes de executá-la, e a sequência de tarefas contiver uma etapa para reparticionar o disco rígido, a etapa de reparticionamento falhará, pois particionar o disco rígido apagará o conteúdo do cache do cliente do Configuration Manager. Se a sequência de tarefas precisar reparticionar o disco rígido, será necessário executar a instalação da imagem no ponto de distribuição usando a opção **Executar programa do ponto de distribuição**  ao implantar a sequência de tarefas.  
+  Por padrão, ao criar a implantação de uma sequência de tarefas, a imagem é baixada primeiramente no cache do cliente do Configuration Manager e instalada em seguida. Se você optar por baixar a imagem no cache do cliente do Configuration Manager antes de executá-la, e a sequência de tarefas contiver uma etapa para reparticionar o disco rígido, a etapa de reparticionamento falhará, pois particionar o disco rígido apagará o conteúdo do cache do cliente do Configuration Manager. Se a sequência de tarefas precisar reparticionar o disco rígido, será necessário executar a instalação da imagem no ponto de distribuição usando a opção **Executar programa do ponto de distribuição**  ao implantar a sequência de tarefas.  
 
- Para obter mais informações, consulte [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
+  Para obter mais informações, consulte [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  

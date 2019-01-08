@@ -10,12 +10,12 @@ ms.assetid: 104fb4cc-6e83-40a3-8e6b-ac909fb9ec7d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f2dbdb4702a1deac4ae130e89c501e3d122f1b49
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: cee5a57b708e94d7443efeb517249c44c1323cb4
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333334"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417924"
 ---
 # <a name="plan-for-the-site-database-for-system-center-configuration-manager"></a>Planejar o banco de dados do site para o System Center Configuration Manager
 
@@ -31,7 +31,7 @@ O servidor de banco de dados do site é um computador que executa uma versão co
 
 -  Para o uso de um Grupo de Disponibilidade que não seja do SQL, o Modelo de Recuperação de Banco de Dados deve ser definido como SIMPLES  
 
-Mais informações sobre os modos de recuperação do SQL podem ser encontradas em [modelos de recuperação (SQL Server)] (https://docs.microsoft.com/sql/relational-databases/backup-restore/recovery-models-sql-server).
+Mais informações sobre os modos de recuperação do SQL podem ser encontradas em [Modelos de recuperação (SQL Server)](https://docs.microsoft.com/sql/relational-databases/backup-restore/recovery-models-sql-server).
 
 As seguintes configurações do SQL Server podem ser usadas para hospedar o banco de dados do site:  
 

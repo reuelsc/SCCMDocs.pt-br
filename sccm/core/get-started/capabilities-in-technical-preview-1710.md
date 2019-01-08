@@ -10,12 +10,12 @@ ms.assetid: f4706a58-1f11-4eab-b1eb-3d1a0da02d0f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 730d14c5985c088d964761bb83043f3a34924486
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: e8f7a8fbdbd52a8f872583cf2237a06ee8c1420e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340318"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414711"
 ---
 # <a name="capabilities-in-technical-preview-1710-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1710 do System Center Configuration Manager
 
@@ -30,8 +30,8 @@ Este artigo apresenta os recursos que estão disponíveis na Technical Preview d
     Workaround details.
 -->
 **Problemas conhecidos nesse Technical Preview:**
--   **Suporte para Windows 10, versão 1709 (também conhecido como Atualização para Criadores de Outono)**.  A partir dessa versão do Windows, a mídia do Windows inclui várias edições. Ao configurar uma sequência de tarefas para usar um pacote de atualização do sistema operacional ou imagem do sistema operacional, selecione uma [edição com suporte para uso no Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
--   **A atualização para uma versão prévia falha quando há um servidor do site no modo passivo**. Quando você executa uma versão prévia que tem um [servidor do site primário no modo passivo](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), você deverá desinstalar o servidor do site de modo passivo para que seja possível atualizar seu site da versão prévia com êxito para essa nova versão prévia. Você pode reinstalar o servidor de site no modo passivo após a conclusão da instalação pelo site.
+- **Suporte para Windows 10, versão 1709 (também conhecido como Atualização para Criadores de Outono)**.  A partir dessa versão do Windows, a mídia do Windows inclui várias edições. Ao configurar uma sequência de tarefas para usar um pacote de atualização do sistema operacional ou imagem do sistema operacional, selecione uma [edição com suporte para uso no Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
+- **A atualização para uma versão prévia falha quando há um servidor do site no modo passivo**. Quando você executa uma versão prévia que tem um [servidor do site primário no modo passivo](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), você deverá desinstalar o servidor do site de modo passivo para que seja possível atualizar seu site da versão prévia com êxito para essa nova versão prévia. Você pode reinstalar o servidor de site no modo passivo após a conclusão da instalação pelo site.
 
   Para desinstalar o servidor do site no modo passivo:
   1. No console, acesse **Administração** > **Visão geral** > **Configuração do Site** > **Servidores e Funções do Sistema de Sites** e selecione o servidor de site no modo passivo.
@@ -86,8 +86,7 @@ Adicione um ícone para seu aplicativo no Centro de Software. Para experimentar 
 
 
 ## <a name="check-compliance-from-software-center-for-co-managed-devices"></a>Verificar a conformidade no Centro de Software para dispositivos cogerenciados
-<!-- 1356374 -->
-Nesta versão, os usuários podem usar o Centro de Software para verificar a conformidade de seus dispositivos Windows 10 cogerenciados, mesmo quando o acesso condicional for gerenciado pelo Intune. Para obter detalhes, confira [Cogerenciamento para dispositivos com Windows 10](./capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices).
+<!-- 1356374 --> Nesta versão, os usuários poderão usar o Centro de Software para verificar a conformidade de seus dispositivos Windows 10 cogerenciados, mesmo quando o acesso condicional for gerenciado pelo Intune. Para obter detalhes, confira [Cogerenciamento para dispositivos com Windows 10](./capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices).
 
 
 ## <a name="support-for-exploit-guard"></a>Suporte para Exploit Guard
@@ -112,22 +111,21 @@ Os dispositivos gerenciados devem executar a Atualização para Criadores de Out
 | Proteção de rede  |  Os dispositivos devem ter a [proteção em tempo real do Windows Defender AV]( https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard) habilitada.  |
 
 ### <a name="create-an-exploit-guard-policy----1355468---"></a>Criar uma política do Exploit Guard<!--1355468 -->
-1.  No console do Configuration Manager, acesse **Ativos e conformidade** > **Endpoint Protection** e, em seguida, clique em **Windows Defender Exploit Guard**.
-2.  Na guia **Início**, no grupo **Criar**, clique em **Criar Política de Exploração**.
-3.  Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.
-4.  Em seguida, selecione os componentes do Exploit Guard que você quer gerenciar com essa política. Para cada componente que você selecionar, será possível configurar detalhes adicionais.
-  - **Redução da Superfície de Ataque:** configure ameaça ao Office, ameaças de script e ameaças de email que você deseja bloquear ou auditar. Você também pode excluir arquivos ou pastas específicas nessa regra.
-  - **Acesso controlado à pasta:** configure a auditoria ou bloqueio e, em seguida, adicione Aplicativos que podem ignorar essa política.  Você também pode especificar outras pastas que não estão protegidas por padrão.
-  - **Proteção contra explorações:** especifique um arquivo XML que contém configurações para a redução de explorações de processos do sistema e de aplicativos. Você pode exportar essas configurações do aplicativo do Central de Segurança do Windows Defender em um dispositivo com Windows 10.
-  - **Proteção de rede:** configure a proteção de rede para bloquear ou auditar o acesso aos domínios suspeitos.
-5.  Conclua o assistente para criar a política, que, mais tarde, você poderá implantar em dispositivos.
+1. No console do Configuration Manager, acesse **Ativos e conformidade** > **Endpoint Protection** e, em seguida, clique em **Windows Defender Exploit Guard**.
+2. Na guia **Início**, no grupo **Criar**, clique em **Criar Política de Exploração**.
+3. Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.
+4. Em seguida, selecione os componentes do Exploit Guard que você quer gerenciar com essa política. Para cada componente que você selecionar, será possível configurar detalhes adicionais.
+   - **Redução da superfície de ataque:** configure as ameaças ao Office, ameaças de script e ameaças de email que você deseja bloquear ou auditar. Você também pode excluir arquivos ou pastas específicas nessa regra.
+   - **Acesso controlado a pastas:** configure o bloqueio ou a auditoria e, em seguida, adicione Aplicativos que podem ignorar essa política.  Você também pode especificar outras pastas que não estão protegidas por padrão.
+   - **Proteção contra explorações:**  especifique um arquivo XML que contém configurações para a mitigação de explorações de processos do sistema e de aplicativos. Você pode exportar essas configurações do aplicativo do Central de Segurança do Windows Defender em um dispositivo com Windows 10.
+   - **Proteção de rede:** defina a proteção de rede para bloquear ou auditar o acesso aos domínios suspeitos.
+5. Conclua o assistente para criar a política, que, mais tarde, você poderá implantar em dispositivos.
 
 ### <a name="deploy-an-exploit-guard-policy"></a>Implantar uma política do Exploit Guard     
 Depois de criar políticas do Exploit Guard, use o assistente para Implantar Política do Exploit Guard para implantá-las. Para fazer isso, abra console do Configuration Manager, acesse **Ativos e conformidade** > **Endpoint Protection** e, em seguida, clique em **Implantar Política do Exploit Guard**.
 
 ## <a name="limited-support-for-cng-certificates"></a>Suporte limitado para certificados CNG
-<!-- 1356191 -->
-A partir desta versão, você pode agora usar modelos de certificado [Cryptography API: Next Generation (CNG)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) para os seguintes cenários:
+<!-- 1356191 --> Começando com esta versão, agora é possível usar modelos de certificado [CNG: (Cryptography API: Next Generation)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) para os seguintes cenários:
 
 - O registro de cliente e a comunicação com um ponto de gerenciamento HTTPS.   
 - Distribuição e o aplicativo de implantação de software com um ponto de distribuição HTTPS.   
@@ -193,7 +191,7 @@ Para permitir que um dispositivo que está executando o Windows Defender SmartSc
 
 ## <a name="configure-and-deploy-windows-defender-application-guard-policies----1351960---"></a>Configurar e implantar políticas de Proteção de Aplicativos do Windows Defender <!-- 1351960 -->
 
-O [Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) é um novo recurso do Windows que ajuda a proteger os usuários através da abertura de sites não confiáveis em um contêiner isolado seguro que não esteja acessível por outras partes do sistema operacional. Nesse visualização técnica, adicionamos suporte para configurar esse recurso usando as configurações de conformidade do Configuration Manager que você configura e, em seguida, implanta em uma coleção. Este recurso será lançado na versão prévia para a versão de 64 bits da atualização do criador do Windows 10 (codinome: RS2). Para testar esse recurso agora, você deverá estar usando uma versão prévia desta atualização.
+O [Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) é um novo recurso do Windows que ajuda a proteger os usuários através da abertura de sites não confiáveis em um contêiner isolado seguro que não esteja acessível por outras partes do sistema operacional. Nesse visualização técnica, adicionamos suporte para configurar esse recurso usando as configurações de conformidade do Configuration Manager que você configura e, em seguida, implanta em uma coleção. Este recurso será lançado como versão prévia na versão de 64 bits da Atualização do Windows 10 para Criadores (codinome: RS2). Para testar esse recurso agora, você deverá estar usando uma versão prévia desta atualização.
 
 ### <a name="before-you-start"></a>Antes de começar
 Para criar e implantar as políticas do Windows Defender Application Guard, os dispositivos do Windows 10 nos quais você implantará a política deverão ser configurados com uma política de isolamento de rede. Para saber mais, veja a postagem no blog mencionado posteriormente. Esse recurso só funciona com versões atuais do Windows 10 Insider. Para testá-lo, os clientes deverão estar executando uma versão recente do Windows 10 Insider.
@@ -204,7 +202,7 @@ Para entender os conceitos básicos sobre o Windows Defender Application Guard, 
 
 Para criar uma política e procurar as configurações disponíveis:
 1. No console do **Configuration Manager**, escolha **Ativos e Conformidade**.
-2. No espaço de trabalho **Ativos e Conformidade**, escolha **Visão Geral** > **Endpoint Protection** > **Windows Defender Application Guard**.
+2. No workspace **Ativos e Conformidade**, escolha **Visão Geral** > **Endpoint Protection** > **Windows Defender Application Guard**.
 3. Na guia **Início**, no grupo **Criar**, clique em **Criar Política do Windows Defender Application Guard**.
 4. Usando a postagem no blog como referência, você pode procurar e definir as configurações disponíveis para experimentar o recurso.
 5. Nesta versão, adicionamos a nova página Definição de Rede ao assistente. Aqui, especifique a identidade corporativa e defina o limite da rede corporativa.

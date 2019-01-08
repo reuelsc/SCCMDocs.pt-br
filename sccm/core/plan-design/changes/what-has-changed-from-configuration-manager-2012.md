@@ -9,12 +9,12 @@ ms.assetid: 3ae68fa6-8b30-45dd-9d12-50bb67cb4a9d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a58e5924fc34bad514ca6f01bb23aa84443705c6
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: df78f6ebfece28d01402272814e8527c3ca4a5fd
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340702"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422820"
 ---
 # <a name="what39s-changed-in-system-center-configuration-manager-from-system-center-2012-configuration-manager"></a>O que mudou no System Center Configuration Manager com relação ao System Center 2012 Configuration Manager
 
@@ -122,27 +122,27 @@ Esteja ciente das seguintes alterações nas atualizações de software:
 
 Esteja ciente das seguintes alterações nas configurações de conformidade:
 
--   O System Center Configuration Manager melhora o fluxo de trabalho para a criação de itens de configuração. Agora, ao criar um item de configuração e selecionar as plataformas com suporte, apenas as configurações relevantes para essa plataforma estarão disponíveis. Consulte [Introdução às configurações de conformidade no System Center Configuration Manager](../../../compliance/get-started/get-started-with-compliance-settings.md).  
+- O System Center Configuration Manager melhora o fluxo de trabalho para a criação de itens de configuração. Agora, ao criar um item de configuração e selecionar as plataformas com suporte, apenas as configurações relevantes para essa plataforma estarão disponíveis. Consulte [Introdução às configurações de conformidade no System Center Configuration Manager](../../../compliance/get-started/get-started-with-compliance-settings.md).  
 
--   O assistente **Criar Item de Configuração** agora facilita a escolha do tipo de item de configuração que você deseja criar. Além disso, itens de configuração novos e atualizados estão disponíveis para:  
+- O assistente **Criar Item de Configuração** agora facilita a escolha do tipo de item de configuração que você deseja criar. Além disso, itens de configuração novos e atualizados estão disponíveis para:  
 
-    -   Dispositivos Windows 10 gerenciados com o cliente do Configuration Manager.  
+  -   Dispositivos Windows 10 gerenciados com o cliente do Configuration Manager.  
 
-    -   Dispositivos Mac OS X gerenciados com o cliente do Configuration Manager.  
+  -   Dispositivos Mac OS X gerenciados com o cliente do Configuration Manager.  
 
-    -   Computadores desktop e de servidor Windows gerenciados com o cliente do Configuration Manager.  
+  -   Computadores desktop e de servidor Windows gerenciados com o cliente do Configuration Manager.  
 
-    -   Dispositivos Windows 8.1 e Windows 10 gerenciados sem o cliente do Configuration Manager.  
+  -   Dispositivos Windows 8.1 e Windows 10 gerenciados sem o cliente do Configuration Manager.  
 
-    -   Dispositivos Windows Phone gerenciados sem o cliente do Configuration Manager.  
+  -   Dispositivos Windows Phone gerenciados sem o cliente do Configuration Manager.  
 
-    -   Dispositivos iOS e Mac OS X gerenciados sem o cliente do Configuration Manager.  
+  -   Dispositivos iOS e Mac OS X gerenciados sem o cliente do Configuration Manager.  
 
-    -   Dispositivos Android e Samsung KNOX Standard gerenciados sem o cliente do Configuration Manager.  
+  -   Dispositivos Android e Samsung KNOX Standard gerenciados sem o cliente do Configuration Manager.  
 
- Consulte [Como criar itens de configuração no System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items.md).  
+  Consulte [Como criar itens de configuração no System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items.md).  
 
--   Suporte para o gerenciamento de configurações em computadores Mac OS X que são registrados no Microsoft Intune ou gerenciados usando o cliente do Configuration Manager. Consulte [Como criar itens de configuração para dispositivos iOS e Mac OS X gerenciados sem o cliente do System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client.md).  
+- Suporte para o gerenciamento de configurações em computadores Mac OS X que são registrados no Microsoft Intune ou gerenciados usando o cliente do Configuration Manager. Consulte [Como criar itens de configuração para dispositivos iOS e Mac OS X gerenciados sem o cliente do System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client.md).  
 
 ## <a name="protect-data-and-site-infrastructure"></a>Proteja a infraestrutura de dados e do site  
 O System Center Configuration Manager permite a integração ao Windows Hello para Empresas (anteriormente conhecido como Microsoft Passport for Work). O Windows Hello para Empresas é um método de conexão alternativo que usa o Active Directory ou uma conta do Azure Active Directory, para substituir uma senha, um cartão inteligente ou um cartão inteligente virtual em dispositivos que executam o Windows 10. Consulte [Windows Hello for Business settings in System Center Configuration Manager](../../../protect/deploy-use/windows-hello-for-business-settings.md) (Configurações do Windows Hello for Business no System Center Configuration Manager).

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
-ms.openlocfilehash: f59ca099325028ccf29904a2108939d0047df745
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 80effa7ec3439925248e19dbf9d35efcf1694b8a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52455931"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419352"
 ---
 # <a name="deploy-software-updates"></a>Implantar atualizações de software  
 
@@ -98,13 +98,13 @@ Depois de criar uma ADR, adicione mais implantações à regra. Essa ação ajud
 
 Cada nova implantação que você adicionar:  
 
--   Usa o mesmo grupo e pacote de atualização que a ADR cria em sua primeira execução  
--   Pode ser direcionada a uma coleção diferente  
--   Dá suporte a propriedades de implantação exclusivas, incluindo:  
-   -   Tempo de ativação  
-   -   Prazo  
-   -   Experiência do usuário  
-   -   Alertas separados para cada implantação  
+- Usa o mesmo grupo e pacote de atualização que a ADR cria em sua primeira execução  
+- Pode ser direcionada a uma coleção diferente  
+- Dá suporte a propriedades de implantação exclusivas, incluindo:  
+  -   Tempo de ativação  
+  -   Prazo  
+  -   Experiência do usuário  
+  -   Alertas separados para cada implantação  
 
 
 Para obter mais informações e etapas detalhadas, confira [Implantar atualizações de software automaticamente](automatically-deploy-software-updates.md)

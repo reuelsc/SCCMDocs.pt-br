@@ -10,12 +10,12 @@ ms.assetid: 7341cc6e-9e08-41e4-bcc6-6c1ff12e85ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 891366f7e5fa3f4fd2b8f9a8606e823f0a48c394
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 98deb50a35bd96684bf537c1821c58d1d08ca738
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342504"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420117"
 ---
 # <a name="use-alerts-and-the-status-system-for-system-center-configuration-manager"></a>Usar alertas e o sistema de status para o System Center Configuration Manager
 
@@ -29,7 +29,7 @@ Configure alertas e use o sistema de status interno para ficar informado quanto 
 
  Por padrão, o sistema de status do Configuration Manager funciona sem configuração, usando as configurações apropriadas para a maioria dos ambientes. No entanto, você pode configurar:  
 
--   **Status summarizers:** você pode editar os status summarizers em cada site para controlar a frequência das mensagens de status que geram uma alteração de indicador de status para os quatro summarizers a seguir:  
+-   **Status Summarizers:** você pode editar os status summarizers em cada site para controlar a frequência das mensagens de status que geram uma alteração de indicador de status para os quatro summarizers a seguir:  
 
     -   Summarizer de implantação de aplicativos  
 
@@ -39,12 +39,12 @@ Configure alertas e use o sistema de status interno para ficar informado quanto 
 
     -   Summarizer de status do sistema de site  
 
--   **Regras de filtro de status:** você pode criar novas regras de filtro de status, modificar a prioridade das regras, desabilitar ou habilitar regras e excluir regras não usadas em cada site.  
+-   **Regras de filtro de status:** você pode criar regras de filtro de status, modificar a prioridade das regras, desabilitar ou habilitar regras e excluir regras não usadas em cada site.  
 
     > [!NOTE]  
     >  As regras de filtro de estado não oferecem suporte a uso de variáveis de ambiente para executar comandos externos.  
 
--   **Relatórios de status:** você pode configurar relatórios dos componentes do servidor e do cliente para modificar a forma como as mensagens de status são relatadas para o sistema de status do Configuration Manager e especificar para onde são enviadas as mensagens de status.  
+-   **Relatório de status:** você pode configurar relatórios dos componentes do servidor e do cliente para modificar a forma como as mensagens de status são relatadas para o sistema de status do Configuration Manager e especificar para onde são enviadas as mensagens de status.  
 
     > [!WARNING]  
     >  Como as configurações de relatório padrão são apropriadas para a maioria dos ambientes, altere-as com cuidado. Quando aumenta o nível do relatório de status escolhendo relatar todos os detalhes de status, você pode aumentar a quantidade de mensagens de status a serem processadas, o que aumenta a carga de processamento no site do Configuration Manager. Se diminuir o nível de relatório de status, você poderá limitar a utilidade do status summarizers.  
@@ -151,7 +151,7 @@ Como o sistema de status mantém configurações separadas para cada site, você
 4.  Clique em **OK**.  
 
 ###  <a name="BKMK_MonitorSystemStatus"></a> Monitorar o sistema de status do Gerenciador de Configurações  
- O**status do sistema** no Configuration Manager fornece uma visão geral das operações gerais de sites e de servidor do site de sua hierarquia. Ele pode revelar problemas operacionais de componentes ou servidores do sistema de sites, e você pode usar o status do sistema para analisar detalhes específicos de diferentes operações do Configuration Manager. Você monitora o status do sistema no nó **Status do Sistema** do espaço de trabalho **Monitoramento** no console do Configuration Manager.  
+ O**status do sistema** no Configuration Manager fornece uma visão geral das operações gerais de sites e de servidor do site de sua hierarquia. Ele pode revelar problemas operacionais de componentes ou servidores do sistema de sites, e você pode usar o status do sistema para analisar detalhes específicos de diferentes operações do Configuration Manager. Você monitora o status do sistema no nó **Status do Sistema** do workspace **Monitoramento** no console do Configuration Manager.  
 
  A maioria dos componentes e funções do sistema de sites do Configuration Manager gera mensagens de status. Os detalhes das mensagens de status são registrados em cada log operacional de componentes, mas também enviados ao banco de dados do site onde estão resumidos e apresentados em um pacote cumulativo de atualizações geral de cada componente ou da integridade do sistema de site. Esses pacotes cumulativos de atualizações de mensagens de status fornecem detalhes sobre informações de operações normais e os detalhes de avisos e erros. Você pode configurar os limites em que os avisos e erros são acionados e ajustar o sistema para garantir que as informações de pacote cumulativo de atualizações ignorem os problemas conhecidos que não são relevantes para você enquanto chama a atenção para problemas reais em servidores e operações de componentes que você talvez precise investigar.  
 
@@ -181,15 +181,15 @@ Como o sistema de status mantém configurações separadas para cada site, você
 ##  <a name="bkmk_Alerts"></a> Alertas  
  Os alertas do Configuration Manager são gerados por algumas operações quando ocorre uma condição específica.  
 
--   Normalmente, os alertas são gerados quando ocorre um erro que você deve resolver.  
+- Normalmente, os alertas são gerados quando ocorre um erro que você deve resolver.  
 
--   Podem ser gerados alertas para alertá-lo de que uma condição existe, para que você possa continuar a monitorar a situação.  
+- Podem ser gerados alertas para alertá-lo de que uma condição existe, para que você possa continuar a monitorar a situação.  
 
--   Alguns alertas são configurados por você, como alertas de status do cliente e do Endpoint Protection, enquanto outros são configurados automaticamente  
+- Alguns alertas são configurados por você, como alertas de status do cliente e do Endpoint Protection, enquanto outros são configurados automaticamente  
 
--   Você pode configurar assinaturas para alertas, que por sua vez podem enviar detalhes por email, aumentando o conhecimento dos principais problemas  
+- Você pode configurar assinaturas para alertas, que por sua vez podem enviar detalhes por email, aumentando o conhecimento dos principais problemas  
 
- Use a tabela a seguir para encontrar informações sobre como configurar alertas e inscrições de alerta no Configuration Manager:  
+  Use a tabela a seguir para encontrar informações sobre como configurar alertas e inscrições de alerta no Configuration Manager:  
 
 
 |Ação|Mais informações|  
@@ -204,9 +204,9 @@ Como o sistema de status mantém configurações separadas para cada site, você
 
 ##### <a name="to-manage-general-alerts"></a>Para gerenciar alertas gerais  
 
-1.  No console do Configuration Manager, navegue até **Monitoramento** > **Alertas** e selecione uma tarefa de gerenciamento.  
+1. No console do Configuration Manager, navegue até **Monitoramento** > **Alertas** e selecione uma tarefa de gerenciamento.  
 
-  Use a tabela a seguir para obter mais informações sobre as tarefas de gerenciamento que podem requerer informações adicionais antes de você selecioná-las.  
+   Use a tabela a seguir para obter mais informações sobre as tarefas de gerenciamento que podem requerer informações adicionais antes de você selecioná-las.  
 
 |Tarefa de gerenciamento|Detalhes|  
     |---------------------|-------------|  
@@ -253,15 +253,15 @@ Como o sistema de status mantém configurações separadas para cada site, você
 
 3.  Na caixa de diálogo **Propriedades do Componente de Notificação de Email** , especifique as seguintes informações:  
 
-    -   **Habilitar notificação por email de alertas**: marque esta caixa de seleção para habilitar o Configuration Manager a usar um servidor SMTP para enviar alertas por email.  
+    -   **Habilitar a notificação de alertas por email**: marque essa caixa de seleção para habilitar o Configuration Manager para usar um servidor SMTP para enviar alertas por email.  
 
-    -   **FQDN ou Endereço IP do servidor SMTP para enviar alertas de email**: insira o FQDN (nome de domínio totalmente qualificado) ou o endereço IP e a porta SMTP do servidor de email que você deseja usar para esses alertas.  
+    -   **FQDN ou endereço IP do servidor SMTP para enviar alertas por email**: insira o FQDN (nome de domínio totalmente qualificado) ou o endereço IP e a porta SMTP do servidor de email que você deseja usar para esses alertas.  
 
-    -   **Conta de Conexão de Servidor SMTP**: especifique o método de autenticação que o Configuration Manager deve usar para conectar o servidor de email.  
+    -   **Conta de conexão do servidor SMTP**: especifique o método de autenticação que o Configuration Manager deve usar para conectar o servidor de email.  
 
-    -   **Endereço de remetente para alertas de email**: especifique o endereço de email do qual os emails de alerta são enviados.  
+    -   **Endereço do remetente para alertas de email**: especifique o endereço de email do qual os emails de alerta são enviados.  
 
-    -   **Testar Servidor SMTP**: envia um email de teste para o endereço de email especificado em **Endereço de remetente para alertas de email**.  
+    -   **Testar servidor SMTP**: envia um email de teste ao endereço de email especificado em **Endereço do remetente de alertas por email**.  
 
 4.  Clique em **OK** para salvar as configurações e fechar a caixa de diálogo **Propriedades dos Componentes de Configuração de Email** .  
 
@@ -273,36 +273,36 @@ Como o sistema de status mantém configurações separadas para cada site, você
 
 3.  Na caixa de diálogo **Nova Assinatura** , especifique as seguintes informações:  
 
-    -   **Nome**: forneça um nome para identificar a assinatura de email. Você pode usar até 255 caracteres.  
+    -   **Nome**: insira um nome para identificar a assinatura de email. Você pode usar até 255 caracteres.  
 
-    -   **Endereço de email**: insira os endereços de email para os quais deseja que o alerta seja enviado. Você pode separar vários endereços de email usando ponto-e- vírgula.  
+    -   **Endereço de email**: insira os endereços de email para os quais você deseja que o alerta seja enviado. Você pode separar vários endereços de email usando ponto-e- vírgula.  
 
     -   **Idioma do email**: na lista, especifique o idioma do email.  
 
 4.  Clique em **OK** para fechar a caixa de diálogo **Nova Assinatura** e criar a assinatura de email.  
 
     > [!NOTE]  
-    >  Você pode excluir e editar assinaturas no espaço de trabalho **Monitoramento** expandindo o nó **Alertas** e clicando no nó **Assinaturas** .  
+    >  Você pode excluir e editar assinaturas no workspace **Monitoramento** expandindo o nó **Alertas** e clicando no nó **Assinaturas**.  
 
 ###  <a name="BKMK_MonitorAlerts"></a> Monitorar alertas  
- Você pode exibir alertas no nó **Alertas** no espaço de trabalho **Monitoramento** . Alertas têm um dos seguintes estados de alerta:  
+ Você pode exibir alertas no nó **Alertas** no workspace **Monitoramento**. Alertas têm um dos seguintes estados de alerta:  
 
--   **Nunca disparado**: a condição do alerta ainda não foi atendida.  
+- **Nunca disparado**: A condição do alerta ainda não foi atendida.  
 
--   **Ativo**: a condição do alerta foi atendida.  
+- **Ativo**: A condição do alerta foi atendida.  
 
--   **Cancelado**: a condição de um alerta ativo deixou de ser atendida. Esse estado indica que a condição que causou o alerta agora está resolvida.  
+- **Cancelado**: A condição de um alerta ativo não foi mais atendida. Esse estado indica que a condição que causou o alerta agora está resolvida.  
 
--   **Adiado**: um usuário administrativo configurou o Configuration Manager para avaliar o estado do alerta posteriormente.  
+- **Adiado**: um usuário administrativo configurou o Configuration Manager para avaliar o estado do alerta posteriormente.  
 
--   **Desabilitado**: o alerta foi desabilitado por um usuário administrativo. Quando um alerta está nesse estado, o Configuration Manager não atualiza o alerta mesmo que o estado do alerta seja alterado.  
+- **Desabilitado**: O alerta foi desabilitado por um usuário administrativo. Quando um alerta está nesse estado, o Configuration Manager não atualiza o alerta mesmo que o estado do alerta seja alterado.  
 
- Você pode executar uma das ações a seguir quando o Configuration Manager gerar um alerta:  
+  Você pode executar uma das ações a seguir quando o Configuration Manager gerar um alerta:  
 
--   Resolva a condição que causou o alerta, por exemplo, você resolve um problema de rede ou de configuração que gerou o alerta. Após o Configuration Manager detectar que o problema não existe mais, o estado do alerta mudará para **Cancelado**.  
+- Resolva a condição que causou o alerta, por exemplo, você resolve um problema de rede ou de configuração que gerou o alerta. Após o Configuration Manager detectar que o problema não existe mais, o estado do alerta mudará para **Cancelado**.  
 
--   Se o alerta é um problema conhecido, você pode adiar o alerta para um período específico. No período especificado, o Configuration Manager atualizará o alerta para seu estado atual.  
+- Se o alerta é um problema conhecido, você pode adiar o alerta para um período específico. No período especificado, o Configuration Manager atualizará o alerta para seu estado atual.  
 
-     Você pode adiar um alerta apenas quando ele está ativo.  
+   Você pode adiar um alerta apenas quando ele está ativo.  
 
--   Você pode editar o **Comentário** de um alerta para que os outros usuários administrativos possam ver que você está ciente do alerta. Por exemplo, no comentário você pode identificar como resolver a condição, fornecer informações sobre o status atual da condição ou explicar o motivo de ter adiado o alerta.  
+- Você pode editar o **Comentário** de um alerta para que os outros usuários administrativos possam ver que você está ciente do alerta. Por exemplo, no comentário você pode identificar como resolver a condição, fornecer informações sobre o status atual da condição ou explicar o motivo de ter adiado o alerta.  

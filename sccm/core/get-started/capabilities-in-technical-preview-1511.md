@@ -11,12 +11,12 @@ author: aczechowski
 robots: noindex,nofollow
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 8a805d6b7075d61b0e7669200670ac8434eccdf5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d58a780ecf6232bd8ef6e7f0d9851ead34486177
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336554"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414745"
 ---
 # <a name="capabilities-in-technical-preview-1511-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1511 do System Center Configuration Manager
 
@@ -59,15 +59,15 @@ Quando a Microsoft publica uma nova atualização de clientes de desktop do Offi
 ### <a name="try-it-out"></a>Experimente!  
  Tente concluir a seguinte tarefa e depois use as informações de comentários perto da parte superior deste tópico para nos contar como ela funcionou:  
 
-1.  É possível sincronizar as atualizações do Office 365 para o servidor do site do Configuration Manager e vê-las no console do Configuration Manager.  
+1. É possível sincronizar as atualizações do Office 365 para o servidor do site do Configuration Manager e vê-las no console do Configuration Manager.  
 
-2.  Você pode aprovar e implantar atualizações do Office 365 com êxito.  
+2. Você pode aprovar e implantar atualizações do Office 365 com êxito.  
 
-3.  Você pode baixar e implantar atualizações do Office 365 com êxito.  
+3. Você pode baixar e implantar atualizações do Office 365 com êxito.  
 
-4.  Você pode verificar a conformidade com as atualizações do Office 365 usando o monitoramento ou os relatórios no console.  
+4. Você pode verificar a conformidade com as atualizações do Office 365 usando o monitoramento ou os relatórios no console.  
 
- Para obter as etapas detalhadas, veja [Gerenciar atualizações do cliente Office 365 com o System Center Configuration Manager Technical Preview](https://technet.microsoft.com/library/mt628083.aspx).  
+   Para obter as etapas detalhadas, veja [Gerenciar atualizações do cliente Office 365 com o System Center Configuration Manager Technical Preview](https://technet.microsoft.com/library/mt628083.aspx).  
 
 ##  <a name="BKMK_AlwasyOn"></a> Suporte para o SQL Server AlwaysOn para bancos de dados altamente disponíveis  
  O Configuration Manager agora dá suporte ao uso de grupos de disponibilidade AlwaysOn do SQL Server para hospedar o banco de dados do site.  Quando você instala um novo site, é possível direcionar a instalação para usar o grupo de disponibilidade em vez de uma instância normal do SQL Server.  
@@ -131,11 +131,11 @@ Para instalar um site que usa um grupo de disponibilidade do SQL Server:
 
 1.  Substitua o seguinte quando for solicitado pela Instalação do Configuration Manager:  
 
-    -   **Nome do SQL Server:** insira o nome virtual do Ponto de extremidade configurado ao criar o grupo de disponibilidade. O nome virtual deve ser um nome DNS completo, como **&lt;endpointServer\>.fabrikam.com**.  
+    -   **Nome do SQL Server**: Insira o nome virtual para o Ponto de extremidade configurado ao criar o grupo de disponibilidade. O nome virtual deve ser um nome DNS completo, como **&lt;endpointServer\>.fabrikam.com**.  
 
-    -   **Instância**: este valor deve permanecer em branco. Não há nenhuma instância nesta configuração.  
+    -   **Instância**:  Este valor deve permanecer em branco. Não há nenhuma instância nesta configuração.  
 
-    -   **Banco de dados**: insira o nome do banco de dados que você criou na réplica primária do grupo de disponibilidade.  
+    -   **Banco de dados**: Insira o nome do banco de dados que você criou na réplica primária do grupo de disponibilidade.  
 
 2.  Em seguida, você deve fornecer um local de rede que pode ser acessado por cada SQL Server no grupo:  
 
@@ -167,7 +167,7 @@ Tente concluir a seguinte tarefa e depois use as informações de comentários p
 
 1.  [Crie uma coleção de dispositivos](https://technet.microsoft.com/library/gg712295.aspx) que contém os servidores no cluster.  
 
-2.  No espaço de trabalho **Ativos e Conformidade**, clique em **Coleções de Dispositivos**, clique com o botão direito do mouse na coleção que contém os servidores no cluster e clique em **Propriedades**.  
+2.  No workspace **Ativos e Conformidade**, clique em **Coleções de Dispositivos**, clique com o botão direito do mouse na coleção que contém os servidores no cluster e clique em **Propriedades**.  
 
 3.  Na guia **Geral**, selecione **Todos os dispositivos fazem parte do mesmo cluster de servidores** e clique em **Configurações**.  
 

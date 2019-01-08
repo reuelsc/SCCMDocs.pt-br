@@ -11,12 +11,12 @@ author: aczechowski
 robots: noindex,nofollow
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: eaae10b191876915517a928a3f6ee15aafba2760
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 875ee80050b10561471f98ec73625055c5975257
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343609"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416666"
 ---
 # <a name="capabilities-in-technical-preview-1602-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1602 do System Center Configuration Manager
 
@@ -31,15 +31,15 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 ### <a name="ios-activation-lock"></a>Bloqueio de Ativação do iOS  
  O System Center Configuration Manager pode ajudar a gerenciar o Bloqueio de Ativação do iOS, um recurso do aplicativo Buscar meu iPhone para dispositivos iOS 7.1 e posteriores. O Bloqueio de Ativação é habilitado automaticamente quando o aplicativo Buscar meu iPhone for usado em um dispositivo. Depois que ele for habilitado, a ID da Apple e a senha do usuário deverão ser inseridas antes que qualquer pessoa possa:  
 
--   Desligar o Buscar meu iPhone  
+- Desligar o Buscar meu iPhone  
 
--   Apagar o dispositivo  
+- Apagar o dispositivo  
 
--   Reativar o dispositivo  
+- Reativar o dispositivo  
 
- O Configuration Manager pode solicitar o status do Bloqueio de Ativação de dispositivos supervisionados e não supervisionados que executam o iOS 7.1 e posterior. Para dispositivos supervisionados, o Intune pode recuperar o código de bypass de Bloqueio de Ativação e emiti-lo diretamente para o dispositivo.  
+  O Configuration Manager pode solicitar o status do Bloqueio de Ativação de dispositivos supervisionados e não supervisionados que executam o iOS 7.1 e posterior. Para dispositivos supervisionados, o Intune pode recuperar o código de bypass de Bloqueio de Ativação e emiti-lo diretamente para o dispositivo.  
 
- Para ver os detalhes, consulte [Ajudar a proteger dispositivos iOS com bypass de Bloqueio de Ativação para o Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock)  
+  Para ver os detalhes, consulte [Ajudar a proteger dispositivos iOS com bypass de Bloqueio de Ativação para o Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock)  
 
 ##  <a name="BKMK_SC1601"></a> Melhorias no Centro de Software na versão 1602  
 

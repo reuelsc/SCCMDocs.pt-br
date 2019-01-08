@@ -10,12 +10,12 @@ ms.assetid: 95033a9b-ff13-4b70-b1de-bcb25bcb6024
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b9a3f4583944f0818f74930753bad99e3408a928
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0b218d665d574c74358e3d018f45dd5b173cc21c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350010"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424163"
 ---
 # <a name="customize-operating-system-images-with-system-center-configuration-manager"></a>Personalizar imagens do sistema operacional com o System Center Configuration Manager
 
@@ -32,34 +32,34 @@ As imagens do sistema operacional no System Center Configuration Manager são ar
 #### <a name="automated-configuration"></a>Configuração automatizada  
  **Vantagens**  
 
--   A configuração pode ser completamente autônoma, o que elimina a necessidade da presença de um administrador ou usuário.  
+- A configuração pode ser completamente autônoma, o que elimina a necessidade da presença de um administrador ou usuário.  
 
--   É possível reutilizar a sequência de tarefas para repetir a configuração de computadores de referência adicionais com um alto nível de segurança.  
+- É possível reutilizar a sequência de tarefas para repetir a configuração de computadores de referência adicionais com um alto nível de segurança.  
 
--   É possível modificar a sequência de tarefas para acomodar diferenças em computadores de referência sem precisar recriar a sequência de tarefas inteira.  
+- É possível modificar a sequência de tarefas para acomodar diferenças em computadores de referência sem precisar recriar a sequência de tarefas inteira.  
 
- **Desvantagens**  
+  **Desvantagens**  
 
--   A ação inicial de criar uma sequência de tarefas pode levar muito tempo para ser criada e testada.  
+- A ação inicial de criar uma sequência de tarefas pode levar muito tempo para ser criada e testada.  
 
--   Se os requisitos do computador de referência mudarem significativamente, poderá demorar bastante até criar e testar a sequência de tarefas novamente.  
+- Se os requisitos do computador de referência mudarem significativamente, poderá demorar bastante até criar e testar a sequência de tarefas novamente.  
 
 #### <a name="manual-configuration"></a>Configuração manual  
  **Vantagens**  
 
--   Não é preciso criar uma sequência de tarefas nem perder tempo para testar e solucionar os problemas da sequência de tarefas.  
+- Não é preciso criar uma sequência de tarefas nem perder tempo para testar e solucionar os problemas da sequência de tarefas.  
 
--   É possível instalar diretamente dos CDs sem colocar todos os pacotes de software (incluindo o próprio Windows) em um pacote do Configuration Manager.  
+- É possível instalar diretamente dos CDs sem colocar todos os pacotes de software (incluindo o próprio Windows) em um pacote do Configuration Manager.  
 
- **Desvantagens**  
+  **Desvantagens**  
 
--   A precisão da configuração do computador de referência depende do administrador ou do usuário que configura o computador.  
+- A precisão da configuração do computador de referência depende do administrador ou do usuário que configura o computador.  
 
--   Ainda é preciso verificar e testar se o computador de referência está configurado corretamente.  
+- Ainda é preciso verificar e testar se o computador de referência está configurado corretamente.  
 
--   Não é possível reutilizar o método de configuração.  
+- Não é possível reutilizar o método de configuração.  
 
--   Exige que uma pessoa esteja ativamente envolvida em todo o processo.  
+- Exige que uma pessoa esteja ativamente envolvida em todo o processo.  
 
 ###  <a name="BKMK_RefComputerConsiderations"></a> Considerações para o computador de referência  
  A lista a seguir relaciona os itens básicos que devem ser considerados ao se configurar um computador de referência.  
@@ -113,20 +113,20 @@ As imagens do sistema operacional no System Center Configuration Manager são ar
 
 #### <a name="to-manually-build-the-reference-computer"></a>Para criar o computador de referência manualmente  
 
-1.  Identifique o computador a ser usado como computador de referência.  
+1. Identifique o computador a ser usado como computador de referência.  
 
-2.  Configure o computador de referência com o sistema operacional apropriado e qualquer outro software necessário para criar a imagem do sistema operacional que deseja implantar.  
+2. Configure o computador de referência com o sistema operacional apropriado e qualquer outro software necessário para criar a imagem do sistema operacional que deseja implantar.  
 
-    > [!WARNING]  
-    >  No mínimo, instale o sistema operacional e o service pack apropriado, drivers de suporte e atualizações de software necessárias.  
+   > [!WARNING]  
+   >  No mínimo, instale o sistema operacional e o service pack apropriado, drivers de suporte e atualizações de software necessárias.  
 
-3.  Configure o computador de referência para ser membro de um grupo de trabalho.  
+3. Configure o computador de referência para ser membro de um grupo de trabalho.  
 
-4.  Redefina a senha de administrador local no computador de referência de forma que o valor da senha fique em branco.  
+4. Redefina a senha de administrador local no computador de referência de forma que o valor da senha fique em branco.  
 
-5.  Execute o Sysprep usando o comando:  **sysprep /quiet /generalize /reboot**. A opção /generalize instrui o Sysprep a remover dados específicos do sistema da instalação do Windows. Informações específicas do sistema incluem logs de eventos, SIDs (IDs de de segurança exclusivas) e outras informações exclusivas. Após as informações exclusivas do sistema serem removidas, o computador é reiniciado.  
+5. Execute o Sysprep usando o comando:  **sysprep /quiet /generalize /reboot**. A opção /generalize instrui o Sysprep a remover dados específicos do sistema da instalação do Windows. Informações específicas do sistema incluem logs de eventos, SIDs (IDs de de segurança exclusivas) e outras informações exclusivas. Após as informações exclusivas do sistema serem removidas, o computador é reiniciado.  
 
- Depois que o computador de referência estiver pronto, use uma sequência de tarefas para capturar a imagem do sistema operacional do computador de referência.  Para obter etapas detalhadas, veja [Capturar uma imagem do sistema operacional de um computador de referência existente](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_CaptureExistingRefComputer).  
+   Depois que o computador de referência estiver pronto, use uma sequência de tarefas para capturar a imagem do sistema operacional do computador de referência.  Para obter etapas detalhadas, veja [Capturar uma imagem do sistema operacional de um computador de referência existente](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_CaptureExistingRefComputer).  
 
 ##  <a name="BKMK_UseTSToBuildReference"></a> Use uma sequência de tarefas para criar um computador de referência  
  É possível automatizar o processo para criar um computador de referência usando uma sequência de tarefas para implantar o sistema operacional, drivers, aplicativos e assim por diante.  Use as etapas a seguir para compilar o computador de referência e capturar a imagem do sistema operacional do computador de referência.  

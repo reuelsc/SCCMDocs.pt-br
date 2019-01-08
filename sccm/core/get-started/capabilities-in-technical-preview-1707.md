@@ -10,12 +10,12 @@ ms.assetid: cb405ba0-8792-4ab7-988b-2f835f3a9550
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 375c743e1094f3b3f52090ae520ee9d8e86acbe0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 5500b7458935c83207a5e54f8fd1d4d7f40dc333
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336962"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421630"
 ---
 # <a name="capabilities-in-technical-preview-1707-for-system-center-configuration-manager"></a>Recursos no Technical Preview 1707 do System Center Configuration Manager
 
@@ -31,7 +31,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 -->
 
 **Problemas conhecidos nesse Technical Preview:**
--   **Atualização para a versão prévia 1707 falha quando você tem um servidor do site no modo passivo**. Quando você executa a versão prévia 1706 e tem um [servidor do site primário no modo passivo](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), precisa desinstalar o servidor do site no modo passivo antes de atualizar seu site de versão prévia para a versão 1707. Depois que seu site executar a versão 1707, você poderá reinstalar o servidor do site no modo passivo.
+- **Atualização para a versão prévia 1707 falha quando você tem um servidor do site no modo passivo**. Quando você executa a versão prévia 1706 e tem um [servidor do site primário no modo passivo](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), precisa desinstalar o servidor do site no modo passivo antes de atualizar seu site de versão prévia para a versão 1707. Depois que seu site executar a versão 1707, você poderá reinstalar o servidor do site no modo passivo.
 
   Para desinstalar o servidor do site no modo passivo:
   1. No console, acesse **Administração** > **Visão geral** > **Configuração do Site** > **Servidores e Funções do Sistema de Sites** e selecione o servidor de site no modo passivo.
@@ -54,12 +54,10 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 -->
 
 ## <a name="client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365"></a>Suporte do Cache Par do Cliente para arquivos de instalação expressa para Windows 10 e Office 365
-<!-- 1352486 -->
-A partir desta versão, o Cache Par dá suporte à distribuição de arquivos de instalação expressa de conteúdo para Windows 10 e dos arquivos de atualização para o Office 365. Nenhuma configuração adicional é necessária.
+<!-- 1352486 --> A partir desta versão, o Cache Par dá suporte à distribuição de arquivos de instalação expressa de conteúdo para Windows 10 e dos arquivos de atualização para o Office 365. Nenhuma configuração adicional é necessária.
 
 ## <a name="surface-device-dashboard"></a>Painel do Surface Device
-<!--1355788-->
-O painel do Surface Device fornece informações sobre os dispositivos Surface encontrados em seu ambiente. No console, vá até **Monitoramento** > **Surface Devices**. É possível exibir o seguinte:
+<!--1355788--> O painel Dispositivo do Surface fornece informações sobre os dispositivos do Surface encontrados no ambiente. No console, vá até **Monitoramento** > **Surface Devices**. É possível exibir o seguinte:
 - porcentagem de Surfaces
 - porcentagem de modelos do Surface
 - as cinco principais versões do sistema operacional
@@ -69,7 +67,7 @@ Clique em uma seção do gráfico **Modelos do Surface** para obter uma lista co
 ## <a name="configure-and-deploy-windows-defender-application-guard-policies"></a>Configurar e implantar políticas de Proteção de Aplicativos do Windows Defender
 <!-- 1351960 -->
 
-O [Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) é um novo recurso do Windows que ajuda a proteger os usuários através da abertura de sites não confiáveis em um contêiner isolado seguro que não esteja acessível por outras partes do sistema operacional. Nesse visualização técnica, adicionamos suporte para configurar esse recurso usando as configurações de conformidade do Configuration Manager que você configura e, em seguida, implanta em uma coleção. Este recurso será lançado na versão prévia para a versão de 64 bits da atualização do criador de outono do Windows 10 (codinome: RS3). Para testar esse recurso agora, você deverá estar usando uma versão prévia desta atualização.
+O [Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) é um novo recurso do Windows que ajuda a proteger os usuários através da abertura de sites não confiáveis em um contêiner isolado seguro que não esteja acessível por outras partes do sistema operacional. Nesse visualização técnica, adicionamos suporte para configurar esse recurso usando as configurações de conformidade do Configuration Manager que você configura e, em seguida, implanta em uma coleção. Este recurso será lançado como versão prévia na versão de 64 bits do Windows 10 Fall Creators Update (codinome: RS3). Para testar esse recurso agora, você deverá estar usando uma versão prévia desta atualização.
 
 ### <a name="before-you-start"></a>Antes de começar
 
@@ -80,7 +78,7 @@ Para criar e implantar as políticas do Windows Defender Application Guard, os d
 #### <a name="to-create-a-policy-and-to-browse-the-available-settings"></a>Para criar uma política e procurar as configurações disponíveis:
 
 1. No console do Configuration Manager, escolha **Ativos e Conformidade**.
-2. No espaço de trabalho **Ativos e Conformidade**, escolha **Visão Geral** > **Endpoint Protection** > **Windows Defender Application Guard**.
+2. No workspace **Ativos e Conformidade**, escolha **Visão Geral** > **Endpoint Protection** > **Windows Defender Application Guard**.
 3. Na guia **Início**, no grupo **Criar**, clique em **Criar Política do Windows Defender Application Guard**.
 4. Usando a postagem no blog como referência, você pode procurar e definir as configurações disponíveis para experimentar o recurso.
 5. Nesta versão, adicionamos a nova página **Definição de Rede** ao assistente. Nessa página, especifique a identidade corporativa e defina o limite da rede corporativa.<br>Os computadores Windows 10 armazenam apenas uma lista de isolamento de rede no cliente. Nesta versão, é possível criar dois tipos diferentes de listas de isolamento de rede (uma da Proteção de Informações do Windows e outra do Windows Defender Application Guard) e implantá-las no cliente. Se você implantar as duas políticas, essas listas de isolamento de rede deverão ser correspondentes. Se você implantar listas que não correspondem ao mesmo cliente, a implantação falhará.

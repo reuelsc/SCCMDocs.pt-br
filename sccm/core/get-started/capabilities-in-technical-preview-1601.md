@@ -11,12 +11,12 @@ author: aczechowski
 robots: noindex,nofollow
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: f75c27ece3b9a8b490fb136a411a65ac4cbe2129
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a11abd53a83f52cbb05d2a49c3271becb4cedb64
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339461"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420185"
 ---
 # <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1601 do System Center Configuration Manager
 
@@ -79,13 +79,13 @@ Na Visualização técnica 1601, adicionamos suporte para os seguintes recursos:
 
     Para usar a opção, você deve criar uma política de conformidade no Configuration Manager com regras específicas descritas abaixo e definir uma política de acesso condicional no console do Intune.  Além disso, para garantir que apenas PCs compatíveis tenham permissão de acesso, você deve definir o requisito de PC do Windows para a opção **Os dispositivos devem ser compatíveis**. A seguir, as regras de política compatíveis que se aplicam a PCs gerenciados pelo System Center Configuration Manager.  
 
-    -   **Requer registro no Azure Active Directory:** essa regra verifica se o dispositivo do usuário é o local de trabalho associado ao Azure AD; se não, o dispositivo será registrado automaticamente no Azure AD. O registro automático só tem suporte no Windows 8.1. Para PCs com Windows 7, implante um MSI para realizar o registro automático. Para mais informações, consulte [aqui](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
+    -   **Exigir registro no Azure Active Directory:** essa regra verifica se o dispositivo do usuário é o local de trabalho associado ao Azure AD e, caso contrário, o dispositivo é registrado automaticamente no Azure AD. O registro automático só tem suporte no Windows 8.1. Para PCs com Windows 7, implante um MSI para realizar o registro automático. Para mais informações, consulte [aqui](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
 
-    -   **Todas as atualizações necessárias instaladas com um prazo superior a determinado número de dias:** essa regra verifica se o dispositivo do usuário tem todas as atualizações necessárias (especificadas na regra **Atualizações automáticas necessárias**) dentro do prazo e período de carência especificado por você e instala automaticamente as atualizações necessárias.  
+    -   **Todas as atualizações necessárias instaladas com uma data limite superior a um determinado número de dias:** essa regra verifica se o dispositivo do usuário tem todas as atualizações necessárias (especificadas na regra **Atualizações automáticas necessárias**) dentro da data limite e do período de carência especificado por você e instala automaticamente todas as atualizações necessárias.  
 
-    -   **Exigir criptografia de unidade de disco BitLocker:** essa é uma verificação para ver se a unidade principal (por exemplo, C:\\) no dispositivo é criptografada pelo BitLocker. Se a criptografia Bitlocker não estiver habilitada no dispositivo primário, o acesso aos serviços de email e do SharePoint será bloqueado.  
+    -   **Exigir a Criptografia de Unidade de Disco BitLocker:** essa é uma verificação para conferir se a unidade principal (por exemplo, C:\\) no dispositivo está criptografada pelo BitLocker. Se a criptografia Bitlocker não estiver habilitada no dispositivo primário, o acesso aos serviços de email e do SharePoint será bloqueado.  
 
-    -   **Exigir Antimalware:** essa é uma verificação para ver se o software antimalware (somente System Center Endpoint Protection ou Windows Defender) está habilitado e em execução.  
+    -   **Exigir antimalware:** essa é uma verificação para conferir se o software antimalware (o System Center Endpoint Protection ou apenas o Windows Defender) está habilitado e em execução.  
          Se não estiver habilitado, o acesso aos serviços de email e do SharePoint estará bloqueado.  
 
     Usuários finais bloqueados por falta de conformidade verão informações de conformidade no Centro de Software do SCCM e iniciarão uma nova avaliação de política quando problemas de conformidade forem corrigidos.  
@@ -94,32 +94,32 @@ Na Visualização técnica 1601, adicionamos suporte para os seguintes recursos:
 
     Uma nova regra de conformidade foi adicionada ao console do Configuration Manager, permitindo que você especifique se os dispositivos devem ter o acesso permitido ou bloqueado com base em seu status de integridade.  Para criar essa regra, abra o assistente **Criar Política de Conformidade** e adicione uma nova regra.  Selecione **Informado como íntegro pelo Serviço de Atestado de Integridade** para a condição e defina o valor como **Verdadeiro**.  Isso assegurará que somente dispositivos informados como íntegros tenham acesso aos recursos da empresa. Para obter detalhes sobre o Serviço de atestado de integridade e como a integridade dos dispositivos é informada no Intune, veja [Atestado de Integridade do Dispositivo](#bkmk_devicehealth).  
 
--   **Novas configurações de política de conformidade:** as novas configurações de política de conformidade ajudam a melhorar a segurança e a proteção em dispositivos usados para acessar serviços de email e do SharePoint da empresa:  
+-   **Novas configurações da política de conformidade:** as novas configurações da política de conformidade ajudam a melhorar a segurança e a proteção nos dispositivos usados para acessar o email da empresa e os serviços do SharePoint:  
 
-    -   **Requer atualizações automáticas:** você pode precisar de dispositivos com Windows 8.1 ou posterior para permitir a instalação automática de atualizações e também especificar a classe da atualizações instaladas.  Você pode optar por: instalar somente atualizações marcadas como importantes ou instalar todas as atualizações recomendadas.  
+    -   **Exigir atualizações automáticas:** você pode exigir que os dispositivos com Windows 8.1 ou posterior permitam a instalação automática de atualizações e também especificar a classe das atualizações instaladas.  Você pode optar por: instalar somente atualizações marcadas como importantes ou instalar todas as atualizações recomendadas.  
 
          Para criar uma regra para atualizações automáticas, abra o assistente **Criar Política de Conformidade** e adicione uma nova regra.  Selecione **Classificação mínima das atualizações necessárias** como a condição e defina o valor para um dos valores disponíveis: **Nenhum**, **Recomendado** e **Importante**.  
 
-        -   **Nenhum:** as atualização não são instaladas automaticamente.  
+        -   **Nenhum:** as atualizações não são instaladas automaticamente.  
 
         -   **Recomendado:** todas as atualizações recomendadas são instaladas  
 
-        -   **Importante:** somente atualizações classificadas como importantes são instaladas.  
+        -   **Importante:** somente as atualizações classificadas como importantes são instaladas.  
 
-    -   **Exigir uma senha para desbloquear dispositivos móveis:** quando essa configuração é definida como **Sim**, os usuários finais devem digitar uma senha antes que possam acessar seu dispositivo.  
+    -   **Exigir uma senha para desbloquear dispositivos móveis:** quando essa configuração é definida como **Sim**, os usuários finais precisam inserir uma senha para que possam acessar o dispositivo.  
 
          Para criar uma regra de senha para desbloquear dispositivos móveis, abra o assistente **Criar Política de Conformidade** e adicione uma nova regra. Selecione **Exigir uma senha para desbloquear um dispositivo ocioso** como a condição e defina o valor como **Verdadeiro**.  
 
-    -   **Minutos de inatividade antes que a senha seja exigida:** especifica o tempo ocioso antes que o usuário precise digitar novamente sua senha.  
+    -   **Minutos de inatividade antes que a senha seja exigida:**  Especifica o tempo ocioso antes que o usuário precise inserir novamente sua senha.  
 
-         Para criar essa regra, abra o assistente **Criar Política de Conformidade** e adicione uma nova regra. **Selecione os Minutos de inatividade antes que a senha seja exigida** como a condição e defina o valor para uma das opções disponíveis: 1 minuto, 5 minutos, 15 minutos, 30 minutos, 1 hora.  
+         Para criar essa regra, abra o assistente **Criar Política de Conformidade** e adicione uma nova regra. **Selecione os minutos de inatividade antes que a senha seja necessária** como a condição e defina o valor para uma das opções disponíveis: 1 minuto, 5 minutos, 15 minutos, 30 minutos e uma hora.  
 
 -   **Substituição de regra padrão – Sempre permitir que dispositivos registrados e compatíveis acessem o Exchange no local:**  
 
      Quando você marca essa opção, os dispositivos registrados no Intune e compatíveis com as políticas de conformidade têm permissão para acessar o Exchange no local. Essa regra substitui a Regra padrão, o que significa que mesmo que você defina a Regra padrão para bloquear o acesso ou colocar na quarentena, dispositivos registrados e compatíveis ainda poderão acessar o Exchange no local.  
      Use essa configuração quando desejar que dispositivos registrados e compatíveis sempre tenham acesso ao email por meio do Exchange no local.  
 
-     Há suporte para isso nas seguintes plataformas: Windows Phone 8 e posterior, iOS 6 e posterior. Android 4.0 e posterior, Samsung KNOX Standard 4.0 e posterior.  
+     Isso tem suporte nas seguintes plataformas:  Windows Phone 8 e posterior, iOS 6 e posterior. Android 4.0 e posterior, Samsung KNOX Standard 4.0 e posterior.  
 
      Para usar essa opção, vá para a página **Geral** do assistente **Configurar Política de Acesso Condicional** para o Exchange no local.  
 
@@ -144,17 +144,17 @@ Um cliente estará online se estiver conectado a uma função de sistema de site
 
 ### <a name="to-view-client-online-status"></a>Para exibir status online do cliente  
 
-1.  No console do Configuration Manager, vá até **Ativos e Conformidade > Visão Geral > Dispositivos**.  
+1. No console do Configuration Manager, vá até **Ativos e Conformidade > Visão Geral > Dispositivos**.  
 
-2.  Clique com botão direito do mouse no cabeçalho da coluna e, em seguida, clique em um dos campos de status online do cliente para adicioná-lo à exibição do dispositivo. Os campos são  
+2. Clique com botão direito do mouse no cabeçalho da coluna e, em seguida, clique em um dos campos de status online do cliente para adicioná-lo à exibição do dispositivo. Os campos são  
 
-    -   **Status Online do Dispositivo** indica se o cliente ainda está online ou offline no momento.  
+   -   **Status Online do Dispositivo** indica se o cliente ainda está online ou offline no momento.  
 
-    -   **Última Vez Online** indica quando o status online do cliente foi alterado de offline para online.  
+   -   **Última Vez Online** indica quando o status online do cliente foi alterado de offline para online.  
 
-    -   **Última Vez Offline** indica quando o status online do cliente foi alterado de online para offline.  
+   -   **Última Vez Offline** indica quando o status online do cliente foi alterado de online para offline.  
 
- Para mostrar alterações recentes no status do cliente, atualize o console.  
+   Para mostrar alterações recentes no status do cliente, atualize o console.  
 
 ##  <a name="bkmk_appmgmt1601"></a> Aprimoramentos no gerenciamento de aplicativos  
  Na Visualização técnica 1601, adicionamos suporte para os seguintes recursos:  

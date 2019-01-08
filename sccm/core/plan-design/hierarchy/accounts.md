@@ -10,12 +10,12 @@ ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3981d454d0b007f5b057ccca4c8888da609dba97
-ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
+ms.openlocfilehash: d1a10f2381d6820d685ec8ff871c83c2a4c39bb1
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52259073"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415051"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Contas usadas no Configuration Manager
 
@@ -223,14 +223,14 @@ Por padrão, esse grupo tem **Controle total** para a seguinte pasta: `C:\Progra
 ### <a name="active-directory-group-discovery-account"></a>Conta de descoberta de grupo do Active Directory  
 
  O site usa a **Conta de descoberta de grupo do Active Directory** para descobrir os seguintes objetos de localizações no Active Directory Domain Services que você especificar:
- - Grupos de segurança locais, globais e universais
- - A associação dentro desses grupos
- - A associação dentro de grupos de distribuição
-    - Os grupos de distribuição não são descobertos como recursos de grupo
+- Grupos de segurança locais, globais e universais
+- A associação dentro desses grupos
+- A associação dentro de grupos de distribuição
+   - Os grupos de distribuição não são descobertos como recursos de grupo
 
- Essa conta pode ser uma conta de computador do servidor do site que executa a descoberta, ou uma conta de usuário do Windows. Ela precisa ter permissão de acesso de **Leitura** nas localizações do Active Directory especificadas para descoberta.  
+  Essa conta pode ser uma conta de computador do servidor do site que executa a descoberta, ou uma conta de usuário do Windows. Ela precisa ter permissão de acesso de **Leitura** nas localizações do Active Directory especificadas para descoberta.  
 
- Para obter mais informações, confira [Descoberta de grupo do Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutGroup).
+  Para obter mais informações, confira [Descoberta de grupo do Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutGroup).
 
 
 ### <a name="active-directory-system-discovery-account"></a>Conta de descoberta de sistemas do Active Directory  
@@ -406,9 +406,9 @@ Por padrão, esse grupo tem **Controle total** para a seguinte pasta: `C:\Progra
 
     -   **Pacote**: expanda **Gerenciamento de aplicativos**, clique em **Pacotes** e selecione o pacote para o qual você quer gerenciar as contas de acesso.  
 
-    -   **Pacote de implantação de atualização de software**: expanda **Atualizações de software**, clique em **Pacotes de Implantação** e selecione o pacote de implantação para o qual você quer gerenciar as contas de acesso.  
+    -   **Pacote de implantação de atualização de software**: expanda **Atualizações do Software**, clique em **Pacotes de Implantação** e selecione os pacotes de implantação para os quais você quer gerenciar as contas de acesso.  
 
-    -   **Pacote de driver**: expanda **Sistemas operacionais**, clique em **Pacotes de driver** e selecione o pacote de drivers para o qual você quer gerenciar as contas de acesso.  
+    -   **Pacote de drivers**: expanda **Sistemas operacionais**, clique em **Pacotes de drivers** e selecione o pacote de drivers para o qual você quer gerenciar as contas de acesso.  
 
     -   **Imagem do sistema operacional**: expanda **Sistemas Operacionais**, escolha **Imagens do Sistema Operacional** e selecione as imagens do sistema operacional para as quais você quer gerenciar as contas de acesso.  
 

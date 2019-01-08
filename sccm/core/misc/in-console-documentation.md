@@ -9,12 +9,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: noindex,nofollow
-ms.openlocfilehash: b9602d6641e1bb28a3af7c24c64073ba019e0f3e
-ms.sourcegitcommit: 6126dfdf5c879db7d12c3eec019a88fa44521361
+ms.openlocfilehash: a71aa0834a241332d3390e1d888d99b6e3f986f7
+ms.sourcegitcommit: d36e4c7082a5144e79035dd8847c8e741fa04667
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52830499"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53444562"
 ---
 <!-- 
 - Feature 1357546
@@ -89,7 +89,7 @@ Artigos com uma atualização recente e significativa.
 ## <a name="troubleshooting-articles"></a>Artigos de solução de problemas
 Orientações passo a passo para ajudar na solução de problemas de componentes e recursos do Configuration Manager.
 
-- [Solução de problemas de inicialização PXE](https://support.microsoft.com/help/10082)
+- [Solução de problemas de inicialização PXE](https://support.microsoft.com/help/4468612)
 - [Solução de problemas de sincronização de atualização de software](https://support.microsoft.com/help/10059)
 - [Compreensão e solução de problemas de distribuição de conteúdo](https://support.microsoft.com/help/4000401)
 - [Compreensão e solução de problemas da integração da Microsoft Store para Empresas](https://support.microsoft.com/help/4010214)
@@ -101,12 +101,12 @@ Orientações passo a passo para ajudar na solução de problemas de componentes
 ## <a name="new-and-updated-support-articles"></a>Artigos de suporte novos e atualizados
 Artigos de suporte novos ou atualizados em novembro de 2018.
 
-- [KB 4468362: como implantar um pacote de idiomas do Windows como um aplicativo no Configuration Manager](https://support.microsoft.com/help/4468362)
-- [KB 4469580: ConfigMgr PXE não funciona porque um certificado autoassinado não é criado](https://support.microsoft.com/help/4469580/)
+- [KB 4468362: Como implantar um pacote de idiomas do Windows como um aplicativo no Configuration Manager](https://support.microsoft.com/help/4468362)
+- [KB 4469580: O ConfigMgr PXE não funciona porque um certificado autoassinado não é criado](https://support.microsoft.com/help/4469580/)
 - [KB 4471003: Como inicializar de um servidor PXE que está em uma rede diferente](https://support.microsoft.com/help/4471003)
-- [KB 4462978: pacote cumulativo de atualizações para o branch atual do System Center Configuration Manager, versão 1806](https://support.microsoft.com/help/4462978)
-- [KB 4471061: um computador cliente pode "roubar" o GUID do Configuration Manager de um objeto de computador desconhecido durante a geração de imagens](https://support.microsoft.com/help/4471061)
-- [KB 4471115: Mídia Dinâmica no Configuration Manager não pode obter locais de ponto de gerenciamento quando o Assistente de Sequência de Tarefas é executado no Windows PE](https://support.microsoft.com/help/4471115)
+- [KB 4462978: Pacote cumulativo de atualizações para o branch atual do System Center Configuration Manager, versão 1806](https://support.microsoft.com/help/4462978)
+- [KB 4471061: Um computador cliente pode "roubar" o GUID do Configuration Manager de um objeto de computador desconhecido durante a geração de imagens](https://support.microsoft.com/help/4471061)
+- [KB 4471115: A Mídia Dinâmica no Configuration Manager não pode obter locais de ponto de gerenciamento quando o Assistente de Sequência de Tarefas é executado no Windows PE](https://support.microsoft.com/help/4471115)
 
 
 Para assinar a notificação Atom ou RSS dos novos artigos de suporte do Configuration Manager, confira [Atualizações de conteúdo de suporte](https://support.microsoft.com/help/4089498/) e selecione **System Center Configuration Manager**.  

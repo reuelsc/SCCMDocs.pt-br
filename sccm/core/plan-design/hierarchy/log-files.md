@@ -10,12 +10,12 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cf7ca86dd04d60f1ff914294a7430d9f4a7a2fb7
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 58ec927ee795624cb475b31c44d64334047f3422
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456695"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416496"
 ---
 # <a name="log-files-in-configuration-manager"></a>Arquivos de log no Configuration Manager
 
@@ -216,39 +216,39 @@ A tabela a seguir lista os arquivos de log localizados no cliente do Configurati
 ###  <a name="BKMK_LogFilesforLnU"></a> Cliente para Linux e UNIX  
  O cliente do Configuration Manager para Linux e UNIX registra as informações nos seguintes arquivos de log:  
 
-> [!TIP]  
+> [!TIP]
 >  Use o CMTrace para exibir os arquivos de log do cliente para Linux e UNIX.  
-
-> [!NOTE]  
+> 
+> [!NOTE]
 >  Quando você usar a versão inicial do cliente para Linux e UNIX e fizer referência à documentação nesta seção, substitua as seguintes referências para cada arquivo ou processo:  
->   
->  -   Substitua **omiserver.bin** por **nwserver.bin**  
-> -   Substitua **omi** por **nanowbem**  
+> 
+> - Substitua **omiserver.bin** por **nwserver.bin**  
+>   -   Substitua **omi** por **nanowbem**  
 
-|Nome do log|Detalhes|  
-|--------------|-------------|  
-|Scxcm.log|O arquivo de log do serviço principal do cliente do Configuration Manager para Linux e UNIX (ccmexec.bin). Esse arquivo de log contém informações sobre a instalação e as operações em andamento do ccmexec.bin.<br /><br /> Por padrão, esse arquivo de log está localizado em **/var/opt/microsoft/scxcm.log**<br /><br /> Para alterar o local do arquivo de log, edite **/opt/microsoft/configmgr/etc/scxcm.conf** e altere o campo **CAMINHO** . Não é necessário reiniciar o computador cliente ou serviço de cliente para que a alteração entre em vigor.<br /><br /> Você pode definir o nível de log para uma das quatro diferentes configurações.|  
-|Scxcmprovider.log|O arquivo de log do serviço CIM do cliente do Configuration Manager para Linux e UNIX (omiserver.bin). Esse arquivo de log contém informações sobre as operações em andamento do nwserver.bin.<br /><br /> Esse log está localizado em **/var/opt/microsoft/configmgr/scxcmprovider.log**<br /><br /> Para alterar o local do arquivo de log, edite **/opt/microsoft/omi/etc/scxcmprovider.conf** e altere o campo **CAMINHO** . Não é necessário reiniciar o computador cliente ou serviço de cliente para que a alteração entre em vigor.<br /><br /> É possível definir o nível de log para uma das três configurações.|  
+|     Nome do log      |                                                                                                                                                                                                                                                                                               Detalhes                                                                                                                                                                                                                                                                                               |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     Scxcm.log     | O arquivo de log do serviço principal do cliente do Configuration Manager para Linux e UNIX (ccmexec.bin). Esse arquivo de log contém informações sobre a instalação e as operações em andamento do ccmexec.bin.<br /><br /> Por padrão, esse arquivo de log está localizado em **/var/opt/microsoft/scxcm.log**<br /><br /> Para alterar o local do arquivo de log, edite **/opt/microsoft/configmgr/etc/scxcm.conf** e altere o campo **CAMINHO** . Não é necessário reiniciar o computador cliente ou serviço de cliente para que a alteração entre em vigor.<br /><br /> Você pode definir o nível de log para uma das quatro diferentes configurações. |
+| Scxcmprovider.log |     O arquivo de log do serviço CIM do cliente do Configuration Manager para Linux e UNIX (omiserver.bin). Esse arquivo de log contém informações sobre as operações em andamento do nwserver.bin.<br /><br /> Esse log está localizado em <strong>/var/opt/microsoft/configmgr/scxcmprovider.log</strong><br /><br /> Para alterar o local do arquivo de log, edite **/opt/microsoft/omi/etc/scxcmprovider.conf** e altere o campo **CAMINHO** . Não é necessário reiniciar o computador cliente ou serviço de cliente para que a alteração entre em vigor.<br /><br /> É possível definir o nível de log para uma das três configurações.      |
 
  Os dois arquivos de log oferecem suporte a vários níveis de registro em log:  
 
 -   **scxcm.log**. Para alterar o nível de log, edite **/opt/microsoft/configmgr/etc/scxcm.conf** e altere cada instância da marca **MÓDULO** em cada nível de log desejado:  
 
-    -   ERRO: indica problemas que exigem atenção  
+    -   ERRO: Indica problemas que exigem atenção  
 
     -   AVISO: indica possíveis problemas de operações do cliente  
 
-    -   INFORMAÇÕES: log mais detalhado que indica o status de vários eventos no cliente  
+    -   INFORMAÇÕES: Log mais detalhado que indica o status de vários eventos no cliente  
 
-    -   RASTREAMENTO: log detalhado que normalmente é usado para diagnosticar problemas  
+    -   RASTREAMENTO: log detalhado usado normalmente para diagnosticar problemas  
 
 -   **scxcmprovider.log**. Para alterar o nível de log, edite **/opt/microsoft/omi/etc/scxcmprovider.conf** e altere cada instância da marca **MÓDULO** em cada nível de log desejado:  
 
-    -   ERRO: indica problemas que exigem atenção  
+    -   ERRO: Indica problemas que exigem atenção  
 
     -   AVISO: indica possíveis problemas de operações do cliente
 
-    -   INFORMAÇÕES: log mais detalhado que indica o status de vários eventos no cliente  
+    -   INFORMAÇÕES: Log mais detalhado que indica o status de vários eventos no cliente  
 
 Em condições normais de operação, o nível de log de ERRO deve ser usado. Esse nível de log cria o menor arquivo de log. À medida que o nível de log vai aumentando de ERRO para AVISO para INFO para RASTREAMENTO, um arquivo de log maior é criado, pois mais dados são gravados no arquivo.  
 

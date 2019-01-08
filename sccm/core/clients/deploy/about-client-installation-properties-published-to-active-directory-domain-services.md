@@ -10,12 +10,12 @@ ms.assetid: 101d7d4d-92db-419d-b2ae-3c1c1dea68e9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 46ede93e8366b4ae387f7e04b83dcb33ce854c5e
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: dccd893cc4a22fddf09598376bdcd05b091e6c2c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862508"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421545"
 ---
 # <a name="about-client-installation-properties-published-to-active-directory-domain-services"></a>Sobre as propriedades de instalação de cliente publicadas nos Serviços de Domínio do Active Directory
 
@@ -35,29 +35,29 @@ Quando você estende o esquema do Active Directory para o System Center Configur
 ## <a name="client-installation-properties-published-to-active-directory-domain-services"></a>Propriedades de instalação de cliente publicadas no Active Directory Domain Services  
 Veja a seguir uma lista de propriedades de instalação do cliente. Para saber mais sobre cada item listado abaixo, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
--   O código do site do Configuration Manager.  
+- O código do site do Configuration Manager.  
 
--   O certificado de autenticação do servidor de site.  
+- O certificado de autenticação do servidor de site.  
 
--   A chave de raiz confiável.  
+- A chave de raiz confiável.  
 
--   As portas de comunicação do cliente para HTTP e HTTPS.  
+- As portas de comunicação do cliente para HTTP e HTTPS.  
 
--   O ponto de status de fallback. Se o site tiver diversos pontos de status de fallback, somente o primeiro instalado será publicado nos Active Directory Domain Services.  
+- O ponto de status de fallback. Se o site tiver diversos pontos de status de fallback, somente o primeiro instalado será publicado nos Active Directory Domain Services.  
 
--   Uma configuração para indicar que o cliente deve se comunicar somente por meio de HTTPS.  
+- Uma configuração para indicar que o cliente deve se comunicar somente por meio de HTTPS.  
 
--   Configurações relacionadas a certificados PKI:  
+- Configurações relacionadas a certificados PKI:  
 
-   -   Se é necessário usar um certificado PKI do cliente.  
+  -   Se é necessário usar um certificado PKI do cliente.  
 
-   -   Os critérios de seleção para seleção do certificado. Isso pode ser exigido, pois o cliente tem mais de um certificado PKI válido que pode ser usado para o Configuration Manager.  
+  -   Os critérios de seleção para seleção do certificado. Isso pode ser exigido, pois o cliente tem mais de um certificado PKI válido que pode ser usado para o Configuration Manager.  
 
-   -   Uma configuração para determinar qual certificado usar se o cliente tiver vários certificados válidos após o processo de seleção de certificados.  
+  -   Uma configuração para determinar qual certificado usar se o cliente tiver vários certificados válidos após o processo de seleção de certificados.  
 
-   -   A lista de emissores do certificado que contém uma lista de certificados de autoridade de certificação raiz confiável.  
+  -   A lista de emissores do certificado que contém uma lista de certificados de autoridade de certificação raiz confiável.  
 
--   Propriedades da instalação client.msi especificadas na guia **Cliente** da caixa de diálogo **Propriedades da Instalação do Cliente por Push** .
+- Propriedades da instalação client.msi especificadas na guia **Cliente** da caixa de diálogo **Propriedades da Instalação do Cliente por Push** .
 
 A instalação de cliente (CCMSetup) utilizará as propriedades publicadas no Active Directory Domain Services somente se nenhuma outra propriedade for especificada usando um dos métodos a seguir:  
 

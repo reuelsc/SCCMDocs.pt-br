@@ -10,12 +10,12 @@ ms.assetid: 8c6eabc4-5dda-4682-b03e-3a450e6ef65a
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: c0e94fd8669556223044403fc72216fcaaaa5e54
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 7d6bcb46650082cebc95e8300a2f6adeb119fdbf
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337693"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421868"
 ---
 # <a name="remote-connection-profiles-in-system-center-configuration-manager"></a>Perfis de conexão remota no System Center Configuration Manager
 
@@ -86,37 +86,37 @@ O Microsoft Intune será necessário se você desejar que os usuários se conect
 
 ## <a name="create-a-remote-connection-profile"></a>Criar um perfil de conexão remota
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Perfis de Conexão Remota**.  
+1. No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Perfis de Conexão Remota**.  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Perfil de Conexão Remota**.  
+2. Na guia **Início** , no grupo **Criar** , clique em **Criar Perfil de Conexão Remota**.  
 
-4.  Na página **Geral** do **Assistente para Criar Perfil de Conexão Remota**, especifique um nome e uma descrição opcional para o perfil usando, no máximo, 256 caracteres para cada um.  
+3. Na página **Geral** do **Assistente para Criar Perfil de Conexão Remota**, especifique um nome e uma descrição opcional para o perfil usando, no máximo, 256 caracteres para cada um.  
 
-5.  Na página de configurações **Perfil**, especifique as seguintes configurações para o perfil de conexão remota:  
+4. Na página de configurações **Perfil**, especifique as seguintes configurações para o perfil de conexão remota:  
 
-    -   **Nome completo e porta do servidor de Gateway de Área de Trabalho Remota (opcional)** – Especifique o nome do Servidor de Gateway de Área de Trabalho Remota a ser usado para conexões.  
+   -   **Nome completo e porta do servidor de Gateway de Área de Trabalho Remota (opcional)** – Especifique o nome do Servidor de Gateway de Área de Trabalho Remota a ser usado para conexões.  
 
-        > [!NOTE]  
-        >  O Configuration Manager não dá suporte ao uso de nomes de domínio internacionalizados para especificar um servidor nesta caixa.  
-        >   
-        >  O nome do servidor deverá ter, no máximo, 256 caracteres e poderá conter caracteres maiúsculos, minúsculos, numéricos, além dos caracteres **–** e **_** , separados por pontos.  
+       > [!NOTE]  
+       >  O Configuration Manager não dá suporte ao uso de nomes de domínio internacionalizados para especificar um servidor nesta caixa.  
+       >   
+       >  O nome do servidor deverá ter, no máximo, 256 caracteres e poderá conter caracteres maiúsculos, minúsculos, numéricos, além dos caracteres **–** e **_** , separados por pontos.  
 
-    -   **Permitir conexões somente de computadores que executam a Área de Trabalho Remota com a Autenticação no Nível da Rede**  
+   -   **Permitir conexões somente de computadores que executam a Área de Trabalho Remota com a Autenticação no Nível da Rede**  
 
-6.  selecione **Habilitado** ou **Desabilitado** para cada uma das configurações de conexão a seguir:  
+5. selecione **Habilitado** ou **Desabilitado** para cada uma das configurações de conexão a seguir:  
 
-    -   **Permitir conexões remotas para computadores de trabalho**  
+   -   **Permitir conexões remotas para computadores de trabalho**  
 
-    -   **Permitir que todos os usuários primários do computador de trabalho se conectem remotamente**  
+   -   **Permitir que todos os usuários primários do computador de trabalho se conectem remotamente**  
 
-    -   **Permitir exceção de Firewall do Windows para conexões nos domínios do Windows e em redes privadas**  
+   -   **Permitir exceção de Firewall do Windows para conexões nos domínios do Windows e em redes privadas**  
 
-    > [!IMPORTANT]  
-    >  Todas as três configurações devem ser as mesmas para que você possa passar essa página do assistente.  
+   > [!IMPORTANT]  
+   >  Todas as três configurações devem ser as mesmas para que você possa passar essa página do assistente.  
 
-7.  Na página **Resumo**, examine as ações a serem executadas e conclua o assistente.  
+6. Na página **Resumo**, examine as ações a serem executadas e conclua o assistente.  
 
- O novo perfil de conexão remota é exibido no nó **Perfis de Conexão Remota** no espaço de trabalho **Ativos e Conformidade** .  
+   O novo perfil de conexão remota é exibido no nó **Perfis de Conexão Remota** no workspace **Ativos e Conformidade**.  
 
 Implantar um perfil de conexão remota  
 
@@ -157,16 +157,16 @@ Implantar um perfil de conexão remota
 
      A página **Status da Implantação** contém as seguintes guias:  
 
-    -   **Compatível:** exibe a conformidade do perfil de conexão remota com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os dispositivos que são compatíveis com o perfil de conexão remota. O painel **Detalhes do Ativo** também exibe os dispositivos compatíveis com esse perfil. Clique duas vezes em um dispositivo na lista para exibir informações adicionais.  
+    -   **Em conformidade:** exibe a conformidade do perfil de conexão remota com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do workspace **Ativos e Conformidade**. Esse nó contém todos os dispositivos que são compatíveis com o perfil de conexão remota. O painel **Detalhes do Ativo** também exibe os dispositivos compatíveis com esse perfil. Clique duas vezes em um dispositivo na lista para exibir informações adicionais.  
 
         > [!IMPORTANT]  
         >  O perfil de conexão remota não será avaliado se não for aplicável a um dispositivo cliente. No entanto, ele é retornado como compatível.  
 
-    -   **Erro:** exibe uma lista de todos os erros da implantação do perfil de conexão remota selecionado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os dispositivos que geraram erros com esse perfil. Quando você seleciona um dispositivo, o painel **Detalhes do Ativo** exibe os dispositivos afetados pelo problema selecionado. Clique duas vezes em um dispositivo na lista para exibir informações adicionais sobre o problema.  
+    -   **Erro:** exibe uma lista de todos os erros da implantação do perfil de conexão remota selecionado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do workspace **Ativos e Conformidade**. Esse nó contém todos os dispositivos que geraram erros com esse perfil. Quando você seleciona um dispositivo, o painel **Detalhes do Ativo** exibe os dispositivos afetados pelo problema selecionado. Clique duas vezes em um dispositivo na lista para exibir informações adicionais sobre o problema.  
 
-    -   **Não Compatível:** exibe uma lista de todas as regras não compatíveis no perfil de conexão remota com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** . Esse nó contém todos os dispositivos não compatíveis com esse perfil. Quando você seleciona um dispositivo, o painel **Detalhes do Ativo** exibe os dispositivos afetados pelo problema selecionado. Clique duas vezes em um dispositivo na lista para exibir informações adicionais sobre o problema.  
+    -   **Fora de conformidade:** exibe uma lista de todas as regras não compatíveis no perfil de conexão remota com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do workspace **Ativos e Conformidade**. Esse nó contém todos os dispositivos não compatíveis com esse perfil. Quando você seleciona um dispositivo, o painel **Detalhes do Ativo** exibe os dispositivos afetados pelo problema selecionado. Clique duas vezes em um dispositivo na lista para exibir informações adicionais sobre o problema.  
 
-    -   **Desconhecido:** exibe uma lista de todos os dispositivos que não relataram a conformidade para a implantação do perfil de conexão remota selecionado, junto com o status atual do cliente dos dispositivos.  
+    -   **Desconhecido:** exibe uma lista de todos os dispositivos que não relataram conformidade para a implantação do perfil de conexão remota selecionado, junto com o status atual do cliente dos dispositivos.  
 
 5.  Na página **Status da Implantação** , você pode examinar informações detalhadas sobre a conformidade do perfil de conexão remota implantado. Um nó temporário é criado no nó **Implantações** , que ajuda você a localizar essas informações novamente com rapidez.  
 

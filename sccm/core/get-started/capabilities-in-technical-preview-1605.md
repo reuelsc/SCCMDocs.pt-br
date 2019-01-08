@@ -10,12 +10,12 @@ ms.assetid: 2bafd028-1923-4463-9e3e-ee41bc0c437b
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 05d87b253f2387dd8428f4b9fadea3fe5f3a48e8
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 4eb41ba3a55d0de026d38a673d4e5dfad8e22cd7
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342521"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416122"
 ---
 # <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1605 do System Center Configuration Manager
 
@@ -25,11 +25,11 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
  **Problemas conhecidos nesse Technical Preview:**  
 
--   Com o Technical Preview 1605, se você atualizar as propriedades de um ponto de gerenciamento após ele ser instalado, poderá ver um erro de console que força o fechamento do console.  Se isso acontecer, você poderá desinstalar o ponto de gerenciamento e, em seguida, reinstalar o ponto de gerenciamento usando as configurações desejadas. Como alternativa, você pode modificar o ponto de gerenciamento antes de instalar o Technical Preview 1605.  
+- Com o Technical Preview 1605, se você atualizar as propriedades de um ponto de gerenciamento após ele ser instalado, poderá ver um erro de console que força o fechamento do console.  Se isso acontecer, você poderá desinstalar o ponto de gerenciamento e, em seguida, reinstalar o ponto de gerenciamento usando as configurações desejadas. Como alternativa, você pode modificar o ponto de gerenciamento antes de instalar o Technical Preview 1605.  
 
--   Quando você usa a o recurso da Windows Store para Empresas com o Technical Preview 1604 e, em seguida, atualiza para o Technical Preview 1605, não é mais possível exibir os dados de integração. Todos os outros recursos continuam a funcionar. Se você tiver integrado com o Technical Preview 1604, poderá continuar integrado após instalar o Technical Preview 1605 e não precisará executar nenhuma ação adicional.  
+- Quando você usa a o recurso da Windows Store para Empresas com o Technical Preview 1604 e, em seguida, atualiza para o Technical Preview 1605, não é mais possível exibir os dados de integração. Todos os outros recursos continuam a funcionar. Se você tiver integrado com o Technical Preview 1604, poderá continuar integrado após instalar o Technical Preview 1605 e não precisará executar nenhuma ação adicional.  
 
- **Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
+  **Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
 
 ##  <a name="BKMK_PerAppVPN"></a> VPN por aplicativo para dispositivos com Windows 10  
  Para dispositivos Windows 10 gerenciados usando o Configuration Manager com o Intune, você pode adicionar uma lista de aplicativos que abrem automaticamente uma conexão VPN que você configurou por meio do console de administração do Configuration Manager. Você tem a opção de restringir o tráfego VPN para esses aplicativos, ou você pode continuar a permitir todo o tráfego pela conexão VPN.  
@@ -57,42 +57,42 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
  Para configurar o período de carência, execute as seguintes ações:  
 
-1.  Na página **Agente de Computador** das configurações do cliente, configure a nova propriedade **Período de carência para a imposição após a data limite da implantação (horas):** com um valor entre **1** e **120** horas.  
+1. Na página **Agente de Computador** das configurações do cliente, configure a nova propriedade **Período de carência para a imposição após a data limite da implantação (horas):** com um valor entre **1** e **120** horas.  
 
-2.  Em uma nova implantação de aplicativo ou nas propriedades de uma implantação existente, na página **Agendamento**, marque a caixa de seleção **Delay enforcement of this deployment according to user preferences (Atrasar a imposição dessa implantação de acordo com as preferências do usuário)** até o período de carência definido nas configurações do cliente.  
+2. Em uma nova implantação de aplicativo ou nas propriedades de uma implantação existente, na página **Agendamento**, marque a caixa de seleção **Delay enforcement of this deployment according to user preferences (Atrasar a imposição dessa implantação de acordo com as preferências do usuário)** até o período de carência definido nas configurações do cliente.  
 
-     Todas as implantações que têm essa caixa de seleção marcada e que são destinadas a dispositivos nos quais você também implantou as configurações do cliente usarão o período de carência.  
+    Todas as implantações que têm essa caixa de seleção marcada e que são destinadas a dispositivos nos quais você também implantou as configurações do cliente usarão o período de carência.  
 
- Nesta versão, o período de carência configurado não é usado por dispositivos de cliente. Se você configurar um período de carência e marcar a caixa de seleção, o aplicativo será instalado na primeira janela fora do horário comercial que o usuário configurou após o prazo.  
+   Nesta versão, o período de carência configurado não é usado por dispositivos de cliente. Se você configurar um período de carência e marcar a caixa de seleção, o aplicativo será instalado na primeira janela fora do horário comercial que o usuário configurou após o prazo.  
 
- Opções semelhantes foram adicionadas ao assistente de implantação de atualizações de software, ao assistente de regras de implantação automática e páginas de propriedades. No entanto, elas não estão implementadas no momento nesse technical preview.  
+   Opções semelhantes foram adicionadas ao assistente de implantação de atualizações de software, ao assistente de regras de implantação automática e páginas de propriedades. No entanto, elas não estão implementadas no momento nesse technical preview.  
 
 ##  <a name="BKMK_Remote"></a> Nova experiência para ações de dispositivo remoto  
  A experiência para executar as ações de dispositivo remoto do console do Configuration Manager foi aprimorada.  
-Ações comuns, como **Desativar/Apagar**, **Redefinir Senha**, **Bloqueio Remoto** e **Ignorar Bloqueio de Ativação** agora podem ser encontradas no menu **Ações do Dispositivo Remoto** acessado pelo espaço de trabalho **Ativos e Conformidade**.  
+Ações comuns, como **Desativar/Apagar**, **Redefinir Senha**, **Bloqueio Remoto** e **Ignorar Bloqueio de Ativação** agora podem ser encontradas no menu **Ações do Dispositivo Remoto** acessado pelo workspace **Ativos e Conformidade**.  
 
  ![Captura de tela de novas ações de dispositivo remoto](media/New-Remote-Device-Actions.png)  
 
  Você pode encontrar o status de cada uma dessas operações nos seguintes locais:  
 
--   No painel de detalhes quando você seleciona um dispositivo do nó **Dispositivos**.  
+- No painel de detalhes quando você seleciona um dispositivo do nó **Dispositivos**.  
 
--   Na página **Propriedades** de um dispositivo.  
+- Na página **Propriedades** de um dispositivo.  
 
--   Na página principal do nó **Dispositivos** (nem todas as colunas podem estar visíveis por padrão).  
+- Na página principal do nó **Dispositivos** (nem todas as colunas podem estar visíveis por padrão).  
 
- Para mais informações sobre o bypass do Bloqueio de Ativação do iOS, confira [Ajudar a proteger dispositivos iOS com bypass de Bloqueio de Ativação para o Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock), em especial a seção **Problemas atuais conhecidos com o bypass do Bloqueio de Ativação no Configuration Manager Technical Preview**.  
+  Para mais informações sobre o bypass do Bloqueio de Ativação do iOS, confira [Ajudar a proteger dispositivos iOS com bypass de Bloqueio de Ativação para o Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock), em especial a seção **Problemas atuais conhecidos com o bypass do Bloqueio de Ativação no Configuration Manager Technical Preview**.  
 
 ##  <a name="BKMK_WSFB"></a> Aplicativos da Windows Store para Empresas  
  Na [Windows Store para Empresas](https://www.microsoft.com/business-store), é possível encontrar e adquirir aplicativos para sua organização, individualmente ou por volume. Ao conectar a loja ao Configuration Manager, é possível gerenciar aplicativos adquiridos por volume no console do Configuration Manager, por exemplo:  
 
--   É possível sincronizar a lista de aplicativos adquiridos com o Configuration Manager  
+- É possível sincronizar a lista de aplicativos adquiridos com o Configuration Manager  
 
--   Os aplicativos que são sincronizados aparecem no console do Configuration Manager e você pode implantá-los como qualquer outro aplicativo  
+- Os aplicativos que são sincronizados aparecem no console do Configuration Manager e você pode implantá-los como qualquer outro aplicativo  
 
--   A cada 24 horas, o Configuration Manager baixa informações de licenciamento de aplicativo da loja e você pode examiná-las no console do Configuration Manager  
+- A cada 24 horas, o Configuration Manager baixa informações de licenciamento de aplicativo da loja e você pode examiná-las no console do Configuration Manager  
 
- Na versão de technical preview 1604, você pode sincronizar e exibir aplicativos da Windows Store para Empresas no console do Configuration Manager. Nesta versão, adicionamos a capacidade de criar e implantar aplicativos do Configuration Manager de aplicativos da loja sincronizados.  
+  Na versão de technical preview 1604, você pode sincronizar e exibir aplicativos da Windows Store para Empresas no console do Configuration Manager. Nesta versão, adicionamos a capacidade de criar e implantar aplicativos do Configuration Manager de aplicativos da loja sincronizados.  
 
 ### <a name="set-up-windows-store-for-business-synchronization"></a>Configurar a sincronização da Windows Store para Empresas  
 
@@ -130,7 +130,7 @@ Ações comuns, como **Desativar/Apagar**, **Redefinir Senha**, **Bloqueio Remot
 
 4.  Compre pelo menos um aplicativo da Windows Store para Empresas.  
 
-5.  No espaço de trabalho **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e clique em **Windows Store para Empresas**.  
+5.  No workspace **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e clique em **Windows Store para Empresas**.  
 
 6.  Na guia **Início**, no grupo **Criar**, clique em **Adicionar Conta da Windows Store para Empresas**.  
 
@@ -143,11 +143,11 @@ Ações comuns, como **Desativar/Apagar**, **Redefinir Senha**, **Bloqueio Remot
 
  Crie e implante um aplicativo do Configuration Manager por meio de um aplicativo licenciado offline da Windows Store para Empresas.  
 
-1.  No espaço de trabalho **Biblioteca de Software** do console do Configuration Manager, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.  
+1. No workspace **Biblioteca de Software** do console do Configuration Manager, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.  
 
-2.  Escolha o aplicativo que deseja implantar e, na guia **Início**, no grupo **Criar**, clique em **Criar Aplicativo**.  
+2. Escolha o aplicativo que deseja implantar e, na guia **Início**, no grupo **Criar**, clique em **Criar Aplicativo**.  
 
- É criado um aplicativo do Configuration Manager contendo o aplicativo da Windows Store para Empresas. Em seguida, é possível implantar e monitorar o aplicativo, como você faria com qualquer outro aplicativo do Configuration Manager.  
+   É criado um aplicativo do Configuration Manager contendo o aplicativo da Windows Store para Empresas. Em seguida, é possível implantar e monitorar o aplicativo, como você faria com qualquer outro aplicativo do Configuration Manager.  
 
 > [!IMPORTANT]  
 >  Quando você cria um aplicativo do Configuration Manager com um único tipo de implantação de um aplicativo licenciado offline, ele pode ser implantado em dispositivos que são gerenciados pelo MDM e também gerenciados com o cliente do Configuration Manager. Se você tentar implantar um aplicativo com vários tipos de implantação, a instalação falhará.  
@@ -160,11 +160,11 @@ Ações comuns, como **Desativar/Apagar**, **Redefinir Senha**, **Bloqueio Remot
 
 -   Para aplicativos do iOS adquiridos por volume, a guia Apple Volume Purchase Program foi removida da caixa de diálogo **Pacote de aplicativo para Navegador do iOS** no Assistente para Criar Aplicativo. Para criar um aplicativo adquirido por volume para iOS, use essas etapas:  
 
-    1.  1.  No espaço de trabalho **Biblioteca de Software** do console do Configuration Manager, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.  
+    1.  1.  No workspace **Biblioteca de Software** do console do Configuration Manager, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.  
 
     2.  2.  Escolha o aplicativo que deseja implantar e, na guia **Início**, no grupo **Criar**, clique em **Criar Aplicativo**.  
 
--   O local usado para obter e carregar um token de VPP da Apple para aplicativos adquiridos por volume no console do Configuration Manager mudou. Agora você pode fazer isso no espaço de trabalho **Administração** no nó **Serviços de Nuvem** > **Tokens do Apple Volume Purchase Program**.  
+-   O local usado para obter e carregar um token de VPP da Apple para aplicativos adquiridos por volume no console do Configuration Manager mudou. Agora você pode fazer isso no workspace **Administração** no nó **Serviços de Nuvem** > **Tokens do Apple Volume Purchase Program**.  
 
 ##  <a name="BKMK_VPP"></a> EDP (Proteção de dados empresariais)  
  Você pode criar itens de configuração que permitem implantar suas políticas de EDP (proteção de dados empresariais), incluindo permitindo que você escolha seus aplicativos protegidos, seu nível de proteção EDP e como encontrar dados empresariais na rede. Para obter mais informações sobre a EDP, consulte os seguintes tópicos:  
@@ -231,29 +231,29 @@ Nesse technical preview, se o Portal da Empresa estiver aberto por mais de 15 mi
 
 ### <a name="deploy-the-company-portal-application-and-configuration"></a>Implantar a configuração e o aplicativo do Portal da Empresa  
 
-1.  Use o script de configuração incluído com o technical preview para preparar a implantação e a configuração do Portal da Empresa:  
+1. Use o script de configuração incluído com o technical preview para preparar a implantação e a configuração do Portal da Empresa:  
 
-    1.  Abra uma janela de comando com privilégios elevados do PowerShell.  
+   1. Abra uma janela de comando com privilégios elevados do PowerShell.  
 
-    2.  Execute **set-executionPolicy RemoteSigned**  
+   2. Execute **set-executionPolicy RemoteSigned**  
 
-    3.  Na pasta **&lt;diretório de instalação do SCCM\>\cd.latest\SMSSETUP\TOOLS\MDM**, execute **.\ConfigurationScript.ps1**  
+   3. Na pasta **&lt;diretório de instalação do SCCM\>\cd.latest\SMSSETUP\TOOLS\MDM**, execute **.\ConfigurationScript.ps1**  
 
-     O script de configuração faz o seguinte:  
+      O script de configuração faz o seguinte:  
 
-    1.  Cria um aplicativo do Configuration Manager com um tipo de implantação de pacote do aplicativo Windows usando **CompanyPortalOnPremisesMDM.appx** na mesma pasta.  
+   4. Cria um aplicativo do Configuration Manager com um tipo de implantação de pacote do aplicativo Windows usando **CompanyPortalOnPremisesMDM.appx** na mesma pasta.  
 
-    2.  Cria um item de configuração e uma linha de base de configuração que configura o Portal da Empresa.  
+   5. Cria um item de configuração e uma linha de base de configuração que configura o Portal da Empresa.  
 
-    3.  Implanta a linha de base de configuração e o aplicativo e adiciona o aplicativo a todos os pontos de distribuição.  
+   6. Implanta a linha de base de configuração e o aplicativo e adiciona o aplicativo a todos os pontos de distribuição.  
 
-    > [!NOTE]  
-    >  Se as funções do Catálogo de Aplicativos não estiverem colocalizadas com o site primário, realize as seguintes ações:  
-    >   
-    >  -   No espaço de trabalho **Ativos e Conformidade**, localize o item de configuração **OnPremMDM Portal Configuration CI – server urls (CI de configuração do portal do MDM – URLs de servidor)**  
-    > -   Altere o valor de **Regras de Conformidade** para o nome de domínio totalmente qualificado do sistema de sites em que as funções do Catálogo de Aplicativos estão localizadas.  
+   > [!NOTE]
+   >  Se as funções do Catálogo de Aplicativos não estiverem colocalizadas com o site primário, realize as seguintes ações:  
+   > 
+   > - No workspace **Ativos e Conformidade**, localize o item de configuração **OnPremMDM Portal Configuration CI – server urls (CI de configuração do portal do MDM – URLs de servidor)**  
+   >   -   Altere o valor de **Regras de Conformidade** para o nome de domínio totalmente qualificado do sistema de sites em que as funções do Catálogo de Aplicativos estão localizadas.  
 
-2.  Depois que o aplicativo do Portal da Empresa e sua configuração forem implantados, verifique se a linha de base de configuração e o aplicativo são compatíveis para o dispositivo determinado usando a seção **Implantações** do console do Configuration Manager. O Portal da Empresa será exibido como **Portal da Empresa (Technical Preview)** no menu Iniciar no dispositivo.  
+2. Depois que o aplicativo do Portal da Empresa e sua configuração forem implantados, verifique se a linha de base de configuração e o aplicativo são compatíveis para o dispositivo determinado usando a seção **Implantações** do console do Configuration Manager. O Portal da Empresa será exibido como **Portal da Empresa (Technical Preview)** no menu Iniciar no dispositivo.  
 
 ### <a name="try-it-out"></a>Experimente!  
  Tente concluir as tarefas a seguir e conte-nos como foi usando o formulário de comentários na página [Configuration Manager feedback program](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) (Programa de comentários do Configuration Manager) no site do Microsoft Connect:  
@@ -287,17 +287,17 @@ Nesse technical preview, se o Portal da Empresa estiver aberto por mais de 15 mi
 
 1.  [Crie uma coleção de dispositivos](https://technet.microsoft.com/library/gg712295.aspx) que contém os computadores do grupo de servidores.  
 
-2.  No espaço de trabalho **Ativos e Conformidade**, clique em **Coleções de Dispositivos**, clique com o botão direito do mouse na coleção que contém os computadores do grupo de servidores e clique em **Propriedades**.  
+2.  No workspace **Ativos e Conformidade**, clique em **Coleções de Dispositivos**, clique com o botão direito do mouse na coleção que contém os computadores do grupo de servidores e clique em **Propriedades**.  
 
 3.  Na guia **Geral**, selecione **Todos os dispositivos fazem parte do mesmo grupo de servidores** e clique em **Configurações**.  
 
 4.  Na página **Configurações do Grupo de Servidor**, especifique uma das seguintes configurações:  
 
-    -   **Allow a percentage of machines to be updated at the same time (Permitir que um percentual de computadores seja atualizado ao mesmo tempo)**: especifica que somente um determinado percentual dos clientes serão atualizados a qualquer dado momento. Se, por exemplo, a coleção tiver 10 clientes e for configurada para atualizar 30% dos clientes ao mesmo tempo, apenas três clientes instalarão atualizações de software a qualquer momento.  
+    -   **Permitir que um percentual dos computadores seja atualizado ao mesmo tempo**: Especifica que apenas um determinado percentual de clientes seja atualizado a qualquer momento. Se, por exemplo, a coleção tiver 10 clientes e for configurada para atualizar 30% dos clientes ao mesmo tempo, apenas três clientes instalarão atualizações de software a qualquer momento.  
 
-    -   **Allow a number of machines to be updated at the same time (Permitir que um número de computadores seja atualizado ao mesmo tempo)**: especifica que somente um determinado número dos clientes será atualizado a qualquer dado momento.  
+    -   **Permitir que vários computadores sejam atualizados ao mesmo tempo**: Especifica que apenas um determinado número de clientes seja atualizado a qualquer momento.  
 
-    -   **Especifique a sequência de manutenção**: especifica que os clientes na coleção serão atualizados um de cada vez na sequência que você configurar. Um cliente instalará atualizações de software apenas depois que o cliente que está à sua frente na lista terminar de instalar atualizações de software.  
+    -   **Especificar a sequência de manutenção**: especifica que os clientes na coleção serão atualizados um de cada vez na sequência que você configurar. Um cliente instalará atualizações de software apenas depois que o cliente que está à sua frente na lista terminar de instalar atualizações de software.  
 
 5.  Especifique se deseja usar um script de pré-implantação (drenagem de nó) ou pós-implantação (retomada de nó).  
 
@@ -332,7 +332,7 @@ Nesse technical preview, se o Portal da Empresa estiver aberto por mais de 15 mi
 
 #### <a name="to-clear-the-deployment-locks-for-computers-in-a-server-group"></a>Para limpar os bloqueios de implantação para computadores em um grupo de servidores  
 
-1.  No espaço de trabalho **Ativos e Conformidade**, clique em **Coleções de Dispositivos** e clique na coleção para limpar os bloqueios de implantação.  
+1.  No workspace **Ativos e Conformidade**, clique em **Coleções de Dispositivos** e clique na coleção para limpar os bloqueios de implantação.  
 
 2.  Na guia **Início**, no grupo **Implantação**, clique em **Limpar Bloqueios de Implantação de Grupo de Servidores**. Quando os clientes não conseguem instalar as atualizações de software e impedem que outros clientes instale suas atualizações de software, os bloqueios de implantação podem ser removidos manualmente.  
 
@@ -342,48 +342,48 @@ Nesse technical preview, se o Portal da Empresa estiver aberto por mais de 15 mi
 ### <a name="try-it-now"></a>Experimente agora!  
  Tente concluir as tarefas a seguir e conte-nos como foi usando o formulário de comentários na página [Configuration Manager feedback program](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) (Programa de comentários do Configuration Manager) no site do Microsoft Connect:  
 
--   Integrar os dispositivos para o serviço online da ATP (Proteção Avançada contra Ameaças) do Windows Defender  
+- Integrar os dispositivos para o serviço online da ATP (Proteção Avançada contra Ameaças) do Windows Defender  
 
--   Monitorar a implantação da ATP do Windows Defender em dispositivos gerenciados  
+- Monitorar a implantação da ATP do Windows Defender em dispositivos gerenciados  
 
- **Pré-requisitos**  
+  **Pré-requisitos**  
 
--   Assinatura do serviço online de Proteção Avançada contra Ameaças do Windows Defender  
+- Assinatura do serviço online de Proteção Avançada contra Ameaças do Windows Defender  
 
--   Clientes que executam a Edição de Aniversário do Windows 10 (build 14328 e superior)  
+- Clientes que executam a Edição de Aniversário do Windows 10 (build 14328 e superior)  
 
--   Criar um arquivo de configuração de integração  
+- Criar um arquivo de configuração de integração  
 
-    ##### <a name="how-to-create-an-onboarding-configuration-file"></a>Como criar um arquivo de configuração de integração  
+  ##### <a name="how-to-create-an-onboarding-configuration-file"></a>Como criar um arquivo de configuração de integração  
 
-    1.  Faça logon no serviço online da ATP do Windows Defender  
+  1.  Faça logon no serviço online da ATP do Windows Defender  
 
-    2.  Clique no item de menu **Integração de Cliente**  
+  2.  Clique no item de menu **Integração de Cliente**  
 
-    3.  Selecione **System Center Configuration Manager** e clique em **Baixar pacote**.  
+  3.  Selecione **System Center Configuration Manager** e clique em **Baixar pacote**.  
 
-    4.  Baixe o arquivo compactado (.zip) e extraia o conteúdo.  
+  4.  Baixe o arquivo compactado (.zip) e extraia o conteúdo.  
 
 
 ##### <a name="onboard-devices-for-windows-defender-atp"></a>Dispositivos integrados para a ATP do Windows Defender  
 
-1.  No console do Configuration Manager, navegue para **Ativos e Conformidade** > **Visão Geral** > **Endpoint Protection** > **Políticas do Windows Defender ATP** e clique em **Criar uma política do Windows Defender ATP**. O Assistente de Política da ATP do Windows Defender é aberto.  
+1. No console do Configuration Manager, navegue para **Ativos e Conformidade** > **Visão Geral** > **Endpoint Protection** > **Políticas do Windows Defender ATP** e clique em **Criar uma política do Windows Defender ATP**. O Assistente de Política da ATP do Windows Defender é aberto.  
 
-2.  Digite o **Nome** e a **Descrição** para a política da ATP do Windows Defender e selecione **Integração**. Clique em Avançar.  
+2. Digite o **Nome** e a **Descrição** para a política da ATP do Windows Defender e selecione **Integração**. Clique em Avançar.  
 
-3.  **Procure** o arquivo de Configuração fornecido pelo locatário do serviço de nuvem da ATP do Windows Defender da sua organização. Clique em **Avançar**.  
+3. **Procure** o arquivo de Configuração fornecido pelo locatário do serviço de nuvem da ATP do Windows Defender da sua organização. Clique em **Avançar**.  
 
-4.  Especifique os arquivos de exemplo que são coletados e compartilhados por meio dos dispositivos gerenciados para análise.  
+4. Especifique os arquivos de exemplo que são coletados e compartilhados por meio dos dispositivos gerenciados para análise.  
 
-    -   **Nenhum** – Nenhum arquivo de exemplo é coletado para análise  
+   - **Nenhum** – Nenhum arquivo de exemplo é coletado para análise  
 
-    -   **Arquivos Executáveis Portáteis** – Arquivos como arquivos de programa (.exe), arquivos de link de biblioteca dinâmica (.dll), arquivos de fonte e arquivos semelhantes que podem ser explorados em ciberataques são coletados e compartilhados para análise  
+   - **Arquivos Executáveis Portáteis** – Arquivos como arquivos de programa (.exe), arquivos de link de biblioteca dinâmica (.dll), arquivos de fonte e arquivos semelhantes que podem ser explorados em ciberataques são coletados e compartilhados para análise  
 
      Clique em **Avançar**.  
 
-5.  Examine o resumo e conclua o assistente.  
+5. Examine o resumo e conclua o assistente.  
 
-6.  Agora você pode implantar a política da ATP do Windows Defender em computadores cliente gerenciados clicando em **Implantar**.  
+6. Agora você pode implantar a política da ATP do Windows Defender em computadores cliente gerenciados clicando em **Implantar**.  
 
 ##### <a name="monitor-windows-defender-atp"></a>Monitorar a ATP do Windows Defender  
 
@@ -430,38 +430,38 @@ Nesse technical preview, se o Portal da Empresa estiver aberto por mais de 15 mi
 
 ##### <a name="pre-declare-corporate-owned-devices-with-imei-or-ios-serial-number"></a>Pré-declarar dispositivos corporativos com número de série do iOS ou IMEI  
 
-1.  No console do Configuration Manager, vá para **Ativos e Conformidade** > **Visão geral** > **Todos os Dispositivos de Propriedade Corporativa** > **Pre-declared Devices (Dispositivos Pré-declarados)** e clique em **Create Pre-declared Devices (Criar Dispositivos Pré-declarados)**. O assistente de Dispositivos Pré-declarados é aberto.  
+1. No console do Configuration Manager, vá para **Ativos e Conformidade** > **Visão geral** > **Todos os Dispositivos de Propriedade Corporativa** > **Pre-declared Devices (Dispositivos Pré-declarados)** e clique em **Create Pre-declared Devices (Criar Dispositivos Pré-declarados)**. O assistente de Dispositivos Pré-declarados é aberto.  
 
-2.  Especifique como você deseja adicionar as informações do dispositivo:  
+2. Especifique como você deseja adicionar as informações do dispositivo:  
 
-    -   **Carregar um arquivo CSV contendo detalhes e números IMEI** – para carregar uma lista de números, consulte a Etapa 3.  
+   -   **Carregar um arquivo CSV contendo detalhes e números IMEI** – para carregar uma lista de números, consulte a Etapa 3.  
 
-    -   **Adicionar detalhes e números IMEI manualmente** – para inserir manualmente as informações, digite o número IMEI ou o número de série do iOS e os detalhes dos dispositivos e prossiga para a Etapa 4.  
+   -   **Adicionar detalhes e números IMEI manualmente** – para inserir manualmente as informações, digite o número IMEI ou o número de série do iOS e os detalhes dos dispositivos e prossiga para a Etapa 4.  
 
-3.  Para arquivos carregados, navegue até o arquivo .csv que contém informações para pré-declarar dispositivos corporativos. O arquivo deve ter o seguinte formato, exceto a linha superior (fornecida apenas para fins de orientação):  
+3. Para arquivos carregados, navegue até o arquivo .csv que contém informações para pré-declarar dispositivos corporativos. O arquivo deve ter o seguinte formato, exceto a linha superior (fornecida apenas para fins de orientação):  
 
-    |**Nº do IMEI**|**Nº de série do iOS**|**Sistema operacional**|**Detalhes**|
-    |---|---|---|---|
-    |123456789012345||WINDOWS|Dispositivo Windows de propriedade da empresa|
-    |123456789012|A0BCD0EFGH0J|IOS|Dispositivos iOS de propriedade da empresa|
-    |123456789012346||ANDROID|Dispositivo Android de propriedade da empresa|
+   |**Nº do IMEI**|**Nº de série do iOS**|**Sistema operacional**|**Detalhes**|
+   |---|---|---|---|
+   |123456789012345||WINDOWS|Dispositivo Windows de propriedade da empresa|
+   |123456789012|A0BCD0EFGH0J|IOS|Dispositivos iOS de propriedade da empresa|
+   |123456789012346||ANDROID|Dispositivo Android de propriedade da empresa|
 
-     **Colunas:**  
+    **Colunas:**  
 
-    -   Coluna 1: Número IMEI – é necessário um número de série do iOS ou um número IMEI para cada linha  
+   - Coluna 1: número IMEI – é necessário um número de série do iOS ou um número IMEI para cada linha  
 
-    -   Coluna 2: Número de série do iOS – apenas os números de série do iOS podem ser pré-declarados. Use o número IMEI para outras plataformas de dispositivo  
+   - Coluna 2: Número de série do iOS – apenas os números de série do iOS podem ser pré-declarados. Use o número IMEI para outras plataformas de dispositivo  
 
-    -   Coluna 3: Sistema operacional do dispositivo (maiúsculas/minúsculas necessárias):  
+   - Coluna 3: sistema operacional do dispositivo (maiúsculas/minúsculas necessárias):  
 
-        -   IOS – todos os dispositivos iOS  
+     -   IOS – todos os dispositivos iOS  
 
-        -   WINDOWS – inclui Windows Phone e Windows 10 Mobile e computadores Windows  
+     -   WINDOWS – inclui Windows Phone e Windows 10 Mobile e computadores Windows  
 
-        -   ANDROID – Todos os dispositivos Android  
+     -   ANDROID – Todos os dispositivos Android  
 
-    -   Coluna 4: detalhes – informações de dispositivo adicionais exibidas no console do Configuration Manager  
+   - Coluna 4: detalhes – Informações de dispositivo adicionais exibidas no console do Configuration Manager  
 
      Clique em **Avançar**.  
 
-4.  Examine os resultados da importação do arquivo. Os números de série ou IMEI importados anteriormente terão seus detalhes atualizados com novos detalhes.  Clique em **Avançar** para continuar ou em **Voltar** para preservar os detalhes atualizados e conclua o assistente.  
+4. Examine os resultados da importação do arquivo. Os números de série ou IMEI importados anteriormente terão seus detalhes atualizados com novos detalhes.  Clique em **Avançar** para continuar ou em **Voltar** para preservar os detalhes atualizados e conclua o assistente.  

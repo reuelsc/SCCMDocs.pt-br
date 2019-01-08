@@ -10,12 +10,12 @@ ms.assetid: d566d85c-bf7a-40e7-8239-57640a1db5f4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bffbb3373fbcd1a9a34f526a7c73faff68ccae49
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: c9888bbcc0468356b55216491d8599ebb5f42818
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42756102"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420423"
 ---
 # <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-configuration-manager"></a>Criar uma sequência de tarefas para capturar e restaurar o estado do usuário no Gerenciador de Configurações
 
@@ -29,13 +29,13 @@ ms.locfileid: "42756102"
 
  Para capturar e restaurar o estado do usuário, adicione as seguintes etapas à sequência de tarefas:  
 
- - [Solicitar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_RequestStateStore): essa etapa é necessária se você armazenar o estado do usuário no ponto de migração de estado.  
+ - [Solicitar repositório de estado](/sccm/osd/understand/task-sequence-steps#BKMK_RequestStateStore): se você armazenar o estado do usuário no ponto de migração de estado, precisará desta etapa.  
 
-- [Capturar Estado do Usuário](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureUserState): essa etapa captura os dados de estado do usuário. Em seguida, os armazena no ponto de migração de estado ou no disco local usando links físicos.  
+- [Capturar estado do usuário](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureUserState): essa etapa captura os dados de estado do usuário. Em seguida, os armazena no ponto de migração de estado ou no disco local usando links físicos.  
 
-- [Restaurar Estado do Usuário](/sccm/osd/understand/task-sequence-steps#BKMK_RestoreUserState): essa etapa restaura os dados de estado do usuário no computador de destino. Ela pode recuperar os dados de um ponto de migração de estado ou se houver um link físico no disco local.  
+- [Restaurar estado do usuário](/sccm/osd/understand/task-sequence-steps#BKMK_RestoreUserState): essa etapa restaura os dados de estado do usuário no computador de destino. Ela pode recuperar os dados de um ponto de migração de estado ou se houver um link físico no disco local.  
 
-- [Liberar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_ReleaseStateStore): essa etapa é necessária se você armazenar o estado do usuário no ponto de migração de estado. Ela remove os dados do ponto de migração de estado.  
+- [Liberar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_ReleaseStateStore): se você armazenar o estado do usuário no ponto de migração de estado, precisará desta etapa. Ela remove os dados do ponto de migração de estado.  
 
 
  Use os procedimentos a seguir para adicionar as etapas de sequência de tarefas necessárias para capturar e restaurar o estado do usuário. Para saber mais sobre a criação de sequências de tarefas em [Gerenciar sequências de tarefas para automatizar tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks).  
@@ -46,7 +46,7 @@ ms.locfileid: "42756102"
 
  Use os seguintes passos para adicionar etapas de sequência de tarefas para capturar o estado do usuário:
 
-1.  Na lista **Sequência de Tarefa**, selecione uma sequência de tarefas e clique em **Editar**.  
+1.  Na lista **Sequência de Tarefa** , selecione uma sequência de tarefas e clique em **Editar**.  
 
 2.  Se estiver usando um ponto de migração de estado para armazenar o estado do usuário, adicione a etapa **Solicitar Armazenamento de Estado** à sequência de tarefas. No **Editor de Sequência de Tarefas**, clique em **Adicionar**. Aponte para **Estado do Usuário**e clique em **Solicitar Armazenamento de Estado**. Configure as propriedades e opções para esta etapa e clique em **Aplicar**. Para saber mais sobre as configurações disponíveis em [Solicitar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_RequestStateStore).  
 
@@ -69,20 +69,20 @@ ms.locfileid: "42756102"
 
  Use os passos seguintes para adicionar etapas de sequência de tarefas para restaurar o estado do usuário:
 
- 1.  Na lista **Sequência de Tarefa** , selecione uma sequência de tarefas e clique em **Editar**.  
+1. Na lista **Sequência de Tarefa** , selecione uma sequência de tarefas e clique em **Editar**.  
 
- 2.  Adicionar a etapa **Restaurar Estado do Usuário** à sequência de tarefas. No **Editor de Sequência de Tarefas**, clique em **Adicionar**. Aponte para **Estado do Usuário**e clique em **Restaurar Estado do Usuário**. Essa etapa estabelece uma conexão com o ponto de migração de estado, se necessário. Configure as propriedades e opções para esta etapa e clique em **Aplicar**. Para saber mais sobre as configurações disponíveis em [Restaurar Estado do Usuário](/sccm/osd/understand/task-sequence-steps#BKMK_RestoreUserState).  
+2. Adicionar a etapa **Restaurar Estado do Usuário** à sequência de tarefas. No **Editor de Sequência de Tarefas**, clique em **Adicionar**. Aponte para **Estado do Usuário**e clique em **Restaurar Estado do Usuário**. Essa etapa estabelece uma conexão com o ponto de migração de estado, se necessário. Configure as propriedades e opções para esta etapa e clique em **Aplicar**. Para saber mais sobre as configurações disponíveis em [Restaurar Estado do Usuário](/sccm/osd/understand/task-sequence-steps#BKMK_RestoreUserState).  
 
-    > [!Important]  
-    >  Quando você usa a etapa [Capturar Estado do Usuário](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureUserState) com a opção de **Capturar todos os perfis de usuário com opções padrão**, você deve selecionar a configuração **Restaurar perfis de usuário do computador local** na etapa **Restaurar Estado do Usuário**. Caso contrário, a sequência de tarefas não funcionará.  
+   > [!Important]  
+   >  Quando você usa a etapa [Capturar Estado do Usuário](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureUserState) com a opção de **Capturar todos os perfis de usuário com opções padrão**, você deve selecionar a configuração **Restaurar perfis de usuário do computador local** na etapa **Restaurar Estado do Usuário**. Caso contrário, a sequência de tarefas não funcionará.  
 
-    > [!Note]  
-    > Se você armazenar o estado do usuário usando links físicos locais e a restauração não for bem-sucedida, você poderá excluir manualmente os links físicos que foram criados para armazenar os dados. A sequência de tarefas pode executar a ferramenta USMTUtils para automatizar esta ação com uma etapa [Executar linha de comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine). Se você usar o USMTUtils para excluir links físicos, adicione uma etapa [Reiniciar Computador](/sccm/osd/understand/task-sequence-steps#BKMK_RestartComputer) depois de executar o USMTUtils.  
+   > [!Note]  
+   > Se você armazenar o estado do usuário usando links físicos locais e a restauração não for bem-sucedida, você poderá excluir manualmente os links físicos que foram criados para armazenar os dados. A sequência de tarefas pode executar a ferramenta USMTUtils para automatizar esta ação com uma etapa [Executar linha de comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine). Se você usar o USMTUtils para excluir links físicos, adicione uma etapa [Reiniciar Computador](/sccm/osd/understand/task-sequence-steps#BKMK_RestartComputer) depois de executar o USMTUtils.  
 
- 3.  Se estiver usando um ponto de migração de estado para armazenar o estado do usuário, adicione à sequência de tarefas a etapa **Liberar Armazenamento de Estado**. No **Editor de Sequência de Tarefas**, clique em **Adicionar**. Aponte para **Estado do Usuário** e clique em **Liberar Armazenamento de Estado**. Configure as propriedades e opções para esta etapa e clique em **Aplicar**. Para saber mais sobre as configurações disponíveis em [Liberar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_ReleaseStateStore).  
+3. Se estiver usando um ponto de migração de estado para armazenar o estado do usuário, adicione à sequência de tarefas a etapa **Liberar Armazenamento de Estado**. No **Editor de Sequência de Tarefas**, clique em **Adicionar**. Aponte para **Estado do Usuário** e clique em **Liberar Armazenamento de Estado**. Configure as propriedades e opções para esta etapa e clique em **Aplicar**. Para saber mais sobre as configurações disponíveis em [Liberar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_ReleaseStateStore).  
 
-    > [!IMPORTANT]  
-    >  A ação de sequência de tarefas executada antes da etapa **Liberar Armazenamento de Estado** deve ser bem-sucedida para que a etapa **Liberar Armazenamento de Estado** seja iniciada.  
+   > [!IMPORTANT]  
+   >  A ação de sequência de tarefas executada antes da etapa **Liberar Armazenamento de Estado** deve ser bem-sucedida para que a etapa **Liberar Armazenamento de Estado** seja iniciada.  
 
 
  Implante essa sequência de tarefas para restaurar o estado do usuário em um computador de destino. Para obter mais informações sobre como implantar sequências de tarefas, consulte [Implantar uma sequência de tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  

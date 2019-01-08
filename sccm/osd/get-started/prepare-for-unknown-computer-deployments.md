@@ -10,12 +10,12 @@ ms.assetid: 9e447e34-0943-49ed-b6ba-3efebf3566c1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 425ab566b5ddbfaad775d61609c0a4ccd98e96d0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 277881aab8a6d971c110b6ddd5b3dd34aae8fe7a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348558"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420151"
 ---
 # <a name="prepare-for-unknown-computer-deployments-in-system-center-configuration-manager"></a>Preparar implantações de computador desconhecido no System Center Configuration Manager
 
@@ -23,19 +23,19 @@ ms.locfileid: "32348558"
 
 Use as informações neste tópico para implantar sistemas operacionais em computadores desconhecidos no ambiente do System Center Configuration Manager. Um computador desconhecido é qualquer computador que não seja gerenciado pelo Configuration Manager. Isso significa que não há registro desses computadores no banco de dados do Configuration Manager. Computadores desconhecidos incluem:  
 
--   Um computador no qual o cliente do Configuration Manager não está instalado  
+- Um computador no qual o cliente do Configuration Manager não está instalado  
 
--   Um computador que não foi importado para o Configuration Manager  
+- Um computador que não foi importado para o Configuration Manager  
 
--   Um computador que não foi descoberto pelo Configuration Manager  
+- Um computador que não foi descoberto pelo Configuration Manager  
 
- É possível implantar sistemas operacionais em computadores desconhecidos com os seguintes métodos de implantação:  
+  É possível implantar sistemas operacionais em computadores desconhecidos com os seguintes métodos de implantação:  
 
--   [Usar PXE para implantar o Windows na rede](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)  
+- [Usar PXE para implantar o Windows na rede](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)  
 
--   [Usar a mídia inicializável para implantar um sistema operacional](../deploy-use/create-bootable-media.md)  
+- [Usar a mídia inicializável para implantar um sistema operacional](../deploy-use/create-bootable-media.md)  
 
--   [Usar a mídia pré-configurada para implantar um sistema operacional](../deploy-use/create-prestaged-media.md)  
+- [Usar a mídia pré-configurada para implantar um sistema operacional](../deploy-use/create-prestaged-media.md)  
 
 ## <a name="unknown-computer-deployment-workflow"></a>Fluxo de trabalho de implantação em computador desconhecido  
  Veja a seguir o fluxo de trabalho básico para implantar um sistema operacional em um computador desconhecido:  
@@ -52,15 +52,15 @@ Use as informações neste tópico para implantar sistemas operacionais em compu
 ## <a name="unknown-computer-installation-process"></a>Processo de instalação do computador desconhecido  
  Quando um computador é primeiramente iniciado do PXE ou da mídia, o Configuration Manager verifica se existe um registro desse computador no banco de dados do Configuration Manager. Se existe registro, o Configuration Manager verifica se há sequências de tarefas implantadas no registro. Se não existe registro, o Configuration Manager verifica se há sequências de tarefas implantadas em um objeto de computador desconhecido. Em ambos os casos, o Configuration Manager executa uma das ações a seguir:  
 
--   Se há uma sequência de tarefas disponível, o Configuration Manager solicita ao usuário que execute a sequência de tarefas.  
+- Se há uma sequência de tarefas disponível, o Configuration Manager solicita ao usuário que execute a sequência de tarefas.  
 
--   Se houver uma sequência de tarefas obrigatória, o Configuration Manager a executará automaticamente.  
+- Se houver uma sequência de tarefas obrigatória, o Configuration Manager a executará automaticamente.  
 
--   Se não houver uma sequência de tarefas implantada no registro, o Configuration Manager gerará um erro indicando que não há sequências de tarefas implantadas no computador de destino.  
+- Se não houver uma sequência de tarefas implantada no registro, o Configuration Manager gerará um erro indicando que não há sequências de tarefas implantadas no computador de destino.  
 
- Quando um computador desconhecido é iniciado, o Configuration Manager reconhece o computador como um computador não provisionado, e não como um computador desconhecido. Isso significa que o computador pode agora receber as sequências de tarefas que foram implantadas no objeto do computador desconhecido. A sequência de tarefas implantada instala uma imagem do sistema operacional que deve incluir o cliente do Configuration Manager.  
+  Quando um computador desconhecido é iniciado, o Configuration Manager reconhece o computador como um computador não provisionado, e não como um computador desconhecido. Isso significa que o computador pode agora receber as sequências de tarefas que foram implantadas no objeto do computador desconhecido. A sequência de tarefas implantada instala uma imagem do sistema operacional que deve incluir o cliente do Configuration Manager.  
 
- Concluída a instalação do cliente do Configuration Manager, é criado um registro para o computador e o computador é listado na coleção apropriada do Configuration Manager. Se o computador falhar ao instalar a imagem do sistema operacional ou o cliente do Configuration Manager, será criado um registro “Desconhecido” para o computador e o computador aparecerá na coleção **Todos os Sistemas**.  
+  Concluída a instalação do cliente do Configuration Manager, é criado um registro para o computador e o computador é listado na coleção apropriada do Configuration Manager. Se o computador falhar ao instalar a imagem do sistema operacional ou o cliente do Configuration Manager, será criado um registro “Desconhecido” para o computador e o computador aparecerá na coleção **Todos os Sistemas**.  
 
 > [!NOTE]  
 >  Durante a instalação da imagem do sistema operacional, a sequência de tarefas pode recuperar as variáveis da coleção, mas não as variáveis desse computador.  
@@ -70,7 +70,7 @@ Use as informações neste tópico para implantar sistemas operacionais em compu
 
 -   **PXE**  
 
-     Marque a caixa de seleção **Habilitar suporte a computadores desconhecidos** na guia **PXE** de um ponto de distribuição que está habilitado para PXE. Para obter mais informações, consulte [Configuring distribution points to accept PXE requests](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint) (Configurando pontos de distribuição para aceitar solicitações PXE).  
+     Marque a caixa de seleção **Habilitar suporte a computadores desconhecidos** na guia **PXE** de um ponto de distribuição que está habilitado para PXE. Para obter mais informações, consulte [Configuring distribution points to accept PXE requests](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint)(Configurando pontos de distribuição para aceitar solicitações PXE).  
 
 -   **Mídia inicializável**  
 

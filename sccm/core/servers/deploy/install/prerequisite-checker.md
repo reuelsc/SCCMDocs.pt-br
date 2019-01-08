@@ -10,12 +10,12 @@ ms.assetid: aaf13bb8-4ba2-4bd7-9fac-d36a9d88a1b6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 296ed6590c10adeab22fb274d5e6f44bc578a784
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: c28152031a540ea3fd5f2ef7233c24fb86c8b7f7
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339954"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422021"
 ---
 # <a name="prerequisite-checker-for-system-center-configuration-manager"></a>Verificador de pré-requisitos para System Center Configuration Manager
 
@@ -77,119 +77,119 @@ Para obter mais informações sobre as verificações que o Verificador de Pré-
 
 ## <a name="run-prerequisite-checker-from-a-command-prompt-to-use-options"></a>Executar o Verificador de Pré-requisitos em um prompt de comando para usar opções  
 
-1.  Abra uma janela de Prompt de Comando e altere os diretórios para um dos seguintes locais:  
+1. Abra uma janela de Prompt de Comando e altere os diretórios para um dos seguintes locais:  
 
-    -   **&lt;*Mídia de instalação do Configuration Manager*\>\SMSSETUP\BIN\X64**  
-    -   **&lt;*Caminho de instalação do Configuration Manager*\>\BIN\X64**  
+   -   **&lt;*Mídia de instalação do Configuration Manager*\>\SMSSETUP\BIN\X64**  
+   -   **&lt;*Caminho de instalação do Configuration Manager*\>\BIN\X64**  
 
-2.  Digite **prereqchk.exe** com a adição de uma ou mais das seguintes opções de linha de comando.  
+2. Digite **prereqchk.exe** com a adição de uma ou mais das seguintes opções de linha de comando.  
 
-    Por exemplo, para verificar um site primário, você pode usar o seguinte:  
+   Por exemplo, para verificar um site primário, você pode usar o seguinte:  
 
-       **prereqchk.exe [/NOUI] /PRI /SQL &lt;FQDN do SQL Server\> /SDK &lt;FQDN do Provedor de SMS\> [/JOIN &lt;FQDN do site de administração central\>] [/MP &lt;FQDN do ponto de gerenciamento\>] [/DP &lt;FQDN do ponto de distribuição\>]**  
+      **prereqchk.exe [/NOUI] /PRI /SQL &lt;FQDN do SQL Server\> /SDK &lt;FQDN do Provedor de SMS\> [/JOIN &lt;FQDN do site de administração central\>] [/MP &lt;FQDN do ponto de gerenciamento\>] [/DP &lt;FQDN do ponto de distribuição\>]**  
 
-    **Servidor do site de administração central:**  
+   **Servidor do site de administração central:**  
 
-    -   **/NOUI**  
-
-         Não necessário. Inicia o Verificador de Pré-requisitos sem exibir a interface do usuário. Você deve especificar essa opção antes de qualquer outra opção na linha de comando.  
-
-    -   **/CAS**  
-
-         Necessário. Verifica se o computador local atende aos requisitos do site de administração central.  
-
-    -   **/SQL &lt;*FQDN do SQL Server*>**  
-
-         Necessário. Usando o FQDN (nome de domínio totalmente qualificado), verifica se o computador especificado atende aos requisitos do SQL Server para hospedar o banco de dados do site do Configuration Manager.  
-
-    -   **/SDK &lt;*FQDN do Provedor de SMS*>**  
-
-         Necessário. Verifica se o computador especificado atende aos requisitos do Provedor de SMS.  
-
-    -   **/Ssbport**  
-
-         Não necessário. Verifica se a exceção de firewall está em vigor para permitir a comunicação na porta do SQL SSB (Server Service Broker). A porta padrão do SSB é a 4022.  
-
-    -   **InstallDir &lt;*caminho de instalação do Configuration Manager*>**  
-
-         Não necessário. Verifica o espaço em disco mínimo nos requisitos para a instalação do site.  
-
-    **Servidor do site primário:**  
-
-    -   **/NOUI**  
+   -   **/NOUI**  
 
         Não necessário. Inicia o Verificador de Pré-requisitos sem exibir a interface do usuário. Você deve especificar essa opção antes de qualquer outra opção na linha de comando.  
 
-    -   **/PRI**  
+   -   **/CAS**  
 
-         Necessário. Verifica se o computador local atende aos requisitos do site primário.  
+        Necessário. Verifica se o computador local atende aos requisitos do site de administração central.  
 
-    -   **/SQL &lt;*FQDN do SQL Server*>**  
+   -   **/SQL &lt;*FQDN do SQL Server*>**  
 
-         Necessário. Verifica se o computador especificado atende aos requisitos do SQL Server para hospedar o banco de dados do site do Configuration Manager.  
+        Necessário. Usando o FQDN (nome de domínio totalmente qualificado), verifica se o computador especificado atende aos requisitos do SQL Server para hospedar o banco de dados do site do Configuration Manager.  
 
-    -   **/SDK &lt;*FQDN do Provedor de SMS*>**  
+   -   **/SDK &lt;*FQDN do Provedor de SMS*>**  
 
-         Necessário. Verifica se o computador especificado atende aos requisitos do Provedor de SMS.  
+        Necessário. Verifica se o computador especificado atende aos requisitos do Provedor de SMS.  
 
-    -   **/JOIN &lt;*FQDN do site de administração central*>**  
+   -   **/Ssbport**  
 
-         Não necessário. Verifica se o computador local atende aos requisitos para se conectar ao servidor do site de administração central.  
+        Não necessário. Verifica se a exceção de firewall está em vigor para permitir a comunicação na porta do SQL SSB (Server Service Broker). A porta padrão do SSB é a 4022.  
 
-    -   **/MP &lt;*FQDN do ponto de gerenciamento*>**  
+   -   **InstallDir &lt;*caminho de instalação do Configuration Manager*>**  
 
-         Não necessário. Verifica se o computador especificado atende aos requisitos da função do sistema de site do ponto de gerenciamento. Há suporte para essa opção apenas quando você usa a opção **/PRI** .  
+        Não necessário. Verifica o espaço em disco mínimo nos requisitos para a instalação do site.  
 
-    -   **/DP &lt;*FQDN do ponto de distribuição*>**  
+   **Servidor do site primário:**  
 
-         Não necessário. Verifica se o computador especificado atende aos requisitos da função do sistema de site do ponto de distribuição. Há suporte para essa opção apenas quando você usa a opção **/PRI** .  
+   -   **/NOUI**  
 
-    -   **/Ssbport**  
+       Não necessário. Inicia o Verificador de Pré-requisitos sem exibir a interface do usuário. Você deve especificar essa opção antes de qualquer outra opção na linha de comando.  
 
-         Não necessário. Verifica se a exceção de firewall está em vigor para permitir a comunicação na porta SSB. A porta padrão do SSB é a 4022.  
+   -   **/PRI**  
 
-    -   **InstallDir &lt;*caminho de instalação do Configuration Manager*>**  
+        Necessário. Verifica se o computador local atende aos requisitos do site primário.  
 
-         Não necessário. Verifica o espaço em disco mínimo nos requisitos para a instalação do site.  
+   -   **/SQL &lt;*FQDN do SQL Server*>**  
 
-    **Servidor do site secundário:**  
+        Necessário. Verifica se o computador especificado atende aos requisitos do SQL Server para hospedar o banco de dados do site do Configuration Manager.  
 
-    -   **/NOUI**  
+   -   **/SDK &lt;*FQDN do Provedor de SMS*>**  
 
-         Não necessário. Inicia o Verificador de Pré-requisitos sem exibir a interface do usuário. Você deve especificar essa opção antes de qualquer outra opção na linha de comando.  
+        Necessário. Verifica se o computador especificado atende aos requisitos do Provedor de SMS.  
 
-    -   **/SEC &lt;*FQDN do servidor do site secundário*>**  
+   -   **/JOIN &lt;*FQDN do site de administração central*>**  
 
-         Necessário. Verifica se o computador especificado atende aos requisitos do site secundário.  
+        Não necessário. Verifica se o computador local atende aos requisitos para se conectar ao servidor do site de administração central.  
 
-    -   **/INSTALLSQLEXPRESS**  
+   -   **/MP &lt;*FQDN do ponto de gerenciamento*>**  
 
-         Não necessário. Verifica se o SQL Server Express pode ser instalado no computador especificado.  
+        Não necessário. Verifica se o computador especificado atende aos requisitos da função do sistema de site do ponto de gerenciamento. Há suporte para essa opção apenas quando você usa a opção **/PRI** .  
 
-    -   **/Ssbport**  
+   -   **/DP &lt;*FQDN do ponto de distribuição*>**  
 
-         Não necessário. Verifica se a exceção de firewall está em vigor para permitir a comunicação para a porta SSB. A porta padrão do SSB é a 4022.  
+        Não necessário. Verifica se o computador especificado atende aos requisitos da função do sistema de site do ponto de distribuição. Há suporte para essa opção apenas quando você usa a opção **/PRI** .  
 
-    -   **/Sqlport**  
+   -   **/Ssbport**  
 
-         Não necessário. Verifica se a exceção de firewall está em vigor para permitir a comunicação para a porta de serviço do SQL Server e se a porta não está em uso por outra instância nomeada do SQL Server. A porta padrão é a 1433.  
+        Não necessário. Verifica se a exceção de firewall está em vigor para permitir a comunicação na porta SSB. A porta padrão do SSB é a 4022.  
 
-    -   **InstallDir &lt;*caminho de instalação do Configuration Manager*>**  
+   -   **InstallDir &lt;*caminho de instalação do Configuration Manager*>**  
 
-         Não necessário. Verifica o espaço em disco mínimo nos requisitos para a instalação do site.  
+        Não necessário. Verifica o espaço em disco mínimo nos requisitos para a instalação do site.  
 
-    -   **/SourceDir**  
+   **Servidor do site secundário:**  
 
-         Não necessário. Verifica se a conta de computador do site secundário pode acessar a pasta que hospeda os arquivos de origem para a Instalação.  
+   -   **/NOUI**  
+
+        Não necessário. Inicia o Verificador de Pré-requisitos sem exibir a interface do usuário. Você deve especificar essa opção antes de qualquer outra opção na linha de comando.  
+
+   -   **/SEC &lt;*FQDN do servidor do site secundário*>**  
+
+        Necessário. Verifica se o computador especificado atende aos requisitos do site secundário.  
+
+   -   **/INSTALLSQLEXPRESS**  
+
+        Não necessário. Verifica se o SQL Server Express pode ser instalado no computador especificado.  
+
+   -   **/Ssbport**  
+
+        Não necessário. Verifica se a exceção de firewall está em vigor para permitir a comunicação para a porta SSB. A porta padrão do SSB é a 4022.  
+
+   -   **/Sqlport**  
+
+        Não necessário. Verifica se a exceção de firewall está em vigor para permitir a comunicação para a porta de serviço do SQL Server e se a porta não está em uso por outra instância nomeada do SQL Server. A porta padrão é a 1433.  
+
+   -   **InstallDir &lt;*caminho de instalação do Configuration Manager*>**  
+
+        Não necessário. Verifica o espaço em disco mínimo nos requisitos para a instalação do site.  
+
+   -   **/SourceDir**  
+
+        Não necessário. Verifica se a conta de computador do site secundário pode acessar a pasta que hospeda os arquivos de origem para a Instalação.  
 
    **Console do Configuration Manager:**  
 
-    -   **/Adminui**  
+   -   **/Adminui**  
 
-         Necessário. Verifica se o computador local cumpre os requisitos para instalar o Configuration Manager.  
+        Necessário. Verifica se o computador local cumpre os requisitos para instalar o Configuration Manager.  
 
-3.  Na interface do usuário do Verificador de Pré-requisitos, é criada uma lista de problemas descobertos na seção **Resultado de pré-requisito**.  
+3. Na interface do usuário do Verificador de Pré-requisitos, é criada uma lista de problemas descobertos na seção **Resultado de pré-requisito**.  
 
-    -   Clique em um item na lista para obter detalhes sobre como resolver o problema.  
-    -   Você deve resolver todos os itens na lista que têm o status de **Erro** para poder instalar o servidor do site, o sistema de sites ou o console do Configuration Manager.  
-    -   Você também pode abrir o arquivo **ConfigMgrPrereq.log** na raiz da unidade do sistema para examinar os resultados do Verificador de Pré-requisitos. O arquivo de log pode conter informações adicionais que não são exibidas na interface do usuário do Verificador de Pré-requisitos.  
+   -   Clique em um item na lista para obter detalhes sobre como resolver o problema.  
+   -   Você deve resolver todos os itens na lista que têm o status de **Erro** para poder instalar o servidor do site, o sistema de sites ou o console do Configuration Manager.  
+   -   Você também pode abrir o arquivo **ConfigMgrPrereq.log** na raiz da unidade do sistema para examinar os resultados do Verificador de Pré-requisitos. O arquivo de log pode conter informações adicionais que não são exibidas na interface do usuário do Verificador de Pré-requisitos.  

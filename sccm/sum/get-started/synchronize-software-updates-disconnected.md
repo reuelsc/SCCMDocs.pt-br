@@ -10,12 +10,12 @@ ms.technology: configmgr-sum
 ms.assetid: 1a997c30-8e71-4be5-89ee-41efb2c8d199
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: da6204a78ce45c72d2b8d5586d02c8692405f295
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d3155faaa0ccad4e4f98ee72d09f67b1676dc2f4
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350418"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421851"
 ---
 # <a name="synchronize-software-updates-from-a-disconnected-software-update-point"></a>Sincronizar atualizações de software por meio de um ponto de atualização de software desconectado  
 
@@ -52,11 +52,11 @@ ms.locfileid: "32350418"
 
 #### <a name="to-copy-local-files-from-the-export-server-to-the-disconnected-software-update-point-server"></a>Para copiar arquivos locais do servidor de exportação para o servidor de ponto de atualização de software desconectado  
 
-1.  No servidor de exportação, navegue até a pasta onde as atualizações de software e os termos de licença para as atualizações de software estão armazenados. Por padrão, o servidor do WSUS armazena os arquivos em <*WSUSInstallationDrive*>\WSUS\WSUSContent\\, em que *WSUSInstallationDrive* é a unidade em que o WSUS está instalado.  
+1. No servidor de exportação, navegue até a pasta onde as atualizações de software e os termos de licença para as atualizações de software estão armazenados. Por padrão, o servidor do WSUS armazena os arquivos em <*WSUSInstallationDrive*>\WSUS\WSUSContent\\, em que *WSUSInstallationDrive* é a unidade em que o WSUS está instalado.  
 
-2.  Copie todos os arquivos e pastas desse local na pasta WSUSContent no servidor de ponto de atualização de software desconectado.  
+2. Copie todos os arquivos e pastas desse local na pasta WSUSContent no servidor de ponto de atualização de software desconectado.  
 
- Use o procedimento a seguir para exportar os metadados de atualizações de software do banco de dados do WSUS no servidor de exportação.  
+   Use o procedimento a seguir para exportar os metadados de atualizações de software do banco de dados do WSUS no servidor de exportação.  
 
 #### <a name="to-export-software-updates-metadata-from-the-wsus-database-on-the-export-server"></a>Para exportar os metadados de atualizações de software do banco de dados do WSUS no servidor de exportação  
 
@@ -98,7 +98,7 @@ ms.locfileid: "32350418"
 
      **wsusutil.exe import export.cab import.log**  
 
-     O formato pode ser resumido da seguinte maneira: o WSUSutil.exe é seguido do comando de importação, do nome do arquivo de pacote (.cab) criado durante a operação de exportação, do caminho do arquivo de pacote, caso ele esteja em uma pasta diferente, e do nome de um arquivo de log. O WSUSutil.exe importa os metadados do servidor de exportação e cria um arquivo de log da operação.  
+     O formato pode ser resumido da seguinte maneira: O WSUSutil.exe é seguido do comando de importação, do nome do arquivo de pacote (.cab) que é criado durante a operação de exportação, do caminho do arquivo de pacote se ele está em uma pasta diferente e do nome de um arquivo de log. O WSUSutil.exe importa os metadados do servidor de exportação e cria um arquivo de log da operação.  
 
 ## <a name="next-steps"></a>Próximas etapas
 Depois de sincronizar as atualizações de software pela primeira vez ou depois que houver novas classificações ou produtos disponíveis, você deverá [configurar as novas classificações e produtos](configure-classifications-and-products.md) para sincronizar atualizações de software com os novos critérios.

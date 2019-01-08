@@ -10,12 +10,12 @@ ms.assetid: bceab2e8-2f05-4a17-9ac8-a7a558670fb7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a72f7979c38a0a8782aa41fef66b7aa00af9bc0f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 24f1d08fedfc09a190739182d7858772745fb3fe
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342232"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423364"
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1612 do System Center Configuration Manager
 
@@ -59,7 +59,7 @@ Além de instalar e configurar o banco de dados de data warehouse, vários novos
 - O computador no qual você instala a função do sistema de sites requer o .NET Framework 4.5.2 ou posterior.
 - A conta do computador no qual a função do sistema de sites será instalada deve ter permissões de administrador local no computador que hospedará o banco de dados de data warehouse.
 - A conta administrativa usada para instalar a função do sistema de sites deve ser DBO na instância do SQL Server que hospedará o banco de dados de data warehouse.  
--  Há suporte para o banco de dados:
+- Há suporte para o banco de dados:
   - Com o SQL Server 2012 ou posterior, Enterprise ou Datacenter Edition.
   - Em uma instância padrão ou nomeada
   - Em um *Cluster do SQL Server*. Embora essa configuração provavelmente funcione, ela não foi testada e o suporte oferecido é o melhor esforço.
@@ -78,14 +78,14 @@ Use as informações a seguir para concluir a instalação da função do sistem
 Página **Seleção de Função do Sistema**:  
 Você deve instalar um ponto do Reporting Services para que o Assistente possa exibir uma opção para selecionar e instalar o ponto do Data Warehouse Service.
 
-Página **Geral** ‑ As informações gerais a seguir são necessárias:
+Página **Geral**: As informações gerais a seguir são necessárias:
 - **Configurações do banco de dados do Configuration Manager:**   
-  - **Nome do Servidor** ‑ Especifique o FQDN do servidor que hospeda o banco de dados do site. Se você não usar uma instância padrão do SQL Server, deverá especificar a instância depois do FQDN no seguinte formato: ***&lt;Sqlserver_FQDN >\&lt;Nome_da_instância>***
+  - **Nome do Servidor** ‑ Especifique o FQDN do servidor que hospeda o banco de dados do site. Se você não usar uma instância padrão do SQL Server, deverá especificar a instância depois do FQDN no seguinte formato: ***&lt;Sqlserver_FQDN>\&lt;Nome_da_instância>***
   - **Nome do banco de dados** ‑ Especifique o nome do banco de dados do site.
   - **Verificar** – Clique em **Verificar** para certificar-se de que a conexão com o banco de dados do site foi bem-sucedida.
 </br></br>
 - **Configurações do banco de dados de data warehouse:**
-  - **Nome do servidor** ‑ Especifique o FQDN do servidor que hospeda o banco de dados e o ponto do Data Warehouse Service. Se você não usar uma instância padrão do SQL Server, deverá especificar a instância depois do FQDN no seguinte formato: ***&lt;Sqlserver_FQDN >\&lt;Nome_da_instância>***
+  - **Nome do servidor** ‑ Especifique o FQDN do servidor que hospeda o banco de dados e o ponto do Data Warehouse Service. Se você não usar uma instância padrão do SQL Server, deverá especificar a instância depois do FQDN no seguinte formato: ***&lt;Sqlserver_FQDN>\&lt;Nome_da_instância>***
   - **Nome do banco de dados** ‑ Especifique o FQDN para o banco de dados de data warehouse.  O Configuration Manager criará o banco de dados com esse nome. Se você especificar um nome de banco de dados que já existe na instância do SQL Server, o Configuration Manager usará esse banco de dados.
   - **Verificar** – Clique em **Verificar** para certificar-se de que a conexão com o banco de dados do site foi bem-sucedida.
 
@@ -122,21 +122,21 @@ Depois de instalar uma função do sistema de sites do Data Warehouse, os seguin
 ### <a name="move-the-data-warehouse-database"></a>Mover o banco de dados de data warehouse
 Use as seguintes etapas para mover o banco de dados de data warehouse para um novo SQL Server:
 
-  1. Examine a configuração de banco de dados atual e registre os detalhes de configuração, incluindo:  
+1. Examine a configuração de banco de dados atual e registre os detalhes de configuração, incluindo:  
    - Os grupos de dados que você deseja sincronizar
    - As tabelas que devem ser incluídas ou excluídas da sincronização       
 
    Você reconfigurará essas tabelas e grupos de dados após restaurar o banco de dados para um novo servidor e reinstalar a função do sistema de sites.  
 
-  2. Use o SQL Server Management Studio para fazer backup do banco de dados de data warehouse e clique novamente para restaurar o banco de dados para um SQL Server no novo computador que hospedará o data warehouse.
+2. Use o SQL Server Management Studio para fazer backup do banco de dados de data warehouse e clique novamente para restaurar o banco de dados para um SQL Server no novo computador que hospedará o data warehouse.
 
-  Depois de restaurar o banco de dados para o novo servidor, verifique se as permissões de acesso ao novo banco de dados de data warehouse são as mesmas do original.
+   Depois de restaurar o banco de dados para o novo servidor, verifique se as permissões de acesso ao novo banco de dados de data warehouse são as mesmas do original.
 
-  3. Use o console do Configuration Manager para remover a função do sistema de sites do ponto do Data Warehouse Service do servidor atual.
+3. Use o console do Configuration Manager para remover a função do sistema de sites do ponto do Data Warehouse Service do servidor atual.
 
-  4. Instale um novo ponto de Data Warehouse Service e especifique o nome do novo SQL Server e a instância que hospeda o banco de dados de data warehouse restaurado.
+4. Instale um novo ponto de Data Warehouse Service e especifique o nome do novo SQL Server e a instância que hospeda o banco de dados de data warehouse restaurado.
 
-  5. A movimentação será concluída depois de instalar a função do sistema de sites.
+5. A movimentação será concluída depois de instalar a função do sistema de sites.
 
 Você pode examinar os seguintes logs do Configuration Manager para confirmar se a função do sistema de site foi reinstalada com êxito:  
 - **DWSSMSI.log** e **DWSSSetup.log** ‑ Use esses logs para investigar erros ao instalar o ponto do Data Warehouse Service.
@@ -148,7 +148,7 @@ Começando do Technical Preview versão 1612, você pode usar uma nova ferrament
 
 Essa ferramenta só afeta o conteúdo do ponto de distribuição que você especificar ao executá-la e não é possível remover o conteúdo da biblioteca de conteúdo no servidor do site.
 
-Depois de instalar o Technical Preview 1612, você poderá encontrar o **ContentLibraryCleanup.exe** na pasta \*%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* no servidor do site do Technical Preview.
+Depois de instalar o Technical Preview 1612, você poderá encontrar o **ContentLibraryCleanup.exe** na pasta *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* no servidor do site do Technical Preview.
 
 A ferramenta lançada com esse Technical Preview visa substituir as versões mais antigas de ferramentas similares lançadas para os produtos anteriores do Configuration Manager. Embora esta versão da ferramenta deixe de funcionar após 1º de março de 2017, novas versões serão lançadas com futuros Technical Previews até que essa ferramenta seja lançada como parte do Branch Atual ou de uma versão fora de banda pronta para produção.
 
@@ -158,22 +158,22 @@ A ferramenta lançada com esse Technical Preview visa substituir as versões mai
 
 ### <a name="modes-of-operation"></a>Modos de operação
 A ferramenta pode ser executada em dois modos:
-  1.    **Modo de hipóteses**:   
-      Quando você não especifica a opção **/delete**, a ferramenta é executada no modo de hipóteses e identifica o conteúdo que seria excluído do ponto de distribuição, mas não exclui efetivamente nenhum dado.
+1. **Modo de hipóteses**:   
+   Quando você não especifica a opção **/delete**, a ferramenta é executada no modo de hipóteses e identifica o conteúdo que seria excluído do ponto de distribuição, mas não exclui efetivamente nenhum dado.
 
-      - Quando a ferramenta é executada nesse modo, as informações sobre o conteúdo que seria excluído são automaticamente gravadas no arquivo de log da ferramenta. Não é solicitado que o usuário confirme cada exclusão em potencial.
-      - Por padrão, o arquivo de log é gravado na pasta temp dos usuários no computador em que a ferramenta é executada, no entanto, você pode usar a opção /log para redirecionar o arquivo de log para outro local.  
-      </br>
+   - Quando a ferramenta é executada nesse modo, as informações sobre o conteúdo que seria excluído são automaticamente gravadas no arquivo de log da ferramenta. Não é solicitado que o usuário confirme cada exclusão em potencial.
+   - Por padrão, o arquivo de log é gravado na pasta temp dos usuários no computador em que a ferramenta é executada, no entanto, você pode usar a opção /log para redirecionar o arquivo de log para outro local.  
+   </br>
 
-    Recomendamos que você execute a ferramenta nesse modo e examine o arquivo de log resultante antes de executar a ferramenta com a opção /delete.  
+   Recomendamos que você execute a ferramenta nesse modo e examine o arquivo de log resultante antes de executar a ferramenta com a opção /delete.  
 
-  2. **Modo de exclusão**: quando você executa a ferramenta com a opção **/delete**, ela é executada no modo de exclusão.
+2. **Modo de exclusão**: quando você executa a ferramenta com a opção **/delete**, ela é executada no modo de exclusão.
 
-     - Quando a ferramenta é executada nesse modo, o conteúdo órfão encontrado no ponto de distribuição especificado pode ser excluído da biblioteca de conteúdo do ponto de distribuição.
-     -  Antes de excluir cada arquivo, é solicitado que o usuário confirme se o arquivo deve ser excluído.  Você pode selecionar, **Y** para sim, **N** para não ou **Sim para todos** para ignorar as futuras solicitações e excluir todo o conteúdo órfão.  
-     </br>
+   - Quando a ferramenta é executada nesse modo, o conteúdo órfão encontrado no ponto de distribuição especificado pode ser excluído da biblioteca de conteúdo do ponto de distribuição.
+   -  Antes de excluir cada arquivo, é solicitado que o usuário confirme se o arquivo deve ser excluído.  Você pode selecionar, **Y** para sim, **N** para não ou **Sim para todos** para ignorar as futuras solicitações e excluir todo o conteúdo órfão.  
+   </br>
 
-     Recomendamos que você execute a ferramenta no modo de hipóteses modo e examine o arquivo de log resultante antes de executar a ferramenta com a opção /delete.  
+   Recomendamos que você execute a ferramenta no modo de hipóteses modo e examine o arquivo de log resultante antes de executar a ferramenta com a opção /delete.  
 
 Quando a ferramenta de limpeza da biblioteca de conteúdo é executada em um desses modos, ela cria automaticamente um log com um nome que inclui o modo no qual ela foi executada, o nome do ponto de distribuição, a data e a hora da operação. O arquivo de log é aberto automaticamente quando a ferramenta é concluída. Por padrão, esse log é gravado na pasta **temp** dos usuários no computador em que a ferramenta é executada, no entanto, você pode usar a opção de linha de comando para redirecionar o arquivo de log para outro local, inclusive para um compartilhamento de rede.   
 
@@ -184,7 +184,7 @@ Para executar a ferramenta:
 2. Em seguida, insira uma linha de comando que inclui as opções de linha de comando necessárias e os comutadores opcionais que você deseja usar.
 
 **Problema conhecido** Quando a ferramenta é executada, um erro semelhante ao seguinte pode ser retornado quando qualquer pacote ou implantação tiver falhado ou estiver em andamento:
--  *System.InvalidOperationException: esta biblioteca de conteúdo não pode ser limpa no momento porque o pacote <packageID> não está totalmente instalado.*
+-  *System.InvalidOperationException: Esta biblioteca de conteúdo não pode ser limpa no momento porque o pacote <packageID> não está totalmente instalado.*
 
 **Solução alternativa:** nenhuma. A ferramenta não é confiável para identificar arquivos órfãos quando o conteúdo está em andamento ou não pôde ser implantado. Portanto, a ferramenta não permitirá que você limpe conteúdo até que esse problema seja resolvido.
 
@@ -197,7 +197,7 @@ As opções de linha de comando a seguir podem ser usadas em qualquer ordem.
 |---------|-------|
 |**/delete**  |**Opcional** </br> Use essa opção quando você desejar excluir o conteúdo do ponto de distribuição. Você será perguntado antes do conteúdo ser efetivamente excluído. </br></br> Quando essa opção não for usada, a ferramenta registra os resultados de qual conteúdo seria excluído, mas não exclui nenhum conteúdo do ponto de distribuição. </br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /delete*** |
 | **/q**       |**Opcional** </br> Execute a ferramenta no modo silencioso, o qual suprime todos os avisos (como avisos de quando você estiver excluindo conteúdo) e não abre automaticamente o arquivo de log. </br></br> Exemplo: ***ContentLibraryCleanup.exe /q /dp server1.contoso.com*** |
-| **/dp &lt;FQDN do ponto de distribuição>**  | **Necessária** </br> Especifique o FQDN (nome de domínio totalmente qualificado) do ponto de distribuição que você deseja limpar. </br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com***|
+| **/dp &lt;FQDN do ponto de distribuição>**  | **Necessária** </br> Especifique o FQDN (nome de domínio totalmente qualificado) do ponto de distribuição que você deseja limpar. </br></br> Exemplo:  ***ContentLibraryCleanup.exe /dp server1.contoso.com***|
 | **/ps &lt;FQDN do site primário>**       | **Opcional** ao limpar o conteúdo de um ponto de distribuição em um site primário.</br>**Obrigatório** ao limpar o conteúdo de um ponto de distribuição em um site secundário. </br></br> Especifique o FQDN do site primário ao qual o ponto de distribuição pertence, ou do pai primário quando o ponto de distribuição estiver em um site secundário. </br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
 | **/sc &lt;código do site primário>**  | **Opcional** ao limpar o conteúdo de um ponto de distribuição em um site primário.</br>**Obrigatório** ao limpar o conteúdo de um ponto de distribuição em um site secundário. </br></br> Especifique o código do site primário ao qual o ponto de distribuição pertence, ou do site pai primário quando o ponto de distribuição estiver em um site secundário.</br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
 | **/log <log file directory>**       |**Opcional** </br> Especifique um diretório no qual os arquivos de log serão colocados. Ele pode ser uma unidade local ou um compartilhamento de rede.</br></br> Quando essa opção não for usada, os arquivos de log são colocados automaticamente na pasta temp dos usuários.</br></br> Exemplo de unidade local: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>Exemplo de compartilhamento de rede: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\&lt;share>\&lt;folder>***|
@@ -299,7 +299,7 @@ Execute essa tarefa com o administrador do Azure, pois você precisará de crede
 
 #### <a name="to-create-the-connection"></a>Para criar a conexão:
 
-2. No espaço de trabalho **Administração**, escolha **Serviços de Nuvem** > **Azure Active Directory** > **Adicionar Azure Active Directory**.
+2. No workspace **Administração**, escolha **Serviços de Nuvem** > **Azure Active Directory** > **Adicionar Azure Active Directory**.
 2. Escolha **Entrar** para criar a conexão com o Azure AD.
 
 #### <a name="configuration-manager-client-requirements"></a>Requisitos do cliente do Configuration Manager

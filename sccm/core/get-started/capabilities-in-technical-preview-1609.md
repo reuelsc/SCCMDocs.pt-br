@@ -10,12 +10,12 @@ ms.assetid: e2a59116-b2e5-4dd2-90eb-0b8a5eb50b56
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 3cfd7131f5b6fb721fdc96c6486183d3781af9d6
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d5bc2f342ec39366a22e915dab08a7338f850dd1
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342385"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415153"
 ---
 # <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1609 do System Center Configuration Manager
 
@@ -60,7 +60,7 @@ Ao usar o Configuration Manager com o Intune, agora você pode criar perfis de V
 
 Nesta versão, atualizamos a [integração da Windows Store para Empresas](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business) com esses novos recursos:
 
-**Atualização:** na versão de technical preview atual, o recurso de sincronização imediata não é funcional.
+**Atualização:** na versão de Technical Preview atual, o recurso de sincronização imediata não é funcional.
 
 - Anteriormente, você podia implantar apenas aplicativos gratuitos da Windows Store para Empresas. Agora, o Configuration Manager também dá suporte à implantação de aplicativos licenciados online pagos (apenas para dispositivos registrados do Intune).
 - Agora você pode iniciar uma sincronização imediata entre a Windows Store para Empresas e o Configuration Manager.
@@ -71,9 +71,9 @@ Nesta versão, atualizamos a [integração da Windows Store para Empresas](/sccm
 #### <a name="purchase-and-sync-a-paid-online-licensed-app"></a>Compre e sincronize um aplicativo licenciado online pago
 
 1. Compre aplicativo licenciado online pago da Windows Store para Empresas.
-2. No espaço de trabalho **Administração** do console do Configuration Manager, clique em **Serviços de Nuvem** > **Atualizações e Manutenção** > **Windows Store para Empresas**.
+2. No workspace **Administração** do console do Configuration Manager, clique em **Serviços de Nuvem** > **Atualizações e Manutenção** > **Windows Store para Empresas**.
 3. Na guia **Início**, no grupo **Sincronizar**, clique em **Sincronizar Agora**.
-4. Logo depois disso, o aplicativo que você adquiriu aparecerá no nó **Informações sobre Licença para Aplicativos da Loja** do espaço de trabalho **Gerenciamento de Aplicativos**.
+4. Logo depois disso, o aplicativo que você adquiriu aparecerá no nó **Informações sobre Licença para Aplicativos da Loja** do workspace **Gerenciamento de Aplicativos**.
 
 #### <a name="create-and-deploy-a-configuration-manager-application-from-the-synchronized-app-data"></a>Criar e implantar um aplicativo do Configuration Manager por meio dos dados do aplicativo sincronizado
 
@@ -82,7 +82,7 @@ O procedimento para criar e implantar um aplicativo do Configuration Manager por
 
 #### <a name="modify-the-client-secret-key-from-azure-active-directory"></a>Modificar a chave secreta do cliente do Azure Active Directory
 
-1. No espaço de trabalho **Administração** do console do Configuration Manager, clique em **Serviços de Nuvem** > **Atualizações e Manutenção** > **Windows Store para Empresas**.
+1. No workspace **Administração** do console do Configuration Manager, clique em **Serviços de Nuvem** > **Atualizações e Manutenção** > **Windows Store para Empresas**.
 2. Selecione sua conta da Windows Store para Empresas e clique em **Propriedades**.
 3. Na caixa de diálogo **Windows Store for Business Account Properties (Propriedades da conta da Windows Store para Empresas)**, insira uma nova chave no campo **Chave secreta do cliente** e clique em **Verificar**. Depois de verificar, clique em **Aplicar** e feche a caixa de diálogo.
 
@@ -237,38 +237,38 @@ As seções a seguir detalham as alterações introduzidas com essa versão pré
 
 ### <a name="changes-in-ui-and-behavior-for-boundary-groups-and-content-locations"></a>Alterações na interface do usuário e comportamento de grupos de limites e locais de conteúdo
 A seguir estão as principais alterações de grupos de limites e como os clientes encontram conteúdo. Muitas dessas alterações e conceitos funcionam em conjunto.
--   **As configurações para rápido ou lento foram removidas:** você não configura mais pontos de distribuição individuais para serem rápidos ou lentos.  Em vez disso, cada sistema de sites associado a um grupo de limites é tratado da mesma forma. Por causa dessa alteração, as guias **Referências** das propriedades do grupo de limites não dão mais suporte à configuração de Rápido ou Lento.
--   **Novo grupo de limites padrão em cada site:** cada site primário tem um novo grupo de limites padrão chamado ***Default-Site-Boundary-Group\<sitecode>***.  Quando um cliente não está em um local de rede que é atribuído a um grupo de limites, o cliente usará os sistemas de sites associados ao grupo padrão do seu site atribuído. Planeje usar esse grupo de limites como uma substituição para o conceito de local de conteúdo de fallback.    
- -  **'Allow fallback source locations for content' (Permitir locais de origem de fallback para conteúdo)** foi removido: você não configura mais explicitamente um ponto de distribuição para ser usado para o fallback e as opções essa configuração foram removidos da interface do usuário.
+- **Configurações para Rápido ou Lento são removidas:** Você não configura mais os pontos de distribuição individuais como rápidos ou lentos.  Em vez disso, cada sistema de sites associado a um grupo de limites é tratado da mesma forma. Por causa dessa alteração, as guias **Referências** das propriedades do grupo de limites não dão mais suporte à configuração de Rápido ou Lento.
+- **Novo grupo de limites padrão em cada site:**  Cada site primário tem um novo grupo de limites padrão chamado ***Default-Site-Boundary-Group\<sitecode>***.  Quando um cliente não está em um local de rede que é atribuído a um grupo de limites, o cliente usará os sistemas de sites associados ao grupo padrão do seu site atribuído. Planeje usar esse grupo de limites como uma substituição para o conceito de local de conteúdo de fallback.    
+  -  **'Allow fallback source locations for content' (Permitir localizações de origem de fallback para conteúdo)** foi removido: você não configura mais explicitamente um ponto de distribuição para ser usado para o fallback e as opções essa configuração foram removidos da interface do usuário.
 
-    Além disso, o resultado da configuração **Permitir que os clientes usem um local de origem de fallback para o conteúdo** em um tipo de implantação para aplicativos foi alterado. Essa configuração em um tipo de implantação agora permite que um cliente use o grupo de limites de site padrão como um local de fonte de conteúdo.
+  Além disso, o resultado da configuração **Permitir que os clientes usem um local de origem de fallback para o conteúdo** em um tipo de implantação para aplicativos foi alterado. Essa configuração em um tipo de implantação agora permite que um cliente use o grupo de limites de site padrão como um local de fonte de conteúdo.
 
- -  **Relações de grupos de limites:** cada grupo de limites pode ser vinculado a um ou mais grupos de limites adicionais. Esses links formam relações que são configuradas na nova guia de propriedades de grupo limites chamada **Relações**:
-    -   Cada grupo de limites ao qual o cliente está associado diretamente é chamado de grupo de limites **atual**.  
-    -   Qualquer grupo de limites que um cliente possa usar devido a uma associação entre o grupo de limites *atual* desse cliente e outro grupo é chamado de grupo de limites **vizinho**.
-    -  A guia **Relações** é o local em que você adiciona grupos de limites que podem ser usados como um grupo de limites *vizinho*. Você também pode configurar um tempo em minutos que determina quando um cliente que não consegue localizar o conteúdo de um ponto de distribuição no grupo *atual* começará a pesquisar locais de conteúdo daqueles grupos de limites *vizinhos*.
+  -  **Relações de grupos de limites:** cada grupo de limites pode ser vinculado a um ou mais grupos de limites adicionais. Esses links formam relações que são configuradas na nova guia de propriedades de grupo limites chamada **Relações**:
+  -   Cada grupo de limites ao qual o cliente está associado diretamente é chamado de grupo de limites **atual**.  
+  -   Qualquer grupo de limites que um cliente possa usar devido a uma associação entre o grupo de limites *atual* desse cliente e outro grupo é chamado de grupo de limites **vizinho**.
+  -  A guia **Relações** é o local em que você adiciona grupos de limites que podem ser usados como um grupo de limites *vizinho*. Você também pode configurar um tempo em minutos que determina quando um cliente que não consegue localizar o conteúdo de um ponto de distribuição no grupo *atual* começará a pesquisar locais de conteúdo daqueles grupos de limites *vizinhos*.
 
-        Quando você adicionar ou alterar uma configuração de grupo de limites, terá a opção de bloquear o fallback para aquele grupo de limites específico daquele grupo atual que está sendo configurado.
+      Quando você adicionar ou alterar uma configuração de grupo de limites, terá a opção de bloquear o fallback para aquele grupo de limites específico daquele grupo atual que está sendo configurado.
 
-    Para usar a nova configuração, você define associações explícitas (links) de um grupo de limites para outro e configura todos os pontos de distribuição nesse grupo associado com o mesmo tempo em minutos. O tempo que você configurar determina quando um cliente que não consegue localizar uma fonte de conteúdo de seu grupo de limites *atual* pode começar a pesquisar fontes de conteúdo desse grupo de limites vizinho.
+  Para usar a nova configuração, você define associações explícitas (links) de um grupo de limites para outro e configura todos os pontos de distribuição nesse grupo associado com o mesmo tempo em minutos. O tempo que você configurar determina quando um cliente que não consegue localizar uma fonte de conteúdo de seu grupo de limites *atual* pode começar a pesquisar fontes de conteúdo desse grupo de limites vizinho.
 
-    Além dos grupos de limites configurados explicitamente, cada grupo de limite tem um link implícito para o grupo de limites de site padrão. Este link se torna ativo após 120 minutos, momento em que o grupo de limites de site padrão se torna um grupo de limites vizinho, o que permite que os clientes usem os pontos de distribuição associados a aquele grupo de limites como locais de fonte de conteúdo.
+  Além dos grupos de limites configurados explicitamente, cada grupo de limite tem um link implícito para o grupo de limites de site padrão. Este link se torna ativo após 120 minutos, momento em que o grupo de limites de site padrão se torna um grupo de limites vizinho, o que permite que os clientes usem os pontos de distribuição associados a aquele grupo de limites como locais de fonte de conteúdo.
 
-    Esse comportamento substitui o que anteriormente era chamado de fallback de conteúdo.  Você pode substituir esse comportamento padrão de 120 minutos associando explicitamente o grupo de limites de site padrão a um grupo *atual* e definindo um tempo específico em minutos ou bloqueando totalmente o fallback para impedir seu uso.
+  Esse comportamento substitui o que anteriormente era chamado de fallback de conteúdo.  Você pode substituir esse comportamento padrão de 120 minutos associando explicitamente o grupo de limites de site padrão a um grupo *atual* e definindo um tempo específico em minutos ou bloqueando totalmente o fallback para impedir seu uso.
 
 
--   **Os clientes tentam obter o conteúdo de cada ponto de distribuição por até dois minutos:** quando um cliente pesquisa um local de fonte de conteúdo, ele tenta acessar cada ponto de distribuição por dois minutos antes de tentar outro ponto de distribuição. Essa é uma alteração de versões anteriores em que os clientes tentavam se conectar a um ponto de distribuição por até duas horas.
+- **Os clientes tentam obter o conteúdo de cada ponto de distribuição por até dois minutos:** quando um cliente pesquisa uma localização de origem de conteúdo, ele tenta acessar cada ponto de distribuição por dois minutos antes de tentar outro ponto de distribuição. Essa é uma alteração de versões anteriores em que os clientes tentavam se conectar a um ponto de distribuição por até duas horas.
 
-    - O primeiro ponto de distribuição que um cliente tenta usar é selecionado aleatoriamente do pool de pontos de distribuição disponíveis no grupo (ou grupos) de limites *atual* do cliente.
+  - O primeiro ponto de distribuição que um cliente tenta usar é selecionado aleatoriamente do pool de pontos de distribuição disponíveis no grupo (ou grupos) de limites *atual* do cliente.
 
-    - Após dois minutos, se o cliente não encontrou o conteúdo, ele muda para um novo ponto de distribuição e tenta obter o conteúdo daquele servidor. Esse processo se repete a cada dois minutos até que o cliente localize o conteúdo ou atinja o último servidor em seu pool.
+  - Após dois minutos, se o cliente não encontrou o conteúdo, ele muda para um novo ponto de distribuição e tenta obter o conteúdo daquele servidor. Esse processo se repete a cada dois minutos até que o cliente localize o conteúdo ou atinja o último servidor em seu pool.
 
-    - Se um cliente não conseguir encontrar um local de fonte de conteúdo válido de seu pool *atual* antes do período de fallback para um grupo de limites *vizinho*, ele adicionará os pontos de distribuição daquele grupo *vizinho* ao final de sua lista atual e pesquisará o grupo de locais de fonte de conteúdo expandido que inclui os pontos de distribuição dos dois grupos de limites.
+  - Se um cliente não conseguir encontrar um local de fonte de conteúdo válido de seu pool *atual* antes do período de fallback para um grupo de limites *vizinho*, ele adicionará os pontos de distribuição daquele grupo *vizinho* ao final de sua lista atual e pesquisará o grupo de locais de fonte de conteúdo expandido que inclui os pontos de distribuição dos dois grupos de limites.
 
-        > [!TIP]  
-        > Quando você cria um link explícito do grupo de limites atual para o grupo de limites de site padrão e define um tempo de fallback menor do que o tempo de fallback de um link para um grupo de limites vizinho, os clientes começam a pesquisar os locais de origem do grupo de limites de site padrão antes de incluir o grupo vizinho.
+      > [!TIP]  
+      > Quando você cria um link explícito do grupo de limites atual para o grupo de limites de site padrão e define um tempo de fallback menor do que o tempo de fallback de um link para um grupo de limites vizinho, os clientes começam a pesquisar os locais de origem do grupo de limites de site padrão antes de incluir o grupo vizinho.
 
-    - Quando o cliente falha em obter o conteúdo do último servidor no pool, ele inicia o processo novamente.
+  - Quando o cliente falha em obter o conteúdo do último servidor no pool, ele inicia o processo novamente.
 
 
 ### <a name="how-the-new-model-works"></a>Como o novo modelo funciona
@@ -318,13 +318,13 @@ Ao configurar os diferentes grupos vizinhos para estarem disponíveis em momento
 
 ### <a name="bkmk_update"></a>Atualizar grupos de limites existentes para o novo modelo
 Quando você instala a versão 1609 e atualiza seu site, as configurações a seguir são feitas automaticamente. Elas devem garantir que o comportamento de fallback atual permaneça disponível, até que você configure novos grupos de limites e relações.  
--   Os pontos de distribuição não protegidos em um site são adicionados ao grupo de limites *Default-Site-Boundary-Group\<sitecode>* desse site.
--   É feita uma cópia de cada grupo de limites existente que inclui um servidor do site configurado com uma conexão lenta. O nome do novo grupo é ***\<nome do grupo de limites original>-Slow-Tmp***:  
-    -   Os sistemas de sites que têm uma conexão rápida são deixados no grupo de limites original.
-    -   Uma cópia dos sistemas de sites que têm uma conexão lenta são adicionadas à cópia do grupo de limites. Os sistemas de sites originais configurados como lentos permanecem no grupo de limites original para compatibilidade com versões anteriores, mas não são usados nesse grupo de limites.
-    -   Esta cópia do grupo de limites não tem limites associados a ela. No entanto, um link de fallback é criado entre o grupo original e a nova cópia de grupo de limites que tem o tempo de fallback definido como zero.
+- Os pontos de distribuição não protegidos em um site são adicionados ao grupo de limites *Default-Site-Boundary-Group\<sitecode>* desse site.
+- É feita uma cópia de cada grupo de limites existente que inclui um servidor do site configurado com uma conexão lenta. O nome do novo grupo é ***\<nome do grupo de limites original>-Slow-Tmp***:  
+  -   Os sistemas de sites que têm uma conexão rápida são deixados no grupo de limites original.
+  -   Uma cópia dos sistemas de sites que têm uma conexão lenta são adicionadas à cópia do grupo de limites. Os sistemas de sites originais configurados como lentos permanecem no grupo de limites original para compatibilidade com versões anteriores, mas não são usados nesse grupo de limites.
+  -   Esta cópia do grupo de limites não tem limites associados a ela. No entanto, um link de fallback é criado entre o grupo original e a nova cópia de grupo de limites que tem o tempo de fallback definido como zero.
 
- A tabela a seguir identifica o novo comportamento de fallback que você pode esperar da combinação das configurações de ponto a distribuição e as configurações de implantação originais:
+  A tabela a seguir identifica o novo comportamento de fallback que você pode esperar da combinação das configurações de ponto a distribuição e as configurações de implantação originais:
 
 A configuração de implantação original para "Não executar programa" na rede lenta  |A configuração do ponto de distribuição original para “Allow client to use a fallback source location for content” (Permitir que o cliente use um local de fonte de fallback para o conteúdo)  |Novo comportamento de fallback  
 ---------|---------|---------
@@ -340,7 +340,7 @@ Não selecionada | Selecionada     |   **Fallback normal** – usar pontos de di
 ## <a name="office-365-client-management-dashboard"></a>Painel de Gerenciamento de Clientes do Office 365  
 O Technical Preview 1609 do Configuration Manager introduz um novo painel. Para exibir o painel, no console do Configuration Manager, vá até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Cliente do Office 365**.
 >[!NOTE]
->No espaço de trabalho **Novidades** no console do Configuration Manager, o novo painel está nomeado incorretamente como **Office 365 Servicing dashboard (Painel de serviços do Office 365)**.
+>No workspace **Novidades** no console do Configuration Manager, o novo painel está nomeado incorretamente como **Office 365 Servicing dashboard (Painel de serviços do Office 365)**.
 
 O painel exibe gráficos para o seguinte:
 
@@ -414,7 +414,7 @@ Em uma sequência de tarefas existente para instalar um sistema operacional, voc
 
 
 ## <a name="intune-compliance-charts"></a>Gráficos de conformidade do Intune
-Nesta versão, você pode obter uma exibição rápida da conformidade geral para dispositivos e os principais motivos para não conformidade usando novos gráficos no **Espaço de Trabalho de Monitoramento** no console do Configuration Manager.
+Nesta versão, você pode obter uma exibição rápida da conformidade geral para dispositivos e os principais motivos para não conformidade usando novos gráficos no **Workspace de Monitoramento** no console do Configuration Manager.
 
 #### <a name="to-view-the-intune-compliance-charts"></a>Para exibir os gráficos de conformidade do Intune
 1. No console do Configuration Manager, acesse **Monitoramento** > **Visão Geral** > **Configurações de Conformidade**.

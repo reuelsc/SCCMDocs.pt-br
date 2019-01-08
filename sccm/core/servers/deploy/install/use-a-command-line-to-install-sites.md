@@ -10,12 +10,12 @@ ms.assetid: e7cdb1a9-140a-436e-ac71-72d083110223
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4a6c989b1eabe47f3360ceec660d5eba32811d60
-ms.sourcegitcommit: ee434c53b3695a039b56298082b6f61f1006d9dd
+ms.openlocfilehash: dcf12016206fe0c4296d08ad8404b163607313e1
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49943284"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417159"
 ---
 # <a name="use-a-command-line-to-install-system-center-configuration-manager-sites"></a>Usar a linha de comando para instalar sites do System Center Configuration Manager
 
@@ -26,41 +26,41 @@ ms.locfileid: "49943284"
 ## <a name="supported-tasks-for-command-line-installations"></a>Tarefas com suporte para instalações de linha de comando
  Esse método de executar a Instalação oferece dá suporte às seguintes tarefas de manutenção do site e de instalação:
 
--   **Instalar um site de administração central ou site primário por meio de um prompt de comando**  
+- **Instalar um site de administração central ou site primário por meio de um prompt de comando**  
   Exibir [Opções de linha de comando para Instalação](../../../../core/servers/deploy/install/command-line-options-for-setup.md)
 
--  **Modificar os idiomas em uso em um site de administração central ou site primário**  
-    Para modificar os idiomas instalados em um site por meio de um prompt de comando (incluindo idiomas para dispositivos móveis), você deve:  
+- **Modificar os idiomas em uso em um site de administração central ou site primário**  
+   Para modificar os idiomas instalados em um site por meio de um prompt de comando (incluindo idiomas para dispositivos móveis), você deve:  
 
-     -   Executar a Instalação de **&lt;ConfigMgrInstallationPath\>\Bin\X64** no servidor do site,
-     -   Usar a opção de linha de comando **/MANAGELANGS**,
-     -   Especificar um arquivo de script de idioma que indique os idiomas que você deseja adicionar ou remover,  
+  - Executar a Instalação de **&lt;ConfigMgrInstallationPath\>\Bin\X64** no servidor do site,
+  - Usar a opção de linha de comando **/MANAGELANGS**,
+  - Especificar um arquivo de script de idioma que indique os idiomas que você deseja adicionar ou remover,  
 
     Por exemplo, use a seguinte sintaxe de comando: **setupwpf.exe /MANAGELANGS &lt;arquivo de script de idioma\>**  
 
     Para criar o arquivo de script de idioma, use as informações em [Opções de linha de comando para gerenciar idiomas](../../../../core/servers/deploy/install/command-line-options-for-setup.md#bkmk_Lang)  
 
--  **Usar um arquivo de script de instalação para recuperação de site ou instalações de site autônomas**  
-    Você pode executar a Instalação de um prompt de comando usando um script de instalação e executar uma instalação de site autônoma. Você também pode usar essa opção para recuperar um site.    
+- **Usar um arquivo de script de instalação para recuperação de site ou instalações de site autônomas**  
+   Você pode executar a Instalação de um prompt de comando usando um script de instalação e executar uma instalação de site autônoma. Você também pode usar essa opção para recuperar um site.    
 
-    Para usar um script com a instalação:  
+   Para usar um script com a instalação:  
 
-    -   Execute a Instalação com a opção de linha de comando **/SCRIPT** e especifique um arquivo de script.  
+  - Execute a Instalação com a opção de linha de comando **/SCRIPT** e especifique um arquivo de script.  
 
-    -   O arquivo de script deve ser configurado com as chaves e os valores necessários.  
+  - O arquivo de script deve ser configurado com as chaves e os valores necessários.  
 
     Para uma instalação autônoma de um site de administração central ou site primário, o arquivo de script deve ter as seguintes seções:  
 
-    -   Identificação    
-    -   Opções    
-    -   SQLConfigOptions    
-      -   HierarchyOptions    
-    -   CloudConnectorOptions   
+  - Identificação    
+  - Opções    
+  - SQLConfigOptions    
+    -   HierarchyOptions    
+  - CloudConnectorOptions   
 
     Para recuperar um site, você também deve incluir as seguintes seções do arquivo de script:  
 
-    -   Identificação  
-    -   Recuperação
+  - Identificação  
+  - Recuperação
 
 Para saber mais, veja [Recuperação autônoma de sites para o Configuration Manager](/sccm/protect/understand/unattended-recovery).  
 

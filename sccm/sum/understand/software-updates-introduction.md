@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
-ms.openlocfilehash: d5528fc3e035cd5bed8bc92c8b65f3025d97a2d1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b59d7063cbe1a16dd023466b272d2c1ebea0e5b6
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351540"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424537"
 ---
 # <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Introdução às atualizações de software no System Center Configuration Manager
 
@@ -129,19 +129,19 @@ Para obter um exemplo que mostra como você pode implantar atualizações de sof
 
  Incluindo o agendamento da verificação, a verificação de conformidade das atualizações de software pode ter início das seguintes maneiras:  
 
--   **Agendamento de verificação das atualizações de software**: a verificação de conformidade das atualizações de software começa no agendamento de verificação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre como definir as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#software-updates).  
+-   **Agendamento de verificação das atualizações de software**: A verificação de conformidade das atualizações de software começa no agendamento de verificação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre como definir as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
--   **Ação Propriedades do Configuration Manager**: o usuário pode iniciar a ação **Ciclo de Verificação de Atualizações de Software** ou **Ciclo de Avaliação de Implantação de Atualizações de Software** na guia **Ação** na caixa de diálogo **Propriedades do Configuration Manager** no computador cliente.  
+-   **Ação Propriedades do Configuration Manager**: O usuário pode iniciar a ação **Ciclo de Verificação de Atualizações de Software** ou **Ciclo de Avaliação de Implantação de Atualizações de Software** na guia **Ação** na caixa de diálogo **Propriedades do Configuration Manager** no computador cliente.  
 
--   **Agendamento de reavaliação da implantação**: a avaliação da implantação e a verificação de conformidade das atualizações de software começam no agendamento de reavaliação da implantação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#software-updates).  
+-   **Agendamento de reavaliação da implantação**: A avaliação da implantação e verificação de conformidade das atualizações de software começam no agendamento de reavaliação da implantação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
--   **Antes de baixar arquivos de atualização**: quando um computador cliente recebe uma política de atribuição de uma nova implantação necessária, o Agente Cliente de Atualizações de Software baixa os arquivos de atualização no cache local do cliente. Para baixar os arquivos de atualização de software, o agente cliente inicia uma varredura para verificar se a atualização de software ainda é necessária.  
+-   **Antes de baixar arquivos de atualização**: Quando um computador cliente recebe uma política de atribuição de uma nova implantação necessária, o Agente Cliente de Atualizações de Software baixa os arquivos de atualização no cache local do cliente. Para baixar os arquivos de atualização de software, o agente cliente inicia uma varredura para verificar se a atualização de software ainda é necessária.  
 
--   **Antes da instalação da atualização de software**: logo antes da instalação da atualização de software, o Agente Cliente de Atualizações de Software inicia uma verificação para confirmar se as atualizações de software ainda são necessárias.  
+-   **Antes da instalação da atualização de software**: Para baixar os arquivos de atualização de software, o Agente Cliente de Atualizações de Software inicia uma varredura para verificar se as atualização ainda são necessárias.  
 
--   **Após a instalação da atualização de software**: logo após uma instalação de atualização de software ser concluída, o Agente Cliente de Atualizações de Software inicia uma verificação para confirmar se as atualizações não são mais necessárias e cria uma nova mensagem de estado que indica que a atualização de software foi instalada. Quando a instalação é concluída, mas uma reinicialização é necessária, a mensagem de estado indica que uma reinicialização está pendente no computador cliente.  
+-   **Após a instalação da atualização de software**: Depois que uma instalação de atualização de software é concluída, o Agente Cliente de Atualizações de Software inicia uma varredura para verificar se as atualizações não são mais necessárias e cria uma nova mensagem de estado que indica que a atualização de software foi instalada. Quando a instalação é concluída, mas uma reinicialização é necessária, a mensagem de estado indica que uma reinicialização está pendente no computador cliente.  
 
--   **Após a reinicialização do sistema**: quando uma reinicialização do sistema está pendente no computador cliente para que a instalação da atualização de software seja concluída, o Agente Cliente de Atualizações de Software inicia uma verificação após a reinicialização para confirmar se a atualização de software não é mais necessária e cria uma mensagem de estado que indica que a atualização de software está instalada.  
+-   **Após a reinicialização do sistema**: Quando uma reinicialização do sistema está pendente no computador cliente para que a instalação da atualização de software seja concluída, o Agente Cliente de Atualizações de Software inicia uma verificação após a reinicialização para verificar se a atualização de software não é mais necessária e cria uma mensagem de estado que indica que a atualização de software está instalada.  
 
 #### <a name="time-to-live-value"></a>Valor de vida útil  
  Os metadados de atualizações de software necessários na verificação de conformidade das atualizações são armazenados no computador cliente local e, por padrão, são relevantes por até 24 horas. Esse valor é conhecido como TTL (Vida Útil).  
@@ -209,47 +209,47 @@ Para obter um exemplo que mostra como você pode implantar atualizações de sof
 ###  <a name="BKMK_AutomaticDeployment"></a> Implantação automática de atualizações de software  
  A implantação automática de atualizações de software é configurada usando uma ADR (regra de implantação automática). Esse método de implantação geralmente é usado para suas atualizações de software mensais (geralmente conhecidas como "Patch Tuesday") e para o gerenciamento de atualizações de definição. Quando a regra é executada, as atualizações são removidas do grupo de atualização de software (se estiver usar um arquivo de grupo) de software, as atualizações de software que atendem aos critérios especificados (por exemplo, todas as atualizações de software de segurança lançados na última semana) são adicionadas a um grupo de atualização de software, os arquivos de conteúdo das atualizações de software são baixados e copiados nos pontos de distribuição e as atualizações de software são implantadas em computadores clientes na coleção de destino. A lista seguinte fornece o fluxo de trabalho geral para implantação automática das atualizações de software:  
 
-1.  Crie uma ADR que especifica as configurações de implantação, como as seguintes:  
+1. Crie uma ADR que especifica as configurações de implantação, como as seguintes:  
 
-    -   Coleção de destino  
+   -   Coleção de destino  
 
-    -   Decida se deseja habilitar a implantação ou relatório em conformidade de atualizações de software para os computadores cliente na coleção de destino  
+   -   Decida se deseja habilitar a implantação ou relatório em conformidade de atualizações de software para os computadores cliente na coleção de destino  
 
-    -   Critérios de atualizações de software  
+   -   Critérios de atualizações de software  
 
-    -   Agendamento de avaliação e implantação  
+   -   Agendamento de avaliação e implantação  
 
-    -   Experiência do usuário  
+   -   Experiência do usuário  
 
-    -   Propriedades do download  
+   -   Propriedades do download  
 
-2.  As atualizações de software são adicionadas a um grupo de atualização de software.  
+2. As atualizações de software são adicionadas a um grupo de atualização de software.  
 
-3.  O grupo de atualização de software é implantado nos computadores cliente na coleção de destino, se especificada.  
+3. O grupo de atualização de software é implantado nos computadores cliente na coleção de destino, se especificada.  
 
- Você deve determinar qual estratégia de implantação usar no seu ambiente. Por exemplo, é possível criar a ADR e ter com alvo uma coleção de clientes de teste. Depois de verificar se as atualizações de software estão instaladas no grupo de teste, é possível adicionar uma nova implantação à regra ou alterar a coleção na implantação existente para uma coleção de destino que inclua um conjunto maior de clientes. Os objetos de atualização de software que são criados pelas ADRs são interativos.  
+   Você deve determinar qual estratégia de implantação usar no seu ambiente. Por exemplo, é possível criar a ADR e ter com alvo uma coleção de clientes de teste. Depois de verificar se as atualizações de software estão instaladas no grupo de teste, é possível adicionar uma nova implantação à regra ou alterar a coleção na implantação existente para uma coleção de destino que inclua um conjunto maior de clientes. Os objetos de atualização de software que são criados pelas ADRs são interativos.  
 
--   As atualizações de software implantadas usando uma ADR são automaticamente implantadas nos novos clientes adicionados à coleção de destino.  
+- As atualizações de software implantadas usando uma ADR são automaticamente implantadas nos novos clientes adicionados à coleção de destino.  
 
--   Novas atualizações de software adicionadas a um grupo de atualização de software são automaticamente implantadas em clientes na coleção de destino.  
+- Novas atualizações de software adicionadas a um grupo de atualização de software são automaticamente implantadas em clientes na coleção de destino.  
 
--   É possível habilitar ou desabilitar as implantações a qualquer momento para a ADR.  
+- É possível habilitar ou desabilitar as implantações a qualquer momento para a ADR.  
 
- Depois de criar uma ADR, é possível adicionar outras implantações à regra. Isso pode ajudá-lo a gerenciar a complexidade de implantar diferentes atualizações em diferentes coleções. Cada nova implantação tem a gama completa da funcionalidade e da experiência de monitoramento da implantação, e cada nova implantação que você adicionar:  
+  Depois de criar uma ADR, é possível adicionar outras implantações à regra. Isso pode ajudá-lo a gerenciar a complexidade de implantar diferentes atualizações em diferentes coleções. Cada nova implantação tem a gama completa da funcionalidade e da experiência de monitoramento da implantação, e cada nova implantação que você adicionar:  
 
--   Usa o mesmo grupo e pacote de atualização que é criado quando o ADR é executado pela primeira vez  
+- Usa o mesmo grupo e pacote de atualização que é criado quando o ADR é executado pela primeira vez  
 
--   Pode especificar uma coleção diferente  
+- Pode especificar uma coleção diferente  
 
--   Dá suporte a propriedades de implantação exclusivas, incluindo:  
+- Dá suporte a propriedades de implantação exclusivas, incluindo:  
 
-    -   Tempo de ativação  
+  -   Tempo de ativação  
 
-    -   Prazo  
+  -   Prazo  
 
-    -   Mostrar ou ocultar a experiência do usuário final  
+  -   Mostrar ou ocultar a experiência do usuário final  
 
-    -   Alertas separados para esta implantação  
+  -   Alertas separados para esta implantação  
 
 ##  <a name="BKMK_DeploymentProcess"></a> Processo de implantação de atualização de software  
  Depois de implantar as atualizações de software ou quando uma regra de implementação automática executa e implanta atualizações de software, uma política de atribuição de implantação é adicionada à política do computador para o site. As atualizações de software são baixadas por meio do local de download, a Internet, ou de uma pasta de rede compartilhada, na origem do pacote. As atualizações de software são copiadas da origem do pacote para a biblioteca de conteúdo no servidor do site, e depois copiadas na biblioteca de conteúdo no ponto de distribuição.  

@@ -10,12 +10,12 @@ ms.assetid: a7d3df90-062d-4d57-9e9d-e137d3e7cd7f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0c8cf0af19017f4acfd95bcd01f8226229c05a14
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f1bf3460e29375a6c5e95ad372af089548be5713
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353385"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422463"
 ---
 # <a name="create-an-image-for-an-oem-in-factory-or-a-local-depot-with-system-center-configuration-manager"></a>Criar uma imagem de um OEM na fábrica ou em um repositório local com o System Center Configuration Manager
 
@@ -28,11 +28,11 @@ Esse método de implantação pode reduzir o tráfego de rede, pois a imagem de 
 
  Você pode usar a mídia de pré-teste nos seguintes cenários de implantação de sistema operacional:  
 
--   [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](install-new-windows-version-new-computer-bare-metal.md)  
+- [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Substituir um computador existente e transferir configurações](replace-an-existing-computer-and-transfer-settings.md)  
+- [Substituir um computador existente e transferir configurações](replace-an-existing-computer-and-transfer-settings.md)  
 
- Conclua as etapas em um dos cenários de implantação de sistema operacional e use as seções a seguir para preparar e criar a mídia pré-configurada.  
+  Conclua as etapas em um dos cenários de implantação de sistema operacional e use as seções a seguir para preparar e criar a mídia pré-configurada.  
 
 ## <a name="configure-deployment-settings"></a>Definir configurações de implantação  
  Ao usar a mídia pré-configurada para iniciar o processo de implantação de sistema operacional, é necessário configurar a implantação para disponibilizar o sistema operacional para a mídia. Você pode configurá-la na página **Configurações de implantação** do Assistente de implantação de Software ou na guia **Configurações de implantação** nas propriedades de implantação.  Para a configuração **Tornar disponível para o seguinte** , defina uma das seguintes opções:  
@@ -44,7 +44,7 @@ Esse método de implantação pode reduzir o tráfego de rede, pois a imagem de 
 -   **Somente mídia e PXE (oculto)**  
 
 ## <a name="create-the-prestaged-media"></a>Criar a mídia pré-configurada  
- Crie o arquivo de mídia pré-configurada para enviar ao OEM ou repositório local. Para obter mais informações, consulte [Criar mídia pré-configurada com o System Center Configuration Manager](create-prestaged-media.md).  
+ Crie o arquivo de mídia pré-configurada para enviar ao OEM ou repositório local. Para obter mais informações, consulte [Create prestaged media with System Center Configuration Manager](create-prestaged-media.md).  
 
 ## <a name="send-the-prestaged-media-file-to-the-oem-or-local-depot"></a>Enviar o arquivo de mídia pré-configurada ao OEM ou repositório local  
  Envie a mídia ao OEM ou a seu repositório local para pré-configurar os computadores. O arquivo de mídia pré-configurada é aplicado a um disco rígido formatado no computador.  

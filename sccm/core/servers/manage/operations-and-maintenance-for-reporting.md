@@ -10,12 +10,12 @@ ms.assetid: b89bcfbf-f5b6-4fb1-bb5e-a5cc18ec0c78
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: fff4150d6b8b4529a6f63989447ee5acb725c92f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 70d56194d693afe6c5521efaace9f26ce92b503f
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342283"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415816"
 ---
 # <a name="operations-and-maintenance-for-reporting-in-system-center-configuration-manager"></a>Operações e manutenção para relatórios no System Center Configuration Manager
 
@@ -47,7 +47,7 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Relatórios**e clique em **Relatórios** na lista de relatórios disponíveis.  
+2.  No workspace **Monitoramento**, expanda **Relatórios** e clique em **Relatórios** na lista de relatórios disponíveis.  
 
     > [!IMPORTANT]  
     >  Nesta versão do Configuration Manager, os relatórios **Todo o conteúdo** exibem somente pacotes, e não aplicativos.  
@@ -108,7 +108,7 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Relatórios**e clique em **Relatórios** na lista de relatórios disponíveis.  
+2.  No workspace **Monitoramento**, expanda **Relatórios** e clique em **Relatórios** na lista de relatórios disponíveis.  
 
 3.  Selecione o relatório que deseja modificar e na guia **Início** , na seção **Grupo de Relatórios** , clique em **Editar**. Especifique a sua conta e senha de usuário, se necessário, e clique em **OK**. Se o Construtor de Relatórios não estiver instalado no computador, será necessário instalá-lo. Clique em **Executar** para instalar o Construtor de Relatórios, o qual é necessário para modificar e criar relatórios.  
 
@@ -124,37 +124,37 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 #### <a name="to-create-a-model-based-report"></a>Para criar um relatório baseado em modelo  
 
-1.  No console do Configuration Manager, clique em **Monitoramento**.  
+1. No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Relatórios** e clique em **Relatórios**.  
+2. No workspace **Monitoramento**, expanda **Relatórios** e clique em **Relatórios**.  
 
-3.  Na guia **Início** , na seção **Criar** , clique em **Criar Relatório** para abrir o **Assistente para Criar Relatório**.  
+3. Na guia **Início** , na seção **Criar** , clique em **Criar Relatório** para abrir o **Assistente para Criar Relatório**.  
 
-4.  Na página **Informações** , defina as seguintes configurações:  
+4. Na página **Informações** , defina as seguintes configurações:  
 
-    -   **Tipo:** Selecione **Relatório baseado em modelo** para criar um relatório no Construtor de Relatórios usando um modelo do Reporting Services.  
+   - **Tipo**: selecione **Relatório\-baseado em modelo** para criar um relatório no Construtor de Relatórios usando um modelo do Reporting Services.  
 
-    -   **Nome**: Especifique um nome para o relatório.  
+   - **Nome**: Especifique um nome para o relatório.  
 
-    -   **Descrição**: Especifique uma descrição para o relatório.  
+   - **Descrição**: Especifique uma descrição para o relatório.  
 
-    -   **Servidor**: Exibe o nome do servidor de relatório no qual você está criando o relatório.  
+   - **Servidor**: Exibe o nome do servidor de relatório no qual você está criando o relatório.  
 
-    -   **Caminho**: Clique em **Procurar** para especificar uma pasta na qual você deseja armazenar o relatório.  
+   - **Caminho**: Clique em **Procurar** para especificar uma pasta na qual você deseja armazenar o relatório.  
 
      Clique em **Avançar**.  
 
-5.  Na página **Seleção de Modelo** , selecione um modelo disponível na lista usada para criar o relatório. Ao selecionar o modelo de relatório, a seção **Visualização** mostra as exibições e as entidades do SQL Server disponibilizadas pelo modelo de relatório selecionado.  
+5. Na página **Seleção de Modelo** , selecione um modelo disponível na lista usada para criar o relatório. Ao selecionar o modelo de relatório, a seção **Visualização** mostra as exibições e as entidades do SQL Server disponibilizadas pelo modelo de relatório selecionado.  
 
-6.  Na página de **Resumo** , analise as configurações. Clique em **Anterior** para alterar as configurações ou clique em **Próximo** para criar o relatório no Configuration Manager.  
+6. Na página de **Resumo** , analise as configurações. Clique em **Anterior** para alterar as configurações ou clique em **Próximo** para criar o relatório no Configuration Manager.  
 
-7.  Na página **Confirmação** , clique em **Fechar** para sair do assistente, depois, abra o Construtor de Relatórios para definir as configurações do relatório. Especifique a sua conta e senha de usuário, se necessário, e clique em **OK**. Se o Construtor de Relatórios não estiver instalado no computador, será necessário instalá-lo. Clique em **Executar** para instalar o Construtor de Relatórios, o qual é necessário para modificar e criar relatórios.  
+7. Na página **Confirmação** , clique em **Fechar** para sair do assistente, depois, abra o Construtor de Relatórios para definir as configurações do relatório. Especifique a sua conta e senha de usuário, se necessário, e clique em **OK**. Se o Construtor de Relatórios não estiver instalado no computador, será necessário instalá-lo. Clique em **Executar** para instalar o Construtor de Relatórios, o qual é necessário para modificar e criar relatórios.  
 
-8.  No Construtor de Relatórios, crie o layout do relatório, selecione os dados nas exibições disponíveis do SQL Server, adicione os parâmetros no relatório e assim por diante. Para obter mais informações sobre como usar o Construtor de Relatórios para criar um novo relatório, consulte a Ajuda do Construtor de Relatórios.  
+8. No Construtor de Relatórios, crie o layout do relatório, selecione os dados nas exibições disponíveis do SQL Server, adicione os parâmetros no relatório e assim por diante. Para obter mais informações sobre como usar o Construtor de Relatórios para criar um novo relatório, consulte a Ajuda do Construtor de Relatórios.  
 
 9. Clique em **Executar** para executar o relatório. Verifique se o relatório contém as informações desejadas. Clique em **Design** para retornar à exibição Design e modificar o relatório, se necessário.  
 
-10. Clique em **Salvar** para salvar o relatório no servidor de relatório. Você pode executar e modificar o novo relatório no nó **Relatórios** do espaço de trabalho **Monitoramento** .  
+10. Clique em **Salvar** para salvar o relatório no servidor de relatório. Você pode executar e modificar o novo relatório no nó **Relatórios** do workspace **Monitoramento**.  
 
 ###  <a name="BKMK_CreateSQLBasedReport"></a> Criar um relatório baseado em SQL  
  Um relatório baseado em SQL permite recuperar dados baseados em uma instrução SQL do relatório.  
@@ -169,35 +169,35 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 #### <a name="to-create-a-sql-based-report"></a>Para criar um relatório baseado em SQL  
 
-1.  No console do Configuration Manager, clique em **Monitoramento**.  
+1. No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Relatórios**e clique em **Relatórios**.  
+2. No workspace **Monitoramento**, expanda **Relatórios** e clique em **Relatórios**.  
 
-3.  Na guia **Início** , na seção **Criar** , clique em **Criar Relatório** para abrir o **Assistente para Criar Relatório**.  
+3. Na guia **Início** , na seção **Criar** , clique em **Criar Relatório** para abrir o **Assistente para Criar Relatório**.  
 
-4.  Na página **Informações** , defina as seguintes configurações:  
+4. Na página **Informações** , defina as seguintes configurações:  
 
-    -   **Tipo**: Selecione **Relatório baseado em SQL** para criar um relatório no Construtor de Relatórios usando uma instrução SQL.  
+   - **Tipo**: selecione **Relatório\-baseado em SQL** para criar um relatório no Construtor de Relatórios usando uma instrução SQL.  
 
-    -   **Nome**: Especifique um nome para o relatório.  
+   - **Nome**: Especifique um nome para o relatório.  
 
-    -   **Descrição**: Especifique uma descrição para o relatório.  
+   - **Descrição**: Especifique uma descrição para o relatório.  
 
-    -   **Servidor**: Exibe o nome do servidor de relatório no qual você está criando o relatório.  
+   - **Servidor**: Exibe o nome do servidor de relatório no qual você está criando o relatório.  
 
-    -   **Caminho**: Clique em **Procurar** para especificar uma pasta na qual você deseja armazenar o relatório.  
+   - **Caminho**: Clique em **Procurar** para especificar uma pasta na qual você deseja armazenar o relatório.  
 
      Clique em **Avançar**.  
 
-5.  Na página de **Resumo** , analise as configurações. Clique em **Anterior** para alterar as configurações ou clique em **Próximo** para criar o relatório no Configuration Manager.  
+5. Na página de **Resumo** , analise as configurações. Clique em **Anterior** para alterar as configurações ou clique em **Próximo** para criar o relatório no Configuration Manager.  
 
-6.  Na página **Confirmação** , clique em **Fechar** para sair do assistente, e abra o Construtor de Relatórios para definir as configurações do relatório. Especifique a sua conta e senha de usuário, se necessário, e clique em **OK**. Se o Construtor de Relatórios não estiver instalado no computador, será necessário instalá-lo. Clique em **Executar** para instalar o Construtor de Relatórios, o qual é necessário para modificar e criar relatórios.  
+6. Na página **Confirmação** , clique em **Fechar** para sair do assistente, e abra o Construtor de Relatórios para definir as configurações do relatório. Especifique a sua conta e senha de usuário, se necessário, e clique em **OK**. Se o Construtor de Relatórios não estiver instalado no computador, será necessário instalá-lo. Clique em **Executar** para instalar o Construtor de Relatórios, o qual é necessário para modificar e criar relatórios.  
 
-7.  No Construtor de Relatórios da Microsoft, especifique a instrução SQL para o relatório ou crie a mesma usando as colunas nas exibições disponíveis do SQL Server, adicione os parâmetros no relatório e assim por diante.  
+7. No Construtor de Relatórios da Microsoft, especifique a instrução SQL para o relatório ou crie a mesma usando as colunas nas exibições disponíveis do SQL Server, adicione os parâmetros no relatório e assim por diante.  
 
-8.  Clique em **Executar** para executar o relatório. Verifique se o relatório contém as informações desejadas. Clique em **Design** para retornar à exibição Design e modificar o relatório, se necessário.  
+8. Clique em **Executar** para executar o relatório. Verifique se o relatório contém as informações desejadas. Clique em **Design** para retornar à exibição Design e modificar o relatório, se necessário.  
 
-9. Clique em **Salvar** para salvar o relatório no servidor de relatório. Você pode executar o novo relatório no nó **Relatórios** do espaço de trabalho **Monitoramento** .  
+9. Clique em **Salvar** para salvar o relatório no servidor de relatório. Você pode executar o novo relatório no nó **Relatórios** do workspace **Monitoramento**.  
 
 ##  <a name="BKMK_ManageReportSubscriptions"></a> Gerenciar assinaturas de relatório  
  As assinaturas de relatório no SQL Server Reporting Services permitem que você configure a entrega automática de relatórios especificados por email ou para um compartilhamento de arquivos em intervalos agendados. Use o **Assistente para Criar Assinatura** no System Center 2012 Configuration Manager para configurar assinaturas de relatório.  
@@ -215,73 +215,73 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 #### <a name="to-create-a-report-subscription-to-deliver-a-report-to-a-file-share"></a>Para criar uma assinatura de relatório para entregar um relatório a um compartilhamento de arquivo  
 
-1.  No console do Configuration Manager, clique em **Monitoramento**.  
+1. No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Gerando Relatórios** e clique em **Relatórios** para listar os relatórios disponíveis. Você pode selecionar uma pasta de relatório para listar somente os relatórios associados à pasta.  
+2. No workspace **Monitoramento**, expanda **Gerando Relatórios** e clique em **Relatórios** para listar os relatórios disponíveis. Você pode selecionar uma pasta de relatório para listar somente os relatórios associados à pasta.  
 
-3.  Selecione o relatório que deseja adicionar à assinatura, e na guia **Início** , na seção **Grupo de Relatórios** , clique em **Criar Inscrição** para abrir o **Assistente para Criar Assinatura**.  
+3. Selecione o relatório que deseja adicionar à assinatura, e na guia **Início** , na seção **Grupo de Relatórios** , clique em **Criar Inscrição** para abrir o **Assistente para Criar Assinatura**.  
 
-4.  Na página **Entrega de Assinatura** , defina as seguintes configurações:  
+4. Na página **Entrega de Assinatura** , defina as seguintes configurações:  
 
-    -   Relatório entregue por: Selecione **Compartilhamento de Arquivo do Windows** para entregar o relatório a um compartilhamento de arquivos.  
+   - Relatório entregue por: Selecione **Compartilhamento de Arquivo do Windows** para entregar o relatório a um compartilhamento de arquivos.  
 
-    -   **Nome do Arquivo**: Especifique o nome do arquivo para o relatório. Por padrão, o arquivo de relatório não inclui uma extensão de nome de arquivo. Selecione **Adicionar extensão de arquivo quando criada** para adicionar automaticamente uma extensão de nome de arquivo a esse relatório com base no formato de renderização.  
+   - **Nome do arquivo**: Especifique o nome do arquivo para o relatório. Por padrão, o arquivo de relatório não inclui uma extensão de nome de arquivo. Selecione **Adicionar extensão de arquivo quando criada** para adicionar automaticamente uma extensão de nome de arquivo a esse relatório com base no formato de renderização.  
 
-    -   **Caminho**: especifique um caminho UNC para uma pasta existente para a qual você deseja enviar este relatório \(por exemplo, \\\\&lt;nome do servidor\>\\&lt;compartilhamento do servidor\>\\&lt;pasta do relatório\>\).  
+   - **Caminho**: especifique um caminho UNC para uma pasta existente para a qual você deseja enviar este relatório \(por exemplo, \\\\&lt;nome do servidor\>\\&lt;compartilhamento do servidor\>\\&lt;pasta do relatório\>\).  
 
-        > [!NOTE]  
-        >  O nome de usuário especificado posteriormente nesta página deve ter acesso a esse compartilhamento de servidor e ter permissões de gravação na pasta de destino.  
+     > [!NOTE]  
+     >  O nome de usuário especificado posteriormente nesta página deve ter acesso a esse compartilhamento de servidor e ter permissões de gravação na pasta de destino.  
 
-    -   **Renderizar Formato**: Selecione um dos seguintes formatos do arquivo de relatório:  
+   - **Formato de renderização**: Selecione um dos seguintes formatos do arquivo de relatório:  
 
-        -   **Arquivo XML com dados de relatório**: Salva o relatório no formato de linguagem XML.  
+     -   **Arquivo XML com os dados de relatório**: Salva o relatório no formato de linguagem XML.  
 
-        -   **CSV \(delimitado por vírgula\)**: Salva o relatório no formato de valores separados por vírgula.  
+     -   **CSV \(delimitado por vírgula\)**: Salva o relatório no formato de valores\-separados\-por vírgula.  
 
-        -   **Arquivo TIFF**: Salva o relatório no formato TIFF.  
+     -   **Arquivo TIFF**: Salva o relatório no formato TIFF.  
 
-        -   **Arquivo do Acrobat \(PDF\)**: Salva o relatório no formato PDF do Acrobat.  
+     -   **Arquivo do Acrobat \(PDF\)**: Salva o relatório no formato PDF do Acrobat.  
 
-        -   **HTML 4.0**: Salva o relatório como uma página da Web visível apenas em navegadores que oferecem suporte a HTML 4.0. O Internet Explorer 5 e as versões posteriores oferecem suporte a HTML 4.0.  
+     -   **HTML 4.0**: Salva o relatório como uma página da Web visível apenas em navegadores que oferecem suporte a HTML 4.0. O Internet Explorer 5 e as versões posteriores oferecem suporte a HTML 4.0.  
 
-            > [!NOTE]  
-            >  Se houver imagens em seu relatório, o formato HTML 4.0 não irá incluí-las no arquivo.  
+         > [!NOTE]  
+         >  Se houver imagens em seu relatório, o formato HTML 4.0 não irá incluí-las no arquivo.  
 
-        -   **MHTML \(arquivo Web\)**: Salva o relatório no formato MIME HTML \(mhtml\), que é visível em muitos navegadores da Web.  
+     -   **MHTML \(arquivo Web\)**: Salva o relatório no formato MIME HTML \(mhtml\), que é visível em muitos navegadores da Web.  
 
-        -   **Processador RPL**: Salva o relatório no formato RPL \(Report Page Layout\).  
+     -   **Renderizador RPL**: salva o relatório no formato RPL \(Layout da página de relatório\).  
 
-        -   **Excel**: Salva o relatório como uma planilha do Microsoft Excel.  
+     -   **Excel**: Salva o relatório como uma planilha do Microsoft Excel.  
 
-        -   **Word**: Salva o relatório como um documento do Microsoft Word.  
+     -   **Word**: Salva o relatório como um documento do Microsoft Word.  
 
-    -   **Nome de usuário**: Especifique uma conta de usuário do Windows com permissões para acessar o compartilhamento do servidor de destino e a pasta. A conta de usuário deve ter acesso a esse compartilhamento de servidor e ter permissão de gravação na pasta de destino.  
+   - **Nome de usuário**: Especifique uma conta de usuário do Windows com permissões para acessar o compartilhamento do servidor de destino e a pasta. A conta de usuário deve ter acesso a esse compartilhamento de servidor e ter permissão de gravação na pasta de destino.  
 
-    -   **Senha**: Especifique a senha para a conta de usuário do Windows. Em **Confirmar Senha**, insira a senha novamente.  
+   - **Senha**: Especifique a senha para a conta de usuário do Windows. Em **Confirmar Senha**, insira a senha novamente.  
 
-    -   Selecione uma das seguintes opções para configurar o comportamento quando um arquivo com o mesmo nome existe na pasta de destino:  
+   - Selecione uma das seguintes opções para configurar o comportamento quando um arquivo com o mesmo nome existe na pasta de destino:  
 
-        -   **Substituir um arquivo existente por uma versão mais nova**: Especifica que, quando o arquivo de relatório já existe, a nova versão o substitui.  
+     -   **Substituir um arquivo existente por uma versão mais nova**: Especifica que, quando o arquivo de relatório já existe, a nova versão o substitui.  
 
-        -   **Não substituir um arquivo existente**: Especifica que, quando o arquivo de relatório já existe, nenhuma ação ocorre.  
+     -   **Não substituir um arquivo existente**: Especifica que, quando o arquivo de relatório já existe, nenhuma ação ocorre.  
 
-        -   **Incrementar nomes de arquivo à medida que versões mais novas forem adicionadas**: Especifica que, quando o arquivo de relatório já existe, um número é adicionado ao novo relatório para o nome de arquivo distingui-lo de outras versões.  
+     -   **Incrementar nomes de arquivo à medida que versões mais novas forem adicionadas**: Especifica que, quando o arquivo de relatório já existe, um número é adicionado ao novo relatório para o nome de arquivo distingui-lo de outras versões.  
 
-    -   **Descrição**: Especifica a descrição para a assinatura de relatório.  
+   - **Descrição**: Especifica a descrição para a assinatura de relatório.  
 
      Clique em **Avançar**.  
 
-5.  Na página **Agendamento da Assinatura** , selecione uma das seguintes opções de agendamento de entrega para a assinatura do relatório:  
+5. Na página **Agendamento da Assinatura** , selecione uma das seguintes opções de agendamento de entrega para a assinatura do relatório:  
 
-    -   **Usar agendamento compartilhado**: Um agendamento compartilhado é um agendamento previamente definido que pode ser usado por outras assinaturas de relatório. Marque essa caixa de seleção e selecione um agendamento compartilhado na lista, se algum tiver sido especificado.  
+   -   **Usar agendamento compartilhado**: Um agendamento compartilhado é um agendamento previamente definido que pode ser usado por outras assinaturas de relatório. Marque essa caixa de seleção e selecione um agendamento compartilhado na lista, se algum tiver sido especificado.  
 
-    -   **Criar novo agendamento**: Configure o agendamento no qual é executado esse relatório, incluindo o intervalo, a data e a hora de início e a data de término para essa assinatura.  
+   -   **Criar novo agendamento**: Configure o agendamento no qual é executado esse relatório, incluindo o intervalo, a data e a hora de início e a data de término para essa assinatura.  
 
-6.  Na página **Parâmetros de Assinatura** , especifique os parâmetros usados para esse relatório quando ele é executado de forma autônoma. Quando não existem parâmetros para o relatório, essa página não é exibida.  
+6. Na página **Parâmetros de Assinatura** , especifique os parâmetros usados para esse relatório quando ele é executado de forma autônoma. Quando não existem parâmetros para o relatório, essa página não é exibida.  
 
-7.  Na página **Resumo** , revise as configurações de assinatura de relatório. Clique em **Anterior** para alterar as configurações ou clique em **Próxima** para criar a assinatura do relatório.  
+7. Na página **Resumo** , revise as configurações de assinatura de relatório. Clique em **Anterior** para alterar as configurações ou clique em **Próxima** para criar a assinatura do relatório.  
 
-8.  Na página **Conclusão** , clique em **Fechar** para sair do assistente. Verifique se a assinatura do relatório foi criada com êxito. É possível exibir e modificar as assinaturas de relatório no nó **Assinaturas** sob **Gerando Relatórios** no espaço de trabalho **Monitoramento** .  
+8. Na página **Conclusão** , clique em **Fechar** para sair do assistente. Verifique se a assinatura do relatório foi criada com êxito. É possível exibir e modificar as assinaturas de relatório no nó **Assinaturas** sob **Gerando Relatórios** no workspace **Monitoramento**.  
 
 ###  <a name="BKMK_ReportSubscriptionEmail"></a> Criar uma assinatura de relatório para entregar um relatório por email  
  Quando você cria uma assinatura de relatório para entregar um relatório por email, um email é enviado aos destinatários que você configurar, e o relatório é incluído como um anexo. O servidor de relatório não valida endereços de email ou os obtém a partir de um servidor de email. Você precisa saber com antecedência quais endereços de email deseja usar. Por padrão, é possível enviar por email relatórios a qualquer conta de email válida, dentro ou fora de sua organização. Você pode selecionar uma ou ambas as opções de entrega de email a seguir:  
@@ -299,13 +299,13 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 -   No console do Configuration Manager, clique em **Monitoramento**.  
 
--   No espaço de trabalho **Monitoramento** , expanda **Gerando Relatórios** e clique em **Relatórios** para listar os relatórios disponíveis. Você pode selecionar uma pasta de relatório para listar somente os relatórios associados à pasta.  
+-   No workspace **Monitoramento**, expanda **Gerando Relatórios** e clique em **Relatórios** para listar os relatórios disponíveis. Você pode selecionar uma pasta de relatório para listar somente os relatórios associados à pasta.  
 
 -   Selecione o relatório que deseja adicionar à assinatura, e na guia **Início** , na seção **Grupo de Relatórios** , clique em **Criar Inscrição** para abrir o **Assistente para Criar Assinatura**.  
 
 -   Na página **Entrega de Assinatura** , defina as seguintes configurações:  
 
-    -   **Relatório entregue por**: Selecione **Email** para entregar o relatório como um anexo em uma mensagem de email.  
+    -   **Relatório entregue por**: selecione **E\-mail** para entregar o relatório como um anexo em uma mensagem de email.  
 
     -   **Para**: Especifique um endereço de email válido ao qual enviar esse relatório.  
 
@@ -328,13 +328,13 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
     -   **Incluir Link**: Inclui uma URL ao relatório inscrito no corpo da mensagem de email.  
 
-    -   **Incluir Relatório**: Especifique que o relatório é anexado à mensagem de email. O formato no qual o relatório será anexado é especificado na lista **Renderizar Formato** .  
+    -   **Incluir Relatório**: especifique que o relatório é anexado à mensagem de email. O formato no qual o relatório será anexado é especificado na lista **Renderizar Formato** .  
 
-    -   **Renderizar Formato**: Selecione um dos seguintes formatos para o relatório anexado:  
+    -   **Formato de renderização**: Selecione um dos seguintes formatos para o relatório anexado:  
 
-        -   **Arquivo XML com dados de relatório**: Salva o relatório no formato de linguagem XML.  
+        -   **Arquivo XML com os dados de relatório**: Salva o relatório no formato de linguagem XML.  
 
-        -   **CSV \(delimitado por vírgula\)**: Salva o relatório no formato de valores separados por vírgula.  
+        -   **CSV \(delimitado por vírgula\)**: Salva o relatório no formato de valores\-separados\-por vírgula.  
 
         -   **Arquivo TIFF**: Salva o relatório no formato TIFF.  
 
@@ -356,4 +356,4 @@ Após implantar a infraestrutura para geração de relatórios no System Center 
 
 -   Na página **Resumo** , revise as configurações de assinatura de relatório. Clique em **Anterior** para alterar as configurações ou clique em **Próxima** para criar a assinatura do relatório.  
 
--   Na página **Conclusão** , clique em **Fechar** para sair do assistente. Verifique se a assinatura do relatório foi criada com êxito. É possível exibir e modificar as assinaturas de relatório no nó **Assinaturas** sob **Gerando Relatórios** no espaço de trabalho **Monitoramento** .  
+-   Na página **Conclusão** , clique em **Fechar** para sair do assistente. Verifique se a assinatura do relatório foi criada com êxito. É possível exibir e modificar as assinaturas de relatório no nó **Assinaturas** sob **Gerando Relatórios** no workspace **Monitoramento**.  

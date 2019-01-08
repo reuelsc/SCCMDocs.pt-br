@@ -10,12 +10,12 @@ ms.assetid: 65c88e54-3574-48b0-a127-9cc914a89dca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5f063034ed7cdc22a92df8d07d8be03ece12f663
-ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
+ms.openlocfilehash: 4587549ef2f43be3dcc5e18021f60c42770f5800
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46533738"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415510"
 ---
 # <a name="the-content-library-in-configuration-manager"></a>A biblioteca de conteúdo no Configuration Manager
 
@@ -45,7 +45,7 @@ O Configuration Manager copia os arquivos de conteúdo na unidade com a priorida
 Para obter mais informações de como definir as configurações de unidade para o ponto de distribuição, confira [Gerenciar o conteúdo e a infraestrutura de conteúdo](/sccm/core/servers/deploy/configure/manage-content-and-content-infrastructure).  
 
 
->  [!IMPORTANT]  
+> [!IMPORTANT]
 >  Para mover a biblioteca de conteúdo para um local diferente em um ponto de distribuição após a instalação, use a ferramenta **Transferência de Biblioteca de Conteúdo** nas ferramentas do Configuration Manager. Para obter mais informações, confira a [ferramenta de Transferência de Biblioteca de Conteúdo](/sccm/core/support/content-library-transfer).  
 
 
@@ -104,7 +104,7 @@ A biblioteca de conteúdo remota é um pré-requisito para [alta disponibilidade
     > [!Warning]  
     > Não reutilize uma pasta existente com conteúdo. Por exemplo, não use a mesma pasta que suas fontes de pacote. Antes de copiar a biblioteca de conteúdo, o Configuration Manager remove qualquer conteúdo existente do local especificado.  
 
-2. No console do Configuration Manager, alterne para o espaço de trabalho **Administração**. Expanda **Configuração do Site**, selecione o nó **Sites** e selecione o site. Na guia **Resumo** na parte inferior do painel de detalhes, observe uma nova coluna para a **Biblioteca de Conteúdo**.  
+2. No console do Configuration Manager, alterne para o workspace **Administração**. Expanda **Configuração do Site**, selecione o nó **Sites** e selecione o site. Na guia **Resumo** na parte inferior do painel de detalhes, observe uma nova coluna para a **Biblioteca de Conteúdo**.  
 
 3. Clique em **Gerenciar Biblioteca de Conteúdo** na faixa de opções.   
 
@@ -112,13 +112,13 @@ A biblioteca de conteúdo remota é um pré-requisito para [alta disponibilidade
 
 5. Observe o valor de **Status** na coluna Biblioteca de Conteúdo na guia Resumo do painel de detalhes. Ela é atualizada para mostrar o progresso da transferência da biblioteca de conteúdo.  
 
-    - Enquanto o processo está **Em andamento**, o valor de **Progresso da movimentação (%)** exibe o percentual concluído.  
+   - Enquanto o processo está **Em andamento**, o valor de **Progresso da movimentação (%)** exibe o percentual concluído.  
 
-    - Se houver um estado de erro, o status exibirá o erro. Os erros comuns incluem **acesso negado** ou **disco cheio**.  
+   - Se houver um estado de erro, o status exibirá o erro. Os erros comuns incluem **acesso negado** ou **disco cheio**.  
 
-    - Ao concluir, ele exibe **Concluído**.  
+   - Ao concluir, ele exibe **Concluído**.  
     
-    Consulte o **distmgr.log** para obter detalhes. Para saber mais, confira [Logs do servidor do site e do sistema de sites](/sccm/core/plan-design/hierarchy/log-files#BKMK_SiteSiteServerLog).  
+     Consulte o **distmgr.log** para obter detalhes. Para saber mais, confira [Logs do servidor do site e do sistema de sites](/sccm/core/plan-design/hierarchy/log-files#BKMK_SiteSiteServerLog).  
 
 Para obter mais informações sobre esse processo, confira [Fluxograma – gerenciar biblioteca de conteúdo](/sccm/core/plan-design/hierarchy/manage-content-library-flowchart).
 
@@ -142,7 +142,7 @@ Por padrão, a biblioteca de conteúdo é armazenada na raiz de uma unidade em u
 
 - A biblioteca de dados (pasta **DataLib**): informações sobre a estrutura original dos pacotes.  
 
-- A biblioteca de arquivo (pasta **FileLib**): os arquivos originais no pacote. Essa pasta normalmente é a que usa a maior parte do armazenamento.  
+- A biblioteca de arquivos (pasta **FileLib**): os arquivos originais no pacote. Essa pasta normalmente é a que usa a maior parte do armazenamento.  
 
 ![Visão geral do diagrama da biblioteca de conteúdo do Configuration Manager](media/content-library-overview.png)
 

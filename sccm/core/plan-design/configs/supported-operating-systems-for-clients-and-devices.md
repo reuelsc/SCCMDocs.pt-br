@@ -10,12 +10,12 @@ ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 48eb4abcc328c57fdb35e3511e49500099a68cf2
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 6f60d7f3a8c3bd81f4de38b2ce4080f54756de14
+ms.sourcegitcommit: c60e057075a83f07d1ca2577c3de1c7d7c8e9cec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456474"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53626456"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versões de sistema operacional compatíveis com clientes e dispositivos para o Configuration Manager
 
@@ -360,10 +360,10 @@ O Configuration Manager dá suporte ao gerenciamento limitado de dispositivos qu
 
 ### <a name="supported-versions-of-exchange-server"></a>Versões compatíveis do Exchange Server
 
--   **Exchange Server 2010 SP1**  
+- **Exchange Online (Office 365)**: Essa versão inclui o Business Productivity Online Standard Suite  
 
--   **Exchange Server 2010 SP2**  
+- **Exchange Server 2016** (começando com a versão 1802)  
 
--   **Exchange Server 2013**  
+- **Exchange Server 2013**  
 
--   **Exchange Online (Office 365)**: essa versão inclui o Business Productivity Online Standard Suite  
+- **Exchange Server 2010 SP1** ou **Exchange Server 2010 SP2** 

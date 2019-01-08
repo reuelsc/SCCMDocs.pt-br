@@ -10,12 +10,12 @@ ms.assetid: 321b19b2-a093-4b8f-995f-41f74b886eb5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b665143f40973c20307b99c15f94d773d43b4914
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: f294bd3e6c8043149e7f5af8b07eb11288751601
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350802"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416255"
 ---
 # <a name="create-wi-fi-profiles"></a>Criar perfis de Wi-Fi
 
@@ -45,80 +45,80 @@ Use perfis de Wi-Fi no System Center Configuration Manager para implantar as con
 
 ## <a name="create-a-wi-fi-profile"></a>Criar um perfil de Wi-Fi  
 
-1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Configurações de Conformidade** >  **Acesso a Recursos da Empresa** > **Perfis de Wi-Fi**.  
+1. No console do Configuration Manager, escolha **Ativos e Conformidade** > **Configurações de Conformidade** >  **Acesso a Recursos da Empresa** > **Perfis de Wi-Fi**.  
 
-3.  Na guia **Início**, no grupo **Criar**, clique em **Criar Perfil Wi-Fi**.  
+2. Na guia **Início**, no grupo **Criar**, clique em **Criar Perfil Wi-Fi**.  
 
-1.  Na página **Geral**, insira um nome exclusivo e uma descrição para o perfil de Wi-Fi.  Se quiser usar as configurações de outro perfil de Wi-Fi, selecione **Importar um item de perfil Wi-Fi existente de um arquivo**.  
+3. Na página **Geral**, insira um nome exclusivo e uma descrição para o perfil de Wi-Fi.  Se quiser usar as configurações de outro perfil de Wi-Fi, selecione **Importar um item de perfil Wi-Fi existente de um arquivo**.  
 
-    > [!IMPORTANT]  
-    >  Verifique se o perfil de Wi-Fi importado contém um XML válido para um perfil de Wi-Fi. O Configuration Manager não valida o perfil quando você importa o arquivo.  
+   > [!IMPORTANT]  
+   >  Verifique se o perfil de Wi-Fi importado contém um XML válido para um perfil de Wi-Fi. O Configuration Manager não valida o perfil quando você importa o arquivo.  
 
-3.  Em **Gravidade de não conformidade dos relatórios**, especifique o nível de gravidade relatado se o perfil Wi-Fi for considerado como não compatível nos dispositivos cliente (por exemplo, se a instalação do perfil falhar). Os níveis de severidade disponíveis são os seguintes:  
+4. Em **Gravidade de não conformidade dos relatórios**, especifique o nível de gravidade relatado se o perfil Wi-Fi for considerado como não compatível nos dispositivos cliente (por exemplo, se a instalação do perfil falhar). Os níveis de severidade disponíveis são os seguintes:  
 
-    -   **Nenhum**: computadores que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
+   -   **Nenhum**: os computadores que não cumprem essa regra de conformidade não relatam uma gravidade de falha em relatórios do Configuration Manager.  
 
-    -   **Informações**: computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Informações** em relatórios do Configuration Manager.  
+   -   **Informações**: os computadores que não cumprem essa regra de conformidade relatam uma gravidade de falha de **Informações** nos relatórios do Configuration Manager.  
 
-    -   **Aviso**: computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Aviso** em relatórios do Configuration Manager.  
+   -   **Aviso**: os computadores que não cumprem essa regra de conformidade relatam uma gravidade de falha de **Aviso** nos relatórios do Configuration Manager.  
 
-    -   **Crítico**: computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager.  
+   -   **Crítico**: os computadores que não cumprem essa regra de conformidade relatam uma gravidade de falha **Crítica** nos relatórios do Configuration Manager.  
 
-    -   **Crítico com evento**: computadores que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico** em relatórios do Configuration Manager. Esse nível de severidade também é registrado como um evento do Windows no log de eventos de aplicativos.  
+   -   **Crítico com evento**: os computadores que não cumprem essa regra de conformidade relatam uma gravidade de falha **Crítica** nos relatórios do Configuration Manager. Esse nível de severidade também é registrado como um evento do Windows no log de eventos de aplicativos.  
 
-1.  Na página **Perfil de Wi-Fi** forneça o nome que os dispositivos exibirão como o nome da rede.  
+5. Na página **Perfil de Wi-Fi** forneça o nome que os dispositivos exibirão como o nome da rede.  
 
-    > [!IMPORTANT]  
-    >  O Configuration Manager não dá suporte ao uso de apóstrofos (**â€˜**) ou vírgulas (**,**) no nome da rede.  
+   > [!IMPORTANT]  
+   >  O Configuration Manager não dá suporte ao uso de apóstrofos (**â€˜**) ou vírgulas (**,**) no nome da rede.  
 
-2.  Especifique a **SSID** que diferencia maiúsculas de minúsculas
-3.  Escolha também as outras opções de conectividade apropriadas.   **Conectar-se quando a rede não estiver transmitindo seu nome (SSID)**, se houver uma possibilidade de que o SSID esteja oculto  
+6. Especifique a **SSID** que diferencia maiúsculas de minúsculas
+7. Escolha também as outras opções de conectividade apropriadas.   **Conectar-se quando a rede não estiver transmitindo seu nome (SSID)**, se houver uma possibilidade de que o SSID esteja oculto  
 
-4.  Na página **Configuração de Segurança**, selecione o protocolo de segurança usado pela rede sem fio ou selecione **Sem autenticação (Aberta)** se a rede não for segura.
-    > [!IMPORTANT]  
-    >  Se você estiver criando um perfil de Wi-Fi para o Gerenciamento de Dispositivo Móvel Local, o branch atual do Configuration Manager dará suporte somente às seguintes configurações de segurança de Wi-Fi:  
-    >   
-    >  Tipos de segurança: **WPA2 Enterprise** ou **WPA2 Personal**  
-    > Tipos de criptografia: **AES** ou **TKIP**  
-    > Tipos de EAP: **Cartão Inteligente ou outro certificado** ou **PEAP**  
+8. Na página **Configuração de Segurança**, selecione o protocolo de segurança usado pela rede sem fio ou selecione **Sem autenticação (Aberta)** se a rede não for segura.
+   > [!IMPORTANT]
+   >  Se você estiver criando um perfil de Wi-Fi para o Gerenciamento de Dispositivo Móvel Local, o branch atual do Configuration Manager dará suporte somente às seguintes configurações de segurança de Wi-Fi:  
+   > 
+   >  Tipo de segurança **WPA2 Enterprise** ou **WPA2 Personal**  
+   > Tipo de criptografia **AES** ou **TKIP**  
+   > Tipos de EAP: **Cartão Inteligente ou outro certificado** ou **PEAP**  
+   > 
+   > Para dispositivos Android, os tipos de segurança **WPA Pessoal**, **WPA2 Pessoal** e **WEP** não têm suporte.  
 
-    > Para dispositivos Android, os tipos de segurança **WPA Pessoal**, **WPA2 Pessoal** e **WEP** não têm suporte.  
+9. selecione o método de criptografia usado pela rede sem fio.  
 
-2.  selecione o método de criptografia usado pela rede sem fio.  
-
-3.  selecione o tipo de EAP usado para autenticação na rede sem fio.  
+10. selecione o tipo de EAP usado para autenticação na rede sem fio.  
 
      Somente para dispositivos Windows Phone: os tipos de EAP **LEAP** e **EAP-FAST** não têm suporte.  
 
-4.  Clique em **Configurar** para especificar as propriedades para o tipo de EAP selecionada. Essa opção pode não estar disponível para alguns tipos de EAP selecionados.  
+11. Clique em **Configurar** para especificar as propriedades para o tipo de EAP selecionada. Essa opção pode não estar disponível para alguns tipos de EAP selecionados.  
 
     > [!IMPORTANT]  
     >  Ao clicar em **Configurar**, a caixa de diálogo que abre é uma do Windows. Por isso, você deve verificar se o sistema operacional do computador que executa o console do Configuration Manager dá suporte à configuração do tipo de EAP selecionado.  
     >   
     >  Para dispositivos do iOS, se você escolher um método não EAP para autenticação, independentemente do método escolhido, o MS-CHAP v2 será usado para a conexão.  
 
-5.  Se você quiser armazenar as credenciais de usuários para que eles não precisem inseri-las a cada logon, selecione **Lembrar as credenciais do usuário a cada logon**.  
+12. Se você quiser armazenar as credenciais de usuários para que eles não precisem inseri-las a cada logon, selecione **Lembrar as credenciais do usuário a cada logon**.  
 
-6. **Apenas para dispositivos iOS:**  
- configure informações de todos os certificados necessários para a conexão Wi-Fi. Você deve configurar o certificado de cliente e o nome do certificado de servidor confiável ou o certificado raiz, da seguinte maneira:  
+13. **Apenas para dispositivos iOS:**  
+    configure informações de todos os certificados necessários para a conexão Wi-Fi. Você deve configurar o certificado de cliente e o nome do certificado de servidor confiável ou o certificado raiz, da seguinte maneira:  
 
-    -   **Nomes de certificado de servidor confiável**: se o servidor ao qual o dispositivo se conecta usar um certificado de autenticação de servidor para identificar o servidor e ajudar a proteger o canal de comunicação, insira os nomes que aparecem no nome da entidade ou no nome alternativo da entidade desse certificado. O nome ou os nomes são normalmente o nome de domínio totalmente qualificado do servidor. Por exemplo, se o certificado do servidor tiver um nome comum de srv1.contoso.com na entidade do certificado, digite **srv1.contoso.com**. Se houver vários nomes especificados para o certificado do servidor no nome alternativo da entidade, insira cada nome, separado por ponto-e-vírgula.  
+    - **Nomes de certificado do servidor confiável**: se o servidor ao qual o dispositivo se conecta usar um certificado de autenticação de servidor para identificar o servidor e ajudar a proteger o canal de comunicação, insira os nomes que aparecem no nome da entidade ou no nome alternativo da entidade desse certificado. O nome ou os nomes são normalmente o nome de domínio totalmente qualificado do servidor. Por exemplo, se o certificado do servidor tiver um nome comum de srv1.contoso.com na entidade do certificado, digite **srv1.contoso.com**. Se houver vários nomes especificados para o certificado do servidor no nome alternativo da entidade, insira cada nome, separado por ponto-e-vírgula.  
 
-    > [!TIP]  
-    >  Se o certificado de cliente selecionado para autenticação de cliente ou EAP para um dispositivo iOS for usado para autenticação em um servidor RADIUS, como um servidor que executa o Servidor de Políticas de Rede, o Nome Alternativo da Entidade deverá ser definido como o UPN.  
+      > [!TIP]  
+      >  Se o certificado de cliente selecionado para autenticação de cliente ou EAP para um dispositivo iOS for usado para autenticação em um servidor RADIUS, como um servidor que executa o Servidor de Políticas de Rede, o Nome Alternativo da Entidade deverá ser definido como o UPN.  
 
-    -   **Selecionar certificados raiz para validação do servidor**: se o servidor ao qual o dispositivo se conecta usar um certificado de autenticação de servidor não confiável para o dispositivo, selecione o perfil de certificado que contém o certificado raiz do certificado do servidor, a fim de criar uma cadeia de certificados de confiança no dispositivo.  
+    - **Selecionar certificados raiz para validação do servidor**: se o servidor ao qual o dispositivo se conecta usar um certificado de autenticação de servidor não confiável para o dispositivo, selecione o perfil de certificado que contém o certificado raiz do certificado do servidor, a fim de criar uma cadeia de confiança de certificados no dispositivo.  
 
-    -   **Selecionar um certificado do cliente para autenticação do cliente**: se o servidor ou o dispositivo de rede exigir um certificado de cliente para autenticar o dispositivo que está sendo conectado, selecione o perfil de certificado que contém o certificado de autenticação de cliente.  
+    - **Selecionar um certificado do cliente para autenticação do cliente**: se o servidor ou o dispositivo de rede exigir um certificado de cliente para autenticar o dispositivo que está sendo conectado, selecione o perfil de certificado que contém o certificado de autenticação de cliente.  
 
-    > [!NOTE]  
-    >  Antes de selecionar o certificado raiz e o certificado de cliente, você deve configurá-los e implantá-los como um perfil de certificado. Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](introduction-to-certificate-profiles.md).  
+      > [!NOTE]  
+      >  Antes de selecionar o certificado raiz e o certificado de cliente, você deve configurá-los e implantá-los como um perfil de certificado. Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](introduction-to-certificate-profiles.md).  
 
-7.  Na página **Configurações Avançadas**, especifique configurações avançadas para o perfil Wi-Fi, como o modo de autenticação, as opções de logon único e a conformidade com FIPS (Federal Information Processing Standards). Para obter mais informações sobre essas opções, consulte a documentação do Windows. É possível que não haja configurações avançadas disponíveis ou elas poderão variar, dependendo das opções selecionadas na página **Configuração de Segurança** do assistente.  
+14. Na página **Configurações Avançadas**, especifique configurações avançadas para o perfil Wi-Fi, como o modo de autenticação, as opções de logon único e a conformidade com FIPS (Federal Information Processing Standards). Para obter mais informações sobre essas opções, consulte a documentação do Windows. É possível que não haja configurações avançadas disponíveis ou elas poderão variar, dependendo das opções selecionadas na página **Configuração de Segurança** do assistente.  
 
-1.  Na página **Configurações de Proxy**, selecione **Definir configurações de proxy para este perfil Wi-Fi** se sua rede sem fio usa um servidor proxy e, em seguida, forneça as informações de configuração.  
+15. Na página **Configurações de Proxy**, selecione **Definir configurações de proxy para este perfil Wi-Fi** se sua rede sem fio usa um servidor proxy e, em seguida, forneça as informações de configuração.  
 
-2. Na página **Plataformas com Suporte**, selecione os sistemas operacionais nos quais você deseja instalar o perfil Wi-Fi. Opcionalmente, clique em **Selecionar tudo** para instalar o perfil Wi-Fi em todos os sistemas operacionais disponíveis.  
+16. Na página **Plataformas com Suporte**, selecione os sistemas operacionais nos quais você deseja instalar o perfil Wi-Fi. Opcionalmente, clique em **Selecionar tudo** para instalar o perfil Wi-Fi em todos os sistemas operacionais disponíveis.  
 
 ### <a name="next-steps"></a>Próximas etapas
  Para obter informações sobre como implantar o perfil Wi-Fi, consulte [Como implantar perfis de Wi-Fi no System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md).  

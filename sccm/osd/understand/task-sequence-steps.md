@@ -10,12 +10,12 @@ ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bec95b13ecba5ae5238d758ae06566042a95d939
-ms.sourcegitcommit: 303d826f45c8fd9a05d8883afc1ca645e56bd576
+ms.openlocfilehash: 5e62983f76b0f2a4277edfab08d4321da5d4a258
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51269239"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416479"
 ---
 # <a name="task-sequence-steps-in-configuration-manager"></a>Etapas de sequência de tarefas no Configuration Manager
 
@@ -37,9 +37,9 @@ ms.locfileid: "51269239"
 
  - **Desabilitar esta etapa**: a sequência de tarefas ignora essa etapa quando ela é executada em um computador. O ícone para esta etapa é esmaecido no editor de sequência de tarefas.  
 
- - **Continuar em caso de erro**: se ocorrer um erro durante a execução da etapa, a sequência de tarefas continuará. Para saber mais, confira [Considerações de planejamento para automatizar tarefas](/sccm/osd/plan-design/planning-considerations-for-automating-tasks#BKMK_TSGroups).   
+ - **Continuar se houver erro**: se ocorrer um erro ao executar a etapa, a sequência de tarefas continuará. Para saber mais, confira [Considerações de planejamento para automatizar tarefas](/sccm/osd/plan-design/planning-considerations-for-automating-tasks#BKMK_TSGroups).   
 
- - **Adicionar Condição**: A sequência de tarefas avalia essas instruções condicionais para determinar se ela executa a etapa. Para obter um exemplo de como usar uma variável de sequência de tarefas como condição, confira [Como usar variáveis de sequência de tarefas](/sccm/osd/understand/using-task-sequence-variables#bkmk_access-condition).   
+ - **Adicionar Condição**: a sequência de tarefas avalia essas instruções condicionais para determinar se ela executa a etapa. Para obter um exemplo de como usar uma variável de sequência de tarefas como condição, confira [Como usar variáveis de sequência de tarefas](/sccm/osd/understand/using-task-sequence-variables#bkmk_access-condition).   
 
 
  As seções abaixo para etapas específicas de sequência de tarefas descrevem outras configurações possíveis na guia **Opções**.
@@ -75,11 +75,11 @@ ms.locfileid: "51269239"
 
  - **Próxima partição disponível**: use a próxima partição sequencial que ainda não foi usada como destino por uma etapa **Aplicar Sistema Operacional** ou **Aplicar Imagem de Dados** nessa sequência de tarefas.  
 
- - **Disco e partição específicos**: selecione o número do **Disco** (começando com 0) e o da **Partição** (começando com 1).  
+ - **Disco e partição específicos**: Selecione o número do **disco** (começando com 0) e o número da **partição** (começando com 1).  
 
  - **Letra da unidade lógica específica**: especifique a **Letra da Unidade** atribuída à partição pelo Windows PE. Essa letra de unidade pode ser diferente da letra de unidade atribuída pelo sistema operacional implantado recentemente.  
 
- - **Letra de unidade lógica armazenada em uma variável**: especifique a variável de sequência de tarefas que contém a letra da unidade atribuída à partição pelo Windows PE. Essa variável é normalmente definida na seção Avançado da caixa de diálogo **Propriedades da Partição** para a etapa da sequência de tarefa **Formatar e Particionar o Disco**.  
+ - **Letra da unidade lógica armazenada em uma variável**: especifique a variável de sequência de tarefas que contém a letra da unidade atribuída à partição pelo Windows PE. Essa variável é normalmente definida na seção Avançado da caixa de diálogo **Propriedades da Partição** para a etapa da sequência de tarefa **Formatar e Particionar o Disco**.  
 
 #### <a name="delete-all-content-on-the-partition-before-applying-the-image"></a>Excluir todo o conteúdo na partição antes de aplicar a imagem  
  Especifica que a sequência de tarefas exclui todos os arquivos na partição de destino antes de instalar a imagem. Não excluindo o conteúdo da partição, esta ação pode ser usada para aplicar o conteúdo adicional a uma partição de destino anterior.  
@@ -201,30 +201,30 @@ ms.locfileid: "51269239"
 #### <a name="os-image-actions"></a>Ações de imagem do sistema operacional
  A etapa **Aplicar imagem do sistema operacional** executa as seguintes ações ao usar uma imagem do SO:  
 
- 1.  Exclua todo o conteúdo no volume de destino, exceto os arquivos na pasta especificada pela variável **\_SMSTSUserStatePath**.  
+1. Exclua todo o conteúdo no volume de destino, exceto os arquivos na pasta especificada pela variável **\_SMSTSUserStatePath**.  
 
- 2.  Extração do conteúdo do arquivo .wim especificado para a partição de destino especificada.  
+2. Extração do conteúdo do arquivo .wim especificado para a partição de destino especificada.  
 
- 3.  Prepare o arquivo de resposta:  
+3. Prepare o arquivo de resposta:  
 
-    1.  Crie um novo arquivo de resposta padrão da Instalação do Windows (sysprep.inf ou unattend.xml) para o sistema operacional implantado.  
+   1.  Crie um novo arquivo de resposta padrão da Instalação do Windows (sysprep.inf ou unattend.xml) para o sistema operacional implantado.  
 
-    2.  Mescle quaisquer valores do arquivo de resposta fornecido pelo usuário.  
+   2.  Mescle quaisquer valores do arquivo de resposta fornecido pelo usuário.  
 
- 4.  Cópia de carregadores de inicialização do Windows para a partição ativa.  
+4. Cópia de carregadores de inicialização do Windows para a partição ativa.  
 
- 5.  Configuração do boot.ini ou do BCD (Banco de Dados de Configuração da Inicialização) para referenciar o sistema operacional recém-instalado.  
+5. Configuração do boot.ini ou do BCD (Banco de Dados de Configuração da Inicialização) para referenciar o sistema operacional recém-instalado.  
 
 #### <a name="os-upgrade-package-actions"></a>Ações do pacote de atualização do sistema operacional
  A etapa **Aplicar imagem do sistema operacional** executa as seguintes ações ao usar um pacote de atualização do SO:  
 
- 1.  Exclua todo o conteúdo no volume de destino, exceto os arquivos na pasta especificada pela variável **\_SMSTSUserStatePath**.  
+1. Exclua todo o conteúdo no volume de destino, exceto os arquivos na pasta especificada pela variável **\_SMSTSUserStatePath**.  
 
- 2.  Prepare o arquivo de resposta:  
+2. Prepare o arquivo de resposta:  
 
-    1.  Criação de um arquivo de resposta novo com valores padrão criados pelo Configuration Manager.  
+   1.  Criação de um arquivo de resposta novo com valores padrão criados pelo Configuration Manager.  
 
-    2.  Mescle quaisquer valores do arquivo de resposta fornecido pelo usuário.  
+   2.  Mescle quaisquer valores do arquivo de resposta fornecido pelo usuário.  
 
 
 ### <a name="properties"></a>Propriedades  
@@ -250,11 +250,11 @@ ms.locfileid: "51269239"
 
  - **Próxima partição disponível**: use a próxima partição sequencial que ainda não foi usada como destino por uma etapa **Aplicar Sistema Operacional** ou **Aplicar Imagem de Dados** nessa sequência de tarefas.  
 
- - **Disco e partição específicos**: selecione o número do **Disco** (começando com 0) e o da **Partição** (começando com 1).  
+ - **Disco e partição específicos**: Selecione o número do **disco** (começando com 0) e o número da **partição** (começando com 1).  
 
  - **Letra da unidade lógica específica**: especifique a **Letra da Unidade** atribuída à partição pelo Windows PE. Essa letra de unidade pode ser diferente da letra de unidade atribuída pelo sistema operacional implantado recentemente.  
 
- - **Letra de unidade lógica armazenada em uma variável**: especifique a variável de sequência de tarefas que contém a letra da unidade atribuída à partição pelo Windows PE. Essa variável é normalmente definida na seção Avançado da caixa de diálogo **Propriedades da Partição** para a etapa da sequência de tarefa **Formatar e Particionar o Disco**.  
+ - **Letra da unidade lógica armazenada em uma variável**: especifique a variável de sequência de tarefas que contém a letra da unidade atribuída à partição pelo Windows PE. Essa variável é normalmente definida na seção Avançado da caixa de diálogo **Propriedades da Partição** para a etapa da sequência de tarefa **Formatar e Particionar o Disco**.  
 
 
 ### <a name="options"></a>Opções  
@@ -519,13 +519,13 @@ ms.locfileid: "51269239"
 #### <a name="copy-by-using-file-system-access"></a>Copiar usando o acesso do sistema de arquivos
  Habilite esta opção especificar qualquer uma das seguintes configurações:  
 
- - **Continuar se não for possível capturar alguns arquivos**: habilite essa configuração para continuar o processo de migração mesmo que não seja possível capturar alguns arquivos. Se você desabilitar essa opção e não conseguir capturar um arquivo, essa etapa da sequência de tarefas falhará. Essa opção é habilitada por padrão.  
+ - **Continuar se alguns arquivos não puderem ser capturados**: habilite essa configuração para continuar o processo de migração mesmo que alguns arquivos não possam ser capturados. Se você desabilitar essa opção e não conseguir capturar um arquivo, essa etapa da sequência de tarefas falhará. Essa opção é habilitada por padrão.  
 
- - **Capturar localmente usando links em vez de copiar arquivos**: habilite essa configuração para usar links físicos NTFS para capturar arquivos.  
+ - **Capturar localmente usando links em vez de copiar arquivos**: Habilite essa configuração para usar links físicos NTFS para capturar arquivos.  
 
      Para saber mais sobre como migrar dados usando links físicos, consulte [Repositório de migração de link físico](https://docs.microsoft.com/windows/deployment/usmt/usmt-hard-link-migration-store).  
 
- - **Capturar em modo offline (somente Windows PE)**: habilite essa configuração para capturar o estado de usuário no Windows PE em vez do sistema operacional completo.  
+ - **Capturar em modo offline (somente Windows PE)**: habilite essa configuração para capturar o estado do usuário no Windows PE em vez do sistema operacional completo.  
 
 #### <a name="capture-by-using-volume-copy-shadow-services-vss"></a>Capturar usando o VSS (Serviços de Cópias de Sombra de Volume)
  Essa opção permite capturar arquivos mesmo se eles estiverem bloqueados para edição por outro aplicativo.  
@@ -689,9 +689,9 @@ ms.locfileid: "51269239"
 #### <a name="place-into-the-following-location"></a>Coloque no seguinte local
  Escolha a opção para salvar o pacote em um dos seguintes locais:  
 
- - **Diretório de trabalho da sequência de tarefas**: esse local também é conhecido como o cache de sequência de tarefas.  
+ - **Diretório de trabalho da sequência de tarefas**: essa localização também é conhecida como o cache de sequência de tarefas.  
 
- - **Cache do cliente do Configuration Manager**: use esta opção para armazenar o conteúdo no cache do cliente. Por padrão, esse caminho é `%WinDir%\ccmcache`.  
+ - **Cache de cliente do Configuration Manager**: use esta opção para armazenar o conteúdo no cache do cliente. Por padrão, esse caminho é `%WinDir%\ccmcache`.  
 
  - **Caminho personalizado**: primeiro, o mecanismo de sequência de tarefas faz o download do pacote no diretório de trabalho da sequência de tarefas. Depois, move o conteúdo até o caminho que você especificar. O mecanismo de sequência de tarefas agrega o caminho ao ID do pacote.  
 
@@ -750,11 +750,11 @@ ms.locfileid: "51269239"
 #### <a name="choose-the-drive-to-encrypt"></a>Selecione a unidade para criptografar
  Especifica a unidade para criptografar. Para criptografar a unidade do sistema operacional atual, selecione **Unidade atual do sistema operacional**. Depois, configure uma das seguintes opções para gerenciamento de chave:  
 
- - **Somente TPM**: selecione esta opção para usar somente o TPM (Trusted Platform Module).  
+ - **Somente TPM**: Selecione esta opção para usar somente Trusted Platform Module (TPM).  
 
- - **Chave de inicialização somente em USB**: selecione esta opção para usar uma chave de inicialização armazenada em uma unidade flash USB. Quando você seleciona essa opção, o BitLocker bloqueia o processo normal de inicialização até que um dispositivo USB que contém uma chave de inicialização do BitLocker é anexado ao computador.  
+ - **Chave de inicialização apenas em USB**: Selecione esta opção para usar uma chave de inicialização armazenada em uma unidade flash USB. Quando você seleciona essa opção, o BitLocker bloqueia o processo normal de inicialização até que um dispositivo USB que contém uma chave de inicialização do BitLocker é anexado ao computador.  
 
- - **TPM e chave de inicialização em USB**: selecione esta opção para usar o TPM e uma chave de inicialização armazenada em uma unidade flash USB. Quando você seleciona essa opção, o BitLocker bloqueia o processo normal de inicialização até que um dispositivo USB que contém uma chave de inicialização do BitLocker é anexado ao computador.  
+ - **TPM e chave de inicialização em USB**: Selecione esta opção para usar o TPM e uma chave de inicialização armazenada em uma unidade flash USB. Quando você seleciona essa opção, o BitLocker bloqueia o processo normal de inicialização até que um dispositivo USB que contém uma chave de inicialização do BitLocker é anexado ao computador.  
 
  - **TPM e PIN**: selecione esta opção para usar o TPM e um PIN (número de identificação pessoal). Quando você seleciona essa opção, o BitLocker bloqueia o processo normal de inicialização até que o usuário forneça o PIN.  
 
@@ -802,8 +802,8 @@ ms.locfileid: "51269239"
 
 #### <a name="disk-type"></a>Tipo de disco
  O tipo de disco a ser formatado. Há duas opções para selecionar na lista suspensa: 
- - **Padrão (MBR)**: Registro Mestre de Inicialização  
- - **GGT**: tabela de partição GUID  
+ - **Padrão (MBR)**: MBR (Registro Mestre de Inicialização)  
+ - **GPT**: Tabela de partição GUID  
 
 
  > [!NOTE]  
@@ -878,7 +878,7 @@ ms.locfileid: "51269239"
 #### <a name="install-applications-according-to-dynamic-variable-list"></a>Instalar aplicativos de acordo com a lista de variável dinâmica
  A sequência de tarefas instala os aplicativos que usam este nome de variável de base. O nome de variável de base é para um conjunto de variáveis de sequência de tarefas definido para uma coleção ou computador. Essas variáveis especificam os aplicativos que a sequência de tarefas instala para essa coleção ou computador. Cada nome de variável consiste em seu nome de base comum e um sufixo numérico, começando com 01. O valor de cada variável deve conter o nome do aplicativo e nada mais.  
 
- Para que a sequência de tarefas instale aplicativos usando uma lista de variáveis dinâmicas, habilite a seguinte configuração na guia **Geral** da caixa de diálogo **Propriedades** do aplicativo: **Permitir que este aplicativo seja instalado na ação de sequência de tarefas Instalar aplicativo em vez de implantar manualmente**.  
+ Para a sequência de tarefas instalar aplicativos usando uma lista de variáveis dinâmicas, habilite a seguinte configuração na guia **Geral** das **Propriedades** do aplicativo: **Permitir que este aplicativo seja instalado da ação de sequência de tarefas Instalar Aplicativo em vez de implantar manualmente**.  
 
  > [!NOTE]  
  >  Você não pode instalar aplicativos usando uma lista dinâmica de variável para implantações de mídia autônoma.  
@@ -964,7 +964,7 @@ ms.locfileid: "51269239"
 #### <a name="install-software-packages-according-to-dynamic-variable-list"></a>Instalar os pacotes de software de acordo com a lista de variável dinâmica
  A sequência de tarefas instala os pacotes que usam este nome de variável de base. O nome de variável de base é para um conjunto de variáveis de sequência de tarefas definido para uma coleção ou computador. Essas variáveis especificam os pacotes que a sequência de tarefas instala para essa coleção ou computador. Cada nome de variável consiste em seu nome de base comum e um sufixo numérico, começando com 001. O valor de cada variável deve conter uma ID de pacote e o nome do software separados por dois-pontos.  
 
- Para que a sequência de tarefas instale o software usando uma lista de variáveis dinâmicas, habilite a seguinte configuração na guia **Avançado** das **Propriedades** do pacote: **Permitir que este programa seja instalado da sequência de tarefas de Pacote de Instalação sem ser implantado**.  
+ Para que a sequência de tarefas instale o software usando uma lista de variáveis dinâmicas, habilite a seguinte configuração na guia **Avançado** do pacote **Propriedades**: **Permitir que este programa seja instalado da sequência de tarefas de Pacote de Instalação sem ser implantado**.  
 
  > [!NOTE]  
  >  Você não pode instalar pacotes de software usando uma lista dinâmica de variável para implantações de mídia autônoma.  
@@ -1516,13 +1516,13 @@ ms.locfileid: "51269239"
 #### <a name="dynamic-rules-and-variables"></a>Variáveis e regras dinâmicas
  Para definir uma variável dinâmica para uso na sequência de tarefas, adicione uma regra. Em seguida, defina um valor para cada variável especificada na regra. Além disso, adicione uma ou mais variáveis sem adicionar uma regra. Quando você adicionar uma regra, poderá escolher entre as seguintes categorias:  
 
- - **Computador**: avaliar valores para a Marcação do ativo, UUID, número de série ou endereço MAC. Defina vários valores, conforme necessário. Se algum valor for true, a regra será avaliada como true. Por exemplo, a seguinte regra é avaliada como true se o número de série do dispositivo é 5892087 e o endereço MAC é 22-A4-5A-13-78-26:  
+ - **Computador**: avaliar valores para a marca de ativo, UUID, número de série ou endereço MAC. Defina vários valores, conforme necessário. Se algum valor for true, a regra será avaliada como true. Por exemplo, a seguinte regra é avaliada como true se o número de série do dispositivo é 5892087 e o endereço MAC é 22-A4-5A-13-78-26:  
 
      `IF Serial Number = 5892087 OR MAC address = 26-78-13-5A-A4-22 THEN`  
 
- - **Local**: avaliar valores para o gateway de rede padrão  
+ - **Localização**: avaliar valores para o gateway de rede padrão  
 
- - **Marca e Modelo**: avaliar valores para a marca e o modelo de um computador. A marca e o modelo devem ambas serem avaliadas como verdadeiro para a regra a ser avaliada como verdadeiro.   
+ - **Marca e modelo**: avaliar valores para a marca e o modelo de um computador. A marca e o modelo devem ambas serem avaliadas como verdadeiro para a regra a ser avaliada como verdadeiro.   
 
     Especifique um asterisco (`*`) e o ponto de interrogação (`?`) como caracteres curinga. O asterisco corresponde a vários caracteres, e o ponto de interrogação corresponde a um único caractere. Por exemplo, a cadeia de caracteres `DELL*900?` corresponde a `DELL-ABC-9001` e `DELL9009`.  
 
@@ -1530,9 +1530,9 @@ ms.locfileid: "51269239"
 
     Especifique uma ou mais variáveis a serem definidas para uma regra que é avaliada como verdadeiro ou definir variáveis sem usar uma regra. Selecione uma variável existente ou crie uma variável personalizada.  
 
-     - **Variáveis de sequência de tarefas existentes**: selecione uma ou mais variáveis em uma lista de variáveis de sequência de tarefas existentes. Variáveis de matriz não estão disponíveis para selecionar.  
+     - **Variáveis de sequência de tarefas existentes**: selecione uma ou mais variáveis em uma lista de variáveis de sequência de tarefas existente. Variáveis de matriz não estão disponíveis para selecionar.  
 
-     - **Variáveis personalizadas da sequência de tarefas**: defina uma variável personalizada da sequência de tarefas. Você também pode especificar uma variável de sequência de tarefas existente. Essa configuração é útil para especificar uma matriz de variáveis existente, como **OSDAdapter**, pois matrizes de variáveis não estão na lista de variáveis de sequência de tarefas existente.  
+     - **Variáveis de sequência de tarefas personalizadas**: defina uma variável de sequência de tarefas personalizada. Você também pode especificar uma variável de sequência de tarefas existente. Essa configuração é útil para especificar uma matriz de variáveis existente, como **OSDAdapter**, pois matrizes de variáveis não estão na lista de variáveis de sequência de tarefas existente.  
 
 
  Depois de selecionar as variáveis de uma regra, forneça um valor para cada variável. A variável é definida como o valor especificado quando a regra for avaliada como verdadeiro. Para cada variável, você pode selecionar o **Valor secreto** para ocultar o valor da variável. Por padrão, algumas variáveis existentes ocultam valores, como a variável **OSDCaptureAccountPassword**.  
@@ -1696,9 +1696,9 @@ ms.locfileid: "51269239"
 #### <a name="provide-the-following-driver-content-to-windows-setup-during-upgrade"></a>Fornecer o seguinte conteúdo de driver à Instalação do Windows durante a atualização
  Adicione drivers ao computador de destino durante o processo de atualização. Essa configuração corresponde à opção de linha de comando `/InstallDriver` da Instalação do Windows. Os drivers devem ser compatíveis com o Windows 10. especifique uma das seguintes opções:  
 
- - **Pacote de driver**: clique em **Procurar** e selecione um pacote de driver existente na lista.  
+ - **Pacote de drivers**: Clique em **Procurar** e selecione um pacote de drivers existente da lista.  
 
- - **Conteúdo de teste**: selecione esta opção para especificar o local para o pacote de drivers. Você pode especificar uma pasta local, um caminho de rede ou uma variável de sequência de tarefas. Ao usar uma variável para o caminho de origem, defina o valor dela logo no início da sequência de tarefas. Por exemplo, usando a etapa [Baixar conteúdo do pacote](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent).  
+ - **Conteúdo de teste**:  selecione esta opção para especificar a localização para o pacote de drivers. Você pode especificar uma pasta local, um caminho de rede ou uma variável de sequência de tarefas. Ao usar uma variável para o caminho de origem, defina o valor dela logo no início da sequência de tarefas. Por exemplo, usando a etapa [Baixar conteúdo do pacote](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent).  
 
 #### <a name="time-out-minutes"></a>Tempo limite (minutos)
  Especifique o número de minutos antes que o Configuration Manager falhe nesta etapa. Essa opção será útil se a Instalação do Windows parar o processamento, mas não encerrar.  

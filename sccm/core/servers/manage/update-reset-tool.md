@@ -10,12 +10,12 @@ ms.assetid: 25fa89d6-7e47-45a6-8f4e-70b77560fba6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e6ae6ed46cc1db5f545182e4b4f6b46374b5c174
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: de5c98e45c6f5d6dca1569de812825cce80d6f70
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344081"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417329"
 ---
 # <a name="update-reset-tool"></a>Ferramenta de redefinição de atualização
 
@@ -62,14 +62,16 @@ Depois que a ferramenta é executada:
 
 **Parâmetros da linha de comando:**  
 
-| Parâmetro        |Descrição                 |  
-|------------------|----------------------------|  
-|**-S &lt;Nome de domínio totalmente qualificado do SQL Server do seu site de nível superior>** | *Necessária* <br> Especifique o nome de domínio totalmente qualificado do SQL Server que hospeda o banco de dados do site para o site de nível superior da sua hierarquia.    |  
-| **-D &lt;Nome do banco de dados>**                        | *Necessária* <br> Especifique o nome do banco de dados no site de nível superior.  |  
-| **-P &lt;Interface gráfica do usuário do pacote>**                         | *Necessária* <br> Especifique a GUID do pacote de atualização que você deseja redefinir.   |  
-| **-I &lt;Nome da instância do SQL Server>**             | *Opcional* <br> Identifique a instância do SQL Server que hospeda o banco de dados do site. |
-| **-FDELETE**                              | *Opcional* <br> Force a exclusão de um pacote de atualização baixado com êxito. |  
- **Exemplos:**  
- Em um cenário típico, você deve redefinir uma atualização que apresenta problemas de download. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Execute: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
- Em um cenário mais complexo, você deve forçar a exclusão do pacote de atualização problemático. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Execute: ***CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+|                        Parâmetro                         |                                                       Descrição                                                        |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| **-S &lt;Nome de domínio totalmente qualificado do SQL Server do seu site de nível superior>** | *Necessária* <br> Especifique o nome de domínio totalmente qualificado do SQL Server que hospeda o banco de dados do site para o site de nível superior da sua hierarquia. |
+|                **-D &lt;Nome do banco de dados>**                 |                          *Necessária* <br> Especifique o nome do banco de dados no site de nível superior.                          |
+|                 **-P &lt;Interface gráfica do usuário do pacote>**                 |                        *Necessária* <br> Especifique a GUID do pacote de atualização que você deseja redefinir.                        |
+|           **-I &lt;Nome da instância do SQL Server>**           |                    *Opcional* <br> Identifique a instância do SQL Server que hospeda o banco de dados do site.                     |
+|                       **-FDELETE**                       |                       *Opcional* <br> Force a exclusão de um pacote de atualização baixado com êxito.                        |
+
+ **Exemplos:**  
+ Em um cenário típico, você deve redefinir uma atualização que apresenta problemas de download. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Você pode executar: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+
+ Em um cenário mais complexo, você deve forçar a exclusão do pacote de atualização problemático. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Você pode executar: ***CMUpdateReset.exe -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***

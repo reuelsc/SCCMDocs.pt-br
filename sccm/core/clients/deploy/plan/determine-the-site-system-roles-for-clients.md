@@ -10,12 +10,12 @@ ms.assetid: 984e8d92-7327-4b08-9228-0c955e6ac778
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: eac38757ed2147d664b3bdbf2f7e0eb11947dcac
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 8fdb7faee21904c504470c2bca86a674d59559cf
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334068"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419811"
 ---
 # <a name="determine-the-site-system-roles-for-system-center-configuration-manager-clients"></a>Adicionar as funções do sistema de sites para os clientes do System Center Configuration Manager
 
@@ -45,15 +45,15 @@ Este tópico pode ajudá-lo a determinar as funções de sistema de site que sã
 
  Instale um ponto de status de fallback se todas as seguintes condições se aplicarem:  
 
--   Você quer que os erros de comunicação do cliente de computadores Windows sejam enviados para o site, mesmo que esses computadores cliente não possam se comunicar com um ponto de gerenciamento.  
+- Você quer que os erros de comunicação do cliente de computadores Windows sejam enviados para o site, mesmo que esses computadores cliente não possam se comunicar com um ponto de gerenciamento.  
 
--   Use os relatórios de implantação do cliente do Configuration Manager, que exibem os dados enviados pelo ponto de status de fallback.  
+- Use os relatórios de implantação do cliente do Configuration Manager, que exibem os dados enviados pelo ponto de status de fallback.  
 
--   Você tem um servidor dedicado para essa função do sistema de site e tem medidas adicionais de segurança para ajudar a proteger o servidor de ataques.  
+- Você tem um servidor dedicado para essa função do sistema de site e tem medidas adicionais de segurança para ajudar a proteger o servidor de ataques.  
 
--   Os benefícios de se usar um ponto de status de fallback superam todos os riscos de segurança associados a conexões não autenticadas e transferências de texto não criptografado pelo tráfego HTTP.  
+- Os benefícios de se usar um ponto de status de fallback superam todos os riscos de segurança associados a conexões não autenticadas e transferências de texto não criptografado pelo tráfego HTTP.  
 
- Não instale um ponto de status de fallback se os riscos de segurança de se executar um site com conexões não autenticadas e transferências de texto não criptografado superam os benefícios da identificação de problemas de comunicação do cliente.  
+  Não instale um ponto de status de fallback se os riscos de segurança de se executar um site com conexões não autenticadas e transferências de texto não criptografado superam os benefícios da identificação de problemas de comunicação do cliente.  
 
 ##  <a name="determine-whether-you-need-a-reporting-services-point"></a>Determinar se você precisa de um ponto de serviços de relatório  
  O Configuration Manager fornece muitos relatórios para ajudar a monitorar a instalação, a atribuição e o gerenciamento de clientes no console do Configuration Manager. Alguns relatórios de implantação do cliente exigem que os clientes sejam atribuídos a um ponto de status de fallback.  

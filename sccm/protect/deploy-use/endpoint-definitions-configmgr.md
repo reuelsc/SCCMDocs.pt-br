@@ -10,12 +10,12 @@ ms.assetid: 3b9c4027-a98b-406b-935c-ccabcfe713df
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 414231d2cd07e583196b6b1abdd6530c3d49681a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 86452d628d025aea2b797d0ade92a3c2e2fff933
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350785"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418570"
 ---
 #  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Usando as atualizações de Software do Configuration Manager para fornecer atualizações de definições
 
@@ -29,31 +29,31 @@ ms.locfileid: "32350785"
 
 ## <a name="to-configure-an-automatic-deployment-rule-to-deliver-definition-updates"></a>Para configurar uma regra de implantação automática para fornecer atualizações de definições
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Atualizações de Software**e clique em **Regras de Implantação Automática**.
+2. No workspace **Biblioteca de Software**, expanda **Atualizações de Software** e clique em **Regras de Implantação Automática**.
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Regra de Implantação Automática**.
+3. Na guia **Início** , no grupo **Criar** , clique em **Criar Regra de Implantação Automática**.
 
-4.  Na página **Geral** do **Assistente para Criar Regra de Implantação Automática**, especifique as seguintes informações:
+4. Na página **Geral** do **Assistente para Criar Regra de Implantação Automática**, especifique as seguintes informações:
 
-    -   **Nome**: digite um nome exclusivo para a regra de implantação automática.
+   -   **Nome**: insira um nome exclusivo para a regra de implantação automática.
 
-    -   **Coleção**: selecione a coleção de computadores cliente na qual você deseja implantar atualizações de definições.
+   -   **Coleta**: selecione a coleção de computadores cliente na qual você deseja implantar atualizações de definições.
 
-        > [!NOTE]
-        >  Você não pode implantar atualizações de definições em uma coleção de usuários.
+       > [!NOTE]
+       >  Você não pode implantar atualizações de definições em uma coleção de usuários.
 
-5.  Clique em **Adicionar a um Grupo de Atualizações de Software existente**.
+5. Clique em **Adicionar a um Grupo de Atualizações de Software existente**.
 
-6.  Verifique se a caixa de seleção  **Habilitar a implantação após esta regra ser executada** está marcada e clique em **Avançar**.
+6. Verifique se a caixa de seleção  **Habilitar a implantação após esta regra ser executada** está marcada e clique em **Avançar**.
 
-7.  Na página **Configurações de Implantação** do assistente, na lista **Nível de detalhe** , selecione **Mínimo**e clique em **Avançar**.
+7. Na página **Configurações de Implantação** do assistente, na lista **Nível de detalhe** , selecione **Mínimo**e clique em **Avançar**.
 
-    > [!NOTE]
-    >  Na lista **Nível de detalhe**, selecione **Mínimo** (Configuration Manager sem Service Pack) ou **Somente mensagens de erro** (Configuration Manager). Isso reduzirá o número de mensagens de estado retornado pela implantação de definição. Essa configuração ajuda a reduzir o uso de processamento da CPU nos servidores do Configuration Manager.
+   > [!NOTE]
+   >  Na lista **Nível de detalhe**, selecione **Mínimo** (Configuration Manager sem Service Pack) ou **Somente mensagens de erro** (Configuration Manager). Isso reduzirá o número de mensagens de estado retornado pela implantação de definição. Essa configuração ajuda a reduzir o uso de processamento da CPU nos servidores do Configuration Manager.
 
-8.  Na lista **Filtros de propriedade** , marque a caixa de seleção **Classificação da Atualização** .
+8. Na lista **Filtros de propriedade** , marque a caixa de seleção **Classificação da Atualização** .
 
 9. Na lista **Critérios de pesquisa**, clique em **<itens para localizar\>**. Na caixa de diálogo **Critérios de Pesquisa** , na lista **Especificar o valor de pesquisa** , selecione **Atualizações de Definições**.
 
@@ -66,8 +66,8 @@ ms.locfileid: "32350785"
 13. Clique em **OK** para fechar a caixa de diálogo **Critérios de Pesquisa** e clique em **Avançar**.
 
 14. Opcionalmente, você pode filtrar as atualizações substituídas.   Para fazer isso:
-  1.  Na lista **Filtros de propriedade** , marque a caixa de seleção **Substituído** .
-  2.  Na lista **Critérios de pesquisa**, clique em **<itens para localizar\>**. Na caixa de diálogo **Critérios de Pesquisa** , na lista **Especificar o valor de pesquisa** , selecione **Não**.  <br><br>
+    1.  Na lista **Filtros de propriedade** , marque a caixa de seleção **Substituído** .
+    2.  Na lista **Critérios de pesquisa**, clique em **<itens para localizar\>**. Na caixa de diálogo **Critérios de Pesquisa** , na lista **Especificar o valor de pesquisa** , selecione **Não**.  <br><br>
 
 15. Clique em **OK** para fechar a caixa de diálogo **Critérios de Pesquisa** e clique em **Avançar**.
 
@@ -75,11 +75,11 @@ ms.locfileid: "32350785"
 
 17. Na página **Agendamento da Implantação** , defina as seguintes configurações:
 
-    -   **Tempo base em**: selecione **UTC** se desejar que todos os clientes na hierarquia instalem as definições mais recentes ao mesmo tempo. O tempo de instalação real varia em uma janela de duas horas. Essa configuração é uma prática recomendada.
+    -   **Tempo baseado em**: selecione **UTC** se desejar que todos os clientes na hierarquia instalem as definições mais recentes ao mesmo tempo. O tempo de instalação real varia em uma janela de duas horas. Essa configuração é uma prática recomendada.
 
     -   **Tempo disponível do software**: especifique o tempo disponível para a implantação criada por essa regra. A hora especificada deve ser pelo menos uma hora depois que a regra de implantação automática é executada. Isso ajuda a garantir que o conteúdo tenha tempo suficiente para replicar os pontos de distribuição na hierarquia. Algumas atualizações de definições também podem incluir atualizações de mecanismos antimalware, as quais podem levar mais tempo para alcançar os pontos de distribuição.
 
-    -   **Prazo de instalação**: selecione **O mais breve possível**.
+    -   **Data limite para a instalação**: Selecione **assim que possível**.
 
         > [!NOTE]
         >  Os prazos de atualização de software variam durante um período de duas horas para impedir que todos os clientes solicitem uma atualização ao mesmo tempo.
@@ -109,7 +109,7 @@ ms.locfileid: "32350785"
 
 
 > [!div class="button"]
-[Próxima etapa >](endpoint-antimalware-policies.md)
-
+> [Próxima etapa >](endpoint-antimalware-policies.md)
+> 
 > [!div class="button"]
-[Voltar >](endpoint-configure-alerts.md)
+> [Voltar >](endpoint-configure-alerts.md)

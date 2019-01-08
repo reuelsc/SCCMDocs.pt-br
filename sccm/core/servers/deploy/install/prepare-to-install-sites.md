@@ -10,12 +10,12 @@ ms.assetid: 9089e1b5-cba4-42bd-a2de-126ef882a3af
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9f07a321ac6f10f5287a88d0df7064920f538ae5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 3de7b19eb7d997ef72cc7a413eb143172c4ce40e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341688"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424350"
 ---
 # <a name="prepare-to-install-system-center-configuration-manager-sites"></a>Preparar para instalar sites do System Center Configuration Manager
 
@@ -35,9 +35,9 @@ Antes de instalar um site, certifique-se de que você planejou sua hierarquia e 
 ### <a name="first-site"></a>Primeiro site
 O primeiro site que você instalará em uma hierarquia será um site primário autônomo ou um site de administração central.
 
-**Mídia de instalação**: para instalar um site de administração central ou um site primário autônomo como o primeiro site em uma nova hierarquia, você deve [usar uma versão de linha de base](../../../../core/servers/manage/updates.md#bkmk_Baselines) do Configuration Manager. Não instale o primeiro site de uma nova hierarquia usando arquivos de origem atualizados da [pasta CD.Latest](../../../../core/servers/manage/the-cd.latest-folder.md) de nenhum site.
+**Mídia de instalação**: Para instalar um site de administração central ou um site primário autônomo como o primeiro site em uma nova hierarquia, você deve [usar uma versão de linha de base](../../../../core/servers/manage/updates.md#bkmk_Baselines) do Configuration Manager. Não instale o primeiro site de uma nova hierarquia usando arquivos de origem atualizados da [pasta CD.Latest](../../../../core/servers/manage/the-cd.latest-folder.md) de nenhum site.
 
-**Método de instalação**: você pode instalar qualquer tipo de site usando o [Assistente de Instalação do Configuration Manager](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) ou pode configurar um script para usar com uma [instalação de linha de comando com scripts](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).
+**Método de instalação**: Você pode instalar qualquer tipo de site usando o [Assistente de Instalação do Configuration Manager](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) ou pode configurar um script para usar com uma [instalação de linha de comando com scripts](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).
 
 
 ### <a name="additional-sites"></a>Sites adicionais
@@ -49,17 +49,17 @@ Depois de instalar o site inicial, você pode adicionar mais sites a qualquer mo
 |Site primário filho|Site secundário|
 |Site primário autônomo|Site secundário (você pode expandir o site primário, o que converte o site primário autônomo em um site primário filho)|
 
-**Mídia de instalação**: quando você instala um site de administração central para expandir um site primário autônomo ou se instalar um novo site primário filho em uma hierarquia existente, deve usar a mídia de instalação (que contém arquivos de origem) que corresponde à versão do site ou sites existentes.
+**Mídia de instalação**: Quando você instala um site de administração central para expandir um site primário autônomo ou se instalar um novo site primário filho em uma hierarquia existente, deverá usar a mídia de instalação (que contém arquivos de origem) que corresponde à versão do site ou sites existentes.
 
 > [!IMPORTANT]
 > Se você tiver instalado atualizações no console que alteraram a versão dos sites instalados anteriormente, não use a mídia de instalação original. Em vez disso, neste cenário, use os arquivos de origem da [pasta CD.Latest](../../../../core/servers/manage/the-cd.latest-folder.md) de um site atualizado. O Configuration Manager exige que você use arquivos de origem que correspondam à versão do site existente ao qual seu novo site se conectará.
 
 Um site secundário deve ser instalado no console do Configuration Manager. Dessa forma, os sites secundários sempre são instalados usando arquivos de origem do site primário pai.
 
-**Método de instalação**: o método usado para instalar sites adicionais depende do tipo de site que você deseja instalar.
--   **Adicionar um site de administração central**: você pode usar o Assistente de Instalação do Configuration Manager ou uma linha de comando com script para instalar o novo site de administração central como um site pai para o site primário autônomo existente. Para obter mais informações, confira [Expansão de um site primário autônomo](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand).
--   **Adicionar um site primário filho**: você pode usar o Assistente de Instalação do Configuration Manager ou uma instalação de linha de comando para adicionar um site primário filho abaixo do site de administração central.
--   **Adicionar um site secundário**: use o console do Configuration Manager para instalar um site secundário como um site filho abaixo do site primário. Não há suporte para outros métodos para adicionar sites secundários.
+**Método de instalação**: O método usado para instalar sites adicionais depende do tipo de site que você deseja instalar.
+-   **Adicionar um site de administração central**:  Você pode usar o Assistente de Instalação do Configuration Manager ou uma linha de comando com script para instalar o novo site de administração central como um site pai para o site primário autônomo existente. Para obter mais informações, confira [Expansão de um site primário autônomo](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand).
+-   **Adicionar um site primário filho**:  Você pode usar o Assistente de Instalação do Configuration Manager ou uma instalação de linha de comando para adicionar um site primário filho abaixo do site de administração central.
+-   **Adicionar um site secundário**:  Use o console do Configuration Manager para instalar um site secundário como um site filho abaixo do site primário. Não há suporte para outros métodos para adicionar sites secundários.
 
 ## <a name="bkmk_tasks"></a> Tarefas comuns para concluir antes de iniciar uma instalação
 -   **Entender a topologia da hierarquia que você usará para a implantação**    
@@ -105,11 +105,11 @@ Os códigos do site não poderão ser usados mais de uma vez em uma hierarquia d
 
 ## <a name="limits-and-restrictions-for-installed-sites"></a>Limites e restrições para sites instalados
 Antes de instalar um site, é importante entender as seguintes limitações que se aplicam aos sites e hierarquias de site:
--   Após executar a Instalação, não é possível alterar as seguintes propriedades do site sem desinstalar o site e reinstalá-lo usando os novos valores:  
+- Após executar a Instalação, não é possível alterar as seguintes propriedades do site sem desinstalar o site e reinstalá-lo usando os novos valores:  
   -   Diretório de instalação dos Arquivos de Programas  
   -   Código do site  
   -   Descrição do site  
--   Quando a hierarquia inclui um site de administração central:  
+- Quando a hierarquia inclui um site de administração central:  
   -   O Configuration Manager não dá suporte para a movimentação de um site primário filho para fora de uma hierarquia para criar um site primário autônomo ou para anexá-lo a uma hierarquia diferente. Em vez disso, desinstale o site primário filho e, em seguida, reinstale-o como um novo site primário autônomo ou como um site filho do site de administração central de uma hierarquia diferente.  
 
 
@@ -130,7 +130,7 @@ Para identificar e corrigir problemas antes de executar a Instalação para inst
 **Identifique portas opcionais**
 
 Você pode identificar portas opcionais para os sistemas de sites e clientes usarem. Aqui estão algumas informações adicionais:
- -  Por padrão, os clientes e sistemas de sites usam portas predefinidas para se comunicar.
- -  Durante a instalação, você pode configurar portas alternativas.
+- Por padrão, os clientes e sistemas de sites usam portas predefinidas para se comunicar.
+- Durante a instalação, você pode configurar portas alternativas.
 
- Para obter mais informações, consulte [Portas usadas no System Center Configuration Manager](../../../../core/plan-design/hierarchy/ports.md).
+  Para obter mais informações, consulte [Portas usadas no System Center Configuration Manager](../../../../core/plan-design/hierarchy/ports.md).

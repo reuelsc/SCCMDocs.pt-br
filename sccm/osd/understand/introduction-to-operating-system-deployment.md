@@ -10,12 +10,12 @@ ms.assetid: d9a1c545-8301-492c-832f-2c108ff93c77
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5dfb38cb005b04e761990a4cb513646daab25439
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 6ec1e6b2ce2322086fdb85e4e45c34ae1a4b5887
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353528"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416700"
 ---
 # <a name="introduction-to-operating-system-deployment-in-system-center-configuration-manager"></a>Introdução à implantação de sistema operacional no System Center Configuration Manager
 
@@ -54,28 +54,28 @@ ms.locfileid: "32353528"
 ##  <a name="BKMK_OSDMethods"></a> Métodos para implantar sistemas operacionais  
  Existem vários métodos que podem ser usados para implantar sistemas operacionais em computadores cliente do Configuration Manager.  
 
--   **Implantações iniciadas pelo PXE**: as implantações iniciadas pelo PXE permitem que computadores cliente solicitem uma implantação por meio da rede. Nesse método de implantação, a imagem do sistema operacional e uma imagem de inicialização do Windows PE são enviadas a um ponto de distribuição configurado para aceitar solicitações de inicialização PXE. Para obter mais informações, consulte [Use o PXE para implantar o Windows pela rede com o System Center Configuration Manager](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+- **Implantações iniciadas pelo PXE**: as implantações iniciadas pelo PXE permitem que computadores cliente solicitem uma implantação através da rede. Nesse método de implantação, a imagem do sistema operacional e uma imagem de inicialização do Windows PE são enviadas a um ponto de distribuição configurado para aceitar solicitações de inicialização PXE. Para obter mais informações, consulte [Use o PXE para implantar o Windows pela rede com o System Center Configuration Manager](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
--   **Disponibilizar sistemas operacionais no Centro de Software**: é possível implantar um sistema operacional e disponibilizá-lo no Centro de Software. Os clientes do Configuration Manager podem iniciar a instalação do sistema operacional no Centro de Software. Para mais informações, consulte [Replace an existing computer and transfer settings (Substituir um computador existente e transferir configurações)](../deploy-use/replace-an-existing-computer-and-transfer-settings.md).  
+- **Disponibilizar sistemas operacionais no Centro de Software**: é possível implantar um sistema operacional e disponibilizá-lo no Centro de Software. Os clientes do Configuration Manager podem iniciar a instalação do sistema operacional no Centro de Software. Para mais informações, consulte [Replace an existing computer and transfer settings (Substituir um computador existente e transferir configurações)](../deploy-use/replace-an-existing-computer-and-transfer-settings.md).  
 
--   **Implantações multicast**: as implantações multicast conservam a largura de banda da rede enviando simultaneamente dados a vários clientes, em vez de enviar uma cópia dos dados a cada cliente por uma conexão separada. Nesse método de implantação, a imagem do sistema operacional é enviada para um ponto de distribuição. Isso, por sua vez, implanta a imagem quando os computadores cliente solicitam a implantação. Para mais informações, consulte [Usar o multicast para implantar o Windows pela rede](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
+- **Implantações multicast**: as implantações multicast conservam a largura de banda da rede enviando simultaneamente dados a vários clientes do em vez de enviar uma cópia dos dados a cada cliente por uma conexão separada. Nesse método de implantação, a imagem do sistema operacional é enviada para um ponto de distribuição. Isso, por sua vez, implanta a imagem quando os computadores cliente solicitam a implantação. Para mais informações, consulte [Usar o multicast para implantar o Windows pela rede](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
 
--   **Implantações de mídia inicializável**: as implantações de mídia inicializável permitem implantar o sistema operacional quando o computador de destino é iniciado. Quando o computador de destino é iniciado, ele se conecta à rede e recupera a sequência de tarefas, a imagem do sistema operacional e qualquer outro conteúdo necessário da rede. Como esse conteúdo não está incluído na mídia, você pode atualizar o conteúdo sem precisar recriar a mídia. Para obter mais informações, consulte [Criar mídia inicializável](../deploy-use/create-bootable-media.md).  
+- **Implantações de mídia inicializável**: as implantações de mídia inicializável permitem implantar o sistema operacional quando o computador de destino é iniciado. Quando o computador de destino é iniciado, ele se conecta à rede e recupera a sequência de tarefas, a imagem do sistema operacional e qualquer outro conteúdo necessário da rede. Como esse conteúdo não está incluído na mídia, você pode atualizar o conteúdo sem precisar recriar a mídia. Para obter mais informações, consulte [Criar mídia inicializável](../deploy-use/create-bootable-media.md).  
 
--   **Implantações de mídia autônoma**: as implantações de mídia autônoma permitem implantar sistemas operacionais com as seguintes condições:  
+- **Implantações de mídia autônoma**: as implantações de mídia autônoma permitem implantar sistemas operacionais nas seguintes condições:  
 
-    -   Em ambientes onde não é prático copiar uma imagem do sistema operacional ou outros pacotes grandes através da rede.  
+  - Em ambientes onde não é prático copiar uma imagem do sistema operacional ou outros pacotes grandes através da rede.  
 
-    -   Em ambientes sem conectividade de rede ou conectividade de rede de baixa largura de banda.  
+  - Em ambientes sem conectividade de rede ou conectividade de rede de baixa largura de banda.  
 
-     Para obter mais informações, consulte [Criar mídia autônoma](../deploy-use/create-stand-alone-media.md).  
+    Para obter mais informações, consulte [Criar mídia autônoma](../deploy-use/create-stand-alone-media.md).  
 
--   **Implantações de mídia pré-configurada**: as implantações de mídia pré-configurada permitem implantar um sistema operacional em um computador que não está totalmente provisionado. A mídia pré-configurada é um arquivo em formato WIM (Windows Imaging) que pode ser instalado em um computador sem sistema operacional pelo fabricante ou em um centro de preparo corporativo que não está conectado ao ambiente do Configuration Manager.  
+- **Implantações de mídia em pré-teste**: as implantações de mídia em pré-teste permitem implantar um sistema operacional em um computador que não está totalmente provisionado. A mídia pré-configurada é um arquivo em formato WIM (Windows Imaging) que pode ser instalado em um computador sem sistema operacional pelo fabricante ou em um centro de preparo corporativo que não está conectado ao ambiente do Configuration Manager.  
 
-     Posteriormente, no ambiente do Configuration Manager, o computador será iniciado usando a imagem de inicialização fornecida pela mídia e será conectado ao ponto de gerenciamento do site para as sequências de tarefas disponíveis que concluem o processo de download. Esse método de implantação pode reduzir o tráfego de rede, pois a imagem de inicialização e a imagem do sistema operacional já estão no computador de destino. É possível especificar aplicativos, pacotes e pacotes de driver para incluir na mídia pré-configurada. Para mais informações, consulte [Criar mídia pré-configurada](../deploy-use/create-prestaged-media.md).  
+   Posteriormente, no ambiente do Configuration Manager, o computador será iniciado usando a imagem de inicialização fornecida pela mídia e será conectado ao ponto de gerenciamento do site para as sequências de tarefas disponíveis que concluem o processo de download. Esse método de implantação pode reduzir o tráfego de rede, pois a imagem de inicialização e a imagem do sistema operacional já estão no computador de destino. É possível especificar aplicativos, pacotes e pacotes de driver para incluir na mídia pré-configurada. Para mais informações, consulte [Criar mídia pré-configurada](../deploy-use/create-prestaged-media.md).  
 
 ##  <a name="BKMK_BootImages"></a> Imagens de inicialização  
- Uma imagem de inicialização no Configuration Manager é uma imagem do WinPE (Windows PE) usada durante uma implantação de sistema operacional. Imagens de inicialização são usadas para iniciar um computador no WinPE, que é um sistema operacional mínimo com componentes e serviços limitados que preparam o computador de destino para a instalação do Windows. O Configuration Manager fornece duas imagens de inicialização: uma para dar suporte a plataformas x86 e outra para dar suporte a plataformas x64. Elas são consideradas imagens de inicialização padrão. Imagens de inicialização criadas e adicionadas ao Configuration Manager são consideradas imagens personalizadas. Imagens de inicialização padrão podem ser substituídas automaticamente com a atualização do Configuration Manager. Para obter mais informações sobre imagens de inicialização, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
+ Uma imagem de inicialização no Configuration Manager é uma imagem do WinPE (Windows PE) usada durante uma implantação de sistema operacional. Imagens de inicialização são usadas para iniciar um computador no WinPE, que é um sistema operacional mínimo com componentes e serviços limitados que preparam o computador de destino para a instalação do Windows. O Configuration Manager oferece duas imagens de inicialização: Uma para oferecer suporte a plataformas x86 e outra para oferecer suporte a plataformas x64. Elas são consideradas imagens de inicialização padrão. Imagens de inicialização criadas e adicionadas ao Configuration Manager são consideradas imagens personalizadas. Imagens de inicialização padrão podem ser substituídas automaticamente com a atualização do Configuration Manager. Para obter mais informações sobre imagens de inicialização, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
 
 ##  <a name="BKMK_OSImages"></a> Imagens do sistema operacional  
  As imagens do sistema operacional no Configuration Manager são armazenadas em arquivos de formato WIM (Windows Imaging) e representam uma coleção compactada de arquivos e pastas de referência necessários para instalar e configurar com êxito um sistema operacional em um computador. Para todos os cenários de implantação de sistema operacional, você deve selecionar uma imagem do sistema operacional. É possível usar a imagem do sistema operacional padrão ou compilar a imagem do sistema operacional de um computador de referência configurado. Para obter mais informações, consulte [Gerenciar imagens do sistema operacional](../get-started/manage-operating-system-images.md).  
@@ -87,31 +87,31 @@ ms.locfileid: "32353528"
  Você pode criar vários tipos de mídia que pode ser usados para implantar sistemas operacionais. Isso inclui capturar mídia usada para capturar imagens do sistema operacional e mídia autônoma, em pré-teste e inicializável usada para implantar um sistema operacional. Com o uso da mídia, é possível implantar sistemas operacionais em computadores que não têm uma conexão de rede ou que têm uma conexão de baixa largura de banda no site do Configuration Manager. Para obter mais informações sobre como usar a mídia, consulte [Create task sequence media (Criar mídia de sequência de tarefas)](../deploy-use/create-task-sequence-media.md).  
 
 ##  <a name="BKMK_DeviceDrivers"></a> Drivers de dispositivo  
- É possível instalar drivers de dispositivo em computadores de destino sem incluí-los na imagem do sistema operacional que está sendo implantada. O Configuration Manager fornece um catálogo de drivers que contém referências a todos os drivers de dispositivos importados para o Configuration Manager. O catálogo de drivers está localizado no espaço de trabalho **Biblioteca de Software** e consiste em dois nós: **Drivers** e **Pacotes de Driver**. O nó **Drivers** lista todos os drivers que você importou no catálogo de drivers. Você pode usar esse nó para descobrir os detalhes sobre cada driver importado, para alterar a qual pacote de driver ou imagem de inicialização um driver pertence, para habilitar ou desabilitar um driver e muito mais. Para mais informações, consulte [Manage drivers (Gerenciar drivers)](../get-started/manage-drivers.md).  
+ É possível instalar drivers de dispositivo em computadores de destino sem incluí-los na imagem do sistema operacional que está sendo implantada. O Configuration Manager fornece um catálogo de drivers que contém referências a todos os drivers de dispositivos importados para o Configuration Manager. O catálogo de drivers está localizado no workspace **Biblioteca de Software** e consiste em dois nós: **Drivers** e **Pacotes de driver**. O nó **Drivers** lista todos os drivers que você importou no catálogo de drivers. Você pode usar esse nó para descobrir os detalhes sobre cada driver importado, para alterar a qual pacote de driver ou imagem de inicialização um driver pertence, para habilitar ou desabilitar um driver e muito mais. Para mais informações, consulte [Manage drivers (Gerenciar drivers)](../get-started/manage-drivers.md).  
 
 ##  <a name="BKMK_OSDUserState"></a> Salvar e restaurar o estado do usuário  
  Ao implantar sistemas operacionais, você pode salvar o estado do usuário do computador de destino, implantar o sistema operacional e restaurar o estado do usuário após a implantação de sistemas operacionais. Geralmente, esse processo é usado ao instalar o sistema operacional em um computador cliente do Configuration Manager.  
 
  As informações de estado do usuário são capturadas e restauradas usando sequências de tarefas. Quando as informações de estado do usuário são capturadas, elas podem ser armazenadas de uma das seguintes maneiras:  
 
--   Você pode armazenar os dados de estado do usuário remotamente, configurando um ponto de migração de estado. A sequência de tarefas de captura envia os dados para o ponto de migração de estado. Em seguida, após a implantação do sistema operacional, a sequência de tarefas de restauração recupera os dados e restaura o estado do usuário no computador de destino.  
+- Você pode armazenar os dados de estado do usuário remotamente, configurando um ponto de migração de estado. A sequência de tarefas de captura envia os dados para o ponto de migração de estado. Em seguida, após a implantação do sistema operacional, a sequência de tarefas de restauração recupera os dados e restaura o estado do usuário no computador de destino.  
 
--   Você pode armazenar os dados de estado do usuário localmente em um local específico. Nesse cenário, a sequência de tarefas de captura copia os dados do usuário para um local específico no computador de destino. Em seguida, após a implantação do sistema operacional, a sequência de tarefas de restauração recupera os dados do usuário desse local.  
+- Você pode armazenar os dados de estado do usuário localmente em um local específico. Nesse cenário, a sequência de tarefas de captura copia os dados do usuário para um local específico no computador de destino. Em seguida, após a implantação do sistema operacional, a sequência de tarefas de restauração recupera os dados do usuário desse local.  
 
--   Você pode especificar links físicos que podem ser usados para restaurar os dados do usuário para o local original. Nesse cenário, os dados de estado do usuário permanecem na unidade quando o sistema operacional antigo é removido. Em seguida, após a implantação do sistema operacional, a sequência de tarefas de restauração usa os links físicos para restaurar os dados de estado do usuário para o local original.  
+- Você pode especificar links físicos que podem ser usados para restaurar os dados do usuário para o local original. Nesse cenário, os dados de estado do usuário permanecem na unidade quando o sistema operacional antigo é removido. Em seguida, após a implantação do sistema operacional, a sequência de tarefas de restauração usa os links físicos para restaurar os dados de estado do usuário para o local original.  
 
- Para obter mais informações, consulte [Manage user state (Gerenciar o estado do usuário)](../get-started/manage-user-state.md).  
+  Para obter mais informações, consulte [Manage user state (Gerenciar o estado do usuário)](../get-started/manage-user-state.md).  
 
 ##  <a name="BKMK_UnknownComputer"></a> Implantar em computadores desconhecidos  
  É possível implantar um sistema operacional em computadores não gerenciados pelo Configuration Manager. Não há registro desses computadores no banco de dados do Configuration Manager. Esses computadores são chamados de computadores desconhecidos. Computadores desconhecidos incluem:  
 
--   Um computador no qual o cliente do Configuration Manager não está instalado  
+- Um computador no qual o cliente do Configuration Manager não está instalado  
 
--   Um computador que não foi importado para o Configuration Manager  
+- Um computador que não foi importado para o Configuration Manager  
 
--   Um computador não descoberto pelo Configuration Manager  
+- Um computador não descoberto pelo Configuration Manager  
 
- Para obter mais informações, consulte [Preparar implantações de computador desconhecido](../get-started/prepare-for-unknown-computer-deployments.md).  
+  Para obter mais informações, consulte [Preparar implantações de computador desconhecido](../get-started/prepare-for-unknown-computer-deployments.md).  
 
 ##  <a name="BKMK_UDA"></a> Associar usuários a um computador  
  Ao implantar um sistema operacional, você pode associar usuários ao computador de destino para dar suporte a ações de afinidade de dispositivo de usuário. Quando você associa um usuário ao computador de destino, o usuário administrativo pode, mais tarde, realizar ações em qualquer computador associado a esse usuário, como implantar um aplicativo no computador de um usuário específico. No entanto, ao implantar um sistema operacional, você não pode implantá-lo no computador de um usuário específico. Para mais informações, consulte [Associar usuários a um computador de destino](../get-started/associate-users-with-a-destination-computer.md).  

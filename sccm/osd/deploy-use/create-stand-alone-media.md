@@ -10,12 +10,12 @@ ms.assetid: c6b9ccd2-78d9-4f0e-b25a-70d0866300ba
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 35dd110c2566dab945bb0701e113becb3412d65c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: e2a9c4a1d2feba0c96dcbe3a2f7ee03c7c5a4555
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351931"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418689"
 ---
 # <a name="create-stand-alone-media-with-system-center-configuration-manager"></a>Criar mídia autônoma com o System Center Configuration Manager
 
@@ -81,55 +81,55 @@ Para executar o Assistente para Criar Mídia de Sequência de Tarefas para criar
 
 ## <a name="to-create-stand-alone-media"></a>Para criar mídia autônoma  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2. No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Mídia de Sequência de Tarefas** para iniciar o Assistente para Criar Mídia de Sequência de Tarefas.  
+3. Na guia **Início** , no grupo **Criar** , clique em **Criar Mídia de Sequência de Tarefas** para iniciar o Assistente para Criar Mídia de Sequência de Tarefas.  
 
-4.  Na página **Selecionar o Tipo de Mídia** , especifique as opções a seguir e clique em **Próximo**.  
+4. Na página **Selecionar o Tipo de Mídia** , especifique as opções a seguir e clique em **Próximo**.  
 
-    -   Selecione **Mídia autônoma**.  
+   -   Selecione **Mídia autônoma**.  
 
-    -   Opcionalmente, se você quiser permitir que o sistema operacional seja implantado sem exigir a entrada do usuário, selecione **Permitir implantação autônoma do sistema operacional**. Quando você seleciona essa opção, o usuário não precisa inserir informações de configuração de rede nem sequências de tarefas opcionais. Se a mídia estiver configurada para proteção de senha, o usuário ainda receberá uma solicitação de senha.  
+   -   Opcionalmente, se você quiser permitir que o sistema operacional seja implantado sem exigir a entrada do usuário, selecione **Permitir implantação autônoma do sistema operacional**. Quando você seleciona essa opção, o usuário não precisa inserir informações de configuração de rede nem sequências de tarefas opcionais. Se a mídia estiver configurada para proteção de senha, o usuário ainda receberá uma solicitação de senha.  
 
-5.  Na página **Tipo de Mídia**, especifique se a mídia é uma unidade USB removível ou um conjunto de CD/DVD:  
+5. Na página **Tipo de Mídia**, especifique se a mídia é uma unidade USB removível ou um conjunto de CD/DVD:  
 
-    > [!IMPORTANT]  
-    >  Por padrão, a mídia autônoma usa um sistema de arquivos FAT32. Não é possível criar uma mídia autônoma em uma unidade USB removível cujo conteúdo inclui um arquivo de tamanho superior a 4 GB.  
+   > [!IMPORTANT]  
+   >  Por padrão, a mídia autônoma usa um sistema de arquivos FAT32. Não é possível criar uma mídia autônoma em uma unidade USB removível cujo conteúdo inclui um arquivo de tamanho superior a 4 GB.  
 
-    -   Ao selecionar a **Unidade USB removível**, especifique a unidade na qual você deseja armazenar o conteúdo.  
+   - Ao selecionar a **Unidade USB removível**, especifique a unidade na qual você deseja armazenar o conteúdo.  
 
-        - **Formatar a unidade USB removível (FAT32) e torná-la inicializável**: por padrão, permita que o Configuration Manager prepare a unidade USB. Muitos dispositivos UEFI mais recentes requerem uma partição FAT32 inicializável. No entanto, esse formato também limita o tamanho dos arquivos e a capacidade geral da unidade. Se você já tiver formatado e configurado a unidade removível, desabilite essa opção. 
+     - **Formatar a unidade USB removível (FAT32) e torná-la inicializável**: por padrão, permitir que o Configuration Manager prepare a unidade USB. Muitos dispositivos UEFI mais recentes requerem uma partição FAT32 inicializável. No entanto, esse formato também limita o tamanho dos arquivos e a capacidade geral da unidade. Se você já tiver formatado e configurado a unidade removível, desabilite essa opção. 
 
-    -   Caso selecione **Conjunto de CD/DVD**, especifique a capacidade da mídia, o nome e o caminho dos arquivos de saída. O assistente grava os arquivos de saída nesse local. Por exemplo: **\\\nomedoservidor\pasta\arquivodesaida.iso**  
+   - Caso selecione **Conjunto de CD/DVD**, especifique a capacidade da mídia, o nome e o caminho dos arquivos de saída. O assistente grava os arquivos de saída nesse local. Por exemplo: **\\\nomedoservidor\pasta\arquivodesaida.iso**  
 
-         Se a capacidade da mídia for muito pequena para armazenar todo o conteúdo, vários arquivos são criados e você deve armazenar o conteúdo em vários CDs ou DVDs. Se várias mídias forem necessárias, o Configuration Manager adicionará um número de sequência ao nome de cada arquivo de saída criado. Além disso, se você implantar um aplicativo juntamente com o sistema operacional e o aplicativo não couber em uma única mídia, o Configuration Manager armazenará o aplicativo em várias mídias. Quando a mídia autônoma é executada, o Configuration Manager solicita ao usuário a próxima mídia, na qual o aplicativo está armazenado.   
+      Se a capacidade da mídia for muito pequena para armazenar todo o conteúdo, vários arquivos são criados e você deve armazenar o conteúdo em vários CDs ou DVDs. Se várias mídias forem necessárias, o Configuration Manager adicionará um número de sequência ao nome de cada arquivo de saída criado. Além disso, se você implantar um aplicativo juntamente com o sistema operacional e o aplicativo não couber em uma única mídia, o Configuration Manager armazenará o aplicativo em várias mídias. Quando a mídia autônoma é executada, o Configuration Manager solicita ao usuário a próxima mídia, na qual o aplicativo está armazenado.   
 
-         > [!IMPORTANT]  
-         >  Se você selecionar uma imagem .iso existente, o Assistente de Mídia de Sequência de Tarefas excluirá essa imagem da unidade ou do compartilhamento assim que você prosseguir para a próxima página do assistente. A imagem existente será excluída mesmo se você cancelar o assistente.  
+      > [!IMPORTANT]  
+      >  Se você selecionar uma imagem .iso existente, o Assistente de Mídia de Sequência de Tarefas excluirá essa imagem da unidade ou do compartilhamento assim que você prosseguir para a próxima página do assistente. A imagem existente será excluída mesmo se você cancelar o assistente.  
 
      Clique em **Avançar**.  
 
-6.  Na página **Segurança**, escolha entre as seguintes configurações e clique em **Avançar**:
-    - **Proteger mídia com senha**: insira uma senha forte para ajudar a proteger a mídia. Se você especificar uma senha, ela será necessária para usar a mídia.  
+6. Na página **Segurança**, escolha entre as seguintes configurações e clique em **Avançar**:
+   - **Proteger mídia com uma senha**: insira uma senha forte para ajudar a proteger a mídia. Se você especificar uma senha, ela será necessária para usar a mídia.  
 
-        > [!IMPORTANT]  
-        >  Na mídia autônoma, somente as etapas da sequência de tarefas e suas variáveis são criptografadas. O conteúdo restante da mídia não é criptografado, portanto não inclua nenhuma informação confidencial nos scripts da sequência de tarefas. Armazene e implemente todas as informações confidenciais usando as variáveis da sequência de tarefas.  
+       > [!IMPORTANT]  
+       >  Na mídia autônoma, somente as etapas da sequência de tarefas e suas variáveis são criptografadas. O conteúdo restante da mídia não é criptografado, portanto não inclua nenhuma informação confidencial nos scripts da sequência de tarefas. Armazene e implemente todas as informações confidenciais usando as variáveis da sequência de tarefas.  
 
-    - **Selecione um intervalo de datas válido para essa mídia autônoma** (a partir da versão 1702): defina datas de início e vencimento opcionais na mídia. Essas configurações estão desabilitadas por padrão. As datas são comparadas com a hora do sistema no computador antes de a mídia autônoma ser executada. Quando a hora do sistema for anterior à hora de início ou posterior à hora de expiração, a mídia autônoma não será iniciada. Essas opções também estão disponíveis usando o cmdlet New-CMStandaloneMedia PowerShell.
-7.  Na página **CD/DVD Autônomo** , especifique a sequência de tarefas que implanta o sistema operacional e clique em **Próxima**. Para adicionar conteúdo à mídia autônoma para dependências de aplicativos, escolha **Detectar dependências de aplicativos associados e adicioná-los a esta mídia**.
-    > [!TIP]
-    > Se você não vir as dependências de aplicativo esperadas, cancele a seleção e selecione novamente a configuração **Detectar dependências de aplicativos associadas e adicioná-las a esta mídia** para atualizar a lista.
+   - **Selecione o intervalo de datas em que esta mídia autônoma será válida** (começando na versão 1702): defina datas de início e término opcionais na mídia. Essas configurações estão desabilitadas por padrão. As datas são comparadas com a hora do sistema no computador antes de a mídia autônoma ser executada. Quando a hora do sistema for anterior à hora de início ou posterior à hora de expiração, a mídia autônoma não será iniciada. Essas opções também estão disponíveis usando o cmdlet New-CMStandaloneMedia PowerShell.
+7. Na página **CD/DVD Autônomo** , especifique a sequência de tarefas que implanta o sistema operacional e clique em **Próxima**. Para adicionar conteúdo à mídia autônoma para dependências de aplicativos, escolha **Detectar dependências de aplicativos associados e adicioná-los a esta mídia**.
+   > [!TIP]
+   > Se você não vir as dependências de aplicativo esperadas, cancele a seleção e selecione novamente a configuração **Detectar dependências de aplicativos associadas e adicioná-las a esta mídia** para atualizar a lista.
 
-    O assistente permite que você selecione apenas as sequências de tarefas associadas a uma imagem de inicialização.  
+   O assistente permite que você selecione apenas as sequências de tarefas associadas a uma imagem de inicialização.  
 
 8. Na página **Selecionar Aplicativo** (disponível a partir da versão 1702), especifique o conteúdo do aplicativo a ser incluído como parte do arquivo de mídia e clique em **Avançar**.
 9. Na página **Selecionar Pacote** (disponível a partir da versão 1702), especifique o conteúdo do pacote a ser incluído como parte do arquivo de mídia e clique em **Avançar**.
 10. Na página **Selecionar Pacote do Driver** (disponível a partir da versão 1702), especifique o conteúdo do pacote do driver a ser incluído como parte do arquivo de mídia e clique em **Avançar**.
-11.  Na página **Pontos de Distribuição**, especifique os pontos de distribuição que tem o conteúdo exigido e clique em **Avançar**.  
+11. Na página **Pontos de Distribuição**, especifique os pontos de distribuição que tem o conteúdo exigido e clique em **Avançar**.  
 
-     O Configuration Manager exibe apenas pontos de distribuição que tenham conteúdo. Distribua todo o conteúdo associado à sequência de tarefas para pelo menos um ponto de distribuição antes de continuar. Após distribuir o conteúdo, atualize a lista de pontos de distribuição. Remova os pontos de distribuição que já foram selecionados nessa página, vá para a página anterior e volte para a página **Pontos de Distribuição**. Como alternativa, reinicie o assistente. Para obter mais informações, consulte [Distribuir o conteúdo referenciado por uma sequência de tarefas](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS) e [Gerenciar conteúdo e infraestrutura de conteúdo](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+    O Configuration Manager exibe apenas pontos de distribuição que tenham conteúdo. Distribua todo o conteúdo associado à sequência de tarefas para pelo menos um ponto de distribuição antes de continuar. Após distribuir o conteúdo, atualize a lista de pontos de distribuição. Remova os pontos de distribuição que já foram selecionados nessa página, vá para a página anterior e volte para a página **Pontos de Distribuição**. Como alternativa, reinicie o assistente. Para obter mais informações, consulte [Distribuir o conteúdo referenciado por uma sequência de tarefas](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS) e [Gerenciar conteúdo e infraestrutura de conteúdo](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
     > [!NOTE]  
     >  É necessário ter direitos de acesso de **Leitura** à biblioteca de conteúdo nos pontos de distribuição.  
@@ -147,7 +147,7 @@ Para executar o Assistente para Criar Mídia de Sequência de Tarefas para criar
 
 13. Conclua o assistente.  
 
- Os arquivos de mídia autônoma (.iso) são criados na pasta de destino. Se tiver selecionado **CD/DVD Autônomo**, agora você poderá copiar os arquivos de saída para um conjunto de CDs ou DVDs.  
+    Os arquivos de mídia autônoma (.iso) são criados na pasta de destino. Se tiver selecionado **CD/DVD Autônomo**, agora você poderá copiar os arquivos de saída para um conjunto de CDs ou DVDs.  
 
 ##  <a name="BKMK_StandAloneMediaTSExample"></a> Exemplo de sequência de tarefas para mídia autônoma  
  Para criar uma sequência de tarefas para implantar um sistema operacional usando mídia autônoma, use a tabela a seguir como um guia. A tabela ajuda você a decidir a sequência geral de etapas de sequência de tarefas. Ela também ajuda a organizar e estruturar as etapas de sequência de tarefas em grupos lógicos. A sequência de tarefas que você criar pode variar do que esse exemplo e pode conter mais ou menos etapas da sequência de tarefas e grupos.  

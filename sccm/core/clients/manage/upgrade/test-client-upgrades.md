@@ -10,12 +10,12 @@ ms.assetid: 49ef2ed2-2e15-4637-8b63-1d5b7f9c17e1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 019b275177e1f264a4bfc2926cfe45ebd0be8eae
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 94ef3ce54db0efb7be7e9d6d0709f48bb212f7e7
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334565"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416530"
 ---
 # <a name="how-to-test-client-upgrades-in-a-pre-production-collection-in-system-center-configuration-manager"></a>Como testar atualizações do cliente em uma coleção de pré-produção no System Center Configuration Manager
 
@@ -38,15 +38,15 @@ ms.locfileid: "32334565"
 > [!IMPORTANT]
 > Não há suporte para a implantação de cliente de pré-produção para computadores de grupo de trabalho. Eles não podem usar a autenticação necessária para o ponto de distribuição acessar o pacote de cliente de pré-produção.  Eles receberão o cliente mais recente quando for promovido para o cliente de produção.
 
-1. [Configure uma coleção](..\collections\create-collections.md) que contém os computadores nos quais você deseja implantar o cliente de pré-produção.   
+1. [Configure uma coleção](../collections/create-collections.md) que contém os computadores nos quais você deseja implantar o cliente de pré-produção.   
 
-1.  No console do Configuration Manager, abra **Administração** > **Configuração do Site** > **Sites** e selecione **Configurações da Hierarquia**.  
+2. No console do Configuration Manager, abra **Administração** > **Configuração do Site** > **Sites** e selecione **Configurações da Hierarquia**.  
 
-     Na guia **Atualização de cliente** das **Propriedades de configurações de hierarquia**:  
+    Na guia **Atualização de cliente** das **Propriedades de configurações de hierarquia**:  
 
-    -   Selecione **Atualizar todos os clientes na coleção de pré-produção automaticamente usando o cliente de pré-produção**  
+   -   Selecione **Atualizar todos os clientes na coleção de pré-produção automaticamente usando o cliente de pré-produção**  
 
-    -   Digite o nome de uma coleção para usar como uma coleção de pré-produção  
+   -   Digite o nome de uma coleção para usar como uma coleção de pré-produção  
 
 ![Testar atualizações do cliente](media/test-client-upgrades.png)
 

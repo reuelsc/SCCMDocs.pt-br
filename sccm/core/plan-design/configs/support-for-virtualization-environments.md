@@ -10,12 +10,12 @@ ms.assetid: 1098e8c5-9676-4c2b-841b-ec88bd04e495
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 374a1643c5ea439a7406bbb1f6b53322caa50871
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: ec7db94635bcc03b21392db19eb668917f38de6d
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333317"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417210"
 ---
 # <a name="support-for-virtualization-environments-for-system-center-configuration-manager"></a>Suporte para ambientes de virtualização do System Center Configuration Manager
 
@@ -25,16 +25,18 @@ O Configuration Manager dá suporte à instalação de funções de cliente e do
 
  Por exemplo, se você usar o Microsoft Hyper-V Server 2012 para hospedar uma máquina virtual que executa o Windows Server 2012, será possível instalar as funções do cliente ou do sistema de sites na máquina virtual (Windows Server 2012), mas não no host (Microsoft Hyper-V Server 2012).  
 
-|Ambiente de virtualização|  
-|--------------------------------|  
-|Windows Server 2008 R2|  
-|Microsoft Hyper-V Server 2008 R2|  
-|Windows Server 2012|  
-|Microsoft Hyper-V Server 2012|  
-|Windows Server 2012 R2|
-|Windows Server 2016 <sup>(consulte a *observação 1*)</sup>|
-|Microsoft Hyper-V Server 2016 <sup>(consulte a *observação 1*)|
--  *Observação 1*: o Configuration Manager não dá suporte à [virtualização aninhada](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/what-s-new-in-hyper-v-on-windows#a-namebkmknestedanested-virtualization-new), que é uma novidade no Windows Server 2016.
+
+|            Ambiente de virtualização             |
+|---------------------------------------------------|
+|              Windows Server 2008 R2               |
+|         Microsoft Hyper-V Server 2008 R2          |
+|                Windows Server 2012                |
+|           Microsoft Hyper-V Server 2012           |
+|              Windows Server 2012 R2               |
+|   Windows Server 2016 <sup>(consulte a *observação 1*)</sup>   |
+| Microsoft Hyper-V Server 2016 <sup>(consulte a *observação 1*) |
+
+-  *Observação 1*: o Configuration Manager não é compatível com a [virtualização aninhada](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/what-s-new-in-hyper-v-on-windows#a-namebkmknestedanested-virtualization-new), que é nova no Windows Server 2016.
 
 
  Cada computador virtual usado deve atender ou exceder aos mesmos requisitos de hardware e software que seriam usados para um computador físico do Configuration Manager.  
@@ -51,11 +53,11 @@ Nenhuma consideração especial é fornecida para máquinas virtuais. Por exempl
 ##  <a name="bkmk_Azure"></a> Máquinas virtuais do Microsoft Azure  
  O Configuration Manager pode ser executado em máquinas virtuais no Azure da mesma forma que é executado localmente dentro da rede corporativa física. Você pode usar o Configuration Manager com as máquinas virtuais do Azure nos seguintes cenários:  
 
--   **Cenário 1:** é possível executar o Configuration Manager em uma máquina virtual do Azure e usá-lo para gerenciar os clientes instalados em outras máquinas virtuais do Azure.  
+-   **Cenário 1:** você pode executar o Configuration Manager em uma máquina virtual do Azure e usá-lo para gerenciar clientes instalados em outras máquinas virtuais do Azure.  
 
--   **Cenário 2:** é possível executar o Configuration Manager em uma máquina virtual do Azure e usá-lo para gerenciar clientes que não estão sendo executados no Azure.  
+-   **Cenário 2:** você pode executar o Configuration Manager em uma máquina virtual do Azure e usá-lo para gerenciar os clientes que não estão em execução no Azure.  
 
--   **Cenário 3:** é possível executar diferentes funções do sistema de sites do Configuration Manager em máquinas virtuais do Azure durante a execução de outras funções em sua rede corporativa física (com conectividade de rede apropriada para comunicações).  
+-   **Cenário 3:** você pode executar diferentes funções do sistema de sites do Configuration Manager em máquinas virtuais do Azure durante a execução de outras funções em sua rede corporativa física (com conectividade de rede apropriada para comunicações).  
 
 Os mesmos requisitos do System Center Configuration Manager para redes, configurações com suporte e requisitos de hardware que se aplicam ao instalar o Configuration Manager localmente em sua rede corporativa física também se aplicam à instalação em máquinas virtuais do Azure.  
 

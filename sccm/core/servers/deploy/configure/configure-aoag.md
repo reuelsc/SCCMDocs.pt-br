@@ -10,12 +10,12 @@ ms.assetid: 7e4ec207-bb49-401f-af1b-dd705ecb465d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2baafa04c315ebc7512504f042c89615b7217b4c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 10b15f8463bb54df859f09379f41a809a45fc5b9
+ms.sourcegitcommit: 81e3666c41eb976cc7651854042dafe219e2e467
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340719"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53747119"
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Configurar grupos de disponibilidade AlwaysOn do SQL Server para o Configuration Manager
 
@@ -38,38 +38,38 @@ Para concluir este procedimento, a conta usada deverá ser:
 -   Um **sysadmin** em cada instância do SQL Server que hospeda o banco de dados do site.
 
 ### <a name="to-create-and-configure-an-availability-group-for-configuration-manager"></a>Para criar e configurar um grupo de disponibilidade para o Configuration Manager  
-1.  Use o seguinte comando para parar o site do Configuration Manager: **Preinst.exe /stopsite**. Para saber mais sobre como usar o Preinst.exe, confira [Ferramenta de manutenção de hierarquia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe).
+1. Use o seguinte comando para parar o site do Configuration Manager: **Preinst.exe /stopsite**. Para saber mais sobre como usar o Preinst.exe, confira [Ferramenta de manutenção de hierarquia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe).
 
-2.  Altere o modelo de backup do banco de dados do site de **SIMPLES** para **COMPLETO**.
-Confira [Exibir ou alterar o modelo de recuperação de um banco de dados](/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server) na documentação do SQL Server. (Grupos de disponibilidade são compatíveis apenas com COMPLETO.)
+2. Altere o modelo de backup do banco de dados do site de **SIMPLES** para **COMPLETO**.
+   Confira [Exibir ou alterar o modelo de recuperação de um banco de dados](/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server) na documentação do SQL Server. (Grupos de disponibilidade são compatíveis apenas com COMPLETO.)
 
-3.  Use o SQL Server para criar um backup completo do seu banco de dados do site. Em seguida, siga um destes procedimentos, dependendo se o servidor que hospeda seu banco de dados do site será um membro de réplica do novo grupo de disponibilidade ou não:
-    -   **Será membro de seu grupo de disponibilidade:**  
-        Se você usar esse servidor como o membro de réplica primária inicial do grupo de disponibilidade, não precisará restaurar uma cópia do banco de dados do site para este ou outro servidor no grupo. O banco de dados já estará em vigor na réplica primária e o SQL Server replicará o banco de dados para as réplicas secundárias durante uma etapa posterior.  
+3. Use o SQL Server para criar um backup completo do seu banco de dados do site. Em seguida, siga um destes procedimentos, dependendo se o servidor que hospeda seu banco de dados do site será um membro de réplica do novo grupo de disponibilidade ou não:
+   - **Será membro de seu grupo de disponibilidade:**  
+     Se você usar esse servidor como o membro de réplica primária inicial do grupo de disponibilidade, não precisará restaurar uma cópia do banco de dados do site para este ou outro servidor no grupo. O banco de dados já estará em vigor na réplica primária e o SQL Server replicará o banco de dados para as réplicas secundárias durante uma etapa posterior.  
 
-      -    **Não será um membro do grupo de disponibilidade:**   
-    Restaure uma cópia do banco de dados do site para o servidor que hospedará a réplica primária do grupo.
+     -    **Não será um membro do grupo de disponibilidade:**   
+     Restaure uma cópia do banco de dados do site para o servidor que hospedará a réplica primária do grupo.
 
-    Para obter informações sobre como concluir essa etapa, confira [Criar um backup completo de banco de dados](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) e [Restaurar um backup de banco de dados usando SSMS](/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms)na documentação do SQL Server.
+   Para obter informações sobre como concluir essa etapa, confira [Criar um backup completo de banco de dados](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) e [Restaurar um backup de banco de dados usando SSMS](/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms) na documentação do SQL Server.
 
-4.  No servidor que hospedará a réplica primária inicial do grupo, use o [Assistente para Novo Grupo de Disponibilidade](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio) para criar o grupo de disponibilidade. No assistente:
-      -    Na página **Selecionar Banco de Dados**, escolha o banco de dados para o site de seu Configuration Manager.  
+4. No servidor que hospedará a réplica primária inicial do grupo, use o [Assistente para Novo Grupo de Disponibilidade](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio) para criar o grupo de disponibilidade. No assistente:
+   - Na página **Selecionar Banco de Dados**, escolha o banco de dados para o site de seu Configuration Manager.  
 
-      -    Na página **Especificar Réplicas** , configure:
-          -    **Réplicas**: especifique os servidores que hospedarão réplicas secundárias.
+   - Na página **Especificar Réplicas** , configure:
+     -    **Réplicas:** Especifique os servidores que hospedarão réplicas secundárias.
 
-          -    **Ouvinte**: especifique o **Nome DNS do Ouvinte** como um nome DNS completo, como **&lt;Listener_Server>.fabrikam.com**. Ele é usado quando você configura o Configuration Manager para usar o banco de dados do site no grupo de disponibilidade.
+     -    **Ouvinte:** Especifique o **Nome DNS do Ouvinte** como um nome DNS completo, como **&lt;Servidor_do_Ouvinte>.fabrikam.com**. Ele é usado quando você configura o Configuration Manager para usar o banco de dados do site no grupo de disponibilidade.
 
-      -    Na página **Selecionar Sincronização de Dados Inicial** , escolha **Completa**. Depois que o assistente cria o grupo de disponibilidade, o assistente fará backup do log de transações e do banco de dados primário. Em seguida, o assistente os restaura em cada servidor que hospeda uma réplica secundária. (Se você não usar essa etapa, será preciso restaurar uma cópia do banco de dados do site em cada servidor que hospeda uma réplica secundária e unir manualmente esse banco de dados ao grupo.)   
+   - Na página **Selecionar Sincronização de Dados Inicial** , escolha **Completa**. Depois que o assistente cria o grupo de disponibilidade, o assistente fará backup do log de transações e do banco de dados primário. Em seguida, o assistente os restaura em cada servidor que hospeda uma réplica secundária. (Se você não usar essa etapa, será preciso restaurar uma cópia do banco de dados do site em cada servidor que hospeda uma réplica secundária e unir manualmente esse banco de dados ao grupo.)   
 
-5.  Verifique a configuração em cada réplica:   
-  1.    Verifique se a conta de computador do servidor do site é um membro do grupo **Administradores Locais** em cada computador que seja um membro do grupo de disponibilidade.  
+5. Verifique a configuração em cada réplica:   
+   1.    Verifique se a conta de computador do servidor do site é um membro do grupo **Administradores Locais** em cada computador que seja um membro do grupo de disponibilidade.  
 
-  2.  Execute o [script de verificação](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#prerequisites) dos pré-requisitos para confirmar se o banco de dados do site em cada réplica está configurado corretamente.
+   2.  Execute o [script de verificação](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#prerequisites) dos pré-requisitos para confirmar se o banco de dados do site em cada réplica está configurado corretamente.
 
-  3.    Se for necessário definir as configurações em réplicas secundárias, você deverá realizar o failover manualmente da réplica primária para a réplica secundária antes de continuar. Você só pode configurar o banco de dados de uma réplica primária. Para saber mais, veja [Executar um failover manual planejado de um grupo de disponibilidade](/sql/database-engine/availability-groups/windows/perform-a-planned-manual-failover-of-an-availability-group-sql-server) na documentação do SQL Server.
+   3.    Se for necessário definir as configurações em réplicas secundárias, você deverá realizar o failover manualmente da réplica primária para a réplica secundária antes de continuar. Você só pode configurar o banco de dados de uma réplica primária. Para saber mais, veja [Executar um failover manual planejado de um grupo de disponibilidade](/sql/database-engine/availability-groups/windows/perform-a-planned-manual-failover-of-an-availability-group-sql-server) na documentação do SQL Server.
 
-6.  Depois que todas as réplicas atenderem aos requisitos, o grupo de disponibilidade estará pronto para ser usado com o Configuration Manager.
+6. Depois que todas as réplicas atenderem aos requisitos, o grupo de disponibilidade estará pronto para ser usado com o Configuration Manager.
 
 ## <a name="configure-a-site-to-use-the-database-in-the-availability-group"></a>Configurar um site para usar o banco de dados do site no grupo de disponibilidade
 Depois que você [criar e configurar o grupo de disponibilidade](#create-and-configure-an-availability-group), use a manutenção de site do Configuration Manager para configurar o site para usar o banco de dados que é hospedado pelo grupo de disponibilidade.
@@ -91,11 +91,11 @@ Para concluir este procedimento, a conta usada para executar a instalação do C
 3.  Escolha a opção **Modificar configuração do SQL Server** e clique em **Avançar**.
 
 4.  Reconfigure o seguinte para o banco de dados do site:
-    -   **Nome do SQL Server:** insira o nome virtual do **ouvinte** do grupo de disponibilidade configurado ao criar o grupo de disponibilidade. O nome virtual deve ser um nome DNS completo, como **&lt;*endpointServer*>.fabrikam.com**.  
+    -   **Nome do SQL Server:** Insira o nome virtual do **ouvinte** do grupo de disponibilidade configurado ao criar o grupo de disponibilidade. O nome virtual deve ser um nome DNS completo, como **&lt;*endpointServer*>.fabrikam.com**.  
 
-    -   **Instância:** esse valor deve estar em branco para especificação da instância padrão do *ouvinte* do grupo de disponibilidade. Se o banco de dados do site atual for executado em uma instância nomeada, esta será listada e deverá ser apagada.
+    -   **Instância:** Esse valor deve estar em branco para especificação da instância padrão do *ouvinte* do grupo de disponibilidade. Se o banco de dados do site atual for executado em uma instância nomeada, esta será listada e deverá ser apagada.
 
-    -   **Banco de Dados:** deixe o nome como ele aparece. Esse é o nome do banco de dados do site atual.
+    -   **Banco de dados:** Deixe o nome como ele aparece. Esse é o nome do banco de dados do site atual.
 
 5.  Depois de fornecer as informações do novo local do banco de dados, conclua a Instalação com o processo e as configurações normais.
 
@@ -160,11 +160,11 @@ Para concluir este procedimento, a conta usada deverá ser:
 7.  Escolha a opção **Modificar configuração do SQL Server** e clique em **Avançar**.  
 
 8.  Reconfigure o seguinte para o banco de dados do site:
-    -   **Nome do SQL Server:** insira o nome do servidor que agora hospeda o banco de dados do site.
+    -   **Nome do SQL Server:** Insira o nome do servidor que agora hospeda o banco de dados do site.
 
-    -   **Instância:** especifique a instância nomeada que hospeda o banco de dados do site ou deixe em branco se o banco de dados estiver na instância padrão.
+    -   **Instância:** Especifique a instância nomeada que hospeda o banco de dados do site ou deixe em branco se o banco de dados estiver na instância padrão.
 
-    -   **Banco de Dados:** deixe o nome como ele aparece. Esse é o nome do banco de dados do site atual.    
+    -   **Banco de dados:** Deixe o nome como ele aparece. Esse é o nome do banco de dados do site atual.    
 
 9.  Depois de fornecer as informações do novo local do banco de dados, conclua a Instalação com o processo e as configurações normais. Quando a Instalação é concluída, o site reinicia e começa a usar o novo local do banco de dados.    
 

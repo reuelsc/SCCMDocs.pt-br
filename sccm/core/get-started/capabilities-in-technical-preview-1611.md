@@ -10,12 +10,12 @@ ms.assetid: d2ad00e8-9f10-41b6-816a-d8542c23a22e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d610b9f5980376bc9859fcd1e8bb34660e068b09
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 71ad5ae8ff823d03951d5f9ae1a13e8051cba23e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335007"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416564"
 ---
 # <a name="capabilities-in-technical-preview-1611-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1611 do System Center Configuration Manager
 
@@ -30,11 +30,11 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
   - Opções de Memória de Criação de Índice do SQL
   - Verifica se há suporte para a versão do SQL Server  
 
- Como esses são apenas avisos, eles podem ser ignorados.
+  Como esses são apenas avisos, eles podem ser ignorados.
 
-- ***PowerShell***: ao conectar-se ao Windows PowerShell no console do Configuration Manager, você poderá receber o seguinte erro: **Microsoft.ConfigurationManagement.PowerShell.Types.ps1xml não é assinado digitalmente**.  
+- ***PowerShell***: quando você se conectar ao Windows PowerShell do console do Configuration Manager, poderá receber o seguinte erro: **Microsoft.ConfigurationManagement.PowerShell.Types.ps1xml não é assinado digitalmente**.  
 
-   Você pode resolver esse problema substituindo alguns arquivos por versões assinadas da versão 1610. Copie todos os arquivos com as seguintes extensões da pasta **&lt;diretório de instalação>\AdminConsole\bin\** na sua instalação da versão 1610: **.psd1**, **.ps1xml** e **.psm1**. Cole esses arquivos na pasta **&lt;diretório de instalação>\AdminConsole\bin\** da sua instalação do Technical Preview 1611, substituindo a versão 1611 dos arquivos.
+   Você pode resolver esse problema substituindo alguns arquivos por versões assinadas da versão 1610. Copie todos os arquivos com as seguintes extensões da pasta **&lt;diretório de instalação>\AdminConsole\bin\\** na sua instalação da versão 1610: **.psd1**, **.ps1xml** e **.psm1**. Cole esses arquivos na pasta **&lt;diretório de instalação>\AdminConsole\bin\\** da sua instalação do Technical Preview 1611, substituindo a versão 1611 dos arquivos.
 
 
 **Veja a seguir os novos recursos que você pode experimentar nesta versão.**  

@@ -10,18 +10,18 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ff4cdcc52e9be329fcfa0fd2127c43255c73ad65
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: c4cd6c45d21c58459fcd23ee02db4b5900996939
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893865"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421987"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Sobre as configurações do cliente no Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (branch atual)*
 
-Gerencie todas as configurações de cliente no console do Configuration Manager por meio do nó **Configurações de Cliente** no espaço de trabalho **Administração**. O Configuration Manager é fornecido com um conjunto de configurações padrão. Quando você altera as configurações padrão do cliente, essas configurações são aplicadas a todos os clientes na hierarquia. Você também pode configurar configurações personalizadas do cliente, que substituem as configurações padrão do cliente ao atribuí-las a coleções. Para obter mais informações, consulte [Como definir as configurações de cliente](/sccm/core/clients/deploy/configure-client-settings).
+Gerencie todas as configurações de cliente no console do Configuration Manager por meio do nó **Configurações de Cliente** no workspace **Administração**. O Configuration Manager é fornecido com um conjunto de configurações padrão. Quando você altera as configurações padrão do cliente, essas configurações são aplicadas a todos os clientes na hierarquia. Você também pode configurar configurações personalizadas do cliente, que substituem as configurações padrão do cliente ao atribuí-las a coleções. Para obter mais informações, consulte [Como definir as configurações de cliente](/sccm/core/clients/deploy/configure-client-settings).
 
 As seções a seguir descrevem as configurações e as opções com mais detalhes.  
  
@@ -100,13 +100,13 @@ Essa configuração se aplica aos usuários quando o computador está na intrane
 
 Defina essa opção como **Sim** para que os usuários recebam a política de usuário em computadores baseados na Internet. Os seguintes requisitos também se aplicam:  
 
--   O cliente e o site são configurados para o [gerenciamento de clientes baseado na Internet](/sccm/core/clients/manage/plan-internet-based-client-management) ou um [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).  
+- O cliente e o site são configurados para o [gerenciamento de clientes baseado na Internet](/sccm/core/clients/manage/plan-internet-based-client-management) ou um [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).  
 
--   A configuração **Habilitar política de usuário em clientes** é **Sim**.  
+- A configuração **Habilitar política de usuário em clientes** é **Sim**.  
 
--   O ponto de gerenciamento baseado na Internet autentica com êxito o usuário usando a autenticação do Windows (Kerberos ou NTLM). Para obter mais informações, consulte [Considerações sobre a comunicação do cliente pela Internet](/sccm/core/plan-design/hierarchy/communications-between-endpoints#BKMK_clientspan).  
+- O ponto de gerenciamento baseado na Internet autentica com êxito o usuário usando a autenticação do Windows (Kerberos ou NTLM). Para obter mais informações, consulte [Considerações sobre a comunicação do cliente pela Internet](/sccm/core/plan-design/hierarchy/communications-between-endpoints#BKMK_clientspan).  
 
--   A partir da versão 1710, o gateway de gerenciamento de nuvem autentica o usuário com êxito usando o Azure Active Directory. Para obter mais informações, consulte [Implantar aplicativos disponíveis para o usuário em dispositivos ingressados no Azure AD](\sccm\apps\deploy-use\deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices).  
+- A partir da versão 1710, o gateway de gerenciamento de nuvem autentica o usuário com êxito usando o Azure Active Directory. Para obter mais informações, consulte [Implantar aplicativos disponíveis para o usuário em dispositivos ingressados no Azure AD](/sccm/apps/deploy-use/deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices).  
 
 Se você definir essa opção como **Não** ou se um dos requisitos anteriores não for atendido, um computador na Internet receberá somente as políticas do computador. Nesse cenário, os usuários ainda podem ver, solicitar e instalar aplicativos de um catálogo de aplicativos baseados na Internet. Se essa configuração for **Não**, mas **Habilitar política do usuário em clientes** for **Sim**, os usuários não receberão as políticas de usuário até que o computador esteja conectado à intranet.  
 
@@ -216,21 +216,21 @@ Defina essa opção como **Sim** para que os dispositivos usem um serviço local
 
 Configure como os usuários podem iniciar a instalação de software, as atualizações de software e as sequências de tarefas:  
 
--   **Todos os Usuários**: os usuários com qualquer permissão, exceto Convidado.  
+-   **Todos os Usuários**: Os usuários com qualquer permissão, exceto Convidado.  
 
--   **Somente Administradores**: os usuários devem ser membros do grupo local de Administradores.  
+-   **Somente Administradores**: Os usuários devem ser membros do grupo local de Administradores.  
 
--   **Somente Administradores e usuários primários**: os usuários devem ser membros do grupo local de Administradores ou um usuário primário no computador.  
+-   **Somente administradores e usuários primários**: Os usuários devem ser membros do grupo local de Administradores ou um usuário primário no computador.  
 
--   **Nenhum Usuário**: nenhum usuário conectado a um computador cliente pode iniciar a instalação de software, as atualizações de software e as sequências de tarefas. Implantações obrigatórias para o computador são sempre instaladas na data limite. Os usuários não podem iniciar a instalação do software usando o Catálogo de Aplicativos ou o Centro de Software.  
+-   **Nenhum Usuário**: Nenhum usuário conectado a um computador cliente pode iniciar a instalação de software, as atualizações de software e as sequências de tarefas. Implantações obrigatórias para o computador são sempre instaladas na data limite. Os usuários não podem iniciar a instalação do software usando o Catálogo de Aplicativos ou o Centro de Software.  
 
 ### <a name="suspend-bitlocker-pin-entry-on-restart"></a>Suspender a entrada de PIN do BitLocker na reinicialização
 
 Se os computadores exigirem a entrada de PIN do BitLocker, essa opção ignorará o requisito de inserção de um PIN quando o computador for reiniciado após uma instalação de software.  
 
--   **Sempre**: o Configuration Manager suspende temporariamente o BitLocker após ele ter instalado um software que exige reinicialização e ter iniciado a reinicialização do computador. Essa configuração se aplica somente a uma reinicialização do computador iniciada pelo Configuration Manager. Essa configuração não suspende o requisito de inserção de PIN do BitLocker quando o usuário reinicia o computador. O requisito de entrada de PIN do BitLocker é retomado após a inicialização do Windows.
+-   **Sempre**: O Configuration Manager suspende temporariamente o BitLocker após ele ter instalado um software que exige reinicialização e ter iniciado a reinicialização do computador. Essa configuração se aplica somente a uma reinicialização do computador iniciada pelo Configuration Manager. Essa configuração não suspende o requisito de inserção de PIN do BitLocker quando o usuário reinicia o computador. O requisito de entrada de PIN do BitLocker é retomado após a inicialização do Windows.
 
--   **Nunca**: o Configuration Manager não suspende o BitLocker após ter instalado o software que exige a reinicialização. Nesse cenário, a instalação do software não pode terminar até que o usuário insira o PIN para concluir o processo de inicialização padrão e carregar o Windows.
+-   **Nunca**: O Configuration Manager não suspende o BitLocker após ter instalado o software que exige a reinicialização. Nesse cenário, a instalação do software não pode terminar até que o usuário insira o PIN para concluir o processo de inicialização padrão e carregar o Windows.
 
 ### <a name="additional-software-manages-the-deployment-of-applications-and-software-updates"></a>O software adicional gerencia a implantação de aplicativos e as atualizações de software
 
@@ -247,20 +247,20 @@ Habilite essa opção somente se uma das seguintes condições forem aplicáveis
 
 Configurar como os clientes do Configuration Manager podem executar scripts do Windows PowerShell. Você pode usar esses scripts para detecção e configuração de itens em configurações de conformidade. Você também pode enviar os scripts em uma implantação como um script padrão.  
 
--   **Ignorar**: o cliente do Configuration Manager ignora a configuração do Windows PowerShell no computador cliente para que os scripts não assinados possam ser executados.  
+-   **Bypass**: O cliente do Configuration Manager ignora a configuração do Windows PowerShell no computador cliente para que os scripts não assinados possam ser executados.  
 
--   **Restrito**: o cliente do Configuration Manager usa a configuração atual do PowerShell no computador cliente. Essa configuração determina se é possível executar scripts não assinados.  
+-   **Restrito**: O cliente do Configuration Manager usa a configuração atual do PowerShell no computador cliente. Essa configuração determina se é possível executar scripts não assinados.  
 
--   **Tudo Assinado**: o cliente do Configuration Manager executará scripts apenas se forem assinados por um fornecedor confiável. Essa restrição aplica-se, independentemente da configuração atual do PowerShell no computador cliente.  
+-   **Tudo Assinado**: O cliente do Configuration Manager executará scripts apenas se forem assinados por um fornecedor confiável. Essa restrição aplica-se, independentemente da configuração atual do PowerShell no computador cliente.  
 
 Essa opção exige no mínimo a versão do Windows PowerShell 2.0. O padrão é todos **Tudo Assinado**.  
 
 > [!TIP]  
 >  Se os scripts não assinados não forem executados devido a essa configuração do cliente, o Configuration Manager relatará esse erro das seguintes maneiras:  
 >   
-> -   O espaço de trabalho **Monitoramento** no console exibe a ID de erro de estado de implantação **0x87D00327**. Ele também exibe a descrição **O script não está assinado**.  
-> -   Os relatórios exibem o tipo **Erro de descoberta**. Em seguida, os relatórios exibem o tipo de erro **0x87D00327** e a descrição **O script não está assinado** ou o código de erro **0x87D00320** e a descrição **O host de script ainda não foi instalado**. Um relatório de exemplo é **Detalhes de erros de itens de configuração em uma linha de base de configuração para um ativo**.  
-> -   O arquivo **DcmWmiProvider.log** exibe a mensagem **O script não está assinado (erro: 87D00327; fonte: CCM)**.  
+> -   O workspace **Monitoramento** no console exibe a ID de erro de estado de implantação **0x87D00327**. Ele também exibe a descrição **O script não está assinado**.  
+> -   Os relatórios exibem o tipo **Erro de descoberta**. Em seguida, os relatórios exibem o tipo de erro **0x87D00327** e a descrição **O script não está assinado** ou o código de erro **0x87D00320** e a descrição **O host de script ainda não foi instalado**. Um exemplo de relatório é: **Detalhes de erros de itens de configuração em uma linha de base de configuração para um ativo**.  
+> -   O arquivo **DcmWmiProvider.log** exibe a mensagem **O script não está assinado (Erro: 87D00327; Fonte: CCM)**.  
 
 ### <a name="show-notifications-for-new-deployments"></a>Mostrar notificações para novas implantações
 
@@ -304,8 +304,8 @@ Para obter mais informações sobre as janelas de manutenção, consulte [Como u
 
 
 ##  <a name="endpoint-protection"></a>Endpoint Protection  
->  [!Tip]   
-> Além das informações a seguir, você pode encontrar detalhes de como usar as configurações do cliente do Endpoint Protection no [Cenário de exemplo: como usar o Endpoint Protection para proteger os computadores contra malware](/sccm/protect/deploy-use/scenarios-endpoint-protection).
+> [!Tip]
+> Além das informações a seguir, você pode encontrar detalhes de como usar as configurações do cliente do Endpoint Protection no [Cenário de exemplo: Usando o Endpoint Protection para proteger computadores contra malware](/sccm/protect/deploy-use/scenarios-endpoint-protection).
 
 ### <a name="manage-endpoint-protection-client-on-client-computers"></a>Gerenciar o cliente Endpoint Protection em computadores cliente
 
@@ -428,9 +428,9 @@ Para que um arquivo MIF seja coletado pelo inventário de hardware, ele deve est
 
 Escolha uma das seguintes opções para essa configuração:  
 
--   **Permitir**: todas as comunicações do cliente são permitidas pela conexão de Internet limitada, a menos que o dispositivo cliente esteja usando uma conexão de dados móvel.  
+-   **Permitir**: Todas as comunicações do cliente são permitidas pela conexão de Internet limitada, a menos que o dispositivo cliente esteja usando uma conexão de dados em roaming.  
 
--   **Limite**: somente as seguintes comunicações do cliente são permitidas pela conexão de Internet limitada:  
+-   **Limitar**: Somente as comunicações do cliente seguintes são permitidas pela conexão de Internet limitada:  
 
     -   Recuperação de política do cliente  
 
@@ -445,7 +445,7 @@ Escolha uma das seguintes opções para essa configuração:
 
     Se o cliente atingir o limite de transferência de dados para a conexão da Internet limitada, o cliente não tentará mais se comunicar com os sites do Configuration Manager.  
 
--   **Bloquear**: o cliente do Configuration Manager não tenta se comunicar com os sites do Configuration Manager quando ele está em uma conexão de Internet limitada. Essa opção é o padrão.  
+-   **Bloquear**: O cliente do Configuration Manager não tenta se comunicar com os sites do Configuration Manager quando ele está em uma conexão de Internet limitada. Essa opção é o padrão.  
 
 
 
@@ -470,18 +470,18 @@ Para obter mais informações sobre o proxy de ativação, veja [Planejar como a
 
 Em seguida, defina as seguintes configurações adicionais, conforme necessário:
 
--   **Número da porta de proxy de ativação (UDP)**: o número da porta que os clientes usam para enviar pacotes de ativação para computadores suspensos. Mantenha a porta padrão 25536 ou altere o número para um valor de sua escolha.  
+-   **Número da porta do proxy de ativação (UDP)**: O número da porta que os clientes usam para enviar pacotes de ativação para computadores suspensos. Mantenha a porta padrão 25536 ou altere o número para um valor de sua escolha.  
 
--   **Número da porta Wake On LAN (UDP)**: mantenha o valor padrão de 9, a menos que tenha alterado o número da porta Wake On LAN (UDP) na guia **Portas** das **Propriedades** do site.  
+-   **Número da porta do Wake On LAN (UDP)**: Mantenha o valor padrão 9, a menos que você tenha alterado o número da porta Wake On LAN (UDP) na guia **Portas** das **Propriedades** do site.  
 
     > [!IMPORTANT]  
     >  Esse número deve corresponder ao número nas **Propriedades**do site. Se você alterar esse número em um só lugar, ele não será atualizado automaticamente em outro lugar.  
 
--   **Exceção do Windows Defender Firewall para proxy de ativação**: o cliente Configuration Manager configura automaticamente o número da porta proxy de ativação em dispositivos que executam o Windows Defender Firewall. Selecione **Configurar** para especificar os perfis de firewall desejados.
+-   **Exceção do Windows Defender Firewall para proxy de ativação**: O cliente do Configuration Manager configura automaticamente o número da porta do proxy de ativação em dispositivos que executam o Windows Defender Firewall. Selecione **Configurar** para especificar os perfis de firewall desejados.
 
     Se os clientes executarem outro firewall, configure-o manualmente para permitir o **Número da porta do proxy de ativação (UDP)**.  
         
--   **Prefixos IPv6, se necessário, para DirectAccess ou outros dispositivos de rede intermediários. Use uma vírgula para especificar várias entradas**: insira os prefixos IPv6 necessários para o proxy de ativação funcionar na sua rede.
+-   **Prefixos IPv6, se necessário, para DirectAccess ou outros dispositivos de rede intermediários. Use uma vírgula para especificar várias entradas**: Insira os prefixos IPv6 necessários para que o proxy de ativação funcione na rede.
 
 
 
@@ -583,11 +583,11 @@ Defina essa opção como **Sim** para usar a NLA (autenticação no nível da re
 ### <a name="select-these-new-settings-to-specify-company-information"></a>Selecionar estas novas configurações para especificar as informações da empresa
 Defina essa opção como **Sim** e, em seguida, especifique as seguintes configurações para criar uma identidade visual do Centro de Software para sua organização:
 
-- **Nome da empresa**: insira o nome da organização que os usuários veem no Centro de Software.  
+- **Nome da empresa**: Insira o nome da organização que os usuários veem no Centro de Software.  
 
-- **Esquema de cores para Centro de Software**: clique em **Selecionar Cor** para definir a cor primária usada pelo Centro de Software.  
+- **Esquema de cores para o Centro de Software**: Clique em **Selecionar Cor** para definir a cor primária usada pelo Centro de Software.  
 
-- **Selecione um logotipo para o Centro de Software**: clique em **Procurar** para selecionar uma imagem a ser exibida no Centro de Software. O logotipo deve ser um JPEG, PNG ou BMP de 400 x 100 pixels com tamanho máximo de 750 KB. O nome do arquivo de logotipo não deve conter espaços.  
+- **Selecionar um logotipo para o Centro de Software**: Clique em **Procurar** para selecionar uma imagem a ser exibida no Centro de Software. O logotipo deve ser um JPEG, PNG ou BMP de 400 x 100 pixels com tamanho máximo de 750 KB. O nome do arquivo de logotipo não deve conter espaços.  
          
 ### <a name="bkmk_HideUnapproved"></a> Ocultar os aplicativos não aprovados no Centro de Software
 Do Configuration Manager versão 1802 em diante, quando você habilita essa opção, os aplicativos disponíveis para o usuário que exigem aprovação são ocultos no Centro de Software.   <!--1355146-->
@@ -656,13 +656,13 @@ Se desejar especificar os tipos de arquivo a serem inventariados, selecione **De
 
 -   Selecione **Novo** para adicionar um novo tipo de arquivo ao inventário. Em seguida, especifique as seguintes informações na caixa de diálogo **Propriedades de Arquivo Inventariado**:  
 
-    -   **Nome**: forneça um nome para o arquivo que você deseja inventariar. Use um asterisco (**&#42;**) curinga para representar qualquer cadeia de texto e um ponto de interrogação (**?**) para representar qualquer caractere único. Por exemplo, se você desejar inventariar todos os arquivos com a extensão .doc, especifique o nome do arquivo **\*.doc**.  
+    -   **Nome**: Forneça um nome para o arquivo que você deseja inventariar. Use um asterisco (**&#42;**) curinga para representar qualquer cadeia de texto e um ponto de interrogação (**?**) para representar qualquer caractere único. Por exemplo, se você desejar inventariar todos os arquivos com a extensão .doc, especifique o nome do arquivo **\*.doc**.  
 
-    -   **Local**: selecione **Definir** para abrir a caixa de diálogo **Propriedades de Caminho**. Configure o inventário de software para pesquisar o arquivo especificado em todos os discos rígidos do cliente, pesquisar um caminho especificado (por exemplo, **C:\Folder**) ou uma variável especificada (por exemplo, *%windir%*). Também é possível pesquisar todas as subpastas no caminho especificado.  
+    -   **Localização**: Selecione **Definir** para abrir a caixa de diálogo **Propriedades de Caminho**. Configure o inventário de software para pesquisar o arquivo especificado em todos os discos rígidos do cliente, pesquisar um caminho especificado (por exemplo, **C:\Folder**) ou uma variável especificada (por exemplo, *%windir%*). Também é possível pesquisar todas as subpastas no caminho especificado.  
 
-    -   **Excluir arquivos criptografados e compactados**: quando você escolhe essa opção, os arquivos compactados ou criptografados não são inventariados.  
+    -   **Excluir arquivos criptografados e compactados**: Quando você escolhe essa opção, os arquivos compactados ou criptografados não são inventariados.  
 
-    -   **Excluir arquivos da pasta do Windows**: quando você escolhe essa opção, os arquivos da pasta do Windows e suas subpastas não são inventariados.  
+    -   **Excluir arquivos na pasta do Windows**: Quando você escolhe essa opção, os arquivos da pasta do Windows e suas subpastas não são inventariados.  
 
     Selecione **OK** para fechar a caixa de diálogo **Propriedades de Arquivo Inventariado**. Adicione todos os arquivos que você deseja inventariar e, em seguida, selecione **OK** para fechar a caixa de diálogo **Definir Configuração do Cliente**.  
 
@@ -677,13 +677,13 @@ Se você deseja coletar arquivos de computadores cliente, selecione **Definir Ar
 
 -   Na caixa de diálogo **Propriedades do Arquivo Coletado** , forneça as seguintes informações:  
 
-    -   **Nome**: forneça um nome para o arquivo que você deseja coletar. Use um asterisco (**&#42;**) curinga para representar qualquer cadeia de texto e um ponto de interrogação (**?**) para representar qualquer caractere único.  
+    -   **Nome**: Forneça um nome para o arquivo que você deseja coletar. Use um asterisco (**&#42;**) curinga para representar qualquer cadeia de texto e um ponto de interrogação (**?**) para representar qualquer caractere único.  
 
-    -   **Local**: selecione **Definir** para abrir a caixa de diálogo **Propriedades de Caminho**. Configure o inventário de software para pesquisar o arquivo que você deseja coletar em todos os discos rígidos do cliente, pesquisar um caminho especificado (por exemplo, **C:\Folder**) ou em uma variável especificada (por exemplo, *%windir%*). Também é possível pesquisar todas as subpastas no caminho especificado.  
+    -   **Localização**: Selecione **Definir** para abrir a caixa de diálogo **Propriedades de Caminho**. Configure o inventário de software para pesquisar o arquivo que você deseja coletar em todos os discos rígidos do cliente, pesquisar um caminho especificado (por exemplo, **C:\Folder**) ou em uma variável especificada (por exemplo, *%windir%*). Também é possível pesquisar todas as subpastas no caminho especificado.  
 
-    -   **Excluir arquivos criptografados e compactados**: quando você escolhe essa opção, os arquivos que foram compactados ou criptografados não são coletados.  
+    -   **Excluir arquivos criptografados e compactados**: Quando você escolhe essa opção, os arquivos que foram compactados ou criptografados não são coletados.  
 
-    -   **Parar a coleta de arquivos quando o tamanho total dos arquivos exceder (KB)**: especifique o tamanho do arquivo, em KB (quilobytes), após o qual o cliente interromperá a coleta dos arquivos especificados.  
+    -   **Parar coleta de arquivos quando o tamanho total dos arquivos exceder (KB)**: Especifique o tamanho do arquivo, em KB (quilobytes), após o qual o cliente interromperá a coleta dos arquivos especificados.  
 
     > [!NOTE]  
     >  O servidor do site coleta as cinco versões alteradas mais recentemente de arquivos coletados e as armazena no diretório `<ConfigMgr installation directory>\Inboxes\Sinv.box\Filecol`. Se um arquivo não tiver sido alterado desde o último ciclo de inventário de software, o arquivo não será coletado novamente.  
@@ -703,9 +703,9 @@ Se você deseja coletar arquivos de computadores cliente, selecione **Definir Ar
 
 O agente de inventário de software recupera os nomes de produto e fabricante nas informações de cabeçalho do arquivo. Esses nomes nem sempre são padronizados nas informações de cabeçalho do arquivo. Quando você exibe o inventário de software no Gerenciador de Recursos, podem aparecer versões diferentes do mesmo fabricante ou nome de produto. Para padronizar esses nomes de exibição, selecione **Definir Nomes** e, em seguida, defina as seguintes configurações:  
 
--   **Tipo de nome**: o inventário de software coleta informações sobre produtos e fabricantes. Escolha se você deseja configurar nomes de exibição para um **Fabricante** ou um **Produto**.  
+-   **Tipo de nome**: O inventário de software coleta informações sobre produtos e fabricantes. Escolha se você deseja configurar nomes de exibição para um **Fabricante** ou um **Produto**.  
 
--   **Nome de exibição:** especifique o nome de exibição que você deseja usar em vez dos nomes na lista **Nomes inventariados**. Para especificar um novo nome de exibição, selecione **Novo**.  
+-   **Nome de exibição**: Especifique o nome de exibição que você deseja usar em vez dos nomes na lista **Nomes inventariados**. Para especificar um novo nome de exibição, selecione **Novo**.  
 
 -   **Nomes inventariados**: Para adicionar um nome inventariado, selecione **Novo**. Esse nome é substituído no inventário de software pelo nome escolhido na lista **Nome de exibição**. Você pode adicionar vários nomes a serem substituídos.  
 

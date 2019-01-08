@@ -10,12 +10,12 @@ ms.assetid: e83a7b0d-b381-4b4a-8eca-850385abbebb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ad76140285df1c0125fcd2efab0f4794ed4881bf
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 5e20985ac8fc39f2384cee5d202e19fc69e2b348
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52455930"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414677"
 ---
 # <a name="co-management-dashboard-in-configuration-manager"></a>Painel de cogerenciamento no Configuration Manager
 
@@ -39,7 +39,7 @@ O painel de cogerenciamento mostra blocos diferentes, dependendo da versão do s
 *Aplica-se às versões 1802 e 1806*
 
 Mostra o percentual de dispositivos cogerenciados no seu ambiente.
- ![Bloco de dispositivos cogerenciados](media\co-management-dashboard\Percent-Co-managed-graph.PNG)
+ ![Bloco de dispositivos cogerenciados](media/co-management-dashboard/Percent-Co-managed-graph.PNG)
 
 
 ### <a name="client-os-distribution"></a>Distribuição do sistema operacional cliente
@@ -55,7 +55,7 @@ Mostra o número de dispositivos do cliente por sistema operacional por versão.
     > O Windows 10, versão 1709 e posterior, é um pré-requisito para o cogerenciamento.  
 
 Focalize uma seção do gráfico para mostrar o percentual de dispositivos nesse grupo de sistema operacional.
- ![Bloco de distribuição do sistema operacional cliente](media\co-management-dashboard\Co-management-OS-distribution-graph.PNG)
+ ![Bloco de distribuição do sistema operacional cliente](media/co-management-dashboard/Co-management-OS-distribution-graph.PNG)
 
 
 ### <a name="co-management-status-donut"></a>Status de cogerenciamento (rosca)
@@ -68,10 +68,10 @@ Mostra a divisão de êxito ou falha do dispositivo nas seguintes categorias:
 - Falha: falha no registro automático  
 
 Focalize uma seção do gráfico para mostrar o percentual de dispositivos nessa categoria. 
- ![Bloco de status de cogerenciamento (rosca)](media\co-management-dashboard\Co-management-status-graph.PNG)
+ ![Bloco de status de cogerenciamento (rosca)](media/co-management-dashboard/Co-management-status-graph.PNG)
 
 Selecione uma seção do grafo para exibir a lista de dispositivos para essa categoria.
- ![Lista de dispositivos com falha de registro](media\co-management-dashboard\Enrollment-Failure_Device-List.PNG)
+ ![Lista de dispositivos com falha de registro](media/co-management-dashboard/Enrollment-Failure_Device-List.PNG)
 
 
 ### <a name="co-management-status-funnel"></a>Status de cogerenciamento (funil)
@@ -84,7 +84,7 @@ Um gráfico de funil que mostra o número de dispositivos com os seguintes estad
 - Registro iniciado  
 - Inscrito  
 
-![Bloco de status de cogerenciamento (funil)](media\co-management-dashboard\1358980-status-funnel.png)
+![Bloco de status de cogerenciamento (funil)](media/co-management-dashboard/1358980-status-funnel.png)
 
 
 ### <a name="co-management-enrollment-status"></a>Status do registro de cogerenciamento
@@ -101,7 +101,7 @@ Mostra a divisão de status do dispositivo nas seguintes categorias:
 
 Selecione um estado no bloco para detalhar uma lista de dispositivos nesse estado.  
 
-![Bloco de status do registro de cogerenciamento](media\co-management-dashboard\1358980-enrollment-status.png)
+![Bloco de status do registro de cogerenciamento](media/co-management-dashboard/1358980-enrollment-status.png)
 
 
 ### <a name="enrollment-errors"></a>Erros de registro
@@ -118,7 +118,7 @@ Uma tabela que mostra a contagem de erros de registro de dispositivos.
 Exibe um gráfico de barras com o número de dispositivos transferidos para o Microsoft Intune para as cargas de trabalho disponíveis. (A lista de cargas de trabalho varia de acordo com a versão do Configuration Manager. Para obter mais informações, confira [Cargas de trabalho que podem ser transferidas para o Intune](/sccm/core/clients/manage/co-management-switch-workloads#workloads-able-to-be-transitioned-to-intune).)
 
 Focalize uma seção do gráfico para mostrar o número de dispositivos que fizeram a transição para a carga de trabalho. 
- ![Grafo de barras de transição de carga de trabalho](media\co-management-dashboard\Workload-Transition.PNG)
+ ![Grafo de barras de transição de carga de trabalho](media/co-management-dashboard/Workload-Transition.PNG)
 
 
 ## <a name="next-steps"></a>Próximas etapas

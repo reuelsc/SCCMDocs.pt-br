@@ -10,12 +10,12 @@ ms.assetid: 1eb2fcaf-acac-4388-9b31-6cccafacaabe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b2b2af6c022d854a6c6d623e3901abac70d42c7a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: fbdb2ecdd0057b52586a7fa19e22cafa0319b039
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342776"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422225"
 ---
 # <a name="how-to-create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-system-center-configuration-manager-client"></a>Como criar itens de configuração personalizados para computadores desktop e de servidor com Windows gerenciados com o cliente do System Center Configuration Manager
 
@@ -84,173 +84,173 @@ Use o item de configuração **Servidores e Desktops Windows personalizados** do
 
  Configurações representam as condições comerciais ou técnicas que são usadas para avaliar a conformidade em dispositivos cliente. Você pode definir uma nova configuração ou navegar até uma configuração existente em um computador de referência.  
 
-1.  No **configurações** página do **Criar Assistente de Item de configuração**, clique em **novo**.  
+1. No **configurações** página do **Criar Assistente de Item de configuração**, clique em **novo**.  
 
-2.  Sobre o **geral** guia do **Criar configuração** diálogo caixa, forneça as seguintes informações:  
+2. Sobre o **geral** guia do **Criar configuração** diálogo caixa, forneça as seguintes informações:  
 
-    -   **Nome:** Insira um nome exclusivo para a configuração. Você pode usar no máximo 256 caracteres.  
+   - **Nome:** Insira um nome exclusivo para a configuração. Você pode usar no máximo 256 caracteres.  
 
-    -   **Descrição:** Insira uma descrição para a configuração. Você pode usar no máximo 256 caracteres.  
+   - **Descrição:** Insira uma descrição para a configuração. Você pode usar no máximo 256 caracteres.  
 
-    -   **Tipo de configuração:** na lista, escolha e configure um dos seguintes tipos de configuração a ser usado para esta configuração:  
+   - **Tipo de configuração:** Na lista, escolha e configure um dos seguintes tipos de configuração a ser usado para esta configuração:  
 
-        -   **Consulta ao Active Directory**  
+     - **Consulta ao Active Directory**  
 
-             **Prefixo LDAP** - Especifique um prefixo válido para a consulta dos Serviços de Domínio do Active Directory para avaliar a conformidade nos computadores cliente. Você pode usar o **LDAP: / /** para um ou **GC: / /** para realizar uma pesquisa de catálogo global.  
+        **Prefixo LDAP** - Especifique um prefixo válido para a consulta dos Serviços de Domínio do Active Directory para avaliar a conformidade nos computadores cliente. Você pode usar o **LDAP: / /** para um ou **GC: / /** para realizar uma pesquisa de catálogo global.  
 
-             **DN (nome distinto)** -especifique o nome distinto do objeto Active Directory Domain Services que é avaliada quanto à conformidade nos computadores cliente.  
+        **DN (nome distinto)** -especifique o nome distinto do objeto Active Directory Domain Services que é avaliada quanto à conformidade nos computadores cliente.  
 
-             Por exemplo, se quiser avaliar um valor relacionado a um usuário chamado João Fernandes no domínio corp.contoso.com, digite o seguinte:  
+        Por exemplo, se quiser avaliar um valor relacionado a um usuário chamado João Fernandes no domínio corp.contoso.com, digite o seguinte:  
 
-            -   **Filtro de pesquisa** - Especifique um filtro LDAP opcional para refinar os resultados da consulta aos Serviços de Domínio Active Directory para avaliar a conformidade nos computadores cliente.  
+       - **Filtro de pesquisa** - Especifique um filtro LDAP opcional para refinar os resultados da consulta aos Serviços de Domínio Active Directory para avaliar a conformidade nos computadores cliente.  
 
-                 Para retornar todos os resultados da consulta, digite **(objectclass=\*)**.  
+          Para retornar todos os resultados da consulta, digite **(objectclass=\*)**.  
 
-            -   **Escopo da pesquisa** - especifique o escopo da pesquisa nos Serviços de Domínio do Active Directory. Você pode escolher:  
+       - **Escopo da pesquisa** - especifique o escopo da pesquisa nos Serviços de Domínio do Active Directory. Você pode escolher:  
 
-                -   **Base** -consulta apenas o objeto especificado.  
+         -   **Base** -consulta apenas o objeto especificado.  
 
-                -   **Um Nível** – Esta opção não é usada nesta versão do Configuration Manager.  
+         -   **Um Nível** – Esta opção não é usada nesta versão do Configuration Manager.  
 
-                -   **Subárvore** -consulta o objeto especificado e sua subárvore completa no diretório.  
+         -   **Subárvore** -consulta o objeto especificado e sua subárvore completa no diretório.  
 
-            -   **Propriedade** -especifique a propriedade do objeto Active Directory Domain Services que é usada para avaliar a conformidade em computadores cliente.  
+       - **Propriedade** -especifique a propriedade do objeto Active Directory Domain Services que é usada para avaliar a conformidade em computadores cliente.  
 
-                 Por exemplo, se você quiser consultar a propriedade do Active Directory **badPwdCount**, que armazena o número de vezes que um usuário digitar incorretamente uma senha, digite **badPwdCount** neste campo.  
+          Por exemplo, se você quiser consultar a propriedade do Active Directory **badPwdCount**, que armazena o número de vezes que um usuário digitar incorretamente uma senha, digite **badPwdCount** neste campo.  
 
-            -   **Consulta** -exibe a consulta construída a partir de entradas no **prefixo LDAP**, **DN (nome distinto)**, **filtro de pesquisa** (se especificado), e **propriedade**, que são usados para avaliar a conformidade em computadores cliente.  
+       - **Consulta** -exibe a consulta construída a partir de entradas no **prefixo LDAP**, **DN (nome distinto)**, **filtro de pesquisa** (se especificado), e **propriedade**, que são usados para avaliar a conformidade em computadores cliente.  
 
-             Para obter mais informações sobre como construir consultas LDAP, consulte a documentação do Windows Server.  
+         Para obter mais informações sobre como construir consultas LDAP, consulte a documentação do Windows Server.  
 
-        -   **Assembly**  
+     - **Assembly**  
 
-             Defina o seguinte para esse tipo de configuração:  
+        Defina o seguinte para esse tipo de configuração:  
 
-            -   **Nome do assembly:** Especifica o nome do objeto de assembly que você deseja pesquisar. O nome não pode ser o mesmo que outros objetos de assembly do mesmo tipo e deve ser registrado no Cache de Assembly Global. O nome do assembly pode ter até 256 caracteres.  
+       - **Nome do assembly:** Especifica o nome do objeto de assembly que você deseja pesquisar. O nome não pode ser o mesmo que outros objetos de assembly do mesmo tipo e deve ser registrado no Cache de Assembly Global. O nome do assembly pode ter até 256 caracteres.  
 
-             Um assembly é um trecho de código que pode ser compartilhado entre aplicativos. Módulos (assemblies) podem ter a extensão de nome de arquivo. dll ou .exe. Cache de Assembly Global é uma pasta chamada *%systemroot%\Assembly* no cliente computadores em que todos os assemblies compartilhados são armazenados.  
+         Um assembly é um trecho de código que pode ser compartilhado entre aplicativos. Módulos (assemblies) podem ter a extensão de nome de arquivo. dll ou .exe. Cache de Assembly Global é uma pasta chamada *%systemroot%\Assembly* no cliente computadores em que todos os assemblies compartilhados são armazenados.  
 
-        -   **Sistema de arquivos**  
+     - **Sistema de arquivos**  
 
-            -   **Tipo** – Na lista, selecione se deseja pesquisar um **Arquivo** ou uma **Pasta**.  
+       - **Tipo** – Na lista, selecione se deseja pesquisar um **Arquivo** ou uma **Pasta**.  
 
-            -   **Caminho** -especifique o caminho da pasta ou arquivo especificado nos computadores cliente. Você pode especificar variáveis de ambiente do sistema e a variável de ambiente *%USERPROFILE%* no caminho.  
+       - **Caminho** -especifique o caminho da pasta ou arquivo especificado nos computadores cliente. Você pode especificar variáveis de ambiente do sistema e a variável de ambiente *%USERPROFILE%* no caminho.  
 
-                > [!NOTE]  
-                >  Se você usar a variável de ambiente *%USERPROFILE%* nas caixas **Caminho** ou **Nome do arquivo ou da pasta** , todos os perfis de usuário no computador cliente serão pesquisados, o que poderá resultar em várias instâncias do arquivo ou da pasta que foi encontrada.  
-                >   
-                >  Se as configurações de conformidade não tiverem acesso ao caminho especificado, será gerado um erro de descoberta. Além disso, se o arquivo que você está procurando está em uso, é gerado um erro de detecção.  
+         > [!NOTE]  
+         >  Se você usar a variável de ambiente *%USERPROFILE%* nas caixas **Caminho** ou **Nome do arquivo ou da pasta** , todos os perfis de usuário no computador cliente serão pesquisados, o que poderá resultar em várias instâncias do arquivo ou da pasta que foi encontrada.  
+         >   
+         >  Se as configurações de conformidade não tiverem acesso ao caminho especificado, será gerado um erro de descoberta. Além disso, se o arquivo que você está procurando está em uso, é gerado um erro de detecção.  
 
-            -   **Nome de arquivo ou pasta** -especifique o nome do objeto de arquivo ou pasta para pesquisar. Você pode especificar variáveis de ambiente do sistema e a variável de ambiente *%USERPROFILE%* no nome do arquivo ou da pasta. Você também pode usar os caracteres curinga * e ? no nome do arquivo.  
+       - **Nome de arquivo ou pasta** -especifique o nome do objeto de arquivo ou pasta para pesquisar. Você pode especificar variáveis de ambiente do sistema e a variável de ambiente *%USERPROFILE%* no nome do arquivo ou da pasta. Você também pode usar os caracteres curinga * e ? no nome do arquivo.  
 
-                > [!NOTE]  
-                >  Se você especificar um nome de arquivo ou de pasta e usar caracteres curinga, essa combinação poderá produzir um grande número de resultados e poderá resultar em alta utilização de recursos no computador cliente e em alto tráfego de rede ao relatar resultados para o Configuration Manager.  
+         > [!NOTE]  
+         >  Se você especificar um nome de arquivo ou de pasta e usar caracteres curinga, essa combinação poderá produzir um grande número de resultados e poderá resultar em alta utilização de recursos no computador cliente e em alto tráfego de rede ao relatar resultados para o Configuration Manager.  
 
-            -   **Incluir subpastas** – Habilite esta opção se também desejar pesquisar quaisquer subpastas no caminho especificado.  
+       - **Incluir subpastas** – Habilite esta opção se também desejar pesquisar quaisquer subpastas no caminho especificado.  
 
-            -   **Esse arquivo ou pasta está associada um aplicativo de 64 bits** - se habilitada, somente os locais de arquivo de 64 bits (como *% ProgramFiles %*) será verificada em computadores de 64 bits. Se essa opção não estiver habilitada, ambos os locais de 32 bits (como *%ProgramFiles(x86)%*) e de 64 bits serão verificados.  
+       - **Esse arquivo ou pasta está associada um aplicativo de 64 bits** - se habilitada, somente os locais de arquivo de 64 bits (como *% ProgramFiles %*) será verificada em computadores de 64 bits. Se essa opção não estiver habilitada, ambos os locais de 32 bits (como *%ProgramFiles(x86)%*) e de 64 bits serão verificados.  
 
-                > [!NOTE]  
-                >  Se o mesmo arquivo ou pasta existir nos dois locais do arquivo do sistema de 64 e de 32 bits no mesmo computador de 64 bits, vários arquivos serão detectados pela condição global.  
+         > [!NOTE]  
+         >  Se o mesmo arquivo ou pasta existir nos dois locais do arquivo do sistema de 64 e de 32 bits no mesmo computador de 64 bits, vários arquivos serão detectados pela condição global.  
 
-             O tipo de configuração **Sistema de arquivos** não dá suporte à especificação de um caminho UNC para um compartilhamento de rede na caixa **Caminho** .  
+         O tipo de configuração **Sistema de arquivos** não dá suporte à especificação de um caminho UNC para um compartilhamento de rede na caixa **Caminho** .  
 
-        -   **Metabase do IIS**  
+     - **Metabase do IIS**  
 
-            -   **Caminho de metabase** -Especifique um caminho válido para a Metabase do IIS (Serviços de Informações da Internet).  
+       -   **Caminho de metabase** -Especifique um caminho válido para a Metabase do IIS (Serviços de Informações da Internet).  
 
-            -   **ID da Propriedade** - Especifique a propriedade numérica da configuração da Metabase do IIS.  
+       -   **ID da Propriedade** - Especifique a propriedade numérica da configuração da Metabase do IIS.  
 
-        -   **Chave do Registro**  
+     - **Chave do Registro**  
 
-            -   **Hive** - Na lista, selecione o hive de Registro que deseja pesquisar.  
+       -   **Hive** - Na lista, selecione o hive de Registro que deseja pesquisar.  
 
-            -   **Chave** - Especifique o nome da chave do Registro que deseja pesquisar. Use o formato *key\subkey*.  
+       -   **Chave** - Especifique o nome da chave do Registro que deseja pesquisar. Use o formato *key\subkey*.  
 
-            -   **Essa chave do registro está associada um aplicativo de 64 bits** -Especifica se as chaves do registro de 64 bits devem ser pesquisadas além as chaves de registro de 32 bits em clientes que executam uma versão de 64 bits do Windows.  
+       -   **Essa chave do registro está associada um aplicativo de 64 bits** -Especifica se as chaves do registro de 64 bits devem ser pesquisadas além as chaves de registro de 32 bits em clientes que executam uma versão de 64 bits do Windows.  
 
-                > [!NOTE]  
-                >  Se a mesma chave do Registro existir nos dois locais do Registro, de 64 e de 32 bits, no mesmo computador de 64 bits, ambas as chaves do Registro serão detectadas pela condição global.  
+           > [!NOTE]  
+           >  Se a mesma chave do Registro existir nos dois locais do Registro, de 64 e de 32 bits, no mesmo computador de 64 bits, ambas as chaves do Registro serão detectadas pela condição global.  
 
-        -   **Valor do Registro**  
+     - **Valor do Registro**  
 
-            -   **Hive** - Na lista, selecione o hive de Registro que deseja pesquisar.  
+       - **Hive** - Na lista, selecione o hive de Registro que deseja pesquisar.  
 
-            -   **Chave** - Especifique o nome da chave do Registro que deseja pesquisar. Use o formato *key\subkey*.  
+       - **Chave** - Especifique o nome da chave do Registro que deseja pesquisar. Use o formato *key\subkey*.  
 
-            -   **Valor** – Especifique o valor que deve estar contido na chave do Registro especificado.  
+       - **Valor** – Especifique o valor que deve estar contido na chave do Registro especificado.  
 
-            -   **A chave do Registro está associada ao aplicativo de 64 bits** - Especifica se as chaves do Registro de 64 bits devem ser pesquisadas além das chaves do Registro de 32 bits em clientes que executam uma versão de 64 bits do Windows.  
+       - **A chave do Registro está associada ao aplicativo de 64 bits** - Especifica se as chaves do Registro de 64 bits devem ser pesquisadas além das chaves do Registro de 32 bits em clientes que executam uma versão de 64 bits do Windows.  
 
-                > [!NOTE]  
-                >  Se a mesma chave do Registro existir nos dois locais do Registro, de 64 e de 32 bits, no mesmo computador de 64 bits, ambas as chaves do Registro serão detectadas pela condição global.  
+         > [!NOTE]  
+         >  Se a mesma chave do Registro existir nos dois locais do Registro, de 64 e de 32 bits, no mesmo computador de 64 bits, ambas as chaves do Registro serão detectadas pela condição global.  
 
-             Você também pode clicar em **Procurar** para navegar até um local do Registro no computador ou em um computador remoto. Para procurar um computador remoto, você deve ter direitos de administrador no computador remoto e o computador remoto deve estar executando o serviço Registro remoto.  
+         Você também pode clicar em **Procurar** para navegar até um local do Registro no computador ou em um computador remoto. Para procurar um computador remoto, você deve ter direitos de administrador no computador remoto e o computador remoto deve estar executando o serviço Registro remoto.  
 
-        -   **script**  
+     - **script**  
 
-            -   **Script de descoberta** – Clique em **Adicionar** para digitar ou procure o script que deseja usar. Você pode usar scripts do Windows PowerShell, VBScript ou Microsoft JScript.  
+       -   **Script de descoberta** – Clique em **Adicionar** para digitar ou procure o script que deseja usar. Você pode usar scripts do Windows PowerShell, VBScript ou Microsoft JScript.  
 
-            -   **Executar scripts usando as credenciais do usuário conectado** – Se você habilitar esta opção, o script será executado em computadores cliente que usam as credenciais de usuários conectados.  
+       -   **Executar scripts usando as credenciais do usuário conectado** – Se você habilitar esta opção, o script será executado em computadores cliente que usam as credenciais de usuários conectados.  
 
-                > [!NOTE]  
-                >  O valor retornado pelo script será usado para avaliar a conformidade da condição global. Por exemplo, ao usar o VBScript, você poderá usar o comando **WScript.Echo Result** para retornar o valor da variável *Result* para a condição global.  
+           > [!NOTE]  
+           >  O valor retornado pelo script será usado para avaliar a conformidade da condição global. Por exemplo, ao usar o VBScript, você poderá usar o comando **WScript.Echo Result** para retornar o valor da variável *Result* para a condição global.  
 
-        -   **Consulta SQL**  
+     - **Consulta SQL**  
 
-            -   **Instância do SQL Server** – Escolha se deseja que a consulta SQL seja executada na instância padrão, em todas as instâncias ou em um determinado nome da instância do banco de dados.  
+       -   **Instância do SQL Server** – Escolha se deseja que a consulta SQL seja executada na instância padrão, em todas as instâncias ou em um determinado nome da instância do banco de dados.  
 
-                > [!NOTE]  
-                >  O nome da instância deve se referir a uma instância local do SQL Server. Para se referir a uma instância de servidor em cluster do SQL, você deve usar uma configuração de script.  
+           > [!NOTE]  
+           >  O nome da instância deve se referir a uma instância local do SQL Server. Para se referir a uma instância de servidor em cluster do SQL, você deve usar uma configuração de script.  
 
-            -   **Banco de dados** -especifique o nome do banco de dados Microsoft SQL Server no qual você deseja executar a consulta SQL.  
+       -   **Banco de dados** -especifique o nome do banco de dados Microsoft SQL Server no qual você deseja executar a consulta SQL.  
 
-            -   **Coluna** -especifique o nome da coluna retornado pela instrução Transact-SQL que é usada para avaliar a conformidade da condição global.  
+       -   **Coluna** -especifique o nome da coluna retornado pela instrução Transact-SQL que é usada para avaliar a conformidade da condição global.  
 
-            -   **Instrução Transact-SQL** – especifique a consulta SQL completa que deseja usar para a condição global. Você também pode clicar **Abrir** para abrir uma consulta SQL existente.  
+       -   **Instrução Transact-SQL** – especifique a consulta SQL completa que deseja usar para a condição global. Você também pode clicar **Abrir** para abrir uma consulta SQL existente.  
 
-                > [!IMPORTANT]  
-                >  As configurações da consulta SQL não dão suporte a comandos SQL que modificam o banco de dados. Só é possível usar comandos SQL que leem as informações do banco de dados.  
+           > [!IMPORTANT]  
+           >  As configurações da consulta SQL não dão suporte a comandos SQL que modificam o banco de dados. Só é possível usar comandos SQL que leem as informações do banco de dados.  
 
-        -   **Consulta WQL**  
+     - **Consulta WQL**  
 
-            -   **Namespace** -especifique o namespace do Windows Management Instrumentation (WMI) que é usado para criar uma consulta WQL que é avaliada quanto à conformidade nos computadores cliente. O valor padrão é Root\cimv2.  
+       -   **Namespace** -especifique o namespace do Windows Management Instrumentation (WMI) que é usado para criar uma consulta WQL que é avaliada quanto à conformidade nos computadores cliente. O valor padrão é Root\cimv2.  
 
-            -   **Classe** -Especifica a classe WMI que é usada para criar uma consulta WQL que é avaliada quanto à conformidade nos computadores cliente.  
+       -   **Classe** -Especifica a classe WMI que é usada para criar uma consulta WQL que é avaliada quanto à conformidade nos computadores cliente.  
 
-            -   **Propriedade** -Especifica a propriedade WMI que é usada para criar uma consulta WQL que é avaliada quanto à conformidade nos computadores cliente.  
+       -   **Propriedade** -Especifica a propriedade WMI que é usada para criar uma consulta WQL que é avaliada quanto à conformidade nos computadores cliente.  
 
-            -   **Cláusula WHERE da consulta WQL** - Você pode usar o item **Cláusula WHERE da consulta WQL** para especificar uma cláusula WHERE a ser aplicada ao namespace, à classe e à propriedade especificados em computadores cliente.  
+       -   **Cláusula WHERE da consulta WQL** - Você pode usar o item **Cláusula WHERE da consulta WQL** para especificar uma cláusula WHERE a ser aplicada ao namespace, à classe e à propriedade especificados em computadores cliente.  
 
-        -   **Consulta XPath**  
+     - **Consulta XPath**  
 
-            -   **Caminho** - Especifique o caminho para o arquivo .xml nos computadores cliente que será usado para avaliar a conformidade. O Configuration Manager dá suporte ao uso de todas as variáveis de ambiente do sistema Windows e à variável de usuário *%USERPROFILE%* no nome do caminho.  
+       - **Caminho** - Especifique o caminho para o arquivo .xml nos computadores cliente que será usado para avaliar a conformidade. O Configuration Manager dá suporte ao uso de todas as variáveis de ambiente do sistema Windows e à variável de usuário *%USERPROFILE%* no nome do caminho.  
 
-            -   **Nome do arquivo XML** -especifique o nome do arquivo que contém a consulta XML que é usada para avaliar a conformidade em computadores cliente.  
+       - **Nome do arquivo XML** -especifique o nome do arquivo que contém a consulta XML que é usada para avaliar a conformidade em computadores cliente.  
 
-            -   **Incluir subpastas** - Habilite esta opção se também desejar pesquisar quaisquer subpastas no caminho especificado.  
+       - **Incluir subpastas** - Habilite esta opção se também desejar pesquisar quaisquer subpastas no caminho especificado.  
 
-            -   **Este arquivo está associado a um aplicativo de 64 bits** ‑ Escolha se o local do arquivo do sistema de 64 bits (*%windir%* \System32) deve ser pesquisado além do local do arquivo do sistema de 32 bits (*%windir%* \Syswow64) em clientes do Configuration Manager que executam uma versão de 64 bits do Windows.  
+       - **Este arquivo está associado a um aplicativo de 64 bits** ‑ Escolha se o local do arquivo do sistema de 64 bits (*%windir%* \System32) deve ser pesquisado além do local do arquivo do sistema de 32 bits (*%windir%* \Syswow64) em clientes do Configuration Manager que executam uma versão de 64 bits do Windows.  
 
-            -   **Consulta XPath** -especifique uma completa XML caminho language (XPath) consulta válida que é usada para avaliar a conformidade em computadores cliente.  
+       - **Consulta XPath** -especifique uma completa XML caminho language (XPath) consulta válida que é usada para avaliar a conformidade em computadores cliente.  
 
-            -   **Namespaces** - Abre a caixa de diálogo **Namespaces do XML** para identificar namespaces e prefixos a ser usados durante a consulta XPath.  
+       - **Namespaces** - Abre a caixa de diálogo **Namespaces do XML** para identificar namespaces e prefixos a ser usados durante a consulta XPath.  
 
-             Se você tentar descobrir um arquivo .XML criptografado, as configurações de conformidade encontram o arquivo, mas a consulta XPath não produzirá nenhum resultado e nenhum erro será gerado.  
+         Se você tentar descobrir um arquivo .XML criptografado, as configurações de conformidade encontram o arquivo, mas a consulta XPath não produzirá nenhum resultado e nenhum erro será gerado.  
 
-             Se a consulta XPath não for válida, a configuração será avaliada como não compatível nos computadores cliente.  
+         Se a consulta XPath não for válida, a configuração será avaliada como não compatível nos computadores cliente.  
 
-    -   **Tipo de dados:** na lista, escolha o formato no qual a condição retorna os dados antes que sejam usados para avaliar a configuração. O **tipo de dados** lista não é exibida para todos os tipos de configuração.  
+   - **Tipo de dados:** Na lista, escolha o formato no qual a condição retorna os dados antes que sejam usados para avaliar a configuração. O **tipo de dados** lista não é exibida para todos os tipos de configuração.  
 
-        > [!NOTE]  
-        >  O **ponto flutuante** tipo de dados suporta apenas 3 dígitos após o ponto decimal.  
+     > [!NOTE]  
+     >  O **ponto flutuante** tipo de dados suporta apenas 3 dígitos após o ponto decimal.  
 
-3.  Configurar detalhes adicionais sobre essa configuração sob o **Definindo tipo** lista. Os itens que você pode configurar variam dependendo do tipo de configuração que você selecionou.  
+3. Configurar detalhes adicionais sobre essa configuração sob o **Definindo tipo** lista. Os itens que você pode configurar variam dependendo do tipo de configuração que você selecionou.  
 
-    > [!NOTE]  
-    >  Quando você cria as configurações do tipo **sistema de arquivos**, **chave do registro**, e **valor do registro**, você pode clicar em **Procurar** para definir a configuração de valores em um computador de referência. Para procurar uma chave do registro ou um valor em um computador remoto, o computador remoto deve ter o serviço Registro remoto habilitado.  
+   > [!NOTE]  
+   >  Quando você cria as configurações do tipo **sistema de arquivos**, **chave do registro**, e **valor do registro**, você pode clicar em **Procurar** para definir a configuração de valores em um computador de referência. Para procurar uma chave do registro ou um valor em um computador remoto, o computador remoto deve ter o serviço Registro remoto habilitado.  
 
-4.  Clique em **OK** para salvar a configuração e fechar a caixa de diálogo **Criar Configuração** .  
+4. Clique em **OK** para salvar a configuração e fechar a caixa de diálogo **Criar Configuração** .  
 
 ##  <a name="configure-compliance-rules"></a>Configurar regras de conformidade  
  Use o procedimento a seguir para configurar as regras de conformidade para o item de configuração.  
@@ -261,18 +261,18 @@ Use o item de configuração **Servidores e Desktops Windows personalizados** do
 
 1.  No **as regras de conformidade** página do **Criar Assistente de Item de configuração**, clique em **novo**.  
 
-2.  No **Create Rule** caixa de diálogo caixa, forneça as seguintes informações:  
+2.  Na caixa de diálogo **Criar Regra** , forneça as seguintes informações:  
 
-    -   **Nome:** Digite um nome para a regra de conformidade.  
+    -   **Nome:** insira um nome para a regra de conformidade.  
 
-    -   **Descrição:** Insira uma descrição para a regra de conformidade.  
+    -   **Descrição:** insira uma descrição para a regra de conformidade.  
 
-    -   **Configuração selecionada:** Clique em **Procurar** para abrir o **Selecionar configuração** caixa de diálogo. Selecione a configuração que você deseja definir uma regra de, ou clique em **nova configuração**. Quando tiver terminado, clique em **Selecione**.  
+    -   **Configuração selecionada:** clique em **Procurar** para abrir a caixa de diálogo **Selecionar Configuração**. Selecione a configuração que você deseja definir uma regra de, ou clique em **nova configuração**. Quando tiver terminado, clique em **Selecione**.  
 
         > [!NOTE]  
         >  Você também pode clicar em **propriedades** para exibir informações sobre a configuração selecionada no momento.  
 
-    -   **Tipo de regra:** Selecione o tipo de regra de conformidade que você deseja usar:  
+    -   **Tipo de regra:** selecione o tipo de regra de conformidade que você deseja usar:  
 
         -   **Valor** criar uma regra que compara o valor retornado pelo item de configuração com um valor que você especificar.  
 
@@ -307,7 +307,7 @@ Use o item de configuração **Servidores e Desktops Windows personalizados** do
 
         -   **Não conformidade de relatório se essa instância de configuração não foi encontrada** – o item de configuração relatórios de não conformidade se essa configuração não for encontrada em computadores cliente.  
 
-        -   **Severidade de não conformidade para relatórios:** especifique o nível de severidade relatado (nos relatórios do Configuration Manager) se a regra de conformidade não for cumprida. Os níveis de severidade disponíveis são os seguintes:  
+        -   **Gravidade de não conformidade para relatórios:** Especifique o nível de gravidade relatado (nos relatórios do Configuration Manager) se a regra de conformidade não for cumprida. Os níveis de severidade disponíveis são os seguintes:  
 
             -   **Nenhum** Computadores que não cumprem essa regra de conformidade não relatam uma severidade de falha.  
 
@@ -330,7 +330,7 @@ Use o item de configuração **Servidores e Desktops Windows personalizados** do
 
             -   **A configuração ocorre o seguinte número de vezes:**  
 
-        -   **Severidade de não conformidade para relatórios:** especifique o nível de severidade relatado (nos relatórios do Configuration Manager) se a regra de conformidade não for cumprida. Os níveis de severidade disponíveis são os seguintes:  
+        -   **Gravidade de não conformidade para relatórios:** Especifique o nível de gravidade relatado (nos relatórios do Configuration Manager) se a regra de conformidade não for cumprida. Os níveis de severidade disponíveis são os seguintes:  
 
             -   **Nenhum** Computadores que não cumprem essa regra de conformidade não relatam uma severidade de falha.  
 
@@ -350,4 +350,4 @@ Use o item de configuração **Servidores e Desktops Windows personalizados** do
 Na página **Plataformas com Suporte** do **Assistente para Criar Item de Configuração**, na lista, selecione as versões do Windows nas quais você deseja que o item de configuração seja avaliado quanto à conformidade, ou clique em **Selecionar tudo**.  
 
 ## <a name="complete-the-wizard"></a>Concluir o assistente  
- Na página **Resumo** do Assistente, examine as ações a serem tomadas e conclua o assistente. O novo item de configuração é exibido no **itens de configuração** nó o **ativos e conformidade** espaço de trabalho.  
+ Na página **Resumo** do Assistente, examine as ações a serem tomadas e conclua o assistente. O novo item de configuração é exibido no nó **Itens de Configuração** do workspace **Ativos e Conformidade**.  

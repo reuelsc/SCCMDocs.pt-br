@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
-ms.openlocfilehash: 807204b9a64e36e103a32d553e7804a0a8592ec1
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: ea1225b1f7ec29d089e8991e397fbae64d5a38eb
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383798"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424180"
 ---
 # <a name="plan-for-software-updates-in-configuration-manager"></a>Planejar atualizações de software no Configuration Manager
 
@@ -89,7 +89,7 @@ O site de administração central e todos os sites primários filho precisam ter
 
 Adicione vários pontos de atualização de software em um site primário do Configuration Manager para fornecer tolerância a falhas. O design de failover do ponto de atualização de software é diferente do modelo aleatório puro usado no design de pontos de gerenciamento. Ao contrário do design de pontos de gerenciamento, há custos de desempenho de rede e do cliente no design de ponto de atualização de software, quando os clientes mudam para um novo ponto de atualização de software. Quando o cliente muda para um novo servidor do WSUS para verificar atualizações de software, o resultado é um aumento no tamanho do catálogo e no lado do cliente associado, e nas demandas de desempenho de rede. Portanto, o cliente preserva a afinidade com o último ponto de atualização de software que ele verificou com êxito.  
 
-O primeiro ponto de atualização de software que você instala em um site primário é a origem da sincronização de todos os pontos de atualização de software que você adiciona ao site primário. Depois de adicionar pontos de atualização de software e iniciar a sincronização, exiba o status dos pontos de atualização de software e a origem da sincronização no nó **Status de sincronização do ponto de atualização de software** no espaço de trabalho **Monitoramento**.  
+O primeiro ponto de atualização de software que você instala em um site primário é a origem da sincronização de todos os pontos de atualização de software que você adiciona ao site primário. Depois de adicionar pontos de atualização de software e iniciar a sincronização, exiba o status dos pontos de atualização de software e a origem da sincronização no nó **Status de sincronização do ponto de atualização de software** no workspace **Monitoramento**.  
 
 Quando houver uma falha do ponto de atualização de software configurado como a origem de sincronização para o site, remova manualmente a função com falha. Em seguida, selecione um novo ponto de atualização de software a ser usado como a origem da sincronização. Para obter mais informações, confira [Remover a função do sistema de sites do ponto de atualização de software](../get-started/remove-a-software-update-point.md).  
 
@@ -104,9 +104,9 @@ O Configuration Manager fornece ao cliente uma lista de pontos de atualização 
 
 O cliente seleciona aleatoriamente um ponto de atualização de software na lista. Ele prioriza os pontos de atualização de software na mesma floresta. O Configuration Manager fornece aos clientes uma lista diferente dependendo do tipo de cliente:  
 
--   **Clientes baseados na intranet**: recebem uma lista de pontos de atualização de software que você pode configurar para permitir conexões somente da intranet ou uma lista de pontos de atualização de software que permitem conexões do cliente da Internet e da intranet.  
+-   **Clientes baseados em intranet**: Recebem uma lista de pontos de atualização de software que você pode configurar para permitir conexões somente da intranet ou uma lista de pontos de atualização de software que permitem conexões do cliente na Internet e na intranet.  
 
--   **Clientes baseados na Internet**: recebem uma lista de pontos de atualização de software que você configura para permitir conexões somente da Internet ou uma lista de pontos de atualização de software que permitem conexões do cliente da Internet e da intranet.  
+-   **Clientes baseados na Internet**: Recebem uma lista de pontos de atualização de software que você pode configurar para permitir conexões somente da Internet ou uma lista de pontos de atualização de software que permitem conexões do cliente na Internet e na intranet.  
 
 
 ###  <a name="BKMK_SUPSwitching"></a> Mudança de ponto de atualização de software  
@@ -157,7 +157,7 @@ Mude clientes do Configuration Manager para um novo ponto de atualização de so
 #### <a name="process-to-switch-software-update-points"></a>Processo de mudar de pontos de atualização de software  
 Inicie essa alteração em uma coleção de dispositivos. Depois ela for disparada, os clientes procurarão outro ponto de atualização de software na próxima verificação.  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Ativos e Conformidade** e selecione o nó **Coleções de Dispositivos**.  
+1.  No console do Configuration Manager, acesse o workspace **Ativos e Conformidade** e escolha o nó **Coleções de Dispositivos**.  
 
 2.  Selecione a coleção de destino. Na guia **Início** da faixa de opções, no grupo **Coleção**, clique em **Notificação do Cliente** e em **Mudar para o próximo ponto de atualização de software**.  
 
@@ -342,15 +342,15 @@ Talvez seja necessário adicionar os endereços abaixo ao firewall localizado en
 - Se os sites filho tiverem um ponto de atualização de software 
 - Se houver um ponto de atualização de software remoto, baseado na Internet, ativo em um site
 
- **Ponto de atualização de software no site filho**  
+  **Ponto de atualização de software no site filho**  
 
--   `http://<FQDN for software update point on child site>`  
+- `http://<FQDN for software update point on child site>`  
 
--   `https://<FQDN for software update point on child site>`  
+- `https://<FQDN for software update point on child site>`  
 
--   `http://<FQDN for software update point on parent site>`  
+- `http://<FQDN for software update point on parent site>`  
 
--   `https://<FQDN for software update point on parent site>`  
+- `https://<FQDN for software update point on parent site>`  
 
 
 
@@ -372,13 +372,13 @@ A sincronização de atualizações de software no Configuration Manager baixa o
 
 As configurações de origem de sincronização do ponto de atualização de software especificam o local para o qual o ponto de atualização de software recupera metadados de atualizações de software. Ela também especifica se o processo de sincronização cria eventos de relatório do WSUS.  
 
--   **Origem da sincronização**: por padrão, o ponto de atualização de software no site de nível superior configura a origem da sincronização para o Microsoft Update. Você tem a opção de sincronizar o site de nível superior com um servidor do WSUS existente. O ponto de atualização de software em um site primário filho configura a origem de sincronização como o ponto de atualização de software no site de administração central.  
+-   **Origem da sincronização**: Por padrão, o ponto de atualização de software no site de nível superior configura a origem da sincronização para o Microsoft Update. Você tem a opção de sincronizar o site de nível superior com um servidor do WSUS existente. O ponto de atualização de software em um site primário filho configura a origem de sincronização como o ponto de atualização de software no site de administração central.  
 
     -  O primeiro ponto de atualização de software instalado em um site primário, que é o ponto de atualização de software padrão, é sincronizado com o site de administração central. Pontos de atualização de software adicionais no site primário sincronizam com o ponto de atualização de software padrão no site primário.  
 
     - Quando um ponto de atualização de software estiver desconectado do Microsoft Update ou do servidor de atualização upstream, configure a origem da sincronização para não ser sincronizada com uma origem de sincronização configurada. Nesse caso, configure-a para usar a função de exportação e importação da ferramenta **WSUSUtil** para sincronizar atualizações de software. Para obter mais informações, consulte [Synchronize software updates from a disconnected software update point](../get-started/synchronize-software-updates-disconnected.md) (Sincronizar atualizações de software de um ponto de atualização de software desconectado).  
 
--   **Eventos de relatórios do WSUS:** o Windows Update Agent em computadores cliente pode criar mensagens de eventos para relatórios do WSUS. Esses eventos não são usados pelo Configuration Manager. Portanto, a opção **Não criar eventos de relatório do WSUS** é selecionada por padrão. Quando esses eventos não são criados, o único momento em que o cliente deve se conectar ao servidor WSUS é durante a avaliação da atualização de software e as verificações de conformidade. Se esses eventos forem necessários para relatórios fora do Configuration Manager, modifique essa configuração para criar eventos de relatório do WSUS.  
+-   **Eventos de geração de relatórios do WSUS:** O Windows Update Agent em computadores cliente pode criar mensagens de eventos para geração de relatórios do WSUS. Esses eventos não são usados pelo Configuration Manager. Portanto, a opção **Não criar eventos de relatório do WSUS** é selecionada por padrão. Quando esses eventos não são criados, o único momento em que o cliente deve se conectar ao servidor WSUS é durante a avaliação da atualização de software e as verificações de conformidade. Se esses eventos forem necessários para relatórios fora do Configuration Manager, modifique essa configuração para criar eventos de relatório do WSUS.  
 
 
 ###  <a name="BKMK_SyncSchedule"></a> Agendamento de sincronização  
@@ -397,23 +397,23 @@ Cada atualização de software é definida com uma classificação de atualizaç
 
 O Configuration Manager dá suporte à sincronização das classificações de atualização a seguir:  
 
--   **Atualizações Críticas**: uma atualização lançada em larga escala para um problema específico que aborda um bug crítico não relacionado à segurança.  
+-   **Atualizações Críticas**: Uma atualização lançada em larga escala para um problema específico que corrige um bug crítico não relacionado a segurança.  
 
--   **Atualizações de Definições**: uma atualização de vírus ou de outros arquivos de definição.  
+-   **Atualizações de definições**: Uma atualização de vírus ou outros arquivos de definição.  
 
--   **Feature Packs**: novos recursos de produtos que são distribuídos fora de uma versão do produto e normalmente são incluídos na próxima versão completa do produto.  
+-   **Feature Packs**: Novos recursos de produtos que são distribuídos fora de um lançamento de produto e que normalmente são incluídos no próximo lançamento do produto completo.  
 
--   **Atualizações de Segurança**: uma atualização lançada em larga escala para um problema específico do produto relacionado à segurança.  
+-   **Atualizações de Segurança**: Uma atualização lançada em larga escala para um problema relacionado à segurança e específico do produto.  
 
--   **Service Packs**: um conjunto cumulativo de hotfixes aplicados a um aplicativo ou sistema operacional. Esses hotfixes incluem atualizações de segurança, atualizações críticas e atualizações de software.  
+-   **Service Packs**: Um conjunto cumulativo de hotfixes aplicados a um aplicativo ou SO. Esses hotfixes incluem atualizações de segurança, atualizações críticas e atualizações de software.  
 
--   **Ferramentas**: um utilitário ou recurso que ajuda a concluir uma ou mais tarefas.  
+-   **Ferramentas**: Um utilitário ou recurso que ajuda a concluir uma ou mais tarefas.  
 
--   **Pacotes Cumulativos de Atualizações**: um conjunto cumulativo de hotfixes reunidos para facilitar a implantação. Esses hotfixes incluem atualizações de segurança, atualizações críticas e atualizações de software. Um pacote cumulativo de atualizações geralmente aborda uma área específica, como segurança ou um componente do produto.  
+-   **Pacotes cumulativos de atualizações**: Um conjunto cumulativo de hotfixes que são reunidos em um pacote para facilitar a implantação. Esses hotfixes incluem atualizações de segurança, atualizações críticas e atualizações de software. Um pacote cumulativo de atualizações geralmente aborda uma área específica, como segurança ou um componente do produto.  
 
--   **Atualizações**: uma atualização em um aplicativo ou arquivo que está instalado no momento.  
+-   **Atualizações**: Uma atualização em um aplicativo ou arquivo que está instalado no momento.  
 
--   **Upgrades**: uma atualização do recurso para uma nova versão do Windows 10.  
+-   **Atualizações**: Uma atualização do recurso para uma nova versão do Windows 10.  
 
 Defina as configurações de classificação de atualização somente no site de nível superior. As configurações de classificação de atualização não são configuradas no ponto de atualização de software em sites filho, porque os metadados de atualizações de software são replicados do site de nível superior. Ao selecionar classificações de atualização, lembre-se de que quanto mais classificações você selecionar, mais tempo levará para sincronizar os metadados das atualizações de software.  
 
@@ -454,7 +454,7 @@ Considere os seguintes cenários em que poderia ser necessário implantar uma at
 -   Quando uma atualização de software substituta não é aprovada para implantação em seu ambiente de produção.  
 
     > [!NOTE]  
-    > Quando o Configuration Manager define uma atualização de software substituída como **Expirada**, ele não define a atualização como **Recusada** no WSUS. No entanto, quando a tarefa de limpeza do WSUS é executada, as atualizações definidas como **Expiradas** no Configuration Manager são definidas com o status **Recusadas** no servidor WSUS. Portanto, o Windows Update Agent nos clientes não precisa mais procurar essas atualizações. Os clientes continuam a procurar uma atualização expirada até que a tarefa de limpeza seja executada. Para obter mais informações sobre a tarefa de limpeza do WSUS, confira [Manutenção de atualizações de software](/sccm/sum/deploy-use/software-updates-maintenance).  
+    > Antes do Configuration Manager versão 1806, quando o Configuration Manager define uma atualização de software substituída como **Expirada**, ele não define a atualização como **Recusada** no WSUS. Os clientes continuam a procurar uma atualização expirada até que a atualização seja recusada manualmente ou por meio de um script personalizado.  Após a versão 1806 do Configuration Manager, Configuration Manager também recusará as atualizações substituídas no WSUS. Para obter mais informações sobre a tarefa de limpeza do WSUS, confira [Manutenção de atualizações de software](/sccm/sum/deploy-use/software-updates-maintenance).
 
 
 ###  <a name="BKMK_UpdateLanguages"></a> Idiomas  

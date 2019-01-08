@@ -2,7 +2,7 @@
 title: Novidades na versão 1810
 titleSuffix: Configuration Manager
 description: Obtenha os detalhes sobre as alterações e as novas funcionalidades introduzidas na versão 1810 do branch atual do Configuration Manager.
-ms.date: 11/27/2018
+ms.date: 12/20/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 80c4798a93d2424759b85b7d8fe106b9251714a4
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: f93b9c7e96c66fd2279d8d6e42f605a763c75025
+ms.sourcegitcommit: 81e3666c41eb976cc7651854042dafe219e2e467
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52457998"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53747136"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Novidades na versão 1810 do branch atual do Configuration Manager
 
@@ -28,9 +28,9 @@ Sempre examine a lista de verificação mais recente para instalar essa atualiza
 > [!Note]  
 > Atualmente, esse artigo lista todos os recursos importantes nesta versão. No entanto, nem todas as seções ainda se vinculam ao conteúdo atualizado com informações adicionais sobre os novos recursos. Continue verificando esta página regularmente para ver se há atualizações. As alterações são indicadas com a marcação ***[Atualizado]***. Essa observação será removida quando o conteúdo for finalizado.  
 
-<!--
-Aside from new features, this release also includes additional changes such as bug fixes. For more information, see [Summary of changes in Configuration Manager current branch, version 1810](https://support.microsoft.com/help/4459701).
+Além de novos recursos, este lançamento inclui outras alterações, como correções de bugs. Para obter mais informações, confira [Resumo das alterações no Branch Atual do Configuration Manager, versão 1810](https://support.microsoft.com/help/4482169).
 
+<!--
 For more information on changes to the Windows PowerShell cmdlets for Configuration Manager, see [PowerShell 1810 Release Notes](https://docs.microsoft.com/powershell/sccm/1810_release_notes?view=sccm-ps).
 
 The following additional updates to this release are also now available:
@@ -77,13 +77,13 @@ Para obter mais informações, confira [Sistemas operacionais com suporte para s
 
 Quando você instala ou atualiza para a versão 1810, a instalação do Configuration Manager agora inclui ou melhora as verificações de pré-requisitos a seguir:
 
-- **Reinicialização do sistema pendente**: essa verificação de pré-requisitos agora é mais resiliente. Ela verifica as chaves de Registro adicionais para recursos do Windows. Para obter mais informações, confira [Reinicialização do sistema pendente](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#pending-system-restart). <!--SCCMDocs-pr issue 3010-->  
+- **Reinicialização do sistema pendente**: Essa verificação de pré-requisitos agora é mais resiliente. Ela verifica as chaves de Registro adicionais para recursos do Windows. Para obter mais informações, confira [Reinicialização do sistema pendente](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#pending-system-restart). <!--SCCMDocs-pr issue 3010-->  
 
-- **Limpeza do controle de alterações do SQL**: uma nova verificação de se o banco de dados do site tem uma lista de pendências de dados de controle de alterações do SQL. Para obter mais informações, incluindo um procedimento para verificar e limpar a lista de pendências, confira [Limpeza do controle de alterações do SQL](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#bkmk_changetracking). <!--SCCMDocs-pr issue 3023-->  
+- **Limpeza do controle de alterações do SQL**: Verificar novamente se o banco de dados do site tem uma lista de pendências de dados de controle de alterações do SQL. Para obter mais informações, incluindo um procedimento para verificar e limpar a lista de pendências, confira [Limpeza do controle de alterações do SQL](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#bkmk_changetracking). <!--SCCMDocs-pr issue 3023-->  
 
-<!-- - **SQL Native Client version**: This prerequisite check is updated for versions of SQL Native Client that support TLS 1.2. The minimum version is 11.4.7001.0. For more information, see [SQL Native Client version](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-native-client). <!--SCCMDocs-pr issue 3094->  
- -->
-- **Sistema do site no nó de cluster do Windows**: o processo de instalação do Configuration Manager não bloqueia mais a instalação da função de servidor de site em um computador com a função do Windows para clustering de failover. O Always On do SQL requer essa função; portanto, anteriormente não era possível colocar o banco de dados do site no servidor do site. Com essa alteração, é possível criar um site altamente disponível com menos servidores usando o Always On do SQL e um servidor do site no modo passivo. Para obter mais informações, confira [Cluster de failover do Windows](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#windows-failover-cluster). <!--1359132-->  
+- **Versão do SQL Native Client**: Essa verificação de pré-requisito é atualizada para versões do SQL Native Client que dão suporte a TLS 1.2. A versão mínima é [SQL 2012 SP4](https://www.microsoft.com/download/details.aspx?id=50402). Para obter mais informações, confira a [versão do SQL Native Client](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-native-client). <!--SCCMDocs-pr issue 3094->  
+
+- **Sistema de sites no nó de cluster do Windows**: O processo de instalação do Configuration Manager não bloqueia mais a instalação da função de servidor de site em um computador com a função do Windows para clustering de failover. O Always On do SQL requer essa função; portanto, anteriormente não era possível colocar o banco de dados do site no servidor do site. Com essa alteração, é possível criar um site altamente disponível com menos servidores usando o Always On do SQL e um servidor do site no modo passivo. Para obter mais informações, confira [Cluster de failover do Windows](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#windows-failover-cluster). <!--1359132-->  
 
 
 
@@ -104,9 +104,9 @@ Para obter mais informações, confira [Notificações do cliente](/sccm/core/cl
 ### <a name="new-boundary-group-options"></a>Novas opções do novo grupo de limites
 <!--1358749--> Os grupos de limites agora incluem as seguintes configurações adicionais para dar a você mais controle sobre a distribuição de conteúdo em seu ambiente:
 
-- **Prefira pontos de distribuição em vez de colegas com a mesma sub-rede**: por padrão, o ponto de gerenciamento prioriza as fontes de cache par na parte superior da lista de locais de conteúdo. Essa configuração reverte essa prioridade para clientes que estão na mesma sub-rede que a fonte de cache par.  
+- **Preferir pontos de distribuição a de pares na mesma sub-rede**: Por padrão, o ponto de gerenciamento prioriza as fontes de cache par na parte superior da lista de locais de conteúdo. Essa configuração reverte essa prioridade para clientes que estão na mesma sub-rede que a fonte de cache par.  
 
-- **Prefira ponto de distribuição em nuvem a pontos de distribuição**: se você tiver uma filial com um link da Internet mais rápido, agora será possível priorizar o conteúdo da nuvem.  
+- **Preferir a pontos de distribuição em nuvem a pontos de distribuição**: Se você tiver uma filial com um link da Internet mais rápido, poderá priorizar o conteúdo de nuvem.  
 
 Para saber mais, confira [Opções de grupo de limites para downloads de pares](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).
 
@@ -213,7 +213,7 @@ Um perfil do PowerShell é um script executado quando o PowerShell é iniciado. 
 ### <a name="task-sequence-support-of-windows-autopilot-for-existing-devices"></a>Suporte à sequência de tarefas do Windows Autopilot para dispositivos existentes
 <!--1358333-->
 
-O [Windows Autopilot para dispositivos existentes](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430), agora está disponível com o Windows 10 Insider Preview. Esse novo recurso permite refazer a imagem e provisionar um dispositivo Windows 7 para o [modo orientado pelo usuário do Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) usando uma única sequência de tarefas nativa do Configuration Manager. 
+O [Windows Autopilot para dispositivos existentes](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430), agora está disponível com o Windows 10, versão 1809 ou posterior. Esse novo recurso permite refazer a imagem e provisionar um dispositivo Windows 7 para o [modo orientado pelo usuário do Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) usando uma única sequência de tarefas nativa do Configuration Manager. 
 
 <!--For more information, see []().--> 
 
@@ -310,13 +310,13 @@ Para obter mais informações, confira [Centro de Suporte](/sccm/core/support/su
 
 O nó **Insights de gerenciamento** agora inclui um painel gráfico. Esse painel exibe uma visão geral dos estados de regra, que torna mais fácil mostrar seu progresso. O painel inclui os seguintes blocos:
 
-- **Índice de insights de gerenciamento**: rastreia o progresso geral nas regras de insights de gerenciamento. O índice é uma média ponderada. As regras críticas valem o máximo. Esse índice dá o menor peso às regras opcionais.  
+- **Índice de insights de gerenciamento**: Rastreia o progresso geral nas regras de insights de gerenciamento. O índice é uma média ponderada. As regras críticas valem o máximo. Esse índice dá o menor peso às regras opcionais.  
 
-- **Grupos de insights de gerenciamento**: mostra o percentual de regras em cada grupo.  
+- **Grupos de insights de gerenciamento**: Mostra o percentual de regras em cada grupo.  
 
-- **Prioridade dos insights de gerenciamento**: mostra o percentual das regras por prioridade.  
+- **Prioridade de insights de gerenciamento**: Mostra o percentual de regras por prioridade.  
 
-- **Todos os insights**: uma tabela de insights incluindo a prioridade e o estado.  
+- **Todos os insights**: Uma tabela de insights incluindo a prioridade e o estado.  
 
 ![Captura de tela do painel de insights de gerenciamento](media/1357979-management-insights-dashboard.png)
 

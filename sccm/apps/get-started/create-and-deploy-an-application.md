@@ -10,12 +10,12 @@ ms.assetid: 3bd1e487-ea18-43c1-b7c3-acbd9b86d429
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 3d34ec4abb712ce6797033a5ff490280611e1b02
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 18f51e43e223b13c01d0c6bde5a30fe08af64f61
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344384"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415439"
 ---
 # <a name="create-and-deploy-an-application-with-system-center-configuration-manager"></a>Criar e implantar um aplicativo com o System Center Configuration Manager
 
@@ -48,38 +48,38 @@ Verifique se você conferiu as informações em [Introdução ao gerenciamento d
 
 ### <a name="to-start-the-create-application-wizard-and-create-the-application"></a>Iniciar o Assistente para Criar aplicativo e criar o aplicativo  
 
-1.  No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Aplicativos**.  
+1. No console do Configuration Manager, escolha **Biblioteca de Software** > **Gerenciamento de Aplicativos** > **Aplicativos**.  
 
-3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Aplicativo**.  
+2. Na guia **Início**, no grupo **Criar**, escolha **Criar Aplicativo**.  
 
-4.  Na página **Geral** do **Assistente para Criar Aplicativo**, selecione **Detectar automaticamente informações sobre este aplicativo em arquivos de instalação**. Isso preenche previamente algumas das informações no assistente com informações que são extraídas do arquivo de instalação .msi. Em seguida, especifique as seguintes informações:  
+3. Na página **Geral** do **Assistente para Criar Aplicativo**, selecione **Detectar automaticamente informações sobre este aplicativo em arquivos de instalação**. Isso preenche previamente algumas das informações no assistente com informações que são extraídas do arquivo de instalação .msi. Em seguida, especifique as seguintes informações:  
 
-    -   **Tipo**: escolha **Windows Installer (\*arquivo .msi)**.  
+   -   **Tipo**: escolha **Windows Installer (\*arquivo .msi)**.  
 
-    -   **Local**: digite o local (ou escolha **Procurar** para selecionar o local) do arquivo de instalação **Contoso.msi**. Observe que o local deve ser especificado na forma *\\\Server\Share\File* para que o Configuration Manager localize os arquivos de instalação.  
+   -   **Localização**: digite a localização (ou escolha **Procurar** para selecionar a localização) do arquivo de instalação **Contoso.msi**. Observe que o local deve ser especificado na forma *\\\Server\Share\File* para que o Configuration Manager localize os arquivos de instalação.  
 
-    Você verá algo semelhante à captura de tela a seguir:  
+   Você verá algo semelhante à captura de tela a seguir:  
 
-    ![Página geral do assistente de gerenciamento de aplicativos](/sccm/apps/get-started/media/App-management-wizard-general-page.png)  
+   ![Página geral do assistente de gerenciamento de aplicativos](/sccm/apps/get-started/media/App-management-wizard-general-page.png)  
 
-5.  Escolha **Próxima**. Na página **Importar Informações**, você verá algumas informações sobre o aplicativo e quaisquer arquivos associados que foram importados para o Configuration Manager. Quando terminar, escolha **Avançar** novamente.  
+4. Escolha **Próxima**. Na página **Importar Informações**, você verá algumas informações sobre o aplicativo e quaisquer arquivos associados que foram importados para o Configuration Manager. Quando terminar, escolha **Avançar** novamente.  
 
-6.  Na página **Informações Gerais**, é possível fornecer mais informações sobre o aplicativo que o ajudem a classificá-lo e localizá-lo no console do Configuration Manager.  
+5. Na página **Informações Gerais**, é possível fornecer mais informações sobre o aplicativo que o ajudem a classificá-lo e localizá-lo no console do Configuration Manager.  
 
-     Além disso, o campo **Programa de instalação** permite especificar a linha de comando completa que será usada para instalar o aplicativo nos computadores. Você pode editá-la para adicionar suas próprias propriedades (por exemplo **/q** para uma instalação autônoma).  
+    Além disso, o campo **Programa de instalação** permite especificar a linha de comando completa que será usada para instalar o aplicativo nos computadores. Você pode editá-la para adicionar suas próprias propriedades (por exemplo **/q** para uma instalação autônoma).  
 
-    > [!TIP]  
-    >  Alguns dos campos nessa assistente podem ter sido preenchidos automaticamente ao importar os arquivos de instalação do aplicativo.  
+   > [!TIP]  
+   >  Alguns dos campos nessa assistente podem ter sido preenchidos automaticamente ao importar os arquivos de instalação do aplicativo.  
 
-     Você verá uma tela semelhante à captura de tela a seguir:  
+    Você verá uma tela semelhante à captura de tela a seguir:  
 
-     ![Página de informações gerais do assistente de gerenciamento de aplicativos](/sccm/apps/get-started/media/App-management-wizard-general-information-page.png)  
+    ![Página de informações gerais do assistente de gerenciamento de aplicativos](/sccm/apps/get-started/media/App-management-wizard-general-information-page.png)  
 
-7.  Escolha **Próxima**. Na página Resumo, é possível confirmar as configurações do aplicativo e concluir o assistente.  
+6. Escolha **Próxima**. Na página Resumo, é possível confirmar as configurações do aplicativo e concluir o assistente.  
 
- Você acabou de criar o aplicativo. Para encontrá-lo, no espaço de trabalho **Biblioteca de Software**, expanda o **Gerenciamento de Aplicativos**e escolha **Aplicativos**. Para este exemplo, você verá:  
+   Você acabou de criar o aplicativo. Para encontrá-lo, no workspace **Biblioteca de Software**, expanda o **Gerenciamento de Aplicativos**e escolha **Aplicativos**. Para este exemplo, você verá:  
 
- ![Gráfico do aplicativo final](/sccm/apps/get-started/media/Final-app-graphic.png)  
+   ![Gráfico do aplicativo final](/sccm/apps/get-started/media/Final-app-graphic.png)  
 
 ## <a name="examine-the-properties-of-the-application-and-its-deployment-type"></a>Examinar as propriedades do aplicativo e o tipo de implantação  
 
@@ -108,7 +108,7 @@ Você verá uma caixa de diálogo como esta:
 
     -   **Tipo de regra**: **Valor**  
 
-    -   **Operador**: **Um de**  
+    -   **Operador**: **One of**  
 
     -   Na lista de sistemas operacionais, selecione **Windows 10**.  
 
@@ -130,7 +130,7 @@ Em seguida, para implantar o aplicativo em computadores, é necessário garantir
 
 1.  No console do Configuration Manager, escolha **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software**, expanda **Aplicativos**. Em seguida, na lista de aplicativos, selecione o **Aplicativo Contoso** que você criou.  
+2.  No workspace **Biblioteca de Software**, expanda **Aplicativos**. Em seguida, na lista de aplicativos, selecione o **Aplicativo Contoso** que você criou.  
 
 3.  Na guia **Início**, no grupo **Implantação**, escolha **Distribuir Conteúdo**.  
 
@@ -142,7 +142,7 @@ Em seguida, para implantar o aplicativo em computadores, é necessário garantir
 
 7.  Conclua o assistente.  
 
-É possível verificar se o conteúdo do aplicativo foi copiado com êxito no ponto de distribuição no espaço de trabalho **Monitoramento** em **Status de Distribuição** > **Status do Conteúdo**.  
+É possível verificar se o conteúdo do aplicativo foi copiado com êxito no ponto de distribuição no workspace **Monitoramento** em **Status de Distribuição** > **Status do Conteúdo**.  
 
 ## <a name="deploy-the-application"></a>Implantar o aplicativo  
 
@@ -185,13 +185,13 @@ Use as informações na seção a seguir **Monitorar o aplicativo** para ver o s
 
 5.  Selecione uma das seguintes guias para ver mais atualizações de status sobre a implantação do aplicativo:  
 
-    -   **Sucesso**: o aplicativo foi instalado com êxito nos computadores indicados.  
+    -   **Êxito**: o aplicativo foi instalado com êxito nos computadores indicados.  
 
-    -   **Em Andamento**: a instalação do aplicativo ainda não foi concluída.  
+    -   **Em andamento**: a instalação do aplicativo ainda não foi concluída.  
 
     -   **Erro**: ocorreu um erro ao instalar o aplicativo nos computadores indicados. Informações adicionais sobre o erro também são exibidas.  
 
-    -   **Requisitos Não Atendidos**: Não houve tentativa de instalar o aplicativo nos dispositivos indicados porque eles não atenderam aos requisitos configurados (neste exemplo, pois eles não são executados no Windows 10).  
+    -   **Requisitos Não Atendidos**: não houve tentativa de instalar o aplicativo nos dispositivos indicados porque eles não atenderam aos requisitos configurados (neste exemplo, pois eles não são executados no Windows 10).  
 
     -   **Desconhecido**: o Configuration Manager não conseguiu relatar o status da implantação. Verifique novamente mais tarde.  
 

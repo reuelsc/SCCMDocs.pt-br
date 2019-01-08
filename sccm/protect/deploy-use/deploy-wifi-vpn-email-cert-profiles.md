@@ -10,12 +10,12 @@ ms.assetid: 3753608d-b539-44dc-8e3f-b631319e7687
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: faf8d48614bc3e27381d57d86fc24da9356aa3f0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: abae42358e6baba660841eab9443410c0b818428
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347562"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419250"
 ---
 # <a name="deploy-profiles-in-system-center-configuration-manager"></a>Implantar perfis no System Center Configuration Manager
 
@@ -25,27 +25,26 @@ Os perfis deverão ser implantados em uma ou mais coleções para poderem ser us
 
  Use a caixa de diálogo **Implantar Perfil Wi-Fi**, **Implantar Perfil VPN**, **Implantar Perfil do Exchange ActiveSync** ou **Implantar Perfil de Certificado** para configurar a implantação desses perfis. Como parte da configuração, defina a coleção na qual o perfil deverá ser implantado e especifique com que frequência esse perfil será avaliado quanto à sua conformidade.  
 
-> [!NOTE]  
+> [!NOTE]
 >  Se você implantar vários perfis de acesso aos recursos da empresa para o mesmo usuário, ocorrerá o seguinte comportamento:  
->   
->  -   Se uma configuração conflitante contiver um valor opcional, ele não será enviado para o dispositivo.  
-> -   Se uma configuração conflitante contiver um valor obrigatório, o valor padrão será enviado para o dispositivo. Se não houver nenhum valor padrão, o perfil de acesso de recursos de toda a empresa falhará. Por exemplo, se você implantar dois perfis de email para o mesmo usuário e os valores especificados para **Host do Exchange ActiveSync** ou **Endereço de Email** forem diferentes, ambos os perfis de email falharão, pois essas são configurações obrigatórias.  
-
-> -   Antes de implantar perfis de certificado, primeiro você deve configurar a infraestrutura e criar perfis de certificado. Para mais informações, consulte os seguintes tópicos:  
->   
->  -   [Configurando infraestrutura de certificado no System Center Configuration Manager](certificate-infrastructure.md)  
-> -   [Como criar perfis de certificado no System Center Configuration Manager](create-certificate-profiles.md)    
-
-> [!IMPORTANT]  
+> 
+> - Se uma configuração conflitante contiver um valor opcional, ele não será enviado para o dispositivo.  
+>   -   Se uma configuração conflitante contiver um valor obrigatório, o valor padrão será enviado para o dispositivo. Se não houver nenhum valor padrão, o perfil de acesso de recursos de toda a empresa falhará. Por exemplo, se você implantar dois perfis de email para o mesmo usuário e os valores especificados para **Host do Exchange ActiveSync** ou **Endereço de Email** forem diferentes, ambos os perfis de email falharão, pois essas são configurações obrigatórias.  
+> 
+> - Antes de implantar perfis de certificado, primeiro você deve configurar a infraestrutura e criar perfis de certificado. Para mais informações, consulte os seguintes tópicos:  
+> 
+>   -   [Configurando infraestrutura de certificado no System Center Configuration Manager](certificate-infrastructure.md)  
+> - [Como criar perfis de certificado no System Center Configuration Manager](create-certificate-profiles.md)    
+> 
+> [!IMPORTANT]
 >  Quando uma implantação do perfil VPN é removida, ele não é removido dos dispositivos cliente. Se quiser remover o perfil dos dispositivos, você deverá removê-lo manualmente.
->   
 
 ## <a name="deploying--profiles"></a>Implantando perfis  
 
 
 1.  No console do System Center Configuration Manager, escolha **Ativos e Conformidade**.  
 
-2.  No espaço de trabalho **Ativos e Conformidade**, expanda **Configurações de Conformidade**, **Acesso aos Recursos da Empresa** e escolha o tipo de perfil apropriado, como **Perfis Wi-Fi**.  
+2.  No workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade**, **Acesso aos Recursos da Empresa** e escolha o tipo de perfil apropriado, como **Perfis Wi-Fi**.  
 
 3.  Na lista de perfis, selecione o perfil que você deseja implantar e, na guia **Início**, no grupo **Implantação**, clique em **Implantar**.  
 
@@ -55,7 +54,7 @@ Os perfis deverão ser implantados em uma ou mais coleções para poderem ser us
 
     -   **Gerar um alerta** – Habilite esta opção para configurar um alerta que será gerado se a conformidade do perfil for menor do que um percentual especificado por uma data e uma hora determinadas. Você também pode especificar se deseja que um alerta seja enviado para o System Center Operations Manager.  
 
-    -   -   **Atraso aleatório (horas)**: (somente para perfis de certificado que contêm as configurações do protocolo SCEP) – Especifica uma janela de atraso para evitar o processamento excessivo no Serviço de Registro de Dispositivo de Rede. O valor padrão é **64** horas.  
+    -   -   **Atraso aleatório (horas)**: (Para perfis de certificado que contêm as configurações do protocolo SCEP) – especifica uma janela de atraso para evitar o processamento excessivo no Serviço de Registro de Dispositivo de Rede. O valor padrão é **64** horas.  
 
     -   **Especificar o agendamento de avaliação de conformidade para este perfil <type>** – Especifique o agendamento com base no qual o perfil implantado será avaliado nos computadores cliente. O agendamento poderá ser simples ou personalizado.  
 

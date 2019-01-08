@@ -10,12 +10,12 @@ ms.assetid: 4cafb7fc-380b-41b1-b83e-045aebfb7131
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 648146f11336489f30f03c35cb3d648f161b5e69
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: ec623e6cf7a2616058b63bb1206f5403c4ff792a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347052"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417398"
 ---
 # <a name="use-multicast-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Usar o multicast para implantar o Windows pela rede com o System Center Configuration Manager
 
@@ -25,11 +25,11 @@ O multicast é um método de otimização da rede que pode ser usado no ambiente
 
  Você pode implantar sistemas operacionais na rede usando multicast nos seguintes cenários de implantação de sistema operacional:  
 
--   [Atualizar um computador existente com uma nova versão do Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
+- [Atualizar um computador existente com uma nova versão do Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
 
--   [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](install-new-windows-version-new-computer-bare-metal.md)  
+- [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](install-new-windows-version-new-computer-bare-metal.md)  
 
- Conclua as etapas em um dos cenários de implantação de sistema operacional e use as seções a seguir para dar suporte a multicast.  
+  Conclua as etapas em um dos cenários de implantação de sistema operacional e use as seções a seguir para dar suporte a multicast.  
 
 ##  <a name="BKMK_Configure"></a> Configurar um ponto de distribuição para dar suporte a multicast  
  Para usar o multicast ao implantar sistemas operacionais, é necessário configurar um ponto de distribuição para dar suporte a multicast. Para mais informações, consulte [Configurar pontos de distribuição para dar suporte a multicast](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_DPMulticast).  

@@ -10,12 +10,12 @@ ms.assetid: 2c8f57cf-1968-48de-87fb-4897432ed6e0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 976aeaacfadfa7d2f189f20ab001486d486b764e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: c88907b82e0066024128985e2d31522a2ea897ee
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335874"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416768"
 ---
 # <a name="how-to-monitor-clients-in-system-center-configuration-manager"></a>Como monitorar clientes no System Center Configuration Manager
 
@@ -62,15 +62,15 @@ ms.locfileid: "32335874"
 
 ##  <a name="bkmk_allStatus"></a> Monitorar o status de todos os clientes  
 
-1.  No console do Configuration Manager, clique em **Monitoramento** > **Status do Cliente**. Nessa página do console, você pode examinar as estatísticas gerais da atividade e das verificações do cliente em todo o site.  Também é possível alterar o escopo das informações ao escolher outra coleção.  
+1. No console do Configuration Manager, clique em **Monitoramento** > **Status do Cliente**. Nessa página do console, você pode examinar as estatísticas gerais da atividade e das verificações do cliente em todo o site.  Também é possível alterar o escopo das informações ao escolher outra coleção.  
 
-2.  Para fazer drill down nos detalhes sobre as estatísticas relatadas, clique no nome das informações relatadas (como **Clientes ativos que passaram na verificação do cliente ou sem resultados**) e examine as informações sobre os clientes individuais.  
+2. Para fazer drill down nos detalhes sobre as estatísticas relatadas, clique no nome das informações relatadas (como **Clientes ativos que passaram na verificação do cliente ou sem resultados**) e examine as informações sobre os clientes individuais.  
 
-3.  Clique em **Atividade do Cliente** para ver gráficos ilustrando a atividade do cliente em seu site do Configuration Manager.  
+3. Clique em **Atividade do Cliente** para ver gráficos ilustrando a atividade do cliente em seu site do Configuration Manager.  
 
-4.  Clique em **Verificação do Cliente** para ver gráficos ilustrando as verificações do cliente em seu site do Configuration Manager.  
+4. Clique em **Verificação do Cliente** para ver gráficos ilustrando as verificações do cliente em seu site do Configuration Manager.  
 
- Você pode configurar alertas para notificar quando os clientes verificam resultados ou a atividade do cliente fica abaixo de uma porcentagem especificada de cliente em uma coleção ou quando a correção fica em uma porcentagem especificada de cliente. Para obter informações sobre como configurar o status do cliente, consulte [Como configurar o status do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).  
+   Você pode configurar alertas para notificar quando os clientes verificam resultados ou a atividade do cliente fica abaixo de uma porcentagem especificada de cliente em uma coleção ou quando a correção fica em uma porcentagem especificada de cliente. Para obter informações sobre como configurar o status do cliente, consulte [Como configurar o status do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).  
 
 ##  <a name="BKMK_ClientHealth"></a> Verificações e correções feitas pela verificação do cliente  
  As seguintes verificações e correções podem ser executadas pela verificação do cliente.  
@@ -103,8 +103,8 @@ ms.locfileid: "32335874"
 |Verificar se o tipo de inicialização do serviço Controle Remoto do Configuration Manager é automático ou manual|Redefinir o tipo de inicialização do serviço como automático|Nenhuma informação adicional|  
 |Verificar se o serviço Controle Remoto do Configuration Manager está em execução|Iniciar o serviço de controle remoto|Nenhuma informação adicional|  
 |Verificar se o provedor WMI do cliente está íntegro|Reiniciar o serviço de Instrumentação de Gerenciamento do Windows|A correção dessa verificação do cliente é realizada somente em computadores que executam o Windows Server 2003, Windows XP (64 bits) ou versões anteriores.|  
-|Verificar se o serviço de proxy de ativação está em execução (Proxy de ativação do ConfigMgr)|Iniciar o serviço Proxy de ativação do ConfigMgr|Esta verificação do cliente é feita apenas se a configuração **Gerenciamento de Energia**: **Habilitar proxy de ativação** estiver definida como **Sim** em sistemas operacionais do cliente com suporte.|  
-|Verificar se o tipo de inicialização do serviço de proxy de ativação (Proxy de ativação do ConfigMgr) é automático|Redefinir o tipo de inicialização do serviço Proxy do ConfigMgr ativação como automático|Esta verificação do cliente é feita apenas se a configuração **Gerenciamento de Energia**: **Habilitar proxy de ativação** estiver definida como **Sim** em sistemas operacionais do cliente com suporte.|  
+|Verificar se o serviço de proxy de ativação está em execução (Proxy de ativação do ConfigMgr)|Iniciar o serviço Proxy de ativação do ConfigMgr|Essa verificação de cliente só será feita se a configuração do cliente **Gerenciamento de Energia**: **Habilitar proxy de ativação** estiver definida como **Sim** em sistemas operacionais do cliente com suporte.|  
+|Verificar se o tipo de inicialização do serviço de proxy de ativação (Proxy de ativação do ConfigMgr) é automático|Redefinir o tipo de inicialização do serviço Proxy do ConfigMgr ativação como automático|Essa verificação de cliente só será feita se a configuração do cliente **Gerenciamento de Energia**: **Habilitar proxy de ativação** estiver definida como **Sim** em sistemas operacionais do cliente com suporte.|  
 
 ## <a name="client-deployment-log-files"></a>Arquivos de log de implantação de cliente
 Para saber mais sobre os arquivos de log usados por operações de gerenciamento e implantação de cliente, confira [Arquivos de log no System Center Configuration Manager](/sccm/core/plan-design/hierarchy/log-files#BKMK_ClientLogs).

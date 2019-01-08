@@ -10,12 +10,12 @@ ms.assetid: 95e9858a-bad4-4651-9e61-2e31dc5050fa
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0405769d3cfc7f77c4ab639ddc0f9ed0cd561366
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 03485b4be2295676d125f3f3e28d2cd7d62728d3
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334031"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420049"
 ---
 # <a name="how-to-configure-client-settings-in-system-center-configuration-manager"></a>Como definir as configurações do cliente no System Center Configuration Manager
 
@@ -30,38 +30,38 @@ Para obter informações sobre cada configuração, consulte [Sobre configuraç�
 
 ##  <a name="configure-the-default-client-settings"></a>Definir as configurações padrão do cliente    
 
-1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
+1. No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente** > **Configurações do Cliente Padrão**.  
 
-3.  Na guia **Início**, escolha **Propriedades**.  
+2. Na guia **Início**, escolha **Propriedades**.  
 
-4.  Exiba e defina as configurações do cliente para cada grupo de configurações no painel de navegação.  
+3. Exiba e defina as configurações do cliente para cada grupo de configurações no painel de navegação.  
 
- Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um único cliente, consulte [Iniciar recuperação de política de um cliente do Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) em [Como gerenciar clientes no System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
+   Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um único cliente, consulte [Iniciar recuperação de política de um cliente do Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) em [Como gerenciar clientes no System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
 
 ##  <a name="create-and-deploy-custom-client-settings"></a>Criar e implantar configurações personalizadas do cliente  
 Ao implantar essas configurações personalizadas, elas substituirão as configurações do cliente padrão. Para começar esse procedimento, verifique se você tem uma coleção que contenha os usuários ou os dispositivos que requerem essas configurações personalizadas do cliente.  
 
-1.  No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente**.  
+1. No console do Configuration Manager, escolha **Administração** > **Configurações do Cliente**.  
 
-3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Configurações Personalizadas do Cliente** e escolha entre:  
+2. Na guia **Início**, no grupo **Criar**, escolha **Criar Configurações Personalizadas do Cliente** e escolha entre:  
 
-    -   **Criar configurações personalizadas do dispositivo do cliente**  
+   -   **Criar configurações personalizadas do dispositivo do cliente**  
 
-    -   **Criar configurações personalizadas do usuário**  
+   -   **Criar configurações personalizadas do usuário**  
 
-4.  Especifique um nome exclusivo e uma descrição opcional.  
+3. Especifique um nome exclusivo e uma descrição opcional.  
 
-5.  Marque uma ou mais caixas de seleção que exibem um grupo de configurações.  
+4. Marque uma ou mais caixas de seleção que exibem um grupo de configurações.  
 
-6.  Clique em cada grupo de configurações no painel de navegação e defina as configurações disponíveis, depois clique em **OK**.   
+5. Clique em cada grupo de configurações no painel de navegação e defina as configurações disponíveis, depois clique em **OK**.   
 
-8.  Selecione a configuração personalizada do cliente que você criou. Na guia **Início**, no grupo **Configurações do Cliente**, escolha **Implantar**.  
+6. Selecione a configuração personalizada do cliente que você criou. Na guia **Início**, no grupo **Configurações do Cliente**, escolha **Implantar**.  
 
-9. Na caixa de diálogo **Selecionar Coleção**, selecione a coleção apropriada e escolha **OK**. Você pode verificar a coleção selecionada se clicar na guia **Implantações** do painel de detalhes.  
+7. Na caixa de diálogo **Selecionar Coleção**, selecione a coleção apropriada e escolha **OK**. Você pode verificar a coleção selecionada se clicar na guia **Implantações** do painel de detalhes.  
 
-10. Exiba a ordem da configuração de cliente personalizada criada. Quando você tem várias configurações personalizadas do cliente, elas são aplicadas de acordo com o número da ordem. Se houver qualquer conflito, a configuração com o menor número de ordem substituirá as demais. Para alterar o número da ordem, na guia **Início**, no grupo **Configurações do Cliente**, escolha **Mover Item para Cima** ou **Mover Item para Baixo**.  
+8. Exiba a ordem da configuração de cliente personalizada criada. Quando você tem várias configurações personalizadas do cliente, elas são aplicadas de acordo com o número da ordem. Se houver qualquer conflito, a configuração com o menor número de ordem substituirá as demais. Para alterar o número da ordem, na guia **Início**, no grupo **Configurações do Cliente**, escolha **Mover Item para Cima** ou **Mover Item para Baixo**.  
 
- Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um único cliente, consulte [Iniciar recuperação de política de um cliente do Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) em [Como gerenciar clientes no System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
+   Os computadores cliente serão definidos com essas configurações durante o próximo download da política do cliente. Para iniciar a recuperação de política para um único cliente, consulte [Iniciar recuperação de política de um cliente do Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) em [Como gerenciar clientes no System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
 
 
 

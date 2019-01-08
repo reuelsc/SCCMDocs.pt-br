@@ -10,12 +10,12 @@ ms.assetid: 79cd131a-1a24-4751-87c8-7f275e45d847
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 35ccc4944359b89bad3ccac52309a289f69933f7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 12a3bffb48cba2e3f258d06489b7511d05b7daad
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338206"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422072"
 ---
 # <a name="create-linux-and-unix-server-applications-with-system-center-configuration-manager"></a>Criar aplicativos de servidor Linux e UNIX com o System Center Configuration Manager
 
@@ -100,15 +100,15 @@ A tabela a seguir lista as propriedades de pacotes e programas sem suporte:
 ### <a name="deploy-software-to-a-linux-or-unix-server"></a>Implantar o software em um servidor Linux ou UNIX
  Para implantar softwares em um servidor Linux ou UNIX usando um pacote ou programa, é possível usar o **Assistente de Implantação de Software**, no console do Configuration Manager. Há suporte para a maioria das definições de implantação pelo cliente para Linux e UNIX. No entanto, não há suporte para várias configurações. Ao implantar softwares, considere o seguinte:  
 
--   É necessário provisionar o pacote para ao menos um ponto de distribuição que esteja associado a um grupo de limites configurado para local de conteúdo.  
+- É necessário provisionar o pacote para ao menos um ponto de distribuição que esteja associado a um grupo de limites configurado para local de conteúdo.  
 
--   O cliente para Linux e UNIX que recebe essa implantação deve ser capaz de acessar esse ponto de distribuição de seu local de rede.  
+- O cliente para Linux e UNIX que recebe essa implantação deve ser capaz de acessar esse ponto de distribuição de seu local de rede.  
 
--   O cliente para Linux e UNIX baixa o pacote do ponto de distribuição e executa o programa no computador local.  
+- O cliente para Linux e UNIX baixa o pacote do ponto de distribuição e executa o programa no computador local.  
 
--   O cliente para Linux e UNIX não pode baixar pacotes de pastas compartilhadas. Ele baixa pacotes de pontos de distribuição habilitados para IIS que oferecem suporte para HTTP ou HTTPS.  
+- O cliente para Linux e UNIX não pode baixar pacotes de pastas compartilhadas. Ele baixa pacotes de pontos de distribuição habilitados para IIS que oferecem suporte para HTTP ou HTTPS.  
 
- A tabela a seguir lista as propriedades para implantações que não têm suporte:  
+  A tabela a seguir lista as propriedades para implantações que não têm suporte:  
 
 |Propriedade de implantação|Comportamento|Mais informações|  
 |-------------------------|--------------|----------------------|  
@@ -131,23 +131,23 @@ A tabela a seguir lista as propriedades de pacotes e programas sem suporte:
 
  Para configurar um cliente que usa os controles de largura de banda de rede, configure as definições do cliente em **Transferência Inteligente em Segundo Plano** e aplique as definições ao computador cliente. Para usar os controles de largura de banda, o cliente deve receber as definições de cliente em **Transferência Inteligente em Segundo Plano** com as seguintes definições configuradas como **Sim**:  
 
--   **Limitar a largura de banda de rede máxima para transferências em segundo plano do BITS**  
+- **Limitar a largura de banda de rede máxima para transferências em segundo plano do BITS**  
 
- O cliente oferece suporte às seguintes configurações de Transferência Inteligente em Segundo Plano:  
+  O cliente oferece suporte às seguintes configurações de Transferência Inteligente em Segundo Plano:  
 
-    -   **Hora de início do período de limitação**  
+  -   **Hora de início do período de limitação**  
 
-    -   **Hora de término do período de limitação**  
+  -   **Hora de término do período de limitação**  
 
-    -   **Taxa de transferência máxima durante o período de limitação (Kbps)**  
+  -   **Taxa de transferência máxima durante o período de limitação (Kbps)**  
 
-    -   **Taxa de transferência máxima fora do período de limitação (Kbps)**  
+  -   **Taxa de transferência máxima fora do período de limitação (Kbps)**  
 
 As seguintes configurações de Transferência Inteligente em Segundo Plano não possuem suporte e são ignoradas pelo cliente do Linux e UNIX:  
 
--   **Permitir downloads de BITS fora do período de limitação**  
+- **Permitir downloads de BITS fora do período de limitação**  
 
- Se o download de software para o cliente de um ponto de distribuição for interrompido, o cliente do Linux e UNIX não retomará o download. Em vez disso, ele reiniciará o download do pacote de software inteiro.  
+  Se o download de software para o cliente de um ponto de distribuição for interrompido, o cliente do Linux e UNIX não retomará o download. Em vez disso, ele reiniciará o download do pacote de software inteiro.  
 
 ##  <a name="configure-operations-for-software-deployments"></a>Configurar as operações para implantações de software  
  De maneira semelhante ao cliente Windows, o cliente do Configuration Manager para Linux e UNIX descobre novas implantações de software ao fazer a busca e a verificação de novas políticas. A frequência com que o cliente verifica novas políticas depende das configurações do cliente. É possível configurar as janelas de manutenção para controlar quando ocorrem implantações de software.  

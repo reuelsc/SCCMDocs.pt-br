@@ -10,12 +10,12 @@ ms.assetid: 406bbdbf-ab4a-4121-a68b-154f96ea14ec
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b6f90995d00767c1607cc74323ebe4feefc97130
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 84d8be8b8f00edd541425bd0e94f7411c45dab55
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333232"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422123"
 ---
 # <a name="how-to-configure-client-communication-ports-in-system-center-configuration-manager"></a>Como configurar portas de comunicação do cliente no System Center Configuration Manager
 
@@ -27,11 +27,11 @@ ms.locfileid: "32333232"
 
  Os valores padrão para as portas de solicitação do cliente são **80** para tráfego HTTP e **443** para tráfego HTTPS. Altere-os somente se não desejar usar esses valores padrão. Um cenário típico de uso de portas personalizadas é quando você usa um site no IIS, em vez de usar o site padrão. Se você alterar os números da porta padrão para o site padrão no IIS e outros aplicativos também usarem o site da Web padrão, eles provavelmente falharão.  
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 >  Não altere os números de porta no Configuration Manager sem entender as consequências. Exemplos:  
->   
->  -   Se você alterar os números de porta para os serviços de solicitação do cliente como uma configuração de site e os clientes existentes não estiverem reconfigurados para usar os novos números de porta, esses clientes se tornarão não gerenciados.  
-> -   Antes de definir um número de porta não padrão, certifique-se de que os firewalls e todos os dispositivos de rede intermediária possam dar suporte a essa configuração e reconfigurá-los quando necessário. Se você gerenciar clientes na Internet e alterar o número da porta HTTPS padrão 443, os roteadores e firewalls da Internet poderão bloquear essa comunicação.  
+> 
+> - Se você alterar os números de porta para os serviços de solicitação do cliente como uma configuração de site e os clientes existentes não estiverem reconfigurados para usar os novos números de porta, esses clientes se tornarão não gerenciados.  
+>   -   Antes de definir um número de porta não padrão, certifique-se de que os firewalls e todos os dispositivos de rede intermediária possam dar suporte a essa configuração e reconfigurá-los quando necessário. Se você gerenciar clientes na Internet e alterar o número da porta HTTPS padrão 443, os roteadores e firewalls da Internet poderão bloquear essa comunicação.  
 
  Para verificar se os clientes não se tornaram não gerenciados após a alteração dos números das portas de solicitação, os clientes deverão ser configurados para usar os novos números de portas de solicitação. Ao alterar as portas de solicitação em um site primário, quaisquer sites secundários vinculados herdarão automaticamente a mesma configuração de porta. Use o procedimento neste tópico para configurar as portas de solicitação no site primário.  
 
@@ -40,13 +40,13 @@ ms.locfileid: "32333232"
 
  Quando o site do Configuration Manager for publicado no Active Directory Domain Services, as configurações de porta de site dos clientes (novos e existentes) que puderem acessar essas informações serão automaticamente definidas, e nenhuma outra ação será necessária. Os clientes que não podem acessar essas informações publicadas nos Serviços de Domínio do Active Directory incluem clientes de grupo de trabalho, clientes de outra floresta do Active Directory, clientes que são configurados somente para Internet e clientes que estão na Internet no momento. Se você alterar os números de porta padrão após a instalação desses clientes, reinstale-os e instale novos clientes usando um dos seguintes métodos:  
 
--   Reinstale os clientes usando o Assistente de Instalação por Push de Cliente. A instalação do cliente por push define automaticamente os clientes com a configuração da porta do site atual. Para saber mais sobre como usar o Assistente de Instalação por Push de Cliente, consulte [Como instalar clientes do Configuration Manager usando push de cliente](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).  
+- Reinstale os clientes usando o Assistente de Instalação por Push de Cliente. A instalação do cliente por push define automaticamente os clientes com a configuração da porta do site atual. Para saber mais sobre como usar o Assistente de Instalação por Push de Cliente, consulte [Como instalar clientes do Configuration Manager usando push de cliente](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).  
 
--   Reinstale os clientes usando as propriedades de instalação CCMSetup.exe e client.msi de CCMHTTPPORT e CCMHTTPSPORT. Para obter mais informações sobre essas propriedades, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+- Reinstale os clientes usando as propriedades de instalação CCMSetup.exe e client.msi de CCMHTTPPORT e CCMHTTPSPORT. Para obter mais informações sobre essas propriedades, consulte [Sobre as propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
--   Reinstale os clientes usando um método que pesquise propriedades de instalação do cliente do Configuration Manager nos Serviços de Domínio Active Directory. Para obter mais informações, consulte [Sobre as propriedades de instalação de cliente publicadas nos Serviços de Domínio do Active Directory no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services.md).  
+- Reinstale os clientes usando um método que pesquise propriedades de instalação do cliente do Configuration Manager nos Serviços de Domínio Active Directory. Para obter mais informações, consulte [Sobre as propriedades de instalação de cliente publicadas nos Serviços de Domínio do Active Directory no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services.md).  
 
- Para reconfigurar os números de porta nos clientes existentes, você também pode usar o script PORTSWITCH.VBS fornecido com a mídia de instalação na pasta SMSSETUP\Tools\PortConfiguration.  
+  Para reconfigurar os números de porta nos clientes existentes, você também pode usar o script PORTSWITCH.VBS fornecido com a mídia de instalação na pasta SMSSETUP\Tools\PortConfiguration.  
 
 > [!IMPORTANT]  
 >  Em clientes existentes e novos que estão na Internet no momento, é necessário configurar os números de porta não padrão usando as propriedades client.msi do CCMSetup.exe do CCMHTTPPORT e do CCMHTTPSPORT.  
@@ -55,18 +55,18 @@ ms.locfileid: "32333232"
 
 #### <a name="to-configure-the-client-communication-port-numbers-for-a-site"></a>Para configurar os números de porta de comunicação do cliente para um site  
 
-1.  No console do Configuration Manager, clique em **Administração**.  
+1. No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , expanda **Configuração de Site**, clique em **Sites**e selecione o site primário a ser configurado.  
+2. No workspace **Administração**, expanda **Configuração de Site**, clique em **Sites** e selecione o site primário a ser configurado.  
 
-3.  Na guia **Início** , clique em **Propriedades**e na guia **Portas** .  
+3. Na guia **Início** , clique em **Propriedades**e na guia **Portas** .  
 
-4.  Selecione qualquer item e clique no ícone Propriedades para exibir a caixa de diálogo **Detalhes de Porta** .  
+4. Selecione qualquer item e clique no ícone Propriedades para exibir a caixa de diálogo **Detalhes de Porta** .  
 
-5.  Na caixa de diálogo **Detalhes de Porta** , especifique o número da porta e a descrição para o item e clique em **OK**.  
+5. Na caixa de diálogo **Detalhes de Porta** , especifique o número da porta e a descrição para o item e clique em **OK**.  
 
-6.  Selecione **Usar site personalizado** , se for usar o nome do site personalizado **SMSWeb** para sistemas de site que executam o IIS.  
+6. Selecione **Usar site personalizado** , se for usar o nome do site personalizado **SMSWeb** para sistemas de site que executam o IIS.  
 
-7.  Clique em **OK** para fechar a caixa de diálogo de propriedades do site.  
+7. Clique em **OK** para fechar a caixa de diálogo de propriedades do site.  
 
- Repita esse procedimento para todos os sites primários da hierarquia.
+   Repita esse procedimento para todos os sites primários da hierarquia.

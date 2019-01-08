@@ -10,12 +10,12 @@ ms.assetid: ccce7cb5-e18f-4337-8adf-2018edca3c00
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d9ef1ca2dd2763cf5b96fd82031a2ef38ef64927
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 3871d0ccf7bbb368e86b9d4f10a87fd25739d360
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334684"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417584"
 ---
 # <a name="configure-source-hierarchies-and-source-sites-for-migration-to-system-center-configuration-manager"></a>Configurar hierarquias de origem e sites de origem para migração para o System Center Configuration Manager
 
@@ -41,27 +41,27 @@ Para habilitar a migração de dados para o seu ambiente do System Center Config
 
 ### <a name="to-configure-a-source-hierarchy"></a>Para configurar uma hierarquia de origem   
 
-1.  No console do Configuration Manager, clique em **Administração**.  
+1. No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , expanda **Migração**e clique em **Hierarquia de Origem**.  
+2. No workspace **Administração**, expanda **Migração**e clique em **Hierarquia de Origem**.  
 
-3.  Na guia **Início** , no grupo **Migração** , clique em **Especificar Hierarquia de Origem**.  
+3. Na guia **Início** , no grupo **Migração** , clique em **Especificar Hierarquia de Origem**.  
 
-4.  Na caixa de diálogo **Especificar Hierarquia de Origem** , para **Hierarquia de Origem**, selecione **Nova Hierarquia de Origem**.  
+4. Na caixa de diálogo **Especificar Hierarquia de Origem** , para **Hierarquia de Origem**, selecione **Nova Hierarquia de Origem**.  
 
-5.  Para **Servidor do site do Configuration Manager da camada superior**, insira o nome ou endereço IP do site de nível superior de uma hierarquia de origem com suporte.  
+5. Para **Servidor do site do Configuration Manager da camada superior**, insira o nome ou endereço IP do site de nível superior de uma hierarquia de origem com suporte.  
 
-6.  Especifique as contas de acesso do site de origem que têm as seguintes permissões:  
+6. Especifique as contas de acesso do site de origem que têm as seguintes permissões:  
 
-    -   Conta do site de origem: Permissão de **Leitura** ao Provedor de SMS para o site de nível superior especificado na hierarquia de origem. Atualizações e compartilhamentos de pontos de distribuição requerem as permissões **Modificar** e **Excluir** para o site na Hierarquia de Origem.
+   - Conta do site de origem: Permissão de **Leitura** ao Provedor de SMS para o site de nível superior especificado na hierarquia de origem. Atualizações e compartilhamentos de pontos de distribuição requerem as permissões **Modificar** e **Excluir** para o site na Hierarquia de Origem.
 
-    -   Conta do banco de dados do site de origem: Permissão de **Leitura** e **Executar** ao banco de dados do SQL Server para o site de nível superior especificado na hierarquia de origem.  
+   - Conta do banco de dados do site de origem: Permissão de **Leitura** e **Execução** para o banco de dados do SQL Server para o site de nível superior especificado na hierarquia de origem.  
 
      Se você especificar o uso da conta de computador, o Configuration Manager usará a conta de computador do site de nível superior da hierarquia de destino. Para essa opção, certifique-se de que essa conta é membro do grupo de segurança **Distributed COM – Usuários** no domínio em que reside o site de nível superior da hierarquia de origem.  
 
-7.  Para compartilhar pontos de distribuição entre as hierarquias de origem e de destino, marque a caixa de seleção **Habilitar o compartilhamento de ponto de distribuição para o servidor do site de origem** . Se você não habilitar o compartilhamento do ponto de distribuição agora, poderá fazê-lo editando as credenciais do site de origem após a conclusão da coleta de dados.  
+7. Para compartilhar pontos de distribuição entre as hierarquias de origem e de destino, marque a caixa de seleção **Habilitar o compartilhamento de ponto de distribuição para o servidor do site de origem** . Se você não habilitar o compartilhamento do ponto de distribuição agora, poderá fazê-lo editando as credenciais do site de origem após a conclusão da coleta de dados.  
 
-8.  Clique em **OK** para salvar a configuração. Esse procedimento abrirá a caixa de diálogo **Status da Coleta de Dados** , e a coleta de dados será iniciada automaticamente.  
+8. Clique em **OK** para salvar a configuração. Esse procedimento abrirá a caixa de diálogo **Status da Coleta de Dados** , e a coleta de dados será iniciada automaticamente.  
 
 9. Quando a coleta de dados for concluída, clique em **Fechar** para fechar a caixa de diálogo **Status da Coleta de Dados** e concluir a configuração.  
 
@@ -80,7 +80,7 @@ Use o procedimento a seguir para configurar sites de origem adicionais para hier
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , expanda **Migração**e clique em **Hierarquia de Origem**.  
+2.  No workspace **Administração**, expanda **Migração**e clique em **Hierarquia de Origem**.  
 
 3.  Escolha o site que deseja configurar como um site de origem.  
 
@@ -88,9 +88,9 @@ Use o procedimento a seguir para configurar sites de origem adicionais para hier
 
 5.  Na caixa de diálogo **Credenciais do Site de Origem** , para as contas de acesso do site de origem, especifique as contas que têm as seguintes permissões:  
 
-    -   Conta do site de origem: Permissão de **Leitura** ao Provedor de SMS para o site de nível superior especificado na hierarquia de origem. Atualizações e compartilhamentos de pontos de distribuição requerem as permissões **Modificar** e **Excluir** para o site na Hierarquia de Origem.  
+    -   Conta do site de origem: Permissão de **Leitura** ao Provedor de SMS para o site de nível superior especificado na hierarquia de origem. Atualizações e compartilhamentos de pontos de distribuição requerem as permissões **Modificar** e **Excluir** para o site na Hierarquia de Origem.  
 
-    -   Conta do banco de dados do site de origem: Permissão de **Leitura** e **Executar** ao banco de dados do SQL Server para o site de nível superior especificado na hierarquia de origem.  
+    -   Conta do banco de dados do site de origem: Permissão de **Leitura** e **Execução** para o banco de dados do SQL Server para o site de nível superior especificado na hierarquia de origem.  
 
     Se você especificar o uso da conta de computador, o Configuration Manager usará a conta de computador do site de nível superior da hierarquia de destino. Para essa opção, certifique-se de que essa conta é membro do grupo de segurança **Distributed COM – Usuários** no domínio em que reside o site de nível superior da hierarquia de origem.  
 

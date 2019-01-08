@@ -10,12 +10,12 @@ ms.assetid: 1a2a9b48-a95b-4643-b00c-b3079584ae2e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 11474f54aaf7a9afe13d411b0dd469abb1eef963
-ms.sourcegitcommit: c2c44329f1f9a2e6c14095360b4fc4aafabc27f0
+ms.openlocfilehash: 2a830b36bec3d112c0b112d2df6887a84c837fa2
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51694936"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418247"
 ---
 # <a name="prerequisites-for-deploying-clients-to-windows-computers-in-configuration-manager"></a>Pré-requisitos para a implantação de clientes em computadores Windows no Configuration Manager
 
@@ -115,9 +115,9 @@ Os pré-requisitos a seguir são específicos para os diversos métodos de insta
 
 Para usar o cliente por push, você precisará das seguintes permissões de segurança:  
 
-   -   Para configurar a conta de instalação do cliente por push: permissões **Modificar** e **Ler** para o objeto **Site**.  
+   -   Para configurar a conta de instalação do cliente por push: permissão **Modificar** e **Ler** para o objeto **Site**.  
 
-   -   Para usar o cliente por push para instalar o cliente em coleções, dispositivos e consultas: permissões **Modificar Recurso** e **Ler** para o objeto **Coleção**.  
+   -   Para usar o push de clientes para instalar coleções, dispositivos e consultas para clientes: permissão **Modificar Recurso** e **Ler** para o objeto **Coleção**.  
 
 
 A função de segurança padrão **Administrador de Infraestrutura** inclui as permissões necessárias para gerenciar instalações do cliente por push.  
@@ -160,7 +160,7 @@ Para baixar os arquivos de origem, o computador cliente precisa se comunicar com
 
  - Dependendo do caso de uso, também poderá ser necessário usar uma das tecnologias a seguir ou ambas:  
 
-     - Active Directory do Azure  
+     - Azure Active Directory  
 
      - Gateway de gerenciamento de nuvem  
 
@@ -222,54 +222,54 @@ Ao instalar o cliente do Configuration Manager em dispositivos móveis e os regi
 
 Para obter mais informações, consulte [Determinar as funções do sistema de sites para clientes](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients).  
 
--   Um ponto de gerenciamento configurado para conexões de cliente HTTPS e habilitado para dispositivos móveis  
+- Um ponto de gerenciamento configurado para conexões de cliente HTTPS e habilitado para dispositivos móveis  
 
-     Um ponto de gerenciamento é sempre necessário para instalar o cliente do Configuration Manager em dispositivos móveis. Além dos requisitos de configuração do HTTPS e de estar habilitado para dispositivos móveis, o ponto de gerenciamento deve ser configurado com um FQDN de Internet e aceitar conexões de cliente da Internet.  
+   Um ponto de gerenciamento é sempre necessário para instalar o cliente do Configuration Manager em dispositivos móveis. Além dos requisitos de configuração do HTTPS e de estar habilitado para dispositivos móveis, o ponto de gerenciamento deve ser configurado com um FQDN de Internet e aceitar conexões de cliente da Internet.  
 
--   Ponto de registro e ponto proxy do registro  
+- Ponto de registro e ponto proxy do registro  
 
-     O ponto proxy do registro gerencia as solicitações de registro dos dispositivos móveis e o ponto de registro conclui o processo de registro. O ponto de registro deve estar na mesma floresta do Active Directory que o servidor do site, mas o ponto proxy do registro pode estar em outra floresta.  
+   O ponto proxy do registro gerencia as solicitações de registro dos dispositivos móveis e o ponto de registro conclui o processo de registro. O ponto de registro deve estar na mesma floresta do Active Directory que o servidor do site, mas o ponto proxy do registro pode estar em outra floresta.  
 
--   Configurações do cliente para registro do dispositivo móvel  
+- Configurações do cliente para registro do dispositivo móvel  
 
-     Defina as configurações de cliente para permitir que os usuários registrem dispositivos móveis e configurem pelo menos um perfil de registro.  
+   Defina as configurações de cliente para permitir que os usuários registrem dispositivos móveis e configurem pelo menos um perfil de registro.  
 
--   Ponto do Reporting Services  
+- Ponto do Reporting Services  
 
-     O ponto do Reporting Services é uma função do sistema de site opcional, mas recomendada, que pode exibir relatórios relacionados ao registro de dispositivo móvel e gerenciamento de clientes.  
+   O ponto do Reporting Services é uma função do sistema de site opcional, mas recomendada, que pode exibir relatórios relacionados ao registro de dispositivo móvel e gerenciamento de clientes.  
 
-     Para obter mais informações, confira [Reporting in Configuration Manager](/sccm/core/servers/manage/reporting) (Relatórios no Configuration Manager).  
+   Para obter mais informações, confira [Reporting in Configuration Manager](/sccm/core/servers/manage/reporting) (Relatórios no Configuration Manager).  
 
--   Para configurar o registro para dispositivos móveis, você deve ter as seguintes permissões de segurança:  
+- Para configurar o registro para dispositivos móveis, você deve ter as seguintes permissões de segurança:  
 
-    -   Para adicionar, modificar e excluir as funções do sistema de site de registro: permissão **Modificar** para o objeto **Site** .  
+  - Para adicionar, modificar e excluir as funções do sistema de site de registro: permissão **Modificar** para o objeto **Site**.  
 
-    -   Para definir as configurações de cliente para registro: as configurações de cliente padrão exigem a permissão **Modificar** para o objeto de **Site** , e as configurações de cliente personalizadas exigem as permissões de **Agente cliente**  .  
+  - Para definir as configurações do cliente para o registro: as configurações de cliente padrão exigem a permissão **Modificar** para o objeto **Site** e as configurações de cliente personalizadas exigem as permissões **Agente cliente**.  
 
-     A função de segurança padrão **Administrador Completo** inclui as permissões necessárias para configurar as funções do sistema de sites de registro.  
+    A função de segurança padrão **Administrador Completo** inclui as permissões necessárias para configurar as funções do sistema de sites de registro.  
 
-     Para gerenciar os dispositivos móveis inscritos, você deve ter as seguintes permissões de segurança:  
+    Para gerenciar os dispositivos móveis inscritos, você deve ter as seguintes permissões de segurança:  
 
-    -   Para apagar ou desativar um dispositivo móvel: **Excluir recurso** para o objeto de **Coleção** .  
+  - Para apagar ou desativar um dispositivo móvel: **Excluir recurso** do objeto **Coleção**.  
 
-    -   Para cancelar um comando apagar ou desativar: **Excluir recurso** para o objeto de **Coleção** .  
+  - Para cancelar um comando de apagamento ou desativação: **Excluir recurso** do objeto **Coleção**.  
 
-    -   Para permitir e bloquear dispositivos móveis: **Modificar recurso** para o objeto de **Coleção** .  
+  - Para permitir e bloquear dispositivos móveis: **Modificar recurso** para o objeto **Coleção**.  
 
-    -   Para um bloqueio remoto ou redefinição de senha em um dispositivo móvel: **Modificar** recurso para o objeto de **Coleção** .  
+  - Para bloquear remotamente ou reconfigurar a senha em um dispositivo móvel: **Modificar** recurso para o objeto **Coleção**.  
 
-     A função de segurança padrão **Administrador de Operações** inclui as permissões necessárias para gerenciar dispositivos móveis.  
+    A função de segurança padrão **Administrador de Operações** inclui as permissões necessárias para gerenciar dispositivos móveis.  
 
-     Para obter mais informações sobre como configurar permissões de segurança, consulte [Fundamentos da administração baseada em funções](/sccm/core/understand/fundamentals-of-role-based-administration) e [Configurar administração baseada em funções](/sccm/core/servers/deploy/configure/configure-role-based-administration).  
+    Para obter mais informações sobre como configurar permissões de segurança, consulte [Fundamentos da administração baseada em funções](/sccm/core/understand/fundamentals-of-role-based-administration) e [Configurar administração baseada em funções](/sccm/core/servers/deploy/configure/configure-role-based-administration).  
 
 
 ### <a name="firewall-requirements"></a>Requisitos de firewall  
 
 Os dispositivos de rede intermediária, como roteadores e firewalls, e Windows Firewall, se aplicável, devem permitir o tráfego associado ao registro de dispositivo móvel:  
 
--   Entre os dispositivos móveis e o ponto proxy do registro: HTTPS (por padrão, TCP 443)  
+-   Entre os dispositivos móveis e o ponto proxy do registro: HTTPS (por padrão, o TCP 443)  
 
--   Entre o ponto proxy do registro e o ponto de registro: HTTPS (por padrão, TCP 443)  
+-   Entre o ponto proxy do registro e o ponto de registro: HTTPS (por padrão, o TCP 443)  
 
 
 Se você usar um servidor Web proxy, ele precisará ser configurado para o túnel SSL. Não há suporte para SSL em dispositivos móveis.  

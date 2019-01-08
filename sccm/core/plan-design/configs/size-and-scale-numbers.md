@@ -10,12 +10,12 @@ ms.assetid: c5a42100-2f60-4952-b495-918025ea6559
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: de8116e1fec500750e429edfb48303b8c24822f4
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 4e1ee76acca06534605e58fff27d2e7ec5e464dd
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384830"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424707"
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Números de tamanho e escala para o System Center Configuration Manager
 
@@ -43,11 +43,11 @@ Esses números de suporte baseiam-se no uso do hardware recomendado para o Confi
 
 ### <a name="primary-site"></a>Site primário  
 
--   Cada site primário fornece suporte a até 250 sites secundários.  
+- Cada site primário fornece suporte a até 250 sites secundários.  
 
--   O número de sites secundários por site primário se baseia em conexões de WAN (rede de longa distância) continuamente conectadas e confiáveis. Para os locais que têm menos de 500 clientes, considere um ponto de distribuição em vez de um site secundário.  
+- O número de sites secundários por site primário se baseia em conexões de WAN (rede de longa distância) continuamente conectadas e confiáveis. Para os locais que têm menos de 500 clientes, considere um ponto de distribuição em vez de um site secundário.  
 
- Para obter mais informações sobre os números de clientes e os dispositivos para os quais um site primário pode dar suporte, consulte [Números de clientes para sites e hierarquias](#bkmk_clientnumbers).  
+  Para obter mais informações sobre os números de clientes e os dispositivos para os quais um site primário pode dar suporte, consulte [Números de clientes para sites e hierarquias](#bkmk_clientnumbers).  
 
 
 ### <a name="secondary-site"></a>Site secundário  
@@ -135,14 +135,14 @@ Para obter mais informações, consulte [desempenho e escala](/sccm/core/clients
 
 ### <a name="management-point"></a>Ponto de gerenciamento  
 
--   Cada site primário dá suporte a até 15 pontos de gerenciamento.  
+- Cada site primário dá suporte a até 15 pontos de gerenciamento.  
 
-    > [!TIP]  
-    >  Não instale os pontos de gerenciamento em servidores que estão em um link lento partindo do servidor do site primário ou do servidor de banco de dados do site.  
+  > [!TIP]  
+  >  Não instale os pontos de gerenciamento em servidores que estão em um link lento partindo do servidor do site primário ou do servidor de banco de dados do site.  
 
--   Cada site secundário dá suporte a um único ponto de gerenciamento que deve ser instalado no servidor do site secundário.  
+- Cada site secundário dá suporte a um único ponto de gerenciamento que deve ser instalado no servidor do site secundário.  
 
- Para obter informações sobre os números de clientes e os dispositivos compatíveis com um ponto de gerenciamento, consulte a seção [Pontos de gerenciamento](#bkmk_mp).  
+  Para obter informações sobre os números de clientes e os dispositivos compatíveis com um ponto de gerenciamento, consulte a seção [Pontos de gerenciamento](#bkmk_mp).  
 
 
 ### <a name="software-update-point"></a>Ponto de atualização de software  
@@ -160,17 +160,17 @@ Para obter mais informações, consulte [desempenho e escala](/sccm/core/clients
 ###  <a name="bkmk_cas"></a> Hierarquia com um site de administração central  
 Um site de administração central oferece suporte a uma quantidade total de dispositivos que inclui até o número de dispositivos listados para os três grupos a seguir:  
 
--   700.000 desktops (computadores que executam Windows, Linux e UNIX). Consulte também, suporte para [dispositivos inseridos](#embedded).
+- 700.000 desktops (computadores que executam Windows, Linux e UNIX). Consulte também, suporte para [dispositivos inseridos](#embedded).
 
--   25.000 dispositivos que executam Mac e Windows CE 7.0  
+- 25.000 dispositivos que executam Mac e Windows CE 7.0  
 
--   Um dos seguintes, dependendo de como sua implantação dá suporte ao MDM (gerenciamento de dispositivo móvel):  
+- Um dos seguintes, dependendo de como sua implantação dá suporte ao MDM (gerenciamento de dispositivo móvel):  
 
-    -   100.000 dispositivos que você gerencia usando o MDM local  
+  -   100.000 dispositivos que você gerencia usando o MDM local  
 
-    -   300.000 dispositivos baseados em cluster  
+  -   300.000 dispositivos baseados em cluster  
 
- Por exemplo, em uma hierarquia, você pode dar suporte a 700.000 desktops, até 25.000 dispositivos Mac e Windows CE 7.0 e até 300.000 dispositivos baseados em nuvem ao integrar o Microsoft Intune. Essa hierarquia dá suporte a um total de 1.025.000 dispositivos. Se você der suporte a dispositivos gerenciados pelo MDM local, o total para essa hierarquia será de 825.000 dispositivos.  
+  Por exemplo, em uma hierarquia, você pode dar suporte a 700.000 desktops, até 25.000 dispositivos Mac e Windows CE 7.0 e até 300.000 dispositivos baseados em nuvem ao integrar o Microsoft Intune. Essa hierarquia dá suporte a um total de 1.025.000 dispositivos. Se você der suporte a dispositivos gerenciados pelo MDM local, o total para essa hierarquia será de 825.000 dispositivos.  
 
 > [!IMPORTANT]  
 >  Em uma hierarquia na qual o site de administração central usa uma edição Standard do SQL Server, a hierarquia dá suporte a 50.000 dispositivos e desktops no máximo. Para dar suporte a mais de 50.000 dispositivos e desktops, é necessário usar uma edição Enterprise do SQL Server. Esse requisito se aplica somente a um site de administração central. Ele não se aplica a um site primário autônomo nem a um site primário filho. A edição do SQL Server usada para um site primário não limita sua capacidade de dar suporte ao número indicado de clientes.   

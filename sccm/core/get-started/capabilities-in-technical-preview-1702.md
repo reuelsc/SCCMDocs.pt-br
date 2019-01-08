@@ -10,12 +10,12 @@ ms.assetid: aedd608d-6db3-4ea5-851d-70f2dcda6bb5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dc1fc6668c61f2eafe04f92fc6b9ea27520ddc43
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d87ef098b096f1dc04bc424a3a100955b12f6f57
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342453"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419012"
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1702 do System Center Configuration Manager
 
@@ -30,9 +30,9 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
 Essa visualização apresenta novas opções de comentários no console do Configuration Manager. As opções de comentários permitem que você envie comentários diretamente para a equipe de desenvolvimento por meio do site de comentários do UserVoice do Configuration Manager.  
 
->Você pode encontrar a opção **Comentários**:
--  Na faixa de opções, na extremidade esquerda da guia Página Inicial de cada nó.  
-   ![Faixa de opções](./media/feedback-home.png)
+> Você pode encontrar a opção **Comentários**:
+> -  Na faixa de opções, na extremidade esquerda da guia Página Inicial de cada nó.  
+>    ![Faixa de opções](./media/feedback-home.png)
 
 -  Ao clicar com o botão direito do mouse em qualquer objeto no console.   
     ![Opção ao clicar com o botão direito do mouse](./media/feedback-option.png)   
@@ -86,8 +86,8 @@ Depois de configurar o Configuration Manager para ser executado no Azure AD, voc
 Para cada método que você usar, edite a consulta LDAP para pesquisar as estruturas de UO do Azure AD, em vez dos contêineres que são comuns ao Active Directory local. Isso exige que você direcione a consulta para pesquisar o Active Directory em sua assinatura do Azure.  
 
 Os exemplos seguintes usam um Azure AD do *contoso.onmicrosoft.com*:
- - **Descoberta do Sistema**   
-O Azure AD armazena os dispositivos na UO **Computadores do AADDC**.  Configure o seguinte:  
+- **Descoberta do Sistema**   
+  O Azure AD armazena os dispositivos na UO **Computadores do AADDC**.  Configure o seguinte:  
   - *LDAP://OU=Computadores do AADDC,DC=contoso,DC=onmicrosoft,DC=com*  
 
 
@@ -113,13 +113,13 @@ Além disso, isso ajuda as organizações a reduzir o vazamento de dados por apl
 
 ### <a name="try-it-out"></a>Experimente
 
-**Cenário:** identifique aplicativos que podem estar causando o vazamento de dados enviando dados corporativos para fora da empresa ou que está causando consumo de dados excessivo, em seguida, [crie uma política de conformidade de dispositivo de acesso condicional](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy) que adiciona esses aplicativos à lista de aplicativos fora de conformidade. Isso bloqueará o acesso aos recursos corporativos que dão suporte a acesso condicional até que o usuário possa remover o aplicativo bloqueado.
+**Cenário:** identifique aplicativos que possam estar causando vazamento de dados e enviando dados corporativos para fora da empresa ou que estejam causando um consumo de dados excessivo, em seguida, [crie uma política de conformidade de dispositivo de acesso condicional](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy) que adicione esses aplicativos à lista de aplicativos fora de conformidade. Isso bloqueará o acesso aos recursos corporativos que dão suporte a acesso condicional até que o usuário possa remover o aplicativo bloqueado.
 
 ## <a name="antimalware-client-version-alert"></a>Alerta de versão do cliente de antimalware
 Começando com essa versão de visualização, o Configuration Manager Endpoint Protection fornece um alerta se mais de 20% (padrão) dos clientes gerenciados estão usando uma versão expirada do cliente antimalware (ou seja, cliente do Windows Defender ou do Endpoint Protection).
 
 ### <a name="try-it-out"></a>Experimente
-Certifique-se de que o Endpoint Protection esteja habilitado em todos os clientes de área de trabalho e servidor usando a política de configurações do cliente. Agora você pode exibir a **Versão do Cliente Antimalware** e o **Status de Implantação do Endpoint Protection** acessando **Ativos e Conformidade** > **Visão Geral** > **Dispositivos** > **Todos os Clientes de Desktops e Servidores**. Para verificar se há um alerta, exiba **Alertas** no espaço de trabalho **Monitoramento**. Se mais de 20% dos clientes gerenciados estiver executando uma versão expirada do software antimalware, o alerta de que o cliente antimalware está desatualizado será exibido. Esse alerta não aparece na guia **Monitoramento** > **Visão Geral**. Para atualizar clientes antimalware expirados, habilite as atualizações de software para clientes antimalware.
+Certifique-se de que o Endpoint Protection esteja habilitado em todos os clientes de área de trabalho e servidor usando a política de configurações do cliente. Agora você pode exibir a **Versão do Cliente Antimalware** e o **Status de Implantação do Endpoint Protection** acessando **Ativos e Conformidade** > **Visão Geral** > **Dispositivos** > **Todos os Clientes de Desktops e Servidores**. Para verificar se há um alerta, exiba **Alertas** no workspace **Monitoramento**. Se mais de 20% dos clientes gerenciados estiver executando uma versão expirada do software antimalware, o alerta de que o cliente antimalware está desatualizado será exibido. Esse alerta não aparece na guia **Monitoramento** > **Visão Geral**. Para atualizar clientes antimalware expirados, habilite as atualizações de software para clientes antimalware.
 
 Para configurar o percentual em que o alerta é gerado, expanda **Monitoramento** > **Alertas** > **Todos os Alertas**, clique duas vezes em **Clientes antimalware desatualizados** e modifique a opção **Acionar alerta se o percentual de clientes gerenciados com uma versão desatualizada do cliente antimalware for de mais de**.
 
@@ -140,7 +140,7 @@ Para coletar informações de avaliação de conformidade para atualizações do
 4. Na página Plataformas com Suporte, selecione **Windows 10** e clique em **Avançar**.
 5. Na página Regras, clique em **Novo...** e, para **Condição**, escolha **Exigir conformidade do Windows Update for Business**. A configuração **Valor** é automaticamente definida como **Verdadeiro**.
 
-A nova política é exibida no nó **Políticas de Conformidade** do espaço de trabalho **Ativos e Conformidade** .
+A nova política é exibida no nó **Políticas de Conformidade** do workspace **Ativos e Conformidade**.
 
 ### <a name="deploy-a-compliance-policy"></a>Implantar uma política de conformidade
 1. No console do Configuration Manager, acesse **Ativos e Conformidade** > **Configurações de Conformidade** e clique em **Políticas de Conformidade**.
@@ -174,34 +174,34 @@ Use o procedimento a seguir para definir uma sequência de tarefas como de alto 
 1. No console do Configuration Manager, acesse **Biblioteca de Software** > **Sistemas Operacionais** > **Sequências de Tarefas**.
 2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.
 3. Na guia **Notificação do Usuário**, selecione **Usar texto personalizado**.
->  [!NOTE]
->  É possível definir o texto de notificação do usuário apenas quando **Essa é uma sequência de tarefas de alto impacto** está selecionado.
+   > [!NOTE]
+   >  É possível definir o texto de notificação do usuário apenas quando **Essa é uma sequência de tarefas de alto impacto** está selecionado.
 
 4. Defina as seguintes configurações (máximo de 255 caracteres para cada caixa de texto):
 
-   **Texto do título da notificação do usuário**: especifica o texto azul exibido na notificação do usuário do Centro de Software. Por exemplo, na notificação do usuário padrão, esta seção contém algo como "Confirmar que você deseja atualizar o sistema operacional neste computador".
+   **Texto do título de notificação ao usuário**: especifica o texto azul exibido na notificação ao usuário do Centro de Software. Por exemplo, na notificação do usuário padrão, esta seção contém algo como "Confirmar que você deseja atualizar o sistema operacional neste computador".
 
-   **Texto da mensagem da notificação do usuário**: há três caixas de texto que fornecem o corpo da notificação personalizada.
-   - 1º de caixa de texto: especifica o corpo do texto principal, geralmente contendo instruções para o usuário. Por exemplo, na notificação de usuário padrão, esta seção contém algo como "Atualizar o sistema operacional levará tempo e o computador poderá ser reiniciado várias vezes".
-   - 2ª caixa de texto: especifica o texto em negrito abaixo do corpo do texto principal. Por exemplo, na notificação de usuário padrão, esta seção contém algo como “Essa atualização in-loco instala o novo sistema operacional e migra automaticamente seus aplicativos, dados e configurações”.
+   **Texto da mensagem de notificação ao usuário**: há três caixas de texto que fornecem o corpo da notificação personalizada.
+   - 1º caixa de texto: especifica o corpo principal do texto, geralmente contendo instruções para o usuário. Por exemplo, na notificação de usuário padrão, esta seção contém algo como "Atualizar o sistema operacional levará tempo e o computador poderá ser reiniciado várias vezes".
+   - 2ª caixa de texto: especifica o texto em negrito abaixo do corpo principal do texto. Por exemplo, na notificação de usuário padrão, esta seção contém algo como “Essa atualização in-loco instala o novo sistema operacional e migra automaticamente seus aplicativos, dados e configurações”.
    - 3ª caixa de texto: especifica a última linha de texto sob o texto em negrito. Por exemplo, na notificação do usuário padrão, essa seção contém algo como “Clique em Instalar para começar. Caso contrário, clique em Cancelar”.   
 
    Digamos que você defina a seguinte notificação personalizada nas propriedades.
 
-   ![Notificação personalizado para uma sequência de tarefas](.\media\user-notification.png)
+   ![Notificação personalizado para uma sequência de tarefas](./media/user-notification.png)
 
    A mensagem de notificação a seguir será exibida quando o usuário final abrir a instalação do Centro de Software.
 
-   ![Notificação personalizado para uma sequência de tarefas](.\media\user-notification-enduser.png)
+   ![Notificação personalizado para uma sequência de tarefas](./media/user-notification-enduser.png)
 
 ### <a name="configure-software-center-properties"></a>Configurar as propriedades do Centro de Software
 Use o procedimento a seguir para configurar os detalhes da sequência de tarefas exibida no Centro de Software. Esses detalhes são apenas para fins informativos.  
 1. No console do Configuration Manager, acesse **Biblioteca de Software** > **Sistemas Operacionais** > **Sequências de Tarefas**.
 2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.
 3. Na guia **Geral**, as seguintes configurações do Centro de Software estão disponíveis:
-  - **Reinicialização Necessária**: permite que o usuário saiba se uma reinicialização é necessária durante a instalação.
-  - **Tamanho do download (MB)**: especifica quantos megabytes são exibidos no Centro de Software para a sequência de tarefas.  
-  - **Tempo de execução estimado (minutos)**: especifica o tempo de execução estimado em minutos exibido no Centro de Software para a sequência de tarefas.
+   - **Reinicialização necessária**: permite que o usuário saiba se uma reinicialização é necessária durante a instalação.
+   - **Tamanho do download (MB)**: especifica quantos megabytes são exibidos no Centro de Software para a sequência de tarefas.  
+   - **Tempo de execução estimado (minutos)**: especifica o tempo de execução estimado em minutos exibido no Centro de Software para a sequência de tarefas.
 
 
 ## <a name="check-for-running-executable-files-before-installing-an-application"></a>Verificar se há arquivos executáveis antes de instalar um aplicativo
@@ -264,8 +264,7 @@ Adicionamos novas configurações que podem ser usadas nos itens de configuraç�
 - **Teclados preditivos** (somente no modo supervisionado)
 - **Correção automática** (somente no modo supervisionado)
 - **Verificação ortográfica do teclado** (somente no modo supervisionado)
-- **Atalhos de teclado** (somente no modo supervisionado)
-<!--- - **Enterprise app trust settings modification** --->
+- **Atalhos de teclado** (somente modo supervisionado) <!--- - **Enterprise app trust settings modification** --->
 - **Instalação de aplicativos usando somente o Apple Configurator e o iTunes** (somente no modo supervisionado)
 - **Downloads automáticos de aplicativos** (somente no modo supervisionado)
 - **Fazer alterações nas configurações do aplicativo Encontrar Meus Amigos** (somente no modo supervisionado)
@@ -298,17 +297,17 @@ As seções a seguir descrevem o gerenciamento do Android for Work.
 #### <a name="enable-android-for-work-management"></a>Habilitar o gerenciamento do Android for Work
 1. Crie uma conta do Google em https://accounts.google.com/SignUp a ser usada como a conta do administrador do Android for Work que será associada a todas as tarefas de gerenciamento do Android for Work desse locatário do Intune. Essa pode ser uma conta do Google compartilhada entre os administradores que gerenciam dispositivos Android. Essa é a conta do Google que sua organização usa para gerenciar e publicar aplicativos no console do Play for Work. Você usará essa conta para aprovar os aplicativos na loja do Play for Work, portanto, mantenha o controle do nome da conta e senha.
 2. Habilite o registro do Android associando a conta do Google ao locatário do Intune gerenciado no Configuration Manager:
-  1. Acesse **Administração** > **Visão Geral** > **Serviços de Nuvem** > **Assinaturas do Microsoft Intune** e selecione sua assinatura do Intune.
-  2. Na faixa de opções, clique em **Configurar Plataformas** > **Android** e certifique-se de que **Habilitar registro do Android** esteja selecionado.
-  3. Na faixa de opções, clique em **Configurar Plataformas** > **Android for Work**.
-  4. Na caixa de diálogo, clique em **Configurar Android for Work no console do Intune**. O console do Intune é aberto no navegador da Web.
-  5. Use suas credenciais de administrador do Intune para fazer logon no portal do Intune.
-  6. Clique em **Configurar** para abrir o site do Android for Work da Google Play.
-  7. Na página de entrada do Google, insira as credenciais da conta do Google da etapa 1 e forneça as informações da sua empresa.
+   1. Acesse **Administração** > **Visão Geral** > **Serviços de Nuvem** > **Assinaturas do Microsoft Intune** e selecione sua assinatura do Intune.
+   2. Na faixa de opções, clique em **Configurar Plataformas** > **Android** e certifique-se de que **Habilitar registro do Android** esteja selecionado.
+   3. Na faixa de opções, clique em **Configurar Plataformas** > **Android for Work**.
+   4. Na caixa de diálogo, clique em **Configurar Android for Work no console do Intune**. O console do Intune é aberto no navegador da Web.
+   5. Use suas credenciais de administrador do Intune para fazer logon no portal do Intune.
+   6. Clique em **Configurar** para abrir o site do Android for Work da Google Play.
+   7. Na página de entrada do Google, insira as credenciais da conta do Google da etapa 1 e forneça as informações da sua empresa.
 3. Quando você retornar ao portal do Intune, o Android for Work estará habilitado e haverá três opções de registro para dispositivos do Android for Work:
-  - **Gerenciar todos os dispositivos como Android** – (desabilitada) todos os dispositivos Android, incluindo dispositivos que dão suporte ao Android for Work, serão registrados como dispositivos Android convencionais
-  - **Gerenciar dispositivos com suporte como Android for Work** – (habilitada) todos os dispositivos que dão suporte ao Android for Work são registrados como dispositivos Android for Work. Qualquer dispositivo Android que não tem suporte para Android for Work é registrado como um dispositivo Android convencional.
-  - **Gerenciar dispositivos com suporte como Android for Work somente para os usuários nestes grupos** – (teste) permite direcionar o gerenciamento do Android for Work a um conjunto de usuários limitado. Somente os membros dos grupos selecionados que registram um dispositivo que dá suporte ao Android for Work são registrados como dispositivos Android for Work. Todos os outros são registrados como dispositivos Android.
+   - **Gerenciar todos os dispositivos como Android** – (desabilitada) todos os dispositivos Android, incluindo dispositivos que dão suporte ao Android for Work, serão registrados como dispositivos Android convencionais
+   - **Gerenciar dispositivos com suporte como Android for Work** – (habilitada) todos os dispositivos que dão suporte ao Android for Work são registrados como dispositivos Android for Work. Qualquer dispositivo Android que não tem suporte para Android for Work é registrado como um dispositivo Android convencional.
+   - **Gerenciar dispositivos com suporte como Android for Work somente para os usuários nestes grupos** – (teste) permite direcionar o gerenciamento do Android for Work a um conjunto de usuários limitado. Somente os membros dos grupos selecionados que registram um dispositivo que dá suporte ao Android for Work são registrados como dispositivos Android for Work. Todos os outros são registrados como dispositivos Android.
   
 > [!NOTE]
 > Um problema conhecido impede que a opção **Gerenciar dispositivos com suporte para os usuários somente desses grupos como Android para o trabalho** funcione conforme o esperado. Os dispositivos dos usuários nos grupos Azure AD especificados se registrarão como Android, em vez de Android para o trabalho. Para testar o Android para o trabalho, você deve usar a opção **Gerenciar todos os dispositivos com suporte como Android para o trabalho**.

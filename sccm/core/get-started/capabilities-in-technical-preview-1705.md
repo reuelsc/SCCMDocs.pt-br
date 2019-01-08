@@ -10,12 +10,12 @@ ms.assetid: 00684289-d21a-45f8-b1e3-c5c787d73096
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 49205ac1d1fc2dd20cbd4a0844632c5f3d181e45
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a9a5aeb35137a74152333a78e95781fb727eecdf
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341892"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421596"
 ---
 # <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>Funcionalidades na Visualização Técnica 1705 do System Center Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "32341892"
 Este artigo apresenta os recursos disponíveis na Visualização Técnica do System Center Configuration Manager, versão 1705. Você pode instalar esta versão para atualizar e adicionar novas funcionalidades ao seu site do Configuration Manager Technical Preview. Antes de instalar esta versão da visualização técnica, veja [Visualização Técnica do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos e limitações gerais de uso de uma visualização técnica, como atualizar entre versões e como fornecer comentários sobre os recursos em uma visualização técnica.    
 
 **Problemas conhecidos nesse Technical Preview:**
--   **O conector do Operations Manager Suite não é atualizado**. Quando você atualiza de uma versão anterior da Visualização Técnica que tinha o conector do OMS configurado, esse conector não é atualizado e não está mais disponível no console. Após a atualização, você deve [usar o Assistente dos Serviços do Azure](capabilities-in-technical-preview-1705.md#use-azure-services-wizard-to-configure-a-connection-to-oms) e restabelecer a conexão com seu espaço de trabalho do OMS.
+-   **O conector do Operations Manager Suite não é atualizado**. Quando você atualiza de uma versão anterior da Visualização Técnica que tinha o conector do OMS configurado, esse conector não é atualizado e não está mais disponível no console. Após a atualização, você deve [usar o Assistente dos Serviços do Azure](capabilities-in-technical-preview-1705.md#use-azure-services-wizard-to-configure-a-connection-to-oms) e restabelecer a conexão com seu workspace do OMS.
 -   **Os drivers do Surface não são sincronizados com êxito**. Embora o suporte para drivers do Surface estejam listados em **Novidades** no console do Configuration Manager para a visualização técnica, esse recurso ainda não funciona conforme o esperado.
 -   **Não foi possível criar políticas de adiamento do Windows Update for Business**. Embora a capacidade de configurar as políticas de adiamento do Windows Update for Business esteja listada em **Novidades** no console do Configuration Manager para a visualização técnica, o assistente não abre e não é possível configurar as políticas.
 
@@ -81,17 +81,19 @@ Depois que a ferramenta é executada:
 
 **Parâmetros da linha de comando:**  
 
-| Parâmetro        |Descrição                 |  
-|------------------|----------------------------|  
-|**-S &lt;Nome de domínio totalmente qualificado do SQL Server do seu site de nível superior>** | *Necessária* <br> Você deve especificar o nome de domínio totalmente qualificado do SQL Server que hospeda o banco de dados do site para o site de nível superior da sua hierarquia.    |  
-| **-D &lt;Nome do banco de dados>**                        | *Necessária* <br> Você deve especificar o nome do banco de dados de sites de nível superior.  |  
-| **-P &lt;Interface gráfica do usuário do pacote>**                         | *Necessária* <br> Você deve especificar a interface gráfica do usuário para o pacote de atualização que você deseja redefinir.   |  
-| **-I &lt;Nome da instância do SQL Server>**             | *Opcional* <br> Use isso para identificar a instância do SQL Server que hospeda o banco de dados do site. |
-| **-FDELETE**                              | *Opcional* <br> Use isto para forçar a exclusão de um pacote de atualização baixado com êxito. |  
- **Exemplos:**  
- Em um cenário típico, você deve redefinir uma atualização que apresenta problemas de download. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Execute: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
- Em um cenário mais complexo, você deve forçar a exclusão do pacote de atualização problemático. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Execute: ***CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+|                        Parâmetro                         |                                                            Descrição                                                            |
+|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| **-S &lt;Nome de domínio totalmente qualificado do SQL Server do seu site de nível superior>** | *Necessária* <br> Você deve especificar o nome de domínio totalmente qualificado do SQL Server que hospeda o banco de dados do site para o site de nível superior da sua hierarquia. |
+|                **-D &lt;Nome do banco de dados>**                 |                             *Necessária* <br> Você deve especificar o nome do banco de dados de sites de nível superior.                             |
+|                 **-P &lt;Interface gráfica do usuário do pacote>**                 |                        *Necessária* <br> Você deve especificar a interface gráfica do usuário para o pacote de atualização que você deseja redefinir.                        |
+|           **-I &lt;Nome da instância do SQL Server>**           |                   *Opcional* <br> Use isso para identificar a instância do SQL Server que hospeda o banco de dados do site.                   |
+|                       **-FDELETE**                       |                      *Opcional* <br> Use isto para forçar a exclusão de um pacote de atualização baixado com êxito.                      |
+
+ **Exemplos:**  
+ Em um cenário típico, você deve redefinir uma atualização que apresenta problemas de download. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Você pode executar: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+
+ Em um cenário mais complexo, você deve forçar a exclusão do pacote de atualização problemático. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Você pode executar: ***CMUpdateReset.exe -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
 ### <a name="test-the-tool-with-the-technical-preview"></a>Teste a ferramenta com a Visualização Técnica  
 Você pode usar essa ferramenta com as versões 1606 ou posteriores da Visualização Técnica. Esse suporte a versões anteriores é fornecido para que a ferramenta possa ser usada com um número maior de cenários de atualização da visualização técnica, sem ter de esperar até a próxima versão de visualização técnica estar disponível.
@@ -114,13 +116,13 @@ A partir dessa visualização técnica, o cache par [não usa mais a conta de ac
 ## <a name="improvements-for-sql-server-always-on-availability-groups"></a>Aprimoramentos para Grupos de Disponibilidade AlwaysOn do SQL Server  
 Com esta versão, agora você pode usar réplicas de confirmação assíncrona nos grupos de disponibilidade AlwaysOn do SQL Server usados com o Configuration Manager.  Isso significa que você pode adicionar mais réplicas a seus grupos de disponibilidade para usar como backups fora do local (remotos) e, em seguida, usá-los em um cenário de recuperação de desastres.  
 
--   O Configuration Manager dá suporte ao uso de réplica de confirmação assíncrona para recuperar sua réplica síncrona.  Confira [Opções de recuperação do banco de dados do site](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) no tópico Backup e recuperação para obter informações sobre como fazer isso.
+- O Configuration Manager dá suporte ao uso de réplica de confirmação assíncrona para recuperar sua réplica síncrona.  Confira [Opções de recuperação do banco de dados do site](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) no tópico Backup e recuperação para obter informações sobre como fazer isso.
 
--   Esta versão não dá suporte a failover para usar a réplica de confirmação assíncrona como seu banco de dados do site.
-> [!CAUTION]  
-> Como o Configuration Manager não valida o estado da réplica de confirmação assíncrona para confirmar que é atual, e [por design essa réplica pode estar fora de sincronia](https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), o uso de uma réplica de confirmação assíncrona como o banco de dados do site pode colocar em risco a integridade do site e dos dados.  
+- Esta versão não dá suporte a failover para usar a réplica de confirmação assíncrona como seu banco de dados do site.
+  > [!CAUTION]  
+  > Como o Configuration Manager não valida o estado da réplica de confirmação assíncrona para confirmar que é atual, e [por design essa réplica pode estar fora de sincronia](https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), o uso de uma réplica de confirmação assíncrona como o banco de dados do site pode colocar em risco a integridade do site e dos dados.  
 
--   Você pode usar o mesmo número e tipo de réplicas em um grupo de disponibilidade como compatível com a versão do SQL Server que você usa.   (O suporte anterior foi limitado a duas réplicas de confirmação síncronas).
+- Você pode usar o mesmo número e tipo de réplicas em um grupo de disponibilidade como compatível com a versão do SQL Server que você usa.   (O suporte anterior foi limitado a duas réplicas de confirmação síncronas).
 
 ### <a name="configure-an-asynchronous-commit-replica"></a>Configurar uma réplica de confirmação assíncrona
 Para adicionar uma réplica assíncrona a um [grupo de disponibilidade que você usa com o Configuration Manager](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database), você não precisa executar os scripts de configuração necessários para configurar uma réplica síncrona. (Isso ocorre porque não há suporte para usar essa réplica assíncrona como o banco de dados do site). Veja [a documentação do SQL Server](https://msdn.microsoft.com/library/hh213247(v=sql.120).aspx(d=robot)) para obter informações sobre como adicionar réplicas secundárias a grupos de disponibilidade.
@@ -156,7 +158,7 @@ Tente concluir as tarefas a seguir e, depois, envie-nos **Comentários** usando 
 ## <a name="configure-and-deploy-windows-defender-application-guard-policies"></a>Configurar e implantar políticas de Proteção de Aplicativos do Windows Defender
 
 O [Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) é um novo recurso do Windows que ajuda a proteger os usuários através da abertura de sites não confiáveis em um contêiner isolado seguro que não esteja acessível por outras partes do sistema operacional. Nesse visualização técnica, adicionamos suporte para configurar esse recurso usando as configurações de conformidade do Configuration Manager que você configura e, em seguida, implanta em uma coleção.
-Este recurso será lançado na versão prévia para a versão de 64 bits da atualização do criador do Windows 10 (codinome: RS2). Para testar esse recurso agora, você deverá estar usando uma versão prévia desta atualização.
+Este recurso será lançado como versão prévia na versão de 64 bits da Atualização do Windows 10 para Criadores (codinome: RS2). Para testar esse recurso agora, você deverá estar usando uma versão prévia desta atualização.
 
 
 ### <a name="before-you-start"></a>Antes de começar
@@ -171,7 +173,7 @@ Verifique se você leu a postagem no blog para entender as noções básicas sob
 Para criar uma política e procurar as configurações disponíveis:
 
 1.  No console do Configuration Manager, escolha **Ativos e Conformidade**.
-2.  No espaço de trabalho **Ativos e Conformidade**, escolha **Visão Geral** > **Endpoint Protection** > **Windows Defender Application Guard**.
+2.  No workspace **Ativos e Conformidade**, escolha **Visão Geral** > **Endpoint Protection** > **Windows Defender Application Guard**.
 3.  Na guia **Início**, no grupo **Criar**, clique em **Criar Política do Windows Defender Application Guard**.
 4.  Usando a postagem no blog como referência, você pode procurar e definir as configurações disponíveis para experimentar o recurso.
 5.  Quando tiver terminado, conclua o assistente e implante a política para um ou mais dispositivos Windows 10.
@@ -224,20 +226,20 @@ Você encontrará ajuda sobre como fazer isso nos tópicos a seguir:
 
 Isso conecta o site do Configuration Manager ao Azure AD e é um pré-requisito para todas as outras operações nesta seção. Para fazer isso:
 
-1.  No espaço de trabalho **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e clique em **Serviços do Azure**.
-2.  Na guia **Página Inicial**, no grupo **Serviços do Azure**, clique em **Configurar os Serviços do Azure**.
-3.  Na página **Serviços do Azure** do Assistente de Serviços do Azure, selecione **Gerenciamento de Nuvem** para permitir que os clientes sejam autenticados com a hierarquia usando o Azure AD.
-4.  Na página **Geral** do assistente, especifique um nome e uma descrição para o serviço do Azure.
-5.  Na página **Aplicativo** do assistente, selecione o seu ambiente do Azure na lista e clique em **Procurar** para selecionar os aplicativos de cliente e servidor que serão usados para configurar o serviço do Azure:
-    - Na janela do **aplicativo de servidor**, selecione o aplicativo de servidor que você deseja usar e depois clique em **OK**. Aplicativos de servidor são os aplicativos Web do Azure que contêm as configurações da sua conta do Azure, incluindo sua ID de locatário, ID de cliente e uma chave secreta para clientes. Se você não tiver um aplicativo de servidor disponível, use um dos seguintes:
-        - **Criar**: Para criar um novo aplicativo de servidor, clique em **Criar**. Forneça um nome amigável para o aplicativo e o locatário. Em seguida, depois que você entrar no Azure, o Configuration Manager cria o aplicativo Web do Azure para você, incluindo a ID do cliente e a chave secreta para uso com o aplicativo Web. Posteriormente, você pode exibi-las no portal do Azure.
-        - **Importar**: Para usar um aplicativo Web que já existe em sua assinatura do Azure, clique em **Importar**. Forneça um nome amigável para o aplicativo e o locatário e especifique a ID de locatário, ID do cliente e a chave secreta para o aplicativo Web do Azure que você deseja que o Configuration Manager use. Depois que você verificar as informações, clique em **OK** para continuar. Esta opção não está disponível atualmente nessa versão prévia.
-    - Repita o mesmo processo para o aplicativo cliente.
+1. No workspace **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e clique em **Serviços do Azure**.
+2. Na guia **Página Inicial**, no grupo **Serviços do Azure**, clique em **Configurar os Serviços do Azure**.
+3. Na página **Serviços do Azure** do Assistente de Serviços do Azure, selecione **Gerenciamento de Nuvem** para permitir que os clientes sejam autenticados com a hierarquia usando o Azure AD.
+4. Na página **Geral** do assistente, especifique um nome e uma descrição para o serviço do Azure.
+5. Na página **Aplicativo** do assistente, selecione o seu ambiente do Azure na lista e clique em **Procurar** para selecionar os aplicativos de cliente e servidor que serão usados para configurar o serviço do Azure:
+   - Na janela do **aplicativo de servidor**, selecione o aplicativo de servidor que você deseja usar e depois clique em **OK**. Aplicativos de servidor são os aplicativos Web do Azure que contêm as configurações da sua conta do Azure, incluindo sua ID de locatário, ID de cliente e uma chave secreta para clientes. Se você não tiver um aplicativo de servidor disponível, use um dos seguintes:
+       - **Criar**: para criar um aplicativo de servidor, clique em **criar**. Forneça um nome amigável para o aplicativo e o locatário. Em seguida, depois que você entrar no Azure, o Configuration Manager cria o aplicativo Web do Azure para você, incluindo a ID do cliente e a chave secreta para uso com o aplicativo Web. Posteriormente, você pode exibi-las no portal do Azure.
+       - **Importar**: para usar um aplicativo Web que já exista em sua assinatura do Azure, clique em **Importar**. Forneça um nome amigável para o aplicativo e o locatário e especifique a ID de locatário, ID do cliente e a chave secreta para o aplicativo Web do Azure que você deseja que o Configuration Manager use. Depois que você verificar as informações, clique em **OK** para continuar. Esta opção não está disponível atualmente nessa versão prévia.
+   - Repita o mesmo processo para o aplicativo cliente.
 
-  Você precisa conceder a permissão de aplicativo *Ler dados do diretório* quando você usar a Importação de Aplicativo, para definir as permissões corretas no portal. Se você usar a criação de aplicativos, as permissões serão criadas automaticamente com o aplicativo, mas você ainda precisará dar consentimento para o aplicativo no portal do Azure.
-6.  Na página **Descoberta** do assistente, opcionalmente escolha **Ativar a Descoberta de Usuário do Azure Active Directory** e, em seguida, clique em **Configurações**.
-Na caixa de diálogo **Configurações de Descoberta de Usuário do Azure AD**, configure um agendamento para quando ocorrer a descoberta. Você também pode habilitar a descoberta delta que verifica apenas as contas novas ou alteradas no Azure AD.
-7.  Conclua o assistente.
+   Você precisa conceder a permissão de aplicativo *Ler dados do diretório* quando você usar a Importação de Aplicativo, para definir as permissões corretas no portal. Se você usar a criação de aplicativos, as permissões serão criadas automaticamente com o aplicativo, mas você ainda precisará dar consentimento para o aplicativo no portal do Azure.
+6. Na página **Descoberta** do assistente, opcionalmente escolha **Ativar a Descoberta de Usuário do Azure Active Directory** e, em seguida, clique em **Configurações**.
+   Na caixa de diálogo **Configurações de Descoberta de Usuário do Azure AD**, configure um agendamento para quando ocorrer a descoberta. Você também pode habilitar a descoberta delta que verifica apenas as contas novas ou alteradas no Azure AD.
+7. Conclua o assistente.
 
 Neste ponto, você se conectou a seu site do Configuration Manager para o Azure AD.
 
@@ -247,12 +249,12 @@ Neste ponto, você se conectou a seu site do Configuration Manager para o Azure 
 Antes de começar, verifique se os arquivos de origem de instalação do cliente estão armazenados localmente no dispositivo para o qual você deseja instalar o cliente.
 Em seguida, use as instruções em [Como implantar clientes em computadores com Windows no System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-clients-manually) usando a seguinte linha de comando de instalação (substitua os valores de exemplo pelos seus próprios valores):
 
-**ccmsetup.exe /NoCrlCheck /Source:C:\CLIENT  CCMHOSTNAME=SCCMPROXYCONTOSO.CLOUDAPP.NET/CCM_Proxy_ServerAuth/72457598037527932 SMSSiteCode=HEC AADTENANTID=780433B5-E05E-4B7D-BFD1-E8013911E543 AADTENANTNAME=contoso  AADCLIENTAPPID=<GUID> AADRESOURCEURI=https://contososerver**
+**ccmsetup.exe /NoCrlCheck /Source:C:\CLIENT  CCMHOSTNAME=SCCMPROXYCONTOSO.CLOUDAPP.NET/CCM_Proxy_ServerAuth/72457598037527932 SMSSiteCode=HEC AADTENANTID=780433B5-E05E-4B7D-BFD1-E8013911E543 AADTENANTNAME=contoso  AADCLIENTAPPID=<GUID> AADRESOURCEURI=<https://contososerver>**
 
-- **/NoCrlCheck**: se o gateway de gerenciamento de nuvem ou ponto de gerenciamento usar um certificado do servidor não público, o cliente poderá não ser capaz de alcançar o local da CRL.
-- **/Source**: Pasta local: local dos arquivos de instalação do cliente.
+- **/NoCrlCheck**: se o gateway de gerenciamento de nuvem ou o ponto de gerenciamento usar um certificado do servidor não público, o cliente poderá não ser capaz de alcançar a localização da CRL.
+- **/Source**: pasta local:   localização dos arquivos de instalação do cliente.
 - **CCMHOSTNAME**: o nome do seu ponto de gerenciamento da Internet. Você pode encontrá-lo executando **gwmi -namespace root\ccm\locationservices -class SMS_ActiveMPCandidate** de um prompt de comando em um cliente gerenciado.
-- **SMSMP**: o nome do seu ponto de gerenciamento de pesquisa – pode ser em sua intranet.
+- **SMSMP**: o nome do seu ponto de gerenciamento de pesquisa, que pode ser na sua intranet.
 - **SMSSiteCode**: o código do site do Configuration Manager.
 - **AADTENANTID**, **AADTENANTNAME**: a ID e o nome do locatário do Azure AD vinculado ao Configuration Manager. Você pode localizar isso executando dsregcmd.exe /status em um prompt de comando em um dispositivo unido do Azure AD.
 - **AADCLIENTAPPID**: a ID do aplicativo cliente do Azure AD. Para obter ajuda sobre como localizar isso, veja [Usar o portal para criar um aplicativo e uma entidade de serviço do Azure Active Directory que pode acessar recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-application-id-and-authentication-key).
@@ -272,7 +274,7 @@ Os pré-requisitos para configurar uma conexão para o OMS são os mesmos dos [d
 
 -   O conector do OMS deve ser instalado no computador que hospeda um [ponto de conexão de serviço](/sccm/core/servers/deploy/configure/about-the-service-connection-point) no [modo online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#a-namebkmkmodesa-modes-of-operation).
 
--   Você deve instalar um Agente de Monitoramento da Microsoft para o OMS instalado no ponto de conexão de serviço junto com o conector do OMS. O agente e o conector do OMS devem ser configurados para usar o mesmo **espaço de trabalho do OMS**. Para instalar o agente, veja [Baixar e instalar o agente](/azure/log-analytics/log-analytics-sccm#download-and-install-the-agent) na documentação do OMS.
+-   Você deve instalar um Agente de Monitoramento da Microsoft para o OMS instalado no ponto de conexão de serviço junto com o conector do OMS. O agente e o conector do OMS devem ser configurados para usar o mesmo **workspace do OMS**. Para instalar o agente, veja [Baixar e instalar o agente](/azure/log-analytics/log-analytics-sccm#download-and-install-the-agent) na documentação do OMS.
 -   Depois de instalar o conector e o agente, você deverá configurar o OMS para usar dados do Configuration Manager. Para fazer isso, no Portal do OMS, veja [Importar as coleções do Configuration Manager](/azure/log-analytics/log-analytics-sccm#import-collections).
 
 ### <a name="use-the-azure-services-wizard-to-configure-the-connection-to-oms"></a>Use o Assistente para Serviços do Azure para configurar a conexão para OMS
@@ -285,12 +287,12 @@ Os pré-requisitos para configurar uma conexão para o OMS são os mesmos dos [d
 
 4.  Selecione um aplicativo Web:
 
-    -   **Importar**: Para usar um aplicativo Web que já existe em sua assinatura do Azure, clique em **Importar**. Forneça um nome amigável para o aplicativo e o locatário e especifique a ID de locatário, ID do cliente e a chave secreta para o aplicativo Web do Azure que você deseja que o Configuration Manager use. Depois que você **verificar** as informações, clique em **OK** para continuar.   
+    -   **Importar**: para usar um aplicativo Web que já exista em sua assinatura do Azure, clique em **Importar**. Forneça um nome amigável para o aplicativo e o locatário e especifique a ID de locatário, ID do cliente e a chave secreta para o aplicativo Web do Azure que você deseja que o Configuration Manager use. Depois que você **verificar** as informações, clique em **OK** para continuar.   
 
     > [!NOTE]   
     > Quando você configura o OMS com essa visualização, o OMS oferece suporte somente à função *import* função para um aplicativo Web. Não há suporte para a criação de um novo aplicativo Web. Da mesma forma, não é possível reutilizar um aplicativo existente para o OMS.
 
-5.  Se você concluiu todos os outros procedimentos com êxito, as informações na tela **Configuração de Conexão de OMS** aparecerão automaticamente nesta página. As informações para as configurações de conexão devem aparecer para sua **Assinatura do Azure**, **Grupo de recursos do Azure** e **Espaço de trabalho do Operations Management Suite**.
+5.  Se você concluiu todos os outros procedimentos com êxito, as informações na tela **Configuração de Conexão de OMS** aparecerão automaticamente nesta página. As informações para as configurações de conexão devem aparecer para sua **Assinatura do Azure**, **Grupo de recursos do Azure** e **Workspace do Operations Management Suite**.
 
 6.  O assistente conecta-se ao serviço do OMS usando as informações que você inseriu. Selecione as coleções de dispositivos que você deseja sincronizar com o OMS e, em seguida, clique em **Adicionar**.
 

@@ -10,12 +10,12 @@ ms.assetid: 4bb6afeb-d267-4f9b-ade2-26e5400c223b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bd76ecfcd4f5731e7fa078a00e79fdc6ab91ffa4
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a12d2e40007a351d3718247803d8be7856e12273
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333494"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423330"
 ---
 # <a name="common-tasks-for-creating-and-deploying-configuration-baselines-with-system-center-configuration-manager"></a>Tarefas comuns para criar e implantar linhas de base de configuração com o System Center Configuration Manager
 
@@ -34,49 +34,49 @@ Este tópico contém cenários comuns para ajudar a saber mais sobre como criar 
 
 Use o procedimento a seguir para aprender a adicionar este item de configuração a uma linha de base de configuração para prepará-lo para implantação.  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Linhas de Base de Configuração**.  
+1. No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Linhas de Base de Configuração**.  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Linha de Base de Configuração**.  
+2. Na guia **Início** , no grupo **Criar** , clique em **Criar Linha de Base de Configuração**.  
 
-4.  Na caixa de diálogo **Criar Linha de Base de Configuração**, defina as seguintes configurações:  
+3. Na caixa de diálogo **Criar Linha de Base de Configuração**, defina as seguintes configurações:  
 
-    -   **Nome** -Digite **Senhas do Windows 10** (ou outro nome de sua escolha)  
+   -   **Nome** -Digite **Senhas do Windows 10** (ou outro nome de sua escolha)  
 
-5.  Clique em **Adicionar** > **Itens de Configuração**.  
+4. Clique em **Adicionar** > **Itens de Configuração**.  
 
-6.  Na caixa de diálogo **Adicionar Itens de Configuração** , selecione o item de configuração **Imposição de Senha do Windows 10** que você criou anteriormente e clique em **Adicionar**.  
+5. Na caixa de diálogo **Adicionar Itens de Configuração** , selecione o item de configuração **Imposição de Senha do Windows 10** que você criou anteriormente e clique em **Adicionar**.  
 
-7.  Clique em OK para fechar a caixa de diálogo **Adicionar Itens de Configuração** e voltar para a caixa de diálogo **Criar Linha de Base de Configuração**.
+6. Clique em OK para fechar a caixa de diálogo **Adicionar Itens de Configuração** e voltar para a caixa de diálogo **Criar Linha de Base de Configuração**.
 
-8.  Clique em **OK** para fechar a caixa de diálogo **Criar Linha de Base de Configuração** .  
+7. Clique em **OK** para fechar a caixa de diálogo **Criar Linha de Base de Configuração** .  
 
- Agora você pode ver a linha de base de configuração no nó **Linhas de Base de Configuração** do console do Configuration Manager.  
+   Agora você pode ver a linha de base de configuração no nó **Linhas de Base de Configuração** do console do Configuration Manager.  
 
 ## <a name="deploy-the-configuration-baseline"></a>Implantar a linha de base de configuração  
  Neste exemplo, você implantará a linha de base de configuração criada no procedimento anterior em uma coleção de computadores.  
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Linhas de Base de Configuração**.  
+1. No console do Configuration Manager, clique em **Ativos e Conformidade** > **Configurações de Conformidade** > **Linhas de Base de Configuração**.  
 
-3.  Na lista de linhas de base de configuração, selecione **Senhas do Windows 10**.  
+2. Na lista de linhas de base de configuração, selecione **Senhas do Windows 10**.  
 
-4.  Na guia **Início** , no grupo **Implantação** , clique em **Implantar**.  
+3. Na guia **Início** , no grupo **Implantação** , clique em **Implantar**.  
 
-5.  Na caixa de diálogo **Implantar Linhas de Base de Configuração**, defina as seguintes configurações:  
+4. Na caixa de diálogo **Implantar Linhas de Base de Configuração**, defina as seguintes configurações:  
 
-    -   **Linhas de base de configuração selecionadas** - Verifique se a linha de base de configuração das **Senhas do Windows 10** foi automaticamente adicionada a essa lista.  
+   -   **Linhas de base de configuração selecionadas** - Verifique se a linha de base de configuração das **Senhas do Windows 10** foi automaticamente adicionada a essa lista.  
 
-    -   **Corrigir regras não compatíveis quando possível** – Marque esta caixa para garantir que, se as configurações corretas não estiverem presentes nos dispositivos de destino, elas serão corrigidas pelo Configuration Manager.  
+   -   **Corrigir regras não compatíveis quando possível** – Marque esta caixa para garantir que, se as configurações corretas não estiverem presentes nos dispositivos de destino, elas serão corrigidas pelo Configuration Manager.  
 
-    -   **Coleção** – Clique em **Procurar** para escolher a coleção de computadores em que a linha de base de configuração será avaliada e corrigida quanto à conformidade. Neste exemplo, a linha de base de configuração foi implantada na coleção interna **Todos os Clientes de Desktop e de Servidor** .  
+   -   **Coleção** – Clique em **Procurar** para escolher a coleção de computadores em que a linha de base de configuração será avaliada e corrigida quanto à conformidade. Neste exemplo, a linha de base de configuração foi implantada na coleção interna **Todos os Clientes de Desktop e de Servidor** .  
 
-        > [!TIP]  
-        >  Não se preocupe se a coleção que você escolher contém computadores ou dispositivos que não executam o Windows 10. Já que você configurou as plataformas com suporte no item de configuração criado, somente os PCs com Windows 10 serão avaliados quanto à conformidade.  
+       > [!TIP]  
+       >  Não se preocupe se a coleção que você escolher contém computadores ou dispositivos que não executam o Windows 10. Já que você configurou as plataformas com suporte no item de configuração criado, somente os PCs com Windows 10 serão avaliados quanto à conformidade.  
 
-    -   Se necessário, configure o agendamento pelo qual a linha de base de configuração será avaliada. Caso contrário, mantenha o padrão de **7 Dias**.  
+   -   Se necessário, configure o agendamento pelo qual a linha de base de configuração será avaliada. Caso contrário, mantenha o padrão de **7 Dias**.  
 
-7.  Clique em **OK** para fechar a caixa de diálogo **Implantar Linhas de Base de Configuração** e criar a implantação.  
+5. Clique em **OK** para fechar a caixa de diálogo **Implantar Linhas de Base de Configuração** e criar a implantação.  
 
- Se quiser dar uma olhada rápida nas estatísticas de conformidade dessa implantação, no espaço de trabalho **Monitoramento** , clique em **Implantações**. Na parte inferior da tela, você verá um gráfico **Estatísticas de Conformidade** .  
+   Se quiser dar uma olhada rápida nas estatísticas de conformidade dessa implantação, no workspace **Monitoramento**, clique em **Implantações**. Na parte inferior da tela, você verá um gráfico **Estatísticas de Conformidade** .  
 
 ## <a name="next-steps"></a>Próximas etapas 
 

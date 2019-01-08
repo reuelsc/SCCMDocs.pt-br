@@ -10,12 +10,12 @@ ms.assetid: 35b5baec-d313-46aa-9d14-c443aa0d6c09
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dd8116bc74f855fff956d0bb201691c741a6d351
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: c5d3635ee6d1ed4e9c3819e2cffc3ee5028953f5
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52455981"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422191"
 ---
 # <a name="support-for-configuration-manager-current-branch-versions"></a>Suporte para versões do branch atual do Configuration Manager
 
@@ -23,12 +23,12 @@ ms.locfileid: "52455981"
 
 A Microsoft planeja lançar atualizações para o branch atual do Configuration Manager algumas vezes ao ano. Para versões do Configuration Manager lançadas antes da 1710, o suporte é de 12 meses. Começando na versão 1710, cada versão de atualização permanece com suporte por 18 meses a partir da data de lançamento para disponibilidade geral. A Microsoft fornece suporte técnico para todo o período de suporte. Há duas fases de manutenção distintas que dependem da disponibilidade da versão mais recente do branch atual.  
 
--   Fase de manutenção de **Atualizações Críticas e de Segurança** – Ao executar a versão do branch atual mais recente do Configuration Manager, você recebe as Atualizações Críticas e de Segurança.  
+- Fase de manutenção de **Atualizações Críticas e de Segurança** – Ao executar a versão do branch atual mais recente do Configuration Manager, você recebe as Atualizações Críticas e de Segurança.  
 
--   Fase de manutenção somente de **Atualizações de Segurança**  – após o lançamento de uma nova versão do branch atual, a Microsoft só dá suporte a atualizações de segurança para as versões mais antigas durante o restante do ciclo de vida de suporte dessa versão (mostrado na Figura 1).  
+- Fase de manutenção somente de **Atualizações de Segurança**  – após o lançamento de uma nova versão do branch atual, a Microsoft só dá suporte a atualizações de segurança para as versões mais antigas durante o restante do ciclo de vida de suporte dessa versão (mostrado na Figura 1).  
 
- ![Gráfico de linha do tempo de manutenção e suporte do Configuration Manager](media/CM_Servicing_support_timeline1.png)  
-Figura 1. Exemplo de sobreposição de ciclo de versão para o suporte à manutenção do branch atual. Este exemplo é para fins ilustrativos do ciclo e não representa as datas de lançamento reais ou esperadas.
+  ![Gráfico de linha do tempo de manutenção e suporte do Configuration Manager](media/CM_Servicing_support_timeline1.png)  
+  Figura 1. Exemplo de sobreposição de ciclo de versão para o suporte à manutenção do branch atual. Este exemplo é para fins ilustrativos do ciclo e não representa as datas de lançamento reais ou esperadas.
 
 > [!NOTE]  
 >  A versão mais recente do branch atual está sempre na fase de manutenção **Atualizações Críticas e de Segurança**. Essa instrução do suporte significa que, se você encontrar um defeito de código que requeira uma atualização crítica, será necessário ter a versão do branch atual mais recente instalada para receber uma correção. Todas as outras versões de branch atuais com suporte só estão qualificadas a receber atualizações de segurança.

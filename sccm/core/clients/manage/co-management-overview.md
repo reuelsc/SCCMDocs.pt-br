@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 1791217e22e2bcc6d5fd2603abee3aaced816afe
-ms.sourcegitcommit: 1f8731ed8f0308cb2cb576722adb0821a366e9ce
+ms.openlocfilehash: 6434ba443cb884c7fbb5d727c5db3c80d2d88aad
+ms.sourcegitcommit: 12b71da551350c99c5916df3629e33e31040db15
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51223731"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53530924"
 ---
 # <a name="co-management-for-windows-10-devices"></a>Cogerenciamento para dispositivos Windows 10    
 
@@ -58,9 +58,9 @@ Uso imediato dos seguintes recursos do Intune:
 
  Há dois caminhos principais para usar o cogerenciamento:  
 
-   - O Configuration Manager provisiona cogerenciamento: você registra no Intune seus dispositivos Windows 10 ingressados no Azure AD que já são clientes do Configuration Manager.  
+   - O Configuration Manager provisiona cogerenciamento: Você registra no Intune seus dispositivos Windows 10 ingressados no Azure AD que já são clientes do Configuration Manager.  
 
-   - Provisionado pelo Intune: para dispositivos que já estão registrados no Intune, você instala o cliente do Configuration Manager para atingir um estado de cogerenciamento. 
+   - Provisionados pelo Intune: Para dispositivos que já estão registrados no Intune, você instala o cliente do Configuration Manager para atingir um estado de cogerenciamento. 
 
 
 ### <a name="configuration-manager"></a>Gerenciador de Configurações
@@ -72,21 +72,21 @@ Uso imediato dos seguintes recursos do Intune:
 
  - Dispositivos Windows 10 devem ser associados ao Azure AD. Eles podem ser de qualquer um dos seguintes tipos:  
 
-     - [Ingressado no Azure AD híbrido](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup), em que o dispositivo ingressa no seu Active Directory local e é registrado com seu Azure Active Directory.
+     - [Ingressado no Azure AD híbrido](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan), em que o dispositivo ingressa no seu Active Directory local e é registrado com seu Azure Active Directory.
 
-     - Somente ingressado no Azure AD. (Esse tipo é às vezes chamado de "ingressado em domínio de nuvem")<!--SCCMDocs issue 605-->
+     - Somente [ingressado no Azure AD](https://docs.microsoft.com/azure/active-directory/devices/azureadjoin-plan). (Esse tipo é às vezes chamado de "ingressado em domínio de nuvem")<!--SCCMDocs issue 605-->
 
  - [Habilitar o registro automático no Windows 10](https://docs.microsoft.com/intune/windows-enroll).  
 
 
 ### <a name="intune"></a>Intune
 
- - [Como configurar a assinatura do Intune](/sccm/mdm/deploy-use/configure-intune-subscription) ou [Configurar o Intune](/intune/setup-steps)  
+- [Como configurar a assinatura do Intune](/sccm/mdm/deploy-use/configure-intune-subscription) ou [Configurar o Intune](/intune/setup-steps)  
 
- - [Iniciar a migração do MDM híbrido para o Intune autônomo](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa)  
+- [Iniciar a migração do MDM híbrido para o Intune autônomo](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa)  
 
- > [!Note]  
- > Se você tiver um ambiente de MDM híbrido (Intune integrado ao Configuration Manager), não será possível habilitar o cogerenciamento. No entanto, você pode iniciar a migração de usuários para o Intune autônomo e, em seguida, habilitar seus dispositivos Windows 10 associados para cogerenciamento. Para obter mais informações sobre como migrar para o Intune autônomo, consulte [Iniciar a migração do MDM híbrido para o Intune autônomo](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).  
+  > [!Note]  
+  > Se você tiver um ambiente de MDM híbrido (Intune integrado ao Configuration Manager), não será possível habilitar o cogerenciamento. No entanto, você pode iniciar a migração de usuários para o Intune autônomo e, em seguida, habilitar seus dispositivos Windows 10 associados para cogerenciamento. Para obter mais informações sobre como migrar para o Intune autônomo, consulte [Iniciar a migração do MDM híbrido para o Intune autônomo](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).  
 
 
 ### <a name="enable-co-management"></a>Habilitar cogerenciamento 

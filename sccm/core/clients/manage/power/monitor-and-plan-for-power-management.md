@@ -10,12 +10,12 @@ ms.assetid: 507bf676-2679-4e4d-8831-3ffc9cf8557e
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 70e6f4ddfa335a08bdf7039274b388b5a468311e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: c0cff0787549624ab0b987fbacdb6f5b4f9c3ec1
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341756"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416207"
 ---
 # <a name="how-to-monitor-and-plan-for-power-management-in-system-center-configuration-manager"></a>Como monitorar e planejar o gerenciamento de energia no System Center Configuration Manager
 
@@ -43,17 +43,17 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 ###  <a name="BKMK_Activity"></a> Relatório Atividades do computador  
  O relatório **Atividade do computador** exibe um gráfico que mostra a seguinte atividade para uma coleção específica em um período de tempo especificado:  
 
--   **Computador ligado** – O computador foi ligado.  
+- **Computador ligado** – O computador foi ligado.  
 
--   **Monitor ligado** – O monitor foi ligado.  
+- **Monitor ligado** – O monitor foi ligado.  
 
--   **Usuário Ativo** – Foi detectada a atividade do mouse do computador, do teclado de computador ou de uma conexão de Área de Trabalho Remota ao computador  
+- **Usuário Ativo** – Foi detectada a atividade do mouse do computador, do teclado de computador ou de uma conexão de Área de Trabalho Remota ao computador  
 
- Esse relatório é usado durante as fases de planejamento e monitoramento e de imposição para ajudá-lo a entender o alinhamento entre a atividade do computador, a atividade do monitor e a atividade do usuário em um período de 24 horas. Se você executar o relatório durante vários dias, os dados serão agregados durante esse período. Este relatório pode ajudá-lo a determinar horários comerciais (de pico) e horários não comerciais (fora de pico) de uma coleção selecionada para ajudá-lo a decidir quando aplicar os planos de gerenciamento de energia configurados.  
+  Esse relatório é usado durante as fases de planejamento e monitoramento e de imposição para ajudá-lo a entender o alinhamento entre a atividade do computador, a atividade do monitor e a atividade do usuário em um período de 24 horas. Se você executar o relatório durante vários dias, os dados serão agregados durante esse período. Este relatório pode ajudá-lo a determinar horários comerciais (de pico) e horários não comerciais (fora de pico) de uma coleção selecionada para ajudá-lo a decidir quando aplicar os planos de gerenciamento de energia configurados.  
 
- O gráfico mostra os períodos de tempo em que um computador pode ser ligado, mas que não há qualquer atividade de usuário. Considere a aplicação de configurações de energia mais restritivas durante esses horários para economizar nos custos de energia de computadores que estão ligados, mas que não estão sendo usados. Um computador é considerado ativo se houve atividade de monitor, usuário ou computador durante um minuto ou mais em relação a uma hora exibida no gráfico. Se um computador não estiver relatando dados de gerenciamento de energia, ele não será incluído no relatório **Atividade do computador** .  
+  O gráfico mostra os períodos de tempo em que um computador pode ser ligado, mas que não há qualquer atividade de usuário. Considere a aplicação de configurações de energia mais restritivas durante esses horários para economizar nos custos de energia de computadores que estão ligados, mas que não estão sendo usados. Um computador é considerado ativo se houve atividade de monitor, usuário ou computador durante um minuto ou mais em relação a uma hora exibida no gráfico. Se um computador não estiver relatando dados de gerenciamento de energia, ele não será incluído no relatório **Atividade do computador** .  
 
- Use os parâmetros a seguir para configurar este relatório.  
+  Use os parâmetros a seguir para configurar este relatório.  
 
 #### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
  Para executar este relatório, os parâmetros a seguir devem ser especificados.  
@@ -78,13 +78,13 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 ###  <a name="BKMK_Comp_Activity_by_computer"></a> Atividades do computador por relatório de computador  
  O relatório **Atividade do computador por computador** exibe um gráfico que mostra a seguinte atividade de um computador especificado em determinada data:  
 
--   **Computador ligado** – O computador foi ligado.  
+- **Computador ligado** – O computador foi ligado.  
 
--   **Monitor ligado** – O monitor foi ligado.  
+- **Monitor ligado** – O monitor foi ligado.  
 
--   **Usuário Ativo** – Foi detectada a atividade do mouse do computador, do teclado de computador ou de uma conexão de Área de Trabalho Remota ao computador.  
+- **Usuário Ativo** – Foi detectada a atividade do mouse do computador, do teclado de computador ou de uma conexão de Área de Trabalho Remota ao computador.  
 
- Este relatório pode ser executado de forma independente ou chamado pelo relatório **Detalhes da atividade do computador** .  
+  Este relatório pode ser executado de forma independente ou chamado pelo relatório **Detalhes da atividade do computador** .  
 
 > [!NOTE]  
 >  Informações sobre a atividade do computador são coletadas de computadores cliente durante o inventário de hardware. Dependendo do tempo em que é executado o inventário de hardware, a atividade que ocorre durante um horário de pico aplicado ou um plano de energia para horário fora de pico pode ser coletada.  
@@ -233,13 +233,13 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 ###  <a name="BKMK_Consumption"></a> Relatório Consumo de energia  
  O relatório **Consumo de energia** exibe as seguintes informações:  
 
--   Um gráfico que mostra o consumo de energia mensal total de computadores em kWh (quilowatts por hora) na coleção especificada, no período de tempo especificado.  
+- Um gráfico que mostra o consumo de energia mensal total de computadores em kWh (quilowatts por hora) na coleção especificada, no período de tempo especificado.  
 
--   Um gráfico que mostra o consumo de energia médio em kWh (quilowatts por hora) de cada computador na coleção especificada, no período de tempo especificado.  
+- Um gráfico que mostra o consumo de energia médio em kWh (quilowatts por hora) de cada computador na coleção especificada, no período de tempo especificado.  
 
--   Uma tabela que mostra o consumo de energia mensal total em kWh (quilowatts por hora) e o consumo de energia médio de computadores na coleção especificada, no período de tempo especificado.  
+- Uma tabela que mostra o consumo de energia mensal total em kWh (quilowatts por hora) e o consumo de energia médio de computadores na coleção especificada, no período de tempo especificado.  
 
- Essas informações podem ser usadas para ajudá-lo a entender as tendências de consumo de energia em seu ambiente. Depois de aplicar um plano de energia aos computadores na coleção selecionada, o consumo de energia dos computadores deverá diminuir.  
+  Essas informações podem ser usadas para ajudá-lo a entender as tendências de consumo de energia em seu ambiente. Depois de aplicar um plano de energia aos computadores na coleção selecionada, o consumo de energia dos computadores deverá diminuir.  
 
 > [!NOTE]  
 >  Se você adicionar ou remover membros da coleção depois de aplicar um plano de energia, isso afetará os resultados mostrados pelo relatório **Consumo de energia** e poderá dificultar a comparação dos resultados das fases de monitoramento e de planejamento e da fase de imposição.  
@@ -276,13 +276,13 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 ###  <a name="BKMK_Consumption_by_Day"></a> Relatório Consumo de energia por dia  
  O relatório **Consumo de energia por dia** exibe as seguintes informações:  
 
--   Um gráfico que mostra o consumo de energia diário total de computadores em kWh (quilowatts por hora) na coleção especificada, nos últimos 31 dias.  
+- Um gráfico que mostra o consumo de energia diário total de computadores em kWh (quilowatts por hora) na coleção especificada, nos últimos 31 dias.  
 
--   Um gráfico que mostra o consumo de energia diário médio em kWh (quilowatts por hora) de cada computador na coleção especificada, nos últimos 31 dias.  
+- Um gráfico que mostra o consumo de energia diário médio em kWh (quilowatts por hora) de cada computador na coleção especificada, nos últimos 31 dias.  
 
--   Uma tabela que mostra o consumo de energia diário total em kWh (quilowatts por hora) e o consumo de energia diário médio de computadores na coleção especificada, nos últimos 31 dias.  
+- Uma tabela que mostra o consumo de energia diário total em kWh (quilowatts por hora) e o consumo de energia diário médio de computadores na coleção especificada, nos últimos 31 dias.  
 
- Essas informações podem ser usadas para ajudá-lo a entender as tendências de consumo de energia em seu ambiente. Depois de aplicar um plano de energia aos computadores na coleção selecionada, o consumo de energia dos computadores deverá diminuir.  
+  Essas informações podem ser usadas para ajudá-lo a entender as tendências de consumo de energia em seu ambiente. Depois de aplicar um plano de energia aos computadores na coleção selecionada, o consumo de energia dos computadores deverá diminuir.  
 
 > [!NOTE]  
 >  Se você adicionar ou remover membros da coleção depois de aplicar um plano de energia, isso afetará os resultados mostrados pelo relatório **Consumo de energia** e poderá dificultar a comparação dos resultados das fases de monitoramento e de planejamento e da fase de imposição.  
@@ -317,15 +317,15 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 ###  <a name="BKMK_Cost"></a> Relatório Custo de energia  
  O relatório **Custo de energia** exibe as seguintes informações:  
 
--   Um gráfico que mostra o consumo de energia mensal total de computadores na coleção especificada, no período de tempo especificado.  
+- Um gráfico que mostra o consumo de energia mensal total de computadores na coleção especificada, no período de tempo especificado.  
 
--   Um gráfico que mostra o custo de energia médio mensal para cada computador na coleção especificada, no período de tempo especificado.  
+- Um gráfico que mostra o custo de energia médio mensal para cada computador na coleção especificada, no período de tempo especificado.  
 
--   Uma tabela que mostra o custo de energia mensal total e o custo de energia mensal médio de computadores na coleção especificada, nos últimos 31 dias.  
+- Uma tabela que mostra o custo de energia mensal total e o custo de energia mensal médio de computadores na coleção especificada, nos últimos 31 dias.  
 
- Essas informações podem ser usadas para ajudá-lo a entender as tendências de custo de energia em seu ambiente. Depois de aplicar um plano de energia aos computadores na coleção selecionada, o custo de energia dos computadores deverá diminuir.  
+  Essas informações podem ser usadas para ajudá-lo a entender as tendências de custo de energia em seu ambiente. Depois de aplicar um plano de energia aos computadores na coleção selecionada, o custo de energia dos computadores deverá diminuir.  
 
- Use os parâmetros a seguir para configurar este relatório.  
+  Use os parâmetros a seguir para configurar este relatório.  
 
 #### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
  Para executar este relatório, os parâmetros a seguir devem ser especificados.  
@@ -359,15 +359,15 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 ###  <a name="BKMK_Cost_by_Day"></a> Relatório Custo de energia por dia  
  O relatório **Custo de energia por dia** exibe as seguintes informações:  
 
--   Um gráfico que mostra o custo de energia diário total para computadores na coleção especificada, nos últimos 31 dias.  
+- Um gráfico que mostra o custo de energia diário total para computadores na coleção especificada, nos últimos 31 dias.  
 
--   Um gráfico que mostra o custo de energia diário médio de cada computador na coleção especificada, nos últimos 31 dias.  
+- Um gráfico que mostra o custo de energia diário médio de cada computador na coleção especificada, nos últimos 31 dias.  
 
--   Uma tabela que mostra o custo de energia diário total e o custo de energia diário médio de computadores na coleção especificada, nos últimos 31 dias.  
+- Uma tabela que mostra o custo de energia diário total e o custo de energia diário médio de computadores na coleção especificada, nos últimos 31 dias.  
 
- Essas informações podem ser usadas para ajudá-lo a entender as tendências de custo de energia em seu ambiente. Depois de aplicar um plano de energia aos computadores na coleção selecionada, o custo de energia dos computadores deverá diminuir.  
+  Essas informações podem ser usadas para ajudá-lo a entender as tendências de custo de energia em seu ambiente. Depois de aplicar um plano de energia aos computadores na coleção selecionada, o custo de energia dos computadores deverá diminuir.  
 
- Use os parâmetros a seguir para configurar este relatório.  
+  Use os parâmetros a seguir para configurar este relatório.  
 
 #### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
  Para executar este relatório, os parâmetros a seguir devem ser especificados.  
@@ -399,15 +399,15 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 ###  <a name="BKMK_Environmental_Impact"></a> Relatório Impacto ambiental  
  O relatório **Impacto ambiental** exibe as seguintes informações:  
 
--   Um gráfico que mostra a quantidade total mensal de CO2 gerado (em toneladas) para cada computador na coleção especificada, no período especificado.  
+- Um gráfico que mostra a quantidade total mensal de CO2 gerado (em toneladas) para cada computador na coleção especificada, no período especificado.  
 
--   Um gráfico que mostra a quantidade média mensal de CO2 gerado (em toneladas) para cada computador na coleção especificada, no período especificado.  
+- Um gráfico que mostra a quantidade média mensal de CO2 gerado (em toneladas) para cada computador na coleção especificada, no período especificado.  
 
--   Uma tabela que mostra a quantidade total mensal de CO2 gerado e a quantidade média mensal de CO2 gerado dos computadores na coleção especificada, no período especificado.  
+- Uma tabela que mostra a quantidade total mensal de CO2 gerado e a quantidade média mensal de CO2 gerado dos computadores na coleção especificada, no período especificado.  
 
- O relatório **Impacto ambiental** calcula a quantidade de CO2 gerado (em toneladas) usando o tempo que um computador ou monitor permaneceu ligado em um período de 24 horas.  
+  O relatório **Impacto ambiental** calcula a quantidade de CO2 gerado (em toneladas) usando o tempo que um computador ou monitor permaneceu ligado em um período de 24 horas.  
 
- Use os parâmetros a seguir para configurar este relatório.  
+  Use os parâmetros a seguir para configurar este relatório.  
 
 #### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
  Para executar este relatório, os parâmetros a seguir devem ser especificados.  
@@ -440,13 +440,13 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 ###  <a name="BKMK_Environmental_Impact_by_Day"></a> Relatório Impacto ambiental por dia  
  O relatório **Impacto ambiental por dia** exibe as seguintes informações:  
 
--   Um gráfico que mostra a quantidade diária total de CO2 gerado (em toneladas) para computadores na coleção especificada, nos últimos 31 dias.  
+- Um gráfico que mostra a quantidade diária total de CO2 gerado (em toneladas) para computadores na coleção especificada, nos últimos 31 dias.  
 
--   Um gráfico que mostra a quantidade diária média de CO2 gerado (em toneladas) para cada computador na coleção especificada, nos últimos 31 dias.  
+- Um gráfico que mostra a quantidade diária média de CO2 gerado (em toneladas) para cada computador na coleção especificada, nos últimos 31 dias.  
 
--   Uma tabela que mostra a quantidade diária total de CO2 gerado e a quantidade diária média de CO2 gerado por computadores na coleção especificada, nos últimos 31 dias.  
+- Uma tabela que mostra a quantidade diária total de CO2 gerado e a quantidade diária média de CO2 gerado por computadores na coleção especificada, nos últimos 31 dias.  
 
- O relatório **Impacto ambiental por dia** calcula a quantidade de CO2 gerado (em toneladas) usando o tempo que um computador ou monitor permaneceu ligado em um período de 24 horas.  
+  O relatório **Impacto ambiental por dia** calcula a quantidade de CO2 gerado (em toneladas) usando o tempo que um computador ou monitor permaneceu ligado em um período de 24 horas.  
 
 #### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
  Para executar este relatório, os parâmetros a seguir devem ser especificados.  
@@ -534,17 +534,17 @@ Use as informações a seguir para aprender a monitorar e planejar o gerenciamen
 ###  <a name="BKMK_Capabilites"></a> Relatório Recursos de energia  
  O relatório **Recursos de energia** exibe os recursos de gerenciamento de hardware de computadores na coleção especificada. Normalmente, esse relatório é usado na fase de monitoramento do gerenciamento de energia para determinar os recursos de gerenciamento de energia dos computadores em sua organização. As informações exibidas no relatório podem ser usadas para criar coleções de computadores aos quais os planos de energia serão aplicados, ou para excluir do gerenciamento de energia. Os recursos de gerenciamento de energia exibidos por este relatório são:  
 
--   **Com capacidade de suspensão** – Indica se o computador pode entrar no modo de suspensão se estiver configurado para fazer isso.  
+- **Com capacidade de suspensão** – Indica se o computador pode entrar no modo de suspensão se estiver configurado para fazer isso.  
 
--   **Com capacidade de hibernação** – Indica se o computador pode entrar no modo de hibernação se estiver configurado para fazer isso.  
+- **Com capacidade de hibernação** – Indica se o computador pode entrar no modo de hibernação se estiver configurado para fazer isso.  
 
--   **Sair do modo de suspensão** – Indica se o computador pode sair do modo de suspensão se estiver configurado para fazer isso.  
+- **Sair do modo de suspensão** – Indica se o computador pode sair do modo de suspensão se estiver configurado para fazer isso.  
 
--   **Sair do modo de hibernação** – Indica se o computador pode sair do modo de hibernação se estiver configurado para fazer isso.  
+- **Sair do modo de hibernação** – Indica se o computador pode sair do modo de hibernação se estiver configurado para fazer isso.  
 
- Os valores relatados pelo relatório **Recursos de energia** indicam os recursos de suspensão e hibernação de computadores, conforme relatado pelo Windows. No entanto, os valores relatados não refletem os casos em que as configurações do Windows ou do BIOS impedem essas funções de funcionar.  
+  Os valores relatados pelo relatório **Recursos de energia** indicam os recursos de suspensão e hibernação de computadores, conforme relatado pelo Windows. No entanto, os valores relatados não refletem os casos em que as configurações do Windows ou do BIOS impedem essas funções de funcionar.  
 
- Use os parâmetros a seguir para configurar este relatório.  
+  Use os parâmetros a seguir para configurar este relatório.  
 
 #### <a name="required-report-parameters"></a>Parâmetros de relatório necessários  
  Para executar este relatório, os parâmetros a seguir devem ser especificados.  

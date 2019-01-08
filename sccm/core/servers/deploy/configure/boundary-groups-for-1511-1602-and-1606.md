@@ -10,12 +10,12 @@ ms.assetid: dec1e0d7-5864-43a8-9f56-413923b3914e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7cdcb6306632df79fe69edd1d526afaf2321bad0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0bb7ccfb2aa516a5deb712bd2ecd82f36c4f282c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343840"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416717"
 ---
 # <a name="boundary-groups-for-system-center-configuration-manager-version-1511-1602-and-1606"></a>Grupos de limites para as versões 1511, 1602 e 1606 do System Center Configuration Manager
 
@@ -109,15 +109,15 @@ Ao configurar grupos de limites, você adiciona um ou mais limites ao grupo de l
 
 #### <a name="to-set-up-a-fallback-site-for-automatic-site-assignment"></a>Para configurar um local de fallback para atribuição automática de site  
 
-1.  No console do Configuration Manager, escolha **Administração** > **Configuração de Site** >  **Sites**.  
+1. No console do Configuration Manager, escolha **Administração** > **Configuração de Site** >  **Sites**.  
 
-2.  Na guia **Início**, no grupo **Sites**, escolha **Configurações da Hierarquia**.  
+2. Na guia **Início**, no grupo **Sites**, escolha **Configurações da Hierarquia**.  
 
-3.  Na guia **Geral**, marque a caixa de seleção **Usar um local de fallback** e selecione um local na lista suspensa **Local de fallback**.  
+3. Na guia **Geral**, marque a caixa de seleção **Usar um local de fallback** e selecione um local na lista suspensa **Local de fallback**.  
 
-4.  Clique em **OK** para salvar a configuração.  
+4. Clique em **OK** para salvar a configuração.  
 
- As seções a seguir fornecem detalhes adicionais sobre configurações de grupo de limites.  
+   As seções a seguir fornecem detalhes adicionais sobre configurações de grupo de limites.  
 
 ###  <a name="BKMK_BoundarySiteAssignment"></a> Sobre atribuição de site  
  É possível configurar cada grupo de limites com um site atribuído para clientes.  

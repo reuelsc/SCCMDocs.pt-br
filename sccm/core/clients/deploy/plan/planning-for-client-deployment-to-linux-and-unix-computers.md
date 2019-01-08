@@ -10,12 +10,12 @@ ms.assetid: 44153689-70e8-42ad-9ae8-17ae35f6a2e3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7251ac6bf623236492f0843b8562a06e547c9cb1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d9d9fd940c21e0fc8d20c86c51cb3443f21a9339
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343677"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419441"
 ---
 # <a name="planning-for-client-deployment-to-linux-and-unix-computers-in-system-center-configuration-manager"></a>Planejando a implantação de cliente em computadores Linux e UNIX no System Center Configuration Manager
 
@@ -23,19 +23,19 @@ ms.locfileid: "32343677"
 
 Você pode instalar o cliente do System Center Configuration Manager em computadores que executam Linux ou UNIX. Esse cliente é designado para servidores que funcionam como um computador de grupo de trabalho, e os clientes não oferecem suporte à interação com usuários conectados. Após você instalar o software cliente e o cliente estabelecer a comunicação com o site do Configuration Manager, você gerenciará o cliente usando o console e relatórios do Configuration Manager.  
 
-> [!NOTE]  
+> [!NOTE]
 >  O cliente do Configuration Manager para computadores Linux e UNIX não dá suporte aos seguintes recursos de gerenciamento:  
->   
->  -   Instalação do cliente por push  
-> -   Implantação de sistema operacional  
-> -   Implantação de aplicativos; em vez disso, distribua software usando pacotes e programas.  
-> -   Inventário de software  
-> -   Atualizações de software  
-> -   Configurações de conformidade  
-> -   Controle remoto  
-> -   Gerenciamento de Energia  
-> -   Correção e verificação de cliente do status do cliente  
-> -   Gerenciamento de clientes baseado na Internet  
+> 
+> - Instalação do cliente por push  
+>   -   Implantação de sistema operacional  
+>   -   Implantação de aplicativos; em vez disso, distribua software usando pacotes e programas.  
+>   -   Inventário de software  
+>   -   Atualizações de software  
+>   -   Configurações de conformidade  
+>   -   Controle remoto  
+>   -   Gerenciamento de Energia  
+>   -   Correção e verificação de cliente do status do cliente  
+>   -   Gerenciamento de clientes baseado na Internet  
 
  Para obter informações sobre as distribuições do Linux e UNIX com suporte e o hardware necessário para dar suporte ao cliente para Linux e UNIX, consulte a seção [Recommended hardware for System Center Configuration Manager](../../../../core/plan-design/configs/recommended-hardware.md) (Hardware recomendado para o System Center Configuration Manager).  
 
@@ -178,7 +178,7 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 |SysMgmtMin.openssl|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|A.00.09.08d.002|  
 |PAM|Módulos de Autenticação Conectáveis|No HP-UX, o PAM faz parte dos componentes centrais do sistema operacional. Não há outras dependências.|  
 
- **Dependências do Configuration Manager:** a tabela a seguir lista as funções de sistema de sites que dão suporte a clientes Linux e UNIX. Para obter mais informações sobre essas funções de sistema de sites, consulte [Adicionar as funções do sistema de sites para os clientes do System Center Configuration Manager](../../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md).  
+ **Dependências do Configuration Manager:** a tabela a seguir lista as funções do sistema de sites compatíveis com clientes Linux e UNIX. Para obter mais informações sobre essas funções de sistema de sites, consulte [Adicionar as funções do sistema de sites para os clientes do System Center Configuration Manager](../../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md).  
 
 |Sistemas de site do Configuration Manager|Mais informações|  
 |---------------------------------------|----------------------|  
@@ -186,7 +186,7 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 |Ponto de distribuição|O ponto de distribuição não é necessário para instalar um cliente do Configuration Manager para Linux e UNIX. No entanto, a função de sistema de site é necessária se você implantar o software em servidores Linux e UNIX.<br /><br /> Uma vez que o cliente do Configuration Manager para Linux e UNIX não dá suporte a comunicações que utilizam o SMB, os pontos de distribuição que você usar com o cliente devem dar suporte à comunicação HTTP ou HTTPS.|  
 |Ponto de status de fallback|O ponto de status de fallback não é necessário para instalar um cliente do Configuration Manager para Linux e UNIX. No entanto, o ponto de status de fallback habilita os computadores no site do Configuration Manager a enviar mensagens de estado quando não puderem se comunicar com um ponto de gerenciamento. Cliente também pode enviar seu status de instalação para o ponto de status de fallback.|  
 
- **Requisitos de firewall**: Certifique-se de que firewalls não bloqueie as comunicações entre as portas que você especificar como as portas de solicitação de cliente. O cliente para Linux e UNIX se comunica diretamente com os pontos de gerenciamento, pontos de distribuição e pontos de status de fallback.  
+ **Requisitos de firewall**: verifique se os firewalls não bloqueiam as comunicações entre as portas que você especifica como as portas de solicitação do cliente. O cliente para Linux e UNIX se comunica diretamente com os pontos de gerenciamento, pontos de distribuição e pontos de status de fallback.  
 
  Para obter informações sobre portas de solicitação e de comunicação do cliente, consulte  [Configurar o cliente para Linux e UNIX para localizar pontos de gerenciamento](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md#BKMK_ConfigClientMP).  
 

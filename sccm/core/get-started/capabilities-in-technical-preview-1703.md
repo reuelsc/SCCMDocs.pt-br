@@ -10,12 +10,12 @@ ms.assetid: 2e801f8c-d331-41ee-8f27-908448fc0951
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4750d9e31eb41fdad7f655faa4e8058156e922a1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: aed9ec403496b309b1b556355c955743d43b2dc4
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337149"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420202"
 ---
 # <a name="capabilities-in-technical-preview-1703-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1703 do System Center Configuration Manager
 
@@ -57,11 +57,11 @@ Use o seguinte formato de URL para abrir o Centro de Software para um aplicativo
 ### <a name="how-to-get-the-application-identifier-of-an-application"></a>Como obter o identificador do aplicativo de um aplicativo.
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.
-2.  No espaço de trabalho Biblioteca de Software, expanda **Gerenciamento de Aplicativos** e clique em **Aplicativos**.
+2.  No workspace Biblioteca de Software, expanda **Gerenciamento de Aplicativos** e clique em **Aplicativos**.
 3.  Na exibição dos **aplicativos**, clique com o botão direito do mouse em um dos cabeçalhos de coluna e, em seguida, na lista, selecione **ID exclusiva do IC**. Você verá que a ID exclusiva de cada aplicativo agora é mostrada na lista.
-4.  Observe a **ID exclusiva do IC** do aplicativo para o qual você deseja fornecer um link, por exemplo: **ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f/2**
+4.  Observe a **ID exclusiva de IC** do aplicativo para o qual você deseja fornecer um link, por exemplo: **ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f/2**
 5.  Em seguida, remova qualquer texto após o aplicativo GUID, neste caso **/2**. Isso deixa você com o identificador do aplicativo.
-6.  Por fim, para concluir a construção do link, preceda-o com **Softwarecenter:SoftwareID =**. Usando o exemplo acima, o link final será: **Softwarecenter:SoftwareId = ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f**.
+6.  Por fim, para concluir a construção do link, preceda-o com **Softwarecenter:SoftwareID =**. Usando o exemplo acima, o link final será: **Softwarecenter:SoftwareId= ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f**.
 
 Usando este link, os usuários finais podem abrir o Centro de Software diretamente para o aplicativo especificado.
 
@@ -106,18 +106,18 @@ No Azure Active Directory, registre o Configuration Manager como uma ferramenta 
 4. Na página do **aplicativo**, especifique seu ambiente do Azure e, em seguida, clique em **Procurar** para abrir a janela do aplicativo de servidor.
 
 5. Na janela do **aplicativo de servidor**, selecione o aplicativo de servidor que você deseja usar e depois clique em **OK**.
-Aplicativos de servidor são os aplicativos Web do Azure que contêm as configurações da sua conta do Azure, incluindo sua ID de locatário, ID de cliente e uma chave secreta para clientes. Se você não tiver um aplicativo de servidor disponível, use um dos seguintes:
-  - **Criar**: Para criar um novo aplicativo de servidor, clique em **Criar**. Forneça um nome amigável para o aplicativo e o locatário. Em seguida, depois que você entrar no Azure, o Configuration Manager cria o aplicativo Web do Azure para você, incluindo a ID do cliente e a chave secreta para uso com o aplicativo Web. Posteriormente, você pode exibi-las no portal do Azure.
-  - **Importar**: Para usar um aplicativo Web que já existe em sua assinatura do Azure, clique em **Importar**. Forneça um nome amigável para o aplicativo e o locatário e especifique a ID de locatário, ID do cliente e a chave secreta para o aplicativo Web do Azure que você deseja que o Configuration Manager use. Depois que você **verificar** as informações, clique em **OK** para continuar.  </br></br>
+   Aplicativos de servidor são os aplicativos Web do Azure que contêm as configurações da sua conta do Azure, incluindo sua ID de locatário, ID de cliente e uma chave secreta para clientes. Se você não tiver um aplicativo de servidor disponível, use um dos seguintes:
+   - **Criar**: para criar um aplicativo de servidor, clique em **criar**. Forneça um nome amigável para o aplicativo e o locatário. Em seguida, depois que você entrar no Azure, o Configuration Manager cria o aplicativo Web do Azure para você, incluindo a ID do cliente e a chave secreta para uso com o aplicativo Web. Posteriormente, você pode exibi-las no portal do Azure.
+   - **Importar**: para usar um aplicativo Web que já exista em sua assinatura do Azure, clique em **Importar**. Forneça um nome amigável para o aplicativo e o locatário e especifique a ID de locatário, ID do cliente e a chave secreta para o aplicativo Web do Azure que você deseja que o Configuration Manager use. Depois que você **verificar** as informações, clique em **OK** para continuar.  </br></br>
 
 6. Examine a página de **informações** e conclua quaisquer etapas adicionais e configurações, conforme indicado. Essas configurações são necessárias para usar o serviço com o Configuration Manager.
-Por exemplo, para configurar WSfB:
+   Por exemplo, para configurar WSfB:
 
-  1. No Azure, você deve registrar o Configuration Manager como um aplicativo Web ou API Web e registrar a ID do cliente. Você também pode especificar uma chave de cliente para uso pela ferramenta de gerenciamento (que é o Configuration Manager).
+   1. No Azure, você deve registrar o Configuration Manager como um aplicativo Web ou API Web e registrar a ID do cliente. Você também pode especificar uma chave de cliente para uso pela ferramenta de gerenciamento (que é o Configuration Manager).
 
-  2.    No console do WSfB, você deve configurar o Configuration Manager como a ferramenta de gerenciamento de repositório, habilitar o suporte para aplicativos licenciados offline e, em seguida, pelo menos um aplicativo de compra.   </br>
+   2.    No console do WSfB, você deve configurar o Configuration Manager como a ferramenta de gerenciamento de repositório, habilitar o suporte para aplicativos licenciados offline e, em seguida, pelo menos um aplicativo de compra.   </br>
 
-  Quando estiver pronto para continuar, clique em **Próximo**.
+   Quando estiver pronto para continuar, clique em **Próximo**.
 
 7. Na página **Configurações de aplicativo**, conclua as configurações de catálogo e idioma do aplicativo para este serviço e, em seguida, clique em **Próxima**.
 8. Após concluir o assistente, o console do Configuration Manager mostra que você configurou **Windows Store para Empresas** como um **tipo de serviço de nuvem**.
@@ -137,7 +137,7 @@ Esta versão apresenta a capacidade de expandir e recolher grupos de sequência 
 
 
 ## <a name="client-settings-to-configure-windows-analytics-for-upgrade-readiness"></a>Configurações do cliente para configurar o Windows Analytics para Preparação para Atualização
-A partir desta versão, você pode usar as configurações do dispositivo cliente para simplificar a configuração da telemetria do Windows necessária para usar soluções do [Windows Analytics](https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics) como [Preparação para Atualização](/sccm/core/clients/manage/upgrade/upgrade-analytics) com o Configuration Manager. O Configuration Manager pode recuperar dados do Windows Analytics que podem fornecer informações valiosas sobre o estado atual de seu ambiente com base nos dados de telemetria do Windows relatados por seus computadores cliente. Os dados de telemetria do Windows são relatados por computadores cliente ao serviço de telemetria do Windows e, depois, os dados relevantes são transferidos para soluções do Windows Analytics hospedadas em um dos espaços de trabalho do OMS de sua organização. A Preparação para Atualização é uma solução do Windows Analytics que ajuda você a priorizar as decisões sobre atualizações do Windows para os dispositivos gerenciados.
+A partir desta versão, você pode usar as configurações do dispositivo cliente para simplificar a configuração da telemetria do Windows necessária para usar soluções do [Windows Analytics](https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics) como [Preparação para Atualização](/sccm/core/clients/manage/upgrade/upgrade-analytics) com o Configuration Manager. O Configuration Manager pode recuperar dados do Windows Analytics que podem fornecer informações valiosas sobre o estado atual de seu ambiente com base nos dados de telemetria do Windows relatados por seus computadores cliente. Os dados de telemetria do Windows são relatados por computadores cliente ao serviço de telemetria do Windows e, depois, os dados relevantes são transferidos para soluções do Windows Analytics hospedadas em um dos workspaces do OMS de sua organização. A Preparação para Atualização é uma solução do Windows Analytics que ajuda você a priorizar as decisões sobre atualizações do Windows para os dispositivos gerenciados.
 
 Para obter informações sobre as configurações de telemetria do Windows, consulte [Configure a telemetria do Windows em sua organização](https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization).
 
@@ -149,7 +149,7 @@ Para configurar a análise do Windows, no console do Configuration Manager, vá 
 
 Em seguida, configure o seguinte depois de navegar até a guia de configurações do **Windows Analytics**:
 - **ID comercial**  
-A ID de chave comercial mapeia informações de dispositivos que você gerencia para o espaço de trabalho do OMS que hospeda os dados do Windows Analytics de sua organização. Se você já configurou uma ID comercial para uso com a Preparação para Atualização use essa ID. Se você ainda não tiver uma chave de ID comercial, veja [Gerar a chave de ID comercial]( https://technet.microsoft.com /itpro/windows/deploy/upgrade-readiness-get-started#generate-your-commercial-id-key).
+A ID de chave comercial mapeia informações de dispositivos que você gerencia para o workspace do OMS que hospeda os dados do Windows Analytics de sua organização. Se você já configurou uma ID comercial para uso com a Preparação para Atualização use essa ID. Se você ainda não tiver uma chave de ID comercial, veja [Gerar a chave de ID comercial]( https://technet.microsoft.com /itpro/windows/deploy/upgrade-readiness-get-started#generate-your-commercial-id-key).
 
 - Defina um **nível de telemetria para dispositivos com Windows 10**   
 Para saber mais sobre o que é coletado por cada nível de telemetria do Windows 10, veja [Configurar a telemetria do Windows em sua organização]( https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization#telemetry-levels).

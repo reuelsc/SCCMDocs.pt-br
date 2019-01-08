@@ -10,12 +10,12 @@ ms.assetid: 97f2d81a-2c58-442c-88bc-defd5a1cd48f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6a2fe20896a781d7c897bd5a827d25a7b70390b7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b0fa269199f7f3bf4299f90faef9e55766f775d4
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351506"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421324"
 ---
 # <a name="manage-boot-images-with-system-center-configuration-manager"></a>Gerenciar imagens de inicialização com o System Center Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "32351506"
 Uma imagem de inicialização no Configuration Manager é uma imagem do [WinPE](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-intro) (Windows PE) usada durante uma implantação de sistema operacional. As imagens de inicialização são usadas para iniciar um computador no WinPE. Esse sistema operacional mínimo contém componentes e serviços limitados. O Configuration Manager usa o WinPE para preparar o computador de destino para a instalação do Windows. Use as seções a seguir para gerenciar imagens de inicialização.
 
 ## <a name="BKMK_BootImageDefault"></a> Imagens de inicialização padrão
-O Configuration Manager fornece duas imagens de inicialização padrão: uma para dar suporte a plataformas x86 e outra para dar suporte a plataformas x64. Essas imagens são armazenadas em: \\\\*servername*>\SMS_<*sitecode*>\osd\boot\\<*x64*> ou <*i386*>. As imagens de inicialização padrão são atualizadas ou geradas novamente dependendo da ação que você tomar.
+O Configuration Manager fornece duas imagens de inicialização padrão: Uma para oferecer suporte a plataformas x86 e outra para oferecer suporte a plataformas x64. Essas imagens são armazenadas em: \\\\*servername*>\SMS_<*sitecode*>\osd\boot\\<*x64*> ou <*i386*>. As imagens de inicialização padrão são atualizadas ou geradas novamente dependendo da ação que você tomar.
 
 Considere os seguintes comportamentos de uma das ações descritas para as imagens de inicialização padrão:
 - Os objetos do driver de origem devem ser válidos. Esses objetos incluem os arquivos de origem do driver. Se os objetos não são válidos, o site não adiciona os drivers às imagens de inicialização.
@@ -62,51 +62,51 @@ A partir do Configuration Manager versão 1706, recarregue a imagem de inicializ
 
  Durante a instalação do site, o Configuration Manager adiciona automaticamente imagens de inicialização baseadas em uma versão do WinPE da versão do Windows ADK com suporte. Dependendo da versão do Configuration Manager, é possível adicionar imagens de inicialização baseadas em uma versão do WinPE diferente da versão com suporte do Windows ADK. Ocorre um erro quando você tenta adicionar uma imagem de inicialização que contém uma versão do WinPE não compatível. A seguinte lista contém as versões do Windows ADK e WinPE atualmente compatíveis: 
 
--   **Versão do Windows ADK**  
+- **Versão do Windows ADK**  
 
-     Windows ADK para Windows 10  
+   Windows ADK para Windows 10  
 
--   **Versões do Windows PE para imagens de inicialização personalizáveis no console do Configuration Manager**  
+- **Versões do Windows PE para imagens de inicialização personalizáveis no console do Configuration Manager**  
 
-     Windows PE 10  
+   Windows PE 10  
 
--   **Versões do Windows PE com suporte para imagens de inicialização não personalizáveis no console do Configuration Manager**  
+- **Versões do Windows PE com suporte para imagens de inicialização não personalizáveis no console do Configuration Manager**  
 
-     Windows PE 3.1<sup>1</sup> e Windows PE 5  
+   Windows PE 3.1<sup>1</sup> e Windows PE 5  
 
-     <sup>1</sup> Só será possível adicionar uma imagem de inicialização ao Configuration Manager quando ela se basear no Windows PE 3.1. Atualize o Windows AIK para Windows 7 (baseado no Windows PE 3.0) com o Suplemento Windows AIK para Windows 7 SP1 (baseado no Windows PE 3.1). Baixe o Suplemento Windows AIK para Windows 7 SP1 no [Centro de Download da Microsoft](https://www.microsoft.com/download/details.aspx?id=5188).  
+   <sup>1</sup> Só será possível adicionar uma imagem de inicialização ao Configuration Manager quando ela se basear no Windows PE 3.1. Atualize o Windows AIK para Windows 7 (baseado no Windows PE 3.0) com o Suplemento Windows AIK para Windows 7 SP1 (baseado no Windows PE 3.1). Baixe o Suplemento Windows AIK para Windows 7 SP1 no [Centro de Download da Microsoft](https://www.microsoft.com/download/details.aspx?id=5188).  
 
-     Por exemplo, use o console do Configuration Manager para personalizar imagens de inicialização baseadas no Windows PE 10 no Windows ADK para Windows 10. Para uma imagem de inicialização baseada no Windows PE 5, personalize-a em outro computador usando a versão do DISM no Windows ADK para Windows 8. Em seguida, adicione a imagem de inicialização personalizada ao console do Configuration Manager. Para obter mais informações, consulte [Customize boot images (Personalizar imagens de inicialização)](customize-boot-images.md).
+   Por exemplo, use o console do Configuration Manager para personalizar imagens de inicialização baseadas no Windows PE 10 no Windows ADK para Windows 10. Para uma imagem de inicialização baseada no Windows PE 5, personalize-a em outro computador usando a versão do DISM no Windows ADK para Windows 8. Em seguida, adicione a imagem de inicialização personalizada ao console do Configuration Manager. Para obter mais informações, consulte [Customize boot images (Personalizar imagens de inicialização)](customize-boot-images.md).
 
- Use o procedimento a seguir para adicionar manualmente uma imagem de inicialização.  
+  Use o procedimento a seguir para adicionar manualmente uma imagem de inicialização.  
 
 #### <a name="to-add-a-boot-image"></a>Para adicionar uma imagem de inicialização  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Imagens de Inicialização**.  
+2. No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Imagens de Inicialização**.  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Adicionar Imagem de Inicialização** para o Assistente para Adicionar Imagem de Inicialização.  
+3. Na guia **Início** , no grupo **Criar** , clique em **Adicionar Imagem de Inicialização** para o Assistente para Adicionar Imagem de Inicialização.  
 
-4.  Na página **Fonte de Dados** , especifique as seguintes opções e clique em **Próximo**.  
+4. Na página **Fonte de Dados** , especifique as seguintes opções e clique em **Próximo**.  
 
-    -   Na caixa **Caminho** , especifique o caminho para o arquivo WIM de imagem de inicialização.  
+   -   Na caixa **Caminho** , especifique o caminho para o arquivo WIM de imagem de inicialização.  
 
-         O caminho especificado deve ser um caminho de rede válido no formato UNC. Por exemplo: \\\\<*nome do servidor*\\<*nome do compartilhamento*>\\<*nomedaimagemdeinicialização*>.wim.  
+        O caminho especificado deve ser um caminho de rede válido no formato UNC. Por exemplo: \\\\<*nome do servidor*\\<*nome do compartilhamento*>\\<*nomedaimagemdeinicialização*>.wim.  
 
-    -   Selecione a imagem de inicialização na lista suspensa **Imagem de Inicialização** . Se o arquivo WIM contiver várias imagens de inicialização, selecione a imagem adequada.  
+   -   Selecione a imagem de inicialização na lista suspensa **Imagem de Inicialização** . Se o arquivo WIM contiver várias imagens de inicialização, selecione a imagem adequada.  
 
-5.  Na página **Geral**  , especifique as opções a seguir e clique em **Próximo**.  
+5. Na página **Geral**  , especifique as opções a seguir e clique em **Próximo**.  
 
-    -   Na caixa **Nome** , especifique um nome exclusivo para a imagem de inicialização.  
+   -   Na caixa **Nome** , especifique um nome exclusivo para a imagem de inicialização.  
 
-    -   Na caixa **Versão** , especifique um número de versão para a imagem de inicialização.  
+   -   Na caixa **Versão** , especifique um número de versão para a imagem de inicialização.  
 
-    -   Na caixa **Comentário** , faça uma breve descrição de como a imagem de inicialização é usada.  
+   -   Na caixa **Comentário** , faça uma breve descrição de como a imagem de inicialização é usada.  
 
-6.  Conclua o assistente.  
+6. Conclua o assistente.  
 
- A imagem de inicialização agora estará listada no nó **Imagem de Inicialização** do console do Configuration Manager. Antes de usar a imagem de inicialização para implantar um sistema operacional, distribua-a para os pontos de distribuição. 
+   A imagem de inicialização agora estará listada no nó **Imagem de Inicialização** do console do Configuration Manager. Antes de usar a imagem de inicialização para implantar um sistema operacional, distribua-a para os pontos de distribuição. 
 
 > [!NOTE]  
 >  No nó **Imagem de Inicialização** do console, a coluna **Tamanho (KB)** exibe o tamanho descompactado de cada imagem de inicialização. Quando o site envia uma imagem de inicialização pela rede, ele envia uma cópia compactada. Normalmente, essa cópia é menor que o tamanho listado na coluna **Tamanho (KB)**.  
@@ -127,19 +127,19 @@ A partir do Configuration Manager versão 1706, recarregue a imagem de inicializ
 ##  <a name="BKMK_ModifyBootImages"></a> Modificar uma imagem de inicialização  
  Você pode adicionar ou remover drivers de dispositivo da imagem ou editar as propriedades associadas à imagem de inicialização. Os drivers de dispositivo adicionados ou removidos podem incluir adaptadores de rede ou drivers de armazenamento em massa. Ao modificar imagens de inicialização, considere os seguintes fatores:  
 
--   Importe e habilite os drivers de dispositivo no catálogo de drivers de dispositivo antes de adicioná-los à imagem de inicialização.  
+- Importe e habilite os drivers de dispositivo no catálogo de drivers de dispositivo antes de adicioná-los à imagem de inicialização.  
 
--   Quando você modifica uma imagem de inicialização, ela não altera os pacotes associados aos quais a imagem de inicialização faz referência.  
+- Quando você modifica uma imagem de inicialização, ela não altera os pacotes associados aos quais a imagem de inicialização faz referência.  
 
--   Depois de fazer alterações na imagem de inicialização, **atualize** a imagem de inicialização nos pontos de distribuição que já têm a imagem. Esse processo disponibiliza a versão mais atual da imagem de inicialização aos clientes. Para obter mais informações, consulte [Manage content you have distributed](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_manage).  
+- Depois de fazer alterações na imagem de inicialização, **atualize** a imagem de inicialização nos pontos de distribuição que já têm a imagem. Esse processo disponibiliza a versão mais atual da imagem de inicialização aos clientes. Para obter mais informações, consulte [Manage content you have distributed](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_manage).  
 
- Use o procedimento a seguir para modificar uma imagem de inicialização.  
+  Use o procedimento a seguir para modificar uma imagem de inicialização.  
 
 #### <a name="to-modify-the-properties-of-a-boot-image"></a>Para modificar as propriedades de uma imagem de inicialização  
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Imagens de Inicialização**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Imagens de Inicialização**.  
 
 3.  Selecione a imagem de inicialização que deseja modificar.  
 
@@ -220,7 +220,7 @@ A partir do Configuration Manager versão 1706, recarregue a imagem de inicializ
 
         -   Clique em **Validar** para verificar a integridade do pacote de imagem de inicialização no ponto de distribuição ou grupo de pontos de distribuição selecionado.  
 
-    -   Na guia **Componentes Opcionais**, especifique os componentes que serão adicionados ao Windows PE para uso com o Configuration Manager. Para obter mais informações sobre os componentes opcionais disponíveis, consulte [WinPE: Adicionar pacotes (Referência de Componentes Opcionais)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).  
+    -   Na guia **Componentes Opcionais**, especifique os componentes que serão adicionados ao Windows PE para uso com o Configuration Manager. Para obter mais informações sobre os componentes opcionais disponíveis, confira [WinPE: adicionar pacotes (referência de componentes opcionais)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).  
 
     -   Na guia **Segurança** , selecione um usuário administrativo e altere as operações que eles executam.  
 
@@ -233,7 +233,7 @@ A partir do Configuration Manager versão 1706, recarregue a imagem de inicializ
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Imagens de Inicialização**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Imagens de Inicialização**.  
 
 3.  Selecione a imagem de inicialização que deseja modificar.  
 
@@ -249,14 +249,14 @@ A partir do Configuration Manager versão 1706, recarregue a imagem de inicializ
 ##  <a name="BKMK_BootImageLanguage"></a> Configurar vários idiomas para implantação de imagem de inicialização  
  As imagens de inicialização têm neutralidade de idioma. Essa funcionalidade permite que você use uma imagem de inicialização para exibir o texto da sequência de tarefas em vários idiomas enquanto usa o WinPE. Inclua o suporte de idioma apropriado por meio da guia **Componentes Opcionais** da imagem de inicialização. Em seguida, defina a variável de sequência de tarefas apropriada para indicar qual idioma exibir. O idioma do sistema operacional implantado não depende do idioma do WinPE. O idioma que o WinPE exibe para o usuário é determinado da seguinte maneira:  
 
--   Quando um usuário executa uma sequência de tarefas de um sistema operacional existente, o Configuration Manager utiliza automaticamente o idioma configurado para o usuário. Quando a sequência de tarefas é executada automaticamente como resultado de um prazo de implantação obrigatória, o Configuration Manager utiliza o idioma do sistema operacional.  
+- Quando um usuário executa uma sequência de tarefas de um sistema operacional existente, o Configuration Manager utiliza automaticamente o idioma configurado para o usuário. Quando a sequência de tarefas é executada automaticamente como resultado de um prazo de implantação obrigatória, o Configuration Manager utiliza o idioma do sistema operacional.  
 
--   Para implantações de sistema operacional que usam PXE ou mídia, defina o valor da ID de idioma na variável **SMSTSLanguageFolder** como parte de um comando prestart. Quando o computador inicializar o WinPE, as mensagens serão exibidas no idioma especificado na variável. Se ocorrer um erro ao acessar o arquivo de recurso de idioma na pasta especificada ou se você não definir a variável, o WinPE exibirá as mensagens no idioma padrão.  
+- Para implantações de sistema operacional que usam PXE ou mídia, defina o valor da ID de idioma na variável **SMSTSLanguageFolder** como parte de um comando prestart. Quando o computador inicializar o WinPE, as mensagens serão exibidas no idioma especificado na variável. Se ocorrer um erro ao acessar o arquivo de recurso de idioma na pasta especificada ou se você não definir a variável, o WinPE exibirá as mensagens no idioma padrão.  
 
-    > [!NOTE]  
-    >  Quando a mídia estiver protegida por senha, o texto que solicita uma senha ao usuário será sempre exibido no idioma do WinPE.  
+  > [!NOTE]  
+  >  Quando a mídia estiver protegida por senha, o texto que solicita uma senha ao usuário será sempre exibido no idioma do WinPE.  
 
- Use o procedimento a seguir para definir o idioma do WinPE para implantações de sistema operacional iniciadas por PXE ou mídia.  
+  Use o procedimento a seguir para definir o idioma do WinPE para implantações de sistema operacional iniciadas por PXE ou mídia.  
 
 #### <a name="to-set-the-windows-pe-language-for-a-pxe-or-media-initiated-operating-system-deployment"></a>Para definir o idioma do Windows PE para uma implantação de sistema operacional iniciada por PXE ou mídia  
 

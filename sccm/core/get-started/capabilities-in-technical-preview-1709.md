@@ -10,12 +10,12 @@ ms.assetid: a3ef6bdc-a204-4c4c-a02f-2bd03f35183e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 74ffd06f8b9786d627dc7fd9cecb15215228313d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 79d7488e0554a36eb274bf4ef76cff92b48a71ba
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341144"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418434"
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Recursos na Technical Preview 1709 do System Center Configuration Manager
 
@@ -30,7 +30,7 @@ Este artigo apresenta os recursos que estão disponíveis na Technical Preview d
     Workaround details.
 -->
 **Problemas conhecidos nesse Technical Preview:**
--   **A atualização para a versão prévia 1709 falha quando há um servidor do site no modo passivo**. Quando você executar a versão prévia 1706, 1707 ou 1708 e houver um [servidor do site primário no modo passivo](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), você deverá desinstalar o servidor do site de modo passivo para que seja possível atualizar seu site da versão prévia com êxito para a versão 1709. Quando seu site estiver executando a versão 1709, você poderá reinstalar o servidor do site de modo passivo.
+- **A atualização para a versão prévia 1709 falha quando há um servidor do site no modo passivo**. Quando você executar a versão prévia 1706, 1707 ou 1708 e houver um [servidor do site primário no modo passivo](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), você deverá desinstalar o servidor do site de modo passivo para que seja possível atualizar seu site da versão prévia com êxito para a versão 1709. Quando seu site estiver executando a versão 1709, você poderá reinstalar o servidor do site de modo passivo.
 
   Para desinstalar o servidor do site no modo passivo:
   1. No console, acesse **Administração** > **Visão geral** > **Configuração do Site** > **Servidores e Funções do Sistema de Sites** e selecione o servidor de site no modo passivo.
@@ -42,8 +42,7 @@ Este artigo apresenta os recursos que estão disponíveis na Technical Preview d
 **Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
 
 ## <a name="improved-vpn-profile-experience-in-configuration-manager-console"></a>Melhoria da experiência do perfil de VPN no Console do Configuration Manager
-<!-- 1313282 -->
-Com esta versão, as páginas de assistente e de propriedades do perfil de VPN foram atualizadas para exibir as configurações apropriadas para a plataforma selecionada. Especificamente:
+<!-- 1313282 --> Nesta versão, atualizamos as páginas do assistente de perfil VPN e de propriedades para exibir as configurações apropriadas à plataforma selecionada. Especificamente:
 
 - Cada plataforma tem seu próprio fluxo de trabalho, o que significa que os novos perfis de VPN contêm apenas a configuração com suporte na plataforma.
 - As páginas **Plataformas com Suporte** agora são exibidas após a página **Geral**.  Agora você escolhe a plataforma antes de configurar os valores das propriedades.
@@ -77,8 +76,7 @@ Crie um novo perfil de VPN usando o processo normal. Observe que a primeira pág
 Conforme você selecionar diferentes plataformas, observe que serão exibidas apenas as configurações relevantes para a plataforma selecionada.
 
 ## <a name="co-management-for-windows-10-devices"></a>Cogerenciamento para dispositivos Windows 10    
-<!-- 1350871 -->
-Muitos clientes desejam gerenciar os dispositivos Windows 10 da mesma forma em que gerenciam os dispositivos móveis, usando uma solução baseada em nuvem simplificada e com menor custo. No entanto, fazer a transição do gerenciamento tradicional para o gerenciamento moderno pode ser um desafio. A partir do Windows 10, versão 1607 (também conhecido como a Atualização de Aniversário), você pode associar um dispositivo com Windows 10 ao Active Directory (AD) local e ao Azure AD baseado em nuvem ao mesmo tempo (Azure AD híbrido). O cogerenciamento aproveita essa melhoria e permite que você gerencie dispositivos com Windows 10 simultaneamente por meio do Configuration Manager e o Intune. É uma solução que fornece uma ponte do gerenciamento tradicional para o moderno e fornece um caminho para fazer a transição usando uma abordagem em fases. 
+<!-- 1350871 --> Muitos clientes desejam gerenciar os dispositivos Windows 10 da mesma forma que gerenciam os dispositivos móveis, ou seja, usando uma solução baseada em nuvem simplificada e com menor custo. No entanto, fazer a transição do gerenciamento tradicional para o gerenciamento moderno pode ser um desafio. A partir do Windows 10, versão 1607 (também conhecido como a Atualização de Aniversário), você pode associar um dispositivo com Windows 10 ao Active Directory (AD) local e ao Azure AD baseado em nuvem ao mesmo tempo (Azure AD híbrido). O cogerenciamento aproveita essa melhoria e permite que você gerencie dispositivos com Windows 10 simultaneamente por meio do Configuration Manager e o Intune. É uma solução que fornece uma ponte do gerenciamento tradicional para o moderno e fornece um caminho para fazer a transição usando uma abordagem em fases. 
 
 ### <a name="prerequisites"></a>Pré-requisitos
 Você deve ter os seguintes pré-requisitos em vigor antes de habilitar o cogerenciamento. Há pré-requisitos gerais e pré-requisitos diferentes para clientes existentes do Configuration Manager e para dispositivos que não são clientes.
@@ -161,7 +159,7 @@ Por exemplo, se você tiver os valores a seguir:
    >Use o valor **MutualAuthPath** na exibição de SQL **vProxy_Roles** para o valor da **URL do ponto de extremidade de autenticação mútua do gateway de gerenciamento de nuvem**.
 
 - **FQDN do MP (ponto de gerenciamento)**: sccmmp.corp.contoso.com    
-- **Código do site**: PS1    
+- **Sitecode**: PS1    
 - **ID do locatário do Azure AD**: 72F988BF-86F1-41AF-91AB-2D7CD011XXXX    
 - **Nome do locatário do Azure AD**: contoso    
 - **ID do aplicativo cliente do Azure AD**: bef323b3-042f-41a6-907a-f9faf0d1XXXX     
@@ -203,8 +201,8 @@ Na seção anterior, você preparou os dispositivos Windows 10 para o cogerencia
 2. Na guia Início, no grupo Gerenciar, escolha **Configurar o cogerenciamento** para abrir o Assistente para Integração de Cogerenciamento.    
 3. Na página Assinatura, clique em **Entrar**, entre no seu locatário do Intune e, em seguida, clique em **Avançar**.   
 4. Na página Preparo, defina as seguintes configurações e, em seguida, clique em **Avançar**:
-    - **Grupo piloto**: o grupo piloto contém uma ou mais coleções para você selecionar. Use esse grupo como parte de sua distribuição em fases do cogerenciamento. É possível começar com uma coleção de teste pequena e, em seguida, adicionar mais coleções ao grupo piloto à medida que você distribui o cogerenciamento para mais usuários e dispositivos. Você pode alterar as coleções no grupo piloto a qualquer momento por meio das propriedades de cogerenciamento.
-    - **Produção**: quando você seleciona essa configuração, todos os dispositivos Windows 10 com suporte são habilitados para o cogerenciamento. Configure o **Grupo de exclusão** com uma ou mais coleções. Os dispositivos que são membros de uma das coleções neste grupo são excluídos do uso do cogerenciamento. 
+    - **Grupo piloto**: o grupo piloto contém uma ou mais coleções que você seleciona. Use esse grupo como parte de sua distribuição em fases do cogerenciamento. É possível começar com uma coleção de teste pequena e, em seguida, adicionar mais coleções ao grupo piloto à medida que você distribui o cogerenciamento para mais usuários e dispositivos. Você pode alterar as coleções no grupo piloto a qualquer momento por meio das propriedades de cogerenciamento.
+    - **Produção**: quando você seleciona essa configuração, todos os dispositivos Windows 10 compatíveis são habilitados para o cogerenciamento. Configure o **Grupo de exclusão** com uma ou mais coleções. Os dispositivos que são membros de uma das coleções neste grupo são excluídos do uso do cogerenciamento. 
 5. Na página Habilitação, escolha **Piloto** ou **Todos** (dependendo das configurações que você configurou na página Preparo) para habilitar o registro automático do Intune e, em seguida, clique em **Avançar**. Quando você escolhe **Piloto**, somente os clientes do Configuration Manager que são membros do grupo piloto são registrados automaticamente no Intune. Isso permite que você habilite o cogerenciamento em um subconjunto de clientes para testá-lo inicialmente e distribuí-lo usando uma abordagem em fases. 
 6. Na página Cargas de trabalho, escolha se deseja mudar as cargas de trabalho do Configuration Manager para serem gerenciadas pelo Intune e, em seguida, clique em **Avançar**. Use os controles deslizantes para mudar a carga de trabalho para o grupo piloto ou para todos os clientes Windows 10 (dependendo das configurações que você configurou na página Preparo). 
 7. Para habilitar o cogerenciamento, conclua o assistente.  

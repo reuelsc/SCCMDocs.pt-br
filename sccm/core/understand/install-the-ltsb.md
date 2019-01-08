@@ -10,16 +10,16 @@ ms.assetid: f4f9a5fd-f573-4b99-ad93-b2c76812e922
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7d6b957ebcc19dfe8c14dd781f71678db8e160af
-ms.sourcegitcommit: 1a1bac2d5ee0f20ce565d29798ee4dd99aaca044
+ms.openlocfilehash: c4ceec8c0d5482456d3257106ee067bf3d9ec1fb
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52281899"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418094"
 ---
 # <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Instalar e atualizar com uma mídia de linha de base da versão 1606 para o System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual), (Branch de Manutenção de Longo Prazo)*
+*Aplica-se a:  System Center Configuration Manager (Branch Atual), (Branch de Manutenção de Longo Prazo)*
 
 Quando você executa a Configuração da mídia de linha de base da versão 1606 para o Configuration Manager, é possível instalar o Branch de Manutenção em Longo Prazo ou o Branch Atual do System Center Configuration Manager.
 
@@ -71,13 +71,13 @@ A mídia de linha de base da versão 1606 dá suporte a uma nova chave de arquiv
 Ao usar um script autônomo para instalar uma ramificação licenciada, é necessário adicionar a seção, os nomes de chave e valores a seguir na seção de Opções do seu script. Você não precisa usar esses valores para instalar com script a Edição de avaliação do Branch Atual:  
 
  **SABranchOptions**
--   **Nome da chave: SAActive**
+- **Nome da chave: SAActive**
   - Valores: 0 ou 1.  
-  - Detalhes: 0 instala uma Edição de Avaliação não licenciada do Branch Atual e 1 instala uma edição licenciada.   
+  - Detalhes:  0 instala uma edição de avaliação não licenciada do Branch Atual e 1 instala uma edição licenciada.   
 
 - **CurrentBranch**
   - Valores: 0 ou 1.  
-  - Detalhes: 0 instala o Branch de Manutenção em Longo Prazo e 1 instala o Branch Atual.  
+  - Detalhes:  0 instala o Branch de Manutenção de Longo Prazo e 1 instala o Branch Atual.  
 
 Por exemplo, para instalar uma edição do Branch Atual, você usaria:
 

@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 497ff025dafcdb135e466a18f2f6661ca0f21a00
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 126ac524aaea851f5203888d414f7f9b188649c2
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349959"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424469"
 ---
 # <a name="configure-options-for-updates-publisher"></a>Configurar opções para o Updates Publisher
 
-*Aplica-se ao: System Center Updates Publisher*
+*Aplica-se a: System Center Updates Publisher*
 
 Analise e defina as opções e configurações relacionadas que afetam a operação do Updates Publisher.
 
@@ -42,47 +42,47 @@ As opções estão divididas assim:
 ## <a name="update-server"></a>Update Server
 Você deve configurar o Updates Publisher para trabalhar com um servidor de atualização como o Windows Server Update Services (WSUS) antes de poder [publicar atualizações](/sccm/sum/tools/manage-updates-with-updates-publisher#publish-updates-and-bundles). Isso inclui a especificação do servidor, métodos para se conectar a esse servidor quando ele for remoto com relação ao console e um certificado a ser usado para assinar digitalmente as atualizações publicadas.
 
--   **Configurar um servidor de atualização**. Ao configurar um servidor de atualização, selecione o servidor WSUS de nível superior (servidor de atualização) em sua hierarquia do Configuration Manager para que todos os sites filho tenham acesso às atualizações que você publicar.
+- **Configurar um servidor de atualização**. Ao configurar um servidor de atualização, selecione o servidor WSUS de nível superior (servidor de atualização) em sua hierarquia do Configuration Manager para que todos os sites filho tenham acesso às atualizações que você publicar.
 
   Se o servidor de atualização for remoto com relação ao seu servidor do Updates Publisher, especifique o FQDN (Nome de domínio totalmente qualificado) do servidor e se você se conectará por SSL. Quando você se conecta por SSL, a porta padrão muda de 8530 para 8531. Certifique-se de que a porta configurada corresponda à porta que está sendo usada por seu servidor de atualização.
 
-    > [!TIP]  
-    > Se você não configurar um servidor de atualização, ainda poderá usar o Updates Publisher para criar atualizações de software.
+  > [!TIP]  
+  > Se você não configurar um servidor de atualização, ainda poderá usar o Updates Publisher para criar atualizações de software.
 
--   **Configure o certificado de autenticação**. Você deve configurar e conectar-se com êxito a um servidor de atualização antes de poder configurar o certificado de autenticação.
+- **Configure o certificado de autenticação**. Você deve configurar e conectar-se com êxito a um servidor de atualização antes de poder configurar o certificado de autenticação.
 
-    O Updates Publisher usa o certificado de autenticação para assinar as atualizações de software que são publicadas no servidor de atualização. A publicação falhará se o certificado digital não estiver disponível no repositório de certificados do servidor de atualização ou no computador que executa o Updates Publisher.
+  O Updates Publisher usa o certificado de autenticação para assinar as atualizações de software que são publicadas no servidor de atualização. A publicação falhará se o certificado digital não estiver disponível no repositório de certificados do servidor de atualização ou no computador que executa o Updates Publisher.
 
-    Para saber mais sobre como adicionar o certificado ao repositório de certificados, confira [Certificados e segurança para o Updates Publisher](/sccm/sum/tools/updates-publisher-security).
+  Para saber mais sobre como adicionar o certificado ao repositório de certificados, confira [Certificados e segurança para o Updates Publisher](/sccm/sum/tools/updates-publisher-security).
 
-    Se um certificado digital não for detectado automaticamente para o servidor de atualização, escolha uma das seguintes opções:
+  Se um certificado digital não for detectado automaticamente para o servidor de atualização, escolha uma das seguintes opções:
 
-    -   **Procurar**: a opção de procurar só estará disponível quando o servidor de atualização for instalado no servidor onde você executa o console. Depois de selecionar um certificado você deve escolher **Criar** para adicionar o certificado ao repositório de certificados do WSUS no servidor de atualização. Você deve inserir a senha do arquivo **.pfx** para os certificados selecionados por esse método.
+  -   **Procurar**: A opção de procurar só estará disponível quando o servidor de atualização for instalado no servidor em que você executa o console. Depois de selecionar um certificado você deve escolher **Criar** para adicionar o certificado ao repositório de certificados do WSUS no servidor de atualização. Você deve inserir a senha do arquivo **.pfx** para os certificados selecionados por esse método.
 
-    -   **Criar:** use essa opção para criar um novo certificado. Isso também adiciona o certificado ao repositório de certificados do WSUS no servidor de atualização.
+  -   **Criar:** Use essa opção para criar um novo certificado. Isso também adiciona o certificado ao repositório de certificados do WSUS no servidor de atualização.
 
-    **Se você criar seu próprio certificado de autenticação**, configure o seguinte:
+  **Se você criar seu próprio certificado de autenticação**, configure o seguinte:
 
-    -   Habilite a opção **Permitir que a chave privada seja exportada**.
+  -   Habilite a opção **Permitir que a chave privada seja exportada**.
 
-    -   Defina **Uso de Chave** como assinatura digital.
+  -   Defina **Uso de Chave** como assinatura digital.
 
-    -   Defina **Tamanho mínimo da chave** como um valor igual ou maior do que 2048 bits.
+  -   Defina **Tamanho mínimo da chave** como um valor igual ou maior do que 2048 bits.
 
-    Use a opção **Remover** para remover um certificado do repositório de certificados do WSUS. Essa opção estará disponível quando o servidor de atualização for local com relação ao console do Updates Publisher usado, ou quando você usar **SSL** para se conectar a um servidor de atualização remoto.
+  Use a opção **Remover** para remover um certificado do repositório de certificados do WSUS. Essa opção estará disponível quando o servidor de atualização for local com relação ao console do Updates Publisher usado, ou quando você usar **SSL** para se conectar a um servidor de atualização remoto.
 
 ## <a name="configmgr-server"></a>ConfigMgr Server
 Use essas opções ao usar o Configuration Manager com o Updates Publisher.
 
--   **Especifique o servidor do Configuration Manager:** depois de habilitar o suporte para o Configuration Manager, especifique o local do servidor de site de nível superior de sua hierarquia do Configuration Manager. Se esse servidor for remoto com relação à instalação do Updates Publisher, especifique o FQDN do servidor do site. Escolha **Conexão de Teste** para garantir que você possa se conectar ao servidor do site.
+-   **Especifique o servidor do Configuration Manager:** Depois de habilitar o suporte para o Configuration Manager, especifique a localização do servidor de site de nível superior de sua hierarquia do Configuration Manager. Se esse servidor for remoto com relação à instalação do Updates Publisher, especifique o FQDN do servidor do site. Escolha **Conexão de Teste** para garantir que você possa se conectar ao servidor do site.
 
--   **Configurar limites:** os limites são usados quando você publica atualizações com um tipo de publicação Automática. Os valores do limite ajudam a determinar quando o conteúdo completo de uma atualização é publicado em vez de apenas os metadados. Para conhecer mais tipos de publicação, veja [Atribuir atualizações a uma publicação](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication)
+-   **Configurar limites:** Os limites são usados quando você publica atualizações com um tipo de publicação Automática. Os valores do limite ajudam a determinar quando o conteúdo completo de uma atualização é publicado em vez de apenas os metadados. Para conhecer mais tipos de publicação, veja [Atribuir atualizações a uma publicação](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication)
 
     Habilite um ou os dois limites a seguir:
 
-    -   **Limite de contagem de solicitação do cliente:** define quantos clientes devem solicitar uma atualização antes que o Updates Publisher possa publicar automaticamente o conjunto completo de conteúdo para essa atualização. Até que o número especificado de clientes solicite a atualização, apenas os metadados das atualizações são publicados.
+    -   **Limite de contagem de solicitações do cliente:** Define quantos clientes devem solicitar uma atualização antes que o Updates Publisher possa publicar automaticamente o conjunto completo de conteúdo para essa atualização. Até que o número especificado de clientes solicite a atualização, apenas os metadados das atualizações são publicados.
 
-    -   **Limite de tamanho de origem do pacote (MB):** isso impede a publicação automática de atualizações que ultrapassam o tamanho especificado. Se o tamanho das atualizações ultrapassar esse valor, apenas os metadados serão publicados. Atualizações menores do que o tamanho especificado podem ter seu conteúdo completo publicado.
+    -   **Limite de tamanho de origem do pacote (MB):** Isso impede a publicação automática de atualizações que ultrapassam o tamanho especificado. Se o tamanho das atualizações ultrapassar esse valor, apenas os metadados serão publicados. Atualizações menores do que o tamanho especificado podem ter seu conteúdo completo publicado.
 
 ## <a name="proxy-settings"></a>Configurações Proxy
 O Updates Publisher usa as configurações de proxy quando você importa catálogos de software da Internet ou publica atualizações na Internet.
@@ -101,17 +101,17 @@ O conteúdo de editores não confiáveis pode danificar os computadores dos clie
 ## <a name="advanced"></a>Avançado
 As opções avançadas incluem as seguintes:
 
--   **Local do repositório:** veja e modifique o local do arquivo de Banco de Dados, **scupdb.sdf**. Esse arquivo é o repositório para o Updates Publisher.
+-   **Localização do repositório:** Exiba e modifique a localização do arquivo de banco de dados, **scupdb.sdf**. Esse arquivo é o repositório para o Updates Publisher.
 
--   **Carimbo de hora:** quando habilitado, um carimbo de hora é adicionado às atualizações assinadas por você, identificando quando foram assinadas. Uma atualização que foi assinada enquanto um certificado era válido pode ser usada após a expiração desse certificado de autenticação. Por padrão, as atualizações de software não podem ser implantadas após a expiração do certificado de assinatura.
+-   **Carimbo de data/hora:** Quando habilitado, um carimbo de data/hora é adicionado às atualizações assinadas por você, identificando quando foram assinadas. Uma atualização que foi assinada enquanto um certificado era válido pode ser usada após a expiração desse certificado de autenticação. Por padrão, as atualizações de software não podem ser implantadas após a expiração do certificado de assinatura.
 
--   **Verificar se há atualizações nos catálogos inscritos:** sempre que o Updates Publisher é iniciado, ele pode procurar automaticamente por atualizações para os catálogos nos quais você se inscreveu. Quando uma atualização de catálogo é encontrada, os detalhes são fornecidos como **Alertas Recentes** na janela **Visão Geral** do **Espaço de Trabalho de Atualizações**.
+-   **Verificar se há atualizações nos catálogos inscritos:** Sempre que o Updates Publisher é iniciado, ele pode procurar automaticamente por atualizações para os catálogos nos quais você se inscreveu. Quando uma atualização de catálogo é encontrada, os detalhes são fornecidos como **Alertas Recentes** na janela **Visão Geral** do **Workspace de Atualizações**.
 
--   **Revogação de certificado:** escolha esta opção para habilitar verificações de revogação de certificado.
+-   **Revogação de certificado:** Escolha esta opção para habilitar verificações de revogação de certificado.
 
--   **Publicação de origem local:** o Updates Publisher pode usar uma cópia local de uma atualização que você está publicando antes de baixar essa atualização da Internet. O local deve ser uma pasta no computador que executa o Updates Publisher. Por padrão, esse local é **Meus Documents\LocalSourcePublishing.** Use isso quando você tiver baixado anteriormente uma ou mais atualizações ou tiver feito modificações em uma atualização que você deseja implantar.
+-   **Publicação de origem local:** O Updates Publisher pode usar uma cópia local de uma atualização que você está publicando antes de baixar essa atualização da Internet. O local deve ser uma pasta no computador que executa o Updates Publisher. Por padrão, esse local é **Meus Documents\LocalSourcePublishing.** Use isso quando você tiver baixado anteriormente uma ou mais atualizações ou tiver feito modificações em uma atualização que você deseja implantar.
 
--   **Assistente para Limpeza de Atualizações de Software:** inicie o assistente para limpeza de atualizações. O assistente expira atualizações que estão no servidor de atualização, mas que não estão no repositório do Updates Publisher. Consulte [Expirar atualizações sem referência](#expire-unreferenced-software-updates) para obter mais detalhes.
+-   **Assistente para Limpeza de Atualizações de Software:** Inicie o assistente de limpeza de atualizações. O assistente expira atualizações que estão no servidor de atualização, mas que não estão no repositório do Updates Publisher. Consulte [Expirar atualizações sem referência](#expire-unreferenced-software-updates) para obter mais detalhes.
 
 ## <a name="updates"></a>Atualizações
  O Updates Publisher pode verificar automaticamente novas atualizações sempre que é aberto. Você também pode aceitar receber builds de visualização do Updates Publisher.

@@ -11,12 +11,12 @@ ms.assetid: b3d755bd-0870-4f1f-a56d-bfd3c7b492b9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6bd4675d3b366c5f414467b76627e25b91259ef2
-ms.sourcegitcommit: 240d3199e1c6fa47af6eda499492b2527516ab18
+ms.openlocfilehash: 27eea5c93ec66207e48390e3c7a0352a3a255ceb
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44326196"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424724"
 ---
 # <a name="how-to-use-the-configuration-manager-docs"></a>Como usar os documentos do Configuration Manager
 
@@ -45,7 +45,7 @@ Para obter ajuda geral com o produto, veja [Ajuda](/sccm/core/understand/find-he
 
     - Para focar ainda mais nos resultados da pesquisa para a biblioteca de conteúdo atual, inclua `site:docs.microsoft.com` para definir o escopo do mecanismo de pesquisa.  
 
--   Use termos de pesquisa que correspondam à terminologia da interface do usuário e da documentação online. Evite termos não oficiais ou abreviações que podem ser vistas no conteúdo da comunidade. Por exemplo, procure por "ponto de gerenciamento" e não "PG", "tipo de implantação" e não "TI" e "atualizações de software" e não "SUM".  
+-   Use termos de pesquisa que correspondam à terminologia da interface do usuário e da documentação online. Evite termos não oficiais ou abreviações que podem ser vistas no conteúdo da comunidade. Por exemplo, procure por "ponto de gerenciamento" e não "PG", "tipo de implantação" e não "TI" e "atualizações de software" e não "SUM".  
 
 -   Para pesquisar dentro de um artigo que você está vendo no momento, use o recurso **Localizar** do navegador. Na maioria dos navegadores da Web modernos, pressione **Ctrl**+**F** e, em seguida, insira os termos de pesquisa.  
 
@@ -71,13 +71,13 @@ Essa integração também exibe quaisquer problemas abertos ou fechados existent
 
 #### <a name="types-of-feedback"></a>Tipos de comentários
 Use os Problemas do GitHub para enviar os seguintes tipos de comentários:
-- Bug de documento: o conteúdo está desatualizado, não está claro, está confuso ou foi interrompido.
-- Aprimoramento de documento: uma sugestão para melhorar o artigo.
-- Pergunta sobre o documento: você precisa de ajuda para encontrar a documentação existente.
-- Ideia para o documento: uma sugestão para um novo artigo. Use esse método em vez do UserVoice para comentários de documentação.
-- Parabéns: comentário positivo sobre um artigo útil ou informativo.
-- Localização: comentários sobre tradução de conteúdo.
-- SEO (Otimização do Mecanismo de Pesquisa): comentários sobre problemas na pesquisa de conteúdo. Inclua o mecanismo de pesquisa, as palavras-chave e o artigo de destino nos comentários.
+- Bug de documento: O conteúdo está desatualizado, não está claro, está confuso ou foi interrompido.
+- Aprimoramento de documento: Uma sugestão para melhorar o artigo.
+- Pergunta sobre o documento: Você precisa de ajuda para encontrar a documentação existente.
+- Ideia de documento: Uma sugestão para um novo artigo. Use esse método em vez do UserVoice para comentários de documentação.
+- Parabéns: Comentários positivos sobre um artigo útil ou informativo!
+- Localização: Comentários sobre tradução de conteúdo.
+- SEO (otimização do mecanismo de pesquisa): Comentários sobre problemas ao pesquisar por conteúdo. Inclua o mecanismo de pesquisa, as palavras-chave e o artigo de destino nos comentários.
 
 Se problemas forem levantados para tópicos não relacionados ao documento, como [comentários sobre o produto](/sccm/core/understand/find-help#product-feedback), [dúvidas sobre produtos](https://social.technet.microsoft.com/Forums/en-US/home?category=ConfigMgrCB) ou [solicitações de suporte](https://aka.ms/cmcbsupport), esses problemas serão fechados e o usuário será redirecionado para o canal de comentários adequado.
 
@@ -90,7 +90,7 @@ Para compartilhar comentários sobre a plataforma do docs.microsoft.com, veja [C
 Para receber notificações quando houver alterações de conteúdo na biblioteca de documentos, use as seguintes etapas:
 
 1. Use a [pesquisa de documentos](https://docs.microsoft.com/search/index?scope=ConfigMgr) para localizar um artigo ou um conjunto de artigos. Por exemplo:
-    - Pesquise um único artigo por título: ["Arquivos de log para solução de problemas – Configuration Manager"](https://docs.microsoft.com/search/index?search=%22Log+files+for+troubleshooting+-+Configuration+Manager%22&scope=ConfigMgr)
+    - Pesquisar por um único artigo por título: ["Arquivos de log para solução de problemas – Configuration Manager"](https://docs.microsoft.com/search/index?search=%22Log+files+for+troubleshooting+-+Configuration+Manager%22&scope=ConfigMgr)
     - Pesquise qualquer artigo sobre [SQL](https://docs.microsoft.com/search/index?search=SQL&scope=ConfigMgr)
 2. No canto superior direito, clique no link **RSS**. 
 3. Use este feed em qualquer aplicativo de RSS para receber notificações quando houver alteração em qualquer um dos resultados da pesquisa.
@@ -122,8 +122,8 @@ A biblioteca de documentos do Configuration Manager, como a maioria do conteúdo
 Se você estiver interessado em contribuir, mas não sabe por onde começar, veja as seguintes sugestões:  
 
 - Pesquise a lista de problemas dos rótulos destinados à comunidade:  
-    - [good-first-issue](https://github.com/MicrosoftDocs/sccmdocs/issues?q=is:open+is:issue+label:good-first-issue)   
-    - [help-wanted](https://github.com/MicrosoftDocs/sccmdocs/issues?q=is:open+is:issue+label:help-wanted)  
+  - [good-first-issue](https://github.com/MicrosoftDocs/sccmdocs/issues?q=is:open+is:issue+label:good-first-issue)   
+  - [help-wanted](https://github.com/MicrosoftDocs/sccmdocs/issues?q=is:open+is:issue+label:help-wanted)  
 
     Esses rótulos são atribuídos por autores da Microsoft para os problemas que são bons candidatos para a contribuição da comunidade.  
 

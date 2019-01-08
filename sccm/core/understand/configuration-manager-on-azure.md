@@ -9,12 +9,12 @@ ms.assetid: d24257d8-8136-47f4-8e0d-34021356dc37
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2b952e76fc21e3190430cdf34cb4a264918fd199
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: fa201029b81bb3e0ca8fb5e97f126c899497d503
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342589"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422922"
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager no Azure – Perguntas frequentes
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -45,13 +45,13 @@ Boa pergunta, aqui estão as áreas que são mais importantes ao tomar essa deci
 ### <a name="what-about-networking-requirements-should-i-use-expressroute-or-an-azure-vpn-gateway"></a>E quanto aos requisitos de rede, devo usar o ExpressRoute ou um Gateway de VPN do Azure?
 A rede é uma decisão muito importante. As velocidades de rede e latência podem afetar a funcionalidade entre o servidor do site e sistemas de sites remotos e qualquer comunicação de cliente para os sistemas de sites. Nossa recomendação é usar o ExpressRoute. Mas não há nenhuma limitação do Configuration Manager para parar de usar o Gateway de VPN do Azure. Você deve examinar cuidadosamente suas necessidades (desempenho, aplicação de patches, distribuição de software, implantação do sistema operacional) dessa infraestrutura e então tomar sua decisão. Alguns pontos a serem considerados para cada solução incluem:
 
- - **ExpressRoute** (recomendado)
+- **ExpressRoute** (recomendado)
   - Extensão natural para seu datacenter (pode unir vários datacenters)
   - Conexões privadas entre datacenters do Azure e sua infraestrutura
   - Não passe pela Internet pública
   - Oferece confiabilidade, velocidades rápidas, latência mais baixa, segurança alta
   - Oferece opções de planos de dados ilimitados e velocidades de até 10 Gbps
- - **Gateway de VPN**
+- **Gateway de VPN**
   - VPNs site a site/ponto a site
   - O tráfego passa pela Internet pública
   - Usa o protocolo IPsec e o protocolo IKE
@@ -109,7 +109,7 @@ As tabelas a seguir listam as contagens de disco iniciais sugeridas para utiliza
 |--------------------|-------------------|------------------|
 |**Até 25 mil**       | Servidor do site: F4S </br>Servidor de banco de dados: DS12_V2 | Servidor do site: 1xP30 </br>Servidor de banco de dados: 2xP30 (distribuído)  |
 |**25 mil a 50 mil**      | Servidor do site: F4S </br>Servidor de banco de dados: DS13_V2 | Servidor do site: 1xP30 </br>Servidor de banco de dados: 2xP30 (distribuído)   |
-|**50 mil a 100 mil**     | Servidor do site: F8S </br>Servidor de banco de dados: DS14_V2 | Servidor de site: 2xP30 (distribuído)   </br>Servidor de banco de dados: 3xP30 (distribuído)   |
+|**50 mil a 100 mil**     | Servidor do site: F8S </br>Servidor de banco de dados: DS14_V2 | Servidor do site: 2xP30 (distribuído)   </br>Servidor de banco de dados: 3xP30 (distribuído)   |
 
 Veja a seguir um exemplo de configuração para clientes de 50 a 100 mil em discos DS14_V2 com 3xP30 em um volume distribuído com volumes lógicos separados para os arquivos de instalação e de banco de dados do Configuration Manager: ![VM)disks](media/vm_disks.png)  
 

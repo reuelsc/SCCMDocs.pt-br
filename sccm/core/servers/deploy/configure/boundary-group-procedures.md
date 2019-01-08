@@ -10,12 +10,12 @@ ms.assetid: a1fe22d0-4695-4de0-8bf0-e3475b03cf0e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d4aa1c044c8ea68b934a6dad4f1f85cbe43ec19b
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 56b1c0cff398f0009169ab1b02801e536e1a3343
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52457991"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418111"
 ---
 # <a name="how-to-configure-boundary-groups-for-configuration-manager"></a>Como configurar grupos de limites para o Configuration Manager
 
@@ -81,17 +81,17 @@ Para configurar o comportamento de fallback, alterne para a guia **Relações** 
 
 - Para criar uma relação com outro grupo de limites:  
 
-    - Selecione **Adicionar**. Na janela Grupos de Limites de Fallback, selecione o grupo de limites para configuração.  
+  - Selecione **Adicionar**. Na janela Grupos de Limites de Fallback, selecione o grupo de limites para configuração.  
 
-    - Defina o tempo de fallback para as seguintes funções do sistema de site:  
-        - Ponto de distribuição  
-        - Ponto de atualização de software  
-        - Ponto de gerenciamento  
+  - Defina o tempo de fallback para as seguintes funções do sistema de site:  
+    - Ponto de distribuição  
+    - Ponto de atualização de software  
+    - Ponto de gerenciamento  
 
-        > [!Note]  
-        > Por exemplo, abra a janela Propriedades do grupo de limites Filial. Na janela Grupos de Limites de Fallback, selecione o grupo de limites Escritório Principal. Defina o tempo de fallback do ponto de distribuição como `20`. Ao salvar essa configuração, os clientes no grupo de limites Filial começam a pesquisar o conteúdo dos pontos de distribuição no grupo de limites Escritório Principal após 20 minutos.  
+      > [!Note]  
+      > Por exemplo, abra a janela Propriedades do grupo de limites Filial. Na janela Grupos de Limites de Fallback, selecione o grupo de limites Escritório Principal. Defina o tempo de fallback do ponto de distribuição como `20`. Ao salvar essa configuração, os clientes no grupo de limites Filial começam a pesquisar o conteúdo dos pontos de distribuição no grupo de limites Escritório Principal após 20 minutos.  
 
-    - Para evitar o fallback para um grupo de limites específico, selecione o grupo de limites e selecione **Nunca fazer fallback** para o tipo de função do sistema de site. Essa ação pode incluir o *grupo de limites de site padrão*.  
+  - Para evitar o fallback para um grupo de limites específico, selecione o grupo de limites e selecione **Nunca fazer fallback** para o tipo de função do sistema de site. Essa ação pode incluir o *grupo de limites de site padrão*.  
 
 - Para modificar a configuração de uma relação existente, selecione o grupo de limites na lista e selecione **Alterar**. Essa ação abre a janela Grupos de Limite de Fallback apenas para este grupo de limites.  
  
@@ -103,9 +103,9 @@ Para saber mais, confira [Fallback](/sccm/core/servers/deploy/configure/boundary
 ### <a name="bkmk_options"></a> Configurar as opções de grupo de limites
 <!--1356193--> A partir da versão 1806, para configurar outras opções para clientes nesse grupo de limites, alterne para a guia **Opções**. Para saber mais, confira [Opções de grupo de limites para downloads de pares](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).
 
-- **Permitir downloads de pares nesse grupo de limites**: essa opção está habilitada por padrão. O ponto de gerenciamento fornece aos clientes uma lista de locais de conteúdo que inclui fontes de pares.  
+- **Permitir downloads de par nesse grupo de limites**: Essa opção é habilitada por padrão. O ponto de gerenciamento fornece aos clientes uma lista de locais de conteúdo que inclui fontes de pares.  
 
-    - **Durante downloads de pares, use apenas pares na mesma sub-rede**: essa configuração depende daquela mostrada acima. Se você habilitar essa opção, o ponto de gerenciamento incluirá apenas as origens de pares de lista do local do conteúdo que estão na mesma sub-rede que o cliente.  
+    - **Durante o download de par, usar apenas pares dentro da mesma sub-rede**: Essa configuração depende do que foi mostrado acima. Se você habilitar essa opção, o ponto de gerenciamento incluirá apenas as origens de pares de lista do local do conteúdo que estão na mesma sub-rede que o cliente.  
 
 
 ## <a name="bkmk_site-fallback"></a> Configurar um local de fallback para atribuição automática de site  

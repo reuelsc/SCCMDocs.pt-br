@@ -10,12 +10,12 @@ ms.assetid: aaf43e69-68b4-469a-ad58-9b66deb29057
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7671025b0a643063f30c98922f7da0659e2e1ab9
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 0c04ee9a62b6c629060f79df2f4b104fe78ca794
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456899"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418978"
 ---
 #  <a name="the-data-warehouse-service-point-for-configuration-manager"></a>O ponto de serviço do data warehouse para o Configuration Manager
 
@@ -90,44 +90,44 @@ Ao instalar a função, o Configuration Manager cria o banco de dados de data wa
 
 #### <a name="general-page"></a>Página Geral
 
-- **Nome de domínio totalmente qualificado do SQL Server** Especifique o FQDN (nome de domínio totalmente qualificado) do servidor que hospeda o banco de dados do ponto de serviço do data warehouse.  
+- **Nome de domínio totalmente qualificado do SQL Server**: especifique o FQDN (nome de domínio totalmente qualificado) do servidor que hospeda o banco de dados do ponto de serviço do data warehouse.  
 
-- **Nome de instância do SQL Server se for aplicável**: se você não usar uma instância padrão do SQL Server, especifique a instância nomeada.  
+- **Nome da instância do SQL Server, se for aplicável**: se você não usar uma instância padrão do SQL Server, especifique a instância nomeada.  
 
-- **Nome do banco de dados**: especifique um nome para o banco de dados de data warehouse. O Configuration Manager cria o banco de dados do data warehouse com esse nome. Se você especificar um nome de banco de dados que já existe na instância do SQL Server, o Configuration Manager usará esse banco de dados.  
+- **Nome do banco de dados**: Especifique um nome para o banco de dados do data warehouse. O Configuration Manager cria o banco de dados do data warehouse com esse nome. Se você especificar um nome de banco de dados que já existe na instância do SQL Server, o Configuration Manager usará esse banco de dados.  
 
-- **Porta do SQL Server usada para conexão**: especifique o número da porta TCP/IP usado pelo SQL Server que hospeda o banco de dados de data warehouse. O serviço de sincronização do data warehouse usa essa porta para conectar-se ao banco de dados do data warehouse. Por padrão, ele usa a porta do SQL Server **1433** para comunicação.  
+- **Porta do SQL Server usada para conexão**: especifique o número da porta TCP/IP usado pelo SQL Server que hospeda o banco de dados do data warehouse. O serviço de sincronização do data warehouse usa essa porta para conectar-se ao banco de dados do data warehouse. Por padrão, ele usa a porta do SQL Server **1433** para comunicação.  
 
-- **Conta do ponto de serviço do data warehouse**: da versão 1802 em diante, defina o **Nome de usuário** que o SQL Server Reporting Services usa ao se conectar ao banco de dados de data warehouse.  
+- **Conta do ponto de serviço do data warehouse**: Começando na versão 1802, defina o **Nome de usuário** que o SQL Server Reporting Services usa ao conectar-se ao banco de dados de data warehouse.  
 
 
 #### <a name="synchronization-schedule-page"></a>Página de agenda de sincronização
 *Aplica-se à versão 1806 e anteriores*
 
-- **Hora de início**: especifique a hora de início da sincronização do data warehouse.  
+- **Hora de início**: Especifique a hora de início da sincronização do data warehouse.  
 
 - **Padrão de recorrência**
 
-    - **Diário**: especifique a execução diária da sincronização.  
+    - **Diário**: especifique que a sincronização é executada diariamente.  
 
-    - **Semanal**: especifique um dia de cada semana, e a recorrência semanal para a sincronização.
+    - **Semanal**: especifique um único dia de cada semana e a recorrência semanal para a sincronização.
 
 
 #### <a name="synchronization-settings-page"></a>Página de configurações de sincronização
 *Aplica-se à versão 1810 e posteriores*
 
-- **Configuração personalizada de Sincronização de Dados**: escolha a opção **Selecionar tabelas**. Na janela de tabelas do Banco de Dados, selecione os nomes de tabela para sincronizar o banco de dados do data warehouse. Use o filtro para pesquisar por nome ou selecione a lista suspensa para escolher grupos específicos. Selecione **OK** ao concluir para salvar.  
+- **Configuração personalizada de sincronização de dados**: escolha a opção para **Selecionar tabelas**. Na janela de tabelas do Banco de Dados, selecione os nomes de tabela para sincronizar o banco de dados do data warehouse. Use o filtro para pesquisar por nome ou selecione a lista suspensa para escolher grupos específicos. Selecione **OK** ao concluir para salvar.  
 
     > [!Note]  
     > Não é possível remover as tabelas que a função seleciona por padrão.  
 
-- **Hora de início**: especifique a hora de início da sincronização do data warehouse.  
+- **Hora de início**: Especifique a hora de início da sincronização do data warehouse.  
 
 - **Padrão de recorrência**
 
-    - **Diário**: especifique a execução diária da sincronização.  
+    - **Diário**: especifique que a sincronização é executada diariamente.  
 
-    - **Semanal**: especifique um dia de cada semana, e a recorrência semanal para a sincronização.
+    - **Semanal**: especifique um único dia de cada semana e a recorrência semanal para a sincronização.
 
 
 
@@ -142,19 +142,19 @@ Depois de instalar um ponto de serviço do data warehouse, vários relatórios s
 
 A função do sistema de sites do data warehouse inclui os seguintes relatórios na categoria **Data Warehouse**:  
 
-- **Implantação do aplicativo - Histórico**: veja detalhes de implantação de aplicativo para um aplicativo e computador específicos.  
+- **Implantação de Aplicativos -Histórico**: Exibe detalhes de implantação de aplicativo para um aplicativo e computador específicos.  
 
-- **Proteção de Ponto de Extremidade e Conformidade de Atualização de Software - Histórico**: veja os computadores que não têm atualizações de software.  
+- **Conformidade de Atualizações de software e do Endpoint Protection**: Exibe computadores com atualizações de software ausentes.  
 
-- **Inventário de hardware geral - Histórico**: veja todo o inventário de hardware de um computador específico.  
+- **Inventário Geral de Hardware - Histórico**: Exibe todo o inventário de hardware para um computador específico.  
 
-- **Inventário de software geral - Histórico**: veja todo o inventário de software de um computador específico.  
+- **Inventário Geral de Software - Histórico**: Exibe todo o inventário de software para um computador específico.  
 
-- **Visão geral da integridade da infraestrutura – Histórico**: tenha uma visão geral da integridade da infraestrutura de seu Configuration Manager.  
+- **Visão Geral de Integridade da Infraestrutura - Histórico**: Exibe uma visão geral da integridade da infraestrutura do seu Configuration Manager.  
 
-- **Lista de Malware Detectado – Histórico**: veja o malware detectado na organização.  
+- **Lista de Malwares Detectados - Histórico**:    Exibe os malwares que foram detectados na sua organização.  
 
-- **Resumo de distribuição de software - Histórico**: um resumo da distribuição de software para um anúncio e computador específicos.  
+- **Resumo de Distribuição de Software - Histórico**: Um resumo da distribuição de software para um anúncio e computador específicos.  
 
 
 
@@ -191,7 +191,7 @@ Use os seguintes logs para investigar problemas com a instalação do ponto de s
 
 - **DWSSMSI.log** e **DWSSSetup.log**: use esses logs para investigar erros ao instalar o ponto de serviço do data warehouse.  
 
-- **Microsoft.ConfigMgrDataWarehouse.log**: use esse log para investigar a sincronização de dados entre o banco de dados do site e o banco de dados de data warehouse.  
+- **Microsoft.ConfigMgrDataWarehouse.log**: use esse log para investigar a sincronização de dados entre o banco de dados do site e o banco de dados do data warehouse.  
 
 
 ### <a name="set-up-failure"></a>Configurar a falha 

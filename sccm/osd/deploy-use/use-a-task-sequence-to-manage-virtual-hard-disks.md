@@ -10,12 +10,12 @@ ms.assetid: 0212b023-804a-4f84-b880-7a59cdb49c67
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 49de1e2f94d1016f3c0139ccf534b85a718bf7e0
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: 675d4a4c91e9401eb05c0a72bb83af00aab0336c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862491"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419029"
 ---
 # <a name="use-a-task-sequence-to-manage-virtual-hard-disks-in-system-center-configuration-manager"></a>Use uma sequência de tarefas para gerenciar discos rígidos virtuais no System Center Configuration Manager
 
@@ -64,7 +64,7 @@ No System Center Configuration Manager, é possível gerenciar VHDs (discos ríg
  Para criar um VHD, é necessário criar uma sequência de tarefas que contenha as etapas para criar o VHD e usar a sequência de tarefas no Assistente para Criar Disco Rígido Virtual para criar o VHD. As seções a seguir fornecem as etapas para criar o VHD.  
 
 ###  <a name="BKMK_CreateTS"></a> Criar uma sequência de tarefas para o VHD  
- Você deve criar uma sequência de tarefas que contenha as etapas para criar o VHD. No Assistente para Criar Sequência de Tarefas, há a opção **Instalar um pacote da imagem existente em um disco rígido virtual** que cria as etapas a serem usadas para criar o VHD. Por exemplo, o assistente adiciona as seguintes etapas necessárias: Reiniciar no Windows PE, Formatar e particionar o Disco, Aplicar Sistema Operacional e Desligar Computador. Você não pode criar o VHD enquanto está no sistema operacional completo. Além disso, o Configuration Manager deve esperar até que a máquina virtual seja desligada antes de completar o pacote. Por padrão, o assistente espera 5 minutos antes de desligar a máquina virtual. Depois de criar a sequência de tarefas, você pode adicionar outras etapas, se necessário.  
+ Você deve criar uma sequência de tarefas que contenha as etapas para criar o VHD. No Assistente para Criar Sequência de Tarefas, há a opção **Instalar um pacote da imagem existente em um disco rígido virtual** que cria as etapas a serem usadas para criar o VHD. Por exemplo, o assistente adiciona as seguintes etapas necessárias: Reiniciar no Windows PE, formatar e particionar o Disco, Aplicar Sistema Operacional e Desligar Computador. Você não pode criar o VHD enquanto está no sistema operacional completo. Além disso, o Configuration Manager deve esperar até que a máquina virtual seja desligada antes de completar o pacote. Por padrão, o assistente espera 5 minutos antes de desligar a máquina virtual. Depois de criar a sequência de tarefas, você pode adicionar outras etapas, se necessário.  
 
 > [!IMPORTANT]  
 >  O procedimento a seguir cria a sequência de tarefas usando a opção **Instalar um pacote da imagem existente em um disco rígido virtual** , que inclui automaticamente as etapas necessárias para criar com êxito o VHD. Se você escolher usar uma sequência de tarefas existente ou criar uma manualmente, certifique-se de ter adicionado a etapa Desligar Computador no final da sequência. Sem essa etapa, a máquina virtual temporária não é excluída e o processo de criação do VHD não é concluído. No entanto, o assistente é concluído e relata com êxito.  
@@ -75,7 +75,7 @@ No System Center Configuration Manager, é possível gerenciar VHDs (discos ríg
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
 3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Sequência de Tarefas** para iniciar o Assistente para Criar Sequência de Tarefas.  
 
@@ -85,7 +85,7 @@ No System Center Configuration Manager, é possível gerenciar VHDs (discos ríg
 
     -   **Nome da sequência de tarefas**: especifique um nome que identifique a sequência de tarefas.  
 
-    -   **Descrição**: especifique uma descrição da sequência de tarefas.  
+    -   **Descrição**: Especifique uma descrição da sequência de tarefas.  
 
     -   **Imagem de inicialização**: especifique a imagem de inicialização que instala o sistema operacional no computador de destino. Para obter mais informações, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
 
@@ -95,19 +95,19 @@ No System Center Configuration Manager, é possível gerenciar VHDs (discos ríg
 
     -   **Imagem**: se o pacote de imagens do sistema operacional contém várias imagens, especifique o índice da imagem do sistema operacional para instalação.  
 
-    -   **Chave do produto**: especifique a chave do produto do sistema operacional Windows a instalar. Você pode especificar as chaves de licença de volume codificadas e as chaves do produto padrão. Se você usar uma chave de produto sem codificação, cada grupo de 5 caracteres deverá ser separado por um traço (-). Por exemplo: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
+    -   **Chave do produto (Product Key)**: especifique a chave do produto do sistema operacional Windows a instalar. Você pode especificar as chaves de licença de volume codificadas e as chaves do produto padrão. Se você usar uma chave de produto sem codificação, cada grupo de 5 caracteres deverá ser separado por um traço (-). Por exemplo: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
 
-    -   **Modo de licenciamento do servidor**: especifique se a licença do servidor é **Por estação**, **Por servidor**ou se nenhuma licença está especificada. Se a licença do servidor for **Por servidor**, especifique também o número máximo de conexões de servidor.  
+    -   **Modo de licenciamento do servidor**: especifique que a licença do servidor é **Por estação**, **Por servidor** ou que nenhuma licença está especificada. Se a licença do servidor for **Por servidor**, especifique também o número máximo de conexões de servidor.  
 
     -   Especifique como lidar com a conta de administrador usada quando a imagem de sistema operacional é implantada.  
 
-        -   **Gerar aleatoriamente a senha do administrador local e desabilitar a conta em todas as plataformas com suporte (recomendado)**: use essa configuração para que o assistente crie aleatoriamente uma senha para a conta de administrador local e desabilite a conta quando a imagem do sistema operacional for implantada.  
+        -   **Gerar a senha do administrador local aleatoriamente e desabilitar a conta em todas as plataformas compatíveis (recomendado)**: Use essa configuração para que o assistente crie aleatoriamente uma senha para a conta de administrador local e desabilite a conta quando a imagem do sistema operacional for implantada.  
 
-        -   **Ativar a conta e especificar a senha do administrador local**: use essa configuração para usar uma senha específica para a conta de administrador local em todos os computadores nos quais a imagem do sistema operacional será implantada.  
+        -   **Habilitar a conta e especificar a senha do administrador local**: Use essa configuração para usar uma senha específica para a conta de administrador local em todos os computadores nos quais a imagem do sistema operacional será implantada.  
 
 7.  Na página **Configurar a Rede** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    -   **Ingressar no grupo de trabalho**: especifique se deseja adicionar o computador de destino a um grupo de trabalho.  
+    -   **Ingressar em um grupo de trabalho**: especifique se deseja adicionar o computador de destino a um grupo de trabalho.  
 
     -   **Ingressar em um domínio**: especifique se deseja adicionar o computador de destino a um domínio. Em **Domínio**, especifique o nome do domínio.  
 
@@ -134,50 +134,50 @@ No System Center Configuration Manager, é possível gerenciar VHDs (discos ríg
 
 #### <a name="to-create-a-vhd"></a>Para criar um VHD  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Discos Rígidos Virtuais**.  
+2. No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Discos Rígidos Virtuais**.  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Disco Rígido Virtual** para iniciar o Assistente para Criar Disco Rígido Virtual.  
+3. Na guia **Início** , no grupo **Criar** , clique em **Criar Disco Rígido Virtual** para iniciar o Assistente para Criar Disco Rígido Virtual.  
 
-    > [!NOTE]  
-    >  O Hyper-V deve estar instalado no computador que está executando o console do Configuration Manager do qual você gerencia os VHDs ou a opção **Criar Disco Rígido Virtual** não será habilitada. Para obter mais informações sobre os requisitos do Hyper-V, consulte [Pré-requisitos de instalação do Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
+   > [!NOTE]  
+   >  O Hyper-V deve estar instalado no computador que está executando o console do Configuration Manager do qual você gerencia os VHDs ou a opção **Criar Disco Rígido Virtual** não será habilitada. Para obter mais informações sobre os requisitos do Hyper-V, consulte [Pré-requisitos de instalação do Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
 
-    > [!TIP]  
-    >  Para organizar os seus VHDs, crie uma pasta ou selecione uma já existente no nó **Discos Rígidos Virtuais** e clique em **Criar Disco Rígido Virtual** a partir da pasta.  
+   > [!TIP]  
+   >  Para organizar os seus VHDs, crie uma pasta ou selecione uma já existente no nó **Discos Rígidos Virtuais** e clique em **Criar Disco Rígido Virtual** a partir da pasta.  
 
-4.  Na página **Geral** , especifique as seguintes configurações e clique em **Próximo**.  
+4. Na página **Geral** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    -   **Nome**: especifique um nome exclusivo para o VHD.  
+   -   **Nome**: Especifique um nome exclusivo para o VHD.  
 
-    -   **Versão**: especifique um número de versão para o VHD. Esta é uma configuração opcional.  
+   -   **Versão**: Especifique um número de versão para o VHD. Esta é uma configuração opcional.  
 
-    -   **Comentário**: especifique uma descrição para o VHD.  
+   -   **Comentário**: especifique uma descrição para o VHD.  
 
-    -   **Caminho**: especifique o caminho e o nome do arquivo do qual o assistente criará o arquivo VHD.  
+   -   **Caminho**: especifique o caminho e o nome do arquivo de onde o assistente criará o arquivo VHD.  
 
-         Você deve inserir um caminho de rede válido no formato UNC. Por exemplo: **\\\nomedoservidor\\<nomedocompartilhamento\>\\<nomedoarquivo\>.vhd**.  
+        Você deve inserir um caminho de rede válido no formato UNC. Por exemplo: **\\\nomedoservidor\\<nomedocompartilhamento\>\\<nomedoarquivo\>.vhd**.  
 
-        > [!WARNING]  
-        >  O Configuration Manager deve ter permissão de acesso para **Gravar** no caminho especificado para criar o VHD. Quando o Configuration Manager não consegue acessar o caminho, ele registra o erro associado no arquivo distmgr.log do servidor do site.  
+       > [!WARNING]  
+       >  O Configuration Manager deve ter permissão de acesso para **Gravar** no caminho especificado para criar o VHD. Quando o Configuration Manager não consegue acessar o caminho, ele registra o erro associado no arquivo distmgr.log do servidor do site.  
 
-5.  Na página **Sequência de Tarefas** , especifique a sequência de tarefas que você especificou na seção anterior e clique em **Avançar**.  
+5. Na página **Sequência de Tarefas** , especifique a sequência de tarefas que você especificou na seção anterior e clique em **Avançar**.  
 
-6.  Na página **Pontos de Distribuição** , selecione um ou mais pontos de distribuição que possuem o conteúdo exigido pela sequência de tarefas e clique em **Próximo**.  
+6. Na página **Pontos de Distribuição** , selecione um ou mais pontos de distribuição que possuem o conteúdo exigido pela sequência de tarefas e clique em **Próximo**.  
 
-7.  Na página **Personalização** , clique em **Próximo**. O processo para criar o VHD ignora todas as configurações que você especificar nesta página.  
+7. Na página **Personalização** , clique em **Próximo**. O processo para criar o VHD ignora todas as configurações que você especificar nesta página.  
 
-8.  Verifique as configurações e clique em **Avançar**. O assistente cria o VHD.  
+8. Verifique as configurações e clique em **Avançar**. O assistente cria o VHD.  
 
-    > [!TIP]  
-    >  O tempo para concluir o processo para criar o VHD pode variar. Enquanto o assistente trabalha nesse processo, você pode monitorar os arquivos de log a seguir para acompanhar o progresso. Por padrão, os logs estão localizados no computador que está executando o console do Configuration Manager em %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
-    >   
-    >  -   **CreateTSMedia.log**: o assistente grava informações nesse log enquanto cria a mídia de sequência de tarefas. Examine esse arquivo de log para acompanhar o progresso do assistente quando ele cria a mídia independente.  
-    > -   **DeployToVHD.log**: o assistente grava informações nesse log ao longo do processo de criação do VHD. Examine esse arquivo de log para acompanhar o progresso do assistente por todas as etapas após ele ter criado a mídia independente.  
-    >   
-    >  Além disso, quando a instalação do sistema operacional começar, você poderá abrir o Hyper-V Manager (se tiver instalado as ferramentas de gerenciamento do Hyper-V no computador) e conectar à máquina virtual temporária criada pelo assistente para ver a sequência de tarefas sendo executada. É possível monitorar, a partir da máquina virtual, o arquivo smsts.log para acompanhar o progresso da sequência de tarefas. Caso ocorra algum problema ao completar a etapa de sequência de tarefas, você pode usar esse arquivo de log para ajudá-lo a solucionar o problema. O arquivo smsts.log fica em x: \windows\temp\smstslog\smsts.log antes da formatação do disco rígido e em c:\\\_SMSTaskSequence\Logs\Smstslog\ depois da formatação. Depois da conclusão das etapas de sequência de tarefas, a máquina virtual é desligada após 5 minutos (por padrão) e excluída.  
+   > [!TIP]
+   >  O tempo para concluir o processo para criar o VHD pode variar. Enquanto o assistente trabalha nesse processo, você pode monitorar os arquivos de log a seguir para acompanhar o progresso. Por padrão, os logs estão localizados no computador que está executando o console do Configuration Manager em %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
+   > 
+   > - **CreateTSMedia.log**: o assistente grava informações nesse log enquanto cria a mídia de sequência de tarefas. Examine esse arquivo de log para acompanhar o progresso do assistente quando ele cria a mídia independente.  
+   >   -   **DeployToVHD.log**: o assistente grava informações nesse log ao longo do processo de criação do VHD. Examine esse arquivo de log para acompanhar o progresso do assistente por todas as etapas após ele ter criado a mídia independente.  
+   > 
+   >   Além disso, quando a instalação do sistema operacional começar, você poderá abrir o Hyper-V Manager (se tiver instalado as ferramentas de gerenciamento do Hyper-V no computador) e conectar à máquina virtual temporária criada pelo assistente para ver a sequência de tarefas sendo executada. É possível monitorar, a partir da máquina virtual, o arquivo smsts.log para acompanhar o progresso da sequência de tarefas. Caso ocorra algum problema ao completar a etapa de sequência de tarefas, você pode usar esse arquivo de log para ajudá-lo a solucionar o problema. O arquivo smsts.log fica em x: \windows\temp\smstslog\smsts.log antes da formatação do disco rígido e em c:\\\_SMSTaskSequence\Logs\Smstslog\ depois da formatação. Depois da conclusão das etapas de sequência de tarefas, a máquina virtual é desligada após 5 minutos (por padrão) e excluída.  
 
- Após o Configuration Manager criar o VHD, ele estará localizado no nó **Discos Rígidos Virtuais** no console do Configuration Manager, no nó **Implantação de Sistema Operacional** no espaço de trabalho **Biblioteca de Software**.  
+   Após o Configuration Manager criar o VHD, ele estará localizado no nó **Discos Rígidos Virtuais** no console do Configuration Manager, no nó **Implantação de Sistema Operacional** no workspace **Biblioteca de Software**.  
 
 > [!NOTE]  
 >  O Configuration Manager recupera o tamanho do VHD ao se conectar ao local de origem do VHD. Se o Configuration Manager não conseguir acessar o arquivo VHD, **0** será exibido na coluna **Tamanho (KB)** para o VHD.  
@@ -192,31 +192,31 @@ No System Center Configuration Manager, é possível gerenciar VHDs (discos ríg
 
 #### <a name="to-create-a-custom-task-sequence-to-modify-the-vhd"></a>Para criar uma sequência de tarefas personalizada para modificar o VHD  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2. No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Sequência de Tarefas** para iniciar o Assistente para Criar Sequência de Tarefas.  
+3. Na guia **Início** , no grupo **Criar** , clique em **Criar Sequência de Tarefas** para iniciar o Assistente para Criar Sequência de Tarefas.  
 
-4.  Na página **Criar uma Nova Sequência de Tarefas** , selecione **Criar uma Nova Sequência de Tarefas Personalizada**e clique em **Próximo**.  
+4. Na página **Criar uma Nova Sequência de Tarefas** , selecione **Criar uma Nova Sequência de Tarefas Personalizada**e clique em **Próximo**.  
 
-5.  Na página **Informações da Sequência de Tarefas** , especifique as seguintes configurações e clique em **Próximo**.  
+5. Na página **Informações da Sequência de Tarefas** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    -   **Nome da sequência de tarefas**: especifique um nome que identifique a sequência de tarefas.  
+   -   **Nome da sequência de tarefas**: especifique um nome que identifique a sequência de tarefas.  
 
-    -   **Descrição**: especifique uma descrição da sequência de tarefas.  
+   -   **Descrição**: Especifique uma descrição da sequência de tarefas.  
 
-    -   **Imagem de inicialização**: especifique a imagem de inicialização que instala o sistema operacional no computador de destino. Para obter mais informações, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
+   -   **Imagem de inicialização**: especifique a imagem de inicialização que instala o sistema operacional no computador de destino. Para obter mais informações, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
 
-6.  Conclua o assistente.  
+6. Conclua o assistente.  
 
- Use o procedimento a seguir para adicionar etapas de sequência de tarefas para a sequência de tarefas personalizada.  
+   Use o procedimento a seguir para adicionar etapas de sequência de tarefas para a sequência de tarefas personalizada.  
 
 #### <a name="to-add-task-sequence-steps-to-the-custom-task-sequence"></a>Para adicionar etapas de sequência de tarefas para a sequência de tarefas personalizada  
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**, clique em **Sequências de Tarefas**e selecione a sequência de tarefas personalizada que você criou no procedimento anterior.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais**, clique em **Sequências de Tarefas** e selecione a sequência de tarefas personalizada que você criou no procedimento anterior.  
 
 3.  Na guia **Início** , no grupo **Sequência de Tarefas** , clique em **Editar** para iniciar o editor de sequência de tarefas.  
 
@@ -231,43 +231,43 @@ No System Center Configuration Manager, é possível gerenciar VHDs (discos ríg
 
 #### <a name="to-modify-a-vhd"></a>Para modificar um VHD  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**, clique em **Discos Rígidos Virtuais**e selecione o VHD a modificar.  
+2. No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais**, clique em **Discos Rígidos Virtuais** e selecione o VHD a modificar.  
 
-3.  Na guia **Início** , no grupo **Disco Rígido Virtual** , clique em **Modificar Disco Rígido Virtual** para iniciar o Assistente para Modificar Disco Rígido Virtual.  
+3. Na guia **Início** , no grupo **Disco Rígido Virtual** , clique em **Modificar Disco Rígido Virtual** para iniciar o Assistente para Modificar Disco Rígido Virtual.  
 
-    > [!NOTE]  
-    >  O Hyper-V deve estar instalado no computador que está executando o console do Configuration Manager de onde você gerencia os VHDs ou a opção **Modificar Disco Rígido Virtual** não será habilitada. Para obter mais informações sobre os requisitos do Hyper-V, consulte [Pré-requisitos de instalação do Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
+   > [!NOTE]  
+   >  O Hyper-V deve estar instalado no computador que está executando o console do Configuration Manager de onde você gerencia os VHDs ou a opção **Modificar Disco Rígido Virtual** não será habilitada. Para obter mais informações sobre os requisitos do Hyper-V, consulte [Pré-requisitos de instalação do Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
 
-4.  Na página **Geral** , confirme as seguintes configurações e clique em **Próximo**.  
+4. Na página **Geral** , confirme as seguintes configurações e clique em **Próximo**.  
 
-    -   **Nome**: especifica o nome exclusivo para o VHD.  
+   -   **Nome**: especifica o nome exclusivo para o VHD.  
 
-    -   **Versão**: especifica o número de versão para o VHD. Esta é uma configuração opcional.  
+   -   **Versão**: especifica o número de versão para o VHD. Esta é uma configuração opcional.  
 
-    -   **Comentário**: especifica a descrição para o VHD.  
+   -   **Comentário**: especifica a descrição para o VHD.  
 
-    -   **Caminho**: especifica o caminho e o nome do arquivo para onde está localizado o arquivo VHD. Não é possível modificar essa configuração.  
+   -   **Caminho**: especifica o caminho e o nome do arquivo para onde está localizado o arquivo VHD. Não é possível modificar essa configuração.  
 
-        > [!WARNING]  
-        >  O Configuration Manager deve ter permissão de acesso para **Gravar** no caminho especificado para criar o VHD. Quando o Configuration Manager não consegue acessar o caminho, ele registra o erro associado no arquivo distmgr.log do servidor do site.  
+       > [!WARNING]  
+       >  O Configuration Manager deve ter permissão de acesso para **Gravar** no caminho especificado para criar o VHD. Quando o Configuration Manager não consegue acessar o caminho, ele registra o erro associado no arquivo distmgr.log do servidor do site.  
 
-5.  Na página **Sequência de Tarefas** , especifique a sequência de tarefas personalizada que você criou na seção anterior e clique em **Próximo**.  
+5. Na página **Sequência de Tarefas** , especifique a sequência de tarefas personalizada que você criou na seção anterior e clique em **Próximo**.  
 
-6.  Na página **Pontos de Distribuição** , selecione um ou mais pontos de distribuição que possuem o conteúdo exigido pela sequência de tarefas e clique em **Próximo**.  
+6. Na página **Pontos de Distribuição** , selecione um ou mais pontos de distribuição que possuem o conteúdo exigido pela sequência de tarefas e clique em **Próximo**.  
 
-7.  Na página **Personalização** , clique em **Próximo**. O processo para modificar o VHD ignora todas as configurações que você especificar nesta página.  
+7. Na página **Personalização** , clique em **Próximo**. O processo para modificar o VHD ignora todas as configurações que você especificar nesta página.  
 
-8.  Verifique as configurações e clique em **Avançar**. O assistente cria o VHD modificado.  
+8. Verifique as configurações e clique em **Avançar**. O assistente cria o VHD modificado.  
 
-    > [!TIP]  
-    >  O tempo para concluir o processo para modificar o VHD pode variar. Enquanto o assistente trabalha nesse processo, você pode monitorar os arquivos de log a seguir para acompanhar o progresso. Por padrão, os logs estão localizados no computador que está executando o console do Configuration Manager em %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
-    >   
-    >  -   **CreateTSMedia.log**: o assistente grava informações nesse log enquanto cria a mídia de sequência de tarefas. Examine esse arquivo de log para acompanhar o progresso do assistente quando ele cria a mídia independente.  
-    > -   **DeployToVHD.log**: o assistente grava informações nesse log ao longo do processo de modificação do VHD. Examine esse arquivo de log para acompanhar o progresso do assistente por todas as etapas após ele ter criado a mídia independente.  
-    >   
-    >  Além disso, você poderá abrir o Hyper-V Manager (se tiver instalado as ferramentas de gerenciamento do Hyper-V no computador) e conectar-se à máquina virtual temporária criada pelo assistente para ver a sequência de tarefas em execução. É possível monitorar, a partir da máquina virtual, o arquivo smsts.log para acompanhar o progresso da sequência de tarefas. Caso ocorra algum problema ao completar a etapa de sequência de tarefas, você pode usar esse arquivo de log para ajudá-lo a solucionar o problema. O arquivo smsts.log fica em x: \windows\temp\smstslog\smsts.log antes da formatação do disco rígido e em c:\\\_SMSTaskSequence\Logs\Smstslog\ depois da formatação. Depois da conclusão das etapas de sequência de tarefas, a máquina virtual é desligada após 5 minutos (por padrão) e excluída.  
+   > [!TIP]
+   >  O tempo para concluir o processo para modificar o VHD pode variar. Enquanto o assistente trabalha nesse processo, você pode monitorar os arquivos de log a seguir para acompanhar o progresso. Por padrão, os logs estão localizados no computador que está executando o console do Configuration Manager em %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
+   > 
+   > - **CreateTSMedia.log**: o assistente grava informações nesse log enquanto cria a mídia de sequência de tarefas. Examine esse arquivo de log para acompanhar o progresso do assistente quando ele cria a mídia independente.  
+   >   -   **DeployToVHD.log**: o assistente grava informações nesse log ao longo do processo de modificação do VHD. Examine esse arquivo de log para acompanhar o progresso do assistente por todas as etapas após ele ter criado a mídia independente.  
+   > 
+   >   Além disso, você poderá abrir o Hyper-V Manager (se tiver instalado as ferramentas de gerenciamento do Hyper-V no computador) e conectar-se à máquina virtual temporária criada pelo assistente para ver a sequência de tarefas em execução. É possível monitorar, a partir da máquina virtual, o arquivo smsts.log para acompanhar o progresso da sequência de tarefas. Caso ocorra algum problema ao completar a etapa de sequência de tarefas, você pode usar esse arquivo de log para ajudá-lo a solucionar o problema. O arquivo smsts.log fica em x: \windows\temp\smstslog\smsts.log antes da formatação do disco rígido e em c:\\\_SMSTaskSequence\Logs\Smstslog\ depois da formatação. Depois da conclusão das etapas de sequência de tarefas, a máquina virtual é desligada após 5 minutos (por padrão) e excluída.  
 
 ##  <a name="BKMK_ApplyUpdates"></a> Aplicar atualizações de software a um VHD  
  Periodicamente, são lançadas novas atualizações de software que se aplicam ao sistema operacional em seu VHD. Você pode aplicar as atualizações de software aplicáveis a um VHD em um agendamento especificado. No agendamento especificado, o Configuration Manager aplica as atualizações de software selecionadas para o VHD.  
@@ -285,7 +285,7 @@ No System Center Configuration Manager, é possível gerenciar VHDs (discos ríg
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Discos Rígidos Virtuais**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Discos Rígidos Virtuais**.  
 
 3.  Selecione o VHD para aplicar atualizações de software.  
 
@@ -295,7 +295,7 @@ No System Center Configuration Manager, é possível gerenciar VHDs (discos ríg
 
 6.  Na página **Definir Agendamento** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    1.  **Agendamento**: especifique o agendamento para quando as atualizações de software são aplicadas ao VHD.  
+    1.  **Agendamento**: especifique o agendamento para quando as atualizações de software forem aplicadas ao VHD.  
 
     2.  **Continuar se houver erro**: selecione essa opção para continuar a aplicar as atualizações de software à imagem em caso de erro.  
 
@@ -315,7 +315,7 @@ No System Center Configuration Manager, é possível gerenciar VHDs (discos ríg
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Discos Rígidos Virtuais**.  
+2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Discos Rígidos Virtuais**.  
 
 3.  Na guia **Início** , no grupo **Disco Rígido Virtual** , clique em **Carregar no Gerenciador de Máquina Virtual** para iniciar o Assistente para Carregar no Gerenciador de Máquina Virtual.  
 
@@ -323,7 +323,7 @@ No System Center Configuration Manager, é possível gerenciar VHDs (discos ríg
 
     -   **Nome do servidor do VMM**: especifique o FQDN do computador em que está instalado o servidor de gerenciamento do VMM. O assistente se conecta ao servidor de gerenciamento do VMM para baixar os compartilhamentos da biblioteca para o servidor.  
 
-    -   **Compartilhamento de biblioteca do VMM**: especifique o compartilhamento de biblioteca do VMM da lista suspensa.  
+    -   **Compartilhamento de biblioteca do VMM**: especifique o compartilhamento da biblioteca do VMM da lista suspensa.  
 
     -   **Usar transferência descriptografada**: selecione essa configuração para transferir o arquivo do VHD para o servidor de gerenciamento do VMM sem o uso de criptografia.  
 

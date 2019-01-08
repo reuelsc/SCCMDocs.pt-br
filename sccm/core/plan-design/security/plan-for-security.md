@@ -10,12 +10,12 @@ ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5332fa778b343a5eaae93a08db0826823fffce42
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 88fa98de0f9f0a113adeef3a30536628706484ab
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456372"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424673"
 ---
 # <a name="plan-for-security-in-configuration-manager"></a>Planejar a segurança no Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "52456372"
 Este artigo descreve os conceitos a serem consideradas ao planejar a segurança com a implementação do Configuration Manager. Ele inclui as seguintes seções:  
 
 - [Planejar certificados (autoassinados e PKI)](#BKMK_PlanningForCertificates)  
-    - [Certificados CNG (Criptografia: Próxima Geração)](#bkmk_plan-cng)  
+    - [Criptografia: Certificados CNG (Cryptography Next Generation)](#bkmk_plan-cng)  
     - [HTTP aprimorado](#bkmk_plan-ehttp)  
     - [Certificados para CMG e CDP](#bkmk_plan-cmgcdp)  
     - [O certificado de autenticação (autoassinado) do servidor do site](#bkmk_plansitesign)  
@@ -58,9 +58,9 @@ Este artigo descreve os conceitos a serem consideradas ao planejar a segurança 
  Quando certificados PKI não estiverem disponíveis, o Configuration Manager gerará certificados autoassinados automaticamente. Alguns certificados no Configuration Manager são sempre autoassinados. Na maioria dos casos, o Configuration Manager gerencia automaticamente os certificados autoassinados e você não precisa tomar medidas adicionais. Um exemplo é o certificado de assinatura do servidor do site. Esse certificado é sempre autoassinado. Ele garante que as políticas que os clientes baixam do ponto de gerenciamento tenham sido enviadas do servidor do site e que não tenham sido violadas.  
 
 
-### <a name="bkmk_plan-cng"></a> Certificados CNG (Criptografia: Próxima Geração)  
+### <a name="bkmk_plan-cng"></a> Criptografia: Certificados CNG (Cryptography Next Generation)  
 
- O Configuration Manager dá suporte a certificados CNG (Criptografia: Próxima Geração). Os clientes do Configuration Manager podem usar o certificado de autenticação de cliente de PKI com chave privada no KSP (provedor de armazenamento de chaves) da CNG. Com o suporte do KSP, os clientes do Configuration Manager dão suporte para chave de privada baseada em hardware, como TPM KSP para certificados de autenticação de cliente de PKI. Para obter mais informações, consulte [Visão geral dos certificados CNG](/sccm/core/plan-design/network/cng-certificates-overview).
+ O Configuration Manager dá suporte a certificados CNG (Cryptography Next Generation). Os clientes do Configuration Manager podem usar o certificado de autenticação de cliente de PKI com chave privada no KSP (provedor de armazenamento de chaves) da CNG. Com o suporte do KSP, os clientes do Configuration Manager dão suporte para chave de privada baseada em hardware, como TPM KSP para certificados de autenticação de cliente de PKI. Para obter mais informações, consulte [Visão geral dos certificados CNG](/sccm/core/plan-design/network/cng-certificates-overview).
 
 
 ### <a name="bkmk_plan-ehttp"></a> HTTP aprimorado  
@@ -154,7 +154,7 @@ Esses certificados de AC raiz importados e o certificado de AC raiz de cada pont
 
 Em muitos casos, a configuração e o comportamento padrão são suficientes. O cliente do Configuration Manager em computadores Windows filtra vários certificados usando esses critérios, nessa ordem:  
 
-1.  A lista de emissores do certificado: o certificado está encadeado a uma AC raiz confiável pelo ponto de gerenciamento.  
+1.  A lista de emissores do certificado: O certificado está encadeado a uma AC raiz que é considerada confiável pelo ponto de gerenciamento.  
 
 2.  O certificado está no repositório de certificados padrão **Pessoal**.  
 
@@ -178,17 +178,17 @@ Clientes que não têm a lista de emissores do certificado quando forem instalad
 
 Na maioria dos casos, o cliente do Configuration Manager identifica corretamente um certificado PKI único e apropriado. No entanto, quando esse comportamento não for o caso, em vez de selecionar o certificado baseado na funcionalidade de autenticação do cliente, você pode configurar dois métodos de seleção alternativos:  
 
--   Uma correspondência parcial de cadeia de caracteres no nome da entidade do certificado do cliente. Esse método é uma correspondência que não diferencia maiúsculas de minúsculas. É apropriado se você está usando o FQDN (nome de domínio totalmente qualificado) de um computador no campo da entidade e deseja que a seleção do certificado seja baseada no sufixo do domínio, por exemplo, **contoso.com**. Entretanto, você pode usar esse método de seleção para identificar alguma cadeia de caracteres sequencial no nome da entidade do certificado que diferencia o certificado dos outros no repositório de certificados do cliente.  
+- Uma correspondência parcial de cadeia de caracteres no nome da entidade do certificado do cliente. Esse método é uma correspondência que não diferencia maiúsculas de minúsculas. É apropriado se você está usando o FQDN (nome de domínio totalmente qualificado) de um computador no campo da entidade e deseja que a seleção do certificado seja baseada no sufixo do domínio, por exemplo, **contoso.com**. Entretanto, você pode usar esse método de seleção para identificar alguma cadeia de caracteres sequencial no nome da entidade do certificado que diferencia o certificado dos outros no repositório de certificados do cliente.  
 
-    > [!NOTE]  
-    >  Você não pode usar a correspondência parcial de cadeia de caracteres com o SAN (nome alternativo da entidade) como uma configuração do site. Embora você possa especificar uma correspondência parcial de cadeia de caracteres para o SAN usando CCMSetup, ela será substituída pelas propriedades do site nos seguintes cenários:  
-    >   
-    >  -   Clientes recuperam informações do site que são publicadas no Active Directory Domain Services.  
-    > -   Clientes são instalados por push.  
-    >   
-    >  Use uma correspondência parcial de cadeia de caracteres na SAN somente ao instalar clientes manualmente e quando eles não recuperarem informações de site do Active Directory Domain Services. Por exemplo, essas condições só se aplicam a clientes da Internet.  
+  > [!NOTE]
+  >  Você não pode usar a correspondência parcial de cadeia de caracteres com o SAN (nome alternativo da entidade) como uma configuração do site. Embora você possa especificar uma correspondência parcial de cadeia de caracteres para o SAN usando CCMSetup, ela será substituída pelas propriedades do site nos seguintes cenários:  
+  > 
+  > - Clientes recuperam informações do site que são publicadas no Active Directory Domain Services.  
+  >   -   Clientes são instalados por push.  
+  > 
+  >   Use uma correspondência parcial de cadeia de caracteres na SAN somente ao instalar clientes manualmente e quando eles não recuperarem informações de site do Active Directory Domain Services. Por exemplo, essas condições só se aplicam a clientes da Internet.  
 
--   Uma correspondência nos valores de atributo de nome da entidade do certificado do cliente ou valores de atributo da SAN (nome alternativo da entidade). Esse método é uma correspondência que diferencia maiúsculas de minúsculas. Será apropriado se você estiver usando um nome diferenciado X500 ou OIDs (identificadores de objeto) equivalentes em conformidade com a RFC 3280 e se desejar que a seleção do certificado seja baseada em valores de atributos. Você só pode especificar os atributos e seus valores necessários para identificar ou validar com exclusividade o certificado e diferenciá-lo de outros no armazenamento de certificados.  
+- Uma correspondência nos valores de atributo de nome da entidade do certificado do cliente ou valores de atributo da SAN (nome alternativo da entidade). Esse método é uma correspondência que diferencia maiúsculas de minúsculas. Será apropriado se você estiver usando um nome diferenciado X500 ou OIDs (identificadores de objeto) equivalentes em conformidade com a RFC 3280 e se desejar que a seleção do certificado seja baseada em valores de atributos. Você só pode especificar os atributos e seus valores necessários para identificar ou validar com exclusividade o certificado e diferenciá-lo de outros no armazenamento de certificados.  
 
 A tabela a seguir mostra os valores de atributo a que o Configuration Manager dá suporte como critérios de seleção de certificados do cliente.  
 
@@ -212,9 +212,9 @@ A tabela a seguir mostra os valores de atributo a que o Configuration Manager d�
 
 Se mais de um certificado apropriado for localizado após a aplicação dos critérios de seleção, você poderá substituir a configuração padrão para selecionar o certificado que tem o período de validade mais longo e, em vez disso, especificar que nenhum certificado foi selecionado. Nesse cenário, o cliente não será capaz de se comunicar com sistemas de site IIS com um certificado PKI. O cliente envia uma mensagem de erro ao seu ponto de status de fallback atribuído para alertá-lo sobre a falha na seleção do certificado para que você possa alterar ou aperfeiçoar seus critérios de seleção. O comportamento do cliente, então, depende se a falha da conexão foi em HTTPS ou HTTP:  
 
--   Se a conexão com falha for via HTTPS: o cliente tentará se conectar via HTTP e usará o certificado autoassinado do cliente.  
+-   Se a conexão falhou em HTTPS: O cliente tenta fazer uma conexão via HTTP e usa seu certificado autoassinado.  
 
--   Se a conexão com falha for via HTTP: o cliente tentará se conectar novamente via HTTP usando o certificado autoassinado do cliente.  
+-   Se a conexão falhou em HTTP: O cliente tenta fazer uma conexão novamente via HTTP usando o certificado autoassinado do cliente.  
 
 Para ajudar a identificar um certificado PKI único de cliente, você também pode especificar um repositório personalizado, diferente do padrão **Pessoal** no repositório do **Computador**. No entanto, você deve criar esse repositório independentemente do Configuration Manager. Você deve ser capaz de implantar certificados neste repositório personalizado e renová-los antes que o período de validade expire.  
 
@@ -227,37 +227,37 @@ As opções de configuração flexíveis do Configuration Manager permitem que v
 
 Devido ao grande número de escolhas e opções de configuração no Configuration Manager, não há uma maneira única de fazer a transição de um site de forma que todos os clientes usem conexões HTTPS. No entanto, você pode seguir estas etapas como orientação:  
 
-1.  Instale o site do Configuration Manager e configure-o de modo que os sistemas de sites aceitem conexões de clientes via HTTPS e HTTP.  
+1. Instale o site do Configuration Manager e configure-o de modo que os sistemas de sites aceitem conexões de clientes via HTTPS e HTTP.  
 
-2.  Configure a guia **Comunicação do Computador Cliente** nas propriedades do site para que as **Configurações do Sistema de Sites** sejam **HTTP ou HTTPS**, e selecione **Usar certificado de cliente PKI (funcionalidade de autenticação de cliente) quando disponível**.  Para obter mais informações, confira [Definir as configurações para certificados PKI do cliente](/sccm/core/plan-design/security/configure-security#BKMK_ConfigureClientPKI).  
+2. Configure a guia **Comunicação do Computador Cliente** nas propriedades do site para que as **Configurações do Sistema de Sites** sejam **HTTP ou HTTPS**, e selecione **Usar certificado de cliente PKI (funcionalidade de autenticação de cliente) quando disponível**.  Para obter mais informações, confira [Definir as configurações para certificados PKI do cliente](/sccm/core/plan-design/security/configure-security#BKMK_ConfigureClientPKI).  
 
-3.  Coordene uma distribuição de PKI para certificados de cliente. Para um exemplo de implantação, confira [Implantar o certificado do cliente para computadores Windows](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_client2008_cm2012).  
+3. Coordene uma distribuição de PKI para certificados de cliente. Para um exemplo de implantação, confira [Implantar o certificado do cliente para computadores Windows](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_client2008_cm2012).  
 
-4.  Instale clientes usando o método de instalação por push do cliente. Para obter mais informações, confira [Como instalar clientes do Configuration Manager por push](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientPush).  
+4. Instale clientes usando o método de instalação por push do cliente. Para obter mais informações, confira [Como instalar clientes do Configuration Manager por push](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientPush).  
 
-5.  Monitore a implantação e o status do cliente usando os relatórios e as informações no console do Configuration Manager.  
+5. Monitore a implantação e o status do cliente usando os relatórios e as informações no console do Configuration Manager.  
 
-6.  Controle quantos clientes estão usando um certificado PKI de cliente visualizando a coluna **Certificado do Cliente** no workspace **Ativos e Conformidade**, nó **Dispositivos**.  
+6. Controle quantos clientes estão usando um certificado PKI de cliente visualizando a coluna **Certificado do Cliente** no workspace **Ativos e Conformidade**, nó **Dispositivos**.  
 
-     Você também pode implantar a Ferramenta de Avaliação de Prontidão do Configuration Manager HTTPS (**cmHttpsReadiness.exe**) nos computadores. Em seguida, use os relatórios para exibir o número de computadores que podem usar um certificado PKI de cliente com o Configuration Manager.  
+    Você também pode implantar a Ferramenta de Avaliação de Prontidão do Configuration Manager HTTPS (**cmHttpsReadiness.exe**) nos computadores. Em seguida, use os relatórios para exibir o número de computadores que podem usar um certificado PKI de cliente com o Configuration Manager.  
 
-    > [!NOTE]  
-    >  Quando você instala o cliente do Configuration Manager, ele instala a ferramenta **CMHttpsReadiness.exe** na pasta `%windir%\CCM`. As opções de linha de comando a seguir estão disponíveis quando você executa esta ferramenta:  
-    >   
-    > - `/Store:<name>`: essa opção é igual à propriedade client.msi **CCMCERTSTORE**  
-    > - `/Issuers:<list>`: essa opção é igual à propriedade client.msi **CCMCERTISSUERS**    
-    > - `/Criteria:<criteria>`: essa opção é igual à propriedade client.msi **CCMCERTSEL**    
-    > - `/SelectFirstCert`: essa opção é igual à propriedade client.msi **CCMFIRSTCERT**    
-    >   
-    >  Para obter mais informações, veja [Sobre propriedades de instalação do cliente](/sccm/core/clients/deploy/about-client-installation-properties).  
+   > [!NOTE]
+   >  Quando você instala o cliente do Configuration Manager, ele instala a ferramenta **CMHttpsReadiness.exe** na pasta `%windir%\CCM`. As opções de linha de comando a seguir estão disponíveis quando você executa esta ferramenta:  
+   > 
+   > - `/Store:<name>`: Essa opção é igual à propriedade client.msi **CCMCERTSTORE**  
+   > - `/Issuers:<list>`: Essa opção é igual à propriedade client.msi **CCMCERTISSUERS**    
+   > - `/Criteria:<criteria>`: Essa opção é igual à propriedade client.msi **CCMCERTSEL**    
+   > - `/SelectFirstCert`: Essa opção é igual à propriedade client.msi **CCMFIRSTCERT**    
+   > 
+   >   Para obter mais informações, veja [Sobre propriedades de instalação do cliente](/sccm/core/clients/deploy/about-client-installation-properties).  
 
-7.  Quando estiver confiante de que um número suficiente de clientes está usando com sucesso o certificado PKI de cliente para autenticação via HTTP, siga essas etapas:  
+7. Quando estiver confiante de que um número suficiente de clientes está usando com sucesso o certificado PKI de cliente para autenticação via HTTP, siga essas etapas:  
 
-    1.  Implante um certificado do servidor Web de PKI em um servidor membro que execute um ponto de gerenciamento adicional para o site e configure o certificado no IIS. Para obter mais informações, confira [Implantar o certificado do servidor Web para sistemas de sites que executam o IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).  
+   1.  Implante um certificado do servidor Web de PKI em um servidor membro que execute um ponto de gerenciamento adicional para o site e configure o certificado no IIS. Para obter mais informações, confira [Implantar o certificado do servidor Web para sistemas de sites que executam o IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).  
 
-    2.  Instale a função de ponto de gerenciamento no servidor e configure a opção **Conexões de Cliente** nas propriedades do ponto de gerenciamento de **HTTPS**.  
+   2.  Instale a função de ponto de gerenciamento no servidor e configure a opção **Conexões de Cliente** nas propriedades do ponto de gerenciamento de **HTTPS**.  
 
-8.  Monitore e verifique se os clientes que têm um certificado PKI usam o novo ponto de gerenciamento ao usar o HTTPS. Você pode usar o registro em log do IIS ou contadores de desempenho para verificar.  
+8. Monitore e verifique se os clientes que têm um certificado PKI usam o novo ponto de gerenciamento ao usar o HTTPS. Você pode usar o registro em log do IIS ou contadores de desempenho para verificar.  
 
 9. Reconfigure as outras funções de sistema de site para usar conexões de cliente HTTPS. Se você quiser gerenciar clientes na Internet, verifique se os sistemas de site têm um FQDN de Internet. Configure pontos de gerenciamento individuais e pontos de distribuição para aceitar conexões de clientes da Internet.  
 
@@ -266,9 +266,9 @@ Devido ao grande número de escolhas e opções de configuração no Configurati
 
 10. Estenda a distribuição de certificado PKI de clientes e sistemas de sites que executam o IIS. Configure as funções do sistema de site para conexões de cliente HTTPS e conexões de Internet conforme necessário.  
 
-11. Para maior segurança: quando estiver seguro de que todos os clientes estão usando um certificado PKI de cliente para autenticação e criptografia, altere as propriedades do site para usar somente HTTPS.  
+11. Para maior segurança: Quando estiver seguro de que todos os clientes estão usando um certificado PKI de cliente para autenticação e criptografia, altere as propriedades do site para usar somente HTTPS.  
 
- Esse plano primeiro apresenta certificados PKI para autenticação somente via HTTP e, em seguida, para autenticação e criptografia via HTTPS. Quando você segue esse plano para introduzir gradualmente esses certificados, pode reduzir o risco de os clientes se tornarem não gerenciados. Você também se beneficia da maior segurança à qual o Configuration Manager dá suporte.  
+    Esse plano primeiro apresenta certificados PKI para autenticação somente via HTTP e, em seguida, para autenticação e criptografia via HTTPS. Quando você segue esse plano para introduzir gradualmente esses certificados, pode reduzir o risco de os clientes se tornarem não gerenciados. Você também se beneficia da maior segurança à qual o Configuration Manager dá suporte.  
 
 ##  <a name="BKMK_PlanningForRTK"></a> Planejar a chave de raiz confiável  
 
@@ -280,26 +280,26 @@ Devido ao grande número de escolhas e opções de configuração no Configurati
 
  Os clientes recuperam automaticamente a cópia pública da chave de raiz confiável usando dois mecanismos:  
 
- - Você estende o esquema do Active Directory para Configuration Manager e publica o site no Active Directory Domain Services. Em seguida, os clientes recuperam informações do site de um servidor de catálogo global. Para obter mais informações, consulte [Preparar o Active Directory para publicação de sites](/sccm/core/plan-design/network/extend-the-active-directory-schema).  
+- Você estende o esquema do Active Directory para Configuration Manager e publica o site no Active Directory Domain Services. Em seguida, os clientes recuperam informações do site de um servidor de catálogo global. Para obter mais informações, consulte [Preparar o Active Directory para publicação de sites](/sccm/core/plan-design/network/extend-the-active-directory-schema).  
 
- - Quando você instala clientes usando o método de instalação do cliente por push. Para saber mais, confira [Instalação no cliente por push](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation).  
+- Quando você instala clientes usando o método de instalação do cliente por push. Para saber mais, confira [Instalação no cliente por push](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation).  
 
- Se os clientes não puderem recuperar a chave de raiz confiável usando um desses mecanismos, eles confiarão na chave de raiz confiável fornecida pelo primeiro ponto de gerenciamento com o qual se comunicarem. Neste cenário, um cliente pode ser direcionado erroneamente para um ponto de gerenciamento de um invasor, em que receberia a política do ponto de gerenciamento não autorizado. Esta ação requer um invasor sofisticado. Esse ataque é limitado ao curto tempo antes de o cliente recuperar a chave raiz confiável de um ponto de gerenciamento válido. Para reduzir esse risco de um invasor direcionar clientes para um ponto de gerenciamento invasor, pré-provisione os clientes com a chave de raiz confiável.  
+  Se os clientes não puderem recuperar a chave de raiz confiável usando um desses mecanismos, eles confiarão na chave de raiz confiável fornecida pelo primeiro ponto de gerenciamento com o qual se comunicarem. Neste cenário, um cliente pode ser direcionado erroneamente para um ponto de gerenciamento de um invasor, em que receberia a política do ponto de gerenciamento não autorizado. Esta ação requer um invasor sofisticado. Esse ataque é limitado ao curto tempo antes de o cliente recuperar a chave raiz confiável de um ponto de gerenciamento válido. Para reduzir esse risco de um invasor direcionar clientes para um ponto de gerenciamento invasor, pré-provisione os clientes com a chave de raiz confiável.  
 
- Use os seguintes procedimentos para pré-provisionar e verificar a chave de raiz confiável para um cliente do Configuration Manager:  
+  Use os seguintes procedimentos para pré-provisionar e verificar a chave de raiz confiável para um cliente do Configuration Manager:  
 
- - [Pré-provisionar um cliente com a chave de raiz confiável usando um arquivo](#bkmk_trk-provision-file)  
+- [Pré-provisionar um cliente com a chave de raiz confiável usando um arquivo](#bkmk_trk-provision-file)  
 
- - [Pré-provisionar um cliente com a chave de raiz confiável sem usar um arquivo](#bkmk_trk-provision-nofile)  
+- [Pré-provisionar um cliente com a chave de raiz confiável sem usar um arquivo](#bkmk_trk-provision-nofile)  
 
- - [Verificar a chave de raiz confiável em um cliente](#bkmk_trk-verify)  
+- [Verificar a chave de raiz confiável em um cliente](#bkmk_trk-verify)  
 
- - [Remover ou substituir a chave de raiz confiável](#bkmk_trk-reset)  
+- [Remover ou substituir a chave de raiz confiável](#bkmk_trk-reset)  
 
- > [!NOTE]  
- > Se os clientes puderem obter a chave de raiz confiável do Active Directory Domain Services ou o cliente por push, você não precisará provisioná-la previamente. 
- > 
- > Quando os clientes usam comunicação HTTPS em pontos de gerenciamento, você não precisa pré-provisionar a chave raiz confiável. Eles estabelecem confiança pelos certificados PKI.  
+  > [!NOTE]  
+  > Se os clientes puderem obter a chave de raiz confiável do Active Directory Domain Services ou o cliente por push, você não precisará provisioná-la previamente. 
+  > 
+  > Quando os clientes usam comunicação HTTPS em pontos de gerenciamento, você não precisa pré-provisionar a chave raiz confiável. Eles estabelecem confiança pelos certificados PKI.  
 
 
 ### <a name="bkmk_trk-provision-file"></a> Pré-provisionar um cliente com a chave de raiz confiável usando um arquivo  
@@ -423,11 +423,11 @@ Essa configuração é uma configuração de toda a hierarquia. Antes de alterar
 
 Os seguintes níveis estão disponíveis:
 
-- **Autenticação do Windows**: exige autenticação com credenciais de domínio do Active Directory.   
+- **Autenticação do Windows**: Exige autenticação com credenciais de domínio do Active Directory.   
 
-- **Autenticação de certificado**: exige autenticação com um certificado válido emitido por uma autoridade de certificação PKI confiável.  
+- **Autenticação de certificado**: Exige autenticação com um certificado válido emitido por uma autoridade de certificação PKI confiável.  
 
-- **Autenticação do Windows Hello para Empresas**: exige autenticação com autenticação forte de dois fatores que esteja vinculada a um dispositivo e use biometria ou PIN.  
+- **Autenticação do Windows Hello para Empresas**: Exige autenticação com autenticação forte de dois fatores que esteja vinculada a um dispositivo e use biometria ou um PIN.  
 
 Para obter mais informações, veja [Planejar para o provedor de SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_auth). 
 

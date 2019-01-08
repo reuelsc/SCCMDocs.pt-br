@@ -10,12 +10,12 @@ ms.assetid: 226cbbb2-9afa-4e2e-a472-be989c0f0e11
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1e71b95642160d519f222a50a66bc8f636628d6e
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: bd347cecce0ae1317fe51a701ce67b4766fbcd10
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383516"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423177"
 ---
 # <a name="content-library-cleanup-tool"></a>Ferramenta de limpeza da biblioteca de conteúdo
 
@@ -93,16 +93,17 @@ Para executar a ferramenta:
 Use esses parâmetros de linha de comando em qualquer ordem.   
 
 ### <a name="required-parameters"></a>Parâmetros necessários
+
 |Parâmetro|Detalhes|
 |---------|-------|
 | `/dp <distribution point FQDN>`  | Especifique o FQDN (nome de domínio totalmente qualificado) do ponto de distribuição que deseja limpar. |
 | `/ps <primary site FQDN>` | *Necessário* somente ao limpar o conteúdo de um ponto de distribuição em um site secundário. A ferramenta conecta-se ao site primário pai para executar consultas no provedor de SMS. Essas consultas permitem que a ferramenta determine qual conteúdo deve estar no ponto de distribuição. Em seguida, ela pode identificar o conteúdo órfão a ser removido. Essa conexão com o site primário pai precisa ser feita para os pontos de distribuição em um site secundário porque os detalhes necessários não estão disponíveis diretamente no site secundário.|
 | `/sc <primary site code>`  | *Necessário* somente ao limpar o conteúdo de um ponto de distribuição em um site secundário. Especifique o código do site primário pai. |
 
-#### <a name="example-scan-and-log-what-content-it-would-delete-what-if"></a>Exemplo: verificar e registrar qual conteúdo seria excluído (hipóteses)
+#### <a name="example-scan-and-log-what-content-it-would-delete-what-if"></a>Exemplo: Verificar e registrar qual conteúdo seria excluído (hipóteses)
 `ContentLibraryCleanup.exe /dp server1.contoso.com`
 
-#### <a name="example-scan-and-log-content-for-a-dp-at-a-secondary-site"></a>Exemplo: verificar e registrar o conteúdo de um DP em um site secundário
+#### <a name="example-scan-and-log-content-for-a-dp-at-a-secondary-site"></a>Exemplo: Verificar e registrar o conteúdo de um DP em um site secundário
 `ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com /sc ABC` 
 
 
@@ -116,16 +117,16 @@ Use esses parâmetros de linha de comando em qualquer ordem.
 | `/sc <primary site code>` | Opcional somente ao limpar o conteúdo de um ponto de distribuição em um site primário. Especifique o código do site primário ao qual o ponto de distribuição pertence. |
 | `/log <log file directory>` | Especifique o local onde a ferramenta grava o arquivo de log. Esse local pode ser uma unidade local ou um compartilhamento de rede.</br></br> Quando você não usa esse parâmetro, a ferramenta coloca o arquivo de log no diretório temporário do usuário no computador em que a ferramenta é executada.|
 
-#### <a name="example-delete-content"></a>Exemplo: excluir conteúdo 
+#### <a name="example-delete-content"></a>Exemplo: Excluir conteúdo 
 `ContentLibraryCleanup.exe /dp server1.contoso.com /delete`
 
-#### <a name="example-delete-content-without-prompts"></a>Exemplo: excluir conteúdo sem avisos
+#### <a name="example-delete-content-without-prompts"></a>Exemplo: Excluir conteúdo sem avisos
 `ContentLibraryCleanup.exe /q /dp server1.contoso.com /delete` 
 
-#### <a name="example-log-to-local-drive"></a>Exemplo: registrar na unidade local
+#### <a name="example-log-to-local-drive"></a>Exemplo: Registrar na unidade local
 `ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop` 
 
-#### <a name="example-log-to-network-share"></a>Exemplo: registrar no compartilhamento de rede
+#### <a name="example-log-to-network-share"></a>Exemplo: Registrar no compartilhamento de rede
 `ContentLibraryCleanup.exe /dp server1.contoso.com /log \\server\share`
 
 

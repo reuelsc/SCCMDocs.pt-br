@@ -10,12 +10,12 @@ ms.assetid: 8eed50f5-80a4-422e-8aa6-a7ccb2171475
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: afc76b59d594c6b8f52062add480874ba5c5686d
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: 162fbdeb08e345ecea20a58b3f5a95a8da193898
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411486"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415102"
 ---
 # <a name="deploy-windows-to-go-with-system-center-configuration-manager"></a>Implantar o Windows to Go com o System Center Configuration Manager
 
@@ -54,7 +54,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
      Antes de criar uma mídia em pré-teste, é necessário distribuir a imagem de inicialização para um ponto de distribuição.  
 
     > [!NOTE]  
-    >  As imagens de inicialização são usadas para instalar o sistema operacional nos computadores de destino em seu ambiente do Configuration Manager. Elas contêm uma versão do Windows PE que instala o sistema operacional, bem como todos os drivers de dispositivo adicionais necessários. O Configuration Manager fornece duas imagens de inicialização: uma para dar suporte a plataformas x86 e outra para dar suporte a plataformas x64. Você também pode criar suas próprias imagens de inicialização. Para obter mais informações, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
+    >  As imagens de inicialização são usadas para instalar o sistema operacional nos computadores de destino em seu ambiente do Configuration Manager. Elas contêm uma versão do Windows PE que instala o sistema operacional, bem como todos os drivers de dispositivo adicionais necessários. O Configuration Manager oferece duas imagens de inicialização: Uma para oferecer suporte a plataformas x86 e outra para oferecer suporte a plataformas x64. Você também pode criar suas próprias imagens de inicialização. Para obter mais informações, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
 
 -   **Distribuir a imagem do sistema operacional Windows 8 para um ponto de distribuição**  
 
@@ -76,70 +76,70 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 #### <a name="to-create-prestaged-media"></a>Para criar mídia em pré-teste  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
+2. No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Mídia de Sequência de Tarefas** para iniciar o Assistente para Criar Mídia de Sequência de Tarefas.  
+3. Na guia **Início** , no grupo **Criar** , clique em **Criar Mídia de Sequência de Tarefas** para iniciar o Assistente para Criar Mídia de Sequência de Tarefas.  
 
-4.  Na página **Selecionar o Tipo de Mídia** , especifique as informações a seguir e clique em **Próximo**.  
+4. Na página **Selecionar o Tipo de Mídia** , especifique as informações a seguir e clique em **Próximo**.  
 
-    -   Selecione **Mídia em pré-teste**.  
+   -   Selecione **Mídia em pré-teste**.  
 
-    -   Selecione **Permitir implantação autônoma do sistema operacional** para iniciar a implantação do Windows To Go sem a interação do usuário.  
+   -   Selecione **Permitir implantação autônoma do sistema operacional** para iniciar a implantação do Windows To Go sem a interação do usuário.  
 
-        > [!IMPORTANT]  
-        >  Quando você usa essa opção com a variável personalizada SMSTSPreferredAdvertID (configurada posteriormente neste procedimento), nenhuma interação do usuário é necessária e o computador iniciará automaticamente a implantação do Windows To Go quando detectar uma unidade do Windows To Go. O usuário ainda deverá digitar uma senha se a mídia estiver configurada para proteção por senha. Se você usar a configuração **Permitir implantação autônoma do sistema operacional** sem configurar a variável SMSTSPreferredAdvertID, ocorrerá um erro quando você implantar a sequência de tarefas.  
+       > [!IMPORTANT]  
+       >  Quando você usa essa opção com a variável personalizada SMSTSPreferredAdvertID (configurada posteriormente neste procedimento), nenhuma interação do usuário é necessária e o computador iniciará automaticamente a implantação do Windows To Go quando detectar uma unidade do Windows To Go. O usuário ainda deverá digitar uma senha se a mídia estiver configurada para proteção por senha. Se você usar a configuração **Permitir implantação autônoma do sistema operacional** sem configurar a variável SMSTSPreferredAdvertID, ocorrerá um erro quando você implantar a sequência de tarefas.  
 
-5.  Na página **Gerenciamento de Mídia** , especifique as informações a seguir e clique em **Próximo**.  
+5. Na página **Gerenciamento de Mídia** , especifique as informações a seguir e clique em **Próximo**.  
 
-    -   Selecione **Mídia dinâmica** se quiser permitir que um ponto de gerenciamento redirecione a mídia para outro ponto de gerenciamento, baseado no local do cliente nos limites do site.  
+   -   Selecione **Mídia dinâmica** se quiser permitir que um ponto de gerenciamento redirecione a mídia para outro ponto de gerenciamento, baseado no local do cliente nos limites do site.  
 
-    -   Selecione **Mídia de site** se quiser que a mídia tenha contato apenas com o ponto de gerenciamento especificado.  
+   -   Selecione **Mídia de site** se quiser que a mídia tenha contato apenas com o ponto de gerenciamento especificado.  
 
-6.  Na página **Propriedades de mídia**  , especifique as informações a seguir e clique em **Próximo**.  
+6. Na página **Propriedades de mídia**  , especifique as informações a seguir e clique em **Próximo**.  
 
-    -   **Criado por**: especifique quem criou a mídia.  
+   -   **Criado por**: especifique quem criou a mídia.  
 
-    -   **Versão**: especifique o número de versão da mídia.  
+   -   **Versão**: especifique o número de versão da mídia.  
 
-    -   **Comentário**: especifique uma descrição exclusiva da finalidade da mídia.  
+   -   **Comentário**: especifique uma descrição única da finalidade da mídia.  
 
-    -   **Arquivo de mídia**: especifique o nome e o caminho dos arquivos de saída. O assistente grava os arquivos de saída nesse local. Por exemplo: **\\\nomedoservidor\pasta\arquivodesaída.wim**  
+   -   **Arquivo de mídia**: especifique o nome e o caminho dos arquivos de saída. O assistente grava os arquivos de saída nesse local. Por exemplo: **\\\nomedoservidor\pasta\arquivodesaída.wim**  
 
-7.  Na página **Segurança** , especifique as informações a seguir e clique em **Próximo**.  
+7. Na página **Segurança** , especifique as informações a seguir e clique em **Próximo**.  
 
-    -   Selecione **Habilitar suporte a computadores desconhecidos** para permitir que a mídia implante um sistema operacional em um computador não gerenciado pelo Configuration Manager. Não há registro desses computadores no banco de dados do Configuration Manager. Computadores desconhecidos incluem:  
+   -   Selecione **Habilitar suporte a computadores desconhecidos** para permitir que a mídia implante um sistema operacional em um computador não gerenciado pelo Configuration Manager. Não há registro desses computadores no banco de dados do Configuration Manager. Computadores desconhecidos incluem:  
 
-        -   Um computador no qual o cliente do Configuration Manager não está instalado  
+       -   Um computador no qual o cliente do Configuration Manager não está instalado  
 
-        -   Um computador que não foi importado para o Configuration Manager  
+       -   Um computador que não foi importado para o Configuration Manager  
 
-        -   Um computador não descoberto pelo Configuration Manager  
+       -   Um computador não descoberto pelo Configuration Manager  
 
-    -   Selecione **Proteger mídia com senha** e digite uma senha forte para ajudar a proteger a mídia contra o acesso não autorizado. Quando você especificar uma senha, o usuário deverá fornecer essa senha para usar a mídia em pré-teste.  
+   -   Selecione **Proteger mídia com senha** e digite uma senha forte para ajudar a proteger a mídia contra o acesso não autorizado. Quando você especificar uma senha, o usuário deverá fornecer essa senha para usar a mídia em pré-teste.  
 
-        > [!IMPORTANT]  
-        >  Como prática recomendada de segurança, atribua sempre uma senha para ajudar a proteger a mídia em pré-teste.  
+       > [!IMPORTANT]  
+       >  Como prática recomendada de segurança, atribua sempre uma senha para ajudar a proteger a mídia em pré-teste.  
 
-        > [!NOTE]  
-        >  Quando você protege a mídia em pré-teste com uma senha, o usuário deve digitá-la mesmo quando a mídia estiver configurada com a opção **Permitir implantação autônoma do sistema operacional** .  
+       > [!NOTE]  
+       >  Quando você protege a mídia em pré-teste com uma senha, o usuário deve digitá-la mesmo quando a mídia estiver configurada com a opção **Permitir implantação autônoma do sistema operacional** .  
 
-    -   Para comunicações HTTP, selecione **Criar certificado de mídia autoassinado**e especifique as datas de início e vencimento do certificado.  
+   -   Para comunicações HTTP, selecione **Criar certificado de mídia autoassinado**e especifique as datas de início e vencimento do certificado.  
 
-    -   Para comunicações HTTPS, selecione **Importar certificado PKI**e especifique o certificado a ser importado e a respectiva senha.  
+   -   Para comunicações HTTPS, selecione **Importar certificado PKI**e especifique o certificado a ser importado e a respectiva senha.  
 
-         Para obter mais informações sobre o certificado de cliente que é usado para imagens de inicialização, consulte [Requisitos do certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
+        Para obter mais informações sobre o certificado de cliente que é usado para imagens de inicialização, consulte [Requisitos do certificado PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
 
-    -   **Afinidade de Dispositivo de Usuário**: para dar suporte ao gerenciamento centrado no usuário no Configuration Manager, especifique como você quer que a mídia associe usuários ao computador de destino. Para obter mais informações sobre como a implantação de sistema operacional dá suporte à afinidade de dispositivo de usuário, consulte [Associar usuários a um computador de destino](../get-started/associate-users-with-a-destination-computer.md).  
+   -   **Afinidade de dispositivo de usuário**: para dar suporte ao gerenciamento centrado no usuário no Configuration Manager, especifique como deseja que a mídia associe usuários ao computador de destino. Para obter mais informações sobre como a implantação de sistema operacional dá suporte à afinidade de dispositivo de usuário, consulte [Associar usuários a um computador de destino](../get-started/associate-users-with-a-destination-computer.md).  
 
-        -   Especifique **Permitir afinidade de dispositivo de usuário com aprovação automática** se você quiser que a mídia associe automaticamente os usuários ao computador de destino. Essa funcionalidade é baseada nas ações da sequência de tarefas que implanta o sistema operacional. Nesse cenário, a sequência de tarefas cria uma relação entre os usuários especificados e o computador de destino quando implanta o sistema operacional no computador de destino.  
+       -   Especifique **Permitir afinidade de dispositivo de usuário com aprovação automática** se você quiser que a mídia associe automaticamente os usuários ao computador de destino. Essa funcionalidade é baseada nas ações da sequência de tarefas que implanta o sistema operacional. Nesse cenário, a sequência de tarefas cria uma relação entre os usuários especificados e o computador de destino quando implanta o sistema operacional no computador de destino.  
 
-        -   Especifique **Permitir afinidade de dispositivo de usuário pendente de aprovação de administrador** se você quiser que a mídia associe os usuários ao computador de destino após a aprovação ser concedida. Essa funcionalidade é baseada no escopo da sequência de tarefas que implanta o sistema operacional. Neste cenário, a sequência de tarefas cria uma relação entre os usuários especificados e o computador de destino, mas aguarda a aprovação de um usuário administrativo antes da implantação do sistema operacional.  
+       -   Especifique **Permitir afinidade de dispositivo de usuário pendente de aprovação de administrador** se você quiser que a mídia associe os usuários ao computador de destino após a aprovação ser concedida. Essa funcionalidade é baseada no escopo da sequência de tarefas que implanta o sistema operacional. Neste cenário, a sequência de tarefas cria uma relação entre os usuários especificados e o computador de destino, mas aguarda a aprovação de um usuário administrativo antes da implantação do sistema operacional.  
 
-        -   Especifique **Não permitir afinidade de dispositivo de usuário** se você quiser que a mídia associe os usuários ao computador de destino. Neste cenário, a sequência de tarefas não associa os usuários ao computador de destino quando implanta o sistema operacional.  
+       -   Especifique **Não permitir afinidade de dispositivo de usuário** se você quiser que a mídia associe os usuários ao computador de destino. Neste cenário, a sequência de tarefas não associa os usuários ao computador de destino quando implanta o sistema operacional.  
 
-8.  Na página **Sequência de Tarefas** , especifique a sequência de tarefas do Windows 8 criada na seção anterior.  
+8. Na página **Sequência de Tarefas** , especifique a sequência de tarefas do Windows 8 criada na seção anterior.  
 
 9. Na página **Imagem de inicialização** , especifique as informações a seguir e clique em **Próximo**.  
 
@@ -159,9 +159,9 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 10. Na página **Imagens** , especifique as informações a seguir e clique em **Próximo**.  
 
-    -   **Pacote de imagem**: especifique o pacote que contém a imagem do sistema operacional Windows 8.  
+    -   **Pacote de imagem**: especifique o pacote que contém a imagem do sistema operacional Windows 8.  
 
-    -   **Índice de imagem**: especifique a imagem a ser implantada se o pacote contiver várias imagens de sistemas operacionais.  
+    -   **Índice de imagens**: especifique a imagem a ser implantada se o pacote contiver várias imagens de sistemas operacionais.  
 
     -   **Ponto de distribuição**: especifique o ponto de distribuição que hospeda o pacote da imagem do sistema operacional. O assistente recupera a imagem do sistema operacional do ponto de distribuição e a grava na mídia.  
 
@@ -178,30 +178,30 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 15. Na página **Personalização** , especifique as informações a seguir e clique em **Próxima**.  
 
-    -   **Variáveis**: especifique as variáveis que a sequência de tarefas usa para implantar o sistema operacional. Para o Windows To Go, use a variável SMSTSPreferredAdvertID para selecionar automaticamente a disposição do Windows To Go usando o seguinte formato:  
+    - **Variáveis**: Especifique as variáveis que a sequência de tarefas usa para implantar o sistema operacional. Para o Windows To Go, use a variável SMSTSPreferredAdvertID para selecionar automaticamente a disposição do Windows To Go usando o seguinte formato:  
 
-         SMSTSPreferredAdvertID = {*IDImplantação*}, onde IDImplantação corresponde à ID de implantação associada à sequência de tarefas que você usa para concluir o processo de provisionamento para a unidade do Windows To Go.  
+       SMSTSPreferredAdvertID = {*IDImplantação*}, onde IDImplantação corresponde à ID de implantação associada à sequência de tarefas que você usa para concluir o processo de provisionamento para a unidade do Windows To Go.  
+
+      > [!TIP]  
+      >  Ao usar essa variável com uma sequência de tarefas que está configurada para executar de forma autônoma (configurada anteriormente neste procedimento), nenhuma interação do usuário é necessária e o computador inicia automaticamente a implantação do Windows To Go quando detecta uma unidade do Windows To Go. O usuário ainda deverá digitar uma senha se a mídia estiver configurada para proteção por senha.  
+
+    - **Comandos prestart**: Especifique os comandos prestart que deseja executar antes de executar a sequência de tarefas. Os comandos prestart podem ser um script ou executável que podem interagir com o usuário no Windows PE antes da execução da sequência de tarefas para instalar o sistema operacional. Configure o seguinte para a implantação do Windows To Go:  
+
+      - **OSDBitLockerPIN**: O BitLocker para Windows To Go requer uma senha. Defina a variável **OSDBitLockerPIN** como parte de um comando prestart para definir a senha do BitLocker para a unidade do Windows To Go.  
+
+        > [!WARNING]  
+        >  Após habilitar o BitLocker para a senha, o usuário deverá inserir a senha a cada vez que o computador for inicializado para a unidade do Windows To Go.  
+
+      - **SMSTSUDAUsers**: Especifica o usuário principal do computador de destino. Use essa variável para coletar o nome de usuário, que pode ser usado para associar o usuário e o dispositivo. Para mais informações, consulte [Associar usuários a um computador de destino](../get-started/associate-users-with-a-destination-computer.md).  
 
         > [!TIP]  
-        >  Ao usar essa variável com uma sequência de tarefas que está configurada para executar de forma autônoma (configurada anteriormente neste procedimento), nenhuma interação do usuário é necessária e o computador inicia automaticamente a implantação do Windows To Go quando detecta uma unidade do Windows To Go. O usuário ainda deverá digitar uma senha se a mídia estiver configurada para proteção por senha.  
+        >  Para recuperar o nome de usuário, você pode criar uma caixa de entrada como parte do comando prestart, pedir ao usuário para inserir seu nome de usuário e definir a variável com o valor. Por exemplo, você pode adicionar as seguintes linhas no arquivo de script do comando prestart:  
+        >   
+        >  `UserID = inputbox("Enter Username" ,"Enter your username:","",400,0)`  
+        >   
+        >  `env("SMSTSUDAUsers") = UserID`  
 
-    -   **Comandos prestart**: especifique os comandos prestart que deseja executar antes de executar a sequência de tarefas. Os comandos prestart podem ser um script ou executável que podem interagir com o usuário no Windows PE antes da execução da sequência de tarefas para instalar o sistema operacional. Configure o seguinte para a implantação do Windows To Go:  
-
-        -   **OSDBitLockerPIN**: o BitLocker para Windows To Go requer uma senha. Defina a variável **OSDBitLockerPIN** como parte de um comando prestart para definir a senha do BitLocker para a unidade do Windows To Go.  
-
-            > [!WARNING]  
-            >  Após habilitar o BitLocker para a senha, o usuário deverá inserir a senha a cada vez que o computador for inicializado para a unidade do Windows To Go.  
-
-        -   **SMSTSUDAUsers**: especifica o usuário principal do computador de destino. Use essa variável para coletar o nome de usuário, que pode ser usado para associar o usuário e o dispositivo. Para mais informações, consulte [Associar usuários a um computador de destino](../get-started/associate-users-with-a-destination-computer.md).  
-
-            > [!TIP]  
-            >  Para recuperar o nome de usuário, você pode criar uma caixa de entrada como parte do comando prestart, pedir ao usuário para inserir seu nome de usuário e definir a variável com o valor. Por exemplo, você pode adicionar as seguintes linhas no arquivo de script do comando prestart:  
-            >   
-            >  `UserID = inputbox("Enter Username" ,"Enter your username:","",400,0)`  
-            >   
-            >  `env("SMSTSUDAUsers") = UserID`  
-
-         Para obter mais informações sobre como criar um arquivo de script para ser usado como comando prestart, consulte [Comandos prestart para mídia de sequência de tarefas](../understand/prestart-commands-for-task-sequence-media.md).  
+        Para obter mais informações sobre como criar um arquivo de script para ser usado como comando prestart, consulte [Comandos prestart para mídia de sequência de tarefas](../understand/prestart-commands-for-task-sequence-media.md).  
 
 16. Conclua o assistente.  
 
@@ -213,24 +213,24 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 #### <a name="to-create-the-windows-to-go-creator-package"></a>Para criar o pacote do Windows To Go Creator  
 
-1.  No servidor que hospeda os arquivos do pacote do Windows To Go Creator, crie uma pasta de origem para os arquivos de origem do pacote.  
+1. No servidor que hospeda os arquivos do pacote do Windows To Go Creator, crie uma pasta de origem para os arquivos de origem do pacote.  
 
-    > [!NOTE]  
-    >  A conta de computador do servidor do site deve ter direitos de acesso de **Leitura** para a pasta de origem.  
+   > [!NOTE]  
+   >  A conta de computador do servidor do site deve ter direitos de acesso de **Leitura** para a pasta de origem.  
 
-2.  Copie o arquivo de mídia em pré-teste criado na seção [Create prestaged media](#BKMK_CreatePrestagedMedia) na pasta de origem do pacote.  
+2. Copie o arquivo de mídia em pré-teste criado na seção [Create prestaged media](#BKMK_CreatePrestagedMedia) na pasta de origem do pacote.  
 
-3.  Copie a ferramenta Windows To Go Creator (WTGCreator.exe) na pasta de origem do pacote. A ferramenta do criador está disponível em qualquer servidor do site primário no seguinte local: <*ConfigMgrInstallationFolder*>\OSD\Tools\WTG\Creator.  
+3. Copie a ferramenta Windows To Go Creator (WTGCreator.exe) na pasta de origem do pacote. A ferramenta do criador está disponível em qualquer servidor do site primário no seguinte local: <*ConfigMgrInstallationFolder*>\OSD\Tools\WTG\Creator.  
 
-4.  Crie um pacote e um programa usando o Assistente para Criar Pacote e Programa.  
+4. Crie um pacote e um programa usando o Assistente para Criar Pacote e Programa.  
 
-5.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+5. No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-6.  No workspace **Biblioteca de Software**, expanda o **Gerenciamento de Aplicativos** e clique em **Pacotes**.  
+6. No workspace **Biblioteca de Software**, expanda o **Gerenciamento de Aplicativos** e clique em **Pacotes**.  
 
-7.  Na guia **Início** , no grupo **Criar** , clique em **Criar Pacote**.  
+7. Na guia **Início** , no grupo **Criar** , clique em **Criar Pacote**.  
 
-8.  Na página **Pacote** , especifique o nome e a descrição do pacote. Por exemplo, digite **Windows To Go** para o nome do pacote e especifique **Package to configure a Windows To Go drive using System Center Configuration Manager** para a descrição do pacote.  
+8. Na página **Pacote** , especifique o nome e a descrição do pacote. Por exemplo, digite **Windows To Go** para o nome do pacote e especifique **Package to configure a Windows To Go drive using System Center Configuration Manager** para a descrição do pacote.  
 
 9. Selecione **Este pacote contém arquivos de origem**, especifique o caminho para a pasta de origem do pacote criada na etapa 1 e clique em **Próximo**.  
 
@@ -238,9 +238,9 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 11. Na página **Programa padrão** , especifique o seguinte:  
 
-    -   **Nome**: especifique o nome do programa. Por exemplo, digite **Creator** para o nome do programa.  
+    -   **Nome**: Especifique o nome do programa. Por exemplo, digite **Creator** para o nome do programa.  
 
-    -   **Linha de Comando**: digite **WTGCreator.exe /wim:PrestageName.wim**, onde PrestageName corresponde ao nome do arquivo em pré-teste criado e copiado na pasta de origem do pacote do pacote do Windows To Go Creator.  
+    -   **Linha de comando**: Digite **WTGCreator.exe /wim:PrestageName.wim**, em que PrestageName é o nome do arquivo pré-teste criado e copiado para a pasta de origem do pacote para o pacote do Windows To Go Creator.  
 
          Ou então, você pode adicionar as seguintes opções:  
 
@@ -248,30 +248,30 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
     -   **Executar**: especifique **Normal** para executar o programa com base nos padrões do sistema e do programa.  
 
-    -   **O programa pode ser executado**: especifique se o programa pode ser executado somente quando um usuário fizer logon.  
+    -   **O programa pode ser executado**: Especifique se o programa pode ser executado somente quando um usuário fizer logon.  
 
-    -   **Modo de execução**: especifique se o programa será executado com as permissões de usuários registrados ou com permissões administrativas. O Windows To Go Creator requer permissões elevadas para ser executado.  
+    -   **Modo de execução**: Especifique se o programa será executado com as permissões de usuários registrados ou com permissões administrativas. O Windows To Go Creator requer permissões elevadas para ser executado.  
 
     -   Selecione **Permitir que os usuários exibam e interajam com o programa de instalação**e clique em **Próximo**.  
 
 12. Na página Requisitos, especifique o seguinte:  
 
-    -   **Requisitos de plataforma**: selecione as plataformas aplicáveis do Windows 8 para permitir o provisionamento.  
+    - **Requisitos da plataforma**: selecione as plataformas aplicáveis do Windows 8 para permitir o provisionamento.  
 
-    -   **Espaço em disco estimado**: especifique o tamanho da pasta de origem do pacote para o Windows To Go Creator.  
+    - **Espaço em disco estimado**: Especifique o tamanho da pasta de origem do pacote para o Windows To Go Creator.  
 
-    -   **Tempo de execução máximo permitido (minutos):** especifica o tempo máximo que o programa está previsto para ser executado no computador do cliente. Por padrão, esse valor é definido como 120 minutos.  
+    - **Tempo de execução máximo permitido (minutos)**: Especifica o tempo máximo previsto para que o programa seja executado no computador cliente. Por padrão, esse valor é definido como 120 minutos.  
 
-        > [!IMPORTANT]  
-        >  Se você estiver usando janelas de manutenção para a coleção em que esse programa é executado, poderá ocorrer um conflito se o **Tempo de execução máximo permitido** for maior do que o tempo da janela de manutenção agendada. Se o tempo de execução máximo for definido como **Desconhecido**, ele será iniciado durante a janela de manutenção, mas continuará sendo executado até que seja concluído ou que ocorra uma falha após a janela de manutenção ser fechada. Se você definir o tempo de execução máximo para um período específico (não definido como Desconhecido) que exceda a duração de qualquer janela de manutenção disponível, esse programa não será executado.  
+      > [!IMPORTANT]  
+      >  Se você estiver usando janelas de manutenção para a coleção em que esse programa é executado, poderá ocorrer um conflito se o **Tempo de execução máximo permitido** for maior do que o tempo da janela de manutenção agendada. Se o tempo de execução máximo for definido como **Desconhecido**, ele será iniciado durante a janela de manutenção, mas continuará sendo executado até que seja concluído ou que ocorra uma falha após a janela de manutenção ser fechada. Se você definir o tempo de execução máximo para um período específico (não definido como Desconhecido) que exceda a duração de qualquer janela de manutenção disponível, esse programa não será executado.  
 
-        > [!NOTE]  
-        >  Se o valor for definido como **Desconhecido**, o Configuration Manager definirá o tempo de execução máximo permitido para 12 horas (720 minutos).  
+      > [!NOTE]  
+      >  Se o valor for definido como **Desconhecido**, o Configuration Manager definirá o tempo de execução máximo permitido para 12 horas (720 minutos).  
 
-        > [!NOTE]  
-        >  Se o tempo de execução máximo (definido pelo usuário ou como o valor padrão) for excedido, o Configuration Manager interromperá o programa se **Executar com direitos administrativos** for selecionado e **Permitir que os usuários exibam e interajam com o programa de instalação** não estiver selecionado na página **Programa Padrão**.  
+      > [!NOTE]  
+      >  Se o tempo de execução máximo (definido pelo usuário ou como o valor padrão) for excedido, o Configuration Manager interromperá o programa se **Executar com direitos administrativos** for selecionado e **Permitir que os usuários exibam e interajam com o programa de instalação** não estiver selecionado na página **Programa Padrão**.  
 
-     Clique em **Próximo** e conclua o assistente.  
+      Clique em **Próximo** e conclua o assistente.  
 
 ###  <a name="BKMK_UpdateTaskSequence"></a> Atualizar a sequência de tarefas para habilitar o BitLocker para o Windows To Go  
  O Windows To Go habilita o BitLocker em uma unidade inicializável externa sem o uso do TPM. Portanto, é necessário usar uma ferramenta separada para configurar o BitLocker na unidade do Windows To Go. Para habilitar o BitLocker, é necessário adicionar uma ação para a sequência de tarefas após a etapa **Instalação do Windows e do ConfigMgr** .  
@@ -309,7 +309,7 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 13. Na guia **Propriedades** da etapa **Executar linha de comando** , adicione o seguinte:  
 
-    1.  **Nome**: especifique um nome para a linha de comando, como **Enable BitLocker for Windows To Go**.  
+    1.  **Nome**: Especifique um nome para a linha de comando, como **Habilitar BitLocker para o Windows To Go**.  
 
     2.  **Linha de comando**: i386\osdbitlocker_wtg.exe /Enable /pwd: < *Nenhum&#124;AD*>  
 
@@ -351,11 +351,11 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 5.  Na página **Geral** , especifique as seguintes configurações:  
 
-    1.  **Software**: verifique se o pacote do Windows To Go é está selecionado.  
+    1.  **Software**: Verifique se o pacote do Windows To Go é está selecionado.  
 
-    2.  **Coleção**: clique em **Procurar** para selecionar a coleção na qual deseja implantar o pacote do Windows To Go.  
+    2.  **Coleta**: Clique em **Procurar** para selecionar a coleção na qual deseja implantar o pacote do Windows To Go.  
 
-    3.  **Usar grupos de pontos de distribuição padrão associados a esta coleção**: selecione esta opção se quiser armazenar o conteúdo pacote no grupo de pontos de distribuição padrão das coleções. Se você não tiver associado a coleção selecionada a um grupo de ponto de distribuição, essa opção estará indisponível.  
+    3.  **Usar grupos de pontos de distribuição padrão associados a esta coleção**: Selecione esta opção se quiser armazenar o conteúdo do pacote no grupo dos pontos de distribuição padrão das coleções. Se você não tiver associado a coleção selecionada a um grupo de ponto de distribuição, essa opção estará indisponível.  
 
 6.  Na página **Conteúdo** , clique em **Adicionar** e selecione os pontos de distribuição ou grupos de pontos de distribuição nos quais deseja implantar o conteúdo associado a este pacote e este programa.  
 
@@ -369,23 +369,23 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
     1.  **Agendar quando essa implantação estará disponível**: especifique a data e a hora em que o pacote e o programa estarão disponíveis para serem executados no computador de destino. Ao selecionar **UTC**, essa configuração garante que o pacote e o programa estejam disponíveis para vários computadores de destino ao mesmo tempo em vez em momentos diferentes, de acordo com a hora local dos computadores de destino.  
 
-    2.  **Agendar quando esta implantação expirará**: especifique a data e a hora em que o pacote e o programa expiram no computador de destino. Ao selecionar **UTC**, essa configuração garante que a sequência de tarefas expire em vários computadores de destino ao mesmo tempo, e não em momentos diferentes, de acordo com a hora local dos computadores de destino.  
+    2.  **Agendar quando esta implantação expirará**: especifique a data e a hora em que o pacote e o programa irão expirar no computador de destino. Ao selecionar **UTC**, essa configuração garante que a sequência de tarefas expire em vários computadores de destino ao mesmo tempo, e não em momentos diferentes, de acordo com a hora local dos computadores de destino.  
 
 10. Na página **Experiência do Usuário** do assistente, especifique as seguintes informações:  
 
-    -   **Instalação de software**: permite que o software seja instalado fora de qualquer janela de manutenção configurada.  
+    -   **Instalação do software**: Permite que o software seja instalado fora de qualquer janela de manutenção configurada.  
 
-    -   **Reinicialização do sistema (se necessário para conclusão da instalação)**: permite que um dispositivo seja reiniciado fora das janelas de manutenção configuradas quando exigido pela instalação do software.  
+    -   **Reinicialização do sistema (se necessário para conclusão da instalação)**: Permite que um dispositivo seja reiniciado fora das janelas de manutenção configuradas quando exigido pela instalação do software.  
 
-    -   **Dispositivos incorporados**ao implantar pacotes e programas em dispositivos com Windows Embedded habilitados para filtro de gravação, você pode especificar para instalar os pacotes e programas em sobreposição temporária e confirmar as alterações posteriormente, ou confirmar as alterações na data limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na data limite da instalação ou durante uma janela de manutenção, é necessário reinicializar. Dessa forma, as alterações permanecem no dispositivo.  
+    -   **Dispositivos inseridos**: Ao implantar pacotes e programas em dispositivos do Windows Embedded habilitados com filtro de gravação, você pode instalar os pacotes e programas em sobreposição temporária e confirmar as alterações posteriormente, ou confirmar as alterações na data limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na data limite da instalação ou durante uma janela de manutenção, é necessário reinicializar. Dessa forma, as alterações permanecem no dispositivo.  
 
 11. Na página **Pontos de Distribuição** , especifique as seguintes informações:  
 
-    -   **Opções de implantação** : especifique **Baixar conteúdo do ponto de distribuição e executar localmente**.  
+    -   **Opções de implantação:** Especifique **Baixar conteúdo do ponto de distribuição e executar localmente**.  
 
-    -   **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: selecione esta opção para reduzir a carga na rede, permitindo que os clientes baixem conteúdo de outros clientes na rede que tenham baixado e armazenado o conteúdo em cache. Essa opção utiliza o Windows BranchCache e pode ser usada em computadores que executam o Windows Vista SP2 e posterior.  
+    -   **Permita que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: Selecione essa opção para reduzir a carga na rede, permitindo que clientes baixem o conteúdo de outros clientes na rede, na qual já baixaram e armazenaram em cache o conteúdo. Essa opção utiliza o Windows BranchCache e pode ser usada em computadores que executam o Windows Vista SP2 e posterior.  
 
-    -   **Permitir que os clientes usem um local de origem de fallback para o conteúdo**: especificar a permissão para que clientes façam o fallback e usem o ponto de distribuição não preferencial como o local de origem para conteúdo, quando este não estiver disponível em um ponto de distribuição preferencial.  
+    -   **Permitir que os clientes usem uma localização de origem de fallback para o conteúdo**: Especificar a permissão para que clientes façam o fallback e usem o ponto de distribuição não preferencial como o local de origem para conteúdo, quando este não estiver disponível em um ponto de distribuição preferencial.  
 
 12. Conclua o assistente.  
 
@@ -401,47 +401,47 @@ Este tópico fornece as etapas para provisionar o Windows To Go no System Center
 
 5.  Na página **Geral** , especifique as seguintes configurações:  
 
-    1.  **Sequência de tarefas**: verifique se a sequência de tarefas do Windows 8 está selecionada.  
+    1.  **Sequência de tarefas**: Verifique se a sequência de tarefas do Windows 8 está selecionada.  
 
-    2.  **Coleção**: clique em **Procurar** para selecionar a coleção que inclui todos os dispositivos para os quais um usuário pode provisionar o Windows To Go.  
+    2.  **Coleta**: clique em **Procurar** para selecionar a coleção que inclui todos os dispositivos para os quais um usuário pode provisionar o Windows To Go.  
 
         > [!IMPORTANT]  
-        >  Se a mídia em pré-teste que você criou na seção [Create prestaged media](#BKMK_CreatePrestagedMedia) utiliza a variável SMSTSPreferredAdvertID, você pode implantar a sequência de tarefas na coleção de **Todos os Sistemas** e especificar a configuração do **Windows PE somente (oculto)** na página **Conteúdo** . Como a sequência de tarefas está oculta, ela só estará disponível para a mídia.  
+        >  Se a mídia em pré-teste que você criou na seção [Criar mídia pré-configurada](#BKMK_CreatePrestagedMedia) utiliza a variável SMSTSPreferredAdvertID, você pode implantar a sequência de tarefas na coleção de **Todos os Sistemas** e especificar a configuração do **Windows PE somente (oculto)** na página **Conteúdo** . Como a sequência de tarefas está oculta, ela só estará disponível para a mídia.  
 
-    3.  **Usar grupos de pontos de distribuição padrão associados a esta coleção**: selecione esta opção se quiser armazenar o conteúdo pacote no grupo de pontos de distribuição padrão das coleções. Se você não tiver associado a coleção selecionada a um grupo de ponto de distribuição, essa opção estará indisponível.  
+    3.  **Usar grupos de pontos de distribuição padrão associados a esta coleção**: Selecione esta opção se quiser armazenar o conteúdo do pacote no grupo dos pontos de distribuição padrão das coleções. Se você não tiver associado a coleção selecionada a um grupo de ponto de distribuição, essa opção estará indisponível.  
 
 6.  Na página **Configurações de Implantação** , defina as seguintes configurações e clique em **Avançar**.  
 
     -   **Finalidade**: selecione **Disponível**. Ao implantar uma sequência de tarefas para um usuário, ele visualiza a sequência de tarefas publicada no catálogo de aplicativos e pode solicitá-la sob demanda. Se você implanta a sequência de tarefas em um dispositivo, o usuário a visualizará no Centro de Software e pode instalá-la sob demanda.  
 
-    -   **Tornar disponível para o seguinte**: especifique se a sequência de tarefas está disponível para clientes do Configuration Manager, mídia ou PXE.  
+    -   **Disponibilizar para o seguinte**: especifique se a sequência de tarefas está disponível para clientes do Configuration Manager, mídia ou PXE.  
 
         > [!IMPORTANT]  
         >  Use a configuração **Somente mídia e PXE (oculto)** para implantações automatizadas de sequência de tarefas. Selecione **Permitir implantação autônoma do sistema operacional** e defina a variável SMSTSPreferredAdvertID como parte da mídia em pré-teste para que o computador inicialize automaticamente para a implantação do Windows To Go sem interação do usuário quando ele detectar uma unidade WIndows To Go. Para obter mais informações sobre essas configurações de mídia em pré-teste, consulte a seção [Create prestaged media](#BKMK_CreatePrestagedMedia) .  
 
 7.  Na página de **Agendamento** , defina as seguintes configurações e clique em **Avançar**.  
 
-    1.  **Agendar quando essa implantação estará disponível**: especifique a data e a hora em que a sequência de tarefas estará disponível para ser executada no computador de destino. Ao selecionar **UTC**, essa configuração garante que a sequência de tarefas esteja disponível para vários computadores de destino ao mesmo tempo, e não em momentos diferentes, de acordo com a hora local dos computadores de destino.  
+    1.  **Agendar quando essa implantação estará disponível**: especifique a data e a hora em que a sequência de tarefas está disponível para ser executada no computador de destino. Ao selecionar **UTC**, essa configuração garante que a sequência de tarefas esteja disponível para vários computadores de destino ao mesmo tempo, e não em momentos diferentes, de acordo com a hora local dos computadores de destino.  
 
-    2.  **Agendar quando essa implantação expirará**: especifique a data e a hora em que a sequência de tarefas expirará no computador de destino. Ao selecionar **UTC**, essa configuração garante que a sequência de tarefas expire em vários computadores de destino ao mesmo tempo, e não em momentos diferentes, de acordo com a hora local dos computadores de destino.  
+    2.  **Agendar quando esta implantação expirará**: especifique a data e a hora em que a sequência de tarefas expirará no computador de destino. Ao selecionar **UTC**, essa configuração garante que a sequência de tarefas expire em vários computadores de destino ao mesmo tempo, e não em momentos diferentes, de acordo com a hora local dos computadores de destino.  
 
 8.  Na página **Experiência do Usuário** , especifique as seguintes informações:  
 
     -   **Mostrar andamento da sequência de tarefas**: especifique se o cliente do Configuration Manager exibe o andamento da sequência de tarefas.  
 
-    -   **Instalação de software**: especifique se o usuário tem permissão para instalar software fora de uma janela de manutenção configurada após a hora agendada.  
+    -   **Instalação do software**: especifique se o usuário tem permissão para instalar software fora de uma janela de manutenção configurada após a hora agendada.  
 
-    -   **Reinicialização do sistema (se necessário para conclusão da instalação)**: permite que um dispositivo seja reiniciado fora das janelas de manutenção configuradas quando exigido pela instalação do software.  
+    -   **Reinicialização do sistema (se necessário para conclusão da instalação)**: Permite que um dispositivo seja reiniciado fora das janelas de manutenção configuradas quando exigido pela instalação do software.  
 
-    -   **Dispositivos incorporados**ao implantar pacotes e programas em dispositivos com Windows Embedded habilitados para filtro de gravação, você pode especificar para instalar os pacotes e programas em sobreposição temporária e confirmar as alterações posteriormente, ou confirmar as alterações na data limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na data limite da instalação ou durante uma janela de manutenção, é necessário reinicializar. Dessa forma, as alterações permanecem no dispositivo.  
+    -   **Dispositivos inseridos**: Ao implantar pacotes e programas em dispositivos do Windows Embedded habilitados com filtro de gravação, você pode instalar os pacotes e programas em sobreposição temporária e confirmar as alterações posteriormente, ou confirmar as alterações na data limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na data limite da instalação ou durante uma janela de manutenção, é necessário reinicializar. Dessa forma, as alterações permanecem no dispositivo.  
 
-    -   **Clientes baseados na internet**: especifique se a sequência de tarefas pode ser executada em um cliente baseado em Internet. Não há suporte para operações que instalam o software, como um sistema operacional, com essa configuração. Use esta opção somente para as sequências de tarefas baseadas em script genérico que executam operações no sistema operacional padrão.  
+    -   **Clientes baseados na Internet**: Especifique se a sequência de tarefas pode ser executada em um cliente baseado em Internet. Não há suporte para operações que instalam o software, como um sistema operacional, com essa configuração. Use esta opção somente para as sequências de tarefas baseadas em script genérico que executam operações no sistema operacional padrão.  
 
 9. Na página **Alertas** , especifique as configurações de alerta que você deseja para esta sequência de tarefas e clique em **Próximo**.  
 
 10. Na página **Pontos de Distribuição** , especifique as seguintes informações e clique em **Próximo**.  
 
-    -   **Opções de implantação**: selecione **Baixar conteúdo localmente quando necessário, executando a sequência de tarefas**.  
+    -   **Opções de implantação**: selecione **Baixar conteúdo localmente quando necessário pela sequência de tarefas em execução**.  
 
     -   **Quando não houver nenhum ponto de distribuição local disponível, use um ponto de distribuição remoto**: especifique se os clientes podem usar pontos de distribuição que estão em redes lentas ou não confiáveis para baixar o conteúdo exigido pela sequência de tarefas.  
 

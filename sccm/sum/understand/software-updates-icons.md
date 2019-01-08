@@ -10,12 +10,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 63c5ef72-5715-4d86-85a2-71beba469fab
 ms.author: aaroncz
-ms.openlocfilehash: d772b4ede4c8bfe13c68597ec8fe9a1f3dccbf38
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 77c6772682c8eb6d1532c0ea38489a45d2466c30
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352926"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422854"
 ---
 # <a name="icons-used-for-software-updates-in-system-center-configuration-manager"></a>Ícones usados para as atualizações de software no System Center Configuration Manager
 
@@ -55,17 +55,17 @@ Atualizações de software sincronizadas são exibidas no console do Configurati
 
  Atualizações de software que foram substituídas por versões mais recentes da atualização de software. Normalmente, uma atualização de software que substitui outra tem uma ou mais das seguintes características:  
 
--   Melhora, aumenta ou acrescenta algo à correção fornecida por uma ou mais atualizações lançadas anteriormente.  
+- Melhora, aumenta ou acrescenta algo à correção fornecida por uma ou mais atualizações lançadas anteriormente.  
 
--   Melhora a eficiência do pacote de arquivos de atualização de software, que o cliente instala se a atualização for aprovada para instalação. Por exemplo, a atualização de software substituída pode conter arquivos que não são mais relevantes para a correção ou para os sistemas operacionais com suporte pela nova atualização. Sendo assim, esses arquivos não são incluídos no pacote de arquivos da atualização de software de substituição.  
+- Melhora a eficiência do pacote de arquivos de atualização de software, que o cliente instala se a atualização for aprovada para instalação. Por exemplo, a atualização de software substituída pode conter arquivos que não são mais relevantes para a correção ou para os sistemas operacionais com suporte pela nova atualização. Sendo assim, esses arquivos não são incluídos no pacote de arquivos da atualização de software de substituição.  
 
--   Atualiza versões mais novas de um produto ou, em outras palavras, que não são mais aplicáveis a versões ou configurações mais antigas de um produto. Atualizações de software também podem substituir outras atualizações de software caso tenham sido feitas modificações para expandir o suporte para idiomas. Por exemplo, uma revisão posterior da atualização de um produto do Microsoft Office pode remover o suporte de um sistema operacional mais antigo, mas adicionar suporte para novos idiomas na versão de atualização de software inicial.  
+- Atualiza versões mais novas de um produto ou, em outras palavras, que não são mais aplicáveis a versões ou configurações mais antigas de um produto. Atualizações de software também podem substituir outras atualizações de software caso tenham sido feitas modificações para expandir o suporte para idiomas. Por exemplo, uma revisão posterior da atualização de um produto do Microsoft Office pode remover o suporte de um sistema operacional mais antigo, mas adicionar suporte para novos idiomas na versão de atualização de software inicial.  
 
- Na guia Regras de Substituição nas propriedades do Componente de Ponto de Atualização de Software, você pode especificar como gerenciar atualizações de software substituídas. Para obter mais informações, consulte [Supersedence rules](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules).  
+  Na guia Regras de Substituição nas propriedades do Componente de Ponto de Atualização de Software, você pode especificar como gerenciar atualizações de software substituídas. Para obter mais informações, consulte [Supersedence rules](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules).  
 
- **Problemas operacionais:**  
+  **Problemas operacionais:**  
 
- Quando possível, implante a atualização de software de substituição nos computadores cliente em vez da atualização de software substituídas. Você pode exibir uma lista das atualizações de software que substituem a atualização de software na guia **Informações de Substituição** nas propriedades da atualização de software.  
+  Quando possível, implante a atualização de software de substituição nos computadores cliente em vez da atualização de software substituídas. Você pode exibir uma lista das atualizações de software que substituem a atualização de software na guia **Informações de Substituição** nas propriedades da atualização de software.  
 
 ### <a name="invalid-icon"></a>Ícone inválido  
  ![ícone](../media/Invalid.jpg "Ícone inválido") O ícone com um X vermelho representa uma atualização de software inválida.  
@@ -74,13 +74,13 @@ Atualizações de software sincronizadas são exibidas no console do Configurati
 
  Atualizações de software inválidas estão em uma implantação ativa, mas, por algum motivo, o conteúdo (arquivos de atualização de software) não está disponível. Veja a seguir cenários em que esse estado pode ocorrer:  
 
--   Você implanta com êxito a atualização de software, mas o arquivo de atualização de software é removido do pacote de implantação e não está mais disponível.  
+- Você implanta com êxito a atualização de software, mas o arquivo de atualização de software é removido do pacote de implantação e não está mais disponível.  
 
--   Você cria uma implantação de atualização de software em um site e o objeto de implantação é replicado com êxito para um site filho, mas o pacote de implantação não foi replicado com êxito para o site filho.  
+- Você cria uma implantação de atualização de software em um site e o objeto de implantação é replicado com êxito para um site filho, mas o pacote de implantação não foi replicado com êxito para o site filho.  
 
- **Problemas operacionais:**  
+  **Problemas operacionais:**  
 
- Quando o conteúdo está ausente para uma atualização de software, os clientes não conseguem instalar a atualização de software até que o conteúdo fique disponível no ponto de distribuição. Você pode redistribuir o conteúdo para pontos de distribuição usando a ação **Redistribuir** . Quando o conteúdo está ausente para uma atualização de software em uma implantação criada em um site pai, a atualização de software deve ser replicada ou redistribuída para o site filho. Para obter mais informações sobre a redistribuição de conteúdo, consulte [Gerenciar o conteúdo que você distribuiu](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage).  
+  Quando o conteúdo está ausente para uma atualização de software, os clientes não conseguem instalar a atualização de software até que o conteúdo fique disponível no ponto de distribuição. Você pode redistribuir o conteúdo para pontos de distribuição usando a ação **Redistribuir** . Quando o conteúdo está ausente para uma atualização de software em uma implantação criada em um site pai, a atualização de software deve ser replicada ou redistribuída para o site filho. Para obter mais informações sobre a redistribuição de conteúdo, consulte [Gerenciar o conteúdo que você distribuiu](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage).  
 
 ### <a name="metadata-only-icon"></a>Ícone somente metadados
  ![ícone](../media/MetadataOnly.png "Ícone somente metadados") O ícone com a seta azul representa uma atualização de software somente de metadados.

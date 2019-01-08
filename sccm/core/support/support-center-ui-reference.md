@@ -10,12 +10,12 @@ ms.assetid: 41cdebfe-b595-40aa-a385-32e0746255ed
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c7fbba9bc6c56a7d4b7a4fc908bfd7fdc9ffa762
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: df7d443a9f611278296c729949d5dfb764a43e9e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52458006"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420770"
 ---
 # <a name="support-center-user-interface-reference"></a>Referência de interface do usuário do Centro de Suporte
 
@@ -84,24 +84,24 @@ Enquanto o Centro de Suporte estiver coletando dados, selecione **Cancelar colet
 #### <a name="data-types"></a>Tipos de dados
 Quando você marca a caixa de seleção para uma opção, o Centro de Suporte coleta esse tipo de dados na próxima vez que você seleciona **Coletar dados selecionados**. Os seguintes tipos estão disponíveis:  
 
-- **Arquivos de log**: arquivos de log de cliente, incluindo logs de instalação  
+- **Arquivos de log**: Arquivos de log do cliente, incluindo os logs de instalação  
 
 - **Política**: coleção de políticas do cliente  
 
-- **Certificados**: informações de chave pública para certificados de cliente. O Centro de Suporte não coleta as chaves privadas do certificado.  
+- **Certificados**: informações de chave pública para certificados do cliente. O Centro de Suporte não coleta as chaves privadas do certificado.  
 
 - **Coletor de configuração do cliente**: informações de cliente do Configuration Manager. Não é possível desabilitar esse tipo de dados.  
 
 - **Registro de cliente**: coleta informações de configuração de cliente do Registro. O Centro de Suporte coleta apenas as informações de Registro do Configuration Manager.  
 
-- **Cliente WMI**: informações de configuração do cliente do WMI. O Centro de Suporte não coleta política do cliente.  
+- **WMI cliente**: informações de configuração de cliente da WMI. O Centro de Suporte não coleta política do cliente.  
 
 - **Solução de problemas**: solução de problemas em tempo real para ajudar a diagnosticar problemas comuns de cliente do Active Directory, pontos de gerenciamento, rede, atribuições de política e registro.  
 
     > [!NOTE]  
     > Não há suporte para esse tipo de dados quando você faz uma conexão remota com outro cliente.  
 
-- **Despejos de depuração**: execute o despejo de depuração do cliente e processos relacionados. Despejos de depuração podem ser grandes. Somente habilite essa opção ao realizar a solução de problemas de desempenho do cliente.  
+- **Despejos de depuração**: execute um despejo de depuração do cliente e dos processos relacionados. Despejos de depuração podem ser grandes. Somente habilite essa opção ao realizar a solução de problemas de desempenho do cliente.  
 
     > [!WARNING]  
     > Coletar despejos de depuração fará com que os pacotes de dados tornem-se muito grandes (em alguns casos, várias centenas de MB).  
@@ -143,23 +143,23 @@ Ao carregar detalhes do cliente, o Centro de Suporte mostra as propriedades a se
 
 - **Aprovado**: indica se o cliente está aprovado no Configuration Manager  
 
-- **Estado do Registro**: indica se o cliente está registrado com o Configuration Manager  
+- **Estado do registro**: indica se o cliente está registrado no Configuration Manager  
 
-- **Voltado para a Internet**: indica se o cliente está na Internet  
+- **Para a Internet**: indica se o cliente está na Internet  
 
 - **Versão**: o número de versão do cliente do Configuration Manager instalado  
 
-- **Código do Site**: o código do site para o site primário ao qual o cliente está atribuído  
+- **Código do site**: o código do site primário ao qual o cliente é atribuído  
 
-- **MP Atribuído**: o FQDN (nome de domínio totalmente qualificado) do ponto de gerenciamento atribuído no momento do cliente  
+- **MP atribuída**: o FQDN (nome de domínio totalmente qualificado) do ponto de gerenciamento atribuído ao cliente no momento  
 
-- **MP residente**: O FQDN do ponto de gerenciamento residente  
+- **MP residente**: o FQDN do ponto de gerenciamento residente  
 
-- **MP do proxy**: O nome de host ou FQDN do ponto de gerenciamento proxy (se houver)  
+- **MP do proxy**: o nome do host ou FQDN do ponto de gerenciamento de proxy (se houver)  
 
-- **Código do Site do Proxy**: o código do site para o site secundário (se houver)  
+- **Código do site do proxy**: O código do site para o site secundário (se houver)  
 
-- **Estado do Proxy**: o estado do ponto de gerenciamento de proxy do cliente do Configuration Manager. Por exemplo, **Ativo** ou **Pendente**.  
+- **Estado do proxy**: o estado do ponto de gerenciamento de proxy do cliente do Configuration Manager. Por exemplo, **Ativo** ou **Pendente**.  
 
 
 
@@ -170,15 +170,15 @@ Use as ações nessa guia, em vez da ferramenta [PolicySpy](/sccm/core/support/p
 #### <a name="load-policy"></a>Carregar política
 Esta opção varia conforme o modo de exibição:
 
-- **Carregar Política real**: selecione **Real** no grupo Exibição e, em seguida, selecione essa opção no grupo Política. O Centro de Suporte carregará a política do cliente que você selecionou no momento.  
+- **Carregar política real**: selecione **Real** no grupo Exibição e, em seguida, selecione essa opção no grupo Política. O Centro de Suporte carregará a política do cliente que você selecionou no momento.  
 
-- **Carregar política Solicitada**: selecione **Solicitada** no grupo Exibição e, em seguida, selecione essa opção no grupo Política. O Centro de Suporte carregará a política de cliente solicitada do cliente.  
+- **Carregar política solicitada**: selecione **Solicitado** no grupo Exibição e, em seguida, selecione essa opção no grupo Política. O Centro de Suporte carregará a política de cliente solicitada do cliente.  
 
-- **Carregar política Padrão**: selecione **Padrão** no grupo Exibição e, em seguida, selecione essa opção no grupo Política. O Centro de Suporte carregará a política padrão para esse cliente.  
+- **Carregar política padrão**: selecione **Padrão** no grupo Exibição e, em seguida, selecione essa opção no grupo Política. O Centro de Suporte carregará a política padrão para esse cliente.  
 
 Selecione a lista suspensa na parte inferior deste botão para obter opções adicionais:
 
-- **Carregar ou Atualizar tudo**: carrega ou atualiza a políticas real, solicitada e padrão ao mesmo tempo.  
+- **Carregar ou atualizar tudo**: carrega ou atualiza a políticas real, solicitada e padrão ao mesmo tempo.  
 
 #### <a name="actual-view"></a>Exibição real
 Abre a exibição de política real
@@ -196,9 +196,9 @@ Selecione a lista suspensa na parte inferior deste botão para obter opções ad
 
 - **Política de solicitação**: o Centro de Suporte solicita a política do cliente do ponto de gerenciamento.  
 
-- **Avaliar política**: o Centro de Suporte avalia a política de cliente no cliente.  
+- **Avaliar política**: o Centro de Suporte avalia a política do cliente no cliente.  
 
-- **Redefinir política como padrão**: o Centro de Suporte informa ao cliente do Configuration Manager para reaplicar a política padrão. Ele remove todas as políticas de computador e de usuário no cliente.  
+- **Redefinir política para o padrão**: o Centro de Suporte informa ao cliente do Configuration Manager que ele deve reaplicar a política padrão. Ele remove todas as políticas de computador e de usuário no cliente.  
 
 #### <a name="listen-for-policy-events"></a>Escutar eventos de política
 O Centro de Suporte escuta eventos de política. Selecione esta opção novamente para desabilitar a escuta para eventos de política. Para exibir **Eventos de política**, selecione a seta na parte inferior dessa guia. 
@@ -222,30 +222,30 @@ Os seguintes itens nesse menu solicitam uma ação do cliente relacionada ao con
 
 - **Serviços de Localização**  
 
-    - **Atualizar serviços de localização de conteúdo**: atualiza os pontos de distribuição usados por todos os downloads de conteúdo ativos.  
+    - **Atualizar locais de conteúdo**: Atualiza os pontos de distribuição usados por todos os downloads de conteúdo ativos.  
 
-    - **Atualizar pontos de gerenciamento**: atualiza a lista interna de pontos de gerenciamento usada pelo cliente.  
+    - **Atualizar pontos de gerenciamento**: Atualiza a lista interna de pontos de gerenciamento usados pelo cliente.  
 
-    - **Atingir tempo limite de solicitações de conteúdo**: se as solicitações de qualquer localização do conteúdo estiverem sendo executadas por muito tempo, essa ação interromperá a solicitação.  
+    - **Atingir tempo limite de solicitações de conteúdo**: se houver solicitações de localização de conteúdo em execução por muito tempo, essa ação interromperá a solicitação.  
 
- - **Avaliação de implantação de aplicativo**: Inicia uma tarefa que avalia os aplicativos implantados.  
+  - **Avaliação de implantação de aplicativo**: Inicia uma tarefa que avalia os aplicativos implantados.  
 
- - **Avaliação de implantação de atualizações de software**: Inicia uma tarefa que avalia as atualizações de software implantadas.  
+  - **Avaliação de implantação de atualizações de software**: Inicia uma tarefa que avalia as atualizações de software implantadas.  
 
- - **Verificação de origem de atualizações de software**: Inicia uma tarefa que verifica os locais de origem da atualização.  
+  - **Verificação de origem de atualizações de software**: Inicia uma tarefa que verifica os locais de origem da atualização.  
 
- - **Atualização de lista de origem do Windows Installer**: Inicia uma tarefa que atualiza o local de origem para instalações do Windows Installer (MSI).  
+  - **Atualização de lista de origem do Windows Installer**: Inicia uma tarefa que atualiza o local de origem para instalações do Windows Installer (MSI).  
 
 #### <a name="content-view"></a>Exibição de conteúdo
 Veja aplicativos, pacotes e atualizações que são carregados no cliente. Ao selecionar um aplicativo, pacote ou a atualização, você pode exibir detalhes deste conteúdo. Para alguns aplicativos, você também pode fazer as seguintes ações:  
 
- - **Atualizar**: atualiza a exibição de detalhes  
+ - **Atualizar**: atualizar a exibição Detalhes  
 
- - **Verificar ou Baixar**: use esse botão para verificar se um aplicativo está disponível para download  
+ - **Verificar ou baixar**: verificar se um aplicativo está disponível para download  
 
  - **Instalar**: instalar o aplicativo  
 
- - **Desinstalar**: desinstale o aplicativo  
+ - **Desinstalar**: Desinstalar o aplicativo  
 
 #### <a name="cache-view"></a>Exibição de cache
 Exiba a configuração de cache do cliente e os detalhes sobre o conteúdo em cache. Quando você conecta o Centro de suporte a um cliente local, também pode fazer as seguintes ações:  
@@ -262,19 +262,19 @@ Essa exibição mostra as propriedades a seguir:
  - **ID de Conteúdo**  
  - **ID de cache**  
  - **Tamanho**  
- - **Última Referência**: essa propriedade é a data de quando o cliente leu ou gravou pela última nesse item no cache.  
+ - **Última referência**: essa propriedade é a data quando o cliente leu ou gravou pela última vez neste item no cache.  
 
 #### <a name="monitoring-view"></a>Exibição de Monitoramento
 Selecione **Monitor** para exibir o progresso ativo da atualização de software e de implantações de atualização de aplicativo. Esta exibição mostra as mensagens de estado geradas no aplicativo e mensagens de evento WMI de atualizações de software.
 
 Para cada evento, a exibição mostra as propriedades a seguir:  
 
- - **Hora**: a hora em que o cliente gerou o evento  
- - **Tipo de tópico**: o tipo de mensagem de estado  
- - **ID de Tópico**: ID da mensagem de estado, usada para mapear eventos nos arquivos de log  
- - **Tipo de ID de tópico**: o subtipo da mensagem de estado  
+ - **Tempo**: a hora em que o cliente gerou o evento  
+ - **Tipo de tópico**: O tipo de mensagem de estado  
+ - **ID do tópico**: ID da mensagem de estado, usada para mapear eventos nos arquivos de log  
+ - **Tipo de ID do tópico**: o subtipo da mensagem de estado  
  - **ID de estado**: o resultado da ação que você está monitorando  
- - **Detalhes** e **Dados de evento**: são mostradas mais informações sobre as mensagens de estado mostradas nessa exibição. Os detalhes do estado às vezes podem estar em branco.  
+ - **Detalhes** e **Dados de evento**: mais informações sobre as mensagens de estado mostradas nesta exibição. Os detalhes do estado às vezes podem estar em branco.  
 
 
 
@@ -292,19 +292,19 @@ O Centro de Suporte carrega ou atualiza a lista de inventário do cliente para a
 
 Os seguintes itens nesse menu solicitam uma ação do cliente relacionada ao inventário:  
 
- - **Ciclo de coleta de dados de descoberta (pulsação)**: dispara a tarefa de cliente usada para coletar informações de descoberta do dispositivo  
+ - **Ciclo de coleta de dados de descoberta (pulsação)**: dispara a tarefa do cliente usada para coletar informações de descoberta do dispositivo  
 
  - **Ciclo de coleta de arquivos**: dispara a tarefa de cliente usada para coletar arquivos locais  
 
- - **Ciclo de inventário de hardware**: dispara a tarefa de cliente usada para coletar dados de inventário de hardware  
+ - **Ciclo de inventário de hardware**: dispara a tarefa do cliente usada para coletar dados de inventário de hardware  
 
- - **Ciclo de coleta IDMIF**: dispara a tarefa do cliente usada para coletar dados IDMIF  
+ - **Ciclo de coleta de IDMIF**: dispara a tarefa do cliente usada para coletar dados IDMIF  
 
- - **Ciclo de inventário de software**: dispara a tarefa de cliente usada para coletar dados de inventário de software  
+ - **Ciclo de inventário de software**: dispara a tarefa do cliente usada para coletar dados de inventário de software  
 
  - **Ciclo de relatório de medição de software**: Dispara a tarefa do cliente usada para criar um relatório de medição de software e enviá-lo para o ponto de gerenciamento. Acompanhe o progresso dessa tarefa no **SWMTRReportGen.log**.
 
- - **Enviar mensagens de estado não enfileiradas**: Dispara a tarefa do cliente para liberar a fila de mensagens de estado.
+ - **Enviar mensagens de estado não enviadas na fila**: Dispara a tarefa do cliente para liberar a fila de mensagens de estado.
 
  - **Advanced**  
      - **Ciclo de inventário de hardware (ressincronização completa)**  
@@ -314,19 +314,19 @@ Os seguintes itens nesse menu solicitam uma ação do cliente relacionada ao inv
 #### <a name="views"></a>Exibições
 Se um recurso não estiver habilitado, o modo de exibição não exibirá nenhum dado. 
 
-- **Status**: mostre os conjuntos de dados de inventário que o cliente coletou  
+- **Status**: mostrar os conjuntos de dados de inventário coletados pelo cliente  
 
-- **DDR**: contém informações sobre os dados de descoberta de cliente coletados do cliente  
+- **DDR**: informações sobre os dados de descoberta do cliente coletados do cliente  
 
-- **HINV**: contém informações sobre os dados de inventário de hardware coletados do cliente  
+- **HINV**: informações sobre os dados de inventário de hardware coletados do cliente  
 
-- **SINV**: contém informações sobre os dados de inventário de software coletados do cliente  
+- **SINV**: informações sobre os dados de inventário de software coletados do cliente  
 
 - **Coleta de arquivos**: informações sobre os arquivos coletados do cliente  
 
 - **IDMIF**: informações sobre os dados IDMIF e NOIDMIF coletados do cliente  
 
-- **Medição**: informações sobre dados de medição de software coletados do cliente  
+- **Medição**: informações sobre os dados de medição de software coletados do cliente  
 
 
 
@@ -348,13 +348,13 @@ Solucione alguns dos problemas mais comuns com clientes do Configuration Manager
 #### <a name="start"></a>Início
 Abre a solução de problemas do cliente
 
-- **Active Directory**: consulta o Active Directory para obter informações do site do Configuration Manager publicado  
-- **MPCERTIFICATE**: obtém certificados de ponto de gerenciamento  
-- **MPLIST**: obtém uma lista de pontos de gerenciamento  
-- **MPKEYINFORMATION**: obtém informações de chave de criptografia de ponto de gerenciamento  
-- **Rede**: soluciona problemas com a rede  
-- **Atribuições de política**: recupera as atribuições de política  
-- **Registro**: verifica se o cliente está registrado com o site  
+- **Active Directory**: consulta o Active Directory para obter informações do site do Configuration Manager publicadas  
+- **MPCERTIFICATE**: Obtém certificados do ponto de gerenciamento  
+- **MPLIST**: Obtém uma lista de pontos de gerenciamento  
+- **MPKEYINFORMATION**: obtém informações de chave de criptografia do ponto de gerenciamento  
+- **Rede**: Soluciona problemas com as redes  
+- **Atribuições de política**: Recupera as atribuições de políticas  
+- **Registro**: verifica se o cliente está registrado no site  
 
 #### <a name="view-selected-log"></a>Exibir o log selecionado
 Depois de selecionar uma linha na guia Solução de problemas, selecione essa ação para exibir o arquivo de log.
@@ -373,9 +373,9 @@ Essa guia é quase idêntica à ferramenta **Visualizador de Log**. A ferramenta
 #### <a name="configure-client-logging"></a>Configurar Log do Cliente
 
 Defina as seguintes opções: 
-- **Nível de log do cliente**: tamanho do arquivo e detalhamento do log  
+- **Nível de log do cliente**: detalhamento do log e tamanho do arquivo  
 - **Contagem máxima de arquivos**: permita mais de um arquivo de log de um determinado tipo  
-- **Tamanho máximo do arquivo**: o tamanho em bytes de qualquer arquivo de log antes de o cliente criar um novo log  
+- **Tamanho máximo do arquivo**: o tamanho em bytes de qualquer arquivo de log antes que o cliente crie um log  
 
 > [!NOTE]  
 > Se você definir esses valores para um nível muito baixo, o cliente não poderá registrar nenhuma informação útil. Se você definir esses valores para um nível muito alto, os logs do cliente poderão consumir grandes quantidades de armazenamento.  
@@ -430,14 +430,14 @@ O Centro de Suporte solicitará que você selecione um ou mais arquivos de log p
 
 Selecione a lista suspensa na parte inferior do botão **Abrir logs** na faixa de opções e selecione uma das seguintes opções adicionais: 
 - **Abrir logs na exibição atual**: abre os arquivos de log selecionados na exibição atual  
-- **Abrir logs na nova janela**: abre os arquivos de log selecionados em uma nova janela **Visualizador de Log**  
+- **Abrir logs em uma nova janela**: abre os arquivos de log selecionados em uma nova janela **Visualizador de Log**  
 
 #### <a name="close-and-clear-logs"></a>Fechar e apagar logs
 Fecha quaisquer arquivos de log abertos. Também apagar todas as entradas de arquivo de log exibidas na janela. O Centro de Suporte não exibirá essas entradas no futuro.
 
 Selecione a lista suspensa na parte inferior do botão **Fechar e limpar logs** na faixa de opções e selecione uma das seguintes opções adicionais: 
-- **Limpar todas as entradas**: limpa qualquer entrada do arquivo de log exibida na janela. O Centro de Suporte não exibirá essas entradas no futuro.  
-- **Fechar todos os logs**: fecha os arquivos de log abertos  
+- **Limpar todas as entradas**: Apagar todas as entradas de arquivo de log exibidas na janela. O Centro de Suporte não exibirá essas entradas no futuro.  
+- **Fechar todos os logs**: Fecha os arquivos de log abertos  
 
 #### <a name="find"></a>Localizar
 Abre a caixa de diálogo **Localizar**. Insira uma cadeia de caracteres a ser pesquisada. Para evitar a correspondências de cadeias de caracteres curtas em outras cadeias de caracteres, você pode optar por combinar palavras inteiras. Você também pode optar por fazer uma correspondência que diferencie maiúsculas de minúsculas para a cadeia de caracteres.
@@ -450,27 +450,27 @@ Depois de localizar duas ou mais correspondências para a cadeia de caracteres q
 
 #### <a name="options"></a>Opções
 
-- **Atualização dinâmica**: monitorar um arquivo de log aberto quanto a alterações. Esse recurso não funciona quando vários arquivos de log estão abertos. Essa opção é habilitada por padrão.  
+- **Atualização dinâmica**: monitore as alterações em um arquivo de log aberto. Esse recurso não funciona quando vários arquivos de log estão abertos. Essa opção é habilitada por padrão.  
 
-- **Rolagem automática**: se você escolher a opção **Atualização Ao Vivo**, essa opção rolará automaticamente a exibição do log para mostrar as entradas adicionadas recentemente. Esse recurso não funciona quando vários arquivos de log estão abertos. Essa opção é habilitada por padrão.  
+- **Rolagem automática**: se você também escolher a opção **Atualização dinâmica**, essa opção rolará automaticamente a exibição do log para mostrar as entradas adicionadas recentemente. Esse recurso não funciona quando vários arquivos de log estão abertos. Essa opção é habilitada por padrão.  
 
 - **Mostrar detalhes**: quando você seleciona uma mensagem de arquivo de log, a parte inferior da guia **Logs** exibe os detalhes da mensagem do arquivo de log. Essa opção é habilitada por padrão.  
 
-- **Filtro rápido**: filtre as mensagens de arquivo de log em todos os arquivos de log abertos para localizar uma cadeia de caracteres específica. Você pode filtrar por texto de log, nome do componente e ID do thread. Para encontrar mensagens de log semelhantes, clique com o botão direito do mouse em uma mensagem de log e selecione **Filtro rápido** no texto do log.  
+- **Filtro rápido**: filtre as mensagens do arquivo de log em todos os arquivos de log abertos para localizar uma cadeia de caracteres específica. Você pode filtrar por texto de log, nome do componente e ID do thread. Para encontrar mensagens de log semelhantes, clique com o botão direito do mouse em uma mensagem de log e selecione **Filtro rápido** no texto do log.  
 
-- **Quebrar o texto de log**: quebre mensagens longas e multilinhas para que caibam em uma única coluna. Esse comportamento torna mais fácil ler essas mensagens. Essa opção é habilitada por padrão.  
+- **Quebrar o texto do log**: Quebre mensagens longas e multilinhas para ajustá-las a uma única coluna. Esse comportamento torna mais fácil ler essas mensagens. Essa opção é habilitada por padrão.  
 
-- **Exibição de entrada de log bruta**: exibe linhas de log não processadas.  
+- **Exibição de entrada de log bruta**: exibe as linhas de log não processadas.  
 
-- **Filtros avançados**: abra a caixa de diálogo **Filtros avançados**. Para obter mais informações, confira [Filtros de arquivo de log avançados](#bkmk_adv-filters).  
+- **Filtros avançados**: abre a caixa de diálogo **Filtros avançados**. Para obter mais informações, confira [Filtros de arquivo de log avançados](#bkmk_adv-filters).  
 
-- **Links de código de erro**: códigos de erro no texto de log são realçados e clicáveis. Essa opção é habilitada por padrão.  
+- **Links de código de erro**: os códigos de erro no texto de log são realçados e clicáveis. Essa opção é habilitada por padrão.  
 
 #### <a name="error-lookup"></a>Pesquisa de erro
 Insira um código de erro para procurá-lo nos arquivos de log abertos no momento. Use os seguintes formatos de código de erro:
- - **Inteiro de 32 bits (com sinal):** Por exemplo, `-2147024891`  
- - **Inteiro de 32 bits (sem sinal):** Por exemplo, `2147942405`  
- - **Hexadecimal de 32 bits**: por exemplo, `0x80070005`  
+ - **inteiro de 32 bits (com sinal)**: Por exemplo, `-2147024891`  
+ - **inteiro de 32 bits (sem sinal)**: Por exemplo, `2147942405`  
+ - **hexadecimal de 32 bits**: Por exemplo, `0x80070005`  
 
 #### <a name="decode-certificate"></a>Decodificar certificado
 Na caixa de diálogo **Decodificar certificado**, cole o valor de certificado serializado para qualquer certificado no cliente. Encontre esse valor no Registro, nos arquivos de log ou no WMI. Selecione **Processo** para exibir informações gerais e detalhes no certificado. Essas informações incluem o caminho de certificação. Selecione **Exportar** para exportar o certificado como um arquivo **.cer**.
@@ -497,17 +497,17 @@ Na caixa de diálogo Filtros avançados, você pode criar conjuntos de filtro co
 
 3. Na caixa de diálogo **Configuração de filtro avançado**, escolha uma coluna e um operador:  
 
-    - **Coluna**: escolha em que local você deseja procurar as cadeias de caracteres que correspondem ao seu filtro:  
+    - **Coluna**: escolha onde procurar cadeias de caracteres que correspondam ao seu filtro:  
 
-         - **Texto de log**: pesquisa dentro do texto de um arquivo de log  
+         - **Texto de log**: pesquisar dentro do texto de um arquivo de log  
 
-         - **Gravidade do log**: pesquisa logs com um nível de gravidade específico. Defina esses níveis de gravidade no campo **Valor**.  
+         - **Gravidade do log**: pesquise logs com um nível de gravidade específico. Defina esses níveis de gravidade no campo **Valor**.  
 
          - **Componente**: pesquise um componente específico por nome  
 
          - **ID do thread**: pesquise mensagens de log com uma ID de thread específica  
 
-         - **Arquivo de origem**: pesquisa mensagens de log que ocorrem em um arquivo de log específico  
+         - **Arquivo de origem**: pesquise mensagens de log que ocorrem em um arquivo de log específico  
 
     - **Operador**: escolha um operador para seu filtro  
 
@@ -558,7 +558,7 @@ Na caixa de diálogo **Opções** , você pode:
 - Reduzir a movimentação de elementos animados da interface do usuário  
 - Alterar a localização dos arquivos temporários    
 - Redefinir os avisos. Novamente, as mensagens de aviso que você suprimiu antes reaparecem quando disparadas.  
-- Redefina o caminho de arquivo temporário para o padrão, `%UserProfile%\AppData\Local\Microsoft\ConfigMgrSupportCenterViewer`  
+- Redefinir o caminho de arquivo temporário para o padrão, `%UserProfile%\AppData\Local\Microsoft\ConfigMgrSupportCenterViewer`  
 
 
 #### <a name="exit"></a>Sair
@@ -626,11 +626,11 @@ Essa guia mostra o conjunto de dados de WMI do cliente do Configuration Manager 
 #### <a name="find"></a>Localizar
 Abre a caixa de diálogo Localizar, que tem os seguintes recursos:  
 
-- **O que localizar**: insira uma cadeia de caracteres a ser pesquisada no conjunto de dados WMI. Dá suporte a caracteres curinga.  
+- **Localizar**: Insira uma cadeia de caracteres a ser pesquisada no conjunto de dados da WMI. Dá suporte a caracteres curinga.  
 
-- **Examinar**: Escolha se deseja pesquisar dentro do conjunto de dados WMI para encontrar uma correspondência de **Nome de classe ou instância**, **Propriedade**ou **Valor**.  
+- **Examinar**: Escolha se deseja pesquisar no conjunto de dados da WMI para encontrar um **nome de classe ou de instância**, uma **propriedade** ou um **valor** correspondente.  
 
-- **Combinar apenas toda a cadeia de caracteres**: por padrão, a caixa de diálogo procurará cadeias de caracteres que contêm a cadeia de caracteres que você está procurando. Marque esta caixa de seleção para localizar apenas cadeias de caracteres que são uma correspondência exata para aquela que você forneceu.  
+- **Corresponder somente à cadeia de caracteres inteira**: Por padrão, a caixa de diálogo pesquisa cadeias de caracteres que contêm a cadeia de caracteres que você está procurando. Marque esta caixa de seleção para localizar apenas cadeias de caracteres que são uma correspondência exata para aquela que você forneceu.  
 
 #### <a name="find-next"></a>Localizar próximo
 Esse botão abre a próxima ocorrência da cadeia de caracteres que você forneceu na caixa de diálogo dentro do conjunto de dados WMI.
@@ -649,11 +649,11 @@ Salve uma cópia da chave e das subchaves do Registro selecionadas como um arqui
 #### <a name="find"></a>Localizar
 Abre a caixa de diálogo Localizar, que tem os seguintes recursos:  
 
-- **O que localizar**: insira uma cadeia de caracteres a ser pesquisada no conjunto de dados WMI. Dá suporte a caracteres curinga.  
+- **Localizar**: Insira uma cadeia de caracteres a ser pesquisada no conjunto de dados da WMI. Dá suporte a caracteres curinga.  
 
-- **Examinar**: Escolha se deseja pesquisar dentro do conjunto de dados WMI para encontrar uma correspondência de **Nome de classe ou instância**, **Propriedade**ou **Valor**.  
+- **Examinar**: Escolha se deseja pesquisar no conjunto de dados da WMI para encontrar um **nome de classe ou de instância**, uma **propriedade** ou um **valor** correspondente.  
 
-- **Combinar apenas toda a cadeia de caracteres**: por padrão, a caixa de diálogo procurará cadeias de caracteres que contêm a cadeia de caracteres que você está procurando. Marque esta caixa de seleção para localizar apenas cadeias de caracteres que são uma correspondência exata para aquela que você forneceu.  
+- **Corresponder somente à cadeia de caracteres inteira**: Por padrão, a caixa de diálogo pesquisa cadeias de caracteres que contêm a cadeia de caracteres que você está procurando. Marque esta caixa de seleção para localizar apenas cadeias de caracteres que são uma correspondência exata para aquela que você forneceu.  
 
 #### <a name="find-next"></a>Localizar próximo
 Esse botão abre a próxima ocorrência da cadeia de caracteres que você forneceu na caixa de diálogo dentro do conjunto de dados WMI.
@@ -669,11 +669,11 @@ A guia **Política** é usada para exibir dados de política incluídos no pacot
 #### <a name="find"></a>Localizar
 Abre a caixa de diálogo Localizar, que tem os seguintes recursos:  
 
-- **O que localizar**: insira uma cadeia de caracteres a ser pesquisada no conjunto de dados WMI. Dá suporte a caracteres curinga.  
+- **Localizar**: Insira uma cadeia de caracteres a ser pesquisada no conjunto de dados da WMI. Dá suporte a caracteres curinga.  
 
-- **Examinar**: Escolha se deseja pesquisar dentro do conjunto de dados WMI para encontrar uma correspondência de **Nome de classe ou instância**, **Propriedade**ou **Valor**.  
+- **Examinar**: Escolha se deseja pesquisar no conjunto de dados da WMI para encontrar um **nome de classe ou de instância**, uma **propriedade** ou um **valor** correspondente.  
 
-- **Combinar apenas toda a cadeia de caracteres**: por padrão, a caixa de diálogo procurará cadeias de caracteres que contêm a cadeia de caracteres que você está procurando. Marque esta caixa de seleção para localizar apenas cadeias de caracteres que são uma correspondência exata para aquela que você forneceu.  
+- **Corresponder somente à cadeia de caracteres inteira**: Por padrão, a caixa de diálogo pesquisa cadeias de caracteres que contêm a cadeia de caracteres que você está procurando. Marque esta caixa de seleção para localizar apenas cadeias de caracteres que são uma correspondência exata para aquela que você forneceu.  
 
 #### <a name="find-next"></a>Localizar próximo
 Esse botão abre a próxima ocorrência da cadeia de caracteres que você forneceu na caixa de diálogo dentro do conjunto de dados WMI.

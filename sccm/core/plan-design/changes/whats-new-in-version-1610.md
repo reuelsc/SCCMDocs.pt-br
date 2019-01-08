@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: cb9b19c95caaf914fa1cbf040258c30ede2dc54a
-ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
+ms.openlocfilehash: f53dbbf341d3c6474c1c5dd5066b8d1f2a0fdc63
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47229306"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424231"
 ---
 # <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>Novidades da versão 1610 do System Center Configuration Manager
 
@@ -36,7 +36,7 @@ As seções a seguir fornecem detalhes sobre as alterações e novas funcionalid
 
 
 ## <a name="in-console-monitoring-of-update-installation-status"></a>Monitoramento do status de instalação de atualização no console  
-Começando com a versão 1610, quando você instala um pacote de atualização e monitora a instalação no console, há uma nova fase: **a pós-instalação**. Esta fase inclui o status para tarefas como reiniciar serviços essenciais e inicialização de monitoramento de replicação. (Essa fase não está disponível no console até a instalação das atualizações do site para a versão 1610.) Para obter mais informações sobre o status de instalação da atualização, consulte [Instalar atualizações no console](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates).
+Começando com a versão 1610, quando você instala um pacote de atualização e monitora a instalação no console, há uma nova fase: **Pós-instalação**. Esta fase inclui o status para tarefas como reiniciar serviços essenciais e inicialização de monitoramento de replicação. (Essa fase não está disponível no console até a instalação das atualizações do site para a versão 1610.) Para obter mais informações sobre o status de instalação da atualização, consulte [Instalar atualizações no console](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates).
 
 
 ## <a name="exclude-clients-from-automatic-upgrade"></a>Excluir clientes da atualização automática
@@ -131,8 +131,8 @@ A identidade visual personalizada do Centro de Software é aplicada de acordo co
 Em alguns casos, talvez você queira conceder aos usuários mais tempo instalar as atualizações de software ou as implantações de aplicativo obrigatórias além das datas limite definidas. Por exemplo, isso normalmente pode ser necessário quando um computador ficou desligado por um período estendido e precisa reinstalar uma grande quantidade de implantações de atualização ou de aplicativo. Por exemplo, se um usuário final acabou de voltar de férias, eles terá que aguardar um longo período enquanto as implantações de aplicativo atrasadas são instaladas. Para ajudar a resolver esse problema, agora você pode definir um período de carência para a imposição implantando configurações de cliente do Configuration Manager para uma coleção. 
 
 Para configurar o período de carência, execute as seguintes ações:
-1.      Na página **Agente de Computador** das configurações do cliente, configure a nova propriedade **Período de carência para a imposição após a data limite da implantação (horas):** com um valor entre **1** e **120** horas.
-2.      Em uma nova implantação de aplicativo obrigatória ou nas propriedades de uma implantação existente, na página **Agendamento**, marque a caixa de seleção **Atrase a imposição dessa implantação de acordo com as preferências do usuário, até o período de carência definido nas configurações do cliente**. Todas as implantações que têm essa caixa de seleção marcada e que são destinadas a dispositivos nos quais você também implantou as configurações do cliente usarão o período de carência imposto.
+1. Na página **Agente de Computador** das configurações do cliente, configure a nova propriedade **Período de carência para a imposição após a data limite da implantação (horas):** com um valor entre **1** e **120** horas.
+2. Em uma nova implantação de aplicativo obrigatória ou nas propriedades de uma implantação existente, na página **Agendamento**, marque a caixa de seleção **Atrase a imposição dessa implantação de acordo com as preferências do usuário, até o período de carência definido nas configurações do cliente**. Todas as implantações que têm essa caixa de seleção marcada e que são destinadas a dispositivos nos quais você também implantou as configurações do cliente usarão o período de carência imposto.
 
 Se você configurar um período de carência para a imposição e marcar a caixa de seleção, quando o prazo da instalação do aplicativo for atingido, ele será instalado na primeira janela fora do horário comercial que o usuário configurou até esse período de carência. No entanto, o usuário ainda poderá abrir o Centro de Software e instalar o aplicativo a qualquer momento que desejar. Depois que o período de carência expirar, a imposição retorna ao comportamento normal para implantações atrasadas. Opções semelhantes foram adicionadas ao assistente de implantação de atualizações de software, ao assistente de regras de implantação automática e páginas de propriedades.
 
@@ -191,13 +191,13 @@ Para saber mais, veja [Gerenciar atualizações do Office 365 ProPlus](/sccm/sum
 ## <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Etapas de sequência de tarefas para gerenciar o BIOS para a conversão de UEFI
 Agora você pode personalizar uma sequência de tarefas de implantação do sistema operacional com uma nova variável, TSUEFIDrive, para que a etapa **Reiniciar o Computador** prepare uma partição FAT32 no disco rígido para a transição para UEFI. O procedimento a seguir fornece um exemplo de como você pode criar etapas de sequência de tarefas para preparar o disco rígido para a conversão de BIOS para UEFI. Para saber mais, veja [Etapas da sequência de tarefas para gerenciar a conversão de BIOS para UEFI](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion).
 
-##  <a name="improvements-to-the-task-sequence-step-prepare-configmgr-client-for-capture"></a>Melhorias na etapa da sequência de tarefas: Preparar o Cliente do ConfigMgr para Captura  
+##  <a name="improvements-to-the-task-sequence-step-prepare-configmgr-client-for-capture"></a>Melhorias à etapa de sequência de tarefas: Prepare ConfigMgr Client for Capture  
 A etapa Preparar o Cliente do ConfigMgr agora removerá completamente o cliente do Configuration Manager, em vez de apenas remover informações importantes. Quando a sequência de tarefas implanta a imagem capturada do sistema operacional, ela instala um novo cliente do Configuration Manager a cada vez. Para obter detalhes, consulte [Etapas da sequência de tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareConfigMgrClientforCapture).
 
 
 
 ## <a name="intune-compliance-policy-charts"></a>Gráficos da política de conformidade do Intune
-Agora é possível obter uma exibição rápida da conformidade geral dos dispositivos e os principais motivos de não conformidade usando novos gráficos no espaço de trabalho **Monitoramento** no console do Configuration Manager. Você pode clicar em uma seção no gráfico para detalhar uma lista de dispositivos nessa categoria. Para obter detalhes, consulte [Monitorar a política de conformidade](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
+Agora é possível obter uma exibição rápida da conformidade geral dos dispositivos e os principais motivos de não conformidade usando novos gráficos no workspace **Monitoramento** no console do Configuration Manager. Você pode clicar em uma seção no gráfico para detalhar uma lista de dispositivos nessa categoria. Para obter detalhes, consulte [Monitorar a política de conformidade](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
 
 
 ## <a name="lookout-integration-for-hybrid-implementations-to-protect-ios-and-android-devices"></a>Integração do Lookout para implementações híbridas para proteger dispositivos Android e iOS

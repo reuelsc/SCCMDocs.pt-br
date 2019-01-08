@@ -10,12 +10,12 @@ ms.assetid: 341f0d0b-f907-44cf-9e10-e1b41fc15f82
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6eaac644b876fa3adfa1a2c79e7c4c5810942d9f
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 187f876999f39dd1d2d4aa345a7e9037f745a0ed
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385568"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418893"
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-configuration-manager"></a>Como implantar clientes em computadores Windows no Configuration Manager
 
@@ -51,7 +51,7 @@ Os arquivos de log do cliente fornecem informações mais detalhadas para soluç
 
 ### <a name="configure-the-site-to-automatically-use-client-push-for-discovered-computers"></a>Configurar o site para usar automaticamente o push do cliente para os computadores descobertos
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
+1.  No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
 
 2.  Selecione o site para o qual deseja configurar a instalação automática do cliente por push em todo o site.  
 
@@ -87,7 +87,7 @@ Os arquivos de log do cliente fornecem informações mais detalhadas para soluç
 
 ### <a name="use-the-client-push-installation-wizard"></a>Usar o assistente de instalação do cliente por push
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
+1.  No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
 
 2.  Selecione o site para o qual deseja configurar a instalação automática do cliente por push em todo o site.  
 
@@ -97,7 +97,7 @@ Os arquivos de log do cliente fornecem informações mais detalhadas para soluç
 
     Se você tiver estendido o esquema do Active Directory para o Configuration Manager, o site publicará as [Propriedades de instalação de cliente](/sccm/core/clients/deploy/about-client-installation-properties) especificadas no Active Directory Domain Services. Quando o CCMSetup é executado sem propriedades de instalação, ele lê essas propriedades do Active Directory.   
 
-5.  No console do Configuration Manager, vá até o espaço de trabalho **Ativos e conformidade**.  
+5.  No console do Configuration Manager, vá até o workspace **Ativos e conformidade**.  
 
 6.  No nó **Dispositivos**, selecione um ou mais computadores. Ou selecione uma coleção de computadores no nó **Coleções de Dispositivos**.  
 
@@ -147,7 +147,7 @@ Use os procedimentos a seguir para configurar computadores sem um cliente do Con
 
 3.  Abra as propriedades da configuração **Especificar o local do serviço do Microsoft Update na intranet** e escolha **Habilitado**.  
 
-4.  **Definir o serviço de atualização da intranet para detectar atualizações**: especifique o nome e a porta do servidor do ponto de atualização de software.  
+4.  **Definir o serviço de atualização da intranet para detectar atualizações**: especifique o nome e a porta do servidor de ponto de atualização de software.  
 
     -   Se você tiver configurado o sistema de sites do Configuration Manager para usar um FQDN (nome de domínio totalmente qualificado), use esse formato.  
 
@@ -158,14 +158,14 @@ Use os procedimentos a seguir para configurar computadores sem um cliente do Con
 
      Exemplo com o formato FQDN: `http://server1.contoso.com:8530`  
 
-5.  **Defina o servidor de estatísticas da intranet**: essa configuração normalmente tem o mesmo nome do servidor.   
+5.  **Definir o servidor de estatísticas da intranet**: essa configuração normalmente é o mesmo nome do servidor.   
 
 6.  Atribua o objeto de política de grupo aos computadores nos quais deseja instalar o cliente e receber atualizações de software.  
 
 
 ### <a name="publish-the-configuration-manager-client-to-the-software-update-point"></a>Publicar o cliente do Configuration Manager no ponto de atualização de software  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
+1.  No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
 
 2.  Selecione o site para o qual deseja configurar a instalação do cliente baseada em atualização de software.  
 
@@ -256,7 +256,7 @@ Então execute um dos seguintes comandos:
 
 Este exemplo instala o cliente sem parâmetros nem propriedades adicionais. O cliente configura automaticamente usando as propriedades de instalação de cliente publicadas para o Active Directory Domain Services, incluindo as seguintes configurações:  
 
-- Código do site: essa configuração exige que um local de rede do cliente seja incluído em um grupo de limites configurado para atribuição do cliente.  
+- Código do site: essa configuração exige que a localização de rede do cliente seja incluído em um grupo de limites configurado para atribuição do cliente.  
 - Ponto de gerenciamento
 - Ponto de status de fallback
 - Comunicar-se usando somente HTTPS  
@@ -301,7 +301,7 @@ Use o Configuration Manager para criar e implantar um pacote e um programa que a
 
 Use o procedimento a seguir para criar um pacote e um programa do Configuration Manager que você possa implantar nos computadores cliente do Configuration Manager para atualizar o software cliente.  
 
-1.  No console do Configuration Manager, vá para o espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Pacotes**.  
+1.  No console do Configuration Manager, vá para o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Pacotes**.  
 
 2.  Na guia **Início** da faixa de opções, no grupo **Criar**, escolha **Criar Pacote com base na Definição**.  
 
@@ -340,7 +340,7 @@ Para que o procedimento instale o cliente do Configuration Manager em um disposi
 
 2. No Intune Software Publisher, insira os parâmetros de linha de comando. Por exemplo, use a seguinte linha de comando com um cliente tradicional na intranet:  
 
-  `CCMSETUPCMD="/MP:<FQDN of management point> SMSMP=<FQDN of management point> SMSSITECODE=<Your site code> DNSSUFFIX=<DNS Suffix of management point>"`  
+   `CCMSETUPCMD="/MP:<FQDN of management point> SMSMP=<FQDN of management point> SMSSITECODE=<Your site code> DNSSUFFIX=<DNS Suffix of management point>"`  
 
    > [!Note]  
    > Para obter uma linha de comando de exemplo a ser usada com um cliente moderno do Windows 10 usando a autenticação do Azure AD, consulte [Preparar dispositivos Windows 10 para o cogerenciamento](/sccm/core/clients/manage/co-management-prepare#command-line-to-install-configuration-manager-client).  

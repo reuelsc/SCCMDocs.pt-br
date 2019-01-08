@@ -10,12 +10,12 @@ ms.assetid: 4d26deed-3b16-4116-b640-f618f2c20f5a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 65e4d68f05087d24bc83e8e4a3dd67489fdbaed3
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: be4f60bbc6114abc1c4537cc83ee8c2dd0aeef42
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893576"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421919"
 ---
 # <a name="security-and-privacy-for-application-management-in-configuration-manager"></a>Segurança e privacidade para gerenciamento de aplicativos no Configuration Manager
 
@@ -213,11 +213,11 @@ Se for configurar um tipo de implantação de aplicativo Web, use HTTPS para pro
     > [!Note]  
     > A partir do Configuration Manager 1802, a principal funcionalidade do Catálogo de Aplicativos agora está incluída no Centro de Software. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).  
 
--  O **Centro de Software** é instalado automaticamente em um dispositivo durante a instalação do cliente do Configuration Manager. Os usuários alteram configurações, procuram e instalam aplicativos do Centro de Software.  
+- O **Centro de Software** é instalado automaticamente em um dispositivo durante a instalação do cliente do Configuration Manager. Os usuários alteram configurações, procuram e instalam aplicativos do Centro de Software.  
 
- Exiba as seguintes seções para obter informações de privacidade sobre a [afinidade de dispositivo de usuário](#bkmk_privacy-uda) e o [Centro de Software e Catálogo de Aplicativos](#bkmk_privacy-userex).  
+  Exiba as seguintes seções para obter informações de privacidade sobre a [afinidade de dispositivo de usuário](#bkmk_privacy-uda) e o [Centro de Software e Catálogo de Aplicativos](#bkmk_privacy-userex).  
 
- Para poder configurar o gerenciamento de aplicativos, considere seus requisitos de privacidade.  
+  Para poder configurar o gerenciamento de aplicativos, considere seus requisitos de privacidade.  
 
 
 ### <a name="bkmk_privacy-uda"></a> Afinidade de dispositivo do usuário  

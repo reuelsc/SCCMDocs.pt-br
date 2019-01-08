@@ -10,12 +10,12 @@ ms.assetid: c6777fb0-0754-4abf-8a1b-7639d23e9391
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5a5ec4f699f2c122dc435bbca5c77789ea972de7
-ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
+ms.openlocfilehash: b074ee02ec5e50fb5e495923538535cf8765dcdb
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601221"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420933"
 ---
 # <a name="ports-used-in-configuration-manager"></a>Portas usadas no Configuration Manager
 
@@ -179,7 +179,7 @@ Para obter mais informações, veja [Portas e fluxo de dados do CMG](/sccm/core/
 
 > [!Important]  
 > Se você habilitar um firewall baseado em host, verifique se as regras permitem que o servidor envie e receba nessas portas. Quando você habilita um ponto de distribuição para PXE, o Configuration Manager pode habilitar a entrada (recebimento) as regras de Firewall do Windows. Ele não configura as regras de saída (envio).<!--SCCMDocs issue #744-->  
-  
+
 
 ###  <a name="BKMK_PortsClient-FSP"></a> Cliente – > Ponto de status de fallback  
 
@@ -237,12 +237,14 @@ O Configuration Manager usa essas conexões para criar o canal do CMG. Para obte
 
 #### <a name="version-1706-or-1710"></a>Versão 1706 ou 1710
 A porta específica depende da configuração do ponto de gerenciamento. 
+
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
 |HTTPS|--|443|
 |HTTP|--|80|  
 
 #### <a name="version-1802"></a>Versão 1802
+
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
 |HTTPS|--|443|
@@ -253,6 +255,7 @@ Para obter mais informações, veja [Portas e fluxo de dados do CMG](/sccm/core/
 ###  <a name="bkmk_cmgcp-sup"></a> Ponto de conexão do CMG -- > Ponto de atualização de software  
 
 A porta específica depende da configuração do ponto de atualização de software. 
+
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
 |HTTPS|--|443|
@@ -684,10 +687,10 @@ Para obter mais informações, veja [Portas e fluxo de dados](/sccm/core/plan-de
 #### <a name="bkmk_note1"></a> Observação 1: porta do servidor proxy
 Esta porta não pode ser configurada, mas pode ser roteada por meio de um servidor proxy configurado.  
 
-#### <a name="bkmk_note2"></a> Observação2: porta alternativa disponível
+#### <a name="bkmk_note2"></a> Observação 2: porta alternativa disponível
 Uma porta alternativa pode ser definida dentro do Configuration Manager para esse valor. Se tiver sido definida uma porta personalizada, substitua essa porta personalizada ao definir as informações de filtro IP para políticas IPsec ou para configurar firewalls.  
 
-#### <a name="bkmk_note3"></a> Observação 3: WSUS (Windows Server Update Services)
+#### <a name="bkmk_note3"></a> Observação 3: Windows Server Update Services (WSUS)
 O WSUS pode ser instalado para usar portas 80/443 ou portas 8530/8531 para comunicação do cliente. Ao executar o WSUS no Windows Server 2012 ou Windows Server 2016, o WSUS é configurado por padrão para usar a porta 8530 para HTTP e a porta 8531 para HTTPS.  
 
 Após a instalação, é possível alterar a porta. Não é necessário usar o mesmo número da porta em toda a hierarquia do site.  
@@ -699,23 +702,23 @@ Após a instalação, é possível alterar a porta. Não é necessário usar o m
     > [!NOTE]  
     >  Ao configurar o ponto de atualização de software para usar HTTPS, a porta HTTP deve também ser aberta. Dados não criptografados, como o EULA para atualizações específicas, usam a porta HTTP.  
 
-#### <a name="bkmk_note4"></a> Observação4: TFTP (daemon FTP trivial FTP)
+#### <a name="bkmk_note4"></a> Observação 4: daemon do TFTP (Trivial FTP)
 O serviço do sistema Trivial FTP (TFTP) Daemon não requer um nome de usuário ou senha e é parte integral do WDS (Serviços de Implantação do Windows). O serviço Trivial FTP Daemon implementa o suporte ao protocolo TFTP definido pelos seguintes RFCs:  
 
 - RFC 350: TFTP  
 
-- RFC 2347: Opções de extensão  
+- RFC 2347: extensão da opção  
 
-- RFC 2348: Opções de tamanho de bloco  
+- RFC 2348: opção de tamanho de bloco  
 
-- RFC 2349: Opções de intervalo de tempo limite e de tamanho da transferência  
+- RFC 2349: opções de tamanho de transferência e de intervalo de tempo limite  
 
 TFTP é projetado para dar suporte a ambientes de inicialização sem disco. O TFTP Daemons escuta na porta UDP 69, mas responde de uma porta alta alocada dinamicamente. Portanto, a habilitação dessa porta permite que o serviço TFTP receba solicitações TFTP de entrada, mas não permite que o servidor selecionado responda a essas solicitações. Não é possível habilitar o servidor selecionado para responder às solicitações TFTP de entrada a menos que o servidor TFTP esteja configurado para responder à porta 69.  
 
-#### <a name="bkmk_note5"></a> Observação 5: comunicação entre servidor do site e sistemas de sites
+#### <a name="bkmk_note5"></a> Observação 5: a comunicação entre o servidor do site e o sistemas de site
 Por padrão, a comunicação entre o servidor do site e os sistemas de site é bidirecional. O servidor do site inicia a comunicação para configurar o sistema de site, e então a maior parte dos sistemas de site se conecta de volta ao servidor do site para enviar informações de status. Pontos do Reporting Services e pontos de distribuição não enviam informações de status. Se você selecionar **Exigir que o servidor do site inicie conexões com este sistema de site** nas propriedades do sistema de sites depois que o sistema de sites tiver sido instalado, ele não iniciará a comunicação com o servidor. Em vez disso, o servidor do site iniciará a comunicação e utilizará a conta de instalação do sistema de sites para se autenticar no servidor do sistema de site.  
 
-#### <a name="bkmk_note6"></a> Nota 6: portas dinâmicas
+#### <a name="bkmk_note6"></a> Observação 6: Portas dinâmicas
 As portas dinâmicas usam um intervalo de números de porta definidos pela versão do sistema operacional. Essas portas são também conhecidas como portas efêmeras. Para obter mais informações sobre os intervalos de porta padrão, consulte [Visão geral do serviço e requisitos de porta de rede para o Windows](https://support.microsoft.com/help/832017/service-overview-and-network-port-requirements-for-windows).  
 
 
@@ -756,10 +759,10 @@ Quando você usar o Azure e o banco de dados do site estiver atrás de um balanc
 - Regras de balanceamento de carga 
 
 Configure as seguintes portas:
- - SQL sobre TCP: TCP 1433
+ - SQL por TCP: TCP 1433
  - SQL Server Service Broker: TCP 4022
  - Protocolo SMB: TCP 445
- - Mapeador de ponto de extremidade RPC: TCP 135
+ - Mapeador de pontos de extremidade RPC: TCP 135
 
 > [!WARNING]  
 >  O Configuration Manager não dá suporte a portas dinâmicas. Por padrão, as instâncias nomeadas do SQL Server usam portas dinâmicas para conexões com o mecanismo de banco de dados. Quando você usa uma instância nomeada, configure manualmente a porta estática para a comunicação entre sites.  
@@ -794,10 +797,10 @@ Para ver um exemplo sobre como configurar o SQL Server para usar uma porta espec
 O Configuration Manager usa as seguintes portas para a descoberta e publicação de informações do site:
  - Protocolo LDAP: 389
  - LDAP de catálogo global: 3268
- - Mapeador de ponto de extremidade RPC: 135
- - RPC: portas TCP altas alocadas dinamicamente
+ - Mapeador de pontos de extremidade RPC: 135
+ - RPC: Portas TCP altas alocadas dinamicamente
  - TCP: 1024: 5000
- - TCP: 49152: 65535
+ - TCP:  49152: 65535
 
 
 ###  <a name="BKMK_External"></a> Conexões externas feitas pelo Gerenciador de Configurações  
@@ -836,17 +839,17 @@ Clientes do Configuration Manager local ou sistemas de sites podem fazer as segu
 
  Os pontos de gerenciamento baseados na Internet e os pontos de distribuição que dão suporte a clientes baseados em Internet, o ponto de atualização de software e o ponto de status de fallback usam as seguintes portas para instalação e reparo:  
 
--   Servidor do site –> sistema de sites: mapeador de ponto de extremidade RPC usando UDP e porta TCP 135.  
+-   Servidor do site --> sistema de sites: mapeador de ponto de extremidade RPC usando UDP e porta TCP 135.  
 
--   Servidor do site –> sistema de sites: portas TCP dinâmicas de RPC  
+-   Servidor do site --> sistema de sites: Portas TCP dinâmicas de RPC  
 
--   Servidor do site &lt; –> sistema de sites: protocolo SMB usando porta TCP 445
+-   Servidor do site &lt; --> sistema de sites: Protocolo SMB usando a porta TCP 445
 
 Instalações de aplicativos e pacotes nos pontos de distribuição requerem as seguintes portas RPC:  
 
--   Servidor do site –> ponto de distribuição: mapeador de ponto de extremidade RPC usando UDP e porta TCP 135
+-   Servidor do site --> ponto de distribuição: Mapeador de pontos de extremidade RPC usando UDP e a porta TCP 135
 
--   Servidor do site –> ponto de distribuição: portas TCP dinâmicas de RPC  
+-   Servidor do site --> ponto de distribuição: Portas TCP dinâmicas de RPC  
 
 Use o IPsec para ajudar a proteger o tráfego entre o servidor do site e os sistemas de site. Se for preciso restringir as portas dinâmicas usadas com RPC, você pode usar a ferramenta de configuração Microsoft RPC (rpccfg.exe) para configurar um intervalo restrito de portas para esses pacotes RPC. Para obter mais informações sobre a ferramenta de configuração RPC, consulte [Como configurar o RPC para usar determinadas portas e como ajudar a proteger essas portas usando o IPsec](https://support.microsoft.com/help/908472/how-to-configure-rpc-to-use-certain-ports-and-how-to-help-secure-those).  
 

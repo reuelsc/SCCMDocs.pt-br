@@ -2,7 +2,7 @@
 title: Notas de versão
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os problemas urgentes que ainda não foram corrigidos no produto nem abordados em um artigo da base de dados de conhecimento do Suporte da Microsoft.
-ms.date: 11/27/2018
+ms.date: 12/21/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 030947fd-f5e0-4185-8513-2397fb2ec96f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 41039ec31c11573424f044df009e9c364491b5f7
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 41b068da0524333ae25ea2228a71bf27344f4f58
+ms.sourcegitcommit: f5fa9e657350ceb963a7928497d2adca9caef3d4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456338"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53748486"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Notas de versão do Configuration Manager
 
@@ -35,7 +35,7 @@ Para saber mais sobre os novos recursos introduzidos com diferentes versões, co
 
 
 
-## <a name="setup-and-upgrade"></a>Instalar e atualizar  
+## <a name="set-up-and-upgrade"></a>Configurar e atualizar  
 
 
 ### <a name="when-using-redistributable-files-from-the-cdlatest-folder-setup-fails-with-a-manifest-verification-error"></a>Ao usar arquivos redistribuíveis da pasta CD.Latest, a instalação falha com um erro de verificação de manifesto
@@ -54,7 +54,7 @@ Use uma das seguintes opções:
 
 ### <a name="setup-command-line-option-joinceip-must-be-specified"></a>O JoinCEIP da opção de linha de comando de instalação deve ser especificado
 <!--510806-->
-*Aplicável a: Configuration Manager versão 1802*
+*Aplica-se a: Configuration Manager versão 1802*
 
 A partir do Configuration Manager versão 1802, o recurso Programa de Aperfeiçoamento da Experiência do Usuário é removido do produto. Durante a [automatização da instalação](/sccm/core/servers/deploy/install/command-line-options-for-setup) de um novo site por meio de um script de linha de comando ou autônomo, a instalação retorna um erro que indica que um parâmetro necessário está ausente. 
 
@@ -67,7 +67,7 @@ Embora isso não afete o resultado do processo de instalação, inclua o parâme
 
 ### <a name="cloud-service-manager-component-stopped-on-site-server-in-passive-mode"></a>Componente do gerenciador de serviços de nuvem parado no servidor do site no modo passivo
 <!--VSO 2858826, SCCMDocs issue 772-->
-*Aplicável a: Configuration Manager versão 1806*
+*Aplica-se a: Configuration Manager versão 1806*
 
 Se o [ponto de conexão de serviço](/sccm/core/servers/deploy/configure/about-the-service-connection-point) estiver colocalizado com um [servidor de site no modo passivo](/sccm/core/servers/deploy/configure/site-server-high-availability), a implantação e o monitoramento de um [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) não serão iniciados. O componente do gerenciador de serviços de nuvem (SMS_CLOUD_SERVICES_MANAGER) está em um estado parado.
 
@@ -89,9 +89,33 @@ Mova a função de ponto de conexão do serviço para outro servidor.
 
 ## <a name="software-updates"></a>Atualizações de software
 
+### <a name="security-roles-are-missing-for-phased-deployments"></a>As funções de segurança estão ausentes para implantações em fases
+<!--3479337, SCCMDocs-pr issue 3095-->
+*Aplica-se a: Configuration Manager versão 1810*
+
+A função de segurança interna **Gerenciador de Implantação de SO** tem permissões para [implantações em fases](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence). Estas permissões estão ausentes das funções a seguir:  
+
+- **Administrador de Aplicativos**  
+- **Gerenciador de Implantação de Aplicativos**  
+- **Gerenciador de Atualização de Software**  
+
+A função **Autor do Aplicativo** pode parecer ter algumas permissões para implantações em fases, mas não deve ser capaz de criar implantações. 
+
+Um usuário com uma dessas funções pode iniciar o assistente Criar implantação em fases, podendo também ver implantações em fases para uma atualização de software ou aplicativo. Esse usuário não pode concluir o assistente nem fazer alterações em uma implantação existente.
+
+#### <a name="workaround"></a>Solução alternativa
+Criar uma função de segurança personalizada. Copie uma função de segurança existente e adicione as seguintes permissões na classe de objeto **Implantação em Fases**:
+- Criar  
+- Excluir  
+- Modificar  
+- Ler  
+
+Para obter mais informações, confira [Criar funções de segurança personalizadas](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_CreateSecRole)
+
+
 ### <a name="changing-office-365-client-setting-doesnt-apply"></a>Não se aplica a alteração da configuração do cliente do Office 365 
 <!--511551-->
-*Aplicável a: Configuration Manager versão 1802*  
+*Aplica-se a: Configuration Manager versão 1802*  
 
 Implante uma [configuração de cliente](/sccm/core/clients/deploy/about-client-settings#enable-management-of-the-office-365-client-agent) com **Habilitar o gerenciamento do Agente Cliente do Office 365** configurado para `Yes`. Em seguida, altere a configuração para `No` ou `Not Configured`. Depois de atualizar a política de clientes direcionados, as atualizações do Office 365 ainda são gerenciadas pelo Configuration Manager. 
 
@@ -109,7 +133,7 @@ Altere o seguinte valor de registro para `0` e reinicie o **Serviço Clique para
 
 ### <a name="you-can-no-longer-deploy-windows-phone-81-vpn-profiles-to-windows-10"></a>Não é mais possível implantar perfis de VPN do Windows Phone 8.1 no Windows 10
 <!-- 503274  -->
-*Aplicável a: Configuration Manager versão 1710*
+*Aplica-se a: Configuration Manager versão 1710*
 
 Não é possível criar um perfil de VPN usando o fluxo de trabalho do Windows Phone 8.1, o que também é aplicável aos dispositivos Windows 10. Para esses perfis, o assistente de criação não mostra mais a página Plataformas compatíveis. O Windows Phone 8.1 é selecionado automaticamente no back-end. A página Plataformas compatíveis está disponível nas propriedades do perfil, mas ela não exibe as opções do Windows 10.
 

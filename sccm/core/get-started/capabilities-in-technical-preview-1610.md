@@ -10,12 +10,12 @@ ms.assetid: 8b31fd3e-875a-4a31-9498-5b050aadce32
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0798deff2f4904cb1cecac79251e7bc0688e0d4e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d0d1e646795bb778e185d49f5de0796f486d2a08
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337047"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419556"
 ---
 # <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1610 do System Center Configuration Manager
 
@@ -63,26 +63,26 @@ Para negar uma solicitação de aplicativo aprovada:
 1.  No console do Configuration Manager, [crie e implante um aplicativo](https://docs.microsoft.com/sccm/apps/deploy-use/create-applications) que requer aprovação.
 2.  Em um computador cliente, abra o Centro de Software e envie uma solicitação para o aplicativo.
 3.  No console do Configuration Manager, aprove a solicitação do aplicativo.
-4.  Negue a solicitação do aplicativo aprovado: no console do Configuration Manager, navegue até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Aplicativo** > **solicitações de aprovação** e selecione a solicitação de aplicativo que deseja negar.  Na faixa de opções, clique em **Negar**.
+4.  Negar solicitação de aplicativo aprovado: no console do Configuration Manager, navegue até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Aplicativos** > **Solicitações de Aprovação** e selecione a solicitação do aplicativo que deseja negar.  Na faixa de opções, clique em **Negar**.
 
 ## <a name="exclude-clients-from-automatic-upgrade"></a>Excluir clientes da atualização automática
 O Technical Preview 1610 apresenta uma nova configuração que você pode usar para excluir uma coleção de clientes e impedir que instalem automaticamente versões atualizadas dos clientes.  Ela se aplica à atualização automática, bem como a outros métodos, como a atualização baseada na atualização de software, scripts de logon e políticas de grupo. Pode ser usada para uma coleção de computadores que precisam de maior atenção ao atualizar o cliente. Um cliente que estiver em uma coleção excluída ignorará todas as solicitações para instalar o software cliente atualizado.
 
 ### <a name="configure-exclusion-from-automatic-upgrade"></a>Configurar a exclusão da atualização automática
 Para configurar exclusões de atualizações automáticas:
-1.  No console do Configuration Manager, abra **Configurações da Hierarquia** em **Administração > Configuração do Site > Sites** e selecione a guia **Atualizar Cliente**.
-2.  Marque a caixa de seleção **Excluir clientes especificados da atualização** e, para **Coleção de exclusão**, selecione a coleção que deseja excluir. É possível selecionar apenas uma coleção para exclusão.
-3.  Clique em **OK** para fechar e salvar a configuração. Em seguida, após os clientes atualizarem a política, os clientes na coleção excluída não instalarão automaticamente as atualizações no software cliente.
+1. No console do Configuration Manager, abra **Configurações da Hierarquia** em **Administração > Configuração do Site > Sites** e selecione a guia **Atualizar Cliente**.
+2. Marque a caixa de seleção **Excluir clientes especificados da atualização** e, para **Coleção de exclusão**, selecione a coleção que deseja excluir. É possível selecionar apenas uma coleção para exclusão.
+3. Clique em **OK** para fechar e salvar a configuração. Em seguida, após os clientes atualizarem a política, os clientes na coleção excluída não instalarão automaticamente as atualizações no software cliente.
 
-  ![Configurações para exclusão de atualizações automáticas](media/automatic_upgrade_exclusion.png)
+   ![Configurações para exclusão de atualizações automáticas](media/automatic_upgrade_exclusion.png)
 
 > [!NOTE]
 > Embora a interface do usuário afirme que os clientes não serão atualizados por meio de nenhum método, dois métodos podem ser usados para substituir essas configurações. A instalação do cliente por push e uma instalação manual do cliente podem ser usadas para substituir essa configuração. Para obter mais detalhes, veja a seção seguir.
 
 ### <a name="how-to-upgrade-a-client-that-is-in-an-excluded-collection"></a>Como atualizar um cliente que está em uma coleção excluída
 Desde que uma coleção esteja configurada para ser excluída, os membros dessa coleção só poderão atualizar o software cliente usando um dos dois métodos, que substituem a exclusão:
- - **Instalação do cliente por push** – você pode usar a instalação do cliente por push para atualizar um cliente que está em uma coleção excluída. Isso é permitido pois é considerado que seja a intenção do administrador, e permite que você atualize os clientes sem remover toda a coleção da exclusão.       
- - **Instalação manual do cliente** – você pode atualizar manualmente os clientes que estão em uma coleção excluída quando usa a seguinte opção de linha de comando com ccmsetup:  ***/ignoreskipupgrade***
+- **Instalação do cliente por push** – você pode usar a instalação do cliente por push para atualizar um cliente que está em uma coleção excluída. Isso é permitido pois é considerado que seja a intenção do administrador, e permite que você atualize os clientes sem remover toda a coleção da exclusão.       
+- **Instalação manual do cliente** – você pode atualizar manualmente os clientes que estão em uma coleção excluída quando usa a seguinte opção de linha de comando com ccmsetup:  ***/ignoreskipupgrade***
 
   Se você tentar atualizar manualmente um cliente que é um membro da coleção excluída e não usar essa opção, o cliente não instalará o novo software cliente. Para obter mais informações, consulte [Como instalar manualmente os clientes do Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-configuration-manager-clients-manually).
 

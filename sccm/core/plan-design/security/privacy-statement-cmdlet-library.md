@@ -9,12 +9,12 @@ ms.assetid: bec00fb4-1ac0-4e49-b330-0871b3722459
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a6a996c4f1e00c05c0b3766b8955130529832063
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: bb48f192146a3c0d4bbbe6f005dda537db871da7
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344493"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415476"
 ---
 # <a name="system-center-configuration-manager-privacy-statement---configuration-manager-cmdlet-library"></a>Política de privacidade do System Center Configuration Manager – Biblioteca de Cmdlets do Configuration Manager
 
@@ -42,11 +42,11 @@ esse recurso de dados de uso é habilitado por padrão. A biblioteca de cmdlets 
 
  Para cancelar totalmente, defina esses dois valores de chave do Registro. Eles são para cada um dos provedores de ETW (Rastreamento de Eventos para Windows):  
 
--   HKLM\Software\Microsoft\ConfigMgr10\PowerShell\Microsoft.ConfigurationManagement.PowerShell.Provider:CeipLevel=0 (cancelamento de dados de uso para o provedor da unidade)  
+- HKLM\Software\Microsoft\ConfigMgr10\PowerShell\Microsoft.ConfigurationManagement.PowerShell.Provider:CeipLevel=0 (cancelamento de dados de uso para o provedor da unidade)  
 
--   HKLM\Software\Microsoft\ConfigMgr10\PowerShell\Microsoft.ConfigurationManagement.PowerShell.Cmdlets:CeipLevel=0 (cancelamento de dados de uso para cmdlets)  
+- HKLM\Software\Microsoft\ConfigMgr10\PowerShell\Microsoft.ConfigurationManagement.PowerShell.Cmdlets:CeipLevel=0 (cancelamento de dados de uso para cmdlets)  
 
- Alterações nas configurações de dados de uso são específicas do computador em que foram feitas.  
+  Alterações nas configurações de dados de uso são específicas do computador em que foram feitas.  
 
 
 ## <a name="next-steps"></a>Próximas etapas

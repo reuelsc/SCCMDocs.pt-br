@@ -10,12 +10,12 @@ ms.assetid: 134a2f60-811e-4dc9-a8f5-1ce0018c5c12
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: f3ee48d60c46def5daef25a2f3654e8a79a0e9e1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 14e982592491ec5e8a10cd3313f748bddac40cff
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339852"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420067"
 ---
 # <a name="capabilities-in-technical-preview-1606-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1606 do System Center Configuration Manager
 
@@ -36,12 +36,12 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 ## <a name="dmp_category"></a> Categorizar automaticamente dispositivos em coleções
 Você pode criar categorias de dispositivos, que podem ser usadas para colocar automaticamente os dispositivos em coleções de dispositivos ao usar o Configuration Manager com o Microsoft Intune. Os usuários devem, então, escolher uma categoria de dispositivo ao registrar um dispositivo no Intune. Além disso, você pode alterar a categoria de um dispositivo do console do Configuration Manager.
 
-**Importante:** essa funcionalidade funciona com a versão de **junho de 2016** do Microsoft Intune. Verifique se você atualizou para essa versão antes de experimentar esses procedimentos.
+**Importante:** Essa funcionalidade funciona com a versão de **junho de 2016** do Microsoft Intune. Verifique se você atualizou para essa versão antes de experimentar esses procedimentos.
 
 ### <a name="try-it-out"></a>Experimente!
 
 ### <a name="create-a-set-of-device-categories"></a>Criar um conjunto de categorias de dispositivo
-1.  No espaço de trabalho **Ativos e Conformidade** do console do Configuration Manager, expanda **Visão Geral** e clique em **Coleções de Dispositivos**.
+1.  No workspace **Ativos e Conformidade** do console do Configuration Manager, expanda **Visão Geral** e clique em **Coleções de Dispositivos**.
 2.  Na guia **Início**, no grupo **Categorias**, clique em **Gerenciar Categorias de Dispositivo**.
 3.  Na caixa de diálogo **Gerenciar Categorias de Dispositivo**, você pode criar, editar ou remover categorias. Tente criar uma nova categoria.
 
@@ -52,7 +52,7 @@ Quando você associa uma coleção a uma categoria de dispositivos, todos os dis
 3.  Feche a caixa de diálogo **Create Device Category Membership Rule (Criar Regra de Associação de Categoria de Dispositivos)** e a caixa de diálogo de propriedades da coleção.
 
 ### <a name="change-the-category-of-a-device"></a>Alterar a categoria de um dispositivo
-1.  No espaço de trabalho **Ativos e Conformidade** do console do Configuration Manager, expanda **Visão Geral** e clique em **Dispositivos**.
+1.  No workspace **Ativos e Conformidade** do console do Configuration Manager, expanda **Visão Geral** e clique em **Dispositivos**.
 2.  Selecione um dispositivo na lista **Dispositivos** e, na guia **Início**, no grupo **Dispositivo**, clique em **Alterar Categoria**.
 3.  Na caixa de diálogo **Editar Categoria de Dispositivo**, selecione a categoria a ser aplicada a esse dispositivo e clique em **OK**.
 
@@ -98,8 +98,8 @@ Leitura adicional:
 - [Conformidade e certificação do Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-certification-and-compliance)
 - [Guia de implantação do Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)
 
- ##  <a name="dmp_onprem"></a> Múltiplos pontos de gerenciamento para Gerenciamento de Dispositivo Móvel Local  
- Com o Technical Preview 1606, o MDM (Gerenciamento de Dispositivo Móvel) local dá suporte a um nova funcionalidade na Atualização de Aniversário do Windows 10 que configura automaticamente um dispositivo registrado para ter mais de um ponto de gerenciamento de dispositivos disponível para uso. Essa funcionalidade permite que o dispositivo realize o fallback para outro ponto de gerenciamento de dispositivos quando o que ele usa normalmente não estiver disponível. Essa funcionalidade funciona apenas para computadores com a Atualização de Aniversário do Windows 10 instalada.  
+  ##  <a name="dmp_onprem"></a> Múltiplos pontos de gerenciamento para Gerenciamento de Dispositivo Móvel Local  
+  Com o Technical Preview 1606, o MDM (Gerenciamento de Dispositivo Móvel) local dá suporte a um nova funcionalidade na Atualização de Aniversário do Windows 10 que configura automaticamente um dispositivo registrado para ter mais de um ponto de gerenciamento de dispositivos disponível para uso. Essa funcionalidade permite que o dispositivo realize o fallback para outro ponto de gerenciamento de dispositivos quando o que ele usa normalmente não estiver disponível. Essa funcionalidade funciona apenas para computadores com a Atualização de Aniversário do Windows 10 instalada.  
 
 ### <a name="try-it-out"></a>Experimente!  
 
@@ -236,7 +236,7 @@ Durante uma implantação de sistema operacional, por padrão, a Instalação do
 Com o Technical Preview 1606, foram introduzidas várias ações que se aplicam às Atualizações e Manutenção no console do Configuration Manager:
 - **Alteração de nome de nó:**
 
-    No espaço de trabalho **Monitoramento**, o nó **Status de Manutenção do Site** foi renomeado para **Status de Serviço e Atualizações**.
+    No workspace **Monitoramento**, o nó **Status de Manutenção do Site** foi renomeado para **Status de Serviço e Atualizações**.
 - **Mais status da instalação:**
 
     Quando você exibe o status da instalação da atualização para um site, agora o console mostra detalhes separados para as seguintes ações:
@@ -248,7 +248,7 @@ Com o Technical Preview 1606, foram introduzidas várias ações que se aplicam 
   Além disso, agora há informações mais detalhadas para cada etapa, incluindo qual arquivo de log você pode exibir para obter mais informações.  
 -   **Nova opção para repetir as falhas de pré-requisito:**
 
-    Nos espaços de trabalho **Administração** e **Monitoramento**, o nó **Atualizações e Manutenção** inclui um novo botão na Faixa de opções chamado **Ignorar avisos de pré-requisito**.
+    Nos workspaces **Administração** e **Monitoramento**, o nó **Atualizações e Manutenção** inclui um novo botão na Faixa de opções chamado **Ignorar avisos de pré-requisito**.
 
     Ao instalar atualizações sem usar a opção de Ignorar avisos de pré-requisito (de dentro do Assistente de Atualizações), e a instalação da atualização for interrompida com um estado de **Prereq warning (Aviso de pré-requisito)**, você poderá selecionar **Ignorar avisos de pré-requisito** na faixa de opções para disparar uma continuação automática da instalação da atualização que ignora os avisos de pré-requisito.  
 
