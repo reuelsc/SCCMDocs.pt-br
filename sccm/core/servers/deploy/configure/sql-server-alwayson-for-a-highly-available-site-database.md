@@ -10,12 +10,12 @@ ms.assetid: 58d52fdc-bd18-494d-9f3b-ccfc13ea3d35
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cf5b55dddae34ac855f21e7d70967d3b9ab1c2dc
-ms.sourcegitcommit: 81e3666c41eb976cc7651854042dafe219e2e467
+ms.openlocfilehash: 2d6dc236381606b72dcb3603e269161dcdd5d6b9
+ms.sourcegitcommit: f2a1fa59fb3870a6bebca61daf15c0c157e9fdd6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747153"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030998"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparar para usar os grupos de disponibilidade AlwaysOn do SQL Server com o Configuration Manager
 
@@ -111,7 +111,7 @@ Hospede todas as réplicas em um grupo de disponibilidade local ou hospede todos
 
 A Instalação do Gerenciador de Configurações precisa se conectar a cada réplica. Quando você configurar um grupo de disponibilidade no Azure e o grupo estiver atrás de um balanceador de carga interno ou externo, abra as portas padrão a seguir:   
 
-- Mapeador de pontos de extremidade RCP: **TCP 135**   
+- Mapeador de pontos de extremidade RPC: **TCP 135**   
 
 - SQL Server Service Broker: **TCP 4022**  
 
