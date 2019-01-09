@@ -10,12 +10,12 @@ ms.assetid: 55ae86a7-f0ab-4c09-b4da-89cd0e7fa0e0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 17b0147e82e2eb9a756bdab69eed7ab86f98a1e0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d046a5fcd6602c82eda631c9d9b7d47db2470888
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344289"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418417"
 ---
 # <a name="configuring-reporting-in-system-center-configuration-manager"></a>Configurando relatórios no System Center Configuration Manager
 
@@ -87,7 +87,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , expanda **Configuração de Site**e clique em **Funções de Servidores e Sistema de Site**.  
+2.  No workspace **Administração**, expanda **Configuração de Site** e clique em **Funções de Servidores e Sistema de Site**.  
 
     > [!TIP]  
     >  Para listar somente sistemas de site que hospedam a função do site do ponto do Reporting Services, clique com o botão direito do mouse em **Funções de Servidores e Sistema de Site** para selecionar o **Ponto do Reporting Services**.  
@@ -97,9 +97,9 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
     > [!NOTE]  
     >  Para obter mais informações sobre como configurar sistemas de sites, consulte [Adicionar funções do sistema de sites ao System Center Configuration Manager](../deploy/configure/add-site-system-roles.md).  
 
-    -   **Novo sistema de sites**: na guia **Início** , no grupo **Criar** , clique em **Criar Servidor do Sistema de Sites**. O **Assistente para Criar Servidor do Sistema de Site** será aberto.  
+    -   **Novo sistema de sites**: Na guia **Início** , no grupo **Criar** , clique em **Criar Servidor do Sistema de Site**. O **Assistente para Criar Servidor do Sistema de Site** será aberto.  
 
-    -   **Sistema de sites existente**: clique no servidor no qual deseja instalar a função do sistema de sites do ponto do Reporting Services. Ao clicar em um servidor, uma lista das funções do sistema de site que já estão instaladas no servidor será exibida no painel de resultados.  
+    -   **Sistema de sites existente**: Clique no servidor no qual deseja instalar a função do sistema de site do ponto do Reporting Services. Ao clicar em um servidor, uma lista das funções do sistema de site que já estão instaladas no servidor será exibida no painel de resultados.  
 
          Na guia **Início** , no grupo **Servidor** , clique em **Adicionar Função do Sistema de Site**. O **Assistente para Adicionar Funções do Sistema de Site** será aberto.  
 
@@ -111,19 +111,19 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
     -   **Nome do servidor de banco de dados do site**: especifique o nome do servidor que hospeda o banco de dados do site do Configuration Manager. Geralmente, o assistente automaticamente recupera o FQDN (nome de domínio totalmente qualificado) do servidor. Para especificar uma instância do banco de dados, use o formato &lt;*Nome do Servidor*>\&lt;*Nome da Instância*>.  
 
-    -   **Nome do banco de dados**: especifique o nome do banco de dados do Configuration Manager e clique em **Verificar** para confirmar se o assistente tem acesso ao banco de dados do site.  
+    -   **Nome do banco de dados**: especifique o nome do banco de dados do site do Configuration Manager e, em seguida, clique em **Verificar** para confirmar que o assistente tem acesso ao banco de dados do site.  
 
         > [!IMPORTANT]  
         >  A conta de usuário que está criando o ponto do Reporting Services deve ter acesso de **Leitura** ao banco de dados do site. Se o teste de conexão falhar, será exibido um ícone de aviso vermelho. Mova o cursor sobre esse ícone para ler os detalhes da falha. Corrija a falha e clique em **Testar** novamente.  
 
-    -   **Nome da pasta**: especifique o nome da pasta criada e usada para hospedar os relatórios do Configuration Manager no Reporting Services.  
+    -   **Nome da pasta**: especifique o nome da pasta que é criada e usada para hospedar os relatórios do Configuration Manager no Reporting Services.  
 
-    -   **Instância do servidor do Reporting Services**: selecione na lista a instância do SQL Server para o Reporting Services. Quando apenas uma instância for encontrada, por padrão, ela será listada e selecionada. Quando nenhuma instância for encontrada, verifique se o SQL Server Reporting Services está instalado e configurado e se o serviço do SQL Server Reporting Services foi iniciado no sistema.  
+    -   **Instância do servidor do Reporting Services**: Selecione na lista a instância do SQL Server para o Reporting Services. Quando apenas uma instância for encontrada, por padrão, ela será listada e selecionada. Quando nenhuma instância for encontrada, verifique se o SQL Server Reporting Services está instalado e configurado e se o serviço do SQL Server Reporting Services foi iniciado no sistema.  
 
         > [!IMPORTANT]  
         >  O Configuration Manager faz uma conexão no contexto do usuário atual à WMI (Instrumentação de Gerenciamento do Windows) do sistema de sites selecionado para recuperar a instância do SQL Server para o Reporting Services. O usuário atual deve ter acesso de **Leitura** à WMI do sistema de site ou as instâncias do Reporting Services não poderão ser recuperadas.  
 
-    -   **Conta do ponto do Reporting Services**: clique em **Definir** e selecione uma conta a ser usada quando o SQL Server Reporting Services no ponto do Reporting Services se conectar ao banco de dados do site do Configuration Manager para recuperar os dados exibidos em um relatório. Selecione **Conta existente** para especificar uma conta de usuário do Windows que tenha sido configurada anteriormente como uma conta do Configuration Manager, ou selecione **Nova conta** para especificar uma conta de usuário do Windows que não esteja configurada como uma conta do Configuration Manager. O Configuration Manager concede automaticamente o acesso do usuário especificado ao banco de dados do site. O usuário será exibido na subpasta **Contas** do nó **Segurança** no espaço de trabalho **Administração** com o nome de conta **Ponto do Reporting Services do ConfigMgr** .  
+    -   **Conta de ponto do Reporting Services**: clique em **Definir** e, em seguida, selecione uma conta a ser usada quando o SQL Server Reporting Services no ponto do Reporting Services se conectar ao banco de dados do site do Configuration Manager para recuperar os dados que são exibidos em um relatório. Selecione **Conta existente** para especificar uma conta de usuário do Windows que tenha sido configurada anteriormente como uma conta do Configuration Manager, ou selecione **Nova conta** para especificar uma conta de usuário do Windows que não esteja configurada como uma conta do Configuration Manager. O Configuration Manager concede automaticamente o acesso do usuário especificado ao banco de dados do site. O usuário será exibido na subpasta **Contas** do nó **Segurança** no workspace **Administração** com o nome de conta **Ponto do Reporting Services do ConfigMgr**.  
 
          A conta que executa o Reporting Services deve pertencer ao grupo de segurança local de domínio **Grupo de Acesso de Autorização do Windows**e ter a permissão **Ler tokenGroupsGlobalAndUniversal** configurada como **Permitir**. Deve haver uma relação de confiança bidirecional estabelecida para usuários de um domínio diferente do que a conta do ponto do Reporting Services para executar com sucesso os relatórios.
 
@@ -147,48 +147,48 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 > [!IMPORTANT]  
 >  As ações na lista a seguir são executadas usando as credenciais da conta configurada para o serviço SMS_Executive, que geralmente é a conta Sistema Local do servidor do site.  
 
--   Instala a função do site do ponto do Reporting Services.  
+- Instala a função do site do ponto do Reporting Services.  
 
--   Cria a fonte de dados no Reporting Services com as credenciais armazenadas que você especificou no assistente. Essa é a conta de usuário e a senha do Windows que o Reporting Services usa para se conectar ao banco de dados do site quando você executa relatórios.  
+- Cria a fonte de dados no Reporting Services com as credenciais armazenadas que você especificou no assistente. Essa é a conta de usuário e a senha do Windows que o Reporting Services usa para se conectar ao banco de dados do site quando você executa relatórios.  
 
--   Cria a pasta raiz do Configuration Manager no Reporting Services.  
+- Cria a pasta raiz do Configuration Manager no Reporting Services.  
 
--   Adiciona as funções de segurança **Usuários de Relatório do ConfigMgr** e **Administradores de Relatório do ConfigMgr** no Reporting Services.  
+- Adiciona as funções de segurança **Usuários de Relatório do ConfigMgr** e **Administradores de Relatório do ConfigMgr** no Reporting Services.  
 
--   Cria subpastas e implanta relatórios do Configuration Manager por meio de %ProgramFiles%\SMS_SRSRP no Reporting Services.  
+- Cria subpastas e implanta relatórios do Configuration Manager por meio de %ProgramFiles%\SMS_SRSRP no Reporting Services.  
 
--   Adiciona a função **Usuários de Relatório do ConfigMgr** do Reporting Services às pastas raiz de todas as contas de usuários do Configuration Manager que têm direitos de **Leitura do Site**.  
+- Adiciona a função **Usuários de Relatório do ConfigMgr** do Reporting Services às pastas raiz de todas as contas de usuários do Configuration Manager que têm direitos de **Leitura do Site**.  
 
--   Adiciona a função **Usuários de Relatório do ConfigMgr** do Reporting Services às pastas raiz de todas as contas de usuários do Configuration Manager que têm direitos de **Modificar o Site**.  
+- Adiciona a função **Usuários de Relatório do ConfigMgr** do Reporting Services às pastas raiz de todas as contas de usuários do Configuration Manager que têm direitos de **Modificar o Site**.  
 
--   Recupera o mapeamento entre as pastas de relatórios e os tipos de objetos protegidos do Configuration Manager (mantidos no banco de dados do site do Configuration Manager).  
+- Recupera o mapeamento entre as pastas de relatórios e os tipos de objetos protegidos do Configuration Manager (mantidos no banco de dados do site do Configuration Manager).  
 
--   Configura os seguintes direitos para usuários administrativos do Configuration Manager para especificar pastas de relatórios no Reporting Services:  
+- Configura os seguintes direitos para usuários administrativos do Configuration Manager para especificar pastas de relatórios no Reporting Services:  
 
-    -   Adiciona e atribui a função **Usuários de Relatório do ConfigMgr** à pasta de relatórios associada para usuários administrativos que têm permissões **Executar Relatório** para o objeto do Configuration Manager.  
+  - Adiciona e atribui a função **Usuários de Relatório do ConfigMgr** à pasta de relatórios associada para usuários administrativos que têm permissões **Executar Relatório** para o objeto do Configuration Manager.  
 
-    -   Adiciona e atribui a função **Administradores de Relatório do ConfigMgr** à pasta de relatórios associada para usuários administrativos que têm permissões **Modificar Relatório** para o objeto do Configuration Manager.  
+  - Adiciona e atribui a função **Administradores de Relatório do ConfigMgr** à pasta de relatórios associada para usuários administrativos que têm permissões **Modificar Relatório** para o objeto do Configuration Manager.  
 
-     O Configuration Manager se conecta ao Reporting Services e define as permissões para usuários nas pastas raiz do Configuration Manager e do Reporting Services e pastas de relatórios específicas. Após a instalação inicial do ponto do Reporting Services, o Configuration Manager se conecta ao Reporting Services em um intervalo de 10 minutos para verificar se os direitos de usuário configurados nas pastas de relatórios são os direitos associados definidos para usuários do Configuration Manager. Quando usuários são adicionados ou direitos de usuários são modificados na pasta de relatórios usando o Gerenciador de Relatórios do Reporting Services, o Configuration Manager substitui essas alterações usando as atribuições baseadas em funções armazenadas no banco de dados do site. O Configuration Manager também remove usuários que não têm direitos de gerar relatórios no Configuration Manager.  
+    O Configuration Manager se conecta ao Reporting Services e define as permissões para usuários nas pastas raiz do Configuration Manager e do Reporting Services e pastas de relatórios específicas. Após a instalação inicial do ponto do Reporting Services, o Configuration Manager se conecta ao Reporting Services em um intervalo de 10 minutos para verificar se os direitos de usuário configurados nas pastas de relatórios são os direitos associados definidos para usuários do Configuration Manager. Quando usuários são adicionados ou direitos de usuários são modificados na pasta de relatórios usando o Gerenciador de Relatórios do Reporting Services, o Configuration Manager substitui essas alterações usando as atribuições baseadas em funções armazenadas no banco de dados do site. O Configuration Manager também remove usuários que não têm direitos de gerar relatórios no Configuration Manager.  
 
 ##  <a name="BKMK_SecurityRoles"></a> Funções de segurança do Reporting Services para o Configuration Manager  
  Quando o Configuration Manager instala o ponto do Reporting Services, ele adiciona as seguintes funções de segurança no Reporting Services:  
 
--   **Usuários de Relatório do ConfigMgr**: os usuários que recebem essa função de segurança podem apenas executar relatórios do Configuration Manager.  
+-   **Usuários de relatório do ConfigMgr**: os usuários que recebem essa função de segurança só podem executar relatórios do Configuration Manager.  
 
--   **Administradores de Relatório do ConfigMgr**: os usuários que recebem essa função de segurança podem executar todas as tarefas relacionadas a relatórios no Configuration Manager.  
+-   **Administradores de relatório do ConfigMgr**: os usuários que recebem essa função de segurança podem executar todas as tarefas relacionadas a relatórios no Configuration Manager.  
 
 ##  <a name="BKMK_VerifyReportingServicesPointInstallation"></a> Verifique a instalação do ponto do Reporting Services  
  Após adicionar a função do site do ponto do Reporting Services, você poderá verificar a instalação observando mensagens de status e entradas de arquivo de log específicos. Use o procedimento a seguir para verificar se a instalação do ponto do Reporting Services foi bem-sucedida.  
 
 > [!WARNING]  
->  Ignore esse procedimento se os relatórios forem exibidos na subpasta **Relatórios** do nó **Relatórios** no espaço de trabalho **Monitoramento** do console do Configuration Manager.  
+>  Ignore esse procedimento se os relatórios forem exibidos na subpasta **Relatórios** do nó **Relatórios** no workspace **Monitoramento** do console do Configuration Manager.  
 
 #### <a name="to-verify-the-reporting-services-point-installation"></a>Para verificar a instalação do ponto do Reporting Services  
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Status do Sistema**e clique em **Status do Componente**.  
+2.  No workspace **Monitoramento**, expanda **Status do Sistema** e clique em **Status do Componente**.  
 
 3.  Clique em **SMS_SRS_REPORTING_POINT** na lista de componentes.  
 
@@ -249,7 +249,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , expanda **Configuração de Site**e clique em **Funções de Servidores e Sistema de Site** na lista de sistemas de site.  
+2.  No workspace **Administração**, expanda **Configuração de Site** e clique em **Funções de Servidores e Sistema de Site** na lista de sistemas de site.  
 
     > [!TIP]  
     >  Para listar somente sistemas de site que hospedam a função do site do ponto do Reporting Services, clique com o botão direito do mouse em **Funções de Servidores e Sistema de Site** para selecionar o **Ponto do Reporting Services**.  
@@ -262,12 +262,12 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
     -   **Nome do servidor de banco de dados do site**: especifique o nome do servidor que hospeda o banco de dados do site do Configuration Manager. Geralmente, o assistente automaticamente recupera o FQDN (nome de domínio totalmente qualificado) do servidor. Para especificar uma instância do banco de dados, use o formato &lt;*Nome do Servidor*>\&lt;*Nome da Instância*>.  
 
-    -   **Nome do banco de dados**: especifique o nome do banco de dados do site do System Center 2012 Configuration Manager e clique em **Verificar** para confirmar se o assistente tem acesso ao banco de dados do site.  
+    -   **Nome do banco de dados**: especifique o nome de banco de dados do site do System Center 2012 Configuration Manager e, em seguida, clique em **Verificar** para confirmar se o assistente tem acesso ao banco de dados do site.  
 
         > [!IMPORTANT]  
         >  A conta de usuário que está criando o ponto do Reporting Services deve ter acesso de Leitura ao banco de dados do site. Se o teste de conexão falhar, será exibido um ícone de aviso vermelho. Mova o cursor sobre esse ícone para ler os detalhes da falha. Corrija a falha e clique em **Testar** novamente.  
 
-    -   **Conta de usuário**: clique em **Definir**e selecione uma conta a ser usada quando o SQL Server Reporting Services do ponto do Reporting Services se conectar ao banco de dados do site do Configuration Manager para recuperar os dados exibidos em um relatório. Selecione **Conta existente** para especificar uma conta de usuário do Windows que tem direitos existentes no Configuration Manager ou selecione **Nova conta** para especificar uma conta de usuário do Windows que atualmente não tem direitos no Configuration Manager. O Configuration Manager concede automaticamente à conta de usuário especificada acesso ao banco de dados do site. A conta será exibida como a conta **Ponto de relatório SRS do ConfigMgr** na subpasta **Contas** do nó **Segurança** no espaço de trabalho **Administração** .  
+    -   **Conta de usuário**: clique em **Definir** e selecione uma conta a ser usada quando o SQL Server Reporting Services no ponto do Reporting Services se conectar ao banco de dados do site do Configuration Manager para recuperar os dados exibidos em um relatório. Selecione **Conta existente** para especificar uma conta de usuário do Windows que tem direitos existentes no Configuration Manager ou selecione **Nova conta** para especificar uma conta de usuário do Windows que atualmente não tem direitos no Configuration Manager. O Configuration Manager concede automaticamente à conta de usuário especificada acesso ao banco de dados do site. A conta será exibida como a conta **Ponto de relatório SRS do ConfigMgr** na subpasta **Contas** do nó **Segurança** no workspace **Administração**.  
 
          A conta de usuário e a senha especificadas do Windows serão criptografadas e armazenadas no banco de dados do Reporting Services. O Reporting Services recupera os dados para os relatórios a partir do banco de dados do site usando essa conta e senha.  
 
@@ -286,7 +286,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Relatórios**e clique em **Relatórios**.  
+2.  No workspace **Monitoramento**, expanda **Relatórios** e clique em **Relatórios**.  
 
 3.  Na guia **Início** , no grupo **Configurações** , clique em **Opções de Relatório**.  
 

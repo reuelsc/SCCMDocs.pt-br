@@ -10,12 +10,12 @@ ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c9f3bc1b85ee9b8fbd8af47e22a826fe8d88377d
-ms.sourcegitcommit: c2c44329f1f9a2e6c14095360b4fc4aafabc27f0
+ms.openlocfilehash: 882af6e50a8619684225de53ce700fcc23923a06
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51694953"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418384"
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Criar e executar scripts do PowerShell do console do Configuration Manager
 
@@ -60,7 +60,7 @@ Para obter mais informações sobre as funções de segurança do Configuration 
 
 No momento, o recurso Executar Scripts dá suporte para:
 
-- Linguagens de scripts: PowerShell
+- Linguagens de script: PowerShell
 - Tipos de parâmetro: inteiro, cadeia de caracteres e lista.
 
 
@@ -113,9 +113,9 @@ As três funções de segurança usadas para executar scripts não são criadas 
 
 ### <a name="security-role-permissions"></a>Permissões de função de segurança  
 
-**Nome da Função**: Executores de Script  
-- **Descrição**: com essas permissões, a função executa apenas os scripts que foram criados anteriormente e aprovados por outras funções.  
-- **Permissões:** verifique se a opção a seguir está definida como **Sim**.  
+**Nome da função**: Executores de script  
+- **Descrição**: essas permissões permitem que essa função execute somente scripts que foram criados anteriormente e aprovados por outras funções.  
+- **Permissões:** verifique se o seguinte está definido como **Sim**.  
 
 |Categoria|Permissão|Estado|
 |---|---|---|
@@ -125,8 +125,8 @@ As três funções de segurança usadas para executar scripts não são criadas 
 |Scripts do SMS|Ler|Sim|
 
 
-**Nome da Função**: Autores do Script  
-- **Descrição**: com essas permissões, a função cria scripts, mas elas não podem aprová-los nem os executar.  
+**Nome da função**: Autores de script  
+- **Descrição**: essas permissões permitem que essa função crie scripts, mas não podem aprovar ou executá-los.  
 - **Permissões**: verifique se as permissões a seguir estão definidas.
  
 |Categoria|Permissão|Estado|
@@ -139,8 +139,8 @@ As três funções de segurança usadas para executar scripts não são criadas 
 |Scripts do SMS|Modificar|Sim|
 
 
-**Nome da Função**: aprovadores do script  
-- **Descrição**: com essas permissões, a função aprova scripts, mas elas não podem criá-los nem executá-los.  
+**Nome da função**: Aprovadores de script  
+- **Descrição**: Essas permissões permitem que a função aprove scripts, mas elas não podem criá-los nem executá-los.  
 - **Permissões:** verifique se as permissões a seguir estão definidas.  
 
 |Categoria|Permissão|Estado|
@@ -172,8 +172,8 @@ As três funções de segurança usadas para executar scripts não são criadas 
 5. Conclua o assistente. O novo script é exibido na lista **Script** com um status de **Aguardando aprovação**. Antes de executar esse script em dispositivos cliente, você deve aprová-lo. 
 
 > [!IMPORTANT]
-    >Evite gerar script de uma reinicialização do dispositivo ou de um reinício do agente do Configuration Manager quando usar o recurso Executar Scripts. Isto pode levar a um estado contínuo de reinicialização. Se necessário, há melhorias no recurso de notificação de cliente que permitem reiniciar os dispositivos, começando na versão 1710 do Configuration Manager. A [coluna de reinicialização pendente](/sccm/core/clients/manage/manage-clients#Restart-clients) pode ajudar a identificar os dispositivos que precisam de uma reinicialização. 
-<!--SMS503978  -->
+> Evite gerar script de uma reinicialização do dispositivo ou de um reinício do agente do Configuration Manager quando usar o recurso Executar Scripts. Isto pode levar a um estado contínuo de reinicialização. Se necessário, há melhorias no recurso de notificação de cliente que permitem reiniciar os dispositivos, começando na versão 1710 do Configuration Manager. A [coluna de reinicialização pendente](/sccm/core/clients/manage/manage-clients#Restart-clients) pode ajudar a identificar os dispositivos que precisam de uma reinicialização. 
+> <!--SMS503978  -->
 
 ## <a name="script-parameters"></a>Parâmetros do script
 *(Introduzido na versão 1710)*  

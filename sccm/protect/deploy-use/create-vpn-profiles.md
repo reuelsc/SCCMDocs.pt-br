@@ -10,12 +10,12 @@ ms.assetid: f338e4db-73b5-45ff-92f4-1b89a8ded989
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d2969a0df23f7e8b74708a4aee03c3ea7f689a99
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: bb5814860389de28294c44f367920a2da9b72fbe
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349891"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419420"
 ---
 # <a name="how-to-create-vpn-profiles-in-system-center-configuration-manager"></a>Como criar perfis de VPN no System Center Configuration Manager
 
@@ -27,28 +27,28 @@ Para conexões VPN de terceiros, distribua o aplicativo VPN antes de implantar o
 
 ### <a name="create-a-vpn-profile"></a>Criar um perfil VPN   
 
-1.  No console do Configuration Manager, escolha **Ativos e Conformidade** > **Configurações de Conformidade** > **Acesso a Recursos da Empresa** > **Perfis VPN**.  
+1. No console do Configuration Manager, escolha **Ativos e Conformidade** > **Configurações de Conformidade** > **Acesso a Recursos da Empresa** > **Perfis VPN**.  
 
-2.  Na guia **Início**, no grupo **Criar**, escolha **Criar Perfil VPN**.  
-
-
-3.  Conclua a página **Geral**. Observe o seguinte:  
-
-    - Selecione a **Plataforma** apropriada.
-
-       - Se você selecionar a plataforma Windows 8.1, haverá a opção de selecionar **Importar um item de perfil de VPN existente de um arquivo** para importar as informações do perfil de VPN que foram exportadas para um arquivo XML.
-
-    - Não use os caracteres \\/:*?&lt;>&#124; ou o caractere de espaço no nome do perfil VPN. Esses são caracteres sem suporte pelo perfil VPN do Windows Server.  
+2. Na guia **Início**, no grupo **Criar**, escolha **Criar Perfil VPN**.  
 
 
-4.  Na página **Conexão**, especifique:  
+3. Conclua a página **Geral**. Observe o seguinte:  
 
-    -   **Tipo de conexão**: escolha o tipo de conexão VPN. É possível escolher entre os tipos de conexão na tabela a seguir.  
+   - Selecione a **Plataforma** apropriada.
 
-    -   **Lista de servidores**: adicionar um novo servidor a ser usado para a conexão VPN. Dependendo do tipo de conexão, você pode adicionar um ou mais servidores VPN e especificar o servidor padrão.  
+      - Se você selecionar a plataforma Windows 8.1, haverá a opção de selecionar **Importar um item de perfil de VPN existente de um arquivo** para importar as informações do perfil de VPN que foram exportadas para um arquivo XML.
 
-        > [!NOTE]  
-        >  Dispositivos que executam iOS não oferecem suporte ao uso de vários servidores VPN. Se você configurar vários servidores VPN e implantar o perfil VPN em um dispositivo iOS, apenas o servidor padrão será usado.  
+   - Não use os caracteres \\/:*?&lt;>&#124; ou o caractere de espaço no nome do perfil VPN. Esses são caracteres sem suporte pelo perfil VPN do Windows Server.  
+
+
+4. Na página **Conexão**, especifique:  
+
+   - **Tipo de conexão**: escolha o tipo de conexão VPN. É possível escolher entre os tipos de conexão na tabela a seguir.  
+
+   - **Lista de servidores**: adicione um novo servidor a ser usado para a conexão VPN. Dependendo do tipo de conexão, você pode adicionar um ou mais servidores VPN e especificar o servidor padrão.  
+
+     > [!NOTE]  
+     >  Dispositivos que executam iOS não oferecem suporte ao uso de vários servidores VPN. Se você configurar vários servidores VPN e implantar o perfil VPN em um dispositivo iOS, apenas o servidor padrão será usado.  
 
      Esta tabela fornece opções de tipos de conexão. Consulte a documentação do servidor VPN para obter mais informações.
 
@@ -68,7 +68,7 @@ Para conexões VPN de terceiros, distribua o aplicativo VPN antes de implantar o
 > [!NOTE]  
 >  Para saber mais sobre a criação de perfis de VPN para dispositivos móveis, confira [Criar perfis de VPN](../../mdm/deploy-use/create-vpn-profiles.md)  
 
-Conclua o assistente. O novo perfil VPN é exibido no nó **Perfis VPN** no espaço de trabalho **Ativos e Conformidade** .
+Conclua o assistente. O novo perfil VPN é exibido no nó **Perfis VPN** no workspace **Ativos e Conformidade**.
 
 ### <a name="next-steps"></a>Próximas etapas
 
