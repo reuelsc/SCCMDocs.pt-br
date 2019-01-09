@@ -10,12 +10,12 @@ ms.assetid: 25e4ac68-0e78-4bbe-b8fc-3898b372c4e8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 34536114e6cb1be8f256da385b3d69d07c17f676
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: 974ecfdf30dd24e6addad91588fce5d223f27b1c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862474"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423738"
 ---
 # <a name="create-a-task-sequence-to-capture-an-operating-system-in-system-center-configuration-manager"></a>Criar uma sequência de tarefas para capturar um sistema operacional no System Center Configuration Manager
 
@@ -48,60 +48,60 @@ Quando você usa uma sequência de tarefas para implantar um sistema operacional
 
 #### <a name="to-create-a-task-sequence-that-builds-and-captures-an-operating-system-image"></a>Para criar uma sequência de tarefas que monta e captura uma imagem de sistema operacional  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2. No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Sequência de Tarefas** para iniciar o Assistente para Criar Sequência de Tarefas.  
+3. Na guia **Início** , no grupo **Criar** , clique em **Criar Sequência de Tarefas** para iniciar o Assistente para Criar Sequência de Tarefas.  
 
-4.  Na página **Criar uma Nova Sequência de Tarefas** , selecione **Montar e capturar uma imagem do sistema operacional de referência**.  
+4. Na página **Criar uma Nova Sequência de Tarefas** , selecione **Montar e capturar uma imagem do sistema operacional de referência**.  
 
-5.  Na página **Informações da Sequência de Tarefas** , especifique as seguintes configurações e clique em **Próximo**.  
+5. Na página **Informações da Sequência de Tarefas** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    -   **Nome da sequência de tarefas**: especifique um nome que identifique a sequência de tarefas.  
+   -   **Nome da sequência de tarefas**: especifique um nome que identifique a sequência de tarefas.  
 
-    -   **Descrição**: especifique uma descrição da tarefa executada pela sequência de tarefas, como, por exemplo, uma descrição do sistema operacional que é criada pela sequência de tarefas.  
+   -   **Descrição**: especifique uma descrição da tarefa executada pela sequência de tarefas, como, por exemplo, uma descrição do sistema operacional que é criada pela sequência de tarefas.  
 
-    -   **Imagem de inicialização**: especifique a imagem de inicialização que instala a imagem da sistema operacional.  
+   -   **Imagem de inicialização**: especifique a imagem de inicialização que instala a imagem da sistema operacional.  
 
-        > [!IMPORTANT]  
-        >  A arquitetura da imagem de inicialização deve ser compatível com a arquitetura de hardware do computador de destino.  
+       > [!IMPORTANT]  
+       >  A arquitetura da imagem de inicialização deve ser compatível com a arquitetura de hardware do computador de destino.  
 
-6.  Na página **Instalar Windows** , especifique as seguintes configurações e clique em **Próximo**.  
+6. Na página **Instalar Windows** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    -   **Pacote de imagens**: especifique o pacote de imagens do sistema operacional, que contém os arquivos necessários para instalar o sistema operacional.  
+   -   **Pacote de imagem**: Especifique o pacote de imagens do sistema operacional, que contém os arquivos necessários para instalar o sistema operacional.  
 
-    -   **Índice de imagem**: especifique o sistema operacional para instalar. Se a imagem do sistema operacional tiver várias versões, selecione a versão que você deseja instalar.  
+   -   **Índice de imagens**: Especifique o sistema operacional para instalar. Se a imagem do sistema operacional tiver várias versões, selecione a versão que você deseja instalar.  
 
-    -   **Chave do produto**: especifique a chave do produto do sistema operacional Windows a instalar. Você pode especificar as chaves de licença de volume codificadas e as chaves do produto padrão. Se você usar uma chave de produto sem codificação, cada grupo de 5 caracteres deverá ser separado por um traço (-). Por exemplo: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
+   -   **Chave do produto (Product Key)**: especifique a chave do produto do sistema operacional Windows a instalar. Você pode especificar as chaves de licença de volume codificadas e as chaves do produto padrão. Se você usar uma chave de produto sem codificação, cada grupo de 5 caracteres deverá ser separado por um traço (-). Por exemplo: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
 
-    -   **Modo de licenciamento do servidor**: especifique se a licença do servidor é **Por estação**, **Por servidor**ou se nenhuma licença está especificada. Se a licença do servidor for **Por servidor**, especifique também o número máximo de conexões de servidor.  
+   -   **Modo de licenciamento do servidor**: especifique que a licença do servidor é **Por estação**, **Por servidor** ou que nenhuma licença está especificada. Se a licença do servidor for **Por servidor**, especifique também o número máximo de conexões de servidor.  
 
-    -   Especifique como lidar com a conta de administrador usada quando o sistema operacional é implantado.  
+   -   Especifique como lidar com a conta de administrador usada quando o sistema operacional é implantado.  
 
-        -   **Gerar aleatoriamente a senha do administrador local e desabilitar a conta em todas as plataformas com suporte**: especifique se deseja que o Configuration Manager crie uma senha aleatória para a conta de administrador local e desabilite a conta quando o sistema operacional for implantado.  
+       -   **Gerar aleatoriamente a senha do administrador local e desabilitar a conta em todas as plataformas compatíveis**: Especifique se deseja que o Configuration Manager crie uma senha aleatória para a conta de administrador local e desabilite a conta quando o sistema operacional for implantado.  
 
-        -   **Ativar a conta e especificar a senha do administrador local**: especifique se a mesma senha deve ser usada para a conta do administrador local em todos os computadores nos quais o sistema operacional será implantado.  
+       -   **Habilitar a conta e especificar a senha do administrador local**: especifique se a mesma senha deve ser usada para a conta do administrador local em todos os computadores nos quais o sistema operacional será implantado.  
 
-7.  Na página **Configurar a Rede** , especifique as seguintes configurações e clique em **Próximo**.  
+7. Na página **Configurar a Rede** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    -   **Ingressar no grupo de trabalho**: especifique se deseja adicionar o computador de destino a um grupo de trabalho quando o sistema operacional é implantado.  
+   -   **Ingressar em um grupo de trabalho**: especifique se deseja adicionar o computador de destino a um grupo de trabalho quando o sistema operacional é implantado.  
 
-    -   **Ingressar em um domínio**: especifique se deseja adicionar o computador de destino a um domínio quando o sistema operacional for implantado. Em **Domínio**, especifique o nome do domínio.  
+   -   **Ingressar em um domínio**: especifique se deseja adicionar o computador de destino a um domínio quando o sistema operacional for implantado. Em **Domínio**, especifique o nome do domínio.  
 
-        > [!IMPORTANT]  
-        >  Você pode localizar os domínios na floresta local, mas, para tanto, é necessário especificar o nome de domínio para uma floresta remota.  
+       > [!IMPORTANT]  
+       >  Você pode localizar os domínios na floresta local, mas, para tanto, é necessário especificar o nome de domínio para uma floresta remota.  
 
-         Você também pode especificar uma UO (unidade organizacional). Essa configuração opcional especifica o nome diferenciado do LDAP X.500 da UO na qual a conta do computador será criada, se ela ainda não existir.  
+        Você também pode especificar uma UO (unidade organizacional). Essa configuração opcional especifica o nome diferenciado do LDAP X.500 da UO na qual a conta do computador será criada, se ela ainda não existir.  
 
-    -   **Conta**: especifique o nome de usuário e senha para a conta que tenha permissões para ingressar no domínio especificado. Por exemplo: *domain\user* ou *%variable%*.  
+   -   **Conta**: especifique o nome de usuário e senha para a conta que tenha permissões para ingressar no domínio especificado. Por exemplo: *domain\user* ou *%variable%*.  
 
-        > [!IMPORTANT]  
-        >  Você deve inserir as credenciais de domínio adequadas se planeja migrar as configurações de domínio ou as configurações do grupo de trabalho.  
+       > [!IMPORTANT]  
+       >  Você deve inserir as credenciais de domínio adequadas se planeja migrar as configurações de domínio ou as configurações do grupo de trabalho.  
 
-8.  Na página **Instalar o Configuration Manager**, especifique o pacote do cliente do Configuration Manager que contém os arquivos de origem para instalar o cliente do Configuration Manager, acrescente propriedades adicionais necessárias para instalar o cliente e clique em **Próximo**.  
+8. Na página **Instalar o Configuration Manager**, especifique o pacote do cliente do Configuration Manager que contém os arquivos de origem para instalar o cliente do Configuration Manager, acrescente propriedades adicionais necessárias para instalar o cliente e clique em **Próximo**.  
 
-     Para obter mais informações sobre as propriedades que podem ser usadas para instalar um cliente, consulte [Sobre as propriedades de instalação do cliente](../../core/clients/deploy/about-client-installation-properties.md).  
+    Para obter mais informações sobre as propriedades que podem ser usadas para instalar um cliente, consulte [Sobre as propriedades de instalação do cliente](../../core/clients/deploy/about-client-installation-properties.md).  
 
 9. Na página **Incluir Atualizações** , especifique se deseja instalar as atualizações de software necessárias, todas as atualizações ou nenhuma e clique em **Próximo**. Se optar pela instalação das atualizações de software, o Configuration Manager instalará somente aquelas que fizerem parte das coleções das quais o computador de destino é membro.  
 
@@ -109,7 +109,7 @@ Quando você usa uma sequência de tarefas para implantar um sistema operacional
 
 11. Na página **Preparação do Sistema** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    -   **Pacote**: especifique o pacote do Configuration Manager que contém a versão apropriada do Sysprep a usar para capturar as configurações do computador de referência.  
+    -   **Pacote**: Especifique o pacote do Configuration Manager que contém a versão apropriada do Sysprep a usar para capturar as configurações do computador de referência.  
 
          Se a versão do sistema operacional em execução for o Windows Vista ou posterior, o Sysprep será instalado automaticamente no computador e não haverá necessidade de especificar um pacote.  
 
@@ -123,15 +123,15 @@ Quando você usa uma sequência de tarefas para implantar um sistema operacional
 
 13. Na página **Capturar Imagem** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    -   **Caminho**: especifique uma pasta de rede compartilhada em que o arquivo de saída .WIM será armazenado. Esse arquivo contém a imagem do sistema operacional baseada nas configurações especificadas neste assistente. Se você especificar uma pasta que já contém um arquivo .WIM, o arquivo existente será substituído.  
+    -   **Caminho**: especifique uma pasta de rede compartilhada onde o arquivo de saída .WIM será armazenado. Esse arquivo contém a imagem do sistema operacional baseada nas configurações especificadas neste assistente. Se você especificar uma pasta que já contém um arquivo .WIM, o arquivo existente será substituído.  
 
-    -   **Conta**: especifique a conta do Windows que tem permissões para o compartilhamento de rede em que a imagem está armazenada.  
+    -   **Conta**: Especifique a conta do Windows que tem permissões para o compartilhamento de rede onde a imagem está armazenada.  
 
 14. Conclua o assistente.  
 
 15. Para adicionar etapas adicionais à sequência de tarefas, selecione a sequência de tarefas criada e clique em **Editar**. Para obter informações sobre como editar uma sequência de tarefas, veja [Editar uma sequência de tarefas](manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence).  
 
- Implante a sequência de tarefas em um computador de referência em uma das seguintes maneiras:  
+    Implante a sequência de tarefas em um computador de referência em uma das seguintes maneiras:  
 
 -   Se o computador de referência for um cliente do Configuration Manager, você poderá implantar a sequência de tarefas de montagem e captura na coleção que contém o computador de referência. Para obter informações sobre como implantar a imagem do sistema operacional, veja [Criar uma sequência de tarefas para instalar um sistema operacional](create-a-task-sequence-to-install-an-operating-system.md).  
 
@@ -147,21 +147,21 @@ Quando você usa uma sequência de tarefas para implantar um sistema operacional
 
 #### <a name="to-capture-an-operating-system-from-an-existing-reference-computer"></a>Para capturar um sistema operacional de um computador de referência existente  
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , expanda **Sistemas Operacionais**e clique em **Sequências de Tarefas**.  
+2. No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
 
-3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Sequência de Tarefas** para iniciar o Assistente para Criar Sequência de Tarefas.  
+3. Na guia **Início** , no grupo **Criar** , clique em **Criar Sequência de Tarefas** para iniciar o Assistente para Criar Sequência de Tarefas.  
 
-4.  Na página **Criar uma nova sequência de tarefas** , selecione **Criar uma nova sequência de tarefas personalizada**.  
+4. Na página **Criar uma nova sequência de tarefas** , selecione **Criar uma nova sequência de tarefas personalizada**.  
 
-5.  Na página **Informações da Sequência de Tarefas** , especifique um nome e uma descrição para a sequência de tarefas.  
+5. Na página **Informações da Sequência de Tarefas** , especifique um nome e uma descrição para a sequência de tarefas.  
 
-6.  Especifique uma imagem de inicialização para a sequência de tarefas. Esta imagem de inicialização é usada para iniciar o computador de referência com o Windows PE.  Para obter mais informações, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
+6. Especifique uma imagem de inicialização para a sequência de tarefas. Esta imagem de inicialização é usada para iniciar o computador de referência com o Windows PE.  Para obter mais informações, consulte [Gerenciar imagens de inicialização](../get-started/manage-boot-images.md).  
 
-7.  Conclua o assistente.  
+7. Conclua o assistente.  
 
-8.  Em **Sequências de Tarefas**, selecione a sequência de tarefas personalizada e, em seguida, na guia **Início** no grupo **Sequência de Tarefas** , clique em **Editar** para abrir o editor de sequência de tarefas.  
+8. Em **Sequências de Tarefas**, selecione a sequência de tarefas personalizada e, em seguida, na guia **Início** no grupo **Sequência de Tarefas** , clique em **Editar** para abrir o editor de sequência de tarefas.  
 
 9. Use esta etapa apenas se o cliente Configuration Manager estiver instalado no computador de referência.  
 
@@ -174,17 +174,17 @@ Quando você usa uma sequência de tarefas para implantar um sistema operacional
 
 11. Clique em **Adicionar**, depois em **Imagens** e, em seguida, clique em [Capturar Imagem do Sistema Operacional](../understand/task-sequence-steps.md#BKMK_CaptureOperatingSystemImage).  Essa etapa só será executada no Windows PE para capturar os discos rígidos no computador de referência. Defina as seguintes configurações para a etapa de sequência de tarefas.  
 
-    -   **Nome** e **Descrição**: se desejar, você pode alterar o nome da etapa de sequência de tarefas e fornecer uma descrição.  
+    - **Nome** e **Descrição**: Opcionalmente, você pode alterar o nome da etapa de sequência de tarefas e fornecer uma descrição.  
 
-    -   **Destino**: especifique uma pasta de rede compartilhada em que o arquivo de saída .WIM será armazenado. Esse arquivo contém a imagem do sistema operacional baseada nas configurações especificadas neste assistente. Se você especificar uma pasta que já contém um arquivo .WIM, o arquivo existente será substituído.  
+    - **Destino**: especifique uma pasta de rede compartilhada onde o arquivo de saída .WIM será armazenado. Esse arquivo contém a imagem do sistema operacional baseada nas configurações especificadas neste assistente. Se você especificar uma pasta que já contém um arquivo .WIM, o arquivo existente será substituído.  
 
-    -   **Descrição**, **Versão**e **Criado por**: você também pode fornecer detalhes sobre a imagem que vai capturar.  
+    - **Descrição**, **Versão**, e **Criado por**: Opcionalmente, você também pode fornecer detalhes sobre a imagem que vai capturar.  
 
-    -   **Capturar conta de imagem de sistema operacional**: especifique a conta do Windows que tem permissão para o compartilhamento de rede especificado. Clique em **Definir** para especificar o nome dessa conta do Windows.  
+    - **Capturar conta de imagem do sistema operacional**: Especifique a conta do Windows que tenha permissões para o compartilhamento de rede especificado. Clique em **Definir** para especificar o nome dessa conta do Windows.  
 
-     Clique em **OK** para fechar do editor de sequência de tarefas.  
+      Clique em **OK** para fechar do editor de sequência de tarefas.  
 
- Implante a sequência de tarefas em um computador de referência em uma das seguintes maneiras:  
+    Implante a sequência de tarefas em um computador de referência em uma das seguintes maneiras:  
 
 -   Se o computador de referência for um cliente do Configuration Manager, você poderá implantar a sequência de tarefas na coleção que contém o computador de referência. Para obter informações sobre como implantar a imagem do sistema operacional, veja [Criar uma sequência de tarefas para instalar um sistema operacional](create-a-task-sequence-to-install-an-operating-system.md).  
 

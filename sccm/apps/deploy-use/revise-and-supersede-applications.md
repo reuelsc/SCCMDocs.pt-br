@@ -10,12 +10,12 @@ ms.assetid: 30170d70-489f-47f7-bebf-9ed0115db26b
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: d32a2997da45f02dfd4d2abaf3bf292295f88224
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b42012bdd6eb0456d25f9970ed2cf18f881a1c14
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335568"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424809"
 ---
 # <a name="revise-and-supersede-applications-in-system-center-configuration-manager"></a>Revisar e substituir aplicativos no System Center Configuration Manager
 
@@ -76,13 +76,13 @@ Neste tópico, você aprenderá a trabalhar com versões de aplicativo do System
 
  É possível criar uma relação de substituição que atualiza o aplicativo dependente para uma nova versão.  
 
-1.  Verifique se o novo aplicativo dependente e o aplicativo dependente original estão no mesmo grupo de dependência do aplicativo mestre.  
+1. Verifique se o novo aplicativo dependente e o aplicativo dependente original estão no mesmo grupo de dependência do aplicativo mestre.  
 
-2.  Crie uma relação de substituição que substitui o aplicativo dependente original pelo novo aplicativo dependente.  
+2. Crie uma relação de substituição que substitui o aplicativo dependente original pelo novo aplicativo dependente.  
 
- Durante novas instalações do aplicativo mestre, o novo aplicativo dependente é instalado. As instalações existentes do aplicativo mestre são atualizadas com o novo aplicativo dependente.  
+   Durante novas instalações do aplicativo mestre, o novo aplicativo dependente é instalado. As instalações existentes do aplicativo mestre são atualizadas com o novo aplicativo dependente.  
 
- O resultado final é que todas as implantações do aplicativo mestre usam o novo aplicativo dependente.  
+   O resultado final é que todas as implantações do aplicativo mestre usam o novo aplicativo dependente.  
 
 ### <a name="further-considerations"></a>Considerações adicionais  
 
@@ -117,7 +117,7 @@ Neste tópico, você aprenderá a trabalhar com versões de aplicativo do System
 
 1.  No console do Configuration Manager, escolha **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos**, escolha **Aplicativos**e escolha o aplicativo desejado.  
+2.  No workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos**, escolha **Aplicativos**e escolha o aplicativo desejado.  
 
 3.  Na guia **Início**, no grupo **Propriedades**, escolha **Propriedades** para abrir a caixa de diálogo *<Nome do Aplicativo\>* **Propriedades**.  
 
