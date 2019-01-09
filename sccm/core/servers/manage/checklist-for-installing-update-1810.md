@@ -10,12 +10,12 @@ ms.assetid: b87ac054-9b37-4725-a3f3-2340cfb10bff
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: efce5242c5de148d6922144af27f47a267b3c6c3
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 6ea093b71d19c2cee35caa748ae60f76a95b078c
+ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52458005"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53817759"
 ---
 # <a name="checklist-for-installing-update-1810-for-configuration-manager"></a>Lista de verificação para instalar a atualização 1810 do Configuration Manager
 
@@ -89,6 +89,9 @@ Para obter mais informações, confira [Pré-requisitos do site e do sistema de
 A versão do ADK (Kit de Avaliação e Implantação) do Windows 10 deve ter suporte para o Configuration Manager versão 1810. Para obter mais informações sobre versões com suporte do Windows ADK, veja [Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk). Se você precisar atualizar o Windows ADK, faça isso antes de começar a atualização do Configuration Manager. Essa ordem garante que as imagens de inicialização padrão sejam automaticamente atualizadas para a versão mais recente do Windows PE. Atualize manualmente todas as imagens de inicialização personalizadas após atualizar o site.
 
 Caso você atualize o site antes de atualizar o Windows ADK, consulte [Atualizar pontos de distribuição com a imagem de inicialização](/sccm/osd/get-started/manage-boot-images#update-distribution-points-with-the-boot-image).
+
+#### <a name="review-sql-server-native-client-version"></a>Revisar a versão do SQL Server Native Client
+Deve ser instalada uma versão mínima do SQL Server 2012 Native Client que inclui suporte para o TLS 1.2. Para obter mais informações, confira a [Lista de verificações de pré-requisitos](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-native-client).
 
 #### <a name="review-the-site-and-hierarchy-status-for-unresolved-issues"></a>Examine o status do site e da hierarquia quanto a problemas não resolvidos 
 Uma atualização de site pode falhar devido a problemas operacionais existentes. Antes de atualizar um site, resolva todos os problemas operacionais para os seguintes sistemas:  

@@ -10,12 +10,12 @@ ms.assetid: da5f8b61-2386-4530-ad54-1a5c51911f07
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1efd4197e63ddc12c0afc9e37b633c38d0df0f14
-ms.sourcegitcommit: a52255da16c9f8b0b60a6c299a369347c7e01bef
+ms.openlocfilehash: 75e463d27475e82677e91b00bfba4c4287d463ee
+ms.sourcegitcommit: f2a1fa59fb3870a6bebca61daf15c0c157e9fdd6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49989137"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030981"
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-configuration-manager"></a>Usar o PXE para implantar o Windows pela rede com o Configuration Manager
 
@@ -43,13 +43,16 @@ Para implantar sistemas operacionais em clientes do Configuration Manager que fa
 > [!NOTE]  
 >  Ao configurar um único ponto de distribuição habilitado para PXE para dar suporte a várias sub-redes, não há suporte para usar opções de DHCP. Configure auxiliares de IP nos roteadores para permitir solicitações PXE sejam encaminhadas para os pontos de distribuição habilitados para PXE.
 
+> [!NOTE]  
+>  Não há suporte para usar o Respondente PXE sem o WDS em servidores que também estão executando um servidor DHCP.
+
 ## <a name="prepare-a-pxe-enabled-boot-image"></a>Preparar uma imagem de inicialização habilitada para PXE
 
 Para usar o PXE para implantar um sistema operacional, você precisa ter imagens de inicialização x86 e x64 habilitadas para PXE distribuídas para um ou mais pontos de distribuição habilitados para PXE. Use as informações para habilitar o PXE em uma imagem de inicialização e distribuí-la para pontos de distribuição:
 
 -   Para habilitar o PXE em uma imagem de inicialização, selecione **Implantar esta imagem de inicialização do ponto de distribuição habilitado para PXE** na guia **Fonte de Dados** nas propriedades da imagem de inicialização.
 
--   Se você alterar as propriedades da imagem de inicialização, distribua novamente a imagem de inicialização para os pontos de distribuição. Para obter mais informações, consulte [Distribuir conteúdo](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute).
+-   Se você alterar as propriedades da imagem de inicialização, atualize e distribua novamente a imagem de inicialização para os pontos de distribuição. Para obter mais informações, consulte [Distribuir conteúdo](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute).
 
 
 
@@ -104,7 +107,7 @@ Para usar uma implantação de sistema operacional iniciada pelo PXE, configure 
 
 Implante o sistema operacional em uma coleção de destino. Para obter mais informações, consulte [Deploy a task sequence](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS). Ao implantar sistemas operacionais usando o PXE, é possível configurar se a implantação será necessária ou estará disponível.
 
--   **Implantação necessária**: as implantações necessárias usam o PXE sem nenhuma intervenção do usuário. O usuário não pode ignorar a inicialização PXE. No entanto, se o usuário cancelar a inicialização PXE antes da resposta do ponto de distribuição, o sistema operacional não será implantado.
+-   **Implantação necessária**: as implantações necessárias usam o PXE sem qualquer intervenção do usuário. O usuário não pode ignorar a inicialização PXE. No entanto, se o usuário cancelar a inicialização PXE antes da resposta do ponto de distribuição, o sistema operacional não será implantado.
 
 -   **Implantação disponível**: as implantações disponíveis exigem que o usuário esteja presente no computador de destino. O usuário precisa pressionar a tecla **F12** para continuar o processo de inicialização do PXE. Se não houver um usuário presente para pressionar **F12**, o computador será inicializado no sistema operacional atual ou pelo próximo dispositivo de inicialização disponível.
 

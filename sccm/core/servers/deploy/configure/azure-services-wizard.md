@@ -10,12 +10,12 @@ ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0e1cdef0acc799fc60c622f11e4c9c7426dfc19c
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 76611065dbed595904c8e0e2f5d52af0b4c68492
+ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456441"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53817776"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurar serviços do Azure para uso com o Configuration Manager
 
@@ -37,14 +37,14 @@ Configure os seguintes serviços do Azure usando esse assistente:
 
     - Suporte a alguns [cenários do gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#scenarios)  
 
--   **Conector do Log Analytics**: [conecte-se ao Azure Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics). Sincronize dados de coleta para o Log Analytics.  
+-   **Conector do Log Analytics**: [conecta ao Azure Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics). Sincronize dados de coleta para o Log Analytics.  
 
     > [!Note]  
     > Este artigo refere-se ao *Conector do Log Analytics*, que antes era chamado de *Conector do OMS*. Não há diferença funcional. Para saber mais, veja [Gerenciamento do Azure - Monitoramento](https://docs.microsoft.com/azure/monitoring/#operations-management-suite).  
 
--   **Conector do Upgrade Readiness**: conecte-se ao [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics) do Windows Analytics. Exiba os dados de compatibilidade da atualização do cliente.  
+-   **Conector do Upgrade Readiness**: conecta ao [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics) do Windows Analytics. Exiba os dados de compatibilidade da atualização do cliente.  
 
--   **Microsoft Store para Empresas**: conecte-se à [Microsoft Store para Empresas](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business). Obtenha aplicativos da loja para sua organização que podem ser implantados com o Configuration Manager.  
+-   **Microsoft Store para Empresas**: conecta ao [Microsoft Store para Empresas](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business). Obtenha aplicativos da loja para sua organização que podem ser implantados com o Configuration Manager.  
 
 ### <a name="service-details"></a>Detalhes do serviço
 
@@ -157,20 +157,20 @@ Depois de selecionar, importar ou criar um aplicativo Web, selecione **OK** para
 Quando você seleciona **Importar** na caixa de diálogo Aplicativo para servidores ou na página Aplicativo do Assistente de Serviços do Azure, ele abre a caixa de diálogo Importar aplicativos. Essa página permite que você insira informações sobre um aplicativo Web do Azure AD que já foi criado no portal do Azure. Ela importa os metadados sobre esse aplicativo Web para o Configuration Manager. Especifique as seguintes informações:
 - **Nome do Locatário do Azure AD**
 - **ID de Locatário do Azure AD**
-- **Nome do Aplicativo**: um nome amigável para o aplicativo.
+- **Nome do aplicativo**: um nome amigável do aplicativo.
 - **ID do Cliente**
 - **Chave Secreta**
-- **Expiração de Chave Secreta**: selecione uma data futura no calendário. 
-- **URI da ID do Aplicativo**: esse valor precisa ser exclusivo no locatário do Azure AD. Ele está localizado no token de acesso usado pelo cliente do Configuration Manager para solicitar o acesso ao serviço. Por padrão, esse valor é https://ConfigMgrService.  
+- **Vencimento da Chave Secreta**: selecione uma data futura no calendário. 
+- **URI da ID do aplicativo**: esse valor precisa ser exclusivo no locatário do Azure AD. Ele está localizado no token de acesso usado pelo cliente do Configuration Manager para solicitar o acesso ao serviço. Por padrão, esse valor é https\://ConfigMgrService.  
 
 Depois de inserir as informações, selecione **Verificar**. Em seguida, selecione **OK** para fechar a caixa de diálogo Importar aplicativos. Essa ação retorna à [página Aplicativo](#azure-app-properties) do Assistente de Serviços do Azure ou à [caixa de diálogo Aplicativo para servidores](#server-app-dialog).
 
 #### <a name="create-server-application-dialog"></a>Caixa de diálogo Criar Aplicativo para Servidores
 
 Quando você seleciona **Criar** na caixa de diálogo Aplicativo para servidores, ele abre a caixa de diálogo Criar Aplicativo para Servidores. Essa página automatiza a criação de um aplicativo Web no Azure AD. Especifique as seguintes informações:
-- **Nome do Aplicativo**: um nome amigável para o aplicativo.
-- **URL da HomePage**: esse valor não é usado pelo Configuration Manager, mas é exigido pelo Azure AD. Por padrão, esse valor é https://ConfigMgrService.  
-- **URI da ID do Aplicativo**: esse valor precisa ser exclusivo no locatário do Azure AD. Ele está localizado no token de acesso usado pelo cliente do Configuration Manager para solicitar o acesso ao serviço. Por padrão, esse valor é https://ConfigMgrService.  
+- **Nome do aplicativo**: um nome amigável do aplicativo.
+- **URL da home page**: esse valor não é usado pelo Configuration Manager, mas é exigido pelo Azure AD. Por padrão, esse valor é https\://ConfigMgrService.  
+- **URI da ID do aplicativo**: esse valor precisa ser exclusivo no locatário do Azure AD. Ele está localizado no token de acesso usado pelo cliente do Configuration Manager para solicitar o acesso ao serviço. Por padrão, esse valor é https\://ConfigMgrService.  
 - **Período de validade da Chave Secreta**: escolha **1 ano** ou **2 anos** na lista suspensa. Um ano é o valor padrão.
 
 Selecione **Entrar** para se autenticar no Azure como um usuário administrativo. Essas credenciais não são salvas pelo Configuration Manager. Essa persona não exige permissões no Configuration Manager e não precisa ser a mesma conta que executa o Assistente de Serviços do Azure. Após a autenticação bem-sucedida no Azure, a página mostra o **Nome do Locatário do Azure AD** para referência. 
@@ -199,7 +199,7 @@ Depois de selecionar, importar ou criar um aplicativo nativo, escolha **OK** par
 #### <a name="import-apps-dialog-client"></a>Caixa de diálogo Importar aplicativos (cliente)
 
 Quando você seleciona **Importar** na caixa de diálogo Aplicativo Cliente, ele abre a caixa de diálogo Importar aplicativos. Essa página permite que você insira informações sobre um aplicativo nativo do Azure AD que já foi criado no portal do Azure. Ela importa os metadados sobre esse aplicativo nativo para o Configuration Manager. Especifique as seguintes informações:
-- **Nome do Aplicativo**: um nome amigável para o aplicativo.
+- **Nome do aplicativo**: um nome amigável do aplicativo.
 - **ID do Cliente** 
 
 Depois de inserir as informações, selecione **Verificar**. Em seguida, selecione **OK** para fechar a caixa de diálogo Importar aplicativos. Essa ação retorna à [caixa de diálogo Aplicativo Cliente](#client-app-dialog).
@@ -207,21 +207,38 @@ Depois de inserir as informações, selecione **Verificar**. Em seguida, selecio
 #### <a name="create-client-application-dialog"></a>Caixa de diálogo Criar Aplicativo Cliente
 
 Quando você seleciona **Criar** na caixa de diálogo Aplicativo Cliente, ele abre a caixa de diálogo Criar Aplicativo Cliente. Essa página automatiza a criação de um aplicativo nativo no Azure AD. Especifique as seguintes informações:
-- **Nome do Aplicativo**: um nome amigável para o aplicativo.
-- **URL de resposta**: esse valor não é usado pelo Configuration Manager, mas é exigido pelo Azure AD. Por padrão, esse valor é https://ConfigMgrService. 
+- **Nome do aplicativo**: um nome amigável do aplicativo.
+- **URL de resposta**: esse valor não é usado pelo Configuration Manager, mas é exigido pelo Azure AD. Por padrão, esse valor é https\://ConfigMgrService. 
 
 Selecione **Entrar** para se autenticar no Azure como um usuário administrativo. Essas credenciais não são salvas pelo Configuration Manager. Essa persona não exige permissões no Configuration Manager e não precisa ser a mesma conta que executa o Assistente de Serviços do Azure. Após a autenticação bem-sucedida no Azure, a página mostra o **Nome do Locatário do Azure AD** para referência. 
 
 Selecione **OK** para criar o aplicativo nativo no Azure AD e feche a caixa de diálogo Criar Aplicativo Cliente. Essa ação retorna à [caixa de diálogo Aplicativo Cliente](#client-app-dialog).
 
 
+### <a name="renew-secret-key-azure-ad-apps"></a>Renovar a chave secreta dos aplicativos do Azure AD
+Antes da versão 1806, para renovar a chave secreta de um aplicativo do Azure, você precisa recriar o aplicativo.
+
+Na versão 1806 e posterior:
+
+- Aplicativo criado: em **Nó de Serviços de Nuvem**, acesse **Locatários do Azure Active Directory**. No painel de detalhes, selecione o locatário no qual o aplicativo foi criado e selecione **Renovar a chave de segredo**.  
+
+    - Selecione **Entrar** para se autenticar no Azure como um usuário administrativo.  
+
+    - Selecione **OK** para criar o aplicativo nativo no Azure AD e feche a caixa de diálogo Criar Aplicativo Cliente. Essa ação retorna à [caixa de diálogo Aplicativo Cliente](#client-app-dialog).  
+
+- Aplicativo importado: use o portal do Azure para renovar e anote a nova chave de segredo e a data de vencimento. Adicione essas informações no assistente **Renovar a Chave de Segredo**.  
+
+> [!Note]  
+> Salve a chave secreta antes de fechar a página **Chave** das propriedades do aplicativo do Azure. Essa informação é removida ao fechar a página.
+
+
 ## <a name="configuration-or-discovery"></a>Configuração ou descoberta
 
 Depois de especificar os aplicativos Web e nativos na página Aplicativos, o Assistente de Serviços do Azure continua para a página **Configuração** ou **Descoberta**, dependendo do serviço ao qual você está se conectando. Os detalhes dessa página variam conforme o serviço. Para obter mais informações, consulte um dos seguintes artigos:  
 
--   Serviço **Gerenciamento de Nuvem**, página **Descoberta**: [Configure a descoberta de usuários do Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc)  
+-   Serviço **Gerenciamento de nuvem**, página **Descoberta**: [Configurar a descoberta de usuários do Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc)  
 
--   Serviço **Conector do Log Analytics**, página **Configuração**: [configure a conexão com o Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics#configure-the-connection-to-log-analytics)  
+-   Serviço **Conector do Log Analytics**, página **Configuração**: [Configurar a conexão ao Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics#configure-the-connection-to-log-analytics)  
 
 -   Serviço **Conector do Upgrade Readiness**, página **Configuração**: [Usar o Assistente do Azure para criar a conexão](/sccm/core/clients/manage/upgrade/upgrade-analytics#use-the-azure-wizard-to-create-the-connection)  
 

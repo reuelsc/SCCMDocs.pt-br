@@ -10,12 +10,12 @@ ms.assetid: 4deac022-e397-4f1f-bc0a-cea6c6c6368d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7b7cb4a6a7ec6738bdf045b75bf88c8b4d8c4650
-ms.sourcegitcommit: 1439817f1309658b31008d7bafaab32fc5ef8789
+ms.openlocfilehash: 7f2fab639082e6871e5df8dcebe0d1b3a440624c
+ms.sourcegitcommit: 1bf26b83fa7da637d299a21e1d3bc61f2d7d8c10
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "52820094"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54060358"
 ---
 # <a name="enhanced-http"></a>HTTP aprimorado
 
@@ -46,7 +46,7 @@ O Configuration Manager versão 1806 inclui melhorias em como os clientes se com
 Os cenários a seguir se beneficiam dessas melhorias:  
 
 
-### <a name="bkmk_scenario1"></a> Cenário 1: Cliente para o ponto de gerenciamento
+### <a name="bkmk_scenario1"></a> Cenário 1: cliente para o ponto de gerenciamento
 <!--1356889-->
 
 [Dispositivos que ingressaram no Azure AD](https://docs.microsoft.com/azure/active-directory/device-management-introduction#azure-ad-joined-devices) podem se comunicar com um ponto de gerenciamento configurado para HTTP. O servidor do site gera um certificado para o ponto de gerenciamento, permitindo que ele se comunique por meio de um canal seguro.   
@@ -55,7 +55,7 @@ Os cenários a seguir se beneficiam dessas melhorias:
 > Esse comportamento mudou com relação à atual branch do Configuration Manager versão 1802, que exige um ponto de gerenciamento habilitado para HTTPS para clientes que ingressaram no Azure AD se comunicarem por meio de um gateway de gerenciamento de nuvem. Para obter mais informações, consulte [Habilitar ponto de gerenciamento para HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
 
 
-### <a name="bkmk_scenario2"></a> Cenário 2: Cliente para o ponto de distribuição
+### <a name="bkmk_scenario2"></a> Cenário 2: cliente para o ponto de distribuição
 <!--1358228-->
 
 Um cliente que ingressou no Azure AD ou no grupo de trabalho pode autenticar-se e baixar o conteúdo por meio de um canal seguro de um ponto de distribuição configurado para HTTP. Esses tipos de dispositivos também podem autenticar e baixar conteúdo de um ponto de distribuição configurado para HTTPS sem necessidade de um certificado PKI no cliente. É um desafio adicionar um certificado de autenticação de cliente a um grupo de trabalho ou um cliente que ingressou no Azure AD.
@@ -63,7 +63,7 @@ Um cliente que ingressou no Azure AD ou no grupo de trabalho pode autenticar-se 
 Esse comportamento inclui cenários de implantação de sistema operacional com uma sequência de tarefas em execução no Centro de Software, PXE ou mídia de inicialização. Para obter mais informações, confira [Conta de acesso à rede](/sccm/core/plan-design/hierarchy/accounts#network-access-account).<!--1358278-->
 
 
-### <a name="bkmk_scenario3"></a> Cenário 3: identidade do dispositivo do Azure AD 
+### <a name="bkmk_scenario3"></a> Cenário 3: Identidade do dispositivo do Azure AD 
 <!--1358460-->
 
 Um [dispositivo do Azure AD híbrido](https://docs.microsoft.com/azure/active-directory/device-management-introduction#hybrid-azure-ad-joined-devices) ou que ingressou no Azure AD sem um usuário do Azure AD conectado pode se comunicar com segurança com o site atribuído. A identidade do dispositivo baseado em nuvem agora é suficiente para autenticar com o CMG e o ponto de gerenciamento para cenários centrados em dispositivo. (Um token de usuário ainda é necessário para cenários centrados no usuário.)  
@@ -79,7 +79,7 @@ Um [dispositivo do Azure AD híbrido](https://docs.microsoft.com/azure/active-di
 
     - Se você já tiver cumprido esse pré-requisito para o seu site, precisará atualizar o aplicativo do Azure AD. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e selecione **Locatários do Azure Active Directory**. Selecione o locatário do Azure AD, selecione o aplicativo Web no painel **​​Aplicativos** e selecione em **Atualizar configuração de aplicativo** na faixa de opções.  
 
-- *[Cenário 3](#bkmk_scenario3) apenas*: um cliente que executa o Windows 10 versão 1803 e ingressou no Azure AD. 
+- *Somente para o [Cenário 3](#bkmk_scenario3)*: Um cliente que executa o Windows 10 versão 1803 ou posterior e ingressou no Azure AD. 
 
 
 

@@ -10,12 +10,12 @@ ms.assetid: 3fe32aa2-d594-4ad0-a291-b8f5395ac50b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b4174c68d5a6ccd31355d976b7830b6d09f39d91
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 38b59e520baf9fddb09f71f459de409f38adad2b
+ms.sourcegitcommit: 32a257fafbb29aece8b4f435dd5614fcef305328
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339869"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54005442"
 ---
 # <a name="frequently-asked-questions-about-diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Perguntas frequentes sobre dados de diagnóstico e de uso do System Center Configuration Manager
 
@@ -50,7 +50,7 @@ O ramificação atual do Configuration Manager precisa ser atualizado regularmen
  Não. Os procedimentos armazenados para coletar dados são limitados ao banco de dados do site.  
 
 ### <a name="bkmk_gdpr"></a> O Configuration Manager está sujeito ao GDPR (Regulamento Geral sobre a Proteção de Dados)?
- Não. O Configuration Manager não está sujeito à supervisão do GDPR. Ele é um produto local que você implanta, gerencia e opera diretamente. Os dados de uso e diagnóstico que a Microsoft coleta melhoram a experiência de instalação, a qualidade e a segurança das versões futuras. Esses dados estão sujeitos à supervisão do GDPR. Nenhum dado de EUII (informação de identificação de usuário final) nem de EUPI (identificadores de pseudônimos de usuário final) é coletado e transmitido à Microsoft. Para obter mais informações sobre o GDPR, confira o [Microsoft Trust Center sobre GDPR](https://microsoft.com/gdpr). Para obter mais informações sobre dados do Configuration Manager, confira [Dados de uso e diagnóstico](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data).
+ Não. O Configuration Manager não está sujeito à supervisão do GDPR. Ele é um produto local que você implanta, gerencia e opera diretamente. Os dados de uso e diagnóstico que a Microsoft coleta melhoram a experiência de instalação, a qualidade e a segurança das versões futuras. Esses dados de diagnóstico e de uso estão sujeitos à supervisão do RGPD. No entanto, nenhum dado de EUII (informação de identificação de usuário final) ou de EUPI (identificadores de pseudônimos de usuário final) é coletado e transmitido à Microsoft. Para obter mais informações sobre o GDPR, confira o [Microsoft Trust Center sobre GDPR](https://microsoft.com/gdpr). Para obter mais informações sobre dados do Configuration Manager, confira [Dados de uso e diagnóstico](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data).
 
 
 ## <a name="see-also"></a>Consulte também  

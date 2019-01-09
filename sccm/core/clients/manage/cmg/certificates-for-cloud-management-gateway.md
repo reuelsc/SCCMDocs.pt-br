@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: 4ef9746b9a1eb90beeec6a477ad1d406acebbb05
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 60fa4176d44b530b2cab6c2b9b4b35c968fae3c1
+ms.sourcegitcommit: 32a257fafbb29aece8b4f435dd5614fcef305328
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456559"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54005476"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificados para o gateway de gerenciamento de nuvem
 
@@ -45,7 +45,7 @@ Para obter mais informações sobre os diferentes cenários, consulte [Planejar 
 
 - Da versão 1710 em diante, suporte para provedores de armazenamento de chaves para chaves privadas do certificado. Para obter mais informações, consulte [Visão geral dos certificados CNG](/sccm/core/plan-design/network/cng-certificates-overview).  
 
-- Da versão 1802 em diante, quando você configura Windows com a seguinte política: **Criptografia do sistema: usar algoritmos em conformidade com FIPS para criptografia, hash e assinatura**  
+- Iniciando na versão 1802, quando você configura o Windows com a seguinte política: **Criptografia do sistema: use algoritmos em conformidade com FIPS para criptografia, hash e assinatura**  
 
 - Da versão 1802 em diante, suporte para **TLS 1.2**. Para obter mais informações, veja [Referência técnica para controles de criptografia](/sccm/core/plan-design/security/cryptographic-controls-technical-reference#about-ssl-vulnerabilities).  
 
@@ -62,8 +62,11 @@ O CMG cria um serviço HTTPS ao qual os clientes baseados na Internet se conecta
  > [!TIP]
  > Esse certificado exige um nome exclusivo para identificar o serviço no Azure. Antes de solicitar um certificado, confirme se o nome de domínio do Azure desejado é exclusivo. Por exemplo, *GraniteFalls.CloudApp.Net*. Faça logon no [portal do Microsoft Azure](https://portal.azure.com). Selecione **Criar um recurso**, escolha a categoria **Computação** e, em seguida, selecione **Serviço de Nuvem**. No campo **Nome DNS**, digite o prefixo desejado, por exemplo, *GraniteFalls*. A interface reflete se o nome de domínio está disponível ou se já está em uso por outro serviço. Não crie o serviço no portal; apenas use esse processo para verificar a disponibilidade do nome. 
   
+ > [!TIP]
+ > Se o CMG também estiver habilitado como um ponto de Distribuição na Nuvem, confirme que o nome do serviço CMG escolhido também é um nome exclusivo da Conta de Armazenamento do Azure. Por exemplo, *GraniteFalls*. Faça logon no [portal do Microsoft Azure] (https://portal.azure.com). Selecione **Criar um recurso**, escolha a categoria **Armazenamento** e, em seguida, selecione **Conta de armazenamento – blob, arquivo, tabela, fila**. Clique em **Criar** e, em **Detalhes da instância**, insira o mesmo nome escolhido para o serviço CMG, por exemplo, *GraniteFalls*. A interface reflete se o nome da conta de armazenamento está disponível ou se já está em uso por outro serviço. Não crie a conta de armazenamento no portal; apenas use esse processo para verificar a disponibilidade do nome. Se o nome do serviço de nuvem do CMG for exclusivo, mas o nome da conta de armazenamento não for, o provisionamento falhará.
+ 
  > [!NOTE]
- > A partir da versão 1802, o certificado de autenticação de servidor do CMG é compatível com caracteres curinga. Algumas autoridades de certificação emitem certificados usando um caractere curinga para o nome do host. Por exemplo, **\*.contoso.com**. Algumas organizações usam certificados curinga para simplificar sua PKI e reduzir os custos de manutenção.<!--491233-->  
+ > A partir da versão 1802, o certificado de autenticação de servidor do CMG dá suporte a caracteres curinga. Algumas autoridades de certificação emitem certificados usando um caractere curinga para o nome do host. Por exemplo, **\*.contoso.com**. Algumas organizações usam certificados curinga para simplificar sua PKI e reduzir os custos de manutenção.<!--491233-->  
  > 
  > Para obter mais informações sobre como usar um certificado curinga com um CMG, veja [Configurar um CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#set-up-a-cmg).<!--SCCMDocs issue #565-->  
 
@@ -250,7 +253,7 @@ Configure um ponto de gerenciamento local com o seguinte modo de conexão de cli
 - *Ingressado no híbrido*: você ingressa o dispositivo tanto em um domínio do Active Directory quanto em um locatário do Azure AD  
 - *HTTP*: nas propriedades do ponto de gerenciamento, você define as conexões do cliente para **HTTP**  
 - *HTTPS*: nas propriedades do ponto de gerenciamento, você define as conexões do cliente para **HTTPS**  
-- *E-HTTP*: nas propriedades do site, guia Comunicação do Computador Cliente, você define as configurações do sistema de sites para **HTTPS ou HTTP** e, em seguida, habilita a nova opção para **Usar certificados gerados pelo Configuration Manager para sistemas de sites HTTP**. Você configura o ponto de gerenciamento para HTTP ou HTTPS.  
+- *E-HTTP*: nas propriedades do site, guia Comunicação do Computador Cliente, você define as configurações do sistema de sites para **HTTPS ou HTTP** e, em seguida, habilita a nova opção para **Usar certificados gerados pelo Configuration Manager para sistemas de sites HTTP**. Configure o ponto de gerenciamento para HTTP, o ponto de gerenciamento de HTTP está pronto para comunicação HTTP e HTTPS (cenários de autenticação de token).   
 
 
 

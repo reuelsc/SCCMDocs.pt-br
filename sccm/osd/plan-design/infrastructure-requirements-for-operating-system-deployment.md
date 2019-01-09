@@ -10,12 +10,12 @@ ms.assetid: 1dc74219-7ff5-4e3b-b4f6-5aad663bb75b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 03ec9c046e1b32f137777f15393b5d26b49e5520
-ms.sourcegitcommit: 265d38d55ca0db043e3a7131a56f123e1d98aa5b
+ms.openlocfilehash: cfaa50b941697b19f2d4d029ed7990f2d39eecbc
+ms.sourcegitcommit: f2a1fa59fb3870a6bebca61daf15c0c157e9fdd6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48236150"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030964"
 ---
 # <a name="infrastructure-requirements-for-os-deployment-in-configuration-manager"></a>Requisitos de infraestrutura para implantação de sistema operacional no Configuration Manager
 
@@ -186,17 +186,17 @@ Para usar relatórios do Configuration Manager para implantações de sistema op
 
 A função de segurança **Gerenciador de Implantação de Sistema Operacional** é uma função interna que não pode ser alterada. No entanto, é possível copiar a função, fazer alterações e salvar essas alterações como uma nova função de segurança personalizada. Estas são algumas das permissões que se aplicam diretamente às implantações de sistema operacional:  
 
-- **Pacote de Imagem de Inicialização**: Criar, Excluir, Modificar, Modificar Pasta, Mover Objeto, Ler, Definir Escopo de Segurança  
+- **Pacote de imagem de inicialização**: Criar, excluir, modificar, modificar pasta, mover objeto, ler, definir escopo de segurança  
 
-- **Drivers do dispositivo**: Criar, Excluir, Modificar, Modificar Pasta, Modificar Relatório, Mover Objeto, Ler, Executar Relatório  
+- **Drivers de dispositivo**: Criar, excluir, modificar, modificar pasta, modificar relatório, mover objeto, ler, executar relatório  
 
-- **Pacote de drivers**: Criar, Excluir, Modificar, Modificar Pasta, Mover Objeto, Ler, Definir Escopo de Segurança  
+- **Pacote de drivers**: Criar, excluir, modificar, modificar pasta, mover objeto, ler, definir escopo de segurança  
 
-- **Imagem do sistema operacional**: Criar, Excluir, Modificar, Modificar Pasta, Mover Objeto, Ler, Definir Escopo de Segurança  
+- **Imagem do sistema operacional**: Criar, excluir, modificar, modificar pasta, mover objeto, ler, definir escopo de segurança  
 
-- **Pacote de atualização do sistema operacional**: Criar, Excluir, Modificar, Modificar Pasta, Mover Objeto, Ler, Definir Escopo de Segurança  
+- **Pacote de atualização do sistema operacional**: Criar, excluir, modificar, modificar pasta, mover objeto, ler, definir escopo de segurança  
 
-- **Pacote de sequência de tarefas**: Criar, Criar Mídia de Sequência de Tarefas, Excluir, Modificar, Modificar Pasta, Modificar Relatório, Mover Objeto, Ler, Executar Relatório, Definir Escopo de Segurança  
+- **Pacote de sequência de tarefas**: Criar, criar mídia de sequência de tarefas, excluir, modificar, modificar pasta, modificar relatório, mover objeto, ler, executar relatório, definir escopo de segurança  
 
 Para obter mais informações, consulte [Criar funções de segurança personalizadas](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_CreateSecRole).  
 
@@ -260,6 +260,8 @@ Se você planeja co-hospedar o ponto de distribuição em um servidor que execut
 
      `WDSUTIL /Set-Server /UseDHCPPorts:No /DHCPOption60:Yes`  
 
+> [!NOTE]
+> Ao usar o respondente PXE sem o WDS em vez do WDS, não há suporte para executar também o DHCP no mesmo servidor.
 
 
 ##  <a name="BKMK_SupportedOS"></a> sistemas operacionais com suporte  
