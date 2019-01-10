@@ -10,12 +10,12 @@ ms.assetid: 446c83b5-c292-4e74-ba19-0792ac6b3472
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d63100e5525b24ffd8deba447a10325c8209ea00
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 3d7f142752f2d3ce97986455fe516748b0d6fb72
+ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53416683"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53817691"
 ---
 # <a name="upgrade-clients-in-system-center-configuration-manager"></a>Atualizar clientes no System Center Configuration Manager
 
@@ -29,7 +29,7 @@ ms.locfileid: "53416683"
 ## <a name="group-policy-installation"></a>Instalação de Política de Grupo  
  **Plataforma de cliente com suporte:** Windows  
 
- **Vantagens**  
+#### <a name="advantages"></a>Vantagens  
 
 - Não exige que os computadores sejam descobertos para que o cliente possa ser atualizado.  
 
@@ -39,7 +39,7 @@ ms.locfileid: "53416683"
 
 - Não exige que você configure e mantenha uma conta de instalação para o computador cliente desejado.  
 
-  **Desvantagens**  
+#### <a name="disadvantages"></a>Desvantagens  
 
 - Poderá causar alto tráfego de rede se vários clientes estiverem sendo atualizados.  
 
@@ -49,7 +49,7 @@ ms.locfileid: "53416683"
 ## <a name="logon-script-installation"></a>Instalação de script de logon  
  **Plataforma de cliente com suporte:** Windows  
 
- **Vantagens**  
+#### <a name="advantages"></a>Vantagens  
 
 - Não exige que os computadores sejam descobertos para que o cliente possa ser instalado.  
 
@@ -57,7 +57,7 @@ ms.locfileid: "53416683"
 
 - Oferece suporte ao uso de propriedades de linha de comando para o CCMSetup.  
 
-  **Desvantagens**  
+#### <a name="disadvantages"></a>Desvantagens  
 
 - Poderá causar alto tráfego de rede se vários clientes estiverem sendo atualizados em um curto período.  
 
@@ -68,7 +68,7 @@ ms.locfileid: "53416683"
 ## <a name="manual-installation"></a>Instalação manual  
  **Plataforma de cliente com suporte:** Windows, UNIX/Linus, Mac OS X  
 
- **Vantagens**  
+#### <a name="advantages"></a>Vantagens  
 
 - Não exige que os computadores sejam descobertos para que o cliente possa ser atualizado.  
 
@@ -76,7 +76,7 @@ ms.locfileid: "53416683"
 
 - Oferece suporte ao uso de propriedades de linha de comando para o CCMSetup.  
 
-  **Desvantagens**  
+#### <a name="disadvantages"></a>Desvantagens  
 
 - Sem automação, portanto demorada.  
 
@@ -94,11 +94,11 @@ ms.locfileid: "53416683"
 > [!NOTE]  
 >  Não é possível atualizar clientes do Configuration Manager 2007 com esse método. Nesse cenário, você pode implantar o cliente do Configuration Manager como um pacote do site do Configuration Manager 2007 ou usar a atualização de cliente automática que cria e implanta automaticamente o pacote que contém a versão mais recente do cliente.  
 
- **Vantagens**  
+#### <a name="advantages"></a>Vantagens  
 
 - Oferece suporte ao uso de propriedades de linha de comando para o CCMSetup.  
 
-  **Desvantagens**  
+#### <a name="disadvantages"></a>Desvantagens  
 
 - Poderá causar alto tráfego na rede se o cliente for distribuído para coleções grandes.  
 
@@ -113,17 +113,19 @@ ms.locfileid: "53416683"
 
  **Plataforma de cliente com suporte:** Windows  
 
- **Vantagens**  
+#### <a name="advantages"></a>Vantagens  
 
+- Devido à randomização durante o período especificado, somente a atualização automática é adequada para as atualizações em larga escala do cliente. Os demais métodos são muito lentos em larga escala ou não têm randomização. 
+
+    > [!Note]
+    > A pilotagem do cliente não é adequada para larga escala, já que não faz qualquer randomização.  
 - Pode ser usada para manter automaticamente clientes em seu site na versão mais recente.  
 
 - Exige administração mínima.  
 
-  **Desvantagens**  
+#### <a name="disadvantages"></a>Desvantagens  
 
 - Pode ser usada somente para atualizar o software cliente e não para instalar um novo cliente.  
-
-- Não é adequada para a atualização de vários clientes simultaneamente.  
 
 - Aplica-se a todos os clientes na hierarquia atribuídos a um site. Não pode ser limitada por coleção.  
 
@@ -134,13 +136,13 @@ ms.locfileid: "53416683"
 ## <a name="client-testing"></a>Teste do cliente  
  **Plataforma de cliente com suporte:** Windows  
 
- **Vantagens**  
+#### <a name="advantages"></a>Vantagens  
 
 - Pode ser usado para testar novas versões de cliente em uma coleção de pré-produção menor.  
 
 - Quando o teste é concluído, os clientes em pré-produção são promovidos para produção e atualizados automaticamente em todo o site do Configuration Manager.  
 
-  **Desvantagens**  
+#### <a name="disadvantages"></a>Desvantagens  
 
 - Pode ser usada somente para atualizar o software cliente e não para instalar um novo cliente.  
 

@@ -10,12 +10,12 @@ ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 88fa98de0f9f0a113adeef3a30536628706484ab
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 5f7cb374859d2605021a3f1ec98d6a6b6081bfc4
+ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53424673"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53817895"
 ---
 # <a name="plan-for-security-in-configuration-manager"></a>Planejar a segurança no Configuration Manager
 
@@ -109,7 +109,7 @@ Quando você usa certificados PKI com o Configuration Manager, planeje usar uma 
 
 O IIS sempre verifica a CRL quanto a certificados de cliente e você não pode alterar essa configuração no Configuration Manager. Por padrão, os clientes do Configuration Manager sempre verificam a CRL para os sistemas de sites. Desabilite essa configuração especificando uma propriedade do site e especificando uma propriedade CCMSetup.  
 
-Computadores que usam a verificação de revogação de certificados, mas não conseguem localizar a CRL, comportam-se como se todos os certificados na cadeia de certificação estivessem revogados. Esse comportamento ocorre porque eles não conseguem verificar se os certificados estão na lista. Nesse cenário, todas as conexões que requerem certificados e usam uma CRL falham.  
+Computadores que usam a verificação de revogação de certificados, mas não conseguem localizar a CRL, comportam-se como se todos os certificados na cadeia de certificação estivessem revogados. Esse comportamento se deve ao fato de não ser possível verificar se os certificados estão na lista de revogação de certificados. Nesse cenário, há falha em todas as conexões que requerem certificados e incluem uma verificação de CRL. Vale ressaltar que o cliente do Configuration Manager é executado como SISTEMA LOCAL ao validar se a CRL está acessível navegando até seu local de http. Portanto, pode dar certo testar a acessibilidade de CRL com a execução de um navegador da Web no contexto do usuário, porém a conta de computador pode ser bloqueada ao tentar estabelecer uma conexão http com a mesma URL de CRL devido à solução de filtragem interna da Web. Pode ser necessário incluir a URL da CRL na lista de permissões em todas as soluções de filtragem da Web nessa situação.
 
 Verificar a CRL sempre que um certificado é usado oferece mais segurança contra o uso de um certificado revogado. No entanto, introduz um atraso de conexão e processamento adicional no cliente. Sua organização pode exigir a verificação de segurança adicional para os clientes na Internet ou em uma rede não confiável.  
 

@@ -10,12 +10,12 @@ ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5e62983f76b0f2a4277edfab08d4321da5d4a258
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 9d3cd85d4c0bd3a996bd6ec18fc24a02423fab62
+ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53416479"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53818048"
 ---
 # <a name="task-sequence-steps-in-configuration-manager"></a>Etapas de sequência de tarefas no Configuration Manager
 
@@ -235,7 +235,14 @@ ms.locfileid: "53416479"
  Instala uma imagem do sistema operacional que você capturou. Clique em **Procurar** para abrir a caixa de diálogo **Selecionar um pacote**. Em seguida, selecione o pacote de imagem existente que você quer instalar. Se várias imagens forem associadas ao **pacote de imagem** especificado, selecione a imagem associada que será usada para essa implantação na lista suspensa. Veja as informações básicas sobre cada imagem existente clicando nela.  
 
 #### <a name="apply-operating-system-image-from-an-original-installation-source"></a>Aplicar a imagem do sistema operacional de uma fonte de instalação original
- Instala um sistema operacional usando um pacote de atualização do sistema operacional, que também é uma fonte de instalação original. Clique em **Procurar** para abrir a caixa de diálogo **Selecionar um Pacote de Instalação do Sistema Operacional**. Em seguida, selecione o pacote de atualização do SO existente que você deseja usar. Clique em cada fonte de imagem existente para exibir informações básicas sobre ela. O painel de resultados na parte inferior da caixa de diálogo exibe as propriedades da fonte da imagem associada. Se houver várias edições associadas ao pacote especificado, use a lista suspensa para selecionar a **Edição** desejada.  
+ Instala um sistema operacional usando um pacote de atualização do sistema operacional, que também é uma fonte de instalação original. Clique em **Procurar** para abrir a caixa de diálogo **Selecionar um Pacote de Atualização do Sistema Operacional**. Em seguida, selecione o pacote de atualização do SO existente que você deseja usar. Clique em cada fonte de imagem existente para exibir informações básicas sobre ela. O painel de resultados na parte inferior da caixa de diálogo exibe as propriedades da fonte da imagem associada. Se houver várias edições associadas ao pacote especificado, use a lista suspensa para selecionar a **Edição** desejada.  
+
+>[!NOTE]
+>Os **Pacotes de Atualização do Sistema Operacional** se destinam principalmente para o uso com as atualizações in-loco e não para novas instalações do Windows. Ao implantar novas instalações do Windows, use a opção **Aplicar sistema operacional de uma imagem capturada** e **install.wim** dos arquivos de origem de instalação.
+>
+>Ainda há suporte para a implantação de novas instalações do Windows por meio de **Pacotes de Atualização do Sistema Operacional**, mas depende da compatibilidade dos drivers com esse método. Ao instalar o Windows desde o **Pacote de Atualização do Sistema Operacional**, os drivers são instalados enquanto ainda estão no Windows PE, em vez de simplesmente serem injetados no Windows PE. Alguns drivers não são compatíveis com a instalação no Windows PE.
+>
+>Se os drivers não forem compatíveis com a instalação no Windows PE, empacote **install.wim** dos arquivos de origem de instalação originais como uma **Imagem do Sistema Operacional**. Em seguida, faça a implantação por meio da opção **Aplicar sistema operacional de uma imagem capturada**.
 
 #### <a name="use-an-unattended-or-sysprep-answer-file-for-a-custom-installation"></a>Use um arquivo de resposta unattended ou sysprep para uma instalação personalizada
  Use essa opção para fornecer um arquivo de resposta de instalação do Windows (**unattend.xml**, **unattend.txt** ou **sysprep.inf**) dependendo do método de instalação e da versão do sistema operacional. O arquivo especificado pode incluir qualquer uma das opções de configuração padrão compatíveis com arquivos de resposta do Windows. Por exemplo, você pode usá-la para especificar a página inicial padrão do Internet Explorer. Especifique o pacote que contém o arquivo de resposta e o caminho associado ao arquivo no pacote.  

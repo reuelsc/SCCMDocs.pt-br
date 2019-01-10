@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: 8f743514af8b89212b10073c07b24990ffedcb1a
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 0ad348c47ff7e97d8d9b3bfba91bd8a0c0ae48ff
+ms.sourcegitcommit: 32a257fafbb29aece8b4f435dd5614fcef305328
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53420389"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54005408"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurar o gateway de gerenciamento de nuvem para o Configuration Manager
 
@@ -41,6 +41,8 @@ Use a seguinte lista de verificação para verificar se você tem as informaçõ
 - Iniciando na versão 1802, selecione a **Implantação do Azure Resource Manager**. Para obter mais informações, consulte [Azure Resource Manager](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager). Você precisa dos seguintes requisitos para uma implantação do Azure Resource Manager do CMG:  
 
     - Integração com o [Azure AD](/sccm/core/servers/deploy/configure/azure-services-wizard) para o **Gerenciamento de Nuvem**. A descoberta de usuário do Azure AD não é necessária.  
+    
+    - O provedor de recursos **Microsoft.ClassicCompute** deve estar registrado na assinatura do Azure. Para obter mais informações, consulte [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
 
     - Um administrador da assinatura precisa entrar.  
 
@@ -54,6 +56,8 @@ Use a seguinte lista de verificação para verificar se você tem as informaçõ
     - Certificado de gerenciamento do Azure  
 
 - Um nome global exclusivo para o serviço. Esse nome é obtido do [certificado de autenticação de servidor do CMG](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#cmg-server-authentication-certificate).  
+
+- Se habilitar o CMG como um Ponto de Distribuição de Nuvem, o mesmo nome de serviço globalmente exclusivo do CMG escolhido também precisará estar disponível como um nome de conta de armazenamento globalmente exclusivo. Esse nome é obtido do [certificado de autenticação de servidor do CMG](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#cmg-server-authentication-certificate).
 
 - A região do Azure para essa implantação do CMG.  
 
@@ -91,7 +95,7 @@ Execute esse procedimento no site de nível superior. Esse site é um site prim�
 7. Selecione a lista suspensa **Região** para escolher a região do Azure para esse CMG.  
 
 8. Na versão 1802, se estiver usando uma implantação do Azure Resource Manager, selecione uma opção **Grupo de Recursos**. 
-   1. Se você escolher **Usar existente**, selecione um grupo de recursos existente na lista suspensa.
+   1. Se você escolher **Usar existente**, selecione um grupo de recursos existente na lista suspensa. O grupo de recursos selecionado já deve existir na região selecionada na etapa 7. Se você selecionar um grupo de recursos existente e ele estiver em uma região diferente da selecionada anteriormente, haverá falhará no provisionamento do CMG.
    2. Se você escolher **Criar novo**, insira o nome do novo grupo de recursos.
 
 9. No campo **Instância de VM**, insira o número de VMs desse serviço. O padrão é um, mas você pode aumentar para 16 VMs por CMG.  

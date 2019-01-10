@@ -10,12 +10,12 @@ ms.assetid: aebafaf9-b3d5-4a0f-9ee5-685758c037a1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0ab848051d5eaa85d2b515145ff64471aee81a31
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 430931e8bfba3f40a8d970b7ae7b97e24d3381ec
+ms.sourcegitcommit: f2a1fa59fb3870a6bebca61daf15c0c157e9fdd6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53415034"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54031015"
 ---
 # <a name="install-and-configure-distribution-points-in-configuration-manager"></a>Instalar e configurar pontos de distribuição no Configuration Manager
 
@@ -341,6 +341,9 @@ Selecione a opção para **Habilitar suporte a PXE para clientes** e, em seguida
 - **Habilitar suporte a computadores desconhecidos**: especifique se deseja habilitar o suporte para computadores não gerenciados pelo Configuration Manager. Para obter mais informações, consulte [Preparar implantações de computador desconhecido](/sccm/osd/get-started/prepare-for-unknown-computer-deployments).  
 
 - **Habilitar um respondente PXE sem o Serviço de Implantação do Windows**: começando na versão 1806, essa opção habilita um respondente PXE no ponto de distribuição, que não requer WDS. Esse respondente PXE dá suporte a redes IPv6. Se você habilitar essa opção em um ponto de distribuição que já esteja habilitado para PXE, o Configuration Manager suspenderá o serviço WDS. Se você desabilitar essa opção, mas escolher a opção **Habilitar suporte a PXE para clientes**, o ponto de distribuição habilitará o WDS novamente.<!--1357580-->  
+
+    > [!Note]
+    >Não há suporte para o uso do Respondente PXE sem o WDS em servidores que também estejam executando um servidor DHCP.
 
 - **Exigir uma senha quando os computadores usarem PXE**: para fornecer segurança adicional para implantações PXE, especifique uma senha forte.  
 
