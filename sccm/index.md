@@ -4,12 +4,12 @@ hide_bc: true
 title: Documentação do System Center Configuration Manager
 description: Saiba como usar o System Center Configuration Manager.
 ms.topic: hub-page
-ms.openlocfilehash: f3f22bd918fd0f87792781b16648487fcd6fd19d
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: b3197faa2207a81fd72e778a9605bb2191167720
+ms.sourcegitcommit: 94bf7d5b5beb9628cc1fdfe75451d33b5de26f8a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53414898"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54152495"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -112,7 +112,7 @@ ms.locfileid: "53414898"
                                                 <h3>Proteger os dados e a infraestrutura</h3>
                                                 <p><a href="/sccm/protect/deploy-use/manage-access-to-services">Acesso condicional</a></p>
                                                 <p><a href="/sccm/protect/deploy-use/endpoint-protection">Proteção de ponto de extremidade para Windows Defender</a></p>
-                                                <p><a href="/sccm/protect/deploy-use/windows-hello-for-business-settings">Windows Hello para Empresas</a></p>
+                                                <p><a href="/sccm/protect/deploy-use/windows-defender-advanced-threat-protection">Proteção Avançada contra Ameaças do Windows Defender</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -543,18 +543,18 @@ ms.locfileid: "53414898"
                                 </a>
                             </li>
                             <li>
-                                <a href="/sccm/protect/deploy-use/windows-hello-for-business-settings">
+                                <a href="/sccm/protect/deploy-use/windows-defender-advanced-threat-protection">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img src="https://docs.microsoft.com/en-us/media/illustrations/bcs-partner-advanced-management-password-3.svg" alt="" />
+                                                    <img src="https://docs.microsoft.com/en-us/media/illustrations/bcs-partner-policies-view-policies-2.svg" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Windows Hello para Empresas</h3>
-                                                <p>Crie políticas para gerenciar métodos alternativos de entrada para dispositivos Windows 10.</p>
+                                                <h3>Proteção Avançada contra Ameaças do Windows Defender</h3>
+                                                <p>Faça a integração do serviço de nuvem do Windows Defender ATP para se proteger contra ataques avançados.</p>
                                             </div>
                                         </div>
                                     </div>
