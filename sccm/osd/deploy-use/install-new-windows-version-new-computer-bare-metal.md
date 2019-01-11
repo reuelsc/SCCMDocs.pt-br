@@ -10,12 +10,12 @@ ms.assetid: f5ad22d5-7df1-49c6-8a0f-db1c3f0cda19
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 41ce74ee0978f561a855c5d3952071f68568dee0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 23c3a8b379accac0e514cfb8a88197baa6463fee
+ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347630"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53817725"
 ---
 # <a name="install-a-new-version-of-windows-on-a-new-computer-bare-metal-with-system-center-configuration-manager"></a>Instalar uma nova versão do Windows em um novo computador (sem sistema operacional) com o System Center Configuration Manager
 
@@ -49,7 +49,12 @@ Use as seções a seguir para atualizar um computador existente com uma nova ver
 
     -   Para saber mais sobre como criar uma imagem do sistema operacional, consulte [Gerenciar imagens do sistema operacional](../get-started/manage-operating-system-images.md).
 
-    -   Distribua a imagem do sistema operacional para pontos de distribuição. Para obter mais informações, consulte [Distribuir conteúdo](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).
+    -   Distribua a imagem do sistema operacional para pontos de distribuição. Para obter mais informações, consulte [Distribuir conteúdo](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).  
+
+    > [!NOTE]
+    > Novas instalações do Windows também podem ser executadas usando arquivos de origem de instalação por meio de pacotes de atualização do sistema operacional, mas use imagens do sistema operacional, como **install.wim**.
+    >
+    > Ainda há suporte para a implantação de novas instalações do Windows por meio de pacotes de atualização do sistema operacional, mas depende da compatibilidade dos drivers com esse método. Ao instalar o Windows a partir do pacote de atualização do sistema operacional, os drivers são instalados enquanto ainda estão no Windows PE, em vez de simplesmente serem injetados no Windows PE. Alguns drivers não são compatíveis com a instalação no Windows PE. Se os drivers não forem compatíveis com a instalação no Windows PE, então use uma imagem do sistema operacional.  
 
 3.  **Criar uma sequência de tarefas para implantar sistemas operacionais na rede**  
 
