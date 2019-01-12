@@ -2,7 +2,7 @@
 title: Novidades no MDM híbrido
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune.
-ms.date: 12/14/2018
+ms.date: 01/10/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,16 +10,16 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7cf1adf7d73e60fba0d748022ab7c241d60ffed7
-ms.sourcegitcommit: c60e057075a83f07d1ca2577c3de1c7d7c8e9cec
+ms.openlocfilehash: 610dfb7391347663fd92c0839d20eb7a4a703438
+ms.sourcegitcommit: c80abe7e4b7b2f80e957e45ff205f67d1b715688
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53626490"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54226216"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de dispositivo móvel) disponíveis para implantações híbridas com o System Center Configuration Manager e o Microsoft Intune.     
 
@@ -44,6 +44,33 @@ Cada seção deste artigo lista recursos híbridos em três categorias diferente
 |**Novo no Microsoft Intune** | De modo geral, todos os recursos listados nesta categoria devem funcionar com todas as versões do Configuration Manager. Isso inclui versões do System Center 2012 R2 Configuration Manager, uma vez que esses recursos exigem apenas o serviço Intune e não exigem funcionalidades adicionais no Configuration Manager.|
 |**Novo no Configuration Manager Technical Preview**| Todos os recursos listados nessa categoria funcionam apenas com o branch de visualização técnica especificado. Para testar esses recursos, você deve instalar a versão de visualização técnica especificada na descrição do recurso. Para obter mais informações, confira [Visualização técnica para o Configuration Manager](/sccm/core/get-started/technical-preview).|
 |**Novo no Configuration Manager (Branch Atual)**| Todos os recursos listados nessa categoria funcionam apenas com a versão especificada do Configuration Manager (branch atual). Se estiver usando uma versão mais antiga do Configuration Manager para sua implantação híbrida, atualize para a versão do Configuration Manager (branch atual) especificada na descrição do recurso. Para obter mais informações, veja [Atualizar para o Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).|
+
+
+
+## <a name="january-2019"></a>Janeiro de 2019
+
+### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+#### <a name="tenant-status-dashboard"></a>Painel de Status do locatário
+<!--1124854--> O novo [página de Status do locatário](https://docs.microsoft.com/intune/tenant-status) fornece um único local onde você pode exibir o status e os detalhes relacionados para seu locatário. O painel é dividido em quatro áreas:
+
+- **Detalhes do locatário**: Exibe informações que incluem o nome do locatário e o local, sua autoridade de MDM, o total os dispositivos registrados no seu locatário e contagens de suas licenças. Esta seção também lista a versão atual do serviço para seu locatário.  
+
+- **Status do conector**: Exibe informações sobre conectores disponíveis, você configurou e também pode listar os que ainda não tiver habilitado.  
+
+    Com base no estado atual de cada conector, eles são sinalizados como não íntegro, aviso ou íntegro. Selecione um conector do drill-through e exibir detalhes ou configurar as informações adicionais para ele.  
+
+- **Integridade do serviço Intune**: Exibe detalhes sobre incidentes ativos ou interrupções para seu locatário. As informações nesta seção são recuperadas diretamente do Centro de mensagens do Office.  
+
+- **Notícias sobre o Intune**: Exibe mensagens ativas para seu locatário. Mensagens incluem coisas como notificações quando seu locatário recebe os recursos mais recentes do Intune.  As informações nesta seção são recuperadas diretamente do Centro de mensagens do Office.  
+
+#### <a name="new-help-and-support-experience-in-company-portal-for-windows-10"></a>Novo ajuda e suporte experiência no Portal de empresa para Windows 10 
+<!--1488939--> A nova página de Ajuda do Portal da empresa e suporte ajuda os usuários a solucionar problemas e solicitar ajuda para problemas de acesso e de aplicativo. Na página de novo, podem erro e detalhes de log de diagnóstico de email e encontrar detalhes de suporte técnico de sua organização. Eles também encontrará uma seção de perguntas Frequentes com links para a documentação relevante do Intune. Para obter mais informações e capturas de tela, consulte [Obtenha ajuda e suporte no Portal de empresa para Windows 10](https://docs.microsoft.com/intune-user-help/help-and-support-windows-cpapp).
+
+#### <a name="some-bitlocker-settings-support-windows-10-pro-edition"></a>Suportam a algumas configurações de disco BitLocker do Windows 10 Pro edition
+<!--2727036--> Você pode criar um item de configuração que define as configurações do endpoint protection em dispositivos Windows 10, incluindo o BitLocker. Essa atualização adiciona suporte para Windows 10 Professional edition para algumas configurações de disco BitLocker.
+
+Para obter mais informações, consulte [configurações de criptografia para o Windows 10](/sccm/mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client#encryption).
 
 
 
@@ -408,8 +435,8 @@ Peça aos usuários finais no Windows 10 versão 1607 ou posterior para atualiza
 
 - **Novas configurações de política de gerenciamento de aplicativo móvel**     
   As configurações a seguir foram adicionadas nas configurações de política de gerenciamento de aplicativos móveis:
-  - **Desabilitar sincronização do contato**: Impede que o aplicativo salve dados no aplicativo contatos nativo do dispositivo.
-  - **Desabilitar a impressão**: Impede que o aplicativo de dados de escola ou trabalho de impressão.
+  - **Desabilitar sincronização do contato**: impede que o aplicativo salve dados no aplicativo Contatos nativo do dispositivo.
+  - **Desabilitar a impressão**: impede que o aplicativo imprima dados corporativos ou de estudante.
   <!-- 1324760 -->    
 
   Veja [proteger aplicativos usando políticas de proteção de aplicativos no Configuration Manager](/sccm/mdm/deploy-use/protect-apps-using-mam-policies) para testar as novas configurações de política de proteção do aplicativo.
