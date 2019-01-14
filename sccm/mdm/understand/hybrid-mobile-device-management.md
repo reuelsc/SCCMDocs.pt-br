@@ -10,12 +10,12 @@ ms.assetid: bb95154b-f63e-4491-896e-41d732c802f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f3d25120701c12b547727259002fc58a8f8f0780
-ms.sourcegitcommit: 97083c51057e2c4e0fe12c3b1f1b512250874c6a
-ms.translationtype: HT
+ms.openlocfilehash: a84dfc33fe79f5eb4d5397505a12052b8e92aebf
+ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50968128"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54250605"
 ---
 # <a name="hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>MDM híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -28,7 +28,7 @@ ms.locfileid: "50968128"
 > 
 > Como resultado, a maioria dos clientes escolhe o Intune no Azure ao invés do MDM híbrido. A quantidade de clientes que usa o MDM híbrido continua a diminuir à medida que mais clientes migram para a nuvem. Portanto, em 1º de setembro de 2019, a Microsoft aposentará a oferta de serviço do MDM híbrido. Planeje sua [migração para o Intune no Azure](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa) para suas necessidades de MDM. 
 > 
-> Essa alteração não afeta o Configuration Manager local ou o [cogerenciamento para dispositivos Windows 10](/sccm/core/clients/manage/co-management-overview). Se você não tiver certeza se está usando o MDM híbrido, acesse o espaço de trabalho **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e clique em **Assinaturas do Microsoft Intune**. Se você tiver uma assinatura do Microsoft Intune definida, seu locatário está configurado para o MDM híbrido.
+> Essa alteração não afeta o Configuration Manager local ou o [cogerenciamento para dispositivos Windows 10](/sccm/comanage/overview). Se você não tiver certeza se está usando o MDM híbrido, acesse o espaço de trabalho **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e clique em **Assinaturas do Microsoft Intune**. Se você tiver uma assinatura do Microsoft Intune definida, seu locatário está configurado para o MDM híbrido.
 > 
 > **Como isso me afeta?**
 > 
@@ -86,8 +86,8 @@ Para ler sobre os novos recursos que estão disponíveis para o MDM híbrido, co
 
 Para colocar dispositivos no gerenciamento híbrido, esses dispositivos devem estar registrados no serviço. A forma como os dispositivos são registrados depende do tipo de dispositivo, da propriedade e do nível de gerenciamento necessário.
 
-- **BYOD (traga seu próprio dispositivo)**: permite que os usuários registrem telefones, tablets ou PCs pessoais  
+- **"Traga seu próprio dispositivo" (BYOD)**: Os usuários registram seus telefones pessoais, tablets ou PCs  
 
-- **COD (dispositivo da empresa)**: permite cenários de gerenciamento como apagamento remoto, dispositivos compartilhados ou afinidade de usuário para um dispositivo  
+- **Dispositivo corporativo (COD)**: Habilitar cenários de gerenciamento como apagamento remoto, dispositivos compartilhados ou afinidade de usuário para um dispositivo  
 
 - Se usar o [Exchange ActiveSync](/sccm/mdm/plan-design/device-enrollment-methods#mobile-device-management-with-exchange-activesync-and-configuration-manager), seja localmente ou hospedado na nuvem, você poderá habilitar o gerenciamento simples do Intune sem o registro. Computadores Windows também podem ser gerenciados usando o [Software cliente do Intune](/intune/deploy-use/manage-windows-pcs-with-microsoft-intune).
