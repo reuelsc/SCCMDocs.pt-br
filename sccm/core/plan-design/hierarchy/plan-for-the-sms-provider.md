@@ -10,12 +10,12 @@ ms.assetid: 5d5d6273-0d8a-43c7-865a-cdb1736dcae3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 024714c564036cd61a6c1340724aa3b9cad782d2
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: d59e5e5bc1dfdf962517b4c364b74aa0df6b650a
+ms.sourcegitcommit: 94bf7d5b5beb9628cc1fdfe75451d33b5de26f8a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456389"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54152444"
 ---
 # <a name="plan-for-the-sms-provider"></a>Planejar o provedor de SMS 
 
@@ -165,11 +165,11 @@ Para definir essa configuração, use as seguintes etapas:
 
 Os seguintes níveis estão disponíveis:
 
-- **Autenticação do Windows**: exige autenticação com credenciais de domínio do Active Directory. Essa configuração é o comportamento anterior e a configuração padrão atual. Quando você atualiza o site, não há alteração no nível de autenticação.  
+- **Autenticação do Windows**: Exige autenticação com credenciais de domínio do Active Directory. Essa configuração é o comportamento anterior e a configuração padrão atual. Quando você atualiza o site, não há alteração no nível de autenticação.  
 
-- **Autenticação de certificado**: exige autenticação com um certificado válido emitido por uma autoridade de certificação PKI confiável. Você não configura esse certificado no Configuration Manager. O Configuration Manager exige que o administrador esteja conectado ao Windows usando a PKI.  
+- **Autenticação de certificado**: Exige autenticação com um certificado válido emitido por uma autoridade de certificação PKI confiável. Você não configura esse certificado no Configuration Manager. O Configuration Manager exige que o administrador esteja conectado ao Windows usando a PKI.  
 
-- **Autenticação do Windows Hello para Empresas**: exige autenticação com autenticação forte de dois fatores que esteja vinculada a um dispositivo e use biometria ou PIN. Você pode usar o Configuration Manager para gerenciar e implantar o Windows Hello para Empresas. Para saber mais, veja as [Configurações para Windows Hello para Empresas](/sccm/protect/deploy-use/windows-hello-for-business-settings).  
+- **Autenticação do Windows Hello para Empresas**: Exige autenticação com autenticação forte de dois fatores que esteja vinculada a um dispositivo e use biometria ou um PIN. Para obter mais informações, confira [Windows Hello para Empresas](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification).   
 
 
 ### <a name="exclusions"></a>Exclusões
