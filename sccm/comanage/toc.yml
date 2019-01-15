@@ -1,0 +1,56 @@
+items:
+- name: Cogerenciamento
+  items:
+  - name: O que é cogerenciamento?
+    href: overview.md
+  - name: Início rápido
+    href: quickstarts.md
+    items:
+    - name: Valor imediato
+      items:
+      - name: Acesso condicional
+        href: quickstart-conditional-access.md
+      - name: Ações remotas do Intune
+        href: quickstart-remote-actions.md
+      - name: Integridade do cliente
+        href: quickstart-client-health.md
+      - name: Azure AD Híbrido
+        href: quickstart-hybrid-aad.md
+      - name: Windows Autopilot
+        href: quickstart-autopilot.md
+    - name: Introdução
+      items:
+      - name: Caminhos para o cogerenciamento
+        href: quickstart-paths.md
+      - name: Configurar o Azure AD híbrido
+        href: quickstart-setup-hybrid-aad.md
+      - name: Atualizar para o Windows 10
+        href: quickstart-upgrade-win10.md
+      - name: Migrar do MDM híbrido
+        href: quickstart-migrate-hybrid-mdm.md
+      - name: Obter ajuda do FastTrack
+        href: quickstart-fasttrack.md
+  - name: Tutoriais
+    items:
+    - name: Habilitar o cogerenciamento para clientes do Configuration Manager
+      href: tutorial-co-manage-clients.md
+  - name: Conceitos
+    items:
+    - name: Cargas de trabalho
+      href: workloads.md
+  - name: Guias de instruções
+    items:
+    - name: Habilitar cogerenciamento
+      href: how-to-enable.md
+    - name: Preparar os dispositivos baseados na Internet
+      href: how-to-prepare-Win10.md
+    - name: Alternar as cargas de trabalho para o Intune
+      href: how-to-switch-workloads.md
+    - name: Monitorar o cogerenciamento
+      href: how-to-monitor.md
+ms.openlocfilehash: bd369fa1393d42e70776d644d055b31eee2a208c
+ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54251239"
