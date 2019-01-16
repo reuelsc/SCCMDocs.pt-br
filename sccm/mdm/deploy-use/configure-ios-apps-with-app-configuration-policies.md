@@ -10,16 +10,16 @@ ms.assetid: f0a78038-ea22-4826-9c07-1771b7dd2e8d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 19b55204566c49c95e76a3eff3f88206df553e13
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: a0a5cb6e609912a280f1cf0608ec298f860fe2e2
+ms.sourcegitcommit: 2687489aa409a050dcacd67f17b3dad3ab7f1804
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53416156"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54316330"
 ---
 # <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Aplicar configurações a aplicativos iOS com políticas de configuração de aplicativo no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
 Você pode usar políticas de configuração de aplicativo no System Center Configuration Manager (Configuration Manager) para distribuir as configurações que podem ser necessárias quando um usuário executa um aplicativo. Por exemplo, um aplicativo pode exigir que um usuário especifique estes detalhes:
@@ -34,7 +34,7 @@ Para usar uma política de configuração de aplicativo no Configuration Manager
 
 Atualmente, as políticas de configuração de aplicativo estão disponíveis somente em dispositivos com iOS 8 e posterior e para estes tipos de aplicativos:
 
-- **pacote do aplicativo para iOS (arquivo *.ipa)**
+- **pacote de aplicativo para iOS (\*arquivo. IPA)**
 - **pacote do aplicativo para iOS da App Store**
 
 Para obter mais informações sobre os tipos de instalação de aplicativos, consulte a [introdução ao gerenciamento de aplicativos](/sccm/apps/understand/introduction-to-application-management).
