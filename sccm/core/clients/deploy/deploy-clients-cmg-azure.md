@@ -10,12 +10,12 @@ ms.assetid: a44006eb-8650-49f6-94e1-18fa0ca959ee
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b722187a895a71b4195200354180cdbc8b2813e6
-ms.sourcegitcommit: 12b71da551350c99c5916df3629e33e31040db15
+ms.openlocfilehash: 37ed497a83b3a82cd054683f38239f51940b970a
+ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53530907"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54250622"
 ---
 # <a name="install-and-assign-configuration-manager-windows-10-clients-using-azure-ad-for-authentication"></a>Instalar e atribuir clientes do Configuration Manager com Windows 10 usando o Azure AD para autenticação
 
@@ -92,7 +92,7 @@ As propriedades /mp e CCMHOSTNAME e especificam uma das seguintes opções, depe
 
 Esse exemplo usa um gateway de gerenciamento de nuvem. Ele substitui os valores de exemplo de cada propriedade: `ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC SMSMP=https://mp1.contoso.com AADTENANTID=daf4a1c2-3a0c-401b-966f-0b855d3abd1a AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver`
 
-Para automatizar a instalação do cliente usando a identidade do Azure AD por meio do Microsoft Intune, consulte o processo de [Preparar dispositivos Windows 10 para o cogerenciamento](/sccm/core/clients/manage/co-management-prepare#command-line-to-install-configuration-manager-client).
+Para automatizar a instalação do cliente usando a identidade do Azure AD por meio do Microsoft Intune, consulte [Como preparar dispositivos baseados na Internet para cogerenciamento](/sccm/comanage/how-to-prepare-win10#install-the-configuration-manager-client).
 
 
 

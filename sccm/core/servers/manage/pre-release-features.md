@@ -10,12 +10,12 @@ ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6fb24c3e262f3d1f3991ab549592e3f21631b32d
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 4d892e8d194f61fece977c91ce36ba46cf9dd53d
+ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456118"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54250707"
 ---
 # <a name="pre-release-features-in-configuration-manager"></a>Recursos pré-lançamento no Configuration Manager
 
@@ -77,7 +77,7 @@ Ao habilitar um recurso de pré-lançamento, o gerenciador de hierarquia (HMAN) 
 |------------------|----------------------|-------------------------|
 | API do Provedor de SMS <!--1359052--> | Versão 1810 | ![Ainda não](media/red_x.png) |
 | [Sistema de sites HTTP aprimorado](/sccm/core/plan-design/hierarchy/enhanced-http) <!--1356889,1358228--> | Versão 1806 | Versão 1810 |
-| [Aplicativos móveis para dispositivos cogerenciados](/sccm/core/clients/manage/co-management-switch-workloads#workloads-able-to-be-transitioned-to-intune) <!--1357892--> | Versão 1806 | ![Ainda não](media/red_x.png) |
+| [Aplicativos cliente para dispositivos cogerenciados](/sccm/comanage/workloads#client-apps) <!--1357892--> | Versão 1806 | ![Ainda não](media/red_x.png) |
 | [Gerenciador de conversão de pacote](/sccm/apps/pcm/package-conversion-manager) <!--1357861--> | Versão 1806 | Versão 1810 |
 | [Suporte para o Cisco AnyConnect 4.0.07x e posterior para iOS](/sccm/mdm/deploy-use/create-vpn-profiles) <!--1357393--> | Versão 1802 | Versão 1802 <br>com atualização 4163547 |
 | [Implantações em fases](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence) <!--1356837--> | Versão 1802 | Versão 1806 |

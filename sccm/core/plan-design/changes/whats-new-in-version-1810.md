@@ -10,12 +10,12 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 050cf81a99f29d24cad6eb13e691e332174627c3
-ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
+ms.openlocfilehash: 60d1c93acc2fcc2c04d09cd8f0ec0c083089a8ec
+ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53818014"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54250588"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Novidades na versão 1810 do branch atual do Configuration Manager
 
@@ -123,7 +123,10 @@ Para obter mais informações, veja [Insights de gerenciamento](/sccm/core/serve
 ### <a name="new-client-notification-action-to-wake-up-device"></a>Nova ação de notificação de cliente para ativação de dispositivo
 <!--1317364--> Agora é possível ativar clientes no console do Configuration Manager, mesmo se o cliente não está na mesma sub-rede que o servidor do site. Se precisar realizar manutenção ou consultar dispositivos, você não estará limitado por clientes remotos que estão em suspensão. O servidor do site usa o canal de notificação do cliente para identificar o outro cliente que está ativo na mesma sub-rede remota. O cliente ativo então envia uma solicitação Wake On LAN (Magic Packet).
 
-<!--For more information, see [Plan how to wake up clients](/sccm/core/clients/deploy/plan/plan-wake-up-clients).-->
+### <a name="new-option-to-perform-client-notification-from-devices-node"></a>Nova opção para executar a notificação de cliente em nó de dispositivos
+<!--1317364--> Até a versão 1810, a opção **Notificação de Cliente** só estava disponível no nó Coleção de Dispositivos ou ao exibir a associação de uma Coleção de Dispositivos. Agora é possível executar uma **Notificação de Cliente** diretamente no nó **Dispositivos**. Não é mais necessário estar dentro de uma exibição de associação de coleção. 
+
+Para obter mais informações, confira [Notificações do cliente](/sccm/core/clients/manage/client-notification).
 
 
 ### <a name="improvements-to-collection-evaluation"></a>Melhorias à avaliação de coleção
@@ -169,7 +172,7 @@ Para obter mais informações, consulte [Configurar grupos de limites](/sccm/cor
 
 ![Captura de tela do painel de cogerenciamento mostrando os quatro blocos principais](media/1358980-comgmt-dashboard.png)
 
-Para obter mais informações, confira [Painel de cogerenciamento](/sccm/core/clients/manage/co-management-dashboard).
+Para obter mais informações, confira [Painel de cogerenciamento](/sccm/comanage/how-to-monitor#co-management-dashboard).
 
 
 

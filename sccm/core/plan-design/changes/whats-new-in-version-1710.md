@@ -10,12 +10,12 @@ ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 821c7f32799020948630cd873fead144ae21e39e
-ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
+ms.openlocfilehash: 4dcf5ce0c31f72db1e6af3ac9e024c83afe92337
+ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47229255"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54250656"
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Novidades da versão 1710 do System Center Configuration Manager
 
@@ -64,7 +64,7 @@ Como os dispositivos agora incluem discos rígidos com tamanhos em escalas de GB
 ## <a name="client-management"></a>Gerenciamento de cliente
 
 ### <a name="co-management-for-windows-10-devices"></a>Cogerenciamento para dispositivos Windows 10    
-<!-- 1350871 --> Em atualizações anteriores do Windows 10, você pode associar um dispositivo com Windows 10 ao Active Directory (AD) local e ao Azure AD baseado em nuvem ao mesmo tempo (Azure AD híbrido). A partir do Configuration Manager versão 1710, o cogerenciamento usufrui dessa melhoria e permite gerenciar dispositivos Windows 10, versão 1709 (também conhecido como Fall Creators Update) simultaneamente usando o Configuration Manager e o Intune. É uma solução que fornece uma ponte do gerenciamento tradicional para o moderno e fornece um caminho para fazer a transição usando uma abordagem em fases. Para obter detalhes, confira [Cogerenciamento para dispositivos com Windows 10](/sccm/core/clients/manage/co-management-overview).
+<!-- 1350871 --> Em atualizações anteriores do Windows 10, você pode associar um dispositivo com Windows 10 ao Active Directory (AD) local e ao Azure AD baseado em nuvem ao mesmo tempo (Azure AD híbrido). A partir do Configuration Manager versão 1710, o cogerenciamento usufrui dessa melhoria e permite gerenciar dispositivos Windows 10, versão 1709 (também conhecido como Fall Creators Update) simultaneamente usando o Configuration Manager e o Intune. É uma solução que fornece uma ponte do gerenciamento tradicional para o moderno e fornece um caminho para fazer a transição usando uma abordagem em fases. Para obter detalhes, confira [Cogerenciamento para dispositivos com Windows 10](/sccm/comanage/overview).
 
 ### <a name="restart-computers-from-the-configuration-manager-console-----1356283---"></a>Reinicie os computadores do console do Configuration Manager <!-- 1356283 -->
 A partir desta versão, você pode usar o console do Configuration Manager para identificar os dispositivos cliente que exigem uma reinicialização e, em seguida, usar uma ação de notificação do cliente para reiniciá-los.
@@ -88,7 +88,7 @@ Para obter mais informações de como usar o recurso Executar Scripts, consulte 
 
 ### <a name="new-mobile-application-management-policy-settings"></a>Novas configurações de política de gerenciamento de aplicativo móvel
 <!-- 1324760 --> As configurações a seguir foram adicionadas nas configurações de política de gerenciamento de aplicativos móveis:
-- **Desabilitar sincronização de contato**: impede que o aplicativo salve dados no aplicativo Contatos nativo do dispositivo.
+- **Desabilitar sincronização de contatos**: impede que o aplicativo salve dados no aplicativo Contatos nativo do dispositivo.
 - **Desabilitar impressão**: impede que o aplicativo imprima dados corporativos ou de estudante.
 
 ### <a name="software-center-no-longer-distorts-icons-larger-than-250x250"></a>O Centro de Software não distorce mais os ícones maiores do que 250 x 250  
@@ -181,7 +181,7 @@ Para obter mais informações, consulte [Perfis de VPN em dispositivos móveis n
 
 ### <a name="limited-support-for-cryptography-next-generation-cng-certificates----1356191---"></a>Suporte limitado para certificados CNG (Cryptography Next Generation)<!-- 1356191 -->
 
-O Configuration Manager tem um suporte limitado para certificados CNG (Cryptography Next Generation). Os clientes do Configuration Manager podem usar o certificado de autenticação de cliente de PKI com chave privada no KSP (provedor de armazenamento de chaves) da CNG. Com o suporte do KSP, os clientes do Configuration Manager dão suporte para chave de privada baseada em hardware, como TPM KSP para certificados de autenticação de cliente de PKI.
+O Configuration Manager tem suporte limitado para certificados CNG (Cryptography Next Generation). Os clientes do Configuration Manager podem usar o certificado de autenticação de cliente de PKI com chave privada no KSP (provedor de armazenamento de chaves) da CNG. Com o suporte do KSP, os clientes do Configuration Manager dão suporte para chave de privada baseada em hardware, como TPM KSP para certificados de autenticação de cliente de PKI.
 
 Para obter mais informações, consulte [Visão geral dos certificados CNG](../network/cng-certificates-overview.md).
 

@@ -2,7 +2,7 @@
 title: Versão prévia do UUP
 titleSuffix: Configuration Manager
 description: Instruções para a versão prévia da integração deUUP
-ms.date: 01/04/2018
+ms.date: 01/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: noindex,nofollow
-ms.openlocfilehash: cfc83f4d076a05ea1847c0d073bd824ad10aa731
-ms.sourcegitcommit: 1bf26b83fa7da637d299a21e1d3bc61f2d7d8c10
+ms.openlocfilehash: 17a9abf2f20f53ba69ad160db421be51471cc311
+ms.sourcegitcommit: 27b2594087e8c54062db6b2a30ab843bab17f8cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54060375"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54270453"
 ---
 # <a name="uup-private-preview-instructions"></a>Instruções para a versão prévia privada do UUP
 
@@ -160,8 +160,8 @@ Depois que você está pronto para começar a sincronizar atualizações de UUP 
 
 5. Na guia **Produtos**, depois que o servidor do WSUS é adicionado à versão prévia, dois novos produtos deverão aparecer. Esses produtos contêm a conteúdo da versão prévia de UUP.  
 
-    - **Piloto do Windows 10 UUP**: Atualizações de UUP da estação de trabalho do Windows  
-    - **Windows Server 2016 UUP**: Atualizações do Windows Server UUP  
+    - **Versão prévia do Windows 10 UUP**  
+    - **Versão prévia do Windows Server UUP**  
 
 6. Na guia **Classificações**, não deixe de selecionar:  
 

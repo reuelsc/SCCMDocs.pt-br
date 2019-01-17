@@ -10,12 +10,12 @@ ms.assetid: 0249dbd3-1e85-4d05-a9e5-420fbe44d850
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e5fd7c26c190407ba5e497068582704b03c71f00
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: fe8fb2a8138433d00686530f76916a1ee4e88dac
+ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411503"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54250792"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novidades na versão 1806 do branch atual do Configuration Manager
 
@@ -134,9 +134,9 @@ Para obter mais informações, veja [Suporte parcial a download](/sccm/core/plan
 ### <a name="boundary-group-options-for-peer-downloads"></a>Opções de grupo de limites para downloads de pares
 <!--1356193--> Os grupos de limites agora incluem configurações adicionais para dar a você mais controle sobre a distribuição de conteúdo em seu ambiente. Esta versão adiciona as seguintes opções:  
 
-- **Permitir download de par neste grupo de limites**: o ponto de gerenciamento fornece aos clientes uma lista de locais de conteúdo que inclui fontes de pares. Essa configuração também afeta a aplicação de IDs de grupo para Otimização de Entrega.  
+- **Permitir downloads de par nesse grupo de limites**: O ponto de gerenciamento fornece aos clientes uma lista de locais de conteúdo que inclui fontes de pares. Essa configuração também afeta a aplicação de IDs de grupo para Otimização de Entrega.  
 
-- **Durante os downloads de pares, use apenas os pares dentro da mesma sub-rede**: o ponto de gerenciamento incluirá apenas as origens de pares de lista do local do conteúdo que estão na mesma sub-rede do que o cliente.  
+- **Durante o download de par, usar apenas pares dentro da mesma sub-rede**: O ponto de gerenciamento inclui apenas as origens de pares de lista do local do conteúdo que estão na mesma sub-rede que o cliente.  
 
 Para saber mais, confira [Opções de grupo de limites para downloads de pares](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).
 
@@ -197,7 +197,7 @@ A versão 1806 inclui as seguintes melhorias ao CMG (Gateway de Gerenciamento de
 #### <a name="simplified-client-bootstrap-command-line"></a>Linha de comando de inicialização de cliente simplificada
 <!--1358215--> Ao instalar o cliente do Configuration Manager na Internet por meio de um CMG, a linha de comando agora requer menos propriedades. Essa melhoria reduz o tamanho da linha de comando usada no Microsoft Intune ao se preparar para o cogerenciamento. 
 
-Para obter mais informações, veja [Preparar dispositivos Windows 10 para cogerenciamento](/sccm/core/clients/manage/co-management-prepare#command-line-to-install-configuration-manager-client).
+Para saber mais, consulte [Como preparar dispositivos baseados na Internet para cogerenciamento](/sccm/comanage/how-to-prepare-win10#install-the-configuration-manager-client).
 
 #### <a name="download-content-from-a-cmg"></a>Baixar o conteúdo de um CMG
 <!--1358651--> Anteriormente, era necessário implantar um ponto de distribuição na nuvem e um CMG como funções separadas. Um CMG agora também pode fornecer conteúdo aos clientes. Essa funcionalidade reduz os certificados necessários e o custo das VMs do Azure. 
@@ -214,27 +214,27 @@ Para obter mais informações, consulte [Modificar um CMG](/sccm/core/clients/ma
 ### <a name="sync-mdm-policy-from-microsoft-intune-for-a-co-managed-device"></a>Sincronizar a política de MDM do Microsoft Intune para um dispositivo cogerenciado
 <!--1357377--> Quando você muda uma carga de trabalho de cogerenciamento, os dispositivos cogerenciados sincronizam a política de MDM automaticamente com o Microsoft Intune. Essa sincronização também acontece quando você inicia a ação **Baixar Política do Computador** nas Notificações do Cliente no console do Configuration Manager. 
 
-Para obter mais informações, veja [Mudar as cargas de trabalho do Configuration Manager para o Intune](/sccm/core/clients/manage/co-management-switch-workloads).
+Para saber mais, consulte [Como mudar as cargas de trabalho do Configuration Manager para o Intune](/sccm/comanage/how-to-switch-workloads).
 
 
 ### <a name="transition-new-workloads-to-intune-using-co-management"></a>Fazer a transição de novas cargas de trabalho para o Intune usando cogerenciamento
 As cargas de trabalho a seguir agora são capazes de fazer a transição do Configuration Manager para o Intune depois de habilitar o cogerenciamento:  
 
-- **Configuração de dispositivo**<!--1357903-->: essa carga de trabalho permite que você use o Intune para implantar políticas de MDM enquanto continua usando o Configuration Manager para implantar aplicativos.  
+- **Configuração do dispositivo**<!--1357903-->: Essa carga de trabalho permite usar o Intune para implantar políticas do MDM e, ao mesmo tempo, continuar usando o Configuration Manager para implantar aplicativos.  
 
-- **Office 365**<!--1357841-->: dispositivos não instalam as implantações do Office 365 do Configuration Manager.  
+- **Office 365**<!--1357841-->: dispositivos não instalam as implantações do Office 365 pelo Configuration Manager.  
 
-- **Aplicativos móveis**<!--1357892-->: todos os aplicativos disponíveis implantados do Intune estão disponíveis no Portal da Empresa. Os aplicativos que você implanta do Configuration Manager estão disponíveis no Centro de Software. Esse recurso é um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features).  
+- **Aplicativos móveis**<!--1357892-->: todos os aplicativos disponíveis implantados pelo Intune estão disponíveis no Portal da Empresa. Os aplicativos que você implanta do Configuration Manager estão disponíveis no Centro de Software. Esse recurso é um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features).  
 
 Para fazer a transição dessas cargas de trabalho, vá para a página de propriedades de cogerenciamento e mova o controle deslizante de carga de trabalho do Configuration Manager para **Piloto** ou **Todos**. 
 
-Para saber mais, confira [Cogerenciamento para dispositivos Windows 10](/sccm/core/clients/manage/co-management-overview).
+Para saber mais, confira [Cogerenciamento para dispositivos Windows 10](/sccm/comanage/overview).
 
 
 ### <a name="support-for-multiple-hierarchies-to-one-intune-tenant"></a>Suporte para várias hierarquias para um locatário do Intune
 <!--1357944--> Alguns clientes têm várias hierarquias do Configuration Manager e querem consolidá-las no futuro para um único locatário do Azure Active Directory e do Microsoft Intune. O cogerenciamento agora dá suporte a conectar mais de um ambiente do Configuration Manager ao mesmo locatário do Intune.
 
-Para obter mais informações, veja [Preparar dispositivos Windows 10 para cogerenciamento](/sccm/core/clients/manage/co-management-prepare).
+Para saber mais, consulte [Pré-requisitos de cogerenciamento](/sccm/comanage/overview#prerequisites).
  
 
 
@@ -411,7 +411,7 @@ Para obter mais informações, veja [Configurações de cliente do Centro de Sof
 
 - Entrar em contato com TI: informações sobre como entrar em contato com o departamento de TI da sua organização  
 
-- Centro de Suporte de TI: ações de autoatendimento de TI como a pesquisa em uma base de dados de conhecimento ou a abertura de um tíquete de suporte.  
+- Centro de Suporte de TI: ações de autoatendimento de TI, como a pesquisa em uma base de dados de conhecimento ou a abertura de um tíquete de suporte.  
 
 - Documentação do usuário final: artigos para usuários em sua organização em vários tópicos de TI, por exemplo, usar aplicativos ou atualizar para o Windows 10.  
 
