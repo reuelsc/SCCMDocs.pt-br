@@ -2,7 +2,7 @@
 title: Servidores de sistema de site com suporte
 titleSuffix: Configuration Manager
 description: Saiba quais versões do Windows podem ser usadas para hospedar um site ou função de sistema de site do Configuration Manager.
-ms.date: 11/27/2018
+ms.date: 01/15/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 17905b4c-3895-4ad4-a69c-5e0d0fc5a8c3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4aba91b232a187a72bbc2ea10f32a14a377a3870
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: b43c8d08fe1655aea175bbec3ceb7877be96f42e
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456848"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342815"
 ---
 # <a name="supported-operating-systems-for-configuration-manager-site-system-servers"></a>Sistemas operacionais compatíveis com servidores do sistema de site do Configuration Manager
 
@@ -178,9 +178,12 @@ Esta versão do sistema operacional é compatível com as seguintes funções:
 
 ## <a name="bkmk_2008r2sp1"></a> Windows Server 2008 R2 com SP1   
 
-*Aplica-se ao Windows Server 2008 R2 com Service Pack 1: Standard, Enterprise e Datacenter*
+*Aplica-se ao Windows Server 2008 R2 com o Service Pack 1: Standard, Enterprise e Datacenter*
 
 Agora, o Windows Server 2008 R2 está com suporte estendido e não mais com suporte base, conforme detalhado na [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais como servidores do sistema de sites com o Configuration Manager, consulte [Sistemas operacionais de servidor preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-server-operating-systems).  
+
+> [!Important]  
+> A data de término do suporte estendido para o Windows Server 2008 R2 é 14 de janeiro de 2020. Após essa data, o Configuration Manager não dará mais suporte a esse sistema operacional como uma função do sistema de sites. 
 
 Os servidores do site ou a maioria das funções do sistema de sites não são compatíveis com esse sistema operacional. Ele ainda é compatível com a função do sistema de sites do ponto de distribuição, incluindo pontos de distribuição pull e para PXE e multicast.
 
@@ -193,9 +196,12 @@ Os servidores do site ou a maioria das funções do sistema de sites não são c
 
 ## <a name="bkmk_2008sp2"></a> Windows Server 2008 com SP2  
 
-*Aplica-se ao Windows Server 2008 com Service Pack 2 (x86, x64): Standard, Enterprise e Datacenter*
+*Aplica-se ao Windows Server 2008 com o Service Pack 2 (x86, x64): Standard, Enterprise e Datacenter*
 
 Agora, o Windows Server 2008 com SP2 (Service Pack 2) está em suporte estendido e não mais com suporte base, conforme detalhado na [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais como servidores do sistema de sites com o Configuration Manager, consulte [Sistemas operacionais de servidor preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-server-operating-systems).  
+
+> [!Important]  
+> A data de término do suporte estendido para o Windows Server 2008 R2 é 14 de janeiro de 2020. Após essa data, o Configuration Manager não dará mais suporte a esse sistema operacional como uma função do sistema de sites. 
 
 Esse sistema operacional não é compatível com servidores do site ou funções do sistema de sites, exceto pelo ponto de distribuição e ponto de distribuição pull. Continue usando esse sistema operacional como um ponto de distribuição até que a reprovação desse suporte seja comunicada ou o período de suporte estendido desse sistema operacional expire. Para obter mais informações, veja [A instalação do CB e do LTSB do Configuration Manager falha no Windows Server 2008](https://support.microsoft.com/help/4015095).
 
@@ -214,7 +220,7 @@ As seguintes versões de sistema operacional do cliente têm suporte para uso co
 
 - Windows 10 (x86, x64): Pro e Enterprise
 - Windows 8.1 (x86, x64): Professional e Enterprise
-- Windows 7 com SP1 (x86, x64): Professional, Enterprise e Ultimate
+- Windows 7 com o SP1 (x86, x64): Professional, Enterprise e Ultimate
 
 Esse suporte tem a seguinte limitação:  
 
@@ -241,10 +247,10 @@ Esse suporte tem a seguinte limitação:
 
 ## <a name="general-notes"></a>Observações gerais
 
-#### <a name="bkmk_note1"></a> Observação 1: pontos de distribuição
+#### <a name="bkmk_note1"></a> Observação 1: Pontos de distribuição
 Os pontos de distribuição dão suporte a várias configurações diferentes que têm diferentes requisitos. Em alguns casos, essas configurações dão suporte à instalação não apenas em servidores, mas em sistemas operacionais cliente. Para mais informações, confira [Manage content and content infrastructure](/sccm/core/servers/deploy/configure/manage-content-and-content-infrastructure) (Gerenciar o conteúdo e a infraestrutura de conteúdo).  
 
-#### <a name="bkmk_note2"></a> Observação 2: servidores de banco de dados do site
-Os servidores de banco de dados do site não são compatíveis com um RODC (controlador de domínio somente leitura). Para obter mais informações, confira o artigo do Suporte da Microsoft: [Você pode encontrar problemas ao instalar o SQL Server em um controlador de domínio](https://support.microsoft.com/help/2032911). 
+#### <a name="bkmk_note2"></a> Observação 2: Servidores de banco de dados do site
+Os servidores de banco de dados do site não são compatíveis com um RODC (controlador de domínio somente leitura). Para obter mais informações, confira o artigo do Suporte da Microsoft: [Você poderá encontrar problemas ao instalar o SQL Server em um controlador de domínio](https://support.microsoft.com/help/2032911). 
 
 Além disso, os servidores do site secundário não são compatíveis com qualquer controlador de domínio.  
