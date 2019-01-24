@@ -10,12 +10,12 @@ ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d0db075f652dd77a833f7a3a00f478bae5a5e54f
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 0a2ee528c8b38acbc18aa051dd84a7634b66713b
+ms.sourcegitcommit: 2687489aa409a050dcacd67f17b3dad3ab7f1804
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53415187"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54316585"
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-configuration-manager"></a>Gerenciar sequências de tarefas para automatizar tarefas no Gerenciador de Configurações
 
@@ -120,6 +120,8 @@ Você pode retornar a uma página anterior quando executar uma sequência de tar
 
        > [!NOTE]    
        > Se o programa selecionado não é executado em um cliente, a sequência de tarefas não é executada. Se o programa selecionado é executado com êxito, ele não é executado novamente, mesmo se a sequência de tarefas é executada novamente no mesmo cliente.  
+   
+   - **Suprimir notificações de sequência de tarefa**: Selecione esta opção para ocultar a notificação do sistema 'Há um novo software disponível'. Você ainda deverá ver o ícone 'novo software' do Centro de Software na área de notificação. Por padrão, essa caixa de seleção está desmarcada.  
  
    - **Desabilitar esta sequência de tarefas nos computadores nos quais está implantada**: Se você selecionar esta opção, o Configuration Manager desabilitará temporariamente todas as implantações que contêm esta sequência de tarefas. Também remove a sequência de tarefas da lista de implantações disponíveis para execução. A sequência de tarefas não será executada até que você a habilite. Por padrão, esta opção está desmarcada.  
 

@@ -10,12 +10,12 @@ ms.assetid: cd74e5f5-33f6-4566-8c9d-d6a93bfe71ed
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 54034ec94ad2a0ea2b7ce095d9da669aea02f0b3
-ms.sourcegitcommit: 702e6017b6dee4629b67bb9f3bd5d9b5a889ebee
+ms.openlocfilehash: 9f6b10706638a476242051757145f725b262a7fc
+ms.sourcegitcommit: 2687489aa409a050dcacd67f17b3dad3ab7f1804
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37340219"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54316432"
 ---
 # <a name="language-packs-in-configuration-manager"></a>Pacotes de idioma no Gerenciador de Configurações
 
@@ -31,9 +31,9 @@ Instale vários idiomas em cada site. Você só precisa instalar os idiomas que 
 
 Quando você instala o suporte para um idioma que corresponde aos seguintes componentes:  
 
-- O idioma de exibição de um computador: o console do Configuration Manager e a interface do usuário que é executada nesse computador exibem informações nesse idioma.  
+- O idioma de exibição de um computador: O console do Configuration Manager e a interface do usuário que é executada nesse computador exibem informações nesse idioma.  
 
-- A preferência de idioma em uso pelo navegador da Web de um computador, as conexões com informações baseadas na web, incluindo o Catálogo de Aplicativos ou o SQL Server Reporting Services, são exibidas nesse idioma.  
+- A preferência de idioma que está em uso pelo navegador da Web de um computador: As conexões com informações baseadas na Web, incluindo o Catálogo de Aplicativos ou o SQL Server Reporting Services, são exibidas nesse idioma.  
 
 
 Quando você executa a instalação do Configuration Manager, ele baixa os arquivos de pacote de idiomas como parte dos pré-requisitos e arquivos redistribuíveis. Também é possível usar o [downloader de instalação](setup-downloader.md) para baixar esses arquivos antes de executar a Instalação.   
@@ -47,7 +47,6 @@ Use a tabela a seguir para mapear uma identificação de localidade para um idio
 |Idioma do servidor|LCID (Identificação de localidade)|Código de três letras|  
 |---------------------|------------------------|-----------------------|  
 |Inglês (padrão)|0409|ENU|  
-|Chinês (tradicional, RAE de Hong Kong)|0c04|ZHH|  
 |Chinês (simplificado)|0804|CHS|  
 |Chinês (tradicional, Taiwan)|0404|CHT|  
 |Tcheco|0405|CSY|  
@@ -75,7 +74,6 @@ Use a tabela a seguir para mapear uma identificação de localidade para um idio
 |Idioma do cliente|LCID (Identificação de localidade)|Código de três letras|  
 |---------------------|------------------------|-----------------------|  
 |Inglês (padrão)|0409|ENG|  
-|Chinês (tradicional, RAE de Hong Kong)|0c04|ZHH|  
 |Chinês - Simplificado|0804|CHS|  
 |Chinês (tradicional, Taiwan)|0404|CHT|  
 |Tcheco|0405|CSY|  

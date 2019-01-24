@@ -1,8 +1,8 @@
 ---
-title: Preterido para servidores de site do Configuration Manager
+title: Itens preteridos para os servidores do site
 titleSuffix: Configuration Manager
-description: Saiba mais sobre os produtos e sistemas operacionais que não são mais compatíveis com os servidores de site do System Center Configuration Manager.
-ms.date: 01/25/2018
+description: Saiba mais sobre os produtos e sistemas operacionais que não são mais compatíveis com os servidores de site do Configuration Manager.
+ms.date: 01/15/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,37 +10,48 @@ ms.assetid: d53ac075-438b-41da-ab85-42f33982da0c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b92eb8083ce886fcab4d9957b2a79999d72a1a5a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: c8ea24e141d0e01512ed81ca96e88f2f0f2d07bc
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32332756"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342713"
 ---
-# <a name="removed-and-deprecated-for-system-center-configuration-manager-site-servers"></a>Removidos e preteridos para os servidores de site do System Center Configuration Manager
+# <a name="removed-and-deprecated-for-configuration-manager-site-servers"></a>Itens removidos e preteridos dos servidores do site do Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este artigo descreve os produtos e os sistemas operacionais que foram removidos do suporte dos servidores de site do System Center Configuration Manager, ou que serão removidos em uma atualização futura (preteridos). O artigo oferece um aviso antecipado das futuras alterações que poderão afetar o uso do Configuration Manager.  
+Este artigo descreve os produtos e os sistemas operacionais que foram removidos do suporte dos servidores de site do Configuration Manager, ou que serão removidos em uma atualização futura (preteridos). Fornece aviso antecipado sobre as futuras alterações que poderão afetar o uso do Configuration Manager.  
 
-Essas informações estão sujeitas a alterações em versões futuras e podem não incluir todos os recursos, os produtos ou os sistemas operacionais preteridos.  
+Essas informações podem ser alteradas no futuro. Elas poderão não incluir cada sistema operacional, produto ou recurso preterido.  
 
 
-## <a name="deprecated-server-operating-systems"></a>Sistemas operacionais de servidor preteridos  
+
+## <a name="server-os"></a>Sistema operacional do Servidor  
 
 |**Sistemas operacionais**|**Substituição anunciada pela primeira vez**|**Suporte removido** |  
 |-|-|-| 
-|Windows Server 2008 R2|10 de julho de 2015| Versão 1702 (veja a observação 1)| 
-|Windows Server 2008|10 de julho de 2015|Versão 1511 </br></br>O suporte como um sistema de sites foi removido. (veja a observação 2).|  
+|Windows Server 2008 R2 com SP1|10 de julho de 2015| Versão 1702 <sup>[Observação 1](#bkmk_note1)</sup>| 
+|Windows Server 2008 com SP2|10 de julho de 2015|Versão 1511 <sup>[Observação 2](#bkmk_note2)</sup>|  
 
->[!NOTE]
->-   Começando com a versão 1702, o Windows Server 2008 R2 não é compatível com servidores do site ou com a maioria das funções do sistema de sites. Entretanto, as versões anteriores à 1702 continuam compatíveis com esse uso. Este sistema operacional permanece compatível com a função de ponto de distribuição do sistema de sites (incluindo pontos de distribuição por pull, bem como para PXE e multicast) até o anúncio de que essa compatibilidade será preterida ou a expiração do período de suporte estendido do sistema operacional. Começando pela versão 1602, você pode atualizar in-loco o sistema operacional de um servidor do site do Windows Server 2008 R2 para o Windows Server 2012 R2.  
->- Para obter mais informações sobre a atualização in-loco do sistema operacional de um servidor do site, consulte a seção [Atualização in-loco do sistema operacional dos servidores do site que executam o Windows Server 2008 R2](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#bkmk_from2008r2) em [Atualizar infraestrutura local que seja compatível com o System Center Configuration Manager](/sccm/core/servers/manage/upgrade-on-premises-infrastructure).
+#### <a name="bkmk_note1"></a> Observação 1: Windows Server 2008 R2 com SP1
+O Windows Server 2008 R2 com Service Pack 1 não é compatível com servidores do site ou com a maioria das funções do sistema de sites. Esse sistema operacional ainda é compatível com a função de ponto de distribuição. Esse suporte inclui pontos de distribuição de pull, PXE e multicast. 
 
->[!NOTE]
->-   O Windows Server 2008 não é compatível com servidores do site ou funções do sistema de sites, exceto pelo ponto de distribuição e pelo ponto de distribuição por pull. Você pode continuar a usar esse sistema operacional como um ponto de distribuição até que a substituição do suporte seja anunciada ou o período de suporte estendido do sistema operacional expire. Para obter mais informações, consulte [Installation of System Center Configuration Manager CB and LTSB fails on Windows Server 2008](https://support.microsoft.com/help/4015095) (A instalação do CB e do LTSB do System Center Configuration Manager falha no Windows Server 2008).
+> [!Important]  
+> A data de término do suporte estendido para o Windows Server 2008 R2 com SP1 é 14 de janeiro de 2020. Após essa data, o Configuration Manager não dará mais suporte a esse sistema operacional como uma função do sistema de sites. 
 
-## <a name="deprecated-support-for-sql-server-versions-as-a-site-database"></a>Suporte preterido para versões do SQL Server como um banco de dados do site  
+Você pode atualizar o sistema operacional do servidor do site do Windows Server 2008 R2 para Windows Server 2012 R2. Para obter mais informações, confira [Atualização in-loco do sistema operacional dos servidores do site que executam o Windows Server 2008 R2](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#bkmk_from2008r2).  
+
+
+#### <a name="bkmk_note2"></a> Observação 2: Windows Server 2008 com SP2
+O Windows Server 2008 com Service Pack 2 não é compatível com servidores do site ou com a maioria das funções do sistema de sites. Esse sistema operacional ainda é compatível com a função de ponto de distribuição. Esse suporte inclui pontos de distribuição de pull, PXE e multicast. 
+
+> [!Important]  
+> A data de término do suporte estendido para o Windows Server 2008 com SP2 é 14 de janeiro de 2020. Após essa data, o Configuration Manager não dará mais suporte a esse sistema operacional como uma função do sistema de sites.  
+
+
+
+## <a name="sql-server"></a>SQL Server   
 
 |**Versões do SQL Server**|**Substituição anunciada pela primeira vez**|**Suporte removido**|   
 |-|-|-| 
@@ -48,14 +59,23 @@ Essas informações estão sujeitas a alterações em versões futuras e podem n
 |SQL Server 2008|10 de julho de 2015|Versão 1511|  
 
 
-Se você precisa atualizar sua versão do SQL Server, recomendamos os seguintes métodos, do mais fácil para o mais complexo.
-1. [Atualização do SQL Server no local](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#a-namebkmksupconfigupgradedbsrva-upgrade-sql-server-on-the-site-database-server) (recomendado).
-2. Instalar uma nova versão do SQL Server em um novo computador. Em seguida, [use a opção de mover o banco de dados](/sccm/core/servers/manage/modify-your-infrastructure#a-namebkmkdbconfiga-modify-the-site-database-configuration) da instalação do Configuration Manager para apontar o servidor do site para o novo SQL Server.
-3. Use [backup e recuperação](/sccm/protect/understand/backup-and-recovery).
+Se você precisa atualizar sua versão do SQL Server, recomendamos os seguintes métodos, do mais fácil para o mais complexo:
+
+1. [Atualização do SQL Server no local](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#a-namebkmksupconfigupgradedbsrva-upgrade-sql-server-on-the-site-database-server) (recomendado).  
+
+2. Instalar uma nova versão do SQL Server em um novo computador. Em seguida, [use a opção de mover o banco de dados](/sccm/core/servers/manage/modify-your-infrastructure#a-namebkmkdbconfiga-modify-the-site-database-configuration) da instalação do Configuration Manager para apontar o servidor do site para o novo SQL Server.  
+
+3. Use [backup e recuperação](/sccm/protect/understand/backup-and-recovery).  
+
 
 
 ## <a name="more-information"></a>Mais informações
-Para obter mais informações, consulte:
- - [Removidos e preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated)
- - O site do [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle).
- - [Suporte para versões do branch atual do Configuration Manager](/sccm/core/servers/manage/current-branch-versions-supported).
+
+Para obter mais informações, consulte os seguintes artigos: 
+
+- [Removidos e preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated)  
+
+- [Ciclo de vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle)  
+
+- [Suporte para versões atuais de branch do Configuration Manager](/sccm/core/servers/manage/current-branch-versions-supported)  
+

@@ -10,12 +10,12 @@ ms.assetid: 62f15230-d3a6-4afc-abd4-1e07e7ba6c97
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cde62242fc4db99d762d670037aad22bd25d6c00
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: e7a2801b7efa513b2b15a58a7a89eee5d4727a21
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456729"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342890"
 ---
 # <a name="task-sequence-variables-in-configuration-manager"></a>Variáveis de sequência de tarefas no Configuration Manager
 
@@ -153,13 +153,13 @@ Para saber mais, confira [Uso de variáveis de sequência de tarefas](/sccm/osd/
 
  Especifica que a sequência de tarefas começou por um dos seguintes métodos:  
 
- - **SMS**: o cliente do Configuration Manager, como quando um usuário o inicia pelo Centro de Software
- - **UFD**: mídia USB herdada
- - **UFD+FORMAT**: mídia USB mais recente
- - **CD**: um CD inicializável
- - **DVD**: um DVD inicializável
- - **PXE**: inicialização de rede com PXE
- - **HD**: mídia em pré-teste em um disco rígido
+ - **SMS**: O cliente do Configuration Manager, como quando um usuário o inicia pelo Centro de Software
+ - **UFD**: Mídia USB herdada
+ - **UFD+FORMAT**: Mídia USB mais recente
+ - **CD**: Um CD inicializável
+ - **DVD**: Um DVD inicializável
+ - **PXE**: Inicialização de rede com PXE
+ - **HD**: Mídia em pré-teste em um disco rígido
 
 
 ### <a name="SMSTSLogPath"></a> _SMSTSLogPath
@@ -289,8 +289,8 @@ Para saber mais, confira [Uso de variáveis de sequência de tarefas](/sccm/osd/
 
  Especifica o tipo da sequência de tarefas em execução atual. Pode ter um dos seguintes valores:  
 
- - **1**: indica uma sequência de tarefas genérica
- - **2**: uma sequência de tarefas de implantação de sistema operacional
+ - **1**: Indica uma sequência de tarefas genérica
+ - **2**: Uma sequência de tarefas de implantação de sistema operacional
 
 
 ### <a name="SMSTSUseCRL"></a> _SMSTSUseCRL
@@ -304,9 +304,9 @@ Para saber mais, confira [Uso de variáveis de sequência de tarefas](/sccm/osd/
 
  Esta variável pode ter os seguintes valores:  
 
- - `true`: especifica que a sequência de tarefas é iniciada manualmente por um usuário no Centro de Software.  
+ - `true`: Especifica que a sequência de tarefas é iniciada manualmente por um usuário no Centro de Software.  
 
- - `false`: especifica que a sequência de tarefas é iniciada automaticamente pelo agendamento do Configuration Manager.
+ - `false`: Especifica que a sequência de tarefas é iniciada automaticamente pelo agendador do Configuration Manager.
 
 
 ### <a name="SMSTSUseSSL"></a> _SMSTSUseSSL
@@ -330,13 +330,13 @@ Para saber mais, confira [Uso de variáveis de sequência de tarefas](/sccm/osd/
 
  A sequência de tarefas define esta variável de acordo com o status de instalação do aplicativo durante a etapa [Instalar Aplicativo](task-sequence-steps.md#BKMK_InstallApplication). Ela define um dos seguintes valores:  
 
- - **Indefinido**: a etapa Instalar Aplicativo não foi executada.  
+ - **Undefined**: A etapa Instalar Aplicativo não foi executada.  
 
- - **Erro**: pelo menos um aplicativo falhou devido a um erro durante a etapa Instalar Aplicativo.  
+ - **Erro**: Pelo menos um aplicativo falhou devido a um erro durante a etapa Instalar Aplicativo.  
 
- - **Aviso**: nenhum erro ocorreu durante a etapa Instalar Aplicativo. Um ou mais aplicativos, ou uma dependência necessária, não foram instalados porque um requisito não foi atendido.  
+ - **Aviso**: Nenhum erro ocorreu durante a etapa Instalar Aplicativo. Um ou mais aplicativos, ou uma dependência necessária, não foram instalados porque um requisito não foi atendido.  
 
- - **Êxito**: não há nenhum erro ou aviso detectado durante a etapa Instalar Aplicativo.  
+ - **Êxito**: Não há nenhum erro ou aviso detectado durante a etapa Instalar Aplicativo.  
 
 
 ### <a name="OSDAdapter"></a> OSDAdapter
@@ -392,9 +392,9 @@ Para saber mais, confira [Uso de variáveis de sequência de tarefas](/sccm/osd/
 #### <a name="osdadapter0tcpipnetbiosoptions"></a>OSDAdapter0TcpipNetbiosOptions
  Opções de NetBIOS por TCP/IP. Os valores possíveis são:  
 
- - `0`: usar as configurações de NetBIOS do servidor DHCP  
- - `1`: habilitar o NetBIOS por TCP/IP  
- - `2`: desabilitar o NetBIOS por TCP/IP  
+ - `0`: Usar as configurações de NetBIOS do servidor DHCP  
+ - `1`: Habilitar o NetBIOS por TCP/IP  
+ - `2`: Desabilitar o NetBIOS por TCP/IP  
 
 #### <a name="osdadapter0enablewins"></a>OSDAdapter0EnableWINS
  Definido como `true` para usar o WINS para resolução de nome.
@@ -483,9 +483,9 @@ Para saber mais, confira [Uso de variáveis de sequência de tarefas](/sccm/osd/
  Se houver vários drivers de dispositivo no catálogo de drivers que são compatíveis com um dispositivo de hardware, essa variável determinará a ação da etapa. 
 
  #### <a name="valid-values"></a>Valores válidos
- - `true` (padrão): instala somente o melhor driver de dispositivo  
+ - `true` (padrão): Instala somente o melhor driver de dispositivo  
 
- - `false`: instala todos os drivers de dispositivo compatíveis e o Windows escolhe o melhor driver a usar  
+ - `false`: Instala todos os drivers de dispositivo compatíveis e o Windows escolhe o melhor driver a usar  
 
 
 ### <a name="OSDAutoApplyDriverCategoryList"></a> OSDAutoApplyDriverCategoryList
@@ -780,8 +780,8 @@ Para saber mais, confira [Uso de variáveis de sequência de tarefas](/sccm/osd/
  Especifica se o computador de destino ingressa em um domínio ou grupo de trabalho do Windows. 
 
  #### <a name="valid-values"></a>Valores válidos
- - `0`: ingressar o computador de destino em um domínio do Windows  
- - `1`: ingressar o computador de destino em um grupo de trabalho  
+ - `0`: Ingressar o computador de destino em um domínio do Windows  
+ - `1`: Ingressar o computador de destino em um grupo de trabalho  
 
 
 ### <a name="OSDJoinWorkgroupName"></a> OSDJoinWorkgroupName
@@ -952,9 +952,9 @@ Para saber mais, confira [Uso de variáveis de sequência de tarefas](/sccm/osd/
  Permite que você personalize os arquivos que a USMT captura. 
 
  #### <a name="valid-values"></a>Valores válidos
- - `Simple`: a sequência de tarefas usará somente os arquivos padrão de configuração da USMT  
+ - `Simple`: A sequência de tarefas usará somente os arquivos padrão de configuração da USMT  
 
- - `Advanced`: a variável [OSDMigrateConfigFiles](#OSDMigrateConfigFiles) da sequência de tarefas especificará os arquivos de configuração que a USMT usa  
+ - `Advanced`: A variável [OSDMigrateConfigFiles](#OSDMigrateConfigFiles) da sequência de tarefas especificará os arquivos de configuração que a USMT usa  
 
 
 ### <a name="OSDMigrateNetworkMembership"></a> OSDMigrateNetworkMembership
@@ -1018,8 +1018,8 @@ Para saber mais, confira [Uso de variáveis de sequência de tarefas](/sccm/osd/
  Especifica se o computador de destino ingressa em um domínio do Active Directory ou um grupo de trabalho.
 
  #### <a name="value-values"></a>Valores do valor
- - `0`: ingressar em um domínio do Active Directory  
- - `1`: ingressar em um grupo de trabalho
+ - `0`: Ingressar em um domínio do Active Directory  
+ - `1`: Ingressar em um grupo de trabalho
 
 
 ### <a name="OSDPartitions"></a> OSDPartitions
@@ -1068,7 +1068,7 @@ Use os seguintes nomes de variáveis para definir as propriedades para a *primei
  Especifica o estilo de partição a ser usado ao particionar o disco. 
 
  #### <a name="valid-values"></a>Valores válidos
- - `GPT`: use o estilo Tabela de partição GUID
+ - `GPT`: Use o estilo Tabela de partição GUID
  - `MBR`: Use o estilo de partição do registro mestre de inicialização
 
 
@@ -1090,9 +1090,9 @@ Use os seguintes nomes de variáveis para definir as propriedades para a *primei
  Especifica uma senha gerada aleatoriamente para a conta de administrador local no novo sistema operacional. 
 
  #### <a name="valid-values"></a>Valores válidos
- - `true` (padrão): a Instalação do Windows desabilita a conta de administrador local no computador de destino  
+ - `true` (padrão): A Instalação do Windows desabilita a conta de administrador local no computador de destino  
 
- - `false`: a Instalação do Windows habilita a conta de administrador local no computador de destino e define a senha da conta para o valor de [OSDLocalAdminPassword](#OSDLocalAdminPassword)  
+ - `false`: A Instalação do Windows habilita a conta de administrador local no computador de destino e define a senha da conta para o valor de [OSDLocalAdminPassword](#OSDLocalAdminPassword)  
 
 
 ### <a name="OSDRegisteredOrgName-input"></a> OSDRegisteredOrgName (entrada)
@@ -1349,8 +1349,8 @@ Use os seguintes nomes de variáveis para definir as propriedades para a *primei
  Especifica o número de segundos que o aviso é exibido para o usuário antes da reinicialização do computador. 
 
  #### <a name="examples"></a>Exemplos
- - `0` (padrão): não exibir uma mensagem de reinicialização  
- - `60`: exibe o aviso por um minuto  
+ - `0` (padrão): Não exibir uma mensagem de reinicialização  
+ - `60`: Exibir o aviso por um minuto  
 
 
 ### <a name="SMSTSAssignmentsDownloadInterval"></a> SMSTSAssignmentsDownloadInterval
@@ -1371,11 +1371,11 @@ Use os seguintes nomes de variáveis para definir as propriedades para a *primei
 
  Especifica como uma sequência de tarefas associa os usuários ao computador de destino. Defina a variável para um dos seguintes valores:  
 
- - **Auto**: quando a sequência de tarefas implanta o sistema operacional no computador de destino, ela cria uma relação entre os usuários especificados e o computador de destino.  
+ - **Auto**: Quando a sequência de tarefas implanta o sistema operacional no computador de destino, ela cria uma relação entre os usuários especificados e o computador de destino.  
 
- - **Pendente**: a sequência de tarefas cria uma relação entre os usuários especificados e o computador de destino. Um administrador precisa aprovar a relação para configurá-la.  
+ - **Pendente**: A sequência de tarefas cria uma relação entre os usuários especificados e o computador de destino. Um administrador precisa aprovar a relação para configurá-la.  
 
- - **Desabilitado**: a sequência de tarefas não associa os usuários ao computador de destino ao implantar o sistema operacional.
+ - **Desabilitado**: A sequência de tarefas não associa os usuários ao computador de destino ao implantar o sistema operacional.
 
 
 ### <a name="SMSTSDisableStatusRetry"></a> SMSTSDisableStatusRetry
@@ -1580,6 +1580,8 @@ Use os seguintes nomes de variáveis para definir as propriedades para a *primei
 
  Controle o tempo limite para a verificação de atualizações de software durante essa etapa. Por exemplo, aumente o valor se você espera ter várias atualizações durante a verificação. O valor padrão é `1800` segundos (30 minutos). O valor da variável é definido em segundos.
 
+> [!NOTE] 
+> Começando pela versão 1802, o valor padrão é `3600` segundos (60 minutos).
 
 ### <a name="SMSTSUDAUsers"></a> SMSTSUDAUsers
 
@@ -1605,9 +1607,9 @@ Por exemplo, se você definir SMSTSWaitForSecondReboot como `600`, a sequência 
 ### <a name="TSDisableProgressUI"></a> TSDisableProgressUI
  <!-- 1354291 --> Use essa variável para controlar quando a sequência de tarefas exibe o progresso para usuários finais. Para ocultar ou exibir o andamento em momentos diferentes, defina essa variável várias vezes em uma sequência de tarefas.  
 
- - `true`: ocultar o progresso da sequência de tarefas  
+ - `true`: Ocultar o progresso da sequência de tarefas  
 
- - `false`: exibir o andamento da sequência de tarefas  
+ - `false`: Exibir o andamento da sequência de tarefas  
 
 
 ### <a name="TSErrorOnWarning"></a> TSErrorOnWarning 
@@ -1637,11 +1639,11 @@ Por exemplo, se você definir SMSTSWaitForSecondReboot como `600`, a sequência 
 
 As seguintes variáveis foram preteridas:
 
-- **OSDAllowUnsignedDriver**: não é usada ao implantar o Windows Vista e sistemas operacionais posteriores
-- **OSDBuildStorageDriverList**: aplica-se somente ao Windows XP e ao Windows Server 2003
-- **OSDDiskpartBiosCompatibilityMode**: só é necessária ao implantar o Windows XP ou o Windows Server 2003
-- **OSDInstallEditionIndex**: não é necessária após o Windows Vista
-- **OSDPreserveDriveLetter**: para saber mais, confira [OSDPreserveDriveLetter](#OSDPreserveDriveLetter)
+- **OSDAllowUnsignedDriver**: Não é usada ao implantar o Windows Vista e sistemas operacionais posteriores
+- **OSDBuildStorageDriverList**: Aplica-se somente ao Windows XP e Windows Server 2003
+- **OSDDiskpartBiosCompatibilityMode**: Só é necessária ao implantar o Windows XP ou o Windows Server 2003
+- **OSDInstallEditionIndex**: Não necessário em sistemas posteriores ao Windows Vista
+- **OSDPreserveDriveLetter**: Para obter mais informações, confira [OSDPreserveDriveLetter](#OSDPreserveDriveLetter)
 
 ### <a name="osdpreservedriveletter"></a>OSDPreserveDriveLetter
 

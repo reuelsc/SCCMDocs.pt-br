@@ -10,12 +10,12 @@ ms.assetid: 20493c86-6454-4b35-8f22-0d049b68b8bb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 666df71b32ea0dc95411b8ffd58d18f7666d7b23
-ms.sourcegitcommit: d36e4c7082a5144e79035dd8847c8e741fa04667
+ms.openlocfilehash: 776d0a477d56a178927fb2d09866eacf63b4895a
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53444579"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342781"
 ---
 # <a name="approve-applications-in-configuration-manager"></a>Aprovar aplicativos no Configuration Manager
 
@@ -69,6 +69,10 @@ Depois de aprovar um aplicativo para instalação, você pode **Negar** a solici
 <!--1321550-->
 
 Da versão 1810 em diante, configure notificações por email para solicitações de aprovação do aplicativo. Quando um usuário solicitar um aplicativo, você receberá um email. Clique nos links no email para aprovar ou negar a solicitação sem precisar usar o console do Configuration Manager.
+
+Você pode definir os endereços de email dos usuários que podem aprovar ou negar a solicitação ao criar uma nova implantação para o aplicativo. Se você precisar alterar a lista de endereços de email posteriormente, vá para o workspace **Monitoramento**, expanda **Alertas**e selecione o nó **Assinaturas**. Selecione **Propriedades** de uma das assinaturas **Aprovar o aplicativo por meio de email** que está relacionada à sua implantação do aplicativo. 
+
+Se há mais de um alerta, você pode determinar qual alerta corresponde a cada implantação. Abra as propriedades do alerta e exiba a lista de **Alertas selecionados** na guia Geral. A implantação está habilitada como o alerta para esta assinatura. 
 
 
 ### <a name="prerequisites"></a>Pré-requisitos

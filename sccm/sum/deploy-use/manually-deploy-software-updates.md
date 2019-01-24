@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
-ms.openlocfilehash: aae0951ddf32ce1d58a29b034acef96b55ab85a0
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 8c0752506e410f752f49795470215c30b0928e4e
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53414796"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342832"
 ---
 # <a name="manually-deploy-software-updates"></a>Implantar atualizações de software manualmente  
 
@@ -161,9 +161,12 @@ Depois de determinar as atualizações que você deseja implantar e adicioná-la
 
    -   **Notificações do usuário**: Especifique se deseja exibir notificações no Centro de Software no **Horário de disponibilidade do software** configurado. Essa configuração também controla se os usuários devem ser notificados nos computadores cliente. Para implantações **Disponíveis**, você não pode selecionar a opção **Ocultar no Centro de Software e em todas as notificações**.  
 
-   -   **Comportamento da data limite**: Essa configuração só é permitida para implantações **Obrigatórias**. Especifica os comportamentos quando a implantação de atualização de software atinge a data limite fora de uma janela de manutenção definida. As opções incluem instalar as atualizações de software e executar um reinício do sistema após a instalação. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+   -   **Comportamento da data limite**: Essa configuração só é permitida para implantações **Obrigatórias**. Especifica os comportamentos quando a implantação de atualização de software atinge a data limite fora de uma janela de manutenção definida. As opções incluem instalar as atualizações de software e executar um reinício do sistema após a instalação. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](/sccm/core/clients/manage/collections/use-maintenance-windows). 
+  
+       > [!Note]
+       > Isso se aplica somente quando a janela de manutenção está configurada para o dispositivo cliente. Se nenhuma janela de manutenção for definida no dispositivo, a atualização da instalação e a reinicialização sempre ocorrerão após o prazo.
 
-   -   **Comportamento de reinício de dispositivo**: Essa configuração só é permitida para implantações **Obrigatórias**. Especifique se deseja suprimir a reinicialização do sistema em servidores e estações de trabalho quando há necessidade de reinicialização para concluir a instalação da atualização.  
+   -   **Comportamento de reinicialização de dispositivo**: Essa configuração só é permitida para implantações **Obrigatórias**. Especifique se deseja suprimir a reinicialização do sistema em servidores e estações de trabalho quando há necessidade de reinicialização para concluir a instalação da atualização.  
 
        > [!WARNING]  
        >  A supressão das reinicializações do sistema pode ser útil em ambientes de servidor ou quando você não deseja que os computadores de destino sejam reiniciados por padrão. No entanto, isso pode deixar os computadores em um estado inseguro. Permitir uma reinicialização forçada ajuda a garantir a conclusão imediata da instalação da atualização de software.  

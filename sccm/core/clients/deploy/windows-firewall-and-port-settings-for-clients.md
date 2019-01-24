@@ -10,12 +10,12 @@ ms.assetid: dce4b640-c92f-401a-9873-ce9aa9262014
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 193ee803fd0a6bacf043dbabc6550ef68a4a629a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 94af249b91735a535ea4056f8a5f19d120632770
+ms.sourcegitcommit: 818f98187d377a90263d1b1c89d4c1fdbf8c908b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337387"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54398482"
 ---
 # <a name="windows-firewall-and-port-settings-for-clients-in-system-center-configuration-manager"></a>Configurações do Firewall do Windows e de porta para computadores cliente no System Center Configuration Manager
 
@@ -45,7 +45,7 @@ Os computadores cliente no System Center Configuration Manager que executam o Fi
 ### <a name="client-push-installation"></a>Instalação do Cliente por Push  
  Para usar push para instalar o cliente do Configuration Manager, adicione o seguinte como exceções ao Firewall do Windows:  
 
--   Entrada e saída: **Compartilhamento de Arquivo e Impressora**  
+-   Entrada e saída: **Compartilhamento de arquivos e impressoras**  
 
 -   Entrada: **WMI (Instrumentação de Gerenciamento do Windows)**  
 
@@ -55,9 +55,9 @@ Os computadores cliente no System Center Configuration Manager que executam o Fi
 ### <a name="client-requests"></a>Solicitações de cliente  
  Para computadores cliente se comunicarem com os sistemas de sites do Configuration Manager, adicione o seguinte como exceções ao Firewall do Windows:  
 
- Saída: porta TCP **80** (para comunicação HTTP)  
+ Saída: Porta TCP **80** (para comunicação HTTP)  
 
- Saída: porta TCP **443** (para comunicação HTTPS)  
+ Saída: Porta TCP **443** (para comunicação HTTPS)  
 
 > [!IMPORTANT]  
 >  Esses são números de porta padrão que podem ser alterados no Configuration Manager. Para obter mais informações, consulte [Como configurar portas de comunicação do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md). Se os valores padrão dessas portas forem alterados, será necessário configurar também exceções correspondentes no Firewall do Windows.  
@@ -65,13 +65,13 @@ Os computadores cliente no System Center Configuration Manager que executam o Fi
 ### <a name="client-notification"></a>Notificação de Cliente  
  Para o ponto de gerenciamento notificar os computadores cliente sobre uma ação que deve ser executada quando um usuário administrativo selecionar uma ação de cliente no console do Configuration Manager, como baixar a política do computador ou iniciar uma verificação de malware, adicione o seguinte como exceção ao Firewall do Windows:  
 
- Saída: porta TCP **10123**  
+ Saída: Porta TCP **10123**  
 
  Se essa comunicação não tiver êxito, o Configuration Manager voltará a usar automaticamente a porta de comunicação cliente-ponto de gerenciamento existente de HTTP ou HTTPS:  
 
- Saída: porta TCP **80** (para comunicação HTTP)  
+ Saída: Porta TCP **80** (para comunicação HTTP)  
 
- Saída: porta TCP **443** (para comunicação HTTPS)  
+ Saída: Porta TCP **443** (para comunicação HTTPS)  
 
 > [!IMPORTANT]  
 >  Esses são números de porta padrão que podem ser alterados no Configuration Manager. Para obter mais informações, consulte [Como configurar portas de comunicação do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md). Se os valores padrão dessas portas forem alterados, será necessário configurar também exceções correspondentes no Firewall do Windows.  
@@ -79,7 +79,7 @@ Os computadores cliente no System Center Configuration Manager que executam o Fi
 ### <a name="remote-control"></a>Controle remoto  
  Para usar o controle remoto do Configuration Manager, autorize a seguinte porta:  
 
--   Entrada: porta TCP**2701**  
+-   Entrada: Porta TCP **2701**  
 
 ### <a name="remote-assistance-and-remote-desktop"></a>Assistência Remota e Área de Trabalho Remota  
  Para iniciar a Assistência Remota no console do Configuration Manager, adicione o programa personalizado **Helpsvc.exe** e a porta de entrada personalizada TCP **135** à lista de programas e serviços permitidos no Firewall do Windows no computador cliente. Também é necessário permitir a **Assistência Remota** e a **Área de Trabalho Remota**. Se você iniciar a Assistência Remota no computador cliente, o Firewall do Windows irá configurar e permitir automaticamente a **Assistência Remota** e a **Área de Trabalho Remota**.  
@@ -87,11 +87,11 @@ Os computadores cliente no System Center Configuration Manager que executam o Fi
 ### <a name="wake-up-proxy"></a>Proxy de ativação  
  Se a configuração de cliente do proxy de ativação for habilitada, um novo serviço chamado Proxy de Ativação do ConfigMgr usará um protocolo ponto a ponto para verificar se outros computadores estão ativos na sub-rede e ativá-los, se necessário. Essa comunicação usa as seguintes portas:  
 
- Saída: porta UDP **25536**  
+ Saída: Porta UDP **25536**  
 
- Saída: porta UDP **9**  
+ Saída: Porta UDP **9**  
 
- Esses são os números da porta padrão que podem ser alterados no Configuration Manager usando as configurações de clientes de **Gerenciamento de Energia** para **Número de porta proxy de ativação (UDP)** e **Número de porta Wake On LAN (UDP)**. Se a configuração de cliente **Gerenciamento de Energia**: **Exceção do Windows Firewall para proxy de ativação** for especificada, essas portas serão automaticamente configuradas no Firewall do Windows para clientes. No entanto, se os clientes tiverem em execução um firewall diferente, configure manualmente as exceções para esses números de porta.  
+ Esses são os números da porta padrão que podem ser alterados no Configuration Manager usando as configurações de clientes de **Gerenciamento de Energia** para **Número de porta proxy de ativação (UDP)** e **Número de porta Wake On LAN (UDP)**. Se você especificar a configuração de cliente **Gerenciamento de energia**: **Exceção do Firewall do Windows para proxy de ativação**, essas portas serão automaticamente configuradas no Firewall do Windows para clientes. No entanto, se os clientes tiverem em execução um firewall diferente, configure manualmente as exceções para esses números de porta.  
 
  Além dessas portas, o proxy de ativação também usa mensagens de solicitação de eco ICMP (Internet Control Message Protocol) de um computador cliente para outro computador cliente. Essa comunicação é usada para confirmar se o outro computador cliente está ativo na rede. O ICMP é, por vezes, referido como comandos ping TCP/IP.  
 

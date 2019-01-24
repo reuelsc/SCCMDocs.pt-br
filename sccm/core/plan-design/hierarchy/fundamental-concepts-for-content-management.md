@@ -10,12 +10,12 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b73ead1492b143260d327f428db5a6183f84434c
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: 4a777ec74fb4006df056b4e69d7cbdfb380bcf72
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411333"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342747"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Conceitos fundamentais para o gerenciamento de conteúdo no Configuration Manager
 
@@ -57,7 +57,7 @@ Para obter mais informações, confira [Conta de acesso de pacote](/sccm/core/pl
 
 
 ## <a name="binary-differential-replication"></a>Replicação diferencial binária  
- A BDR (replicação diferencial binária) é um pré-requisito para os pontos de distribuição. Às vezes, ela é conhecida como replicação delta. Quando você está distribuindo atualizações para o conteúdo implantado anteriormente em outros sites ou em pontos de distribuição remotos, a BDR é usada automaticamente para reduzir a largura de banda.  
+ A BDR (replicação diferencial binária) às vezes é conhecida como replicação delta. Ela é usada para distribuir atualizações para conteúdo que você implantou anteriormente em outros sites ou em pontos de distribuição remotos. Para dar suporte à redução do BDR de uso de largura de banda, instale o recurso **Compactação Diferencial Remota** nos pontos de distribuição. Para obter mais informações, confira [Pré-requisitos de pontos de distribuição](/sccm/core/plan-design/configs/site-and-site-system-prerequisites#bkmk_2012dppreq).
 
  A BDR minimiza a largura de banda da rede usada para enviar atualizações para o conteúdo distribuído. Ela reenvia somente o conteúdo novo ou alterado, em vez de enviar todo o conjunto de arquivos de fonte de conteúdo sempre que você altera esses arquivos.  
 
@@ -173,9 +173,9 @@ Quando um cliente precisa de conteúdo, ele faz uma solicitação de local de co
 
  O ponto de distribuição (não especializado) básico é conhecido como ponto de distribuição padrão. Há duas variações do ponto de distribuição padrão que recebem atenção especial:  
 
--   **Ponto de distribuição de pull**: uma variação de um ponto de distribuição em que o ponto de distribuição obtém conteúdo de outro ponto de distribuição (um ponto de distribuição de origem). Esse processo é semelhante a como os clientes baixam o conteúdo dos pontos de distribuição. Os pontos de distribuição de pull podem ajudar a evitar gargalos de largura de banda de rede que ocorrem quando o servidor do site deve distribuir conteúdo diretamente para cada ponto de distribuição. [Use um ponto de distribuição pull](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point).
+-   **Ponto de distribuição de pull**: Uma variação de um ponto de distribuição em que o ponto de distribuição obtém conteúdo de outro ponto de distribuição (um ponto de distribuição de origem). Esse processo é semelhante a como os clientes baixam o conteúdo dos pontos de distribuição. Os pontos de distribuição de pull podem ajudar a evitar gargalos de largura de banda de rede que ocorrem quando o servidor do site deve distribuir conteúdo diretamente para cada ponto de distribuição. [Use um ponto de distribuição pull](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point).
 
--   **Ponto de distribuição na nuvem**: uma variação de ponto de distribuição que é instalado no Microsoft Azure. [Saiba como usar um ponto de distribuição na nuvem](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point).  
+-   **Ponto de distribuição na nuvem**: Uma variação de um ponto de distribuição instalado no Microsoft Azure. [Saiba como usar um ponto de distribuição na nuvem](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point).  
 
 
 Os pontos de distribuição padrão dão suporte a uma variedade de recursos e configurações:  
@@ -236,9 +236,9 @@ Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/d
 ## <a name="network-bandwidth"></a>Largura de banda da rede  
  Para ajudar a gerenciar a quantidade de largura de banda de rede usada quando você distribui conteúdo, use as seguintes opções:  
 
--   **Conteúdo pré-teste**: transferência de conteúdo para um ponto de distribuição sem a distribuição do conteúdo pela rede.  
+-   **Conteúdo pré-teste**: A transferência de conteúdo para um ponto de distribuição sem a distribuição do conteúdo pela rede.  
 
--   **Agendamento e limitação**: configurações que ajudam a controlar quando e como o conteúdo é distribuído aos pontos de distribuição.  
+-   **Agendamento e limitação**: Configurações que ajudam a controlar quando e como o conteúdo é distribuído aos pontos de distribuição.  
 
 Para obter mais informações, consulte [Gerenciar largura de banda de rede](/sccm/core/plan-design/hierarchy/manage-network-bandwidth).
 
@@ -256,7 +256,7 @@ Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/d
 ## <a name="on-demand-content-distribution"></a>Distribuição de conteúdo sob demanda  
  A distribuição de conteúdo sob demanda é uma opção para implantações de aplicativos e pacotes individuais. Com essa opção é possível distribuir conteúdo sob demanda para servidores preferenciais.  
 
--   Para habilitar essa configuração em uma implantação, habilite **Distribuir o conteúdo deste pacote para pontos de distribuição preferenciais**.  
+-   Para habilitar essa configuração para uma implantação, habilite: **Distribuir o conteúdo deste pacote para pontos de distribuição preferenciais**.  
 
 -   Quando você habilita essa opção para uma implantação e um cliente solicita esse conteúdo, mas ele não está disponível em nenhum dos pontos de distribuição preferenciais do cliente, o Configuration Manager distribui automaticamente esse conteúdo para os pontos de distribuição preferenciais do cliente.  
 
