@@ -10,12 +10,12 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 610dfb7391347663fd92c0839d20eb7a4a703438
-ms.sourcegitcommit: c80abe7e4b7b2f80e957e45ff205f67d1b715688
+ms.openlocfilehash: 1ec1155ec578e0eab957baa991628ed18eef6c62
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54226216"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898640"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -435,8 +435,8 @@ Peça aos usuários finais no Windows 10 versão 1607 ou posterior para atualiza
 
 - **Novas configurações de política de gerenciamento de aplicativo móvel**     
   As configurações a seguir foram adicionadas nas configurações de política de gerenciamento de aplicativos móveis:
-  - **Desabilitar sincronização do contato**: impede que o aplicativo salve dados no aplicativo Contatos nativo do dispositivo.
-  - **Desabilitar a impressão**: impede que o aplicativo imprima dados corporativos ou de estudante.
+  - **Desabilitar sincronização de contatos**: impede que o aplicativo salve dados no aplicativo Contatos nativo do dispositivo.
+  - **Desabilitar impressão**: impede que o aplicativo imprima dados corporativos ou de estudante.
   <!-- 1324760 -->    
 
   Veja [proteger aplicativos usando políticas de proteção de aplicativos no Configuration Manager](/sccm/mdm/deploy-use/protect-apps-using-mam-policies) para testar as novas configurações de política de proteção do aplicativo.
@@ -592,24 +592,24 @@ Após dezembro, os usuários finais que têm dispositivos diferente dos listados
 Para obter mais informações, confira [Registrar seu dispositivo macOS no Intune com o aplicativo Portal da Empresa](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos-cp).
 
 
-### <a name="plan-for-change-new-intune-support-experience-for-premier-customers"></a>Plano para alteração: Novo suporte do Intune experiência para Premier, os clientes 
+### <a name="intune-support-experience-for-premier-customers-now-in-azure-instead-of-mpo"></a>Experiência de suporte do Intune para Premier clientes agora no Azure em vez do MPO  
 <!--2828727-->
 
-atualização 4/12/2018: Estamos tentando tornar esse processo melhor para você. Criação do MPO não será desabilitada em 3 de dezembro de solicitação de suporte. Apresentaremos conhece por meio do Centro de mensagens e atualizar esta postagem em breve para compartilhar linhas do tempo para que essa alteração.
-
-Como um cliente Premier da Microsoft, no momento, você pode usar o [portal do Microsoft Premier Online (MPO)](https://premier.microsoft.com) e [Intune no Azure](https://portal.azure.com) para criar solicitações de suporte do Intune. A partir de 3 de dezembro de 2018, para continuar aprimorando a experiência do Suporte Premier, será possível criar solicitações de suporte apenas no Intune no Azure.
+Compartilhamos em MC147649 em setembro, que seria removemos a capacidade de criar solicitações de suporte do Intune do portal do Microsoft Premier Online (MPO) (premier.microsoft.com) em dezembro. Agora, após um pequeno atraso, no final de janeiro, você será redirecionado para criar solicitações de suporte apenas no Intune no Azure.
 
 #### <a name="how-does-this-affect-me"></a>Como isso me afeta?
-Após 3 de dezembro, não será possível criar solicitações de suporte no MPO. Se você tentar, verá um prompt que informa que não é possível ignorar seu redirecionamento para o Intune no Azure. Quando você cria uma solicitação de suporte no portal do Azure, ela é roteada para o Suporte da Microsoft dedicado ao Intune. Eles diagnosticarão e resolverão seu problema oportunamente. Se você criar uma solicitação de suporte no portal do MPO, não poderá exibi-la no portal do Azure. Comece a criar somente as solicitações de suporte no Intune no Azure.  
+Após o final de janeiro, continue aprimorando o Premier dar suporte à experiência, você não poderá criar solicitações de suporte em MPO. Quando você tentar realizar essa ação, você verá um aviso não é possível ignorar redirecionando você para o Intune no Azure. Aqui, você pode criar uma solicitação de suporte, que é roteada para o Intune dedicadas Microsoft Support. Esses suporte engenheiros serão diagnosticar e resolver o problema de maneira oportuna. Você não pode exibir as solicitações de suporte no portal do Azure que você criou no portal do MPO.
 
-Se você usar o MDM (gerenciamento de dispositivo móvel) híbrido ou usar o cogerenciamento, continue usando o MPO para criar solicitações de suporte para o Configuration Manager, mas use o portal do Azure para criar solicitações de suporte para Intune. Como um lembrete, o MDM híbrido foi preterido, e você deve planejar migrar para o Intune no Azure assim que possível. Para obter mais informações, confira [Migrar do Gerenciamento de Dispositivo Móvel Híbrido para o Intune no Azure](https://aka.ms/hybrid_notification).
+O portal do Azure tem uma nova experiência de suporte como anunciamos recentemente MC171941. Para obter mais informações, consulte [como obter suporte para o Microsoft Intune](https://aka.ms/new_support_experience).
 
-Observe que apenas os usuários com funções de Administrador Global, de Administrador de Serviços do Intune e de Administrador de Suporte de Serviço podem criar tíquetes de suporte no portal do Azure.
+Se você usar o MDM híbrido ou o cogerenciamento, continue a usar o MPO para criar solicitações de suporte do Configuration Manager. Use o portal do Azure para criar solicitações de suporte do Intune. Como um lembrete, o MDM híbrido foi preterido, e você deve planejar migrar para o Intune no Azure assim que possível. Para obter mais informações, confira [Migrar do Gerenciamento de Dispositivo Móvel Híbrido para o Intune no Azure](https://aka.ms/hybrid_notification).
+
+Somente os usuários com funções de Administrador Global, administrador de serviço do Intune e o administrador de suporte de serviço podem criar tíquetes de suporte no portal do Azure.
 
 #### <a name="what-can-i-do-to-prepare-for-this-change"></a>O que fazer para me preparar para essa mudança?
 - Para de usar o MPO para solicitações de suporte relacionadas ao Intune. Use o Intune no Azure para criar e gerenciar todas as solicitações de suporte do Intune.  
 - Notifique a documentação de assistência técnica e atualização se necessário.  
-- Se você tiver usuários sem as funções de Administrador Global ou de Administrador de Serviços do Intune no momento criando solicitações de suporte no MPO, atribua a função de Administrador de Suporte de Serviço no Azure Active Directory. Os usuários exigem uma dessas funções para criar tíquetes de suporte no portal do Azure.  
+- Se você tiver usuários sem as funções de Administrador Global ou administrador de serviço do Intune no momento, criando solicitações de suporte em MPO, atribua a função de administrador de suporte do serviço no Azure Active Directory. Os usuários exigem uma dessas funções para criar tíquetes de suporte no portal do Azure.  
 
 #### <a name="additional-information"></a>Informações adicionais
 Para saber mais, confira a [postagem no blog da equipe de suporte do Microsoft Intune](https://aka.ms/IntuneSupport_MPO_to_Azure).
