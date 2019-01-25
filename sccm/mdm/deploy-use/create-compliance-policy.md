@@ -10,17 +10,16 @@ ms.assetid: 0fd76043-d7ee-423d-8c5f-aa7e9ed58ce0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: noindex
-ms.openlocfilehash: 67cc82bdd114c9d525e5a9dacc1e5775d52150dd
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: b0179de8cc96f885236178c70b7e834672ee1d5b
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53414915"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898572"
 ---
 # <a name="create-and-deploy-a-device-compliance-policy"></a>Criar e implantar uma política de conformidade de dispositivo
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
 ## <a name="create-a-compliance-policy"></a>Criar uma política de conformidade
@@ -97,11 +96,11 @@ ms.locfileid: "53414915"
 
     A página **Status da Implantação** tem as seguintes guias:  
 
-    - **Compatível com**: Mostra a conformidade da política com base no número de ativos afetados. É possível escolher uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do workspace **Ativos e Conformidade**, que contém todos os usuários ou dispositivos que são compatíveis com esta regra. O painel **Detalhes do Ativo** mostra os usuários e os dispositivos compatíveis com a política. Para mostrar mais informações, clique duas vezes em um usuário ou dispositivo da lista.  
+    - **Em conformidade**: Mostra a conformidade da política com base no número de ativos afetados. É possível escolher uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do workspace **Ativos e Conformidade**, que contém todos os usuários ou dispositivos que são compatíveis com esta regra. O painel **Detalhes do Ativo** mostra os usuários e os dispositivos compatíveis com a política. Para mostrar mais informações, clique duas vezes em um usuário ou dispositivo da lista.  
 
     - **Erro**: Mostra uma lista de todos os erros da implantação da política selecionada com base no número de ativos afetados. É possível escolher uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do workspace **Ativos e Conformidade**, que contém todos os usuários ou dispositivos que geraram erros com esta regra. Ao selecionar um usuário ou dispositivo, o painel **Detalhes do Ativo** mostra os usuários ou os dispositivos afetados pelo problema. Para mostrar mais informações sobre o problema, clique duas vezes em um usuário ou dispositivo da lista.  
 
-    - **Fora de conformidade**: Mostra uma lista de todas as regras não compatíveis na política com base no número de ativos afetados. É possível escolher uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do workspace **Ativos e Conformidade**, que contém todos os usuários ou dispositivos que não são compatíveis com esta regra. Ao selecionar um usuário ou dispositivo, o painel **Detalhes do Ativo** mostra os usuários ou os dispositivos afetados pelo problema. Para mostrar mais informações sobre o problema, clique duas vezes em um usuário ou dispositivo da lista.  
+    - **Não em conformidade**: Mostra uma lista de todas as regras não compatíveis na política com base no número de ativos afetados. É possível escolher uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do workspace **Ativos e Conformidade**, que contém todos os usuários ou dispositivos que não são compatíveis com esta regra. Ao selecionar um usuário ou dispositivo, o painel **Detalhes do Ativo** mostra os usuários ou os dispositivos afetados pelo problema. Para mostrar mais informações sobre o problema, clique duas vezes em um usuário ou dispositivo da lista.  
 
     - **Desconhecido**: Mostra uma lista de todos os usuários e dispositivos que não relataram a conformidade para a implantação da política selecionada junto com o status atual do cliente dos dispositivos.  
 
@@ -233,7 +232,7 @@ ms.locfileid: "53414915"
     **Tem suporte em**:  
     - iOS 6+  
 
-- **Perfil de email**: Se a opção A conta de email deve ser gerenciada pelo Intune estiver marcada, escolha **Selecionar** para escolher o perfil de email pelo qual os dispositivos devem ser gerenciados. O perfil de email deve estar presente no dispositivo.  
+- **Perfil de email**: Se a opção **A conta de email deve ser gerenciada pelo Intune** estiver marcada, escolha **Selecionar** para escolher o perfil de email pelo qual os dispositivos devem ser gerenciados. O perfil de email deve estar presente no dispositivo.  
 
     **Tem suporte em**:  
     - iOS 6+  
