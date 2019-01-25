@@ -204,9 +204,13 @@ items:
     items:
     - name: Configurar seu laboratório
       href: get-started/set-up-your-lab.md
+    - name: Criar um laboratório no Azure
+      href: get-started/azure-template.md
   - name: Visualização técnica
     href: get-started/technical-preview.md
     items:
+    - name: Recursos do 1901
+      href: get-started/2019/technical-preview-1901.md
     - name: Recursos do 1812
       href: get-started/capabilities-in-technical-preview-1812.md
     - name: Recursos do 1811
@@ -215,8 +219,6 @@ items:
       href: get-started/capabilities-in-technical-preview-1810-2.md
     - name: Recursos da versão 1810
       href: get-started/capabilities-in-technical-preview-1810.md
-    - name: Recursos da versão 1809
-      href: get-started/capabilities-in-technical-preview-1809.md
   - name: Migrar dados entre hierarquias
     href: migration/migrate-data-between-hierarchies.md
     items:
@@ -765,9 +767,9 @@ items:
       href: clients/manage/upgrade/upgrade-clients-for-linux-and-unix-servers.md
     - name: Atualizar clientes Mac
       href: clients/manage/upgrade/upgrade-clients-on-mac-computers.md
-ms.openlocfilehash: aa4011a4b3a62500307769fb36212a46cd406c2a
-ms.sourcegitcommit: d36e4c7082a5144e79035dd8847c8e741fa04667
+ms.openlocfilehash: 0e150450ce64e610187c1c046a299c23b08fc235
+ms.sourcegitcommit: b8167a60fd6f2d8387b2db723976c0e2c4198d33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53444596"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54832781"
