@@ -10,12 +10,13 @@ ms.assetid: 7996b3eb-5259-483b-af40-adae2943d123
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ebd51b397e37c69e8f6e8d1e154fc369347bd63a
-ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
+ROBOTS: NOINDEX
+ms.openlocfilehash: 6108a6d90a18277275e50ba980a9d81099ba116a
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47229357"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898484"
 ---
 # <a name="capabilities-in-technical-preview-1805-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1805 do System Center Configuration Manager
 
@@ -52,7 +53,7 @@ Steps to workaround, if any.
 ### <a name="try-it-out"></a>Experimente!
 Siga as instruções para criar uma implantação em fases, em que você configura manualmente todas as fases. Envie seus [Comentários](capabilities-in-technical-preview-1804.md#bkmk_feedback) sobre como isso funcionou. 
 
-1. No espaço de trabalho **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**.  
+1. No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**.  
 
 2. Clique com o botão direito do mouse em uma sequência de tarefas existente e selecione **Criar Implantação em Fases**.  
 
@@ -68,12 +69,12 @@ Siga as instruções para criar uma implantação em fases, em que você configu
         - **Percentual de sucesso da implantação**: especifique o percentual de dispositivos que concluíram com êxito a implantação de acordo com os critérios de sucesso da fase anterior.  
 
     - Condições para começar esta fase de implantação após êxito da fase anterior  
-        - **Iniciar automaticamente esta fase após um período de adiamento (em dias)**: escolha o número de dias de espera antes do início da fase seguinte após o sucesso da fase anterior. 
-        - **Iniciar manualmente esta fase da implantação**: não inicie esta fase automaticamente após o sucesso da fase anterior.  
+        - **Iniciar essa fase automaticamente após um período de adiamento (em dias)**: escolha o número de dias a aguardar antes do início da próxima fase e após o êxito da fase anterior. 
+        - **Iniciar esta fase de implantação manualmente**: não inicie essa fase automaticamente após o êxito da fase anterior.  
 
     - Uma vez que um dispositivo for definido como destino, instale o software
-        - **Assim que possível**: define a data limite da instalação no dispositivo assim que o dispositivo é direcionado.
-        - **Hora limite (em relação à hora em que o dispositivo é direcionado)**: define a data limite da instalação com determinado número de dias depois que o dispositivo é direcionado.  
+        - **O mais breve possível**: define a data limite da instalação no dispositivo assim que este é direcionado.
+        - **Hora do prazo (em relação ao tempo que o dispositivo é direcionado)**: define o prazo de instalação para um determinado número de dias após o dispositivo ser direcionado.  
      
 7. Conclua o assistente Configurações de Fase.
 
@@ -103,7 +104,7 @@ O Configuration Manager não migra os pontos de distribuição na nuvem clássic
 ### <a name="try-it-out"></a>Experimente!  
  Tente concluir as tarefas. Depois, envie seus [comentários](capabilities-in-technical-preview-1804.md#bkmk_feedback) sobre como isso funcionou.
 
-1. No console do Configuration Manager, no espaço de trabalho **Administração**, expanda **Serviços de Nuvem** e selecione **Pontos de Distribuição de Nuvem**. Clique em **Criar Ponto de Distribuição de Nuvem** na faixa de opções.   
+1. No console do Configuration Manager, no workspace **Administração**, expanda **Serviços de Nuvem** e selecione **Pontos de Distribuição de Nuvem**. Clique em **Criar Ponto de Distribuição de Nuvem** na faixa de opções.   
 
 2. Na página **Geral**, selecione **implantação do Azure Resource Manager** . Clique em **Entrar** para autenticar com uma conta de administrador de assinatura do Azure. O assistente automatiza os campos restantes das informações de assinatura do Azure AD armazenadas durante o pré-requisito de integração. Se você possui várias assinaturas, selecione a assinatura desejada para usar. Clique em **Avançar**.  
 
@@ -172,7 +173,7 @@ Para saber mais sobre o Windows LEDBAT, confira a postagem no blog [Novos avanç
 ### <a name="try-it-out"></a>Experimente!
  Tente concluir as tarefas. Depois, envie seus [comentários](#bkmk_feedback) sobre como isso funcionou.
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**. Selecione o nó **Pontos de Distribuição**. Selecione o ponto de distribuição de destino e clique em **Propriedades** na faixa de opções.  
+1. No console do Configuration Manager, acesse o workspace **Administração**. Selecione o nó **Pontos de Distribuição**. Selecione o ponto de distribuição de destino e clique em **Propriedades** na faixa de opções.  
 
 2. Na guia **Geral**, habilite a opção para **Ajustar a velocidade de download para usar a largura de banda de rede não utilizada (Windows LEDBAT)**.  
 
@@ -198,11 +199,11 @@ Tente concluir as tarefas. Depois, envie seus [comentários](capabilities-in-tec
 
 #### <a name="cloud-management-dashboard"></a>Painel de gerenciamento de nuvem
 
-No console do Configuration Manager, acesse o espaço de trabalho **Monitoramento**. Selecione o nó **Gerenciamento de Nuvem** e visualize os blocos do painel.  
+No console do Configuration Manager, acesse o workspace **Monitoramento**. Selecione o nó **Gerenciamento de Nuvem** e visualize os blocos do painel.  
 
 #### <a name="cmg-connection-analyzer"></a>Analisador de conexão de CMG
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**. Expanda **Serviços de Nuvem** e selecione **Gateway de Gerenciamento de Nuvem**.  
+1. No console do Configuration Manager, acesse o workspace **Administração**. Expanda **Serviços de Nuvem** e selecione **Gateway de Gerenciamento de Nuvem**.  
 
 2. Selecione a instância CMG de destino e, em seguida, selecione **Analisador de Conexões** na faixa de opções.  
 
@@ -250,7 +251,7 @@ Ao clicar com o botão direito do mouse em um dispositivo específico, você tam
 ### <a name="try-it-out"></a>Experimente!
 Tente concluir as tarefas. Depois, envie seus [comentários](capabilities-in-technical-preview-1804.md#bkmk_feedback) sobre como isso funcionou.
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Ativos e Conformidade** e selecione **Coleções de Dispositivos**. Selecione uma coleção de destino e clique em **Iniciar CMPivot** na faixa de opções para iniciar a ferramenta.  
+1. No console do Configuration Manager, acesse o workspace **Ativos e Conformidade** e selecione **Coleções de Dispositivos**. Selecione uma coleção de destino e clique em **Iniciar CMPivot** na faixa de opções para iniciar a ferramenta.  
 
 2. A interface fornece mais informações sobre o uso da ferramenta. 
      - Você pode inserir manualmente as cadeias de caracteres de consulta na parte superior ou clicar nos links na documentação em linha.
@@ -275,14 +276,14 @@ Esta versão inclui melhorias em como os clientes se comunicam com os sistemas d
 ### <a name="bkmk_token"></a> Cenários
 Os cenários a seguir se beneficiam dessas melhorias:  
 
-#### <a name="bkmk_token1"></a> Cenário 1: Cliente para o ponto de gerenciamento
+#### <a name="bkmk_token1"></a> Cenário 1: cliente para o ponto de gerenciamento
 <!--1356889-->
 [Os dispositivos associados ao Azure AD](/azure/active-directory/device-management-introduction#azure-ad-joined-devices) podem se comunicar por meio de um gateway de gerenciamento de nuvem (CMG) com um ponto de gerenciamento configurado para HTTP. O servidor do site gera um certificado para o ponto de gerenciamento, permitindo que ele se comunique por meio de um canal seguro.   
 
 > [!Note]  
 > Esse comportamento foi alterado na versão 1802 do branch atual do Configuration Manager, que requer um ponto de gerenciamento habilitado para HTTPS para esse cenário. Para obter mais informações, consulte [Habilitar ponto de gerenciamento para HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#enable-management-point-for-https).  
 
-#### <a name="bkmk_token2"></a> Cenário 2: Cliente para o ponto de distribuição
+#### <a name="bkmk_token2"></a> Cenário 2: cliente para o ponto de distribuição
 <!--1358228--> Um cliente associado ao grupo de trabalho ou ao Azure AD pode baixar o conteúdo por meio de um canal seguro a partir de um ponto de distribuição configurado para HTTP.   
 
 #### <a name="bkmk_token3"></a> Cenário 3: Identidade de dispositivo do Azure AD 
@@ -299,7 +300,7 @@ Os cenários a seguir se beneficiam dessas melhorias:
 
 - Integrar o site ao Azure AD para gerenciamento de nuvem.  
 
-    - Se você já atingiu esse pré-requisito para o seu site, precisa atualizar o aplicativo do Azure AD. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Serviços de Nuvem** e selecione **Locatários do Azure Active Directory**. Selecione o locatário do Azure AD, selecione o aplicativo Web no painel **​​Aplicativos** e clique em **Atualizar Configuração do Aplicativo** na faixa de opções.  
+    - Se você já atingiu esse pré-requisito para o seu site, precisa atualizar o aplicativo do Azure AD. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e selecione **Locatários do Azure Active Directory**. Selecione o locatário do Azure AD, selecione o aplicativo Web no painel **​​Aplicativos** e clique em **Atualizar Configuração do Aplicativo** na faixa de opções.  
 
 - Um cliente que executa o Windows 10 versão 1803 e ingressou no Azure AD. (Este requisito destina-se tecnicamente apenas ao [Cenário 3](#bkmk_token3).) 
 
@@ -307,7 +308,7 @@ Os cenários a seguir se beneficiam dessas melhorias:
 ### <a name="try-it-out"></a>Experimente!
 Tente concluir as tarefas. Depois, envie seus [comentários](capabilities-in-technical-preview-1804.md#bkmk_feedback) sobre como isso funcionou.
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione **Sites**. Selecione o site e clique em **Propriedades** na faixa de opções.  
+1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione **Sites**. Selecione o site e clique em **Propriedades** na faixa de opções.  
 
 2. Alterne para a guia **Comunicação do Computador Cliente**. Selecione a opção para **HTTPS ou HTTP** e, em seguida, ative a nova opção para **Usar certificados gerados pelo Configuration Manager para sistemas de site HTTP**.  
 
@@ -316,7 +317,7 @@ Veja a lista [anterior dos cenários](#bkmk_token) para validar.
 > [!Tip]
 > Nesta versão, aguarde até 30 minutos para o ponto de gerenciamento receber e configurar o novo certificado do site.
 
-Você pode ver esses certificados no console do Configuration Manager. Acesse o espaço de trabalho **Administração**, expanda **Segurança** e selecione o nó **Certificados**. Procure o certificado raiz **Emissão de SMS**, bem como os certificados de função de servidor do site emitidos pela raiz de emissão do SMS.
+Você pode ver esses certificados no console do Configuration Manager. Acesse o workspace **Administração**, expanda **Segurança** e selecione o nó **Certificados**. Procure o certificado raiz **Emissão de SMS**, bem como os certificados de função de servidor do site emitidos pela raiz de emissão do SMS.
 
 
 ### <a name="known-issues"></a>Problemas conhecidos
@@ -345,7 +346,7 @@ Para saber mais sobre o uso geral da ferramenta SCUP, confira [System Center Upd
 ### <a name="try-it-out"></a>Experimente!
 Tente concluir as tarefas. Depois, envie seus [comentários](capabilities-in-technical-preview-1804.md#bkmk_feedback) sobre como isso funcionou.
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**. Expanda a **Configuração do site** e selecione **Sites**. Selecione o site de nível superior, clique em **Configurar Componentes do Site** na faixa de opções e selecione **Ponto de Atualização de Software**.  
+1. No console do Configuration Manager, acesse o workspace **Administração**. Expanda a **Configuração do site** e selecione **Sites**. Selecione o site de nível superior, clique em **Configurar Componentes do Site** na faixa de opções e selecione **Ponto de Atualização de Software**.  
 
 2. Mude para a guia **Atualizações de Terceiros**. Selecione a opção **Habilitar atualizações de software de terceiros**, e selecione a opção **Configuration Manager gerencia automaticamente o certificado**.
 
@@ -359,7 +360,7 @@ Tente concluir as tarefas. Depois, envie seus [comentários](capabilities-in-tec
 O modelo de sequência de tarefas padrão para o upgrade in-loco do Windows 10 agora inclui outro novo grupo com ações recomendadas para adicionar caso o processo de atualização falhe. Essas ações facilitam a solução de problemas.
 
 ### <a name="new-groups-under-run-actions-on-failure"></a>Novos grupos em **Executar Ações com Falha**
-- **Coletar logs**: para reunir logs do cliente, adicione etapas nesse grupo. 
+- **Coletar logs**: para reunir logs do cliente, adicione etapas a este grupo. 
     - Uma prática comum é copiar os arquivos de log para um compartilhamento de rede. Para estabelecer essa conexão, use a etapa [Conectar à Pasta de Rede](/sccm/osd/understand/task-sequence-steps#BKMK_ConnectToNetworkFolder). 
     - Para executar a operação de cópia, use um script ou utilitário personalizado com a etapa [Executar Linha de Comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) ou [Executar script do PowerShell](/sccm/osd/understand/task-sequence-steps#BKMK_RunPowerShellScript).
     - Os arquivos a coletar podem incluir os seguintes logs:  
@@ -369,7 +370,7 @@ O modelo de sequência de tarefas padrão para o upgrade in-loco do Windows 10 a
     - Para saber mais sobre logs do cliente do Configuration Manager, confira [Logs do cliente do Configuration Manager](/sccm/core/plan-design/hierarchy/log-files#BKMK_ClientLogs)
     - Para saber mais sobre _SMSTSLogPath e outras variáveis ​​úteis, confira [Variáveis ​​internas da sequência de tarefas](/sccm/osd/understand/task-sequence-built-in-variables)
 
-- **Executar as ferramentas de diagnóstico**: para executar ferramentas de diagnóstico adicionais, adicione etapas neste grupo. Essas ferramentas devem ser automatizadas para coletar informações adicionais do sistema logo após a falha.
+- **Executar as ferramentas de diagnóstico**: para executar ferramentas de diagnóstico adicionais, adicione etapas a este grupo. Essas ferramentas devem ser automatizadas para coletar informações adicionais do sistema logo após a falha.
     - Uma dessas ferramentas é o Windows [SetupDiag](/windows/deployment/upgrade/setupdiag). É uma ferramenta de diagnóstico autônoma que você pode usar para obter detalhes sobre o motivo pelo qual uma atualização do Windows 10 não foi bem-sucedida.
          - No Configuration Manager, [crie um pacote](/sccm/apps/deploy-use/packages-and-programs#create-a-package-and-program) para a ferramenta.
          - Adicionar uma etapa [Executar Linha de comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) para este grupo da sua sequência de tarefas. Use a opção **Pacote** para fazer referência à ferramenta. A cadeia de caracteres a seguir é um exemplo de **Linha de Comando**:  
@@ -405,7 +406,7 @@ O valor do usuário atualmente conectado está em branco no nó Dispositivos ou 
 - Agora, ele dá suporte a comentários offline. Salve seus comentários no console e faça o upload para a Microsoft em um sistema conectado à Internet. Use a nova ferramenta de envio de comentários offline localizada em `cd.latest\SMSSETUP\Tools\UploadOfflineFeedback\UploadOfflineFeedback.exe`. Para ver as opções de linha de comandos disponíveis e necessárias, execute a ferramenta com a opção `--help`. O sistema conectado precisa de acesso a **petrol.office.microsoft.com**.
 
 ### <a name="known-issues"></a>Problemas conhecidos
-Ao usar **Enviar um sorriso** ou **Enviar um rosto triste** no console em um computador com conexão à internet, ele pode retornar com a seguinte mensagem: "Erro ao enviar comentários". Se você clicar em **Mais detalhes**, ele mostra o seguinte texto: `{"Message":""}`. Esse erro ocorre devido a um problema conhecido com a resposta do sistema de comentários de back-end. Você pode ignorar o erro. A Microsoft recebeu seus comentários. (Se os detalhes exibem uma mensagem diferente, use a opção de comentários offline para tentar enviar seus comentários em um momento posterior.)
+Ao usar **Enviar um sorriso** ou **Enviar um rosto triste** no console em um computador com conexão à Internet, ele pode retornar com a seguinte mensagem: "Erro ao enviar comentários". Se você clicar em **Mais detalhes**, ele mostra o seguinte texto: `{"Message":""}`. Esse erro ocorre devido a um problema conhecido com a resposta do sistema de comentários de back-end. Você pode ignorar o erro. A Microsoft recebeu seus comentários. (Se os detalhes exibem uma mensagem diferente, use a opção de comentários offline para tentar enviar seus comentários em um momento posterior.)
 
 
 
@@ -434,7 +435,7 @@ O assistente de limpeza do WSUS agora recusa as atualizações expiradas ou subs
 ### <a name="try-it-out"></a>Experimente!
 Tente concluir as tarefas. Depois, envie seus [comentários](capabilities-in-technical-preview-1804.md#bkmk_feedback) sobre como isso funcionou.
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**. Expanda a **Configuração do site** e selecione **Sites**. Selecione o site de nível superior, clique em **Configurar Componentes do Site** na faixa de opções e selecione **Ponto de Atualização de Software**.  
+1. No console do Configuration Manager, acesse o workspace **Administração**. Expanda a **Configuração do site** e selecione **Sites**. Selecione o site de nível superior, clique em **Configurar Componentes do Site** na faixa de opções e selecione **Ponto de Atualização de Software**.  
 
 2. Mude para a guia **Regras de Substituição**. Habilitar a opção para **Execute o assistente de limpeza do WSUS**. Especifique o comportamento de substituição desejado.  
 

@@ -10,12 +10,13 @@ ms.assetid: 8af43618-ec60-4c3e-a007-12399d1335b9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a796c8cc23ab15e3fbeb09fca6ffa6f1dbd45bc3
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ROBOTS: NOINDEX
+ms.openlocfilehash: 80f16244c10899ed264b83f6c7a9a050fba7a224
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "34474336"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898300"
 ---
 # <a name="capabilities-in-technical-preview-1804-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1804 do System Center Configuration Manager
 
@@ -70,7 +71,7 @@ Essa biblioteca de conteúdo remoto é um novo pré-requisito para [alta disponi
 ### <a name="try-it-out"></a>Experimente!
  Tente concluir as tarefas. Depois, envie seus [comentários](#bkmk_feedback) sobre como isso funcionou.
 
-1. No console do Configuration Manager, alterne para o espaço de trabalho **Administração**. Expanda a **Configuração do site** e selecione **Sites**. Na guia **Resumo** na parte inferior do painel de detalhes, observe uma nova coluna para a **Biblioteca de Conteúdo**.  
+1. No console do Configuration Manager, alterne para o workspace **Administração**. Expanda a **Configuração do site** e selecione **Sites**. Na guia **Resumo** na parte inferior do painel de detalhes, observe uma nova coluna para a **Biblioteca de Conteúdo**.  
 
 2. Clique em **Gerenciar biblioteca de conteúdo** na faixa de opções.  
 
@@ -97,7 +98,7 @@ Mande um sorriso! Agora, você pode informar diretamente a equipe do Configurati
 
 2. Na lista suspensa, selecione uma das opções disponíveis:  
 
-   - **Enviar um sorriso**: você realmente gostou de algo! Para essa opção, insira os detalhes do seu comentário. Se quiser, inclua uma captura de tela e seu endereço de email.  
+   - **Enviar um sorriso**: você adorou algo! Para essa opção, insira os detalhes do seu comentário. Se quiser, inclua uma captura de tela e seu endereço de email.  
 
    - **Enviar um rosto triste**: você encontrou um problema no console ou algo que não funcionou como o esperado. Para essa opção, insira os detalhes do possível problema do produto. Se quiser, inclua uma captura de tela, seu endereço de email e dados de diagnóstico.  
 
@@ -150,25 +151,25 @@ Agora, as ferramentas de servidor e cliente do Configuration Manager estão incl
 
  - **DP Job Manager**: soluciona problemas de trabalhos de distribuição de conteúdo para os pontos de distribuição  
 
- - **Collection Evaluation Viewer**: exiba detalhes de avaliação da coleta  
+ - **Collection Evaluation Viewer**: exibe detalhes de avaliação de coleção  
 
- - **Content Library Explorer**: exiba o conteúdo do repositório de instância única da biblioteca de conteúdo  
+ - **Gerenciador da Biblioteca de Conteúdo**: exibe conteúdos do repositório de instância única da biblioteca de conteúdo  
 
- - **Content Library Transfer**: transfere a biblioteca de conteúdo entre unidades  
+ - **Transferência da biblioteca de conteúdo**: transfere a biblioteca de conteúdo entre as unidades  
 
- - **Content Ownership Tool**: altera a propriedade de pacotes órfãos. Esses pacotes existem no site sem um servidor de site proprietário.  
+ - **Ferramenta de Propriedade de Conteúdo**: altera a propriedade de pacotes órfãos. Esses pacotes existem no site sem um servidor de site proprietário.  
 
- - **Role-based Administration and Auditing Tool**: ajuda os administradores a realizar a auditoria de funções de configuração  
+ - **Ferramenta de Administração e Auditoria Baseada em Funções**: ajuda os administradores a fazer a auditoria da configuração de funções  
 
 #### <a name="client-tools"></a>Ferramentas de cliente
 
- - **CMTrace**: exiba logs  
+ - **CMTrace**: exibe logs  
 
- - **Deployment Monitoring Tool**: solucione problemas de aplicativos, atualizações e implantações da linha de base  
+ - **Deployment Monitoring Tool**: soluciona problemas de aplicativos, atualizações e implantações de linha de base  
 
- - **Policy Spy**: exiba as atribuições de políticas  
+ - **Policy Spy**: exibe atribuições de política  
 
- - **Power Viewer Tool**: exiba o status do recurso de gerenciamento de energia  
+ - **Power Viewer Tool**: exibe o status do recurso de gerenciamento de energia  
 
  - **Send Schedule Tool**: aciona agendas e avaliações de linhas de base do DCM  
 
@@ -202,7 +203,7 @@ O comportamento mudou para quando você revoga a aprovação de um aplicativo. A
 
 2. No cliente do Configuration Manager, no Centro de Software, o usuário solicita aprovação para instalar o aplicativo.  
 
-3. No console do Configuration Manager, aprove a solicitação desse usuário para instalar o aplicativo no dispositivo. As solicitações de aprovação do aplicativo são exibidas no espaço de trabalho **Biblioteca de Software**, no **Gerenciamento de Aplicativos** no nó **Solicitações de Aprovação**.  
+3. No console do Configuration Manager, aprove a solicitação desse usuário para instalar o aplicativo no dispositivo. As solicitações de aprovação do aplicativo são exibidas no workspace **Biblioteca de Software**, no **Gerenciamento de Aplicativos** no nó **Solicitações de Aprovação**.  
 
 4. No cliente no Centro de Software, o usuário instala o aplicativo.  
 
@@ -221,7 +222,7 @@ O comportamento mudou para quando você revoga a aprovação de um aplicativo. A
 ### <a name="try-it-out"></a>Experimente!
  Tente concluir as tarefas. Depois, envie seus [comentários](#bkmk_feedback) sobre como isso funcionou.
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**. Expanda **Configuração da Hierarquia** e selecione **Métodos de Descoberta**. Selecione **Descoberta de Sistema do Active Directory** e clique em **Propriedades** na faixa de opções.  
+1. No console do Configuration Manager, acesse o workspace **Administração**. Expanda **Configuração da Hierarquia** e selecione **Métodos de Descoberta**. Selecione **Descoberta de Sistema do Active Directory** e clique em **Propriedades** na faixa de opções.  
 
 2. Clique no ícone Novo para especificar um novo contêiner do Active Directory.   
 
@@ -248,7 +249,7 @@ Agora, você pode controlar se o link para **Abrir o site do Catálogo de Aplica
 ### <a name="try-it-out"></a>Experimente!
  Tente concluir as tarefas. Depois, envie seus [comentários](#bkmk_feedback) sobre como isso funcionou.
 
-1. No console do Configuration Manager, no espaço de trabalho **Administração**, nó **Configurações do Cliente** , crie uma política personalizada de configurações de dispositivos de cliente.  
+1. No console do Configuration Manager, no workspace **Administração**, nó **Configurações do Cliente** , crie uma política personalizada de configurações de dispositivos de cliente.  
 
 2. Selecione o grupo **Centro de Software**.  
 
@@ -267,7 +268,7 @@ Para saber mais sobre configurações do cliente, confira [Definir configuraçõ
 ### <a name="try-it-out"></a>Experimente!
 Tente concluir as tarefas. Depois, envie seus [comentários](#bkmk_feedback) sobre como isso funcionou.
 
-1. No console do Configuration Manager, alterne para o espaço de trabalho **Biblioteca de Software**. Expanda **Atualizações de Software** e selecione **Regras de Implantação Automática**. Na faixa de opções, selecione **Criar Regra de Implantação Automática**.  
+1. No console do Configuration Manager, alterne para o workspace **Biblioteca de Software**. Expanda **Atualizações de Software** e selecione **Regras de Implantação Automática**. Na faixa de opções, selecione **Criar Regra de Implantação Automática**.  
 
 2. Preencha as configurações adequadas da guia **Geral** e da guia **Configurações de Implantação**.  
 
@@ -288,7 +289,7 @@ Depois de adicionar os critérios de arquitetura, a página de propriedades da r
 ## <a name="improvements-to-os-deployment"></a>Melhorias na implantação do sistema operacional
 Fizemos estas melhorias na implantação de sistema operacional, algumas das quais foram resultado de seus comentários no UserVoice.  
 
- - [Mascarar dados confidenciais armazenados em variáveis de sequência de tarefas](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): na etapa [Definir Variável de Sequência de Tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable), selecione a nova opção para **Não exibir este valor**. Por exemplo, ao especificar uma senha.<!--1358330--> Os comportamentos a seguir se aplicam quando você habilita essa opção:
+ - [Mascarar dados confidenciais armazenados nas variáveis da sequência de tarefas](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): na etapa [Definir Variável de Sequência de Tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable), selecione a nova opção **Não exibir esse valor**. Por exemplo, ao especificar uma senha.<!--1358330--> Os comportamentos a seguir se aplicam quando você habilita essa opção:
    - O valor da variável não é exibido no smsts.log.
    - O console do Configuration Manager e o Provedor de SMS lidam com esse valor da mesma forma que outros segredos, como senhas.
    - O valor não será incluído quando você exportar a sequência de tarefas.
@@ -298,7 +299,7 @@ Fizemos estas melhorias na implantação de sistema operacional, algumas das qua
    > Variáveis e seus valores são salvos com a sequência de tarefas como XML, e são ofuscados no banco de dados. Quando o cliente solicita uma política de sequência de tarefas do ponto de gerenciamento, ela é criptografada em trânsito e armazenada no cliente. No entanto, todos os valores de variáveis são texto sem formatação no ambiente da sequência de tarefas na memória durante a execução no cliente. Se a sequência de tarefas incluir uma etapa para mostrar o valor da variável, essa saída será em texto sem formatação. Esse comportamento exige uma ação explícita do administrador para incluir uma etapa como essa na sequência de tarefas. 
 
 
- - [Ocultar o nome do programa durante a Etapa de Execução de Comando de uma sequência de tarefas](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): para evitar a exibição ou registro em log de dados possivelmente confidenciais, defina a variável de sequência de tarefas **OSDDoNotLogCommand** como `TRUE`. Essa variável oculta o nome do programa no smsts.log durante uma etapa da sequência de tarefas [Executar Linha de Comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine). <!--1358493-->  
+ - [Mascarar o nome do programa durante a Etapa de Execução de Comando de uma sequência de tarefas](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): para impedir que os dados potencialmente confidenciais sejam exibidos ou registrados, defina a variável de sequência de tarefas **OSDDoNotLogCommand** como `TRUE`. Essa variável oculta o nome do programa no smsts.log durante uma etapa da sequência de tarefas [Executar Linha de Comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine). <!--1358493-->  
 
 
 
