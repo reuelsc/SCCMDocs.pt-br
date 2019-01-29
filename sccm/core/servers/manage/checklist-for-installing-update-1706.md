@@ -10,12 +10,13 @@ ms.assetid: 7def067e-845c-4db3-9d56-fa1dcf2fd7c7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c6d544b0bdc087a8d78bb677ed519711131c5a0d
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ROBOTS: NOINDEX
+ms.openlocfilehash: 004ac9fa331b4e698ae9ad3699c8d717b1d95a3e
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53414830"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54897654"
 ---
 # <a name="checklist-for-installing-update-1706-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1706 do System Center Configuration Manager
 

@@ -10,12 +10,13 @@ ms.assetid: df2e57b9-6445-4067-98e7-ace85d4e6aa6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0dcd2db7543d68a97e00244536d2aac218d440e7
-ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
+ROBOTS: NOINDEX
+ms.openlocfilehash: 0d45586267e06185752f597549f798be19d4d47b
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52259056"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54897042"
 ---
 # <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Novidades da versão 1606 do System Center Configuration Manager
 
@@ -146,7 +147,7 @@ Agora é possível executar uma verificação de conformidade imediatamente depo
 
 ## <a name="operating-system-deployment"></a>Implantação de sistema operacional
 
-### <a name="improvements-to-the-task-sequence-step-install-software-updates"></a>Melhorias na etapa da sequência de tarefas: Instalar Atualizações de Software
+### <a name="improvements-to-the-task-sequence-step-install-software-updates"></a>Melhorias à etapa de sequência de tarefas: Instalar Atualizações de Software
 Uma nova configuração, **Avaliar as atualizações de software dos resultados da verificação armazenados em cache**, oferece a opção de realizar uma verificação completa de atualizações de software, em vez de usar os resultados da verificação armazenados em cache. Para obter detalhes, confira [Etapas da sequência de tarefas no System Center Configuration Manager](../../../osd/understand/task-sequence-steps.md#BKMK_InstallSoftwareUpdates).
 
 Além disso, uma nova variável de sequência de tarefas, **SMSTSSoftwareUpdateScanTimeout**, está disponível. Essa variável permite controlar o tempo limite da verificação de atualizações de software durante a etapa da sequência de tarefas Instalar Atualizações de Software. O valor padrão é 30 minutos. Para obter detalhes, confira [Task sequence built-in variables in System Center Configuration Manager](../../../osd/understand/task-sequence-built-in-variables.md) (Variáveis internas de sequência de tarefas no System Center Configuration Manager).
