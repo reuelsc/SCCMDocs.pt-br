@@ -2,7 +2,7 @@
 title: Versões de visualização técnica
 titleSuffix: Configuration Manager
 description: Saiba mais sobre o branch de visualização técnica para fazer o test drive das novas funcionalidades e recursos no Configuration Manager.
-ms.date: 12/14/2018
+ms.date: 01/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d2c1e93378711a19b10f9b67fcaad9973e53ee2e
-ms.sourcegitcommit: d36e4c7082a5144e79035dd8847c8e741fa04667
+ms.openlocfilehash: cf432ea32e5946a98b59e158752b3e82cf63b3b3
+ms.sourcegitcommit: b8167a60fd6f2d8387b2db723976c0e2c4198d33
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53444630"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54832764"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Visualização técnica para o Configuration Manager
 
@@ -25,7 +25,7 @@ Este artigo fornece detalhes sobre o branch de visualização técnica mensal do
 
 Como esta versão é technical preview, os detalhes e funcionalidades estão sujeitos a alterações.  
 
-Essas informações se aplicam a todas as versões do branch da visualização técnica do Configuration Manager. Este artigo lista cada novo recurso juntamente com a versão da visualização técnica na qual ele aparece pela primeira vez. Por exemplo, a versão **1809** de setembro (09) de 2018 (18). Os artigos separados dedicados a cada detalhe da versão prévia detalham recursos individuais.  
+Essas informações se aplicam a todas as versões do branch da visualização técnica do Configuration Manager. Este artigo lista cada novo recurso juntamente com a versão da visualização técnica na qual ele aparece pela primeira vez. Por exemplo, a versão **1901** de janeiro (01) de 2019 (19). Os artigos separados dedicados a cada detalhe da versão prévia detalham recursos individuais.  
 
 Para saber mais sobre o que há de novo no *branch atual* do Configuration Manager, confira [Novidades nas versões incrementais do Configuration Manager](/sccm/core/plan-design/changes/whats-new-incremental-versions).
 
@@ -124,15 +124,30 @@ Os seguintes recursos estão disponíveis com a visualização técnica mais rec
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-1812"></a>Technical Preview versão 1812
+### <a name="technical-preview-version-1901"></a>Technical Preview versão 1901
 
-<!--capabilities-in-technical-preview-1812.md#bkmk_anchor-->
+<!-- - [title](/sccm/core/get-started/2019/technical-preview-1901#bkmk_anchor)<!--ID-->
 
-- [Melhorias para à etapa de sequência de tarefas de Executar Script do PowerShell](capabilities-in-technical-preview-1812.md#bkmk_posh) <!--3556028 fka 1359389-->  
-- [Melhorias nas aprovações de aplicativo por email](capabilities-in-technical-preview-1812.md#bkmk_email) <!--3594063-->  
-- [Configurar a afinidade de dispositivo de usuário no Centro de Software](capabilities-in-technical-preview-1812.md#bkmk_uda) <!--3485366-->  
-- [Melhorias no console do Configuration Manager](capabilities-in-technical-preview-1812.md#bkmk_console) <!--3594151-->  
-- [Baixar relatórios do Hub de Comunidade](capabilities-in-technical-preview-1812.md#bkmk_hub)<!--3555936-->  
+
+- [Painel de integridade do cliente](/sccm/core/get-started/2019/technical-preview-1901#bkmk_health)<!--3599209-->  
+- [Especificar a prioridade para as atualizações de recurso no serviço do Windows 10](/sccm/core/get-started/2019/technical-preview-1901#bkmk_neo)<!--3734525-->  
+- [Monitoramento dedicado para implantações em fases](/sccm/core/get-started/2019/technical-preview-1901#bkmk_pod)<!--3555949--> 
+- [Executar o CMPivot do site de administração central](/sccm/core/get-started/2019/technical-preview-1901#bkmk_cmpivot)<!--3610960-->  
+- [Melhorias na etapa da sequência de tarefas Executar Script do PowerShell](/sccm/core/get-started/2019/technical-preview-1901#bkmk_posh)<!--3556028-->  
+- [Produtos do Office no painel de ciclo de vida](/sccm/core/get-started/2019/technical-preview-1901#bkmk_lifecycle)<!--3556026-->  
+- [Regras de insight de gerenciamento para coleções](/sccm/core/get-started/2019/technical-preview-1901#bkmk_micoll)<!--3555752-->  
+- [Pesquisar nas exibições de dispositivo usando o endereço MAC](/sccm/core/get-started/2019/technical-preview-1901#bkmk_mac)<!--3600878-->  
+- [Modo de manutenção de ponto de distribuição](/sccm/core/get-started/2019/technical-preview-1901#bkmk_dpmaint)<!--3555754-->  
+- [Serviço de imagens otimizadas](/sccm/core/get-started/2019/technical-preview-1901#bkmk_resetbase)<!--3555951-->  
+- [Importar um único índice de uma imagem do sistema operacional](/sccm/core/get-started/2019/technical-preview-1901#bkmk_index)<!--3719699--> 
+- [Usar o Azure Resource Manager para serviços de nuvem](/sccm/core/get-started/2019/technical-preview-1901#bkmk_arm)<!--3605704-->  
+- [Confirmação de comentários do console](/sccm/core/get-started/2019/technical-preview-1901#bkmk_feedback)<!--3556010--> 
+- [Criar um laboratório do Configuration Manager Technical Preview no Azure](/sccm/core/get-started/2019/technical-preview-1901#bkmk_azurevm)<!--3556017-->  
+- [Especificar uma porta personalizada para ativação de par](/sccm/core/get-started/2019/technical-preview-1901#bkmk_sleep)<!--3605925-->  
+- [Exibir consoles conectados recentemente](/sccm/core/get-started/2019/technical-preview-1901#bkmk_console)<!--3699367-->  
+- [Interromper o serviço de nuvem quando ele excede o limite](/sccm/core/get-started/2019/technical-preview-1901#bkmk_cmg)<!--3735092--> 
+- [Tempo limite do modo de provisionamento de cliente](/sccm/core/get-started/2019/technical-preview-1901#bkmk_osdprov)<!--3197824-->
+- [Melhorias na implantação do sistema operacional](/sccm/core/get-started/2019/technical-preview-1901#bkmk_osd)<!--3633146,3641475,3654172,3734270-->
 
 
 > [!Note]  
@@ -151,6 +166,11 @@ Then remove the bottom of this list and/or move individual items not in CB to th
 
  | Recurso | Versão da visualização técnica | Versão do branch atual |  
  |---------|---------------------------|------------------------|
+ | Melhorias na etapa da sequência de tarefas Executar Script do PowerShell <!--3556028 fka 1359389--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_posh) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Melhorias nas aprovações de aplicativo por email <!--3594063--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_email) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Configurar a afinidade de dispositivo de usuário no Centro de Software <!--3485366--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_uda) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Melhorias no console do Configuration Manager <!--3594151--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_console) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Baixar os relatórios do Hub de Comunidade<!--3555936--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_hub) | ![Não foi adicionado](media/Red_X.gif) | 
  | Não carregar perfis do Windows PowerShell <!--1359239--> | [Tech Preview 1811](capabilities-in-technical-preview-1811.md#bkmk_noprofile) | ![Não foi adicionado](media/Red_X.gif) | 
  | Uma conexão do Intune não é mais necessária para o MDM local <!--1359124--> | [Tech Preview 1811](capabilities-in-technical-preview-1811.md#bkmk_opmdm) | ![Não foi adicionado](media/Red_X.gif) | 
  | Notificações do console do Configuration Manager <!--1318035--> | [Tech Preview 1811](capabilities-in-technical-preview-1811.md#bkmk_notify) | ![Não foi adicionado](media/Red_X.gif) | 
@@ -161,19 +181,6 @@ Then remove the bottom of this list and/or move individual items not in CB to th
  | Regra de insights de gerenciamento para a versão do cliente da origem do cache par <!--1358008--> | [Tech Preview 1810.2](capabilities-in-technical-preview-1810-2.md#bkmk_insights) | Versão 1810 | 
  | Melhorias na configuração de clientes baseados na Internet <!--1359181--> | [Tech Preview 1810.2](capabilities-in-technical-preview-1810-2.md#bkmk_cmg) | Versão 1810 | 
  | Converter aplicativos em MSIX <!--1359029--> | [Tech Preview 1810.2](capabilities-in-technical-preview-1810-2.md#bkmk_msix) | Versão 1810 | 
- | Melhoria à instalação do cliente <!--1358840--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_ccmsetup) | Versão 1810 | 
- | Política de conformidade de aplicativo necessária para dispositivos cogerenciados <!--1358196--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_app-compliance) | Versão 1810 | 
- | Melhoria ao painel de cogerenciamento <!--1358980--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_comgmt-report) | Versão 1810 | 
- | Opções do novo grupo de limites <!--1358749--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_bgoptions) | Versão 1810 | 
- | Sistema de sites no nó de cluster do Windows <!--1359132--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_cluster) | Versão 1810 | 
- | Melhorias ao CMPivot <!--1359068--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_cmpivot) | Versão 1810 | 
- | Melhorias nos scripts <!--1358239--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_scripts) | Versão 1810 | 
- | Nova ação de notificação de cliente para ativação de dispositivo <!--1317364--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_wakeup) | Versão 1810 | 
- | Suporte à sequência de tarefas para grupos de limites <!--1359025--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_bgr-osd) | Versão 1810 | 
- | Painel de insights de gerenciamento <!--1357979--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_insights) | Versão 1810 | 
- | Painel de documentação no console <!--1357546--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_doc-dashboard) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhorias na manutenção do driver <!--1358270--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_drivers) | Versão 1810 | 
- | Suporte à sequência de tarefas do Windows AutoPilot para dispositivos existentes <!--1358333--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_autopilot) | Versão 1810 | 
 
 
 
@@ -189,6 +196,7 @@ With each CB release, review and remove from this list for anything that's now a
 
 | Recurso        | Versão da visualização técnica |  
 |----------------|---------------------------|
+| Painel de documentação no console <!--1357546--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_doc-dashboard) | 
 | Hub de Comunidade <!--1357766--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_hub) | 
 | Atividade de sincronização de dispositivo cogerenciados com o Intune <!--1358565--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_comgmt) | 
 | Serviço de respondente PXE baseado no cliente <!--1357148--> | [Tech Preview 1712](capabilities-in-technical-preview-1712.md#client-based-pxe-responder-service) |
