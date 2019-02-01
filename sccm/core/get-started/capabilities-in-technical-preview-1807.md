@@ -10,12 +10,13 @@ ms.assetid: bcde47a7-433e-4944-964b-539b17d15d64
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9095bdf431525a66a570267c4fff07a382a16fe4
-ms.sourcegitcommit: af4f8bd8dffe6fb05f51322ea9e94d335a2cc0c0
+ROBOTS: NOINDEX
+ms.openlocfilehash: c443f561392f95d875a681319ebb9db4ff3fb66b
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39360759"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898470"
 ---
 # <a name="capabilities-in-configuration-manager-technical-preview-version-1807"></a>Funcionalidades na visualização técnica da versão 1807 do Configuration Manager 
 
@@ -59,28 +60,28 @@ Steps to workaround, if any.
 ## <a name="bkmk_hub"></a> Hub da comunidade
 <!--1357766-->
 
-O Hub da comunidade é um local centralizado para o compartilhamento de objetos úteis do Configuration Manager com outras pessoas. Confira a nova área de trabalho **Comunidade** no console do Configuration Manager e escolha o nó **Hub**. Use o Hub da comunidade para fazer o download dos seguintes tipos de objetos do Configuration Manager: 
+O Hub da comunidade é um local centralizado para o compartilhamento de objetos úteis do Configuration Manager com outras pessoas. Confira o novo workspace **Comunidade** no console do Configuration Manager e escolha o nó **Hub**. Use o Hub da comunidade para fazer o download dos seguintes tipos de objetos do Configuration Manager: 
 - Scripts
 - Itens de configuração
 
-![Console do Configuration Manager, Espaço de trabalho da comunidade, Nó do hub](media/1357766-hub.png)
+![Console do Configuration Manager, Workspace da comunidade, Nó do hub](media/1357766-hub.png)
 
 Para ver mais detalhes sobre um item disponível, clique nele no hub. Na página de detalhes, clique em **Fazer o download** para adquirir o item. Quando você faz o download de um item no hub, ele é automaticamente adicionado ao seu site. 
 
-![Console do Configuration Manager, Espaço de trabalho da comunidade, Nó do hub, página de detalhes](media/1357766-hub-details.png)
+![Console do Configuration Manager, Workspace da comunidade, Nó do hub, página de detalhes](media/1357766-hub-details.png)
 
-O espaço de trabalho da **comunidade** também inclui os seguintes nós:
+O workspace da **comunidade** também inclui os seguintes nós:
 
 - **Documentação**: exibe a [biblioteca de documentação](https://docs.microsoft.com/sccm/) do Configuration Manager  
 
-- **Comentários**: exibe o [site do UserVoice](https://configurationmanager.uservoice.com/) do Configuration Manager  
+- **Comentários**: exibe o [site UserVoice](https://configurationmanager.uservoice.com/) do Configuration Manager  
 
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
 - Usar o console do Configuration Manager no SO do cliente.  
 
-    - Como alternativa, porém, não recomendável: em um servidor do sistema operacional, desabilite [Internet Explorer: Configuração de Segurança Reforçada](https://go.microsoft.com/fwlink/?LinkId=253461).  
+    - Como alternativa, mas não recomendado: em um sistema operacional do servidor, desabilite a opção [Internet Explorer: configuração de segurança aprimorada](https://go.microsoft.com/fwlink/?LinkId=253461).  
 
 - O computador do console exige acesso à Internet e conectividade aos seguintes sites:  
     - `https://aka.ms`  
@@ -104,7 +105,7 @@ Com base em seus [comentários do UserVoice](https://configurationmanager.uservo
 
 Tente concluir as tarefas. Em seguida, envie [Comentários](capabilities-in-technical-preview-1804.md#bkmk_feedback) com sua opinião sobre o recurso.
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**. Na faixa de opções, clique em **Configurar Componentes do Site** e escolha **Ponto de Atualização de Software**.  
+1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**. Na faixa de opções, clique em **Configurar Componentes do Site** e escolha **Ponto de Atualização de Software**.  
 
 2. Alterne para a guia **Manutenção Offline** e especifique a opção para **Uma unidade local a ser usada pela manutenção offline de imagens**.  
 
@@ -128,11 +129,11 @@ Tente concluir as tarefas. Em seguida, envie [Comentários](capabilities-in-tech
 
 Se você já tiver configurado seu site para cogerenciamento: 
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Serviços de Nuvem** e escolha o nó **Cogerenciamento**. Na faixa de opções, clique em **Propriedades**.  
+1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e escolha o nó **Cogerenciamento**. Na faixa de opções, clique em **Propriedades**.  
 
 2. Alterne para a guia **Relatório**. Clique em **Entrar** e autentique. Em seguida, clique em **Atualizar** para habilitar permissões de leitura para o Intune Data Warehouse.  
 
-3. Após o site ser sincronizado com o Intune, vá para a área de trabalho **Monitoramento** e escolha o nó **Status do Cliente**. Na seção **Status Geral do Cliente**, confira a linha de **Clientes inativos que usam o Intune**.  
+3. Após o site ser sincronizado com o Intune, vá para o workspace **Monitoramento** e escolha o nó **Status do Cliente**. Na seção **Status Geral do Cliente**, confira a linha de **Clientes inativos que usam o Intune**.  
 
 Para saber mais sobre a ativação do cogerenciamento, confira [Cogerenciamento para dispositivos Windows 10](/sccm/core/clients/manage/co-management-overview).
 
@@ -219,7 +220,7 @@ Tente concluir as tarefas. Em seguida, envie [Comentários](capabilities-in-tech
 
 Agora você pode visualizar a saída detalhada do script em formato JSON bruto ou estruturado. Essa formatação facilita a leitura e a análise da saída. Se o script retornar um texto formatado em JSON válido, exiba a saída detalhada como **Saída JSON** ou **Saída Raw**. Caso contrário, a única opção será **Saída do Script**. 
 
-#### <a name="example-script-output-is-valid-json"></a>Exemplo: a saída do script é um JSON válido
+#### <a name="example-script-output-is-valid-json"></a>Exemplo: A saída do script é um JSON válido
 Comando: `$PSVersionTable.PSVersion`  
 
 Saída:  
@@ -229,7 +230,7 @@ Major  Minor  Build  Revision
 5      1      16299  551
 ```
 
-#### <a name="example-script-output-isnt-valid-json"></a>Exemplo: a saída do script não é um JSON válido
+#### <a name="example-script-output-isnt-valid-json"></a>Exemplo: Saída do script não é um JSON válido
 Comando: `Write-Output (Get-WmiObject -Class Win32_OperatingSystem).Caption`  
 
 Saída:  
@@ -242,7 +243,7 @@ Microsoft Windows 10 Enterprise
 
 Tente concluir as tarefas. Em seguida, envie [Comentários](capabilities-in-technical-preview-1804.md#bkmk_feedback) com sua opinião sobre o recurso.
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Ativos e Conformidade** e escolha o nó **Coleções de Dispositivos**. Clique com o botão direito do mouse em uma coleção e escolha **Executar Script**. Para saber mais sobre a criação e execução de scripts, confira [Criar e executar scripts do PowerShell do console do Configuration Manager](/sccm/apps/deploy-use/create-deploy-scripts).  
+1. No console do Configuration Manager, acesse o workspace **Ativos e Conformidade** e escolha o nó **Coleções de Dispositivos**. Clique com o botão direito do mouse em uma coleção e escolha **Executar Script**. Para saber mais sobre a criação e execução de scripts, confira [Criar e executar scripts do PowerShell do console do Configuration Manager](/sccm/apps/deploy-use/create-deploy-scripts).  
 
 2. Execute um script na coleção de destino.  
 

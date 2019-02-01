@@ -10,12 +10,13 @@ ms.assetid: 56dc4b07-5aa4-43e2-9be8-d26ae5ff5613
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dc4dc88b2a8fa9ba075fee51e187e02ae55c2cce
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ROBOTS: NOINDEX
+ms.openlocfilehash: 672257141c0672a76b89ee9d78184d2a4230280f
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344510"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898351"
 ---
 # <a name="capabilities-in-technical-preview-1803-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1803 do System Center Configuration Manager
 
@@ -41,8 +42,7 @@ Examine o artigo de [Technical Preview](/sccm/core/get-started/technical-preview
 
  
 ## <a name="pull-distribution-points-support-cloud-distribution-points-as-source"></a>Os pontos de distribuição por pull são compatíveis com os pontos de distribuição de nuvem como origem  
-<!--1321554-->
-Muitos clientes usam [pontos de distribuição por pull](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point) em escritórios remotos ou filiais, que baixam o conteúdo de um ponto de distribuição de origem pela WAN. Se seus escritórios remotos tiverem uma conexão melhor com a Internet ou para reduzir a carga em seus links de WAN, agora você poderá usar um [ponto de distribuição de nuvem](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) no Microsoft Azure como a origem. Quando você adiciona uma fonte na guia **Ponto de distribuição por pull** das propriedades do ponto de distribuição, qualquer ponto de distribuição de nuvem no site agora é listado como um ponto de distribuição disponível. O comportamento de ambas as funções do sistema de sites permanece o mesmo caso contrário. 
+<!--1321554--> Muitos clientes usam [pontos de distribuição de pull](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point) em escritórios remotos ou filiais, que baixam o conteúdo de um ponto de distribuição de origem pela WAN. Se seus escritórios remotos tiverem uma conexão melhor com a Internet ou para reduzir a carga em seus links de WAN, agora você poderá usar um [ponto de distribuição de nuvem](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) no Microsoft Azure como a origem. Quando você adiciona uma fonte na guia **Ponto de distribuição por pull** das propriedades do ponto de distribuição, qualquer ponto de distribuição de nuvem no site agora é listado como um ponto de distribuição disponível. O comportamento de ambas as funções do sistema de sites permanece o mesmo caso contrário. 
 
 ### <a name="prerequisites"></a>Pré-requisitos
 - O ponto de distribuição por pull precisa de acesso à Internet para se comunicar com o Microsoft Azure.
@@ -54,8 +54,7 @@ Muitos clientes usam [pontos de distribuição por pull](/sccm/core/plan-design/
 
 
 ## <a name="partial-download-support-in-client-peer-cache-to-reduce-wan-utilization"></a>O suporte parcial de download no cache de par de cliente para reduzir a utilização de WAN
-<!--1357346-->
-As fontes de cache de par de cliente agora podem dividir o conteúdo em partes. Essas partes minimizam a transferência de rede para reduzir a utilização de WAN. O ponto de gerenciamento fornece acompanhamento mais detalhado das partes do conteúdo. Ele tentará eliminar mais de um download do mesmo conteúdo por grupo de limites. 
+<!--1357346--> As fontes de cache de par de cliente agora podem dividir o conteúdo em partes. Essas partes minimizam a transferência de rede para reduzir a utilização de WAN. O ponto de gerenciamento fornece acompanhamento mais detalhado das partes do conteúdo. Ele tentará eliminar mais de um download do mesmo conteúdo por grupo de limites. 
 
 ### <a name="example-scenario"></a>Cenário de exemplo
 A Contoso tem um único site primário com dois grupos de limites: HQ (Matriz) e Filial. Há uma relação de fallback de 30 minutos entre os grupos de limites. O ponto de gerenciamento e o ponto de distribuição para o site são apenas no limite do HQ. O local da filial não tem nenhum ponto de distribuição local. Dois dos quatro clientes na filial são configurados como origens de cache de par. 
@@ -80,7 +79,7 @@ A Contoso tem um único site primário com dois grupos de limites: HQ (Matriz) e
  Tente concluir as tarefas. Em seguida, envie **Comentários** da guia **Início** da faixa de opções, nos informando como isso funcionou.
 
 1. Configure [grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups) e [fontes de cache par](/sccm/core/plan-design/hierarchy/client-peer-cache) como normalmente.
-2. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione **Sites**. Clique em **Configurações da hierarquia**  na faixa de opções. 
+2. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione **Sites**. Clique em **Configurações da hierarquia**  na faixa de opções. 
 3. Na guia **Geral**, habilite a opção de **Configurar fontes de cache par de cliente para dividir o conteúdo em partes**. 
 4. Crie uma implantação necessária com o conteúdo.  
 
@@ -93,24 +92,22 @@ A Contoso tem um único site primário com dois grupos de limites: HQ (Matriz) e
 
 
 ## <a name="maintenance-windows-in-software-center"></a>Janelas de manutenção no Centro de Software
-<!--1358131-->
-O Centro de Software agora exibe a próxima janela de manutenção agendada. Na guia Status da Instalação, alterne a exibição de Todas os para Futuras. Isso exibe o intervalo de tempo e a lista de implantações que estão agendadas. A lista estará em branco se não houver nenhuma janela de manutenção futura. 
+<!--1358131--> O Centro de Software agora exibe a próxima janela de manutenção agendada. Na guia Status da Instalação, alterne a exibição de Todas os para Futuras. Isso exibe o intervalo de tempo e a lista de implantações que estão agendadas. A lista estará em branco se não houver nenhuma janela de manutenção futura. 
 
 ![Centro de Software mostrando a lista de implantações futuras na guia Status da Instalação](media/1358131-software-center-maintenance-windows.png)
 
 
 ## <a name="custom-tab-for-webpage-in-software-center"></a>Guia personalizada para página da Web no Centro de Software
-<!--1358132-->
-Agora você pode criar uma guia personalizada para abrir uma página da Web no Centro de Software. Esse recurso permite que você mostre conteúdo aos usuários finais de forma consistente e confiável. A lista a seguir inclui alguns exemplos:
+<!--1358132--> Agora você pode criar uma guia personalizada para abrir uma página da Web no Centro de Software. Esse recurso permite que você mostre conteúdo aos usuários finais de forma consistente e confiável. A lista a seguir inclui alguns exemplos:
 - Entrar em contato com TI: informações sobre como entrar em contato com o departamento de TI da sua organização
-- Centro de Suporte de TI: ações de autoatendimento de TI como a pesquisa em uma base de dados de conhecimento ou a abertura de um tíquete de suporte.
+- Centro de Suporte de TI: ações de autoatendimento de TI, como a pesquisa em uma base de dados de conhecimento ou a abertura de um tíquete de suporte.
 - Documentação do usuário final: artigos para usuários em sua organização em vários tópicos de TI, por exemplo, usar aplicativos ou atualizar para o Windows 10.
 
 
 ### <a name="try-it-out"></a>Experimente!
  Tente concluir as tarefas. Em seguida, envie **Comentários** da guia **Início** da faixa de opções, nos informando como isso funcionou.
 
-1. No console do Configuration Manager, no espaço de trabalho **Administração**, no nó **Configurações do Cliente**, abra a política **Configurações do Cliente Padrão**.
+1. No console do Configuration Manager, no workspace **Administração**, no nó **Configurações do Cliente**, abra a política **Configurações do Cliente Padrão**.
 2. Selecione o grupo **Centro de Software**.
 3. Para **Configurações do Centro de Software**, clique em **Personalizar**.
 4. Alterne para a guia **Guias**.

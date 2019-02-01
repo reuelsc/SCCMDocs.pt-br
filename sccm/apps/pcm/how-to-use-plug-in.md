@@ -10,13 +10,13 @@ ms.assetid: 83cf156c-36de-483f-a9e6-2e06158f3b20
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: noindex,nofollow
-ms.openlocfilehash: 9e670cb6afd7186d7dc248bedd6e2ce7d7746b02
-ms.sourcegitcommit: 759098de944b8f7d5eedfc2bae2cb9a6ba15276f
+ROBOTS: NOINDEX
+ms.openlocfilehash: 5ed885ba459a584939881235e44d632515138cdf
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43297195"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54896355"
 ---
 # <a name="how-to-use-the-package-conversion-manager-plug-in"></a>Como usar o plug-in do Gerenciador de Conversão de Pacotes
 
@@ -45,9 +45,9 @@ Por padrão, o Gerenciador de Conversão de Pacotes realiza as seguintes ações
 
 4.  Execute uma das ações a seguir, dependendo da operação do Gerenciador de Conversão de Pacotes:  
 
-    - **Analisar**: exibir o estado de preparação do pacote no console do Configuration Manager.  
+    - **Analisar**: exiba o estado de preparação do pacote no console do Configuration Manager.  
 
-    - **Converter**: gravar o aplicativo no banco de dados do Configuration Manager.  
+    - **Converter**: grave o aplicativo no banco de dados do Configuration Manager.  
 
 
 ## <a name="plug-in-based-process"></a>Processo baseado em plug-in 
@@ -66,11 +66,11 @@ Quando você usa o plug-in, o Gerenciador de Conversão de Pacotes realiza as se
 
 6.  Análise do aplicativo e determinação do status de preparação de um pacote.  
 
-7.  Execute uma das ações a seguir, dependendo da operação do Gerenciador de Conversão de Pacotes:  
+7.  Execute uma das seguintes ações, dependendo da operação do Gerenciador de Conversão de Pacotes:  
 
-    - **Analisar**: exibir o estado de preparação do pacote no console do Configuration Manager.  
+    - **Analisar**: exiba o estado de preparação do pacote no console do Configuration Manager.  
 
-    - **Converter**: gravar o aplicativo no banco de dados do Configuration Manager.  
+    - **Converter**: grave o aplicativo no banco de dados do Configuration Manager.  
 
 
 

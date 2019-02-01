@@ -10,13 +10,13 @@ ms.assetid: 9e614ae1-47d2-4a93-ba0a-89dc50d1e266
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: noindex,nofollow
-ms.openlocfilehash: fbd3a84a81fae4ec9197368ff3eca0c027ae9d90
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ROBOTS: NOINDEX
+ms.openlocfilehash: 128ba61e75bfdbbaf6a3051317b9554253b96e87
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336979"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898232"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1511-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1511 do System Center Configuration Manager
 

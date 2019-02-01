@@ -10,17 +10,16 @@ ms.assetid: ab5cda93-b67c-4aa5-904d-7b63ce790aa0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: f74d7925528e48c691ce7ca61b6dc0b5136f1df7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f97decbe40293ee45cdc75c3fb36f4c57662ac06
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349469"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54896770"
 ---
 # <a name="install-updates-publisher"></a>Instalar o Updates Publisher
 
-*Aplica-se ao: System Center Updates Publisher*
+*Aplica-se a: System Center Updates Publisher*
 
 As informações neste tópico podem ajudar você a obter, instalar e configurar o Updates Publisher para uso em seu ambiente.
 
@@ -39,19 +38,19 @@ Instale e execute o Updates Publisher em uma edição de 64 bits dos sistemas op
 ### <a name="prerequisites"></a>Pré-requisitos
 Os itens a seguir são necessários no computador que executa o Updates Publisher.
 
--   **Sistema operacional de 64 bits**: o computador no qual você instala o Updates Publisher deve executar um sistema operacional de 64 bits.
+-   **Sistema operacional de 64 bits**: o computador no qual você instala o Updates Publisher precisa executar um sistema operacional de 64 bits.
 -   **WSUS 4.0 ou posterior**:
     -   No Windows Server, instale o Console de Administração padrão para atender a esse requisito.
     -   Para Windows 10 e Windows 8.1, instale [RSAT (Ferramentas de Administração de Servidor Remoto) para sistemas operacionais Windows](https://support.microsoft.com/help/2693643/remote-server-administration-tools-rsat-for-windows-operating-systems). Isso instala o suporte necessário para usar o Updates Publisher (*cmdlets do PowerShell e API*, e *Console de Gerenciamento de Interface do Usuário*).
 -   **Permissões**:
-    -   Instalação: administrador local
+    -   Instalação: Administrador local
     -   A maioria das operações: usuário local
-    -   Publicação, ou operações que envolvem o WSUS: membro do grupo de administradores de WSUS no servidor do WSUS.
+    -   Publicação ou operações que envolvem o WSUS: membro do grupo de administradores do WSUS no servidor do WSUS.
 
 ### <a name="supported-languages"></a>Idiomas com suporte
 O Updates Publisher está disponível somente em inglês, mas pode gerenciar atualizações para outros idiomas. O suporte ao idioma depende da tarefa, como publicação, criação ou edição das atualizações.
 
-Ao exportar ou publicar atualizações, o Updates Publisher exibe o título e a descrição da atualização de software com base na localidade do computador onde o Updates Publisher está instalado.
+Ao exportar ou publicar atualizações, o Updates Publisher exibe o título e a descrição da atualização de software com base na localidade do computador em que o Updates Publisher está instalado.
 
 Por exemplo, crie uma atualização de software que tem um título em inglês e espanhol.
 

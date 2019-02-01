@@ -10,19 +10,18 @@ ms.assetid: cd64994c-b426-4465-96cd-54b0edc2778d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: d0d69990fe99f9b08c9c14222a2d1a9c6ec06b4c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 4de365b7df3a18abdfc5a92e9516bad84818ac35
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351829"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54896721"
 ---
 # <a name="manage-software-updates-in-updates-publisher"></a>Gerenciar atualizações de software no Updates Publisher
 
-*Aplica-se ao: System Center Updates Publisher*     
+*Aplica-se a: System Center Updates Publisher*     
 
-No System Center Updates Publisher, use o **Espaço de Trabalho de Atualizações** para gerenciar atualizações de software e pacotes que você importou para o repositório.  
+No System Center Updates Publisher, use o **Workspace de Atualizações** para gerenciar atualizações de software e pacotes que você importou para o repositório.  
 
 As tarefas de gerenciamento incluem duplicação, edição e expiração ou reativação de atualizações e pacotes, e atribuição de atualizações e pacotes às publicações. Você também pode exportar catálogos personalizados para uso com outras instalações do Updates Publisher.
 
@@ -37,19 +36,19 @@ Você também pode [criar suas próprias atualizações](/sccm/sum/tools/create-
 ## <a name="create-a-duplicate-of-an-update"></a>Criar uma duplicata de uma atualização
 Você pode criar duplicatas, ou cópias, de atualizações que estão no repositório. Depois, você pode modificar a cópia em vez de modificar a atualização original. Não é possível criar cópias dos pacotes de atualização.
 
-Para criar uma cópia, selecione uma atualização no **Espaço de Trabalho de Atualizações** e depois escolha **Duplicar**. A cópia da atualização aparece no mesmo local no Espaço de Trabalho de Atualizações com *Cópia de* adicionado ao seu nome.
+Para criar uma cópia, selecione uma atualização no **Workspace de Atualizações** e depois escolha **Duplicar**. A cópia da atualização aparece no mesmo local no Workspace de Atualizações com *Cópia de* adicionado ao seu nome.
 
 Uma nova cópia criada por você tem um status de **Não expirada**, mas, caso contrário, retém as configurações do original.
 
 ## <a name="edit-updates-and-bundles"></a>Editar atualizações e pacotes
 Você pode selecionar atualizações e pacotes que estão em seu repositório para modificá-los.
 
-No **Espaço de Trabalho de Atualizações**, selecione uma atualização ou pacote e selecione **Editar** na guia **Início** para abrir o assistente para edição. Cada atualização e pacote possui assistentes separados, porém bem relacionados que apresentam as mesmas opções que os assistentes [Criar Atualização](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard) ou [Criar Pacote](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-bundle-wizard).
+No **Workspace de Atualizações**, selecione uma atualização ou pacote e selecione **Editar** na guia **Início** para abrir o assistente para edição. Cada atualização e pacote possui assistentes separados, porém bem relacionados que apresentam as mesmas opções que os assistentes [Criar Atualização](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard) ou [Criar Pacote](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-bundle-wizard).
 
 Durante a edição, você pode alterar todos os detalhes disponíveis sobre a atualização ou pacote para que possa ser usado em seu ambiente. Por exemplo, você pode editar as regras de aplicabilidade ou precedência ou alterar o idioma. Você também pode alterar o produto e o fornecedor para mover a atualização ou agrupar para uma pasta personalizada, a fim de agrupar as atualizações para seu próprio uso.
 
 ## <a name="assign-updates-and-bundles-to-a-publication"></a>Atribuir pacotes e atualizações a uma publicação
-Você pode selecionar as atualizações e pacotes no **Espaço de Trabalho de Atualizações** e, em seguida, escolher **Atribuir** na guia **Início** da faixa de opções para adicioná-las a uma publicação. Isso inicia o assistente **Atribuir Atualizações de Software**.
+Você pode selecionar as atualizações e pacotes no **Workspace de Atualizações** e, em seguida, escolher **Atribuir** na guia **Início** da faixa de opções para adicioná-las a uma publicação. Isso inicia o assistente **Atribuir Atualizações de Software**.
 -  Consulte [Publicar atualizações e pacotes](#publish-updates-and-bundles-from-the-updates-workspace) para obter informações sobre como selecionar e publicar atualizações e pacotes como uma única tarefa.
 -  Confira [Gerenciar publicações](/sccm/sum/tools/updates-publisher-publications) para obter informações sobre como gerenciar grupos de atualizações e pacotes como um único objeto. Depois de atribuir atualizações a uma publicação, você pode gerenciar essa publicação, que, por sua vez, incluirá todas as suas atualizações atribuídas.
 
@@ -73,24 +72,24 @@ Ao atribuir atualizações a uma publicação:
 
     -   Use **Atribuir a atualização de software para uma nova publicação** quando você não tiver uma publicação adequada. Isso criará uma nova publicação com o nome especificado por você.
 
-Depois de atribuir atualizações a uma publicação, use o **Espaço de Trabalho de Publicação** para [publicar](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations) ou [exportar](/sccm/sum/tools/updates-publisher-publications#export-a-pubilcation) a publicação como um grupo.
+Depois de atribuir atualizações a uma publicação, use o **Workspace de Publicação** para [publicar](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations) ou [exportar](/sccm/sum/tools/updates-publisher-publications#export-a-pubilcation) a publicação como um grupo.
 
-## <a name="publish-updates-and-bundles-from-the-updates-workspace"></a>Publicar atualizações e pacotes do Espaço de Trabalho de Atualizações
+## <a name="publish-updates-and-bundles-from-the-updates-workspace"></a>Publicar atualizações e pacotes do Workspace de Atualizações
 Quando você publica atualizações e pacotes, o Updates Publisher adiciona informações sobre essas atualizações e pacotes (metadados) e, possivelmente, os binários para as atualizações (conteúdo completo) para um servidor de atualização para implantação em dispositivos.
 
-Antes de você ter a opção de publicar, é necessário configurar a opção [Servidor de Atualização](/sccm/sum/tools/updates-publisher-options#update-server) para o Updates Publisher. Para abrir essa opção de configuração, acesse **Espaço de Trabalho de Atualizações** &gt; **Visão geral** e selecione **Configurar WSUS e Certificado de Assinatura.** Você também pode acessar a página do Servidor de Atualização nas opções do Updates Publisher.
+Antes de você ter a opção de publicar, é necessário configurar a opção [Servidor de Atualização](/sccm/sum/tools/updates-publisher-options#update-server) para o Updates Publisher. Para abrir essa opção de configuração, acesse **Workspace de Atualizações**&gt;**Visão geral** e selecione **Configurar WSUS e Certificado de Assinatura.** Você também pode acessar a página do Servidor de Atualização nas opções do Updates Publisher.
 
 Há duas maneiras de publicar pacotes e atualizações:
--   Diretamente do Espaço de Trabalho de Atualizações. (Consulte o procedimento a seguir, *Para publicar atualizações e pacotes*.)
--   Como uma [publicação](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations) do Espaço de Trabalho de Publicações.  
+-   Diretamente do Workspace de Atualizações. (Consulte o procedimento a seguir, *Para publicar atualizações e pacotes*.)
+-   Como uma [publicação](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations) do Workspace de Publicações.  
 
 > [!NOTE]   
 > O Updates Publisher só pode publicar atualizações com 375 megabytes (MB) ou menos de tamanho.
 
 ### <a name="to-publish-updates-and-bundles"></a>Para publicar atualizações e pacotes
-1.  Acesse **Espaço de Trabalho de Atualizações** e selecione uma ou mais atualizações e pacotes que você deseja publicar. Em seguida, escolha **Publicar** na guia **Início** da faixa de opções.
+1.  Acesse **Workspace de Atualizações** e selecione uma ou mais atualizações e pacotes que você deseja publicar. Em seguida, escolha **Publicar** na guia **Início** da faixa de opções.
 
-2.  Na página **Selecionar** do assistente **Publicar**, selecione como você deseja publicar as atualizações. As opções são as mesmas para [atribuição de atualizações](#assign-updates-and-bundles-to-a-publication): **Conteúdo Completo**, **Somente metadados** ou **Automáticas**.
+2.  Na página **Selecionar** do assistente **Publicar**, selecione como você deseja publicar as atualizações. As opções são as mesmas para a [atribuição de atualizações](#assign-updates-and-bundles-to-a-publication): **Conteúdo Completo**, **Somente metadados** ou **Automática**.
 
     Também é possível escolher assinar todas as atualizações com um novo certificado de publicação.
 
@@ -101,7 +100,7 @@ Se a publicação falhar, você receberá um link para o arquivo UpdatesPublishe
 ## <a name="export-updates"></a>Exportar atualizações
 Você pode exportar atualizações e pacotes de seu repositório do Updates Publisher para criar um catálogo de atualizações personalizadas. Em seguida, você pode [adicionar](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e depois [importar](/sccm/sum/tools/updates-publisher-catalogs#mport-updates) esse catálogo para outra instância do Updates Publisher. (Você também pode [exportar atualizações como uma publicação](/sccm/sum/tools/updates-publisher-publications##export-a-publication).)
 
-Para exportar diretamente, acesse o **Espaço de Trabalho de Atualizações** > **Todas as Atualizações de Software** e selecione um ou mais pacotes e atualizações. Não é possível exportar uma pasta de fornecedor ou de produto, mas você pode selecionar uma pasta e, depois, selecionar as atualizações dessa pasta para exportação.
+Para exportar diretamente, acesse o **Workspace de Atualizações** > **Todas as Atualizações de Software** e selecione um ou mais pacotes e atualizações. Não é possível exportar uma pasta de fornecedor ou de produto, mas você pode selecionar uma pasta e, depois, selecionar as atualizações dessa pasta para exportação.
 
 Com uma ou mais atualizações selecionadas, escolha **Exportar** na guia **Início** da faixa de opções e forneça um caminho e nome de arquivo para a exportação do catálogo.
 
@@ -110,7 +109,7 @@ Você terá a opção de exportar (incluir) atualizações de software dependent
 ## <a name="delete-updates-and-bundles"></a>Excluir atualizações e pacotes
 Você pode excluir atualizações e pacotes de atualizações para removê-los do repositório do Updates Publisher.
 
-Acesse o **Espaço de Trabalho de Atualizações** > **Todas as Atualizações de Software** e selecione uma ou mais atualizações individuais. Escolha **Excluir** na guia **Início** da faixa de opções.
+Acesse o **Workspace de Atualizações** > **Todas as Atualizações de Software** e selecione uma ou mais atualizações individuais. Escolha **Excluir** na guia **Início** da faixa de opções.
 
 -   Se a seleção contiver apenas atualizações ou pacotes que não foram publicados ou que expiraram, você receberá uma solicitação para confirmar a exclusão antes da remoção.
 
@@ -119,11 +118,11 @@ Acesse o **Espaço de Trabalho de Atualizações** > **Todas as Atualizações d
 Se você excluir uma atualização ou pacote de um fornecedor e, depois, importar novamente esse catálogo, essa atualização será restaurada para seu repositório.
 
 ## <a name="manage-vendor-and-product-folders"></a>Gerenciar pastas de fornecedor e de produto
-Para exibir uma lista de fornecedores, e produtos para cada fornecedor para o qual você importou ou criou atualizações, acesse **Espaço de Trabalho de Atualizações** > **Visão geral** > **Todas as Atualizações de Software**.
+Para exibir uma lista de fornecedores, e produtos para cada fornecedor para o qual você importou ou criou atualizações, acesse **Workspace de Atualizações** > **Visão geral** > **Todas as Atualizações de Software**.
 
 Pastas de fornecedores e produtos são criadas automaticamente pelo Updates Publisher quando você usa um assistente para importar ou criar uma atualização de software ou pacote. Você também pode criar essas pastas manualmente.
 
--   Para criar uma pasta de fornecedor, no painel de navegação do **Espaço de Trabalho de Atualizações**, clique com o botão direito em **Todas as Atualizações de Software** e escolha **Criar Fornecedor**.
+-   Para criar uma pasta de fornecedor, no painel de navegação do **Workspace de Atualizações**, clique com o botão direito em **Todas as Atualizações de Software** e escolha **Criar Fornecedor**.
 
 -   Para criar uma pasta de produto em uma pasta de fornecedor, clique na pasta de fornecedor e escolha **Criar Produto**.
 
@@ -132,4 +131,4 @@ Além de criar pastas, você pode renomear ou excluir qualquer pasta de forneced
 Você pode mover as atualizações entre fornecedores e pastas do produto, incluindo para pastas que você criar. Para mover uma atualização ou pacote para uma nova pasta, selecione e **Edite** a atualização ou pacote. Em seguida, na página **Informações** do assistente para Editar Atualização, reatribua o fornecedor e o produto. Quando o assistente para **Editar Atualização** for concluído, a alteração se aplicará e a atualização será transferida para a nova pasta.
 
 ## <a name="view-the-xml-of-an-update-or-bundle"></a>Exibir o XML de uma atualização ou pacote
-Você pode selecionar uma única atualização ou pacote no **Espaço de Trabalho de Atualizações** e, em seguida, escolher **Exibir** XML para exibir a estrutura em XML da atualização. Não há opções para editar a estrutura em XML diretamente.
+Você pode selecionar uma única atualização ou pacote no **Workspace de Atualizações** e, em seguida, escolher **Exibir** XML para exibir a estrutura em XML da atualização. Não há opções para editar a estrutura em XML diretamente.

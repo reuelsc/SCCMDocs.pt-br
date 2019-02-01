@@ -8,15 +8,15 @@ ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 684a5559-9e6e-469b-86ae-e768e9f0c9ac
 author: aczechowski
-robots: noindex,nofollow
+ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 113e22c33e9e8545c382373f3ba093dba3969939
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9aecb8f744185116b85232bd9b2893cdf20a3b6d
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340685"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54897535"
 ---
 # <a name="capabilities-in-technical-preview-1604-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1604 do System Center Configuration Manager
 
@@ -73,7 +73,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
 4.  Compre pelo menos um aplicativo da Windows Store para Empresas.  
 
-5.  No espaço de trabalho **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e clique em **Windows Store para Empresas**.  
+5.  No workspace **Administração** do console do Configuration Manager, expanda **Serviços de Nuvem** e clique em **Windows Store para Empresas**.  
 
 6.  Na guia **Início**, no grupo **Criar**, clique em **Adicionar Conta da Windows Store para Empresas**.  
 
@@ -81,9 +81,9 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
 8.  Quando terminar, você verá a conta configurada na lista **Contas da Windows Store para Empresas** no console do Configuration Manager.  
 
-##### <a name="scenario-2-create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-offline-licensed-app"></a>Cenário 2: Criar e implantar um aplicativo do Configuration Manager por meio de um aplicativo licenciado offline da Windows Store para Empresas  
+##### <a name="scenario-2-create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-offline-licensed-app"></a>Cenário 2: Criar e implantar um aplicativo do Configuration Manager usando um aplicativo licenciado offline da Microsoft Store para Empresas  
 
-1.  No espaço de trabalho **Biblioteca de Software** do console do Configuration Manager, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.  
+1.  No workspace **Biblioteca de Software** do console do Configuration Manager, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.  
 
 2.  A lista **Aplicativos comprados na Windows Store para Empresas** mostra uma lista de aplicativos que foram sincronizados da loja. Escolha o aplicativo que deseja implantar e, na guia **Início**, no grupo **Criar**, clique em **Criar Aplicativo**.  
 

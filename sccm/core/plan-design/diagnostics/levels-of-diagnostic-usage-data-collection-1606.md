@@ -10,12 +10,13 @@ ms.assetid: f7350d03-f440-4744-82d4-75f8c6c25028
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 902e5e91b64cf3061862deeb98b0d9bf427e4598
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ROBOTS: NOINDEX
+ms.openlocfilehash: af82e3b5d0f555494705a28fba291253c83b00ea
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340906"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898011"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1606-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1606 do System Center Configuration Manager
 
@@ -87,7 +88,7 @@ Alterações de versões anteriores são indicadas com ***[Novo]*** ou ***[Atual
      -  Estatísticas sobre as conexões do console (versão de sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versões do .NET instaladas e pacotes de idiomas do console)    
 
 
-- ***[Novo]*** Versão do SQL, nível do service pack, edição, ID de agrupamento e conjunto de caracteres
+- ***[Novo]*** Versão do SQL, nível do service pack, edição, ID de ordenação e conjunto de caracteres
 
 
 ##  <a name="bkmk_level2"></a> Nível 2 - Avançado
@@ -385,7 +386,7 @@ A partir da versão 1606 do System Center Configuration Manager, este nível inc
 -   Número mínimo/máximo/médio de horas desde a última verificação de atualização de software
 
 -    Produtos de atualização de software sincronizados pelo Ponto de Atualização de Software
--    Configurações de conformidade: detalhes de configuração de: protocolo SCEP, VPN, Wi-Fi e de modelo de Política de Conformidade
+-    Configurações de conformidade: Detalhes de configuração do modelo de SCEP, VPN, Wi-Fi e Política de Conformidade
 
 -    Tipo de políticas de Acesso Condicional EAS (bloqueio ou quarentena) para dispositivos que o Intune gerencia
 

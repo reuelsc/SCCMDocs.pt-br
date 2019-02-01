@@ -10,18 +10,18 @@ ms.assetid: 272ee86b-d3d9-4fd9-b5c4-73e490e1a1e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fc49a74fe4e257acceaea54d7c423709998a87bd
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 09a583fd3d7ff768c9a102631a0c2cb39a286c23
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334174"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898368"
 ---
 # <a name="security-and-privacy-for-remote-control-in-system-center-configuration-manager"></a>Segurança e privacidade do controle remoto no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este tópico contém as informações de segurança e privacidade de controle remoto no System Center 2012 Configuration Manager.  
+Este tópico contém informações de segurança e privacidade para controle remoto no System Center Configuration Manager.  
 
 ##  <a name="BKMK_Security_HardwareInventory"></a> Práticas recomendadas de segurança para o controle remoto  
  Use as seguintes práticas recomendadas de segurança ao gerenciar computadores cliente usando o controle remoto.  
@@ -32,7 +32,7 @@ Este tópico contém as informações de segurança e privacidade de controle re
 |Não habilite o compartilhamento da Área de transferência no visualizador do controle remoto.|A Área de Transferência dá suporte a objetos como arquivos executáveis e texto e pode ser usada pelo usuário no computador host durante a sessão de controle remoto para executar um programa no computador de origem.|  
 |Não digite senhas de contas com privilégios ao administrar remotamente um computador.|O software que observa a entrada do teclado pode capturar a senha. Ou então, se o programa que está sendo executado no computador cliente não for o programa do qual o usuário do controle remoto assume o controle, o programa poderá estar capturando a senha. Quando são necessárias contas e senhas, o usuário final deve inseri-las.|  
 |Bloqueie o teclado e o mouse durante uma sessão de controle remoto.|Se o Configuration Manager detectar que a conexão de controle remoto foi encerrada, ele bloqueará automaticamente o teclado e o mouse para que um usuário não possa assumir o controle da sessão de controle remoto aberta. No entanto, essa detecção pode não ocorrer imediatamente e não ocorrerá se o serviço de controle remoto for encerrado.<br /><br /> Selecione a ação **Bloquear Teclado e Mouse Remotos** na janela **Controle Remoto do ConfigMgr** .|  
-|Não permita que os usuários definam as configurações de controle remoto no Centro de Software.|Não habilite a configuração do cliente **Os usuários podem alterar as configurações de política ou de notificação no Centro de Software** para ajudar a impedir que os usuários sejam espionados.<br /><br /> Essa configuração destina-se ao computador e não ao usuário conectado.|  
+|Não permita que os usuários definam as configurações de controle remoto no Centro de Software.|Não habilite a configuração do cliente **Os usuários podem alterar as configurações de política ou de notificação no Centro de Software** para ajudar a impedir que os usuários sejam espionados. Se um usuário alterar essa configuração, ela poderá permitir que um usuário diferente no mesmo computador seja exibido remotamente. <br /><br />**Essa configuração é para o computador, não para o usuário conectado**.|  
 |Habilite o perfil do Firewall do Windows do **Domínio** .|Habilite a configuração do cliente **Habilitar controle remoto em perfis de exceção de Firewall de clientes** e selecione o Firewall do Windows do **Domínio** para os computadores da intranet.|  
 |Se você fizer logout durante uma sessão de controle remoto e fizer logon como um usuário diferente, certifique-se de fazer logout antes de se desconectar da sessão de controle remoto.|Se você não fizer logout nesse cenário, a sessão permanecerá aberta.|  
 |Não forneça aos usuários direitos de administrador local.|Quando você concede aos usuários direitos de administrador local, eles poderão assumir sua sessão de controle remoto ou comprometer suas credenciais.|  

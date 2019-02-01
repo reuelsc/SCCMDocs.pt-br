@@ -8,15 +8,15 @@ ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: e4d9e414-1346-4ed4-85d0-64d602b68731
 author: aczechowski
-robots: noindex,nofollow
+ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 939a767820983c1fe2d575d7a745d6dabb45f25c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 970f86849572d6b360c5b92a42a3d131a38fe1d7
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335653"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54896457"
 ---
 # <a name="capabilities-in-technical-preview-1512-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1512 do System Center Configuration Manager
 
@@ -39,7 +39,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 
 O console também exibe as principais configurações de atestado de integridade ausentes com o número de dispositivos.  
 
-Para visualizar a exibição do atestado de integridade do dispositivo no console do Configuration Manager, acesse o espaço de trabalho **Monitoramento**, clique no nó **Segurança** e clique em **Atestado de Integridade**.  
+Para visualizar a exibição do atestado de integridade do dispositivo no console do Configuration Manager, acesse o workspace **Monitoramento**, clique no nó **Segurança** e clique em **Atestado de Integridade**.  
 
 ##  <a name="bkmk_viewterms"></a> Monitoramento no console dos termos e condições  
 A partir do Technical Preview 1512, ao integrar o Configuration Manager ao Microsoft Intune, você poderá usar o console do Configuration Manager para ver quais usuários aceitaram os termos e condições configurados pelo departamento de TI, e quais não aceitaram.  
@@ -57,13 +57,13 @@ A partir do Technical Preview 1512, ao integrar o Configuration Manager ao Micro
 ##  <a name="bkmk_EPpolicy"></a> Aprimoramentos nas configurações da política do Endpoint Protection  
 Na Visualização Técnica 1512, adicionamos as seguintes novas configurações na política antimalware do Endpoint Protection:  
 
--   Proteção em tempo real: **Bloco de aplicativos potencialmente indesejados no download e antes da instalação**  
+-   Proteção em tempo real: **Bloqueio de aplicativos potencialmente indesejados no download e antes da instalação**  
 
     -   PUA (Aplicativos Potencialmente Indesejados) é uma classificação de risco com base na reputação e identificação voltadas para a pesquisa. Normalmente, esses são agregadores de aplicativos indesejados ou seus aplicativos empacotados.  
 
     -   A configuração de política de proteção está habilitada (definida como "Sim") por padrão. Quando habilitada, essa configuração impede PUA no momento de download e instalação. No entanto, você pode excluir arquivos específicos ou pastas para atender às necessidades específicas do seu ambiente.  
 
--   Configurações de verificação: **Verificação de unidades de rede mapeadas ao executar uma verificação completa**  
+-   Configurações de verificação: **Verificar unidades de rede mapeadas ao executar uma verificação completa**  
 
     -   Essa configuração fornece maior granularidade ao administrador para permitir verificações sob demanda de arquivos de rede sem o risco de sempre verificar unidades de rede mapeadas durante uma verificação completa agendada.  
 
@@ -75,9 +75,9 @@ Na Visualização Técnica 1512, adicionamos as seguintes novas configurações 
 
      O mecanismo antimalware pode solicitar que amostras de arquivo sejam enviadas à Microsoft para análise posterior. Por padrão, ele solicitará sempre antes de enviar esses exemplos. Os administradores agora podem gerenciar as configurações a seguir para configurar esse comportamento:  
 
-    -   Avançado ‑ **Permitir o envio de arquivo de amostra automático para ajudar a Microsoft a determinar se certos itens detectados são maliciosos**: altere essa configuração para "Sim" para habilitar o envio automático de amostra. Por padrão, essa configuração é "Não", o que significa que o envio automático de amostra está desabilitado e os usuários serão avisados antes do envio de amostras.   (Essa configuração foi introduzida no System Center 2012 R2 Configuration Manager SP1)  
+    -   Avançado: **Habilitar o envio automático de arquivo de exemplo para ajudar a Microsoft a determinar se certos itens detectados são mal-intencionados**:  altere essa configuração para "Sim" para habilitar o envio automático de arquivo de exemplo. Por padrão, essa configuração é "Não", o que significa que o envio automático de amostra está desabilitado e os usuários serão avisados antes do envio de amostras.   (Essa configuração foi introduzida no System Center 2012 R2 Configuration Manager SP1)  
 
-    -   Avançado ‑ **Permitir que usuários modifiquem configurações de envio do arquivo de amostra automática**: essa configuração determina se um usuário com direitos administrativos em um dispositivo pode alterar a configuração de envio do arquivo de amostra automática na interface do cliente. Por padrão, essa configuração é definida como “Não”, o que significa que as configurações só podem ser alteradas no console do Configuration Manager e os administradores locais em um dispositivo não podem alterar essa configuração.  
+    -   Avançado: **Permitir que os usuários modifiquem configurações de envio do arquivo de amostra automática**: Essa configuração determina se um usuário com direitos administrativos em um dispositivo pode alterar a configuração de envio do arquivo de amostra automática na interface do cliente. Por padrão, essa configuração é definida como “Não”, o que significa que as configurações só podem ser alteradas no console do Configuration Manager e os administradores locais em um dispositivo não podem alterar essa configuração.  
 
          Por exemplo, o código a seguir mostra a configuração do Windows Defender no Windows 10 definida pelo administrador como habilitada e o usuário não tem permissão para modificá-la:  
 

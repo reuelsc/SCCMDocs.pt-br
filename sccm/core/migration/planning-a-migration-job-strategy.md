@@ -10,13 +10,12 @@ ms.assetid: a70bfbd4-757a-4468-9312-1c3b373ef9fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: noindex
-ms.openlocfilehash: 0481abfb1ed881355a489b99b0c3f7ec9c595e69
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0e77225fb378a5851dbba9718dd3810463255cf7
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342317"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898419"
 ---
 # <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>Planejar a estratégia de trabalho de migração no System Center Configuration Manager
 
@@ -45,11 +44,11 @@ Use trabalhos de migração para configurar os dados específicos que você dese
 ##  <a name="Types_of_Migration"></a> Tipos de trabalhos de migração  
  O Configuration Manager dá suporte aos seguintes tipos de trabalho de migração. Cada tipo de trabalho foi desenvolvido para ajudar a definir os objetos que você pode incluir nesse trabalho.  
 
- **Migração de coleção** (com suporte apenas ao migrar do Configuration Manager 2007 SP2): migre objetos que estão relacionados às coleções selecionadas. Por padrão, a migração da coleção inclui todos os objetos que estão associados aos membros da coleção. Quando você usa um trabalho de migração da coleção, você pode excluir instâncias de objeto específico.  
+ **Migração de coleção** (com suporte apenas ao migrar do Configuration Manager 2007 SP2): Migre os objetos que estão relacionados às coleções selecionadas. Por padrão, a migração da coleção inclui todos os objetos que estão associados aos membros da coleção. Quando você usa um trabalho de migração da coleção, você pode excluir instâncias de objeto específico.  
 
- **Migração de objeto**: migre objetos individuais selecionados. Você seleciona somente os dados específicos que deseja migrar.  
+ **Migração de objeto**: Migre objetos individuais que você selecionou. Você seleciona somente os dados específicos que deseja migrar.  
 
- **Migração de objetos migrados anteriormente**: migre objetos que você migrou anteriormente quando eles forem atualizados na hierarquia de origem após terem sido migrados pela última vez.  
+ **Migração de objetos já migrados**: migre os objetos que você já migrou quando eles foram atualizados na hierarquia de origem após a última migração.  
 
 ###  <a name="Objects_that_can_migrate"></a> Objetos que você pode migrar  
  Nem todo objeto pode ser migrado por um tipo específico de trabalho de migração. A lista a seguir identifica o tipo de objeto que pode ser migrado com cada tipo de trabalho de migração.  
@@ -277,7 +276,7 @@ Use trabalhos de migração para configurar os dados específicos que você dese
 -   Uma coleção que contém uma regra para incluir computadores desconhecidos. A coleção é migrada, mas a regra para incluir computadores desconhecidos não é migrada.  
 
 ### <a name="empty-collections"></a>Coleções vazias  
- Uma coleção vazia não contém recursos associados a ela. Quando o Configuration Manager migra uma coleção vazia, ele converte a coleção em uma pasta organizacional que não contém usuários ou dispositivos. Esta pasta é criada com o nome da coleção vazia no nó **Coleções de Usuários** ou **Coleções de Dispositivos**, no espaço de trabalho **Ativos e Conformidade** do console do Configuration Manager.  
+ Uma coleção vazia não contém recursos associados a ela. Quando o Configuration Manager migra uma coleção vazia, ele converte a coleção em uma pasta organizacional que não contém usuários ou dispositivos. Esta pasta é criada com o nome da coleção vazia no nó **Coleções de Usuários** ou **Coleções de Dispositivos**, no workspace **Ativos e Conformidade** do console do Configuration Manager.  
 
 ### <a name="linked-collections-and-subcollections"></a>Coleções e subcoleções vinculadas  
  Quando você migra coleções vinculadas a outras coleções ou que contêm subcoleções, o Configuration Manager cria uma pasta no nó **Coleções de Usuários** ou **Coleções de Dispositivos**, além das coleções e subcoleções vinculadas.  
@@ -285,7 +284,7 @@ Use trabalhos de migração para configurar os dados específicos que você dese
 ### <a name="collection-dependencies-and-include-objects"></a>Dependências da coleção e inclusão de objetos  
  Quando você especifica uma coleção a ser migrada no Assistente para Criar Trabalho de Migração, todas as coleções dependentes são automaticamente selecionadas para serem incluídas no trabalho. Este comportamento garante que todos os recursos necessários estejam disponíveis após a migração.  
 
- Por exemplo: você seleciona uma coleção de dispositivos que executam o Windows 7, nomeada como **Win_7**. Esta coleção está limitada à coleção que contém os sistemas operacionais de todos os seus clientes, nomeada como **All_Clients**. A coleção **All_Clients** será automaticamente selecionada para migração.  
+ Por exemplo: você seleciona uma coleção de dispositivos que executam o Windows 7 e chama-se **Win_7**. Esta coleção está limitada à coleção que contém os sistemas operacionais de todos os seus clientes, nomeada como **All_Clients**. A coleção **All_Clients** será automaticamente selecionada para migração.  
 
 ### <a name="collection-limiting"></a>Limitação da coleção  
  Com o System Center Configuration Manager, as coleções são dados globais e são avaliadas em cada site na hierarquia. Portanto, planeje como limitar o escopo de uma coleção depois da migração. Durante a migração, você pode identificar uma coleção da hierarquia de destino a ser usada para limitar o escopo da coleção que você está migrando de modo que a coleção migrada não contenha membros não previstos.  

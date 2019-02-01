@@ -10,12 +10,13 @@ ms.assetid: 14ee4fb0-7790-45a6-906e-6e55627d4079
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8ed8aed38f20adb3558b61dd32a36f88fbac3b00
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ROBOTS: NOINDEX
+ms.openlocfilehash: a45f48ef16e0d204cfe347c3e024cd0b36403405
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893501"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898180"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1706-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1706 do System Center Configuration Manager
 
@@ -91,7 +92,7 @@ Para o System Center Configuration Manager versão 1706, esse nível inclui o se
 
      - Versão do script pós-atualização
 
-- Versão do SQL, nível do service pack, edição, ID de agrupamento e conjunto de caracteres     
+- Versão do SQL, nível do service pack, edição, ID de ordenação e conjunto de caracteres     
 - Estatísticas de telemetria (quando executar, tempo de execução, erros)
 
 - Uso da Descoberta de Rede (habilitada ou desabilitada)
@@ -449,7 +450,7 @@ Para o System Center Configuration Manager versão 1706, esse nível inclui o se
 
 - ***[Novo]*** Estatísticas de política de conformidade sobre conformidade e erros
 
-- Configurações de conformidade: detalhes de configuração de: protocolo SCEP, VPN, Wi-Fi e de modelo de Política de Conformidade. Contagem de grupos que têm atualizações de software expiradas
+- Configurações de conformidade: Detalhes de configuração do modelo de SCEP, VPN, Wi-Fi e Política de Conformidade Contagem de grupos que têm atualizações de software expiradas
 
 - Pacote de configuração do DCM para uso do System Center Configuration Manager
 

@@ -10,13 +10,13 @@ ms.assetid: 4021eca1-adfb-4e5a-adee-159263c29637
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: noindex,nofollow
-ms.openlocfilehash: c6d085fd33513a32207a3b9acfdfe6fe91657a88
-ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
+ROBOTS: NOINDEX
+ms.openlocfilehash: 86d36921939b611fa6647d4a0bf3af6d11f27ee7
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52259039"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54897620"
 ---
 # <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Novidades da versão 1602 do System Center Configuration Manager
 
@@ -132,7 +132,7 @@ Você encontrará esses aplicativos no nó **Aplicativos** do console do Configu
  Para obter mais detalhes, consulte [Políticas de conformidade do dispositivo no System Center Configuration Manager](../../../protect/deploy-use/device-compliance-policies.md).  
 
 ### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>Verificar se os dispositivos registrados e em conformidade sempre têm acesso ao Exchange no Local  
- Ao marcar a seguinte opção, os dispositivos que estão registrados no Intune e que estão em conformidade com as políticas de conformidade têm permissão para acessar o Exchange no Local: **Substituição de regra padrão – sempre permitir que dispositivos registrados e em conformidade acessem o Exchange no Local:**. Essa regra está disponível na **página Geral** do **Assistente de Configuração de Política de Acesso Condicional** do Exchange no local.
+ Quando você marca a opção a seguir, os dispositivos registrados no Intune e em conformidade com as políticas de conformidade têm permissão para acessar o Exchange local: **Substituição de regra padrão – sempre permitir que os dispositivos registrados no Intune e em conformidade acessem o Exchange local:**. Essa regra está disponível na **página Geral** do **Assistente de Configuração de Política de Acesso Condicional** do Exchange no local.
 
  Essa regra substitui a regra padrão, o que significa que mesmo que você defina a regra padrão para bloquear o acesso ou colocar em quarentena, os dispositivos registrados e em conformidade ainda poderão acessar o Exchange no Local. Use essa configuração quando desejar que dispositivos registrados e compatíveis sempre tenham acesso ao email por meio do Exchange no local.   
 
@@ -173,9 +173,9 @@ Para obter detalhes, consulte [Atestado de integridade do System Center Configur
 ### <a name="improvements-to-endpoint-protection-antimalware-settings"></a>Aprimoramentos nas configurações de antimalware do Endpoint Protection  
  A versão 1602 adiciona as seguintes novas configurações na política antimalware do Endpoint Protection para o Windows Defender:  
 
--   Proteção em tempo real: bloqueie aplicativos potencialmente indesejados durante o download, antes da instalação.  
+-   Proteção em tempo real: bloqueie aplicativos possivelmente indesejados no download, antes da instalação.  
 
--   Configurações de verificação: verifique as unidades de rede mapeadas durante uma verificação completa.  
+-   Configurações de verificação: examine as unidades de rede mapeadas durante uma verificação completa.  
 
 -   Configurações de envio automático de arquivo de exemplo:  
 
@@ -209,10 +209,10 @@ O Configuration Manager pode solicitar o status do Bloqueio de Ativação de dis
 
  Selecione a implantação de termos e condições na lista de implantações. A área de resumo mostra as seguintes estatísticas:  
 
--   **Em conformidade**: usuários que aceitaram a última versão dos termos e condições.  
+-   **Em conformidade**: os usuários que aceitaram a versão mais recente dos termos e condições.  
 
 -   **Erro**  
 
--   **Fora de conformidade**: usuários que aceitaram uma versão dos termos e condições, mas não a última versão.  
+-   **Fora de conformidade**: Os usuários que aceitaram uma versão dos termos e condições, mas não a versão mais recente.  
 
--   **Desconhecido**: usuários que nunca aceitaram os termos e condições, incluindo aqueles sem um dispositivo registrado.  
+-   **Desconhecido**: os usuários que nunca aceitaram os termos e condições, incluindo aqueles que não têm um dispositivo registrado.  
