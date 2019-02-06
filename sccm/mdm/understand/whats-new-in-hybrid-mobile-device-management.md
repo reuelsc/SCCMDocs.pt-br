@@ -2,7 +2,7 @@
 title: Novidades no MDM híbrido
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune.
-ms.date: 01/28/2019
+ms.date: 02/04/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 84c244a959bb9a087d33410fe0605bc6ddcadfbc
-ms.sourcegitcommit: a2ecd84d93f431ee77848134386fec14031aed6a
+ms.openlocfilehash: d6b54466f72c56d830954f8641b9f06f5f6e76e7
+ms.sourcegitcommit: 7e020ce097360e8703ac8cd6bd871c33f72a441e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55230895"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55742049"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -44,6 +44,15 @@ Cada seção deste artigo lista recursos híbridos em três categorias diferente
 |**Novo no Microsoft Intune** | De modo geral, todos os recursos listados nesta categoria devem funcionar com todas as versões do Configuration Manager. Isso inclui versões do System Center 2012 R2 Configuration Manager, uma vez que esses recursos exigem apenas o serviço Intune e não exigem funcionalidades adicionais no Configuration Manager.|
 |**Novo no Configuration Manager Technical Preview**| Todos os recursos listados nessa categoria funcionam apenas com o branch de visualização técnica especificado. Para testar esses recursos, você deve instalar a versão de visualização técnica especificada na descrição do recurso. Para obter mais informações, confira [Visualização técnica para o Configuration Manager](/sccm/core/get-started/technical-preview).|
 |**Novo no Configuration Manager (Branch Atual)**| Todos os recursos listados nessa categoria funcionam apenas com a versão especificada do Configuration Manager (branch atual). Se estiver usando uma versão mais antiga do Configuration Manager para sua implantação híbrida, atualize para a versão do Configuration Manager (branch atual) especificada na descrição do recurso. Para obter mais informações, veja [Atualizar para o Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).|
+
+
+
+## <a name="february-2019"></a>Fevereiro de 2019
+
+### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+#### <a name="intune-macos-company-portal-dark-mode"></a>MacOS do Intune modo escuro do Portal da empresa
+<!--3300524--> O Portal da empresa do macOS do Intune agora dá suporte ao modo de escuro para macOS. Quando você habilita o modo escuro em um dispositivo macOS 10.14 +, o Portal da empresa ajusta sua aparência para as cores que refletem esse modo.
 
 
 
