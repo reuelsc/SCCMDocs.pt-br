@@ -2,7 +2,7 @@
 title: MDM híbrido com o Microsoft Intune
 titleSuffix: Configuration Manager
 description: Saiba mais sobre o MDM (gerenciamento de dispositivos móveis) híbrido com o Configuration Manager e o Microsoft Intune.
-ms.date: 11/02/2018
+ms.date: 01/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: bb95154b-f63e-4491-896e-41d732c802f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a84dfc33fe79f5eb4d5397505a12052b8e92aebf
-ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
+ms.openlocfilehash: a744463aa82951d68125c0d17d88ba5e8a1f2703
+ms.sourcegitcommit: 33e066aceaf321add1031df00e552e942c8351a7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54250605"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55764405"
 ---
 # <a name="hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>MDM híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -38,7 +38,9 @@ ms.locfileid: "54250605"
 > 
 > - O licenciamento continua o mesmo. As licenças do Intune no Azure estão inclusas no MDM híbrido.  
 > 
-> - O acesso condicional e os recursos de MDM locais no Configuration Manager não são preteridos. Alterações futuras para o Configuration Manager permitirão que esses recursos funcionem sem MDM híbrido. 
+> - O recurso MDM local no Configuration Manager não é preterido. A partir do Configuration Manager versão 1810, você pode usar o MDM local sem uma conexão do Intune. Para obter mais informações, consulte [Intune uma conexão não é mais necessário para novas implantações de MDM local](/sccm/core/plan-design/changes/whats-new-in-version-1810#bkmk_opmdm). 
+> 
+> - O recurso de acesso condicional no local do Configuration Manager também é preterido com o MDM híbrido. Se você usar o acesso condicional em dispositivos gerenciados com o cliente do Configuration Manager, para certificar-se de que eles ainda estão protegidos, primeiro habilite o acesso condicional no Intune para os dispositivos antes de migrar. Habilitar o cogerenciamento no Configuration Manager, mover a carga de trabalho de política de conformidade para o Intune e, em seguida, concluir a migração do Intune híbrido para Intune autônomo. Para obter mais informações, consulte [acesso condicional com o cogerenciamento](https://docs.microsoft.com/sccm/comanage/quickstart-conditional-access). 
 > 
 > - No dia 1º de setembro de 2019, todos os dispositivos com MDM híbrido restantes deixarão de receber políticas, aplicativos ou atualizações de segurança.  
 > 
