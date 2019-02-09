@@ -10,19 +10,19 @@ ms.assetid: bb95154b-f63e-4491-896e-41d732c802f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a744463aa82951d68125c0d17d88ba5e8a1f2703
-ms.sourcegitcommit: 33e066aceaf321add1031df00e552e942c8351a7
+ms.openlocfilehash: dd91d8afb092f855179edaa07163d5fcaa2ac350
+ms.sourcegitcommit: 38f56f1d5803370f4262931c2dc4a532bfcf0594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55764405"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55905583"
 ---
 # <a name="hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>MDM híbrido com o Configuration Manager e o Microsoft Intune
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 > [!Important]  
-> O gerenciamento híbrido de dispositivos móveis é um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures) desde 14 de agosto de 2018.
+> O gerenciamento híbrido de dispositivos móveis é um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures) desde 14 de agosto de 2018. Começando com a versão de serviço do Intune 1902, esperada-se no final de fevereiro de 2019, novos clientes não é possível criar uma nova conexão de híbrida. 
 > <!--Intune feature 2683117-->  
 > Desde o lançamento no Azure há mais de um ano, o Intune adicionou centenas de novos recursos de serviço solicitados pelo cliente e líderes de mercado. Agora, ele oferece muito mais recursos do que os oferecidos pelo gerenciamento de dispositivos móveis híbrido (MDM). O Intune no Azure oferece uma experiência administrativa mais integrada e simplificada para suas necessidades de mobilidade corporativa.
 > 
@@ -36,13 +36,20 @@ ms.locfileid: "55764405"
 > 
 > - Se você migrar para o Intune no Azure antes do final da oferta do MDM híbrido, não deverá haver impacto para o usuário final.  
 > 
+> - No dia 1º de setembro de 2019, todos os dispositivos com MDM híbrido restantes deixarão de receber políticas, aplicativos ou atualizações de segurança.  
+> 
 > - O licenciamento continua o mesmo. As licenças do Intune no Azure estão inclusas no MDM híbrido.  
 > 
 > - O recurso MDM local no Configuration Manager não é preterido. A partir do Configuration Manager versão 1810, você pode usar o MDM local sem uma conexão do Intune. Para obter mais informações, consulte [Intune uma conexão não é mais necessário para novas implantações de MDM local](/sccm/core/plan-design/changes/whats-new-in-version-1810#bkmk_opmdm). 
 > 
-> - O recurso de acesso condicional no local do Configuration Manager também é preterido com o MDM híbrido. Se você usar o acesso condicional em dispositivos gerenciados com o cliente do Configuration Manager, para certificar-se de que eles ainda estão protegidos, primeiro habilite o acesso condicional no Intune para os dispositivos antes de migrar. Habilitar o cogerenciamento no Configuration Manager, mover a carga de trabalho de política de conformidade para o Intune e, em seguida, concluir a migração do Intune híbrido para Intune autônomo. Para obter mais informações, consulte [acesso condicional com o cogerenciamento](https://docs.microsoft.com/sccm/comanage/quickstart-conditional-access). 
-> 
-> - No dia 1º de setembro de 2019, todos os dispositivos com MDM híbrido restantes deixarão de receber políticas, aplicativos ou atualizações de segurança.  
+> - O recurso de acesso condicional no local do Configuration Manager também é preterido com o MDM híbrido. Se você usar o acesso condicional em dispositivos gerenciados com o cliente do Configuration Manager, certifique-se de que eles são protegidos antes de migrar. 
+>     1. Definir políticas de acesso condicional no Azure
+>     2. Configurar políticas de conformidade no portal do Intune 
+>     3. Concluir a migração híbrida e definir a autoridade MDM para Intune
+>     4. Habilitar cogerenciamento
+>     5. Mover a carga de trabalho de cogerenciamento de políticas de conformidade para o Intune 
+>
+>     Para obter mais informações, consulte [acesso condicional com o cogerenciamento](https://docs.microsoft.com/sccm/comanage/quickstart-conditional-access). 
 > 
 > **O que preciso fazer para me preparar para essa alteração?**
 > 
