@@ -10,12 +10,12 @@ ms.assetid: 92b339ef-2723-4322-bec6-077b3e8846b0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a16794fbcff6f21f2240f69998c576994a57502c
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: 818065f4ea3f537dc565d06c278b710b224a4031
+ms.sourcegitcommit: f0ec334a70d0cdd3f5f185ac7787b700947f82de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893620"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55303209"
 ---
 # <a name="prerequisites-for-installing-configuration-manager-sites"></a>Pré-requisitos para instalar sites do Configuration Manager
 
@@ -115,7 +115,7 @@ Todas as outras funções do sistema de site podem permanecer instaladas no site
 #### <a name="open-the-sql-server-service-broker-port"></a>Abra a porta do SQL Server Service Broker
 A porta da rede deve estar aberta para o SQL SSB (Server Service Broker) entre o site primário autônomo e o servidor para o site de administração central.  
 
-Para replicar dados de maneira bem sucedida entre o site de administração central e um site primário, o Configuration Manager requer uma porta aberta entre os dois sites para o SSB usar. Ao instalar um site de administração central e expandir um site primário autônomo, a verificação de pré-requisitos não verifica se a porta especificada para o SSB está aberta no site primário.  
+Para replicar dados de maneira bem sucedida entre o site de administração central e um site primário, o Configuration Manager requer uma porta aberta entre os dois sites para o SSB usar. Quando você instala um site de administração central e expande um site primário autônomo, a verificação de pré-requisitos não verifica se a porta especificada para o SSB está aberta no site primário.  
 
 #### <a name="known-issues-with-azure-services"></a>Problemas conhecidos com os serviços do Azure
 Quando você usar um dos seguintes serviços do Azure com o Configuration Manager, depois de expandi-lo, remova e recrie a conexão para esse serviço.

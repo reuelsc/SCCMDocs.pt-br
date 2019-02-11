@@ -2,7 +2,7 @@
 title: Extensões SCAP
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as extensões SCAP (Security Content Automation Protocol) para o Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 01/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
@@ -10,18 +10,25 @@ ms.assetid: a315489d-5e12-46d6-903e-3a35235b72c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0cf248704d49f429bf4ca9dc4ea2be375093f92c
-ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
+ms.openlocfilehash: e42027663f06bff715cb7e9087ececbc421cc495
+ms.sourcegitcommit: 013ca76d5a3c07306de7b5bfd985b0289d1be599
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52258991"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55482445"
 ---
 # <a name="about-the-security-content-automation-protocol-scap-extensions"></a>Sobre as extensões do SCAP (Protocolo de Automação de Conteúdo de Segurança)
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 As extensões SCAP para o Configuration Manager ajudam você a analisar e avaliar seu ambiente de rede em relação à conformidade com o SCAP (Security Content Automation Protocol). O SCAP é definido e mantido pelo NIST (National Institute of Standards and Technology) dos EUA. Para obter mais informações, confira a [visão geral do projeto SCAP](https://csrc.nist.gov/projects/security-content-automation-protocol).
+
+> [!Note]  
+> Esta versão da ferramenta é um recurso de pré-lançamento que só está disponível na versão 1806. Esta versão não é certificada pelo NIST. <!--SCCMDocs-pr issue 3323-->
+> 
+> Se você precisar de uma ferramenta certificada ou estiver usando outra versão do branch atual do Configuration Manager, use a seguinte versão das extensões do SCAP:
+> - [Baixar as extensões SCAP para o System Center Configuration Manager](https://www.microsoft.com/download/details.aspx?id=48741)
+> - [Documentação para extensões SCAP versão 3.0](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/mt228311\(v%3dtechnet.10\))
 
 As extensões SCAP para o Configuration Manager usam o recurso de configurações de conformidade para primeiro verificar os computadores em seu ambiente. Em seguida, ele documenta seu nível de conformidade com o USGCB (United States Government Configuration Baseline).
 
@@ -68,11 +75,11 @@ Esta versão das extensões do protocolo SCEP para o Configuration Manager inclu
 
 ## <a name="terms"></a>Termos
 
-- **ID OVAL:** um identificador para uma definição OVAL específica que está em conformidade com o formato de IDs OVAL.  
+- **ID OVAL**: um identificador para uma definição OVAL específica que está em conformidade com o formato de IDs OVAL.  
 
-- **Fluxo de dados de resultado SCAP:** um pacote de componentes SCAP e os mapeamentos de referências entre os componentes SCAP que armazenam o conteúdo de saída (resultado).  
+- **Fluxo de dados de resultado SCAP**: um pacote de componentes SCAP e os mapeamentos de referências entre os componentes SCAP que armazenam o conteúdo de saída (resultado).  
 
-- **Fluxo de dados de origem SCAP:** um pacote de componentes SCAP e os mapeamentos de referências entre componentes SCAP que armazenam o conteúdo de entrada (fonte).
+- **Fluxo de dados de origem SCAP**: um pacote de componentes SCAP e os mapeamentos de referências entre componentes SCAP que armazenam o conteúdo de entrada (fonte).
 
 
 

@@ -2,7 +2,7 @@
 title: Centro de Suporte
 titleSuffix: Configuration Manager
 description: Solucionar problemas de clientes do Configuration Manager com o Centro de Suporte.
-ms.date: 11/27/2018
+ms.date: 01/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c631197d-7daa-4faa-9e22-980cd6d604c2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6d9a4df006619278504d3a4967b813aa2989ebf7
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 828edc3c90b4dd93f4d86772b863816bbc8c9130
+ms.sourcegitcommit: 013ca76d5a3c07306de7b5bfd985b0289d1be599
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52457987"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55482411"
 ---
 # <a name="support-center-for-configuration-manager"></a>Centro de Suporte do Configuration Manager
 
@@ -88,6 +88,8 @@ Para evitar esse problema, use os seguintes formatos de nome de usuário para se
 Ao conectar-se a clientes remotos usando o cmdlet [New-CMMachineConnection](https://go.microsoft.com/fwlink/p/?linkid=390542) do PowerShell, o Centro de suporte cria uma conexão de protocolo SMB de mensagem do servidor para cada cliente remoto. Ele retém essas conexões depois de você concluir a coleta de dados. Para evitar exceder o número máximo de conexões remotas para o Windows, use o comando `net use` para ver o conjunto ativo de conexões remotas. Em seguida, desabilite todas as conexões desnecessárias usando o comando a seguir: `net use <connection_name> /d` 
 em que `<connection_name>` é o nome da conexão remota.
 
+#### <a name="application-deployment-evaluation-cycle-request-isnt-sent-correctly-to-remote-machines"></a>A solicitação de ciclo de avaliação de implantação de aplicativos não é enviada de maneira correta para computadores remotos
+<!--2849356--> No Centro de Suporte, se você selecionar **Avaliação de implantação de aplicativo** na ação **gatilho Invocar** na guia **Conteúdo**, essa ação iniciará uma tarefa que avaliará os aplicativos implantados. Se você estiver conectado a um cliente local, tanto as implantações de aplicativos de computador quanto as de usuário serão avaliadas. No entanto, se você estiver conectado a um cliente remoto, apenas as implantações de aplicativos de computador serão avaliadas.
 
 
 ## <a name="next-steps"></a>Próximas etapas

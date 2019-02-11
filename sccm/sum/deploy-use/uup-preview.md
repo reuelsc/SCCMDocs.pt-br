@@ -2,7 +2,7 @@
 title: Versão prévia do UUP
 titleSuffix: Configuration Manager
 description: Instruções para a versão prévia da integração deUUP
-ms.date: 01/25/2019
+ms.date: 01/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 27a960758d8d3939798ae270404d5dd1afbea62d
-ms.sourcegitcommit: ad25a7bdd983c5a0e4c95bffdc61c9a1ebcbb765
+ms.openlocfilehash: fde592b02d78c0a2ab29d77f7e55273c143b09ee
+ms.sourcegitcommit: f7b2fe522134cf102a3447505841cee315d3680c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55072978"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55570125"
 ---
 # <a name="uup-private-preview-instructions"></a>Instruções para a versão prévia privada do UUP
 
@@ -40,7 +40,9 @@ Saiba mais sobre a UUP na postagem do blog do Windows [Uma atualização em noss
 
 ### <a name="cumulative-updates"></a>Atualizações cumulativas
 
-As atualizações cumulativas com UUP permitem que o conteúdo para FODs e pacotes de idiomas sejam distribuídos offline, permitindo que os usuários finais os adquiram sob demanda, sem necessidade de acessar a Internet nem de esforços de preparo entediantes por parte dos administradores.
+- As atualizações cumulativas com UUP permitem que o conteúdo para FODs e pacotes de idiomas sejam distribuídos offline, permitindo que os usuários finais os adquiram sob demanda, sem necessidade de acessar a Internet nem de esforços de preparo entediantes por parte dos administradores.
+
+- As atualizações cumulativas com UUP incluem as atualizações da pilha de manutenção com as atualizações mensais cumulativas de segurança. Esse comportamento resolve dificuldades ao orquestrar estas duas atualizações. Ele garante que as atualizações da pilha de manutenção estejam em vigor para instalar as atualizações cumulativas sem a necessidade de gerenciar e orquestrar as relações.
 
 
 
@@ -66,9 +68,7 @@ A propriedade **MUUrl** deve ser `https://sws.update.microsoft.com`. Para alter�
 
 ### <a name="2-update-configmgr"></a>2. Atualizar o ConfigMgr
 
-Se você estiver sincronizando arquivos de instalação expressa em seu ambiente, o branch atual do ConfigMgr 1810 será necessário para os ambientes de produção ou o branch 1812 de visualização técnica para os ambientes de laboratório.
-
-Se você não estiver sincronizando arquivos de instalação expressa em seu ambiente, o hotfix KB4482615 do ConfigMgr 1810 também será necessário para os ambientes de produção ou o branch 1812 de visualização técnica para os ambientes de laboratório.
+Faça as seguintes alterações no site do Configuration Manager para dar suporte a essa versão prévia de UUP:
 
 
 #### <a name="diagnostics-and-usage-data-level"></a>Nível de dados de diagnóstico e de uso

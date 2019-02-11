@@ -10,12 +10,12 @@ ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4d892e8d194f61fece977c91ce36ba46cf9dd53d
-ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
+ms.openlocfilehash: e1becb8cc719466edabfb55ce82f9aa5e3345e3f
+ms.sourcegitcommit: 013ca76d5a3c07306de7b5bfd985b0289d1be599
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54250707"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55482428"
 ---
 # <a name="pre-release-features-in-configuration-manager"></a>Recursos pré-lançamento no Configuration Manager
 
@@ -78,6 +78,7 @@ Ao habilitar um recurso de pré-lançamento, o gerenciador de hierarquia (HMAN) 
 | API do Provedor de SMS <!--1359052--> | Versão 1810 | ![Ainda não](media/red_x.png) |
 | [Sistema de sites HTTP aprimorado](/sccm/core/plan-design/hierarchy/enhanced-http) <!--1356889,1358228--> | Versão 1806 | Versão 1810 |
 | [Aplicativos cliente para dispositivos cogerenciados](/sccm/comanage/workloads#client-apps) <!--1357892--> | Versão 1806 | ![Ainda não](media/red_x.png) |
+| [Extensões SCAP](/sccm/compliance/plan-design/scap/about-scap) <!--3607889--> | Versão 1806 | ![Ainda não](media/red_x.png) |
 | [Gerenciador de conversão de pacote](/sccm/apps/pcm/package-conversion-manager) <!--1357861--> | Versão 1806 | Versão 1810 |
 | [Suporte para o Cisco AnyConnect 4.0.07x e posterior para iOS](/sccm/mdm/deploy-use/create-vpn-profiles) <!--1357393--> | Versão 1802 | Versão 1802 <br>com atualização 4163547 |
 | [Implantações em fases](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence) <!--1356837--> | Versão 1802 | Versão 1806 |

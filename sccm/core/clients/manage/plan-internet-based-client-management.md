@@ -10,12 +10,12 @@ ms.assetid: 83a7c934-3b11-435d-ba22-cbc274951e83
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1ce1596a6882b7756339eff3a9bf65a9420a6cec
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: f334c4ec1ef66ba85026da6bc970e34b94b51204
+ms.sourcegitcommit: a2ecd84d93f431ee77848134386fec14031aed6a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53424508"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55230861"
 ---
 # <a name="plan-for-internet-based-client-management-in-system-center-configuration-manager"></a>Planejar o gerenciamento de clientes baseados na Internet no System Center Configuration Manager
 
@@ -48,8 +48,8 @@ O gerenciamento de clientes baseado na Internet (às vezes chamado de IBCM) perm
 
   Quando você tem um ponto de atualização de software configurado para aceitar conexões da Internet, os clientes baseados na Internet do Configuration Manager sempre são verificados em relação a esse ponto de atualização de software, para determinar quais atualizações de software são necessárias. No entanto, quando esses clientes estão na Internet, primeiro tentam baixar as atualizações de software do Microsoft Update, em vez de fazer isso de um ponto de distribuição baseado na Internet. Somente se isso falhar, eles tentarão baixar as atualizações de software necessárias de um ponto de distribuição baseado na Internet. Clientes que não estão configurados para gerenciamento de clientes baseado na Internet nunca tentam baixar atualizações de software do Microsoft Update, mas sempre usam os pontos de distribuição do Configuration Manager.  
  
-[!Tip]  
-O cliente do Configuration Manager determina automaticamente se ele está na intranet ou na Internet. Se o cliente pode contatar um controlador de domínio ou um ponto de gerenciamento local, ele define seu tipo de conexão como Atualmente intranet. Caso contrário, ele alterna para Atualmente Internet, e o cliente usa os pontos de gerenciamento, pontos de atualização de software e pontos de distribuição atribuídos ao site para comunicação.
+> [!Tip]  
+> O cliente do Configuration Manager determina automaticamente se ele está na intranet ou na Internet. Se o cliente pode contatar um controlador de domínio ou um ponto de gerenciamento local, ele define seu tipo de conexão como Atualmente intranet. Caso contrário, ele alterna para Atualmente Internet, e o cliente usa os pontos de gerenciamento, os pontos de atualização de software e os pontos de distribuição atribuídos ao site para comunicação.
 
 ##  <a name="considerations-for-client-communications-from-the-internet-or-untrusted-forest"></a>Considerações sobre a comunicação do cliente da Internet ou de uma floresta não confiável  
  As seguintes funções de sistema de site instaladas em sites primários oferecem suporte a conexões de clientes que estão em locais não confiáveis, como a Internet ou uma floresta não confiável (sites secundários não oferecem suporte a conexões de clientes em locais não confiáveis):  
