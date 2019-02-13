@@ -10,16 +10,17 @@ ms.assetid: aba688d9-fd5b-4c42-8cb4-f7e1b161ef50
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 98b573dcf72f4bbf3cde73cb9a5cd7905b8a0248
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a157e8696a9b4b24acb722be037185351f94ccdc
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53417312"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127874"
 ---
 # <a name="manage-mobile-devices-with-system-center-configuration-manager-and-exchange"></a>Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Use o conector do Exchange Server no System Center Configuration Manager quando desejar gerenciar dispositivos móveis que se conectam ao Exchange Server (local ou online) usando o protocolo Microsoft Exchange ActiveSync e quando não for possível registrá-los com o Configuration Manager. É possível configurar os recursos de gerenciamento de dispositivo móvel do Exchange, como apagamento remoto de dados no dispositivo e controle de configurações para vários servidores Exchange, no console do Configuration Manager.  
 
@@ -44,7 +45,7 @@ Use o conector do Exchange Server no System Center Configuration Manager quando 
 ## <a name="required-security-permissions"></a>Permissões de segurança necessárias  
  Você deve ter as seguintes permissões de segurança para configurar o conector do Exchange Server:  
 
-- Para adicionar, modificar e excluir o conector do Exchange Server: **Modifique** permissão para o **Site** objeto.  
+- Para adicionar, modificar e excluir o conector do Exchange Server: permissão **Modificar** para o objeto **Site**.  
 
 - Para definir as configurações de dispositivo móvel: **ModifyConnectorPolicy** permissão para o **Site** objeto.  
 
@@ -52,11 +53,11 @@ Use o conector do Exchange Server no System Center Configuration Manager quando 
 
   Você deve ter as seguintes permissões de segurança para gerenciar dispositivos móveis:  
 
-- Para apagar um dispositivo móvel: **Excluir recurso** para o **coleção** objeto.  
+- Para apagar um dispositivo móvel: **Excluir recurso** do objeto **Coleção**.  
 
-- Para cancelar um comando de apagamento: **Modificar recurso** para o **coleção** objeto.  
+- Para cancelar um comando de apagamento: **Modificar recurso** para o objeto **Coleção**.  
 
-- Para permitir e bloquear dispositivos móveis: **Modificar recurso** para o **coleção** objeto.  
+- Para permitir e bloquear dispositivos móveis: **Modificar recurso** para o objeto **Coleção**.  
 
   A função de segurança **Administrador de Operações** inclui as permissões necessárias para gerenciar dispositivos móveis usando o conector do Exchange Server.  
 

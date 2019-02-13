@@ -10,16 +10,17 @@ ms.assetid: 49cec466-1676-4fe2-a2fe-5004f01d735e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4d00973704ce49a949c89a37e89ed2d39064cbec
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 755be3231c00eabf9562256e62061fbad70633e7
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53422905"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56140942"
 ---
 # <a name="manage-sharepoint-online-access-in-system-center-configuration-manager"></a>Gerenciar o acesso ao SharePoint Online no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
 A política de acesso condicional do Configuration Manager para **SharePoint Online** gerencia o acesso ao OneDrive para arquivos comerciais, que são armazenados no SharePoint Online. O acesso é baseado nas condições especificadas.

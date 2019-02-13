@@ -10,16 +10,17 @@ ms.assetid: 617abb22-d22f-41fb-a76b-1c4259e419d2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 12626a734138094e7558617b714b2b5acdac6450
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d0ce47e9ade73d76e99aa5c0d4e5581c713a847a
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53424293"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139020"
 ---
 # <a name="create-a-service-connection-point-with-system-center-configuration-manager-and-microsoft-intune"></a>Criar um ponto de conexão de serviço com o System Center Configuration Manager e o Microsoft Intune
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Depois de criar a assinatura, é possível instalar a função do sistema de sites do ponto de conexão de serviço que permite que você se conecte ao serviço do Intune. Esta função do sistema de sites enviará por push as configurações e os aplicativos ao serviço do Intune.
 

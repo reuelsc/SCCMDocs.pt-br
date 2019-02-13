@@ -10,16 +10,17 @@ ms.assetid: fa648e73-5fb8-4818-ab57-7466ffaf888e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f1dbe514e8beca7250b7bfa62a9af7997bf5246c
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f976b63b4580b5df9c6e609ff6b361538860c41c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53417227"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56137636"
 ---
 # <a name="manage-email-access-in-configuration-manager"></a>Gerenciar acesso a email no Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Use o Configuration Manager o acesso condicional para gerenciar o acesso ao email do Exchange com base nas condições especificadas.  
 
@@ -124,7 +125,7 @@ Depois de executar o relatório, examine essas quatro colunas para determinar se
 
 - **Registrado no AAD**: O dispositivo está registrado com o Azure Active Directory (conhecido como ingresso no local).  
 
-- **Compatível com**: O dispositivo está em conformidade com as políticas de conformidade implantadas.  
+- **Em conformidade**: O dispositivo está em conformidade com as políticas de conformidade implantadas.  
 
 - **EAS ativado**: dispositivos iOS e Android precisam ter sua ID do Exchange ActiveSync associada com o registro do dispositivo no Azure Active Directory. Isso acontece quando o usuário clica no link **Ativar Email** no email de quarentena.  
 

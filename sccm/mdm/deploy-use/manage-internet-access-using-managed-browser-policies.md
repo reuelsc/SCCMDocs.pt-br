@@ -10,16 +10,17 @@ ms.assetid: 8e25e00c-c9a8-473f-bcb7-ea989f6ca3c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2483a15286a2784f2fb8a4256029004374a313dc
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ede2563adbd517dbcda0a408fa5b9b166e8e3c12
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53419777"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129350"
 ---
 # <a name="manage-internet-access-using-managed-browser-policies-with-system-center-configuration-manager"></a>Gerenciar o acesso à Internet usando políticas de navegador gerenciado com o System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 No System Center Configuration Manager, é possível implantar o Intune Managed Browser (um aplicativo de navegação na Web) e associá-lo a uma política de navegador gerenciado. A política de navegador gerenciado configura uma lista de sites permitidos ou bloqueados que restringe os sites que os usuários do navegador gerenciado podem acessar.  
 

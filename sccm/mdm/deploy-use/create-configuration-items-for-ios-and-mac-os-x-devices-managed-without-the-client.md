@@ -10,12 +10,13 @@ ms.assetid: 613a48ac-c55d-4c4a-94ea-d3747a1b10cb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 708a9fc1f3a2f10a602dc5d926cd8b8df0cbc7cf
-ms.sourcegitcommit: 2687489aa409a050dcacd67f17b3dad3ab7f1804
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 690aefeac875e3c3f39d5801bdb33d69ccecb45e
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54316568"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56135813"
 ---
 # <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Como criar itens de configuração para dispositivos com iOS e Mac OS X gerenciados com o Intune
 Use o item de configuração **iOS e Mac OS X** do System Center Configuration Manager para gerenciar as configurações para dispositivos iOS e Mac OS X que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  

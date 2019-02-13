@@ -10,12 +10,13 @@ ms.assetid: b5d520a7-e9e5-40ee-91f9-f2684214beb6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 11b448d27dbf639eaccf0f41ed97b7961a01adb6
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 54ca57956db37a26e2edad27c6cf6b92aecd1645
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347426"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56138901"
 ---
 # <a name="user-affinity-for-hybrid-managed-devices-in-configuration-manager"></a>Afinidade de usuário para dispositivos híbridos gerenciados no Configuration Manager
 

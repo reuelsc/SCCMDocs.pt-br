@@ -10,22 +10,23 @@ ms.assetid: a9163b77-a67d-4139-8272-bb1dfdb8707c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9a93d58f990738a93a489e0ee5920098ea04fce0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4e9c9cd6f881fd43c6d6824fbca5dc05f00fc5ea
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32345879"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56136738"
 ---
 # <a name="enable-platform-enrollment-with-system-center-configuration-manager-and-microsoft-intune"></a>Habilitar o registro de plataforma com o System Center Configuration Manager e o Microsoft Intune
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Plataformas de dispositivos diferentes exigem configuração adicional para habilitar o registro de dispositivo.
-  - [Configuração do registro de iOS e Mac](enroll-hybrid-ios-mac.md): obtenha um Apple MDM Push Certificate
+  - [iOS e a configuração do registro do Mac](enroll-hybrid-ios-mac.md): Obtenha um Apple MDM Push certificate
 
-  - [Configuração do registro do Windows](enroll-hybrid-windows.md): configure o DNS e habilite o registro de dispositivos de computadores Windows, Windows 10 Mobile e Windows Phone
+  - [Configuração do registro do Windows](enroll-hybrid-windows.md): Configurar o DNS e habilitar o registro para dispositivos de PCs do Windows, Windows 10 Mobile e Windows Phone
 
-  - [Android](enroll-hybrid-android.md): os dispositivos Android não exigem etapas adicionais para habilitar o registro
+  - [Android](enroll-hybrid-android.md): Dispositivos Android não exigem etapas adicionais para habilitar o registro
 
 Depois de habilitar o gerenciamento do MDM, você poderá especificar o número de dispositivos que cada usuário pode registrar, até 15 dispositivos por usuário.

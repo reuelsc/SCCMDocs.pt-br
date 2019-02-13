@@ -10,12 +10,13 @@ ms.assetid: ad8fa94d-45bb-4c94-8d86-31234c5cf21c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b6a974d1cca4f97cbcf41a0cf644f545cec4b37d
-ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: cbd996629d3b312febd271757aff69faf5371c64
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42589494"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127415"
 ---
 # <a name="set-up-actions-for-non-compliance"></a>Configurar ações de não conformidade
 
@@ -53,20 +54,20 @@ O Configuration Manager fornece modelos de email, mas você também pode criar s
 
 1. No console do Configuration Manager, escolha **Ativos e Conformidade**.  
 
-2. No espaço de trabalho **Ativos e Conformidade**, expanda **Configurações de Conformidade** e escolha **Modelos de notificação de conformidade**.  
+2. No workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade** e escolha **Modelos de notificação de conformidade**.  
 
 3. Na guia **Início**, em **Criar Modelo de Notificação de Conformidade**.  
 
 4. Insira as seguintes informações:  
 
-    a. **Nome**: nome do modelo de email  
+    a. **Nome**: Nome do modelo de email  
 
     > [!Note]  
     > O campo **De** é preenchido automaticamente com um endereço de email sem resposta da Microsoft.<!--SCCMDocs issue 652-->  
 
-    c. **Assunto**: um assunto explicando a notificação por email que está sendo enviada  
+    c. **Assunto**: Um assunto que explique a notificação de email que está sendo enviada  
 
-    d. **Corpo da mensagem**: mais detalhes sobre a notificação por email  
+    d. **Corpo da mensagem**: Obter mais detalhes sobre a notificação por email  
 
     > [!TIP]  
     > Você também pode incluir o **cabeçalho do email** com o logotipo da empresa e o **rodapé do email**, que pode incluir o nome da organização e informações de contato. Além disso, edite essas informações nas propriedades da sua assinatura do Intune.  
@@ -83,7 +84,7 @@ O Configuration Manager fornece modelos de email, mas você também pode criar s
 
 1. No console do Configuration Manager, escolha **Ativos e Conformidade**.  
 
-2. No espaço de trabalho **Ativos e Conformidade**, expanda **Configurações de Conformidade**e escolha **Políticas de Conformidade**.  
+2. No workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade**e escolha **Políticas de Conformidade**.  
 
 3. Na guia **Início**, no grupo **Criar**, escolha **Criar Política de Conformidade**.  
 
@@ -91,22 +92,22 @@ O Configuration Manager fornece modelos de email, mas você também pode criar s
 
 5. Na página **Ações de Não Conformidade**, para definir o que acontece quando um dispositivo fica fora de conformidade, clique em **Novo**.  
 
-6. Você pode escolher duas opções: **Enviar email ao usuário final** ou **Marcar dispositivo como fora de conformidade**.  
+6. Você pode escolher duas opções: **Enviar email ao usuário final** ou **marcar dispositivos como fora de conformidade**.  
 
 7. Se você selecionar **Enviar email ao usuário final**, insira os dados a seguir:  
 
-    a. **Período de cortesia (em dias)**: insira um número de dias de 0 a 365  
+    a. **Período de carência (em dias):** Insira um número de dias de 0 a 365  
 
     b. **Destinatários adicionais (via email)**  
 
-    c. **Selecione o modelo de mensagem:** escolha um modelo de email padrão ou um modelo personalizado que você criou.  
+    c. **Selecione o modelo de mensagem:** Escolha um modelo de email padrão ou um modelo personalizado que você criou.  
     
     > [!TIP]   
     > Você também pode adicionar um novo modelo de email ao adicionar a ação **Enviar email ao usuário final** clicando em **Novo** na página **Adicionar Ação**.  
 
 8. Se você selecionar **Marcar dispositivo como fora de conformidade**, insira os dados a seguir:  
 
-    a. **Período de cortesia (em dias)**: insira um número de dias de 0 a 365  
+    a. **Período de carência (em dias):** Insira um número de dias de 0 a 365  
 
 9. Conclua o assistente.  
 

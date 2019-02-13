@@ -10,16 +10,17 @@ ms.assetid: c3cf9f64-c2b9-4ace-9527-2aba6d4eef04
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0a24edacba97dcce91057e2403585a0843a4b212
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e5d81d385c48d9653e1596e6a5d9d1163e84f314
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53424418"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56141748"
 ---
 # <a name="install-site-system-roles-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Instalar funções do sistema de site para o gerenciamento de dispositivo móvel local no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manager exige as seguintes funções de sistema de sites na sua infraestrutura do site do Configuration Manager:  
 

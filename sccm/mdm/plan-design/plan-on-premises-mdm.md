@@ -10,16 +10,17 @@ ms.assetid: 02979fb8-ea7e-4ec6-b7e0-ecbfda73e52d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 35170f4584f9c327c542ac35d2f63803163330ba
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 577672a6f816eaffc88c78d4baf3feab5b8989a1
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53422276"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56132176"
 ---
 # <a name="plan-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Planejar o gerenciamento de dispositivo móvel local no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Considere os seguintes requisitos antes de preparar a infraestrutura do Configuration Manager para manipular o Gerenciamento de dispositivo móvel local.
 

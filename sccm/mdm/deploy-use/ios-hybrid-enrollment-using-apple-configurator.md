@@ -10,16 +10,17 @@ ms.assetid: 61a19d95-83ff-4ad8-9a67-f304d2ba54f2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: de83706e92150a654967ec5cf38c5b18508d4e2b
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 04b67b324927f4918ff5c0835896cb0d63a9e48c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53416904"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56126650"
 ---
 # <a name="ios-hybrid-enrollment-using-apple-configurator-with-configuration-manager"></a>Registro híbrido do iOS que usa o Apple Configurator com o Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 As empresas que compram dispositivos iOS para serem usados pelos funcionários podem gerenciá-los usando o Microsoft Intune. Para preparar os dispositivos iOS corporativos para o registro, você deve configurar um perfil de registro no console do Configuration Manager e, em seguida, exportar a URL do perfil para uso pelo Apple Configurator. Você deve preparar o dispositivo iOS para registro ao conectá-lo a um computador Mac com um cabo USB e usar o Apple Configurator para configurá-lo. O alocador do Apple Configurator redefine o dispositivo e adiciona o perfil de registro para que o dispositivo possa ser registrado na primeira vez que o usuário ligar e percorrer o processo do Assistente de Instalação.
 

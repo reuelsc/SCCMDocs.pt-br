@@ -10,12 +10,13 @@ ms.assetid: 8c13d593-3120-47a8-8fae-eff497afcd73
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b5f8061f87acee2a341a3cc3f25a66f50288cc58
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 69699dc76fa9e0324376a8a4dbb7430b2b2f068d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32345760"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56142401"
 ---
 # <a name="microsoft-store-for-business-in-system-center-configuration-manager"></a>Microsoft Store para Empresas no System Center Configuration Manager
 

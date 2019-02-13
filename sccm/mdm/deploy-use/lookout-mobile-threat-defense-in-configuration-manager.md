@@ -10,18 +10,19 @@ ms.assetid: 9083c571-f4fc-4a78-adc5-8aec84dabcbd
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c8e984c6eb76716e031ed793a7753840842f0ea7
-ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 62db216d2047ee0272c6b3fa226493b5e8af5f84
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42584621"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56128714"
 ---
 # <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>Gerenciar o acesso aos recursos da empresa com base em risco de dispositivo, rede e aplicativo
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Controle o acesso de dispositivos móveis a recursos corporativos com base na avaliação de riscos realizada pelo Lookout. O Lookout é uma solução de proteção contra ameaças ao dispositivo integrada ao Microsoft Intune. O risco é baseado em dados coletados pelo serviço do Lookout. Ele reúne dados de dispositivos referentes a vulnerabilidades do sistema operacional, aplicativos maliciosos instalados e perfis de rede mal-intencionados. 
+Controle o acesso de dispositivos móveis a recursos corporativos com base na avaliação de riscos realizada pelo Lookout. O Lookout é uma solução de proteção contra ameaças ao dispositivo integrada ao Microsoft Intune. O risco é baseado em dados coletados pelo serviço do Lookout. Ele reúne dados de dispositivos referentes a vulnerabilidades do sistema operacional, aplicativos maliciosos instalados e perfis de rede mal-intencionados. 
 
 Com base na avaliação de riscos relatada pelo Lookout, ativada por meio das políticas de conformidade do Configuration Manager, é possível configurar políticas de acesso condicional. Essas políticas permitem ou bloqueiam dispositivos que o Configuration Manager determina como não compatíveis devido a ameaças detectadas nesses dispositivos.
 
