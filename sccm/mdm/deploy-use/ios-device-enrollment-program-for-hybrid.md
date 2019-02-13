@@ -10,16 +10,17 @@ ms.assetid: 78d44adc-9b1c-4bc6-b72d-e93873916ea6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4628dd18ed865088c68cf38810e984a18f0ba0ad
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 044ea01729b61f55dca74ac0e77b7007e05b346a
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53422208"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56140959"
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registro no DEP (Programa de Registro de Dispositivos) do iOS para implantações híbridas com o Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 As empresas podem adquirir dispositivos iOS por meio do programa de registro de dispositivo da Apple e, em seguida, gerenciá-los usando o Microsoft Intune. Para gerenciar dispositivos iOS de propriedade corporativa com o DEP (Programa de Registro de Dispositivo) da Apple, as empresas devem concluir as etapas com a Apple para participar do programa e adquirir dispositivos por meio desse programa. Detalhes do processo estão disponíveis em: [https://deploy.apple.com](https://deploy.apple.com). As vantagens do programa incluem instalação não assistida de dispositivos sem conectar cada dispositivo por USB a um computador.  
 
