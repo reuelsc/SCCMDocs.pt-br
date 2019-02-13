@@ -10,16 +10,17 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: b552391d-abc0-48a2-a429-93605a13a66a
-ms.openlocfilehash: 26d6f9b928a7acdfbeb6baac3c3ce1c29cc127d9
-ms.sourcegitcommit: d021f82e4bc35a8e9b5d291bf779ce52b4f47eb8
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 46b5034cb95193a07421fe79a445dac0f5b28503
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53656451"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56124254"
 ---
 # <a name="import-configuration-manager-data-to-microsoft-intune"></a>Importar dados do Configuration Manager para o Microsoft Intune 
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*    
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*    
 
 A primeira fase recomendada do processo para [migrar usuários e dispositivos do MDM híbrido para o Intune autônomo](migrate-hybridmdm-to-intunesa.md) na configuração somente de nuvem é usar a ferramenta Importador de Dados do Intune. Se desejar, você poderá ignorar esta fase e passar para a fase [Preparar o Intune para migração de usuários](migrate-prepare-intune.md). No entanto, essa ferramenta executa as seguintes funções que podem ajudar a poupar tempo na próxima fase:  
 
@@ -181,7 +182,7 @@ Na fase 1, você selecionará os objetos a serem descobertos e fará com que a f
 
     - **Selecione tipos de objeto para importação**: Forneça as seguintes informações sobre seu site e os objetos que você deseja importar:  
 
-        - **Nome do servidor de site**: Forneça o nome de domínio totalmente qualificado do servidor do site para importar objetos. A ferramenta só descobre os objetos que são acessíveis para o usuário que executa a ferramenta. Geralmente, você especifica o site de nível superior e executa a ferramenta com um usuário que tenha acesso a todos os objetos na hierarquia do site.  
+        - **Nome do servidor do site**: Forneça o nome de domínio totalmente qualificado do servidor do site para importar objetos. A ferramenta só descobre os objetos que são acessíveis para o usuário que executa a ferramenta. Geralmente, você especifica o site de nível superior e executa a ferramenta com um usuário que tenha acesso a todos os objetos na hierarquia do site.  
 
         - **Código do site**: Forneça o código do site para o servidor do site. Você pode encontrar o código de três letras na parte superior do console do Configuration Manager.  
 

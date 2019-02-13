@@ -10,12 +10,13 @@ ms.assetid: 34024741-edfa-4088-8599-d6bafc331e62
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8bd926535f56e32430ae41c883623b80d142aebc
-ms.sourcegitcommit: 33e066aceaf321add1031df00e552e942c8351a7
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b45e9f586616a1f620864a6e6dc8d0777a118251
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55764422"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56122280"
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gerenciar o acesso aos serviços O365 para PCs gerenciados pelo System Center Configuration Manager.
 
@@ -86,7 +87,7 @@ Para obter informações sobre como configurar o acesso condicional para disposi
 
 -   **Todas as atualizações necessárias instaladas com uma data limite superior a um determinado número de dias:** Especifique o valor para o período de cortesia do prazo de implantação para as atualizações necessárias no dispositivo do usuário. Adicionar esta regra também instala automaticamente quaisquer atualizações necessárias. Especifique as atualizações necessárias na regra **Atualizações automáticas necessárias**.   
 
--   **Exigir a Criptografia de Unidade de Disco BitLocker:** Essa regra verifica se a unidade principal (por exemplo, c\\) no dispositivo é criptografada pelo BitLocker. Se a criptografia Bitlocker não estiver habilitada no dispositivo primário, o acesso a email e aos serviços do SharePoint será bloqueado.  
+-   **Exigir a Criptografia de Unidade de Disco BitLocker:** Essa regra verifica se a unidade principal (por exemplo, c\\) no dispositivo é criptografada pelo BitLocker. Se a criptografia não está habilitada no dispositivo primário, o acesso ao email e SharePoint services o BitLocker estiver bloqueado.  
 
 -   **Exigir antimalware:** Esta regra verifica se o System Center Endpoint Protection ou o Windows Defender está habilitado e em execução. Se não estiver habilitado, o acesso aos serviços de email e do SharePoint estará bloqueado.  
 

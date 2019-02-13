@@ -10,16 +10,17 @@ ms.assetid: 45388103-2410-4c7e-b4cf-73a1bda485fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1c90525b20107cbc926e3775f10d75b7c7083cac
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d7accfe4c329b61c7791bc4b82028d48fdc81931
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53424554"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56122606"
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Perfis de VPN em dispositivos móveis no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Use perfis de VPN no Configuration Manager para implantar as configurações de VPN para usuários de dispositivo móvel em sua organização. Ao implantar essas configurações, você minimiza o esforço do usuário final necessário para conectar-se aos recursos na rede corporativa.  
 
@@ -122,7 +123,7 @@ As seguintes opções estão disponíveis para todos os tipos de conexão no Win
 
      - **Lembre-se as credenciais do usuário a cada logon**: As credenciais do usuário sejam lembradas para que os usuários não precisem inseri-las a cada vez que se conectam.  
 
-     - **Selecione um certificado de cliente para autenticação de cliente**: Selecione o cliente criado anteriormente [certificado SCEP](create-pfx-certificate-profiles.md) que é usado para autenticar a conexão VPN.   
+     - **Selecionar um certificado do cliente para autenticação do cliente**: Selecione o cliente criado anteriormente [certificado SCEP](create-pfx-certificate-profiles.md) que é usado para autenticar a conexão VPN.   
 
        > [!NOTE]  
        >  Para dispositivos com iOS, o perfil SCEP selecionado é inserido no perfil de VPN. Para outras plataformas, uma regra de aplicabilidade é adicionada para garantir que o perfil de VPN não seja instalado se o certificado não estiver presente ou não for compatível.  

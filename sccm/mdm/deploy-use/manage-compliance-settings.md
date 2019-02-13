@@ -10,16 +10,17 @@ ms.assetid: 9e83007f-e81c-4b7e-b47e-b01d7b19cfbc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5f6ee6ae8d059905e8cda08fec3d75deff177163
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c81e7198a01e2d5dfca7abc80f6a23714184a32c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53418536"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56121770"
 ---
 # <a name="managing-compliance-on-devices-managed-with-intune"></a>Gerenciar a conformidade em dispositivos gerenciados com o Intune
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Esses cenários oferecem uma introdução ao uso das configurações de conformidade do System Center Configuration Manager, apresentando alguns cenários comuns que podem ser encontrados.  
 

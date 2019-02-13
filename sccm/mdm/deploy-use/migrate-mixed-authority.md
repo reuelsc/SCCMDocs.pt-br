@@ -10,16 +10,17 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: 6f0201d7-5714-4ba0-b2bf-d1acd0203e9a
-ms.openlocfilehash: 79cf4c2ec217a245bb5c4abbad40aad7188e0ac0
-ms.sourcegitcommit: 3772ece83823714b2aae46ec20523cc094701760
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 7ede0049847eda2b87731f4cfbce0bda8984f158
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51688458"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120241"
 ---
 # <a name="change-the-mdm-authority-for-specific-users-mixed-mdm-authority"></a>Alterar a autoridade de MDM para usuários específicos (autoridade de MDM mista) 
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*    
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*    
 
 Você pode configurar uma autoridade de MDM mista no mesmo locatário. Gerenciar alguns usuários no Microsoft Intune e outros com o MDM híbrido. Este artigo fornece informações sobre como começar a mover usuários para o Intune autônomo. Ele pressupõe que você concluiu as etapas a seguir:  
 
@@ -153,7 +154,7 @@ Para alternar a autoridade de gerenciamento desses dispositivos MDM, use o cmdle
 
 ### <a name="cmdlet-switch-mdmdeviceauthority"></a>Cmdlet *Switch-MdmDeviceAuthority*
 
-#### <a name="synopsis"></a>SINOPSE
+#### <a name="synopsis"></a>SYNOPSIS
 O cmdlet alterna a autoridade de gerenciamento de dispositivos MDM sem afinidade de usuário (por exemplo, dispositivos registrados em lite). O cmdlet alterna entre o Intune e Configuration Manager autoridades de gerenciamento. Ele muda para os dispositivos especificados com base nas autoridades de gerenciamento, quando você executar o cmdlet.
 
 ### <a name="syntax"></a>SINTAXE

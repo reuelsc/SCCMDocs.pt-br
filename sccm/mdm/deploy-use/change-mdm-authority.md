@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: cc397ab5-125f-4f17-905b-fab980194f49
-ms.openlocfilehash: 692ffb04546da4f65b2198e582999582c996fdb2
-ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c0420113feaaf9c9485b8d1e3d488b07878c61b5
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42584807"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56131958"
 ---
 # <a name="change-your-mdm-authority"></a>Alterar sua autoridade de MDM
 
@@ -69,7 +70,7 @@ O processo para alterar a autoridade de MDM para o Intune autônomo inclui as se
 - Da próxima vez que o dispositivo se conectar ao serviço, ele sincronizará e receberá as novas configurações da nova autoridade de MDM.  
 
 #### <a name="to-change-the-mdm-authority-to-intune-standalone"></a>Para alterar a autoridade de MDM para o Intune autônomo
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**. Expanda **Serviços de Nuvem** e selecione o nó **Assinatura do Microsoft Intune**. Exclua sua assinatura existente do Intune.  
+1. No console do Configuration Manager, acesse o workspace **Administração**. Expanda **Serviços de Nuvem** e selecione o nó **Assinatura do Microsoft Intune**. Exclua sua assinatura existente do Intune.  
 
 2. Selecione **Alterar a autoridade de MDM para o Microsoft Intune** e, em seguida, clique em **Avançar**.  
 
