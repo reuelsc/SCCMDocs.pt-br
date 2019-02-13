@@ -10,12 +10,13 @@ ms.assetid: 5267f0af-34d3-47a0-9ab8-986c41276e6c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 51d3a537fd7aa874fb2662bb6ec15fcfaa2124e5
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b773696d5967d9ed1779ee822168d7177f10f585
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "34474319"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56130438"
 ---
 # <a name="recommended-hardware-for-system-center-configuration-manager"></a>Hardware recomendado para o System Center Configuration Manager
 
@@ -111,7 +112,7 @@ Para obter um melhor desempenho, use as configurações de RAID 10 para todas as
 ### <a name="client-for-windows-computers"></a>Cliente para computadores Windows  
  Estes são os requisitos mínimos para computadores baseados no Windows que você gerencia usando o Configuration Manager, incluindo sistemas operacionais inseridos:  
 
--   **Processador e memória**: consulte os requisitos de processador e RAM para o sistema operacional do computador.  
+-   **Processador e memória:** Confira os requisitos de RAM e do processador do sistema operacional do computador.  
 
 -   **Espaço em disco:** 500 MB de espaço em disco disponível, com 5 GB recomendados para o cache do cliente do Configuration Manager. Menos espaço em disco será necessário se você usar as configurações personalizadas para instalar o cliente do Configuration Manager:  
 
@@ -128,7 +129,7 @@ Para obter um melhor desempenho, use as configurações de RAID 10 para todas as
 
  Veja abaixo os requisitos de hardware mínimos adicionais para a funcionalidade opcional no Configuration Manager.  
 
--   **Implantação do sistema operacional:** 384 MB de RAM  
+-   **Implantação de sistema operacional:** 384 GB de RAM  
 
 -   **Centro de Software:** processador de 500 MHz  
 
