@@ -10,12 +10,13 @@ ms.assetid: 408190da-bea6-4122-9dd6-f90155040e88
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 24a066b30d6c220ecb5be8455a3150bd27936da7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: cc5b38894155df35812d14397fb0d3aaea79c585
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347528"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56122484"
 ---
 # <a name="monitor-mobile-threat-defense-compliance"></a>**Monitorar a conformidade de Defesa contra Ameaças Móveis**
 
@@ -25,9 +26,9 @@ ms.locfileid: "32347528"
 
 Para monitorar o status de defesa contra ameaças móveis:
 
-1.  No console do Configuration Manager, clique no espaço de trabalho **Monitoramento**.
+1.  No console do Configuration Manager, clique no workspace **Monitoramento**.
 
-2.  No espaço de trabalho **Monitoramento** , clique no nó **Segurança**.
+2.  No workspace **Monitoramento**, clique no nó **Segurança**.
 
 Você pode ver um resumo do status da conformidade com níveis de ameaça diferentes, que é exibido em um formato gráfico visual. Você pode clicar em seções específicas dos gráficos para ver mais informações como: 
 
@@ -40,7 +41,7 @@ Você pode ver um resumo do status da conformidade com níveis de ameaça difere
 
 Você também pode ver o status individual do dispositivo:
 
-1.  No console do Configuration Manager, clique no espaço de trabalho **Ativos e conformidade**.
+1.  No console do Configuration Manager, clique no workspace **Ativos e conformidade**.
 
 2.  Clique em **Dispositivos**.
 
@@ -58,11 +59,11 @@ Além disso, na tela **Dispositivos**, você pode selecionar dispositivos espec�
 |-|-|-|
 |**Descrição**| Sim | Detalhes sobre a ameaça fornecida pelo parceiro de Defesa contra Ameaças Móveis. |
 |**Hora da última atualização**| Sim | A última vez em que o parceiro de Defesa contra Ameaças Móveis enviou detalhes atualizados sobre a ameaça para o Intune. |
-|**Gravidade da ameaça**| Sim | A gravidade da ameaça é a definição de uma ameaça individual com base na configuração do administrador no console do parceiro de Defesa contra Ameaças Móveis. Ela tem um dos três valores: **Baixa**, **Média** ou **Alta** |
-|**Status da ameaça**| Sim | O estado atual da ameaça no dispositivo. Estados possíveis: **Ativa**, **Resolvida** ou **Ignorada:** indica que o usuário ignorou a ameaça em seu dispositivo, mas a ameaça ainda está presente. |
-|**Tipo de ameaça**| Sim | Tipo de ameaça de parceiro de Defesa contra Ameaças Móveis. Os valores possíveis: **Aplicativo**, **Arquivo** ou **SO** |
+|**Gravidade da ameaça**| Sim | A gravidade da ameaça é a definição de uma ameaça individual com base na configuração do administrador no console do parceiro de Defesa contra Ameaças Móveis. Ele tem um dos três valores: **Baixa**, **médio** ou **alta** |
+|**Status da ameaça**| Sim | O estado atual da ameaça no dispositivo. Estados possíveis: **Active Directory**, **resolvido** ou **ignorado:** Indica que o usuário ignorou a ameaça em seu dispositivo, mas a ameaça ainda está presente. |
+|**Tipo de ameaça**| Sim | Tipo de ameaça de parceiro de Defesa contra Ameaças Móveis. Valores possíveis: **Aplicativo**, **arquivo** ou **SO** |
 |**ID da conta do AAD**| Não | O identificador exclusivo do Azure Active Directory. |
-|**Classificação**| Sim | O parceiro de Defesa contra Ameaças Móveis forneceu a classificação de ameaça. Valores possíveis: **Root Enabler, Riskware, Adware, Chargeware, DataLeak, Trojan, Worm, Virus, Exploit, Backdoor, Bot, AppDropper, ClickFraud, Spam, Spyware, SurveillanceWare, Vulnerability, Unknown, Root Jailbrake, Connectivity, TollFraud, SideloadedApp** |
+|**Classificação**| Sim | O parceiro de Defesa contra Ameaças Móveis forneceu a classificação de ameaça. Valores possíveis: **Habilitador de raiz, Riskware, Adware, Chargeware, DataLeak, cavalo de Troia, worms, vírus, Exploit, Backdoor, Bot, AppDropper, ClickFraud, Spam, Spyware, SurveillanceWare, vulnerabilidade, Unknown, Root Jailbrake, conectividade, TollFraud, SideloadedApp** |
 |**ID do Dispositivo**| Não | A ID de objeto do Azure Active Directory que representa o dispositivo ingressado no local de trabalho com informações sobre a ameaça. |
 |**ID da Ameaça**| Não | O parceiro de Defesa contra Ameaças Móveis gerou um identificador exclusivo para a ameaça. A ID da Ameaça é usada para a resolução de acompanhamento. |
 |**URL da Ameaça**| Não | Quando presente, a URL de ameaça vincula-se de volta para a exibição do console de gerenciamento do parceiro de Defesa contra Ameaças Móveis dessa ameaça específica. |

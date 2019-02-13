@@ -10,12 +10,13 @@ ms.assetid: e025c48c-1514-4ab7-836c-e0635aaa993a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a95a7735cc7f7afb6a16b030de6925926335e403
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ef070186112642d204aade24039da87c0e3a22f0
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385211"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139663"
 ---
 # <a name="create-android-applications-in-configuration-manager"></a>Criar aplicativos Android no Configuration Manager
 
@@ -37,7 +38,7 @@ Ele permite as seguintes ações de implantação:
 
 |Tipo de dispositivo|Ações com suporte|
 |-|-|
-|Android|**Disponível**, **Obrigatória**: o usuário precisa concordar com a instalação e a desinstalação.|
+|Android|**Disponível**, **necessária**: O usuário deve concordar com a instalação e com a desinstalação.|
 |Android for Work |**Disponível**, **Obrigatória** |
 
 
@@ -54,17 +55,17 @@ Siga essas etapas para aprovar aplicativos na loja Play for Work, sincronizá-lo
 
 3. Procure aplicativos que você deseja implantar em seu ambiente. Escolha **Aprovar** para cada um deles para disponibilizar o aplicativo ao Android for Work.  
 
-4. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Serviços de Nuvem** e selecione o nó **Android for Work**.  
+4. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e selecione o nó **Android for Work**.  
 
 5. Clique em **Sincronizar** na faixa de opções.  
 
-6. Espere até 10 minutos para que os aplicativos sejam sincronizados. Em seguida, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Informações sobre Licença para Aplicativos da Store**.  
+6. Espere até 10 minutos para que os aplicativos sejam sincronizados. Em seguida, acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Informações sobre Licença para Aplicativos da Store**.  
 
 7. Selecione um aplicativo sincronizado do Play for Work e clique em **Criar Aplicativo**.  
 
 8. Conclua o assistente.  
 
-9. Acesse o espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**. Selecione um aplicativo Android for Work e implante-o como de costume.  
+9. Acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**. Selecione um aplicativo Android for Work e implante-o como de costume.  
 
 Para sincronizar aplicativos do Play for Work com o Configuration Manager, primeiro aprove pelo menos um aplicativo no site Play for Work.
 

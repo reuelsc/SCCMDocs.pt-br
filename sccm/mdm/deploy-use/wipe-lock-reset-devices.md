@@ -10,12 +10,13 @@ ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 21fed8dbba8cc5c8e96218459288b57364fe350e
-ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ebc2b995c763aa54e1d47ee38ab2d250554f5a29
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42584938"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56136017"
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-configuration-manager"></a>Proteja os dados com a limpeza remota, o bloqueio ou a redefinição de senha usando o Configuration Manager
 
@@ -69,7 +70,7 @@ Emita um **apagamento seletivo** para um dispositivo para remover apenas os dado
 |Aplicativos da empresa e dados associados instalados usando o Configuration Manager e o Intune|Aplicativos são desinstalados. Dados de aplicativo da empresa são removidos.|  
 |Perfis VPN e Wi-Fi|Removidos.|  
 |Certificados|Removidos e revogados.|  
-|Configurações|Removidos, exceto para: **Permitir roaming de voz**, **Permitir roaming de dados** e **Permitir sincronização automática durante roaming**.|  
+|Configurações|Removidos, exceto para: **Permitir roaming de voz**, **Permitir roaming de dados**, e **permitir sincronização automática durante roaming**.|  
 |Agente de gerenciamento|O perfil de gerenciamento é removido.|  
 |Perfis de email|Para os perfis de email configurados pelo Intune, a conta de email e o email são removidos.|  
 

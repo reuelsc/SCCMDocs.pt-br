@@ -10,16 +10,17 @@ ms.assetid: 99de8fe7-560e-401a-8ab2-6d87d091be17
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a009159a4bd0588f80f140f588b17911101cc72c
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9ec6756e5c180561bef10bba799e3fdba3dcc303
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53418553"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56137619"
 ---
 # <a name="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurar sua assinatura do Intune usando o System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 A assinatura do Intune permite gerenciar dispositivos pela Internet. Isso inclui especificar qual coleção de usuários pode registrar dispositivos e definir informações apresentadas aos usuários. Durante a criação da assinatura do Intune, você também pode adicionar a identidade visual da marca ao portal de empresa do Intune com o logotipo e esquema de cores personalizado de sua empresa.
 
@@ -53,7 +54,7 @@ A assinatura do Intune faz o seguinte:
 
 7. Na página **Geral** , especifique as seguintes opções e clique em **Próximo**.
 
-   - **Coleção**: Especifique uma coleção de usuário que contém os usuários que registrarão seus dispositivos móveis.
+   - **Coleta**: Especifique uma coleção de usuário que contém os usuários que registrarão seus dispositivos móveis.
 
      > [!NOTE]
      >  Se um usuário for removido da coleção, o dispositivo do usuário continuará a ser gerenciado por até 24 horas, quando o registro do usuário for removido do banco de dados de usuários.

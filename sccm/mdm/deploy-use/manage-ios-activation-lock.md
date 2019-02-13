@@ -10,12 +10,13 @@ ms.assetid: e2745bac-e1b4-4dac-8ac7-32f1c820bc9c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4550116bd4635e7320e9cbdf18997e2e17ae0466
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8a695a0b777f4adf3d2fb336df6aced8702e9dab
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349143"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56125248"
 ---
 # <a name="manage-ios-activation-lock-with-system-center-configuration-manager"></a>Gerenciar o Bloqueio de Ativação do iOS com o System Center Configuration Manager
 
@@ -83,7 +84,7 @@ Você só pode ignorar o Bloqueio de Ativação ou recuperar o código de bypass
 ## <a name="view-the-activation-lock-bypass-code"></a>Exibir o código de bypass do Bloqueio de Ativação
 
 1. No console do Configuration Manager, clique em **Ativos e Conformidade**.
-2. No espaço de trabalho **Ativos e Conformidade** , clique em **Dispositivos**.
+2. No workspace **Ativos e Conformidade**, clique em **Dispositivos**.
 3. Selecione um dispositivo registrado que esteja no modo supervisionado com o Bloqueio de Ativação habilitado.
 4. Na guia **Início** do grupo **Dispositivo** , clique em **Ações de Dispositivo Remoto** > **Exibir código de bypass do Bloqueio de Ativação**.
 5. A caixa de diálogo **Código de Bypass de Bloqueio de Ativação** exibe o código de bypass do dispositivo selecionado.
@@ -91,7 +92,7 @@ Você só pode ignorar o Bloqueio de Ativação ou recuperar o código de bypass
 ## <a name="bypass-activation-lock"></a>Ignorar o Bloqueio de Ativação
 
 1. No console do Configuration Manager, clique em **Ativos e Conformidade**.
-2. No espaço de trabalho **Ativos e Conformidade** , clique em **Dispositivos**.
+2. No workspace **Ativos e Conformidade**, clique em **Dispositivos**.
 3. Selecione um dispositivo registrado que esteja no modo supervisionado com o Bloqueio de Ativação habilitado.
 3. Na guia **Início** do grupo **Dispositivos** , clique em **Ações de Dispositivo Remoto** > **Ignorar Bloqueio de Ativação**.
 5. Leia as mensagens na caixa de diálogo de aviso e clique em **Sim** quando estiver pronto para continuar.

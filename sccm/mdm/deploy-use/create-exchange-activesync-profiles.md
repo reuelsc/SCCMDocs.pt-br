@@ -10,16 +10,17 @@ ms.assetid: 120442be-179e-450c-a0c4-284046895da3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: decd16a03a0381718ada3e4c977d10c159c6be25
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3bf178465f5aff508daca1d87b1b548a42db931d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53417057"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139265"
 ---
 # <a name="exchange-activesync-email-profiles-in-system-center-configuration-manager"></a>Perfis de email do Exchange ActiveSync no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Usando o Microsoft Intune e o Exchange ActiveSync, você pode configurar dispositivos com restrições e perfis de email. Isso permite que os usuários acessem o email corporativo em seus dispositivos com uma configuração mínima exigida de sua parte.  
 

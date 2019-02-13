@@ -10,12 +10,13 @@ ms.assetid: b81d06dc-3844-4117-9937-16732a227994
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 89501e22c855f31264fbf94fe093d8ebde08708f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: be1221b3448c8a2818f7fd02b5ff2d14218bbeed
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349306"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56134020"
 ---
 # <a name="overview-of-device-enrollment-methods"></a>Visão geral dos métodos de registro de dispositivo
 

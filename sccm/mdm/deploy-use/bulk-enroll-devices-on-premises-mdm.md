@@ -10,12 +10,13 @@ ms.assetid: b36f5e4a-2b57-4d18-83f6-197081ac2a0a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 437f6e6068fb56f1a906cbb8bea24cd3c707f0e3
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e0c007a2414a68701584967ee21e3cf046e42be3
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350231"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56130615"
 ---
 # <a name="how-to-bulk-enroll-devices-with-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Como registrar dispositivos em massa com o Gerenciamento de Dispositivo Móvel local no System Center Configuration Manager
 

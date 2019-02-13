@@ -10,12 +10,13 @@ ms.assetid: 497c05c7-fe9f-4b88-983b-1c5b3d59308e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ac0e4426b2025a88f126f9cc0b2e57f5a5313740
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 63a82c6b81d5a2e09c6f73b79c39372c96ed4e07
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347392"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56143649"
 ---
 # <a name="on-premises-mobile-device-management-mdm-in-system-center-configuration-manager"></a>MDM (Gerenciamento de Dispositivo Móvel) Local no System Center Configuration Manager
 

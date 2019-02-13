@@ -10,16 +10,17 @@ ms.assetid: 9126d188-7780-45a4-b21d-7fcf4fad7da2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6f83f26f746c54e3d1defe31df47b3c7c8a7e117
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 7d6f8c25902be857e0eec3cd4b969d1fb5bda136
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53417941"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56136323"
 ---
 # <a name="apply-settings-to-android-for-work-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Aplicar configurações a aplicativos Android for Work com políticas de configuração de aplicativo no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Você pode usar políticas de configuração de aplicativo no System Center Configuration Manager para distribuir configurações que podem ser necessárias quando um usuário executa um aplicativo. Por exemplo, um aplicativo pode exigir que um usuário especifique estes detalhes:
 - Um número de porta personalizado
@@ -41,7 +42,7 @@ Para obter mais informações sobre os tipos de instalação de aplicativos, con
 3. No Assistente para Criar Política de Configuração de Aplicativo, na página **Geral** defina estas informações de política:
    - **Nome**. Insira um nome exclusivo para a política.
    - **Descrição**. (Opcional) Para facilitar a identificação da política, você pode adicionar uma descrição.
-   -  **Selecione um tipo de política de configuração**. Especifique a plataforma de destino com a política de configuração de aplicativo: **Política de configuração para o Android para aplicativos de trabalho**.
+   -  **Selecione um tipo de política de configuração**. Especifique a plataforma de destino da política de configuração de aplicativo: **Política de configuração para aplicativos Android for Work**.
    -  **Categorias atribuídas para melhorar a pesquisa e a filtragem**. (Opcional) Para criar e atribuir categorias para a política, escolha **Categorias**. As categorias facilitam a classificação e a localização de itens no console do Configuration Manager.
 4. Na página **Política do Android for Work**, escolha como definir as informações da política de configuração:
    - **Especificar pares nome-valor**. Você pode usar essa opção para arquivos de lista de propriedades que não usam aninhamento. Para especificar um par nome e valor:

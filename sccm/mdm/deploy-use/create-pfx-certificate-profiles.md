@@ -10,12 +10,13 @@ ms.assetid: d240a836-c49b-49ab-a920-784c062d6748
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a186e0b2c4b355cabcaaeb3b3124b65d3588fbc8
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6bbe52a282db016077cb96144938a0d443955f6c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350955"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127432"
 ---
 # <a name="how-to-create-pfx-certificate-profiles-using-a-certificate-authority"></a>Como criar perfis de certificado PFX usando uma autoridade de certificação
 
@@ -35,15 +36,15 @@ Para importar as credenciais de certificado de arquivos de certificado existente
 ### <a name="get-started"></a>Introdução
 
 1.  No console do System Center Configuration Manager, escolha **Ativos e Conformidade**.  
-2.  No espaço de trabalho **Ativos e Conformidade**, escolha **Configurações de Conformidade**, escolha &gt;Acesso ao Recurso da Empresa**e clique em** &gt; **Perfis de Certificado**.  
+2.  No workspace **Ativos e Conformidade**, escolha **Configurações de Conformidade**, escolha &gt;Acesso ao Recurso da Empresa**e clique em**&gt;**Perfis de Certificado**.  
 
 3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Perfil Certificado**.
 
 4.  Na página **Geral** do Assistente para **Criar Perfil de Certificado** , especifique as seguintes informações:  
 
-    -   **Nome**: insira um nome exclusivo para o perfil de certificado. Você pode usar no máximo 256 caracteres.  
+    -   **Nome**: Insira um nome exclusivo para o perfil de certificado. Você pode usar no máximo 256 caracteres.  
 
-    -   **Descrição**: forneça uma descrição que ofereça uma visão geral do perfil de certificado e outras informações relevantes que ajudem a identificá-lo no console do System Center Configuration Manager. Você pode usar no máximo 256 caracteres.  
+    -   **Descrição**: faça uma descrição que ofereça uma visão geral do perfil de certificado e outras informações relevantes que ajudem a identificá-lo no console do System Center Configuration Manager. Você pode usar no máximo 256 caracteres.  
 
     -   Em **Especificar o tipo de perfil de certificado que você deseja criar**, escolha **Troca de Informações Pessoais – Configurações de PKCS #12 (PFX) – Criar** e, depois, escolha sua autoridade de certificação na lista suspensa.  A partir da versão 1706, você pode escolher **Microsoft** ou **Entrust**.
 
@@ -164,11 +165,11 @@ Para definir as configurações de certificado ao usar Entrust como a AC:
 
 1.  Quando estiver pronto, escolha **Avançar** para criar o perfil.  
 
-1.  O perfil de certificado que contém o arquivo PFX agora está disponível do espaço de trabalho **Perfis de Certificado** . 
+1.  O perfil de certificado que contém o arquivo PFX agora está disponível do workspace **Perfis de Certificado**. 
 
 1.  Para implantar o perfil:
 
-    1. Abra o espaço de trabalho **Ativos e Conformidade**.
+    1. Abra o workspace **Ativos e Conformidade**.
     1. Escolha **Configurações de Conformidade** > **Acesso aos Recursos da Empresa** > **Perfis de Certificado**
     1. Clique o perfil de certificado desejado e escolha **Implantar**. 
 

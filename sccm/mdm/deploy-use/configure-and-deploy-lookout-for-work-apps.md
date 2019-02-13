@@ -10,16 +10,17 @@ ms.assetid: 3f62b763-4347-453d-b0a7-1f4a0d1d4105
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 00fa7e538f6156f0dacee00feeb4b767a3c83a5c
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a4e829d92b099be3fbf77796ea604d9d33db252c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53417602"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56132945"
 ---
 # <a name="configure-and-deploy-lookout-for-work-apps"></a>Configurar e implantar aplicativos Lookout for Work
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 Este artigo explica como configurar e implantar o aplicativo Lookout for Work em dispositivos Android e iOS.
 
@@ -31,7 +32,7 @@ Este artigo explica como configurar e implantar o aplicativo Lookout for Work em
 2.  Na página **Geral** do Assistente para Implantar Software, especifique as seguintes informações:  
     - Tipo: selecione **Pacote do aplicativo para Android no Google Play**.
     - Local: copie o link do aplicativo Lookout for Work da Google Play Store e cole-o aqui
-    - Publicador: Lookout Mobile Security
+    - Publisher: Lookout Mobile Security
     - Nome: Lookout for Work
     - Descrição: o Lookout oferece a melhor proteção contra ameaças móveis para proteger o seu dispositivo. Quando aplicativo Lookout é instalado, ele protege seu dispositivo contra ameaças. Se encontrar qualquer ameaça, ele o alertará você e seu administrador de TI.
     - Categoria administrativa: Gerenciamento do computador  

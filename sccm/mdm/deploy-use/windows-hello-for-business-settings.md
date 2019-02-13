@@ -1,7 +1,7 @@
 ---
 title: Configurações do Windows Hello para Empresas
 titleSuffix: Configuration Manager
-description: Saiba como integrar o Windows Hello para empresas com o Configuration Manager.
+description: Saiba como integrar o Windows Hello para Empresas com o Configuration Manager.
 ms.date: 12/21/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -10,12 +10,13 @@ ms.assetid: c0593c07-5dd7-4d23-a0d8-d30165f49ef7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f403fc8c83b93c91a1d648b194e2da1c82133fe2
-ms.sourcegitcommit: 94bf7d5b5beb9628cc1fdfe75451d33b5de26f8a
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 71f853034133e2ec73a4d8e606c2e0c0c94841a4
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54152410"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56134071"
 ---
 # <a name="windows-hello-for-business-settings-in-configuration-manager-hybrid"></a>Windows Hello para empresas no Configuration Manager (híbrido)
 

@@ -10,12 +10,13 @@ ms.assetid: 6e233f17-8ead-4984-a3fa-12687c4381ee
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0a189b5467b1c76287e47ef4ad615d4bff7f4de6
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 817e1b3a37ea5e40eb8787b23c56ae69bda8bf19
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32345658"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129503"
 ---
 # <a name="manage-devices-for-on-premises-mobile-device-management"></a>Gerenciar dispositivos para o Gerenciamento de Dispositivo Móvel local
 

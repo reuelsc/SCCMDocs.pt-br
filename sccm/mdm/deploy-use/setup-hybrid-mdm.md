@@ -10,16 +10,17 @@ ms.assetid: bb95154b-f63e-4491-896e-41d732c802f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a69f849d4843ff7a0cf7df4a0b6de044a9506301
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 0efe4dbc80c787591f5c7274dbaa89aa8e326c6c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53421800"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56121049"
 ---
 # <a name="set-up-hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>Configure o MDM híbrido com o Configuration Manager e o Microsoft Intune
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
 Antes de poder gerenciar dispositivos iOS, Windows e Android com o Configuration Manager, eles devem ser registrados com o Intune. Use as etapas a seguir para configurar o registro de dispositivo híbrido com o Configuration Manager usando o Intune. Ao concluir as etapas a seguir, você habilitará o registro de BYOD ("traga seu próprio dispositivo") para seus usuários. Essas etapas também são pré-requisitos para [registrar dispositivos BYOD](enroll-hybrid-ios-mac.md) e [registrar dispositivos da empresa](enroll-company-owned-devices.md).

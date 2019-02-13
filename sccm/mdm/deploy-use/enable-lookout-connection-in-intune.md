@@ -9,12 +9,13 @@ ms.assetid: 7e4ada34-63bf-4b9f-8246-31816aa44196
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 179aae5fdbd8d6c09a34dca6dd01437d5f61f7b8
-ms.sourcegitcommit: 0a4556820fabe004d45a82b0ee1176f6891ac9f0
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b36e98edfffcc26b7fb2670cbfdc31c165331f0f
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37949587"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139384"
 ---
 # <a name="enable-lookout-mtd-connection-in-the-intune-admin-console"></a>Habilitar a conexão com o Lookout MTD no console do administrador do Intune
 
@@ -46,11 +47,11 @@ Este artigo mostra como habilitar a conexão com o Lookout MTD (defesa contra am
 
 Você pode decidir quais opções de alternância de MTD você precisa habilitar de acordo com os requisitos da sua organização. Aqui estão mais detalhes:
 
-- **Conectar dispositivos Android 4.1 ou superiores à MTD do Lookout for Work**: quando você habilitar essa opção, os dispositivos Android 4.1 ou superiores poderão relatar riscos de segurança para o Intune.  
-    - **Marcar como não compatível, se nenhum dado for recebido**: se o Intune não receber nenhum dado sobre um dispositivo nessa plataforma do Lookout, considere o dispositivo como não compatível.  
+- **Conectar-se Android 4.1 + dispositivos para o Lookout for Work MTD**: Quando você habilitar essa opção, você pode ter o Android 4.1 + relatem os riscos de segurança de dispositivos de volta para o Intune.  
+    - **Marcar como fora de conformidade se nenhum dado for recebido**: Se o Intune não receber dados sobre um dispositivo nesta plataforma do Lookout, considere o dispositivo não compatível.  
 
-- **Conectar dispositivos iOS 8.0 ou superiores à MTD do Lookout for Work**: quando você habilitar essa opção, os dispositivos iOS 8.0 ou superiores poderão relatar riscos de segurança para o Intune.
-    - **Marcar como não compatível, se nenhum dado for recebido**: se o Intune não receber nenhum dado sobre um dispositivo nessa plataforma do Lookout, considere o dispositivo como não compatível.  
+- **Conectar dispositivos iOS 8.0 + com o Lookout for Work MTD**: Quando você habilitar essa opção, você pode ter dispositivos iOS 8.0 + relatem os riscos de segurança de volta ao Intune.
+    - **Marcar como fora de conformidade se nenhum dado for recebido**: Se o Intune não receber dados sobre um dispositivo nesta plataforma do Lookout, considere o dispositivo não compatível.  
 
 > [!TIP]  
 > Você pode ver o **Status de conexão** e o horário da **Última sincronização** entre o Intune e o Lookout no painel Defesa Contra Ameaças Móveis.

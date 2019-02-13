@@ -10,16 +10,17 @@ ms.assetid: 2a7d7170-1933-40e9-96d6-74a6eb7278e2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 391ecbd4ff9f863f41454786e8f8232b31a112a5
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8443430b55ee61e9ad5eeac1e70342dfa6e85851
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53418315"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56122365"
 ---
 # <a name="set-up-certificates-for-trusted-communications-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Configurar certificados para comunicações confiáveis do Gerenciamento de Dispositivo Móvel Local no System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch atual)*
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manager exige as funções de sistema de sites ponto de registro, ponto proxy do registro, ponto de distribuição e ponto de gerenciamento de dispositivos para ser configurado para comunicações confiáveis com os dispositivos gerenciados. Qualquer servidor de sistema de sites que hospede uma ou mais dessas funções deve ter um certificado PKI exclusivo associado ao servidor Web nesse sistema. Um certificado com a mesma raiz que o certificado nos servidores também deve ser armazenado nos dispositivos gerenciados para estabelecer comunicação confiável com eles.  
 
@@ -90,7 +91,7 @@ O Gerenciamento de Dispositivo Móvel Local do System Center Configuration Manag
     >   
     >  **Autoridade de certificação**: **Windows Server 2003**  
     >   
-    >  **Destinatário do certificado**: **Windows XP / Server 2003**  
+    >  **Destinatário do certificado**: **Windows XP/Server 2003**  
 
 5.  Na caixa de diálogo **Propriedades do Novo Modelo**, na guia **Geral**, insira um nome de modelo para gerar os certificados da Web que serão usados nos sistemas de sites do Configuration Manager, como **Servidor Web do MDM ConfigMgr**.  
 

@@ -10,12 +10,13 @@ ms.assetid: 1ef60106-8f31-46d6-95a6-25a6495f22c7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 711af365353d68020a7bbbef8026f452d4203ce3
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 7b97d30e1d5cc5cdca0cd69e260910c7981d1cec
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32346749"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56134207"
 ---
 # <a name="preparation-steps-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Etapas de preparação para o gerenciamento de dispositivo móvel local no System Center Configuration Manager
 
