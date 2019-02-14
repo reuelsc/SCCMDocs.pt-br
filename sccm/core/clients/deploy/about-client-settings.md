@@ -10,12 +10,12 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c4cd6c45d21c58459fcd23ee02db4b5900996939
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: b272a8988a3e8d2e09b4043c087207e62c59b274
+ms.sourcegitcommit: 5e7c4d36f4cdb3390ad3b381d31a3e1e4bf3c6e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53421987"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986579"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Sobre as configurações do cliente no Configuration Manager
 
@@ -624,7 +624,7 @@ Por exemplo, caso sua organização não use políticas de conformidade e você 
 Configure um agendamento para quando o Configuration Manager reavalia as regras de requisito para todas as implantações. O valor padrão é um intervalo de sete dias.  
 
 > [!IMPORTANT]  
->  Não altere esse valor para um valor menor que o padrão. Um agendamento de reavaliação mais agressivo afeta negativamente o desempenho da rede e dos computadores cliente.  
+> Essa configuração é mais invasiva para o cliente local do que para a rede ou o servidor do site. Um agendamento de reavaliação mais agressivo afeta negativamente o desempenho da rede e dos computadores cliente. A Microsoft não recomenda definir um valor inferior ao padrão. Se você alterar esse valor, monitore atentamente o desempenho.  
 
 Inicie essa ação em um cliente da seguinte maneira: no painel de controle **Configuration Manager**, na guia **Ações**, selecione **Ciclo de avaliação de implantação de aplicativo**.  
 

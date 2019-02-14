@@ -10,12 +10,12 @@ ms.assetid: 6a279624-ffc9-41aa-8132-df1809708dd5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4fdc882d63e7bf7d3189e770f230412f17ca0b63
-ms.sourcegitcommit: d36e4c7082a5144e79035dd8847c8e741fa04667
+ms.openlocfilehash: ffcb60ff355a67304b057ef2d1b632fb9e0c21dc
+ms.sourcegitcommit: 5e7c4d36f4cdb3390ad3b381d31a3e1e4bf3c6e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53444647"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986528"
 ---
 # <a name="list-of-prerequisite-checks-for-configuration-manager"></a>Lista de verificações de pré-requisitos para o Configuration Manager
 
@@ -526,7 +526,7 @@ O Configuration Manager não requer extensões de esquema do Active Directory pa
 
 Da versão 1810 em diante, verifique se o banco de dados do site tem uma lista de pendências de dados de controle de alterações do SQL.<!--SCCMDocs-pr issue 3023-->  
 
-Verifique manualmente essa verificação executando um procedimento armazenado de diagnóstico no banco de dados do site. Primeiro, crie uma [conexão de diagnóstico](https://docs.microsoft.com/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators?view=sql-server-2017) para seu banco de dados do site. O método mais fácil é usar o Editor de Consultas do SQL Server Management Studio e conectar-se ao `admin:<instance name>`. 
+Verifique manualmente essa verificação executando um procedimento armazenado de diagnóstico no banco de dados do site. Primeiro, crie uma [conexão de diagnóstico](https://docs.microsoft.com/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators?view=sql-server-2017) para seu banco de dados do site. O método mais fácil é usar o Editor de Consultas do Mecanismo de Banco de Dados do SQL Server Management Studio e se conectar ao `admin:<instance name>`. 
 
 Em uma janela de consulta da conexão de administrador dedicada, execute os seguintes comandos:
 
