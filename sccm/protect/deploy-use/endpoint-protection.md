@@ -10,12 +10,13 @@ ms.assetid: 76c90f64-d729-456b-8304-01852cd66fb6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 160713fe480b0a47c2ad57376c4a1dccdbfb00b1
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1048b24dba0658610471d37f12f75fd1d06b8d03
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53418944"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56123864"
 ---
 # <a name="endpoint-protection"></a>Endpoint Protection
 
@@ -45,7 +46,7 @@ A partir dos computadores Windows 10 e Windows Server 2016, o Windows Defender j
 
  Além disso, você gerencia as configurações do Firewall do Windows com o Endpoint Protection no console do Configuration Manager.  
 
- [Cenário de exemplo: usar o System Center Endpoint Protection para proteger os computadores contra malware no System Center Configuration Manager](scenarios-endpoint-protection.md) Endpoint Protection e no Firewall do Windows.  
+ [Cenário de exemplo: usar o System Center Endpoint Protection para proteger os computadores contra malware no System Center Configuration Manager](scenarios-endpoint-protection.md) Endpoint Protection e o Firewall do Windows.  
 
 
 ## <a name="managing-malware-with-endpoint-protection"></a>Gerenciando malware com o Endpoint Protection  
@@ -111,7 +112,7 @@ Use as etapas a seguir para baixar o arquivo de imagem que contém o software cl
 2. Selecione a guia **Downloads e Chaves** na parte superior do site.
 3. Aplique filtro no produto **System Center Endpoint Protection (branch atual)**.
 4. Clique no link **Download**
-5. Clique em **Continue**. Você verá vários arquivos, incluindo um denominado: **System Center Endpoint Protection (branch atual – versão 1606) para o sistema operacional Linux e Macintosh OS Multilanguage 32/64 bits 1878 MB ISO**.
+5. Clique em **Continue**. Você verá vários arquivos, incluindo um denominado: **System Center Endpoint Protection (branch atual – versão 1606) para o sistema operacional Linux e o sistema operacional Macintosh Multilanguage 32/64 bits 1878 MB ISO**.
 6. Para baixar o arquivo, clique no ícone de seta. O nome do arquivo é **SW_DVD5_Sys_Ctr_Endpnt_Prtctn_1606_MultiLang_-3_EptProt_Lin_Mac_MLF_X21-67050.ISO**.
 
 A atualização de janeiro de 2018 (X21-67050) inclui as seguintes versões:

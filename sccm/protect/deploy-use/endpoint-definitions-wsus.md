@@ -10,12 +10,13 @@ author: aczechowski
 description: Saiba como configurar o Windows Server Updates Services para aprovação automática de atualizações de definição.
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: b66c55da65f65c219b5c961949244f105885ba8f
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 74a1dc94a30f56e22b181446422a8b5f99790ffc
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53424265"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127619"
 ---
 # <a name="enable-endpoint-protection-malware-definitions-to-download-from-windows-server-update-services-wsus-for-configuration-manager"></a>Habilitar o download das definições de malware do Endpoint Protection do WSUS (Windows Server Update Services) para o Configuration Manager
 
@@ -74,19 +75,19 @@ ms.locfileid: "53424265"
 
 2.  Na guia **Regras de Atualização** clique em **Nova Regra**.
 
-3.  No **Adicionar regra** caixa de diálogo **etapa 1: Selecione as propriedades**, selecione o **quando uma atualização está em uma classificação específica** caixa de seleção.
+3.  Na caixa de diálogo **Adicionar Regra** , em **Etapa 1: Selecionar propriedades**, marque a caixa de seleção **Quando uma atualização está em uma classificação específica** .
 
-4.  Sob **Etapa 2: edite as propriedades**, clique em **qualquer classificação**.
+4.  Em **Etapa 2: Editar as propriedades**, clique em **qualquer classificação**.
 
 5.  Desmarque todas as caixas de seleção, exceto **Atualizações de Definições**e clique em **OK**.
 
-6.  No **Adicionar regra** caixa de diálogo **etapa 1: Selecione as propriedades**, selecione o **quando uma atualização está em um produto específico** caixa de seleção.
+6.  Na caixa de diálogo **Adicionar Regra** , em **Etapa 1: Selecionar propriedades**, marque a caixa de seleção **Quando uma atualização está em um produto específico** .
 
-7.  Sob **Etapa 2: edite as propriedades**, clique em **qualquer produto**.
+7.  Em **Etapa 2: Editar as propriedades**, clique em **qualquer produto**.
 
 8.  Desmarque todas as caixas de seleção, exceto **Forefront Endpoint Protection** para Windows 8.1 e versões anteriores ou **Windows Defender** para Windows 10 e versões posteriores e clique em **OK**.
 
-9. Sob **etapa 3: Em Etapa 3: Especificar um nome de**, digite um nome para a regra e clique em **OK**.
+9. Em **Etapa 3: Especificar um nome de**, digite um nome para a regra e clique em **OK**.
 
 10. Na caixa de diálogo **Aprovações Automáticas** , marque a caixa de seleção para a regra recém-criada e clique em **Executar regra**.
 

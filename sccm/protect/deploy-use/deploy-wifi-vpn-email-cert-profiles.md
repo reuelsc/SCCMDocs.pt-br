@@ -10,12 +10,13 @@ ms.assetid: 3753608d-b539-44dc-8e3f-b631319e7687
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: abae42358e6baba660841eab9443410c0b818428
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 63b52b42a9957ed8728d0942988067fef2be6271
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53419250"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129707"
 ---
 # <a name="deploy-profiles-in-system-center-configuration-manager"></a>Implantar perfis no System Center Configuration Manager
 
@@ -54,7 +55,7 @@ Os perfis deverão ser implantados em uma ou mais coleções para poderem ser us
 
     -   **Gerar um alerta** – Habilite esta opção para configurar um alerta que será gerado se a conformidade do perfil for menor do que um percentual especificado por uma data e uma hora determinadas. Você também pode especificar se deseja que um alerta seja enviado para o System Center Operations Manager.  
 
-    -   -   **Atraso aleatório (horas)**: (Para perfis de certificado que contêm as configurações do protocolo SCEP) – especifica uma janela de atraso para evitar o processamento excessivo no Serviço de Registro de Dispositivo de Rede. O valor padrão é **64** horas.  
+    -   -   **Atraso aleatório (horas)**: (somente para perfis de certificado que contêm as configurações do protocolo SCEP) – Especifica uma janela de atraso para evitar o processamento excessivo no Serviço de Registro de Dispositivo de Rede. O valor padrão é **64** horas.  
 
     -   **Especificar o agendamento de avaliação de conformidade para este perfil <type>** – Especifique o agendamento com base no qual o perfil implantado será avaliado nos computadores cliente. O agendamento poderá ser simples ou personalizado.  
 

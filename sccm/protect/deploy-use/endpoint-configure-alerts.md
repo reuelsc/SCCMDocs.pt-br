@@ -10,12 +10,13 @@ ms.assetid: f504de3e-4caf-455c-80d7-a63f13f4c5d9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: dbebdde88a5031eec91a2383e105d06cbc7541e5
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 26cf060d8443cefeed05c3615d5b1ecd0e862038
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53420440"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56138799"
 ---
 #  <a name="configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Configurar alertas para o Endpoint Protection no Configuration Manager
 
@@ -75,13 +76,13 @@ ms.locfileid: "53420440"
 
         -   **Número de vezes que foi detectado malware:** - o alerta é gerado quando o mesmo malware é detectado em computadores na coleção mais vezes que o número de vezes especificado. Especifique um número de **2** a **32**.
 
-        -   **Intervalo para detecção (horas):** especifique o intervalo de detecção (em horas) no qual o número de detecções de malware deve ocorrer. Especifique um número de **1** a **168**.
+        -   **Intervalo de detecção (horas):** especifique o intervalo de detecção (em horas) no qual o número de detecções de malware deve ocorrer. Especifique um número de **1** a **168**.
 
     -   **Detecção de Malware Múltipla** – Este alerta será gerado se mais de um número especificado de tipos de malware for detectado durante um número especificado de horas em computadores na coleção que você monitorar. Especifique as seguintes informações para configurar este alerta:
 
-        -   **Número de tipos de malware detectados:** o alerta é gerado quando o número especificado de tipos diferentes de malware é detectado em computadores na coleção. Especifique um número de **2** a **32**.
+        -   **Número de tipos de malware detectado:** o alerta é gerado quando o número especificado de tipos diferentes de malware é detectado em computadores na coleção. Especifique um número de **2** a **32**.
 
-        -   **Intervalo para detecção (horas):** especifique o intervalo de detecção (em horas) no qual o número de detecções de malware deve ocorrer. Especifique um número de **1** a **168**.
+        -   **Intervalo de detecção (horas):** especifique o intervalo de detecção, em horas, no qual o número de detecções de malware deve ocorrer. Especifique um número de **1** a **168**.
 
 9. Clique em **OK** para fechar a caixa de diálogo _<Nome da Coleção\>_ **Propriedades**.  
 

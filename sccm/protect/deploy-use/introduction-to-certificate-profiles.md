@@ -10,12 +10,13 @@ ms.assetid: 41dcc259-f147-4420-bff2-b65bdf8cff77
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 27a615a412bca7e30ab5f5a3dc5f794961d13d2c
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5872a6a8ee69e50d0abfe5840a087aaf83ab7aa5
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53424486"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156603"
 ---
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introdução aos perfis de certificado no System Center Configuration Manager
 
@@ -34,7 +35,7 @@ Os perfis de certificado oferecem os seguintes recursos de gerenciamento:
 
 -   Monitorar e emitir relatórios sobre os certificados instalados.  
 
-**Exemplo:** Todos os funcionários devem poder conectar-se a pontos de acesso Wi-Fi em vários locais corporativos. Para habilitar a conexão fácil do usuário, primeiro implante os certificados necessários para a conexão com o Wi-Fi. Em seguida, implante perfis de Wi-Fi que referenciem o certificado.  
+**Exemplo:** Todos os funcionários devem conseguir se conectar aos pontos de acesso Wi-Fi em vários locais corporativos. Para habilitar a conexão fácil do usuário, primeiro implante os certificados necessários para a conexão com o Wi-Fi. Em seguida, implante perfis de Wi-Fi que referenciem o certificado.  
 
 **Exemplo:** você tem uma PKI em vigor. Você deseja passar para um método mais flexível e seguro de implantação de certificados. Os usuários devem ser capazes de acessar recursos da empresa em seus dispositivos pessoais sem comprometer a segurança. Configurar perfis de certificado com configurações e protocolos com suporte pela plataforma específica do dispositivo. Os dispositivos podem solicitar automaticamente esses certificados de um servidor de registro da Internet. Em seguida, configurar perfis VPN para usar esses certificados para que o dispositivo possa acessar os recursos da empresa.  
 

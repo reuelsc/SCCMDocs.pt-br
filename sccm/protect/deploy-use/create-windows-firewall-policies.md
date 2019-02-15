@@ -10,12 +10,13 @@ ms.assetid: 6ecdfad1-6305-45a8-ae75-3f33b967cb8f
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 3217fe8f6d9ee541105abdecf9963898af38b907
-ms.sourcegitcommit: 316899b08f2ef372993909e08e069f7edfed1d33
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d1747cc8c4b43402319ce2924c3eaa680a72f83f
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44111018"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56125112"
 ---
 # <a name="create-and-deploy-windows-firewall-policies-for-endpoint-protection-in-system-center-configuration-manager"></a>Criar e implantar políticas do Firewall do Windows para o Endpoint Protection no System Center Configuration Manager
 
@@ -31,7 +32,7 @@ As políticas de firewall para o Endpoint Protection no System Center Configurat
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
 
-2.  No espaço de trabalho **Ativos e Conformidade**, expanda **Endpoint Protection** e clique em **Políticas de Firewall do Windows**.  
+2.  No workspace **Ativos e Conformidade**, expanda **Endpoint Protection** e clique em **Políticas de Firewall do Windows**.  
 
 3.  Na guia **Início** , no grupo **Criar** , clique em **Criar Política de Firewall do Windows**.  
 
@@ -62,7 +63,7 @@ As políticas de firewall para o Endpoint Protection no System Center Configurat
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.  
 
-2.  No espaço de trabalho **Ativos e Conformidade**, expanda **Endpoint Protection** e clique em **Políticas de Firewall do Windows**.  
+2.  No workspace **Ativos e Conformidade**, expanda **Endpoint Protection** e clique em **Políticas de Firewall do Windows**.  
 
 3.  Na lista **Políticas de Firewall do Windows** , selecione a política de Firewall do Windows que você deseja implantar.  
 

@@ -10,12 +10,13 @@ ms.assetid: 5e5d854c-9cc1-4dd8-b33f-0fcac675b395
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2ccc918bf5f15798c201ed491dd3824bb20b2ebb
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: fb36d753c3ae05e1e38849709b417ac709281203
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862559"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127908"
 ---
 # <a name="device-guard-management-with-configuration-manager"></a>Gerenciamento de Proteção do Dispositivo com Configuration Manager
 
@@ -77,7 +78,7 @@ Antes de configurar ou implantar políticas de Controle de Aplicativos do Window
 
 ## <a name="how-to-create-a-windows-defender-application-control-policy"></a>Como criar uma política do Controle de Aplicativos do Windows Defender
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.
-2.  No espaço de trabalho **Ativos e Conformidade**, expanda **Endpoint Protection** e clique em **Controle de Aplicativos do Windows Defender**.
+2.  No workspace **Ativos e Conformidade**, expanda **Endpoint Protection** e clique em **Controle de Aplicativos do Windows Defender**.
 3.  Na guia **Início**, no grupo **Criar**, clique em **Criar Política de Controle de Aplicativo**.
 4.  Na página **Geral** do **Assistente para Criar Política de Controle de Aplicativo**, especifique estas configurações:
     - **Nome** – Insira um nome exclusivo para esta política do Controle de Aplicativos do Windows Defender. 
@@ -100,7 +101,7 @@ Antes de configurar ou implantar políticas de Controle de Aplicativos do Window
 
 ## <a name="how-to-deploy-a-windows-defender-application-control-policy"></a>Como implantar uma política do Controle de Aplicativos do Windows Defender
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.
-2.  No espaço de trabalho **Ativos e Conformidade**, expanda **Endpoint Protection** e clique em **Controle de Aplicativos do Windows Defender**.
+2.  No workspace **Ativos e Conformidade**, expanda **Endpoint Protection** e clique em **Controle de Aplicativos do Windows Defender**.
 3.  Na lista de políticas, selecione a que você deseja implantar e na guia **Início**, no grupo **Implantação**, clique em **Implantar Política de Controle de Aplicativos**.
 4.  Na caixa de diálogo **Implantar política do Controle de Aplicativos**, selecione a coleção na qual deseja implantar a política. Em seguida, configure um agendamento para quando os clientes avaliarem a política. Por fim, selecione se o cliente pode avaliar a política fora de qualquer janela de manutenção configurada.
 5.  Quando tiver terminado, clique em **OK** para implantar a política. 

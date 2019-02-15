@@ -10,12 +10,13 @@ ms.assetid: 3b9c4027-a98b-406b-935c-ccabcfe713df
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 86452d628d025aea2b797d0ade92a3c2e2fff933
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c16487bc59a7e067aac5554213e2be750729078f
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53418570"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120139"
 ---
 #  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Usando as atualizações de Software do Configuration Manager para fornecer atualizações de definições
 
@@ -37,9 +38,9 @@ ms.locfileid: "53418570"
 
 4. Na página **Geral** do **Assistente para Criar Regra de Implantação Automática**, especifique as seguintes informações:
 
-   -   **Nome**: insira um nome exclusivo para a regra de implantação automática.
+   -   **Nome**: digite um nome exclusivo para a regra de implantação automática.
 
-   -   **Coleta**: selecione a coleção de computadores cliente na qual você deseja implantar atualizações de definições.
+   -   **Coleção**: selecione a coleção de computadores cliente na qual você deseja implantar atualizações de definições.
 
        > [!NOTE]
        >  Você não pode implantar atualizações de definições em uma coleção de usuários.
@@ -75,11 +76,11 @@ ms.locfileid: "53418570"
 
 17. Na página **Agendamento da Implantação** , defina as seguintes configurações:
 
-    -   **Tempo baseado em**: selecione **UTC** se desejar que todos os clientes na hierarquia instalem as definições mais recentes ao mesmo tempo. O tempo de instalação real varia em uma janela de duas horas. Essa configuração é uma prática recomendada.
+    -   **Tempo base em**: selecione **UTC** se desejar que todos os clientes na hierarquia instalem as definições mais recentes ao mesmo tempo. O tempo de instalação real varia em uma janela de duas horas. Essa configuração é uma prática recomendada.
 
     -   **Tempo disponível do software**: especifique o tempo disponível para a implantação criada por essa regra. A hora especificada deve ser pelo menos uma hora depois que a regra de implantação automática é executada. Isso ajuda a garantir que o conteúdo tenha tempo suficiente para replicar os pontos de distribuição na hierarquia. Algumas atualizações de definições também podem incluir atualizações de mecanismos antimalware, as quais podem levar mais tempo para alcançar os pontos de distribuição.
 
-    -   **Data limite para a instalação**: Selecione **assim que possível**.
+    -   **Prazo de instalação**: selecione **O mais breve possível**.
 
         > [!NOTE]
         >  Os prazos de atualização de software variam durante um período de duas horas para impedir que todos os clientes solicitem uma atualização ao mesmo tempo.

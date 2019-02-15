@@ -9,12 +9,13 @@ ms.assetid: 7610bbd3-a67f-4a09-8115-e35d40d43b42
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 0e8cd4a409718645d06f17c8cea36e7b06ec61d2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 94b1da6564c4b23c3db45b7b8851d795b97b061e
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351999"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56133628"
 ---
 # <a name="planning-for-endpoint-protection-in-system-center-configuration-manager"></a>Planejando o Endpoint Protection no System Center Configuration Manager
 
@@ -55,7 +56,7 @@ Computadores Windows 10 não exigem nenhum cliente adicional para o gerenciament
 
 ## <a name="managing-malware-with-endpoint-protection"></a>Gerenciando malware com o Endpoint Protection  
 
-O Endpoint Protection no Configuration Manager permite que você crie políticas antimalware que contêm configurações para o cliente do Endpoint Protection. Você pode implantar essas políticas antimalware nos computadores cliente e monitorá-los no nó **Status do Endpoint Protection** no espaço de trabalho **Monitoramento** ou usando relatórios do Configuration Manager.  
+O Endpoint Protection no Configuration Manager permite que você crie políticas antimalware que contêm configurações para o cliente do Endpoint Protection. Você pode implantar essas políticas antimalware nos computadores cliente e monitorá-los no nó **Status do Endpoint Protection** no workspace **Monitoramento** ou usando relatórios do Configuration Manager.  
 
  Informações adicionais:  
 

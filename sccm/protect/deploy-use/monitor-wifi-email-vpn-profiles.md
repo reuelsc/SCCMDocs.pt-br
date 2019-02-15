@@ -10,12 +10,13 @@ ms.assetid: e2315b8b-98bc-40e1-8ef9-bfb5e69ab109
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 47b5bb12a89143a0c7e6d16a3252948b955b8ff3
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 49602002a789c0bd1e8d8cc128d3062fde9194fc
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349204"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56137687"
 ---
 # <a name="monitor-email-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>Monitorar perfis de email, Wi-Fi e VPN no System Center Configuration Manager
 
@@ -34,7 +35,7 @@ Depois de implantar perfis de email, Wi-Fi ou VPN do System Center Configuration
 
 1.  No console do System Center Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , clique em **Implantações**.  
+2.  No workspace **Monitoramento**, clique em **Implantações**.  
 
 3.  Na lista **Implantações**, selecione a implantação de perfil para a qual você deseja examinar as informações de conformidade.  
 
@@ -42,14 +43,14 @@ Depois de implantar perfis de email, Wi-Fi ou VPN do System Center Configuration
 
      A página **Status da Implantação** contém as seguintes guias:  
 
-    -   **Compatível:** exibe a conformidade do perfil com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** no espaço de trabalho **Ativos e Conformidade** , que contém todos os usuários compatíveis com esse perfil. O painel **Detalhes do Ativo** exibe os usuários compatíveis com o perfil. Clique duas vezes em um usuário na lista para exibir informações adicionais.  
+    -   **Compatível:** exibe a conformidade do perfil com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** no workspace **Ativos e Conformidade**, que contém todos os usuários compatíveis com esse perfil. O painel **Detalhes do Ativo** exibe os usuários compatíveis com o perfil. Clique duas vezes em um usuário na lista para exibir informações adicionais.  
 
         > [!IMPORTANT]  
         >  Um perfil não será avaliado se ele não for aplicável em um dispositivo cliente; entretanto, ele será devolvido como compatível.  
 
-    -   **Erro:** exibe uma lista de todos os erros da implantação do perfil selecionado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário sob o nó **Usuários** do espaço de trabalho **Ativos e Conformidade** , que contém todos os usuários que geraram erros com esse perfil. Quando você seleciona um usuário, o painel **Detalhes do Ativo** exibe os usuários afetados pelo problema selecionado. Clique duas vezes em um usuário na lista para exibir informações adicionais sobre o problema.  
+    -   **Erro:** exibe uma lista de todos os erros da implantação do perfil selecionado com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário sob o nó **Usuários** do workspace **Ativos e Conformidade**, que contém todos os usuários que geraram erros com esse perfil. Quando você seleciona um usuário, o painel **Detalhes do Ativo** exibe os usuários afetados pelo problema selecionado. Clique duas vezes em um usuário na lista para exibir informações adicionais sobre o problema.  
 
-    -   **Não Compatível:** exibe uma lista de todas as regras não compatíveis no perfil com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do espaço de trabalho **Ativos e Conformidade** , que contém todos os usuários que não são compatíveis com esse perfil. Quando você seleciona um usuário, o painel **Detalhes do Ativo** exibe os usuários afetados pelo problema selecionado. Clique duas vezes em um usuário na lista para exibir mais informações sobre o problema.  
+    -   **Não Compatível:** exibe uma lista de todas as regras não compatíveis no perfil com base no número de ativos afetados. Você pode clicar duas vezes em uma regra para criar um nó temporário no nó **Usuários** do workspace **Ativos e Conformidade**, que contém todos os usuários que não são compatíveis com esse perfil. Quando você seleciona um usuário, o painel **Detalhes do Ativo** exibe os usuários afetados pelo problema selecionado. Clique duas vezes em um usuário na lista para exibir mais informações sobre o problema.  
 
     -   **Desconhecido:** exibe uma lista de todos os usuários que não relataram a conformidade para a implantação do perfil selecionado, junto com o status atual do cliente dos dispositivos.  
 

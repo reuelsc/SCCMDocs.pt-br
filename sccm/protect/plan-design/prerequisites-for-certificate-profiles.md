@@ -10,12 +10,13 @@ ms.assetid: 0317fd02-3721-4634-b18b-7c976a4e92bf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1c5a4ddc906b6304f61f1476a125d98c18acab55
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5990495532e9d4abe3b912a98e69f2aa1a3c16c9
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349772"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56121821"
 ---
 # <a name="prerequisites-for-certificate-profiles-in-system-center-configuration-manager"></a>Pré-requisitos dos perfis de certificado no System Center Configuration Manager
 

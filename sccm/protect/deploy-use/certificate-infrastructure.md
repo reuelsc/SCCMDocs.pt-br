@@ -10,12 +10,13 @@ ms.assetid: 29ae59b7-2695-4a0f-a9ff-4f29222f28b3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 783512841b61d6fa10e3f2832100e9000576e65a
-ms.sourcegitcommit: 2687489aa409a050dcacd67f17b3dad3ab7f1804
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 95a5166433ef35b3c2ab7108bfc83a2d403558e0
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54316517"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56128163"
 ---
 # <a name="configure-certificate-infrastructure"></a>Configurar a infraestrutura de certificado
 
@@ -38,16 +39,16 @@ Use estas etapas para configurar sua infraestrutura para certificados SCEP ou PF
 
 2. Verifique e, se necessário, modifique as permissões de segurança dos modelos de certificado que o Serviço de Registro de Dispositivo de Rede está usando:  
 
-   -   Para a conta que executa o console do System Center Configuration Manager: permissão de **Leitura**.  
+   -   Para a conta que executa o console do System Center Configuration Manager: permissão de **leitura**.  
 
         Essa permissão é necessária para que, quando executar o Assistente para Criar Perfil de Certificado, você possa procurar pelo modelo de certificado que deseja utilizar e selecioná-lo ao criar um perfil de configurações do SCEP. Selecionar um modelo de certificado significa que algumas configurações do assistente são preenchidas automaticamente, de forma que você tenha menos configurações para definir e de que haja menos risco de selecionar configurações não compatíveis com os modelos de certificado que o Serviço de Registro de Dispositivo de Rede está usando.  
 
-   -   Para a conta de serviço do SCEP que o pool de aplicativos do Serviço de Registro de Dispositivo de Rede usa: permissões de **Leitura** e **Registro**.  
+   -   Para a conta de serviço do SCEP que o pool de aplicativos do Serviço de Registro de Dispositivo de Rede usa: permissões **Ler** e **Registrar** .  
 
         Este requisito não é específico para o System Center Configuration Manager, mas faz parte da configuração do Serviço de Registro de Dispositivo de Rede. Para mais informações, consulte [Diretrizes do Serviço de Registro de Dispositivo de Rede](http://go.microsoft.com/fwlink/p/?LinkId=309016) na biblioteca de Serviços de Certificados do Active Directory no TechNet.  
 
    > [!TIP]  
-   >  Para identificar quais modelos de certificado o Serviço de Registro de Dispositivo de Rede está usando, exiba a chave do Registro a seguir no servidor que está executando o Serviço de Registro de Dispositivo de Rede: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP.  
+   >  Para identificar quais modelos de certificado o Serviço de Registro de Dispositivo de Rede está usando, exiba a seguinte chave do Registro no servidor que está executando o Serviço de Registro de Dispositivo de Rede: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP.  
 
    > [!NOTE]  
    >  Essas são as permissões de segurança padrão adequadas para a maioria dos ambientes. No entanto, você pode usar uma configuração de segurança alternativa. Para obter mais informações, consulte [Planejando permissões de modelo de certificado para os perfis de certificado no System Center Configuration Manager](../../protect/plan-design/planning-for-certificate-template-permissions.md).  
@@ -126,7 +127,7 @@ Use estas etapas para configurar sua infraestrutura para certificados SCEP ou PF
      -   **Nome do site**, **Número da Porta HTTPS** e **Nome do aplicativo Virtual** para o ponto de registro de certificado. Esses campos são preenchidos automaticamente com valores padrão. 
      -   **URL para o serviço de registro do dispositivo de rede e certificado de Autoridade de Certificação raiz** -clique em **Adicionar**, em seguida, na caixa de diálogo **Adicionar URL e certificado de AC raiz**, especifique o seguinte:
          - **URL do Serviço de Registro de Dispositivo de Rede**: especifique a URL no seguinte formato: https://*<server_FQDN>*/certsrv/mscep/mscep.dll. Por exemplo, se o FQDN do servidor que está executando o Serviço de Registro de Dispositivo de Rede for server1.contoso.com, digite **https://server1.contoso.com/certsrv/mscep/mscep.dll**.
-         - **Certificado de AC raiz**: Navegue até e selecione o arquivo de certificado (.cer) criado e salvo por você na **Etapa 1: instalar e configurar o Serviço de Registro de Dispositivo de Rede e as dependências**. Este certificado de AC raiz permite que o ponto de registro de certificado valide o certificado de autenticação de cliente que o Módulo de Política do System Center Configuration Manager usará.  
+         - **Certificado de AC Raiz**: Navegue até e selecione o arquivo de certificado (.cer) criado e salvo na **Etapa 1: Instale e configure o Serviço de Registro de Dispositivo de Rede e dependências**. Este certificado de AC raiz permite que o ponto de registro de certificado valide o certificado de autenticação de cliente que o Módulo de Política do System Center Configuration Manager usará.  
 
    - Se você selecionou **Processar solicitações de certificado PFX**, configure os detalhes de conexão e as credenciais da autoridade de certificação selecionada.
 
@@ -189,9 +190,9 @@ Use estas etapas para configurar sua infraestrutura para certificados SCEP ou PF
 
 6. Aceite a porta padrão **443** ou especifique o número alternativo de porta que o ponto de registro de certificado está utilizando e clique em **Avançar**.  
 
-7. Na página **Certificado do cliente para o Módulo de Política**, navegue e especifique o certificado de autenticação de cliente implantado por você na **Etapa 1: Instale e configure o Serviço de Registro de Dispositivo de Rede e dependências** e clique em **Próximo**.  
+7. Na página **Certificado do Cliente para o Módulo de Política**, navegue até e especifique o certificado de autenticação de cliente implantado na **Etapa 1: Instale e configure o Serviço de Registro de Dispositivo de Rede e dependências**e clique em **Próximo**.  
 
-8. Na página **Certificar Ponto de Registro de Certificado**, clique em **Navegar** para selecionar o arquivo de certificado exportado para a AC raiz que foi localizado e salvo por você no final da **Etapa 2: Instalar e configurar o ponto de registro de certificado**.  
+8. Na página **Certificado do Ponto de Registro de Certificado** , clique em **Procurar** para selecionar o arquivo de certificado exportado para a AC raiz localizado e salvo ao final da **Etapa 2: Instale e configure o ponto de registro de certificado**.  
 
    > [!NOTE]  
    >  Se você não salvou este arquivo de certificado anteriormente, ele estará localizado em <ConfigMgr Installation Path\>\inboxes\certmgr.box no computador do servidor do site.  

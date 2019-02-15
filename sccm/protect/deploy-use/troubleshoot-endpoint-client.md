@@ -10,12 +10,13 @@ ms.assetid: d837253e-fcc2-422a-9e2c-c78b938dfd8c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b6cbee02b0f3eaa34891019e305572f854575b86
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4f7528f15c67e8ce339013db583d545cb252712d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53420788"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56125656"
 ---
 # <a name="troubleshooting-windows-defender-or-endpoint-protection-client"></a>Solucionando problemas do cliente Windows Defender ou Endpoint Protection
 
@@ -52,7 +53,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 > [!IMPORTANT]  
 >  Você precisa sair do Internet Explorer para concluir essas etapas. Portanto, imprimi-as, anote-as, ou copie-as para outro arquivo e, em seguida, marque este tópico para acesso futuro.  
 
-### <a name="step-1-reset-your-internet-explorer-settings"></a>Etapa 1: redefina as configurações do Internet Explorer  
+### <a name="step-1-reset-your-internet-explorer-settings"></a>Etapa 1: Redefinir as configurações do Internet Explorer  
 
 1.  Saia de todos os programas abertos, incluindo o Internet Explorer.  
 
@@ -73,7 +74,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
 8.  Se o problema persistir, prossiga para a próxima etapa.  
 
-### <a name="step-2-set-internet-explorer-as-the-default-browser"></a>Etapa 2: configure o Internet Explorer como o navegador padrão  
+### <a name="step-2-set-internet-explorer-as-the-default-browser"></a>Etapa 2: Configurar o Internet Explorer como navegador padrão  
 
 1.  Saia de todos os programas abertos, incluindo o Internet Explorer.  
 
@@ -89,7 +90,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
 7.  Se o problema persistir, prossiga para a próxima etapa.  
 
-### <a name="step-3-ensure-that-the-date-and-time-are-set-correctly-on-your-computer"></a>Etapa 3: Verifique se a data e hora estão definidas corretamente no computador  
+### <a name="step-3-ensure-that-the-date-and-time-are-set-correctly-on-your-computer"></a>Etapa 3: Verificar se data e hora estão definidas corretamente no computador  
 
 1.  Abra o Windows Defender ou o Endpoint Protection.  
 
@@ -97,7 +98,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
 3.  Para redefinir a configuração de data ou hora do computador, siga as etapas em [Corrigir tarefas comuns de manutenção do sistema e atalhos da área de trabalho desfeitos](http://go.microsoft.com/fwlink/?LinkId=155579) (http://go.microsoft.com/fwlink/?LinkId=155579)).  
 
-### <a name="step-4-rename-the-software-distribution-folder-on-your-computer"></a>Etapa 4: Renomeie a pasta de distribuição de Software em seu computador  
+### <a name="step-4-rename-the-software-distribution-folder-on-your-computer"></a>Etapa 4: Renomear a pasta de distribuição de software em seu computador  
 
 1. Pare o serviço de atualizações automáticas  
 
@@ -125,7 +126,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
     3.  Feche o snap-in serviços.  
 
-### <a name="step-5-reset-the-microsoft-antivirus-update-engine-on-your-computer"></a>Etapa 5: Redefina o mecanismo de atualização de antivírus da Microsoft em seu computador  
+### <a name="step-5-reset-the-microsoft-antivirus-update-engine-on-your-computer"></a>Etapa 5: Redefinir o mecanismo de atualização de antivírus da Microsoft no computador  
 
 1.  Clique em **Iniciar** , procure por  **cmd**, clique em **OK**e, em seguida, clique com botão direito do mouse em **Prompt de Comando**, depois selecione **Executar como administrador**.  
 
@@ -146,7 +147,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
 5.  Se o problema persistir, prossiga para a próxima etapa.  
 
-### <a name="step-6-manually-install-the-virus-and-spyware-definition-updates"></a>Etapa 6: Instale manualmente as atualizações de definições de vírus e spyware  
+### <a name="step-6-manually-install-the-virus-and-spyware-definition-updates"></a>Etapa 6: Instalar manualmente as atualizações de definições de vírus e spyware  
 
 -   Se estiver executando um sistema operacional Windows de 32 bits, baixe as últimas atualizações manualmente em [http://go.microsoft.com/fwlink/?LinkID=87342](http://go.microsoft.com/fwlink/?LinkID=87342) (http://go.microsoft.com/fwlink/?LinkID=87342)).  
 
@@ -155,7 +156,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 -   Clique em **Executar**. As últimas atualizações são instaladas manualmente em seu computador.  
 
 
-### <a name="step-7-contact-support"></a>Etapa 7: Suporte de contato  
+### <a name="step-7-contact-support"></a>Etapa 7: Entrar em contato com o suporte  
 
 -   Se as etapas não resolveram o problema, contate o suporte. Para obter mais informações, consulte [Atendimento ao cliente](http://go.microsoft.com/fwlink/?LinkID=196174) (http://go.microsoft.com/fwlink/?LinkID=196174)).  
 
@@ -166,11 +167,11 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
  **Solução**  
 
-### <a name="step-1-restart-your-computer"></a>Etapa 1: Reinicie o computador.  
+### <a name="step-1-restart-your-computer"></a>Etapa 1: Reiniciar o computador.  
 
 -   Feche todos os aplicativos e reinicie o computador.  
 
-### <a name="step-2-make-sure-the-windows-defender-or-endpoint-protection-service-is-set-to-automatic-and-is-started"></a>Etapa 2: verifique se o "Windows Defender" ou o "serviço do Endpoint Protection" está definido como automático e foi iniciado  
+### <a name="step-2-make-sure-the-windows-defender-or-endpoint-protection-service-is-set-to-automatic-and-is-started"></a>Etapa 2: Verificar se o serviço "Windows Defender" ou "Endpoint Protection" está definido como automático e foi iniciado  
 
 1.  Clique em **Iniciar** , procure por **services.msc**e pressione **Enter**.  
 
@@ -182,7 +183,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
 5.  Se você observar erros exibidos durante esse processo, envie um caso online e inclua as informações do erro.  
 
-### <a name="step-3-remove-any-existing-internet-security-programs"></a>Etapa 3: Remova todos os programas de segurança da Internet existentes  
+### <a name="step-3-remove-any-existing-internet-security-programs"></a>Etapa 3: Remover os programas de segurança da Internet existentes  
 
 1.  Clique em **Iniciar** , procure por **appwiz.cpl**e pressione **Enter**.  
 
@@ -199,7 +200,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 >       do Endpoint Protection depois de remover os programas de segurança da Internet existentes, entre em contato com o Windows Defender ou  
 >       Suporte do Endpoint Protection com envio de caso online (para mais informações, consulte [Como enviar um caso online](http://www.microsoft.com/en-ph/security_essentials/Support/8c9074b6-1558-4d14-bc39-d294ced11096.aspx)).  
 
-### <a name="step-4-uninstallreinstall-endpoint-protection"></a>Etapa 4: desinstale/reinstale o Endpoint Protection  
+### <a name="step-4-uninstallreinstall-endpoint-protection"></a>Etapa 4: Desinstalar/reinstalar o Endpoint Protection  
 
 1.  Clique em **Iniciar** , procure por **appwiz.cpl**e pressione **Enter**.  
 
@@ -210,7 +211,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 ##  <a name="internet-connection-issues"></a>Problemas de conexão com a Internet  
  Para certificar-se de que o computador receba as atualizações mais recentes do Windows Update, você deve estar conectado à Internet.  
 
-### <a name="step-1-verify-that-your-computer-is-connected-to-the-internet"></a>Etapa 1: Verifique se o computador está conectado à Internet  
+### <a name="step-1-verify-that-your-computer-is-connected-to-the-internet"></a>Etapa 1: Verificar se o computador está conectado à Internet  
 
 1.  Clique em **Iniciar**, procure por **ncpa.cpl**e pressione **Enter**.  
 
@@ -220,7 +221,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
 4.  Se o computador parece não estar conectado, clique com o botão direito do mouse no nome da conexão e, em seguida, clique em **Conectar**, **Habilitar**, **Autenticar**, ou **Reparar**.  
 
-### <a name="step-3-restart-your-computer"></a>Etapa 3: Reinicie o computador.  
+### <a name="step-3-restart-your-computer"></a>Etapa 3: Reiniciar o computador  
 
 -   Feche os programas abertos e reinicie o computador.  
 
@@ -267,7 +268,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 > [!IMPORTANT]  
 >  Será necessário reiniciar o computador ao solucionar esse problema. Marque esta página nos favoritos (marque-a como Favorita) para localizar este tópico com mais facilidade posteriormente ou imprima-a para facilitar a referência.  
 
-### <a name="step-1-remove-any-existing-security-programs"></a>Etapa 1: Remova todos os programas de segurança existentes  
+### <a name="step-1-remove-any-existing-security-programs"></a>Etapa 1: Remover programas de segurança existentes  
 **Somente Endpoint Protection**
 
 1.  Desinstale completamente todos os programas de segurança da Internet existentes.  
@@ -276,7 +277,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
 3.  Instale o Endpoint Protection novamente. Se isso não solucionar o problema, prossiga para a próxima etapa.  
 
-### <a name="step-2-ensure-that-the-windows-installer-service-is-running"></a>Etapa 2: Verifique se o serviço Windows Installer está em execução  
+### <a name="step-2-ensure-that-the-windows-installer-service-is-running"></a>Etapa 2: Verificar se o serviço Windows Installer está em execução  
 
 1.  Clique em **Iniciar** , procure por **services.msc**e pressione **Enter**.  
 
@@ -293,7 +294,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
 6.  Instale o Endpoint Protection novamente. Se isso não solucionar o problema, prossiga para a próxima etapa.  
 
-### <a name="step-3-start-windows-in-selective-startup-mode"></a>Etapa 3: Inicie o Windows no modo de Inicialização Seletiva  
+### <a name="step-3-start-windows-in-selective-startup-mode"></a>Etapa 3: Iniciar o Windows no modo Inicialização Seletiva  
 
 1.  Clique em **Iniciar** , procure **services.msc**, e pressione **Enter**.  
 

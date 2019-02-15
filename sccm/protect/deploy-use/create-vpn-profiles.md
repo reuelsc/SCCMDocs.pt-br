@@ -10,12 +10,13 @@ ms.assetid: f338e4db-73b5-45ff-92f4-1b89a8ded989
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bb5814860389de28294c44f367920a2da9b72fbe
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8f00b3aef75d2200d991f99e514f83636f7b16bb
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53419420"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56121804"
 ---
 # <a name="how-to-create-vpn-profiles-in-system-center-configuration-manager"></a>Como criar perfis de VPN no System Center Configuration Manager
 
@@ -45,7 +46,7 @@ Para conexões VPN de terceiros, distribua o aplicativo VPN antes de implantar o
 
    - **Tipo de conexão**: escolha o tipo de conexão VPN. É possível escolher entre os tipos de conexão na tabela a seguir.  
 
-   - **Lista de servidores**: adicione um novo servidor a ser usado para a conexão VPN. Dependendo do tipo de conexão, você pode adicionar um ou mais servidores VPN e especificar o servidor padrão.  
+   - **Lista de servidores**: adicionar um novo servidor a ser usado para a conexão VPN. Dependendo do tipo de conexão, você pode adicionar um ou mais servidores VPN e especificar o servidor padrão.  
 
      > [!NOTE]  
      >  Dispositivos que executam iOS não oferecem suporte ao uso de vários servidores VPN. Se você configurar vários servidores VPN e implantar o perfil VPN em um dispositivo iOS, apenas o servidor padrão será usado.  

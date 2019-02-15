@@ -10,12 +10,13 @@ ms.assetid: ab7626ae-d4bf-4ca6-ab25-c61f96800a02
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: d401eea9b3556eae2ad8b3c26eda5a243fc07211
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ee1734178e3225aaf25a8105d83d9c0315866283
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53419131"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56122178"
 ---
 # <a name="enable-endpoint-protection-malware-definitions-to-download-from-microsoft-updates-for-configuration-manager"></a>Habilitar o download das definições de malware do Endpoint Protection do Microsoft Updates para o Configuration Manager
 
