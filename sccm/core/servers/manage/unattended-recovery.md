@@ -10,12 +10,13 @@ ms.assetid: 828c31d1-3d70-4412-b1a8-c92e7e504d39
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 637727356724085f019ac9ab336bc37e3635ea3a
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 0da207f92ea2c11266831a0c03f5b846654e83a4
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53415136"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56128993"
 ---
 # <a name="unattended-site-recovery-for-configuration-manager"></a>Recuperação autônoma de sites para o Configuration Manager   
 
@@ -57,7 +58,7 @@ ms.locfileid: "53415136"
 
     -   **Obrigatório:** Sim
     -   **Valores:** 1, 2 ou 4  
-         1 = Servidor do site de recuperação e SQL Server.   
+         1 = Servidor do site de recuperação e SQL Server.   
          2 = Recuperar apenas o servidor do site.  
          4 = Recuperar apenas o SQL Server.
     -   **Detalhes:** especifica se a instalação recupera o servidor do site, o SQL Server ou ambos. As chaves associadas são necessárias quando o seguinte valor é definido para a configuração de ServerRecoveryOptions:  
@@ -227,7 +228,7 @@ ms.locfileid: "53415136"
 
     -   **Obrigatório:** Sim
     -   **Valores:** 1, 2 ou 4    
-         1 = Servidor do site de recuperação e SQL Server.   
+         1 = Servidor do site de recuperação e SQL Server.   
          2 = Recuperar apenas o servidor do site.  
          4 = Recuperar apenas o SQL Server.
     -   **Detalhes:** especifica se a instalação recupera o servidor do site, o SQL Server ou ambos. As chaves associadas são necessárias quando o seguinte valor é definido para a configuração de ServerRecoveryOptions:

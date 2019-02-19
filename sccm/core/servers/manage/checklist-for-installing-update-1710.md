@@ -10,12 +10,13 @@ ms.assetid: 7e8ab8ca-41ef-467a-943b-a115d88cafe0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 91c16c556914a6edd97fbe2d00c469ea51173680
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 188d2ffdb3ad6f908a0ea25a6966bd0dcf5db807
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53419301"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56122994"
 ---
 # <a name="checklist-for-installing-update-1710-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1710 do System Center Configuration Manager
 

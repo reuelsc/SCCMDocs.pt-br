@@ -10,12 +10,13 @@ ms.assetid: 9ea20b01-676a-4cc2-b328-0098a41b202e
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 84643f38b5dd0c42a611ca50aaae6ab6d9f52405
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 49f7d898e5cb744771694ce49adb52457fb25e01
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32331661"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156416"
 ---
 # <a name="plan-for-and-configure-compliance-settings-in-system-center-configuration-manager"></a>Planejar e definir as configurações de conformidade no System Center Configuration Manager
 

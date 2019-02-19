@@ -10,12 +10,13 @@ ms.assetid: 91f9de33-b277-4500-acd6-e7d90a2947c9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 27e8e3ef78947eb6623a56e670e176aaa2800f68
-ms.sourcegitcommit: 78d2dce465e3500653b252583a6903a006784c26
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 116c12d86c097222844e76dde877b674ca7498b9
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46448898"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127109"
 ---
 # <a name="health-attestation-for-system-center-configuration-manager"></a>Atestado de integridade do System Center Configuration Manager
 
@@ -67,7 +68,7 @@ Você também pode **Editar** ou **Remover** as URLs de serviço de atestado de 
 
 ## <a name="monitor-device-health-attestation"></a>Monitorar o atestado de integridade do dispositivo
 
-1.  Para ver a exibição do atestado de integridade do dispositivo no console do Configuration Manager, acesse o espaço de trabalho **Monitoramento** , clique no nó **Segurança** e clique em **Atestado de Integridade**.  
+1.  Para ver a exibição do atestado de integridade do dispositivo no console do Configuration Manager, acesse o workspace **Monitoramento**, clique no nó **Segurança** e clique em **Atestado de Integridade**.  
 2.  O Atestado de Integridade do dispositivo é exibido  
 
 O Atestado de Integridade do Dispositivo do Configuration Manager exibe o seguinte:  

@@ -10,12 +10,13 @@ ms.assetid: f3df18c2-99eb-4606-a3ef-db31374af602
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c2be3c4fd5a356cf7473b7de7676df9bb9a0ca7e
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 586ded5ad185513360c0087601d1966d9333ef48
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385817"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56137306"
 ---
 # <a name="flowchart---promote-site-server-unplanned"></a>Fluxograma – promover o servidor do site (não planejado)
 

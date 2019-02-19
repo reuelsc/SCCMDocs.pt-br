@@ -10,12 +10,13 @@ ms.assetid: 4b7aa5f6-5ebd-49be-b7f3-4206caadc187
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2678904b9e5393ea4be557866dee8dfa754ebbc6
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 341f1530e0b5bc9486cf062b5f16ede2154439ed
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32332892"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129639"
 ---
 # <a name="how-to-use-resource-explorer-to-view-software-inventory-in-system-center-configuration-manager"></a>Como usar o Gerenciador de Recursos para exibir o inventário de software no System Center Configuration Manager
 
@@ -42,7 +43,7 @@ Use o Gerenciador de Recursos no System Center Configuration Manager para exibir
 
 1.  No console do Configuration Manager, escolha **Ativos e Conformidade**
 
-2.  No espaço de trabalho **Ativos e Conformidade**, escolha **Dispositivos** ou abra uma coleção que exibe os dispositivos.  
+2.  No workspace **Ativos e Conformidade**, escolha **Dispositivos** ou abra uma coleção que exibe os dispositivos.  
 
 3.  Escolha o computador que contém o inventário que você deseja exibir e, em seguida, na guia **Início** > grupo **Dispositivos**, escolha **Iniciar** > **Gerenciador de Recursos**.
 

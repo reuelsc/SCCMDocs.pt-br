@@ -10,12 +10,13 @@ ms.assetid: 217c8a0e-5112-420e-a325-2a6d75326290
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 604cf10c660cd1f26513a6a34b370d380635504b
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4c18d6320397281156e39624ea8dc50e6d0539ed
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53421069"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139901"
 ---
 # <a name="create-a-task-sequence-to-install-an-operating-system-in-system-center-configuration-manager"></a>Criar uma sequência de tarefas para instalar um sistema operacional no System Center Configuration Manager
 
@@ -128,15 +129,15 @@ Use sequências de tarefas no System Center Configuration Manager para instalar 
 |Particionar Disco 0|Formatar e Particionar Disco|  
 |Restaurar Arquivos e Configurações do Usuário|Restaurar Estado do Usuário|  
 
-|Grupo ou etapa de sequência de tarefas|Descrição|  
+|Grupo de sequências de tarefas ou etapa|Descrição|  
 |---------------------------------|-----------------|  
 |Captura de arquivos e configurações - **(novo grupo de sequências de tarefas)**|Crie um grupo de sequências de tarefas. Um grupo de sequências de tarefas mantém as etapas de sequência de tarefas semelhantes juntas para melhor organização e controle de erro.<br /><br /> Esse grupo contém as etapas necessárias para capturar os arquivos e configurações do sistema operacional de um computador de referência.|  
 |Capturar Configurações do Windows|Use essa etapa de sequência de tarefas para identificar as configurações do Microsoft Windows para capturar do computador de referência. Você pode capturar o nome do computador, usuário e informações organizacionais e as configurações de fuso horário.|  
 |Capturar configurações da rede|Use essa etapa de sequência de tarefas para capturar as configurações de rede do computador de referência. Você pode capturar a associação de domínio ou grupo de trabalho do computador de referência e obter informações sobre configuração de adaptador de rede.|  
-|Capturar arquivos de usuário e configurações - **(nova tarefa sequência subgrupo)**|Crie um grupo de sequências de tarefas dentro de um grupo de sequências de tarefas. Esse subgrupo contém as etapas necessárias para capturar dados de estado do usuário. Semelhante ao grupo inicial que você adicionou, esse subgrupo mantém etapas de sequências de tarefas semelhantes para melhor organização e controle de erro.|  
+|Capturar arquivos de usuário e configurações - **(nova tarefa sequência subgrupo)**|Crie um grupo de sequências de tarefas dentro de um grupo de sequências de tarefas. Esse subgrupo contém as etapas necessárias para capturar dados de estado do usuário. Semelhante para o grupo inicial que você adicionou, esse subgrupo mantém controlam semelhante etapas da sequência de tarefas para o erro e melhor organização.|  
 |Armazenamento de estado do usuário de solicitação|Use essa etapa de sequência de tarefas para solicitar acesso a um ponto de migração de estado onde os dados de estado do usuário são armazenados. Você pode configurar essa etapa de sequência de tarefas para capturar ou restaurar as informações de estado do usuário.|  
-|Capturar Arquivos e Configurações do Usuário|Use essa etapa de sequência de tarefas para usar o User State Migration Tool (USMT) para capturar o estado do usuário e configurações do computador de referência que receberão a sequência de tarefas associada a essa etapa da tarefa. Você pode capturar as opções padrão ou configurar as opções que deseja capturar.|  
-|Liberar Armazenamento de Estado do Usuário|Use essa etapa de sequência de tarefas para notificar o estado do ponto de migração que a ação de captura ou restauração foi concluída.|  
+|Capturar Arquivos e Configurações do Usuário|Use essa etapa de sequência de tarefas para usar o User State Migration Tool (USMT) para capturar o estado do usuário e configurações do computador de referência que receberão a sequência de tarefas associada a essa etapa da tarefa. Você pode capturar as opções padrão ou configurar opções capturar.|  
+|Armazenamento de estado do usuário de versão|Use essa etapa de sequência de tarefas para notificar o estado do ponto de migração que a ação de captura ou restauração foi concluída.|  
 |Instalar o sistema operacional - **(novo grupo de sequências de tarefas)**|Crie outro grupo de subpropriedades de sequência de tarefas. Esse subgrupo contém as etapas necessárias para instalar e configurar o ambiente do Windows PE.|  
 |Reiniciar no Windows PE|Use essa etapa de sequência de tarefas para especificar as opções de reinicialização do computador de destino que recebe essa sequência de tarefas. Esta etapa exibirá uma mensagem para o usuário indicando que o computador será reiniciado para que a instalação possa continuar.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSInWinPE** de somente leitura. Se o valor for igual a **false** continua a etapa de sequência de tarefas.|  
 |Particionar disco 0|Esta etapa especifica as ações necessárias para formatar o disco rígido no computador de destino. O número de disco padrão é **0**.<br /><br /> Esta etapa usa a variável de sequência de tarefas **_SMSTSClientCache** de somente leitura. Esta etapa será executada se o cache do cliente do Configuration Manager não existir.|  

@@ -10,20 +10,21 @@ ms.assetid: a3aac306-85d6-4cad-92bb-8ad9f920565e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: deb4e5a7f4133ab1bb0b15b8eb9c2c08412690e9
-ms.sourcegitcommit: 4317bd20050f582a068d0a813e71c449d655e4b4
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d9881e2e08485063305e7482120cac63de44fa35
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55971957"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56138510"
 ---
 # <a name="features-in-configuration-manager-technical-preview-version-1902"></a>Recursos na visualização técnica do Configuration Manager versão 1902
 
-*Aplica-se a: System Center Configuration Manager (Visualização Técnica)*
+*Aplica-se a: System Center Configuration Manager (Technical Preview)*
 
 Este artigo apresenta os recursos disponíveis na visualização técnica do Configuration Manager, versão 1902. Instale esta versão para atualizar e adicionar novos recursos ao seu site da visualização técnica. 
 
-Examine o artigo da [visualização técnica](/sccm/core/get-started/technical-preview) antes de instalar essa atualização. Este artigo familiariza você com os requisitos gerais e as limitações do uso de uma visualização técnica, como atualizar entre versões e como fornecer comentários.     
+Examine o artigo da [visualização técnica](/sccm/core/get-started/technical-preview) antes de instalar essa atualização. Este artigo familiariza você com os requisitos gerais e as limitações do uso de um technical preview, como atualizar entre versões e como fornecer comentários.     
 
 
 <!--  Known Issues Template

@@ -10,12 +10,13 @@ ms.assetid: 33bcf8b3-a6b6-4fc9-bb59-70a9621b2b0d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b0fd4c36ed03f0e0b158fe637a045553dab31ade
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9b3ba4c5179069e5443beaf1b7f733c797cfd680
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43995339"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156518"
 ---
 #  <a name="sync-data-from-configuration-manager-to-azure-log-analytics"></a>Sincronizar dados do Configuration Manager com o Azure Log Analytics
 
@@ -53,7 +54,7 @@ Use o **Assistente dos Serviços do Azure** para configurar uma conexão do Conf
 > [!Note]  
 > Este artigo refere-se ao *Conector do Log Analytics*, que antes era chamado de *Conector do OMS*. Não há diferença funcional. Para saber mais, veja [Gerenciamento do Azure - Monitoramento](https://docs.microsoft.com/azure/monitoring/#operations-management-suite).  
 
-Se você tiver concluído todos os outros procedimentos com êxito, as informações na tela **Configuração de Conexão** aparecerão automaticamente depois que você importar o aplicativo Web. As informações para as configurações de conexão devem aparecer para sua **Assinatura do Azure**, **Grupo de recursos do Azure** e **Espaço de trabalho do Operations Management Suite**.
+Se você tiver concluído todos os outros procedimentos com êxito, as informações na tela **Configuração de Conexão** aparecerão automaticamente depois que você importar o aplicativo Web. As informações para as configurações de conexão devem aparecer para sua **Assinatura do Azure**, **Grupo de recursos do Azure** e **Workspace do Operations Management Suite**.
 
 O assistente conecta-se ao serviço do Log Analytics usando as informações que você inseriu. Selecione as coleções de dispositivos que você deseja sincronizar com o serviço de nuvem e, em seguida, clique em **Adicionar**.
 
@@ -62,7 +63,7 @@ O assistente conecta-se ao serviço do Log Analytics usando as informações que
 
 Depois de vincular o Configuration Manager ao Log Analytics, exiba as propriedades da conexão para adicionar ou remover coleções. 
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Serviços de Nuvem** e selecione o nó **Serviços do Azure**.  
+1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e selecione o nó **Serviços do Azure**.  
 
 2. Selecione sua conexão do Log Analytics. Na faixa de opções, selecione **Propriedades**.  
 

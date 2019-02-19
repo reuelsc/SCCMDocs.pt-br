@@ -10,12 +10,13 @@ ms.assetid: 6f0e08f8-f2e1-4823-90f6-7b1f4341eb46
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ef51a1193e6227bfb6738f1a550128bbba983773
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: eebd1aaf72cbd7932a919c0a8ffdef6d6af8389f
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385847"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56132009"
 ---
 # <a name="site-failure-impacts-in-configuration-manager"></a>Impactos de falha do site no Configuration Manager
 

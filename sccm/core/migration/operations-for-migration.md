@@ -10,12 +10,13 @@ ms.assetid: c28e3492-851a-40fc-ba13-67ebc2d8b41a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a038377e4b29852157fd0d92836f26f1b5e18433
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b59ff47ace87e4c7e8a345402616de44342ea9c1
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344136"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56121406"
 ---
 # <a name="operations-for-migrating-to-system-center-configuration-manager"></a>Operações de migração para o System Center Configuration Manager
 
@@ -29,7 +30,7 @@ Para migração no System Center Configuration Manager, é possível migrar dado
 
 -   [Atualizar ou reatribuir um ponto de distribuição compartilhado](#BKMK_ProcUpgrdSS)  
 
--   [Monitorar a atividade de migração no espaço de trabalho Migração](#Monitor_MIgration)  
+-   [Monitorar a atividade de migração no workspace Migração](#Monitor_MIgration)  
 
 -   [Migrar clientes](#BKMK_MigrateClients)  
 
@@ -45,7 +46,7 @@ Para migração no System Center Configuration Manager, é possível migrar dado
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
+2.  No workspace **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
 
 3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Trabalho de Migração**.  
 
@@ -81,7 +82,7 @@ Para migração no System Center Configuration Manager, é possível migrar dado
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
+2.  No workspace **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
 
 3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Trabalho de Migração**.  
 
@@ -107,7 +108,7 @@ Para migração no System Center Configuration Manager, é possível migrar dado
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
+2.  No workspace **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
 
 3.  Na guia **Início**, no grupo **Criar**, escolha **Criar Trabalho de Migração**.  
 
@@ -133,7 +134,7 @@ Para migração no System Center Configuration Manager, é possível migrar dado
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, escolha **Migração** para obter acesso à lista de exclusões. É possível também acessar a lista de exclusão do nó **Hierarquia de Origem** ou **Trabalhos de Migração** .  
+2.  No workspace **Administração**, escolha **Migração** para obter acesso à lista de exclusões. É possível também acessar a lista de exclusão do nó **Hierarquia de Origem** ou **Trabalhos de Migração** .  
 
 3.  Na guia **Início**, no grupo **Migração**, escolha **Editar Lista de Exclusões**.  
 
@@ -145,7 +146,7 @@ Para migração no System Center Configuration Manager, é possível migrar dado
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Migração**, escolha **Hierarquia de Origem** e selecione o site de origem que você deseja configurar.  
+2.  No workspace **Administração**, expanda **Migração**, escolha **Hierarquia de Origem** e selecione o site de origem que você deseja configurar.  
 
 3.  Na guia **Início**, no grupo **Site de Origem**, escolha **Configurar**.  
 
@@ -157,7 +158,7 @@ Para migração no System Center Configuration Manager, é possível migrar dado
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
+2.  No workspace **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
 
 3.  Escolha o trabalho de migração que você deseja alterar. Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
@@ -169,7 +170,7 @@ Para migração no System Center Configuration Manager, é possível migrar dado
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
+2.  No workspace **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
 
 3.  Escolha o trabalho de migração que você deseja executar. Na guia **Início**, no grupo **Trabalho de Migração**, escolha **Iniciar**.  
 
@@ -188,7 +189,7 @@ Para migração no System Center Configuration Manager, é possível migrar dado
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Hierarquia de Origem**.  
+2.  No workspace **Administração**, expanda **Migração** e, em seguida, escolha **Hierarquia de Origem**.  
 
 3.  Selecione o site que tem o ponto de distribuição que você deseja atualizar, escolha a guia **Pontos de Distribuição Compartilhados** e selecione o ponto de distribuição qualificado para ser atualizado ou transferido.  
 
@@ -200,12 +201,12 @@ Para migração no System Center Configuration Manager, é possível migrar dado
 
 6.  Confirme as configurações e, em seguida, conclua o assistente.  
 
-##  <a name="Monitor_MIgration"></a> Monitorar a atividade de migração no espaço de trabalho Migração  
+##  <a name="Monitor_MIgration"></a> Monitorar a atividade de migração no workspace Migração  
  Usar o console do Configuration Manager para monitorar a migração.  
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
+2.  No workspace **Administração**, expanda **Migração** e, em seguida, escolha **Trabalhos de Migração**.  
 
 3.  Escolha o trabalho de migração que você deseja monitorar.  
 
@@ -219,7 +220,7 @@ Para migração no System Center Configuration Manager, é possível migrar dado
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Migração** e, em seguida, escolha **Hierarquia de Origem**.  
+2.  No workspace **Administração**, expanda **Migração** e, em seguida, escolha **Hierarquia de Origem**.  
 
 3.  Para hierarquias de origem do Configuration Manager 2007, selecione um site de origem que esteja no nível inferior da hierarquia de origem. Para uma hierarquia de origem do System Center 2012 Configuration Manager ou do System Center Configuration Manager, selecione o sites de origem disponível.  
 

@@ -10,12 +10,13 @@ ms.assetid: b48c693c-d2b0-4707-a5dd-fe92172c49fe
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: d4602a2dbee04259d5953873485cdbccdc58167d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b1eb13beac2882121b2e083ad3e29eef6918eeaa
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333653"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120882"
 ---
 # <a name="manage-configuration-data-in-system-center-configuration-manager"></a>Gerenciar dados de configuração no System Center Configuration Manager
 
@@ -25,7 +26,7 @@ Depois de criar itens e linhas de base de configuração no System Center Config
 
 ## <a name="manage-configuration-items"></a>Gerenciar itens de configuração  
 
--   No espaço de trabalho **Ativos e Conformidade**, expanda **Configurações de Conformidade** > **Itens de Configuração**, selecione o item de configuração a ser gerenciado e uma tarefa de gerenciamento.  
+-   No workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade** > **Itens de Configuração**, selecione o item de configuração a ser gerenciado e uma tarefa de gerenciamento.  
 
 |Tarefa de gerenciamento|Detalhes|  
 |---------------------|-------------|  
@@ -38,7 +39,7 @@ Depois de criar itens e linhas de base de configuração no System Center Config
 
 ## <a name="manage-configuration-baselines"></a>Gerenciar linhas de base de configuração  
 
--   No espaço de trabalho **Ativos e Conformidade**, expanda **Configurações de Conformidade** > **Linhas de Base de Configuração**, selecione a linha de base de configuração a ser gerenciada e uma tarefa de gerenciamento.  
+-   No workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade** > **Linhas de Base de Configuração**, selecione a linha de base de configuração a ser gerenciada e uma tarefa de gerenciamento.  
 
 
 |Tarefa de gerenciamento|Detalhes|  

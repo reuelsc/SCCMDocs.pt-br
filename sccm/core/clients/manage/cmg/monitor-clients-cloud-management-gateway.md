@@ -10,12 +10,13 @@ ms.assetid: 15f72f80-9850-40ce-9c3a-443ba04b6a03
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4ef27c67b9b17f41fbe71d57fdea9552b7dff9f7
-ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6b52a97432dd85987dd98f11b0a048b1f730db84
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601034"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56140670"
 ---
 # <a name="monitor-cloud-management-gateway-in-configuration-manager"></a>Monitorar o gateway de gerenciamento de nuvem no Configuration Manager
 
@@ -69,7 +70,7 @@ O CMG gera entradas em vários arquivos de log. Para obter mais informações, c
 A captura de tela a seguir é uma parte do painel de gerenciamento de nuvem que mostra dois dos blocos disponíveis:  
 ![O painel de controle do gerenciamento de nuvem faz o rastreamento do tráfego CMG e dos clientes online atuais](media/1358461-cmg-dashboard.png)
 
-No console do Configuration Manager, acesse o espaço de trabalho **Monitoramento**. Selecione o nó **Gerenciamento de Nuvem** e visualize os blocos do painel.  
+No console do Configuration Manager, acesse o workspace **Monitoramento**. Selecione o nó **Gerenciamento de Nuvem** e visualize os blocos do painel.  
 
 
 
@@ -77,7 +78,7 @@ No console do Configuration Manager, acesse o espaço de trabalho **Monitorament
 
 Começando na versão 1806, use o analisador de conexão do CMG para verificação em tempo real para ajudar a solucionar problemas. O utilitário no console verifica o status atual do serviço e o canal de comunicação por meio da conexão CMG aponta para os pontos de gerenciamento que permitem o tráfego CMG.
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**. Expanda **Serviços de Nuvem** e selecione o nó **Gateway de Gerenciamento de Nuvem**.  
+1. No console do Configuration Manager, acesse o workspace **Administração**. Expanda **Serviços de Nuvem** e selecione o nó **Gateway de Gerenciamento de Nuvem**.  
 
 2. Selecione a instância CMG de destino e, em seguida, selecione **Analisador de Conexões** na faixa de opções.  
 

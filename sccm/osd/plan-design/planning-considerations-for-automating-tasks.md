@@ -10,12 +10,13 @@ ms.assetid: fc497a8a-3c54-4529-8403-6f6171a21c64
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 608b947e75ff29cf9653b2a12497918846556f4d
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6030bb1a02a94e61cf3ef53b6d90f7b6a5ae4f7a
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411282"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56122093"
 ---
 # <a name="planning-considerations-for-automating-tasks-in-configuration-manager"></a>Considerações de planejamento para automatizar tarefas no Gerenciador de Configurações
 

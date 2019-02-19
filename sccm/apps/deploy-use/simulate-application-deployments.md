@@ -10,18 +10,19 @@ ms.assetid: 28b240a4-d358-40ce-8006-c697b1622ece
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: bd2f4f24a9bc22daac5b5c6e785ff2ea5d02f49a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 89283226a067ff3e0bd232c33ab1cfe5d9240fb5
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333069"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56130013"
 ---
 # <a name="simulate-application-deployments-with-system-center-configuration-manager"></a>Simular implantações de aplicativos com o System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-É possível usar implantações simuladas para testar a implantação de aplicativo sem instalar ou desinstalar o aplicativo. Uma implantação simulada avalia o método de detecção, os requisitos e as dependências para um tipo de implantação. Ela reporta os resultados no nó **Implantações** do espaço de trabalho **Monitoramento**. Use o procedimento nesse tópico para simular uma implantação de aplicativo no System Center Configuration Manager (Configuration Manager).  
+É possível usar implantações simuladas para testar a implantação de aplicativo sem instalar ou desinstalar o aplicativo. Uma implantação simulada avalia o método de detecção, os requisitos e as dependências para um tipo de implantação. Ela reporta os resultados no nó **Implantações** do workspace **Monitoramento**. Use o procedimento nesse tópico para simular uma implantação de aplicativo no System Center Configuration Manager (Configuration Manager).  
 
 > [!NOTE]  
 > Você não pode usar implantações simuladas para coleções de dispositivos móveis.  
@@ -49,4 +50,4 @@ ms.locfileid: "32333069"
 
 4.  Clique em **Avançar**, examine as informações na página **Resumo** e, então, conclua o assistente para criar a implantação de aplicativo simulado.  
 
-5.  Aplicativos simulados aparecem no nó **Implantações** do espaço de trabalho **Monitoramento** com uma finalidade de **Simular**. Para obter mais informações sobre como monitorar implantações de aplicativos, consulte [Monitorar aplicativos do console do System Center Configuration Manager](../../apps/deploy-use/monitor-applications-from-the-console.md).  
+5.  Aplicativos simulados aparecem no nó **Implantações** do workspace **Monitoramento** com uma finalidade de **Simular**. Para obter mais informações sobre como monitorar implantações de aplicativos, consulte [Monitorar aplicativos do console do System Center Configuration Manager](../../apps/deploy-use/monitor-applications-from-the-console.md).  

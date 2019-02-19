@@ -10,20 +10,21 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 69fd77df25465910776eb413601efef5d87842aa
-ms.sourcegitcommit: 4317bd20050f582a068d0a813e71c449d655e4b4
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c48e7fdd2826af942cc94017d58614760f61545d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55971890"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56136976"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Visualização técnica para o Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Visualização Técnica)*
+*Aplica-se a: System Center Configuration Manager (Technical Preview)*
 
 Este artigo fornece detalhes sobre o branch de visualização técnica mensal do Configuration Manager. A visualização técnica introduz uma nova funcionalidade na qual a Microsoft tem trabalhado. Ele introduz novos recursos que ainda não estão incluídos no branch atual do Configuration Manager. Eventualmente, esses recursos poderão ser incluídos em uma atualização do branch atual. Antes de finalizarmos os recursos, queremos que você os experimente e dê sua opinião.  
 
-Como esta versão é de visualização técnica, os detalhes e funcionalidades estão sujeitos a alterações.  
+Como esta versão é technical preview, os detalhes e funcionalidades estão sujeitos a alterações.  
 
 Essas informações se aplicam a todas as versões do branch da visualização técnica do Configuration Manager. Este artigo lista cada novo recurso juntamente com a versão da visualização técnica na qual ele aparece pela primeira vez. Por exemplo, a versão **1901** de janeiro (01) de 2019 (19). Os artigos separados dedicados a cada detalhe da versão prévia detalham recursos individuais.  
 
@@ -48,7 +49,7 @@ Para a maioria dos pré-requisitos do produto, use as informações contidas nas
 
 -   O ponto de conexão de serviço deve ser instalado no modo online. Ele não é compatível com o modo offline.  
 
--   Os artigos separados para cada versão específica da visualização técnica incluem requisitos ou limitações adicionais, conforme aplicável.
+-   Os artigos separados para cada versão específica do technical preview incluem requisitos ou limitações adicionais, conforme aplicável.
 
 -   Os recursos a seguir não são compatíveis com o branch da visualização técnica:  
 
@@ -95,7 +96,7 @@ Primeiro, é necessário instalar uma versão de linha de base do branch da visu
 A Microsoft oferece suporte a todas as versões da visualização técnica até que três versões sucessivas estejam disponíveis. Por exemplo, quando a versão 1708 foi liberada, a versão 1704 deixou de ter suporte. As versões 1705, 1706 e 1707 permaneceram com suporte. Quando uma linha de base fica sem suporte, ainda há suporte para a instalação um novo site da visualização técnica desde que você atualize imediatamente para uma versão com suporte. A linha de base mais antiga terá suporte até que uma nova versão de linha de base esteja disponível. Atualize para a versão mais recente disponível na linha de base e repita o processo de atualização até instalar a versão mais recente da visualização técnica.
 
 > [!TIP]  
->  Quando você instala uma atualização da Visualização Técnica, atualiza a instalação da versão prévia para essa nova versão da Visualização Técnica. Uma instalação da visualização técnica nunca tem a opção de upgrade para uma instalação de branch atual. Ela também não recebe atualizações da versão de branch atual. 
+>  Quando você instala uma atualização do Technical Preview, atualiza a instalação da versão prévia para essa nova versão de Technical Preview. Uma instalação da visualização técnica nunca tem a opção de upgrade para uma instalação de branch atual. Ela também não recebe atualizações da versão de branch atual. 
 > 
 > Diversas vezes ao longo do ano, são disponibilizadas versões do branch da visualização técnica e do branch atual com o mesmo número de versão. Por exemplo, há um visualização técnica versão 1802 e um branch atual versão 1802. 
 
@@ -104,7 +105,7 @@ A Microsoft oferece suporte a todas as versões da visualização técnica até 
    
 Instale uma versão de linha de base em até um ano após seu lançamento. Quando você instala um novo site da visualização técnica, se mais de uma versão de linha de base estiver disponível no momento, use a versão de linha de base mais recente.
 
--  **Visualização Técnica versão 1810.2**: A visualização técnica do Configuration Manager versão 1810.2 está disponível como uma atualização no console e como uma nova versão de linha de base. Baixe as versões de linha de base do [Centro de Avaliação do TechNet](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
+-  **Technical Preview versão 1810.2**: O Configuration Manager Technical Preview versão 1810.2 está disponível como uma atualização no console e como uma nova versão de linha de base. Baixe as versões de linha de base do [Centro de Avaliação do TechNet](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
 
 
 
@@ -174,16 +175,16 @@ Then remove the bottom of this list and/or move individual items not in CB to th
  | Interromper o serviço de nuvem quando ele exceder o limite <!--3735092--> | [Visualização Técnica 1901](/sccm/core/get-started/2019/technical-preview-1901#bkmk_cmg) | ![Não foi adicionado](media/Red_X.gif) | 
  | Tempo limite do modo de provisionamento de cliente <!--3197824--> | [Visualização Técnica 1901](/sccm/core/get-started/2019/technical-preview-1901#bkmk_osdprov) | ![Não foi adicionado](media/Red_X.gif) | 
  | Melhorias na implantação do sistema operacional <!--3633146,3641475,3654172,3734270--> | [Visualização Técnica 1901](/sccm/core/get-started/2019/technical-preview-1901#bkmk_osd) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhorias na etapa da sequência de tarefas Executar Script do PowerShell <!--3556028 fka 1359389--> | [Visualização Técnica 1812](capabilities-in-technical-preview-1812.md#bkmk_posh) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhorias nas aprovações de aplicativo por email <!--3594063--> | [Visualização Técnica 1812](capabilities-in-technical-preview-1812.md#bkmk_email) | ![Não foi adicionado](media/Red_X.gif) | 
- | Configurar a afinidade de dispositivo de usuário no Centro de Software <!--3485366--> | [Visualização Técnica 1812](capabilities-in-technical-preview-1812.md#bkmk_uda) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhorias no console do Configuration Manager <!--3594151--> | [Visualização Técnica 1812](capabilities-in-technical-preview-1812.md#bkmk_console) | ![Não foi adicionado](media/Red_X.gif) | 
- | Baixar os relatórios do Hub de Comunidade<!--3555936--> | [Visualização Técnica 1812](capabilities-in-technical-preview-1812.md#bkmk_hub) | ![Não foi adicionado](media/Red_X.gif) | 
- | Não carregar perfis do Windows PowerShell <!--1359239--> | [Visualização Técnica 1811](capabilities-in-technical-preview-1811.md#bkmk_noprofile) | ![Não foi adicionado](media/Red_X.gif) | 
- | Uma conexão do Intune não é mais necessária para o MDM local <!--1359124--> | [Visualização Técnica 1811](capabilities-in-technical-preview-1811.md#bkmk_opmdm) | ![Não foi adicionado](media/Red_X.gif) | 
- | Notificações do console do Configuration Manager <!--1318035--> | [Visualização Técnica 1811](capabilities-in-technical-preview-1811.md#bkmk_notify) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhorias na criação de mídia da sequência de tarefas <!--1359388--> | [Visualização Técnica 1811](capabilities-in-technical-preview-1811.md#bkmk_tsmedia) | ![Não foi adicionado](media/Red_X.gif) | 
- | Melhoria para à etapa de sequência de tarefas de Executar Script do PowerShell <!--1359389--> | [Visualização Técnica 1811](capabilities-in-technical-preview-1811.md#bkmk_posh) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Melhorias na etapa da sequência de tarefas Executar Script do PowerShell <!--3556028 fka 1359389--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_posh) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Melhorias nas aprovações de aplicativo por email <!--3594063--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_email) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Configurar a afinidade de dispositivo de usuário no Centro de Software <!--3485366--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_uda) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Melhorias no console do Configuration Manager <!--3594151--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_console) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Baixar os relatórios do Hub de Comunidade<!--3555936--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_hub) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Não carregar perfis do Windows PowerShell <!--1359239--> | [Tech Preview 1811](capabilities-in-technical-preview-1811.md#bkmk_noprofile) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Uma conexão do Intune não é mais necessária para o MDM local <!--1359124--> | [Tech Preview 1811](capabilities-in-technical-preview-1811.md#bkmk_opmdm) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Notificações do console do Configuration Manager <!--1318035--> | [Tech Preview 1811](capabilities-in-technical-preview-1811.md#bkmk_notify) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Melhorias na criação de mídia da sequência de tarefas <!--1359388--> | [Tech Preview 1811](capabilities-in-technical-preview-1811.md#bkmk_tsmedia) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Melhoria para à etapa de sequência de tarefas de Executar Script do PowerShell <!--1359389--> | [Tech Preview 1811](capabilities-in-technical-preview-1811.md#bkmk_posh) | ![Não foi adicionado](media/Red_X.gif) | 
 
 
 
@@ -202,12 +203,12 @@ With each CB release, review and remove from this list for anything that's now a
 | Painel de documentação no console <!--1357546--> | [Visualização técnica 1810](capabilities-in-technical-preview-1810.md#bkmk_doc-dashboard) | 
 | Hub de Comunidade <!--1357766--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_hub) | 
 | Atividade de sincronização de dispositivo cogerenciados com o Intune <!--1358565--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_comgmt) | 
-| Serviço de respondente PXE baseado no cliente <!--1357148--> | [Visualização Técnica 1712](capabilities-in-technical-preview-1712.md#client-based-pxe-responder-service) |
+| Serviço de respondente PXE baseado no cliente <!--1357148--> | [Tech Preview 1712](capabilities-in-technical-preview-1712.md#client-based-pxe-responder-service) |
 | Suporte de inicialização de rede PXE para IPv6 <!--1269793--> |[Visualização Técnica 1706](capabilities-in-technical-preview-1706.md#pxe-network-boot-support-for-ipv6)|
-| Usar o Azure Active Directory <!--1322145--> | [Visualização Técnica 1702](capabilities-in-technical-preview-1702.md#azurediscovery) |
-| Avaliação de conformidade para atualizações do Windows Update para Empresas <!--1235390--> | [Visualização Técnica 1702](capabilities-in-technical-preview-1702.md#compliance-assessment-for-windows-update-for-business-updates) |
-| Melhorias no Asset Intelligence <!--1307390--> | [Visualização Técnica 1608](capabilities-in-technical-preview-1608.md#improvements-to-asset-intelligence) |
-| Os usuários finais podem instalar aplicativos por meio do Portal da Empresa <!--1037233?--> | [Visualização Técnica 1605](capabilities-in-technical-preview-1605.md#BKMK_End) |
+| Usar o Azure Active Directory <!--1322145--> | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#azurediscovery) |
+| Avaliação de conformidade para atualizações do Windows Update para Empresas <!--1235390--> | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#compliance-assessment-for-windows-update-for-business-updates) |
+| Melhorias no Asset Intelligence <!--1307390--> | [Tech Preview 1608](capabilities-in-technical-preview-1608.md#improvements-to-asset-intelligence) |
+| Os usuários finais podem instalar aplicativos por meio do Portal da Empresa <!--1037233?--> | [Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_End) |
 
 
 

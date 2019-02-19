@@ -10,12 +10,13 @@ ms.assetid: ceff72f5-f19d-43a0-a8c0-72f1c09b9bf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1c37ff5a794aa830c60de06054014ec942a4a44b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 057058aff3a5b34d59da743160ae786737515b73
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337098"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56125918"
 ---
 # <a name="manage-content-and-content-infrastructure-for-system-center-configuration-manager"></a>Gerenciar conteúdo e infraestrutura de conteúdo do System Center Configuration Manager
 

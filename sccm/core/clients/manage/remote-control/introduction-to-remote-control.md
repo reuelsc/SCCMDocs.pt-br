@@ -10,12 +10,13 @@ ms.assetid: 29350919-6a25-446b-a0da-05e8914fbb26
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6a6f6ea0d68a8ba8d2db20bd8a77d5e480314150
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b2f9744db8722686d10ad098b186c3972b570cfc
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32331957"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129282"
 ---
 # <a name="introduction-to-remote-control-in-system-center-configuration-manager"></a>Introdução ao controle remoto no System Center Configuration Manager
 

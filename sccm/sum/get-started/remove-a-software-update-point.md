@@ -10,12 +10,13 @@ ms.technology: configmgr-sum
 ms.assetid: 2486375c-d4a2-4cf2-9124-9bee02bbf173
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 585077c44b13d79da55e8ab140fd93998b8371c1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c7ab7e28d576bb543fa47f86ad4363e9cffd53e0
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353562"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56138000"
 ---
 #  <a name="BKMK_RemoveSUP"></a> Remover a função do sistema de sites do ponto de atualização de software  
 
@@ -32,7 +33,7 @@ Você pode remover a função do sistema de sites do ponto de atualização de s
 
 1.  No console do **Configuration Manager** , clique em **Administração**.  
 
-2.  No espaço de trabalho Administração, expanda **Configuração do Site**e clique em **Funções de Servidores e Sistema de Site**.  
+2.  No workspace Administração, expanda **Configuração do Site** e clique em **Funções de Servidores e Sistema de Site**.  
 
 3.  Selecione o servidor do sistema de site com o ponto de atualização de software a remover e em **Funções do Sistema de Site**, selecione **Ponto de atualização de software**.  
 

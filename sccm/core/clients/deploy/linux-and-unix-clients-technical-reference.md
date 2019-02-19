@@ -10,12 +10,13 @@ ms.assetid: e5a8c79f-5791-49c5-8055-086d742e5559
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3e66708471b22346901e8ee16e63dd962b699a16
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 2ecd5b3ad493f4916b475aea69b4db241f7ff74b
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344731"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56132843"
 ---
 # <a name="linux-and-unix-clients-component-services-and-commands-for-system-center-configuration-manager"></a>Serviços e comandos de componentes de cliente Linux e UNIX para o System Center Configuration Manager
 

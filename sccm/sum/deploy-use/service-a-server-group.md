@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 304a83ea-0f72-437d-9688-2e6e0c7526dd
-ms.openlocfilehash: 7c775df2446dbd0da1d9317982fc752dbfe5120a
-ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: aac5c9d6c683447fe7dda50e6dcfd52b7024656d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46533806"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56131635"
 ---
 # <a name="service-a-server-group"></a>Realização de serviços em um grupo de servidores
 
@@ -35,17 +36,17 @@ Quando você implanta atualizações de software em uma coleção que tem config
 As configurações do grupo do servidores são definidas nas propriedades de uma coleção de dispositivos. Para realizar serviços em um grupo de servidores, todos os membros da coleção devem ser atribuídos ao mesmo site. Use as etapas a seguir para criar uma coleção e definir as configurações do grupo de servidores:
 1.  [Crie uma coleção de dispositivos](../../core/clients/manage/collections/create-collections.md) que contém os computadores do grupo de servidores.  
 
-2.  No espaço de trabalho **Ativos e Conformidade**, clique em **Coleções de Dispositivos**, clique com o botão direito do mouse na coleção que contém os computadores do grupo de servidores e clique em **Propriedades**.  
+2.  No workspace **Ativos e Conformidade**, clique em **Coleções de Dispositivos**, clique com o botão direito do mouse na coleção que contém os computadores do grupo de servidores e clique em **Propriedades**.  
 
 3.  Na guia **Geral**, selecione **Todos os dispositivos fazem parte do mesmo grupo de servidores** e clique em **Configurações**.  
 
 4.  Na página **Configurações do Grupo de Servidor**, especifique uma das seguintes configurações:  
 
-    -   **Allow a percentage of machines to be updated at the same time (Permitir que um percentual de computadores seja atualizado ao mesmo tempo)**: especifica que somente um determinado percentual dos clientes serão atualizados a qualquer dado momento. Se, por exemplo, a coleção tiver 10 clientes e for configurada para atualizar 30% dos clientes ao mesmo tempo, apenas três clientes instalarão atualizações de software a qualquer momento.  
+    -   **Permitir que um percentual dos computadores seja atualizado ao mesmo tempo**: Especifica que apenas um determinado percentual de clientes seja atualizado a qualquer momento. Se, por exemplo, a coleção tiver 10 clientes e for configurada para atualizar 30% dos clientes ao mesmo tempo, apenas três clientes instalarão atualizações de software a qualquer momento.  
 
-    -   **Allow a number of machines to be updated at the same time (Permitir que um número de computadores seja atualizado ao mesmo tempo)**: especifica que somente um determinado número dos clientes será atualizado a qualquer dado momento.  
+    -   **Permitir que vários computadores sejam atualizados ao mesmo tempo**: Especifica que apenas um determinado número de clientes seja atualizado a qualquer momento.  
 
-    -   **Especifique a sequência de manutenção**: especifica que os clientes na coleção serão atualizados um de cada vez na sequência que você configurar. Um cliente instalará atualizações de software apenas depois que o cliente que está à sua frente na lista terminar de instalar atualizações de software.  
+    -   **Especificar a sequência de manutenção**: especifica que os clientes na coleção serão atualizados um de cada vez na sequência que você configurar. Um cliente instalará atualizações de software apenas depois que o cliente que está à sua frente na lista terminar de instalar atualizações de software.  
 
 5.  Especifique se deseja usar um script de pré-implantação (drenagem de nó) ou pós-implantação (retomada de nó).  
 
@@ -84,6 +85,6 @@ Implante atualizações de software na coleção do grupo de servidores usando o
 
 ## <a name="clear-the-deployment-locks-for-computers-in-a-server-group"></a>Limpe os bloqueios de implantação para computadores em um grupo de servidores  
 Quando um computador falha ao liberar um bloqueio de implantação, você pode liberar manualmente todos os bloqueios de implantação do grupo de servidores para a coleção. Limpe os bloqueios somente quando uma implantação ficar presa atualizando computadores da coleção e houver computadores que ainda não são compatíveis.  
-1.  No espaço de trabalho **Ativos e Conformidade**, clique em **Coleções de Dispositivos** e clique na coleção para limpar os bloqueios de implantação.  
+1.  No workspace **Ativos e Conformidade**, clique em **Coleções de Dispositivos** e clique na coleção para limpar os bloqueios de implantação.  
 
 2.  Na guia **Início**, no grupo **Implantação**, clique em **Limpar Bloqueios de Implantação de Grupo de Servidores**. Quando os clientes não conseguem instalar as atualizações de software e impedem que outros clientes instale suas atualizações de software, os bloqueios de implantação podem ser removidos manualmente.  

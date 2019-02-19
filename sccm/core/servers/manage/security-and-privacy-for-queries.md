@@ -10,12 +10,13 @@ ms.assetid: 30080620-20d3-4c38-b8dd-db5516e1acae
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 2d84385782df17d4019d6de65bcc7006aeab8b24
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 7cdd9731b2ae34e096159b9e73c730fcbd7ac728
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337608"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56121525"
 ---
 # <a name="security-and-privacy-for-queries-in-system-center-configuration-manager"></a>Segurança e privacidade de consultas no System Center Configuration Manager
 

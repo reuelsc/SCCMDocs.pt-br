@@ -10,12 +10,13 @@ ms.assetid: d39c201f-d364-4e7b-bde4-faa76d747f33
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a8d1d0a727f0a4ad4a2bfc25141f7e2982494080
-ms.sourcegitcommit: b596d944e49f3c4912c6ca91915ed1418c17a1a2
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 35bfd908864ee77c19821ce02ab62c03523fae37
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42584826"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56126939"
 ---
 # <a name="install-the-system-center-configuration-manager-console"></a>Instalar o console do System Center Configuration Manager
 
@@ -85,7 +86,7 @@ Os administradores usam o console do Configuration Manager para gerenciar o ambi
   |/uninstall|Desinstala o console do Configuration Manager. Especifique essa opção primeiro ao usá-la com a opção **/q**.|  
   |LangPackDir|Especifica o caminho para a pasta que contém os arquivos de idioma. Você pode usar o **Downloader de Instalação** para baixar os arquivos de idioma. Se você não usar esta opção, o programa de instalação procurará a pasta de idioma na pasta atual. Se a pasta de idioma não for encontrada, o programa de instalação continuará instalando somente o idioma inglês. Para obter mais informações, consulte [Downloader de Instalação](setup-downloader.md).|  
   |TargetDir|Especifica a pasta de instalação para instalar o console do Configuration Manager. Essa opção é necessária ao usar a opção **/q** .|  
-  |EnableSQM|Especifica se deve associar-se o CEIP (Programa de Aperfeiçoamento da experiência do Usuário). Use um valor de **1** para ingressar no Programa de Aperfeiçoamento da Experiência do Usuário e um valor de **0** para não ingressar no programa. Essa opção é necessária ao usar a opção **/q** .</br></br>Observação: a partir do Configuration Manager versão 1802, o recurso Programa de Aperfeiçoamento da Experiência do Usuário é removido do produto.  Usar o parâmetro causará falha na instalação.|  
+  |EnableSQM|Especifica se deve associar-se o CEIP (Programa de Aperfeiçoamento da experiência do Usuário). Use um valor de **1** para ingressar no Programa de Aperfeiçoamento da Experiência do Usuário e um valor de **0** para não ingressar no programa. Essa opção é necessária ao usar a opção **/q** .</br></br>Observação: A partir do Configuration Manager versão 1802, o recurso Programa de Aperfeiçoamento da Experiência do Usuário é removido do produto.  Usar o parâmetro causará falha na instalação.|  
   |DefaultSiteServerName|Especifica o FQDN do servidor do site ao qual o console se conecta quando ele é aberto. Essa opção é necessária ao usar a opção **/q** .|  
 
 

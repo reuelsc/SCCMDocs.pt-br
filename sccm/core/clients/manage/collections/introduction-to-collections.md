@@ -10,12 +10,13 @@ ms.assetid: d17e1188-d277-438f-9236-db9cd213b421
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 48a0788d83ffcd7a373f5f73ee675b62508a6d86
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b9b995d0abfc3f14dce35e0aec70ac25b2ca2853
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333579"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56138935"
 ---
 # <a name="introduction-to-collections-in-system-center-configuration-manager"></a>Introdução às coleções no System Center Configuration Manager
 
@@ -25,9 +26,9 @@ As coleções ajudam você o a organizar recursos em unidades gerenciáveis. Voc
 
 A maioria das tarefas de gerenciamento depende do uso de uma ou mais coleções. Embora você possa usar a coleção interna de Todos os sistemas, o uso dessa coleção para tarefas de gerenciamento não é uma prática recomendada. Crie coleções personalizadas para identificar mais especificamente os dispositivos ou os usuários para uma tarefa.  
 
- As coleções internas e personalizadas são exibidas nos nós **Coleções de Usuários** e **Coleções de Dispositivos**, no espaço de trabalho **Ativos e Conformidade**, no console do Configuration Manager.  
+ As coleções internas e personalizadas são exibidas nos nós **Coleções de Usuários** e **Coleções de Dispositivos**, no workspace **Ativos e Conformidade**, no console do Configuration Manager.  
 
- As coleções que você exibiu recentemente aparecem no nó **Usuários** e no nó **Dispositivos**, no espaço de trabalho **Ativos e Conformidade**.  
+ As coleções que você exibiu recentemente aparecem no nó **Usuários** e no nó **Dispositivos**, no workspace **Ativos e Conformidade**.  
 
 Aqui estão alguns exemplos do uso de coleção:  
 

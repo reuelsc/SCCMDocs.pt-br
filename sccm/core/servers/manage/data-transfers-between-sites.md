@@ -10,12 +10,13 @@ ms.assetid: dc526e8d-fac3-4bb5-b206-03ad29b0ae11
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 45fb1bc31a7e888ca4caa21a710e74ec0fde422c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 39ae7c931b2d69199dc2c24cbb1bf9ae804a04b4
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341858"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56123181"
 ---
 # <a name="data-transfers-between-sites-in-system-center-configuration-manager"></a>Transferência de dados entre sites no System Center Configuration Manager
 
@@ -54,7 +55,7 @@ Você pode alterar as seguintes configurações para rotas de replicação de ar
 
 -  Você pode configurar uma rota de replicação de arquivo entre dois sites secundários para o conteúdo baseado em arquivo de rota entre esses sites.  
 
-Para gerenciar uma rota de replicação de arquivo, no espaço de trabalho **Administração**, expanda o nó **Configuração da Hierarquia** e selecione **Replicação de Arquivo**.  
+Para gerenciar uma rota de replicação de arquivo, no workspace **Administração**, expanda o nó **Configuração da Hierarquia** e selecione **Replicação de Arquivo**.  
 
 #### <a name="sender"></a>Remetente
 
@@ -68,7 +69,7 @@ Por padrão, o remetente grava dados em um site de destino, utilizando vários *
 
 -  **Configurações de repetição**. Por padrão, cada site repete um problema de conexão duas vezes com um atraso de um minuto entre as tentativas de conexão. Você pode modificar o número de tentativas de conexão que o site faz e o tempo de espera entre as tentativas.  
 
-Para gerenciar o remetente de um site, no espaço de trabalho **Administração**, expanda o nó **Configuração do Site**, selecione o nó **Sites** e selecione **Propriedades** para o site que deseja gerenciar. Selecione a guia **Remetente** para alterar as configurações de remetente.  
+Para gerenciar o remetente de um site, no workspace **Administração**, expanda o nó **Configuração do Site**, selecione o nó **Sites** e selecione **Propriedades** para o site que deseja gerenciar. Selecione a guia **Remetente** para alterar as configurações de remetente.  
 
 ## <a name="bkmk_dbrep"></a> Database replication  
 A replicação de banco de dados do Configuration Manager usa o SQL Server para transferir dados e mesclar as alterações feitas em um banco de dados do site com as informações armazenadas no banco de dados em outros sites na hierarquia. Observe o seguinte sobre a replicação de banco de dados:
@@ -115,10 +116,10 @@ Você pode alterar as configurações para cada link de replicação de banco de
 -  Especificar quando gerar alertas para um link de replicação com falha.
 -  Especifique com que frequência o Configuration Manager resume dados sobre o tráfego de replicação que utiliza o link de replicação. Esses dados são usados em relatórios.
 
-Para configurar um link de replicação de banco de dados, no console do Configuration Manager, no nó **Replicação de Banco de Dados**, edite as propriedades do link. Esse nó aparece no espaço de trabalho **Monitoramento** e no espaço de trabalho **Administração**, no nó **Configuração da Hierarquia**. Você pode editar um link de replicação do pai site ou do site filho do link de replicação.  
+Para configurar um link de replicação de banco de dados, no console do Configuration Manager, no nó **Replicação de Banco de Dados**, edite as propriedades do link. Esse nó aparece no workspace **Monitoramento** e no workspace **Administração**, no nó **Configuração da Hierarquia**. Você pode editar um link de replicação do pai site ou do site filho do link de replicação.  
 
 > [!TIP]  
-> Você pode editar links de replicação de banco de dados no nó **Replicação do Banco de Dados** em qualquer um dos espaços de trabalho. No entanto, quando você usa o nó **Replicação do Banco de Dados** no espaço de trabalho **Monitoramento** também pode exibir o status de replicação de banco de dados dos links de replicação e acessar a ferramenta Replication Link Analyzer para ajudar a investigar problemas com a replicação.  
+> Você pode editar links de replicação de banco de dados no nó **Replicação do Banco de Dados** em qualquer um dos workspaces. No entanto, quando você usa o nó **Replicação do Banco de Dados** no workspace **Monitoramento** também pode exibir o status de replicação de banco de dados dos links de replicação e acessar a ferramenta Replication Link Analyzer para ajudar a investigar problemas com a replicação.  
 
 Para obter informações sobre como configurar os links de replicação, consulte [Controles de replicação de banco de dados do site](#BKMK_DBRepControls). Para obter mais informações sobre como monitorar a replicação, consulte a [Como monitorar o status de replicação e links de replicação de banco de dados](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_MonitorRepLinksAndStatuss) no tópico [Monitorar a infraestrutura de hierarquia e de replicação no System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md).  
 
@@ -182,7 +183,7 @@ Limites de replicação de banco de dados definem quando o status de um vínculo
 
 Como é possível que um ou alguns grupos de replicação não repliquem enquanto outros grupos de replicação continuam a replicar com êxito, planeje examinar o status de replicação de um link de replicação quando ele informar pela primeira vez um status degradado. Se houver atrasos recorrentes para grupos de replicação específicos e esse atraso não apresentar problema, ou onde o link de rede entre os sites tiver baixa largura de banda disponível, considere modificar os valores de repetição para os status degradado ou com falha do link. Ao aumentar o número de tentativas antes que o link seja definido como degradado ou com falha, você pode eliminar falsos alertas para problemas conhecidos e acompanhar o status do link de forma mais precisa.  
 
-Além disso, considere o intervalo de sincronização da replicação para cada grupo de replicação para entender com que frequência a replicação do grupo ocorre. Para exibir o **Intervalo de Sincronização** para grupos de replicação, no espaço de trabalho **Monitoramento**, no nó **Replicação de Banco de Dados**, selecione a guia **Detalhe da Replicação** de um link de replicação.  
+Além disso, considere o intervalo de sincronização da replicação para cada grupo de replicação para entender com que frequência a replicação do grupo ocorre. Para exibir o **Intervalo de Sincronização** para grupos de replicação, no workspace **Monitoramento**, no nó **Replicação de Banco de Dados**, selecione a guia **Detalhe da Replicação** de um link de replicação.  
 
 Para obter mais informações sobre como monitorar a replicação de banco de dados, incluindo como exibir o status da replicação, consulte a [Como monitorar o status de replicação e links de replicação de banco de dados](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_MonitorRepLinksAndStatuss) no tópico [Monitorar a infraestrutura de hierarquia e de replicação no System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md).  
 
@@ -197,7 +198,7 @@ Os itens a seguir são controles de replicação que você pode modificar para c
 -  Configurar o período de tempo de espera antes que as falhas de replicação acionem o site para reinicializar sua cópia de banco de dados do site.  
 -  Configurar um banco de dados do site para compactar os dados que ele replica pela replicação de banco de dados. Os dados são compactados apenas para a transferência entre sites, e não para o armazenamento no banco de dados do site em qualquer um dos sites.  
 
-Para alterar as configurações para os controles de replicação para um banco de dados de site, no console do Configuration Manager, no nó **Replicação de Banco de Dados**, edite as propriedades do banco de dados de site. Esse nó aparece no nó **Configuração da Hierarquia** , no espaço de trabalho **Administração** , e também é exibido no **Espaço de Trabalho de Monitoramento**. Para editar as propriedades do banco de dados do site, selecione o vínculo de replicação entre sites e depois abra **Propriedades de Banco de Dados Pai** ou **Propriedades de Banco de Dados Filho**.  
+Para alterar as configurações para os controles de replicação para um banco de dados de site, no console do Configuration Manager, no nó **Replicação de Banco de Dados**, edite as propriedades do banco de dados de site. Esse nó aparece no nó **Configuração da Hierarquia**, no workspace **Administração**, e também é exibido no **Workspace de Monitoramento**. Para editar as propriedades do banco de dados do site, selecione o vínculo de replicação entre sites e depois abra **Propriedades de Banco de Dados Pai** ou **Propriedades de Banco de Dados Filho**.  
 
 > [!TIP]  
-> Você pode configurar controles de replicação de banco de dados no nó **Replicação do Banco de Dados** em qualquer um dos espaços de trabalho. No entanto, quando você usa o nó **Replicação do Banco de Dados** no espaço de trabalho **Monitoramento** você também pode exibir o status de replicação de banco de dados de um vínculo de replicação e acessar a ferramenta Replication Link Analyzer para ajudar a investigar problemas com a replicação.  
+> Você pode configurar controles de replicação de banco de dados no nó **Replicação do Banco de Dados** em qualquer um dos workspaces. No entanto, quando você usa o nó **Replicação do Banco de Dados** no workspace **Monitoramento** você também pode exibir o status de replicação de banco de dados de um vínculo de replicação e acessar a ferramenta Replication Link Analyzer para ajudar a investigar problemas com a replicação.  

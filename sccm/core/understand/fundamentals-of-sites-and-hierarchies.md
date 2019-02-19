@@ -10,12 +10,13 @@ ms.assetid: 4db1e15f-e832-4cf9-be33-d3971e635a55
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dbd87268c1572f53fcc86d5f2dc93537ad759260
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 00465c431ded49c3833b19a3efd1da05ad1c388d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339274"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56124629"
 ---
 # <a name="fundamentals-of-sites-and-hierarchies-for-system-center-configuration-manager"></a>Conceitos básicos de sites e hierarquias do System Center Configuration Manager
 

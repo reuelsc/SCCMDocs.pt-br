@@ -10,12 +10,13 @@ ms.assetid: f4854b50-2e8c-414c-a872-9579554dca98
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b9bdffc9271b1e59bbe459dffc0e3c69578a4711
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 2b93672c951668a4ea3b9970c0fd22132ec5aa8b
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32332657"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56128312"
 ---
 # <a name="plan-to-complete-migration-in-system-center-configuration-manager"></a>Planejamento da conclusão da migração no System Center Configuration Manager
 
@@ -53,4 +54,4 @@ Para mais informações sobre sites de origem e coleta de dados, consulte [Plane
 ##  <a name="Plan_to_clean_up"></a> Planejar a limpeza dos dados de migração  
  A última etapa necessária para concluir a migração é limpar os dados de migração. É possível usar o comando **Limpar Dados de Migração** depois de interromper a coleta de dados de cada site de origem na hierarquia de origem. Essa ação opcional remove dados sobre a hierarquia de origem atual do banco de dados da hierarquia de destino.  
 
- Quando você limpa dados de migração, a maior parte dos dados é removida do banco de dados da hierarquia de destino. No entanto, detalhes sobre os objetos migrados são mantidos. Com esses detalhes, você pode usar o espaço de trabalho **Migração** para reconfigurar a hierarquia de origem que contém os dados que foram migrados para retomar a migração daquela hierarquia de origem ou examinar objetos ou a propriedade do site dos objetos migrados anteriormente.  
+ Quando você limpa dados de migração, a maior parte dos dados é removida do banco de dados da hierarquia de destino. No entanto, detalhes sobre os objetos migrados são mantidos. Com esses detalhes, você pode usar o workspace **Migração** para reconfigurar a hierarquia de origem que contém os dados que foram migrados para retomar a migração daquela hierarquia de origem ou examinar objetos ou a propriedade do site dos objetos migrados anteriormente.  

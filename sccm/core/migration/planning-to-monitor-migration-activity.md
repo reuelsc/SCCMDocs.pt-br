@@ -10,23 +10,24 @@ ms.assetid: fc731d3f-edd7-4049-b17b-653d6693a564
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2dfad7c9963862ff90934861973bf3862d745b98
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5588afeb02ead302201cc99c8c2ad7558ec4b32e
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333120"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56134775"
 ---
 # <a name="planning-to-monitor-migration-activity-in-system-center-configuration-manager"></a>Planejamento do monitoramento da atividade de migração no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Com o System Center Configuration Manager, você pode monitorar a migração no console do Configuration Manager que se conecta à hierarquia de destino. No console do Configuration Manager, no espaço de trabalho **Administração**, é possível usar o nó **Migração** para monitorar o progresso e o sucesso dos trabalhos de migração. É possível exibir informações de resumo para cada trabalho de migração que identifique objetos que migraram, objetos que ainda não foram migrados e o número de objetos excluídos de um trabalho de migração. Você também verá detalhes sobre problemas de migração.  
+Com o System Center Configuration Manager, você pode monitorar a migração no console do Configuration Manager que se conecta à hierarquia de destino. No console do Configuration Manager, no workspace **Administração**, é possível usar o nó **Migração** para monitorar o progresso e o sucesso dos trabalhos de migração. É possível exibir informações de resumo para cada trabalho de migração que identifique objetos que migraram, objetos que ainda não foram migrados e o número de objetos excluídos de um trabalho de migração. Você também verá detalhes sobre problemas de migração.  
 
 ## <a name="view-migration-progress"></a>Exibir andamento da migração  
  Para exibir o andamento de um trabalho de migração, execute uma das seguintes ações:  
 
--   No espaço de trabalho **Administração** do console do Configuration Manager, expanda o nó **Trabalhos de Migração**, selecione um trabalho de migração e selecione a guia **Objetos no Trabalho**.  
+-   No workspace **Administração** do console do Configuration Manager, expanda o nó **Trabalhos de Migração**, selecione um trabalho de migração e selecione a guia **Objetos no Trabalho**.  
 
 -   Use os arquivos de log do Configuration Manager para examinar o andamento da migração ou para identificar problemas. O Gerenciador de Migração é o processo do Configuration Manager que controla as ações de migração e as registra no arquivo migmctrl.log, na pasta **\&lt;CaminhoDeInstalação\>\\LOGS** do servidor do site.  
 

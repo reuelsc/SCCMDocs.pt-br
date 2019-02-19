@@ -10,12 +10,13 @@ ms.assetid: 16acfd63-0c40-424c-82f4-8c63f7f1c30b
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 6374fa186ab13f3288e218e6670da3ea4ff10f4e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a76ce199b84db200ed023d610f40dbf6f9f989c2
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32332416"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120858"
 ---
 # <a name="create-windows-embedded-applications-with-system-center-configuration-manager"></a>Criar aplicativos do Windows Embedded com o System Center Configuration Manager
 

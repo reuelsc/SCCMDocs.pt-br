@@ -10,12 +10,13 @@ ms.assetid: 0bdcb018-bac2-4540-b786-6242bac73ff4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7b59b7414ad2095d053b1121ba936281559aa5e2
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e3280edbe900e96cf97af8e59578ceab5322ee2a
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385997"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56137289"
 ---
 # <a name="deploy-and-monitor-scap-compliance-in-configuration-manager"></a>Implantar e monitorar a conformidade do SCAP no Configuration Manager
 
@@ -53,7 +54,7 @@ Para obter mais informações, veja [Monitorar configurações de conformidade](
 
 ### <a name="validate-the-xccdfdatastream-results"></a>Validar os resultados do XCCDF/Fluxo de dados
 
-1. No console do Configuration Manager, vá para o espaço de trabalho **Ativos e Conformidade**, expanda **Configurações de Conformidade** e selecione o **Painel do SCAP**.  
+1. No console do Configuration Manager, vá para o workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade** e selecione o **Painel do SCAP**.  
 
 2. Selecione a Linha de Base de Configuração, Atribuição, Arquivo do SCAP, Fluxo de Dados, Parâmetro de Comparação e Perfil (se aplicável).  
 
@@ -125,7 +126,7 @@ Abra o prompt de comando e vá para a pasta **AdminConsole\Bin** do Configuratio
 
 #### <a name="how-to-get-the-baselineciid-and-assignmentid"></a>Como obter BaselineCIID e AssignmentID
 
-No console do Configuration Manager, vá para o espaço de trabalho **Ativos e Conformidade**, expanda **Configurações de Conformidade** e selecione **Linhas de Base de Configuração**. O `BaselineCIID` é o identificador (ID) para a linha de base de configuração.  
+No console do Configuration Manager, vá para o workspace **Ativos e Conformidade**, expanda **Configurações de Conformidade** e selecione **Linhas de Base de Configuração**. O `BaselineCIID` é o identificador (ID) para a linha de base de configuração.  
 ![Obter a ID de CI e a ID de Atribuição](./media/get-to-baselines.png)
 
 Selecione a linha de base de configuração desejada e, em seguida, clique na guia **Implantações**. O `AssignmentID` é o identificador (ID) para a implantação de linha de base de configuração para uma coleção de dispositivos. Se a ID de Atribuição não for exibida, clique com o botão direito do mouse no cabeçalho da coluna e selecione **ID da Atribuição**.  

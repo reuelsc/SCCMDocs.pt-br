@@ -10,16 +10,17 @@ ms.assetid: 600086d5-bd9e-4ac1-8ace-c7a62de80dc2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f46fdb622a55c7281de89c84d5e66e54ab149548
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e339d096b64bb35cd344e601212ae5ec1f5504ec
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339529"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56119608"
 ---
 # <a name="use-the-configuration-manager-client-software-for-extended-interoperability-with-future-versions-of-a-current-branch-site"></a>Usar o software cliente do Configuration Manager para interoperabilidade estendida com versões futuras de um site do Branch Atual
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*  
+*Aplica-se a: System Center Configuration Manager (Branch Atual)*  
 
 Os requisitos de sua empresa podem não permitir a atualização regular do cliente do Configuration Manager em alguns dispositivos. Por exemplo, talvez você precise estar em conformidade com políticas de gerenciamento de alterações, ou o dispositivo pode ser essencial. Acomode essas necessidades instalando um novo cliente para uso de longo prazo, chamado de EIC (cliente de interoperabilidade estendida). O EIC só deve ser usado para dispositivos específicos que não são atualizados com frequência, como quiosque ou dispositivos de ponto de venda. Continue a usar a [atualização automática do cliente](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#use-automatic-client-upgrade) para a maioria dos seus clientes. 
 

@@ -10,12 +10,13 @@ ms.assetid: d466edd2-97f0-44c1-a73e-d71abbdbf4a8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0f87975d660a94d04cdd7d0e10816b6e2815fe53
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 50543fdd042eb0285c070d8714cb98eec9a7629f
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342062"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129061"
 ---
 # <a name="uninstall-sites-and-hierarchies-in-system-center-configuration-manager"></a>Desinstalar sites e hierarquias no System Center Configuration Manager
 
@@ -55,7 +56,7 @@ Você não pode mover um site secundário ou reatribuir um site secundário a um
     -   Direitos Sysadmin no banco de dados de site do site secundário  
 
 2.  No console do Configuration Manager, selecione **Administração**.  
-3.  No espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione **Sites**.  
+3.  No workspace **Administração**, expanda **Configuração do Site** e selecione **Sites**.  
 4.  Selecione o servidor do site secundário que deseja remover.  
 5.  Na guia **Início**, no grupo **Site**, selecione **Excluir**.  
 6.  Na página **Geral** , selecione desinstalar ou excluir o site secundário e clique em **Avançar**.  
@@ -102,7 +103,7 @@ Use o procedimento a seguir para desinstalar um site primário.
 #### <a name="to-uninstall-a-primary-site-that-is-configured-with-distributed-views"></a>Para desinstalar um site primário configurado com exibições distribuídas  
 
 1.  Para desinstalar qualquer site primário, você deve desligar as exibições distribuídas em cada link na hierarquia entre o site de administração central e um site primário.  
-2.  Depois de desligar as exibições distribuídas em cada link, confirme se os dados do site primário concluem a reinicialização no site de administração central. Para monitorar a inicialização de dados, no console do Configuration Manager, no espaço de trabalho **Monitoramento**, exiba o link no nó **Replicação de Banco de Dados**.  
+2.  Depois de desligar as exibições distribuídas em cada link, confirme se os dados do site primário concluem a reinicialização no site de administração central. Para monitorar a inicialização de dados, no console do Configuration Manager, no workspace **Monitoramento**, exiba o link no nó **Replicação de Banco de Dados**.  
 3.  Após os dados reinicializarem com êxito com o site de administração central, você pode desinstalar o site primário. Para desinstalar um site primário, consulte [Desinstalar um site primário](#BKMK_UninstallPrimary).  
 4.  Quando o site primário é completamente desinstalado, você pode reconfigurar exibições distribuídas em links para sites primários.  
 

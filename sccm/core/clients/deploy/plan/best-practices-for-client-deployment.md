@@ -10,12 +10,13 @@ ms.assetid: a933d69c-5feb-4b2b-84e8-56b3b64d5947
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9c68a51202152e4b1418101412739b0d83f10203
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a3f5be163775e667571d97ef8a9d417ce6256b2d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333511"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56121991"
 ---
 # <a name="best-practices-for-client-deployment-in-system-center-configuration-manager"></a>Práticas recomendadas para a implantação de cliente no System Center Configuration Manager
 
@@ -25,7 +26,7 @@ ms.locfileid: "32333511"
 ## <a name="use-software-update-based-client-installation-for-active-directory-computers"></a>Use a instalação do cliente com base na atualização de software para computadores do Active Directory  
  Esse método de implantação do cliente usa as tecnologias existentes do Windows, é integrado à infraestrutura do Active Directory, exige o mínimo de configuração no Configuration Manager, é o mais fácil de configurar para firewalls e é o mais seguro. Usando grupos de segurança e filtro WMI para a configuração de Política de Grupo, você também tem uma grande flexibilidade para controlar em quais computadores instalar o cliente do Configuration Manager.  
 
- Para obter mais informações, consulte [Como instalar clientes do Configuration Manager usando a instalação baseada em atualização de software](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientSUP).  
+ Para obter mais informações, consulte [How to Install Configuration Manager Clients by Using Software Update-Based Installation](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientSUP).  
 
 ## <a name="extend-the-active-directory-schema-and-publish-the-site-so-that-you-can-run-ccmsetup-without-command-line-options"></a>Estender o esquema do Active Directory e publicar o site para que você possa executar o CCMSetup sem opções de linha de comando  
  Quando você estende o esquema do Active Directory para o Configuration Manager e o site é publicado no Active Directory Domain Services, muitas propriedades de instalação do cliente são publicadas neles. Se um computador puder localizar essas propriedades de instalação do cliente, ele poderá usá-las durante a implantação do cliente do Configuration Manager. Como essa informação é gerada automaticamente, o risco de erro humano associado à inserção manual de propriedades de instalação é eliminado.  

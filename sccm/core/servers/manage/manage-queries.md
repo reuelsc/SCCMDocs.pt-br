@@ -10,12 +10,13 @@ ms.assetid: e562e2a0-8df8-4952-952f-e8c38461c612
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 9d538106f2cc30a9eca5be51c4174af531bbbda9
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 87b92bb857f6a39a99e3aee1e4bc862904bcc4ef
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337778"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56126905"
 ---
 # <a name="how-to-manage-queries-in-system-center-configuration-manager"></a>Como gerenciar consultas no System Center Configuration Manager
 
@@ -26,7 +27,7 @@ Use as informações neste tópico para ajudar a gerenciar consultas no System C
  Para obter informações sobre como criar consultas, veja [Como criar consultas no System Center Configuration Manager](../../../core/servers/manage/create-queries.md).  
 
 ## <a name="how-to-manage-queries"></a>Como gerenciar consultas  
- No espaço de trabalho **Monitoramento** , selecione **Consultas**, selecione a consulta a ser gerenciada e uma tarefa de gerenciamento.  
+ No workspace **Monitoramento**, selecione **Consultas**, selecione a consulta a ser gerenciada e uma tarefa de gerenciamento.  
 
  Use a tabela a seguir para obter mais informações sobre as tarefas de gerenciamento que podem requerer informações adicionais antes de você selecioná-las.  
 

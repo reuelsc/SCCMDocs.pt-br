@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b8d8af88-e8ac-4deb-921b-975e2d2afd80
-ms.openlocfilehash: 54e91c729739d7bf1f0417a80a0143cc4969ed74
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c864b683c540e981f7506663182564cda1c379c2
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383127"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56137704"
 ---
 # <a name="manage-express-installation-files-for-windows-10-updates"></a>Gerenciar os arquivos de instalação expressa para atualizações do Windows 10
 
@@ -31,7 +32,7 @@ Para saber como usar o Configuration Manager para gerenciar o conteúdo de atual
 ### <a name="enable-the-site-to-download-express-installation-files-for-windows-10-updates"></a>Habilite o site para baixar arquivos de instalação expressa para atualizações do Windows 10
 Para começar a sincronizar os metadados para arquivos de instalação expressa do Windows 10, habilite-a nas Propriedades do ponto de atualização de software.  
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
+1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
 
 2. Selecione o site de administração central ou um site primário autônomo.  
 
@@ -54,7 +55,7 @@ Depois de implantar configurações do cliente para habilitar essa funcionalidad
 
 1. Habilite o suporte a arquivos de instalação expressa nas propriedades do componente de ponto de atualização de software (procedimento anterior).  
 
-2. No console do Configuration Manager, vá até o espaço de trabalho **Administração** e selecione **Configurações do Cliente**.  
+2. No console do Configuration Manager, vá até o workspace **Administração** e selecione **Configurações do Cliente**.  
 
 3. Selecione as configurações de cliente apropriadas e clique em **Propriedades** na faixa de opções.  
 

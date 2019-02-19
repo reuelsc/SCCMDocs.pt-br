@@ -10,12 +10,13 @@ ms.assetid: 7daf71dc-3775-40d7-92e0-8679d7d90a78
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b5d8897eed2885c9b9e97c01fb544ad26ed703e4
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c157e9650b96e9d8e1b9a1f776803e9d5565f698
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32331556"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56125952"
 ---
 # <a name="configuration-items-for-devices-managed-with-the-system-center-configuration-manager-client"></a>Itens de configuração de dispositivos gerenciados com o cliente do System Center Configuration Manager
 

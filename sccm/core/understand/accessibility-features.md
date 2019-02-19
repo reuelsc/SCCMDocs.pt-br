@@ -10,12 +10,13 @@ ms.assetid: 1cb96666-98bf-49a9-85ca-dbb53f0655e9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fc0e7b81b4b46502e4477f098bdc129b0491be69
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 2f52e903f730590cd9e0b3c8e6f53982ac24fc1b
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340600"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56136236"
 ---
 # <a name="accessibility-features-in-system-center-configuration-manager"></a>Recursos de acessibilidade no System Center Configuration Manager
 
@@ -42,16 +43,16 @@ O System Center Configuration Manager inclui recursos para ajudar a torná-lo ac
 - Melhora a navegação no painel de navegação quando você digita as letras de um nome de nó.
 - A navegação por teclado no modo de exibição principal e na faixa de opções agora é circular.
 - Agora, a navegação por teclado no painel de detalhes é circular. Para retornar ao painel ou objeto anterior, use Ctrl + D, depois, Shift + TAB.
-- Depois de atualizar um modo de exibição do Espaço de Trabalho, o foco é definido para o painel principal desse espaço de trabalho.
+- Depois de atualizar um modo de exibição do Workspace, o foco é definido para o painel principal desse workspace.
 - Correção de um problema para permitir que os leitores de tela anunciem os nomes dos itens de lista.
 - Adição de nomes acessíveis para vários controles na página, o que permite aos leitores de tela anunciarem informações importantes.
 
 
 **Os atalhos de teclado a seguir estão disponíveis para todas as versões**
 
-- Para acessar um espaço de trabalho, use os seguintes atalhos de teclado:  
+- Para acessar um workspace, use os seguintes atalhos de teclado:  
 
-|Atalho de teclado| Espaço de trabalho|
+|Atalho de teclado| Workspace|
 |--------|--------|  
 |Ctrl + 1| Ativos e conformidade|
 |Ctrl + 2|  Biblioteca de software|
@@ -59,17 +60,17 @@ O System Center Configuration Manager inclui recursos para ajudar a torná-lo ac
 |Ctrl + 4|  Administração|
 
 
--   Para acessar um menu do espaço de trabalho, pressione a tecla Tab até que o ícone Expandir/Recolher esteja em foco. Em seguida, pressione a tecla de seta para baixo para acessar o menu do espaço de trabalho.  
+-   Para acessar um menu do workspace, pressione a tecla Tab até que o ícone Expandir/Recolher esteja em foco. Em seguida, pressione a tecla de seta para baixo para acessar o menu do workspace.  
 
--   Para navegar por um menu de espaço de trabalho, use as teclas de direção.  
+-   Para navegar por um menu de workspace, use as teclas de direção.  
 
--   Para acessar diferentes áreas no espaço de trabalho, use a tecla Tab e as teclas Shift+Tab. Para navegar dentro de uma área do espaço de trabalho, como a faixa de opções, use as teclas de direção.  
+-   Para acessar diferentes áreas no workspace, use a tecla Tab e as teclas Shift+Tab. Para navegar dentro de uma área do workspace, como a faixa de opções, use as teclas de direção.  
 
 -   Para acessar a barra de endereços quando seu foco estiver no nó de árvore, use Shift+Tab três vezes.  
 
 -   Em uma página de assistente ou de propriedades, você pode se mover entre as caixas com os atalhos de teclado. Pressione a tecla Alt mais o caractere sublinhado (Alt+_) para selecionar uma caixa específica.     
 
--  Para navegar até os diferentes nós de um espaço de trabalho, insira a primeira letra do nome do nó. Cada pressionamento de tecla move o cursor para o próximo nó que começa com determinada letra. Quando você estiver usando um leitor de tela, o leitor lê o nome do nó.
+-  Para navegar até os diferentes nós de um workspace, insira a primeira letra do nome do nó. Cada pressionamento de tecla move o cursor para o próximo nó que começa com determinada letra. Quando você estiver usando um leitor de tela, o leitor lê o nome do nó.
 
 > [!NOTE]  
 >  As informações nessa seção podem se aplicar somente a usuários que licenciam produtos da Microsoft nos Estados Unidos. Se você adquiriu este produto fora dos Estados Unidos, pode usar o cartão de informações da subsidiária fornecido com o pacote do software ou acessar o [site de Acessibilidade da Microsoft](http://go.microsoft.com/fwlink/?LinkId=8431) para obter informações de contato dos serviços de suporte da Microsoft. Você pode contatar a subsidiária para descobrir se os tipos de produtos e serviços descritos nessa seção estão disponíveis na sua área. As informações sobre acessibilidade estão disponíveis em outros idiomas, incluindo japonês e francês.  

@@ -10,12 +10,13 @@ ms.assetid: 07c3c6d9-f056-4c4d-bc70-ede5ca933807
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 325b571adbcb2750eaa0b3a856dda753c43634f0
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: bb271aa0ea5733e956d7ba244374af9437db3d6c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42755893"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56131873"
 ---
 # <a name="associate-users-with-a-destination-computer-in-configuration-manager"></a>Associar usuários ao computador de destino no Configuration Manager
 

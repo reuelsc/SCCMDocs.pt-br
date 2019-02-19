@@ -10,16 +10,17 @@ ms.assetid: b670cfaf-96a4-4fcb-9caa-0f2e8c2c6198
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6fb655ae6094d7c764f2c3d0b84a505e9dfda3d2
-ms.sourcegitcommit: 9f02f21fbd4324ee8cc1af2d56db67c9c2fce969
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 92ac9cbfd8b4c68a818a3988c0ce1f3ec26a2215
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52709926"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139163"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Otimizar a entrega de atualizações do Windows 10 com o Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (branch atual)*
 
 Para muitos clientes, um caminho bem-sucedido para ficar e manter-se atualizado com as atualizações mensais do Windows 10 começa com uma estratégia de distribuição de conteúdo válida usando o Configuration Manager. O tamanho das atualizações de qualidade mensal pode ser uma causa de preocupação para organizações de grandes porte. Há algumas tecnologias disponíveis que se destinam a ajudar a reduzir a carga de rede e a largura de banda para otimizar a distribuição de atualização. Este artigo explica essas tecnologias, as compara e fornece recomendações para ajudá-lo a tomar decisões sobre qual delas usar.  
  

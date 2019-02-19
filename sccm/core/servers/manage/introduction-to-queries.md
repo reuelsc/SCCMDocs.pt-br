@@ -10,12 +10,13 @@ ms.assetid: 03d1b3a9-41db-4d3a-a70e-e05ab5dc8141
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: ebc5c1b7f7efb1ba9c3f1fc7b36f82b6be59858f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3812953df11daff9d768aa808edd0bcb08ab66f5
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336707"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56124806"
 ---
 # <a name="introduction-to-queries-in-system-center-configuration-manager"></a>Introdução a consultas no System Center Configuration Manager
 
@@ -27,7 +28,7 @@ Você pode criar e executar consultas para localizar objetos em uma hierarquia d
 
  Depois de criar uma consulta inicial, você pode especificar critérios de consulta adicionais. Por exemplo, você pode especificar uma opção para que os resultados da consulta incluam somente os computadores que são atribuídos a um site especificado. Você também pode modificar o modo como os resultados são exibidos para que seja possível exibir os resultados em uma ordem que seja significativa para você. Por exemplo, você pode especificar uma opção para que os resultados sejam classificados pela quantidade de espaço livre em disco em ordem crescente ou decrescente.  
 
- Ao criar uma consulta, ela é armazenada pelo Configuration Manager e exibida no nó **Consultas** do espaço de trabalho **Monitoramento**. Nesse local, você pode criar uma nova consulta e executar, atualizar ou gerenciar uma consulta existente.  
+ Ao criar uma consulta, ela é armazenada pelo Configuration Manager e exibida no nó **Consultas** do workspace **Monitoramento**. Nesse local, você pode criar uma nova consulta e executar, atualizar ou gerenciar uma consulta existente.  
 
  Você também pode importar uma consulta para uma regra de consulta em uma coleção do Configuration Manager. Para mais informações, consulte [Como criar coleções no System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md).  
 

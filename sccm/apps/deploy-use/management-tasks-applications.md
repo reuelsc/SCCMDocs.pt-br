@@ -10,12 +10,13 @@ ms.assetid: c4041e21-21ff-4d95-ab05-14007e0047cf
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 4cc6c423880850b40d67d35e990982583c39e54e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d6f66eedd60c759395126363db9e672c45993d48
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334133"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56123957"
 ---
 # <a name="management-tasks-for-system-center-configuration-manager-applications"></a>Tarefas de gerenciamento para aplicativos do System Center Configuration Manager
 
@@ -29,7 +30,7 @@ Para obter ajuda na criação de aplicativos e tipos de implantação, consulte 
 >  Dependendo do tipo de aplicativo ou de implantação, algumas opções de gerenciamento poderão não estar disponíveis.  
 
 ##  <a name="manage-applications"></a>Gerenciar aplicativos  
- No espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** > **Aplicativos**, escolha o aplicativo a ser gerenciado e uma tarefa de gerenciamento.  
+ No workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** > **Aplicativos**, escolha o aplicativo a ser gerenciado e uma tarefa de gerenciamento.  
 
 |Tarefa|Detalhes|  
 |----------|-------------|  
@@ -37,7 +38,7 @@ Para obter ajuda na criação de aplicativos e tipos de implantação, consulte 
 |**Criar arquivo de conteúdo de pré-teste**|Abre o **Assistente para Criar Arquivo de Conteúdo de Pré-Teste** , que ajuda a gerenciar o conteúdo para pontos de distribuição remotos. Quando o agendamento e a limitação não fornecem uma solução válida para o ponto de distribuição remoto, é possível pré-configurar o conteúdo no ponto de distribuição<br /><br /> Consulte [Gerenciar conteúdo e infraestrutura de conteúdo](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
 |**Histórico de Revisão**|Abre a caixa de diálogo **Histórico de Revisão de Aplicativo**, que permite exibir as propriedades das revisões feitas nesse aplicativo, excluir as revisões antigas e restaurar as versões antigas do aplicativo.<br /><br /> Consulte [Como revisar e substituir aplicativos](../../apps/deploy-use/revise-and-supersede-applications.md).|  
 |**Criar Tipo de Implantação**|Abre o **Assistente para Criar Tipo de Implantação**, que permite adicionar um novo tipo de implantação ao aplicativo selecionado.<br /><br /> Consulte [Criar aplicativos](../../apps/deploy-use/create-applications.md).|  
-|**Atualizar Estatísticas**|Atualiza as informações exibidas no nó **Implantações** do espaço de trabalho **Monitoramento** sobre as implantações desse aplicativo.<br /><br /> Consulte [Monitorar aplicativos no console do System Center Configuration Manager](../../apps/deploy-use/monitor-applications-from-the-console.md).|  
+|**Atualizar Estatísticas**|Atualiza as informações exibidas no nó **Implantações** do workspace **Monitoramento** sobre as implantações desse aplicativo.<br /><br /> Consulte [Monitorar aplicativos no console do System Center Configuration Manager](../../apps/deploy-use/monitor-applications-from-the-console.md).|  
 |**Restabelecer**|Restabelece um aplicativo que foi desativado com a tarefa de gerenciamento **Desativar**.|  
 |**Desativar**|Quando você desativa um aplicativo, ele não fica mais disponível para implantação, mas o aplicativo e suas implantações não são excluídos. As cópias existentes desse aplicativo que foram instaladas em computadores cliente não serão removidas. Quaisquer revisões para o aplicativo serão excluídas do Configuration Manager após 60 dias. No entanto, as cópias instaladas do aplicativo não são removidas.<br /><br /> Para excluir um aplicativo, é necessário desativá-lo primeiro, excluir todas implantações, remover as referências a ele por outras implantações e, em seguida, excluir todas as revisões dele.<br /><br /> Consulte [Revisar e substituir aplicativos](../../apps/deploy-use/revise-and-supersede-applications.md).|  
 |**Exportarar**|Abre o **Assistente para Exportar Aplicativo**, que permite exportar os aplicativos selecionados para um arquivo .zip que poderá ser arquivado ou instalado em outro site. Se você optar por exportar o conteúdo do aplicativo, será criada uma pasta que tem o conteúdo.<br /><br /> Também é possível exportar as dependências do aplicativo, as relações e condições de substituição, bem como o conteúdo do aplicativo e suas dependências.<br /><br /> O cmdlet **Export-CMApplication** do Windows PowerShell executa a mesma função. Para obter mais informações, consulte [Export-CMApplication](http://go.microsoft.com/fwlink/p/?LinkID=258880) na documentação de referência de cmdlet do Microsoft System Center 2012 Configuration Manager SP1.|  
@@ -48,7 +49,7 @@ Para obter ajuda na criação de aplicativos e tipos de implantação, consulte 
 |**Exibir Relações**|Mostra um diagrama gráfico das relações entre os aplicativos selecionados e outros aplicativos. Escolha um destes procedimentos:<br><br><ul><li>**Dependência** – mostra os aplicativos que dependem do aplicativo selecionado e os aplicativos dos quais o aplicativo selecionado depende.</li><li>**Substituição** – mostra os aplicativos que são substituídos pelo aplicativo selecionado e os aplicativos pelos quais o aplicativo selecionado é substituído.</li><li>**Condições Globais** – mostra as condições globais referenciadas por esse aplicativo.</li></ol><br /> Consulte [Revisar e substituir aplicativos](../../apps/deploy-use/revise-and-supersede-applications.md) e [Criar condições globais](../../apps/deploy-use/create-global-conditions.md).|  
 
 ##  <a name="manage-deployment-types"></a>Gerenciar tipos de implantação  
- No espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos**, escolha **Aplicativos** e o aplicativo que tem o tipo de implantação que você deseja gerenciar. No painel de detalhes, escolha a guia **Tipos de Implantação**, o tipo de implantação que você deseja gerenciar e uma tarefa de gerenciamento.  
+ No workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos**, escolha **Aplicativos** e o aplicativo que tem o tipo de implantação que você deseja gerenciar. No painel de detalhes, escolha a guia **Tipos de Implantação**, o tipo de implantação que você deseja gerenciar e uma tarefa de gerenciamento.  
 
 |Tarefa|Detalhes|  
 |----------|-------------|  

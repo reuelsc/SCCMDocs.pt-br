@@ -10,12 +10,13 @@ ms.assetid: 66f7759c-6272-4116-aad7-0d05db1d46cd
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d261b246c0718777be56425c7783d05f767575df
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1df57ef2d51a9cd525dbd9b8d99a909baf47ef95
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342606"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127534"
 ---
 # <a name="plan-a-content-deployment-migration-strategy-in-system-center-configuration-manager"></a>Planejar uma estratégia de migração de implantação de conteúdo no System Center Configuration Manager
 
@@ -73,7 +74,7 @@ Use as seguintes informações como auxílio para o planejamento de pontos de di
     > [!NOTE]  
     >  Quando você exibe detalhes de um pacote hospedado em um ponto de distribuição compartilhado, o número de pacotes exibidos como **Pacotes Migrados Hospedados** na guia **Pontos de Distribuição Compartilhados** nos sites de origem não é atualizado até a conclusão do próximo ciclo de coleta de dados.  
 
--   É possível exibir os pontos de distribuição compartilhados e suas propriedades no nó **Hierarquia de Origem** do espaço de trabalho **Administração** no console do Configuration Manager que se conecta à hierarquia de destino.  
+-   É possível exibir os pontos de distribuição compartilhados e suas propriedades no nó **Hierarquia de Origem** do workspace **Administração** no console do Configuration Manager que se conecta à hierarquia de destino.  
 
 -   Não é possível usar um ponto de distribuição compartilhado de uma hierarquia de origem do Configuration Manager 2007 para hospedar pacotes do Microsoft Application Virtualization (App-V). Os pacotes do App-V devem ser migrados e convertidos para uso pelos clientes na hierarquia de destino. No entanto, é possível usar um ponto de distribuição compartilhado de uma hierarquia de origem do System Center 2012 Configuration Manager ou System Center Configuration Manager para hospedar pacotes do App-V para clientes em uma hierarquia de destino.  
 
@@ -134,13 +135,13 @@ Para atualizar um ponto de distribuição por meio do console do Configuration M
     > [!NOTE]  
     >  Quando o Configuration Manager verifica a elegibilidade de um ponto de distribuição para atualização, ele não valida a versão do sistema operacional do computador do ponto de distribuição.  
 
-Para atualizar um ponto de distribuição, no espaço de trabalho **Administração**, expanda **Migração**, expanda o nó **Hierarquia de Origem** e, em seguida, selecione o site que contém o ponto de distribuição que você deseja atualizar. Em seguida, no painel de detalhes, na guia **Pontos de Distribuição Compartilhados** , selecione o ponto de distribuição que você quer atualizar.  
+Para atualizar um ponto de distribuição, no workspace **Administração**, expanda **Migração**, expanda o nó **Hierarquia de Origem** e, em seguida, selecione o site que contém o ponto de distribuição que você deseja atualizar. Em seguida, no painel de detalhes, na guia **Pontos de Distribuição Compartilhados** , selecione o ponto de distribuição que você quer atualizar.  
 
 Você pode verificar se o ponto de distribuição está pronto para atualização exibindo o status na coluna **Qualificado para Reatribuição** .  Em seguida, na faixa de opções do console do Configuration Manager, na guia **Pontos de Distribuição**, no grupo **Ponto de Distribuição**, selecione **Transferir**. Isso abre um assistente que você usa para concluir a atualização do ponto de distribuição.  
 
 Ao atualizar um ponto de distribuição compartilhado, você deve atribuir o ponto de distribuição a um site primário ou secundário de sua escolha na hierarquia de destino. Depois que o ponto de distribuição é atualizado, você o gerencia como um ponto de distribuição na hierarquia do destino da mesma maneira que qualquer outro ponto de distribuição.  
 
-Você pode monitorar o progresso de uma atualização de ponto de distribuição no console do Configuration Manager selecionando o nó **Migração do Ponto de Distribuição** no nó **Migração** do espaço de trabalho **Administração**. Você também pode exibir informações no **Migmctrl.log** , no servidor do site de administração central da hierarquia de destino, ou no **distmgr.log** no servidor do site na hierarquia de destino que controla o ponto de distribuição atualizado.  
+Você pode monitorar o progresso de uma atualização de ponto de distribuição no console do Configuration Manager selecionando o nó **Migração do Ponto de Distribuição** no nó **Migração** do workspace **Administração**. Você também pode exibir informações no **Migmctrl.log** , no servidor do site de administração central da hierarquia de destino, ou no **distmgr.log** no servidor do site na hierarquia de destino que controla o ponto de distribuição atualizado.  
 
 > [!NOTE]  
 >  Quando você atualiza um ponto de distribuição na hierarquia de destino, a função do sistema de sites do ponto de distribuição é removida do site de origem do Configuration Manager 2007. No entanto, os pacotes enviados para o ponto de distribuição não são atualizados na hierarquia do Configuration Manager 2007. No console do Configuration Manager 2007, os pacotes que haviam sido enviados para o ponto de distribuição continuam a listar o computador do sistema de sites como um ponto de distribuição com um **Tipo** **Desconhecido**. Atualizações subsequentes do pacote no Configuration Manager 2007 resultam em erros de relatórios do Gerenciador de Distribuição no distmgr.log desse site quando o site tenta atualizar o pacote no sistema de sites desconhecido.  

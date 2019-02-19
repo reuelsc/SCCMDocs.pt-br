@@ -10,12 +10,13 @@ ms.assetid: 5c975e69-0cc0-4afd-b7fb-b7182162a933
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b216df726ed46c54bcb4778f0f93b2d19f0f9321
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d7c24692b88571e56c877c8529fe84b7441c6696
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32332926"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127636"
 ---
 # <a name="how-to-audit-remote-control-usage-in-system-center-configuration-manager"></a>Como auditar o uso do controle remoto no System Center Configuration Manager
 
@@ -35,7 +36,7 @@ Você pode usar relatórios do System Center Configuration Manager para exibir i
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Relatórios**e clique em **Relatórios**.  
+2.  No workspace **Monitoramento**, expanda **Relatórios** e clique em **Relatórios**.  
 
 3.  No nó **Relatórios** , clique na coluna **Categoria** para classificar os relatórios, para que você possa encontrar mais facilmente os relatórios na categoria **Mensagens de Status - Auditoria**.  
 
@@ -49,7 +50,7 @@ Você pode usar relatórios do System Center Configuration Manager para exibir i
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Relatórios**e clique em **Relatórios**.  
+2.  No workspace **Monitoramento**, expanda **Relatórios** e clique em **Relatórios**.  
 
 3.  No nó **Relatórios** , clique na coluna **Categoria** para classificar os relatórios, para que você possa encontrar mais facilmente os relatórios na categoria **Mensagens de Status - Auditoria**.  
 
