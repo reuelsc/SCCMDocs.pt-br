@@ -10,19 +10,19 @@ ms.assetid: c0f094f1-852e-4606-91db-97846d8f0772
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7a9095ea946e024dcd633aa6457b21fe71988c85
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6c3217dee8406b46aeb93925c368f18f402bfb70
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348310"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56123586"
 ---
 # <a name="vpn-profiles-in-system-center-configuration-manager"></a>Perfis VPN no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-<!--1283610-->
-Para implantar as configurações de VPN para os usuários da organização, use perfis de VPN no Configuration Manager. Ao implantar essas configurações, você minimiza o esforço do usuário final necessário para conectar-se aos recursos na rede da empresa.  
+<!--1283610--> Para implantar as configurações de VPN para os usuários na sua organização, use perfis de VPN no Configuration Manager. Ao implantar essas configurações, você minimiza o esforço do usuário final necessário para conectar-se aos recursos na rede da empresa.  
 
  Por exemplo, você deseja definir todos os dispositivos Windows 10 com as configurações necessárias para conectar-se a um compartilhamento de arquivos na rede corporativa. Você pode criar um perfil de VPN com as configurações necessárias para conectar-se à rede corporativa. Em seguida, implantar esse perfil para todos os usuários que têm dispositivos que executam o Windows 10. Esses usuários verão a conexão de VPN na lista de redes disponíveis e poderão se conectar facilmente.  
 
