@@ -2,7 +2,7 @@
 title: Novidades no MDM híbrido
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune.
-ms.date: 02/04/2019
+ms.date: 02/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5199edf3e362deaeb160bf105ae69f7acbee334
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 2d65f6493ca3d067e31b6602c711ab1fbf9408a1
+ms.sourcegitcommit: e7e5ca04601270ea7af90183123d5db1d42784da
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124329"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56422231"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -51,6 +51,10 @@ Cada seção deste artigo lista recursos híbridos em três categorias diferente
 ## <a name="february-2019"></a>Fevereiro de 2019
 
 ### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+#### <a name="macos-users-are-prompted-to-update-their-password"></a>os usuários do macOS são solicitados para atualizar sua senha 
+<!--1873216--> Em dispositivos macOS, os usuários finais serão solicitados para atualizar sua senha. Esse aviso ocorre sempre que um usuário executa uma tarefa que requer autenticação, como entrar no dispositivo. Usuários também precisará atualizar suas senhas quando fazer nada que requer privilégios administrativos, como solicitar acesso ao conjunto de chaves.  
+
 
 #### <a name="intune-macos-company-portal-dark-mode"></a>MacOS do Intune modo escuro do Portal da empresa
 <!--3300524--> O Portal da empresa do macOS do Intune agora dá suporte ao modo de escuro para macOS. Quando você habilita o modo escuro em um dispositivo macOS 10.14 +, o Portal da empresa ajusta sua aparência para as cores que refletem esse modo.
@@ -609,29 +613,6 @@ Após dezembro, os usuários finais que têm dispositivos diferente dos listados
  
 #### <a name="additional-information"></a>Informações adicionais
 Para obter mais informações, confira [Registrar seu dispositivo macOS no Intune com o aplicativo Portal da Empresa](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos-cp).
-
-
-### <a name="intune-support-experience-for-premier-customers-now-in-azure-instead-of-mpo"></a>Experiência de suporte do Intune para Premier clientes agora no Azure em vez do MPO  
-<!--2828727-->
-
-Compartilhamos em MC147649 em setembro, que seria removemos a capacidade de criar solicitações de suporte do Intune do portal do Microsoft Premier Online (MPO) (premier.microsoft.com) em dezembro. Agora, após um pequeno atraso, no final de janeiro, você será redirecionado para criar solicitações de suporte apenas no Intune no Azure.
-
-#### <a name="how-does-this-affect-me"></a>Como isso me afeta?
-Após o final de janeiro, continue aprimorando o Premier dar suporte à experiência, você não poderá criar solicitações de suporte em MPO. Quando você tentar realizar essa ação, você verá um aviso não é possível ignorar redirecionando você para o Intune no Azure. Aqui, você pode criar uma solicitação de suporte, que é roteada para o Intune dedicadas Microsoft Support. Esses suporte engenheiros serão diagnosticar e resolver o problema de maneira oportuna. Você não pode exibir as solicitações de suporte no portal do Azure que você criou no portal do MPO.
-
-O portal do Azure tem uma nova experiência de suporte como anunciamos recentemente MC171941. Para obter mais informações, consulte [como obter suporte para o Microsoft Intune](https://aka.ms/new_support_experience).
-
-Se você usar o MDM híbrido ou o cogerenciamento, continue a usar o MPO para criar solicitações de suporte do Configuration Manager. Use o portal do Azure para criar solicitações de suporte do Intune. Como um lembrete, o MDM híbrido foi preterido, e você deve planejar migrar para o Intune no Azure assim que possível. Para obter mais informações, confira [Migrar do Gerenciamento de Dispositivo Móvel Híbrido para o Intune no Azure](https://aka.ms/hybrid_notification).
-
-Somente os usuários com funções de Administrador Global, administrador de serviço do Intune e o administrador de suporte de serviço podem criar tíquetes de suporte no portal do Azure.
-
-#### <a name="what-can-i-do-to-prepare-for-this-change"></a>O que fazer para me preparar para essa mudança?
-- Para de usar o MPO para solicitações de suporte relacionadas ao Intune. Use o Intune no Azure para criar e gerenciar todas as solicitações de suporte do Intune.  
-- Notifique a documentação de assistência técnica e atualização se necessário.  
-- Se você tiver usuários sem as funções de Administrador Global ou administrador de serviço do Intune no momento, criando solicitações de suporte em MPO, atribua a função de administrador de suporte do serviço no Azure Active Directory. Os usuários exigem uma dessas funções para criar tíquetes de suporte no portal do Azure.  
-
-#### <a name="additional-information"></a>Informações adicionais
-Para saber mais, confira a [postagem no blog da equipe de suporte do Microsoft Intune](https://aka.ms/IntuneSupport_MPO_to_Azure).
 
 
 ### <a name="plan-for-change-use-intune-on-azure-now-for-your-mdm-management"></a>Plano para alteração: Use o Intune no Azure agora para o gerenciamento MDM 
