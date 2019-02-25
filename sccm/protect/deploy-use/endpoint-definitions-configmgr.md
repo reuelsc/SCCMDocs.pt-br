@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c16487bc59a7e067aac5554213e2be750729078f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 411811c4047cd781d0edcd5cc345ff82acc80f91
+ms.sourcegitcommit: 0a23cde6112cbb5987f433bffcf6f223b994ba72
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120139"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56667436"
 ---
 #  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Usando as atualizações de Software do Configuration Manager para fornecer atualizações de definições
 
@@ -49,10 +49,10 @@ ms.locfileid: "56120139"
 
 6. Verifique se a caixa de seleção  **Habilitar a implantação após esta regra ser executada** está marcada e clique em **Avançar**.
 
-7. Na página **Configurações de Implantação** do assistente, na lista **Nível de detalhe** , selecione **Mínimo**e clique em **Avançar**.
+7. Na página **Configurações de Implantação** do assistente, na lista **Nível de detalhe**, selecione **Somente mensagens de erro** e clique em **Avançar**.
 
    > [!NOTE]
-   >  Na lista **Nível de detalhe**, selecione **Mínimo** (Configuration Manager sem Service Pack) ou **Somente mensagens de erro** (Configuration Manager). Isso reduzirá o número de mensagens de estado retornado pela implantação de definição. Essa configuração ajuda a reduzir o uso de processamento da CPU nos servidores do Configuration Manager.
+   >  Selecionando **somente mensagens de erro** reduzirá o número de mensagens de estado retornado pela implantação de definição. Essa configuração ajuda a reduzir o uso de processamento da CPU nos servidores do Configuration Manager.
 
 8. Na lista **Filtros de propriedade** , marque a caixa de seleção **Classificação da Atualização** .
 
@@ -91,18 +91,20 @@ ms.locfileid: "56120139"
 
 20. Na página **Alertas** do assistente, você não precisa configurar nenhum alerta. O Endpoint Protection no Configuration Manager gera todos os alertas que podem ser necessários. Clique em **Avançar**.
 
-21. Na página **Configurações de Download** do assistente, selecione o comportamento de download das atualizações de software necessárias e clique em **Avançar**.
-
-22. Na página **Pacote de Implantação** do assistente, selecione um pacote de implantação existente ou crie um novo pacote de implantação para conter os arquivos de atualização de software associados à regra.
+21. Na página **Pacote de Implantação** do assistente, selecione um pacote de implantação existente ou crie um novo pacote de implantação para conter os arquivos de atualização de software associados à regra.
 
     > [!NOTE]
     >  Considere colocar as atualizações de definições em um pacote que não contenha outras atualizações de software. Essa estratégia mantém o tamanho do pacote de atualização de definição menor, o que permite que ele seja replicado para os pontos de distribuição mais rapidamente.
 
-23. Na página **Pontos de Distribuição** do assistente, selecione um ou mais pontos de distribuição para os quais o conteúdo do pacote serão copiados e clique em **Avançar**.
+22. Se criar um novo pacote, na página **Pontos de Distribuição** do assistente, selecione um ou mais pontos de distribuição para os quais o conteúdo do pacote serão copiados e clique em **Avançar**.
 
-24. Na página **Local de Download** do assistente, selecione **Baixar atualizações de software da Internet**e clique em **Avançar**.
+23. Na página **Local de Download** do assistente, selecione **Baixar atualizações de software da Internet**e clique em **Avançar**.
 
-25. Na página **Seleção do Idioma** do assistente, selecione cada versão do idioma das atualizações a serem baixadas e clique em **Avançar**.
+24. Na página **Seleção do Idioma** do assistente, selecione cada versão do idioma das atualizações a serem baixadas e clique em **Avançar**.
+
+25. Na página **Configurações de Download** do assistente, selecione o comportamento de download das atualizações de software necessárias e clique em **Avançar**.
+
+26. Na página **Resumo** do assistente, examine as configurações e clique em **Avançar**.
 
 26. Conclua o Assistente para Criar de Regra de Implantação Automática.
 
