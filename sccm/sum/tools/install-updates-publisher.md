@@ -2,31 +2,32 @@
 title: Instalar o Updates Publisher
 titleSuffix: Configuration Manager
 description: Instalar o System Center Updates Publisher em seu ambiente
-ms.date: 07/03/2017
+ms.date: 02/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
 ms.assetid: ab5cda93-b67c-4aa5-904d-7b63ce790aa0
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cd48e40f594ced5a62e3a65beb43e6dc74e090b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 37a468a2b9727d66f7d3fe0cafd1aae044585b2a
+ms.sourcegitcommit: e18853c214c95e4d21b2f032aba6d17c21e97027
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122467"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56443946"
 ---
 # <a name="install-updates-publisher"></a>Instalar o Updates Publisher
 
 *Aplica-se a: System Center Updates Publisher*
 
-As informações neste tópico podem ajudar você a obter, instalar e configurar o Updates Publisher para uso em seu ambiente.
-
+As informações neste artigo podem ajudar você a baixar, instalar e configurar o Updates Publisher para uso com o seu ambiente do System Center Configuration Manager.
 
 ## <a name="prerequisites-and-limitations"></a>Pré-requisitos e limitações
-As seções a seguir detalham os requisitos de instalação e uso do Updates Publisher, e as limitações ou problemas conhecidos de seu uso.
+O System Center Updates Publisher só pode ser usado com o System Center Configuration Manager. Ele não é destinado para uso com hierarquias autônomas do WSUS.
+
+As seções a seguir detalham os requisitos de instalação e uso do Updates Publisher, e as limitações ou problemas conhecidos de seu uso.  
 
 ### <a name="operating-systems"></a>Sistemas operacionais
 Instale e execute o Updates Publisher em uma edição de 64 bits dos sistemas operacionais a seguir. Não há requisitos mínimos de service pack ou pacote cumulativo de atualizações.
@@ -116,5 +117,5 @@ Após a conclusão da instalação, execute **UpdatesPublisher.exe** na pasta *U
 ## <a name="next-steps"></a>Próximas etapas
  Depois de instalar o Updates Publisher, recomendamos que você [configure as opções](updates-publisher-options.md) para o Updates Publisher. Você deve configurar algumas opções antes de poder usar alguns recursos do Updates Publisher.
 
- No entanto, se você quiser usar os padrões e não planeja implantar atualizações em um servidor de atualização ou em dispositivos gerenciados, acesse diretamente [Gerenciar catálogos de atualização de software](updates-publisher-catalogs.md) ou [Criar atualizações de software](create-updates-with-updates-publisher.md) e crie catálogos de atualização de sua preferência.
+ No entanto, se você quiser usar os padrões e não planejar implantar atualizações em um servidor de atualização ou em dispositivos gerenciados, acesse diretamente [Gerenciar catálogos de atualização de software](updates-publisher-catalogs.md) ou [Criar atualizações de software](create-updates-with-updates-publisher.md) e crie seus próprios catálogos de atualização.
 

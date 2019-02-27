@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 304fe88dd5ed8a37bf17dca390d95158d005bae3
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 8850d849066c97b8cb07719f229ebec1d4748403
+ms.sourcegitcommit: 369db96ee84299b5ab6d74b177e6366b3017fc54
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125354"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56589876"
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Números de tamanho e escala para o System Center Configuration Manager
 
@@ -208,7 +208,7 @@ Por exemplo, um site primário autônomo que dá suporte a 150.000 desktops e 10
 
 
 ### <a name="embedded"></a> Sites primários e dispositivos Windows Embedded
-Os sites primários dão suporte aos dispositivos Windows Embedded que têm o FBWF (Filtros de Gravação Baseado em Arquivo) habilitado. Quando dispositivos inseridos não têm filtros de gravação habilitados, um site primário pode dar suporte a um número de dispositivos inseridos que chega até o número permitido de dispositivos para esse site. Do número total de dispositivos aos quais um site primário dá suporte, um máximo de 10.000 desses dispositivos pode ser Windows Embedded. Esses dispositivos precisam ser configurados para as exceções listadas na observação importante encontrada em [Planejando a implantação de cliente em dispositivos Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Um site primário dá suporte a apenas 3.000 dispositivos Windows Embedded com EWF habilitado e que não estão configurados para as exceções.
+Os sites primários dão suporte aos dispositivos Windows Embedded que têm o FBWF (Filtros de Gravação Baseado em Arquivo) habilitado. Quando dispositivos inseridos não têm filtros de gravação habilitados, um site primário pode dar suporte a um número de dispositivos inseridos que chega até o número permitido de dispositivos para esse site. Quando os dispositivos inseridos têm os FBWFs ou UWFs (filtros de gravação unificados) habilitados, um site primário pode dar suporte a um máximo de 10.000 dispositivos inseridos do Windows. Esses dispositivos precisam ser configurados para as exceções listadas na observação importante encontrada em [Planejando a implantação de cliente em dispositivos Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Um site primário dá suporte a apenas 3.000 dispositivos Windows Embedded com EWF habilitado e que não estão configurados para as exceções.
 
 
 ###  <a name="bkmk_sec"></a> Sites secundários  

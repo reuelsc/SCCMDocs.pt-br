@@ -2,7 +2,7 @@
 title: Versões de visualização técnica
 titleSuffix: Configuration Manager
 description: Saiba mais sobre o branch de visualização técnica para fazer o test drive das novas funcionalidades e recursos no Configuration Manager.
-ms.date: 02/08/2019
+ms.date: 02/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c48e7fdd2826af942cc94017d58614760f61545d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: aa55a8e7c46df0c0d946e7e7c9f93e894bc49b89
+ms.sourcegitcommit: e7e5ca04601270ea7af90183123d5db1d42784da
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136976"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56422197"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Visualização técnica para o Configuration Manager
 
@@ -105,7 +105,7 @@ A Microsoft oferece suporte a todas as versões da visualização técnica até 
    
 Instale uma versão de linha de base em até um ano após seu lançamento. Quando você instala um novo site da visualização técnica, se mais de uma versão de linha de base estiver disponível no momento, use a versão de linha de base mais recente.
 
--  **Technical Preview versão 1810.2**: O Configuration Manager Technical Preview versão 1810.2 está disponível como uma atualização no console e como uma nova versão de linha de base. Baixe as versões de linha de base do [Centro de Avaliação do TechNet](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
+-  **Technical Preview versão 1902.2**: O Configuration Manager Technical Preview versão 1902.2 está disponível como uma atualização no console e como uma nova versão de linha de base. Baixe as versões de linha de base do [Centro de Avaliação do TechNet](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
 
 
 
@@ -125,19 +125,14 @@ Os seguintes recursos estão disponíveis com a visualização técnica mais rec
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-1902"></a>Visualização Técnica versão 1902
+### <a name="technical-preview-version-19022"></a>Technical Preview versão 1902.2
 
-<!-- - [title](/sccm/core/get-started/2019/technical-preview-1901#bkmk_anchor)<!--ID-->
+<!-- - [title](/sccm/core/get-started/2019/technical-preview-1901#bkmk_anchor) <!--ID--> 
 
-- [Substituir as notificações do sistema por uma janela de diálogo](/sccm/core/get-started/2019/technical-preview-1902#bkmk_impact)<!--3555947-->
-- [Status do andamento durante a sequência de tarefas de atualização in-loco](/sccm/core/get-started/2019/technical-preview-1902#bkmk_ipu)<!--3747129-->
-- [Redirecionar pastas conhecidas do Windows para o OneDrive](/sccm/core/get-started/2019/technical-preview-1902#bkmk_odfb)<!--3556021-->
-- [Visualizar a primeira tela somente durante o controle remoto](/sccm/core/get-started/2019/technical-preview-1902#bkmk_rcmulti)<!--3231732-->
-- [Editar ou copiar os scripts do PowerShell](/sccm/core/get-started/2019/technical-preview-1902#bkmk_psedit)<!--3705507-->
-- [Adicionar o gateway de gerenciamento de nuvem a grupos de limites](/sccm/core/get-started/2019/technical-preview-1902#bkmk_cmgbg)<!--3640932-->
-- [Configurar os modos de exibição padrão no Centro de Software](/sccm/core/get-started/2019/technical-preview-1902#bkmk_swctr)<!--3612112-->
-- [Melhorias no painel de integridade do cliente](/sccm/core/get-started/2019/technical-preview-1902#bkmk_health)<!--3599209-->
-
+- [Idiomas adicionais para atualizações do Office 365](/sccm/core/get-started/2019/technical-preview-1902-2#bkmk_o365lang) <!--3555955--> 
+- [Integração com o analytics para preparação do Office 365 ProPlus](/sccm/core/get-started/2019/technical-preview-1902-2#bkmk_o365) <!--3735402--> 
+- [Aperfeiçoamento para os critérios de sucesso da implantação em fases](/sccm/core/get-started/2019/technical-preview-1902-2#bkmk_pod) <!--3555946--> 
+- [Melhoria no HTTP aprimorado](/sccm/core/get-started/2019/technical-preview-1902-2#bkmk_ehttp) <!--3798957--> 
 
 
 > [!Note]  
@@ -156,6 +151,14 @@ Then remove the bottom of this list and/or move individual items not in CB to th
 
  | Recurso | Versão da visualização técnica | Versão do branch atual |  
  |---------|---------------------------|------------------------|
+ | Substituir as notificações do sistema por uma janela de diálogo <!--3555947--> | [Tech Preview 1902](/sccm/core/get-started/2019/technical-preview-1902#bkmk_impact) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Status do andamento durante a sequência de tarefas de atualização in-loco <!--3747129--> | [Tech Preview 1902](/sccm/core/get-started/2019/technical-preview-1902#bkmk_ipu) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Redirecionar pastas conhecidas do Windows para o OneDrive <!--3556021--> | [Tech Preview 1902](/sccm/core/get-started/2019/technical-preview-1902#bkmk_odfb) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Exibir a primeira tela somente durante o controle remoto <!--3231732--> | [Tech Preview 1902](/sccm/core/get-started/2019/technical-preview-1902#bkmk_rcmulti) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Editar ou copiar os scripts do PowerShell <!--3705507--> | [Tech Preview 1902](/sccm/core/get-started/2019/technical-preview-1902#bkmk_psedit) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Adicionar o gateway de gerenciamento de nuvem a grupos de limites <!--3640932--> | [Tech Preview 1902](/sccm/core/get-started/2019/technical-preview-1902#bkmk_cmgbg) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Configurar os modos de exibição padrão no Centro de Software <!--3612112--> | [Tech Preview 1902](/sccm/core/get-started/2019/technical-preview-1902#bkmk_swctr) | ![Não foi adicionado](media/Red_X.gif) | 
+ | Melhorias no painel de integridade do cliente <!--3599209--> | [Tech Preview 1902](/sccm/core/get-started/2019/technical-preview-1902#bkmk_health) | ![Não foi adicionado](media/Red_X.gif) | 
  | Painel de integridade do cliente <!--3599209--> | [Visualização Técnica 1901](/sccm/core/get-started/2019/technical-preview-1901#bkmk_health) | ![Não foi adicionado](media/Red_X.gif) | 
  | Especificar a prioridade para as atualizações de recurso no serviço do Windows 10 <!--3734525--> | [Visualização Técnica 1901](/sccm/core/get-started/2019/technical-preview-1901#bkmk_neo) | ![Não foi adicionado](media/Red_X.gif) | 
  | Monitoramento dedicado para implantações em fases <!--3555949--> | [Visualização Técnica 1901](/sccm/core/get-started/2019/technical-preview-1901#bkmk_pod) | ![Não foi adicionado](media/Red_X.gif) | 

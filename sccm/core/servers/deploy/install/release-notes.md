@@ -2,7 +2,7 @@
 title: Notas de versão
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os problemas urgentes que ainda não foram corrigidos no produto nem abordados em um artigo da base de dados de conhecimento do Suporte da Microsoft.
-ms.date: 12/21/2018
+ms.date: 02/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ba088be689808139a977073dd5b111d1fa46b7b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: bc19092f1272611ea3e05d708bf89bda1a4ba3b9
+ms.sourcegitcommit: 0a23cde6112cbb5987f433bffcf6f223b994ba72
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121549"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56667453"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Notas de versão do Configuration Manager
 
@@ -84,7 +84,16 @@ Mova a função de ponto de conexão do serviço para outro servidor.
 
 
 
-<!-- ## Operating system deployment  -->
+## <a name="os-deployment"></a>Implantação de sistema operacional
+
+### <a name="after-passive-site-server-is-promoted-the-default-boot-image-packages-still-have-package-source-on-the-previous-active-server"></a>Depois que o servidor do site passivo for promovido, os pacotes de imagem de inicialização padrão ainda terão a origem do pacote no servidor ativo anterior
+<!--3453224, SCCMDocs-pr issue 3097-->
+*Aplica-se a: Configuration Manager versão 1810*
+
+Se você tiver um servidor do site no modo passivo (servidor B), quando promovê-lo a ativo, o local do conteúdo para imagens de inicialização padrão continuará a fazer referência ao servidor anteriormente ativo (servidor A). Se o servidor A tem uma falha de hardware, você não pode atualizar ou alterar as imagens de inicialização padrão.
+
+#### <a name="workaround"></a>Solução alternativa
+Nenhum
 
 
 
