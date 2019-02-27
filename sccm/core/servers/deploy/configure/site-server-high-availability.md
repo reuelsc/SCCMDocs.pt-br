@@ -10,12 +10,13 @@ ms.assetid: 6dcef836-c0d1-40af-ad30-cd8d864b09a9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 912bdb93db05091ff756c51ee9f951a17a76ff5d
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: be12cfe29ff470f2f577bab2c685695ae5770bae
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385967"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56131414"
 ---
 # <a name="site-server-high-availability-in-configuration-manager"></a>Alta disponibilidade do servidor do site no Configuration Manager
 
@@ -101,7 +102,7 @@ Para fazer o servidor do site no modo passivo ficar ativo, você *promove*-o man
 
 Para obter mais informações sobre o processo geral de adição de funções, veja [Instalar funções do sistema de site](/sccm/core/servers/deploy/configure/install-site-system-roles).
 
-1. No console do Configuration Manager, vá para o espaço de trabalho **Administração**, expanda **Configuração do Site**, selecione o nó **Sites** e clique em **Criar Servidor do Sistema de Sites** na faixa de opções.   
+1. No console do Configuration Manager, vá para o workspace **Administração**, expanda **Configuração do Site**, selecione o nó **Sites** e clique em **Criar Servidor do Sistema de Sites** na faixa de opções.   
 
 2. Na página **Geral** do Assistente para Criar Servidor do Sistema de Sites, especifique o servidor para hospedar o servidor do site no modo passivo. O servidor especificado não pode hospedar nenhuma função do sistema de sites antes de instalar um servidor do site no modo passivo.  
 
@@ -119,9 +120,9 @@ Para obter mais informações sobre o processo geral de adição de funções, v
 
      - Selecione uma das seguintes opções:  
 
-         - **Copiar arquivos de origem de instalação pela rede do servidor do site no modo ativo**: essa opção cria um pacote compactado e o envia para o novo servidor do site.  
+         - **Copiar os arquivos de origem de instalação na rede do servidor do site em modo ativo**: esta opção cria um pacote compactado e o envia para o novo servidor do site.  
 
-         - **Use os arquivos de origem no seguinte local no servidor do site no modo passivo**: por exemplo, um caminho local para o qual você já copiou os arquivos de origem. Verifique se que este conteúdo é da mesma versão que o servidor do site no modo ativo.  
+         - **Usar os arquivos de origem no seguinte local no servidor do site em modo passivo**: por exemplo, um caminho local para o qual você já copiou os arquivos de origem. Verifique se que este conteúdo é da mesma versão que o servidor do site no modo ativo.  
 
          - (*Recomendado*) **Use os arquivos de origem no seguinte local de rede**: especifique o caminho diretamente para os conteúdos da pasta **CD.Latest** do servidor do site no modo ativo. Por exemplo, `\\Server\SMS_ABC\CD.Latest` em que "*Server*" é o nome do servidor do site no modo ativo, e "*ABC*" é o código do site.  
 
@@ -129,7 +130,7 @@ Para obter mais informações sobre o processo geral de adição de funções, v
 
 5. Conclua o assistente. Depois, o Configuration Manager instala o servidor do site no modo passivo no servidor especificado.
 
-Para obter o status de instalação detalhado, no console, vá para o espaço de trabalho **Monitoramento** e selecione o nó **Status do Servidor do Site**. O estado do servidor do site no modo passivo é exibido como **Instalando**. Para obter informações mais detalhadas, selecione o servidor e clique em **Mostrar Status**. Essa ação abre a janela de Status de Instalação do Servidor do Site. Quando o processo for concluído, o estado será exibido como **OK** para ambos os servidores.   
+Para obter o status de instalação detalhado, no console, vá para o workspace **Monitoramento** e selecione o nó **Status do Servidor do Site**. O estado do servidor do site no modo passivo é exibido como **Instalando**. Para obter informações mais detalhadas, selecione o servidor e clique em **Mostrar Status**. Essa ação abre a janela de Status de Instalação do Servidor do Site. Quando o processo for concluído, o estado será exibido como **OK** para ambos os servidores.   
 
 Para obter mais informações sobre o processo de instalação, veja [Fluxograma – configurar um servidor do site no modo passivo](/sccm/core/servers/deploy/configure/passive-site-server-flowchart).
 
@@ -169,13 +170,13 @@ Esta seção descreve como alterar o servidor do site do modo passivo para o mod
 > [!Tip]  
 > O console do Configuration Manager solicita a lista de Provedores de SMS disponíveis da WMI no servidor do site. Quando você instala vários provedores de SMS em um site, o site atribui aleatoriamente cada nova solicitação de conexão para usar um provedor de SMS instalado. Não é possível especificar o local do Provedor de SMS a ser usado com uma sessão de conexão específica. Se o seu console não conseguir se conectar ao site porque o servidor do site atual está offline, especifique o outro servidor do site na janela Conexão do Site.  
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**. Selecione o site e, em seguida, mude para a guia **Nós**. Selecione o servidor do site no modo passivo e, em seguida, clique em **Promover para ativo** na faixa de opções. Clique em **Sim** para confirmar e continuar.   
+1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**. Selecione o site e, em seguida, mude para a guia **Nós**. Selecione o servidor do site no modo passivo e, em seguida, clique em **Promover para ativo** na faixa de opções. Clique em **Sim** para confirmar e continuar.   
   
 2. Atualize o nó do console. A coluna **Status** para o servidor que você está promovendo exibe a guia **Nós** como **Promovendo**.  
 
 3. Após a conclusão da promoção, a coluna **Status** mostrará **OK** para o novo servidor do site no modo ativo e para o novo servidor do site no modo passivo. A coluna **Nome do Servidor** para o site agora exibe o nome do novo servidor do site no modo ativo.
 
-Para o status detalhado, vá para o espaço de trabalho **Monitoramento** e selecione o nó **Status do Servidor do Site**. A coluna **Modo** identifica qual servidor está *Ativo* ou *Passivo*. Ao promover um servidor do modo passivo para o modo ativo, selecione o servidor do site que você está promovendo para ativo e depois escolha **Mostrar Status** na faixa de opções. Essa ação abre a janela Status de Promoção do Servidor do Site, que exibe detalhes adicionais sobre o processo.
+Para o status detalhado, vá para o workspace **Monitoramento** e selecione o nó **Status do Servidor do Site**. A coluna **Modo** identifica qual servidor está *Ativo* ou *Passivo*. Ao promover um servidor do modo passivo para o modo ativo, selecione o servidor do site que você está promovendo para ativo e depois escolha **Mostrar Status** na faixa de opções. Essa ação abre a janela Status de Promoção do Servidor do Site, que exibe detalhes adicionais sobre o processo.
 
 Quando um servidor do site no modo ativo mudar para o modo passivo, somente a função de sistema de sites ficará passiva. Todas as outras funções de sistema de sites instaladas nesse computador permanecerão ativas e acessíveis aos clientes.
 
@@ -207,4 +208,4 @@ As etapas a seguir podem ser necessárias em seu ambiente:
 
 ## <a name="daily-monitoring"></a>Monitoramento diário
 
-Quando você tiver um servidor do site no modo passivo, monitore-o diariamente. Verifique se seu Status permanece OK e está pronto para uso. No console do Configuration Manager, vá até o espaço de trabalho **Monitoramento** e selecione o nó **Status do Servidor do Site**. Exiba os servidores do site e seu status atual. Também exiba o status no espaço de trabalho **Administração**. Expanda **Configuração do Site** e selecione o nó **Sites**. Selecione o site e, em seguida, mude para a guia **Nós**. 
+Quando você tiver um servidor do site no modo passivo, monitore-o diariamente. Verifique se seu Status permanece OK e está pronto para uso. No console do Configuration Manager, vá até o workspace **Monitoramento** e selecione o nó **Status do Servidor do Site**. Exiba os servidores do site e seu status atual. Também exiba o status no workspace **Administração**. Expanda **Configuração do Site** e selecione o nó **Sites**. Selecione o site e, em seguida, mude para a guia **Nós**. 

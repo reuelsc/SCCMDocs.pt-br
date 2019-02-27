@@ -10,12 +10,13 @@ ms.assetid: 07ce872e-1558-42ad-b5ad-582c5b1bdbb4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: eb7e4a6645514cedee382932adff76da14d0ba16
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 74b8f7b099e906856300f5cc76b807daf894e060
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385517"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120071"
 ---
 # <a name="design-a-hierarchy-of-sites-for-configuration-manager"></a>Projetar uma hierarquia de sites do Configuration Manager
 

@@ -10,12 +10,13 @@ ms.assetid: 92c1ccca-a748-44cd-a52e-e41d34bf981d
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 9920bd48ad7b953469261602c21a6664580143a2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 07b766db6b80f92eba8d401b3c751ca1d4766b38
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335772"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56130853"
 ---
 # <a name="monitor-compliance-settings-in-system-center-configuration-manager"></a>Monitorar as configurações de conformidade no System Center Configuration Manager
 
@@ -24,7 +25,7 @@ ms.locfileid: "32335772"
 Depois de as implantar linhas de base de configuração do System Center Configuration Manager em dispositivos na sua hierarquia, você pode usar um ou mais dos procedimentos deste tópico para exibir o status de conformidade da linha de base de configuração:
 
 > [!NOTE]  
->  Os campos de critérios de validação nos relatórios de configurações de conformidade (o equivalente no relatório do lado do cliente é **Restrições**) exibem o SML subjacente (Service Modeling Language). Isso pode dificultar para os administradores que criaram o item de configuração no console do Configuration Manager entenderem quais são os critérios de validação, caso não tenham conhecimento do SML. Nesse caso, use o espaço de trabalho **Monitoramento** do console do Configuration Manager para exibir as propriedades do item de configuração e seus critérios de validação.  
+>  Os campos de critérios de validação nos relatórios de configurações de conformidade (o equivalente no relatório do lado do cliente é **Restrições**) exibem o SML subjacente (Service Modeling Language). Isso pode dificultar para os administradores que criaram o item de configuração no console do Configuration Manager entenderem quais são os critérios de validação, caso não tenham conhecimento do SML. Nesse caso, use o workspace **Monitoramento** do console do Configuration Manager para exibir as propriedades do item de configuração e seus critérios de validação.  
 
 ##  <a name="view-compliance-results-in-the-configuration-manager-console"></a>Exibir resultados de conformidade no console do Configuration Manager  
  Use este procedimento para exibir detalhes sobre a conformidade das linhas de base de configuração implantadas no console do Configuration Manager.  
@@ -39,14 +40,14 @@ Depois de as implantar linhas de base de configuração do System Center Configu
 
      A página **Status da Implantação** contém as seguintes guias:  
 
-    -   **Compatível**: exibe a conformidade da linha de base de configuração com base no número de ativos afetados. É possível clicar em uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** que estão localizados no espaço de trabalho **Ativos e Conformidade** , que contém todos os usuários ou dispositivos que são compatíveis com esta regra. O painel **Detalhes do Ativo** exibe os usuários e os dispositivos compatíveis com a linha de base de configuração. Clique duas vezes em um usuário dispositivo na lista para exibir informações adicionais.  
+    -   **Em conformidade**: exibe a conformidade da linha de base de configuração com base no número de ativos afetados. É possível clicar em uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** que estão localizados no workspace **Ativos e Conformidade**, que contém todos os usuários ou dispositivos que são compatíveis com esta regra. O painel **Detalhes do Ativo** exibe os usuários e os dispositivos compatíveis com a linha de base de configuração. Clique duas vezes em um usuário dispositivo na lista para exibir informações adicionais.  
 
         > [!IMPORTANT]  
         >  Uma regra de item de configuração não será avaliada se não for detectada nem aplicável em um dispositivo cliente; no entanto, será retornada como compatível.  
 
-    -   **Erro**: exibe uma lista de todos os erros da implantação da linha de base de configuração selecionada com base no número de ativos afetados. É possível clicar em uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do espaço de trabalho **Ativos e Conformidade** , que contém todos os usuários ou dispositivos que geraram erros com esta regra. Ao selecionar um usuário ou dispositivo, o painel **Detalhes do Ativo** exibe os usuários ou os dispositivos afetados pelo problema selecionado. Clique duas vezes em um usuário ou dispositivo na lista para exibir informações adicionais sobre o problema.  
+    -   **Erro**: exibe uma lista de todos os erros da implantação da linha de base de configuração selecionada com base no número de ativos afetados. É possível clicar em uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do workspace **Ativos e Conformidade**, que contém todos os usuários ou dispositivos que geraram erros com esta regra. Ao selecionar um usuário ou dispositivo, o painel **Detalhes do Ativo** exibe os usuários ou os dispositivos afetados pelo problema selecionado. Clique duas vezes em um usuário ou dispositivo na lista para exibir informações adicionais sobre o problema.  
 
-    -   **Não Compatível**: exibe uma lista de todas as regras não compatíveis na linha de base de configuração com base no número de ativos afetados. É possível clicar em uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do espaço de trabalho **Ativos e Conformidade** , que contém todos os usuários ou dispositivos que não são compatíveis com esta regra. Ao selecionar um usuário ou dispositivo, o painel **Detalhes do Ativo** exibe os usuários ou os dispositivos afetados pelo problema selecionado. Clique duas vezes em um usuário ou dispositivo na lista para exibir informações adicionais sobre o problema.  
+    -   **Não em conformidade**: exibe uma lista de todas as regras não compatíveis na linha de base de configuração com base no número de ativos afetados. É possível clicar em uma regra para criar um nó temporário no nó **Usuários** ou **Dispositivos** do workspace **Ativos e Conformidade**, que contém todos os usuários ou dispositivos que não são compatíveis com esta regra. Ao selecionar um usuário ou dispositivo, o painel **Detalhes do Ativo** exibe os usuários ou os dispositivos afetados pelo problema selecionado. Clique duas vezes em um usuário ou dispositivo na lista para exibir informações adicionais sobre o problema.  
 
     -   **Desconhecido**: exibe uma lista de todos os usuários e dispositivos que não relataram a conformidade para a implantação da linha de base de configuração selecionada, junto com o status atual do cliente dos dispositivos.  
 
@@ -74,9 +75,9 @@ Depois de as implantar linhas de base de configuração do System Center Configu
     > [!IMPORTANT]  
     >  Os resultados da avaliação são armazenados em cache por 15 minutos. Se você iniciar uma reavaliação no período de 15 minutos, os resultados de conformidade serão retornados desse cache em vez de uma nova avaliação. Portanto, se você fizer uma alteração no cliente que possa afetar os resultados da avaliação de conformidade, aguarde 15 minutos antes de iniciar uma reavaliação.  
 
-    -   **Compatível**: o computador cliente está em conformidade com a linha de base de configuração avaliada.  
+    -   **Em conformidade**: o computador cliente está em conformidade com a linha de base de configuração avaliada.  
 
-    -   **Não Compatível**: o computador cliente não está em conformidade com a linha de base de configuração avaliada.  
+    -   **Não em conformidade**: o computador cliente não está em conformidade com a linha de base de configuração avaliada.  
 
     -   **Desconhecido**: o computador cliente ainda não avaliou a linha de base de configuração. Se deseja iniciar a avaliação fora do agendamento de avaliação de conformidade, selecione as linhas de base de configuração a ser avaliadas e clique em **Avaliar**.  
 
@@ -104,4 +105,4 @@ Depois de as implantar linhas de base de configuração do System Center Configu
 
 5.  O **Assistente para Criar Coleção de Usuários** ou o **Assistente para Criar Coleção de Dispositivos** é aberto, dependendo se o item de configuração foi implantado em usuários ou dispositivos. O assistente é populado automaticamente com os valores corretos para criar a coleção; no entanto, é possível editar esses valores.  
 
-6.  Depois de concluir o assistente, a coleção é exibida no nó **Coleções de Usuários** ou **Coleções de Dispositivos** do espaço de trabalho **Ativos e Conformidade** .  
+6.  Depois de concluir o assistente, a coleção é exibida no nó **Coleções de Usuários** ou **Coleções de Dispositivos** do workspace **Ativos e Conformidade**.  

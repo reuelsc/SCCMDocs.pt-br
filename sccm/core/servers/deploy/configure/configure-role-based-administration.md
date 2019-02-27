@@ -9,12 +9,13 @@ ms.assetid: 57413dd3-b2f8-4a5f-b27f-8464d357caff
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f5a0601af46d4d5f835822d3e5c551096512ceb3
-ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 554e67e171fe5b800d231d257105531dcd633baf
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42590869"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56131567"
 ---
 # <a name="configure-role-based-administration-for-configuration-manager"></a>Configurar administração baseada em funções para o Configuration Manager   
 
@@ -47,7 +48,7 @@ No Configuration Manager, a administração baseada em funções combina funçõ
 
 1.  No console do Configuration Manager, acesse **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e selecione **Funções de Segurança**.  
+2.  No workspace **Administração**, expanda **Segurança**e selecione **Funções de Segurança**.  
 
      Use um dos seguintes processos para criar a nova função de segurança:  
 
@@ -86,7 +87,7 @@ No Configuration Manager, a administração baseada em funções combina funçõ
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e selecione **Funções de Segurança**.  
+2.  No workspace **Administração**, expanda **Segurança**e selecione **Funções de Segurança**.  
 
 3.  Selecione a função de segurança personalizada que deseja modificar.  
 
@@ -141,7 +142,7 @@ No Configuration Manager, a administração baseada em funções combina funçõ
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
+2.  No workspace **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
 
 3.  Na guia **Início**, no grupo **Criar**, escolha **Adicionar Usuário ou Grupo**.  
 
@@ -156,7 +157,7 @@ No Configuration Manager, a administração baseada em funções combina funçõ
 
     -   **Todas as instâncias dos objetos relacionados às funções de segurança atribuídas**: essa opção associa o usuário administrativo ao escopo de segurança **Todos** e às coleções **Todos os Sistemas** e **Todos os Usuários e Grupos de Usuários**. As funções de segurança que são atribuídas ao usuário definem o acesso a objetos. Os novos objetos que esse usuário administrativo cria são atribuídos ao escopo de segurança **Padrão** .  
 
-    -   **Somente instâncias de objetos atribuídas aos escopos e coleções de segurança especificados**: por padrão, essa opção associa o usuário administrativo ao escopo de segurança **Padrão** e às coleções **Todos os Sistemas** e **Todos os Usuários e Grupos de Usuários**. No entanto, os escopos de segurança e as coleções atuais são limitados aos que estão associados à conta que você usou para criar o novo usuário administrativo. Essa opção oferece suporte à adição ou remoção de escopos de segurança e coleções para personalizar o escopo administrativo do usuário administrativo.  
+    -   **Somente as instâncias de objetos que estiverem atribuídas a coleções ou escopos de segurança especificados**: por padrão, essa opção associa o usuário administrativo ao escopo de segurança **Padrão** e a coleções de **Todos os sistemas** e **Todos os usuários e Grupos de usuários**. No entanto, os escopos de segurança e as coleções atuais são limitados aos que estão associados à conta que você usou para criar o novo usuário administrativo. Essa opção oferece suporte à adição ou remoção de escopos de segurança e coleções para personalizar o escopo administrativo do usuário administrativo.  
 
     > [!IMPORTANT]  
     >  As opções anteriores associam cada escopo de segurança e coleção associados a cada função de segurança atribuída ao usuário administrativo. Você pode usar uma terceira opção, **Associar funções de segurança atribuídas a escopos e coleções de segurança específicos**, para associar funções de segurança individuais a escopos e coleções de segurança específicos. Essa terceira opção fica disponível com a criação do novo usuário administrativo, quando você modifica o usuário administrativo.  
@@ -174,9 +175,9 @@ No Configuration Manager, a administração baseada em funções combina funçõ
 
 -   **Todas as instâncias dos objetos relacionados às funções de segurança atribuídas**: essa opção associa o usuário administrativo ao escopo **Todos** e às coleções **Todos os Sistemas** e **Todos os Usuários e Grupos de Usuários**. As funções de segurança que são atribuídas ao usuário definem o acesso a objetos.  
 
--   **Somente instâncias de objetos atribuídas aos escopos e às coleções de segurança especificados**: essa opção associa o usuário administrativo aos mesmos escopos e coleções de segurança associados à conta que você usa para configurar o usuário administrativo. Essa opção oferece suporte à adição ou remoção de funções de segurança e coleções para personalizar o escopo administrativo do usuário administrativo.  
+-   **Somente as instâncias de objetos que estiverem atribuídas a coleções ou escopos de segurança especificados**: Essa opção associa o usuário administrativo aos mesmos escopos de segurança e coleções que estão associados à conta que você usa para configurar o usuário administrativo. Essa opção oferece suporte à adição ou remoção de funções de segurança e coleções para personalizar o escopo administrativo do usuário administrativo.  
 
--   **Associar funções de segurança atribuídas a escopos e coleções de segurança específicos**: essa opção permite criar associações específicas entre funções individuais de segurança e escopos e coleções de segurança específicos do usuário.  
+-   **Associar funções de segurança atribuídas a coleções e escopos de segurança específicos**: Essa opção permite que você crie as associações específicas entre as funções de segurança individuais, os escopos de segurança e as coleções específicos para o usuário.  
 
     > [!NOTE]  
     >  Essa opção está disponível somente quando você modifica as propriedades de um usuário administrativo.  
@@ -189,7 +190,7 @@ Use o procedimento a seguir para exibir e gerenciar a configuração de objetos 
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
+2.  No workspace **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
 
 3.  Selecione o usuário administrativo que deseja modificar.  
 
@@ -203,11 +204,11 @@ Use o procedimento a seguir para exibir e gerenciar a configuração de objetos 
 
 Use o procedimento a seguir para modificar um usuário administrativo que tem o comportamento de objeto passível de proteção definido como **Todas as instâncias de objetos relacionadas às funções de segurança atribuídas**.  
 
-#### <a name="for-option-all-instances-of-the-objects-that-are-related-to-the-assigned-security-roles"></a>Para a opção: Todas as instâncias de objetos relacionadas às funções de segurança atribuídas  
+#### <a name="for-option-all-instances-of-the-objects-that-are-related-to-the-assigned-security-roles"></a>Para a opção: Todas as instâncias dos objetos relacionados às funções de segurança atribuídas  
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
+2.  No workspace **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
 
 3.  Selecione o usuário administrativo que deseja modificar.  
 
@@ -230,11 +231,11 @@ Use o procedimento a seguir para modificar um usuário administrativo que tem o 
 
 Use o procedimento a seguir para modificar um usuário administrativo que tem o comportamento de objeto passível de proteção definido como **Somente instâncias de objetos atribuídas aos escopos e às coleções de segurança especificadas**.  
 
-#### <a name="for-option-only-the-instances-of-objects-that-are-assigned-to-the-specified-security-scopes-and-collections"></a>Para a opção: Somente instâncias de objetos atribuídas aos escopos ou às coleções de segurança especificados  
+#### <a name="for-option-only-the-instances-of-objects-that-are-assigned-to-the-specified-security-scopes-and-collections"></a>Para a opção: Somente as instâncias de objetos que estiverem atribuídas a coleções ou escopos de segurança especificados  
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
+2.  No workspace **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
 
 3.  Selecione o usuário administrativo que deseja modificar.  
 
@@ -258,11 +259,11 @@ Use o procedimento a seguir para modificar um usuário administrativo que tem o 
 
 Use o procedimento a seguir para modificar um usuário administrativo que tem o comportamento de objeto passível de proteção definido como **Associar funções de segurança atribuídas a escopos e coleções de segurança específicos**.  
 
-#### <a name="for-option-associate-assigned-security-roles-with-specific-security-scopes-and-collections"></a>Para a opção: Associar funções de segurança atribuídas a escopos e coleções de segurança específicos  
+#### <a name="for-option-associate-assigned-security-roles-with-specific-security-scopes-and-collections"></a>Para a opção: Associar funções de segurança atribuídas a coleções e escopos de segurança específicos  
 
 1.  No console do Configuration Manager, escolha **Administração**.  
 
-2.  No espaço de trabalho **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
+2.  No workspace **Administração**, expanda **Segurança**e escolha **Usuários Administrativos**.  
 
 3.  Selecione o usuário administrativo que deseja modificar.  
 

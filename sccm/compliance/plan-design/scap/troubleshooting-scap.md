@@ -10,12 +10,13 @@ ms.assetid: 27261853-1641-4826-98c6-afbb73a1209d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bb3bcd0e7301ff2ef7baeff29de038cbd8476525
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 58a3c69e6206aa651e55f96286f98f64f748de70
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383272"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56137129"
 ---
 # <a name="troubleshoot-the-scap-extensions-for-configuration-manager"></a>Solucionar problemas de extensões do SCAP para o Configuration Manager
 
@@ -68,7 +69,7 @@ Aqui estão alguns problemas comuns e as soluções para ajudá-lo a solucionar 
 
      - É mais provável que as novas configurações ainda não tenham entrado em vigor. Por padrão, os clientes do Active Directory verificam se há atualizações na política de grupo a cada 90 minutos. Esse ciclo pode ser um dos motivos pelos quais as configurações parecem não ter sido aplicadas, mesmo que você tenha configurado as políticas corretamente.  
 
-     - Muitas configurações do computador exigem uma reinicialização para que entrem em vigor. Por exemplo, a configuração **Criptografia do sistema: usar algoritmos em conformidade com o FIPS usar para criptografia, hash e assinatura** exige que você reinicie o computador para que o Windows possa usar os algoritmos de criptografia especificados. Ignore o intervalo de atualização de política de grupo inserindo o seguinte comando em um prompt de comando com privilégios de administrador: `gpupdate /force`. Depois de concluída a atualização da Política de Grupo, reinicie o computador para garantir que todas as configurações tenham efeito. Para obter mais informações, confira [Uma descrição do utilitário de atualização de política de grupo](https://support.microsoft.com/help/298444).
+     - Muitas configurações do computador exigem uma reinicialização para que entrem em vigor. Por exemplo, a configuração de **Criptografia de sistema: usar algoritmos compatíveis com FIPS para criptografia, hash e assinatura** exige que você reinicie o computador antes que o Windows possa usar os algoritmos de criptografia especificados. Ignore o intervalo de atualização de política de grupo inserindo o seguinte comando em um prompt de comando com privilégios de administrador: `gpupdate /force`. Depois de concluída a atualização da Política de Grupo, reinicie o computador para garantir que todas as configurações tenham efeito. Para obter mais informações, confira [Uma descrição do utilitário de atualização de política de grupo](https://support.microsoft.com/help/298444).
 
 - Estou tendo problemas ao fornecer a conexão de banco de dados com minhas informações organizacionais.  
 

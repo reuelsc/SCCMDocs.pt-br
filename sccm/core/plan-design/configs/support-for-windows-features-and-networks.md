@@ -10,12 +10,13 @@ ms.assetid: 0cf4bacb-6b6d-4d4f-8640-b13fe15873de
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 915a8ac1d20ca288b2b830791c8a3b79c65ffbce
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ae1ac3262acff35e23de4faa1e80c796f5ee4e4b
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383628"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156688"
 ---
 # <a name="support-for-windows-features-and-networks-in-configuration-manager"></a>Suporte para recursos do Windows e redes no Configuration Manager
 
@@ -60,7 +61,7 @@ Para obter informações, consulte [Configurar clientes para o BranchCache](http
 |Windows 8|Com suporte por padrão|  
 |Windows 8.1|Com suporte por padrão|  
 |Windows 10|Com suporte por padrão|  
-|Windows Server 2008 com SP2|**Exige o BITS 4.0**: instale a versão BITS 4.0 em clientes do Configuration Manager usando as atualizações de software ou a distribuição de software. Para obter mais informações, consulte [Windows Management Framework](https://support.microsoft.com/help/968929/windows-management-framework-windows-powershell-2-0-winrm-2-0-and-bits).<br /><br /> Neste sistema operacional, a funcionalidade do cliente do BranchCache não é compatível com a distribuição de software que é executada pela rede ou para transferências de arquivos SMB. Além disso, esse sistema operacional não pode usar a funcionalidade do BranchCache com pontos de distribuição baseados em nuvem.|  
+|Windows Server 2008 com SP2|**Exige o BITS 4.0**: instale a versão BITS 4.0 em clientes do Configuration Manager usando as atualizações de software ou a distribuição de software. Para obter mais informações, consulte [Windows Management Framework](https://support.microsoft.com/help/968929/windows-management-framework-windows-powershell-2-0-winrm-2-0-and-bits).<br /><br /> Neste sistema operacional, a funcionalidade do cliente do BranchCache não é compatível com a distribuição de software que é executada pela rede ou para transferências de arquivos SMB. Além disso, esse sistema operacional não pode usar a funcionalidade do BranchCache com pontos de distribuição baseados em nuvem.|  
 |Windows Server 2008 R2|Com suporte por padrão|  
 |Windows Server 2012|Com suporte por padrão|  
 |Windows Server 2012 R2|Com suporte por padrão|  
@@ -151,7 +152,7 @@ As funções de servidor do site exigem o NTFS, de modo que o Configuration Mana
 
 ### <a name="support-considerations"></a>Considerações sobre suporte
 
-- **Rede de Área de Armazenamento**: há suporte para uma SAN (rede de área de armazenamento) quando um servidor baseado no Windows com suporte é anexado diretamente ao volume hospedado pela SAN.  
+- **Rede de área de armazenamento**: Há suporte para uma SAN (Rede de Área de Armazenamento) quando um servidor baseado no Windows com suporte é conectado diretamente ao volume hospedado pela SAN.  
 
 - **Single Instance Storage**: o Configuration Manager não dá suporte à configuração de pastas de pacote e de assinatura do ponto de distribuição em um volume habilitado para SIS (Single Instance Storage).  
 

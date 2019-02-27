@@ -10,12 +10,13 @@ ms.assetid: f3058277-c597-4dac-86d1-41b6f7e62b36
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5c90889861db55a27da897e709b16b66edece08a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 67d2fc976b08e438c6f19a7fecca03761bb099f6
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342419"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56124723"
 ---
 # <a name="use-the-hotfix-installer-to-install-updates-for-system-center-configuration-manager"></a>Usar o Instalador do Hotfix para instalar atualizações do System Center Configuration Manager
 
@@ -94,7 +95,7 @@ O assistente também cria implantações que você pode usar para instalar as at
 |&lt;Nome do servidor\>|Este é o nome do servidor do site em que você executa o pacote de atualização.|  
 |SMS_&lt;Código do site\>|Este é o nome do compartilhamento da pasta de instalação do Configuration Manager.|  
 |&lt;Número da KB\>|Este é o número de identificação do artigo da Base de Dados de Conhecimento para este pacote de atualização.|  
-|&lt;Tipo de atualização\>|São os tipos de atualizações do Configuration Manager. O assistente cria uma pasta separada para cada tipo de atualização contida no pacote de atualização. Os nomes das pastas representam os tipos de atualização. Eles incluem o seguinte:<br /><br /> **Servidor**: inclui atualizações para servidores do site, servidores de banco de dados do site e computadores que executam o Provedor de SMS.<br /><br /> **Cliente**: inclui atualizações do cliente do Configuration Manager.<br /><br /> **AdminConsole**: inclui atualizações do console do Configuration Manager<br /><br /> Além dos tipos de atualização anteriores, o assistente cria uma pasta chamada **SCUP**. Essa pasta não representa um tipo de atualização, mas contém o arquivo .cab para o Updates Publisher.|  
+|&lt;Tipo de atualização\>|São os tipos de atualizações do Configuration Manager. O assistente cria uma pasta separada para cada tipo de atualização contida no pacote de atualização. Os nomes das pastas representam os tipos de atualização. Eles incluem o seguinte:<br /><br /> **Servidor**: inclui atualizações para servidores do site, servidores de banco de dados do site e computadores que executam o Provedor de SMS.<br /><br /> **Cliente:** inclui atualizações do cliente do Configuration Manager.<br /><br /> **AdminConsole**: inclui atualizações do console do Configuration Manager<br /><br /> Além dos tipos de atualização anteriores, o assistente cria uma pasta chamada **SCUP**. Essa pasta não representa um tipo de atualização, mas contém o arquivo .cab para o Updates Publisher.|  
 |&lt;Plataforma\>|Esta é uma pasta específica de plataforma. Ela contém os arquivos de atualização que são específicos a um tipo de processador.  Essas pastas incluem:<br /><br />- x64<br /><br /> - I386|  
 
 ##  <a name="bkmk_Install"></a> Como instalar atualizações  
@@ -161,7 +162,7 @@ Depois de instalar o pacote de atualização em um servidor do site, você poder
 
 4.  Reinicie os serviços que foram interrompidos nas etapas anteriores.  
 
-5.  Quando o pacote de atualização é instalado, ele extrai **update.sql** para o seguinte local no servidor do site: **\\\\&lt;Nome do Servidor\>\SMS_&lt;Código do Site\>\Hotfix\\&lt;Número da KB\>\update.sql**  
+5.  Quando o pacote de atualização é instalado, ele extrai **update.sql** para o seguinte local no servidor do site:  **\\\\&lt;Nome do servidor\>\SMS_&lt;Código do site\>\Hotfix\\&lt;Número da KB\>\update.sql**  
 
 ####  <a name="bkmk_provider"></a> Atualizar um computador que executa o Provedor de SMS  
  Depois de instalar um pacote de atualização que inclui atualizações para o Provedor de SMS, você deve implantar a atualização em cada computador que executa o Provedor de SMS. A única exceção a isso é a instância do Provedor de SMS instalada anteriormente no servidor do site onde você instalou o pacote de atualização. A instância local do Provedor de SMS no servidor do site é atualizada quando você instala o pacote de atualização.  
@@ -202,7 +203,7 @@ Por exemplo, você pode usar a seguinte linha de comando para atualizar um conso
 ###  <a name="BKMK_DeploySCUP"></a> Usar o Updates Publisher 2011 para instalar atualizações  
  Quando você instala o pacote de atualização em um servidor do site, o assistente de instalação cria um arquivo de catálogo do Updates Publisher, que pode ser usado para implantar as atualizações nos computadores aplicáveis. O assistente sempre cria esse catálogo, mesmo quando você seleciona a opção **Usar pacote e programa para implantar esta atualização**.  
 
- O catálogo do Updates Publisher é chamado **SCUPCatalog.cab** e pode ser encontrado no seguinte local no computador em que é executado o pacote de atualização: **\\\\&lt;NomeDoServidor\>\SMS_&lt;CódigoDoSite\>\Hotfix\\&lt;Número da KB\>\SCUP\SCUPCatalog.cab**  
+ O catálogo do Updates Publisher é denominado **SCUPCatalog.cab** e pode ser encontrado no seguinte local no computador em que é executado o pacote de atualização: **\\\\&lt;NomeDoServidor\>\SMS_&lt;CódigoDoSite\>\Hotfix\\&lt;Número da KB\>\SCUP\SCUPCatalog.cab**  
 
 > [!IMPORTANT]  
 >  Como o arquivo SCUPCatalog.cab é criado usando caminhos específicos para o servidor do site onde o pacote de atualização está instalado, ele não pode ser usado em outros servidores de site.  
@@ -241,7 +242,7 @@ Por exemplo, você pode usar a seguinte linha de comando para atualizar um conso
 
  Em seguida, na página **Configurar Método de Implantação de Atualização de Software** do assistente, selecione a opção **Eu usarei a distribuição de software**. Essa seleção instrui o assistente para criar os pacotes de implantação de software.  
 
- Concluído o assistente, você pode exibir os pacotes que ele cria no console do Configuration Manager, no nó **Pacotes** no espaço de trabalho **Biblioteca de Software**. Você pode, então, usar seu processo padrão para implantar pacotes de software nos clientes do Configuration Manager. Quando um pacote é executado em um cliente, ele instala as atualizações dos componentes aplicáveis do Configuration Manager no computador cliente.  
+ Concluído o assistente, você pode exibir os pacotes que ele cria no console do Configuration Manager, no nó **Pacotes** no workspace **Biblioteca de Software**. Você pode, então, usar seu processo padrão para implantar pacotes de software nos clientes do Configuration Manager. Quando um pacote é executado em um cliente, ele instala as atualizações dos componentes aplicáveis do Configuration Manager no computador cliente.  
 
  Para obter informações sobre como implantar pacotes em clientes do Configuration Manager, consulte [Pacotes e programas no System Center Configuration Manager](../../../apps/deploy-use/packages-and-programs.md).  
 

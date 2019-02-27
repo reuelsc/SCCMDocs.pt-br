@@ -10,12 +10,13 @@ ms.assetid: dc245916-bc11-4983-9c4d-015f655007c1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5324e00f17770feca25d40c645d8e344df797f21
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5ebf89e46b33649f12ea5770d6e771e811a66094
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456321"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56125724"
 ---
 # <a name="manage-and-monitor-phased-deployments"></a>Gerenciar e monitorar implantações em fases
 
@@ -34,16 +35,16 @@ Quando você seleciona a configuração, **Iniciar manualmente a segunda fase da
 
 1. Como iniciar essa ação varia de acordo com o tipo de software implantado:  
 
-    - **Aplicativo** (somente na versão 1806 ou posteriores): acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione **Aplicativos**.   
+    - **Aplicativo** (somente na versão 1806 ou posterior): vá até o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione **Aplicativos**.   
 
-    - **Atualização de software** (somente na versão 1810 ou posterior): vá para o workspace **Biblioteca de Software** e, em seguida, selecione um dos seguintes nós:    
+    - **Atualização de software** (somente na versão 1810 ou posterior): vá até o workspace **Biblioteca de Software** e, em seguida, selecione um dos seguintes nós:    
         - Atualizações de software  
             - **Todas as Atualizações de Software**  
             - **Grupos de Atualizações de Software**   
         - Serviço do Windows 10, **Todas as Atualizações do Windows 10**  
         - Gerenciamento de Cliente do Office 365, **Atualizações do Office 365**  
 
-    - **Sequência de tarefas**: acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequência de Tarefas**.   
+    - **Sequência de tarefas**: acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**.   
 
 2. Selecione o software com a implantação em fases.  
 
@@ -61,16 +62,16 @@ Talvez você precise suspender manualmente ou retomar uma implantação em fases
 
 1. Como iniciar essa ação varia de acordo com o tipo de software implantado:  
 
-    - **Aplicativo** (somente na versão 1806 ou posteriores): acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione **Aplicativos**.   
+    - **Aplicativo** (somente na versão 1806 ou posterior): acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione **Aplicativos**.   
 
-    - **Atualização de software** (somente na versão 1810 ou posterior): vá para o workspace **Biblioteca de Software** e, em seguida, selecione um dos seguintes nós:    
+    - **Atualização de software** (somente na versão 1810 ou posterior): acesse o workspace **Biblioteca de Software** e, em seguida, selecione um dos seguintes nós:    
         - Atualizações de software  
             - **Todas as Atualizações de Software**  
             - **Grupos de Atualizações de Software**   
         - Serviço do Windows 10, **Todas as Atualizações do Windows 10**  
         - Gerenciamento de Cliente do Office 365, **Atualizações do Office 365**  
 
-    - **Sequência de tarefas**: acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequência de Tarefas**. Selecione uma sequência de tarefas existente e clique em **Criar Implantação em Fases** na faixa de opções.  
+    - **Sequência de tarefas**: acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**. Selecione uma sequência de tarefas existente e clique em **Criar Implantação em Fases** na faixa de opções.  
 
 2. Selecione o software com a implantação em fases.  
 
@@ -94,15 +95,15 @@ Este painel mostra as seguintes informações para cada fase da implantação:
 
 - **Total de dispositivos**: o número de dispositivos afetados por essa fase.  
 
-- **Status**: o status atual desta fase. Cada fase pode estar em um dos seguintes estados:  
+- **Status**: o status atual dessa fase. Cada fase pode estar em um dos seguintes estados:  
 
     - **Implantação criada**: a implantação em fases criou uma implantação do software para a coleção para essa fase. Os clientes são direcionados ativamente com este software.  
 
-    - **Aguardando**: a fase anterior ainda não atendeu aos critérios de sucesso para que a implantação passe para essa fase.  
+    - **Aguardando**: a fase anterior ainda não atingiu os critérios de êxito para que a implantação continue nessa fase.  
 
     - **Suspenso**: um administrador suspendeu a implantação.  
 
-- **Progresso**: os estados de implantação com codificação de cores de clientes. Por exemplo: Êxito, Em Andamento, Erro, Requisitos Não Atendidos e Desconhecido. 
+- **Progresso**: os estados de implantação codificados por cores dos clientes. Por exemplo: Êxito, Em Andamento, Erro, Requisitos Não Atendidos e Desconhecido. 
 
 #### <a name="success-criteria-tile"></a>Bloco de critérios de sucesso
 

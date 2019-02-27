@@ -10,11 +10,13 @@ ms.assetid: 17cf034f-eaff-43ce-bc8e-917213c1db74
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b7fa19ed6dbdcd745b911e235c95166a70c00f23
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f8efc99783b07b5097ac2e6de82df9651eefa5ce
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127194"
 ---
 # <a name="publish-site-data-for-system-center-configuration-manager"></a>Publicar dados do site para o System Center Configuration Manager
 
@@ -39,7 +41,7 @@ Para saber mais sobre como clientes localizam um ponto gerenciamento, veja [Ente
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , expanda **Configuração de Site**e clique em **Sites**. Selecione o site em que deseja publicar seus dados do site. Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
+2.  No workspace **Administração**, expanda **Configuração de Site**e clique em **Sites**. Selecione o site em que deseja publicar seus dados do site. Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
 3.  Na guia **Publicando** das propriedades do site, selecione as florestas nas quais esse site publicará dados.  
 
@@ -49,7 +51,7 @@ Para saber mais sobre como clientes localizam um ponto gerenciamento, veja [Ente
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho de **Administração** , clique em **Florestas do Active Directory**. Se uma descoberta de florestas do Active Directory tiver sido executada anteriormente, você verá cada floresta descoberta no painel de resultados. A floresta local e quaisquer florestas confiáveis são detectadas quando a descoberta de florestas do Active Directory é executada. Somente as florestas não confiáveis devem ser adicionadas manualmente.  
+2.  No workspace **Administração**, expanda **Configuração da Hierarquia** e clique em **Florestas do Active Directory**. Se uma descoberta de florestas do Active Directory tiver sido executada anteriormente, você verá cada floresta descoberta no painel de resultados. A floresta local e quaisquer florestas confiáveis são detectadas quando a descoberta de florestas do Active Directory é executada. Somente as florestas não confiáveis devem ser adicionadas manualmente.  
 
     -   Para configurar uma floresta descoberta anteriormente, selecione-a no painel de resultados. Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades** para abrir as propriedades da floresta. Continue na etapa 3.  
 

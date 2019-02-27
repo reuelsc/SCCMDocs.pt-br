@@ -10,12 +10,13 @@ ms.assetid: c1b2057e-b74f-43fa-a293-763a8f866d3d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 117ad9a087151db51c4cf33112ab662f53b9134e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 72478fc0b8853cbf9767adfa3949f96b29f2668a
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32332008"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120350"
 ---
 # <a name="prerequisites-for-remote-control-in-system-center-configuration-manager"></a>Pré-requisitos para o controle remoto no System Center Configuration Manager
 
@@ -45,4 +46,4 @@ O visualizador de controle remoto tem suporte em todos os sistemas operacionais 
 |----------------|----------------------|  
 |O controle remoto deve ser habilitado para clientes|Por padrão, o controle remoto não está habilitado quando você instala o Configuration Manager. Para obter informações sobre como habilitar e configurar o controle remoto, consulte [Configurando o controle remoto no System Center Configuration Manager](../../../../core/clients/manage/remote-control/configuring-remote-control.md).|  
 |Ponto do Reporting Services|A função do sistema de sites do ponto do Reporting Services deve estar instalada antes que seja possível executar relatórios para o controle remoto. Para obter mais informações, consulte [Relatórios no System Center Configuration Manager](../../../../core/servers/manage/reporting.md).|  
-|Permissões de segurança para gerenciar o controle remoto|Para acessar recursos da coleção e iniciar uma sessão de controle remoto do console do Configuration Manager: permissão para **Ler**, **Ler Recurso** e **Controlar Remotamente** para o objeto **Coleção**.<br /><br /> A função de segurança **Operador de Ferramentas Remotas** inclui essas permissões necessárias para gerenciar o controle remoto no Configuration Manager.<br /><br /> Para mais informações, consulte [Configurar administração baseada em funções para o System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-role-based-administration.md).<br /><br /> Além disso, os visualizadores autorizados devem receber a permissão para usar o controle remoto por meio da adição desses usuários à lista **Visualizadores permitidos de Controle Remoto e Assistência Remota** nas configurações do cliente das **Ferramentas Remotas**.
+|Permissões de segurança para gerenciar o controle remoto|Para acessar recursos de coleção e iniciar uma sessão de controle remoto do console do Configuration Manager: permissão **Ler**, **Ler Recurso** e **Controle Remoto** para o objeto **Coleção**.<br /><br /> A função de segurança **Operador de Ferramentas Remotas** inclui essas permissões necessárias para gerenciar o controle remoto no Configuration Manager.<br /><br /> Para mais informações, consulte [Configurar administração baseada em funções para o System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-role-based-administration.md).<br /><br /> Além disso, os visualizadores autorizados devem receber a permissão para usar o controle remoto por meio da adição desses usuários à lista **Visualizadores permitidos de Controle Remoto e Assistência Remota** nas configurações do cliente das **Ferramentas Remotas**.

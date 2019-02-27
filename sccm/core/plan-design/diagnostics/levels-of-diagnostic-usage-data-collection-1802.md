@@ -10,12 +10,13 @@ ms.assetid: 29dd51b8-6576-4010-81ba-3129ed2c3421
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d630c5d02b6c7729e5f26ce3915f48bf20aef7e2
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 0925a4cc4e4db0a178a4ccf1c7e959a76910f6e8
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893746"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56142163"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1802-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1802 do System Center Configuration Manager
 
@@ -43,7 +44,7 @@ O nível Básico inclui dados sobre sua hierarquia, dados necessários para ajud
 
 Para o Configuration Manager versão 1802, esse nível inclui os seguintes dados:
 
-- Estatísticas sobre as conexões do console do Configuration Manager: versão de sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versões do .NET instaladas e pacotes de idiomas do console
+- Estatísticas sobre as conexões de console do Configuration Manager: versão do sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versões do .NET instaladas e pacotes de idiomas do console
 
 - Contagens básicas de tipo de implantação e de aplicativo: total de aplicativos, total de aplicativos com vários tipos de implantação, total de aplicativos com dependências, total de aplicativos substituídos e contagem de tecnologias de implantação em uso
 
@@ -92,7 +93,7 @@ Para o Configuration Manager versão 1802, esse nível inclui os seguintes dados
 
      - Versão do script pós-atualização
 
-- Versão do SQL, nível do service pack, edição, ID de agrupamento e conjunto de caracteres     
+- Versão do SQL, nível do service pack, edição, ID de ordenação e conjunto de caracteres     
 
 - Estatísticas de telemetria: quando executar, tempo de execução, erros
 
@@ -467,7 +468,7 @@ Para o Configuration Manager versão 1802, esse nível inclui os seguintes dados
 
 - Estatísticas de política de conformidade em relação a conformidade e erros
 
-- Configurações de conformidade: detalhes de configuração de protocolo SCEP, VPN, Wi-Fi e de modelo de política de conformidade
+- Configurações de conformidade: Detalhes de configuração do modelo de SCEP, VPN, Wi-Fi e de política de conformidade
 
 - Pacote de configuração do DCM para uso do System Center Configuration Manager
 

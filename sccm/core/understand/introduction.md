@@ -10,12 +10,13 @@ ms.assetid: 3343eccf-bf09-41cd-9e68-03e893c7f904
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f0986d713b47d15dc0298e413216a1e33fe2e937
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 10e30b2446d1b2f51d2de8d97c4d8b084357ae32
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342470"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56133378"
 ---
 # <a name="introduction-to-system-center-configuration-manager"></a>Introduction to System Center Configuration Manager
 
@@ -110,7 +111,7 @@ Para obter mais informações, veja [Introdução ao gerenciamento de aplicativo
 
 Em todos os cenários, Anibal é o administrador principal do Configuration Manager.  
 
-###  <a name="BKMK_ScenarioEmpower"></a> Cenário de exemplo: capacitar os usuários ao garantir acesso a aplicativos de qualquer dispositivo  
+###  <a name="BKMK_ScenarioEmpower"></a> Cenário de exemplo: capacitar os usuários garantindo o acesso a aplicativos de qualquer dispositivo  
  A Trey Research deseja garantir que os funcionários tenham acesso aos aplicativos que eles necessitam da forma mais eficiente possível. Anibal mapeia esses requisitos da empresa para os seguintes cenários:  
 
 |Requisito|Estado atual de gerenciamento de clientes|Estado futuro de gerenciamento de clientes|  
@@ -178,7 +179,7 @@ Ele implementa esses itens usando as etapas de configuração na tabela a seguir
 
  Essas etapas de configuração e os resultados têm como efeito a unificação com êxito pela Trey Research do gerenciamento de conformidade de dispositivos.  
 
-###  <a name="BKMK_ScenarioSimplify"></a> Cenário de exemplo: simplificar o gerenciamento de clientes para os dispositivos  
+###  <a name="BKMK_ScenarioSimplify"></a> Cenário de exemplo: simplificar o gerenciamento de clientes para dispositivos  
  A Trey Research quer que todos os computadores novos instalem automaticamente a imagem de computador base da empresa, que executa o Windows 7. Depois que a imagem do sistema operacional for instalada nesses computadores, eles devem ser gerenciados e monitorados quanto ao software adicional instalado pelos usuários. Os computadores que armazenam informações altamente confidenciais requerem políticas de gerenciamento mais restritivas do que os outros computadores. Por exemplo, os engenheiros de suporte técnico não devem se conectar a eles remotamente, a entrada de PIN do BitLocker deve ser usada para reinicializações, e apenas os administradores locais podem instalar software.  
 
  Anibal mapeia esses requisitos da empresa para os seguintes cenários:  

@@ -10,12 +10,13 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b059fd3b8511a3cbbf308ea7a3ee21a4ec9dbfaa
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d8eff4154f5799ef0d6411b077f50753d203310e
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456712"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56126769"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planejar o gateway de gerenciamento de nuvem no Configuration Manager
 
@@ -315,7 +316,7 @@ As seguintes recomendações podem ajudá-lo a melhorar o desempenho do CMG:
 
 Você não precisa abrir nenhuma porta de entrada para a rede local. O ponto de conexão de serviço e o ponto de conexão do CMG iniciam toda a comunicação com o Azure e o CMG. Essas duas funções do sistema de sites precisam conseguir criar conexões de saída para a nuvem da Microsoft. O ponto de conexão de serviço implanta e monitora o serviço no Azure e, portanto, ele precisa estar no modo online. O ponto de conexão do CMG se conecta ao CMG para gerenciar a comunicação entre o CMG e as funções do sistema de sites locais.
 
-O seguinte diagrama é um fluxo de dados básico e conceitual do CMG: ![fluxo de dados do CMG](media/cmg-data-flow.png)
+O seguinte diagrama é um fluxo de dados básico e conceitual do CMG: ![Fluxo de dados do CMG](media/cmg-data-flow.png)
    1. O ponto de conexão de serviço se conecta ao Azure pela porta HTTPS 443. Ele se autentica usando o Azure AD ou o certificado de gerenciamento do Azure. O ponto de conexão de serviço implanta o CMG no Azure. O CMG cria o serviço de nuvem HTTPS usando o certificado de autenticação de servidor.  
 
    2. O ponto de conexão do CMG se conecta ao CMG no Azure por TCP-TLS ou HTTPS. Ele mantém a conexão aberta e cria o canal para a comunicação bidirecional futura.   
@@ -357,9 +358,9 @@ O sistema de sites do ponto de conexão do CMG é compatível com um proxy Web. 
 
 - StorageEndpoint (core.windows.net)  
 
-- Para a recuperação de token do Azure AD pelo cliente e console do Configuration Manager: ActiveDirectoryEndpoint (https://login.microsoftonline.com/))  
+- Para a recuperação de token do Azure AD pelo cliente e console do Configuration Manager: ActiveDirectoryEndpoint (https://login.microsoftonline.com/)  
 
-- Para a descoberta de usuário do Azure AD: ponto de extremidade do Graph do AAD (https://graph.windows.net/))  
+- Para a descoberta de usuários do Azure AD: Ponto de extremidade do AAD Graph (https://graph.windows.net/)  
 
 
 

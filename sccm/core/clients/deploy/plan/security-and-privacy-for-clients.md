@@ -10,12 +10,13 @@ ms.assetid: c1d71899-308f-49d5-adfa-3a3ec0163ed8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3dfb749695ffb7a8ecdeab5e4fbed764023eb6e2
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9671ccad42fc9135193cf41e058b472b52a412e1
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385585"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56142299"
 ---
 # <a name="security-and-privacy-for-configuration-manager-clients"></a>Segurança e privacidade para clientes do Configuration Manager
 
@@ -203,7 +204,7 @@ Para dispositivos móveis baseados na Internet registrados com o Configuration M
 
 *Para dispositivos móveis registrados pelo Configuration Manager*: use um item de configuração de dispositivo móvel para configurar a complexidade da senha como o PIN. Especifique pelo menos o comprimento de senha mínimo padrão.  
 
-*Para dispositivos móveis que não tem o cliente do Configuration Manager instalado, mas que são gerenciados pelo conector do Exchange Server*: defina as **Configurações de Senha** para o conector do Exchange Server de modo que a complexidade da senha seja o PIN. Especifique pelo menos o comprimento de senha mínimo padrão.  
+*Para dispositivos móveis que não têm o cliente do Configuration Manager instalado, mas são gerenciados pelo conector do Exchange Server*: defina as **Configurações de Senha** para o conector do Exchange Server de modo que a complexidade da senha seja o PIN. Especifique pelo menos o comprimento de senha mínimo padrão.  
 
 
 #### <a name="only-allow-applications-to-run-that-are-signed-by-companies-that-you-trust"></a>Somente permita a execução de aplicativos assinados por empresas em que você confia  
@@ -212,7 +213,7 @@ Ajude a impedir a adulteração de informações de inventário e de status, per
 
 *Para dispositivos móveis registrados pelo Configuration Manager*: use um item de configuração de dispositivo móvel para definir a configuração de segurança **Aplicativos não assinados** como **Proibido**. Configure **Instalações de arquivo não assinadas** para que sejam uma fonte confiável.  
 
-*Para dispositivos móveis que não têm o cliente do Configuration Manager instalado, mas que são gerenciados pelo conector do Exchange Server*: defina as **Configurações do Aplicativo** para o conector do Exchange Server de modo que as opções **Instalação de arquivo não assinado** e **Aplicativos não assinados** sejam **Proibidas**.  
+*Para dispositivos móveis que não têm o cliente do Configuration Manager instalado, mas são gerenciados pelo conector do Exchange Server*: defina as **Configurações de aplicativo** para o conector do Exchange Server de modo que **Instalação de arquivo não assinado** e **Aplicativos não assinados** seja **Proibidos**.  
 
 
 #### <a name="lock-mobile-devices-when-not-in-use"></a>Bloquear dispositivos móveis quando eles não estiverem em uso  
@@ -221,7 +222,7 @@ Ajude a evitar ataques de elevação de privilégio bloqueando o dispositivo mó
 
 *Para dispositivos móveis registrados pelo Configuration Manager*: use um item de configuração do dispositivo móvel para definir a configuração de senha **Tempo ocioso em minutos antes de o dispositivo móvel ser bloqueado**.  
 
-*Para dispositivos móveis que não têm o cliente do Configuration Manager instalado, mas que são gerenciados pelo conector do Exchange Server*: defina as **Configurações de Senha** para que o conector do Exchange Server configure **Tempo ocioso em minutos antes do bloqueio do dispositivo móvel**.  
+*Para dispositivos móveis que não têm o cliente do Configuration Manager instalado, mas são gerenciados pelo conector do Exchange Server*: defina as **Configurações de senha** para que o conector do Exchange Server configure o **Tempo ocioso em minutos antes de o dispositivo móvel ser bloqueado**.  
 
 
 #### <a name="restrict-the-users-who-can-enroll-their-mobile-devices"></a>Restringir os usuários que podem registrar seus dispositivos móveis  

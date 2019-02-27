@@ -10,12 +10,13 @@ ms.assetid: 3a832943-580a-4a40-b454-961d0854ac2b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1acc1bd6a6ccbd010308d026933a371f9e8227d8
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: dd0caf8db2c5d0c29c43f3be1e20a0b8adc01fce
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456542"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56125265"
 ---
 # <a name="updates-and-servicing-for-configuration-manager"></a>Atualizações e manutenção do Configuration Manager
 
@@ -69,7 +70,7 @@ As seguintes versões do Configuration Manager com suporte estão disponíveis c
 <a name="bkmk_note1"></a> 
 
 > [!Note]  
-> <sup>**Observação 1:**</sup> A mídia de linha de base 1802 está disponível como parte das seguintes versões no VLSC ([Centro de Serviços de Licença por Volume](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx)):
+> <sup>**Observação 1:**</sup> a mídia de linha de base do 1802 está disponível como parte das seguintes versões no [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (Centro de Serviços de Licenciamento por Volume):
 > - System Center Config Mgr (branch atual)
 > - System Center 2016 Datacenter
 > - System Center 2016 Standard  

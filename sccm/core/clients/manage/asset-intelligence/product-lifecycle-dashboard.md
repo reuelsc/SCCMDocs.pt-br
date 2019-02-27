@@ -10,12 +10,13 @@ ms.assetid: 8b5b144a-0e5f-4fcc-87b2-33b9bcdb5655
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bda6e266c6be8897de87a2a30fb0198a4b4c8446
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 716c5218eafaf6297292fdd852589b7327e2ecaa
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456008"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120020"
 ---
 # <a name="manage-microsoft-lifecycle-policy-with-configuration-manager"></a>Gerenciar a Política de Ciclo de Vida da Microsoft com o Configuration Manager
 
@@ -63,9 +64,9 @@ Para acessar o painel do ciclo de vida no console do Configuration Manager, aces
 
 Altere o modo de exibição selecionando uma das seguintes opções na lista **Categoria de produtos**:  
 - **Todos**: exibir todos os produtos juntos  
-- **Cliente Windows**: exibir versões de sistema operacional do cliente Windows  
+- **Windows Client**: exibir versões de sistema operacional do cliente Windows  
 - **Windows Server**: exibir versões do sistema operacional do Windows Server  
-- **Banco de dados**: exibir versões do SQL Server  
+- **Banco de dados**: Exibir versões do SQL Server  
 - **Configuration Manager**: iniciando na versão 1810, exibir versões do Configuration Manager  
 
 O painel contém os seguintes blocos:  
@@ -90,14 +91,14 @@ O painel contém os seguintes blocos:
 
 Também há relatórios adicionais disponíveis. No console do Configuration Manager, acesse o workspace **Monitoramento**, expanda **Relatório** e, em seguida, expanda **Relatórios**. Os seguintes novos relatórios são adicionados na categoria **Asset Intelligence**:  
 
-- **Ciclo de vida 01A – computadores com um produto de software específico**: exiba uma lista de computadores em que um produto especificado é detectado.  
+- **Ciclo de vida 01A: computadores com um produto de software específico**: Veja uma lista de computadores nos quais um produto especificado é detectado.  
 
-- **Ciclo de vida 02A – lista de computadores com produtos expirados na organização**: exiba os computadores que contêm produtos expirados. Você pode filtrar este relatório pelo nome do produto.
+- **Ciclo de vida 02A: lista de máquinas com produtos expirados na organização**: Veja os computadores que apresentam produtos expirados. Você pode filtrar este relatório pelo nome do produto.
 
-- **Ciclo de vida 03A – lista de produtos expirados encontrados na organização**: exiba detalhes de produtos em seu ambiente que têm datas de ciclo de vida expiradas.  
+- **Ciclo de vida 03A: lista de produtos expirados encontrados na organização**: Veja detalhes de produtos em seu ambiente que apresentam datas de ciclo de vida expiradas.  
 
-- **Ciclo de vida 04A – visão geral do ciclo de vida do produto:** exiba uma lista de ciclos de vida de produtos. Filtre a lista por nome do produto e dias para expiração.  
+- **Ciclo de vida 04A: visão geral do ciclo de vida de produtos**: Veja uma lista de ciclos de vida de produtos. Filtre a lista por nome do produto e dias para expiração.  
 
-- **Ciclo de vida 05A – painel de ciclo de vida do produto**: da versão 1810 em diante, esse relatório inclui informações semelhantes, como o painel no console. Selecione uma categoria para exibir a contagem de produtos em seu ambiente e os dias de suporte restantes.  
+- **Ciclo de vida 05A – painel de ciclo de vida do produto**: Começando na versão 1810, esse relatório inclui informações semelhantes às do painel no console. Selecione uma categoria para exibir a contagem de produtos em seu ambiente e os dias de suporte restantes.  
 
 Para obter mais informações, confira a [Lista de relatórios](/sccm/core/servers/manage/list-of-reports#asset-intelligence).<!--SCCMDocs issue 997-->  

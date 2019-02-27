@@ -10,12 +10,13 @@ ms.assetid: f7832d83-9ae2-4530-8a77-790e0845e12f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 85ce1c4b5201c29ffa3543357f50a379c1b11e7f
-ms.sourcegitcommit: 84afecee44200e27d1d5bb5ed2d54fd6a8c51617
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e876e34929479654240ff220c3cad91043da0f83
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43053874"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56123130"
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Fazer backup de um site do Configuration Manager
 
@@ -29,7 +30,7 @@ As seções neste artigo podem ajudá-lo a fazer backup de seus sites. Para recu
 
 ## <a name="considerations-before-creating-a-backup"></a>Considerações antes de criar um backup  
 
--   Se você usar um grupo de disponibilidade do Always On do SQL Server para hospedar o banco de dados do site: modifique seu backup e os planos de recuperação conforme descrito em [Preparar para usar o Always On do SQL Server](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#changes-for-site-backup).  
+-   Se você usa um grupo de disponibilidade Always On do SQL Server para hospedar o banco de dados do site: modifique seus planos de backup e recuperação conforme descrito em [Preparar para usar o SQL Server Always On](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#changes-for-site-backup).  
 
 -   O Configuration Manager pode recuperar o banco de dados do site da tarefa de backup do Configuration Manager. Ele também pode usar um backup do banco de dados do site que você cria com outro processo.   
 
@@ -70,7 +71,7 @@ Quando o serviço de backup do Configuration Manager é executado, ele segue as 
 As informações de status de backup do site são gravadas no arquivo **Smsbkup.log** . O arquivo é criado na pasta de destino especificada nas propriedades da tarefa de manutenção do Servidor do Site de Backup.  
 
 #### <a name="to-enable-the-site-backup-maintenance-task"></a>Para habilitar a tarefa de manutenção de backup do site  
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
+1.  No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
 
 2.  Selecione o site no qual deseja habilitar a tarefa de manutenção de backup do site.  
 
@@ -83,11 +84,11 @@ As informações de status de backup do site são gravadas no arquivo **Smsbkup.
     > [!IMPORTANT]  
     >  Para ajudar a evitar a violação dos arquivos de backup, armazene os arquivos em um local seguro. O caminho de backup mais seguro é para uma unidade local que possibilite definir permissões do arquivo NTFS na pasta. O Configuration Manager não criptografa os dados de backup armazenados no caminho do backup.  
 
-    -   **Unidade local no servidor do site para dados e banco de dados do site**: especifica que a tarefa armazena os arquivos de backup do site e do banco de dados do site no caminho especificado na unidade de disco local do servidor do site. Crie a pasta local antes das execuções de tarefa de backup. A conta do Sistema Local no servidor do site deve ter permissões de arquivo NTFS de **Gravação** para a pasta local do backup do servidor do site. A conta Sistema Local no computador que está executando o SQL Server deve ter permissões de **Gravação** do NTFS para a pasta do backup do banco de dados do site.  
+    -   **Unidade local no servidor do site para dados e banco de dados do site**: especifica que a tarefa armazene os arquivos de backup do site e do banco de dados do site no caminho especificado na unidade de disco local do servidor do site. Crie a pasta local antes das execuções de tarefa de backup. A conta do Sistema Local no servidor do site deve ter permissões de arquivo NTFS de **Gravação** para a pasta local do backup do servidor do site. A conta Sistema Local no computador que está executando o SQL Server deve ter permissões de **Gravação** do NTFS para a pasta do backup do banco de dados do site.  
 
-    -   **Caminho de rede (nome UNC) para banco de dados e dados do site**: especifica que a tarefa armazena os arquivos de backup para o site e o banco de dados do site no caminho de rede especificado. Crie o compartilhamento antes da execução da tarefa de backup. A conta de computador do servidor do site deve ter permissões de compartilhamento e NTFS de **Gravação** para a pasta de rede compartilhada. Se o SQL Server estiver instalado em outro computador, a conta de computador do SQL Server deverá ter as mesmas permissões.  
+    -   **Caminho de rede (nome UNC) para dados e banco de dados do site**: especifica que a tarefa armazene os arquivos de backup para o site e o banco de dados do site no caminho de rede especificado. Crie o compartilhamento antes da execução da tarefa de backup. A conta de computador do servidor do site deve ter permissões de compartilhamento e NTFS de **Gravação** para a pasta de rede compartilhada. Se o SQL Server estiver instalado em outro computador, a conta de computador do SQL Server deverá ter as mesmas permissões.  
 
-    -   **Unidades locais no servidor do site e SQL Server**: especifica que a tarefa armazena os arquivos de backup para o site no caminho especificado na unidade local do servidor do site. A tarefa armazena os arquivos de backup do banco de dados do site no caminho especificado na unidade local do servidor de banco de dados do site. Crie as pastas locais antes da execução da tarefa de backup. A conta de computador do servidor do site deve ter permissões de **Gravação** NTFS para a pasta criada no servidor do site. A conta de computador do SQL Server deve ter permissões de **Gravação** NTFS para a pasta criada no servidor de banco de dados do site. Essa opção está disponível somente quando o banco de dados do site não está instalado no servidor do site.  
+    -   **Unidades locais no servidor do site e SQL Server**: especifica que a tarefa armazene os arquivos de backup para o site no caminho especificado na unidade local do servidor do site. A tarefa armazena os arquivos de backup do banco de dados do site no caminho especificado na unidade local do servidor de banco de dados do site. Crie as pastas locais antes da execução da tarefa de backup. A conta de computador do servidor do site deve ter permissões de **Gravação** NTFS para a pasta criada no servidor do site. A conta de computador do SQL Server deve ter permissões de **Gravação** NTFS para a pasta criada no servidor de banco de dados do site. Essa opção está disponível somente quando o banco de dados do site não está instalado no servidor do site.  
 
     > [!NOTE]  
     >   A opção de navegar até o destino do backup está disponível somente quando você especifica o caminho de rede do destino do backup.  
@@ -98,15 +99,15 @@ As informações de status de backup do site são gravadas no arquivo **Smsbkup.
 
     Ao executar o console do Configuration Manager no mesmo servidor do site que você está configurando para backup, a tarefa de backup usará o horário local para o agendamento. Quando você executa o console do Configuration Manager de outro computador, a tarefa de backup usa o UTC (Tempo Universal Coordenado) para o agendamento.  
 
-7.  Escolha se deseja criar um alerta se a tarefa de backup do site falhar. Quando selecionada, o Configuration Manager cria um alerta crítico para a falha do backup. Você pode examinar esses alertas no nó **Alertas** no espaço de trabalho **Monitoramento**.  
+7.  Escolha se deseja criar um alerta se a tarefa de backup do site falhar. Quando selecionada, o Configuration Manager cria um alerta crítico para a falha do backup. Você pode examinar esses alertas no nó **Alertas** no workspace **Monitoramento**.  
 
 #### <a name="verify-that-the-backup-site-server-maintenance-task-is-running"></a>Verificar se a tarefa de manutenção Servidor do Site de Backup está em execução  
 
 -   Confira o carimbo de data/hora dos arquivos na pasta de destino do backup que a tarefa criou. Verifique se que o carimbo de data/hora é atualizado para a última hora em que a tarefa foi agendada para ser executada.  
 
--   Vá para o nó **Status do Componente** do espaço de trabalho **Monitoramento**. Examine as mensagens de status **SMS_SITE_BACKUP**. Quando o backup do site for concluído com êxito, você verá a ID da mensagem **5035**. Essa mensagem indica que o backup do site foi concluído sem erros.  
+-   Vá para o nó **Status do Componente** do workspace **Monitoramento**. Examine as mensagens de status **SMS_SITE_BACKUP**. Quando o backup do site for concluído com êxito, você verá a ID da mensagem **5035**. Essa mensagem indica que o backup do site foi concluído sem erros.  
 
--   Quando você configura a tarefa de backup para criar um alerta quando ela falhar, examine os alertas de falha de backup no nó **Alertas** do espaço de trabalho **Monitoramento**.  
+-   Quando você configura a tarefa de backup para criar um alerta quando ela falhar, examine os alertas de falha de backup no nó **Alertas** do workspace **Monitoramento**.  
 
 -   Abra o Windows Explorer no servidor do site e navegue até `<ConfigMgrInstallationFolder>\Logs`. Examine **Smsbkup.log** para verificar se há avisos e erros. Quando o backup do site for concluído com êxito, o log mostrará `Backup completed` com a ID de mensagem `STATMSG: ID=5035`.  
 
@@ -133,7 +134,7 @@ Após o backup bem-sucedido do site, a tarefa de backup tenta automaticamente ex
 
 O arquivo AfterBackup.bat permite arquivar o instantâneo de backup ao final de cada operação de backup. Ele pode realizar automaticamente outras tarefas pós-backup que não fazem parte da tarefa de manutenção do Servidor do Site de Backup. O arquivo AfterBackup.bat integra o arquivo e as operações de backup, garantindo assim que cada novo instantâneo de backup seja arquivado.
 
-Se o arquivo AfterBackup.bat não estiver presente, a tarefa de backup o ignorará sem afetar a operação de backup. Para verificar se a tarefa de backup executou com sucesso esse script, veja o nó **Status do Componente** no espaço de trabalho **Monitoramento** e examine as mensagens de status de **SMS_SITE_BACKUP**. Quando a tarefa iniciar com êxito após o arquivo de comando AfterBackup.bat, você verá a ID da mensagem **5040**.  
+Se o arquivo AfterBackup.bat não estiver presente, a tarefa de backup o ignorará sem afetar a operação de backup. Para verificar se a tarefa de backup executou com sucesso esse script, veja o nó **Status do Componente** no workspace **Monitoramento** e examine as mensagens de status de **SMS_SITE_BACKUP**. Quando a tarefa iniciar com êxito após o arquivo de comando AfterBackup.bat, você verá a ID da mensagem **5040**.  
 
 > [!TIP]  
 >  Para arquivar os arquivos de backup do servidor do site com AfterBackup.bat, você deve usar uma ferramenta de comando de cópia no arquivo de lote. Uma dessas ferramentas é [Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) no Windows Server. Por exemplo, crie o arquivo AfterBackup.bat com o seguinte comando: `Robocopy E:\ConfigMgr_Backup \\ServerName\ShareName\ConfigMgr_Backup /MIR`  
@@ -189,7 +190,7 @@ Você pode usar sequências de tarefas do Configuration Manager para capturar e 
 
 ### <a name="determine-the-folders-used-to-store-user-state-migration-data"></a>Determinar as pastas usadas para armazenar dados de migração de estado do usuário  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Funções do Sistema de Sites e Servidores**.  
+1.  No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione o nó **Funções do Sistema de Sites e Servidores**.  
 
 2.  Selecione o sistema de sites que hospeda a função de migração de estado. Em seguida, selecione **Ponto de migração de estado** no painel **Funções do Sistema de Sites**.  
 

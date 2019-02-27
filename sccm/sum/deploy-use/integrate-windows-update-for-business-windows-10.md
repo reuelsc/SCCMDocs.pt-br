@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
-ms.openlocfilehash: ce3937b630eea38af34f1abd7c7348ebf2f8dfdb
-ms.sourcegitcommit: 316899b08f2ef372993909e08e069f7edfed1d33
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 456e4537e7c397063c50422e8c408dc5d688af04
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44111086"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56121566"
 ---
 # <a name="integration-with-windows-update-for-business-in-windows-10"></a>Integração com o Windows Update for Business no Windows 10
 
@@ -81,11 +82,11 @@ O WUfB (Windows Update para Empresas) permite que você mantenha dispositivos ba
 3. Na página **Geral**, forneça um nome e uma descrição para a política.
 4. Na página **Políticas de Adiamento**, defina se deseja adiar ou pausar as Atualizações de Recurso. Normalmente, as Atualizações de Recurso são recursos novos do Windows. Depois de definir a configuração **Nível de preparação do branch**, defina se, e por quanto tempo, você quer adiar o recebimento de Atualizações de Recurso após a disponibilização da Microsoft.
     - **Nível de preparação do branch**: defina o branch para o qual o dispositivo receberá atualizações do Windows (Branch Atual ou Branch Atual para Negócios).
-    - **Período de adiamento (dias)**: especifique o número de dias durante os quais as Atualizações de Recurso serão adiadas. Você pode adiar o recebimento dessas Atualizações de Recurso por um período de 365 dias a partir do lançamento.
-    - **Pausar Atualizações de Recurso a partir de**: selecione se você quer pausar o recebimento de Atualizações de Recursos nos dispositivos durante um período de até 60 dias a partir do momento que você pausar as atualizações. Após o número máximo de dias, a funcionalidade de pausa expirará automaticamente, e o dispositivo verificará no Windows Update se há atualizações aplicáveis. Após essa verificação, você poderá pausar as atualizações novamente. Retome as Atualizações de Recurso desmarcando a caixa de seleção.   
+    - **Período de adiamento (dias)**:  especifique o número de dias durante os quais as Atualizações de Recurso serão adiadas. Você pode adiar o recebimento dessas Atualizações de Recurso por um período de 365 dias a partir do lançamento.
+    - **Pausar atualizações de recursos a partir de**: selecione se você quer pausar o recebimento de Atualizações de Recursos nos dispositivos durante um período de até 60 dias a contar do momento que você pausar as atualizações. Após o número máximo de dias, a funcionalidade de pausa expirará automaticamente, e o dispositivo verificará no Windows Update se há atualizações aplicáveis. Após essa verificação, você poderá pausar as atualizações novamente. Retome as Atualizações de Recurso desmarcando a caixa de seleção.   
 5. Escolha se deseja adiar ou pausar as Atualizações de Qualidade. Normalmente, as Atualizações de Qualidade são correções e aprimoramentos funcionalidades existentes do Windows, e geralmente são publicadas na primeira terça-feira de cada mês, embora possam ser liberadas a qualquer momento pela Microsoft. Você pode definir se, e por quanto tempo, deseja adiar o recebimento das Atualizações de Qualidade após sua disponibilização.
-    - **Período de adiamento (dias)**: especifique o número de dias durante os quais as Atualizações de qualidade serão adiadas. Você pode adiar o recebimento dessas Atualizações de qualidade por um período de 30 dias a partir do lançamento.
-    - **Pausar Atualizações de Qualidade a partir de**: selecione se você quer pausar o recebimento de Atualizações de Qualidade nos dispositivos durante um período de até 35 dias a partir do momento que você pausar as atualizações. Após o número máximo de dias, a funcionalidade de pausa expirará automaticamente, e o dispositivo verificará no Windows Update se há atualizações aplicáveis. Após essa verificação, você poderá pausar as atualizações novamente. Retome as Atualizações de Qualidade desmarcando a caixa de seleção.
+    - **Período de adiamento (dias)**: especifique em quantos dias as Atualizações de Qualidade serão adiadas. Você pode adiar o recebimento dessas Atualizações de qualidade por um período de 30 dias a partir do lançamento.
+    - **Pausar atualizações de qualidade a partir de**: selecione se você quer pausar o recebimento de Atualizações de Qualidade nos dispositivos durante um período de até 35 dias a contar do momento que você pausar as atualizações. Após o número máximo de dias, a funcionalidade de pausa expirará automaticamente, e o dispositivo verificará no Windows Update se há atualizações aplicáveis. Após essa verificação, você poderá pausar as atualizações novamente. Retome as Atualizações de Qualidade desmarcando a caixa de seleção.
 6. Selecione **Instalar as atualizações de outros produtos da Microsoft** para habilitar a configuração da política de grupo que torna as configurações de adiamento aplicáveis ao Microsoft Update, bem como para o Windows Update.
 7. Selecione **Incluir drivers com o Windows Update** para atualizar automaticamente os drivers de Windows Updates. Se você desmarcar essa configuração, as atualizações de driver não serão baixadas do Windows Update.
 8. Conclua o assistente para criar a nova política de adiamento.
@@ -94,11 +95,11 @@ O WUfB (Windows Update para Empresas) permite que você mantenha dispositivos ba
 1. Em **Biblioteca de Software** > **Manutenção do Windows 10** > **Políticas do Windows Update for Business**
 2. Na guia **Início**, no grupo **Implantação**, selecione **Implantar a Política do Windows Update for Business**.
 3. Defina as seguintes configurações:
-    - **Política de configuração para implantação**: selecione a política do Windows Update for Business que você deseja implantar.
-    - **Coleção**: clique em **Procurar** para selecionar a coleção de usuários na qual você deseja implantar a política.
-    - **Corrigir regras não compatíveis quando houver suporte**: selecione para corrigir automaticamente quaisquer regras não compatíveis com o WMI (Instrumentação de Gerenciamento do Windows), o Registro, scripts e todas as configurações de dispositivos móveis registrados pelo Configuration Manager.
+    - **Política de configuração para implantação**: selecione a política do Windows Update para Empresas que você deseja implantar.
+    - **Coleta**: clique em **Procurar** para selecionar a coleção de usuários na qual você deseja implantar a política.
+    - **Corrigir regras não compatíveis quando houver suporte**: selecione para corrigir automaticamente quaisquer regras não compatíveis com o WMI (Instrumentação de Gerenciamento do Windows), o Registro, os scripts e todas as configurações de dispositivos móveis registrados pelo Configuration Manager.
     - **Permitir correção fora da janela de manutenção**: se uma janela de manutenção tiver sido configurada para a coleção na qual você está implantando a política, habilite esta opção para permitir que as configurações de conformidade corrijam o valor fora da janela de manutenção. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](/sccm/core/clients/manage/collections/use-maintenance-windows).
-    - **Gerar um alerta**: configura um alerta gerado se a conformidade da linha de base de configuração for menor que um percentual especificado por uma data e hora determinadas. Você também pode especificar se deseja que um alerta seja enviado para o System Center Operations Manager.
+    - **Gerar um alerta**: configurará um alerta gerado se a conformidade da linha de base de configuração for menor que um percentual especificado por uma data e hora determinadas. Você também pode especificar se deseja que um alerta seja enviado para o System Center Operations Manager.
     - **Atraso aleatório (horas)**: especifica uma janela de atraso para evitar o processamento excessivo no Serviço de Registro de Dispositivo de Rede. O valor padrão é de 64 horas.
-    - **Agenda**: especifique o agendamento de avaliação de conformidade com base no qual o perfil implantado será avaliado em computadores cliente. O agendamento poderá ser simples ou personalizado. O perfil será avaliado por computadores cliente quando o usuário fizer logon.
+    - **Agendamento**: especifique o agendamento de avaliação de conformidade com base no qual o perfil implantado será avaliado em computadores cliente. O agendamento poderá ser simples ou personalizado. O perfil será avaliado por computadores cliente quando o usuário fizer logon.
 4.  Conclua o assistente para implantar o perfil.

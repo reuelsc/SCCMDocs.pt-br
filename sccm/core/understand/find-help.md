@@ -10,12 +10,13 @@ ms.assetid: 86810629-cf2a-43e8-86a2-847444119fc1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e6be541a1b26961684f0577f2540132b81f50b7a
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f9c4b9bdbd67e26962a4de3ff66643f071339795
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385466"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139469"
 ---
 # <a name="find-help-for-using-configuration-manager"></a>Localizar ajuda para usar o Configuration Manager
 
@@ -51,8 +52,8 @@ Para obter dicas de pesquisa, fornecer comentários e obter mais informações s
 
 Do Configuration Manager versão 1806 em diante, você pode enviar comentários sobre o produto diretamente do console. Se você precisar anexar logs, use o [Hub de Comentários](#BKMK_FeedbackHub). É possível fazer o seguinte: <!--1357542-->
 
-  - **Enviar um Smiley**: envie comentários sobre o que você gostou.
-  - **Enviar um rosto triste**: envie comentários sobre o que você não gostou.
+  - **Enviar um sorriso**: enviar comentários sobre o que você gostou.
+  - **Enviar um rosto triste**: enviar comentários sobre o que você não gostou.
   - **Enviar uma sugestão**: leva você para o [site UserVoice](https://configurationmanager.uservoice.com/) para compartilhar sua ideia.
 
 ![Enviar comentários no Configuration Manager 1806](media/1806-send-a-smile.png)
@@ -133,7 +134,7 @@ Os links a seguir fornecem informações sobre as opções de suporte e os recur
 
 -   [Suporte da Microsoft](https://aka.ms/cmcbsupport)  
 
--   [Comunidade do Configuration Manager: guia de sobrevivência do System Center Configuration Manager (ramificação atual)](https://social.technet.microsoft.com/wiki/contents/articles/33035.system-center-configuration-manager-current-branch-survival-guide.aspx )  
+-   [Comunidade do Configuration Manager: Guia de sobrevivência do System Center Configuration Manager (Branch Atual)](https://social.technet.microsoft.com/wiki/contents/articles/33035.system-center-configuration-manager-current-branch-survival-guide.aspx )  
 
 -   [Página de fóruns do Configuration Manager](https://social.technet.microsoft.com/Forums/en-US/home?category=ConfigMgrCB)  
     <!-- NOTE: the above URL requires "en-US" for the category to work -->

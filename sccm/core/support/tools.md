@@ -10,12 +10,13 @@ ms.assetid: 395403dc-6997-4415-93fd-6b1eeb6ba31a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fd23bd523eb64f7d00f71c38c79a180c4e2e569a
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1479524f08f17aa59f6e7dc771253a4fb6720189
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39386537"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56131125"
 ---
 # <a name="configuration-manager-tools"></a>Ferramentas do Configuration Manager
 
@@ -37,13 +38,13 @@ Todos os sistemas operacionais do Windows listados como clientes compatíveis em
 
 - [Client Spy](/sccm/core/support/clispy): solucione problemas relacionados a distribuição, inventário e medição de software
 
-- [Deployment Monitoring Tool](/sccm/core/support/deployment-monitoring-tool): solucione problemas de aplicativos, atualizações e implantações da linha de base  
+- [Deployment Monitoring Tool](/sccm/core/support/deployment-monitoring-tool): soluciona problemas de aplicativos, atualizações e implantações de linha de base  
 
-- [Policy Spy](/sccm/core/support/policy-spy): exiba as atribuições de políticas  
+- [Policy Spy](/sccm/core/support/policy-spy): exibe atribuições de política  
 
-- [Power Viewer Tool](/sccm/core/support/power-viewer-tool): exiba o status do recurso de gerenciamento de energia  
+- [Power Viewer Tool](/sccm/core/support/power-viewer-tool): exibe o status do recurso de gerenciamento de energia  
 
-- [Ferramenta de Agendamento de Envio](/sccm/core/support/send-schedule-tool): disparar agendas e avaliações de linhas de base de configuração  
+- [Send Schedule Tool](/sccm/core/support/send-schedule-tool): dispare agendas e avaliações de linhas de base de configuração  
 
 > [!Note]  
 > A pasta ClientTools também inclui o arquivo Microsoft.Diagnostics.Tracing.EventSource.dll. Várias ferramentas de cliente exigem essa biblioteca. Você não pode usá-lo diretamente.  
@@ -53,17 +54,17 @@ Todos os sistemas operacionais do Windows listados como clientes compatíveis em
 
 - [Gerenciador de Filas de Trabalhos do DP](/sccm/core/support/dp-job-manager): soluciona problemas de trabalhos de distribuição de conteúdo para os pontos de distribuição  
 
-- [Collection Evaluation Viewer](/sccm/core/support/ceviewer): exiba detalhes de avaliação da coleta  
+- [Collection Evaluation Viewer](/sccm/core/support/ceviewer): exibe detalhes de avaliação de coleção  
 
-- [Content Library Explorer](/sccm/core/support/content-library-explorer): exiba o conteúdo do repositório de instância única da biblioteca de conteúdo  
+- [Gerenciador da Biblioteca de Conteúdo](/sccm/core/support/content-library-explorer): exibe conteúdos do repositório de instância única da biblioteca de conteúdo  
 
-- [Content Library Transfer](/sccm/core/support/content-library-transfer): transfere a biblioteca de conteúdo entre unidades  
+- [Transferência da biblioteca de conteúdo](/sccm/core/support/content-library-transfer): transfere a biblioteca de conteúdo entre as unidades  
 
-- [Content Ownership Tool](/sccm/core/support/content-ownership-tool): altera a propriedade de pacotes órfãos. Esses pacotes existem no site sem um servidor de site proprietário.  
+- [Ferramenta de Propriedade de Conteúdo](/sccm/core/support/content-ownership-tool): altera a propriedade de pacotes órfãos. Esses pacotes existem no site sem um servidor de site proprietário.  
 
-- [Role-based Administration and Auditing Tool](/sccm/core/support/rbaviewer): ajuda os administradores a realizar a auditoria de funções de configuração  
+- [Ferramenta de Administração e Auditoria Baseada em Funções](/sccm/core/support/rbaviewer): ajuda os administradores a fazer a auditoria da configuração de funções  
 
-- [Ferramenta de Resumo do Medidor de Execução](/sccm/core/support/run-meter-summ): tarefa de resumo de medição de execução e analisar dados de medição
+- [Executar Ferramenta de Resumo do Medidor](/sccm/core/support/run-meter-summ): execute a tarefa de resumo de medição e analise os dados de medição
 
 > [!Note]  
 > A pasta ServerTools também inclui os seguintes arquivos 

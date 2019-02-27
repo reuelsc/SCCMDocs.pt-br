@@ -10,12 +10,13 @@ ms.assetid: 5d388399-07ca-431c-a9b2-56c69771aa87
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fadc93d1977d5d066a6c4c3884bdbaeefb2a0c90
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 235355dff634bab09ef7be65645dbb32c5b86cf9
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343758"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56133707"
 ---
 # <a name="features-and-capabilities-of-system-center-configuration-manager"></a>Recursos e funcionalidades do System Center Configuration Manager
 

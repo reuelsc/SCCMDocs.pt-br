@@ -10,12 +10,13 @@ ms.assetid: 49505eb1-d44d-4121-8712-e0f3d8b15bf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e232875aab086dea04261abc4d83df8d5d03e6c8
-ms.sourcegitcommit: aca62bd3d267b1dbea46d4db6f32d797c5f6263c
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6524fb7715c9bc3040996a16b4204464e0505123
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43347963"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139180"
 ---
 # <a name="configure-discovery-methods-for-configuration-manager"></a>Configurar métodos de descoberta para o Configuration Manager
 
@@ -32,7 +33,7 @@ Configure métodos de descoberta para encontrar recursos para gerenciá-los na r
  > [!NOTE]  
  > As informações a seguir não se aplicam à descoberta de usuários do Azure AD. Em vez disso, consulte [Configurar a descoberta de usuários do Azure AD](#azureaadisc) mais adiante neste artigo.
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda a **Configuração da Hierarquia** e, em seguida, selecione **Métodos de Descoberta**.  
+1.  No console do Configuration Manager, acesse o workspace **Administração**, expanda a **Configuração da Hierarquia** e, em seguida, selecione **Métodos de Descoberta**.  
 
 2.  Selecione o método de descoberta para o site em que deseja habilitar a descoberta.  
 
@@ -173,7 +174,7 @@ Em seguida, use as informações nas seções a seguir para configurar os métod
 
     2.  Especifique opções que mudam o comportamento da pesquisa:  
 
-        - **Descobrir objetos em grupos do Active Directory**: o site também analisa a associação de grupos nesse caminho.  
+        - **Descobrir objetos nos grupos do Active Directory**: o site também examina a associação de grupos nesse caminho.  
 
         - **Pesquisar recursivamente contêineres filho do Active Directory**: se você habilitar essa opção, o site pesquisará contêineres ou unidades organizacionais adicionais no caminho acima. Se você desabilitar essa opção, o site só procurará recursos no caminho específico.  
 
@@ -337,7 +338,7 @@ O Configuration Manager oferece suporte aos seguintes métodos para pesquisar na
 -   Os servidores DHCP ainda podem responder com uma lista de recursos localizados no domínio.  
 
 
-#### <a name="BKMK_LimitBySNMPname"></a> Limitar pesquisas usando nomes de comunidades SNMP  
+#### <a name="BKMK_LimitBySNMPname"></a> Limitar pesquisas usando nomes de comunidade SNMP  
 
  Configure uma Descoberta de Rede para pesquisar uma comunidade SNMP específica ou um conjunto de comunidades durante uma descoberta. Por padrão, o método configura o nome da comunidade **pública**.  
 
@@ -479,7 +480,7 @@ O Configuration Manager oferece suporte aos seguintes métodos para pesquisar na
 
 A descoberta de rede não cria mensagens para alertá-lo quando a descoberta foi concluída. Use o procedimento a seguir para verificar quando a descoberta foi concluída:  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Monitoramento**. Expanda **Status do Sistema** e, em seguida, selecione o nó **Consultas de Mensagens de Status**.  
+1.  No console do Configuration Manager, acesse o workspace **Monitoramento**. Expanda **Status do Sistema** e, em seguida, selecione o nó **Consultas de Mensagens de Status**.  
 
 2.  Selecione a consulta **Todas as Mensagens de Status**.  
 
@@ -496,7 +497,7 @@ A descoberta de rede não cria mensagens para alertá-lo quando a descoberta foi
 
     -   Componente: **SMS_NETWORK_DISCOVERY**  
 
-    -   Descrição: **Este componente parou**  
+    -   Descrição: o **Este componente parou**  
 
     Caso essa mensagem de status não esteja presente, a descoberta de rede ainda não foi concluída.  
 
@@ -506,6 +507,6 @@ A descoberta de rede não cria mensagens para alertá-lo quando a descoberta foi
 
     -   Componente: **SMS_NETWORK_DISCOVERY**  
 
-    -   Descrição: **Este componente foi iniciado**  
+    -   Descrição: o **Este componente foi iniciado**  
 
     Essa informação verifica se a descoberta de rede foi iniciada. Caso essas informações não estejam presentes, reagende a descoberta de rede.  

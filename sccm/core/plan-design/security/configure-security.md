@@ -10,12 +10,13 @@ ms.assetid: 552e7e3d-e584-4a7c-9155-0f796a14b678
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d1aaf6db583d9749dda3be14cfd06acbff19b093
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4d58f8566f80efa2700f5947f4144623b10eb6ad
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456083"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56140585"
 ---
 # <a name="configure-security-in-configuration-manager"></a>Configurar a segurança no Configuration Manager
 
@@ -45,11 +46,11 @@ Se você quiser usar certificados PKI (infraestrutura de chave pública) para co
 
 3.  Selecione as configurações de sistemas de sites que usam o IIS.  
 
-    - **Somente HTTPS**: clientes atribuídos ao site sempre usam um certificado PKI de cliente ao se conectarem a sistemas de site que usam IIS.  
+    - **Somente HTTPS**: clientes atribuídos ao site sempre usam um certificado PKI de cliente ao se conectarem a sistemas de site que usam o IIS.  
 
     - **HTTPS ou HTTP**: você não exige que os clientes usem certificados PKI.  
 
-    - **Usar certificados gerados pelo Configuration Manager para sistemas de sites HTTP**: para obter mais informações sobre essa configuração, confira [HTTP aprimorado](/sccm/core/plan-design/hierarchy/enhanced-http).  
+    - **Use os certificados gerados pelo Configuration Manager para sistemas de sites HTTP**: Para saber mais sobre essa configuração, confira [HTTP aprimorado](/sccm/core/plan-design/hierarchy/enhanced-http).  
 
 4.  Selecione as configurações para computadores cliente.  
 
@@ -59,7 +60,7 @@ Se você quiser usar certificados PKI (infraestrutura de chave pública) para co
 
     Para obter mais informações sobre o método de seleção de certificado do cliente, consulte [Planejando a seleção de certificado de cliente PKI](/sccm/core/plan-design/security/plan-for-security#BKMK_PlanningForClientCertificateSelection).  
 
-    - **Os clientes verificam a CRL (lista de certificados revogados) para sistemas de sites**: habilite essa configuração para que os clientes verifiquem a CRL da sua organização em busca de certificados revogados.  
+    - **Os clientes verificam a CRL (lista de certificados revogados) para sistemas de sites**: habilite essa configuração para que os clientes verifiquem a CRL da sua organização para certificados revogados.  
 
     Para obter mais informações sobre a verificação de CRL por parte dos clientes, consulte [Planejando a revogação de certificado PKI](/sccm/core/plan-design/security/plan-for-security#BKMK_PlanningForCRLs).  
 

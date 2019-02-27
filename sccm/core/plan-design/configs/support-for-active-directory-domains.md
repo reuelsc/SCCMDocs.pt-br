@@ -10,12 +10,13 @@ ms.assetid: 8c5a13f8-42d5-4898-b7b6-e594dae8b335
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dcb0f5e82d0ef53524e9abfdb974605e3ae73db3
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 2babdf726d468d27d0fe2ab37ad99a101adbb74c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333946"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129554"
 ---
 # <a name="supported-active-directory-domains-for-system-center-configuration-manager"></a>Domínios do Active Directory com suporte no System Center Configuration Manager
 
@@ -78,6 +79,6 @@ A tabela a seguir identifica os cenários com suporte para um namespace não con
 
 -   O domínio de rótulo único no Active Directory Domain Services deve ser configurado com um namespace DNS não contíguo que tem um domínio primário válido.  
 
-     **Por exemplo:** o domínio de rótulo único da Contoso é configurado para ter um namespace não contíguo no DNS de contoso.com. Portanto, ao especificar o sufixo DNS no Configuration Manager para um computador no domínio Contoso, especifique “Contoso.com” e não “Contoso”.  
+     **Por exemplo:** O domínio de rótulo único da Contoso é configurado para ter um namespace não contíguo no DNS de contoso.com. Portanto, ao especificar o sufixo DNS no Configuration Manager para um computador no domínio Contoso, especifique “Contoso.com” e não “Contoso”.  
 
 -   As conexões do DCOM (Distributed Component Object Model) entre os servidores do site no contexto do sistema devem ser bem-sucedidas com o uso da autenticação Kerberos.  

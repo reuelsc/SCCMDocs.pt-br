@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.assetid: 76477b4d-df41-4b25-8318-7d18d46ca2c6
-ms.openlocfilehash: 2b0b553b7281015bfee89f8409fd6c5e255d753c
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d97a67dd65dd79ba8b47541d0c7a7cad239dca28
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384136"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56126013"
 ---
 # <a name="configure-microsoft-edge-settings-in-system-center-configuration-manager"></a>Definir as configurações do Microsoft Edge no System Center Configuration Manager
 
@@ -29,32 +30,32 @@ Essa política se aplica somente aos clientes no Windows 10, versão 1703 ou pos
 ## <a name="policy-settings"></a>Configurações de política
 Esta política atualmente inclui as seguintes configurações:
 - **Definir o navegador Microsoft Edge como padrão** : configura a configuração do aplicativo padrão do Windows 10 para o navegador da Web para o Microsoft Edge
-- **Permitir lista suspensa da barra de endereços**: exige o Windows 10, versão 1703 ou posterior. Para saber mais, confira a [política de navegador AllowAddressBarDropdown ](/windows/client-management/mdm/policy-csp-browser#browser-allowaddressbardropdown).
-- **Permitir sincronizar favoritos entre navegadores da Microsoft** : requer o Windows 10, versão 1703 ou posterior. Para saber mais, confira a [política de navegador SyncFavoritesBetweenIEAndMicrosoftEdge](/windows/client-management/mdm/policy-csp-browser#browser-syncfavoritesbetweenieandmicrosoftedge).
-- **Permitir limpar dados de navegação na saída**: requer o Windows 10, versão 1703 ou posterior. Para saber mais, confira a [política do navegador ClearBrowsingDataOnExit](/windows/client-management/mdm/policy-csp-browser#browser-clearbrowsingdataonexit).
-- **Permitir não rastrear cabeçalhos**: para obter mais informações, confira a [política do navegador AllowDoNotTrack](/windows/client-management/mdm/policy-csp-browser#browser-allowdonottrack).
-- **Permitir preenchimento automático**: para obter mais informações, confira a [ política do navegador AllowAutofill](/windows/client-management/mdm/policy-csp-browser#browser-allowautofill).
+- **Permitir lista suspensa de barra de endereços**: requer o Windows 10, versão 1703 ou posterior. Para saber mais, confira a [política de navegador AllowAddressBarDropdown ](/windows/client-management/mdm/policy-csp-browser#browser-allowaddressbardropdown).
+- **Permitir a sincronização de favoritos entre navegadores da Microsoft**: requer o Windows 10, versão 1703 ou posterior. Para saber mais, confira a [política de navegador SyncFavoritesBetweenIEAndMicrosoftEdge](/windows/client-management/mdm/policy-csp-browser#browser-syncfavoritesbetweenieandmicrosoftedge).
+- **Permitir a limpeza de dados de navegação ao sair**: requer o Windows 10, versão 1703 ou posterior. Para saber mais, confira a [política do navegador ClearBrowsingDataOnExit](/windows/client-management/mdm/policy-csp-browser#browser-clearbrowsingdataonexit).
+- **Permitir cabeçalhos Não Rastrear**: para obter mais informações, confira a [Política do navegador AllowDoNotTrack](/windows/client-management/mdm/policy-csp-browser#browser-allowdonottrack).
+- **Permitir preenchimento automático**: para obter mais informações, confira a [política do navegador AllowAutofill](/windows/client-management/mdm/policy-csp-browser#browser-allowautofill).
 - **Permitir cookies**: para obter mais informações, confira a [política do navegador AllowCookies](/windows/client-management/mdm/policy-csp-browser#browser-allowcookies).
-- **Permitir o bloqueador de pop-up**: para obter mais informações, confira a [política do navegador AllowPopups](/windows/client-management/mdm/policy-csp-browser#browser-allowpopups).
-- **Permitir sugestões de pesquisa na barra de endereços**: Para saber mais, confira a [política do navegador AllowSearchSuggestionsinAddressBar](/windows/client-management/mdm/policy-csp-browser#browser-allowsearchsuggestionsinaddressbar).
-- **Permitir enviar o tráfego de Intranet para o Internet Explorer** : para obter mais informações, confira a [política do navegador SendIntranetTraffictoInternetExplorer](/windows/client-management/mdm/policy-csp-browser#browser-sendintranettraffictointernetexplorer).
-- **Permitir o gerenciador de senhas**: para obter mais informações, confira a [política do navegador AllowPasswordManager](/windows/client-management/mdm/policy-csp-browser#browser-allowpasswordmanager).
-- **Permitir Ferramentas para desenvolvedores**: Para saber mais, confira a [política do navegador AllowDeveloperTools](/windows/client-management/mdm/policy-csp-browser#browser-allowdevelopertools).
-- **Permitir extensões**: para obter mais informações, confira a [política de navegador AllowExtensions](/windows/client-management/mdm/policy-csp-browser#browser-allowextensions).
+- **Permitir bloqueador de pop-up**: para obter mais informações, confira a [política do navegador AllowPopups](/windows/client-management/mdm/policy-csp-browser#browser-allowpopups).
+- **Permitir sugestões de pesquisa na barra de endereços**: para obter mais informações, confira a [política do navegador AllowSearchSuggestionsinAddressBar](/windows/client-management/mdm/policy-csp-browser#browser-allowsearchsuggestionsinaddressbar).
+- **Permitir envio de tráfego de intranet ao Internet Explorer**: para obter mais informações, confira a [política do navegador SendIntranetTraffictoInternetExplorer](/windows/client-management/mdm/policy-csp-browser#browser-sendintranettraffictointernetexplorer).
+- **Permitir gerenciador de senhas**: para obter mais informações, confira [política do navegador AllowPasswordManager](/windows/client-management/mdm/policy-csp-browser#browser-allowpasswordmanager).
+- **Permitir Ferramentas para Desenvolvedores**: para obter mais informações, confira a [política do navegador AllowDeveloperTools](/windows/client-management/mdm/policy-csp-browser#browser-allowdevelopertools).
+- **Permitir extensões**: para obter mais informações, confira a [política do navegador AllowExtensions](/windows/client-management/mdm/policy-csp-browser#browser-allowextensions).
 
 
 ### <a name="configure-windows-defender-smartscreen-settings-for-microsoft-edge"></a>Definir as configurações do Windows Defender SmartScreen para o Microsoft Edge
 <!--1353701--> Começando na versão 1806, essa política adiciona três configurações ao [Windows Defender SmartScreen](/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview). Agora, a política inclui as seguintes configurações adicionais na página **Configurações do SmartScreen**:
 
-- **Permitir SmartScreen**: especifica se o Windows Defender SmartScreen é permitido. Para obter mais informações, confira a [Política do navegador AllowSmartScreen](/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen).
-- **Os usuários podem substituir o aviso do SmartScreen para sites**: especifica se os usuários podem substituir os avisos do Filtro do Windows Defender SmartScreen sobre sites possivelmente mal-intencionados. Para obter mais informações, confira a [Política do navegador PreventSmartScreenPromptOverride](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride).
-- **Os usuários podem substituir o aviso do SmartScreen para arquivos**: especifica se os usuários podem substituir os avisos do Filtro do Windows Defender SmartScreen sobre o download de arquivos não verificados. Para obter mais informações, confira a [Política do navegador PreventSmartScreenPromptOverrideForFiles](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles).
+- **Permitir SmartScreen**: Especifica se o Windows Defender SmartScreen é permitido. Para obter mais informações, confira a [Política do navegador AllowSmartScreen](/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen).
+- **Os usuários podem substituir o aviso do SmartScreen para sites**: Especifica se os usuários podem substituir os avisos de Filtro do Windows Defender SmartScreen sobre sites potencialmente mal-intencionados. Para obter mais informações, confira a [Política do navegador PreventSmartScreenPromptOverride](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride).
+- **Os usuários podem substituir o aviso do SmartScreen para arquivos**: Especifica se os usuários podem substituir os avisos de Filtro do Windows Defender SmartScreen sobre como baixar arquivos não verificados. Para obter mais informações, confira a [Política do navegador PreventSmartScreenPromptOverrideForFiles](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles).
 
 
 
 ## <a name="create-the-microsoft-edge-browser-profile"></a>Criar o perfil do navegador Microsoft Edge
 
-1. No console do Configuration Manager, vá até o espaço de trabalho **Ativos e conformidade**. Expanda **Configurações de Conformidade** e selecione o nó **Perfis de Navegador do Microsoft Edge**. Na faixa de opções, clique na opção **Criar perfil do Microsoft Edge**.
+1. No console do Configuration Manager, vá até o workspace **Ativos e conformidade**. Expanda **Configurações de Conformidade** e selecione o nó **Perfis de Navegador do Microsoft Edge**. Na faixa de opções, clique na opção **Criar perfil do Microsoft Edge**.
 2. Especifique um **Nome** para a política, digite opcionalmente a **Descrição** e clique em **Avançar**.
 3. Na página **Configurações Gerais**, altere o valor para **Configurado** para que as configurações sejam incluídas nesta política e clique em **Avançar**. Para continuar, é necessário definir a configuração **Configurar o Navegador Microsoft Edge como o padrão**.
 4. Na versão 1806 e posterior, defina as configurações na página **Configurações do SmartScreen** e, em seguida, clique em **Avançar**. 

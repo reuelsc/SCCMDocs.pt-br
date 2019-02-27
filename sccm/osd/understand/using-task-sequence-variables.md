@@ -10,12 +10,13 @@ ms.assetid: bc7de742-9e5c-4a70-945c-df4153a61cc3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 18305b26937c87cbdb4d5726bded571699416793
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3e8ebea21b735e6b93d73bf6ff5eb842243ef42d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42756273"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56121855"
 ---
 # <a name="how-to-use-task-sequence-variables-in-configuration-manager"></a>Como usar as variáveis de sequência de tarefas no Configuration Manager
 
@@ -229,7 +230,7 @@ ms.locfileid: "42756273"
 
     - **Condição**: a condição para avaliar o valor da variável. Por exemplo, **igual a**.  
 
-    - **Valor**: o valor da variável a verificar. Por exemplo, `false`.  
+    - **Valor**: o valor da variável a ser verificada. Por exemplo, `false`.  
 
 
  Os três exemplos anteriores formam uma condição comum para testar se a sequência de tarefas está em execução de uma imagem de inicialização no Windows PE: 

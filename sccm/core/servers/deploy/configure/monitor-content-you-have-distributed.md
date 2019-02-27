@@ -10,12 +10,13 @@ ms.assetid: 82e8a693-9adf-4ca3-8484-7e101c34c7c1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 44ddf230d33759787636e88f6edcdd79744fd7b2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f6bc81a1aa6d8464094195c33faeecfeaf2d46f0
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338917"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56123923"
 ---
 # <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager
 
@@ -33,7 +34,7 @@ Use o console do System Center Configuration Manager para monitorar o conteúdo 
 >  O Configuration Manager monitora somente o conteúdo em um ponto de distribuição que está na biblioteca de conteúdo. O conteúdo armazenado no ponto de distribuição no pacote ou os compartilhamentos personalizados não são monitorados.  
 
 ##  <a name="BKMK_ContentStatus"></a> Monitoramento de status do conteúdo  
- O nó **Status do Conteúdo** no espaço de trabalho **Monitoramento** fornece informações sobre os pacotes de conteúdo. No console do Configuration Manager, você pode examinar informações como:  
+ O nó **Status do Conteúdo** no workspace **Monitoramento** fornece informações sobre os pacotes de conteúdo. No console do Configuration Manager, você pode examinar informações como:  
 
 -   O nome do pacote.  
 -   O tipo.  
@@ -73,7 +74,7 @@ Use os procedimentos a seguir para exibir o status do conteúdo e gerenciar as d
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique em **Status do Conteúdo**. Os pacotes são exibidos.  
+2.  No workspace **Monitoramento**, expanda **Status da Distribuição** e clique em **Status do Conteúdo**. Os pacotes são exibidos.  
 
 3.  Selecione o pacote para o qual você deseja informações detalhadas de status.  
 
@@ -83,7 +84,7 @@ Use os procedimentos a seguir para exibir o status do conteúdo e gerenciar as d
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique em **Status do Conteúdo**. Os pacotes são exibidos.  
+2.  No workspace **Monitoramento**, expanda **Status da Distribuição** e clique em **Status do Conteúdo**. Os pacotes são exibidos.  
 
 3.  Selecione o pacote que deseja gerenciar e, no painel de detalhes, clique em **Exibir Status**.  
 
@@ -95,7 +96,7 @@ Use os procedimentos a seguir para exibir o status do conteúdo e gerenciar as d
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique em **Status do Conteúdo**. Os pacotes são exibidos.  
+2.  No workspace **Monitoramento**, expanda **Status da Distribuição** e clique em **Status do Conteúdo**. Os pacotes são exibidos.  
 
 3.  Selecione o pacote que deseja gerenciar e, no painel de detalhes, clique em **Exibir Status**.  
 
@@ -104,7 +105,7 @@ Use os procedimentos a seguir para exibir o status do conteúdo e gerenciar as d
 5.  Clique em **Sim** para confirmar a ação e iniciar o processo de redistribuição ao ponto de distribuição.  
 
 ## <a name="distribution-point-group-status"></a>Status do grupo de pontos de distribuição  
-O nó **Status do Grupo de Pontos de Distribuição** no espaço de trabalho **Monitoramento** fornece informações sobre grupos de pontos de distribuição. Você pode examinar informações como:  
+O nó **Status do Grupo de Pontos de Distribuição** no workspace **Monitoramento** fornece informações sobre grupos de pontos de distribuição. Você pode examinar informações como:  
 
 -   O nome do grupo de ponto de distribuição.  
 -   A descrição.  
@@ -123,14 +124,14 @@ Você também pode exibir informações detalhadas para o seguinte:
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique em **Status do Grupo de Pontos de Distribuição**. Os grupos de pontos de distribuição são exibidos.  
+2.  No workspace **Monitoramento**, expanda **Status da Distribuição** e clique em **Status do Grupo de Pontos de Distribuição**. Os grupos de pontos de distribuição são exibidos.  
 
 3.  Selecione o grupo de pontos de distribuição sobre o qual você deseja informações detalhadas de status.  
 
 4.  Na guia **Início** , clique em **Exibir Status**. As informações detalhadas de status para o grupo de pontos de distribuição são exibidas.  
 
 ## <a name="distribution-point-configuration-status"></a>Status de configuração de pontos de distribuição  
- O nó **Status de Configuração de Pontos de Distribuição** no espaço de trabalho **Monitoramento** fornece informações sobre o ponto de distribuição. É possível verificar quais atributos estão habilitados para o ponto de distribuição, como PXE, multicast e validação de conteúdo, e o status da distribuição para o ponto de distribuição. É possível também exibir informações detalhadas para o ponto de distribuição.  
+ O nó **Status de Configuração de Pontos de Distribuição** no workspace **Monitoramento** fornece informações sobre o ponto de distribuição. É possível verificar quais atributos estão habilitados para o ponto de distribuição, como PXE, multicast e validação de conteúdo, e o status da distribuição para o ponto de distribuição. É possível também exibir informações detalhadas para o ponto de distribuição.  
 
 > [!WARNING]  
 >  O status de configuração de pontos de distribuição é relativo às últimas 24 horas. Se ocorrer um erro no ponto de distribuição e ele se recuperar, o status de erro poderá ser exibido por até 24 horas após a recuperação do ponto de distribuição.  
@@ -141,7 +142,7 @@ Use o procedimento a seguir para exibir o status de configuração de pontos de 
 
 1.  No console do Configuration Manager, clique em **Monitoramento**.  
 
-2.  No espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique em **Status de Configuração de Pontos de Distribuição**. Os pontos de distribuição são exibidos.  
+2.  No workspace **Monitoramento**, expanda **Status da Distribuição** e clique em **Status de Configuração de Pontos de Distribuição**. Os pontos de distribuição são exibidos.  
 
 3.  Selecione o ponto de distribuição sobre qual você deseja informações de status.  
 

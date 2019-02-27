@@ -10,12 +10,13 @@ ms.assetid: f053fa73-c553-4522-a6b9-f885f23fe57c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 41dd6ad6f8a0292fdb16a0d727665b17e038f87b
-ms.sourcegitcommit: 1439817f1309658b31008d7bafaab32fc5ef8789
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ba73d215b9a672f4843c2f1e4a63dfc6bd13ea74
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "52820034"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56132877"
 ---
 # <a name="package-conversion-manager"></a>Package Conversion Manager
 
@@ -61,9 +62,9 @@ Antes de começar a converter pacotes em aplicativos, primeiro desenvolva um pla
 
 Esta seção descreve dois exemplos de planos de conversão de pacote:  
 
-- [Um ambiente de teste de alta utilização de recursos](#bkmk_define-high): você tem um ambiente de teste com recursos, permissões e arquitetura para replicar por completo seu ambiente de produção.  
+- [Um ambiente de teste com alta utilização de recursos](#bkmk_define-high): você tem um ambiente de teste com recursos, permissões e arquitetura para replicar por completo seu ambiente de produção.  
 
-- [Um ambiente de teste de recursos limitados](#bkmk_define-limited): você não tem um ambiente de teste que duplica totalmente o seu ambiente de produção.  
+- [Um ambiente de teste com recursos limitados](#bkmk_define-limited): você não tem um ambiente de teste que replica totalmente seu ambiente de produção.  
 
 Ajuste esses planos conforme necessário para outros problemas específicos do seu ambiente.
 

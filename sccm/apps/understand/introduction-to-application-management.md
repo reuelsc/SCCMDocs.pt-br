@@ -10,12 +10,13 @@ ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0d4e83cbcb1c95303719b1d86ffc9a8969c16998
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3e71a94a4e4769d5a8fe7e2a7957eeb9e46f79be
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893899"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56126194"
 ---
 # <a name="introduction-to-application-management-in-configuration-manager"></a>Introdução ao gerenciamento de aplicativos no Configuration Manager
 
@@ -24,7 +25,7 @@ ms.locfileid: "43893899"
 Neste artigo, você aprenderá os conceitos básicos para começar a trabalhar com aplicativos do Configuration Manager.  
 
 > [!TIP]  
->  Se você já sabe como gerenciar aplicativos no Configuration Manager, ignore este artigo. Passe para a criação de um aplicativo de exemplo: [Criar e implantar um aplicativo](/sccm/apps/get-started/create-and-deploy-an-application).  
+>  Se você já sabe como gerenciar aplicativos no Configuration Manager, ignore este artigo. Vá diretamente para a criação de um aplicativo de exemplo: [Criar e implantar um aplicativo](/sccm/apps/get-started/create-and-deploy-an-application).  
 
 
 
@@ -152,7 +153,7 @@ Além disso, quando você gerencia dispositivos por meio do gerenciamento de dis
 
 ## <a name="state-based-applications"></a>Aplicativos baseados em estado  
 
-Os aplicativos do Configuration Manager usam monitoramento baseado em estado. Você pode acompanhar o último estado de implantação de aplicativo de usuários e dispositivos. Essas mensagens de estado exibem informações sobre dispositivos individuais. Por exemplo, ao implantar um aplicativo em uma coleção de usuários, você pode exibir o estado de conformidade da implantação e a finalidade da implantação no console do Configuration Manager. Monitore a implantação de software do espaço de trabalho **monitoramento** no console do Configuration Manager. Para obter mais informações, consulte [Monitor applications (Monitorar aplicativos)](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
+Os aplicativos do Configuration Manager usam monitoramento baseado em estado. Você pode acompanhar o último estado de implantação de aplicativo de usuários e dispositivos. Essas mensagens de estado exibem informações sobre dispositivos individuais. Por exemplo, ao implantar um aplicativo em uma coleção de usuários, você pode exibir o estado de conformidade da implantação e a finalidade da implantação no console do Configuration Manager. Monitore a implantação de software do workspace **monitoramento** no console do Configuration Manager. Para obter mais informações, consulte [Monitor applications (Monitorar aplicativos)](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
 
 Regularmente, o cliente do Configuration Manager reavalia as implantações de aplicativos. Por exemplo:  
 

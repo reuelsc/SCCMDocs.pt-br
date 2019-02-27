@@ -4,12 +4,12 @@ ms.author: aaroncz
 ms.prod: configuration-manager
 ms.topic: include
 ms.date: 11/27/2018
-ms.openlocfilehash: c91cf0abb8cb79fe92e34b6b234a4c8264af75ab
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: f6e46f8b0bf985eae87cd5157f8a82af5fa0b849
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456933"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56142571"
 ---
 ##  <a name="BKMK_OSImagesApplyUpdates"></a> Aplicar atualizações de software a uma imagem  
 
@@ -41,11 +41,11 @@ O banco de dados armazena informações sobre a imagem, incluindo as atualizaç�
 
 5.  Na página **Definir Agendamento** , especifique as seguintes configurações e clique em **Próximo**.  
 
-    a.  **Agenda**: especifique o agendamento para quando o site se aplica as atualizações de software à imagem.  
+    a.  **Agendamento**: especifique o agendamento para quando o site aplica as atualizações de software à imagem.  
 
-    b.  **Continuar se houver erro**: selecione essa opção para continuar a aplicar as atualizações de software à imagem em caso de erro.  
+    b.  **Continuar se houver erro**:  selecione essa opção para continuar aplicando as atualizações de software à imagem em caso de erro.  
 
-    c.  **Atualizar pontos de distribuição com a imagem**: selecione essa opção para atualizar a imagem nos pontos de distribuição depois que o site aplicar as atualizações de software.  
+    c.  **Atualizar pontos de distribuição com a imagem**: selecione essa opção para atualizar a imagem nos pontos de distribuição após o site aplicar as atualizações de software.  
 
 6.  Conclua o Assistente de Agendar Atualizações.  
 
@@ -56,8 +56,8 @@ O banco de dados armazena informações sobre a imagem, incluindo as atualizaç�
 ### <a name="servicing-operations"></a>Operações de manutenção
 
 No console do Configuration Manager, no nó **Imagens do Sistema Operacional** ou **Pacotes de Atualização do Sistema Operacional**, adicione as seguintes colunas à exibição:
-- **Data de Atualizações Agendada**: essa propriedade mostra o próximo agendamento que você definiu.  
-- **Atualizações de Status Agendadas**: essa propriedade mostra o status. Por exemplo, **Bem-sucedido** ou **Em processo**.  
+- **Data de Atualizações Agendadas**: essa propriedade mostra o próximo agendamento que você definiu.  
+- **Status de Atualizações Agendadas**: essa propriedade mostra o status. Por exemplo, **Bem-sucedido** ou **Em processo**.  
 
 Selecione um objeto de imagem específica e, em seguida, alterne para a guia **Status de Atualização** no painel de detalhes. Essa guia mostra a lista de atualizações na imagem. 
 
@@ -82,4 +82,5 @@ Por padrão, essa configuração é **Automática**. Com esse valor, o Configura
 Se você selecionar uma unidade que não existe no servidor do site, o Configuration Manager se comportará da mesma que se você selecionasse **Automático**. 
 
 Durante a manutenção offline, o Configuration Manager armazena arquivos temporariamente em uma pasta, `<drive>:\ConfigMgr_OfflineImageServicing`. Ele também cria imagem do sistema operacional nessa pasta. 
+
 

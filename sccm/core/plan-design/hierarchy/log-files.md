@@ -2,7 +2,7 @@
 title: Arquivos de log para solução de problemas
 titleSuffix: Configuration Manager
 description: Use arquivos de log para solucionar problemas com clientes e sistemas de sites do Configuration Manager.
-ms.date: 11/27/2018
+ms.date: 02/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,13 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 96673c0b299e45111c7d9a2bedf55282de50132e
-ms.sourcegitcommit: 5e7c4d36f4cdb3390ad3b381d31a3e1e4bf3c6e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a5c6cee6422d3fc8777f54bd42716748410c9323
+ms.sourcegitcommit: ceec0e20bf801071f2a05233f984cf17acc3fd29
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55986613"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265063"
 ---
 # <a name="log-files-in-configuration-manager"></a>Arquivos de log no Configuration Manager
 
@@ -809,9 +810,10 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 ###  <a name="BKMK_WindowsServicingLog"></a>Serviço do Windows 10  
  A tabela a seguir lista os arquivos de log que contêm informações relacionadas ao serviço do Windows 10.  
 A manutenção usa a mesma infraestrutura e processo das atualizações de software. Confira outros logs aplicáveis ao cenário de manutenção em [Atualizações de Software](#BKMK_SU_NAPLog).
+
 |Nome do log|Descrição|Computador com o arquivo de log|  
 |--------------|-----------------|----------------------------|  
-|CBS.log|Registra as falhas de manutenção relacionadas a alterações para o Windows Update ou funções e recursos.|Cliente|  
+|CBS.log|Registra as falhas de manutenção relacionadas a alterações para o Windows Update ou funções e recursos.|Cliente|
 |DISM.log|Registra todas as ações usando o DISM. Se necessário, o DISM.log apontará para CBS.log para obter mais detalhes.|Cliente|
 |setupact.log|Arquivo de log primário da maioria dos erros que ocorre durante o processo de instalação do Windows. O arquivo de log está localizado na pasta %windir%\$Windows.~BT\sources\panther.|Cliente|
 

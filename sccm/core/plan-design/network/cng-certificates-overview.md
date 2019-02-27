@@ -10,20 +10,21 @@ ms.assetid: dba904ae-7c44-46db-ae63-999b9821cb46
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8b85961c14c3db69c3e02e776798588fadd0fc89
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 2fb57705079072e6a656464f5b7252b2ce05ad9d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383146"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56123239"
 ---
 # <a name="cng-certificates-overview"></a>Visão geral dos certificados CNG
 <!-- 1356191 --> 
 
-O Configuration Manager tem um suporte limitado para certificados CNG (Cryptography Next Generation). Os clientes do Configuration Manager podem usar o certificado de autenticação de cliente de PKI com chave privada no KSP (provedor de armazenamento de chaves) da CNG. Com o suporte do KSP, os clientes do Configuration Manager dão suporte para chave de privada baseada em hardware, como TPM KSP para certificados de autenticação de cliente de PKI.
+O Configuration Manager tem suporte limitado para certificados CNG (Cryptography Next Generation). Os clientes do Configuration Manager podem usar o certificado de autenticação de cliente de PKI com chave privada no KSP (provedor de armazenamento de chaves) da CNG. Com o suporte do KSP, os clientes do Configuration Manager dão suporte para chave de privada baseada em hardware, como TPM KSP para certificados de autenticação de cliente de PKI.
 
 ## <a name="supported-scenarios"></a>Cenários com suporte
-Você pode usar modelos de certificado [CNG (Cryptography API: Next Generation)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) para os seguintes cenários:
+Você pode usar os modelos de certificado de [Cryptography API: (Cryptography API: Next Generation)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) para os seguintes cenários:
 
 - Registro de cliente e comunicação com um ponto de gerenciamento HTTPS   
 - Distribuição de software e implantação de aplicativos com um ponto de distribuição HTTPS   

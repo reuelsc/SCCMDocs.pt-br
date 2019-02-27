@@ -10,12 +10,13 @@ ms.assetid: 24fca61e-9cdb-447a-ad7a-f4d2e4fd6704
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 07eb6ec88a5f9b9f7985c317813b2ef7dd5534ff
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: fe4e1c83f4079e0df959563ac8209a98983b8d90
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344697"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56132448"
 ---
 # <a name="use-cloud-services-with-system-center-configuration-manager"></a>Usar serviços de nuvem com o System Center Configuration Manager
 

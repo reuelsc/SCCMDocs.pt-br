@@ -10,12 +10,13 @@ ms.assetid: cb616925-bb94-4b7c-a867-b3d95aef4d5e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fdcd31ec5a2fc5fbba12145115b46b2fbe8d4edd
-ms.sourcegitcommit: 759098de944b8f7d5eedfc2bae2cb9a6ba15276f
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e586990d049119c3cb00a61c56a1b84763104309
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43297166"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56137891"
 ---
 # <a name="troubleshoot-package-conversion-manager"></a>Solução de problemas do Gerenciador de Conversão de Pacotes
 
@@ -37,7 +38,7 @@ Se o Provedor de SMS não está funcionando corretamente, o console do Configura
 
 ## <a name="package-readiness"></a>Preparação de pacote
 
-Antes de converter um pacote em um aplicativo, analise o pacote usando a função **Analisar** do Gerenciador de Conversão de Pacotes. Após a análise, adicione a coluna **Preparação** ao nó **Pacotes** do console do Configuration Manager. A lista de pacotes exibe um dos seguintes estados de preparação do pacote analisado:
+Antes de converter um pacote em um aplicativo, analise o pacote usando a função  **Analisar** do Gerenciador de Conversão de Pacotes. Após a análise, adicione a coluna **Preparação** ao nó **Pacotes** do console do Configuration Manager. A lista de pacotes exibe um dos seguintes estados de preparação do pacote analisado:
 
  - **Automática**: o pacote pode ser convertido diretamente com a função **Converter**.      
 
@@ -46,7 +47,7 @@ Antes de converter um pacote em um aplicativo, analise o pacote usando a funçã
 
  - **Manual**: o pacote precisa de algumas adições ou alterações antes que você possa convertê-lo usando a função **Corrigir e Converter**.  
 
- - **Não Aplicável**: o pacote não é adequado para conversão. Corrija os problemas com o pacote ou continue a implantá-lo como um pacote.  
+ - **Não aplicável**: o pacote não é adequado para conversão. Corrija os problemas com o pacote ou continue a implantá-lo como um pacote.  
 
  - **Erro**: o pacote contém erros. Corrija esses erros manualmente antes de analisar e convertê-lo.  
 

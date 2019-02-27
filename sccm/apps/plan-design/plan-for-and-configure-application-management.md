@@ -10,16 +10,17 @@ ms.assetid: 2be84a1d-ebb9-47ae-8982-c66d5b92a52a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: df936f3ab5567840560497edd60a32f3bbb9c74d
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 62d750a6ff711afc06ddbcec9b9ad98ecfab758e
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893594"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56124148"
 ---
 # <a name="plan-for-and-configure-application-management-in-configuration-manager"></a>Planejar e configurar o gerenciamento de aplicativos no Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (branch atual)*
 
 Use as informações descritas neste artigo como auxílio para implantar as dependências necessárias para implantar aplicativos no Configuration Manager.  
 
@@ -248,7 +249,7 @@ Implante um certificado de autenticação de cliente em computadores cliente nos
 Para saber mais sobre os requisitos de certificado PKI, consulte [Requisitos do certificado PKI](/sccm/core/plan-design/network/pki-certificate-requirements).  
 
 
-### <a name="step-3-install-and-configure-the-application-catalog-roles"></a>Etapa 3: instalar e configurar as funções do Catálogo de Aplicativos
+### <a name="step-3-install-and-configure-the-application-catalog-roles"></a>Etapa 3: Instalar e configurar as funções do Catálogo de Aplicativos
 
 Instale o ponto de serviço Web de Catálogo de Aplicativos e as funções de site do catálogo de aplicativos no mesmo site. Não é necessário instalá-las no mesmo servidor ou na mesma floresta do Active Directory. No entanto, o ponto de serviço Web do catálogo de aplicativos deve estar na mesma floresta que o banco de dados do site.
 
@@ -266,16 +267,16 @@ Instale o catálogo de aplicativos em um novo servidor do sistema de site ou um 
 
 #### <a name="verify-the-installation-of-these-site-system-roles"></a>Verificar a instalação dessas funções de sistema de site  
 
-- Mensagens de status: Use os componentes **SMS_PORTALWEB_CONTROL_MANAGER** e **SMS_AWEBSVC_CONTROL_MANAGER**.  
+- Mensagens de status: use os componentes **SMS_PORTALWEB_CONTROL_MANAGER** e **SMS_AWEBSVC_CONTROL_MANAGER**.  
 
     Por exemplo, a ID do status **1015** para **SMS_PORTALWEB_CONTROL_MANAGER** confirma se o Gerenciador do Componente de Site instalou com êxito o ponto de sites da Web do Catálogo de Aplicativos.  
 
-- Arquivos de log: Procure **SMSAWEBSVCSetup.log** e **SMSPORTALWEBSetup.log**.  
+- Arquivos de log: pesquise por **SMSAWEBSVCSetup.log** e **SMSPORTALWEBSetup.log**.  
 
     Para obter mais informações, pesquise os arquivos de log **awebsvcMSI.log** e **portlwebMSI.log**.  
 
 
-### <a name="step-4-configure-client-settings"></a>Etapa 4: Definir a configuração do cliente
+### <a name="step-4-configure-client-settings"></a>Etapa 4: Definir as configurações do cliente
 
 Se você desejar que todos os usuários tenham a mesma configuração, defina as configurações padrão. Caso contrário, defina as configurações do cliente personalizadas para coleções específicas.
 
@@ -291,7 +292,7 @@ Para obter mais informações, consulte os seguintes artigos:
 O cliente do Configuration Manager definirá dispositivos com essas configurações quando baixar a política do cliente. Para iniciar a recuperação de política para um cliente individual, veja [Como gerenciar clientes](/sccm/core/clients/manage/manage-clients).
 
 
-### <a name="step-5-verify-that-the-application-catalog-is-operational"></a>Etapa 5: Verificar se o Catálogo de Aplicativos está funcionando
+### <a name="step-5-verify-that-the-application-catalog-is-operational"></a>Etapa 5: Verifique se o Catálogo de Aplicativos está operacional
 
 Use os procedimentos a seguir para verificar se o catálogo de aplicativos está operacional. 
 
@@ -301,7 +302,7 @@ Use os procedimentos a seguir para verificar se o catálogo de aplicativos está
 > [!TIP]  
 >  Os pré-requisitos ausentes correspondem aos motivos mais comuns do mau funcionamento do Catálogo de Aplicativos após a instalação. Confirme se os pré-requisitos de função para as funções do sistema de site do Catálogo de Aplicativos. Para obter mais informações, consulte [Site and site system prerequisites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) (Pré-requisitos de site e sistema de sites).  
 
-Em um navegador, digite o endereço do site do Catálogo de Aplicativos. Confirme se a página da Web exibe estas três guias: **Catálogo de Aplicativos**, **Minhas Solicitações de Aplicativos**e **Meus Dispositivos**.  
+Em um navegador, digite o endereço do site do Catálogo de Aplicativos. Confirme se a página da Web exibe as três guias: **Catálogo de Aplicativos**, **Minhas Solicitações de Aplicativos** e **Meus Dispositivos**.  
 
 Use o endereço apropriado para o Catálogo de Aplicativos na lista a seguir, em que &lt;servidor&gt; é o nome do computador, FQDN da intranet ou FQDN da Internet:  
 

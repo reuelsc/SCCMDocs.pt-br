@@ -10,12 +10,13 @@ ms.assetid: 7d8f530b-1a39-4a9d-a2f0-675b516da7e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 008da23a6fedf1666a29754dc41a47c61f8bfbda
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a5336db0bd16d4845650bae775f2eff895e617fb
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384225"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56142265"
 ---
 # <a name="use-a-pull-distribution-point-with-configuration-manager"></a>Usar um ponto de distribuição por pull com o Configuration Manager
 
@@ -63,7 +64,7 @@ Quando você distribui conteúdo para um ponto de distribuição por pull, ocorr
 
 Ao usar um ponto de distribuição por pull, examine e defina as seguintes configurações de componentes do site:  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
+1.  No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione o nó **Sites**.  
 
 2.  Selecione o site. Na faixa de opções, clique em **Configurar componentes do site** e selecione **Distribuição de Software**.  
 
@@ -71,13 +72,13 @@ Ao usar um ponto de distribuição por pull, examine e defina as seguintes confi
 
 4.  No grupo **Configurações de repetição**, examine os seguintes valores:  
 
-    -   **Número de repetições**: o número de vezes que o Gerenciador de Transferência de Pacote tenta notificar o ponto de distribuição por pull para baixar o conteúdo. Depois de tentar esse número de vezes, o Gerenciador de Transferência de Pacote cancelará a transferência. Esse valor é 30 por padrão.  
+    -   **Número de repetições**: o número de vezes que o Gerenciador de Transferência de Pacote tenta notificar o ponto de distribuição de recepção para baixar o conteúdo. Depois de tentar esse número de vezes, o Gerenciador de Transferência de Pacote cancelará a transferência. Esse valor é 30 por padrão.  
 
     -   **Atraso antes de tentar novamente (minutos)**: o número de minutos que o Gerenciador de Transferência de Pacote espera entre as tentativas. Esse valor é 20 por padrão.  
 
 5.  No grupo **Configurações de sondagem de status**, examine os seguintes valores:  
 
-    -   **Número de sondagens**: o número de vezes que o Gerenciador de Transferência de Pacote contata o ponto de distribuição por pull para recuperar o status do trabalho. Se o Gerenciador de Transferência de Pacote tentar esse número de vezes antes que o trabalho seja concluído, ele cancelará a transferência. Esse valor é 72 por padrão.   
+    -   **Número de sondagens**: o número de vezes que o Gerenciador de Transferência de Pacote contata o ponto de distribuição de recepção para recuperar o status do trabalho. Se o Gerenciador de Transferência de Pacote tentar esse número de vezes antes que o trabalho seja concluído, ele cancelará a transferência. Esse valor é 72 por padrão.   
 
     -   **Atraso antes de tentar novamente (minutos)**: o número de minutos que o Gerenciador de Transferência de Pacote espera entre as tentativas. Esse valor é 60 por padrão.   
     

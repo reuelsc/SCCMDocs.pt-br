@@ -10,12 +10,13 @@ ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 01112dac89ba0fe9e18dabe186353506d9476213
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: cb208bdb360f726a59585d567c239074717acf66
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456763"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120003"
 ---
 # <a name="list-of-reports-in-configuration-manager"></a>Lista de relatórios no Configuration Manager
 
@@ -207,13 +208,13 @@ Os sete relatórios a seguir estão listados na categoria **Data Warehouse**.
 
 |Nome do relatório|Descrição|  
 |-----------------|-----------------|  
-|**Implantação do aplicativo**|Histórico: veja os detalhes da implantação de aplicativo para um aplicativo e um computador específicos.|
-|**Endpoint Protection e Conformidade de Atualizações de Software**|Histórico: veja os computadores com atualizações de software faltantes.|
-|**Inventário geral de hardware**|Histórico: veja todo o inventário de hardware de um computador específico.|
-|**Inventário geral de software**|Histórico: veja todo o inventário de software de um computador específico.|
-|**Visão Geral de Integridade de Infraestrutura**|Histórico: exibe uma visão geral da integridade da infraestrutura do Configuration Manager.|
-|**Lista de Malwares Detectados**|Histórico: veja o malware que foi detectado na organização.|
-|**Resumo de distribuição de software**|Histórico: um resumo da distribuição de software para um anúncio e computador específicos.|
+|**Implantação do aplicativo**|Histórico: Exibe detalhes de implantação de aplicativo para um aplicativo e computador específicos.|
+|**Endpoint Protection e Conformidade de Atualizações de Software**|Histórico: Exibe computadores com atualizações de software ausentes.|
+|**Inventário geral de hardware**|Histórico: Exibe todo o inventário de hardware para um computador específico.|
+|**Inventário geral de software**|Histórico: Exibe todo o inventário de software para um computador específico.|
+|**Visão Geral de Integridade de Infraestrutura**|Histórico: Exibe uma visão geral da integridade da infraestrutura do seu Configuration Manager.|
+|**Lista de Malwares Detectados**|Histórico: Exibe os malwares que foram detectados na sua organização.|
+|**Resumo de distribuição de software**|Histórico: Um resumo da distribuição de software para um anúncio e computador específicos.|
 
 
 ## <a name="device-management"></a>Gerenciamento de dispositivo  
@@ -619,7 +620,7 @@ Os 15 relatórios a seguir são listados na categoria **Software – Empresas e 
 |**Contagem de produtos inventariados e versões de um produto específico**|Exibe uma lista das versões inventariadas de um produto especificado e o número de computadores em que cada um está instalado.|  
 |**Contagem de todas as instâncias de software registradas com Adicionar ou Remover Programas**|Exibe um resumo de todas as instâncias de software instaladas e registradas com Adicionar ou Remover Programas ou Programas e Recursos em computadores na coleção especificada.|  
 |**Contagem de instâncias de software específico registradas com Adicionar ou Remover Programas**|Exibe uma contagem de instâncias de pacotes de software especificados instalados e registrados com Adicionar ou Remover Programas ou Programas e Recursos.|  
-|**Contagens de Navegador padrão**|Mostra a contagem de clientes com um navegador da Web específico como o padrão do Windows. <br>Use a seguinte referência para BrowserProgIDs comuns:<br> - AppXq0fevzme2pys62n3e0fbqa7peapykr8v: Microsoft Edge<br> - IE.HTTP: Microsoft Internet Explorer<br> - ChromeHTML: Google Chrome<br> - OperaStable: Opera Software<br> - FirefoxURL-308046B0AF4A39CB: Mozilla Firefox<br> – Desconhecido: o sistema operacional do cliente não dá suporte à consulta, a consulta não foi executada ou um usuário não fez logon|
+|**Contagens de Navegador padrão**|Mostra a contagem de clientes com um navegador da Web específico como o padrão do Windows. <br>Use a seguinte referência para BrowserProgIDs comuns:<br> - AppXq0fevzme2pys62n3e0fbqa7peapykr8v: Microsoft Edge<br> - IE.HTTP: Microsoft Internet Explorer<br> - ChromeHTML: Google Chrome <br> - OperaStable: Software Opera<br> - FirefoxURL-308046B0AF4A39CB: Mozilla Firefox <br> – Desconhecido: o sistema operacional do cliente não dá suporte à consulta, a consulta não foi executada ou um usuário não fez logon|
 |**Instalações dos aplicativos do Windows especificados**|Este relatório lista todos os computadores com um aplicativo do Windows especificado.|  
 |**Produtos em um computador específico**|Exibe um resumo dos produtos de software inventariados e seus fabricantes em um computador especificado.|  
 |**Software registrado em Adicionar ou Remover Programas em um computador específico**|Exibe um resumo do software instalado em um computador especificado que é registrado em Adicionar ou Remover Programas ou Programas e Recursos.|  

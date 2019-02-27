@@ -10,12 +10,13 @@ ms.assetid: bda87fc5-2e4c-4992-98a4-01770365038c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1b29fb48d8d8abc2e0c6693725b65c90a0cf1cd1
-ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: abfad38e0c02ff6c0af8d4c9c47bdeed7598e513
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "42584510"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129741"
 ---
 # <a name="setup-downloader-for-system-center-configuration-manager"></a>Downloader de Instalação para System Center Configuration Manager
 
@@ -61,9 +62,9 @@ Você tem duas opções para executar o Downloader de Instalação:
 
     -   **/VERIFYLANG**: use essa opção para verificar os arquivos de idiomas na pasta de download. Examine o arquivo ConfigMgrSetup.log no diretório raiz da unidade C para obter uma lista dos arquivos de idiomas desatualizados.
 
-    -   **/LANG**: use essa opção para baixar somente os arquivos de idiomas para a pasta de download.  
+    -   **/LANG**: use essa opção para baixar os arquivos de idiomas na pasta de download.  
 
-    -   **/NOUI**: use essa opção para iniciar o Downloader de Instalação sem exibir a interface do usuário. Ao usar essa opção, você deve especificar o **caminho de download** como parte da linha de comando no prompt de comando.  
+    -   **/NOUI**: use essa opção para iniciar o Downloader de Instalação sem exibir a interface de usuário. Ao usar essa opção, você deve especificar o **caminho de download** como parte da linha de comando no prompt de comando.  
 
     -   **&lt;DownloadPath\>**: você pode especificar o caminho para a pasta de download para iniciar automaticamente processo de verificação ou download. Você deve especificar o caminho de download ao usar a opção **/NOUI**. Se você não especificar um caminho de download, deverá especificar o caminho quando o Downloader de Instalação for aberto. O Downloader de Instalação criará a pasta caso ela não exista.  
 

@@ -10,12 +10,13 @@ ms.assetid: 9edc214f-f405-456d-80df-8adcc2a5428d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 67a052fffcaf6ad105f417649aa9f3826922ce80
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 2188ce295f999b392166c99133822ad8fc1e441e
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385887"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56125231"
 ---
 # <a name="deployment-monitoring-tool"></a>Deployment Monitoring Tool
 
@@ -41,7 +42,7 @@ A Ferramenta de Monitoramento de Implantação dá suporte apenas à interface g
 
 - **Propriedades do Cliente**: uma lista de atributos úteis sobre o dispositivo e o cliente do Configuration Manager. Este modo de exibição é o padrão.   
 
-- **Implantações**: exibir todas as implantações almejadas no momento. Selecione uma implantação no painel de resultados para exibir mais informações no painel de detalhes.  
+- **Implantações**: exibir todas as implantações de destino no momento. Selecione uma implantação no painel de resultados para exibir mais informações no painel de detalhes.  
 
 - **Todas as Atualizações**: exibir todas as atualizações de software e seus status.  
 
@@ -52,9 +53,9 @@ Para copiar dados em qualquer modo de exibição, selecione uma célula e pressi
 
 As seguintes ações estão disponíveis no menu **Ações**:  
 
-- **Conectar-se ao computador remoto**: selecione um computador ao qual se conectar. Quando você não especificar um nome de usuário e senha, ele usará as credenciais atuais. Clique em **Salvar** para se conectar ao computador remoto.  
+- **Conectar ao computador remoto**: selecione um computador ao qual se conectar. Quando você não especificar um nome de usuário e senha, ele usará as credenciais atuais. Clique em **Salvar** para se conectar ao computador remoto.  
 
-- **Exportar Dados**: selecione o arquivo para gravar os dados e, em seguida, clique em **Salvar**. Use o arquivo XML exportado para a solução de problemas remota em um computador diferente.  
+- **Exportar Dados**: selecione o arquivo no qual gravar os dados e, em seguida, clique em **Salvar**. Use o arquivo XML exportado para a solução de problemas remota em um computador diferente.  
 
 - **Importar Dados**: selecione um arquivo para importar para a ferramenta.  
 

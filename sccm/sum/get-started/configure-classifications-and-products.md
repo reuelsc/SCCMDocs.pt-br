@@ -5,17 +5,18 @@ description: Siga estas etapas para configurar as classificações e os produtos
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 04/10/2018
+ms.date: 02/15/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
-ms.openlocfilehash: a9af39cd5f57e8b2741facde269ea81bc1b10728
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f1d984598288434aa1e81c6bd2c51a315edfa551
+ms.sourcegitcommit: fd16fc2b681608fd6def5bad2cedffbcd1f2423a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350673"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56405685"
 ---
 #  <a name="configure-classifications-and-products-to-synchronize"></a>configurar classificações e produtos para sincronizar  
 
@@ -40,15 +41,15 @@ ms.locfileid: "32350673"
     > [!NOTE]  
     >  Cada atualização de software é definida com uma classificação de atualização que ajuda a organizar os diferentes tipos de atualização. Durante o processo de sincronização, os metadados de atualizações de software para as classificações especificadas são sincronizados. O Configuration Manager fornece a capacidade de sincronizar atualizações de software com as seguintes classificações de atualização:  
     >   
-    > - **Atualizações críticas**: especifica uma atualização lançada em larga escala para um problema específico que aborda um bug crítico não relacionado à segurança.  
-    > - **Atualizações de definições**: especifica uma atualização para vírus ou outros arquivos de definição.  
-    > - **Feature Packs**: especifica novos recursos de produtos que são distribuídos fora de um lançamento de produto e que normalmente são incluídos no próximo lançamento do produto completo.  
-    > - **Atualizações de segurança**: especifica uma atualização lançada em larga escala para um problema de um produto em específico relacionado à segurança.  
-    > - **Service Packs**: especifica um conjunto cumulativo de hotfixes que são aplicados a um aplicativo. Estes hotfixes podem incluir atualizações de segurança, atualizações críticas, atualizações de software e assim por diante.  
-    > - **Ferramentas**: especifica um utilitário ou um recurso que ajuda a concluir uma ou mais tarefas.  
-    > - **Pacotes cumulativos de atualizações**: especifica um conjunto cumulativo de hotfixes que são reunidos para facilitar a implantação. Esses hotfixes podem incluir atualizações de segurança, atualizações críticas, atualizações e assim por diante. Um pacote cumulativo de atualizações geralmente aborda uma área específica, como segurança ou um componente do produto.  
-    > - **Atualizações**: especifica uma atualização para um aplicativo ou arquivo que está atualmente instalado.  
-    > - **Upgrade**: especifica uma atualização para os recursos e funcionalidades do Windows 10. Seus sites e pontos de atualização de software devem executar o WSUS 4.0 com o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para obter a classificação de **Upgrade**.    
+    > - **Atualizações Críticas**: especifica uma correção lançada em larga escala para um problema específico que corrige um bug crítico não relacionado a segurança.  
+    > - **Atualizações de definições**: especifica uma atualização de software frequente e lançada em larga escala que contém adições ao banco de dados de definição de um produto.  
+    > - **Feature Packs**: especifica novas funcionalidades de produtos distribuídas pela primeira vez fora de um lançamento de produto e que normalmente são incluídas no próximo lançamento do produto completo.  
+    > - **Atualizações de Segurança**: especifica uma correção lançada em larga escala para uma vulnerabilidade relacionada à segurança específica do produto.  
+    > - **Service Packs**: especifica um conjunto cumulativo e testado de todos os hotfixes, atualizações de segurança, atualizações críticas e atualizações aplicadas a um produto. Além disso, os service packs podem conter correções adicionais para problemas encontrados internamente desde o lançamento do produto.  
+    > - **Ferramentas**: Especificam um utilitário ou um recurso que ajuda a concluir uma ou mais tarefas.  
+    > - **Pacotes cumulativos de atualizações**: especifica um conjunto cumulativo e testado de hotfixes, atualizações de segurança, atualizações críticas e atualizações combinadas para facilitar a implantação. Um pacote cumulativo de atualizações geralmente aborda uma área específica, como segurança ou um componente do produto.  
+    > - **Atualizações**: especifica uma correção lançada em larga escala para um problema específico. Uma atualização corrige um bug não crítico não relacionado à segurança.  
+    > - **Atualização**: especifica uma atualização para os recursos e funcionalidades do Windows 10. Seus sites e pontos de atualização de software devem executar o WSUS 4.0 com o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para obter a classificação de **Upgrade**.    
     >       
 
     > [!NOTE]    

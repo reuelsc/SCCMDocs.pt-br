@@ -10,12 +10,13 @@ ms.assetid: 4b72922a-d11e-4aef-b309-19f5f0716f32
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5218d47ae8699ee0feb0cf59405833ec4cc49569
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1365c3951a829d92cbdb2f6a4a87c8496f9ada3c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385827"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56136340"
 ---
 # <a name="dp-job-queue-manager"></a>Gerenciador de Filas de Trabalhos do DP
 
@@ -33,13 +34,13 @@ Também obtém informações do servidor do site no qual o ponto de distribuiç�
 
 Execute **DPJobMgr.exe**. O menu principal da ferramenta contém as seguintes guias: 
 
-- [Conectar-se](#bkmk_connect): estabelecer a conexão inicial ao servidor do site primário  
+- [Conectar](#bkmk_connect): estabelecer a conexão inicial com o servidor do site primário  
 
 - [Visão Geral](#bkmk_overview): resume em uma única exibição todos os trabalhos que estão em execução em todos os pontos de distribuição  
 
 - [Informações de Ponto de Distribuição](#bkmk_dp-info): faça a seleção múltipla de pontos de distribuição para acompanhá-los e gerenciar um único trabalho de interesse  
 
-- [Gerenciar Trabalhos](#bkmk_manage-jobs): mostra em uma exibição simples uma lista de todos os trabalhos e seus status. Manipular trabalhos, movê-los para cima, cancelar ou iniciar manualmente.  
+- [Gerenciar Trabalhos](#bkmk_manage-jobs): Mostra em uma exibição simples uma lista de todos os trabalhos e seus status. Manipular trabalhos, movê-los para cima, cancelar ou iniciar manualmente.  
 
 
 ### <a name="bkmk_connect"></a> Guia Conectar
@@ -53,9 +54,9 @@ Depois que a ferramenta estabelecer uma conexão com sucesso, uma notificação 
 
 Mostra um resumo de todos os trabalhos em todos os pontos de distribuição. Veja as seguintes colunas:  
 
-- **Ponto de distribuição**: lista os nomes dos pontos de distribuição  
+- **Ponto de Distribuição**: lista os nomes dos pontos de distribuição  
 
-- **Executar trabalhos**: mostra o número de trabalhos simultâneos que estão em execução no ponto de distribuição específico.  
+- **Trabalhos em Execução**: mostra o número de trabalhos simultâneos que estão em execução no ponto de distribuição específico.  
 
     > [!Tip]  
     > O número de distribuições de software concorrente é uma configuração de site. Modificada essa configuração nas Propriedades do Componente de Distribuição de Software.  
@@ -85,7 +86,7 @@ Há oito colunas:
 
     - **Em Execução**: indica que um trabalho específico está sendo executado em um ponto de distribuição. Para trabalhos de longa execução (pacotes grandes), geralmente há tempo para obter o progresso (%) até a conclusão. Ele mostra esse percentual na coluna **Progresso** nessa exibição. Para pacotes pequenos, a coluna **Progresso** pode ficar vazia. O trabalho já pode ter sido concluído no momento em que ele receber o status do ponto de distribuição remoto.  
 
-    - **Repetir**: indica que um determinado trabalho falhou e está agora em um estado de nova tentativa. Esse trabalho é repetido após o intervalo de repetição. Esse intervalo é configurável e será definido como 30 minutos por padrão.  
+    - **Tentar novamente**: indica que um determinado trabalho falhou e está agora em um estado de nova tentativa. Esse trabalho é repetido após o intervalo de repetição. Esse intervalo é configurável e será definido como 30 minutos por padrão.  
 
 - **Software**: nome do pacote que é o destino de um ponto de distribuição específico  
 
@@ -97,7 +98,7 @@ Há oito colunas:
 
 - **Hora de Início/Reinício**: para um trabalho em execução, esse valor é a hora de início (verde). Para um trabalho de nova tentativa, esse valor é o momento em que ele tentará novamente o trabalho.  
 
-- **Repetições**: o número de vezes que ele repetiu esse pacote.  
+- **Novas tentativas**: o número de vezes que ele repetiu esse pacote.  
 
 - **Nome do Ponto de Distribuição**: o FQDN (nome de domínio totalmente qualificado) do ponto de distribuição  
 
@@ -115,15 +116,15 @@ Há oito colunas:
 
 Mostra em uma exibição simples uma lista de todos os trabalhos e seus status. Contém as mesmas oito colunas que a [guia Informações do Ponto de Distribuição](#bkmk_dp-info). Nessa exibição, clique com o botão direito do mouse nos trabalhos para as seguintes ações:  
 
-- **Execução**: inicia um trabalho que está em um estado que não em execução  
+- **Executar**: inicia um trabalho em um estado que não em execução  
 
-- **Mover para Cima**: move um ou mais trabalhos para o início da fila. Essa ação pode resultar em os trabalhos serem executados imediatamente. Um trabalho de menor prioridade pode ser colocado em pausa devido a essa ação.  
+- **Mover para o Início**: move um ou mais trabalhos para o início da fila. Essa ação pode resultar em os trabalhos serem executados imediatamente. Um trabalho de menor prioridade pode ser colocado em pausa devido a essa ação.  
 
 - **Mover para Cima**: move um trabalho em particular uma linha para cima. Um trabalho de menor prioridade pode colocar a execução em pausa devido a essa ação.  
 
 - **Mover para Baixo**: move um trabalho em particular uma linha para baixo.  
 
-- **Mover para Baixo**: move um ou mais trabalhos para o final da fila.  
+- **Mover para o Fim**: move um ou mais trabalhos para o final da fila.  
 
     > [!Tip]  
     > Arraste e solte trabalhos na lista para movê-los.  

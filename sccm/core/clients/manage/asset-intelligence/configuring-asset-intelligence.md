@@ -10,12 +10,13 @@ ms.assetid: 08e0382d-de05-4a76-ba5c-7223173f7066
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 182006f0e4fcaf2304570ef4110527a61180c290
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3a96f9292256227da6a216a913c7a0be1be5c60d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341008"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156705"
 ---
 # <a name="configure-asset-intelligence-in-system-center-configuration-manager"></a>Configurar Asset Intelligence no System Center Configuration Manager
 
@@ -27,15 +28,15 @@ O Asset Intelligence faz o inventário e gerencia o uso de licença de software.
    
 
 - **Etapa 1**: Para coletar os dados de inventário necessários para os relatórios do Asset Intelligence, você precisa habilitar o agente cliente de inventário de hardware, conforme descrito em [Como estender o inventário de hardware no System Center Configuration Manager](../../../../core/clients/manage/inventory/extend-hardware-inventory.md).
-- **Etapa 2**: [Habilitar as classes de relatório de inventário de hardware do Asset Intelligence](#BKMK_EnableAssetIntelligence).  
+- **Etapa 2**: [Habilitar classes de relatório de inventário de hardware do Asset Intelligence](#BKMK_EnableAssetIntelligence).  
 - **Etapa 3**: [Instalar um ponto de sincronização do Asset Intelligence](#BKMK_InstallAssetIntelligenceSynchronizationPoint)
-- **Etapa 4**: [Habilitar a auditoria de eventos de logon com êxito](#BKMK_EnableSuccessLogonEvents)  
+- **Etapa 4**: [Habilitar auditoria de eventos de logon de êxito](#BKMK_EnableSuccessLogonEvents)  
 - **Etapa 5**: [Importar informações de licença de software](#BKMK_ImportSoftwareLicenseInformation)  
 - **Etapa 6**: [Configurar tarefas de manutenção do Asset Intelligence](#BKMK_ConfigureMaintenanceTasks) 
 
 
 ###  <a name="BKMK_EnableAssetIntelligence"></a> Enable Asset Intelligence hardware inventory reporting classes  
- Para habilitar o Asset Intelligence nos sites do Configuration Manager, é necessário habilitar uma ou mais classes de relatório de inventário de hardware do Asset Intelligence. Você pode habilitar as classes na home page do **Asset Intelligence** ou no espaço de trabalho **Administração** , no nó **Configurações do Cliente** das propriedades de configurações do cliente. Use um dos procedimentos a seguir.  
+ Para habilitar o Asset Intelligence nos sites do Configuration Manager, é necessário habilitar uma ou mais classes de relatório de inventário de hardware do Asset Intelligence. Você pode habilitar as classes na home page do **Asset Intelligence** ou no workspace **Administração**, no nó **Configurações do Cliente** das propriedades de configurações do cliente. Use um dos procedimentos a seguir.  
 
 ##### <a name="to-enable-asset-intelligence-hardware-inventory-reporting-classes-from-the-asset-intelligence-home-page"></a>Para habilitar as classes de relatório de inventário de hardware do Asset Intelligence na home page do Asset Intelligence  
 
@@ -77,7 +78,7 @@ Além de baixar novas informações do catálogo do Asset Intelligence, o ponto 
 
 3.  Adicione a função do sistema de sites do ponto de sincronização do Asset Intelligence a um servidor do sistema de sites novo ou existente:  
 
-    -  Para um **Novo servidor do sistema de sites**: na guia **Início**, no grupo **Criar**, escolha **Criar Servidor do Sistema de Site** para iniciar o assistente.   
+    -  Para um **Novo servidor do sistema de sites**: na guia **Início**, no grupo **Criar**, escolha **Criar Servidor do Sistema de Sites** para iniciar o assistente.   
 
         > [!NOTE]  
         >  Por padrão, quando o Configuration Manager instala uma função do sistema de sites, os arquivos de instalação são instalados na primeira unidade de disco rígido com formatação NTFS disponível que contém o maior espaço livre em disco disponível. Para impedir o Configuration Manager de instalar em unidades específicas, crie um arquivo vazio chamado No_sms_on_drive.sms e copie-o para a pasta raiz da unidade antes de instalar o servidor do sistema de sites.  
@@ -132,7 +133,7 @@ Além de baixar novas informações do catálogo do Asset Intelligence, o ponto 
 
 ##### <a name="to-import-software-license-information-into-the-asset-intelligence-catalog"></a>Para importar informações de licença de software para o catálogo do Asset Intelligence  
 
-1.  No espaço de trabalho **Ativos e Conformidade**, escolha **Asset Intelligence**.  
+1.  No workspace **Ativos e Conformidade**, escolha **Asset Intelligence**.  
 
 2.  Na guia **Início** do grupo **Asset Intelligence**, escolha **Importar Licenças de Software**.   
 
@@ -163,9 +164,9 @@ O Asset Intelligence faz a correspondência dos produtos que você especificar n
 
 |Entrada de demonstrativo de licenças geral|Correspondência de entradas do banco de dados do site|  
 |-------------------------------------|------------------------------------|  
-|Name: "MySoftware", ProductVersion0:"2"|ProductName0: "Mysoftware", ProductVersion0: "2.01.1234"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.02.5678"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.1234"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.5678"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.3579.000"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.10.1234"|  
-|Name: "MySoftware", Version "2.05"|ProductName0: "MySoftware", ProductVersion0: "2.05.1234"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.5678"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.3579.000"|  
-|Name: "Mysoftware", Version "2"<br /><br /> Name: "Mysoftware", Version "2.05"|Erro durante a importação. A importação falhará quando mais de uma entrada corresponder à mesma versão do produto.|  
+|Nome: "MySoftware", ProductVersion0:"2"|ProductName0: "Mysoftware", ProductVersion0: "2.01.1234"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.02.5678"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.1234"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.5678"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.3579.000"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.10.1234"|  
+|Nome: "MySoftware", Version "2.05"|ProductName0: "MySoftware", ProductVersion0: "2.05.1234"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.5678"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.3579.000"|  
+|Nome: "Mysoftware", Version "2"<br /><br /> Nome: "Mysoftware", Version "2.05"|Erro durante a importação. A importação falhará quando mais de uma entrada corresponder à mesma versão do produto.|  
   
 
 ##### <a name="to-create-a-general-license-statement-import-file-by-using-microsoft-excel"></a>Para criar um arquivo de importação de demonstrativo de licença geral usando o Microsoft Excel  
@@ -199,17 +200,17 @@ O Asset Intelligence faz a correspondência dos produtos que você especificar n
 |EffectiveQuantity|Valor inteiro|Sim|Número de licenças adquiridas|  
 |PONumber|Até 255 caracteres|Não|Informações de ordem de compra|  
 |ResellerName|Até 255 caracteres|Não|Informações do revendedor|  
-|DateOfPurchase|Valor de data no seguinte formato: DD/MM/AAAA|Não|Data da aquisição de licenças|  
+|DateOfPurchase|Calor de data no seguinte formato: DD/MM/AAAA|Não|Data da aquisição de licenças|  
 |SupportPurchased|Valor de bit|Não|0 ou 1: insira 0 para Sim ou 1 para Não|  
-|SupportExpirationDate|Valor de data no seguinte formato: DD/MM/AAAA|Não|Data de término do suporte adquirido|  
+|SupportExpirationDate|Calor de data no seguinte formato: DD/MM/AAAA|Não|Data de término do suporte adquirido|  
 |Comentários|Até 255 caracteres|Não|Comentários opcionais|  
 
 ###  <a name="BKMK_ConfigureMaintenanceTasks"></a> Configure Asset Intelligence maintenance tasks  
  As seguintes tarefas de manutenção estão disponíveis para o Asset Intelligence:  
 
--   **Verificar Título do Aplicativo com as Informações de Inventário**: verifica se o título de software relatado no inventário de software concilia-se com o título de software no catálogo do Asset Intelligence. Por padrão, esta tarefa é habilitada e agendada para ser executada aos sábados após a meia-noite e antes das 5h. Esta tarefa de manutenção está disponível somente no site de nível superior em sua hierarquia do Configuration Manager.  
+-   **Verificar título do aplicativo com informações de inventário**: verifica se o título de software relatado no inventário de software reconcilia-se com o título de software no catálogo do Asset Intelligence. Por padrão, esta tarefa é habilitada e agendada para ser executada aos sábados após a meia-noite e antes das 5h. Esta tarefa de manutenção está disponível somente no site de nível superior em sua hierarquia do Configuration Manager.  
 
--   **Resumir Dados de Software Instalado**: fornece as informações exibidas no espaço de trabalho **Ativos e Conformidade** do nó **Software Inventariado**, no nó **Asset Intelligence**. Quando a tarefa é executada, o Configuration Manager reúne uma contagem de todos os títulos de software inventariado no site primário. Por padrão, esta tarefa é habilitada e agendada para ser executada todos os dias após a meia-noite e antes das 5h. Esta tarefa de manutenção está disponível somente em sites primários.  
+-   **Resumir dados de software instalado**: fornece as informações exibidas no workspace **Ativos e Conformidade** do nó **Software Inventariado** no nó **Asset Intelligence**. Quando a tarefa é executada, o Configuration Manager reúne uma contagem de todos os títulos de software inventariado no site primário. Por padrão, esta tarefa é habilitada e agendada para ser executada todos os dias após a meia-noite e antes das 5h. Esta tarefa de manutenção está disponível somente em sites primários.  
 
 ##### <a name="to-configure-asset-intelligence-maintenance-tasks"></a>Para configurar tarefas de manutenção do Asset Intelligence  
 

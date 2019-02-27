@@ -10,12 +10,13 @@ ms.assetid: 9181c84e-d74f-44ea-9bb9-f7805eb465fc
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 38732081ce27fde764f7d47a565ce1211cef1f54
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1fa26147539abc611b86791f6dd9a4be0bc89c59
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383542"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156467"
 ---
 # <a name="create-windows-applications-in-configuration-manager"></a>Criar aplicativos do Windows no Configuration Manager
 
@@ -51,8 +52,8 @@ Ao criar um aplicativo no console do Configuration Manager, selecione o **Tipo**
 Ao provisionar um aplicativo licenciado offline, o Configuration Manager não permite que o Windows o atualize automaticamente da Microsoft Store.  
 
 O Configuration Manager dá suporte ao provisionamento de aplicativo nas seguintes versões do Windows:<!--SCCMDocs-pr issue 2762-->
-- Ação de instalação: Windows 10, versão 1607 e posteriores
-- Ação de desinstalação: Windows 10, versão 1703 e posteriores
+- Ação de instalação: Windows 10 versão 1607 e posterior
+- Ação de desinstalação: Windows 10 versão 1703 e posterior
 
 Para configurar um tipo de implantação de aplicativo do Windows para esse recurso, habilite a opção para **Provisionar este aplicativo para todos os usuários no dispositivo**. Para mais informações, consulte [Criar aplicativos](/sccm/apps/deploy-use/create-applications).
 

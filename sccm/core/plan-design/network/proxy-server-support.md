@@ -10,12 +10,13 @@ ms.assetid: 9123a87a-0b6f-43c7-b5c2-fac5d09686b1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 78694282dae7408e1f9e01fd75585f87aef41da7
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5123bd51de9678666b28ec464e811dafdd91a30d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383541"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156547"
 ---
 # <a name="proxy-server-support-in-configuration-manager"></a>Suporte para servidor proxy no Configuration Manager
 
@@ -75,7 +76,7 @@ Essa função do sistema de sites usa o proxy ao conectar-se com o Microsoft Upd
 Essas configurações ficam na guia **Configurações de Proxy e Conta** das propriedades do ponto de atualização de software.  
 
 > [!NOTE]  
->  Por padrão, a conta **Sistema** do servidor em que uma regra de implantação automática foi criada é usada para conectar-se à Internet e baixar atualizações de software quando as regras de implantação automática são executadas. Como alternativa, configure e use a conta do servidor proxy do sistema de sites. 
+>  Por padrão, quando as regras de implantação automática são executadas, a conta do **Sistema** no servidor de sites do site no qual uma regra de implantação automática foi criada é usada para conectar-se à Internet e baixar atualizações do software. Como alternativa, configure e use a conta do servidor proxy do sistema de sites. 
 >   
 >  Quando essa conta não pode acessar a Internet, não é possível baixar as atualizações de software. A seguinte entrada é registrada em **ruleengine.log**:  
 > `Failed to download the update from internet. Error = 12007.`  
@@ -84,18 +85,18 @@ Essas configurações ficam na guia **Configurações de Proxy e Conta** das pro
 
 ## <a name="configure-the-proxy-for-a-site-system-server"></a>Configurar o proxy para um servidor do sistema de sites  
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Administração**. Expanda **Configuração do Site** e, em seguida, selecione o nó **Servidores e Funções do Sistema de Sites**.  
+1.  No console do Configuration Manager, acesse o workspace **Administração**. Expanda **Configuração do Site** e, em seguida, selecione o nó **Servidores e Funções do Sistema de Sites**.  
 
 2.  Selecione o servidor do sistema de sites que você deseja editar. No painel de detalhes, clique com o botão direito do mouse na função **Sistema de sites** e selecione **Propriedades**.  
 
 3.  Em Propriedades do sistema de sites, mude para a guia **Proxy**. Defina as seguintes configurações de proxy:  
 
-    - **Usar um servidor proxy ao sincronizar informações da Internet**: selecione essa opção para habilitar o servidor do sistema de sites para usar um servidor proxy.  
+    - **Usar um servidor proxy ao sincronizar informações da Internet**: selecione essa opção para permitir que o servidor do sistema de sites use um servidor proxy.  
 
     - **Nome do servidor proxy**: especifique o nome do host ou o FQDN do servidor proxy em seu ambiente.  
 
     - **Porta**: especifique a porta de rede que será usada para a comunicação com o servidor proxy. Por padrão, ele usa a porta **80**.  
 
-    - **Usar credenciais para conectar-se ao servidor proxy**: muitos servidores proxy exigem que o usuário se autentique. Por padrão, o servidor do sistema de sites usa sua conta de computador para conectar-se ao servidor proxy. Se necessário, habilite essa opção, clique em **Definir** e, em seguida, escolha uma **Conta Existente** ou especifique uma **Nova Conta**. Essas credenciais são a **conta do servidor proxy do sistema de sites**.  Para obter mais informações, confira [Contas usadas no Configuration Manager](/sccm/core/plan-design/hierarchy/accounts).  
+    - **Use as credenciais para se conectar ao servidor proxy**: muitos servidores proxy exigem que um usuário se autentique. Por padrão, o servidor do sistema de sites usa sua conta de computador para conectar-se ao servidor proxy. Se necessário, habilite essa opção, clique em **Definir** e, em seguida, escolha uma **Conta Existente** ou especifique uma **Nova Conta**. Essas credenciais são a **conta do servidor proxy do sistema de sites**.  Para obter mais informações, confira [Contas usadas no Configuration Manager](/sccm/core/plan-design/hierarchy/accounts).  
 
 4.  Clique em **OK** para salvar a nova configuração do servidor proxy.  

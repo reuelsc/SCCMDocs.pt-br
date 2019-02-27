@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ff166d93812b07c37c31228ca395f0cfcf94de6
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: a57beb79bf7e4dc51e72d7254ff0f190c6ca32c4
+ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156950"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56838949"
 ---
 # <a name="manage-applications-in-system-center-configuration-manager"></a>Gerenciar aplicativos no System Center Configuration Manager
 
@@ -45,6 +45,8 @@ A implantação e monitoramento de aplicativos no System Center Configuration Ma
 Confira aqui algumas considerações para ter em mente ao implantar e monitorar aplicativos, específicas ao gerenciamento de dispositivos móveis.
 
 - Os dispositivos registrados em MDM não dão suporte às configurações de agendamento, às experiência do usuário nem às implantações simuladas.
+
+- Não adicione mais de 100 localidades para um único aplicativo. Adição de mais de 100 localidades impede que o aplicativo está sincronizando com o Intune. Essa ação também impede que o aplicativo que está sendo instalado ou sendo disponível para instalação no dispositivo.
 
 - Associe a implantação com uma política de configuração de aplicativo do iOS, se você já tiver configurado uma. Confira [Configurar aplicativos iOS com políticas de configuração de aplicativo](configure-ios-apps-with-app-configuration-policies.md).
 

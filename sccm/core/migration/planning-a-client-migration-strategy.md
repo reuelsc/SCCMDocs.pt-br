@@ -10,12 +10,13 @@ ms.assetid: 2e27b0b7-7bd3-45cd-bc99-9c991606c637
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a67fb2d070c971004418ba47c9eb56b6b0de3e5a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 088f300e475e7299ae0f589790c6c9bfabea3544
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335857"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56132550"
 ---
 # <a name="plan-a-client-migration-strategy-in-system-center-configuration-manager"></a>Planejar uma estratégia de migração de cliente no System Center Configuration Manager
 
@@ -34,9 +35,9 @@ Para migrar clientes da hierarquia de origem para uma hierarquia de destino do S
 ##  <a name="Planning_for_Client_Agent_Migration"></a> Planejar a migração de clientes para a hierarquia de destino  
  Ao migrar clientes de uma hierarquia de origem, o software cliente no computador cliente é atualizado para corresponder à versão do produto da hierarquia de destino.  
 
--   **Uma hierarquia de origem do Configuration Manager 2007:** ao migrar clientes de uma hierarquia de origem que executa uma versão com suporte do Configuration Manager, o software cliente é atualizado para a versão do cliente da hierarquia de destino.  
+-   **Uma hierarquia de origem do Configuration Manager 2007:** Ao migrar clientes de uma hierarquia de origem que executa uma versão com suporte do Configuration Manager, o software cliente é atualizado para a versão do cliente da hierarquia de destino.  
 
--   **Uma hierarquia de origem do System Center 2012 Configuration Manager ou posterior:** ao migrar clientes entre hierarquias que são da mesma versão do produto, o software cliente não é alterado nem atualizado. Em vez disso, o cliente é reatribuído da hierarquia de origem para um local na hierarquia de destino.  
+-   **Uma hierarquia de origem do System Center 2012 Configuration Manager ou posterior:** Quando você migra clientes entre hierarquias que são da mesma versão do produto, o software do cliente não é alterado nem atualizado. Em vez disso, o cliente é reatribuído da hierarquia de origem para um local na hierarquia de destino.  
 
     > [!NOTE]  
     >  Quando não há suporte para a versão do produto de uma hierarquia para migração para sua hierarquia de destino, atualize todos os sites e clientes na hierarquia de origem para uma versão compatível do produto. Depois de atualizar a hierarquia de origem para uma versão do produto com suporte, você poderá migrar entre as hierarquias. Para obter mais informações, veja [Versões do Configuration Manager com suporte para migração](../../core/migration/prerequisites-for-migration.md#BKMK_SupportedMigrationVersions) em [Pré-requisitos para a migração no System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
@@ -61,7 +62,7 @@ Use as seguintes informações para ajudá-lo a planejar a migração do cliente
 
 -   O Configuration Manager não pode migrar um cliente do Configuration Manager 2007 que tem o cliente App-V instalado, a menos que a versão do cliente App-V seja a 4.6 SP1 ou posterior.  
 
-Você pode monitorar o processo de migração do cliente no nó **Migração** do espaço de trabalho **Administração**, no console do Configuration Manager.  
+Você pode monitorar o processo de migração do cliente no nó **Migração** do workspace **Administração**, no console do Configuration Manager.  
 
 Concluída a migração do cliente para a hierarquia de destino, você não poderá mais gerenciar o dispositivo usando sua hierarquia de origem e deve considerar remover o cliente da hierarquia de origem. Apesar de não ser um requisito para a migração de hierarquias, isso poderá ajudar a evitar a identificação do cliente migrado em um relatório de hierarquia de origem, ou ainda uma contagem incorreta de recursos entre as duas hierarquias durante a migração. Por exemplo, quando um cliente migrado permanecer no banco de dados do site de origem, você possivelmente executará um relatório de atualizações de software que identificará incorretamente o computador como um recurso não gerenciado, quando na verdade ele é gerenciado pela hierarquia de destino.  
 

@@ -10,12 +10,13 @@ ms.assetid: d50dcca0-4419-449d-a487-73abcadf328f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c6a2a69047a8fee5ab0c1f4f0f13197178334f05
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e27dd4479b4bb575cfc5c4a5e03c4252535f835b
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342181"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56136959"
 ---
 # <a name="deploy-and-manage-content-for-system-center-configuration-manager"></a>Implantar e gerenciar o conteúdo para o System Center Configuration Manager
 
@@ -50,23 +51,23 @@ Use o procedimento a seguir para distribuir o conteúdo para pontos de distribui
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer distribuir:  
+2.  No workspace **Biblioteca de Software**, selecione uma das seguintes etapas para o tipo de conteúdo que você quer distribuir:  
 
-    -   **Aplicativos**: expanda **Gerenciamento de Aplicativos** > **Aplicativos** e selecione os aplicativos que você quer distribuir.  
+    -   **Aplicativos**: expanda **Gerenciamento de Aplicativos** > **Aplicativos** e, em seguida, selecione os aplicativos que deseja distribuir.  
 
-    -   **Pacotes**: expanda **Gerenciamento de Aplicativos** >  **Pacotes** e selecione os pacotes que você quer distribuir.  
+    -   **Pacotes**: expanda **Gerenciamento de Aplicativos** >  **Pacotes** e, em seguida, selecione os pacotes que deseja distribuir.  
 
-    -   **Pacotes de Implantação**: expanda **Atualizações do Software** >  **Pacotes de Implantação** e selecione os pacotes de implantação que você quer distribuir.  
+    -   **Pacotes de Implantação**: expanda **Atualizações do Software** >  **Pacotes de Implantação** e, em seguida, selecione os pacotes de implantação que deseja distribuir.  
 
-    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** >  **Pacotes de Driver** e selecione os pacotes de driver que você quer distribuir.  
+    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** >  **Pacotes de Driver** e, em seguida, selecione os pacotes de driver que deseja distribuir.  
 
-    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** >  **Imagens do Sistema Operacional** e selecione as imagens do sistema operacional que você quer distribuir.  
+    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** >  **Imagens do Sistema Operacional** e, em seguida, selecione as imagens do sistema operacional que deseja distribuir.  
 
-    -   **Instaladores do Sistema Operacional**: expanda **Sistemas Operacionais** > **Instaladores do Sistema Operacional** e selecione os instaladores do sistema operacional que deseja distribuir.  
+    -   **Instaladores de Sistema Operacional**: expanda **Sistemas Operacionais** > **Instaladores de Sistema Operacional** e, em seguida, selecione os instaladores de sistema operacional que deseja distribuir.  
 
     -   **Imagens de Inicialização**: expanda **Sistemas Operacionais** >  **Imagens de Inicialização** e selecione as imagens de inicialização que deseja distribuir.  
 
-    -   **Sequência de Tarefas**: expanda **Sistemas Operacionais** >  **Sequências de Tarefas** e selecione a sequência de tarefas que deseja distribuir. Embora as sequências de tarefas não tenham o conteúdo, elas têm dependências de conteúdo associadas que são distribuídas.  
+    -   **Sequências de Tarefas**: expanda **Sistemas Operacionais** >  **Sequências de Tarefas** e selecione a sequência de tarefas que deseja distribuir. Embora as sequências de tarefas não tenham o conteúdo, elas têm dependências de conteúdo associadas que são distribuídas.  
 
         > [!NOTE]  
         >  Se você modificar a sequência de tarefas, deverá redistribuir o conteúdo.  
@@ -85,7 +86,7 @@ Use o procedimento a seguir para distribuir o conteúdo para pontos de distribui
 
 6.  Na página **Destino do Conteúdo** , clique em **Adicionar**, escolha uma destas opções e siga a etapa associada:  
 
-    -   **Coleções**: selecione **Coleções de Usuários** ou **Coleções de Dispositivos**, clique na coleção associada a um ou mais grupos de pontos de distribuição, e clique em **OK**.  
+    -   **Coleções**: selecione **Coleções de Usuários** ou **Coleções de Dispositivos**, clique na coleção associada a um ou mais grupos de pontos de distribuição e clique em **OK**.  
 
         > [!NOTE]  
         >  Somente as coleções associadas a um grupo de pontos de distribuição são exibidas. Para mais informações sobre como associar coleções a grupos de pontos de distribuição, confira [Manage distribution point groups](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) (Gerenciar grupos de pontos de distribuição) no tópico [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Instalar e configurar pontos de distribuição para o System Center Configuration Manager).  
@@ -127,35 +128,35 @@ Para informações sobre quando pré-configurar os arquivos de conteúdo, confir
 
 Use as seções a seguir para pré-configurar o conteúdo.  
 
-###  <a name="BKMK_CreatePrestagedContentFile"></a> Etapa 1: Criar um arquivo de conteúdo pré-teste  
+###  <a name="BKMK_CreatePrestagedContentFile"></a> Etapa 1: Crie um arquivo de conteúdo de pré-teste  
  Você pode criar um arquivo de conteúdo pré-teste, compactado, que contenha os arquivos e metadados associados para o conteúdo selecionado no console do Configuration Manager. Use o procedimento a seguir para criar um arquivo de conteúdo de pré-teste.  
 
 ##### <a name="to-create-a-prestaged-content-file"></a>Para criar um arquivo de conteúdo de pré-teste  
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer pré-configurar:  
+2.  No workspace **Biblioteca de Software**, selecione uma das seguintes etapas para o tipo de conteúdo que você quer pré-configurar:  
 
-    -   **Aplicativos**: Expanda **Gerenciamento de Aplicativos**, clique em **Aplicativos**, e selecione os aplicativos que você quer pré-configurar.  
+    -   **Aplicativos**: expanda **Gerenciamento de Aplicativos**, clique em **Aplicativos** e selecione os aplicativos que deseja pré-configurar.  
 
-    -   **Pacotes**: Expanda **Gerenciamento de Aplicativos**, clique em **Pacotes**, e selecione os pacotes que você quer pré-configurar.  
+    -   **Pacotes**: expanda **Gerenciamento de Aplicativos**, clique em **Pacotes** e selecione os pacotes que deseja pré-configurar.  
 
-    -   **Pacotes de Driver**: Expanda **Sistemas Operacionais**, clique em **Pacotes de Driver**, e selecione os pacotes de driver que você quer pré-configurar.  
+    -   **Pacotes de Driver**: expanda **Sistemas Operacionais**, clique em **Pacotes de Driver** e selecione os pacotes de driver que deseja pré-configurar.  
 
-    -   **Imagens do Sistema Operacional**: Expanda **Sistemas Operacionais**, clique em **Imagens do Sistema Operacional**, e selecione as imagens do sistema operacional que você quer pré-configurar.  
+    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais**, clique em **Imagens do Sistema Operacional** e selecione as imagens do sistema operacional que você quer pré-configurar.  
 
-    -   **Instaladores de Sistema Operacional**: Expanda **Sistemas Operacionais**, clique em **Instaladores de Sistema Operacional**, e selecione os instaladores de sistema operacional que você quer pré-configurar.  
+    -   **Instaladores de Sistema Operacional**: expanda **Sistemas Operacionais**, clique em **Instaladores do Sistema Operacional** e selecione os instaladores de sistema operacional que você quer pré-configurar.  
 
-    -   **Imagens de Inicialização**: Expanda **Sistemas Operacionais**, clique em **Imagens de Inicialização**, e selecione as imagens de inicialização que você quer pré-configurar.  
+    -   **Imagens de Inicialização**: expanda **Sistemas Operacionais**, clique em **Imagens de Inicialização** e selecione as imagens de inicialização que você quer pré-configurar.  
 
-    -   **Sequências de Tarefas**: expanda **Sistemas Operacionais**, clique em **Sequências de Tarefas**e selecione a sequência de tarefas que você quer criar um pré-teste.  
+    -   **Sequências de Tarefas**: expanda **Sistemas Operacionais**, clique em **Sequências de Tarefas** e selecione a sequência de tarefas que deseja pré-configurar.  
 
 3.  Na guia **Início** , no grupo **Implantação** , clique em **Criar Arquivo de Conteúdo de Pré-Teste**. O Assistente para Criar Arquivo de Conteúdo de Pré-Teste é aberto.  
 
     > [!NOTE]  
-    >  **Para aplicativos:** na guia **Início**, no grupo **Aplicativo**, clique em **Criar Arquivo de Conteúdo Pré-teste**.  
+    >  **Para aplicativos**: na guia **Início**, no grupo **Aplicativo**, clique em **Criar Arquivo de Conteúdo de Pré-Teste**.  
     >   
-    >  **Para pacotes:** na guia **Início**, no grupo &lt;*NomedoPacote*>, clique em **Criar Arquivo de Conteúdo Pré-teste**.  
+    >  **Para pacotes:** na guia **Início**, no grupo &lt;*PackageName*>, clique em **Criar Arquivo de Conteúdo Pré-Teste**.  
 
 4.  Na página **Geral** , clique em **Procurar**, escolha o local para o arquivo de conteúdo de pré-teste, determine um nome para o arquivo e clique em **Salvar**. Use esse arquivo de conteúdo de pré-teste em servidores de site primário, servidores de site secundário ou pontos de distribuição, para importar o conteúdo e os metadados.  
 
@@ -188,21 +189,21 @@ Use as seções a seguir para pré-configurar o conteúdo.
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer selecionar ao criar arquivo de conteúdo pré-configurado:  
+2.  No workspace **Biblioteca de Software**, selecione uma das seguintes etapas para o tipo de conteúdo que você quer selecionar ao criar arquivo de conteúdo pré-configurado:  
 
-    -   **Aplicativos**: Expanda **Gerenciamento de Aplicativo**, clique em **Aplicativos**, e selecione os aplicativos pré-configurados.  
+    -   **Aplicativos**: expanda **Gerenciamento de Aplicativo**, clique em **Aplicativos** e selecione os aplicativos pré-configurados.  
 
-    -   **Pacotes**: Expanda **Gerenciamento de Aplicativo**, clique em **Pacotes**, e selecione os pacotes pré-configurados.  
+    -   **Pacotes**: expanda **Gerenciamento de Aplicativo**, clique em **Pacotes** e selecione os pacotes pré-configurados.  
 
-    -   **Pacotes de Implantação**: Expanda **Atualizações do Software**, clique em **Pacotes de Implantação**, e selecione os pacotes de implantação pré-configurados.  
+    -   **Pacotes de Implantação**: expanda **Atualizações do Software**, clique em **Pacotes de Implantação** e selecione os pacotes de implantação pré-configurados.  
 
-    -   **Pacotes de Driver**: Expanda **Sistemas Operacionais**, clique em **Pacotes de Driver**, e selecione os pacotes de driver pré-configurados.  
+    -   **Pacotes de Driver**: expanda **Sistemas Operacionais**, clique em **Pacotes de Driver** e selecione os pacotes de driver pré-configurados.  
 
-    -   **Imagens do Sistema Operacional**: Expanda **Sistemas Operacionais**, clique em **Imagens do Sistema Operacional**, e selecione as imagens do sistema operacional pré-configuradas.  
+    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais**, clique em **Imagens do Sistema Operacional** e selecione as imagens do sistema operacional pré-configuradas.  
 
-    -   **Instaladores de Sistema Operacional**: Expanda **Sistemas Operacionais**, clique em **Instaladores de Sistema Operacional**, e selecione os instaladores de sistema operacional pré-configurados.  
+    -   **Instaladores de Sistema Operacional**: expanda **Sistemas Operacionais**, clique em **Instaladores de Sistema Operacional** e selecione os instaladores de sistema operacional pré-configurados.  
 
-    -   **Imagens de Inicialização**: Expanda **Sistemas Operacionais**, clique em **Imagens de Inicialização**, e selecione as imagens de inicialização pré-configuradas.  
+    -   **Imagens de Inicialização**: expanda **Sistemas Operacionais**, clique em **Imagens de Inicialização** e selecione as imagens de inicialização pré-configuradas.  
 
 3.  Na guia **Início** , no grupo **Implantação** , clique em **Distribuir Conteúdo**. O Assistente para Distribuir Conteúdo é aberto.  
 
@@ -218,7 +219,7 @@ Use as seções a seguir para pré-configurar o conteúdo.
 
 6.  Na página **Destino de Conteúdo** , clique em **Adicionar**, escolha uma das seguintes opções que inclui os pontos de distribuição a serem pré-configurados e siga a etapa associada:  
 
-    -   **Coleções**: selecione **Coleções de Usuários** ou **Coleções de Dispositivos**, clique na coleção associada a um ou mais grupos de pontos de distribuição, e clique em **OK**.  
+    -   **Coleções**: selecione **Coleções de Usuários** ou **Coleções de Dispositivos**, clique na coleção associada a um ou mais grupos de pontos de distribuição e clique em **OK**.  
 
         > [!NOTE]  
         >  Somente as coleções associadas a um grupo de pontos de distribuição são exibidas.  Para mais informações, confira [Manage distribution point groups](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) (Gerenciar grupos de pontos de distribuição) no tópico [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Instalar e configurar pontos de distribuição para o System Center Configuration Manager).  
@@ -235,7 +236,7 @@ Use as seções a seguir para pré-configurar o conteúdo.
 
 9. A página **Confirmação** mostra se o conteúdo foi atribuído com êxito aos pontos de distribuição. Para monitorar a distribuição de conteúdo, confira [Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
 
-###  <a name="BKMK_ExportContentFromPrestagedContentFile"></a> Etapa 3: Extrair o conteúdo do arquivo de conteúdo pré-teste  
+###  <a name="BKMK_ExportContentFromPrestagedContentFile"></a> Etapa 3: extrair o conteúdo do arquivo de conteúdo de pré-teste  
  Após criar o arquivo de conteúdo de pré-teste e atribuir o conteúdo a pontos de distribuição, você pode extrair os arquivos de conteúdo para a biblioteca de conteúdo em um servidor do site ou ponto de distribuição. Normalmente, você já copiou o arquivo de conteúdo de pré-teste em uma unidade portátil, como uma unidade USB, ou gravou o conteúdo em uma mídia, como um DVD, e já o tem disponível no local do servidor do site ou no ponto de distribuição que requer o conteúdo.  
 
  Use o procedimento a seguir para exportar manualmente os arquivos de conteúdo do arquivo de conteúdo de pré-teste usando a ferramenta de linha de comando Extrair Conteúdo.  
@@ -287,17 +288,17 @@ Use as seções a seguir para pré-configurar o conteúdo.
 
     1.  No console do Configuration Manager, clique em **Administração**.  
 
-    2.  No espaço de trabalho **Administração** , clique em **Pontos de Distribuição**, e então selecione o ponto de distribuição localizado no servidor do site.  
+    2.  No workspace **Administração**, clique em **Pontos de Distribuição**, e então selecione o ponto de distribuição localizado no servidor do site.  
 
     3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
     4.  Na guia **Geral** , verifique se a caixa de seleção **Habilitar este ponto de distribuição para conteúdo pré-configurado** não está selecionada.  
 
-2.  Crie o arquivo de conteúdo pré-testado usando a seção [Etapa 1: Criar um arquivo de conteúdo pré-teste](#BKMK_CreatePrestagedContentFile) nesse tópico.  
+2.  Criar o arquivo de conteúdo pré-configurado usando a [Etapa 1: Criar arquivo de conteúdo pré-teste](#BKMK_CreatePrestagedContentFile) neste tópico.  
 
-3.  Atribua o conteúdo ao ponto de distribuição usando a seção [Etapa 2: Atribuir o conteúdo a pontos de distribuição](#BKMK_AssignContentToDistributionPoint) neste tópico.  
+3.  Atribua o conteúdo ao ponto de distribuição usando a [Etapa 2: Atribuir o conteúdo aos pontos de distribuição](#BKMK_AssignContentToDistributionPoint) neste tópico.  
 
-4.  No servidor do site, extraia o conteúdo do arquivo de conteúdo pré-teste usando a seção [Etapa 3: Extrair o conteúdo do arquivo de conteúdo pré-teste](#BKMK_ExportContentFromPrestagedContentFile) neste tópico.  
+4.  No servidor do site, extraia o conteúdo do arquivo de conteúdo pré-teste usando a [Etapa 3: Exportar o conteúdo do arquivo de conteúdo pré-teste](#BKMK_ExportContentFromPrestagedContentFile) neste tópico.  
 
     > [!NOTE]  
     >  Quando o ponto de distribuição estiver em um site secundário, aguarde pelo menos 10 minutos e, então, usando um console do Configuration Manager que está conectado a um site primário pai, atribua o conteúdo ao ponto de distribuição no site secundário.  
@@ -322,19 +323,19 @@ Quando o local do arquivo de origem para uma implantação é atualizado adicion
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer distribuir:  
+2.  No workspace **Biblioteca de Software**, selecione uma das seguintes etapas para o tipo de conteúdo que você quer distribuir:  
 
-    -   **Aplicativos**: expanda **Gerenciamento de Aplicativos** > **Aplicativos** e selecione os aplicativos que você quer distribuir. Clique na guia **Tipos de Implantação** e selecione o tipo de implantação que você quer atualizar.  
+    -   **Aplicativos**: expanda **Gerenciamento de Aplicativos** > **Aplicativos** e, em seguida, selecione os aplicativos que deseja distribuir. Clique na guia **Tipos de Implantação** e selecione o tipo de implantação que você quer atualizar.  
 
     -   **Pacotes**: expanda **Gerenciamento de Aplicativos** > **Pacotes** e selecione os pacotes que deseja atualizar.  
 
-    -   **Pacotes de Implantação**: expanda **Atualizações do Software** > **Pacotes de Implantação** e selecione os pacotes de implantação que deseja atualizar.  
+    -   **Pacotes de Implantação**: expanda **Atualizações do Software** > **Pacotes de Implantação** e, em seguida, selecione os pacotes de implantação que deseja atualizar.  
 
-    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** > **Pacotes de Driver** e selecione os pacotes de driver que deseja atualizar.  
+    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** > **Pacotes de Driver** e, em seguida, selecione os pacotes de driver que deseja atualizar.  
 
-    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** > **Imagens do Sistema Operacional** e selecione as imagens do sistema operacional que deseja atualizar.  
+    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** > **Imagens do Sistema Operacional** e, em seguida, selecione as imagens do sistema operacional que deseja atualizar.  
 
-    -   **Instaladores do Sistema Operacional**: expanda **Sistemas Operacionais** > **Instaladores do Sistema Operacional** e selecione os instaladores do sistema operacional que deseja atualizar.  
+    -   **Instaladores de Sistema Operacional**: expanda **Sistemas Operacionais** > **Instaladores do Sistema Operacional** e, em seguida, selecione os instaladores do sistema operacional que deseja atualizar.  
 
     -   **Imagens de Inicialização**: expanda **Sistemas Operacionais** >  **Imagens de Inicialização** e selecione as imagens de inicialização que deseja atualizar.  
 
@@ -360,19 +361,19 @@ Você pode redistribuir um pacote para copiar todos os arquivos de conteúdo do 
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer distribuir:  
+2.  No workspace **Biblioteca de Software**, selecione uma das seguintes etapas para o tipo de conteúdo que você quer distribuir:  
 
     -   **Aplicativos**: expanda **Gerenciamento de Aplicativos** >  **Aplicativos** e selecione o aplicativo que deseja redistribuir.  
 
     -   **Pacotes**: expanda **Gerenciamento de Aplicativos** > **Pacotes** e selecione o pacote que deseja redistribuir.  
 
-    -   **Pacotes de Implantação**: expanda **Atualizações do Software** >  **Pacotes de Implantação** e selecione o pacote de implantação que deseja redistribuir.  
+    -   **Pacotes de Implantação**: expanda **Atualizações do Software** >  **Pacotes de Implantação** e selecione o pacote de implantação que você quer redistribuir.  
 
-    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** > **Pacotes de Driver** e selecione o pacote de driver que deseja redistribuir.  
+    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** > **Pacotes de Driver** e selecione o pacote de driver que você quer redistribuir.  
 
-    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** > **Imagens do Sistema Operacional** e selecione a imagem do sistema operacional que deseja redistribuir.  
+    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** > **Imagens do Sistema Operacional** e selecione a imagem do sistema operacional que você quer redistribuir.  
 
-    -   **Instaladores do Sistema Operacional**: expanda **Sistemas Operacionais** > **Instaladores do Sistema Operacional** e selecione o instalador do sistema operacional que deseja redistribuir.  
+    -   **Instaladores de Sistema Operacional**: expanda **Sistemas Operacionais** > **Instaladores do Sistema Operacional** e selecione o instalador do sistema operacional que você quer redistribuir.  
 
     -   **Imagens de Inicialização**: expanda **Sistemas Operacionais** >  **Imagens de Inicialização** e selecione a imagem de inicialização que deseja redistribuir.  
 
@@ -384,7 +385,7 @@ Você pode redistribuir um pacote para copiar todos os arquivos de conteúdo do 
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , clique em **Pontos de Distribuição**, depois selecione o ponto de distribuição no qual você quer redistribuir o conteúdo.  
+2.  No workspace **Administração**, clique em **Pontos de Distribuição**, depois selecione o ponto de distribuição no qual você quer redistribuir o conteúdo.  
 
 3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
@@ -394,7 +395,7 @@ Você pode redistribuir um pacote para copiar todos os arquivos de conteúdo do 
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , clique em **Grupos de Pontos de Distribuição**, depois selecione o grupo de pontos de distribuição no qual você quer redistribuir o conteúdo.  
+2.  No workspace **Administração**, clique em **Grupos de Pontos de Distribuição**, depois selecione o grupo de pontos de distribuição no qual você quer redistribuir o conteúdo.  
 
 3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
@@ -424,19 +425,19 @@ Porém, quando o conteúdo é associado a outro pacote que foi distribuído para
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer excluir:  
+2.  No workspace **Biblioteca de Software**, selecione uma das seguintes etapas para o tipo de conteúdo que você quer excluir:  
 
     -   **Aplicativos**: expanda **Gerenciamento de Aplicativos** > **Aplicativos** e selecione o aplicativo que deseja remover.  
 
     -   **Pacotes**: expanda **Gerenciamento de Aplicativos** > **Pacotes** e selecione o pacote que deseja remover.  
 
-    -   **Pacotes de Implantação**: expanda **Atualizações do Software** > **Pacotes de Implantação** e selecione o pacote de implantação que deseja remover.  
+    -   **Pacotes de Implantação**: expanda **Atualizações do Software** > **Pacotes de Implantação** e selecione o pacote de implantação que você quer remover.  
 
-    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** > **Pacotes de Driver** e selecione o pacote de driver que deseja remover.  
+    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** > **Pacotes de Driver** e selecione o pacote de driver que você quer remover.  
 
-    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** > **Imagens do Sistema Operacional** e selecione a imagem do sistema operacional que deseja remover.  
+    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** > **Imagens do Sistema Operacional** e selecione a imagem do sistema operacional que você quer remover.  
 
-    -   **Instaladores do Sistema Operacional**: expanda **Sistemas Operacionais** > **Instaladores do Sistema Operacional** e selecione o instalador do sistema operacional que deseja remover.  
+    -   **Instaladores de Sistema Operacional**: expanda **Sistemas Operacionais** > **Instaladores do Sistema Operacional** e selecione o instalador do sistema operacional que você quer remover.  
 
     -   **Imagens de Inicialização**: expanda **Sistemas Operacionais** > **Imagens de Inicialização** e selecione a imagem de inicialização que deseja remover.  
 
@@ -448,7 +449,7 @@ Porém, quando o conteúdo é associado a outro pacote que foi distribuído para
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , clique em **Pontos de Distribuição**, depois selecione o ponto de distribuição no qual você quer excluir o conteúdo.  
+2.  No workspace **Administração**, clique em **Pontos de Distribuição**, depois selecione o ponto de distribuição no qual você quer excluir o conteúdo.  
 
 3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
@@ -458,7 +459,7 @@ Porém, quando o conteúdo é associado a outro pacote que foi distribuído para
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , clique em **Grupos de Pontos de Distribuição**, depois selecione o grupo de pontos de distribuição do qual você quer remover o conteúdo.  
+2.  No workspace **Administração**, clique em **Grupos de Pontos de Distribuição**, depois selecione o grupo de pontos de distribuição do qual você quer remover o conteúdo.  
 
 3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
@@ -468,7 +469,7 @@ Porém, quando o conteúdo é associado a outro pacote que foi distribuído para
 ### <a name="validate-content"></a>Validar o conteúdo
 O processo de validação de conteúdo verifica a integridade dos arquivos de conteúdo nos pontos de distribuição. É possível habilitar a validação de conteúdo em um agendamento ou então iniciar manualmente a validação de conteúdo a partir das propriedades dos pontos de distribuição e pacotes.  
 
- Quando o processo de validação de conteúdo começa, o Configuration Manager verifica os arquivos de conteúdo em pontos de distribuição e, se o hash do arquivo não é esperado para os arquivos no ponto de distribuição, o Configuration Manager cria uma mensagem de status que você pode examinar no espaço de trabalho **Monitoramento**.  
+ Quando o processo de validação de conteúdo começa, o Configuration Manager verifica os arquivos de conteúdo em pontos de distribuição e, se o hash do arquivo não é esperado para os arquivos no ponto de distribuição, o Configuration Manager cria uma mensagem de status que você pode examinar no workspace **Monitoramento**.  
 
  Para mais informações sobre como configurar o agendamento de validação de conteúdo, confira [Distribution point configurations](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs) (Configurações do ponto de distribuição) no tópico [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Instalar e configurar pontos de distribuição para o System Center Configuration Manager).  
 
@@ -477,31 +478,31 @@ O processo de validação de conteúdo verifica a integridade dos arquivos de co
 
 1.  No console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , clique em **Pontos de Distribuição**e selecione o ponto de distribuição no qual você quer validar o conteúdo.  
+2.  No workspace **Administração**, clique em **Pontos de Distribuição**e selecione o ponto de distribuição no qual você quer validar o conteúdo.  
 
 3.  Na guia **Início** , no grupo **Propriedades** , clique em **Propriedades**.  
 
 4.  Na guia **Conteúdo** , selecione o pacote no qual você quer validar o conteúdo, clique em **Validar**, **OK**e em **OK**. O processo de validação de conteúdo é iniciado para o pacote no ponto de distribuição.  
 
-5.  Para exibir os resultados do processo de validação de conteúdo, no espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique no nó **Status do Conteúdo** . O conteúdo de cada tipo de pacote (por exemplo, aplicativo, pacote de atualização de software e imagem de inicialização) é exibido. Para mais informações sobre o monitoramento do status do conteúdo, confira [Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
+5.  Para exibir os resultados do processo de validação de conteúdo, no workspace **Monitoramento**, expanda **Status da Distribuição** e clique no nó **Status do Conteúdo**. O conteúdo de cada tipo de pacote (por exemplo, aplicativo, pacote de atualização de software e imagem de inicialização) é exibido. Para mais informações sobre o monitoramento do status do conteúdo, confira [Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
 
 #### <a name="to-initiate-content-validation-for-a-package"></a>Para iniciar a validação de conteúdo para um pacote  
 
 1.  No console do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  No espaço de trabalho **Biblioteca de Software** , selecione uma das seguintes etapas para o tipo de conteúdo que você quer validar:  
+2.  No workspace **Biblioteca de Software**, selecione uma das seguintes etapas para o tipo de conteúdo que você quer validar:  
 
     -   **Aplicativos**: expanda **Gerenciamento de Aplicativos** > **Aplicativos** e selecione o aplicativo que deseja validar.  
 
     -   **Pacotes**: expanda **Gerenciamento de Aplicativos** > **Pacotes** e selecione o pacote que deseja validar.  
 
-    -   **Pacotes de Implantação**: expanda **Atualizações do Software** > **Pacotes de Implantação** e selecione o pacote de implantação que deseja validar.  
+    -   **Pacotes de Implantação**: expanda **Atualizações do Software** > **Pacotes de Implantação** e selecione o pacote de implantação que você quer validar.  
 
-    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** > **Pacotes de Driver** e selecione o pacote de driver que deseja validar.  
+    -   **Pacotes de Driver**: expanda **Sistemas Operacionais** > **Pacotes de Driver** e selecione o pacote de driver que você quer validar.  
 
-    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** > **Imagens do Sistema Operacional** e selecione a imagem do sistema operacional que deseja validar.  
+    -   **Imagens do Sistema Operacional**: expanda **Sistemas Operacionais** > **Imagens do Sistema Operacional** e selecione a imagem do sistema operacional que você quer validar.  
 
-    -   **Instaladores do Sistema Operacional**: expanda **Sistemas Operacionais** >  **Instaladores do Sistema Operacional** e selecione o instalador do sistema operacional que deseja validar.  
+    -   **Instaladores de Sistema Operacional**: expanda **Sistemas Operacionais** >  **Instaladores do Sistema Operacional** e selecione o instalador do sistema operacional que você quer validar.  
 
     -   **Imagens de Inicialização**: expanda **Sistemas Operacionais** > **Imagens de Inicialização** e selecione a imagem de inicialização que deseja pré-configurar.  
 
@@ -509,4 +510,4 @@ O processo de validação de conteúdo verifica a integridade dos arquivos de co
 
 4.  Na guia **Locais de Conteúdo** , selecione o ponto de distribuição ou grupo de pontos de distribuição no qual você quer validar o conteúdo, clique em **Validar**, **OK**e em **OK**. O processo de validação de conteúdo é iniciado para o conteúdo no ponto de distribuição ou grupo de pontos de distribuição selecionado.  
 
-5.  Para exibir os resultados do processo de validação de conteúdo, no espaço de trabalho **Monitoramento** , expanda **Status da Distribuição**e clique no nó **Status do Conteúdo** . O conteúdo de cada tipo de pacote (por exemplo, aplicativo, pacote de atualização de software e imagem de inicialização) é exibido. Para mais informações sobre o monitoramento do status do conteúdo, confira [Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
+5.  Para exibir os resultados do processo de validação de conteúdo, no workspace **Monitoramento**, expanda **Status da Distribuição** e clique no nó **Status do Conteúdo**. O conteúdo de cada tipo de pacote (por exemplo, aplicativo, pacote de atualização de software e imagem de inicialização) é exibido. Para mais informações sobre o monitoramento do status do conteúdo, confira [Monitorar o conteúdo que você distribuiu com o System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  

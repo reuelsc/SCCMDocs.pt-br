@@ -10,12 +10,13 @@ ms.assetid: e80d1151-91db-4a27-8411-a957297b67d0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2d8587c0640d831a723b9ff7c3a6402d47ee2405
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 03d85a55e51125e40e1df766382b0a074d865a51
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337234"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56141612"
 ---
 # <a name="manage-network-bandwidth-for-content"></a>Gerenciar largura de banda de rede para o conteúdo
 Para ajudar a gerenciar a largura de banda de rede usada no processo de gerenciamento de conteúdo do System Center Configuration Manager, você pode usar controles internos para agendamento e limitação. Você também pode usar conteúdo pré-testado. As seções a seguir descrevem essas opções mais detalhadamente.
@@ -59,11 +60,11 @@ Opcionalmente, você pode configurar o ponto de distribuição como **pré-testa
 
     As seguintes configurações estão disponíveis nas propriedades de um aplicativo, pacote, pacote de driver, imagem de inicialização, instalador do sistema operacional e imagem. Essas configurações possibilitam escolher como a distribuição de conteúdo é gerenciada em pontos de distribuição remotos que são identificados como pré-testados:  
 
-    -   **Baixar conteúdo automaticamente quando pacotes forem atribuídos a pontos de distribuição**: use esta opção quando tiver pacotes menores, e as configurações de agendamento e limitação fornecerem controle suficiente para distribuição do conteúdo.  
+    -   **Baixar conteúdo automaticamente quando pacotes forem atribuídos a pontos de distribuição**: use esta opção quando você tem pacotes menores e as configurações de agendamento e limitação fornecem controle suficiente para distribuição do conteúdo.  
 
-    -   **Baixar somente alterações de conteúdo para o ponto de distribuição**: use essa opção quando você espera que futuras atualizações ao conteúdo do pacote sejam menores em geral. Por exemplo, você pode pré-testar um aplicativo como o Microsoft Office, já que o tamanho inicial do pacote é maior que 700 MB e é muito grande para ser enviado pela rede. No entanto, as atualizações de conteúdo nesse pacote podem ser inferiores a 10 MB e são aceitáveis para distribuição pela rede. Outro exemplo pode ser pacotes de driver em que o tamanho inicial do pacote é grande, mas adições de driver incrementais ao pacote podem ser pequenas.  
+    -   **Baixar somente alterações de conteúdo para o ponto de distribuição**: use esta opção quando você esperar que atualizações futuras ao conteúdo no pacote sejam geralmente menores do que no pacote inicial. Por exemplo, você pode pré-testar um aplicativo como o Microsoft Office, já que o tamanho inicial do pacote é maior que 700 MB e é muito grande para ser enviado pela rede. No entanto, as atualizações de conteúdo nesse pacote podem ser inferiores a 10 MB e são aceitáveis para distribuição pela rede. Outro exemplo pode ser pacotes de driver em que o tamanho inicial do pacote é grande, mas adições de driver incrementais ao pacote podem ser pequenas.  
 
-    -   **Copiar manualmente o conteúdo deste pacote para o ponto de distribuição**: use esta opção no caso de pacotes grandes, com conteúdo como um sistema operacional, e quando você nunca desejar usar a rede para distribuir o conteúdo para o ponto de distribuição. Ao selecionar essa opção, você deve pré-configurar o conteúdo no ponto de distribuição.  
+    -   **Copiar manualmente o conteúdo deste pacote para o ponto de distribuição**: use esta opção quando você tiver pacotes grandes, com conteúdo como um sistema operacional, e nunca desejar usar a rede para distribuir o conteúdo para o ponto de distribuição. Ao selecionar essa opção, você deve pré-configurar o conteúdo no ponto de distribuição.  
 
     > [!IMPORTANT]  
     >  As opções anteriores são aplicáveis por pacote e são usadas somente quando um ponto de distribuição é identificado como pré-testado. Os pontos de distribuição que não foram identificados como pré-configurados ignoram essas configurações. Nesse caso, o conteúdo será sempre distribuído do servidor do site para os pontos de distribuição pela rede.  

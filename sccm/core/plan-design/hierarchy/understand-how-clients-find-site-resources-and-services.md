@@ -10,12 +10,13 @@ ms.assetid: ae72df4b-5f5d-4e19-9052-bda28edfbace
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ae82e17f5a0e7d32c3f5838edc3dfbf00b6f396b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9cf206bfb0774ee1d45c70e2a0c890a2f157ad65
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342096"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127177"
 ---
 # <a name="learn-how-clients-find-site-resources-and-services-for-system-center-configuration-manager"></a>Saiba como os clientes encontram serviços e recursos do site para o System Center Configuration Manager
 
@@ -99,7 +100,7 @@ Os clientes organizam sua lista de pontos de gerenciamento usando as seguintes c
     -   Normalmente, os pontos de gerenciamento locais são um subconjunto de pontos de gerenciamento atribuído, a menos que o cliente esteja em um local de rede associado a outro site com os pontos de manutenção de seus grupos de limites.   
 
 
--   **Atribuído**: qualquer ponto de gerenciamento que é um sistema de sites para o site atribuído do cliente.  
+-   **Atribuído**: qualquer do ponto de gerenciamento que é um sistema de sites para o site atribuído do cliente.  
 
 Você pode usar pontos de gerenciamento preferenciais. Os pontos de gerenciamento em um site que não estão associados a um grupo de limites ou que não estão em um grupo de limites associado ao local de rede atual de um cliente não são considerados preferenciais. Eles serão usados quando o cliente não conseguir identificar um ponto de gerenciamento preferencial disponível.  
 
@@ -183,10 +184,10 @@ O Configuration Manager dá suporte à RFC 2782 para registros de local do servi
 
 Para publicar um ponto de gerenciamento no Configuration Manager, especifique os seguintes valores:  
 
--   **_Service**: insira **_mssms_mp**_&lt;sitecode\>, em que &lt;sitecode\> é o código do site do ponto de gerenciamento.  
+-   **_Service**: digite **_mssms_mp**_&lt;código do site\>, em que &lt;código do site\> é o código do site do ponto de gerenciamento.  
 -   **._Proto**: especifique **._tcp**.  
 -   **.Name**: insira o sufixo DNS do ponto de gerenciamento, por exemplo **contoso.com**.  
--   **TTL**: insira **14400**, que é de quatro horas.  
+-   **TTL**: insira **14400**, que corresponde a quatro horas.  
 -   **Classe**: especifique **IN** (em conformidade com a RFC 1035).  
 -   **Prioridade**: o Configuration Manager não usa esse campo.
 -   **Peso**: o Configuration Manager não usa esse campo.  
@@ -195,7 +196,7 @@ Para publicar um ponto de gerenciamento no Configuration Manager, especifique os
     > [!NOTE]  
     >  A porta do registro SRV deve corresponder à porta de comunicação usada pelo ponto de gerenciamento. Por padrão, ela é **80** para comunicação HTTP e **443** para comunicação HTTPS.  
 
--   **Destino**: insira o FQDN da intranet especificado para o sistema de site que é configurado com a função do site do ponto de gerenciamento.  
+-   **Destino**: Insira o FQDN da intranet especificado para o sistema de site que é configurado com a função do site do ponto de gerenciamento.  
 
 Se você estiver usando o DNS do Windows Server, você poderá usar o procedimento a seguir para inserir esse registro DNS nos pontos de gerenciamento da intranet. Se você estiver usando uma implementação diferente para DNS, use as informações desta seção sobre os valores dos campos e consulte a documentação de DNS para adaptar esse procedimento.  
 
@@ -226,8 +227,8 @@ Se você estiver usando o DNS do Windows Server, você poderá usar o procedimen
 4.  Usando a opção **Outros Novos Registros**, escolha **Local do Serviço (SRV)** na caixa de diálogo **Tipo de Registro de Recurso**, escolha **Criar Registro**, digite as seguintes informações e escolha **Concluído**:  
 
     -   **Domínio**: se necessário, digite o sufixo DNS do ponto de gerenciamento, por exemplo **contoso.com**.  
-    -   **Service**: digite **_mssms_mp**_&lt;sitecode\>, em que &lt;sitecode\> é o código do site do ponto de gerenciamento.  
-    -   **Protocolo**: tipo **_tcp**.  
+    -   **Serviço**: digite **_mssms_mp**_&lt;código do site\>, em que &lt;código do site\> é o código do site do ponto de gerenciamento.  
+    -   **Protocolo**: digite **_tcp**.  
     -   **Prioridade**: o Configuration Manager não usa esse campo.  
     -   **Peso**: o Configuration Manager não usa esse campo.  
     -   **Porta**: insira o número da porta que o ponto de gerenciamento usa, por exemplo **80** para HTTP e **443** para HTTPS.  
@@ -235,7 +236,7 @@ Se você estiver usando o DNS do Windows Server, você poderá usar o procedimen
         > [!NOTE]  
         >  A porta do registro SRV deve corresponder à porta de comunicação usada pelo ponto de gerenciamento. Por padrão, ela é **80** para comunicação HTTP e **443** para comunicação HTTPS.  
 
-    -   **Host que oferece esse serviço**: insira o FQDN da intranet especificado para o sistema de site que é configurado com a função do site do ponto de gerenciamento.  
+    -   **Host que oferece este serviço**: Insira o FQDN da intranet especificado para o sistema de site que é configurado com a função do site do ponto de gerenciamento.  
 
 Repita essas etapas para cada ponto de gerenciamento da intranet que você desejar publicar no DNS.  
 

@@ -10,12 +10,13 @@ ms.assetid: 6a4a3290-5228-4871-918a-554aa1c20834
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3ad96cedf1170f8563fdafe3922f6ad2e7c67b5a
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 87552016d1cd17e79abf01a9de9109195d3d2a70
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39386007"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56125284"
 ---
 # <a name="cmtrace"></a>CMTrace
 
@@ -87,7 +88,7 @@ Defina as configurações do CMTrace. As seguintes opções estão disponíveis:
 
      - **Intervalo de Atualização**: controla a frequência com que o CMTrace verifica se há alterações nos arquivos de log e carrega as novas linhas. Por padrão, esse valor é de 500 milissegundos.  
 
-     - **Destacar**: define a cor que o CMTrace usa ao destacar as linhas de log que você escolhe. Por padrão, essa cor é amarelo básico (vermelho: 255, verde: 255, azul: 0).  
+     - **Realçar**: define a cor que o CMTrace usa ao destacar as linhas de log que você escolhe. Por padrão, essa cor é amarelo básico (vermelho: 255, verde: 255, azul: 0).  
 
      - **Colunas**: configura as colunas visíveis na exibição de log e a ordem em que aparecem. Por padrão, exibe o Texto de Log, Componente, Data/Hora e Thread.  
 
@@ -146,7 +147,7 @@ Exemplos: <!--SCCMDocs issue #603-->
 
 
 #### <a name="error-lookup"></a>Pesquisa de Erro
-Digite ou cole um código de erro no formato decimal ou hexadecimal para exibir uma descrição. Possíveis origens de erro incluem: Windows, WMI ou Winhttp.
+Digite ou cole um código de erro no formato decimal ou hexadecimal para exibir uma descrição. Possíveis origens do erro incluem: Windows, WMI ou Winhttp.
 
 #### <a name="pause"></a>Pausar
 Suspender ou reiniciar o monitoramento de log. Os casos de uso a seguir estão algumas das possíveis razões para usar essa ação:  

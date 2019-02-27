@@ -10,12 +10,13 @@ ms.assetid: ed931751-18f2-4230-a09e-a0a329fbfa1c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 51823b2e424450352d55402f16a8c05211eb77c5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 59376c5b9846e32cc8b63666956424a11211f1c0
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342113"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56130785"
 ---
 # <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Sobre métodos de descoberta para o System Center Configuration Manager
 
@@ -26,9 +27,9 @@ Os métodos de descoberta do Configuration Manager encontram diferentes disposit
 
 
 ##  <a name="bkmk_aboutForest"></a> Descoberta de Florestas do Active Directory  
- **Configurável:** sim  
+ **Configurável:** Sim  
 
- **Habilitado por padrão:** não  
+ **Habilitado por padrão:** Não  
 
  **Contas** que você pode usar para executar esse método:  
 
@@ -48,11 +49,11 @@ Use a descoberta de florestas do Active Directory para:
 
 -   Publicar no AD DS (Active Directory Domain Services) em uma floresta quando a publicação nessa floresta está habilitada. A Conta da Floresta especificada do Active Directory deve ter permissões nessa floresta.  
 
-Gerencie a descoberta de florestas do Active Directory no console do Configuration Manager. Acesse o espaço de trabalho **Administração** e expanda **Configuração da Hierarquia**.   
+Gerencie a descoberta de florestas do Active Directory no console do Configuration Manager. Acesse o workspace **Administração** e expanda **Configuração da Hierarquia**.   
 
--   **Métodos de Descoberta**: habilite a descoberta de florestas do Active Directory para ser executada no site de nível superior da hierarquia. Especifique também um agendamento simples para executar a descoberta. Configure-a para criar automaticamente limites nas sub-redes IP e sites do Active Directory descobertas por ela. A descoberta de florestas do Active Directory não pode ser executada em um site primário filho ou em um site secundário.  
+-   **Métodos de Descoberta**: habilite a descoberta de florestas do Active Directory para ser executada no site de nível superior de sua hierarquia. Especifique também um agendamento simples para executar a descoberta. Configure-a para criar automaticamente limites nas sub-redes IP e sites do Active Directory descobertas por ela. A descoberta de florestas do Active Directory não pode ser executada em um site primário filho ou em um site secundário.  
 
--   **Florestas do Active Directory**: configure as florestas adicionais a serem descobertas, especifique cada Conta da Floresta do Active Directory e configure a publicação para cada floresta. Monitore o processo de descoberta. Adicione sub-redes IP e sites do Active Directory como limites do Configuration Manager e membros de grupos de limites.  
+-   **Florestas do Active Directory**: configure as florestas adicionais a serem descobertas, especifique cada Conta de Floresta do Active Directory e configure a publicação para cada floresta. Monitore o processo de descoberta. Adicione sub-redes IP e sites do Active Directory como limites do Configuration Manager e membros de grupos de limites.  
 
 Para configurar a publicação de florestas do Active Directory para cada site em sua hierarquia, conecte o console do Configuration Manager ao site de nível superior da hierarquia. A guia **Publicando** na caixa de diálogo **Propriedades** de um site do Active Directory pode mostrar apenas o site atual e seus sites filho. Quando a publicação estiver habilitada para uma floresta e o esquema dessa floresta for estendido para o Configuration Manager, as seguintes informações serão publicadas em cada site que estiver habilitado para publicar nessa floresta do Active Directory:  
 
@@ -81,9 +82,9 @@ Para obter mais informações sobre como configurar esse método de descoberta, 
 
 
 ##  <a name="bkmk_aboutGroup"></a> Descoberta de grupos do Active Directory  
-**Configurável:** sim  
+**Configurável:** Sim  
 
-**Habilitado por padrão:** não  
+**Habilitado por padrão:** Não  
 
 **Contas** que você pode usar para executar esse método:  
 
@@ -108,7 +109,7 @@ A descoberta de grupos do Active Directory não dá suporte a atributos estendid
 
 Você pode configurar os seguintes escopos de descoberta que controlam como esse método pesquisa informações:  
 
--   **Local**: Use um local, se você quiser pesquisar um ou mais contêineres do Active Directory. Essa opção de escopo dá suporte a uma pesquisa recursiva dos contêineres especificados do Active Directory. Esse processo pesquisa cada contêiner filho no contêiner especificado. Ele continua até que não sejam mais encontrados contêineres filho.  
+-   **Localização**: Use um local, se você quiser pesquisar um ou mais contêineres do Active Directory. Essa opção de escopo dá suporte a uma pesquisa recursiva dos contêineres especificados do Active Directory. Esse processo pesquisa cada contêiner filho no contêiner especificado. Ele continua até que não sejam mais encontrados contêineres filho.  
 
 -   **Grupos**: Usar grupos se desejar pesquisar um ou mais grupos específicos do Active Directory. Você pode configurar o **Domínio do Active Directory** para usar o domínio e a floresta padrão ou para limitar a pesquisa a um controlador de domínio específico. Além disso, você pode especificar um ou mais grupos para a pesquisa. Se você não especificar pelo menos um grupo, todos os grupos encontrados no local especificado do **Domínio do Active Directory** serão pesquisados.  
 
@@ -125,9 +126,9 @@ Para obter mais informações sobre como configurar esse método de descoberta, 
 
 
 ##  <a name="bkmk_aboutSystem"></a> Descoberta de sistemas do Active Directory  
-**Configurável:** sim  
+**Configurável:** Sim  
 
-**Habilitado por padrão:** não  
+**Habilitado por padrão:** Não  
 
 **Contas** que você pode usar para executar esse método:  
 
@@ -165,9 +166,9 @@ Para obter mais informações sobre como configurar esse método de descoberta, 
 
 
 ##  <a name="bkmk_aboutUser"></a> Descoberta de Usuário do Active Directory  
-**Configurável:** sim  
+**Configurável:** Sim  
 
-**Habilitado por padrão:** não  
+**Habilitado por padrão:** Não  
 
 **Contas** que você pode usar para executar esse método:  
 
@@ -215,9 +216,9 @@ Para configurar a descoberta de usuários do Azure AD, consulte [Configurar os S
 
 
 ##  <a name="bkmk_aboutHeartbeat"></a> Descoberta de pulsação  
-**Configurável:** sim  
+**Configurável:** Sim  
 
-**Habilitado por padrão:** sim  
+**Habilitado por padrão:** Sim  
 
 **Contas** que você pode usar para executar esse método:  
 
@@ -255,9 +256,9 @@ Para obter mais informações sobre como configurar esse método de descoberta, 
 
 
 ##  <a name="bkmk_aboutNetwork"></a> Descoberta de Rede  
-**Configurável:** sim  
+**Configurável:** Sim  
 
-**Habilitado por padrão:** não  
+**Habilitado por padrão:** Não  
 
 **Contas** que você pode usar para executar esse método:  
 
@@ -273,11 +274,11 @@ Antes de poder usar a descoberta de rede, você deve especificar o *nível* de d
 
 Para esse método descobrir um recurso com êxito, a descoberta de rede deve identificar o endereço IP e a máscara de sub-rede do recurso. Os métodos a seguir são usados para identificar a máscara de sub-rede de um objeto:  
 
--   **Cache ARP do roteador:** a descoberta de rede consulta o cache ARP de um roteador para localizar informações de sub-rede. Normalmente, os dados do cache ARP de um roteador têm um curto período de vida. Portanto, quando a descoberta de rede consulta o cache ARP, este pode não conter mais as informações sobre o objeto solicitado.  
+-   **Cache ARP do roteador:** A Descoberta de Rede consulta o cache ARP de um roteador para localizar informações de sub-rede. Normalmente, os dados do cache ARP de um roteador têm um curto período de vida. Portanto, quando a descoberta de rede consulta o cache ARP, este pode não conter mais as informações sobre o objeto solicitado.  
 
--   **DHCP:** a descoberta de rede consulta cada servidor DHCP especificado para descobrir os dispositivos para os quais o servidor DHCP forneceu concessão. A Descoberta de Rede oferece suporte somente a servidores DHCP que executam a implementação de DHCP da Microsoft.  
+-   **DHCP:** A Descoberta de Rede consulta cada servidor DHCP especificado para descobrir os dispositivos para os quais o servidor DHCP forneceu concessão. A Descoberta de Rede oferece suporte somente a servidores DHCP que executam a implementação de DHCP da Microsoft.  
 
--   **Dispositivo SNMP**: a descoberta de rede pode consultar diretamente um dispositivo SNMP. Para a Descoberta de Rede consultar um dispositivo, o dispositivo deve ter um agente SNMP local instalado. Também configure a descoberta de rede para usar o nome da comunidade usado pelo agente SNMP.  
+-   **Dispositivo SNMP:** a Descoberta de Rede pode consultar diretamente um dispositivo SNMP. Para a Descoberta de Rede consultar um dispositivo, o dispositivo deve ter um agente SNMP local instalado. Também configure a descoberta de rede para usar o nome da comunidade usado pelo agente SNMP.  
 
 Quando a descoberta identifica um objeto de IP endereçável e pode determinar a máscara de sub-rede do objeto, ela cria um DDR para esse objeto. Como tipos diferentes de dispositivos se conectam à rede, a descoberta de rede descobre recursos que não dão suporte ao cliente do Configuration Manager. Por exemplo, dispositivos que podem ser detectados, mas não gerenciados incluem impressoras e roteadores.  
 
@@ -412,7 +413,7 @@ O diagrama a seguir mostra o que a descoberta de rede somente de topologia encon
 
 
 ##  <a name="bkmk_aboutServer"></a> Descoberta de Servidor  
-**Configurável:** não  
+**Configurável:** Não  
 
 Além dos métodos de descoberta configuráveis pelo usuário, o Configuration Manager usa um processo chamado **Descoberta de Servidor** (SMS_WINNT_SERVER_DISCOVERY_AGENT). Esse método de descoberta cria registros de recursos para computadores que são sistemas de sites, como um computador configurado como ponto de gerenciamento.  
 

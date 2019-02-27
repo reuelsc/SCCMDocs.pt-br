@@ -10,12 +10,13 @@ ms.assetid: b1970688-0cd2-404f-a17f-9e2aa4a78758
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 14251bb062423a31bcf74d2079b2e1b667f61ba9
-ms.sourcegitcommit: 06d490d526070e17d77e86bc6c200899ded911cb
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d096681c044b794b849d05c48fa17171344b8a64
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967157"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129860"
 ---
 # <a name="set-up-your-system-center-configuration-manager-lab"></a>Configurar seu laboratório do System Center Configuration Manager
 
@@ -40,7 +41,7 @@ Ao seguir as orientações descritas neste tópico, você poderá configurar um 
 
     -   O Configuration Manager requer uma versão de 64 bits do SQL Server para hospedar o banco de dados do site.  
 
-    -   **SQL_Latin1_General_CP1_CI_AS** como a classe **Agrupamento de SQL** .  
+    -   **SQL_Latin1_General_CP1_CI_AS** como a classe **Ordenação de SQL** .  
 
     -   **A autenticação do Windows**, [em vez da autenticação do SQL](https://technet.microsoft.com/library/ms144284.aspx), é necessária.  
 
@@ -79,7 +80,7 @@ Depois de instalar todos esses componentes, existem outras etapas necessárias p
 ##  <a name="BKMK_LabADPrep"></a> Preparar o conteúdo do Active Directory para o laboratório  
  Para este laboratório, você criará um grupo de segurança e adicionará um usuário de domínio a ele.  
 
--   Grupo de segurança: **Evaluation**  
+-   Grupo de segurança: **Avaliação**  
 
     -   Escopo do grupo: **Universal**  
 
@@ -356,9 +357,9 @@ Antes de começar a instalação, inicie o [Verificador de Pré-requisitos](/scc
     |Etapa no procedimento de instalação do site|Seleção|  
     |-----------------------------------------|---------------|  
     |Etapa 4: A página da **Chave do Produto (Product Key)**|Selecione **Avaliação**.|  
-    |Etapa 7:  **Downloads de pré-requisito**|Selecione **Baixar arquivos necessários** e especifique o local predefinido.|  
-    |Etapa 10: **Configurações do site e da instalação**|-   **Código do site:LAB**<br />-   **Nome do site:Evaluation**<br />-   **Pasta de instalação:** especifique seu local predefinido.|  
-    |Etapa 11: **Instalação do site primário**|Selecione **Instalar o site primário como um site autônomo**e clique em **Avançar**.|  
+    |Etapa 7:  **Downloads de pré-requisitos**|Selecione **Baixar arquivos necessários** e especifique o local predefinido.|  
+    |Etapa 10: **Configurações do site e de instalação**|-   **Código do site:LAB**<br />-   **Nome do site:Evaluation**<br />-   **Pasta de instalação:** especifique seu local predefinido.|  
+    |Etapa 11: **Instalação de site primário**|Selecione **Instalar o site primário como um site autônomo**e clique em **Avançar**.|  
     |Etapa 12: **Instalação do banco de dados**|-   **Nome do SQL Server (FQDN):** insira seu FQDN aqui.<br />-   **Nome da instância:** deixe em branco, pois você usará a instância padrão do SQL instalada anteriormente.<br />-   **Porta do Service Broker:** deixe como a porta padrão 4022.|  
     |Etapa 13: **Instalação do banco de dados**|Mantenha essas configurações como padrão.|  
     |Etapa 14: **Provedor de SMS**|Mantenha essas configurações como padrão.|  
@@ -372,7 +373,7 @@ Cada site do Configuration Manager publica suas próprias informações específ
 
 1.  No canto inferior esquerdo do console do Configuration Manager, clique em **Administração**.  
 
-2.  No espaço de trabalho **Administração** , expanda **Configuração da Hierarquia**e clique em **Métodos de Descoberta**.  
+2.  No workspace **Administração**, expanda **Configuração da Hierarquia**e clique em **Métodos de Descoberta**.  
 
 3.  Selecione **Descoberta de Florestas do Active Directory** e clique em **Propriedades**.  
 
@@ -382,7 +383,7 @@ Cada site do Configuration Manager publica suas próprias informações específ
 
 6.  Vá para a parte superior da tela, para a guia **Geral** .  
 
-7.  No espaço de trabalho **Administração** , expanda **Configuração da Hierarquia**e clique em **Florestas do Active Directory**.  
+7.  No workspace **Administração**, expanda **Configuração da Hierarquia**e clique em **Florestas do Active Directory**.  
 
 #### <a name="to-enable-a-configuration-manager-site-to-publish-site-information-to-your-active-directory-forest"></a>Para habilitar um site do Configuration Manager a publicar informações em sua floresta do Active Directory:  
 
@@ -390,6 +391,6 @@ Cada site do Configuration Manager publica suas próprias informações específ
 
 2.  Você vai configurar uma nova floresta que ainda não foi descoberta.  
 
-3.  No espaço de trabalho de **Administração** , clique em **Florestas do Active Directory**.  
+3.  No workspace de **Administração**, clique em **Florestas do Active Directory**.  
 
 4.  Na guia **Publicação** das propriedades do site, selecione a floresta conectada e clique em **OK** para salvar a configuração.

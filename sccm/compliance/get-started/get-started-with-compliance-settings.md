@@ -10,12 +10,13 @@ ms.assetid: a2742d52-851e-4abc-b623-d12d91684c0b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ec350bdb6b3b421d95bf13eafc562919bccc3c38
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f4e85b6886947fe0ac720f5840dcefd91a441d3e
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335602"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56130938"
 ---
 # <a name="get-started-with-compliance-settings-in-system-center-configuration-manager"></a>Introdução às configurações de conformidade no System Center Configuration Manager
 
@@ -71,7 +72,7 @@ Antes de criar as configurações de conformidade do Configuration Manager, saib
  Dispositivos cliente avaliam sua conformidade com relação a cada linha de base de configuração implantada e, imediatamente, informam os resultados ao site usando mensagens de estado e de status. Se um dispositivo estiver desconectado da rede no momento, mas baixou a linha de base de configuração, ele ainda avaliará a conformidade dos itens de configuração. Ele envia as informações de conformidade quando se reconecta.  
 
 ### <a name="monitoring-configuration-baselines"></a>Monitorando linhas de base de configuração
-- Monitore os resultados da avaliação de conformidade no console do Configuration Manager, no espaço de trabalho **Monitoramento**, no nó **Implantações**. Por exemplo:
+- Monitore os resultados da avaliação de conformidade no console do Configuration Manager, no workspace **Monitoramento**, no nó **Implantações**. Por exemplo:
     - Causas comuns de não conformidade
     - Erros
     - O número de dispositivos e usuários afetados
@@ -109,8 +110,7 @@ Para obter mais informações, consulte [Atualizar dispositivos Windows com a po
 
 
 ## <a name="microsoft-edge-browser-profiles"></a>Perfis do navegador Microsoft Edge
-<!-- 1357310 -->
-A partir da versão 1802, para os clientes que utilizam o navegador da Web [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) em clientes do Windows 10, crie uma política de configurações de conformidade para definir várias configurações do Microsoft Edge. 
+<!-- 1357310 --> A partir da versão 1802, para clientes que utilizam o navegador da Web [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) em clientes do Windows 10, crie uma política de configurações de conformidade para definir várias configurações do Microsoft Edge. 
 
 Para obter mais informações, consulte [Perfis do navegador Microsoft Edge](/sccm/compliance/deploy-use/browser-profiles).
 

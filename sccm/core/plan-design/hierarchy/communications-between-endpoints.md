@@ -10,12 +10,13 @@ ms.assetid: 68fe0e7e-351e-4222-853a-877475adb589
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ce3353d9cc139da53a655f50144c3816b1a4a355
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5ebe37bb97c4a1e231bfaf94f420f7f0471f30f6
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411367"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56141952"
 ---
 # <a name="communications-between-endpoints-in-configuration-manager"></a>Comunicação entre pontos de extremidade no Configuration Manager
 
@@ -83,7 +84,7 @@ Quando você implanta uma função de sistema de site que usa o Internet Informa
 
 Há dois estágios quando um cliente se comunica com um ponto de gerenciamento: autenticação (transporte) e autorização (mensagem). Esse processo varia de acordo com os seguintes fatores: 
 - Configuração do site: HTTP, HTTPS ou HTTP aprimorado
-- Configuração do ponto de gerenciamento: somente HTTPS ou permite HTTP ou HTTPS
+- Configuração do ponto de gerenciamento: Somente HTTPS ou permite HTTP ou HTTPS
 - Identidade do dispositivo para cenários centrados em dispositivos
 - Identidade do dispositivo para cenários centrados em usuários
 
@@ -91,8 +92,8 @@ Use a tabela a seguir para entender como este processo funciona:
 
 | Tipo de MP  | Autenticação de cliente  | Autorização do cliente<br>Identidade do dispositivo  | Autorização do cliente<br>Identidade do usuário  |
 |----------|---------|---------|---------|
-| HTTP     | Anônima<br>Com o HTTP aprimorado, o site verifica o token do *usuário* ou do *dispositivo* do Azure AD. | Solicitação de localização: anônima<br>Pacote de cliente: anônimo<br>Registro, usando um dos seguintes métodos para provar a identidade do dispositivo:<br> – Anônimo (aprovação manual)<br> – Autenticação integrada ao Windows<br> – Token do *dispositivo* do Azure AD (HTTP aprimorado)<br>Após o registro, o cliente usa assinatura da mensagem para comprovar a identidade do dispositivo | Para cenários centrados no usuário, usando um dos seguintes métodos para provar a identidade do usuário:<br> – Autenticação integrada ao Windows<br> – Token do *usuário* do Azure AD (HTTP aprimorado) |
-| HTTPS    | Use um dos métodos a seguir:<br> – Certificado PKI<br> – Autenticação integrada ao Windows<br> – Token do *usuário* ou do *dispositivo* do Azure AD | Solicitação de localização: anônima<br>Pacote de cliente: anônimo<br>Registro, usando um dos seguintes métodos para provar a identidade do dispositivo:<br> – Anônimo (aprovação manual)<br> – Autenticação integrada ao Windows<br> – Certificado PKI<br> – Token do *usuário* ou do *dispositivo* do Azure AD<br>Após o registro, o cliente usa assinatura da mensagem para comprovar a identidade do dispositivo | Para cenários centrados no usuário, usando um dos seguintes métodos para provar a identidade do usuário:<br> – Autenticação integrada ao Windows<br> – Token do *usuário* do Azure AD |
+| HTTP     | Anônima<br>Com o HTTP aprimorado, o site verifica o token do *usuário* ou do *dispositivo* do Azure AD. | Solicitação de localização: Anônima<br>Pacote do cliente: Anônima<br>Registro, usando um dos seguintes métodos para provar a identidade do dispositivo:<br> – Anônimo (aprovação manual)<br> – Autenticação integrada ao Windows<br> – Token do *dispositivo* do Azure AD (HTTP aprimorado)<br>Após o registro, o cliente usa assinatura da mensagem para comprovar a identidade do dispositivo | Para cenários centrados no usuário, usando um dos seguintes métodos para provar a identidade do usuário:<br> – Autenticação integrada ao Windows<br> – Token do *usuário* do Azure AD (HTTP aprimorado) |
+| HTTPS    | Use um dos métodos a seguir:<br> – Certificado PKI<br> – Autenticação integrada ao Windows<br> – Token do *usuário* ou do *dispositivo* do Azure AD | Solicitação de localização: Anônima<br>Pacote do cliente: Anônima<br>Registro, usando um dos seguintes métodos para provar a identidade do dispositivo:<br> – Anônimo (aprovação manual)<br> – Autenticação integrada ao Windows<br> – Certificado PKI<br> – Token do *usuário* ou do *dispositivo* do Azure AD<br>Após o registro, o cliente usa assinatura da mensagem para comprovar a identidade do dispositivo | Para cenários centrados no usuário, usando um dos seguintes métodos para provar a identidade do usuário:<br> – Autenticação integrada ao Windows<br> – Token do *usuário* do Azure AD |
 
 > [!Tip]  
 > Para obter mais informações sobre a configuração do ponto de gerenciamento para tipos de identidade do dispositivo diferentes e com o gateway de gerenciamento de nuvem, confira [Habilitar o ponto de gerenciamento para HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
@@ -198,7 +199,7 @@ Para obter mais informações, consulte os seguintes artigos:
 
 ###  <a name="bkmk_span"></a> Cenários compatíveis com um site ou hierarquia que abrange vários domínios e florestas  
 
-#### <a name="scenario-1-communication-between-sites-in-a-hierarchy-that-spans-forests"></a>Cenário 1: comunicação entre sites em uma hierarquia que abrange florestas  
+#### <a name="scenario-1-communication-between-sites-in-a-hierarchy-that-spans-forests"></a>Cenário 1: Comunicação entre sites em uma hierarquia que abrange florestas  
 Esse cenário exige uma relação de confiança de floresta bidirecional que dá suporte à autenticação Kerberos.  Se você não tiver uma relação de confiança de floresta bidirecional que dá suporte à autenticação Kerberos, o Configuration Manager não dará suporte a um site filho na floresta remota.  
 
 O Configuration Manager dá suporte à instalação de um site filho em uma floresta remota que tem a relação de confiança bidirecional necessária com a floresta do site pai. Por exemplo, é possível colocar um site secundário em uma floresta diferente de seu site pai primário, contanto que a relação de confiança necessária exista.  
@@ -224,7 +225,7 @@ Defina também as seguintes configurações:
 
 -   Para instalar um site ou de função do sistema do site, você deve especificar uma conta que tenha permissões de administrador local no computador especificado.  
 
-#### <a name="scenario-2-communication-in-a-site-that-spans-forests"></a>Cenário 2: comunicação em um site que abrange florestas  
+#### <a name="scenario-2-communication-in-a-site-that-spans-forests"></a>Cenário 2: Comunicação em um site que abrange florestas  
 Esse cenário não requer uma relação de confiança de floresta bidirecional.  
 
 Sites primários oferecem suporte à instalação de funções do sistema de site em computadores em florestas remotas.  
@@ -265,9 +266,9 @@ Você pode precisar configurar o acesso do ponto de gerenciamento e do ponto de 
 
 Se você configurar uma conta de usuário de domínio como uma conta de conexão para essas funções do sistema, verifique se a conta de usuário do domínio tem acesso adequado ao banco de dados do SQL Server naquele site:  
 
--   Ponto de gerenciamento: **Conta de Conexão do Banco de Dados do Ponto de Gerenciamento**  
+-   Ponto de gerenciamento: **Conta de Conexão de Banco de Dados do Ponto de Gerenciamento**  
 
--   Ponto de registro: **Conta de Conexão do Ponto de Registro**  
+-   Ponto de registro: **Conta de conexão do ponto de registro**  
 
 Ao planejar funções do sistema de site em outras florestas, considere as seguintes informações adicionais:  
 
@@ -275,7 +276,7 @@ Ao planejar funções do sistema de site em outras florestas, considere as segui
 
 -   Quando o ponto de gerenciamento com base em Internet tem uma relação de confiança com a floresta que contém as contas do usuário, as políticas do usuário têm suporte. Quando não existe uma relação de confiança, somente as políticas do computador têm suporte.  
 
-#### <a name="scenario-3-communication-between-clients-and-site-system-roles-when-the-clients-arent-in-the-same-active-directory-forest-as-their-site-server"></a>Cenário 3: comunicação entre clientes e funções do sistema de site quando os clientes não estão na mesma floresta do Active Directory que o servidor do site  
+#### <a name="scenario-3-communication-between-clients-and-site-system-roles-when-the-clients-arent-in-the-same-active-directory-forest-as-their-site-server"></a>Cenário 3: comunicação entre clientes e funções do sistema de sites quando os clientes não estão na mesma floresta do Active Directory que o servidor do site  
 O Configuration Manager dá suporte aos seguintes cenários para os clientes que não estão na mesma floresta que o servidor do site:  
 
 -   Há uma relação de confiança de floresta bidirecional entre a floresta do cliente e a floresta do servidor do site.  
@@ -295,7 +296,7 @@ Para publicar informações do site em outra floresta do Active Directory:
 -   Configurar cada site para publicar seus dados nos Serviços de Domínio Active Directory. Essa configuração permite que os clientes nessa floresta recuperem informações do site e localizem pontos de gerenciamento. Para clientes que não podem usar o Active Directory Domain Services na localização de serviço, é possível usar DNS, WINS ou o ponto de gerenciamento atribuído do cliente.  
 
 
-####  <a name="bkmk_xchange"></a> Cenário 4: colocar o conector do Exchange Server em uma floresta remota  
+####  <a name="bkmk_xchange"></a> Cenário 4: Colocar o conector do Exchange Server em uma floresta remota  
 
 Para dar suporte a esse cenário, verifique se a resolução de nomes funciona entre as florestas. Por exemplo, configure encaminhamentos de DNS. Quando você configura o conector do Exchange Server, especifique o FQDN do Exchange Server da intranet. Para saber mais, confira [Gerenciar dispositivos móveis com o Configuration Manager e o Exchange](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).  
 

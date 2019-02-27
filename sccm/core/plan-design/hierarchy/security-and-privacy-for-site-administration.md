@@ -10,12 +10,13 @@ ms.assetid: 1d58176e-abc0-4087-8583-ce70deb4dcf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 515385c6c6855e63dc32b522edff9cd2047331bd
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a41b2c0931fc3deb72ff92d8b12b433ef5651aa1
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343027"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129588"
 ---
 # <a name="security-and-privacy-for-site-administration-in-system-center-configuration-manager"></a>Segurança e privacidade para administração de site no System Center Configuration Manager
 
@@ -98,7 +99,7 @@ Isolar cada função do sistema de sites em um servidor diferente reduz a chance
 
 O SCW (Assistente de Configuração de Segurança) ajuda a criar uma política de segurança que você pode aplicar a qualquer servidor em sua rede. Depois de instalar o modelo do System Center Configuration Manager, o SCW reconhece aplicativos, portas, serviços e funções do sistema de sites do Configuration Manager. Ele permite então a comunicação necessária para o Configuration Manager e bloqueia a comunicação não exigida.  
 
-O Assistente de Configuração de Segurança está incluído no kit de ferramentas do System Center 2012 Configuration Manager, que pode ser baixado do Centro de Download da Microsoft: [System Center 2012 – Configuration Manager Component Add-ons and Extensions](http://go.microsoft.com/fwlink/p/?LinkId=251931) (System Center 2012 – Complementos e extensões do componente do Configuration Manager).  
+O Assistente de Configuração de Segurança está incluído no kit de ferramentas do System Center 2012 Configuration Manager, que pode ser baixado do Centro de Download da Microsoft: [System Center 2012 – Complementos e extensões do componente do Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=251931).  
 
 **Configurar endereços IP estáticos para sistemas de site.**  
 

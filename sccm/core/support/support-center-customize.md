@@ -10,12 +10,13 @@ ms.assetid: a6f7f6b7-9ef3-4ffa-a3cf-d877ac55983b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ca7dfce7b96747e46247cb290b4fc0d7e0df41ff
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b100daf91b8bb7c5d4dd5f041c57e7dc9dac390e
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52457994"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156773"
 ---
 # <a name="customize-support-center"></a>Personalizar o Centro de Suporte
 
@@ -27,7 +28,7 @@ A ferramenta [Centro de Suporte](/sccm/core/support/support-center) inclui um ar
 
   - [Personalizar grupos de log](#bkmk_loggroups): defina novos grupos de arquivos de log usando expressões regulares. Também adicione outros arquivos de log a grupos de log.  
 
-  - [Coletar arquivos de log adicionais usando caracteres curinga:](#bkmk_wildcards) use pesquisas com curingas para coletar arquivos de log adicionais  
+  - [Coletar arquivos de log adicionais usando caracteres curinga:](#bkmk_wildcards): use pesquisas curinga para coletar arquivos de log adicionais  
 
 Para fazer essas alterações, você precisa ter permissões administrativas locais no cliente no qual instalou o Centro de Suporte. Faça essas personalizações usando um editor de texto ou XML, como o Bloco de Notas ou o Visual Studio.
 
@@ -96,9 +97,9 @@ Para coletar chaves do Registro para os programas clássicos instalados no dispo
 
 Para personalizar que arquivos de log o Centro de Suporte coleta e como ele os representa na lista **Grupos de log**, use elementos no elemento `<logGroups>`. Quando você iniciar o Centro de suporte, ele examinará esta seção do arquivo de configuração. Ele então criará um grupo na lista **Grupos de log** para cada valor de atributo de chave exclusivo encontrado nos elementos `<add/>` contidos no elemento `<logGroups>`.
 
-  - **Grupo de componentes de log**: o elemento `<componentLogGroup>` usa um atributo de chave para definir o nome do grupo de log que aparece na lista. Ele também usa um atributo de valor que contém uma regex (expressão regular). Ele usa essa regex para coletar um conjunto de arquivos de log relacionados.  
+  - **Grupo de logs de componente**: o elemento `<componentLogGroup>` usa um atributo de chave para definir o nome do grupo de log exibido na lista. Ele também usa um atributo de valor que contém uma regex (expressão regular). Ele usa essa regex para coletar um conjunto de arquivos de log relacionados.  
 
-  - **Grupo de log estático**: os elementos `<staticLogGroup>` usam um atributo de chave para definir o nome do grupo de log que aparece na lista. Ele também usa um atributo de valor que define um nome de arquivo de log.  
+  - **Grupo de log estático:** o elemento `<staticLogGroup>` usa um atributo de chave para definir o nome do grupo de log exibido na lista. Ele também usa um atributo de valor que define um nome de arquivo de log.  
 
 Se o mesmo valor de atributo de chave for usado em um elemento `<add/>` dentro dos elementos `<componentLogGroup>` e do elemento `<staticLogGroup>`, o Centro de Suporte criará um único grupo. Esse grupo inclui os arquivos de log definidos por ambos os elementos que usam a mesma chave.
 

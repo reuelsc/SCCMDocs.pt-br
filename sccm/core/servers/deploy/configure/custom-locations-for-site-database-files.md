@@ -10,12 +10,13 @@ ms.assetid: 500a9aa6-68aa-44eb-bf49-350c1314a697
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 597ce060dc1fb37f1cc827da3e1c059958a91163
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6f094e2e6eab0067f51cb7fcd193a4acc914fc5c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32332722"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56134945"
 ---
 # <a name="custom-locations-for-system-center-configuration-manager-site-database-files"></a>Locais personalizados para os arquivos do banco de dados do site do System Center Configuration Manager
 
@@ -28,9 +29,9 @@ ms.locfileid: "32332722"
 
  **Durante a instalação** de um novo site primário ou site de administração central, você pode:  
 
--   **Especificar locais de arquivo não padrão para o banco de dados do site**: a instalação do Configuration Manager cria o banco de dados do site usando esses locais.  
+-   **Especificar locais de arquivo não padrão para o banco de dados do site**: a instalação Configuration Manager cria o banco de dados do site usando esses locais.  
 
--   **Especificar o uso de um banco de dados do SQL Server criado previamente que usa locais de arquivo personalizados**: a instalação do Configuration Manager usa esse banco de dados criado previamente e seus locais de arquivos pré-configurados.  
+-   **Especificar o uso de um banco de dados do SQL Server criado previamente que usa locais de arquivo personalizados**:  a instalação do Configuration Manager usa esse banco de dados criado previamente e seus locais de arquivos pré-configurados.  
 
 **Após a instalação** você pode alterar o local dos arquivos de banco de dados do site. Isso exige que você pare o site e edite o local do arquivo no SQL Server:  
 

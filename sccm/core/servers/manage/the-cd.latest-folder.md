@@ -10,12 +10,13 @@ ms.assetid: 8db92d67-5d9c-4e9c-80d0-ae6fa0dd4817
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 35a8e1356306815503f2c153a12139e06dd27be2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ef94f51ad85f5d816a5de253a63a639111b4383a
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337166"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56134326"
 ---
 # <a name="the-cdlatest-folder-for-system-center-configuration-manager"></a>A pasta CD.Latest para o System Center Configuration Manager
 
@@ -32,7 +33,7 @@ No entanto, a mídia de linha de base, como a versão de linha de base 1802 lan�
 
  Veja a seguir os cenários que criam ou atualizam a pasta CD.Latest em um site de administração central ou servidor de site primário:  
 
--   Você instala uma atualização ou hotfix de dentro do console do Configuration Manager: a pasta é criada ou atualizada na pasta de instalação do Configuration Manager.  
+-   Você instala uma atualização ou um hotfix de dentro do console do Configuration Manager: a pasta é criada ou atualizada na pasta de instalação do Configuration Manager.  
 
 -   Você executa a tarefa de backup interna do Configuration Manager: a pasta é criada ou atualizada no local da pasta de backup indicada.  
 

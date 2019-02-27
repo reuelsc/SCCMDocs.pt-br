@@ -10,12 +10,13 @@ ms.assetid: a0bd093d-67a5-4f74-bf79-dd604889f5ba
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b5f7ac3125b099a764604b3338a92f3f45b10afe
-ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5adc8809edc0a069269dfce71f302452a0e01b45
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52258971"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56124022"
 ---
 # <a name="learn-more-about-powershell-script-security"></a>Saiba mais sobre a segurança de script do PowerShell
 
@@ -64,7 +65,7 @@ Passar parâmetros é uma maneira de ter flexibilidade com os scripts e adiar as
 - Utilize o módulo do PowerShell ["caçador de injeção"](https://www.powershellgallery.com/packages/InjectionHunter/1.0.0) na Galeria do PowerShell.
     - Pode haver falsos positivos; portanto, procure a intenção quando algo for sinalizado como suspeito para determinar se ele é um problema real ou não. 
 - O Microsoft Visual Studio tem um analisador de Script, que pode ajudar com a verificação da sintaxe do PowerShell.
-- Este vídeo intitulado “DEF CON 25 - Lee Holmes - Get $pwnd: Attacking Battle Hardened Windows Server” (Atacando um Windows Server protegido para a batalha) fornece uma visão geral dos tipos de problemas contra os quais você pode proteger (especialmente, a seção 12:20 a 17:50):     <iframe width="560" height="315" src="https://www.youtube.com/embed/ahxMOAAani8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+- Este vídeo intitulado: “DEF CON 25 - Lee Holmes - Get $pwnd: Attacking Battle Hardened Windows Server” (Atacando um Windows Server protegido para a batalha) fornece uma visão geral dos tipos de problemas contra os quais você pode proteger (especialmente, a seção 12:20 a 17:50):     <iframe width="560" height="315" src="https://www.youtube.com/embed/ahxMOAAani8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## <a name="environment-recommendations"></a>Recomendações para o ambiente
 Recomendações gerais para administradores do PowerShell.

@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
-ms.openlocfilehash: bcdc6298a7b1c429888acf2b7257cec072e9b878
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: da01c741107d4eb4a707f7f0d8ada5d82706f292
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383413"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56119884"
 ---
 # <a name="software-center-user-guide"></a>Guia do usuário do Centro de Software
 
@@ -132,8 +133,8 @@ Para tornar esse computador isentos dessas políticas, marque a caixa de seleç�
 ### <a name="computer-maintenance"></a>Manutenção do computador
 
 Especificar como o Centro de Software aplica as alterações no software antes da data limite
-- **Instalar ou desinstalar automaticamente o software obrigatório e reiniciar o computador somente fora do horário comercial especificado**: essa configuração está desabilitada por padrão.
-- **Suspender as atividades do Centro de Software quando meu computador estiver no modo de apresentação**: essa configuração está habilitada por padrão.
+- **Instalar ou desinstalar automaticamente o software necessário e reiniciar o computador somente fora do horário comercial especificado**: Essa configuração fica desabilitada por padrão.
+- **Suspender atividades da Central de Software quando meu computador estiver no modo de apresentação**: Essa configuração é habilitada por padrão.
 - **Política de Sincronização**: clique nesse botão quando instruído pelo administrador de TI. Esse computador verifica com os servidores se há algo novo, como aplicativos, atualizações de software ou sistemas operacionais.
 
 ## <a name="custom-tab-in-software-center"></a>Guia personalizada no Centro de Software

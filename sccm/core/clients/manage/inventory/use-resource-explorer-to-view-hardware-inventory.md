@@ -10,12 +10,13 @@ ms.assetid: 375912f5-436d-4315-bdbe-d77afee6c9f3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e4f39d06072222c14627481f21139f06ee6656c4
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: fc4958e83c73da91aa31fb8ac0e1b84375218ac9
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384965"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56128197"
 ---
 # <a name="how-to-use-resource-explorer-to-view-hardware-inventory-in-configuration-manager"></a>Como usar o Gerenciador de Recursos para exibir o inventário de hardware no Configuration Manager
 
@@ -47,7 +48,7 @@ O Gerenciador de Recursos contém as seguintes seções relacionadas ao inventá
 
 ## <a name="bkmk_open"></a> Como abrir o Gerenciador de Recursos   
 
-1.  No console do Configuration Manager, acesse o espaço de trabalho **Ativos e Conformidade** e selecione o nó **Dispositivos**. Você também pode selecionar qualquer coleção no nó **Coleções de Dispositivos**.  
+1.  No console do Configuration Manager, acesse o workspace **Ativos e Conformidade** e selecione o nó **Dispositivos**. Você também pode selecionar qualquer coleção no nó **Coleções de Dispositivos**.  
 
 2.  Selecione um dispositivo. Na faixa de opções, na guia **Início** e no grupo **Dispositivos**, clique em **Iniciar** e, em seguida, selecione **Gerenciador de Recursos**.   
 

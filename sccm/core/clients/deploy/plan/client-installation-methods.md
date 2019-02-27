@@ -10,12 +10,13 @@ ms.assetid: 51b5964b-374d-4abc-8619-414a9fffad2d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6e437709ec1b721cf9ca597bdc944bcce6da9b0f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c206a8045429551f361f640febbcda4a39ef9698
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334242"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139935"
 ---
 # <a name="client-installation-methods-in-system-center-configuration-manager"></a>Métodos de instalação do cliente no System Center Configuration Manager
 
@@ -25,7 +26,7 @@ Você pode usar diferentes métodos para instalar o software cliente do Configur
 
 ## <a name="client-push-installation"></a>Instalação do cliente por push  
 
-**Plataforma de cliente compatível**: Windows  
+**Plataforma de cliente com suporte**: Windows  
 
 #### <a name="advantages"></a>Vantagens  
 
@@ -55,7 +56,7 @@ Para obter mais informações, consulte [Como instalar clientes com o push do cl
 
 ## <a name="software-update-point-based-installation"></a>Instalação baseada em ponto de atualização de software  
 
-**Plataforma de cliente compatível**: Windows  
+**Plataforma de cliente com suporte**: Windows  
 
 #### <a name="advantages"></a>Vantagens  
 
@@ -87,7 +88,7 @@ Para obter mais informações, consulte [Como instalar clientes com a instalaç�
 
 ## <a name="group-policy-installation"></a>Instalação da política de grupo  
 
-**Plataforma de cliente compatível**: Windows  
+**Plataforma de cliente com suporte**: Windows  
 
 #### <a name="advantages"></a>Vantagens  
 
@@ -111,7 +112,7 @@ Para obter mais informações, consulte [Como instalar clientes com a política 
 
 ## <a name="logon-script-installation"></a>Instalação de script de logon  
 
-**Plataforma de cliente compatível**: Windows  
+**Plataforma de cliente com suporte**: Windows  
 
 #### <a name="advantages"></a>Vantagens  
 
@@ -131,7 +132,7 @@ Para obter mais informações, consulte [Como instalar clientes com scripts de l
 
 ## <a name="manual-installation"></a>Instalação manual  
 
-**Plataforma de cliente compatíveis:** Windows, UNIX/Linux, Mac OS X  
+**Plataforma de cliente com suporte**: Windows, UNIX/Linux, Mac OS X  
 
 #### <a name="advantages"></a>Vantagens  
 
@@ -157,7 +158,7 @@ Para obter mais informações sobre como instalar manualmente o cliente em cada 
 
 ## <a name="microsoft-intune-mdm-installation"></a>Instalação do Microsoft Intune MDM
 
-**Plataforma de cliente compatíveis**: Windows 10
+**Plataformas de cliente com suporte**: Windows 10
 
 #### <a name="advantages"></a>Vantagens  
 

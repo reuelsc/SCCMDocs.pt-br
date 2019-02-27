@@ -10,16 +10,17 @@ ms.assetid: ee8d611f-aa0c-4efd-b0ad-dbd14d0a0623
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9e58e11bec9441f73bff021c8a6a24d150777cbe
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 57770c35b3a824aa285185e3031ed2fc9b9dd82d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385534"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56135435"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Perguntas frequentes sobre licenças e branches do Configuration Manager
 
- *Aplica-se a: System Center Configuration Manager (Branch Atual), System Center Configuration Manager (Branch de Manutenção em Longo Prazo)*
+ *Aplica-se a: System Center Configuration Manager (Branch Atual), System Center Configuration Manager (Branch de Manutenção de Longo Prazo)*
 
 ## <a name="summary"></a>Resumo
 Estas perguntas frequentes abordam o licenciamento de versões de Branch Atual e Branch de Manutenção de Longo Prazo (LTSB) do System Center Configuration Manager, disponíveis por meio de programas de licenciamento por volume da Microsoft. Este artigo é apenas informativo. Ele não substitui qualquer documentação sobre o licenciamento do System Center Configuration Manager. Para saber mais, veja o licenciamento de produto para o [System Center 2016](https://www.microsoft.com/en-us/licensing/product-licensing/system-center-2016.aspx)<!-- this link doesn't work without some language code --> e os [Termos do produto](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=53). Os Termos do Produto descrevem os termos de uso para todos os produtos da Microsoft no licenciamento por volume.
@@ -41,11 +42,11 @@ O Branch de Manutenção em Longo Prazo é um build pronto para produção do Sy
 
 ### <a name="bkmk_licensing-acronyms"></a> Já vi os termos SA e L&SA sendo usados em conteúdos sobre licenciamento. O que significam esses acrônimos em relação ao System Center Configuration Manager?    
 Tanto SA (Software Assurance) quanto L&SA (Licença e Software Assurance) são opções de licença que concedem direitos de uso do System Center Configuration Manager. SA é uma opção para clientes que estão renovando a cobertura de SA de um contrato anterior. L&SA é uma opção para clientes que estão comprando uma nova licença e cobertura de SA.
-  - **SA (Software Assurance)**: os clientes devem ter SA ativo para as licenças do System Center Configuration Manager ou direitos de assinatura equivalente para instalar e usar a opção de Branch Atual do System Center Configuration Manager.    
+  - **SA (Software Assurance)**: os clientes devem ter o SA ativo para as licenças do System Center Configuration Manager ou direitos de assinatura equivalentes para instalar e usar a opção de Branch Atual do System Center Configuration Manager.    
 
     - Embora o SA seja opcional para alguns produtos da Microsoft, a única maneira de obter direitos de usar o Branch Atual do System Center Configuration Manager é com o SA *(ou direitos de assinatura equivalente)*. Para obter mais informações, veja as [perguntas frequentes sobre o Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/FAQ-Software-Assurance.aspx).<!--this link doesn't work without some language code-->
 
-  - **L&SA (Microsoft License e Software Assurance)**: os clientes que estiverem comprando novas licenças para o System Center Configuration Manager devem adquirir o L&SA (licença e cobertura de SA).   
+  - **L&SA (Licença e Software Assurance) da Microsoft**: clientes que estiverem comprando novas licenças do System Center Configuration Manager devem adquirir a L&SA (a licença e a cobertura do SA).   
 
     - O SA concede direitos de uso do Branch Atual.
 

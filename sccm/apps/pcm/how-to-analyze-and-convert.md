@@ -10,12 +10,13 @@ ms.assetid: f3bf1737-827d-48fa-8bb1-f48fe71afe0c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9c58e12d906606acc0015d38e543616570d61520
-ms.sourcegitcommit: 759098de944b8f7d5eedfc2bae2cb9a6ba15276f
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 50ec232c9f5b007ef7a139cbe7894c333b6eed63
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43297165"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56137874"
 ---
 # <a name="how-to-analyze-and-convert-packages-with-package-conversion-manager"></a>Como analisar e converter pacotes com o Gerenciador de Conversão de Pacotes
 
@@ -37,25 +38,25 @@ Antes de converter um pacote, primeiro analise-o. Dependendo dos resultados da a
 
 ## <a name="bkmk_analyze"></a> Como analisar pacotes
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**. Expanda **Gerenciamento de Aplicativos** e selecione o nó **Pacotes**.  
+1. No console do Configuration Manager, acesse o workspace **Biblioteca de Software**. Expanda **Gerenciamento de Aplicativos** e selecione o nó **Pacotes**.  
 
 2. Selecione o pacote a ser convertido. Na guia **Início** da faixa de opções, no grupo **Conversão de Pacote**, selecione **Analisar Pacote**. O Gerenciador de Conversão de Pacotes analisa o pacote.  
 
 3. Para conferir o estado de preparação do pacote, adicione a coluna **Preparação** à lista de pacotes. O estado de preparação do pacote determina sua próxima ação:  
 
-    - **Automático**: [como converter pacotes](#bkmk_convert)  
+    - **Automática**: [Como converter pacotes](#bkmk_convert)  
 
         Para também anexar coleções e criar condições globais com um estado de preparação **Automático**, confira [Como corrigir e converter pacotes](#bkmk_fix).  
 
-    - **Manual**: [como corrigir e converter pacotes](#bkmk_fix)
+    - **Manual**: [Como corrigir e converter pacotes](#bkmk_fix)
 
-    - **Não aplicável**: este pacote não possui um programa ou conteúdo necessário. Adicione qualquer programa ou conteúdo necessário e tente realizar a análise novamente. Ou deixe-o em um estado não convertido e continue a implantá-lo como um pacote.  
+    - **Não aplicável**: este pacote não tem um programa ou conteúdo necessário. Adicione qualquer programa ou conteúdo necessário e tente realizar a análise novamente. Ou deixe-o em um estado não convertido e continue a implantá-lo como um pacote.  
 
 
 
 ## <a name="bkmk_convert"></a> Como converter pacotes
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**. Expanda **Gerenciamento de Aplicativos** e selecione o nó **Pacotes**.  
+1. No console do Configuration Manager, acesse o workspace **Biblioteca de Software**. Expanda **Gerenciamento de Aplicativos** e selecione o nó **Pacotes**.  
 
 2. Selecione o pacote para converter com um estado de preparação de **Automático**. Na guia **Início** da faixa de opções, no grupo **Conversão de Pacote**, selecione **Converter Pacote**. O assistente Converter Pacote em Aplicativo é aberto.  
 
@@ -70,7 +71,7 @@ Antes de converter um pacote, primeiro analise-o. Dependendo dos resultados da a
 
 ## <a name="bkmk_fix"></a> Como corrigir e converter pacotes
 
-1. No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**. Expanda **Gerenciamento de Aplicativos** e selecione o nó **Pacotes**.  
+1. No console do Configuration Manager, acesse o workspace **Biblioteca de Software**. Expanda **Gerenciamento de Aplicativos** e selecione o nó **Pacotes**.  
 
 2. Selecione um pacote com um estado de preparação de **Manual** ou **Automático**. Na guia **Início** da faixa de opções, no grupo **Conversão de Pacote**, selecione **Corrigir e Converter**.  
 

@@ -10,16 +10,17 @@ ms.assetid: ddcad9f2-a542-4079-83ca-007d7cb44995
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 42cd1011b3d077a21cd481d5c88b6c9c53765f0e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b151b93bf0dfa067c2b85860e2c0119922a17cd2
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340614"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56130285"
 ---
 # <a name="deploy-app-v-virtual-applications-with-system-center-configuration-manager"></a>Implantar aplicativos virtuais do App-V com o System Center Configuration Manager
 
-*Aplica-se a: System Center Configuration Manager (Branch Atual)*
+*Aplica-se a: System Center Configuration Manager (branch atual)*
 
 Quando você usa o Configuration Manager para gerenciar aplicativos virtuais, obtém os seguintes benefícios:  
 
@@ -60,7 +61,7 @@ Além dos outros requisitos e procedimentos do System Center Configuration Manag
 
      Antes de implantar com sucesso aplicativos virtuais, você também deve atualizar o cliente do App-V 4.6 SP1 com o hotfix descrito no artigo [2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322) da Base de Dados de Conhecimento.  
 
--   **App-V 5, App-V 5.0 SP1, App-V 5.0 SP2, App-V 5.0 SP3 e App-V 5.1:** Para o App-V 5.0 SP2, é necessário instalar o [Hotfix 5](https://support.microsoft.com/en-us/kb/2963211) ou usar o App-V 5.0 SP3.  
+-   **App-V 5, App-V 5.0 SP1, App-V 5.0 SP2, App-V 5.0 SP3 e App-V 5.1**: para o App-V 5.0 SP2, é necessário instalar o [Pacote de Hotfix 5](https://support.microsoft.com/en-us/kb/2963211) ou usar o App-V 5.0 SP3.  
 -   **App-V 5.2**: faz parte do Windows 10 Education (1607 e posterior), do Windows 10 Enterprise (1607 e posterior) e do Windows Server 2016.
 
 Para obter mais informações sobre o App-V no Windows 10, consulte os seguintes tópicos:
@@ -120,7 +121,7 @@ Use a tabela a seguir para ajudá-lo a planejar uma migração de uma infraestru
 |O Configuration Manager começa a gerenciar aplicativos virtuais em um cliente após a primeira implantação de um aplicativo virtual. Depois disso, o Configuration Manager deve gerenciar todos os aplicativos do App-V no computador.|Nenhuma informação adicional.|  
 |Distribuir o conteúdo para os pontos de distribuição apropriados para permitir a entrega local de aplicativos.|Consulte [Gerenciar conteúdo e infraestrutura de conteúdo](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
 |Implantar o aplicativo para clientes do Configuration Manager.<br /><br /> Se o aplicativo do App-V foi criado com uma versão anterior do sequenciador que não cria um arquivo XML do manifesto, você pode abri-lo e salvá-lo em uma versão mais recente do sequenciador para criar o arquivo. Este arquivo é necessário para implantar aplicativos virtuais com o Configuration Manager.<br /><br /> O App-V oferece suporte a pacotes de aplicativos virtuais criados com as versões do sequenciador do SoftGrid 4.1 SP1 ou 4.2.<br /><br /> Se os aplicativos foram instalados de modo local anteriormente, você deve desinstalá-los para poder implantar uma versão virtual do aplicativo.|Consulte [Implantar aplicativos](../../apps/deploy-use/deploy-applications.md).|  
-|O System Center Configuration Manager não dá mais suporte usando pacotes e programas que contêm aplicativos virtuais. Quando você migra do Configuration Manager 2007 para o System Center Configuration Manager, o Configuration Manager converte esses pacotes em aplicativos.<br /><br /> Os anúncios do Configuration Manager 2007 são convertidos nos seguintes tipos de implantação:<br /><br /> – Migração de pacotes App-V sem anúncios: um tipo de implantação que usa configurações de tipo de implantação padrão.<br /><br /> – Migração de pacotes do App-V com um anúncio: um tipo de implantação que usa as mesmas configurações que o <br />                anúncio do Configuration Manager 2007.<br /><br /> – Migração de pacotes do App-V com vários anúncios: um tipo de implantação para cada <br />                anúncio do Configuration Manager 2007 que usa as mesmas configurações que esse anúncio.|Consulte [Planejamento da migração de objetos do Configuration Manager para o System Center Configuration Manager](../../core/migration/planning-for-the-migration-of-objects.md).|  
+|O System Center Configuration Manager não dá mais suporte usando pacotes e programas que contêm aplicativos virtuais. Quando você migra do Configuration Manager 2007 para o System Center Configuration Manager, o Configuration Manager converte esses pacotes em aplicativos.<br /><br /> Os anúncios do Configuration Manager 2007 são convertidos nos seguintes tipos de implantação:<br /><br /> - Migrando pacotes do App-V sem nenhum anúncio:  um tipo de implantação que usa as configurações padrão de tipo de implantação.<br /><br /> - Migrando pacotes do App-V com um anúncio: um tipo de implantação que usa as mesmas configurações do <br />                anúncio do Configuration Manager 2007.<br /><br /> - Migrando pacotes do App-V com vários anúncios: Um tipo de implantação para cada <br />                anúncio do Configuration Manager 2007 que usa as mesmas configurações que esse anúncio.|Consulte [Planejamento da migração de objetos do Configuration Manager para o System Center Configuration Manager](../../core/migration/planning-for-the-migration-of-objects.md).|  
 
 ##  <a name="migrating-app-v-5-connection-groups-to-configuration-manager-virtual-environments"></a>Migrando grupos de conexão do App-V 5 em ambientes virtuais do Configuration Manager  
 Os ambientes virtuais do App-V no Configuration Manager permitem que os aplicativos virtuais que você implantou compartilhem o mesmo sistema de arquivos e Registro em computadores cliente. Isso significa que, diferentemente dos aplicativos virtuais padrão, esses aplicativos podem compartilhar dados entre si. Os ambientes virtuais são criados ou alterados em computadores cliente quando o aplicativo é instalado ou quando os clientes avaliam seus aplicativos instalados. Os ambientes virtuais são semelhantes aos grupos de conexão no App-V 5 autônomo.  

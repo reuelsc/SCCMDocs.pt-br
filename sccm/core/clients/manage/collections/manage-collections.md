@@ -10,12 +10,13 @@ ms.assetid: e102fd1a-76df-4d8e-b1b0-10ee18318f67
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 03b34c09a5fef63316bb1d9d1a94dbbfc3ccf69f
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 93a502e9c77e05eedba1c2989cbae69e4080832f
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456253"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56133724"
 ---
 # <a name="how-to-manage-collections-in-configuration-manager"></a>Como gerenciar coleções no Configuration Manager
 
@@ -40,7 +41,7 @@ Use as informações de visão geral contidas neste artigo para ajudá-lo a exec
 #### <a name="add-selected-items"></a>Adicionar itens selecionados
  Fornece as seguintes opções: 
 
- - **Adicionar Itens Selecionados à Coleção de Dispositivos Existente**: abre a caixa de diálogo **Selecionar Coleções**. Selecione a coleção à qual você deseja adicionar os membros da coleção selecionada. A coleção selecionada está incluída nesta coleção usando uma regra de associação **Incluir Coleções** .  
+ - **Adicionar Itens Selecionados à Coleção de Dispositivos Existente**: Abra a caixa de diálogo **Selecionar Coleção** . Selecione a coleção à qual você deseja adicionar os membros da coleção selecionada. A coleção selecionada está incluída nesta coleção usando uma regra de associação **Incluir Coleções** .  
 
  - **Adicionar Itens Selecionados à Nova Coleção de Dispositivos**: abre o **Assistente para Criar Coleção de Dispositivos**, em que é possível criar uma nova coleção. A coleção selecionada está incluída nesta coleção usando uma regra de associação **Incluir Coleções** .  
 
@@ -111,7 +112,7 @@ Use as informações de visão geral contidas neste artigo para ajudá-lo a exec
 
  - **Linha de Base de Configuração**: abre a caixa de diálogo **Implantar Linhas de Base de Configuração**. Configure a implementação de uma ou mais linhas de base de configuração para a coleção selecionada. Para obter mais informações, veja [Como implantar linhas de base de configuração](/sccm/compliance/deploy-use/deploy-configuration-baselines).  
 
- - **Sequência de tarefas**: abre o **Assistente de Implantação de Software**. Selecione e configure uma implantação de sequência de tarefas para a coleção selecionada. Para obter mais informações, consulte [Gerenciar sequências de tarefas para automatizar tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  
+ - **Sequência de Tarefas**: abre o **Assistente de Implantação de Software**. Selecione e configure uma implantação de sequência de tarefas para a coleção selecionada. Para obter mais informações, consulte [Gerenciar sequências de tarefas para automatizar tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  
 
  - **Atualizações de Software**: abre o **Assistente para Implantar Atualizações de Software**. Configure a implantação de atualizações de software para recursos na coleção selecionada. Para saber mais, confira [Gerenciar atualizações de software](/sccm/sum/understand/software-updates-introduction).  
 

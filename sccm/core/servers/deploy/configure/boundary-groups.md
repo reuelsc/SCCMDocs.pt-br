@@ -10,12 +10,13 @@ ms.assetid: 5db2926f-f03e-49c7-b44b-e89b1a5a6779
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e9b2eaaf3581bdb951b23541c96532c5b049aac1
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a1062cd5983c3eb0d1353b6387b7d9ee507df3b4
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456355"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56132632"
 ---
 # <a name="configure-boundary-groups-for-configuration-manager"></a>Configurar grupos de limites para o Configuration Manager
 
@@ -158,9 +159,9 @@ Da versão 1810 em diante, quando um dispositivo executa uma sequência de taref
 
 Configure esse comportamento usando as configurações a seguir na página **Pontos de Distribuição** da implantação da sequência de tarefas: 
 
-- **Quando nenhum ponto de distribuição local estiver disponível, use um ponto de distribuição remoto**: para essa implantação, a sequência de tarefas pode reverter os pontos de distribuição em um grupo de limite vizinho.  
+- **Quando não houver nenhum ponto de distribuição local disponível, use um ponto de distribuição remoto**: para essa implantação, a sequência de tarefas pode fazer fallback para pontos de distribuição em um grupo de limites vizinho.  
 
-- **Permitir que clientes usem pontos de distribuição do grupo de limites de site padrão**: para essa implantação, a sequência de tarefas pode ser revertida para pontos de distribuição no grupo de limites de site padrão.  
+- **Permitir que os clientes usem pontos de distribuição do grupo de limites de site padrão**: para essa implantação, a sequência de tarefas pode fazer fallback para pontos de distribuição em um grupo de limites do site padrão.  
 
 Para usar esse novo comportamento, certifique-se de atualizar os clientes para a versão mais recente.
 
@@ -296,7 +297,7 @@ Para obter mais informações sobre o comportamento do cliente para adquirir con
 
 Durante a atualização do cliente, se você não especificar o parâmetro de linha de comando /MP, o cliente consultará fontes como o Active Directory e o WMI em busca de qualquer ponto de gerenciamento disponível. A atualização do cliente não respeita a configuração do grupo de limites. <!--VSO 2841292-->  
 
-Para que os clientes usem essa funcionalidade, habilite a seguinte configuração: **Os clientes preferem usar os pontos de gerenciamento especificados nos grupos de limites** em **Configurações da Hierarquia**. 
+Para usar essa opção, habilite a configuração: **Os clientes preferem usar os pontos de gerenciamento especificados em grupos de limites** em **Configurações da Hierarquia**. 
 
 > [!Note]  
 > Processos de implantação de sistema operacional não estão cientes dos grupos de limites para pontos de gerenciamento.  
@@ -306,13 +307,13 @@ Para que os clientes usem essa funcionalidade, habilite a seguinte configuraçã
 
 Novas entradas aparecem no **LocationServices.log**. O atributo **Localidade** identifica um dos seguintes estados:
 
-- **0**: desconhecido  
+- **0**: Desconhecida  
 
-- **1**: o ponto de gerenciamento especificado está apenas no grupo de limites padrão do site para o fallback  
+- **1**: O ponto de gerenciamento especificado é somente no grupo de limites padrão do site de fallback  
 
-- **2**: o ponto de gerenciamento especificado está em um grupo de limites remoto ou vizinho. Quando o ponto de gerenciamento está em um grupo vizinho ou em grupos de limites padrão do site, a localidade é 2.  
+- **2**: O ponto de gerenciamento especificado está em um grupo de limites remoto ou vizinho. Quando o ponto de gerenciamento está em um grupo vizinho ou em grupos de limites padrão do site, a localidade é 2.  
 
-- **3**: o ponto de gerenciamento especificado está no grupo de limites local ou atual. Quando o ponto de gerenciamento está no grupo de limites atual, bem como em um grupo vizinho ou no grupo de limites padrão do site, a localidade é 3. Se você não habilitar a configuração de pontos de gerenciamento preferenciais nas Configurações de Hierarquia, a localidade será sempre 3, independentemente do grupo de limites em que o ponto de gerenciamento esteja.  
+- **3**: O ponto de gerenciamento especificado está no grupo de limites local ou atual. Quando o ponto de gerenciamento está no grupo de limites atual, bem como em um grupo vizinho ou no grupo de limites padrão do site, a localidade é 3. Se você não habilitar a configuração de pontos de gerenciamento preferenciais nas Configurações de Hierarquia, a localidade será sempre 3, independentemente do grupo de limites em que o ponto de gerenciamento esteja.  
 
 Os clientes usam os pontos de gerenciamento local primeiro (localidade 3), em seguida os remotos (localidade 2) e depois os fallbacks (localidade 1). 
 
@@ -381,7 +382,7 @@ Com essa configuração:
 
 - Se o cliente não conseguir localizar o conteúdo de seu grupo de limites *atual* depois de pesquisar por 10 minutos, ele adicionará os pontos de distribuição do grupo de limites BG_B à sua pesquisa. Ele então continua pesquisando o conteúdo de um ponto de distribuição em seu pool combinado de servidores. Esse pool agora inclui servidores dos grupos de limites BG_A e BG_B. O cliente continua acessando cada ponto de distribuição por dois minutos e, em seguida, alterna para o próximo servidor em seu pool. O pool de clientes dos locais de fonte de conteúdo válidos incluem DP_A1, DP_A2, DP_B1 e DP_B2.  
 
-- Depois de mais 10 minutos (total de 20 minutos), se o cliente ainda não encontra um ponto de distribuição com o conteúdo, ele expande seu pool para incluir os servidores disponíveis do segundo grupo *vizinho*, o grupo de limites BG_C. O cliente agora tem seis pontos de distribuição de pesquisa: DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2. Ele continua mudando para um novo ponto de distribuição a cada dois minutos até encontrar o conteúdo.  
+- Depois de mais 10 minutos (total de 20 minutos), se o cliente ainda não encontra um ponto de distribuição com o conteúdo, ele expande seu pool para incluir os servidores disponíveis do segundo grupo *vizinho*, o grupo de limites BG_C. O cliente agora tem seis pontos de distribuição para pesquisar: DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2. Ele continua mudando para um novo ponto de distribuição a cada dois minutos até encontrar o conteúdo.  
 
 - Se o cliente não tiver encontrado conteúdo depois de um total de 120 minutos, ele realizará o fallback para incluir o *grupo de limites de site padrão* como parte de sua pesquisa contínua. Agora o pool inclui todos os pontos de distribuição dos três grupos de limites configurados e o ponto de distribuição final localizado no servidor do site. O cliente continua, então, a pesquisa do conteúdo, alterando os pontos de distribuição a cada dois minutos até que o conteúdo seja encontrado.  
 

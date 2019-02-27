@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 9afd7b0f-5c8e-48bc-9a65-1f7d74103688
-ms.openlocfilehash: e51e2c8236b014063efe9734baf338ebe70d1eb3
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9399900849ead41118cb727c3ec36cd8345e393b
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384476"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56133098"
 ---
 # <a name="monitor-software-updates-in-system-center-configuration-manager"></a>Monitorar atualizações de software no System Center Configuration Manager
 
@@ -31,13 +32,13 @@ Começando do Configuration Manager versão 1610, é possível usar o Painel de 
 
 -   Configuração de ADR: é possível definir as configurações de alertas no Assistente de Regra de Implantação Automática e nas propriedades da ADR.  
 
--   Configuração de implantação: é possível definir as configurações de alertas no Assistente para Implantar Atualizações de Software e nas propriedades de implantação.  
+-   Configuração de implantação: Você pode definir as configurações de alertas no Assistente para Implantar Atualizações de Software e nas propriedades de implantação.  
 
 Depois de definir as configurações de alerta, se ocorrerem as condições especificadas, o Configuration Manager gerará um alerta. Você pode revisar os alertas de atualização de software nos seguintes locais:  
 
-1.  Reveja alertas recentes no nó **Atualizações de Software** no espaço de trabalho **Biblioteca de Software** .  
+1.  Reveja alertas recentes no nó **Atualizações de Software** no workspace **Biblioteca de Software**.  
 
-2.  Gerencie os alertas configurados no nó **Alertas** no espaço de trabalho **Monitoramento** .  
+2.  Gerencie os alertas configurados no nó **Alertas** no workspace **Monitoramento**.  
 
 ##  <a name="BKMK_SUSyncStatus"></a> Status da sincronização de atualizações de software  
  Após iniciar o processo de sincronização, você poderá monitorar o processo de sincronização do console do Configuration Manager para todos os pontos de atualização de software da hierarquia. Use o procedimento a seguir para monitorar o processo de sincronização de atualização de software.  
@@ -68,9 +69,9 @@ A seguir há alguns dos relatórios que são úteis para a identificação de po
 #### <a name="compliance-9---overall-health-and-compliance-starting-in-version-1806"></a>Conformidade 9 – integridade e conformidade gerais (começando na versão 1806)
 O relatório inclui as seguintes partes:
 
-- **Clientes Íntegro vs Total de Clientes**: esse gráfico de barras compara os clientes "íntegros" que se comunicaram com o site no período de tempo especificado em relação ao número total de clientes na coleção especificada.
-- **Visão Geral de Conformidade**: esse gráfico de pizza mostra o estado de conformidade geral do grupo de atualização de software específico em clientes ativos na coleção especificada.
-- **Cinco principais atualizações sem conformidade por ID de artigo**: esse gráfico de barras exibe as cinco principais atualizações de software no grupo especificado que estão fora de conformidade em clientes ativos na coleção especificada.
+- **Clientes Íntegros versus Total de Clientes**: esse gráfico de barras compara os clientes "íntegros" que se comunicaram com o site no período de tempo especificado em relação ao número total de clientes na coleção especificada.
+- **Visão geral de conformidade**: esse gráfico de pizza mostra o estado de conformidade geral do grupo de atualização de software específico em clientes ativos na coleção especificada.
+- **Cinco principais fora de conformidade por ID do artigo**: esse gráfico de barras exibe as cinco principais atualizações de software no grupo especificado que estão fora de conformidade em clientes ativos na coleção especificada.
 - A parte inferior do relatório é uma tabela com mais detalhes, que lista as atualizações de software no grupo especificado.
 
 #### <a name="management-2---updates-required-but-not-deployed"></a>gerenciamento 2 - Atualizações necessárias, mas não implantadas
@@ -86,7 +87,7 @@ Este relatório retorna os erros de implantação no site e uma contagem dos com
  Você pode monitorar o conteúdo no console do Configuration Manager para revisar o status de todos os tipos de pacotes em relação aos pontos de distribuição associados. Isso pode incluir o status de validação do conteúdo para o conteúdo no pacote, o status do conteúdo atribuído a um grupo de ponto de distribuição específico, o estado do conteúdo atribuído a um ponto de distribuição e o status de recursos opcionais para cada ponto de distribuição (validação de conteúdo, PXE e multicast).  
 
 ###  <a name="BKMK_ContentStatus"></a> Monitoramento de status do conteúdo  
- O nó **Status do Conteúdo** no espaço de trabalho **Monitoramento** fornece informações sobre os pacotes de conteúdo. Você pode revisar informações gerais sobre o pacote, status de distribuição para o pacote e informações de status detalhadas sobre o pacote. Use o procedimento a seguir para exibir o status do conteúdo.  
+ O nó **Status do Conteúdo** no workspace **Monitoramento** fornece informações sobre os pacotes de conteúdo. Você pode revisar informações gerais sobre o pacote, status de distribuição para o pacote e informações de status detalhadas sobre o pacote. Use o procedimento a seguir para exibir o status do conteúdo.  
 
 #### <a name="to-monitor-content-status"></a>Para monitorar o status do conteúdo  
 
@@ -97,7 +98,7 @@ Este relatório retorna os erros de implantação no site e uma contagem dos com
 3.  Na guia **Início** , clique em **Exibir Status**. As informações detalhadas de status para o pacote são exibidas.  
 
 ###  <a name="BKMK_DPGroupStatus"></a> Status do grupo de pontos de distribuição  
- O nó **Status do Grupo de Pontos de Distribuição** no espaço de trabalho **Monitoramento** fornece informações sobre grupos de pontos de distribuição. Você pode rever informações sobre o grupo de pontos de distribuição, como o status do grupo de pontos de distribuição e a taxa de conformidade, bem como informações detalhadas do status do grupo de pontos de distribuição. Use o procedimento a seguir para exibir o status do grupo de pontos de distribuição.  
+ O nó **Status do Grupo de Pontos de Distribuição** no workspace **Monitoramento** fornece informações sobre grupos de pontos de distribuição. Você pode rever informações sobre o grupo de pontos de distribuição, como o status do grupo de pontos de distribuição e a taxa de conformidade, bem como informações detalhadas do status do grupo de pontos de distribuição. Use o procedimento a seguir para exibir o status do grupo de pontos de distribuição.  
 
 #### <a name="to-monitor-distribution-point-group-status"></a>Para monitorar o status do grupo de pontos de distribuição  
 
@@ -108,7 +109,7 @@ Este relatório retorna os erros de implantação no site e uma contagem dos com
 3.  Na guia **Início** , clique em **Exibir Status**. As informações detalhadas de status para o grupo de pontos de distribuição são exibidas.  
 
 ###  <a name="BKMK_DPConfigStatus"></a> Status de configuração do ponto de distribuição  
- O nó **Status de Configuração de Pontos de Distribuição** no espaço de trabalho **Monitoramento** fornece informações sobre o ponto de distribuição. Você pode rever quais atributos estão habilitados para o ponto de distribuição, como o PXE, Multicast e validação de conteúdo. É possível também exibir informações detalhadas para o ponto de distribuição. Use o procedimento a seguir para exibir o status de configuração de pontos de distribuição.  
+ O nó **Status de Configuração de Pontos de Distribuição** no workspace **Monitoramento** fornece informações sobre o ponto de distribuição. Você pode rever quais atributos estão habilitados para o ponto de distribuição, como o PXE, Multicast e validação de conteúdo. É possível também exibir informações detalhadas para o ponto de distribuição. Use o procedimento a seguir para exibir o status de configuração de pontos de distribuição.  
 
 #### <a name="to-monitor-distribution-point-configuration-status"></a>Para monitorar o status de configuração de pontos de distribuição  
 

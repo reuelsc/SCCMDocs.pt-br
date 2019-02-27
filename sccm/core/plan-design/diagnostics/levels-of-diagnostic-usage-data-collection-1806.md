@@ -10,12 +10,13 @@ ms.assetid: a0287beb-70a9-4b57-a627-e7bfba27fd3b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d964295134538cf281af214830a5bc416484be51
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4bfd2a4cef78b6674e6f288483190ca7c48542fe
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893664"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56131907"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1806"></a>Níveis da coleta de dados de diagnóstico e de uso para a versão 1806
 
@@ -43,7 +44,7 @@ O nível Básico inclui dados sobre sua hierarquia, dados necessários para ajud
 
 Para o Configuration Manager versão 1806, esse nível inclui os seguintes dados:
 
-- Estatísticas sobre as conexões do console do Configuration Manager: versão de sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versões do .NET instaladas e pacotes de idiomas do console
+- Estatísticas sobre as conexões de console do Configuration Manager: versão do sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versões do .NET instaladas e pacotes de idiomas do console
 
 - Contagens básicas de tipo de implantação e de aplicativo: total de aplicativos, total de aplicativos com vários tipos de implantação, total de aplicativos com dependências, total de aplicativos substituídos e contagem de tecnologias de implantação em uso
 
@@ -92,7 +93,7 @@ Para o Configuration Manager versão 1806, esse nível inclui os seguintes dados
 
      - Versão do script pós-atualização
 
-- Versão do SQL, nível do service pack, edição, ID de agrupamento e conjunto de caracteres     
+- Versão do SQL, nível do service pack, edição, ID de ordenação e conjunto de caracteres     
 
 - Estatísticas de diagnóstico e dados de uso: quando executar, tempo de execução, erros
 
@@ -516,7 +517,7 @@ Para o Configuration Manager versão 1806, esse nível inclui os seguintes dados
 
 - Estatísticas de política de conformidade em relação a conformidade e erros
 
-- Configurações de conformidade: detalhes de configuração de protocolo SCEP, VPN, Wi-Fi e de modelo de política de conformidade
+- Configurações de conformidade: Detalhes de configuração do modelo de SCEP, VPN, Wi-Fi e de política de conformidade
 
 - Pacote de configuração do DCM para uso do System Center Configuration Manager
 

@@ -10,12 +10,13 @@ ms.assetid: 8cdb22a6-72d7-41f5-9bed-c098b1bcf675
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ae137cae29d49413ca11668ff0cc744168e91e21
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d0a32357001f37f537f13fe85e71a41f9cb658ac
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383670"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56122433"
 ---
 # <a name="manage-apps-from-the-microsoft-store-for-business-with-configuration-manager"></a>Gerenciar aplicativos da Microsoft Store para Empresas com o Configuration Manager
 
@@ -82,7 +83,7 @@ Em seguida, ocorrem os seguintes comportamentos:
 
 - O usuário precisa concluir a instalação pela loja  
 
-- No console do Configuration Manager, o status de implantação do aplicativo relata falha com o seguinte erro: "O aplicativo da Microsoft Store foi aberto no computador cliente e está esperando o usuário concluir a instalação."  
+- No console do Configuration Manager, o status de implantação do aplicativo relata falha com o seguinte erro: “O aplicativo da Microsoft Store foi aberto no computador cliente e está aguardando que o usuário conclua a instalação.”  
 
 No próximo ciclo de avaliação do aplicativo:  
 
@@ -136,7 +137,7 @@ Na página **Configurações** do Assistente de Serviços do Azure, especifique 
 
 Após a sincronização, crie e implante os aplicativos da loja como qualquer outro aplicativo.
 
-1.  No espaço de trabalho **Biblioteca de Software** do console do Configuration Manager, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.  
+1.  No workspace **Biblioteca de Software** do console do Configuration Manager, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.  
 
 2.  Escolha o aplicativo que deseja implantar e clique em **Criar Aplicativo** na faixa de opções.  
 
@@ -153,7 +154,7 @@ Em seguida, implante e monitore o aplicativo, como você faria com qualquer outr
 
 ## <a name="next-steps"></a>Próximas etapas
 
-No espaço de trabalho **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.
+No workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e clique em **Informações sobre Licença para Aplicativos da Loja**.
 
 É possível exibir as seguintes informações sobre cada aplicativo da loja que você gerencia:
 - Nome do aplicativo

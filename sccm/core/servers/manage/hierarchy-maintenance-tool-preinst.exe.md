@@ -10,12 +10,13 @@ ms.assetid: cead6825-6113-4ba5-a381-ac3598dfee86
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4dd1bf9b4085b6e1591d5841bfc307398505f5d1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 87819530c5a37885c66611da0ba66c1a8872ac57
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340770"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156620"
 ---
 # <a name="hierarchy-maintenance-tool-preinstexe-for-system-center-configuration-manager"></a>Ferramenta de Manutenção de Hierarquia (Preinst.exe) para o System Center Configuration Manager
 
@@ -104,7 +105,7 @@ Você pode usar a ferramenta de Manutenção de Hierarquia para exportar as chav
 
 1.  Enquanto conectado ao site filho, abra um prompt de comando e navegue para a localização do **Preinst.exe**.  
 
-2.  Para exportar a chave pública do site filho, digite: **Preinst /keyforparent**  
+2.  Digite o seguinte para exportar a chave pública do site filho: **Preinst /keyforparent**  
 
 3.  A opção /keyforparent coloca a chave pública do site filho no arquivo **&lt;código do site\>.CT4** localizado na raiz da unidade do sistema.  
 

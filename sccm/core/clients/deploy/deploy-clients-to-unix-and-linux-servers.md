@@ -10,12 +10,13 @@ ms.assetid: 15a4e323-9f42-4fea-bb14-f2b905d1f77c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7caffbbccfa53ef4e502685263cb0d81c6e83535
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a94cb1338e010bfbd9ed1e2ecf7bdb5ba2418390
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336626"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120684"
 ---
 # <a name="how-to-deploy-clients-to-unix-and-linux-servers-in-system-center-configuration-manager"></a>Como implantar clientes para servidores UNIX e Linux no System Center Configuration Manager
 
@@ -84,7 +85,7 @@ Cada pacote de instalação de cliente contém todos os arquivos necessários pa
 
      Quando você digitar esse comando, use propriedades de linha de comando adicionais que você precisar.  Para obter a lista das propriedades de linha de comando, veja [Propriedades de linha de comando para instalar o cliente em servidores Linux e UNIX](#BKMK_CmdLineInstallLnUClient)  
 
-6.  Após o script ser executado, valide a instalação ao examinar o arquivo **/var/opt/microsoft/scxcm.log** . Além disso, é possível confirmar se o cliente está instalado e se comunicando com o site exibindo detalhes do cliente no nó **Dispositivos** do espaço de trabalho **Ativos e Conformidade** do console do Configuration Manager.  
+6.  Após o script ser executado, valide a instalação ao examinar o arquivo **/var/opt/microsoft/scxcm.log** . Além disso, é possível confirmar se o cliente está instalado e se comunicando com o site exibindo detalhes do cliente no nó **Dispositivos** do workspace **Ativos e Conformidade** do console do Configuration Manager.  
 
 ###  <a name="BKMK_CmdLineInstallLnUClient"></a> Propriedades de linha de comando para instalar o cliente em servidores Linux e UNIX  
  As seguintes propriedades estão disponíveis para modificar o comportamento do script de instalação:  
@@ -145,7 +146,7 @@ Cada pacote de instalação de cliente contém todos os arquivos necessários pa
 
      Se você não usar essa propriedade para especificar um certificado PKI, o cliente usa um certificado autoassinado e todas as comunicações com sistemas de site são via HTTP.  
 
-     Se você especificar um certificado inválido na linha de comando de instalação de cliente, nenhum erro será retornado. Isso ocorre porque a validação de certificado ocorre depois que o cliente é instalado. Quando o cliente é iniciado, os certificados são validados com o ponto de gerenciamento e se um certificado não passam na validação a seguinte mensagem aparece no **scxcm.log**, o arquivo de log de cliente do Unix e Linux Configuration Manager: **Falha validar o certificado do ponto de gerenciamento**. O local do arquivo de log padrão é:  **/var/opt/microsoft/scxcm.log**.  
+     Se você especificar um certificado inválido na linha de comando de instalação de cliente, nenhum erro será retornado. Isso ocorre porque a validação de certificado ocorre depois que o cliente é instalado. Quando o cliente é iniciado, os certificados são validados com o ponto de gerenciamento e, se um certificado não passa na validação, a seguinte mensagem aparece em **scxcm.log**, o arquivo de log de cliente do Configuration Manager para Unix e Linux: **Falha ao validar o certificado de ponto de gerenciamento**. O local do arquivo de log padrão é:  **/var/opt/microsoft/scxcm.log**.  
 
     > [!NOTE]  
     >  Você deve especificar essa propriedade ao instalar um cliente e usar a propriedade **-mp** para especificar um ponto de gerenciamento que seja configurado para aceitar somente conexões de clientes via HTTPS.  

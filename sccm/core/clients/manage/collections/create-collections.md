@@ -10,12 +10,13 @@ ms.assetid: 1401a35e-4312-4d3b-8ceb-0abbb10d4f05
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c314cba909929ee49355eab59dfc813aab7e393e
-ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6235f3f58d8688d9ceee11e1b4be05a2df21a509
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "42584407"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56141112"
 ---
 # <a name="how-to-create-collections-in-system-center-configuration-manager"></a>Como criar coleções no System Center Configuration Manager
 
@@ -75,7 +76,7 @@ Coleções são grupos de usuários ou dispositivos. Use coleções para tarefas
 
 -   **Importar Instrução de Consulta** – Abre a caixa de diálogo **Procurar Consulta**, em que é possível selecionar uma [consulta do Configuration Manager](../../../../core/servers/manage/create-queries.md) a ser usada como a regra de consulta para a coleção.   
 
--   **Classe de recurso:** selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione um dos valores de **Recursos do Sistema** para pesquisar dados de inventário retornados de computadores cliente ou **Computador Desconhecido** para selecionar valores retornados por computadores desconhecidos.  
+-   **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione um dos valores de **Recursos do Sistema** para pesquisar dados de inventário retornados de computadores cliente ou **Computador Desconhecido** para selecionar valores retornados por computadores desconhecidos.  
 
 -   **Editar Instrução de Consulta** – Abre a caixa de diálogo **Propriedades da Instrução da Consulta**, em que é possível criar uma consulta a ser usada como a regra para a coleção. Para obter mais informações sobre consultas, consulte [Referência técnica de consultas no System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md).  
 
@@ -110,7 +111,7 @@ Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que voc�
 
 -   **Agendar uma atualização completa para esta coleção** – Agende uma avaliação completa regular da associação da coleção.  
 
-6.  Conclua o assistente para criar a nova coleção. A nova coleção é exibida no nó **Coleções de Dispositivos** do espaço de trabalho **Ativos e Conformidade** .  
+6.  Conclua o assistente para criar a nova coleção. A nova coleção é exibida no nó **Coleções de Dispositivos** do workspace **Ativos e Conformidade**.  
 
 > [!NOTE]  
 >  É necessário atualizar ou recarregar o console do Configuration Manager para ver os membros da coleção. No entanto, os membros não aparecerão na coleção até depois da primeira atualização agendada ou se você selecionar manualmente **Atualizar Associação** para a coleção. Pode levar alguns minutos para concluir uma atualização da coleção.  
@@ -182,7 +183,7 @@ Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que voc�
 
 -   **Agendar uma atualização completa para esta coleção** – Agende uma avaliação completa regular da associação da coleção.  
 
-6.  Conclua o assistente. A nova coleção é exibida no nó **Coleções de Usuários** do espaço de trabalho **Ativos e Conformidade** .  
+6.  Conclua o assistente. A nova coleção é exibida no nó **Coleções de Usuários** do workspace **Ativos e Conformidade**.  
 
 > [!NOTE]  
 >  É necessário atualizar ou recarregar o console do Configuration Manager para ver os membros da coleção. No entanto, os membros não aparecerão na coleção até após a primeira atualização agendada ou selecionar manualmente **Atualizar Associação** para a coleção. Pode levar alguns minutos para concluir uma atualização da coleção.  
@@ -200,4 +201,4 @@ Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que voc�
     > [!NOTE]  
     >  O arquivo que você deseja importar deve ter sido exportado de um site que executa a mesma versão do Configuration Manager que esse. Para obter mais informações sobre como exportar coleções, consulte [Como gerenciar coleções no System Center Configuration Manager](../../../../core/clients/manage/collections/manage-collections.md).  
 
-6.  Conclua o assistente para importar a coleção. A nova coleção é exibida no nó **Coleções de Usuários** ou **Coleções de Dispositivos** do espaço de trabalho **Ativos e Conformidade** . Atualize ou recarregue o console do Configuration Manager para ver os membros da coleção recém-importada.  
+6.  Conclua o assistente para importar a coleção. A nova coleção é exibida no nó **Coleções de Usuários** ou **Coleções de Dispositivos** do workspace **Ativos e Conformidade**. Atualize ou recarregue o console do Configuration Manager para ver os membros da coleção recém-importada.  

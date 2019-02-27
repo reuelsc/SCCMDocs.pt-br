@@ -10,12 +10,13 @@ ms.assetid: 1b931c9d-ffae-4d8e-baa7-c330a152674f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 424ab2a1ca7ed81ccdb5c0607edd74ec8ccb7484
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4d759ada36184ac8a6d1ac59c94c96cdaf234d56
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52457993"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139367"
 ---
 # <a name="accessibility-features-in-support-center"></a>Recursos de acessibilidade no Centro de Suporte
 
@@ -59,15 +60,15 @@ Você também pode usar um teclado para executar tarefas comuns no Centro de sup
 |Abrir arquivos de log no modo de exibição atual<br>(na guia **Logs** do Centro de Suporte e na janela do Visualizador de Log)|**Ctrl** + **Shift** + **O** |
 |Abrir arquivos de log em uma nova janela do Visualizador de Log<br>(na guia **Logs** do Centro de Suporte e na janela do Visualizador de Log)|**Ctrl** + **N** |
 |Fechar todos os arquivos de log<br>(na guia **Logs** do Centro de Suporte e na janela do **Visualizador de Log**)|**Ctrl** + **W** |
-|Pesquisar nos arquivos de log| - **CTRL** + **F**: abre a caixa de diálogo **Localizar** para inserir a cadeia de caracteres de pesquisa<br> - **F3**: localizar a próxima correspondência<br> - **SHIFT** + **F3**: localizar a correspondência anterior|
+|Pesquisar nos arquivos de log| - **Ctrl** + **F**: abrir a caixa de diálogo **Localizar** para inserir uma cadeia de caracteres de pesquisa<br> - **F3**: localizar a próxima correspondência<br> - **Shift** + **F3**: localizar a correspondência anterior|
 |Pesquisar um código de erro<br>(na guia **Logs** e na janela do **Visualizador de Log**)|**Ctrl** + **L** |
-|Copiar de um arquivo de log| - **Ctrl** + **C**: copia o texto do arquivo de log<br> - **Ctrl** + **Shift** + **C**: copia a entrada de log sem formatação|
+|Copiar de um arquivo de log| - **Ctrl** + **C**: Copia o texto do arquivo de log<br> - **Ctrl** + **Shift** + **C**: Copia a entrada de log sem formatação|
 |Filtro rápido usando o texto do arquivo de log<br>(na guia **Logs** e na janela do **Visualizador de Log**)|**Ctrl** + **Shift** + **C** |
 |Anotar um arquivo de log<br>(na guia **Logs** e na janela do **Visualizador de Log**)|**Ctrl** + **Shift** + **N** <sup>[Observação 1](#bkmk_note1)</sup>|
 |Abrir a Ajuda|**F1**|
 
 
-#### <a name="bkmk_note1"></a> Observação 1: anotar um arquivo de log
+#### <a name="bkmk_note1"></a> Observação 1: Anotar um arquivo de log
 O Centro de Suporte armazena as anotações na memória. Você só pode usá-las dentro de uma sessão de exibição de log. Para manter uma anotação para uso futuro, obtenha uma captura de tela para salvar a imagem resultante.
 
 

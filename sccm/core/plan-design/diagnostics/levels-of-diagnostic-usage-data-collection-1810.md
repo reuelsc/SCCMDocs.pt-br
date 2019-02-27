@@ -10,12 +10,13 @@ ms.assetid: bce9e299-7b3a-4f51-8863-a322877daa2c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c6dd50d137cdc570b7e37cd96fb310c85ba60840
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 52c13109710fc35dcd2853f76188ac42269a8058
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52457997"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120054"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1810"></a>Níveis de coleta de dados de uso de diagnóstico para a versão 1810
 
@@ -42,7 +43,7 @@ O nível básico inclui dados sobre sua hierarquia. É necessário para ajudar a
 
 Para o Configuration Manager versão 1810, esse nível inclui os seguintes dados:
 
-- Estatísticas sobre as conexões do console do Configuration Manager: versão de sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versões do .NET instaladas e pacotes de idiomas do console
+- Estatísticas sobre as conexões de console do Configuration Manager: versão do sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versões do .NET instaladas e pacotes de idiomas do console
 
 - Contagens básicas de tipo de implantação e de aplicativo: total de aplicativos, total de aplicativos com vários tipos de implantação, total de aplicativos com dependências, total de aplicativos substituídos e contagem de tecnologias de implantação em uso
 
@@ -547,7 +548,7 @@ Para o Configuration Manager versão 1810, esse nível inclui os seguintes dados
 
 - Estatísticas de política de conformidade em relação a conformidade e erros  
 
-- Configurações de conformidade: detalhes de configuração de protocolo SCEP, VPN, Wi-Fi e de modelo de política de conformidade  
+- Configurações de conformidade: Detalhes de configuração do modelo de SCEP, VPN, Wi-Fi e de política de conformidade  
 
 - Pacote de configuração do DCM para uso do Configuration Manager  
 

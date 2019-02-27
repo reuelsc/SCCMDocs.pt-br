@@ -10,12 +10,13 @@ ms.assetid: 5cb41e2b-4c79-4da9-a432-ff869c0870f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5a9865a591f6947447ebb088b5e5e25db1e9fa54
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 026c6e5646983f815572974d5aaa67746178c03b
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52457986"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156450"
 ---
 # <a name="support-center-quickstart-guide"></a>Guia de início rápido do Centro de Suporte
 
@@ -35,7 +36,7 @@ Criar um arquivo completo do *pacote de solução de problemas* que captura o es
 
 
 
-## <a name="step-1-create-a-data-bundle-on-a-local-client"></a>Etapa 1: Criar um pacote de dados em um cliente local
+## <a name="step-1-create-a-data-bundle-on-a-local-client"></a>Etapa 1: Criar um conjunto de dados em um cliente local
 
 1.  Instale o Centro de Suporte no cliente do Configuration Manager.  
 
@@ -47,7 +48,7 @@ Criar um arquivo completo do *pacote de solução de problemas* que captura o es
 
 
 
-## <a name="step-2-view-the-data-bundle-using-support-center-viewer"></a>Etapa 2: exibir um pacote de dados usando o Visualizador do Centro de Suporte
+## <a name="step-2-view-the-data-bundle-using-support-center-viewer"></a>Etapa 2: Exibir um pacote de dados usando o Visualizador do Centro de Suporte
 
 1.  Abra o **Visualizador do Centro de Suporte**. Essa ação pode acontecer em qualquer computador no qual você instala o Centro de suporte.  
 
@@ -75,15 +76,15 @@ Criar um arquivo completo do *pacote de solução de problemas* que captura o es
 
 Além dessas capacidades básicas, o Centro de Suporte também pode coletar uma grande variedade de outras informações de estado do cliente. Abra **Centro de Suporte** e selecione **Coletar Todos os Dados**. Esse processo normalmente tem duração de alguns minutos, mesmo em computadores mais recentes. O Centro de Suporte coleta os dados adicionais a seguir:
 
-  - **Política**: colete as configurações de política do Configuration Manager, incluindo a configuração da política solicitada e a configuração da política real  
+  - **Política**: configurações de política do Configuration Manager, incluindo a configuração da política solicitada e a configuração da política real  
 
-  - **Certificados**: informações de chave pública para certificados de cliente. O Centro de Suporte não coleta as chaves privadas do certificado.  
+  - **Certificados**: informações de chave pública para certificados do cliente. O Centro de Suporte não coleta as chaves privadas do certificado.  
 
   - **Registro de cliente**: coleta informações de configuração de cliente do Registro. O Centro de Suporte coleta apenas as informações de Registro do Configuration Manager.  
 
-  - **Cliente WMI**: informações de configuração do cliente do WMI. O Centro de Suporte não coleta política do cliente.  
+  - **WMI cliente**: informações de configuração de cliente da WMI. O Centro de Suporte não coleta política do cliente.  
 
   - **Solução de problemas**: solução de problemas em tempo real para ajudar a diagnosticar problemas comuns de cliente do Active Directory, pontos de gerenciamento, rede, atribuições de política e registro.  
 
-  - **Despejos de depuração**: execute o despejo de depuração do cliente e processos relacionados. Despejos de depuração podem ser grandes. Somente habilite essa opção ao realizar a solução de problemas de desempenho do cliente.  
+  - **Despejos de depuração**: execute um despejo de depuração do cliente e dos processos relacionados. Despejos de depuração podem ser grandes. Somente habilite essa opção ao realizar a solução de problemas de desempenho do cliente.  
 
