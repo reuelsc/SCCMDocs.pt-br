@@ -5,18 +5,18 @@ description: Saiba mais sobre os recursos e as funcionalidades do Centro de Soft
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 07/30/2018
+ms.date: 02/20/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da01c741107d4eb4a707f7f0d8ada5d82706f292
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: eacd1d1be2564b718423b9d0db8d24b60aac1adb
+ms.sourcegitcommit: 369db96ee84299b5ab6d74b177e6366b3017fc54
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56119884"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56589910"
 ---
 # <a name="software-center-user-guide"></a>Guia do usuário do Centro de Software
 
@@ -45,7 +45,7 @@ Clique na guia **Aplicativos** para encontrar e instalar aplicativos implantados
 - **Todos**: mostra todos os aplicativos que podem ser instalados
 - **Obrigatório**: o administrador de TI impõe esses aplicativos. Se você desinstalar um desses aplicativos, o Centro de Software o reinstalará.
 - **Filtros**: o administrador de TI pode criar categorias de aplicativos. Se estiver disponível, clique na lista suspensa para filtrar a exibição somente com os aplicativos de uma categoria específica. Selecione **Todos** para mostrar todos os aplicativos.
-- **Classificar por**: reorganize a lista de aplicativos. Por padrão, essa lista é classificada pelo **Mais recente**.
+- **Classificar por**: reorganize a lista de aplicativos. Por padrão, essa lista é classificada pelo **Mais recente**. Os aplicativos disponibilizados recentemente são listados com uma marca **Novo** que fica visível por sete dias.
 - **Pesquisar**: ainda não está encontrando o que procura? Insira palavras-chave na caixa de pesquisa para encontrá-lo!
 -  **Alternar a exibição**: clique nos ícones para alternar a exibição entre a exibição de lista e a exibição de bloco. Por padrão, a lista de aplicativos é mostrada como blocos gráficos. 
     - Exibição de bloco: o administrador de TI pode personalizar os ícones. Abaixo de cada bloco, são exibidos o nome do aplicativo, o distribuidor e a versão. 
