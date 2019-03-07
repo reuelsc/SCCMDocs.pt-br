@@ -5,18 +5,18 @@ description: Saiba como preparar os dispositivos baseados na internet do Windows
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 01/14/2019
+ms.date: 03/05/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbe26eee8b01c581776b1c134e1fe59cf4293e1a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 31779b3588617816df4309461ed7715b20b0abd4
+ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56754519"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57558024"
 ---
 # <a name="how-to-prepare-internet-based-devices-for-co-management"></a>Como preparar os dispositivos baseados na internet para o cogerenciamento
 
@@ -51,7 +51,9 @@ Para obter mais informações, consulte [adicionar dispositivos na Microsoft Sto
 ### <a name="autopilot-for-existing-devices"></a>AutoPilot para dispositivos existentes
 <!--1358333-->
 
-[Windows Autopilot para dispositivos existentes](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) está disponível o Windows 10, versão 1809 ou posterior. Esse recurso permite que você recriar a imagem e provisionar um dispositivo com Windows 7 para [modo controlada pelo usuário do Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) usando uma sequência de tarefas do Configuration Manager única e nativo. 
+[Windows Autopilot para dispositivos existentes](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) está disponível no Windows 10, versão 1809 ou posterior. Esse recurso permite que você recriar a imagem e provisionar um dispositivo com Windows 7 para [modo controlada pelo usuário do Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) usando uma sequência de tarefas do Configuration Manager única e nativo. 
+
+Para obter mais informações, consulte [Windows Autopilot para sequência de tarefas de dispositivos existentes](/sccm/osd/deploy-use/windows-autopilot-for-existing-devices).
 
 
 
@@ -87,6 +89,11 @@ A linha de comando a seguir está um exemplo: `CCMSETUPCMD="CCMHOSTNAME=contoso.
     
      Para obter mais informações, consulte [planejando CRLs](/sccm/core/plan-design/security/plan-for-security#-plan-for-the-site-server-signing-certificate-self-signed)  
 
+Começando na versão 1810, para o site adicionais do Azure publica informações sobre o anúncio para o gateway de gerenciamento de nuvem (CMG). Um cliente associado ao Azure AD obtém essas informações do CMG durante o processo ccmsetup, usando o mesmo locatário ao qual ele está associado. Esse comportamento simplifica ainda mais o registro de dispositivos para o cogerenciamento em um ambiente com mais de um locatário do Azure AD. Agora são apenas duas propriedades de ccmsetup necessárias **CCMHOSTNAME** e **SMSSiteCode**.<!--3607731-->
+
+> [!Note]
+> Se você já estiver implantando o cliente do Configuration Manager do Intune, atualize o aplicativo do Intune com uma nova linha de comando e o novo MSI. <!-- SCCMDocs-pr issue 3084 -->
+
 O exemplo a seguir inclui todas essas propriedades:   
 `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver SMSMP=https://mp1.contoso.com`
 
@@ -102,6 +109,9 @@ Para obter mais informações, consulte [Propriedades de instalação do cliente
 3. Em **Outros**, selecione **Aplicativo de linha de negócios**.  
 
 4. Carregar o **CCMSetup** arquivo de pacote do aplicativo. Encontrar esse arquivo na seguinte pasta no Gerenciador de configuração do servidor do site: `<ConfigMgr installation directory>\bin\i386`.  
+
+    > [!Tip]  
+    > Quando você atualiza o site, certifique-se de que atualizar também esse aplicativo no Intune.  
 
 5. Depois que o aplicativo for atualizado, configure as informações do aplicativo com a linha de comando que você copiou do Configuration Manager.  
 
