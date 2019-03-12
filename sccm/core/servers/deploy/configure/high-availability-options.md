@@ -2,7 +2,7 @@
 title: Alta disponibilidade
 titleSuffix: Configuration Manager
 description: Aprenda a implantar o Configuration Manager usando as opções que mantêm um alto nível de serviço disponível.
-ms.date: 07/30/2018
+ms.date: 03/06/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b69fac83283963e49b01c733fb8fa3000702cfb
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 424b841360efbebef96ba5980c4ea7a45995ea0a
+ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132159"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57562119"
 ---
 # <a name="high-availability-options-for-configuration-manager"></a>Opções de alta disponibilidade para o Configuration Manager
 
@@ -214,6 +214,8 @@ Vários sistemas de site não dão suporte a múltiplas instâncias em um site o
 > Esta seção se aplica somente às versões do Configuration Manager 1802 e anteriores. Da versão 1806 em diante, o Configuration Manager fornece uma opção de alta disponibilidade para o servidor do site. Para obter mais informações, confira [Alta disponibilidade do servidor do Site](/sccm/core/servers/deploy/configure/site-server-high-availability).  
 
 O Configuration Manager não dá suporte à instalação do servidor do site para cada site em um cluster do Windows Server ou NLB.  
+
+Da versão 1810 em diante, o processo de instalação do Configuration Manager não bloqueia mais a instalação da função de servidor de site em um computador com a função do Windows para clustering de failover. O Always On do SQL requer essa função; portanto, anteriormente não era possível colocar o banco de dados do site no servidor do site. Com essa alteração, é possível criar um site altamente disponível com menos servidores usando o Always On do SQL e um servidor do site no modo passivo. <!--3607761, fka 1359132-->  
 
 As informações a seguir podem ajudá-lo a se preparar caso o servidor do site falhe ou não esteja operacional:  
 
