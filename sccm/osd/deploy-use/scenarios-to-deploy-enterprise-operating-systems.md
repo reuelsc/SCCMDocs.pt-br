@@ -1,8 +1,8 @@
 ---
 title: Cenários para implantar sistemas operacionais corporativos
 titleSuffix: Configuration Manager
-description: Conheça vários cenários para implantar sistemas operacionais corporativos com o System Center Configuration Manager.
-ms.date: 10/06/2016
+description: Conheça vários cenários para implantar sistemas operacionais corporativos com o Configuration Manager.
+ms.date: 02/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,53 +11,46 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92b968a8dae63d15e087e098452b56b0397c7b78
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: f6d34c3d8dfa753934f03337d68e989a8bf8fcd7
+ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137568"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56838694"
 ---
-# <a name="scenarios-to-deploy-enterprise-operating-systems-with-system-center-configuration-manager"></a>Cenários para implantar sistemas operacionais corporativos com o System Center Configuration Manager
+# <a name="scenarios-to-deploy-enterprise-operating-systems-with-configuration-manager"></a>Cenários para implantar sistemas operacionais corporativos com o Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Os seguintes cenários de implantação de sistema operacional estão disponíveis no System Center Configuration Manager:  
+Os seguintes cenários de implantação de sistema operacional estão disponíveis no Configuration Manager:  
 
--   [Atualizar o Windows para a versão mais recente](upgrade-windows-to-the-latest-version.md): esse cenário atualiza o sistema operacional em computadores que executam Windows 7, Windows 8, Windows 8.1 ou Windows 10 no momento. O processo de atualização mantém os aplicativos, as configurações e os dados do usuário no computador. Não há dependências externas, como o Windows ADK, e esse processo é mais rápido e mais resiliente do que as implantações tradicionais de sistema operacional.  
+#### <a name="upgrade-windows-to-the-latest-version"></a>Atualizar o Windows para a última versão
+Este cenário atualiza o sistema operacional em computadores que atualmente executam o Windows 7, Windows 8.1 ou o Windows 10. O processo de atualização mantém os aplicativos, as configurações e os dados do usuário no computador. Não há dependências externas, como o Windows ADK. Esse processo pode ser mais rápido e mais resiliente do que as implantações tradicionais de sistema operacional.  
 
--   [Atualizar um computador existente com uma nova versão do Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md): esse cenário particiona e formata (apaga) um computador existente e instala um novo sistema operacional no computador. É possível migrar configurações e dados do usuário após a instalação do sistema operacional.  
+Para obter mais informações, confira [Atualizar o Windows para a versão mais recente](/sccm/osd/deploy-use/upgrade-windows-to-the-latest-version).
 
--   [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](install-new-windows-version-new-computer-bare-metal.md): esse cenário instala um sistema operacional em um novo computador. Essa é uma nova instalação do sistema operacional e não inclui nenhuma configuração ou migração de dados do usuário.  
 
--   [Substituir um computador existente e transferir configurações](replace-an-existing-computer-and-transfer-settings.md): esse cenário instala um sistema operacional em um novo computador. Opcionalmente, é possível migrar configurações e dados do usuário do computador antigo para o novo.  
+#### <a name="windows-autopilot-for-existing-devices"></a>Windows Autopilot para dispositivos existentes
+<!--3607717, fka 1358333--> A partir da versão 1810, o Windows Autopilot para dispositivos existentes está disponível com o Windows 10, versão 1809 ou posterior. Esse recurso permite refazer a imagem e provisionar um dispositivo Windows 7 para o modo orientado pelo usuário do Windows Autopilot usando uma única sequência de tarefas do Configuration Manager.
 
-## <a name="things-to-consider-before-you-deploy-operating-system-images"></a>Coisas a considerar antes de implantar imagens do sistema operacional  
- Existem certas coisas que você deve considerar antes de implantar um sistema operacional.  
+Para saber mais, confira [Windows Autopilot para dispositivos existentes](/sccm/osd/deploy-use/windows-autopilot-for-existing-devices).
 
-### <a name="operating-system-image-size"></a>Tamanho da imagem do sistema operacional  
- O tamanho da imagem de um sistema operacional pode ser bem grande. Por exemplo, o tamanho da imagem do Windows 7 é de 3 GB ou mais. O tamanho da imagem e o número de computadores em que o sistema operacional é implantado simultaneamente afeta o desempenho da rede e a largura de banda disponível. Lembre-se de testar o desempenho da rede para avaliar melhor o possível impacto da implantação da imagem e o tempo necessário para concluir a implantação. As atividades do Configuration Manager que afetam o desempenho da rede estão a distribuição da imagem para um ponto de distribuição, distribuição da imagem de um site para outro e download da imagem para o cliente do Configuration Manager.  
 
- Também é preciso planejar espaço de armazenamento em disco suficiente nos pontos de distribuição que hospedam as imagens do sistema operacional.  
+#### <a name="refresh-an-existing-computer-with-a-new-version-of-windows"></a>Atualizar um computador existente com uma nova versão do Windows
+Este cenário particiona e formata (apaga) um computador existente e instala um novo sistema operacional nele. É possível migrar as configurações e os dados do usuário após a instalação do sistema operacional.  
 
-### <a name="client-cache-size"></a>Tamanho do cache do cliente  
- Quando os clientes do Configuration Manager baixam conteúdo, eles usam automaticamente o BITS (Serviço de Transferência Inteligente em Segundo Plano), se disponível. Ao implantar uma sequência de tarefas que instala um sistema operacional, é possível definir uma opção na implantação para que os clientes do Configuration Manager baixem a imagem completa em um cache local antes que a sequência de tarefas seja executada.  
+Para saber mais, confira [Atualizar um computador existente com uma nova versão do Windows](/sccm/osd/deploy-use/refresh-an-existing-computer-with-a-new-version-of-windows).
 
- Em geral, quando um cliente do Configuration Manager precisa baixar a imagem de um sistema operacional (ou qualquer outro pacote), mas não há espaço suficiente no cache, o cliente verifica os outros pacotes no cache para determinar se a exclusão de algum ou de todos os pacotes mais antigos liberará espaço em disco suficiente para acomodar a imagem. Se excluir pacotes não liberar espaço em disco suficiente, o cliente não baixa a nova imagem e a implantação falha. Isso pode ocorrer se o cache tiver um pacote grande configurado para persistir no cache. Se excluir pacotes liberar espaço suficiente no cache, o cliente os exclui e depois baixa o novo pacote no cache.  
 
- O tamanho padrão do cache em clientes do Configuration Manager pode não ser suficientemente grande para a maioria das implantações de imagem do sistema operacional. Se você planeja baixar a imagem completa no cache do cliente, ajuste o tamanho do cache do cliente do Configuration Manager nos computadores de destino para acomodar o tamanho da imagem que será implantada.  
+#### <a name="install-a-new-version-of-windows-on-a-new-computer-bare-metal"></a>Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)
+Este cenário instala um sistema operacional em um novo computador. Essa é uma nova instalação do sistema operacional e não inclui nenhuma configuração ou migração de dados do usuário.  
 
- Para obter mais informações, consulte [Configurar o cache de cliente para clientes do Configuration Manager](../../core/clients/manage/manage-clients.md#BKMK_ClientCache).  
+Para saber mais, confira [Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)](/sccm/osd/deploy-use/install-new-windows-version-new-computer-bare-metal).
 
-## <a name="task-sequence-deployments"></a>Implantações de sequência de tarefas  
- A sequência de tarefas criada pode implantar a imagem do sistema operacional em um computador cliente do Configuration Manager de uma das seguintes maneiras:  
 
-- Baixar a imagem e seu conteúdo primeiramente no cache do cliente do Configuration Manager de um ponto de distribuição e instalá-la.  
+#### <a name="replace-an-existing-computer-and-transfer-settings"></a>Substituir um computador existente e transferir configurações
+Este cenário instala um sistema operacional em um novo computador. Opcionalmente, é possível migrar configurações e dados do usuário do computador antigo para o novo.  
 
-- Instalar a imagem e seu conteúdo diretamente do ponto de distribuição.  
+Para mais informações, consulte [Replace an existing computer and transfer settings (Substituir um computador existente e transferir configurações)](/sccm/osd/deploy-use/replace-an-existing-computer-and-transfer-settings).
 
-- Instalar a imagem e seu conteúdo conforme necessário a partir do ponto de distribuição.  
 
-  Por padrão, ao criar a implantação de uma sequência de tarefas, a imagem é baixada primeiramente no cache do cliente do Configuration Manager e instalada em seguida. Se você optar por baixar a imagem no cache do cliente do Configuration Manager antes de executá-la, e a sequência de tarefas contiver uma etapa para reparticionar o disco rígido, a etapa de reparticionamento falhará, pois particionar o disco rígido apagará o conteúdo do cache do cliente do Configuration Manager. Se a sequência de tarefas precisar reparticionar o disco rígido, será necessário executar a instalação da imagem no ponto de distribuição usando a opção **Executar programa do ponto de distribuição**  ao implantar a sequência de tarefas.  
-
-  Para obter mais informações, consulte [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  

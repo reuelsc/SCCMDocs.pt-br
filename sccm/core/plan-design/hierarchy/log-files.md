@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5c6cee6422d3fc8777f54bd42716748410c9323
-ms.sourcegitcommit: ceec0e20bf801071f2a05233f984cf17acc3fd29
+ms.openlocfilehash: b3edf45c5b4eb62d5bfdd795f104c40da1ee1526
+ms.sourcegitcommit: 56ec6933cf7bfc93842f55835ad336ee3a1c6ab5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265063"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57211696"
 ---
 # <a name="log-files-in-configuration-manager"></a>Arquivos de log no Configuration Manager
 
@@ -576,6 +576,7 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |PrestageContent.log|Registra detalhes sobre o uso da ferramenta ExtractContent.exe em um ponto de distribuição em pré-teste remoto. Essa ferramenta extrai o conteúdo exportado para um arquivo.|Função do sistema de site|  
 |SMSdpmon.log|Registra detalhes sobre as tarefas agendadas de monitoramento de integridade do ponto de distribuição, que estão configuradas em um ponto de distribuição.|Função do sistema de site|  
 |smsdpprov.log|Registra os detalhes sobre a extração de arquivos compactados recebidos de um site primário. Esse log é gerado pelo provedor WMI do ponto de distribuição remoto.|O computador de ponto de distribuição que não está colocalizado com o servidor do site|  
+|smsdpusage.log|Registra os detalhes sobre o smsdpusage.exe que é executado e coleta os dados para o relatório de resumo de uso do ponto de distribuição.|Função do sistema de site|  
 
 ###  <a name="BKMK_DiscoveryLog"></a> Descoberta  
 A tabela a seguir lista os arquivos de log que contêm informações relacionadas à Descoberta.  

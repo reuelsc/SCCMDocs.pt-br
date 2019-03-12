@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8eff4154f5799ef0d6411b077f50753d203310e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 0a66ba04defcea48db143487cc08bc5dc330cf2c
+ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126769"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56838898"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planejar o gateway de gerenciamento de nuvem no Configuration Manager
 
@@ -208,7 +208,8 @@ A seguinte tabela lista o suporte do CMG para recursos do Configuration Manager:
 | Distribuição de software (direcionada ao dispositivo)     | ![Com suporte](media/green_check.png) |
 | Distribuição de software (direcionada ao usuário, obrigatória)<br>(com integração com o Azure AD)     | ![Com suporte](media/green_check.png)  (1710) |
 | Distribuição de software (direcionada ao usuário, disponível)<br>([todos os requisitos](/sccm/apps/deploy-use/deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices)) | ![Com suporte](media/green_check.png)  (1802) |
-| Sequência de tarefas de atualização in-loco do Windows 10     | ![Com suporte](media/green_check.png)  (1802) |
+| Sequência de tarefas de atualização in-loco do Windows 10      | ![Com suporte](media/green_check.png)  (1802) |
+| Sequências de tarefas que não estão usando imagens de inicialização e são implantadas com uma opção: **Baixar todo o conteúdo localmente antes de iniciar a sequência de tarefas**      | ![Com suporte](media/green_check.png)  (1802) |
 | CMPivot     | ![Com suporte](media/green_check.png)  (1806) |
 | Outros cenários de sequência de tarefas     | ![Sem suporte](media/Red_X.png) |
 | Push de cliente     | ![Sem suporte](media/Red_X.png) |

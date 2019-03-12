@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc19092f1272611ea3e05d708bf89bda1a4ba3b9
-ms.sourcegitcommit: 0a23cde6112cbb5987f433bffcf6f223b994ba72
+ms.openlocfilehash: c7e4307d61cccf968729f013ebaa4bfab4b0027e
+ms.sourcegitcommit: 56ec6933cf7bfc93842f55835ad336ee3a1c6ab5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56667453"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57211526"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Notas de versão do Configuration Manager
 
@@ -26,13 +26,15 @@ Com o Configuration Manager, as notas da versão do produto estão limitadas a p
 
 A documentação específica do recurso inclui informações sobre problemas conhecidos que afetam os cenários principais.  
 
-> [!TIP]  
->  Este tópico contém notas de versão para o branch atual do Configuration Manager. Para obter informações sobre o branch da visualização técnica, confira [Visualização Técnica](/sccm/core/get-started/technical-preview)  
+Este tópico contém notas de versão para o branch atual do Configuration Manager. Para obter informações sobre o branch da visualização técnica, confira [Visualização Técnica](/sccm/core/get-started/technical-preview)  
 
 Para saber mais sobre os novos recursos introduzidos com diferentes versões, confira os seguintes artigos:
 - [Novidades na versão 1810](/sccm/core/plan-design/changes/whats-new-in-version-1810)
 - [Novidades na versão 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806)  
 - [Novidades na versão 1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)
+
+> [!Tip]  
+> Para ser notificado quando esta página for atualizada, copie e cole a seguinte URL em seu leitor de feeds de RSS: `https://docs.microsoft.com/api/search/rss?search=%22release+notes+-+Configuration+Manager%22&locale=en-us`
 
 
 

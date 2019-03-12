@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa55a8e7c46df0c0d946e7e7c9f93e894bc49b89
-ms.sourcegitcommit: e7e5ca04601270ea7af90183123d5db1d42784da
+ms.openlocfilehash: d9dee0aa39454d41f217cbe646845bf42076d3af
+ms.sourcegitcommit: 56ec6933cf7bfc93842f55835ad336ee3a1c6ab5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56422197"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57211611"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Visualização técnica para o Configuration Manager
 
@@ -30,6 +30,8 @@ Essas informações se aplicam a todas as versões do branch da visualização t
 
 Para saber mais sobre o que há de novo no *branch atual* do Configuration Manager, confira [Novidades nas versões incrementais do Configuration Manager](/sccm/core/plan-design/changes/whats-new-incremental-versions).
 
+> [!Tip]  
+> Para ser notificado quando esta página for atualizada, copie e cole a seguinte URL em seu leitor de feeds de RSS: `https://docs.microsoft.com/api/search/rss?search=%22technical+preview+releases+-+Configuration+Manager%22&locale=en-us`
 
 
 ##  <a name="bkmk_reqs"></a> Requisitos e limitações  
