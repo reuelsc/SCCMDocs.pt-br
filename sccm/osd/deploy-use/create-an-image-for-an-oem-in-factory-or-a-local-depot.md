@@ -13,7 +13,7 @@ manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 56ac5353052fdba2884b6caee8f56d0835028e3e
 ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
 ms.lasthandoff: 02/12/2019
 ms.locfileid: "56135578"
@@ -45,7 +45,7 @@ Esse método de implantação pode reduzir o tráfego de rede, pois a imagem de 
 -   **Somente mídia e PXE (oculto)**  
 
 ## <a name="create-the-prestaged-media"></a>Criar a mídia pré-configurada  
- Crie o arquivo de mídia pré-configurada para enviar ao OEM ou repositório local. Para obter mais informações, consulte [Create prestaged media with System Center Configuration Manager](create-prestaged-media.md).  
+ Crie o arquivo de mídia pré-configurada para enviar ao OEM ou repositório local. Para obter mais informações, consulte [Criar mídia pré-configurada com o System Center Configuration Manager](create-prestaged-media.md).  
 
 ## <a name="send-the-prestaged-media-file-to-the-oem-or-local-depot"></a>Enviar o arquivo de mídia pré-configurada ao OEM ou repositório local  
  Envie a mídia ao OEM ou a seu repositório local para pré-configurar os computadores. O arquivo de mídia pré-configurada é aplicado a um disco rígido formatado no computador.  
