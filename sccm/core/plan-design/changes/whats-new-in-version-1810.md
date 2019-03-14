@@ -2,7 +2,7 @@
 title: Novidades na versão 1810
 titleSuffix: Configuration Manager
 description: Obtenha os detalhes sobre as alterações e as novas funcionalidades introduzidas na versão 1810 do branch atual do Configuration Manager.
-ms.date: 03/02/2019
+ms.date: 03/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d8a3c6c73d30d7d5e8e825cd20baa334214dceb
-ms.sourcegitcommit: 33a006204f7f5f9b9acd1f3e84c4bc207362d00a
+ms.openlocfilehash: 9d2ab324038e833da7bc080286c820b3df8d06fa
+ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57305789"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57558160"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Novidades na versão 1810 do branch atual do Configuration Manager
 
@@ -122,27 +122,20 @@ Para obter mais informações, confira [Notificações do cliente](/sccm/core/cl
 
 
 ### <a name="improvements-to-collection-evaluation"></a>Melhorias à avaliação de coleção
-<!--1358981--> As seguintes alterações no comportamento da avaliação de coleção podem melhorar o desempenho do site:  
- 
+<!--3607726, fka 1358981-->
+ ***[ATUALIZADO]*** As seguintes alterações no comportamento de avaliação de coleção podem melhorar o desempenho do site:  
+
 - Anteriormente, quando você configurava um agendamento em uma coleção baseada em consulta, o site continuava a avaliar a consulta, independentemente de você ter ativado ou não a configuração de coleção para **Agendar uma atualização completa nesta coleção**. Para desabilitar totalmente o agendamento, era preciso alterá-lo para **Nenhum**. Agora o site remove o agendamento ao desabilitar essa configuração. Para especificar um agendamento para avaliação de coleção, ative a opção **Agendar uma atualização completa nesta coleção**.  
 
 - Você não pode desabilitar a avaliação de coleções internas como **Todos os sistemas**, mas agora pode configurar o agendamento. Esse comportamento permite que você personalize essa ação em um momento que atenda aos seus requisitos de negócios. 
 
-<!--For more information, see [How to create collections](/sccm/core/clients/manage/collections/create-collections).-->
+Para obter mais informações, confira [Como criar coleções](/sccm/core/clients/manage/collections/create-collections#bkmk_create).
 
 
 ### <a name="improvement-to-client-installation"></a>Melhoria à instalação do cliente
 <!--1358840--> Ao instalar o cliente do Configuration Manager, o processo ccmsetup contata o ponto de gerenciamento para localizar o conteúdo necessário. Anteriormente neste processo, o ponto de gerenciamento só retorna pontos de distribuição no grupo de limites atuais do cliente. Se nenhum conteúdo estiver disponível, o processo de instalação regredirá para baixar o conteúdo do ponto de gerenciamento. Não há nenhuma opção de regredir para os pontos de distribuição em outros grupos de limites que podem ter o conteúdo necessário. Agora, o ponto de gerenciamento retorna pontos de distribuição com base na configuração do grupo de limites. 
 
 Para obter mais informações, consulte [Configurar grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_ccmsetup).
-
-
-### <a name="improvements-to-internet-based-client-setup"></a>Melhorias à configuração de clientes baseados na Internet
-<!--1359181-->
-<!--move this under co-management?-->  
-Esta versão simplifica ainda mais o processo de configuração do cliente do Configuration Manager para clientes na Internet. O site publica informações adicionais do Azure AD (Azure Active Directory) no gateway de gerenciamento de nuvem (CMG). Um cliente associado ao Azure AD obtém essas informações do CMG durante o processo ccmsetup, usando o mesmo locatário ao qual ele está associado. Esse comportamento simplifica ainda mais o registro de dispositivos para o cogerenciamento em um ambiente com mais de um locatário do Azure AD. Agora as duas únicas propriedades necessárias do ccmsetup são **CCMHOSTNAME** e **SMSSiteCode**.
-
-<!--For more information, see [Prepare Windows 10 devices for co-management](https://docs.microsoft.com/en-us/sccm/core/clients/manage/co-management-prepare#command-line-to-install-configuration-manager-client).-->
 
 
 
@@ -166,6 +159,13 @@ Esta versão simplifica ainda mais o processo de configuração do cliente do Co
 ![Captura de tela do painel de cogerenciamento mostrando os quatro blocos principais](media/1358980-comgmt-dashboard.png)
 
 Para obter mais informações, confira [Painel de cogerenciamento](/sccm/comanage/how-to-monitor#co-management-dashboard).
+
+
+### <a name="improvements-to-internet-based-client-setup"></a>Melhorias à configuração de clientes baseados na Internet
+<!--3607731, fka 1359181-->
+ ***[ATUALIZADO]*** Esta versão simplifica ainda mais o processo de configuração de cliente do Configuration Manager para clientes na Internet. O site publica informações adicionais do Azure AD (Azure Active Directory) no gateway de gerenciamento de nuvem (CMG). Um cliente associado ao Azure AD obtém essas informações do CMG durante o processo ccmsetup, usando o mesmo locatário ao qual ele está associado. Esse comportamento simplifica ainda mais o registro de dispositivos para o cogerenciamento em um ambiente com mais de um locatário do Azure AD. Agora as duas únicas propriedades necessárias do ccmsetup são **CCMHOSTNAME** e **SMSSiteCode**.
+
+Para saber mais, consulte [Como preparar dispositivos baseados na Internet para cogerenciamento](/sccm/comanage/how-to-prepare-Win10#install-the-configuration-manager-client).
 
 
 
@@ -195,14 +195,16 @@ Para obter mais informações, confira [Aprovar aplicativos](/sccm/apps/deploy-u
 
 
 ### <a name="detection-methods-dont-load-windows-powershell-profiles"></a>Métodos de detecção não carregam perfis do Windows PowerShell
-<!--1359239--> Você pode usar scripts do Windows PowerShell para métodos de detecção de aplicativos e configurações em itens de configuração. Agora, quando esses scripts são executados em clientes, o cliente do Configuration Manager chama o PowerShell com o parâmetro `-NoProfile`. Essa opção inicia o PowerShell sem perfis. 
+<!--3607762, fka 1359239-->
+ ***[ATUALIZADO]*** Você pode usar scripts do Windows PowerShell para métodos de detecção em aplicativos e configurações nos itens de configuração. Agora, quando esses scripts são executados em clientes, o cliente do Configuration Manager chama o PowerShell com o parâmetro `-NoProfile`. Essa opção inicia o PowerShell sem perfis. 
 
 Um perfil do PowerShell é um script executado quando o PowerShell é iniciado. Você pode criar um perfil do PowerShell para personalizar seu ambiente e adicionar elementos específicos da sessão para cada sessão do PowerShell que você iniciar. 
 
 > [!Note]  
 > Essa alteração no comportamento não se aplica a [Scripts](/sccm/apps/deploy-use/create-deploy-scripts) ou [CMPivot](/sccm/core/servers/manage/cmpivot). Ambos os recursos já usam esse parâmetro do PowerShell.    
 
-<!--For more information, see []().-->
+Para obter mais informações, confira [Criar aplicativos](/sccm/apps/deploy-use/create-applications) e [Criar itens de configuração personalizados](/sccm/compliance/deploy-use/create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-client).
+
 
 
 ## <a name="bkmk_osd"></a> Implantação do sistema operacional
