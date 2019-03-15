@@ -2,7 +2,7 @@
 title: Gerenciar o acesso a email
 titleSuffix: Configuration Manager
 description: Saiba como usar o acesso condicional do Configuration Manager para gerenciar o acesso ao email do Exchange.
-ms.date: 03/05/2017
+ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f976b63b4580b5df9c6e609ff6b361538860c41c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 76326a1e0bcb3d9362db5eccfc08459bb4448206
+ms.sourcegitcommit: ec4411fe30770f90128cf6cbd181047db90040cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137636"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57881768"
 ---
 # <a name="manage-email-access-in-configuration-manager"></a>Gerenciar acesso a email no Configuration Manager
 
@@ -146,7 +146,7 @@ Você pode exportar o conteúdo do relatório e usar a coluna **Endereço de ema
 
 Direcione as políticas de acesso condicional a diferentes grupos ou coleções de usuários de acordo com os tipos de política. Esses grupos contêm os usuários que serão afetados ou que ficarão isentos da política. Quando um usuário é afetado por uma política, cada dispositivo que ele usa deve ser compatível para que possa acessar o email.  
 
-- **Para a política do Exchange Online**: para grupos de usuários de segurança do Active Directory do Azure. Você pode configurar esses grupos no **Centro de administração do Office 365**ou no **Portal de conta do Intune**.  
+- **Para a política do Exchange Online**: para grupos de usuários de segurança do Active Directory do Azure. Você pode configurar esses grupos na **Centro de administração do Microsoft 365**, ou o **portal de conta do Intune**.  
 
 - **Para a política do Exchange no local**: em coleções de usuários do Configuration Manager. É possível configurá-las no workspace **Ativos e Conformidade**.  
 

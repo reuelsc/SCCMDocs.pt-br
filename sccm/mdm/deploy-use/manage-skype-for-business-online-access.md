@@ -2,7 +2,7 @@
 title: Gerenciar o acesso do Skype for Business Online
 titleSuffix: Configuration Manager
 description: Saiba como usar a política de acesso condicional para gerenciar o acesso ao Skype for Business Online.
-ms.date: 12/22/2017
+ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78c40d84b7d774d7621b983a6e2bb755b14f9563
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 601b58b2f955170e5ab2f038cb49306efe3b499c
+ms.sourcegitcommit: ec4411fe30770f90128cf6cbd181047db90040cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138357"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57881717"
 ---
 # <a name="manage-skype-for-business-online-access"></a>Gerenciar o acesso do Skype for Business Online
 
@@ -52,7 +52,7 @@ Use a política de acesso condicional do Skype for Business Online para gerencia
 ## <a name="configure-conditional-access-for-skype-for-business-online"></a>Configurar o acesso condicional para o Skype for Business Online  
 
 ### <a name="step-1-configure-active-directory-security-groups"></a>Etapa 1: Configurar grupos de segurança do Active Directory  
- Antes de começar, configure os grupos de segurança do Active Directory do Azure para a política de acesso condicional. Configure esses grupos no Centro de administração do Office 365. Esses grupos contêm os usuários a serem afetados pela política ou excluídos dela. Quando um usuário é afetado por uma política, cada dispositivo que ele usa deve ser compatível para que possa acessar os recursos.  
+ Antes de começar, configure os grupos de segurança do Active Directory do Azure para a política de acesso condicional. Configure esses grupos no Centro de administração do Microsoft 365. Esses grupos contêm os usuários a serem afetados pela política ou excluídos dela. Quando um usuário é afetado por uma política, cada dispositivo que ele usa deve ser compatível para que possa acessar os recursos.  
 
  Você pode especificar dois tipos de grupo para uso com a política do Skype for Business:  
 

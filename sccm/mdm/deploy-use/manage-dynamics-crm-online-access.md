@@ -2,7 +2,7 @@
 title: Gerenciar o acesso ao Dynamics CRM Online
 titleSuffix: Configuration Manager
 description: Saiba como controlar o acesso ao Microsoft Dynamics CRM Online de dispositivos iOS e Android com acesso condicional do Microsoft Intune.
-ms.date: 03/05/2017
+ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2bf6073a15518e971d4880a7adbb0853d6387f0d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: fbd3d765a17d41bfbc2c400a3368cf00784b16c1
+ms.sourcegitcommit: ec4411fe30770f90128cf6cbd181047db90040cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122841"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57881666"
 ---
 # <a name="manage-dynamics-crm-online-access-in-system-center-configuration-manager"></a>Gerenciar o acesso ao Dynamics CRM Online no System Center Configuration Manager
 
@@ -47,7 +47,7 @@ Se uma condição não for atendida, o usuário receberá uma das seguintes mens
 ## <a name="configure-conditional-access-for-dynamics-crm-online"></a>Configurar o acesso condicional do Dynamics CRM Online  
 ### <a name="step-1-configure-active-directory-security-groups"></a>Etapa 1: Configurar grupos de segurança do Active Directory
 
-Antes de começar, configure os grupos de segurança do Active Directory do Azure para a política de acesso condicional. Você pode configurar esses grupos no **Centro de administração do Office 365**. Esses grupos serão usado para o destino ou usuários isentos da política. Quando um usuário é afetado por uma política, cada dispositivo que ele usa deve ser compatível para que possa acessar os recursos.
+Antes de começar, configure os grupos de segurança do Active Directory do Azure para a política de acesso condicional. Você pode configurar esses grupos na **Centro de administração do Microsoft 365**. Esses grupos serão usado para o destino ou usuários isentos da política. Quando um usuário é afetado por uma política, cada dispositivo que ele usa deve ser compatível para que possa acessar os recursos.
 
 Você pode especificar dois tipos de grupo para a política do Dynamics CRM:
 * **Grupos de destino** – Contém grupos de usuários aos quais a política será aplicada.

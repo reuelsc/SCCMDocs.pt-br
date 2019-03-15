@@ -2,7 +2,7 @@
 title: Gerenciar o acesso aos serviços do O365
 titleSuffix: Configuration Manager
 description: Saiba como configurar o acesso condicional aos serviços do Office 365 para computadores gerenciados pelo System Center Configuration Manager.
-ms.date: 04/10/2018
+ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,18 +11,19 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b45e9f586616a1f620864a6e6dc8d0777a118251
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 74a28863b2e30566b07890d57e927703d77247f6
+ms.sourcegitcommit: ec4411fe30770f90128cf6cbd181047db90040cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122280"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57881700"
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gerenciar o acesso aos serviços O365 para PCs gerenciados pelo System Center Configuration Manager.
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-<!--1191496--> Configure o acesso condicional para serviços do Office 365 para PCs gerenciados pelo Configuration Manager.  
+<!--1191496-->
+Configure o acesso condicional aos serviços do Office 365 para computadores gerenciados pelo Configuration Manager.  
 
 > [!Important]  
 > Incluindo o MDM híbrido no local são de acesso condicional [recursos preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
@@ -33,7 +34,7 @@ ms.locfileid: "56122280"
 Para obter informações sobre como configurar o acesso condicional para dispositivos registrados e gerenciados pelo Microsoft Intune, consulte [Gerenciar o acesso a serviços no System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md). Esse artigo também aborda os dispositivos ingressados em domínio e não são avaliados quanto à conformidade.
 
 > [!Note]  
-> O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, veja [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 
 ## <a name="supported-services"></a>Serviços com suporte  
@@ -99,10 +100,10 @@ Para obter informações sobre como configurar o acesso condicional para disposi
     - **Exigir que o Antimalware de Início Antecipado esteja habilitado no dispositivo**  
 
     >[!Tip]  
-    > Os critérios de acesso condicional para o atestado de integridade do dispositivo foram introduzidos na versão 1710 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). Na versão 1802, esse recurso deixou de ser um recurso de pré-lançamento.<!--1235616-->  
+    > Os critérios de acesso condicional para o atestado de integridade do dispositivo foram introduzidos na versão 1710 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1802, esse recurso deixa de ser um recurso de pré-lançamento.<!--1235616-->  
 
     > [!Note]  
-    > O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, veja [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+    > O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 ### <a name="step-2-evaluate-the-effect-of-conditional-access"></a>Etapa 2. Avaliar o efeito do acesso condicional  
  Execute o **Relatório de Conformidade de Acesso Condicional**. Ele pode ser encontrado no workspace **Monitoramento** em **Relatórios** > **Gerenciamento de conformidade e configurações**. Esse relatório exibe o status de conformidade para todos os dispositivos. Dispositivos relatados como fora de conformidade são impedidos de acessar o Exchange Online e o SharePoint Online.  
@@ -112,7 +113,7 @@ Para obter informações sobre como configurar o acesso condicional para disposi
 ### <a name="configure-active-directory-security-groups"></a>Configurar grupos de segurança do Active Directory  
  Você direciona políticas de acesso condicional a grupos de usuários de acordo com os tipos de política. Esses grupos contêm os usuários que são afetados ou que ficam isentos da política. Quando uma política afeta um usuário, cada dispositivo usado por ele deve estar em conformidade para que possa acessar o serviço.  
 
- Grupos de usuário de segurança do Active Directory Esses grupos de usuário devem ser sincronizados com o Azure Active Directory. Você também pode configurar esses grupos no Centro de administração do Office 365 ou no Portal de conta do Intune.  
+ Grupos de usuário de segurança do Active Directory Esses grupos de usuário devem ser sincronizados com o Azure Active Directory. Você também pode configurar esses grupos no Centro de administração do Microsoft 365 ou portal de conta do Intune.  
 
  É possível especificar dois tipos de grupo em cada política. :  
 

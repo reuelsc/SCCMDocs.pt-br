@@ -2,7 +2,7 @@
 title: Gerenciar o acesso do SharePoint Online
 titleSuffix: Configuration Manager
 description: Saiba como usar a política de acesso condicional do SharePoint Online no System Center Configuration Manager para gerenciar o acesso ao OneDrive.
-ms.date: 12/09/2017
+ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 755be3231c00eabf9562256e62061fbad70633e7
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 69a160a3c7833f196d50185e551f619d68dc0925
+ms.sourcegitcommit: ec4411fe30770f90128cf6cbd181047db90040cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140942"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57881734"
 ---
 # <a name="manage-sharepoint-online-access-in-system-center-configuration-manager"></a>Gerenciar o acesso ao SharePoint Online no System Center Configuration Manager
 
@@ -106,7 +106,7 @@ Os aplicativos de área de trabalho do Office podem acessar o SharePoint Online 
 ## <a name="configure-conditional-access-for-sharepoint-online"></a>Configurar o acesso condicional para o SharePoint Online  
 
 ### <a name="step-1-configure-active-directory-security-groups"></a>Etapa 1: Configurar grupos de segurança do Active Directory  
- Antes de começar, configure grupos de segurança do Azure AD para a política de acesso condicional. Você pode configurar esses grupos no **Centro de administração do Office 365**ou no **Portal de conta do Intune**. Esses grupos incluem os usuários que são afetados ou que ficarão isentos da política. Quando um usuário é afetado por uma política, cada dispositivo que ele usa deve ser compatível para que possa acessar os recursos.  
+ Antes de começar, configure grupos de segurança do Azure AD para a política de acesso condicional. Você pode configurar esses grupos na **Centro de administração do Microsoft 365**, ou o **portal de conta do Intune**. Esses grupos incluem os usuários que são afetados ou que ficarão isentos da política. Quando um usuário é afetado por uma política, cada dispositivo que ele usa deve ser compatível para que possa acessar os recursos.  
 
  Você pode especificar dois tipos de grupo em uma política do SharePoint Online:  
 
