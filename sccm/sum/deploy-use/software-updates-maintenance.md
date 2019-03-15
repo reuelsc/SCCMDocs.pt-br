@@ -3,7 +3,7 @@ title: Manutenção de atualizações de software
 titleSuffix: Configuration Manager
 description: Para manter as atualizações no Configuration Manager, você pode agendar a tarefa de limpeza do WSUS ou executá-la manualmente.
 author: mestew
-ms.date: 02/19/2019
+ms.date: 03/05/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
@@ -11,12 +11,12 @@ ms.assetid: 4b0e2e90-aac7-4d06-a707-512eee6e576c
 manager: dougeby
 ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a872d48437b14bfec5b2b3da3a51be5c11cdfba3
-ms.sourcegitcommit: e18853c214c95e4d21b2f032aba6d17c21e97027
-ms.translationtype: HT
+ms.openlocfilehash: ff0f69a0e43c2d52aec9df262bf8d48587edb94c
+ms.sourcegitcommit: 4ab85212268e76d3fd22f00e6c74edaa5abde60c
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56443929"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57426848"
 ---
 # <a name="software-updates-maintenance"></a>Manutenção de atualizações de software
 
@@ -52,7 +52,7 @@ Antes da versão 1806 do Configuration Manager, a opção de limpeza do WSUS exe
 - Uma limpeza de itens de configuração de atualização de software no banco de dados do Configuration Manager ocorre a cada sete dias e remove atualizações desnecessárias do console.
   - Essa limpeza não removerá as atualizações expiradas do console do Configuration Manager se elas estiverem implantadas no momento.
 
-Manutenção adicional ainda é necessária no banco de dados do WSUS nível superior e em todos os outros bancos de dados do WSUS no ambiente. Para obter mais informações e instruções, leia a postagem no blog [The complete guide to Microsoft WSUS and Configuration Manager SUP maintenance](https://blogs.technet.microsoft.com/configurationmgr/2016/01/26/the-complete-guide-to-microsoft-wsus-and-configuration-manager-sup-maintenance/) (O guia completo para manutenção do Microsoft WSUS e do Configuration Manager SUP).
+Manutenção adicional ainda é necessária no banco de dados do WSUS nível superior e em todos os outros bancos de dados do WSUS no ambiente. Para obter mais informações e instruções, leia a postagem no blog [The complete guide to Microsoft WSUS and Configuration Manager SUP maintenance](https://support.microsoft.com/help/4490644/complete-guide-to-microsoft-wsus-and-configuration-manager-sup-maint/) (O guia completo para manutenção do Microsoft WSUS e do Configuration Manager SUP).
 
 ## <a name="wsus-cleanup-behavior-starting-in-version-1806"></a>Comportamento de limpeza do WSUS começando na versão 1806
 
@@ -75,7 +75,7 @@ Toda a Manutenção do WSUS precisa ser executada manualmente em bancos de dados
 - Computadores que não estão entrando em contato com o servidor
 - Arquivos de atualização desnecessários
 
-  Para obter mais informações e instruções, leia a postagem no blog [The complete guide to Microsoft WSUS and Configuration Manager SUP maintenance](https://blogs.technet.microsoft.com/configurationmgr/2016/01/26/the-complete-guide-to-microsoft-wsus-and-configuration-manager-sup-maintenance/) (O guia completo para manutenção do Microsoft WSUS e do Configuration Manager SUP).
+  Para obter mais informações e instruções, leia a postagem no blog [The complete guide to Microsoft WSUS and Configuration Manager SUP maintenance](https://support.microsoft.com/help/4490644/complete-guide-to-microsoft-wsus-and-configuration-manager-sup-maint/) (O guia completo para manutenção do Microsoft WSUS e do Configuration Manager SUP).
 
 ## <a name="wsus-cleanup-behavior-starting-in-version-1810"></a>Comportamento de limpeza do WSUS começando na versão 1810
 
@@ -97,7 +97,7 @@ As seguintes opções do **Assistente de Limpeza do Servidor WSUS** não são ex
 - Computadores que não estão entrando em contato com o servidor
 - Arquivos de atualização desnecessários
 
-  Para obter mais informações e instruções, leia a postagem no blog [The complete guide to Microsoft WSUS and Configuration Manager SUP maintenance](https://blogs.technet.microsoft.com/configurationmgr/2016/01/26/the-complete-guide-to-microsoft-wsus-and-configuration-manager-sup-maintenance/) (O guia completo para manutenção do Microsoft WSUS e do Configuration Manager SUP).
+  Para obter mais informações e instruções, leia a postagem no blog [The complete guide to Microsoft WSUS and Configuration Manager SUP maintenance](https://support.microsoft.com/help/4490644/complete-guide-to-microsoft-wsus-and-configuration-manager-sup-maint/) (O guia completo para manutenção do Microsoft WSUS e do Configuration Manager SUP).
 
 ## <a name="updates-cleanup-log-entries"></a>Entradas de log de limpeza de atualizações
 
