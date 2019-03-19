@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78acd5880bfdada80fca33ea4147fc36b28c495e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 322ca2cb3f1df6a71fb7ceaf15017d7bd45db4c7
+ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126735"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57562067"
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-configuration-manager"></a>Usar o PXE para implantar o Windows pela rede com o Configuration Manager
 
@@ -108,7 +108,7 @@ Para usar uma implantação de sistema operacional iniciada pelo PXE, configure 
 
 Implante o sistema operacional em uma coleção de destino. Para obter mais informações, consulte [Deploy a task sequence](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS). Ao implantar sistemas operacionais usando o PXE, é possível configurar se a implantação será necessária ou estará disponível.
 
--   **Implantação necessária**: as implantações necessárias usam o PXE sem qualquer intervenção do usuário. O usuário não pode ignorar a inicialização PXE. No entanto, se o usuário cancelar a inicialização PXE antes da resposta do ponto de distribuição, o sistema operacional não será implantado.
+-   **Implantação necessária**: as implantações necessárias usam o PXE sem nenhuma intervenção do usuário. O usuário não pode ignorar a inicialização PXE. No entanto, se o usuário cancelar a inicialização PXE antes da resposta do ponto de distribuição, o sistema operacional não será implantado.
 
 -   **Implantação disponível**: as implantações disponíveis exigem que o usuário esteja presente no computador de destino. O usuário precisa pressionar a tecla **F12** para continuar o processo de inicialização do PXE. Se não houver um usuário presente para pressionar **F12**, o computador será inicializado no sistema operacional atual ou pelo próximo dispositivo de inicialização disponível.
 
@@ -134,4 +134,4 @@ A lista a seguir fornece detalhes sobre como uma imagem de inicialização é se
 
 3. Na lista de sequências de tarefas encontrada na etapa 2, o Configuration Manager procura uma imagem de inicialização que corresponde à arquitetura do cliente que está tentando ser inicializado. Se uma imagem de inicialização é encontrada com a mesma arquitetura, ela é usada.  
 
-4. Se não for encontrada uma imagem de inicialização com a mesma arquitetura, o Configuration Manager buscará uma imagem de inicialização que seja compatível com a arquitetura do cliente. Ele procura na lista de sequências de tarefas encontrada na etapa 2. Por exemplo, um cliente de 64 bits é compatível com imagens de inicialização de 32 bits e 64 bits. Um cliente de 32 bits é compatível apenas com imagens de inicialização de 32 bits. Um cliente UEFI é compatível apenas com imagens de inicialização de 64 bits.  
+4. Se não for encontrada uma imagem de inicialização com a mesma arquitetura, o Configuration Manager buscará uma imagem de inicialização que seja compatível com a arquitetura do cliente. Ele procura na lista de sequências de tarefas encontrada na etapa 2. Por exemplo, um cliente BIOS/MBR de 64 bits é compatível com imagens de inicialização de 32 bits e 64 bits. Um cliente BIOS/MBR de 32 bits é compatível apenas com imagens de inicialização de 32 bits. Os clientes UEFI são compatíveis apenas com correspondência de arquitetura. Um cliente UEFI de 64 bits é compatível com imagens de inicialização somente de 64 bits e um cliente UEFI de 32 bits é compatível com apenas as imagens de inicialização de 32 bits.

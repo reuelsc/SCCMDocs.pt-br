@@ -2,7 +2,7 @@
 title: Centro de Suporte
 titleSuffix: Configuration Manager
 description: Solucionar problemas de clientes do Configuration Manager com o Centro de Suporte.
-ms.date: 01/30/2019
+ms.date: 03/06/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5942f60ea15ad83f5debdf8dd3d53e72770744c6
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 367c293794eea86ef8b7b7fb0e331ce0602b325e
+ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122858"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57562033"
 ---
 # <a name="support-center-for-configuration-manager"></a>Centro de Suporte do Configuration Manager
 
@@ -77,6 +77,9 @@ Após a instalação, localize os itens a seguir no menu Iniciar no grupo do **M
 
 
 ## <a name="known-issues"></a>Problemas conhecidos 
+
+#### <a name="you-cant-install-the-latest-version-if-an-older-version-is-already-installed"></a>Não é possível instalar a versão mais recente, quando a versão anterior está instalada
+<!--SCCMDocs-pr issue #3090--> Se você já instalou uma versão anterior do Centro de Suporte, a versão 1810 do instalador falhará. Esse problema ocorre devido à maneira pela qual os arquivos são versionados entre a versão original e a versão mais recente. Para contornar esse problema, primeiro desinstale a versão anterior do Centro de Suporte. Em seguida, instale a versão mais recente (1810) do Configuration Manager.
 
 #### <a name="remote-connections-must-include-computer-name-or-domain-as-part-of-the-user-name"></a>Conexões remotas devem incluir o nome do computador ou domínio como parte do nome de usuário
 Se você se conectar a um cliente remoto do Centro de Suporte, deverá fornecer o nome do computador ou o nome de domínio da conta de usuário ao estabelecer a conexão. Se você usar um nome do computador ou nome de domínio abreviado (como `.\administrator`), a conexão será bem-sucedida, mas o Centro de Suporte não coletará dados do cliente. 

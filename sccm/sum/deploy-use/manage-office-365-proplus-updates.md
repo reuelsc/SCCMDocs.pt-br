@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ece8381fd41651b5b52e3187bbcbfc1a0578234
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 10c04b5daa53a1b12637fa8470b97ae27a63678b
+ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124755"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "57881819"
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gerenciar o Office 365 ProPlus com o Configuration Manager
 
@@ -24,15 +24,15 @@ ms.locfileid: "56124755"
 
 O Configuration Manager permite gerenciar aplicativos do Office 365 ProPlus das seguintes maneiras:
 
-- [Painel de gerenciamento de clientes do Office 365](#office-365-client-management-dashboard): você pode examinar as informações de cliente do Office 365 usando o painel de gerenciamento de clientes do Office 365. A partir do Configuration Manager versão 1802, o painel de gerenciamento de clientes do Office 365 exibe uma lista de dispositivos relevantes quando seções de gráfico são selecionadas. <!--1357281 -->
+- [Painel de gerenciamento de clientes do Office 365](#office-365-client-management-dashboard): examine as informações de clientes do Office 365 no painel de gerenciamento de clientes do Office 365. A partir do Configuration Manager versão 1802, o painel de gerenciamento de clientes do Office 365 exibe uma lista de dispositivos relevantes quando seções de gráfico são selecionadas. <!--1357281 -->
 
-- [Implantar aplicativos do Office 365](#deploy-office-365-apps): Você pode iniciar o instalador do Office 365 no painel de gerenciamento de clientes do Office 365 para facilitar a experiência de instalação inicial do aplicativo do Office 365. O assistente permite que você defina as configurações de instalação do Office 365, baixe arquivos das redes de distribuição de conteúdo (CDNs) do Office, e crie e implante um aplicativo de script com o conteúdo.    
+- [Implantar aplicativos do Office 365](#deploy-office-365-apps): você pode iniciar o instalador do Office 365 no painel de gerenciamento de clientes do Office 365 para facilitar a experiência de instalação inicial do aplicativo do Office 365. O assistente permite que você defina as configurações de instalação do Office 365, baixe arquivos das redes de distribuição de conteúdo (CDNs) do Office, e crie e implante um aplicativo de script com o conteúdo.    
 
-- [Implantar atualizações do Office 365](#deploy-office-365-updates): você pode gerenciar as atualizações de clientes do Office 365 usando o fluxo de trabalho de gerenciamento de atualizações de software. Quando a Microsoft publica uma nova atualização de cliente do Office 365 na Rede de Distribuição de Conteúdo do Office (CDN), a Microsoft também publica um pacote de atualização para o Windows Server Update Services (WSUS). Após o Configuration Manager sincronizar a atualização de clientes do Office 365 do catálogo do WSUS para o servidor do site, a atualização ficará disponível para implantar em clientes.    
+- [Implantar atualizações do Office 365](#deploy-office-365-updates): você pode gerenciar as atualizações de cliente do Office 365 usando o fluxo de trabalho do gerenciamento de atualização de software. Quando a Microsoft publica uma nova atualização de cliente do Office 365 na Rede de Distribuição de Conteúdo do Office (CDN), a Microsoft também publica um pacote de atualização para o Windows Server Update Services (WSUS). Após o Configuration Manager sincronizar a atualização de clientes do Office 365 do catálogo do WSUS para o servidor do site, a atualização ficará disponível para implantar em clientes.    
 
-- [Adicionar idiomas para os downloads de atualizações do Office 365](#add-languages-for-office-365-update-downloads): você pode adicionar suporte para o Configuration Manager para baixar atualizações de todos os idiomas compatíveis com o Office 365. Isso significa que o Configuration Manager não precisa dar suporte ao idioma, contanto que o Office 365 dê esse suporte. Antes do Configuration Manager versão 1610, você deve baixar e implantar as atualizações nos mesmos idiomas configurados nos clientes do Office 365. 
+- [Adicionar idiomas para downloads de atualizações do Office 365](#add-languages-for-office-365-update-downloads): você pode adicionar suporte para o Configuration Manager para baixar atualizações em qualquer idioma compatível com o Office 365. Isso significa que o Configuration Manager não precisa dar suporte ao idioma, contanto que o Office 365 dê esse suporte. Antes do Configuration Manager versão 1610, você deve baixar e implantar as atualizações nos mesmos idiomas configurados nos clientes do Office 365. 
 
-- [Alterar o canal de atualização](#change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager): você pode usar a política de grupo para distribuir uma alteração de valor de chave do Registro para os clientes do Office 365 para alterar o canal de atualização.
+- [Alterar o canal de atualização](#change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager): use a política de grupo para distribuir uma alteração de valor da chave do registro para os clientes do Office 365 para alterar o canal de atualização.
 
 
 ## <a name="office-365-client-management-dashboard"></a>Painel de Gerenciamento de Clientes do Office 365  
@@ -103,7 +103,7 @@ Começando no Configuration Manager 1806, a Ferramenta de Personalização do Of
 9. Conclua o assistente.
 10. Você pode implantar ou editar o aplicativo em **Biblioteca de Softwares** > **Visão Geral** > **Gerenciamento de Aplicativos** > **Aplicativos**.    
 
-Depois que você criar e implantar os aplicativos do Office 365 usando o Instalador do Office 365, o Configuration Manager não gerenciará as atualizações do Office por padrão. Para permitir que os clientes do Office 365 recebam atualizações do Configuration Manager, veja [Implantar atualizações do Office 365 com o Configuration Manager](#deploy-office-365-updates-with-configuration-manager).
+Depois que você criar e implantar os aplicativos do Office 365 usando o Instalador do Office 365, o Configuration Manager não gerenciará as atualizações do Office por padrão. Para permitir que os clientes do Office 365 recebam atualizações do Configuration Manager, veja [Implantar atualizações do Office 365 com o Configuration Manager](#deploy-office-365-updates).
 
 Depois de implantar aplicativos do Office 365, você pode criar regras de implantação automática para manter os aplicativos. Para criar uma regra de implantação automática para aplicativos do Office 365, clique em **Criar uma ADR** no painel de Gerenciamento de Clientes do Office 365. Selecione **Cliente do Office 365** quando escolher o produto. Para mais informações, confira [Automatically deploy software updates](/sccm/sum/deploy-use/automatically-deploy-software-updates) (Implantar atualizações de software automaticamente).
 
@@ -117,7 +117,7 @@ Use as etapas a seguir para implantar atualizações do Office 365 com o Configu
 2.  [Configure os pontos de atualização de software](../get-started/configure-classifications-and-products.md) para sincronizar as atualizações de clientes do Office 365. Defina as **atualizações** para a classificação e selecione o **cliente do Office 365**. Sincronize as atualizações de software depois de configurar os pontos de atualização de software para usar a classificação **Atualizações**.
 3.  Permita que os clientes do Office 365 recebam atualizações do Configuration Manager. Use as configurações do cliente do Configuration Manager ou a política de grupo para habilitar o cliente.   
 
-    **Método 1**: começando no Configuration Manager versão 1606, você pode usar a configuração do cliente do Configuration Manager para gerenciar o agente cliente do Office 365. Depois de definir essa configuração e implantar as atualizações do Office 365, o agente cliente do Configuration Manager se comunica com o agente cliente do Office 365 para baixar as atualizações de um ponto de distribuição e instalá-las. O Configuration Manager faz um inventário das configurações de cliente do Office 365 ProPlus.    
+    **Método 1**: a partir do Configuration Manager versão 1606, é possível usar a configuração do cliente do Configuration Manager para gerenciar o agente cliente do Office 365. Depois de definir essa configuração e implantar as atualizações do Office 365, o agente cliente do Configuration Manager se comunica com o agente cliente do Office 365 para baixar as atualizações de um ponto de distribuição e instalá-las. O Configuration Manager faz um inventário das configurações de cliente do Office 365 ProPlus.    
 
       1.  No console do Configuration Manager, escolha **Administração** > **Visão Geral** > **Configurações do Cliente**.  
 
@@ -125,7 +125,7 @@ Use as etapas a seguir para implantar atualizações do Office 365 com o Configu
 
       3.  Clique em **Atualizações de Software** e selecione **Sim** para a configuração **Habilitar o gerenciamento do Agente Cliente do Office 365**.  
 
-    **Método 2**: [permitir que os clientes do Office 365 recebam atualizações](/DeployOffice/manage-updates-to-office-365-proplus-with-system-center-configuration-manager#BKMK_EnableClient) do Configuration Manager usando a Ferramenta de Implantação do Office ou a Política de Grupo.  
+    **Método 2**: [Permitir que os clientes do Office 365 recebam atualizações](/DeployOffice/manage-updates-to-office-365-proplus-with-system-center-configuration-manager#BKMK_EnableClient) do Configuration Manager usando a Ferramenta de Implantação do Office ou a Política de Grupo.  
 
 4. [Implante as atualizações do Office 365](deploy-software-updates.md) nos clientes.   
 
@@ -145,7 +145,7 @@ Quando você implanta uma atualização em um cliente do Office 365, o comportam
 |Versão do Configuration Manager |Experiência do usuário final|  
 |----------------|---------------------|
 |1706, 1710|O cliente recebe notificações pop-up e no aplicativo, bem como uma caixa de diálogo de contagem regressiva, antes da instalação da atualização.|
-|1802| O cliente recebe notificações pop-up e no aplicativo, bem como uma caixa de diálogo de contagem regressiva, antes da instalação da atualização. </br>Se um aplicativo do Office 365 estiver sendo executado durante uma imposição de atualização de clientes do Office 365, os aplicativos do Office não serão forçados a fechar. Em vez disso, a instalação da atualização retornará exigindo uma reinicialização do sistema <!--510006-->|
+|1802| O cliente recebe notificações pop-up e no aplicativo, bem como uma caixa de diálogo de contagem regressiva, antes da instalação da atualização. </br>Se um aplicativo do Office 365 estiver sendo executado durante uma imposição de atualização de clientes do Office 365, os aplicativos do Office não serão forçados a fechar. Em vez disso, a instalação da atualização retornará, exigindo uma reinicialização do sistema <!--510006-->|
 
 
 > [!Important]
@@ -230,7 +230,8 @@ Para alterar o canal de atualização após habilitar os clientes do Office 365 
 
 - Canal Semestral (direcionado) <br/>
 <i>(anteriormente Primeira Versão do Canal Adiado)</i>:  
-  **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/b8f9b850-328d-4355-9145-c59439a0c4cf <!--the channel names changed in Sept 2017- https://docs.microsoft.com/en-us/DeployOffice/overview-of-update-channels-for-office-365-proplus?ui=en-US&rs=en-US&ad=US-->
+  **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/b8f9b850-328d-4355-9145-c59439a0c4cf
+<!--the channel names changed in Sept 2017- https://docs.microsoft.com/en-us/DeployOffice/overview-of-update-channels-for-office-365-proplus?ui=en-US&rs=en-US&ad=US-->
 
 
 <!--- You can create an Office 365 app without using the Office 365 Installation Wizard. To do this, you use the Office 2016 Deployment Tool (ODT) to download Office installation source files to a network share, generate Configure.xml that specifies the correct Office version and channel, and so on. Then, create an app for the files using the normal app management process.

@@ -2,7 +2,7 @@
 title: Console do Configuration Manager
 titleSuffix: Configuration Manager
 description: Saiba mais sobre como navegar por meio do console do Configuration Manager.
-ms.date: 2/20/2019
+ms.date: 03/06/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30db8b061f41e8a9255b5a308df6a98ef8c0d81b
-ms.sourcegitcommit: 369db96ee84299b5ab6d74b177e6366b3017fc54
+ms.openlocfilehash: 0f9c06f40af1134055d4038fd23954b3f4c59682
+ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56589893"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57562101"
 ---
 # <a name="using-the-configuration-manager-console"></a>Usando o console do Configuration Manager
 
@@ -160,6 +160,15 @@ Da versão 1806 em diante, as colunas a seguir estão disponíveis no nó **Disp
     > Exibir o usuário conectado no momento exige [descoberta de usuário](/sccm/core/servers/deploy/configure/configure-discovery-methods#bkmk_config-adud) e [afinidade de dispositivo de usuário](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity).  
 
 Para obter mais informações sobre como mostrar uma coluna não padrão, confira [Colunas](#columns).
+
+#### <a name="improvement-to-device-search-performance"></a>Melhoria de desempenho da Pesquisa de Dispositivos
+<!-- 3614690 --> Começando na versão 1806, ao pesquisar em uma Coleção de Dispositivos, o recurso não pesquisa a palavra-chave em relação a todas as propriedades do objeto. Quando você não especifica o conteúdo que deseja pesquisar, o mecanismo pesquisa as quatro propriedades a seguir:
+- Name
+- Usuários primários
+- Usuário conectado no momento
+- Nome de Usuário do Último Logon
+
+Este comportamento melhora significativamente o tempo necessário para pesquisar por nome, principalmente em um ambiente grande. Esta alteração não afeta as pesquisas personalizadas por critérios específicos. 
 
 
 ### <a name="monitoring-workspace"></a>Workspace de monitoramento

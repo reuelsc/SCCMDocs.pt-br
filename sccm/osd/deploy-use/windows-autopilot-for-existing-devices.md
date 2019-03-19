@@ -2,7 +2,7 @@
 title: Windows Autopilot para dispositivos existentes
 titleSuffix: Configuration Manager
 description: Siga esta sequência de tarefas do Configuration Manager para refazer a imagem e provisionar um dispositivo Windows 7 para o modo orientado pelo usuário do Windows Autopilot
-ms.date: 02/22/2019
+ms.date: 03/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: 2e96f847-5b5a-4da9-8e8f-6aa488838508
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 53a9ac779a9a89e010334970c2045e71380a7801
-ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
-ms.translationtype: HT
+ms.openlocfilehash: 6878e36e5bf20774f6eef1ee855dda2f95dabfb4
+ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56839008"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557990"
 ---
 # <a name="windows-autopilot-for-existing-devices"></a>Windows Autopilot para dispositivos existentes
 <!--3607717, fka 1358333-->
@@ -31,9 +31,12 @@ O [Windows Autopilot para dispositivos existentes](https://techcommunity.microso
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Adquira a mídia de instalação para o Windows 10, versão 1809 ou posterior. Em seguida, crie uma imagem do sistema operacional do Configuration Manager. Para obter mais informações, confira [Gerenciar imagens do sistema operacional](/sccm/osd/get-started/manage-operating-system-images).
+- Adquira a mídia de instalação para o Windows 10, versão 1809 ou posterior. Em seguida, crie uma imagem do sistema operacional do Configuration Manager. Para obter mais informações, confira [Gerenciar imagens do sistema operacional](/sccm/osd/get-started/manage-operating-system-images).
 
-No Microsoft Intune, crie perfis para o Windows Autopilot. Para saber mais, confira [Registrar dispositivos Windows no Intune usando Windows Autopilot](https://docs.microsoft.com/intune/enrollment-autopilot).
+- No Microsoft Intune, crie perfis para o Windows Autopilot. Para saber mais, confira [Registrar dispositivos Windows no Intune usando Windows Autopilot](https://docs.microsoft.com/intune/enrollment-autopilot).
+
+- Um dispositivo que ainda não está registrado no serviço Windows Autopilot. Se o dispositivo já estiver registrado, o perfil atribuído terá precedência. O piloto automático para o perfil de dispositivos existente se aplica somente se que o perfil online expira.
+
 
 
 ## <a name="create-the-configuration-file"></a>Criar o arquivo de configuração
@@ -89,13 +92,13 @@ No Microsoft Intune, crie perfis para o Windows Autopilot. Para saber mais, conf
 
 4. Na página **Instalar Windows**, selecione o **Pacote de imagem** do Windows 10. Em seguida, defina as seguintes configurações:  
 
-    - **Índice de imagens**: Selecione Enterprise, Education ou Professional, conforme exigido pela sua organização  
+    - **Índice de imagens**: selecione Enterprise, Education ou Professional, conforme exigido pela sua organização  
 
     - Habilite a opção para **Particionar e formatar o computador de destino antes de instalar o sistema operacional**  
 
-    - **Configure a sequência de tarefas para uso com o BitLocker**: Se você habilitar essa opção, a sequência de tarefas incluirá as etapas necessárias para habilitar o Bitlocker  
+    - **Configure a sequência de tarefas para uso com o Bitlocker**: se você habilitar essa opção, a sequência de tarefas inclui as etapas necessárias para habilitar o Bitlocker  
 
-    - **Chave do produto (Product Key)**: Se você precisar especificar uma chave de produto para ativação do Windows, insira-a aqui  
+    - **Chave do produto**: se você precisar especificar uma chave de produto para ativação do Windows, insira-a aqui  
 
     - Selecione uma das opções a seguir para configurar a conta de administrador local no Windows 10:  
         - **Gere a senha do administrador local aleatoriamente e desabilite a conta em todas as plataformas com suporte (recomendado)**
@@ -121,9 +124,9 @@ No Microsoft Intune, crie perfis para o Windows Autopilot. Para saber mais, conf
 
 Se você editar a sequência de tarefas, será semelhante à sequência de tarefas padrão para aplicar uma imagem do sistema operacional existente. Essa sequência de tarefas inclui as seguintes etapas adicionais:  
 
-- **Aplicar a configuração do Windows Autopilot**: Esta etapa aplica o arquivo de configuração do Autopilot do pacote especificado. Não é um novo tipo de etapa, é uma etapa para **Executar a linha de comando** para copiar o arquivo.  
+- **Aplicar a configuração do Windows Autopilot**: esta etapa aplica o arquivo de configuração do Autopilot do pacote especificado. Não é um novo tipo de etapa, é uma etapa para **Executar a linha de comando** para copiar o arquivo.  
 
-- **Preparar o Windows para captura**: Esta etapa executa o Sysprep do Windows e tem a configuração para **Desligar o computador depois de executar essa ação**. Para obter mais informações, consulte [Preparar o Windows para Captura](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareWindowsforCapture).  
+- **Preparar o Windows para captura**: esta etapa executa o Windows Sysprep e inclui a nova opção para **Desligar o computador depois de executar essa ação**. Para obter mais informações, consulte [Preparar o Windows para Captura](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareWindowsforCapture).  
 
 A sequência de tarefas do Windows Autopilot para dispositivos existentes faz com que um dispositivo ingresse no Azure Active Directory (Azure AD). 
 

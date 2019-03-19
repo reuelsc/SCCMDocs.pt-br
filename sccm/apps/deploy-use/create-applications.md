@@ -2,7 +2,7 @@
 title: Criar aplicativos
 titleSuffix: Configuration Manager
 description: Crie aplicativos com tipos de implantação, métodos de detecção e requisitos para instalação do software.
-ms.date: 11/27/2018
+ms.date: 03/04/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7f896f2ad719572c5adb4e0f24cfc1cf7d1c4d6
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 236ae6e9efafcfe24f064fb643a43524eee3718d
+ms.sourcegitcommit: 4ab85212268e76d3fd22f00e6c74edaa5abde60c
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126738"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57426933"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Criar aplicativos no Configuration Manager
 
@@ -84,11 +84,11 @@ Em seguida, detecte automaticamente ou especifique manualmente as informações 
         > [!TIP]  
         >  Se o programa de instalação não for exibido, escolha **Procurar** e procure o local do programa de instalação.  
 
-    -   **Comportamento da instalação**: Selecione uma das três opções de como o Configuration Manager deve instalar esse tipo de implantação. Para obter mais informações sobre essas opções, confira [Experiência de Usuário](#bkmk_dt-ux).  
+    -   **Comportamento da instalação**: selecione uma das três opções de como o Configuration Manager deve instalar esse tipo de implantação. Para obter mais informações sobre essas opções, confira [Experiência de Usuário](#bkmk_dt-ux).  
 
-    -   **Use uma conexão VPN automática (se configurada)**: Se você tiver implantado um perfil de VPN para o dispositivo no qual o usuário inicia o aplicativo, conecte-se à VPN quando o aplicativo for iniciado. Essa opção é somente para Windows 8.1 e Windows Phone 8.1. Em dispositivos Windows Phone 8.1, se você implantar mais de um perfil de VPN no dispositivo, não haverá suporte para conexões VPN automáticas. Para obter mais informações, consulte [Perfis de VPN](/sccm/protect/deploy-use/vpn-profiles).  
+    -   **Usar uma conexão VPN automática (se configurada)**: se você implantou um perfil de VPN para o dispositivo no qual o usuário inicia o aplicativo, conecte-se à VPN quando o aplicativo for iniciado. Essa opção é somente para Windows 8.1 e Windows Phone 8.1. Em dispositivos Windows Phone 8.1, se você implantar mais de um perfil de VPN no dispositivo, não haverá suporte para conexões VPN automáticas. Para obter mais informações, consulte [Perfis de VPN](/sccm/protect/deploy-use/vpn-profiles).  
 
-    - **Provisionar este aplicativo para todos os usuários no dispositivo**<!--1358310-->: Começando na versão 1806, é possível provisionar um aplicativo com um pacote do aplicativo do Windows para todos os usuários no dispositivo. Para obter mais informações, confira [Criar aplicativos Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_provision).  
+    - **Provisionar este aplicativo para todos os usuários no dispositivo**<!--1358310-->: começando na versão 1806, é possível provisionar um aplicativo com um pacote do aplicativo do Windows para todos os usuários no dispositivo. Para obter mais informações, confira [Criar aplicativos Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_provision).  
 
        > [!Tip]  
        > Se você estiver modificando um aplicativo existente, essa configuração estará na guia **Experiência do Usuário** das propriedades de tipo de implantação do pacote do aplicativo do Windows.  
@@ -118,28 +118,28 @@ Para adicionar mais tipos de implantação ou definir outras configurações, co
 
 3.  Na página **Catálogo de Aplicativos** do Assistente para Criar Aplicativo, especifique as seguintes informações:  
 
-    -   **Idioma selecionado**: Na lista suspensa, selecione a versão de idioma do aplicativo que deseja configurar. Escolha **Adicionar/Remover** para configurar mais idiomas para esse aplicativo.  
+    -   **Idioma selecionado**: na lista suspensa, selecione a versão de idioma do aplicativo que deseja configurar. Escolha **Adicionar/Remover** para configurar mais idiomas para esse aplicativo.  
 
-    -   **Nome do aplicativo localizado**: Especifique o nome do aplicativo no idioma selecionado.  
+    -   **Nome do aplicativo localizado**: especifique o nome do aplicativo no idioma selecionado.  
 
         > [!IMPORTANT]  
         > Um nome de aplicativo localizado é necessário para cada versão de idioma que você configura.  
 
-    -   **Categorias de usuário**: Escolha **Editar** para especificar as categorias do aplicativo no idioma selecionado. Os usuários do Centro de Software usam essas categorias para filtrar e classificar os aplicativos disponíveis.  
+    -   **Categorias do usuário**: escolha **Editar** para especificar as categorias do aplicativo no idioma selecionado. Os usuários do Centro de Software usam essas categorias para filtrar e classificar os aplicativos disponíveis.  
 
-    -   **Documentação do usuário**: Especifique a localização de um arquivo no qual os usuários do Centro de Software podem obter mais informações sobre este aplicativo. Esse local é um endereço de site ou um caminho de rede e um nome de arquivo. Verifique se os usuários têm acesso a esse local.  
+    -   **Documentação do usuário**: especifique o local de um arquivo no qual os usuários do Centro de Software podem obter mais informações sobre este aplicativo. Esse local é um endereço de site ou um caminho de rede e um nome de arquivo. Verifique se os usuários têm acesso a esse local.  
 
-    -   **Texto do link**: Especifique o texto que é exibido no lugar da URL do aplicativo.  
+    -   **Texto do link**: especifique o texto que é exibido no lugar da URL do aplicativo.  
 
-    -   **URL de privacidade**: Especifique um endereço de site para a política de privacidade do aplicativo.  
+    -   **URL de privacidade**: especifique um endereço de site para a política de privacidade do aplicativo.  
 
-    -   **Descrição localizada**: Insira uma descrição deste aplicativo no idioma selecionado.  
+    -   **Descrição localizada**: insira uma descrição deste aplicativo no idioma selecionado.  
 
-    -   **Palavras-chave**: Insira uma lista de palavras-chave no idioma selecionado. Essas palavras-chave ajudam os usuários do Centro de Software a pesquisar o aplicativo.  
+    -   **Palavras-chave**: insira uma lista de palavras-chave no idioma selecionado. Essas palavras-chave ajudam os usuários do Centro de Software a pesquisar o aplicativo.  
 
-    -   **Ícone**: Clique em **Procurar** para selecionar um ícone para este aplicativo. Se você não especificar um ícone, o Configuration Manager usará um ícone padrão. Os ícones podem ter dimensões de pixel de até 512 x 512.  
+    -   **Ícone**: clique em **Procurar** para selecionar um ícone para este aplicativo. Se você não especificar um ícone, o Configuration Manager usará um ícone padrão. Os ícones podem ter dimensões de pixel de até 512 x 512.  
 
-    -   **Exibir como um aplicativo em destaque e realçá-lo no Portal da Empresa**: Esta opção exibe o aplicativo em destaque no Portal da Empresa em dispositivos móveis.  
+    -   **Exibir como um aplicativo em destaque e realçá-lo no Portal da Empresa**: essa opção exibe o aplicativo em destaque no Portal da Empresa em dispositivos móveis.  
 
 4.  Na página **Tipos de Implantação** do Assistente para Criar Aplicativo, escolha **Adicionar** para criar um novo tipo de implantação. Para obter mais informações, consulte [Criar tipos de implantação para o aplicativo](#bkmk_create-dt).  
 
@@ -169,11 +169,11 @@ Se você [detectar automaticamente as informações do aplicativo](#bkmk_auto-ap
 
 Há três maneiras de iniciar o Assistente para Criar Tipo de Implantação:
 
-- **No nó Aplicativos**: No console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**. Selecione um aplicativo e, em seguida, clique em **Criar Tipo de Implantação** na faixa de opções.  
+- **No nó Aplicativos**: no console do Configuration Manager, acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**. Selecione um aplicativo e, em seguida, clique em **Criar Tipo de Implantação** na faixa de opções.  
 
-- **Ao criar um aplicativo**: Quando você [Especificar manualmente as informações do aplicativo](#bkmk_manual-app) no assistente para Criar Aplicativo, clique em **Adicionar** na página Tipos de Implantação.  
+- **Ao criar um aplicativo**: quando você [Especificar manualmente as informações do aplicativo](#bkmk_manual-app) no assistente para Criar Aplicativo, clique em **Adicionar** na página Tipos de Implantação.  
 
-- **Nas propriedades do aplicativo**: Selecione um aplicativo existente no nó **Aplicativos** e clique em **Propriedades**. Mude para a guia **Tipos de Implantação** e, em seguida, clique em **Adicionar**.
+- **Nas propriedades do aplicativo**: selecione um aplicativo existente no nó **Aplicativos** e clique em **Propriedades**. Mude para a guia **Tipos de Implantação** e, em seguida, clique em **Adicionar**.
 
 Em seguida, use um dos procedimentos a seguir para [identificar automaticamente](#bkmk_auto-dt) ou [especificar manualmente](#bkmk_manual-dt) as informações do tipo de implantação.  
 
@@ -204,9 +204,9 @@ Em seguida, use um dos procedimentos a seguir para [identificar automaticamente]
 
     -   **Programa de instalação**: especifique o programa de instalação e as propriedades que você precisa para instalar o tipo de implantação.  
 
-    -   **Comportamento da instalação**: Selecione uma das três opções de como o Configuration Manager deve instalar esse tipo de implantação. Para obter mais informações sobre essas opções, confira [Experiência de Usuário](#bkmk_dt-ux).  
+    -   **Comportamento da instalação**: selecione uma das três opções de como o Configuration Manager deve instalar esse tipo de implantação. Para obter mais informações sobre essas opções, confira [Experiência de Usuário](#bkmk_dt-ux).  
 
-    -   **Use uma conexão VPN automática (se configurada)**: Se você tiver implantado um perfil de VPN para o dispositivo no qual o usuário inicia o aplicativo, conecte-se à VPN quando o aplicativo for iniciado. Essa opção é somente para Windows 8.1 e Windows Phone 8.1. Em dispositivos Windows Phone 8.1, se você implantar mais de um perfil de VPN no dispositivo, não haverá suporte para conexões VPN automáticas. Para obter mais informações, consulte [Perfis de VPN](/sccm/protect/deploy-use/vpn-profiles).  
+    -   **Usar uma conexão VPN automática (se configurada)**: se você implantou um perfil de VPN para o dispositivo no qual o usuário inicia o aplicativo, conecte-se à VPN quando o aplicativo for iniciado. Essa opção é somente para Windows 8.1 e Windows Phone 8.1. Em dispositivos Windows Phone 8.1, se você implantar mais de um perfil de VPN no dispositivo, não haverá suporte para conexões VPN automáticas. Para obter mais informações, consulte [Perfis de VPN](/sccm/protect/deploy-use/vpn-profiles).  
 
 4.  Escolha **Avançar** e, em seguida, continue nas [Opções de tipo de conteúdo de implantação](#bkmk_dt-content).  
 
@@ -228,24 +228,24 @@ Na página **Conteúdo**, especifique as seguintes informações:
 > [!Note]  
 > Quando você exibe as propriedades de um tipo de implantação existente, algumas dessas opções são exibidas na guia **Conteúdo** e outras na guia **Programas**.  
 
-- **Localização do conteúdo**: Especifique a localização do conteúdo para esse tipo de implantação ou selecione **Procurar** para escolher a pasta de conteúdo do tipo de implantação.  
+- **Local do conteúdo**: especifique o local do conteúdo para esse tipo de implantação ou selecione **Procurar** para escolher a pasta de conteúdo do tipo de implantação.  
 
     > [!IMPORTANT]  
     >  A conta Sistema do computador servidor do site precisa ter permissões para o local do conteúdo especificado.  
 
-    - **Manter o conteúdo no cache do cliente**: O cliente do Configuration Manager mantém indefinidamente em seu cache o conteúdo do tipo de implantação. O cliente mantém o conteúdo, mesmo quando o aplicativo já está instalado. Essa opção é útil em algumas implantações, como software baseado no Windows Installer. O Windows Installer precisa de uma cópia local do conteúdo de origem para aplicar as atualizações. Essa opção reduz o espaço disponível em cache. Se você selecionar essa opção, uma implantação grande poderá falhar futuramente se o cache não tiver espaço suficiente.  
+    - **Manter o conteúdo no cache do cliente**: o cliente do Configuration Manager mantém indefinidamente em seu cache o conteúdo do tipo de implantação. O cliente mantém o conteúdo, mesmo quando o aplicativo já está instalado. Essa opção é útil em algumas implantações, como software baseado no Windows Installer. O Windows Installer precisa de uma cópia local do conteúdo de origem para aplicar as atualizações. Essa opção reduz o espaço disponível em cache. Se você selecionar essa opção, uma implantação grande poderá falhar futuramente se o cache não tiver espaço suficiente.  
 
-- **Programa de instalação**: Especifique o nome do programa de instalação e todos os parâmetros de instalação necessários.  
+- **Programa de instalação**: especifique o nome do programa de instalação e todos os parâmetros de instalação necessários.  
 
-    - **A instalação inicia em**: Opcionalmente, especifique a pasta que contém o programa de instalação para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente ou um caminho para a pasta do ponto de distribuição que tem os arquivos de instalação.  
+    - **A instalação é iniciada em**: opcionalmente, especifique a pasta que contém o programa de instalação para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente ou um caminho para a pasta do ponto de distribuição que tem os arquivos de instalação.  
 
-- **Desinstalar programa**: Opcionalmente, especifique o nome do programa de desinstalação e os parâmetros necessários.  
+- **Desinstalar programa**: opcionalmente, especifique o nome do programa de desinstalação e os parâmetros necessários.  
 
-    - **A desinstalação inicia em**: Opcionalmente, especifique a pasta que contém o programa de desinstalação para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente. Também pode ser um caminho relativo em um ponto de distribuição da pasta com o pacote.  
+    - **A desinstalação é iniciada em**: opcionalmente, especifique a pasta que contém o programa de desinstalação para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente. Também pode ser um caminho relativo em um ponto de distribuição da pasta com o pacote.  
 
-- **Reparar o programa**: Opcionalmente, começando na versão 1810, para tipos de implantação do Windows Installer e o instalador de Script, especifique o nome do programa reparo e todos os parâmetros necessários.<!--1357866-->  
+- **Reparar o programa**: opcionalmente, começando na versão 1810, para tipos de implantação do Windows Installer e o instalador de Script, especifique o nome do programa reparo e todos os parâmetros necessários.<!--1357866-->  
 
-    - **O reparo inicia em**: Opcionalmente, especifique a pasta que contém o programa de reparo para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente. Também pode ser um caminho relativo em um ponto de distribuição da pasta com o pacote.  
+    - **Reparo inicia em**: opcionalmente, especifique a pasta que contém o programa de reparo para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente. Também pode ser um caminho relativo em um ponto de distribuição da pasta com o pacote.  
 
 - **Execute o programa de instalação e desinstalação como um processo de 32 bits em clientes de 64 bits**: use o arquivo de 32 bits e os locais de Registro em computadores Windows para executar o programa de instalação para o tipo de implantação.  
 
@@ -255,19 +255,19 @@ Quando você exibe as propriedades de um tipo de implantação, as opções a se
 
 - **Configurações de conteúdo de desinstalação**:  
 
-    - **Igual ao conteúdo de instalação**: Se o conteúdo de instalação e desinstalação forem os mesmos, selecione essa opção. Essa opção é o padrão.  
+    - **Igual ao conteúdo de instalação**: se o conteúdo de instalação e desinstalação forem os mesmos, selecione essa opção. Essa opção é o padrão.  
 
-    - **Nenhum conteúdo de desinstalação**: Se o aplicativo não precisar de conteúdo para desinstalação, selecione essa opção.  
+    - **Sem conteúdo de desinstalação**: se o aplicativo não precisar de conteúdo para desinstalação, selecione essa opção.  
 
-    - **Diferente do conteúdo de instalação**: Selecione esta opção se o conteúdo de desinstalação for diferente do conteúdo de instalação.  
+    - **Diferente do conteúdo da instalação**: se o conteúdo de desinstalação for diferente do conteúdo de instalação, selecione essa opção.  
 
-        - **Localização do conteúdo de desinstalação**: Especifique o caminho de rede para o conteúdo que é usado para desinstalar o aplicativo.  
+        - **Local do conteúdo de desinstalação**: especifique o caminho de rede para o conteúdo que é usado para desinstalar o aplicativo.  
 
-- **Permitir que os clientes usem pontos de distribuição do grupo de limites de site padrão**: Especifique se os clientes deverão baixar e instalar os softwares de um ponto de distribuição no grupo de limites do site padrão quando o conteúdo não estiver disponível em um ponto de distribuição nos grupos de limites atuais ou vizinhos.  
+- **Permitir que os clientes usem pontos de distribuição do grupo de limites do site padrão**: especifique se os clientes devem baixar e instalar o software de um ponto de distribuição no grupo de limites do site padrão, quando o conteúdo não está disponível em um ponto de distribuição nos grupos de limites atuais ou vizinhos.  
 
-- **Opções de implantação**: Especifique se os clientes deverão baixar o aplicativo ao usarem um ponto de distribuição de um vizinho ou os grupos de limites do site padrão.  
+- **Opções de implantação**: especifique se os clientes devem baixar o aplicativo ao usarem um ponto de distribuição de um vizinho ou os grupos de limites do site padrão.  
 
-- **Permita que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: Especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações, confira [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). Começando na versão 1802, o BranchCache está sempre habilitado nos clientes. Essa configuração foi removida, pois os clientes usam o BranchCache quando há suporte para ele no ponto de distribuição.  
+- **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações, confira [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). Começando na versão 1802, o BranchCache está sempre habilitado nos clientes. Essa configuração foi removida, pois os clientes usam o BranchCache quando há suporte para ele no ponto de distribuição.  
 
 
 ### <a name="bkmk_dt-detect"></a> Opções de **Método de Detecção** do tipo de implantação   
@@ -283,29 +283,29 @@ Este procedimento configura um método de detecção que indica a presença do t
 
 2.  Na caixa de diálogo **Regra de Detecção**, clique na lista suspensa **Tipo de configuração**. Selecione um dos seguintes métodos para detectar a presença do tipo de implantação:  
 
-    - **Sistema de arquivos**: Detecte se um arquivo ou uma pasta especificada existe em um dispositivo. Essa detecção indica que o aplicativo está instalado. Especifique os seguintes detalhes adicionais:  
+    - **Sistema de Arquivos**: detecte se um arquivo ou uma pasta especificada existe em um dispositivo. Essa detecção indica que o aplicativo está instalado. Especifique os seguintes detalhes adicionais:  
 
-        - **Tipo**: Selecione se é um arquivo ou uma pasta.  
+        - **Tipo**: selecione se é um arquivo ou uma pasta.  
 
-        - **Caminho** (obrigatório): Insira ou navegue até o caminho local no dispositivo que inclui o arquivo ou a pasta. Por exemplo, `C:\Program Files`. Não é possível especificar um caminho de rede compartilhada. Se você clicar **Procurar**, procure o sistema de arquivos local ou conecte-se a um cliente representativo para procurar.  
+        - **Caminho** (obrigatório): insira ou navegue até o caminho local no dispositivo que inclui o arquivo ou a pasta. Por exemplo, `C:\Program Files`. Não é possível especificar um caminho de rede compartilhada. Se você clicar **Procurar**, procure o sistema de arquivos local ou conecte-se a um cliente representativo para procurar.  
 
-        - **Nome do arquivo ou pasta** (obrigatório): Especifique o nome do arquivo ou da pasta específico a ser detectado no caminho acima. Se o cliente detectar esse arquivo ou pasta no dispositivo, ele considerará que o aplicativo está instalado no dispositivo.  
+        - **Nome do arquivo ou da pasta** (obrigatório): especifique o nome do arquivo ou da pasta específico a ser detectado no caminho acima. Se o cliente detectar esse arquivo ou pasta no dispositivo, ele considerará que o aplicativo está instalado no dispositivo.  
 
-        - **Esse arquivo ou pasta está associado a um aplicativo de 32 bits em sistemas de 64 bits**: Essa opção é habilitada por padrão. O cliente verifica primeiro os locais de arquivo de 32 bits buscando o arquivo ou a pasta especificada. Se o arquivo ou a pasta não for encontrada, o cliente pesquisará nos locais de 64 bits.  
+        - **Este arquivo ou pasta está associada com um aplicativo de 32 bits em sistemas de 64 bits**: essa opção é selecionada por padrão. O cliente verifica primeiro os locais de arquivo de 32 bits buscando o arquivo ou a pasta especificada. Se o arquivo ou a pasta não for encontrada, o cliente pesquisará nos locais de 64 bits.  
 
-    - **Registro**: Detecte se uma chave do Registro ou um valor de registro especificado existe em um dispositivo cliente. Essa detecção indica que o aplicativo está instalado. Especifique os seguintes detalhes adicionais:  
+    - **Registro**: detecte se uma chave do Registro ou um valor de registro especificado existe em um dispositivo cliente. Essa detecção indica que o aplicativo está instalado. Especifique os seguintes detalhes adicionais:  
 
-        - **Hive** (obrigatório): Escolha um hive do Registro na lista suspensa. Por exemplo, `HKEY_LOCAL_MACHINE`.  
+        - **Hive** (obrigatório): escolha um hive do Registro na lista suspensa. Por exemplo, `HKEY_LOCAL_MACHINE`.  
 
-        - **Chave** (obrigatório): Especifique a chave do Registro a ser pesquisada no hive acima. Por exemplo, `SOFTWARE\Microsoft\Office`.  
+        - **Chave** (obrigatório): especifique a chave do Registro a ser pesquisada no hive acima. Por exemplo, `SOFTWARE\Microsoft\Office`.  
 
-        - **Valor** (opcional): Insira um valor específico a ser detectado na chave acima. Se você quiser que o cliente detecte o valor (padrão), habilite a opção para **Usar o valor de chave do Registro (padrão) para detecção**. Quando você inserir um valor ou habilitar essa opção, será necessário selecionar um **Tipo de Dados**.  
+        - **Valor** (opcional): insira um valor específico a ser detectado na chave acima. Se você quiser que o cliente detecte o valor (padrão), habilite a opção para **Usar o valor de chave do Registro (padrão) para detecção**. Quando você inserir um valor ou habilitar essa opção, será necessário selecionar um **Tipo de Dados**.  
 
-        - **Esta chave do Registro está associada a um aplicativo de 32 bits em sistemas de 64 bits**: Selecione esta opção para primeiro verificar locais do Registro de 32 bits em busca da chave do Registro especificada. Se a chave do Registro não for encontrada, o cliente pesquisará nos locais de 64 bits.  
+        - **Esta chave do Registro está associada a um aplicativo de 32 bits em sistemas de 64 bits**: selecione essa opção para verificar primeiro os locais do Registro de 32 bits buscando a chave do Registro especificada. Se a chave do Registro não for encontrada, o cliente pesquisará nos locais de 64 bits.  
 
-    - **Windows Installer**: Detecte se um arquivo do Windows Installer especificado existe em um dispositivo cliente. Essa detecção indica que o aplicativo está instalado. Especifique o **Código do produto** de MSI a ser detectado no cliente. Se você clicar em **Procurar**, selecione o arquivo MSI do qual o código do produto deve ser lido. 
+    - **Windows Installer**: detecte se um arquivo do Windows Installer especificado existe em um dispositivo cliente. Essa detecção indica que o aplicativo está instalado. Especifique o **Código do produto** de MSI a ser detectado no cliente. Se você clicar em **Procurar**, selecione o arquivo MSI do qual o código do produto deve ser lido. 
 
-3.  Na parte inferior da janela Regra de Detecção, especifique se o item precisa existir ou atender a uma regra. Por exemplo, se você detectar um arquivo, a opção a seguir será selecionada por padrão: **A configuração do sistema de arquivos deve existir no sistema de destino para indicar a presença desse aplicativo**. Selecione a outra opção para criar uma regra de detecção com base nas propriedades do arquivo ou da pasta. Essas propriedades incluem a data de modificação, a data de criação, a versão ou o tamanho. Esses critérios de regra são diferentes para cada tipo de configuração.  
+3.  Na parte inferior da janela Regra de Detecção, especifique se o item precisa existir ou atender a uma regra. Por exemplo, se você detectar um arquivo, a seguinte opção será selecionada por padrão: **A configuração do sistema de arquivos precisa existir no sistema de destino para indicar a presença deste aplicativo**. Selecione a outra opção para criar uma regra de detecção com base nas propriedades do arquivo ou da pasta. Essas propriedades incluem a data de modificação, a data de criação, a versão ou o tamanho. Esses critérios de regra são diferentes para cada tipo de configuração.  
 
 4.  Clique em **OK** para fechar a caixa de diálogo **Regra de Detecção**.  
 
@@ -319,6 +319,9 @@ Continue na próxima seção sobre como usar um script personalizado como um mé
 1.  Na página **Método de Detecção**, marque a caixa **Usar um script personalizado para verificar a presença de um tipo de implantação**. Em seguida, clique em **Editar**.  
 
 2.  Na caixa de diálogo **Editor de Scripts**, clique na lista suspensa **Tipo de Script**. Selecione uma das linguagens de script a seguir para detectar o tipo de implantação: PowerShell, VBScript ou JScript.  
+
+    > [!Note]  
+    > Começando na versão 1810, quando um script do Windows PowerShell é executado como um método de detecção do aplicativo, o cliente do Configuration Manager chama PowerShell com o `-NoProfile` parâmetro. Essa opção inicia o PowerShell sem perfis. Um perfil do PowerShell é um script executado quando o PowerShell é iniciado. <!--3607762-->  
 
 3.  Na caixa **Conteúdo do script**, insira o script que você deseja usar ou cole o conteúdo de um script existente. Escolha **Abrir** para navegar até um script existente salvo. Clique em **Limpar** para remover o texto no campo Conteúdo do script. Se necessário, habilite a opção para **Executar o script como um processo de 32 bits em clientes de 64 bits**.  
 
@@ -358,29 +361,29 @@ Use as tabelas a seguir para verificar na saída de um script se um aplicativo f
 
 Use os exemplos de VBScript a seguir para escrever seus próprios scripts de detecção de aplicativos:  
 
-Exemplo 1: O script retorna um código de saída diferente de zero. Esse código indica que o script não foi executado com êxito. Nesse caso, o estado de detecção do aplicativo é desconhecido.  
+Exemplo 1: o script retorna um código de saída diferente de zero. Esse código indica que o script não foi executado com êxito. Nesse caso, o estado de detecção do aplicativo é desconhecido.  
 ``` VBScript
 WScript.Quit(1)
 ```
 
-Exemplo 2: O script retorna um código de saída igual a zero, mas o valor de STDERR não está vazio. Esse resultado indica que o script não foi executado com êxito. Nesse caso, o estado de detecção do aplicativo é desconhecido.  
+Exemplo 2: o script retorna um código de saída igual a zero, mas o valor de STDERR não está vazio. Esse resultado indica que o script não foi executado com êxito. Nesse caso, o estado de detecção do aplicativo é desconhecido.  
 ``` VBScript
 WScript.StdErr.Write "Script failed"
 WScript.Quit(0)
 ```
 
-Exemplo 3: O script retorna um código de saída igual a zero, o que indica que ele foi executado com êxito. No entanto, o valor de STDOUT está vazio, o que indica que o aplicativo não está instalado.  
+Exemplo 3: o script retorna um código de saída igual a zero, o que indica que ele foi executado com êxito. No entanto, o valor de STDOUT está vazio, o que indica que o aplicativo não está instalado.  
 ``` VBScript
 WScript.Quit(0)
 ```
 
-Exemplo 4: O script retorna um código de saída igual a zero, o que indica que ele foi executado com êxito. O valor de STDOUT não está vazio, o que indica que o aplicativo está instalado.  
+Exemplo 4: o script retorna um código de saída igual a zero, o que indica que ele foi executado com êxito. O valor de STDOUT não está vazio, o que indica que o aplicativo está instalado.  
 ``` VBScript
 WScript.StdOut.Write "The application is installed"
 WScript.Quit(0)
 ```
 
-Exemplo 5: O script retorna um código de saída igual a zero, o que indica que ele foi executado com êxito. Os valores de STDOUT e STDERR não estão vazios, o que indica que o aplicativo está instalado.  
+Exemplo 5: o script retorna um código de saída igual a zero, o que indica que ele foi executado com êxito. Os valores de STDOUT e STDERR não estão vazios, o que indica que o aplicativo está instalado.  
 ``` VBScript
 WScript.StdOut.Write "The application is installed"
 WScript.StdErr.Write "Completed"
@@ -396,13 +399,13 @@ Na página **Experiência do Usuário** , especifique as seguintes informações
 
 - **Comportamento da instalação**: na lista suspensa, escolha uma das seguintes opções:  
 
-    - **Instalar para o usuário**: O cliente instala o aplicativo apenas para o usuário a quem você implanta o aplicativo.  
+    - **Instalar para o usuário**: o cliente instala o aplicativo apenas para o usuário a quem você implanta o aplicativo.  
 
-    - **Instalar para o sistema**: O cliente instala o aplicativo apenas uma vez. Ele está disponível para todos os usuários.  
+    - **Instalar para o sistema**: o cliente instala o aplicativo apenas uma vez. Ele está disponível para todos os usuários.  
 
-    - **Instalar para o sistema se o recurso for um dispositivo; caso contrário, instalar para o usuário**: Se você implantar o aplicativo em um dispositivo, o cliente o instalará para todos os usuários. Se você implantar o aplicativo para um usuário, o cliente o instalará apenas para esse usuário.  
+    - **Instalar para o sistema se o recurso for dispositivo, caso contrário, instalar para o usuário**: se você implantar o aplicativo em um dispositivo, o cliente o instalará para todos os usuários. Se você implantar o aplicativo para um usuário, o cliente o instalará apenas para esse usuário.  
 
-- **Requisito de logon**: Selecione uma das seguintes opções:  
+- **Requisito de logon**: selecione uma das seguintes opções:  
 
   - **Somente quando um usuário tiver efetuado logon**  
 
@@ -413,7 +416,7 @@ Na página **Experiência do Usuário** , especifique as seguintes informações
     > [!NOTE]  
     >  Essa opção usa como padrão **Somente quando um usuário estiver conectado**. Se você selecionar **Instalar para o usuário** na lista suspensa **Comportamento da instalação**, não poderá alterar essa opção.  
 
-- **Visibilidade do programa de instalação**: Especifique o modo no qual o tipo de implantação é executado em dispositivos cliente. Selecione uma das seguintes opções:  
+- **Visibilidade do programa de instalação**: especifique o modo no qual o tipo de implantação é executado nos dispositivos cliente. Selecione uma das seguintes opções:  
 
     - **Maximizado**: o tipo de implantação é executado maximizado em dispositivos cliente. Os usuários veem todas as atividades de instalação.  
 
@@ -421,9 +424,9 @@ Na página **Experiência do Usuário** , especifique as seguintes informações
 
     - **Minimizado**: o tipo de implantação é executado minimizado em dispositivos cliente. Os usuários podem ver a atividade de instalação na área de notificação ou na barra de tarefas.  
 
-    - **Oculto**: O tipo de implantação é executado no modo oculto nos dispositivos cliente. Os usuários não veem nenhuma atividade de instalação.  
+    - **Oculto**: o tipo de implantação é executado no modo oculto nos dispositivos cliente. Os usuários não veem nenhuma atividade de instalação.  
 
-- **Permitir que os usuários exibam e interajam com o programa de instalação**: Especifique se um usuário pode interagir com a instalação do tipo de implantação para configurar as opções de instalação.  
+- **Permitir que os usuários exibam e interajam com o programa de instalação**: especifique se um usuário pode interagir com a instalação do tipo de implantação para configurar as opções de instalação.  
 
     > [!NOTE]  
     >  Se você selecionar a opção **Instalar para o usuário** na lista suspensa **Comportamento da instalação**, essa opção estará habilitada por padrão.  
@@ -433,7 +436,7 @@ Na página **Experiência do Usuário** , especifique as seguintes informações
     >  
     > A instalação no contexto do sistema e a permissão para os usuários interagirem com a instalação não é uma configuração segura. Para obter mais informações, consulte [Segurança e privacidade do gerenciamento de aplicativos](/sccm/apps/plan-design/security-and-privacy-for-application-management#bkmk_interact).  
 
-- **Tempo de execução máximo permitido (minutos)**: Especifique o tempo máximo em minutos em que você espera que o tipo de implantação seja executado no computador cliente. Especifique essa configuração como um número inteiro maior que zero. O valor padrão é 120 minutos (duas horas).  
+- **Máximo de tempo de execução permitido (minutos)**: especifique o tempo máximo em minutos em que você espera que o tipo de implantação seja executado no computador cliente. Especifique essa configuração como um número inteiro maior que zero. O valor padrão é 120 minutos (duas horas).  
 
     Use esse valor para as seguintes ações:  
 
@@ -444,7 +447,7 @@ Na página **Experiência do Usuário** , especifique as seguintes informações
     > [!IMPORTANT]  
     >  Um conflito poderá ocorrer se o **Tempo de execução máximo permitido** for maior do que a janela de manutenção agendada. Se o usuário definir o tempo de execução máximo com um período superior ao tamanho de qualquer janela de manutenção disponível, esse tipo de implantação não será executado.  
 
-- **Tempo estimado para instalação (minutos)**: Especifique o tempo estimado para a instalação do tipo de implantação. Os usuários veem esse tempo no Centro de Software.  
+- **Tempo estimado para instalação (minutos)**: especifique o tempo estimado para a instalação do tipo de implantação. Os usuários veem esse tempo no Centro de Software.  
 
 
 #### <a name="deployment-type-properties-user-experience-options"></a>Opções de **Experiência do Usuário** das propriedades do tipo de implantação
@@ -452,13 +455,13 @@ Quando você exibe as propriedades de um tipo de implantação, as opções a se
 
 Impor um comportamento de pós-instalação específico. Selecione uma das seguintes opções:  
 
-- **Determinar o comportamento com base em códigos de retorno**: Manipule as reinicializações com base nos códigos configurados na guia [Códigos de Retorno](#bkmk_dt-return). O Centro de Software exibe **Pode Exigir uma Reinicialização**. Se um usuário estiver conectado durante a instalação, ele receberá avisos, dependendo da configuração de Experiência do Usuário *da implantação*.  
+- **Determinar o comportamento com base em códigos de retorno**: manipule as reinicializações com base nos códigos configurados na guia [Códigos de Retorno](#bkmk_dt-return). O Centro de Software exibe **Pode Exigir uma Reinicialização**. Se um usuário estiver conectado durante a instalação, ele receberá avisos, dependendo da configuração de Experiência do Usuário *da implantação*.  
 
-- **Nenhuma ação específica**: Nenhuma reinicialização é necessária após a instalação. O Centro de Software relata que nenhuma reinicialização é necessária.  
+- **Nenhuma ação específica**: nenhuma reinicialização é necessária após a instalação. O Centro de Software relata que nenhuma reinicialização é necessária.  
 
-- **O programa de instalação do software pode forçar uma reinicialização do dispositivo**: O Configuration Manager não controla nem inicia uma reinicialização, mas a instalação real pode fazer isso sem aviso. Use essa configuração para impedir que o Configuration Manager relate falha de instalação quando o instalador inicia uma reinicialização. O Centro de Software exibe **Pode Exigir uma Reinicialização**.  
+- **O programa de instalação do software pode forçar uma reinicialização do dispositivo**: o Configuration Manager não controla nem inicia uma reinicialização, mas a instalação real pode fazer isso sem aviso. Use essa configuração para impedir que o Configuration Manager relate falha de instalação quando o instalador inicia uma reinicialização. O Centro de Software exibe **Pode Exigir uma Reinicialização**.  
 
-- **O cliente do Configuration Manager forçará a reinicialização de um dispositivo obrigatório**: O Configuration Manager força uma reinicialização do dispositivo após uma instalação bem-sucedida. O Centro de Software relata que uma reinicialização é necessária. Se um usuário estiver conectado durante a instalação, ele receberá avisos, dependendo da configuração de Experiência do Usuário *da implantação*.  
+- **O cliente do Configuration Manager forçará uma reinicialização obrigatória do dispositivo**: o Configuration Manager força uma reinicialização do dispositivo após uma instalação bem-sucedida. O Centro de Software relata que uma reinicialização é necessária. Se um usuário estiver conectado durante a instalação, ele receberá avisos, dependendo da configuração de Experiência do Usuário *da implantação*.  
 
 
 ### <a name="bkmk_dt-require"></a> **Requisitos** do tipo de implantação
@@ -529,15 +532,15 @@ Especifique os códigos de retorno para controlar os comportamentos depois que o
 
 3. Selecione uma **Tipo de Código** na lista suspensa. Essa configuração define como o Configuration Manager interpreta o código de retorno especificado desse tipo de implantação. Os tipos disponíveis variam com base na tecnologia do tipo de implantação.   
 
-    - **Êxito (sem reinicialização)**: O tipo de implantação foi instalado com êxito e não é necessário reinicializar.  
+    - **Êxito (sem reinicialização)**: o tipo de implantação foi instalado com êxito e não é necessário reinicializar.  
 
-    - **Falha (sem reinicialização)**: O tipo de implantação não foi instalado.  
+    - **Falha (sem reinicialização)**: o tipo de implantação não foi instalado.  
 
-    - **Reinicialização Forçada**: O tipo de implantação foi instalado com êxito, mas requer que o dispositivo seja reiniciado. Nada mais poderá ser instalado até que o dispositivo seja reiniciado.  
+    - **Reinicialização Forçada**: o tipo de implantação foi instalado com êxito, mas requer que o dispositivo seja reiniciado. Nada mais poderá ser instalado até que o dispositivo seja reiniciado.  
 
-    - **Reinicialização Suave**: O tipo de implantação foi instalado com êxito, mas requer que o dispositivo seja reiniciado. Outras instalações podem ocorrer antes que o dispositivo seja reiniciado.    
+    - **Reinicialização Suave**: o tipo de implantação foi instalado com êxito, mas solicita que o dispositivo seja reiniciado. Outras instalações podem ocorrer antes que o dispositivo seja reiniciado.    
 
-    - **Repetição Rápida**: Outra instalação já está em andamento no dispositivo. O cliente tentará novamente a cada duas horas, até o total de 10 vezes.  
+    - **Repetição Rápida**: outra instalação já está em andamento no dispositivo. O cliente tentará novamente a cada duas horas, até o total de 10 vezes.  
 
 4. Opcionalmente, insira um **Nome** e uma **Descrição** para esse código de retorno.
 
@@ -593,9 +596,9 @@ Configure opções adicionais que são exclusivas para tipos de implantação Ap
 
 4.  Nas propriedades do tipo de implantação, mude para a guia **Conteúdo**. Configure as opções a seguir conforme o necessário:  
 
-    -   **Manter o conteúdo no cache do cliente**: O cliente do Configuration Manager não excluirá do seu cache o conteúdo desse tipo de implantação.  
+    -   **Manter o conteúdo no cache do cliente**: o cliente do Configuration Manager não excluirá do seu cache o conteúdo desse tipo de implantação.  
 
-    -   **Carregar conteúdo no cache do App-V antes de iniciar**: Antes que o aplicativo seja iniciado, o cliente do Configuration Manager carrega no cache do App-V todo o conteúdo desse tipo de implantação. O cliente não fixa o conteúdo no cache. Ele exclui o conteúdo conforme o necessário.  
+    -   **Carregar conteúdo no cache do App-V antes de iniciar**: antes que o aplicativo seja iniciado, o cliente do Configuration Manager carrega no cache do App-V todo o conteúdo desse tipo de implantação. O cliente não fixa o conteúdo no cache. Ele exclui o conteúdo conforme o necessário.  
 
 5.  Clique em **OK** para fechar as propriedades do tipo de implantação. Em seguida, clique em **OK** para fechar as propriedades do aplicativo.  
 
@@ -660,12 +663,12 @@ O Configuration Manager dá suporte aos seguintes tipos de implantação de apli
 | **Aplicativo Web** | Especifique um link para um aplicativo Web. Esse tipo de implantação instala um atalho para o aplicativo Web no dispositivo do usuário.<sup>[Observação 2](#bkmk_note2)</sup> |  
 | **Windows Installer por meio do MDM (\*.msi)** | Crie e implante aplicativos baseados no Windows Installer em dispositivos Windows 10. Para obter mais informações, confira [Implantar aplicativos do Windows Installer em dispositivos Windows 10 registrados no MDM](/sccm/apps/get-started/creating-windows-applications#bkmk_mdm-msi). |  
 
-#### <a name="bkmk_note1"></a> Observação 1: Pacote de aplicativo Windows (na Windows Store)
+#### <a name="bkmk_note1"></a> Observação 1: pacote do aplicativo do Windows (na Windows Store)
 Para implantar o aplicativo como um link para a Windows Store, configure a política de grupo **Desligar o aplicativo Store**. Defina essa política como **Desabilitada** ou **Não Configurada**. Se você habilitar essa configuração, os clientes não poderão se conectar à Windows Store para baixar e instalar aplicativos.
 
 Os clientes do Windows sempre avaliam os tipos de implantação que usam um link para um repositório antes de outros tipos de implantação. Em seguida, o cliente avalia os tipos de implantação por prioridade. 
 
-#### <a name="bkmk_note2"></a> Observação 2: Aplicativo da Web  
+#### <a name="bkmk_note2"></a> Observação 2: aplicativo Web  
 Se você instalou o navegador gerenciado do Microsoft Intune em dispositivos iOS ou Android, verifique se os usuários podem usar somente o navegador gerenciado para abrir o aplicativo. No endereço do site, substitua **http** por **http-intunemam** ou **https** por **https-intunemam**. Por exemplo: 
 - `http-intunemam://<path to web app>`
 - `https-intunemam://<path to web app>`
