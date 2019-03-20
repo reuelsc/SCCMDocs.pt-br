@@ -10,12 +10,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8104210fcf690cecf4bdb815384b8dd672c3873d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 8add225db488a749eba98f9015fcb112e8f34f04
+ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122314"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57881785"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificados para o gateway de gerenciamento de nuvem
 
@@ -40,9 +40,10 @@ Para obter mais informações sobre os diferentes cenários, consulte [Planejar 
 
 
 ### <a name="general-information"></a>Informações gerais
-<!--SCCMDocs issue #779--> Certificados para o Gateway de Gerenciamento de Nuvem têm suporte para as seguintes configurações:  
+<!--SCCMDocs issue #779-->
+Certificados para o Gateway de Gerenciamento de Nuvem têm suporte para as seguintes configurações:  
 
-- **Comprimento de chave de 4096 bits**  
+- Comprimento de chave de 2048 ou 4096 bits
 
 - Da versão 1710 em diante, suporte para provedores de armazenamento de chaves para chaves privadas do certificado. Para obter mais informações, consulte [Visão geral dos certificados CNG](/sccm/core/plan-design/network/cng-certificates-overview).  
 
@@ -69,7 +70,7 @@ O CMG cria um serviço HTTPS ao qual os clientes baseados na Internet se conecta
  > [!NOTE]
  > A partir da versão 1802, o certificado de autenticação de servidor do CMG dá suporte a caracteres curinga. Algumas autoridades de certificação emitem certificados usando um caractere curinga para o nome do host. Por exemplo, **\*.contoso.com**. Algumas organizações usam certificados curinga para simplificar sua PKI e reduzir os custos de manutenção.<!--491233-->  
  > 
- > Para obter mais informações sobre como usar um certificado curinga com um CMG, veja [Configurar um CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#set-up-a-cmg).<!--SCCMDocs issue #565-->  
+ > Para saber mais sobre como usar um certificado curinga com um CMG, consulte [Configurar um CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#set-up-a-cmg).<!--SCCMDocs issue #565-->  
 
 
 ### <a name="bkmk_cmgroot"></a> Certificado raiz confiável do CMG para clientes

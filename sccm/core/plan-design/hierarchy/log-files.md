@@ -2,7 +2,7 @@
 title: Arquivos de log para solução de problemas
 titleSuffix: Configuration Manager
 description: Use arquivos de log para solucionar problemas com clientes e sistemas de sites do Configuration Manager.
-ms.date: 02/12/2019
+ms.date: 03/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3edf45c5b4eb62d5bfdd795f104c40da1ee1526
-ms.sourcegitcommit: 56ec6933cf7bfc93842f55835ad336ee3a1c6ab5
+ms.openlocfilehash: f14953b7c2008f6d0e9e5715a8096126e56b0b7e
+ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57211696"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57881955"
 ---
 # <a name="log-files-in-configuration-manager"></a>Arquivos de log no Configuration Manager
 
@@ -164,6 +164,7 @@ A tabela a seguir lista os arquivos de log localizados no cliente do Configurati
 |ClientLocation.log|Registra as tarefas que estão relacionadas à atribuição de site do cliente.|  
 |CMHttpsReadiness.log|Registra os resultados da execução da Ferramenta de avaliação de prontidão do HTTPS do Configuration Manager. Essa ferramenta verifica se os computadores têm o certificado de autenticação de cliente PKI (Infraestrutura de Chave Pública) que pode ser usado para o Configuration Manager.|  
 |CmRcService.log|Registra as informações para o serviço de controle remoto.|  
+|CoManagementHandler.log|Use para solucionar problemas de cogerenciamento no cliente.|
 |ContentTransferManager.log|Agenda o BITS (Serviço de Transferência Inteligente em Segundo Plano) ou o protocolo SMB para baixar ou acessar pacotes.|  
 |DataTransferService.log|Registra todas as comunicações de BITS para acesso a política ou pacote.|  
 |EndpointProtectionAgent|Registra as informações sobre a instalação do cliente do System Center Endpoint Protection e o aplicativo de política de antimalware para esse cliente.|  
@@ -282,6 +283,7 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 |--------------|-----------------|----------------------------|  
 |adctrl.log|Registra atividade de processamento do registro.|Servidor do site|  
 |ADForestDisc.log|Registra ações de descoberta de florestas do Active Directory.|Servidor do site|  
+|adminservice.log|Registra ações para a API REST do serviço de administração do Provedor de SMS|Computador com o Provedor de SMS|
 |ADService.log|Registra criação de conta e detalhes do grupo de segurança no Active Directory.|Servidor do site|  
 |adsgdis.log|Registra ações de descoberta de grupos do Active Directory.|Servidor do site|  
 |adsysdis.log|Registra ações de descoberta de sistemas do Active Directory.|Servidor do site|  
@@ -406,6 +408,7 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 |mpfdm.log|Registra as ações do componente do ponto de gerenciamento que movem arquivos de cliente para pasta de CAIXAS DE ENTRADA no servidor do site.|Servidor do sistema de site|  
 |mpMSI.log|Registra detalhes sobre a instalação do ponto de gerenciamento.|Servidor do site|  
 |MPSetup.log|Registra o processo de wrapper de instalação do ponto de gerenciamento.|Servidor do site|  
+|UserService.log|Registra solicitações de usuários do Centro de Software, recuperando/instalando aplicativos disponíveis pelo usuário no servidor.|Servidor do sistema de site|
 
 ###  <a name="BKMK_SUPLog"></a> Arquivos de log do ponto de atualização de software  
  A tabela a seguir lista os arquivos de log que contêm informações relacionadas ao ponto de atualização de software.  
@@ -520,10 +523,10 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |--------------|-----------------|----------------------------|  
 |CloudMgr.log|Registra os detalhes sobre como implantar o serviço do gateway de gerenciamento de nuvem, status do serviço contínuo e dados de uso associados ao serviço.<br>Configure o nível de log editando o valor **Nível de log** na chave do Registro HKLM\SOFTWARE\ Microsoft\SMS\COMPONENTS\ SMS_CLOUD_ SERVICES_MANAGER|A pasta *installdir* no servidor do site primário ou autoridades de certificação.|
 |CMGSetup.log<sup>1</sup>|Registra os detalhes sobre a segunda fase da implantação do gateway de gerenciamento de nuvem (implantação local no Azure)<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
-|CMGHttpHandler.log<sup>1</sup>|Registra os detalhes sobre a associação do manipulador de http do gateway de gerenciamento de nuvem com os Serviços de informações da Internet no Azure<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.<br>Da versão 1806 em diante, este log não existe. A funcionalidade do componente é mesclada no componente do serviço CMG. Veja o CMGService.log em vez disso.<!--SCCMDocs-pr issue #2822-->|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
+|CMGHttpHandler.log<sup>1</sup>|Registra os detalhes sobre a associação do manipulador de http do gateway de gerenciamento de nuvem com os Serviços de informações da Internet no Azure<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.<br>Da versão 1806 em diante, este log não existe. A funcionalidade do componente é mesclada no componente do serviço CMG. Consulte o CMGService.log em vez disso.<!--SCCMDocs-pr issue #2822-->|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
 |CMGService.log<sup>1</sup>|Registra os detalhes sobre o componente de núcleo do serviço de gateway de gerenciamento de nuvem no Azure<br>Você pode configurar o nível de log usando a configuração **Nível de rastreamento** (**Informações** (padrão), **Detalhado**, **Erro**) na guia de **configuração dos serviços do Portal do Azure\nuvem**.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
 |SMS_Cloud_<br>ProxyConnector.log|Registra os detalhes sobre como configurar conexões entre o serviço do gateway de gerenciamento de nuvem e o ponto de conexão do gateway de gerenciamento de nuvem.|Servidor do sistema de site|
-|CMGContentService.log<sup>1</sup>|<!--SCCMDocs-pr issue #2822-->Começando na versão 1806, quando você habilita um CMG para também veicular conteúdo do armazenamento do Azure, esse log registra os detalhes desse serviço.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
+|CMGContentService.log<sup>1</sup>|<!--SCCMDocs-pr issue #2822-->A partir da versão 1806, quando você habilita um CMG para também veicular conteúdo do armazenamento do Azure, esse log registra os detalhes desse serviço.|O **%approot%\logs** no seu servidor do Azure ou a pasta SMS/Logs no servidor do sistema de site|
 
 <sup>1</sup> Esses são arquivos de log locais do Configuration Manager que o gerenciador de serviço de nuvem sincroniza com o armazenamento do Azure a cada cinco minutos. O gateway de gerenciamento de nuvem envia os logs por push para o armazenamento do Azure a cada cinco minutos. Portanto, o atraso máximo é de 10 minutos. Comutadores detalhados afetam os logs locais e remotos. Os nomes de arquivo reais incluem o nome do serviço e o identificador da instância de função. Por exemplo, CMG-*ServiceName*-*RoleInstanceID*-CMGSetup.log
 
