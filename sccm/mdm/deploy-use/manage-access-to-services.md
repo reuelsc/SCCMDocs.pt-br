@@ -2,7 +2,7 @@
 title: Acesso condicional
 titleSuffix: Configuration Manager
 description: Saiba como usar o acesso condicional no System Center Configuration Manager para proteger emails e outros serviços.
-ms.date: 12/22/2017
+ms.date: 03/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38036f72603265f14ccd228b9466abc2a74a8ff5
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: f38b991ef942ea3dae3cffc49d7fe498458f6108
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135796"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58197037"
 ---
 # <a name="manage-access-to-services-in-system-center-configuration-manager"></a>Gerenciar o acesso a serviços no System Center Configuration Manager
 
@@ -30,7 +30,7 @@ Use o acesso condicional para especificar condições para ajudar a proteger o e
 > Se você usar o acesso condicional em dispositivos gerenciados com o cliente do Configuration Manager, para certificar-se de que eles ainda estão protegidos, primeiro habilite o acesso condicional no Intune para os dispositivos antes de migrar. Habilitar o cogerenciamento no Configuration Manager, mover a carga de trabalho de política de conformidade para o Intune e, em seguida, concluir a migração do Intune híbrido para Intune autônomo. Para obter mais informações, consulte [acesso condicional com o cogerenciamento](https://docs.microsoft.com/sccm/comanage/quickstart-conditional-access). 
 
 
- Para obter mais informações sobre o acesso condicional em dispositivos gerenciados com o cliente do Configuration Manager, consulte [Gerenciar o acesso aos serviços do O365 em computadores gerenciados pelo System Center Configuration Manager](../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
+ Para obter informações sobre o acesso condicional em dispositivos que são gerenciados com o cliente do Configuration Manager, consulte [gerenciar o acesso aos serviços do Office 365 para PCs gerenciados pelo System Center Configuration Manager](../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
 
 
  Um fluxo típico de acesso condicional será semelhante ao seguinte:  

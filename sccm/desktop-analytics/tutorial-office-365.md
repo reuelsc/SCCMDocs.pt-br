@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb4170bddfbad34807c6fb82131fa09dc7c6b09f
-ms.sourcegitcommit: ceec0e20bf801071f2a05233f984cf17acc3fd29
+ms.openlocfilehash: c8e346aaabb03296f19a1eaf40d79c0f9f241cce
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56754587"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58197003"
 ---
 # <a name="tutorial-deploy-office-365-to-pilot"></a>Tutorial: Implantar o Office 365 para piloto 
 
@@ -84,7 +84,7 @@ Antes de iniciar este tutorial, certifique-se de que ter os seguintes pré-requi
     - `https://nexus.officeapps.live.com`  
     - `https://office.pipe.aria.microsoft.com`  
     - `https://graph.windows.net` (na função de servidor do Configuration Manager somente)
-    - `https://fef.bmsub01.manage-beta.microsoft.com` (na função de servidor do Configuration Manager somente)
+    - `https://fef.msua06.manage.microsoft.com` (na função de servidor do Configuration Manager somente)
 
     Para obter mais informações, consulte [como habilitar o compartilhamento de área de trabalho de análise de dados](/sccm/desktop-analytics/enable-data-sharing#endpoints).  
 
@@ -101,7 +101,7 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 
 2. Sobre o **aceite o contrato de serviço** página, examine o contrato de serviço e selecione **Accept**.  
 
-3. Sobre o **confirmar sua assinatura** página, a lista de licenças qualificadas necessárias são para recursos de integridade de dispositivo do Windows da área de trabalho de análise. Selecione **próxima** para continuar.  
+3. Sobre o **confirmar sua assinatura** página, a lista de licenças qualificadas necessárias são para recursos de integridade de dispositivo do Windows da área de trabalho de análise. Selecione **Avançar** para continuar.  
 
 4. Sobre o **dar aos usuários acesso** página, análise de área de trabalho pré-configura dois grupos de segurança no Azure Active Directory:  
 

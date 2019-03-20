@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5213c96ee434d9d87ea7728701945ac46c0a62a0
-ms.sourcegitcommit: ceec0e20bf801071f2a05233f984cf17acc3fd29
+ms.openlocfilehash: f1a6ab6fca6650bde69179b71576d1df2e201b92
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56754586"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58196731"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Habilitar o compartilhamento de área de trabalho de análise de dados 
 
@@ -76,8 +76,8 @@ Para habilitar o compartilhamento de dados, configure o servidor de proxy à lis
 | `https://nexusrules.officeapps.live.com` | Usado para solicitar os eventos de diagnóstico de dados dinâmicos de clientes do Office. Esses dados são úteis para fins de drill-down e diagnóstico no portal de análise de área de trabalho |
 | `https://nexus.officeapps.live.com` | Usado pelos clientes do Office para enviar eventos de dados de diagnóstico do Office 14, 15 de Office e as versões anteriores ao 16.0.8702 do Office 16. Ele é usado para coletar o uso e confiabilidade sinaliza eventos para análise de área de trabalho. |
 | `https://office.pipe.aria.microsoft.com` | Usado pelos clientes do Office para enviar eventos de dados de diagnóstico de aplicativos do Office universal/moderno e Win32 Office 16 versões mais tarde do que 16.0.8702. Ele é usado para coletar o uso e confiabilidade sinaliza eventos para análise de área de trabalho. |
-| `https://graph.windows.net` | Usado pelo Configuration Manager para recuperar automaticamente as configurações como CommercialId ao anexar a sua hierarquia para análise de área de trabalho. |
-| `https://fef.bmsub01.manage-beta.microsoft.com` | Usado pelo Configuration Manager para sincronizar as associações de coleção de dispositivo, planos de implantação e o status de preparação do dispositivo com a análise de área de trabalho. |
+| `https://graph.windows.net` | Usado para recuperar automaticamente as configurações como CommercialId ao anexar a sua hierarquia para análise de área de trabalho (na função de servidor do Configuration Manager somente). |
+| `https://fef.msua06.manage.microsoft.com` | Usado para associações de coleção de dispositivo de sincronização, planos de implantação e o status de preparação do dispositivo com a análise de área de trabalho (na função de servidor do Configuration Manager somente). |
 
 
 ### <a name="ssl-inspection"></a>Inspeção de SSL
