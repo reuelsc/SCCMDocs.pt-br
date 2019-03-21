@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4187be7bf25bd88a5ba1432eaeb4cb5a44945551
-ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
+ms.openlocfilehash: db5e58d82f12ceaac5ad0da66a0836f1d3d913d6
+ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57562118"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57881802"
 ---
 # <a name="site-and-site-system-prerequisites-for-configuration-manager"></a>Pré-requisitos do site e do sistema de sites para o Configuration Manager
 
@@ -157,6 +157,9 @@ Confira as seções principais deste artigo para obter os pré-requisitos espec�
 
 - Para mais informações sobre esse requisito, consulte [Requisitos de infraestrutura para implantação do sistema operacional](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
+#### <a name="windows-server-roles-and-features"></a>Recursos e funções do Windows Server  
+
+- Se você está utilizando o [serviço de administração](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service), o servidor host da função de provedor de SMS requer o .NET versão 4.5.2 ou posterior  <!-- SCCMDocs issue #1203 -->
 
 
 ##  <a name="bkmk_2012acwspreq"></a> Ponto de sites da Web do Catálogo de Aplicativos  
