@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8e346aaabb03296f19a1eaf40d79c0f9f241cce
-ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
+ms.openlocfilehash: b8102e426e4737efdd5ca77de2824c1465b382ec
+ms.sourcegitcommit: 5f17355f954b9d9e10325c0e9854a9d582dec777
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58197003"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329491"
 ---
 # <a name="tutorial-deploy-office-365-to-pilot"></a>Tutorial: Implantar o Office 365 para piloto 
 
@@ -97,7 +97,7 @@ Antes de iniciar este tutorial, certifique-se de que ter os seguintes pré-requi
 
 Use este procedimento para entrar no Analytics de área de trabalho e configurá-lo em sua assinatura. Esse procedimento é um processo único para configurar a análise de área de trabalho para sua organização.  
 
-1. Abra o [portal de análise de área de trabalho](https://aka.ms/m365aprod) no gerenciamento de dispositivo do Microsoft 365 como um usuário com **administrador de empresa** permissões. Selecione **iniciar**.  
+1. Abra o portal de análise de área de trabalho no gerenciamento de dispositivo do Microsoft 365 como um usuário com **administrador da empresa** permissões. Selecione **iniciar**.  
 
 2. Sobre o **aceite o contrato de serviço** página, examine o contrato de serviço e selecione **Accept**.  
 
@@ -134,7 +134,7 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 
 ### <a name="create-an-app-in-azure-ad-for-configuration-manager"></a>Criar um aplicativo no Azure AD para o Configuration Manager  
 
-1. No [portal do Azure](http://portal.azure.com), acesse **Azure Active Directory**e selecione **registros do aplicativo**. Em seguida, selecione **novo registro de aplicativo**.  
+1. No [portal do Azure](https://portal.azure.com), acesse **Azure Active Directory**e selecione **registros do aplicativo**. Em seguida, selecione **novo registro de aplicativo**.  
 
 2. No **criar** painel, defina as seguintes configurações:  
 
