@@ -3,7 +3,7 @@ title: 'Adicionar atualizações a um grupo de atualização '
 titleSuffix: Configuration Manager
 description: Adicione atualizações de software manualmente ou automaticamente a um grupo de atualização de software no seu ambiente.
 author: aczechowski
-ms.date: 01/23/2017
+ms.date: 03/18/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
@@ -11,12 +11,12 @@ ms.assetid: a0767664-fd60-46a8-9da5-86cc431ce53c
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4d17d4e1e0a41e2e94cfe70d422ed3425a812d6
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 0657877c22aa8ce2382408821d5b61f5fded151d
+ms.sourcegitcommit: d71e558db2da124357b840332e2da671b3810507
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56141146"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58269004"
 ---
 # <a name="add-software-updates-to-an-update-group"></a>Adicionar atualizações de software a um grupo de atualização  
 
@@ -49,7 +49,7 @@ ms.locfileid: "56141146"
 3.  Selecione as atualizações de software que deseja adicionar ao novo grupo de atualização de software.  
 
     > [!NOTE]  
-    >  Por padrão, no nó **Todas as Atualizações de Software**, o Configuration Manager exibe somente atualizações de software com uma classificação **Crítico** e **Segurança** e que foram liberadas nos últimos 30 dias.  
+    >  Sobre o **todas as atualizações de Software** nó, o Configuration Manager exibe todas as atualizações, exceto aqueles no **Upgrades** classificação e **cliente do Office 365** produto classificação.  
 
 4.  Na guia **Início** , no grupo **Atualizar** , clique em **Editar Associação**.  
 
