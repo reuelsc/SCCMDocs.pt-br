@@ -2,21 +2,21 @@
 title: instalar e configurar um ponto de atualização de software
 titleSuffix: Configuration Manager
 description: Os sites primários requerem um ponto de atualização de software no site de administração central para a avaliação de conformidade das atualizações de software e para implantar atualizações de software em clientes.
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
-ms.date: 05/30/2017
+ms.date: 03/20/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b099a645-6434-498f-a408-1d438e394396
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b51b8245de3c446657e328456f81bd40ebf71261
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 286fb75eb16636ac129bc634e443d6bbfac3d44a
+ms.sourcegitcommit: d71e558db2da124357b840332e2da671b3810507
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56141850"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58269031"
 ---
 # <a name="install-and-configure-a-software-update-point"></a>instalar e configurar um ponto de atualização de software  
 
@@ -34,7 +34,7 @@ ms.locfileid: "56141850"
 > [!IMPORTANT]  
 >  Não há suporte para instalar a função do sistema de site do ponto de atualização de software em um servidor que tenha sido configurado e usado como um servidor do WSUS autônomo ou usando um ponto de atualização de software para gerenciar diretamente os clientes do WSUS. Os servidores do WSUS existentes têm suporte apenas como origens da sincronização upstream para o ponto de atualização de software ativo. Veja [Sincronizar por meio de um local de fonte de dados upstream](#BKMK_wsussync)
 
- Você pode adicionar a função do sistema de site do ponto de atualização de software a um servidor do sistema de site existente ou criar um novo. Na página **Seleção de Função do Sistema** do **Assistente para Criar Servidor do Sistema de Site** ou do <strong>Assistente para Adicionar Funções do Sistema de Site, dependendo se você adicionar a função do sistema de site a um servidor do site novo ou existente, selecione **Ponto de atualização de software</strong> e configure os parâmetros de atualização de software no assistente. As configurações são diferentes dependendo da versão do Configuration Manager que você usa. Para obter mais informações sobre como instalar funções do sistema de sites, veja [Instalar funções do sistema de sites](../../core/servers/deploy/configure/install-site-system-roles.md).  
+ Você pode adicionar a função do sistema de site do ponto de atualização de software a um servidor do sistema de site existente ou criar um novo. Na página **Seleção de Função do Sistema** do **Assistente para Criar Servidor do Sistema de Site** ou do **Assistente para Adicionar Funções do Sistema de Site**, dependendo se você adicionar a função do sistema de site a um servidor do site novo ou existente, selecione **Ponto de atualização de software** e configure os parâmetros de atualização de software no assistente. As configurações são diferentes dependendo da versão do Configuration Manager que você usa. Para obter mais informações sobre como instalar funções do sistema de sites, veja [Instalar funções do sistema de sites](../../core/servers/deploy/configure/install-site-system-roles.md).  
 
  Use as seções a seguir para obter informações sobre as configurações do ponto de atualização de software em um site.  
 
@@ -51,7 +51,7 @@ ms.locfileid: "56141850"
         >  A configuração **Usar um proxy ao baixar conteúdo usando regras de implantação automática** está disponível, mas não é usada para um ponto de atualização de software em um site secundário. Somente o ponto de atualização de software no site de administração central e no site primário baixa conteúdo da página do Microsoft Update.  
 
 > [!IMPORTANT]  
->  Por padrão, a conta **Sistema Local** do servidor em que uma regra de implantação automática foi criada é usada para conectar à Internet e baixar atualizações de software quando as regras de implantação automática forem executadas. Quando essa conta não tem acesso à Internet, as atualizações de software não são baixadas e o seguinte é registrado em ruleengine.log: **Falha em baixar a atualização da Internet. Erro = 12007**. Configure as credenciais para conectar ao servidor proxy quando a conta Sistema Local não tem acesso à Internet.  
+>  Por padrão, a conta **Sistema Local** do servidor em que uma regra de implantação automática foi criada é usada para conectar à Internet e baixar atualizações de software quando as regras de implantação automática forem executadas. Quando essa conta não tem acesso à Internet, as atualizações de software não são baixadas e a seguinte entrada é registrada em ruleengine.log: **Falha ao baixar a atualização da Internet. Erro = 12007**. Configure as credenciais para conectar ao servidor proxy quando a conta Sistema Local não tem acesso à Internet.  
 
 
 ## <a name="wsus-settings"></a>Configurações do WSUS  
@@ -89,14 +89,14 @@ ms.locfileid: "56141850"
 
  A lista a seguir fornece mais informações sobre cada opção que você pode usar como origem da sincronização:  
 
--   **Sincronizar do Microsoft Update**: use esta configuração para sincronizar metadados de atualizações de software do Microsoft Update. O site de administração central deve ter acesso à Internet; caso contrário, a sincronização falhará. Essa configuração está disponível apenas quando você configura o ponto de atualização de software no site de nível superior.  
+-   **Sincronizar do Microsoft Update**: use essa configuração para sincronizar metadados de atualizações de software do Microsoft Update. O site de administração central deve ter acesso à Internet; caso contrário, a sincronização falhará. Essa configuração está disponível apenas quando você configura o ponto de atualização de software no site de nível superior.  
 
     > [!NOTE]  
     >  Quando há um firewall entre o ponto de atualização de software e a Internet, o firewall pode precisar configurar o firewall para aceitar as portas HTTP e HTTPS usadas para o site do WSUS. Você também pode restringir o acesso no firewall a domínios limitados. Para obter mais informações sobre como planejar um firewall que dá suporte a atualizações de software, veja [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls).  
 
--   **<a name="BKMK_wsussync"></a>Sincronizar por meio de uma localização de fonte de dados upstream**: use esta configuração para sincronizar metadados de atualizações de software da origem da sincronização upstream. Os sites primários filhos e os sites secundários são automaticamente configurados para usar o URL do site pai para essa configuração. Você tem a opção de sincronizar as atualizações de software em um servidor do WSUS existente. Especifique um URL, como https://WSUSServer:8531, em que 8531 é a porta usada para se conectar ao servidor WSUS.  
+-   **<a name="BKMK_wsussync"></a>Sincronizar a partir de um local de fonte de dados upstream**: use essa configuração para sincronizar os metadados das atualizações de software da origem de sincronização upstream. Os sites primários filhos e os sites secundários são automaticamente configurados para usar o URL do site pai para essa configuração. Você tem a opção de sincronizar as atualizações de software em um servidor do WSUS existente. Especifique um URL, como https://WSUSServer:8531, em que 8531 é a porta usada para se conectar ao servidor WSUS.  
 
--   **Não sincronizar do Microsoft Update ou da fonte de dados upstream**: use esta configuração para sincronizar manualmente as atualizações de software quando o ponto de atualização de software no site de nível superior estiver desconectado da Internet. Para obter mais informações, consulte [Synchronize software updates from a disconnected software update point](synchronize-software-updates-disconnected.md) (Sincronizar atualizações de software de um ponto de atualização de software desconectado).  
+-   **Não sincronizar do Microsoft Update ou da fonte de dados upstream**: use essa configuração para sincronizar manualmente as atualizações de software quando o ponto de atualização de software no site de nível superior estiver desconectado da Internet. Para obter mais informações, consulte [Synchronize software updates from a disconnected software update point](synchronize-software-updates-disconnected.md) (Sincronizar atualizações de software de um ponto de atualização de software desconectado).  
 
 > [!NOTE]  
 >  Quando há um firewall entre o ponto de atualização de software e a Internet, o firewall pode precisar configurar o firewall para aceitar as portas HTTP e HTTPS usadas para o site do WSUS. Você também pode restringir o acesso no firewall a domínios limitados. Para obter mais informações sobre como planejar um firewall que dá suporte a atualizações de software, veja [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls).  
@@ -115,7 +115,7 @@ ms.locfileid: "56141850"
 >  Ao optar por não permitir a sincronização de atualizações de software em uma agenda, você poderá sincronizar manualmente as atualizações de software nos nós **Todas as Atualizações de Software** ou **Grupos de Atualização de Software**, no workspace Biblioteca de Software. Para mais informações, consulte [Sincronizar atualizações de software](synchronize-software-updates.md).  
 
 ## <a name="supersedence-rules"></a>Regras de substituição  
- Configure as definições de substituição na página **Regras de Substituição** do assistente ou na guia **Regras de Substituição** em Propriedades do Componente de Ponto de Atualização de Software. Você pode configurar as regras de substituições somente no site de nível superior.  
+ Configure as definições de substituição na página **Regras de Substituição** do assistente ou na guia **Regras de Substituição** em Propriedades do Componente de Ponto de Atualização de Software. Você pode configurar as regras de substituições somente no site de nível superior. A partir do Configuration Manager versão 1810, você pode especificar o comportamento de regras de substituição para **atualizações de recursos** separadamente da **atualizações de recurso de não**. <!--3098809, 2977644-->
 
  Nesta página, você pode determinar que as atualizações de software substituídas sejam imediatamente expiradas, o que as impedirá de serem incluídas em novas implantações e sinalizará as implantações existentes para indicar que as atualizações de software substituídas contêm uma ou mais atualizações de software expiradas. Ou, você pode especificar um período de tempo até que as atualizações de software substituídas se expirem, o que permitirá que você continue a implantá-las. Para obter mais informações, consulte [Supersedence rules](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules).  
 

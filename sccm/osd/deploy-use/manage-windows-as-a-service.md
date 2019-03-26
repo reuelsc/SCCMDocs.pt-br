@@ -2,7 +2,7 @@
 title: Gerenciar o Windows como serviço
 titleSuffix: Configuration Manager
 description: Exibir o estado do WaaS (Windows como serviço) usando o Configuration Manager, criar planos de manutenção para formar anéis de implantação e exibir alertas quando os clientes do Windows 10 estiverem próximos do fim do suporte.
-ms.date: 10/02/2017
+ms.date: 03/15/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51c5d7f1bb6500eddfaf7e1a3a19e25bc7cafa63
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 614ccc06a3fef5cca54c7eb1c32952e8531aedfa
+ms.sourcegitcommit: d71e558db2da124357b840332e2da671b3810507
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137585"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58269056"
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gerenciar o Windows como um serviço usando o System Center Configuration Manager
 
@@ -44,9 +44,9 @@ ms.locfileid: "56137585"
 
      As seguintes informações de canal e build do Windows 10 são descobertas e armazenadas em um dos seguintes atributos:  
 
-    -   **Branch de preparação do sistema operacional**: especifica o canal do sistema operacional. Por exemplo, **0** = canal semestral – direcionado (não adiar as atualizações), **1** = canal semestral (adiar as atualizações), **2** = LTSC (Canal de Manutenção de Longo Prazo)
+    -   **Ramificação de Preparação do Sistema Operacional**: especifica o canal do sistema operacional. Por exemplo, **0** = canal semestral – direcionado (não adiar as atualizações), **1** = canal semestral (adiar as atualizações), **2** = LTSC (Canal de Manutenção de Longo Prazo)
 
-    -   **Build do sistema operacional**: especifica o build do sistema operacional. Por exemplo, **10.0.10240** (RTM) ou **10.0.10586** (versão 1511)  
+    -   **Compilação do Sistema Operacional**: especifica o build do sistema operacional. Por exemplo, **10.0.10240** (RTM) ou **10.0.10586** (versão 1511)  
 
 -   O ponto de conexão de serviço deve ser instalado e configurado no modo **Online, conexão persistente** para que seja possível ver os dados no painel de serviço do Windows 10. Quando estiver no modo offline, você não verá as atualizações de dados no painel até receber atualizações de serviço do Configuration Manager. Para obter mais informações, consulte [Sobre o ponto de conexão de serviço](../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
@@ -58,21 +58,21 @@ ms.locfileid: "56137585"
 ##  <a name="BKMK_ServicingDashboard"></a> Painel de serviço do Windows 10  
  O painel de serviço do Windows 10 fornece informações sobre os computadores Windows 10 em seu ambiente, os planos de serviço ativos, as informações de conformidade e assim por diante. Os dados contidos no painel de serviço do Windows 10 dependem da instalação do Ponto de Conexão de Serviço. O painel contém os seguintes blocos:  
 
--   **Bloco Uso do Windows 10**: fornece um detalhamento dos builds públicos do Windows 10. Os builds do Windows Insiders são listados como **outros** , bem como quaisquer builds que ainda não são conhecidos para seu site. O ponto de conexão de serviço baixa os metadados que informam sobre os builds do Windows e, em seguida, esses dados são comparados com os dados de descoberta.  
+-   **Bloco de Uso do Windows 10**: fornece uma divisão dos builds públicos do Windows 10. Os builds do Windows Insiders são listados como **outros** , bem como quaisquer builds que ainda não são conhecidos para seu site. O ponto de conexão de serviço baixa os metadados que informam sobre os builds do Windows e, em seguida, esses dados são comparados com os dados de descoberta.  
 
--   **Bloco Anéis do Windows 10**: fornece um detalhamento do Windows 10 por canal e estado de preparação. O segmento LTSC inclui todas as versões de LTSC. O primeiro bloco divide as versões específicas, por exemplo, Windows 10 LTSC 2015.   
+-   **Bloco Anéis do Windows 10**: fornece uma divisão do Windows 10 por canal e estado de preparação. O segmento LTSC inclui todas as versões de LTSC. O primeiro bloco divide as versões específicas, por exemplo, Windows 10 LTSC 2015.   
 
--   **Bloco Criar plano de serviço**: fornece uma maneira rápida de criar um plano de serviço. Você especifica o nome, a coleção (exibe apenas as dez primeiras coleções por tamanho, em ordem crescente), o pacote de implantação (exibe apenas os dez primeiros pacotes por pacotes modificados mais recentemente) e o estado de preparação. Valores padrão são usados para as outras configurações. Clique em **Configurações Avançadas** para iniciar o assistente de Criação do Plano de Serviço, em que é possível configurar todas as configurações do plano de serviço.  
+-   **Bloco Criar Plano de Serviço**: fornece uma maneira rápida de criar um plano de serviço. Você especifica o nome, a coleção (exibe apenas as dez primeiras coleções por tamanho, em ordem crescente), o pacote de implantação (exibe apenas os dez primeiros pacotes por pacotes modificados mais recentemente) e o estado de preparação. Valores padrão são usados para as outras configurações. Clique em **Configurações Avançadas** para iniciar o assistente de Criação do Plano de Serviço, em que é possível configurar todas as configurações do plano de serviço.  
 
--   **Bloco expirado**: exibe o percentual de dispositivos que estão em um build do Windows 10 cuja vida útil já expirou. O Configuration Manager determina o percentual dos metadados baixados pelo Ponto de Conexão de Serviço e o compara com os dados de descoberta. Um build cuja vida útil já expirou não recebe mais atualizações cumulativas mensais, que incluem atualizações de segurança. Os computadores nessa categoria devem ser atualizados para a próxima versão de build. O Configuration Manager arredonda para o próximo número inteiro. Por exemplo, se você tiver 10.000 computadores e apenas um em um build expirado, o bloco exibirá 1%.  
+-   **Bloco Expirado**: exibe o percentual de dispositivos que estão em um build do Windows 10 cuja vida útil já expirou. O Configuration Manager determina o percentual dos metadados baixados pelo Ponto de Conexão de Serviço e o compara com os dados de descoberta. Um build cuja vida útil já expirou não recebe mais atualizações cumulativas mensais, que incluem atualizações de segurança. Os computadores nessa categoria devem ser atualizados para a próxima versão de build. O Configuration Manager arredonda para o próximo número inteiro. Por exemplo, se você tiver 10.000 computadores e apenas um em um build expirado, o bloco exibirá 1%.  
 
--   **Bloco Expiração em breve**: exibe o percentual de computadores que estão em um build cujo fim da vida útil está próximo (em aproximadamente quatro meses), semelhante ao bloco **Expirado**. O Configuration Manager arredonda para o próximo número inteiro.  
+-   **Bloco Expira em breve**: exibe o percentual de computadores que estão em um build cujo fim da vida útil está próximo (em aproximadamente quatro meses), semelhante ao bloco **Expirado** . O Configuration Manager arredonda para o próximo número inteiro.  
 
--   **Bloco Alertas**: exibe alertas ativos.  
+-   **Bloco Alertas**: exibe os alertas ativos.  
 
--   **Bloco Monitoramento de plano de serviço**: exibe os planos de manutenção criados e um gráfico da conformidade de cada um. Esse bloco fornece uma visão geral rápida do estado atual das implantações de plano de serviço. Se um anel de implantação anterior atender às suas expectativas quanto à conformidade, será possível selecionar um plano de serviço posterior (anel de implantação) e clicar em **Implantar Agora** , em vez de aguardar até que as regras do plano de serviço sejam disparadas automaticamente.  
+-   **Bloco Monitoramento do Plano de Serviço**: exibe os planos de serviço criados e um gráfico da conformidade para cada um. Esse bloco fornece uma visão geral rápida do estado atual das implantações de plano de serviço. Se um anel de implantação anterior atender às suas expectativas quanto à conformidade, será possível selecionar um plano de serviço posterior (anel de implantação) e clicar em **Implantar Agora** , em vez de aguardar até que as regras do plano de serviço sejam disparadas automaticamente.  
 
--   O **bloco Builds do Windows 10**: exibe uma linha do tempo fixa da imagem que fornece uma visão geral dos builds do Windows 10 lançados no momento e uma ideia geral de quando os builds passarão para estados diferentes.  
+-   O **bloco Builds do Windows 10**: exibe uma linha do tempo fixa da imagem que fornece uma visão geral dos builds do Windows 10 atualmente liberadas e fornece uma ideia geral de quando os builds farão a transição para estados diferentes.  
 
 > [!IMPORTANT]  
 >  As informações mostradas no painel de serviço do Windows 10 (como o ciclo de vida do suporte para versões do Windows 10) são fornecidas para sua conveniência e somente para uso interno em sua empresa. Você não deve depender exclusivamente dessas informações para confirmar a conformidade da atualização. Certifique-se de verificar a precisão das informações fornecidas a você.  
@@ -80,11 +80,11 @@ ms.locfileid: "56137585"
 ## <a name="servicing-plan-workflow"></a>Fluxo de trabalho do plano de serviço  
  Os planos de serviço do Windows 10 no Configuration Manager são muito parecidos com as regras de implantação automática das atualizações de software. Você cria um plano de serviço com os seguintes critérios avaliados pelo Configuration Manager:  
 
-- **Classificação de atualizações**: somente as atualizações que estão na classificação **Atualizações** são avaliadas.  
+- **Classificação Atualizações**: somente as atualizações que estão na classificação **Atualizações** são avaliadas.  
 
-- **Estado de preparação**: o estado de preparação definido no plano de manutenção é comparado com o estado de preparação da atualização. Os metadados da atualização são recuperados quando o ponto de conexão de serviço verifica se há atualizações.  
+- **Estado de preparação**: o estado de preparação definido no plano de serviço é comparado com o estado de preparação da atualização. Os metadados da atualização são recuperados quando o ponto de conexão de serviço verifica se há atualizações.  
 
-- **Adiamento de tempo**: o número de dias que você especifica para **Quantos dias depois que a Microsoft publicar uma nova atualização você deseja esperar para implantar em seu ambiente** no plano de manutenção. Caso a data atual seja posterior à data de lançamento, mais o número configurado de dias, o Configuration Manager avalia se é necessário incluir uma atualização na implantação.  
+- **Adiamento de tempo**: o número de dias especificados para **Por quantos dias você gostaria de aguardar após a publicação pela Microsoft de uma nova atualização antes de implantá-la em seu ambiente** no plano de serviço. Caso a data atual seja posterior à data de lançamento, mais o número configurado de dias, o Configuration Manager avalia se é necessário incluir uma atualização na implantação.  
 
   Quando uma atualização atende aos critérios, o plano de serviço adiciona a atualização ao pacote de implantação, distribui o pacote para os pontos de distribuição e implanta a atualização na coleção com base nas configurações definidas no plano de serviço. É possível monitorar as implantações no bloco Monitoramento do Plano de Serviço no Painel de Serviço do Windows 10. Para obter mais informações, consulte [Implantar atualizações de software](../../sum/deploy-use/monitor-software-updates.md).  
 
@@ -109,13 +109,13 @@ ms.locfileid: "56137585"
 
 4. Na página **Geral** , defina as seguintes configurações:  
 
-   -   **Nome**: especifique o nome do plano de manutenção. O nome deve ser exclusivo, deve ajudar a descrever a finalidade da regra e diferenciá-la de outras no site do Configuration Manager.  
+   -   **Nome**: especifique o nome para o plano de serviço. O nome deve ser exclusivo, deve ajudar a descrever a finalidade da regra e diferenciá-la de outras no site do Configuration Manager.  
 
-   -   **Descrição**: especifique uma descrição para o plano de manutenção. A descrição deve fornecer uma visão geral do plano de serviço e qualquer outra informação relevante que ajude a identificá-lo e diferenciá-lo de outros planos no site do Configuration Manager. O campo de descrição é opcional, tem um limite de 256 caracteres e um valor em branco por padrão.  
+   -   **Descrição:** especifique uma descrição para o plano de serviço. A descrição deve fornecer uma visão geral do plano de serviço e qualquer outra informação relevante que ajude a identificá-lo e diferenciá-lo de outros planos no site do Configuration Manager. O campo de descrição é opcional, tem um limite de 256 caracteres e um valor em branco por padrão.  
 
 5. Na página Plano de Serviço, defina as seguintes configurações:  
 
-   -   **Coleção de destino**: especifica a coleção de destino a ser usada para o plano de manutenção. Os membros da coleção recebem as atualizações do Windows 10 definidas no plano de serviço.  
+   -   **Coleção de Destino**: especifica a coleção de destino a ser usada para o plano de serviço. Os membros da coleção recebem as atualizações do Windows 10 definidas no plano de serviço.  
 
        > [!NOTE]  
        >  Ao executar uma implantação de alto risco, como um plano de serviço, a janela **Selecionar Coleção** exibe somente as coleções personalizadas que atendem às configurações de verificação da implantação definidas nas propriedades do site.
@@ -133,42 +133,48 @@ ms.locfileid: "56137585"
 
 6. Na página Anel de Implantação, defina as seguintes configurações:  
 
-   -   **Especifique o estado de preparação do Windows ao qual este plano de manutenção deve ser aplicado**: Selecione uma das seguintes opções:  
+   -   **Especificar o estado de preparação do Windows ao qual este plano de serviço deve ser aplicado**: selecione uma das seguintes opções:  
 
-       -   **Canal semestral (direcionado)**: nesse modelo de manutenção, as atualizações de recursos ficam disponíveis assim que a Microsoft as lança.
+       -   **Canal semestral (direcionado)**: neste modelo de serviço, as atualizações de recursos estão disponíveis assim que a Microsoft as libera.
 
-       -   **Canal semestral**: esse canal de manutenção normalmente é usado para a implantação ampla. Clientes do Windows 10 no Canal Semestral recebem o mesmo build do Windows 10 que os dispositivos no canal direcionado, apenas em um momento posterior.
+       -   **Canal semestral**: esse canal de serviços é usado normalmente para a implantação ampla. Clientes do Windows 10 no Canal Semestral recebem o mesmo build do Windows 10 que os dispositivos no canal direcionado, apenas em um momento posterior.
 
        Para saber mais sobre os canais de manutenção e quais opções são as melhores opções para você, consulte [Canais de manutenção](/windows/deployment/update/waas-overview#servicing-channels).
 
-   -   **Por quantos dias você gostaria de aguardar após a publicação pela Microsoft de uma nova atualização antes de implantá-la em seu ambiente**: caso a data atual seja posterior à data de lançamento mais o número de dias configurado para essa configuração, o Configuration Manager avaliará se é necessário incluir uma atualização na implantação.
+   -   **Por quantos dias você gostaria de aguardar após a publicação pela Microsoft de uma nova atualização antes de implantá-la em seu ambiente**: caso a data atual seja posterior à data de lançamento, somada ao número de dias que você definir para essa configuração, o Configuration Manager avalia se deve incluir uma atualização na implantação.
 
 
-7. Na página Atualizações, configure os critérios de pesquisa para filtrar as atualizações que são adicionadas ao plano de serviço. Somente as atualizações que atendem aos critérios especificados são adicionadas à implantação associada.   
+7. Na página Atualizações, configure os critérios de pesquisa para filtrar as atualizações que são adicionadas ao plano de serviço. Somente as atualizações que atendem aos critérios especificados são adicionadas à implantação associada. Os filtros de propriedade a seguir estão disponíveis: <!--3098809, 3113836, 3204570 -->
 
-    > [!Important]    
-    > É recomendável que, como parte dos critérios de pesquisa, que você defina o campo **Obrigatório** com um valor de **>=1**. Usar esses critérios garante que apenas as atualizações aplicáveis são adicionadas ao plano de serviço.
+   - **Arquitetura** (começando na versão 1810)
+   - **Idioma**
+   - **Categoria de produto** (começando na versão 1810)
+   - **Necessária**
+      > [!Important]    
+      > É recomendável que, como parte dos critérios de pesquisa, que você defina o campo **Obrigatório** com um valor de **>=1**. Usar esses critérios garante que apenas as atualizações aplicáveis são adicionadas ao plano de serviço.
+   - **Substituída** (começando na versão 1810)
+   - **Título**
 
     Clique em **Visualizar** para exibir as atualizações que atendem aos critérios especificados.  
 
 8. Na página Agendamento da Implantação, defina as seguintes configurações:  
 
-   -   **Agendar avaliação**: especifique se o Configuration Manager avalia o tempo disponível e as datas limite de instalação usando UTC ou a hora local do computador que executa o console do Configuration Manager.  
+   -   **Avaliação do agendamento**: especifique se o Configuration Manager avalia o tempo disponível e os prazos de instalação usando UTC ou a hora local do computador que executa o console do Configuration Manager.  
 
        > [!NOTE]  
        >  Quando você seleciona a hora local e seleciona **O mais breve possível** para o **Tempo disponível do software** ou o **Prazo de instalação**, a hora atual no computador que executa o console do Configuration Manager é usada para avaliar quando as atualizações estarão disponíveis ou quando serão instaladas em um cliente. Se o cliente estiver em um fuso horário diferente, essas ações ocorrerão quando o tempo do cliente atingir o tempo de avaliação.  
 
-   -   **Tempo disponível do software**: Selecione uma das configurações a seguir para especificar quando as atualizações de software estarão disponíveis aos clientes:  
+   -   **Tempo disponível do software**: selecione uma das configurações a seguir para especificar quando as atualizações de software estão disponíveis aos clientes:  
 
-       -   **O mais breve possível**: Selecione esta configuração para disponibilizar as atualizações de software incluídas na implantação aos computadores cliente o mais breve possível. Quando você cria a implantação com essa configuração selecionada, o Configuration Manager atualiza a política de cliente. Então, no próximo ciclo de sondagem da política do cliente, os clientes ficam informados da implantação e podem obter as atualizações disponíveis para instalação.  
+       -   **O mais breve possível**: selecione essa configuração para disponibilizar as atualizações de software incluídas na implantação aos computadores cliente o mais breve possível. Quando você cria a implantação com essa configuração selecionada, o Configuration Manager atualiza a política de cliente. Então, no próximo ciclo de sondagem da política do cliente, os clientes ficam informados da implantação e podem obter as atualizações disponíveis para instalação.  
 
-       -   **Horário específico**: Selecione esta configuração para disponibilizar as atualizações de software incluídas na implantação aos computadores cliente, em uma data e hora específica. Quando você cria a implantação com essa configuração habilitada, o Configuration Manager atualiza a política de cliente. Em seguida, no próximo ciclo de sondagem de política do cliente, os clientes são informados da implantação. No entanto, as atualizações de software na implantação não estão disponíveis para instalação até após a data e hora configuradas.  
+       -   **Horário específico**: selecione essa configuração para disponibilizar as atualizações de software incluídas na implantação aos computadores cliente, em uma data e hora específica. Quando você cria a implantação com essa configuração habilitada, o Configuration Manager atualiza a política de cliente. Em seguida, no próximo ciclo de sondagem de política do cliente, os clientes são informados da implantação. No entanto, as atualizações de software na implantação não estão disponíveis para instalação até após a data e hora configuradas.  
 
-   -   **Data limite para a instalação**: Selecione uma das seguintes configurações para especificar o prazo de instalação das atualizações de software na implantação:  
+   -   **Prazo de instalação**: selecione uma das seguintes configurações para especificar o prazo de instalação das atualizações de software na implantação:  
 
-       -   **O mais breve possível**: Selecione esta configuração para instalar automaticamente as atualizações de software na implantação o mais breve possível.  
+       -   **O mais breve possível**: selecione essa configuração para instalar automaticamente as atualizações de software na implantação o mais breve possível.  
 
-       -   **Horário específico**: Selecione esta configuração para instalar automaticamente as atualizações de software na implantação, em uma data e hora específica. O Configuration Manager determina o prazo para instalar as atualizações de software, adicionando o intervalo **Horário específico** configurado para o **Tempo disponível do software**.  
+       -   **Horário específico**: selecione essa configuração para instalar automaticamente as atualizações de software na implantação, em uma data e hora específica. O Configuration Manager determina o prazo para instalar as atualizações de software, adicionando o intervalo **Horário específico** configurado para o **Tempo disponível do software**.  
 
            > [!NOTE]  
            >  O prazo real da instalação é o prazo exibido, mais um período de tempo aleatório de até 2 horas. Isso reduz o impacto potencial de todos os computadores cliente na coleção de destino que está instalando as atualizações na implantação ao mesmo tempo.  
@@ -177,13 +183,13 @@ ms.locfileid: "56137585"
 
 9. Na página Experiência do Usuário, defina as seguintes configurações:  
 
-    -   **Notificações do usuário**: especifique se deseja exibir notificações das atualizações no Centro de Software no computador cliente no **Tempo disponível do software** configurado e se deseja exibir as notificações do usuário nos computadores cliente.  
+    -   **Notificações de usuário**: especifique se deseja exibir a notificação das atualizações no Centro de Software no computador cliente no **Tempo disponível do software** configurado e se deseja exibir as notificações de usuário nos computadores cliente.  
 
-    -   **Comportamento da data limite**: especifique o comportamento que deverá ocorrer quando a data limite for alcançada para a implantação da atualização. Especifique se deseja instalar as atualizações na implantação. Especifique também se o sistema deve ser reiniciado após a instalação da atualização, independentemente de uma janela de manutenção configurada. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](../../core/clients/manage/collections/use-maintenance-windows.md).  
+    -   **Comportamento da data limite**: especifique o comportamento que deve ocorrer na data limite da implantação de atualização. Especifique se deseja instalar as atualizações na implantação. Especifique também se o sistema deve ser reiniciado após a instalação da atualização, independentemente de uma janela de manutenção configurada. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   **Comportamento de reinicialização de dispositivo**: especifique se deseja suprimir uma reinicialização do sistema em servidores e estações de trabalho depois que as atualizações forem instaladas e uma reinicialização do sistema for necessária para concluir a instalação.  
+    -   **Comportamento de reinicialização do dispositivo**: especifique se uma reinicialização do sistema em servidores e estações de trabalho deve ser suprimida depois que as atualizações são instaladas e se uma reinicialização do sistema é necessária para concluir a instalação.  
 
-    -   **Manipulação de filtro de gravação para dispositivos Windows Embedded**: ao implantar atualizações de software em dispositivos Windows Embedded habilitados com filtro de gravação, você pode especificar que a atualização seja instalada na sobreposição temporária e confirmar as alterações mais tarde na data limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na data limite da instalação ou durante uma janela de manutenção, é necessário reinicializar. Dessa forma, as alterações permanecem no dispositivo.  
+    -   **Manuseio de filtro de gravação para dispositivos Windows Embedded**: ao implantar atualizações em dispositivos Windows Embedded com filtro de gravação habilitado, é possível especificar que a atualização seja instalada na sobreposição temporária e que as alterações sejam confirmadas mais tarde, na data limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na data limite da instalação ou durante uma janela de manutenção, é necessário reinicializar. Dessa forma, as alterações permanecem no dispositivo.  
 
         > [!NOTE]  
         >  Ao implantar uma atualização em um dispositivo Windows Embedded, verifique se o dispositivo é membro de uma coleção com uma janela de manutenção configurada.  
@@ -194,7 +200,7 @@ ms.locfileid: "56137585"
 
     2.  **Descrição**: especifique uma descrição que forneça informações sobre o pacote de implantação. A descrição é limitada a 127 caracteres.  
 
-    3.  **Origem do pacote**: especifica o local dos arquivos de origem da atualização de software. Digite um caminho de rede para o local de origem, por exemplo, **\\\servidor\nome do compartilhamento\caminho**ou clique em **Procurar** para encontrar o local na rede. Crie a pasta compartilhada para os arquivos de origem do pacote de implantação antes de ir para a próxima página.  
+    3.  **Origem do pacote**: especifica o local dos arquivos de origem de atualização do software. Digite um caminho de rede para o local de origem, por exemplo, **\\\servidor\nome do compartilhamento\caminho**ou clique em **Procurar** para encontrar o local na rede. Crie a pasta compartilhada para os arquivos de origem do pacote de implantação antes de ir para a próxima página.  
 
         > [!NOTE]  
         >  O local de origem do pacote de implantação especificado não poderá ser usado por outro pacote de implantação de software.  
@@ -205,7 +211,7 @@ ms.locfileid: "56137585"
         > [!IMPORTANT]  
         >  Será possível alterar o local de origem do pacote nas propriedades do pacote de implantação depois que o Configuration Manager criar o pacote de implantação. Mas ao fazer isso, é necessário primeiro copiar o conteúdo da fonte da origem do pacote para o seu novo local de origem.  
 
-    4.  **Prioridade de envio**: Especifique a prioridade de envio do pacote de implantação. O Configuration Manager usa a prioridade de envio do pacote de implantação quando envia o pacote para pontos de distribuição. Os pacotes de implantação são enviados em ordem de prioridade: alta, média ou baixa. Pacotes com prioridades idênticas são enviados na ordem em que foram criados. Se não houver uma lista de pendências, o pacote será processado imediatamente, não importando qual seja a prioridade.  
+    4.  **Prioridade de envio**: especifique a prioridade de envio do pacote de implantação. O Configuration Manager usa a prioridade de envio do pacote de implantação quando envia o pacote para pontos de distribuição. Os pacotes de implantação são enviados por ordem de prioridade: Alta, Média, ou Baixa. Pacotes com prioridades idênticas são enviados na ordem em que foram criados. Se não houver uma lista de pendências, o pacote será processado imediatamente, não importando qual seja a prioridade.  
 
 11. Na página Pontos de Distribuição, especifique os pontos de distribuição ou grupos de pontos de distribuição que hospedam os arquivos de atualização. Para obter mais informações sobre pontos de distribuição, consulte [Configurar um ponto de distribuição](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_configs).
 
@@ -214,9 +220,9 @@ ms.locfileid: "56137585"
 
 12. Na página Local de Download, especifique se deseja baixar os arquivos de atualização da Internet ou de sua rede local. Defina as seguintes configurações:  
 
-    -   **Baixar atualizações de software da Internet**: selecione essa configuração para baixar as atualizações de uma localização específico na Internet. Essa configuração é habilitada por padrão.  
+    -   **Baixar atualizações de software da Internet**: selecione essa configuração para baixar as atualizações de um local específico na Internet. Essa configuração é habilitada por padrão.  
 
-    -   **Baixar atualizações de software de uma localização na rede local**: selecione essa configuração para baixar as atualizações de um diretório local ou de uma pasta compartilhada. Essa configuração é útil quando o computador que executa o assistente não tem acesso à Internet. Qualquer computador com acesso à Internet pode baixar preliminarmente as atualizações e armazená-las em um local na rede local que é acessível pelo computador que executa o assistente.  
+    -   **Baixar atualizações de software de um local na rede local**: selecione essa configuração para baixar as atualizações de um diretório local ou de uma pasta compartilhada. Essa configuração é útil quando o computador que executa o assistente não tem acesso à Internet. Qualquer computador com acesso à Internet pode baixar preliminarmente as atualizações e armazená-las em um local na rede local que é acessível pelo computador que executa o assistente.  
 
 13. Na página Seleção de Idioma, selecione os idiomas nos quais as atualizações selecionadas serão baixadas. As atualizações só serão baixadas se estiverem disponíveis nos idiomas selecionados. Atualizações não específicas a um idioma são sempre baixadas. Por padrão, o assistente seleciona os idiomas que você configurou nas propriedades de ponto de atualização de software. Pelo menos um idioma deve ser selecionado para ir para a próxima página. Quando você seleciona somente os idiomas que não são compatíveis com uma atualização, o download falha para a atualização.  
 
@@ -242,9 +248,9 @@ Use o procedimento a seguir para modificar as propriedades de um plano de servi�
 
     As seguintes configurações estão disponíveis nas propriedades de plano de manutenção, que não foram configuradas no assistente:
 
-    **Configurações de implantação**: na guia Configurações de implantação, defina as seguintes configurações:  
+    **Configurações de Implantação**: na guia Configurações de Implantação, defina as seguintes configurações:  
 
-    -   **Tipo de implantação**: especifique o tipo de implantação para a implantação de atualização de software. Selecione **Necessário** para criar uma implantação de atualização de software obrigatória na qual as atualizações de software são instaladas automaticamente em clientes antes do prazo de uma instalação configurada. Selecione **Disponível** para criar uma implantação de atualização de software opcional que esteja disponível para que os usuários instalem do Centro de Software.  
+    -   **Tipo de implantação**: especifique o tipo de implantação para a implantação de atualização do software. Selecione **Necessário** para criar uma implantação de atualização de software obrigatória na qual as atualizações de software são instaladas automaticamente em clientes antes do prazo de uma instalação configurada. Selecione **Disponível** para criar uma implantação de atualização de software opcional que esteja disponível para que os usuários instalem do Centro de Software.  
 
         > [!IMPORTANT]  
         >  Depois de criar a implantação de atualização de software, você não poderá alterar o tipo de implantação.  
@@ -254,20 +260,20 @@ Use o procedimento a seguir para modificar as propriedades de um plano de servi�
         >  
         > No entanto, os grupos de atualização de software implantados como **Disponíveis** são baixados em primeiro plano e ignoram as configurações de BITS.  
 
-    -   **Usar Wake On LAN para ativar clientes para implantações obrigatórias**: especifique se o Wake on LAN deve ser habilitado no prazo para enviar pacotes de ativação para os computadores que exigem uma ou mais atualizações de software na implantação. Todos os computadores que estão no modo de suspensão no momento da instalação são ativados para que a instalação da atualização de software seja iniciada. Clientes que estão no modo de suspensão e que não necessitam de atualizações de software na implantação não são iniciados. Por padrão, essa configuração não está habilitada e está disponível somente quando **Tipo de implantação** está definido como **Necessário**.  
+    -   **Usar Wake-on-LAN para ativar clientes para implantações obrigatórias**: especifique se o Wake on LAN deve ser habilitado no prazo para enviar pacotes de ativação para os computadores que exigem uma ou mais atualizações de software na implantação. Todos os computadores que estão no modo de suspensão no momento da instalação são ativados para que a instalação da atualização de software seja iniciada. Clientes que estão no modo de suspensão e que não necessitam de atualizações de software na implantação não são iniciados. Por padrão, essa configuração não está habilitada e está disponível somente quando **Tipo de implantação** está definido como **Necessário**.  
 
         > [!WARNING]  
         >  Para usar essa opção, os computadores e as redes devem ser configurados para Wake on LAN.  
 
-    -   **Nível de detalhe**: Especifique o nível de detalhe para as mensagens de estado relatadas por computadores cliente.  
+    -   **Nível de detalhe**: especifique o nível de detalhe para as mensagens de estado que são relatadas pelos computadores cliente.  
 
-    **Configurações de download**: na guia Configurações de download, defina as seguintes configurações:  
+    **Configurações de Download**: na guia Configurações de Download, defina as seguintes configurações:  
 
     - Especifique se o cliente baixa e instala as atualizações de software quando estiver conectado a uma rede lenta ou usando um local de conteúdos de fallback.  
 
     - Especifique se o cliente deve baixar e instalar as atualizações de software por meio de um ponto de distribuição de fallback quando o conteúdo das atualizações de software não está disponível ou de um ponto de distribuição preferencial.  
 
-    -   **Permita que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: Especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, consulte [Fundamental concepts for content management (Conceitos fundamentais para o gerenciamento de conteúdo)](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+    -   **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações sobre o BranchCache, consulte [Fundamental concepts for content management (Conceitos fundamentais para o gerenciamento de conteúdo)](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
     -   Especifique se os clientes deverão baixar as atualizações de software do Microsoft Update se elas não estiverem disponíveis nos pontos de distribuição.
         > [!IMPORTANT]
