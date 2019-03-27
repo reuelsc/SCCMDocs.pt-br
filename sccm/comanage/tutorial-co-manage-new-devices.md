@@ -13,10 +13,10 @@ ms.service: ''
 ms.technology: ''
 ms.assetid: ''
 ms.openlocfilehash: 61400d382a539efa495af99795e32fc1f2a517ab
-ms.sourcegitcommit: af8693048e6706ffda72572374f56e0bc7dfce2c
+ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2019
+ms.lasthandoff: 03/27/2019
 ms.locfileid: "57737347"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Tutorial: Habilitar o cogerenciamento para novos dispositivos baseados na Internet
@@ -367,7 +367,7 @@ Com as configurações do Azure, as funções do sistema de sites e as configura
    
    - **Piloto Intune**: alterna uma carga de trabalho apenas para os dispositivos no grupo Piloto. Você atribuirá uma coleção como o grupo Piloto na próxima página do assistente.  
    
-   - **Intune**: alterna a carga de trabalho associada para todos os dispositivos Windows 10 cogerenciados.  
+   - **Intune** - alterna a carga de trabalho associada para todos os dispositivos Windows 10 cogerenciados.  
 
    Não é necessário alternar quaisquer cargas de trabalho no momento em que você habilita o cogerenciamento. É possível revisitar essa configuração no console do Configuration Manager posteriormente, depois que o cogerenciamento é configurado.  
 
