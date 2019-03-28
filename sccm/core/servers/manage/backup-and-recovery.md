@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e876e34929479654240ff220c3cad91043da0f83
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 7fb6a87f965db0a329a4f64918b0efcd5732ea0b
+ms.sourcegitcommit: d71e558db2da124357b840332e2da671b3810507
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123130"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58269128"
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Fazer backup de um site do Configuration Manager
 
@@ -67,6 +67,8 @@ Para simplificar o processo de backup, crie um arquivo **AfterBackup.bat**. Esse
 Você pode fazer backup de um site de administração central e de um site primário. Sites secundários ou servidores do sistema de sites não têm tarefas de backup.
 
 Quando o serviço de backup do Configuration Manager é executado, ele segue as instruções definidas no arquivo de controle de backup: `<ConfigMgrInstallationFolder>\Inboxes\Smsbkup.box\Smsbkup.ctl`. É possível modificar o arquivo de controle de backup para alterar o comportamento do serviço de backup.  
+> [!NOTE]
+> As modificações de **Smsbkup.ctl** serão aplicadas após a reinicialização do serviço SMS_SITE_VSS_WRITER no servidor do site ser executada.
 
 As informações de status de backup do site são gravadas no arquivo **Smsbkup.log** . O arquivo é criado na pasta de destino especificada nas propriedades da tarefa de manutenção do Servidor do Site de Backup.  
 

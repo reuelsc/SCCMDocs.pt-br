@@ -10,12 +10,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8add225db488a749eba98f9015fcb112e8f34f04
-ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
+ms.openlocfilehash: 69c5f446c465655adb1e9fee1b891a3152af47e9
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/19/2019
-ms.locfileid: "57881785"
+ms.locfileid: "58197088"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificados para o gateway de gerenciamento de nuvem
 
@@ -206,11 +206,9 @@ Depois de emitir um certificado de autenticação de cliente para um computador,
 Provisione esse certificado fora do contexto do Configuration Manager. Por exemplo, use os Serviços de Certificados do Active Directory e a política de grupo para emitir um certificado do servidor Web. Para obter mais informações, consulte [Requisitos de certificado PKI](/sccm/core/plan-design/network/pki-certificate-requirements) e [Implantar o certificado do servidor Web em sistemas de sites que executam o IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).
 
 
-- Nas versões 1706 ou 1710, ao gerenciar clientes tradicionais com a identidade local usando um certificado de autenticação de cliente, esse certificado é recomendado, mas não é obrigatório.  
+- Na versão 1710, esse certificado é recomendado, mas não é obrigatório, para gerenciar clientes tradicionais com a identidade local usando um certificado de autenticação de cliente. Esse certificado é obrigatório para os pontos de gerenciamento ao gerenciar clientes do Windows 10 ingressados no Microsoft Azure Active Directory.
 
-- Na versão 1710, ao gerenciar clientes do Windows 10 ingressados no Azure AD, esse certificado é obrigatório para os pontos de gerenciamento.  
-
-- A partir da versão 1802, esse certificado é obrigatório em todos os cenários. Somente os pontos de gerenciamento que você habilitar para CMG devem ser HTTPS. Essa alteração no comportamento fornece melhor suporte para autenticação baseada em token do Azure AD.  
+- Na versão 1802, esse certificado é obrigatório em todos os cenários. Somente os pontos de gerenciamento que você habilitar para CMG devem ser HTTPS. Essa alteração no comportamento fornece melhor suporte para autenticação baseada em token do Azure AD.  
 
 - Começando na versão 1806, ao usar a opção do site para **Usar certificados gerados pelo Configuration Manager para o sistema de sites HTTP**, o ponto de gerenciamento pode ser HTTP. Para obter mais informações, confira [HTTP aprimorado](/sccm/core/plan-design/hierarchy/enhanced-http).
 
@@ -220,12 +218,12 @@ Essas tabelas resumem se o ponto de gerenciamento requer HTTP ou HTTPS, dependen
 #### <a name="for-internet-based-clients-communicating-with-the-cloud-management-gateway"></a>Para clientes baseados na Internet se comunicando com o gateway de gerenciamento de nuvem
 Configure um ponto de gerenciamento local para permitir conexões do CMG com o seguinte modo de conexão de cliente:
 
-| Tipo de cliente   | 1706        | 1710        | 1802        | 1806        |
+| Tipo de cliente   | 1710        | 1802        | 1806        | 1810        |
 |------------------|-------------|-------------|-------------|-------------|
-| Grupo de trabalho        | HTTP, HTTPS | HTTP, HTTPS | HTTPS       | E-HTTP<sup>[Observação 1](#bkmk_note1)</sup>, HTTPS |
-| Ingressado no domínio do AD | HTTP, HTTPS | HTTP, HTTPS | HTTPS       | E-HTTP<sup>[Observação 1](#bkmk_note1)</sup>, HTTPS |
-| Ingressado no Azure AD  | HTTPS       | HTTPS       | HTTPS       | E-HTTP, HTTPS |
-| Ingressado no híbrido    | HTTP, HTTPS | HTTP, HTTPS | HTTPS       | E-HTTP, HTTPS |
+| Grupo de trabalho        | HTTP, HTTPS | HTTPS       | E-HTTP<sup>[Observação 1](#bkmk_note1)</sup>, HTTPS | E-HTTP<sup>[Observação 1](#bkmk_note1)</sup>, HTTPS |
+| Ingressado no domínio do AD | HTTP, HTTPS | HTTPS       | E-HTTP<sup>[Observação 1](#bkmk_note1)</sup>, HTTPS | E-HTTP<sup>[Observação 1](#bkmk_note1)</sup>, HTTPS |
+| Ingressado no Azure AD  | HTTPS       | HTTPS       | E-HTTP, HTTPS | E-HTTP, HTTPS |
+| Ingressado no híbrido    | HTTP, HTTPS | HTTPS       | E-HTTP, HTTPS | E-HTTP, HTTPS |
 
 <a name="bkmk_note1"></a> 
 
@@ -235,7 +233,7 @@ Configure um ponto de gerenciamento local para permitir conexões do CMG com o s
 #### <a name="for-on-premises-clients-communicating-with-the-on-premises-management-point"></a>Para clientes locais se comunicando com o ponto de gerenciamento local
 Configure um ponto de gerenciamento local com o seguinte modo de conexão de cliente:
 
-| Tipo de cliente   | 1706        | 1710        | 1802        | 1806        |
+| Tipo de cliente   | 1710        | 1802        | 1806        | 1810        |
 |------------------|-------------|-------------|-------------|-------------|
 | Grupo de trabalho        | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS |
 | Ingressado no domínio do AD | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS |

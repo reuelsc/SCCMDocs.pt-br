@@ -2,7 +2,7 @@
 title: Criar um laboratório no Azure
 titleSuffix: Configuration Manager
 description: Automatize a criação de um laboratório do Configuration Manager Technical Preview usando modelos do Azure
-ms.date: 01/22/2019
+ms.date: 03/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02f3df4b8c090df960f1052a25c1f6cc8ef45395
-ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
+ms.openlocfilehash: 25283e513e256e8ce779df7b71ac6f6c17f1e370
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56838762"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58196816"
 ---
 # <a name="create-a-configuration-manager-technical-preview-lab-in-azure"></a>Criar um laboratório do Configuration Manager Technical Preview no Azure
 
@@ -33,7 +33,7 @@ Para obter mais informações sobre o branch atual do Configuration Manager, con
 ## <a name="prerequisites"></a>Pré-requisitos
 
 Esse processo requer uma assinatura do Azure na qual você possa criar os seguintes objetos: 
-- quatro máquinas virtuais Standard_D2s_v3
+- Três máquinas virtuais Standard_D2s_v3
 - uma conta de armazenamento Standard_LRS
 
 > [!Tip]  
@@ -68,7 +68,7 @@ Esse processo requer uma assinatura do Azure na qual você possa criar os seguin
     > [!Important]  
     > As configurações a seguir são exigidas pelo Azure. Use os valores padrão. Não altere esses valores.  
     > 
-    > - **\_Local dos artefatos**: o local dos scripts deste modelo <!-- https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sccm-technicalpreview/ -->  
+    > - **\_Local dos artefatos**: A localização dos scripts para este modelo <!-- https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sccm-technicalpreview/ -->  
     >
     > - **\_Token de SAS do local dos artefatos**: O sasToken é necessário para acessar o local dos artefatos  
     > 
@@ -86,7 +86,7 @@ Para conectar-se às VMs, primeiro obtenha no portal do Azure os endereços IP p
 
 ## <a name="azure-vm-info"></a>Informações sobre a VM do Azure
 
-As quatro máquinas virtuais têm as seguintes especificações:
+Todas as três VMs possuem as seguintes especificações:
 - Standard_D2s_v3, que tem dois núcleos de CPU e 8 GB de memória  
 - Windows Server 2016 Datacenter Edition
 - 150 GB de espaço em disco
@@ -127,14 +127,4 @@ Controlador de domínio do Active Directory
 - RDC (Compactação Diferencial Remota) 
 - IIS (Serviços de Informações da Internet)
 - BITS (Serviço de Transferência Inteligente em Segundo Plano)
-
-
-### `<prefix>Other`
-
-Essa VM pode ser usada como um cliente ou para hospedar outras funções de site.
-
-#### <a name="windows-features-and-roles"></a>Recursos e funções do Windows
-- .NET
-- RDC (Compactação Diferencial Remota) 
-
 

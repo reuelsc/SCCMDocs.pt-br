@@ -2,7 +2,7 @@
 title: Propriedades e parâmetros de instalação do cliente
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os parâmetros e propriedades de linha de comando ccmsetup para instalar o cliente do Configuration Manager.
-ms.date: 03/28/2018
+ms.date: 03/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebfcde2be230c9c5e04031210cb6e137ed81668c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: f84b4b775c2baa59a5281a79f8154c0a6d0820f6
+ms.sourcegitcommit: 5feeb99605be5c4c39896bcee239cc274d89b3e8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126483"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58508523"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-system-center-configuration-manager"></a>Sobre os parâmetros e propriedades de instalação do cliente no System Center Configuration Manager
 
@@ -40,7 +40,7 @@ Use o comando CCMSetup.exe para instalar o cliente do Configuration Manager. Se 
 > [!NOTE]  
 >  No Configuration Manager, não é possível executar o arquivo Client.msi diretamente.  
 
- O CCMSetup.exe fornece [parâmetros de linha de comando](#ccmsetup-exe-command-line-parameters) para personalizar a instalação. Os parâmetros são prefixados com uma barra invertida e, por padrão, ficam em letra minúscula. Especifique o valor de um parâmetro, quando for necessário, usando dois-pontos e, logo em seguida, o valor desejado. Também é possível fornecer propriedades para modificar o comportamento do client.msi na linha de comando do CCMSetup.exe. Por padrão, as propriedades estão em maiúsculas. Especifique um valor para uma propriedade usando um sinal de igual seguido imediatamente pelo valor desejado.  
+ O CCMSetup.exe fornece [parâmetros de linha de comando](#ccmsetupexe-command-line-parameters) para personalizar a instalação. Os parâmetros são prefixados com uma barra invertida e, por padrão, ficam em letra minúscula. Especifique o valor de um parâmetro, quando for necessário, usando dois-pontos e, logo em seguida, o valor desejado. Também é possível fornecer propriedades para modificar o comportamento do client.msi na linha de comando do CCMSetup.exe. Por padrão, as propriedades estão em maiúsculas. Especifique um valor para uma propriedade usando um sinal de igual seguido imediatamente pelo valor desejado.  
 
 > [!IMPORTANT]  
 >  Especifique os parâmetros do CCMSetup antes de especificar as propriedades do client.msi.  
@@ -336,7 +336,7 @@ Exemplo: **CCMSetup.exe CCMALLOWSILENTREBOOT**
 
  Esse valor é uma correspondência com diferenciação de maiúsculas e minúsculas dos atributos da entidade no certificado de AC raiz. Os atributos podem ser separados por uma vírgula (,) ou por um ponto-e-vírgula (;). Especifique mais de um certificado de AC raiz usando uma barra separadora. Exemplo:  
 
- `CCMCERTISSUERS=”CN=Contoso Root CA; OU=Servers; O=Contoso, Ltd; C=US &#124; CN=Litware Corporate Root CA; O=Litware, Inc.”`  
+ `CCMCERTISSUERS="CN=Contoso Root CA; OU=Servers; O=Contoso, Ltd; C=US | CN=Litware Corporate Root CA; O=Litware, Inc."`  
 
 > [!TIP]  
 >  Para copiar **CertificateIssuers=&lt;string\>** para o site, referencie o arquivo mobileclient.tcf na pasta &lt;diretório do Configuration Manager\>\bin\\&lt;platform\> no servidor do site.  

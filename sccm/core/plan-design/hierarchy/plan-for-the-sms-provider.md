@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aba8479d6a2aecb3c73dad6acce6ab8237ff2576
-ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
+ms.openlocfilehash: 6ff872817805c85665bde7219ca26de0bf8d78ef
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/19/2019
-ms.locfileid: "57881870"
+ms.locfileid: "58197105"
 ---
 # <a name="plan-for-the-sms-provider"></a>Planejar o provedor de SMS 
 
@@ -259,19 +259,18 @@ A instalação do Windows ADK pode exigir até 650 MB de espaço livre em disco 
 
 A partir da versão 1810, o Provedor de SMS fornece acesso de interoperabilidade da API somente leitura ao WMI por HTTPS, chamado de **serviço de administração**. Essa API REST pode ser utilizada no lugar de um serviço Web personalizado para acessar informações do site.
 
-`https://servername/AdminService/wmi/<ClassName>` 
+O formato de URL do **serviço de administração** é `https://<servername>/AdminService/wmi/<ClassName>`, em que `<servername>` é o servidor no qual o Provedor de SMS está instalado e `<ClassName>` é um nome de classe WMI válido do Configuration Manager.
 
 Por exemplo, `https://servername/AdminService/wmi/SMS_Site`
 
 Faz chamadas diretas para esse serviço com o cmdlet do Windows PowerShell [Invoke-RestMethod](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod).
 
-Você também pode usá-lo para acessar dados do site do Power BI usando a opção de conector do OData. 
-
 > [!Tip]  
 > Você pode usar esse cmdlet em uma sequência de tarefas. Essa ação permite acessar informações do site sem a necessidade de um serviço Web personalizado para fazer interface com o provedor WMI. 
 
-O serviço de administração registra sua atividade no arquivo **adminservice.log**.
+Você também pode usá-lo para acessar dados do site do Power BI usando a opção de conector do OData. 
 
+O serviço de administração registra sua atividade no arquivo **adminservice.log**.
 
 ### <a name="enable-the-administration-service-through-the-cmg"></a>Habilitar o serviço de administração por meio do CMG
 

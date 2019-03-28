@@ -2,7 +2,7 @@
 title: Notificação de cliente
 titleSuffix: Configuration Manager
 description: Gerencie clientes executando ações imediatas de um console do Configuration Manager central.
-ms.date: 03/06/2019
+ms.date: 03/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a643924cbaef928f9db4011f634ae96171ab7914
-ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
+ms.openlocfilehash: 39135a1fa548c83e0ba9c7d2a98cf1e925217280
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57562084"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58197020"
 ---
 # <a name="client-notification-in-configuration-manager"></a>Notificação do cliente no Configuration Manager
 
@@ -79,7 +79,8 @@ Essas ações estão no menu **Notificação do cliente**, na faixa de opções 
 Na versão 1806 ou anterior, a opção **Notificação de Cliente** ficava disponível apenas no nó Coleção de Dispositivos ou ao exibir a associação de uma Coleção de Dispositivos. Já na versão 1810, é possível iniciar uma **Notificação de Cliente** diretamente do nó **Dispositivos**. Não é mais necessário estar dentro de uma exibição de associação de coleção. <!--SCCMDocs-pr issue 2972-->
 
 #### <a name="permissions"></a>Permissões
-<!--SCCMDocs-pr issue #2972--> Da versão 1810 em diante, as ações de notificação do cliente agora exigem a permissão **Notificar Recurso** no objeto de Coleção. Essa permissão se aplica a todas as ações no menu **Notificação do cliente**. 
+<!--SCCMDocs-pr issue #2972-->
+Da versão 1810 em diante, as ações de notificação do cliente agora exigem a permissão **Notificar Recurso** no objeto de Coleção. Essa permissão se aplica a todas as ações no menu **Notificação do cliente**. 
 
 As seguintes funções internas têm esta permissão por padrão:
 - Administrador Completo  
@@ -135,7 +136,7 @@ Dispare os clientes do Windows 10 para verificar e enviar o estado de integridad
 
 ### <a name="check-conditional-access-compliance"></a>Verificar conformidade de acesso condicional
 
-Dispare clientes para verificar a conformidade com acesso condicional. Para saber mais, confira [Gerenciar o acesso aos serviços do O365 para computadores](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm).  
+Dispare clientes para verificar a conformidade com acesso condicional. Para obter mais informações, confira [Gerenciar o acesso aos serviços do Office 365 para computadores](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm).  
 
 
 ### <a name="wake-up"></a>Ativação

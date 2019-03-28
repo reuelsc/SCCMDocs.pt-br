@@ -2,7 +2,7 @@
 title: Configurações do cliente
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as configurações padrão e personalizadas para controlar os comportamentos do cliente
-ms.date: 08/31/2018
+ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9a06e9f0607161b87422d29ede028da0e8aea8c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 472cf012805700e1ec2de2f3c83a0ef63e10183b
+ms.sourcegitcommit: 5f17355f954b9d9e10325c0e9854a9d582dec777
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140891"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329593"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Sobre as configurações do cliente no Configuration Manager
 
@@ -294,7 +294,8 @@ Para obter mais informações sobre as janelas de manutenção, consulte [Como u
 
 ## <a name="delivery-optimization"></a>Otimização de Entrega
 
-<!-- 1324696 --> Você usa os grupos de limites do Configuration Manager para definir e regular a distribuição de conteúdo em sua rede corporativa e para escritórios remotos. A [Otimização de Entrega do Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) é uma tecnologia ponto-a-ponto baseada na nuvem para compartilhar conteúdo entre dispositivos do Windows 10. A partir da versão 1802, configure a Otimização de Entrega para que ela use os grupos de limites ao compartilhar o conteúdo entre pares.
+<!-- 1324696 -->
+Você usa os grupos de limites do Configuration Manager para definir e regular a distribuição de conteúdo em sua rede corporativa e para escritórios remotos. A [Otimização de Entrega do Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) é uma tecnologia ponto-a-ponto baseada na nuvem para compartilhar conteúdo entre dispositivos do Windows 10. A partir da versão 1802, configure a Otimização de Entrega para que ela use os grupos de limites ao compartilhar o conteúdo entre pares.
 
  > [!Note]
  > A Otimização de Entrega está disponível apenas em clientes do Windows 10
@@ -608,7 +609,7 @@ Defina as configurações adicionais nesse grupo como **Sim** para tornar as seg
 - **Status da Instalação**
 - **Conformidade do Dispositivo**
 - **Opções**
-- **Especificar uma guia personalizada para o Centro de Software** (começando na versão 1806) <!--1358132-->
+- **Especifique uma guia personalizada para o Centro de Software** (começando da versão 1806) <!--1358132-->
     - **Nome da guia**
     - **URL de conteúdo**
 
@@ -722,7 +723,7 @@ Selecione **Agendamento** para ajustar a frequência com que os clientes executa
 
 
 
-##  <a name="software-updates"></a>Atualizações de software  
+## <a name="software-updates"></a>Atualizações de software  
 
 ### <a name="enable-software-updates-on-clients"></a>Habilitar atualizações de software em clientes
 
@@ -774,6 +775,10 @@ Essa configuração define a porta local para que o ouvinte HTTP baixe o conteú
 ### <a name="enable-management-of-the-office-365-client-agent"></a>Habilitar o gerenciamento do Agente Cliente do Office 365
 
 Quando você configura essa opção como **Sim**, ela habilita a definição das configurações de instalação do Office 365. Ele também permite o download de arquivos das Redes de Distribuição de Conteúdo (CDNs) do Office e a implantação dos arquivos como um aplicativo no Configuration Manager. Para obter mais informações, consulte [Gerenciar o Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates).
+
+### <a name="bkmk_SUMMaint"></a>Habilite a instalação de atualizações de software na janela de manutenção "Todas as implementações" quando a janela de manutenção "Atualização de software" estiver disponível
+
+Quando você define essa opção para **Sim** e o cliente tem pelo menos uma janela de manutenção de "Atualização de Software" definida, as atualizações de software serão instaladas durante uma janela de manutenção "Todas as implantações". Por padrão, essa configuração é definida como **Não**. Essa configuração de cliente foi adicionada no Configuration Manager versão 1810. <!--2839307-->
 
 ### <a name="enable-third-party-software-updates"></a>Habilitar atualizações do software de terceiros 
 
