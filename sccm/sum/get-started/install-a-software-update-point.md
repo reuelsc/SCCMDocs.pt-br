@@ -5,18 +5,18 @@ description: Os sites primários requerem um ponto de atualização de software 
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 03/20/2019
+ms.date: 03/27/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b099a645-6434-498f-a408-1d438e394396
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 286fb75eb16636ac129bc634e443d6bbfac3d44a
-ms.sourcegitcommit: d71e558db2da124357b840332e2da671b3810507
+ms.openlocfilehash: 9a8961e86ff5184463dd156e2394150968046fb8
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58269031"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58523785"
 ---
 # <a name="install-and-configure-a-software-update-point"></a>instalar e configurar um ponto de atualização de software  
 
