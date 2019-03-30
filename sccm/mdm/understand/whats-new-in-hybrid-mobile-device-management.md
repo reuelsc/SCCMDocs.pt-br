@@ -2,7 +2,7 @@
 title: Novidades no MDM híbrido
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune.
-ms.date: 02/26/2019
+ms.date: 03/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6e883b6ea5cea6d6b27863afc84eef774b4d552
-ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
+ms.openlocfilehash: b26ad559d9417fcc81a2023c1bf1704ae44b7d0c
+ms.sourcegitcommit: 60aff44c76e6432dc544c8b26acba432ac799cfc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58197139"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58639589"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -45,6 +45,32 @@ Cada seção deste artigo lista recursos híbridos em três categorias diferente
 |**Novo no Microsoft Intune** | De modo geral, todos os recursos listados nesta categoria devem funcionar com todas as versões do Configuration Manager. Isso inclui versões do System Center 2012 R2 Configuration Manager, uma vez que esses recursos exigem apenas o serviço Intune e não exigem funcionalidades adicionais no Configuration Manager.|
 |**Novo no Configuration Manager Technical Preview**| Todos os recursos listados nessa categoria funcionam apenas com o branch de visualização técnica especificado. Para testar esses recursos, você deve instalar a versão de visualização técnica especificada na descrição do recurso. Para obter mais informações, confira [Visualização técnica para o Configuration Manager](/sccm/core/get-started/technical-preview).|
 |**Novo no Configuration Manager (Branch Atual)**| Todos os recursos listados nessa categoria funcionam apenas com a versão especificada do Configuration Manager (branch atual). Se estiver usando uma versão mais antiga do Configuration Manager para sua implantação híbrida, atualize para a versão do Configuration Manager (branch atual) especificada na descrição do recurso. Para obter mais informações, veja [Atualizar para o Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).|
+
+
+
+## <a name="march-2019"></a>Março de 2019
+
+### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+#### <a name="install-available-apps-using-the-company-portal-app-after-windows-bulk-enrollment"></a>Instalar aplicativos disponíveis usando o aplicativo de Portal da empresa após o registro em massa do Windows 
+<!-- 2751523 -->
+Dispositivos Windows registrados no Intune usando [registro do Windows em massa](https://docs.microsoft.com/intune/windows-bulk-enroll) (pacotes de provisionamento) poderão usar o aplicativo de Portal da empresa para instalar aplicativos disponíveis. Para obter mais informações sobre o aplicativo de Portal da empresa, consulte [adicionar manualmente o Portal da empresa do Windows 10](https://docs.microsoft.com/intune/store-apps-company-portal-app) e [como configurar o aplicativo de Portal da empresa do Microsoft Intune](https://docs.microsoft.com/intune/company-portal-app).
+
+> [!Note]  
+> Esse recurso ainda não está totalmente implantado em todos os clientes. Se você não pode usar o Portal da empresa em dispositivos em massa registrado, talvez você precise aguardar até que essa alteração distribui para sua conta.
+
+#### <a name="app-icons-are-displayed-with-an-automatically-generated-background"></a>Ícones do aplicativo são exibidos com um plano de fundo gerado automaticamente 
+<!-- 1429026 -->
+O aplicativo do Portal de empresa do Windows agora exibe ícones de aplicativo com um plano de fundo gerado automaticamente. Este plano de fundo baseia-se na cor dominante do ícone, se ele puder ser detectado. Quando aplicável, o plano de fundo substituirá a borda cinza que era visível anteriormente em blocos de aplicativos. Você verá essa alteração em versões mais recentes que 10.3.3451.0 do Portal da empresa.
+
+#### <a name="changes-to-company-portal-enrollment-for-ios-12-devices"></a>Alterações no registro do Portal da empresa para dispositivos iOS 12
+<!-- 3448635 -->  
+Portal da empresa para iOS atualiza as telas de registro do aplicativo e as etapas para se alinhar com as alterações de registro do MDM lançadas no Apple iOS 12.2. O fluxo de trabalho atualizado agora solicita que você:
+- Permitir Safari abrir o site do Portal da empresa (por meio do Safari) e baixar o perfil de gerenciamento antes de retornar ao aplicativo Portal da empresa. 
+- Abra o aplicativo de configurações para instalar o perfil de gerenciamento em seu dispositivo.
+- Retorne ao aplicativo Portal da empresa para concluir o registro.  
+
+Para obter mais informações sobre como preparar para que essas alterações, consulte o [postagem do Microsoft Tech Community](https://aka.ms/CP_changes_iOS12). Para dar suporte a novos registros de iOS no Portal da empresa, consulte [registrar o dispositivo de iOS no Intune](https://docs.microsoft.com/intune/ios-enroll).
 
 
 
