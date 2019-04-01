@@ -2,7 +2,7 @@
 title: Criar aplicativos de servidores Linux e UNIX
 titleSuffix: Configuration Manager
 description: Veja quais considerações você deverá levar em conta ao criar e implantar aplicativos para dispositivos Linux e Unix.
-ms.date: 04/13/2017
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,16 +11,21 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 125a5fda74834c51e98f3028325bcc227fd106eb
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 35765aa804bf0e6d303caf2c395d3d44d5027951
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126170"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58524069"
 ---
-# <a name="create-linux-and-unix-server-applications-with-system-center-configuration-manager"></a>Criar aplicativos de servidor Linux e UNIX com o System Center Configuration Manager
+# <a name="create-linux-and-unix-server-applications-with-configuration-manager"></a>Criar aplicativos de servidor Linux e UNIX com o Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
+
+> [!Important]  
+> Começando na versão 1902, Configuration Manager não dá suporte a clientes Linux ou UNIX. 
+> 
+> Considere a possibilidade de gerenciamento do Microsoft Azure para gerenciar servidores Linux. As soluções do Azure têm amplo suporte para Linux que, na maioria dos casos, supera a funcionalidade do Configuration Manager, incluindo o gerenciamento de patches de ponta a ponta para o Linux.
 
 Leve em conta as seguintes considerações ao criar e implantar aplicativos para computadores que executam Linux e UNIX.  
 
@@ -29,7 +34,7 @@ Leve em conta as seguintes considerações ao criar e implantar aplicativos para
 
  Os recursos de implantação de software Linux e UNIX incluem:  
 
--   Instalação de software para servidores Linux e UNIX, incluindo o seguinte:  
+-   Instalação de software para servidores Linux e UNIX, incluindo os seguintes recursos:  
 
     -   Nova implantação de software  
 
@@ -65,10 +70,10 @@ As principais diferenças entre implantar pacotes e programas em computadores Li
 ##  <a name="configure-packages-programs-and-deployments-for-linux-and-unix-servers"></a>Configurar pacotes, programas e implantações em servidores Linux e UNIX  
  É possível criar e implantar pacotes e programas usando as opções padrão disponíveis no console do Configuration Manager. O cliente não necessita de configurações exclusivas.  
 
- Use as informações nas seções a seguir para configurar pacotes e programas, bem como implantações.  
+ Use as informações nas seções a seguir para configurar pacotes e programas, e implantações.  
 
 ### <a name="packages-and-programs"></a>Pacotes e programas  
- Para criar um pacote ou programa para um servidor Linux ou UNIX, use o **Assistente para Criar Pacote e Programa**, no console do Configuration Manager. O cliente para Linux e UNIX oferece suporte à maioria das configurações de pacote e programa. No entanto, não há suporte para várias configurações. Quando você cria ou configura pacotes e programas, considere o seguinte:  
+ Para criar um pacote ou programa para um servidor Linux ou UNIX, use o **Assistente para Criar Pacote e Programa**, no console do Configuration Manager. O cliente para Linux e UNIX oferece suporte à maioria das configurações de pacote e programa. No entanto, não há suporte para várias configurações. Quando você cria ou configura pacotes e programas, considere os seguintes pontos:  
 
 -   Inclua os tipos de arquivo com suporte nos computadores de destino.  
 
@@ -80,10 +85,10 @@ A tabela a seguir lista as propriedades de pacotes e programas sem suporte:
 
 |Propriedade de pacotes e de programas|Comportamento|Mais informações|  
 |----------------------------------|--------------|----------------------|  
-|Configurações de compartilhamento de pacote:<br /><br /> – Todas as opções|Um erro é gerado e ocorre falha na instalação do software|O cliente não oferece suporte a essa configuração. Em vez disso, o cliente deve baixar o software usando o HTTP ou HTTPS e executar a linha de comando de seu cache local.|  
-|Configurações de atualização do pacote:<br /><br /> – Desconectar usuários dos pontos de distribuição|As configurações são ignoradas|O cliente não oferece suporte a essa configuração.|  
-|Configurações de implantação do sistema operacional:<br /><br /> – Todas as opções|As configurações são ignoradas|O cliente não oferece suporte a essa configuração.|  
-|Relatórios:<br /><br /> – Usar propriedades do pacote para correspondência de status MIF<br /><br /> – Usar esses campos para correspondência de status MIF|As configurações são ignoradas|O cliente não oferece suporte ao uso de status de arquivos MIF.|  
+|Configurações de compartilhamento de pacote:<br /><br /> – Todas as opções|Um erro é gerado e ocorre falha na instalação do software|O cliente não dá suporte a essa configuração. Em vez disso, o cliente deve baixar o software usando o HTTP ou HTTPS e executar a linha de comando de seu cache local.|  
+|Configurações de atualização do pacote:<br /><br /> – Desconectar usuários dos pontos de distribuição|As configurações são ignoradas|O cliente não dá suporte a essa configuração.|  
+|Configurações de implantação do sistema operacional:<br /><br /> – Todas as opções|As configurações são ignoradas|O cliente não dá suporte a essa configuração.|  
+|Relatórios:<br /><br /> – Usar propriedades do pacote para correspondência de status MIF<br /><br /> – Usar esses campos para correspondência de status MIF|As configurações são ignoradas|O cliente não dá suporte ao uso de status de arquivos MIF.|  
 |**Executar**:<br /><br /> – Todas as opções|As configurações são ignoradas|O cliente sempre executa pacotes sem interface do usuário.<br /><br /> O cliente ignora todas as opções de configuração para Executar.|  
 |Após a execução:<br /><br />– O Configuration Manager reinicia o computador<br /><br /> – O programa controla a reinicialização<br /><br /> – O Configuration Manager faz logoff do usuário|Um erro é gerado e ocorre falha na instalação do software|Não há suporte para a configuração de reinicialização do sistema e para as configurações específicas do usuário.<br /><br /> Quando qualquer configuração que não seja **Nenhuma ação é necessária** estiver em uso, o cliente gerará um erro e continuará a instalação do software, sem ações efetuadas.|  
 |O programa pode ser executado:<br /><br /> – Somente quando um usuário está conectado|Um erro é gerado e ocorre falha na instalação do software|Não há suporte para as configurações específicas do usuário.<br /><br /> Quando essa opção estiver configurada, o cliente gerará um erro e ocorrerá falha na instalação do software.<br /><br /> As outras opções são ignoradas e a instalação do software continua.|  
@@ -94,14 +99,14 @@ A tabela a seguir lista as propriedades de pacotes e programas sem suporte:
 |Quando este programa estiver atribuído a um computador:<br /><br /> – Executar uma vez a cada usuário que fizer logon|As configurações são ignoradas|Não há suporte para as configurações específicas do usuário.<br /><br /> No entanto, o cliente oferece suporte à configuração executar uma vez para o computador.<br /><br /> Essa configuração não gera erro ou entrada de log porque o erro e a entrada de log já são criados para a configuração de pré-requisitos do **O programa pode ser executado** = **Somente quando um usuário tiver efetuado logon**.|  
 |Suprimir notificações do programa|As configurações são ignoradas|O cliente não implementa uma interface do usuário.<br /><br /> Quando essa configuração é selecionada, ela será ignorada e a instalação do software continua.|  
 |Desabilitar este programa em computadores nos quais ele estiver implantado|As configurações são ignoradas|Não há suporte para essa configuração e ela não afeta a instalação do software.|  
-|Permitir que este programa seja instalado da sequência de tarefas de Pacote de Instalação sem ser implantado||O cliente não oferece suporte a sequências de tarefas.<br /><br /> Não há suporte para essa configuração e ela não afeta a instalação do software.|  
-|Windows Installer:<br /><br /> – Todas as opções|As configurações são ignoradas|O cliente não oferece suporte para arquivos ou configurações do Windows Installer.|  
-|Modo de Manutenção do OpsMgr:<br /><br /> – Todas as opções|As configurações são ignoradas|O cliente não oferece suporte a essa configuração.|  
+|Permitir que este programa seja instalado da sequência de tarefas de Pacote de Instalação sem ser implantado||O cliente não dá suporte a sequências de tarefas.<br /><br /> Não há suporte para essa configuração e ela não afeta a instalação do software.|  
+|Windows Installer:<br /><br /> – Todas as opções|As configurações são ignoradas|O cliente não dá suporte a arquivos ou configurações do Windows Installer.|  
+|Modo de Manutenção do OpsMgr:<br /><br /> – Todas as opções|As configurações são ignoradas|O cliente não dá suporte a essa configuração.|  
 
 ### <a name="deploy-software-to-a-linux-or-unix-server"></a>Implantar o software em um servidor Linux ou UNIX
- Para implantar softwares em um servidor Linux ou UNIX usando um pacote ou programa, é possível usar o **Assistente de Implantação de Software**, no console do Configuration Manager. Há suporte para a maioria das definições de implantação pelo cliente para Linux e UNIX. No entanto, não há suporte para várias configurações. Ao implantar softwares, considere o seguinte:  
+ Para implantar softwares em um servidor Linux ou UNIX usando um pacote ou programa, é possível usar o **Assistente de Implantação de Software**, no console do Configuration Manager. Há suporte para a maioria das definições de implantação pelo cliente para Linux e UNIX. No entanto, não há suporte para várias configurações. Ao implantar softwares, considere os seguintes pontos:  
 
-- É necessário provisionar o pacote para ao menos um ponto de distribuição que esteja associado a um grupo de limites configurado para local de conteúdo.  
+- Provisione o pacote para ao menos um ponto de distribuição que esteja associado a um grupo de limites configurado para local de conteúdo.  
 
 - O cliente para Linux e UNIX que recebe essa implantação deve ser capaz de acessar esse ponto de distribuição de seu local de rede.  
 
@@ -113,11 +118,11 @@ A tabela a seguir lista as propriedades de pacotes e programas sem suporte:
 
 |Propriedade de implantação|Comportamento|Mais informações|  
 |-------------------------|--------------|----------------------|  
-|Configurações de implantação – finalidade:<br /><br /> – Disponível<br /><br /> – Necessária|As configurações são ignoradas|Não há suporte para as configurações específicas do usuário.<br /><br /> No entanto, o cliente oferece suporte à configuração **Necessária**, o que impõe o horário de instalação agendado, mas não oferece suporte à instalação manual antes do horário agendado.|  
-|Enviar pacotes de ativação|As configurações são ignoradas|O cliente não oferece suporte a essa configuração.|  
-|Agendamento de atribuição:<br /><br /> – logon<br /><br /> – logoff|Um erro é gerado e ocorre falha na instalação do software|Não há suporte para as configurações específicas do usuário.<br /><br /> No entanto, o cliente oferece suporte à configuração **O mais breve possível**.|  
+|Configurações de implantação – finalidade:<br /><br /> – Disponível<br /><br /> – Necessária|As configurações são ignoradas|Não há suporte para as configurações específicas do usuário.<br /><br /> No entanto, o cliente dá suporte à configuração **Necessária**, o que impõe o horário de instalação agendado, mas não dá suporte à instalação manual antes do horário agendado.|  
+|Enviar pacotes de ativação|As configurações são ignoradas|O cliente não dá suporte a essa configuração.|  
+|Agendamento de atribuição:<br /><br /> – entrar<br /><br /> – sair|Um erro é gerado e ocorre falha na instalação do software|Não há suporte para as configurações específicas do usuário.<br /><br /> No entanto, o cliente oferece suporte à configuração **O mais breve possível**.|  
 |Configurações de notificação:<br /><br /> – Permitir que os usuários executem o programa de forma independente das atribuições|As configurações são ignoradas|O cliente não implementa uma interface do usuário.|  
-|Quando o tempo de atribuição agendada for atingido, permita que esta atividade seja realizada fora da janela de manutenção:<br /><br /> – Reinicialização do sistema (se necessário para conclusão da instalação)|Um erro é gerado|O cliente não oferece suporte à reinicialização do sistema.|  
+|Quando o tempo de atribuição agendada for atingido, permita que esta atividade seja realizada fora da janela de manutenção:<br /><br /> – Reinicialização do sistema (se necessário para conclusão da instalação)|Um erro é gerado|O cliente não dá suporte à reinicialização do sistema.|  
 |Opção de implantação para redes locais rápidas:<br /><br /> – Executar programa do ponto de distribuição|Um erro é gerado e ocorre falha na instalação do software|O cliente não pode executar o software do ponto de distribuição; em vez disso, deve baixar o programa para poder executá-lo.|  
 |Opção de implantação para limite de rede lento e não confiável ou um local de origem de fallback para o conteúdo:<br /><br /> – Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede|As configurações são ignoradas|O cliente não dá suporte ao compartilhamento de conteúdo entre pares.|  
 

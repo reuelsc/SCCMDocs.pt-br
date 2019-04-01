@@ -2,7 +2,7 @@
 title: Package Conversion Manager
 titleSuffix: Configuration Manager
 description: Saiba mais sobre o Gerenciador de Conversão de Pacotes para converter pacotes em aplicativos no Configuration Manager.
-ms.date: 08/24/2018
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba73d215b9a672f4843c2f1e4a63dfc6bd13ea74
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 2abfa18bdf454850510c18551f2f64813a7891ea
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132877"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58523921"
 ---
 # <a name="package-conversion-manager"></a>Package Conversion Manager
 
@@ -41,6 +41,12 @@ Para obter mais informações, consulte os seguintes artigos:
 
 Essa versão integrada do Gerenciador de Conversão de Pacotes funciona em pacotes no branch atual do Configuration Manager. Não é uma ferramenta autônoma. Se você tiver pacotes e programas em uma versão mais antiga do Configuration Manager, primeiro migre os pacotes para o seu branch atual. Para saber mais, confira [Migrar dados entre hierarquias](/sccm/core/migration/migrate-data-between-hierarchies).
 
+<!-- SCCMDocs-pr issue #3357 -->
+1902 de versão do Configuration Manager inclui os seguintes aprimoramentos:
+- Análise de pacote agendado é executado a cada 7 dias por padrão
+- Cmdlets do PowerShell para analisar e converter pacotes
+- Aprimoramentos e correções de bug gerais
+
 
 
 ## <a name="planning"></a>Planejamento
@@ -62,9 +68,9 @@ Antes de começar a converter pacotes em aplicativos, primeiro desenvolva um pla
 
 Esta seção descreve dois exemplos de planos de conversão de pacote:  
 
-- [Um ambiente de teste com alta utilização de recursos](#bkmk_define-high): você tem um ambiente de teste com recursos, permissões e arquitetura para replicar por completo seu ambiente de produção.  
+- [Um ambiente de teste de alta utilização de recursos](#bkmk_define-high): você tem um ambiente de teste com recursos, permissões e arquitetura para replicar por completo seu ambiente de produção.  
 
-- [Um ambiente de teste com recursos limitados](#bkmk_define-limited): você não tem um ambiente de teste que replica totalmente seu ambiente de produção.  
+- [Um ambiente de teste de recursos limitados](#bkmk_define-limited): você não tem um ambiente de teste que duplica totalmente o seu ambiente de produção.  
 
 Ajuste esses planos conforme necessário para outros problemas específicos do seu ambiente.
 
