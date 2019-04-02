@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7c731692bc2277cc5ce97e079387b392ca09ff3e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: MT
+ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
+ms.lasthandoff: 03/27/2019
 ms.locfileid: "56754567"
 ---
 # <a name="how-to-monitor-co-management-in-configuration-manager"></a>Como monitorar o cogerenciamento no Configuration Manager
@@ -35,7 +35,7 @@ Depois de habilitar o cogerenciamento, monitore dispositivos de cogerenciamento 
 
 ## <a name="co-management-dashboard"></a>Painel de cogerenciamento
 
-Iniciando na versão 1802, exiba um painel com informações sobre cogerenciamento. O painel ajuda você a analisar os computadores cogerenciados no ambiente. Os grafos podem ajudar a identificar os dispositivos que podem precisar de atenção.<!--1356648-->
+Iniciando na versão 1802, exiba um painel com informações sobre cogerenciamento. O painel ajuda você a analisar os computadores cogerenciados no ambiente. Os gráficos podem ajudar a identificar os dispositivos que podem precisar de atenção.<!--1356648-->
 
 No console do Configuration Manager, vá até o workspace **Monitoramento** e selecione o nó **Cogerenciamento**.
 
@@ -67,7 +67,7 @@ Mostra o número de dispositivos do cliente por sistema operacional por versão.
 
 Focalize uma seção do gráfico para mostrar o percentual de dispositivos nesse grupo de sistema operacional.
 
-![Bloco de distribuição do sistema operacional do cliente](media/co-management-dashboard/Co-management-OS-distribution-graph.PNG)
+![Bloco de distribuição do sistema operacional cliente](media/co-management-dashboard/Co-management-OS-distribution-graph.PNG)
 
 
 ### <a name="co-management-status-donut"></a>Status de cogerenciamento (rosca)
@@ -81,7 +81,7 @@ Mostra a divisão de êxito ou falha do dispositivo nas seguintes categorias:
 
 Focalize uma seção do gráfico para mostrar o percentual de dispositivos nessa categoria. 
 
-![Bloco de status (rosca) de cogerenciamento](media/co-management-dashboard/Co-management-status-graph.PNG)
+![Bloco de status de cogerenciamento (rosca)](media/co-management-dashboard/Co-management-status-graph.PNG)
 
 Selecione uma seção do grafo para exibir a lista de dispositivos para essa categoria.
 
@@ -135,36 +135,36 @@ Focalize uma seção do gráfico para mostrar o número de dispositivos que fize
 
 *Aplica-se à versão 1810 e posteriores*
 
-Esta tabela é uma lista de erros de registro de dispositivos. Esses erros podem vir do componente MDM no Windows, o núcleo do sistema operacional do Windows ou o cliente do Configuration Manager. 
+Esta tabela traz uma lista de erros de registro de dispositivos. Esses erros podem ser provenientes do componente MDM no Windows, do sistema operacional Windows principal ou do cliente do Configuration Manager. 
 
-Há centenas de possíveis erros. A tabela a seguir lista os erros mais comuns.
+Há centenas de erros possíveis. A tabela a seguir lista os erros mais comuns.
 <!-- SCCMDocs issue 1064, BUG 3158555 -->
 
 | Erro | Descrição |
 |---------|---------|
-| 2147549183 (0x8000FFFF) | O registro do MDM não foi configurado ainda no AD do Azure, ou o registro de URL não é esperado.<br><br>[Habilitar o registro automático do Windows 10](https://docs.microsoft.com/intune/windows-enroll#enable-windows-10-automatic-enrollment) |
-| 2149056536 (0x80180018)<br>MENROLL_E_USERLICENSE | Licença de usuário está no registro de bloqueio de estado inválido<br><br>[Atribuir licenças a usuários](https://docs.microsoft.com/intune/licenses-assign) |
-| 2149056555 (0x8018002B)<br>MENROLL_E_MDM_NOT_CONFIGURED | Ao tentar automaticamente registrado no Intune, mas a configuração do AD do Azure totalmente não é aplicada. Esse problema deve ser transitório, como as tentativas de dispositivo após um curto período. |
-| 2149056554 (0x‭8018002A‬)<br>&nbsp; | O usuário cancelou a operação<br><br>Se o registro do MDM exige autenticação multifator e o usuário não tiver conectado com um segundo fator com suporte, o Windows exibe uma notificação do sistema para o usuário se registre. Se o usuário não responder para notificação do sistema, esse erro ocorre. Esse problema deve ser transitório, como o Configuration Manager será tentar novamente e avisar o usuário. Os usuários devem usar a autenticação multifator quando eles entrarem no Windows. Também instruí-los esperassem esse comportamento e se for solicitado, execute a ação. | 
-| 2149056533 (0x80180015)<br>MENROLL_E_NOTSUPPORTED | Gerenciamento de dispositivos móveis geralmente não é suportado | 
-| 2149056514 (0x80180002)<br>MENROLL_E_DEVICE_AUTHENTICATION_ERROR | Falha ao autenticar o usuário do servidor<br><br> Não há nenhum token do Azure AD para o usuário. Verifique se que o usuário pode autenticar no Azure AD. |
-| 2147942450 (0x‭80070032‬)<br>&nbsp; | Somente há suporte para o registro automático do MDM no Windows RS3 e posteriores.<br><br>Verifique se o dispositivo atende a [requisitos mínimos](/sccm/comanage/overview#windows-10) para o cogerenciamento. |
-| 3400073293 | Resposta de conta de realm ADAL usuário desconhecida<br><br>Verifique a configuração do AD do Azure e certifique-se de que os usuários possam autenticar com êxito. | 
-| 3399548929 | Precisa de entrada do usuário<br><br>Esse problema deve ser temporário. Ocorre quando o usuário rapidamente sai antes de ocorre a tarefa de inscrição. | 
-| 3400073236 | Falha na solicitação de token de segurança ADAL.<br><br>Verifique a configuração do AD do Azure e certifique-se de que os usuários possam autenticar com êxito. |
+| 2147549183 (0x8000FFFF) | O registro do MDM ainda não foi configurado no Azure AD, ou a URL de registro não é esperada.<br><br>[Habilitar o registro automático no Windows 10](https://docs.microsoft.com/intune/windows-enroll#enable-windows-10-automatic-enrollment) |
+| 2149056536 (0x80180018)<br>MENROLL_E_USERLICENSE | A licença do usuário está em um estado inválido que bloqueia o registro<br><br>[Atribuir licenças a usuários](https://docs.microsoft.com/intune/licenses-assign) |
+| 2149056555 (0x8018002B)<br>MENROLL_E_MDM_NOT_CONFIGURED | Ao tentar se inscrever automaticamente no Intune, mas a configuração do Azure AD não é totalmente aplicada. Esse problema deve ser temporário, pois o dispositivo tenta novamente após um curto período de tempo. |
+| 2149056554 (0x‭8018002A‬)<br>&nbsp; | O usuário cancelou a operação<br><br>Se o registro no MDM exige autenticação multifator e o usuário não fez login com um segundo fator compatível, o Windows exibe uma notificação do sistema solicitando o registro do usuário. Se o usuário não responder à notificação do sistema, esse erro ocorrerá. Esse problema deve ser temporário, pois o Configuration Manager tenta novamente e faz a solicitação ao usuário. Os usuários devem usar a autenticação multifator ao entrar no Windows. Instrua-os também a esperar esse comportamento, e se solicitado, a realizar a ação. | 
+| 2149056533 (0x80180015)<br>MENROLL_E_NOTSUPPORTED | Geralmente não há suporte para o gerenciamento de dispositivos móveis | 
+| 2149056514 (0x80180002)<br>MENROLL_E_DEVICE_AUTHENTICATION_ERROR | Falha no servidor ao autenticar o usuário<br><br> Não há nenhum token do Azure AD para o usuário. Verifique se o usuário pode se autenticar no Azure AD. |
+| 2147942450 (0x‭80070032‬)<br>&nbsp; | Há suporte somente para o registro automático do MDM no Windows RS3 e versões posteriores.<br><br>Verifique se o dispositivo atende aos [requisitos mínimos](/sccm/comanage/overview#windows-10) para o cogerenciamento. |
+| 3400073293 | Resposta desconhecida da conta do realm do usuário da ADAL<br><br>Verifique a configuração do Azure AD e certifique-se de que os usuários possam se autenticar com êxito. | 
+| 3399548929 | A entrada do usuário é obrigatória<br><br>Esse problema deve ser temporário. Ele ocorre quando o usuário sai rapidamente, antes de ocorrer a tarefa de registro. | 
+| 3400073236 | Falha na solicitação de token de segurança da ADAL.<br><br>Verifique a configuração do Azure AD e certifique-se de que os usuários possam se autenticar com êxito. |
 | 2149122477 | Problema HTTP genérico |
-| 3400073247 | A autenticação integrada do ADAL do Windows só tem suporte no fluxo federado<br><br>[Planejar sua implementação de junção do Azure Active Directory híbrido](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan) | 
-| 3399942148 | O servidor ou proxy não foi encontrado.<br><br>Esse problema deve ser transitório, quando o cliente não pode se comunicar com a nuvem. Se ele persistir, verifique se que o cliente tem conectividade consistente com o Azure. | 
-| 2149056532 | Não há suporte para plataforma específica ou versão<br><br>Verifique se o dispositivo atende a [requisitos mínimos](/sccm/comanage/overview#windows-10) para o cogerenciamento. |
-| 2147943568 | Elemento não encontrado<br><br>Esse problema deve ser temporário. Se ele persistir, entre em contato com o Microsoft Support. |
-| 2192179208 | Não há recursos de memória estão disponíveis para processar este comando.<br><br>Esse problema deve ser temporário, ele deve ser resolvido sozinho quando o cliente tentará novamente. |
-| 3399614467 | Falha de ADAL concessão de autorização para essa asserção<br><br>Verifique a configuração do AD do Azure e certifique-se de que os usuários possam autenticar com êxito. |
-| 2149056517 | Falha genérica do servidor de gerenciamento, por exemplo, erro de acesso do banco de dados<br><br>Esse problema deve ser temporário. Se ele persistir, entre em contato com o Microsoft Support. |
-| 2149134055 | Nome do WinHTTP não resolvido<br><br>O cliente não é possível resolver o nome do serviço. Verifique a configuração de DNS. | 
-| 2149134050 | tempo limite da Internet<br><br>Esse problema deve ser transitório, quando o cliente não pode se comunicar com a nuvem. Se ele persistir, verifique se que o cliente tem conectividade consistente com o Azure. | 
+| 3400073247 | A autenticação do Windows integrada à ADAL só é compatível em fluxo federado<br><br>[Planejar sua implementação de ingresso no Azure Active Directory híbrido](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan) | 
+| 3399942148 | O servidor ou proxy não foi encontrado.<br><br>Esse problema deve ser temporário, quando o cliente não pode se comunicar com a nuvem. Se persistir, verifique se o cliente tem conectividade consistente com o Azure. | 
+| 2149056532 | Não há suporte para a plataforma ou versão específica<br><br>Verifique se o dispositivo atende aos [requisitos mínimos](/sccm/comanage/overview#windows-10) para o cogerenciamento. |
+| 2147943568 | Elemento não encontrado<br><br>Esse problema deve ser temporário. Se ele persistir, entre em contato com o Suporte da Microsoft. |
+| 2192179208 | Não há recursos de memória suficientes disponíveis para processar este comando.<br><br>Esse problema deve ser temporário e resolvido sozinho quando o cliente tentar novamente. |
+| 3399614467 | Falha na concessão de autorização da ADAL para essa declaração<br><br>Verifique a configuração do Azure AD e certifique-se de que os usuários possam se autenticar com êxito. |
+| 2149056517 | Falha genérica do servidor de gerenciamento, como erro de acesso ao banco de dados<br><br>Esse problema deve ser temporário. Se ele persistir, entre em contato com o Suporte da Microsoft. |
+| 2149134055 | Nome Winhttp não resolvido<br><br>O cliente não pode resolver o nome do serviço. Verifique a configuração do DNS. | 
+| 2149134050 | tempo limite da Internet<br><br>Esse problema deve ser temporário, quando o cliente não pode se comunicar com a nuvem. Se persistir, verifique se o cliente tem conectividade consistente com o Azure. | 
 
 
-Para obter mais informações, consulte [valores de erro de registro do MDM](https://docs.microsoft.com/windows/desktop/mdmreg/mdm-registration-constants).
+Para saber mais, confira [Valores de erro de registro do MDM](https://docs.microsoft.com/windows/desktop/mdmreg/mdm-registration-constants).
 
 
 
@@ -176,15 +176,15 @@ duas políticas são criadas no nó **Implantações** do workspace **Monitorame
 
 ## <a name="wmi-device-data"></a>Dados de dispositivo do WMI
 
-Consulta de **SMS_Client_ComanagementState** classe WMI. Você pode criar coleções personalizadas no Configuration Manager, que ajudam a determinar o status da implantação do cogerenciamento. Para obter mais informações sobre como criar coleções personalizadas, consulte [como criar coleções](/sccm/core/clients/manage/collections/create-collections). 
+confira a classe WMI **SMS_Client_ComanagementState**. Você pode criar coleções personalizadas no Configuration Manager para ajudar a determinar o status da implantação do cogerenciamento. Para saber mais sobre como criar coleções personalizadas, confira [Como criar coleções](/sccm/core/clients/manage/collections/create-collections). 
 
 Os campos a seguir estão disponíveis na classe WMI:  
 
-- **MachineId**: Uma ID de dispositivo exclusivo para o cliente do Configuration Manager  
+- **MachineId**: uma ID de dispositivo exclusiva do cliente do Configuration Manager  
 
 - **MDMEnrolled**: especifica se o dispositivo é registrado no MDM  
 
-- **Authority**: A autoridade para os quais o dispositivo está registrado  
+- **Authority**: a autoridade para a qual o dispositivo está registrado  
 
 - **ComgmtPolicyPresent**: especifica se a política de cogerenciamento do Configuration Manager existe no cliente. Se o valor de **MDMEnrolled** for **0**, o dispositivo não será cogerenciado independentemente da existência da política de cogerenciamento no cliente.  
 

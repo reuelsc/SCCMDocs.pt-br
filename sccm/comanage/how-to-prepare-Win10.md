@@ -1,7 +1,7 @@
 ---
-title: Gerenciar dispositivos baseados na internet em conjunto
+title: Cogerenciar dispositivos baseados na Internet
 titleSuffix: Configuration Manager
-description: Saiba como preparar os dispositivos baseados na internet do Windows 10 para cogerenciamento.
+description: Saiba como preparar dispositivos Windows 10 baseados na Internet para o cogerenciamento.
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
@@ -12,66 +12,67 @@ ms.technology: configmgr-client
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 31779b3588617816df4309461ed7715b20b0abd4
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
-ms.translationtype: MT
+ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
+ms.lasthandoff: 03/27/2019
 ms.locfileid: "57558024"
 ---
-# <a name="how-to-prepare-internet-based-devices-for-co-management"></a>Como preparar os dispositivos baseados na internet para o cogerenciamento
+# <a name="how-to-prepare-internet-based-devices-for-co-management"></a>Como preparar dispositivos baseados na Internet para o cogerenciamento
 
-Este artigo se concentra no segundo caminho para o cogerenciamento para novos dispositivos baseados na internet. Esse cenário é quando você tem novos dispositivos Windows 10 que ingressem no Azure AD e registrados automaticamente para o Intune. Instalar o cliente do Configuration Manager para atingir um estado de cogerenciamento.  
+Este artigo enfoca o segundo caminho para o cogerenciamento, para novos dispositivos baseados na Internet. Este cenário ocorre quando você tem novos dispositivos Windows 10 que ingressam no Azure AD e se registram automaticamente no Intune. Instale o cliente do Configuration Manager para atingir um estado de cogerenciamento.  
 
 
 
 ## <a name="windows-autopilot"></a>Windows Autopilot
 
-Para novos dispositivos Windows 10, você pode usar o serviço Autopilot para definir a experiência de caixa (OOBE). Esse processo inclui ingressar o dispositivo no Azure AD e o registro do dispositivo no Intune.  
+Para novos dispositivos Windows 10, você pode usar o serviço AutoPilot para definir a configuração inicial pelo usuário. Esse processo inclui ingressar o dispositivo no AD e no Azure AD, bem como registrar o dispositivo no Intune.  
 
-Para obter mais informações, consulte [visão geral do Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot).    
+Para saber mais, confira [Visão geral do Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot).    
 
-Para configurar seus dispositivos para ser registrados automaticamente no Intune quando tentarem entrar no Azure AD, consulte [dispositivos Windows registrar para o Microsoft Intune](https://docs.microsoft.com/intune/windows-enroll).  
+Para configurar seus dispositivos para serem registrados automaticamente no Intune ao ingressar no Azure AD, confira  [Registrar dispositivos Windows no Microsoft Intune](https://docs.microsoft.com/intune/windows-enroll).  
 
 
 ### <a name="gather-information-from-configuration-manager"></a>Coletar informações do Configuration Manager
 
-A partir da versão 1802, use o Configuration Manager para coletar e relatar as informações do dispositivo exigidas pela Microsoft Store para Empresas e Educação. Esta informação inclui o número de série do dispositivo, o identificador de produto do Windows e um identificador de hardware. Ele é usado para registrar o dispositivo em que a Microsoft Store para dar suporte ao Windows Autopilot. 
+A partir da versão 1802, use o Configuration Manager para coletar e relatar as informações do dispositivo exigidas pela Microsoft Store para Empresas e Educação. Esta informação inclui o número de série do dispositivo, o identificador de produto do Windows e um identificador de hardware. Ele é usado para registrar o dispositivo na Microsoft Store para dar suporte ao Windows Autopilot. 
 
-1. No console do Configuration Manager, vá para o **monitoramento** espaço de trabalho, expanda o **Reporting** nó, expanda **relatórios**e selecione o **Hardware - Geral** nó.  
+1. No console do Configuration Manager, acesse o workspace **Monitoramento**, expanda o nó **Geração de relatórios**, expanda **Relatórios** e selecione o nó **Hardware - Geral**.  
 
-2. Executar o relatório **informações de dispositivo do Windows Autopilot**e exibir os resultados.  
+2. Execute o relatório, **Informações do dispositivo do Windows AutoPilot** e veja os resultados.  
 
-3. No Visualizador de relatórios, selecione a **exportar** ícone e escolha o **CSV (delimitado por vírgula)** opção.  
+3. No visualizador de relatórios, selecione o ícone **Exportar** e escolha a opção **CSV (delimitado por vírgulas)**.  
 
 4. Depois de salvar o arquivo, faça o upload dos dados para a Microsoft Store para Empresas e Educação.  
 
-Para obter mais informações, consulte [adicionar dispositivos na Microsoft Store para empresas e educação](https://docs.microsoft.com/microsoft-store/add-profile-to-devices#add-devices-and-apply-autopilot-deployment-profile).
+Para saber mais, confira [Adicionar dispositivos na Microsoft Store para Empresas e Educação](https://docs.microsoft.com/microsoft-store/add-profile-to-devices#add-devices-and-apply-autopilot-deployment-profile).
 
 
-### <a name="autopilot-for-existing-devices"></a>AutoPilot para dispositivos existentes
+### <a name="autopilot-for-existing-devices"></a>Autopilot para dispositivos existentes
 <!--1358333-->
 
-[Windows Autopilot para dispositivos existentes](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) está disponível no Windows 10, versão 1809 ou posterior. Esse recurso permite que você recriar a imagem e provisionar um dispositivo com Windows 7 para [modo controlada pelo usuário do Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) usando uma sequência de tarefas do Configuration Manager única e nativo. 
+O [Windows Autopilot para dispositivos existentes](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) está disponível no Windows 10, versão 1809 ou posterior. Esse recurso permite refazer a imagem e provisionar um dispositivo Windows 7 para o [modo orientado pelo usuário do Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) usando uma única sequência de tarefas nativa do Configuration Manager. 
 
-Para obter mais informações, consulte [Windows Autopilot para sequência de tarefas de dispositivos existentes](/sccm/osd/deploy-use/windows-autopilot-for-existing-devices).
+Para saber mais, confira [Sequência de tarefas do Windows Autopilot para dispositivos existentes](/sccm/osd/deploy-use/windows-autopilot-for-existing-devices).
 
 
 
 ## <a name="install-the-configuration-manager-client"></a>Instalar o cliente do Configuration Manager
 
-Para dispositivos baseados na internet no segundo caminho, você precisa criar um aplicativo no Intune. Implante esse aplicativo nos dispositivos Windows 10 que já não são clientes do Configuration Manager. 
+Para dispositivos baseados na Internet no segundo caminho, é preciso criar um aplicativo no Intune. Implante esse aplicativo em dispositivos Windows 10 que ainda não são clientes do Configuration Manager. 
 
 ### <a name="get-the-command-line-from-configuration-manager"></a>Obter a linha de comando do Configuration Manager
 
 1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e escolha o nó **Cogerenciamento**.  
 
-2. Selecione o objeto de cogerenciamento e, em seguida, escolha **propriedades** na faixa de opções.  
+2. Selecione o objeto de cogerenciamento e, em seguida, escolha **Propriedades** na faixa de opções.  
 
-3. Sobre o **habilitação** guia, copie a linha de comando. Cole-o no bloco de notas para salvar para o próximo processo.  
+3. Na guia **Habilitação**, copie a linha de comando. Cole-a no bloco de notas para salvar para o próximo processo.  
 
-A linha de comando a seguir está um exemplo: `CCMSETUPCMD="CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC"`
+A linha de comando a seguir é um exemplo: `CCMSETUPCMD="CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC"`
 
-<!--1358215--> Da versão 1806 em diante, menos propriedades de linha de comando agora são necessárias.  
+<!--1358215-->
+A partir da versão 1806, são necessárias menos propriedades de linha de comando.  
 
 - As propriedades de linha de comando a seguir são necessárias em todos os cenários:  
     - CCMHOSTNAME  
@@ -81,41 +82,41 @@ A linha de comando a seguir está um exemplo: `CCMSETUPCMD="CCMHOSTNAME=contoso.
     - AADCLIENTAPPID  
     - AADRESOURCEURI  
 
-- Se o cliente passa de volta à intranet, a propriedade a seguir é necessária:  
+- Se o cliente voltar para a Intranet, a seguinte propriedade será necessária:  
     - SMSMP  
 
-- Se usando seu próprio certificado SSL de PKI e sua CRL não é publicado na internet, o seguinte parâmetro é necessário:  
+- Se você usar seu próprio certificado SSL PKI e sua CRL não for publicada na Internet, será necessário o seguinte parâmetro:  
     - /noCRLCheck  
     
-     Para obter mais informações, consulte [planejando CRLs](/sccm/core/plan-design/security/plan-for-security#-plan-for-the-site-server-signing-certificate-self-signed)  
+     Para saber mais, confira [Planejamento de CRLs](/sccm/core/plan-design/security/plan-for-security#-plan-for-the-site-server-signing-certificate-self-signed)  
 
-Começando na versão 1810, para o site adicionais do Azure publica informações sobre o anúncio para o gateway de gerenciamento de nuvem (CMG). Um cliente associado ao Azure AD obtém essas informações do CMG durante o processo ccmsetup, usando o mesmo locatário ao qual ele está associado. Esse comportamento simplifica ainda mais o registro de dispositivos para o cogerenciamento em um ambiente com mais de um locatário do Azure AD. Agora são apenas duas propriedades de ccmsetup necessárias **CCMHOSTNAME** e **SMSSiteCode**.<!--3607731-->
+Começando na versão 1810, o site publica informações adicionais do Microsoft Azure AD no Gateway de Gerenciamento de Nuvem. Um cliente associado ao Azure AD obtém essas informações do CMG durante o processo ccmsetup, usando o mesmo locatário ao qual ele está associado. Esse comportamento simplifica ainda mais o registro de dispositivos para o cogerenciamento em um ambiente com mais de um locatário do Azure AD. Agora as duas únicas propriedades necessárias do ccmsetup são **CCMHOSTNAME** e **SMSSiteCode**.<!--3607731-->
 
 > [!Note]
-> Se você já estiver implantando o cliente do Configuration Manager do Intune, atualize o aplicativo do Intune com uma nova linha de comando e o novo MSI. <!-- SCCMDocs-pr issue 3084 -->
+> Se você já estiver implantando o cliente do Configuration Manager no Intune, atualize o aplicativo do Intune com uma nova linha de comando e a nova MSI. <!-- SCCMDocs-pr issue 3084 -->
 
 O exemplo a seguir inclui todas essas propriedades:   
 `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver SMSMP=https://mp1.contoso.com`
 
-Para obter mais informações, consulte [Propriedades de instalação do cliente](/sccm/core/clients/deploy/about-client-installation-properties).
+Para obter mais informações, confira [Propriedades de instalação do cliente](/sccm/core/clients/deploy/about-client-installation-properties).
 
 
 ### <a name="create-the-app-in-intune"></a>Criar o aplicativo no Intune
 
-1. Vá para o [portal do Azure](https://portal.azure.com)e, em seguida, abra a página do Intune.  
+1. Vá para o [portal do Azure](https://portal.azure.com) e, em seguida, abra a página do Intune.  
 
-2. Selecione **aplicativos de cliente** > **aplicativos** > **adicionar**.  
+2. Selecione **Aplicativos Clientes** > **Aplicativos** > **Adicionar**.  
 
 3. Em **Outros**, selecione **Aplicativo de linha de negócios**.  
 
-4. Carregar o **CCMSetup** arquivo de pacote do aplicativo. Encontrar esse arquivo na seguinte pasta no Gerenciador de configuração do servidor do site: `<ConfigMgr installation directory>\bin\i386`.  
+4. Carregue o arquivo de pacote do aplicativo **ccmsetup.msi**. Encontre esse arquivo na seguinte pasta no servidor do site do Configuration Manager: `<ConfigMgr installation directory>\bin\i386`.  
 
     > [!Tip]  
-    > Quando você atualiza o site, certifique-se de que atualizar também esse aplicativo no Intune.  
+    > Ao atualizar o site, não deixe de atualizar também esse aplicativo no Intune.  
 
-5. Depois que o aplicativo for atualizado, configure as informações do aplicativo com a linha de comando que você copiou do Configuration Manager.  
+5. Depois que o aplicativo for atualizado, configure as informações dele com a linha de comando que você copiou do Configuration Manager.  
 
 > [!IMPORTANT]    
-> Se você personalizar essa linha de comando, verifique se que ele não tem mais de 1024 caracteres. Quando o comprimento da linha de comando é maior que 1024 caracteres, a instalação do cliente falhará.
+> Se você personalizar essa linha de comando, garanta que não tenha mais de 1.024 caracteres. Quando a extensão da linha de comando for maior que 1.024 caracteres, a instalação do cliente falhará.
 
 
