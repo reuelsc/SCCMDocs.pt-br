@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e0b1e9404eb332a562b6d48db0f55e8726a09c8
-ms.sourcegitcommit: 5f17355f954b9d9e10325c0e9854a9d582dec777
+ms.openlocfilehash: ca7214b12532305932ddca4595b4ef4d5bdc1569
+ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329610"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477501"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Novidades na versão 1810 do branch atual do Configuration Manager
 
@@ -417,7 +417,7 @@ Além de novos recursos, este lançamento inclui outras alterações, como corre
 
 Para saber mais sobre alterações nos cmdlets do Windows PowerShell para Configuration Manager, confira [Notas sobre a versão 1810 do PowerShell](https://docs.microsoft.com/powershell/sccm/1810-release-notes?view=sccm-ps).
 
-O seguinte pacote cumulativo de atualizações (4486457) foi disponibilizado no console em 25 de janeiro de 2019: [Pacote cumulativo de atualizações do branch atual do Configuration Manager, versão 1810](https://support.microsoft.com/help/4486457).
+O seguinte pacote cumulativo de atualizações (4488598) está disponível no console, a partir de 25 de janeiro de 2019: [Pacote cumulativo de atualizações 2 do Branch Atual do Configuration Manager, versão 1810](https://support.microsoft.com/help/4488598). Esse pacote substitui o pacote cumulativo de atualizações anterior, KB 4486457.
 
 
 ### <a name="hotfixes"></a>Hotfixes

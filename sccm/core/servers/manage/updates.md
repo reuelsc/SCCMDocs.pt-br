@@ -2,7 +2,7 @@
 title: Atualizações e serviços
 titleSuffix: Configuration Manager
 description: Saiba mais sobre o método de serviço no console chamado Atualizações e Manutenção, que facilita a localização e a instalação de atualizações recomendadas.
-ms.date: 11/27/2018
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd0caf8db2c5d0c29c43f3be1e20a0b8adc01fce
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: fb97b113bb6c99d67414a5de904f071f44497ada
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125265"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58524227"
 ---
 # <a name="updates-and-servicing-for-configuration-manager"></a>Atualizações e manutenção do Configuration Manager
 
@@ -62,6 +62,7 @@ As seguintes versões do Configuration Manager com suporte estão disponíveis c
 
 | Version | Data de disponibilidade | [Data de término do suporte](/sccm/core/servers/manage/current-branch-versions-supported) | Linha de base | Atualização no console |  
 |-------------|-----------|------------|--------------|------------------------|  
+| [1902](/sccm/core/plan-design/changes/whats-new-in-version-1902)<br /><br /> 5.00.8790.1000 | 27 de março de 2019 | 27 de setembro de 2020 | Sim<sup>[Observação 1](#bkmk_note1)</sup> | Sim |
 | [1810](/sccm/core/plan-design/changes/whats-new-in-version-1810)<br /><br /> 5.00.8740.1000 | 27 de novembro de 2018 | 27 de maio de 2020 | Não | Sim |
 | [1806](/sccm/core/plan-design/changes/whats-new-in-version-1806)<br /><br /> 5.00.8692.1000 | 31 de julho de 2018 | 31 de janeiro de 2020 | Não | Sim |
 | [1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)<br /><br /> 5.00.8634.1000 | 22 de março de 2018 | 22 de setembro de 2019 | Sim<sup>[Observação 1](#bkmk_note1)</sup> | Sim |
@@ -70,12 +71,12 @@ As seguintes versões do Configuration Manager com suporte estão disponíveis c
 <a name="bkmk_note1"></a> 
 
 > [!Note]  
-> <sup>**Observação 1:**</sup> a mídia de linha de base do 1802 está disponível como parte das seguintes versões no [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (Centro de Serviços de Licenciamento por Volume):
+> <sup>**Observação 1:**</sup> a mídia de linha de base está disponível como parte das seguintes versões no [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (Centro de Serviços de Licenciamento por Volume):
 > - System Center Config Mgr (branch atual)
 > - System Center 2016 Datacenter
 > - System Center 2016 Standard  
 > 
-> Por exemplo, pesquise no VLSC para localizar `System Center Config Mgr (current branch)`. Localize a mídia de linha de base 1802 na lista de arquivos e baixe essa versão.  
+> Por exemplo, pesquise no VLSC para localizar `System Center Config Mgr (current branch)`. Localize a mídia de linha de base na lista de arquivos e faça o download para essa versão.  
 
 #### <a name="historical-versions"></a>Versões históricas
 A tabela a seguir lista as versões históricas do branch atual do Configuration Manager sem suporte:
@@ -104,50 +105,50 @@ Ao usar uma instalação pronta para produção do branch atual do Configuration
 
 As atualizações incluídas são:  
 
--   Novas versões, como a versão 1802, 1806 ou 1810.  
+- Novas versões, como a versão 1806, 1810 ou 1902.  
 
--   Atualizações que incluem novos recursos para a versão atual.
+- Atualizações que incluem novos recursos para a versão atual.
 
--   Hotfixes para a sua versão do Configuration Manager e que todos os clientes devem instalar.
+- Hotfixes para a sua versão do Configuration Manager e que todos os clientes devem instalar.
 
 As atualizações no console oferecem maior estabilidade e resolvem os problemas comuns. Elas substituem os tipos de atualização das versões anteriores do produto por service packs, atualizações cumulativas e hotfixes que se aplicam a todos os clientes e à extensão do Microsoft Intune. 
 
 As atualizações no console podem ser aplicadas a um ou mais dos sistemas a seguir:  
 
--   Servidores do site primário e de administração central  
+- Servidores do site primário e de administração central  
 
--   Servidores do sistema de site e funções do sistema de site  
+- Servidores do sistema de site e funções do sistema de site  
 
--   Instâncias do provedor de SMS  
+- Instâncias do provedor de SMS  
 
--   Consoles do Configuration Manager  
+- Consoles do Configuration Manager  
 
--   Clientes do Configuration Manager  
+- Clientes do Configuration Manager  
 
 O Configuration Manager descobre novas atualizações para você. Sincronize o ponto de conexão de serviço do Configuration Manager com o serviço de nuvem da Microsoft, observando os seguintes comportamentos:  
 
--   Quando o ponto de conexão de serviço está no modo online, o site sincroniza com a Microsoft diariamente. Ele identifica automaticamente novas atualizações que se aplicam à sua infraestrutura. Para baixar atualizações e arquivos redistribuíveis, o computador que hospeda a função do sistema de sites do ponto de conexão de serviço usa o contexto **Sistema** para acessar os seguintes locais da Internet: go.microsoft.com e download.microsoft.com. Para saber mais sobre as localizações adicionais usadas pelo ponto de conexão de serviço, confira [Requisitos de acesso à Internet](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls).  
+- Quando o ponto de conexão de serviço está no modo online, o site sincroniza com a Microsoft diariamente. Ele identifica automaticamente novas atualizações que se aplicam à sua infraestrutura. Para baixar atualizações e arquivos redistribuíveis, o computador que hospeda a função do sistema de sites do ponto de conexão de serviço usa o contexto **Sistema** para acessar os seguintes locais da Internet: go.microsoft.com e download.microsoft.com. Para saber mais sobre as localizações adicionais usadas pelo ponto de conexão de serviço, confira [Requisitos de acesso à Internet](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls).  
 
--   Quando o ponto de conexão de serviço estiver no modo offline, use a ferramenta de conexão de serviço para sincronizar-se manualmente com a nuvem da Microsoft. Para obter mais informações, veja [Usar a ferramenta de conexão de serviço](/sccm/core/servers/manage/use-the-service-connection-tool).  
+- Quando o ponto de conexão de serviço estiver no modo offline, use a ferramenta de conexão de serviço para sincronizar-se manualmente com a nuvem da Microsoft. Para obter mais informações, veja [Usar a ferramenta de conexão de serviço](/sccm/core/servers/manage/use-the-service-connection-tool).  
 
--   As atualizações no console substituem a necessidade de localizar e instalar atualizações, service packs e novos recursos individuais de forma independente.  
+- As atualizações no console substituem a necessidade de localizar e instalar atualizações, service packs e novos recursos individuais de forma independente.  
 
--   Instale somente as atualizações no console que você escolher. Ao instalar algumas atualizações, você pode selecionar recursos individuais para habilitar e usar. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).  
+- Instale somente as atualizações no console que você escolher. Ao instalar algumas atualizações, você pode selecionar recursos individuais para habilitar e usar. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).  
 
 Quando você instala uma atualização no console, ocorre o seguinte processo:  
 
--   Ele executa automaticamente uma verificação de pré-requisitos. Você também pode executar manualmente essa verificação antes de iniciar a instalação.  
+- Ele executa automaticamente uma verificação de pré-requisitos. Você também pode executar manualmente essa verificação antes de iniciar a instalação.  
 
--   Ela instala no site de nível superior no seu ambiente. Esse é o site de administração central, se você tiver um. Em uma hierarquia, a atualização instala automaticamente em sites primários. Controle quando cada servidor do site primário tem permissão para atualizar usando [Períodos de serviço para servidores do site](/sccm/core/servers/manage/service-windows).  
+- Ela instala no site de nível superior no seu ambiente. Esse é o site de administração central, se você tiver um. Em uma hierarquia, a atualização instala automaticamente em sites primários. Controle quando cada servidor do site primário tem permissão para atualizar usando [Períodos de serviço para servidores do site](/sccm/core/servers/manage/service-windows).  
 
--   Depois que um servidor do site é atualizado, todas as funções do sistema de site afetadas são atualizadas automaticamente. Essas funções incluem instâncias do provedor de SMS. Após o site instalar a atualização, os consoles do Configuration Manager também solicitam que o usuário do console atualize o console.  
+- Depois que um servidor do site é atualizado, todas as funções do sistema de site afetadas são atualizadas automaticamente. Essas funções incluem instâncias do provedor de SMS. Após o site instalar a atualização, os consoles do Configuration Manager também solicitam que o usuário do console atualize o console.  
 
--   Se uma atualização incluir o cliente do Configuration Manager, haverá a opção de testar a atualização em pré-produção ou aplicar a atualização a todos os clientes imediatamente.  
+- Se uma atualização incluir o cliente do Configuration Manager, haverá a opção de testar a atualização em pré-produção ou aplicar a atualização a todos os clientes imediatamente.  
 
--   Depois que um site primário for atualizado, os sites secundários não serão atualizados automaticamente. Em vez disso, você deve iniciar manualmente a atualização de site secundário.  
+- Depois que um site primário for atualizado, os sites secundários não serão atualizados automaticamente. Em vez disso, você deve iniciar manualmente a atualização de site secundário.  
 
 > [!NOTE]  
->  O branch atual do Configuration Manager, o branch de manutenção em longo prazo e o branch de technical preview são versões diferentes. Portanto, as atualizações que se aplicam a um branch não estão disponíveis como atualizações no console para outros branches. Para saber mais sobre as ramificações disponíveis, confira [Qual ramificação do Configuration Manager devo usar?](/sccm/core/understand/which-branch-should-i-use)
+> O branch atual do Configuration Manager, o branch de manutenção em longo prazo e o branch de technical preview são versões diferentes. As atualizações que se aplicam a um Branch não estão disponíveis como atualizações no console para outros Branches. Para saber mais sobre as ramificações disponíveis, confira [Qual ramificação do Configuration Manager devo usar?](/sccm/core/understand/which-branch-should-i-use)
 
 
 
@@ -155,7 +156,7 @@ Quando você instala uma atualização no console, ocorre o seguinte processo:
 
 Alguns hotfixes são lançados com disponibilidade limitada para resolver problemas específicos. Outros hotfixes são aplicáveis a todos os clientes, mas não é possível instalar usando o método no console. Essas correções são entregues fora de banda e não são descobertas do serviço de nuvem da Microsoft.  
 
-Se você deseja corrigir ou solucionar um problema na implantação do Configuration Manager, procure mais informações sobre os hotfixes fora de banda nos serviços de atendimento ao cliente da Microsoft, em um artigo da base de dados de conhecimento do Suporte da Microsoft ou em [postagens no blog da Equipe do System Center Configuration Manager](https://cloudblogs.microsoft.com/enterprisemobility/?product=system-center-configuration-manager) no blog do Enterprise Mobility + Security. 
+Geralmente, quando você procura corrigir ou solucionar um problema na implantação do Configuration Manager, poderá saber mais sobre os hotfixes fora de banda por meio dos serviços de atendimento ao cliente da Microsoft, um artigo da base de dados de conhecimento do suporte da Microsoft ou no [Blog da Equipe do Configuration Manager](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/bg-p/ConfigurationManagerBlog). 
 
 Instale essas correções manualmente, usando um dos seguintes dois métodos:  
 
@@ -181,13 +182,13 @@ Para obter mais informações, veja [Usar o instalador do hotfix para instalar a
 
 Os artigos a seguir podem ajudá-lo a entender como localizar e instalar os diferentes tipos de atualizações do Configuration Manager:  
 
--   [Instalar de atualizações no console](/sccm/core/servers/manage/install-in-console-updates)  
+- [Instalar de atualizações no console](/sccm/core/servers/manage/install-in-console-updates)  
 
--   [Usar a ferramenta de conexão de serviço](/sccm/core/servers/manage/use-the-service-connection-tool)  
+- [Usar a ferramenta de conexão de serviço](/sccm/core/servers/manage/use-the-service-connection-tool)  
 
--   [Usar a ferramenta de registro de atualização para importar hotfixes](/sccm/core/servers/manage/use-the-update-registration-tool-to-import-hotfixes)  
+- [Usar a ferramenta de registro de atualização para importar hotfixes](/sccm/core/servers/manage/use-the-update-registration-tool-to-import-hotfixes)  
 
--   [Usar o instalador do hotfix para instalar atualizações](/sccm/core/servers/manage/use-the-hotfix-installer-to-install-updates)  
+- [Usar o instalador do hotfix para instalar atualizações](/sccm/core/servers/manage/use-the-hotfix-installer-to-install-updates)  
 
 
 Para obter mais informações sobre o branch de visualização técnica, confira [Visualização técnica](/sccm/core/get-started/technical-preview).

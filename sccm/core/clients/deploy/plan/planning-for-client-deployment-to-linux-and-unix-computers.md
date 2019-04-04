@@ -1,8 +1,8 @@
 ---
 title: Planejar a implantação do cliente em computadores Linux e UNIX
 titleSuffix: Configuration Manager
-description: Planeje a implantação de cliente em computadores Linux e UNIX | System Center Configuration Manager.
-ms.date: 08/30/2017
+description: Planejar a implantação do cliente em computadores Linux e UNIX no Configuration Manager.
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,18 +11,23 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60811ad0556be4d59caab346d20fbb2c40024206
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: cfa2a2412744046ca1a16aad2721fcb9efcff38e
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128231"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58524142"
 ---
-# <a name="planning-for-client-deployment-to-linux-and-unix-computers-in-system-center-configuration-manager"></a>Planejando a implantação de cliente em computadores Linux e UNIX no System Center Configuration Manager
+# <a name="planning-for-client-deployment-to-linux-and-unix-computers-in-configuration-manager"></a>Planejar a implantação do cliente em computadores Linux e UNIX no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Você pode instalar o cliente do System Center Configuration Manager em computadores que executam Linux ou UNIX. Esse cliente é designado para servidores que funcionam como um computador de grupo de trabalho, e os clientes não oferecem suporte à interação com usuários conectados. Após você instalar o software cliente e o cliente estabelecer a comunicação com o site do Configuration Manager, você gerenciará o cliente usando o console e relatórios do Configuration Manager.  
+> [!Important]  
+> A partir da versão 1902, o Configuration Manager não dá suporte a clientes Linux ou UNIX. 
+> 
+> Considere o Gerenciamento do Microsoft Azure para gerenciar servidores Linux. As soluções do Azure têm amplo suporte para Linux que, na maioria dos casos, supera a funcionalidade do Configuration Manager, incluindo o gerenciamento de patches de ponta a ponta para o Linux.
+
+Você pode instalar o cliente do Configuration Manager em computadores que executam o Linux ou o UNIX. Esse cliente é projetado para servidores que funcionam como um computador de grupo de trabalho, e o cliente não oferece suporte à interação com usuários conectados. Após você instalar o software cliente e o cliente estabelecer a comunicação com o site do Configuration Manager, você gerenciará o cliente usando o console e relatórios do Configuration Manager.  
 
 > [!NOTE]
 >  O cliente do Configuration Manager para computadores Linux e UNIX não dá suporte aos seguintes recursos de gerenciamento:  
@@ -156,7 +161,7 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 
 |Pacote necessário|Descrição|Versão mínima|  
 |----------------------|-----------------|---------------------|  
-|Versão do SO|Versão do sistema operacional|AIX 6.1, qualquer Nível de Tecnologia e Service Pack|  
+|Versão do SO|Versão do sistema operacional|AIX 6.1: qualquer Nível de Tecnologia e Service Pack|  
 |xlC.rte|Tempo de execução XL C/C++|9.0.0.5|  
 |OpenSSL/openssl.base|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras|0.9.8.4|  
 
@@ -164,7 +169,7 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 
 |Pacote necessário|Descrição|Versão mínima|  
 |----------------------|-----------------|---------------------|  
-|Versão do SO|Versão do sistema operacional|AIX 7.1, qualquer Nível de Tecnologia e Service Pack|  
+|Versão do SO|Versão do sistema operacional|AIX 7.1: qualquer Nível de Tecnologia e Service Pack|  
 |xlC.rte|Tempo de execução XL C/C++||  
 |OpenSSL/openssl.base|Bibliotecas OpenSSL; Protocolo de Comunicações de Rede Seguras||  
 
@@ -183,67 +188,67 @@ Você pode instalar o cliente do System Center Configuration Manager em computad
 
 |Sistemas de site do Configuration Manager|Mais informações|  
 |---------------------------------------|----------------------|  
-|Ponto de gerenciamento|Embora o ponto de gerenciamento não seja necessário para instalar um cliente do Configuration Manager para Linux e UNIX, será necessário ter um ponto de gerenciamento para transferir informações entre os computadores cliente e os servidores do Configuration Manager. Sem um ponto de gerenciamento não é possível gerenciar computadores cliente.|  
-|Ponto de distribuição|O ponto de distribuição não é necessário para instalar um cliente do Configuration Manager para Linux e UNIX. No entanto, a função de sistema de site é necessária se você implantar o software em servidores Linux e UNIX.<br /><br /> Uma vez que o cliente do Configuration Manager para Linux e UNIX não dá suporte a comunicações que utilizam o SMB, os pontos de distribuição que você usar com o cliente devem dar suporte à comunicação HTTP ou HTTPS.|  
-|Ponto de status de fallback|O ponto de status de fallback não é necessário para instalar um cliente do Configuration Manager para Linux e UNIX. No entanto, o ponto de status de fallback habilita os computadores no site do Configuration Manager a enviar mensagens de estado quando não puderem se comunicar com um ponto de gerenciamento. Cliente também pode enviar seu status de instalação para o ponto de status de fallback.|  
+|Ponto de gerenciamento|Embora não seja necessário um ponto de gerenciamento para instalar um cliente do Configuration Manager no Linux e no UNIX, será necessário ter um ponto de gerenciamento para transferir as informações entre os computadores cliente e os servidores do Configuration Manager. Sem um ponto de gerenciamento, você não pode gerenciar computadores cliente.|  
+|Ponto de distribuição|Não é necessário o ponto de distribuição para instalar um cliente do Configuration Manager no Linux e no UNIX. No entanto, a função de sistema de site é necessária se você implantar o software em servidores Linux e UNIX.<br /><br /> Uma vez que o cliente do Configuration Manager para Linux e UNIX não oferece suporte a comunicações que utilizam o SMB, os pontos de distribuição que você usar com o cliente devem dar suporte à comunicação HTTP ou HTTPS.|  
+|Ponto de status de fallback|O ponto de status de fallback não é necessário para instalar um cliente do Configuration Manager no Linux e no UNIX. No entanto, o ponto de status de fallback habilita os computadores no site do Configuration Manager a enviar mensagens de estado quando eles não podem se comunicar com um ponto de gerenciamento. Cliente também pode enviar seu status de instalação para o ponto de status de fallback.|  
 
- **Requisitos de firewall**: verifique se os firewalls não bloqueiam as comunicações entre as portas que você especifica como as portas de solicitação do cliente. O cliente para Linux e UNIX se comunica diretamente com os pontos de gerenciamento, pontos de distribuição e pontos de status de fallback.  
+ **Requisitos de firewall**: verifique se os firewalls não bloqueiam as comunicações entre as portas que você especificar como portas de solicitação do cliente. O cliente para Linux e UNIX se comunica diretamente com os pontos de gerenciamento, pontos de distribuição e pontos de status de fallback.  
 
  Para obter informações sobre portas de solicitação e de comunicação do cliente, consulte  [Configurar o cliente para Linux e UNIX para localizar pontos de gerenciamento](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md#BKMK_ConfigClientMP).  
 
 ##  <a name="BKMK_PlanningforCommunicationsforLnU"></a> Planejamento da comunicação entre florestas com relações de confiança para servidores Linux e UNIX  
- Os servidores Linux e UNIX que você gerenciada com o Configuration Manager funcionam como clientes de grupo de trabalho e requerem configurações semelhantes às de clientes baseados no Windows que estão em um grupo de trabalho. Para obter informações sobre comunicações de computadores que estão em grupos de trabalho, consulte a seção [Comunicações entre florestas do Active Directory](../../../../core/plan-design/hierarchy/communications-between-endpoints.md#Plan_Com_X-Forest) no tópico [Comunicação entre pontos de extremidade no System Center Configuration Manager](../../../../core/plan-design/hierarchy/communications-between-endpoints.md) tópico.  
+ Os servidores Linux e UNIX que você gerenciada com o Configuration Manager funcionam como clientes de grupo de trabalho e requerem configurações semelhantes às de clientes baseados no Windows que estão em um grupo de trabalho. Para saber mais sobre as comunicações entre computadores em grupos de trabalho, confira as informações a respeito das [comunicações entre florestas do Active Directory](/sccm/core/plan-design/hierarchy/communications-between-endpoints#Plan_Com_X-Forest).  
 
 ###  <a name="BKMK_ServiceLocationforLnU"></a> Local do serviço pelo cliente para Linux e UNIX  
- A tarefa de localizar um servidor de sistema de site que fornece o serviço aos clientes é conhecida como serviço local. Ao contrário de um cliente baseado em Windows, o cliente para Linux e UNIX não usar o Active Directory local de serviço. Além disso, o cliente do Configuration Manager para Linux e UNIX não dá suporte a uma propriedade de cliente que especifica o sufixo de domínio de um ponto de gerenciamento. Em vez disso, o cliente aprende sobre servidores de sistema de site adicionais que fornecem serviços aos clientes de um ponto de gerenciamento conhecidos que você atribuir ao instalar o software cliente.  
+ A tarefa de localizar um servidor de sistema de site que fornece o serviço aos clientes é conhecida como serviço local. Ao contrário de um cliente baseado em Windows, o cliente para Linux e UNIX não usa o Active Directory para local do serviço. Além disso, o cliente do Configuration Manager para Linux e UNIX não dá suporte a uma propriedade de cliente que especifica o sufixo de domínio de um ponto de gerenciamento. Em vez disso, o cliente aprende sobre servidores de sistema de site adicionais que fornecem serviços aos clientes de um ponto de gerenciamento conhecidos que você atribuir ao instalar o software cliente.  
 
- Para obter mais informações sobre a localização de serviço, consulte a seção [Local do serviço e como os clientes determinam seu ponto de gerenciamento atribuído](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#BKMK_Plan_Service_Location) no tópico [Entender como os clientes encontram serviços e recursos do site para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
+ Para saber mais, confira as informações sobre o [local de serviço e como os clientes determinam seu ponto de gerenciamento atribuído](/sccm/core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services#BKMK_Plan_Service_Location).  
 
 ##  <a name="BKMK_SecurityforLnU"></a> Planejamento de segurança e certificados para servidores Linux e UNIX  
  Para ter uma comunicação segura e autenticada com sites do Configuration Manager, o cliente do Configuration Manager para Linux e UNIX usa o mesmo modelo de comunicação que o cliente do Configuration Manager para Windows.  
 
- Quando instala o cliente Linux e UNIX, você pode atribuir ao cliente um certificado PKI que permite a ele usar HTTPS para se comunicar com sites do Configuration Manager. Se você não atribuir um certificado PKI, o cliente cria um certificado auto-assinado e se comunica somente por HTTP.  
+ Quando instala o cliente Linux e UNIX, você pode atribuir ao cliente um certificado PKI que permite a ele usar HTTPS para se comunicar com sites do Configuration Manager. Se você não atribuir um certificado PKI, o cliente criará um certificado autoassinado e se comunicará somente via HTTP.  
 
  Os clientes que recebem um certificado PKI ao instalar usam HTTPS para se comunicar com pontos de gerenciamento. Quando um cliente não consegue localizar um ponto de gerenciamento que oferece suporte a HTTPS, ele voltará para usar HTTP com o certificado PKI fornecido.  
 
- Quando um cliente Linux ou UNIX usa um certificado PKI não é preciso aprová-las. Quando um cliente usar um certificado autoassinado, examine as configurações de hierarquia para aprovação do cliente no console do Configuration Manager. Se o método de aprovação do cliente não é **Aprovar automaticamente todos os computadores (não recomendados)**, você deve aprovar manualmente o cliente.  
+ Quando um cliente Linux ou UNIX usa um certificado PKI, você não precisa aprová-los. Quando um cliente usar um certificado autoassinado, examine as configurações de hierarquia para aprovação do cliente no console do Configuration Manager. Se o método de aprovação do cliente não é **Aprovar automaticamente todos os computadores (não recomendados)**, você deve aprovar manualmente o cliente.  
 
- Para obter mais informações sobre como aprovar manualmente o cliente, consulte a seção [Gerenciar clientes do nó de dispositivos](../../../../core/clients/manage/manage-clients.md#BKMK_ManagingClients_DevicesNode) no tópico [Como gerenciar clientes no System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+ Para saber mais sobre como aprovar computadores manualmente, confira as informações sobre como [gerenciar clientes no nó de dispositivos](/sccm/core/clients/manage/manage-clients#BKMK_ManagingClients_DevicesNode).  
 
- Para obter informações sobre como usar certificados no Configuration Manager, consulte [Requisitos de certificado PKI para o System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
+ Para saber mais como usar certificados no Configuration Manager, confira os [requisitos de certificado PKI](/sccm/core/plan-design/network/pki-certificate-requirements).  
 
 ###  <a name="BKMK_AboutCertsforLnU"></a> Sobre certificados para uso por servidores Linux e UNIX  
  O cliente do Configuration Manager para Linux e UNIX usa um certificado autoassinado ou um certificado PKI X.509, assim como clientes baseados em Windows. Não há nenhuma alteração nos requisitos de PKI para sistemas de sites do Configuration Manager quando você gerencia clientes Linux e UNIX.  
 
  Os certificados que você usa para clientes Linux e UNIX que se comunicam com sistemas de sites do Configuration Manager devem estar em um formato PKCS nº 12 (Padrão de certificado de chave pública) e é necessário saber a senha para que você possa especificá-la para o cliente ao especificar o certificado PKI.  
 
- O cliente do Configuration Manager para Linux e UNIX dá suporte a um único certificado PKI e não dá suporte a vários certificados. Portanto, os critérios de seleção de certificado que você configurar para um site do Configuration Manager não se aplicam.  
+ O cliente do Configuration Manager para Linux e UNIX dá suporte a um único certificado PKI e não oferece suporte a vários certificados. Portanto, os critérios de seleção de certificado que você configura para um site do Configuration Manager não se aplicam.  
 
 ###  <a name="BKMK_ConfigCertsforLnU"></a> Configuração de certificados para servidores Linux e UNIX  
  Para configurar um cliente do Configuration Manager para servidores Linux e UNIX para usar comunicações HTTPS, você deve configurar o cliente para usar um certificado PKI no momento em que você instalar o cliente. Não é possível provisionar um certificado antes da instalação do software cliente.  
 
- Quando você instala um cliente que usa um certificado PKI, use o parâmetro de linha de comando **- /usepkicert** para especificar o local e o nome de um arquivo PKCS #12 que contém o certificado PKI. Além disso, você deve usar o parâmetro de linha de comando **- certpw** para especificar a senha do certificado.  
+ Ao instalar um cliente que usa um certificado PKI, use o parâmetro de linha de comando `-UsePKICert` para especificar o local e o nome do arquivo PKCS#12 que contém o certificado PKI. Além disso, é preciso usar o parâmetro de linha de comando `-certpw` para especificar a senha do certificado.  
 
- Se você não especificar **- /usepkicert**, o cliente gera um certificado auto-assinado e tenta se comunicar com servidores do sistema de site usando apenas HTTP.  
+ Se você não especificar `-UsePKICert`, o cliente irá gerar um certificado autoassinado e tentará se comunicar com os servidores do sistema de site usando apenas HTTP.  
 
-##  <a name="BKMK_NoSHA-256"></a> Sobre sistemas operacionais Linux e UNIX que não dão suporte a SHA-256  
- Os seguintes sistemas operacionais Linux e UNIX que têm suporte como clientes para o Configuration Manager foram lançados com versões do OpenSSL que não dão suporte a SHA-256:  
+##  <a name="BKMK_NoSHA-256"></a> Versões que não dão suporte a SHA-256  
+ Os seguintes sistemas operacionais Linux e UNIX que têm suporte como clientes no Configuration Manager foram lançados com versões do OpenSSL que não dão suporte a SHA-256:  
 
 -   Solaris Versão 10 (SPARC/x86)  
 
 
- Para gerenciar esses sistemas operacionais com Configuration Manager, você precisa instalar o cliente do Configuration Manager para Linux e UNIX com uma opção de linha de comando que instrui o cliente a ignorar a validação do SHA-256. Os clientes do Configuration Manager que são executados nessas versões de sistema operacional operam em um modo menos seguro que os clientes que dão suporte a SHA-256. Este modo menos seguro de operação tem o seguinte comportamento:  
+ Para gerenciar esses sistemas operacionais com o Configuration Manager, é necessário instalar o cliente do Configuration Manager para Linux e UNIX com a opção de linha de comando que instrui o cliente a ignorar a validação de SHA-256. Os clientes do Configuration Manager que são executados nessas versões de sistema operacional operam em um modo menos seguro que os clientes que dão suporte a SHA-256. Este modo menos seguro de operação tem o seguinte comportamento:  
 
--   Os clientes não validar a assinatura de servidor de site associada à política solicitam um ponto de gerenciamento.  
+-   Os clientes não validam a assinatura do servidor de site associada à política que eles solicitam a um ponto de gerenciamento.  
 
 -   Os clientes não validam o hash para pacotes que eles baixam do ponto de distribuição.  
 
 > [!IMPORTANT]  
->  O **ignoreSHA256validation** opção permite que você execute o cliente para computadores Linux e UNIX em um modo menos seguro. Isso é destinado ao uso em plataformas mais antigas que não inclui suporte para SHA-256. Isso é uma substituição de segurança e não é recomendado pela Microsoft, mas há suporte para uso em um ambiente de datacenter segura e confiável.  
+>  A opção `ignoreSHA256validation` permite que você execute o cliente para computadores Linux e UNIX em um modo menos seguro. Isso é destinado ao uso em plataformas mais antigas que não inclui suporte para SHA-256. Isso é uma substituição de segurança e não é recomendado pela Microsoft, mas há suporte para uso em um ambiente de datacenter segura e confiável.  
 
  Quando o cliente do Configuration Manager para Linux e UNIX é instalado, o script de instalação verifica a versão do sistema operacional. Por padrão, se a versão do sistema operacional for identificada como tendo sido lançada sem uma versão do OpenSSL que dá suporte a SHA-256, a instalação do cliente do Configuration Manager falhará.  
 
- Para instalar o cliente do Configuration Manager em sistemas operacionais Linux e UNIX que não foram lançados com uma versão do OpenSSL que dá suporte a SHA-256, você precisa usar a opção de linha de comando de instalação **ignoreSHA256validation**. Quando você usar essa opção de linha de comando em um sistema de operacional Linux ou UNIX aplicável, o cliente do Configuration Manager ignorará a validação do SHA-256 e, após a instalação, o cliente não usará SHA-256 para assinar os dados que envia a sistemas de sites usando HTTP. Para obter informações sobre como configurar clientes Linux e UNIX para usar certificados, consulte [Planejamento de segurança e certificados para servidores Linux e UNIX](#BKMK_SecurityforLnU) neste tópico. Para obter informações sobre a necessidade de SHA-256, consulte a seção [Configurar assinatura e criptografia](../../../../core/plan-design/security/configure-security.md#BKMK_ConfigureSigningEncryption) no tópico [Configurar a segurança no System Center Configuration Manager](../../../../core/plan-design/security/configure-security.md).  
+ Para instalar o cliente do Configuration Manager em sistemas operacionais Linux e UNIX que não foram lançados com uma versão do OpenSSL que dê suporte a SHA-256, você precisará usar a opção de linha de comando de instalação `ignoreSHA256validation`. Quando você usar essa opção de linha de comando em um sistema operacional Linux ou UNIX aplicável, o cliente do Configuration Manager ignorará a validação de SHA-256 e, após a instalação, o cliente não usará o SHA-256 para assinar os dados que envia a sistemas de sites usando HTTP. Para obter informações sobre como configurar clientes Linux e UNIX para usar certificados, confira o [planejamento de segurança e certificados para servidores Linux e UNIX](#BKMK_SecurityforLnU). Confira mais informações sobre a necessidade de SHA-256 em [Configurar assinatura e criptografia](/sccm/core/plan-design/security/configure-security#BKMK_ConfigureSigningEncryption).  
 
 > [!NOTE]  
->  A opção de linha de comando **ignoreSHA256validation** é ignorada em computadores que executam uma versão do Linux e UNIX lançado com versões do OpenSSL que dão suporte a SHA-256.  
+>  A opção de linha de comando `ignoreSHA256validation` é ignorada em computadores que executam uma versão do Linux e UNIX lançada com versões do OpenSSL que dão suporte a SHA-256.  

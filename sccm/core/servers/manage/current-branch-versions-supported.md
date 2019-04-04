@@ -2,7 +2,7 @@
 title: Versões do branch atual
 titleSuffix: Configuration Manager
 description: Examine o histórico de versão do Configuration Manager e saiba mais sobre as fases do serviço oferecido.
-ms.date: 11/27/2018
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acdc85980db937433cf8bf10336d940d0a434c94
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: ed5e7b6931fe8c853b867483d3db8a2d5bc9ad8b
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135949"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58523717"
 ---
 # <a name="support-for-configuration-manager-current-branch-versions"></a>Suporte para versões do branch atual do Configuration Manager
 
@@ -28,8 +28,11 @@ A Microsoft planeja lançar atualizações para o branch atual do Configuration 
 
 - Fase de manutenção somente de **Atualizações de Segurança**  – após o lançamento de uma nova versão do branch atual, a Microsoft só dá suporte a atualizações de segurança para as versões mais antigas durante o restante do ciclo de vida de suporte dessa versão (mostrado na Figura 1).  
 
-  ![Gráfico de linha do tempo de manutenção e suporte do Configuration Manager](media/CM_Servicing_support_timeline1.png)  
-  Figura 1. Exemplo de sobreposição de ciclo de versão para o suporte à manutenção do branch atual. Este exemplo é para fins ilustrativos do ciclo e não representa as datas de lançamento reais ou esperadas.
+([Exibir gráfico em tamanho normal](media/CM_Servicing_support_timeline1.png))
+
+![Gráfico de linha do tempo de manutenção e suporte do Configuration Manager](media/CM_Servicing_support_timeline1.png)  
+
+Figura 1. Exemplo de sobreposição de ciclo de versão para o suporte à manutenção do branch atual. Este exemplo é para fins ilustrativos do ciclo e não representa as datas de lançamento reais ou esperadas.
 
 > [!NOTE]  
 >  A versão mais recente do branch atual está sempre na fase de manutenção **Atualizações Críticas e de Segurança**. Essa instrução do suporte significa que, se você encontrar um defeito de código que requeira uma atualização crítica, será necessário ter a versão do branch atual mais recente instalada para receber uma correção. Todas as outras versões de branch atuais com suporte só estão qualificadas a receber atualizações de segurança.

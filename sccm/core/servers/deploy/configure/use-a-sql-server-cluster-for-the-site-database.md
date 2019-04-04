@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cdbe1d7c3fb28a16c6ba55d073adba3781b12f58
-ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
+ms.openlocfilehash: d07005c63f0d69d57d24eac163b67c34529658cf
+ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57562050"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477544"
 ---
 # <a name="use-a-sql-server-cluster-for-the-site-database"></a>Usar um cluster do SQL Server para hospedar o banco de dados do site
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Use um cluster do SQL Server para hospedar o banco de dados do site do Configuration Manager. Um cluster oferece suporte para failover e aumenta a confiabilidade do banco de dados do site. No entanto, ele não fornece processamento adicional nem benefícios de balanceamento de carga. Pode ocorrer degradação no desempenho, uma vez que o servidor do site deve localizar o nó ativo do cluster do SQL Server, antes de se conectar ao banco de dados do site.  
+Você pode usar um cluster de failover do SQL Server para hospedar o banco de dados do site do Configuration Manager. Um cluster oferece suporte para failover e aumenta a confiabilidade do banco de dados do site. No entanto, ele não fornece processamento adicional nem benefícios de balanceamento de carga. Além disso, um cluster de Failover do SQL Server usa o armazenamento compartilhado e introduz um ponto único de falha. Pode ocorrer degradação no desempenho, uma vez que o servidor do site deve localizar o nó ativo do cluster do SQL Server, antes de se conectar ao banco de dados do site.  
 
 > [!IMPORTANT]  
 > A configuração bem-sucedida dos clusters do SQL Server se baseia na documentação e nos procedimentos fornecidos na biblioteca de documentação do SQL Server.  

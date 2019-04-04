@@ -1,8 +1,8 @@
 ---
-title: 'Monitorar clientes Linux/UNIX '
+title: Monitorar clientes Linux/UNIX
 titleSuffix: Configuration Manager
-description: Monitore clientes em servidores Linux e UNIX no System Center Configuration Manager.
-ms.date: 08/04/2017
+description: Monitorar clientes em servidores Linux e UNIX no Configuration Manager.
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,18 +11,23 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e8e10b4297e1367f6835e61ced77f2a1154319b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 47a85ec7dea72f08a0ec48ebb151566b8563ba9a
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56127925"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58523683"
 ---
-# <a name="how-to-monitor-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>Como monitorar clientes para servidores Linux e UNIX no System Center Configuration Manager
+# <a name="how-to-monitor-clients-for-linux-and-unix-servers-in-configuration-manager"></a>Como monitorar clientes em servidores Linux e UNIX no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Você pode exibir informações de servidores Linux e UNIX no console do System Center Configuration Manager usando os mesmos métodos que você pode usar para exibir informações de clientes baseados em Windows.  
+> [!Important]  
+> A partir da versão 1902, o Configuration Manager não dá suporte a clientes Linux ou UNIX. 
+> 
+> Considere o Gerenciamento do Microsoft Azure para gerenciar servidores Linux. As soluções do Azure têm amplo suporte para Linux que, na maioria dos casos, supera a funcionalidade do Configuration Manager, incluindo o gerenciamento de patches de ponta a ponta para o Linux.
+
+Você pode exibir as informações de servidores Linux e UNIX no console do System Center Configuration Manager usando os mesmos métodos que utiliza para exibir as informações de clientes baseados em Windows.  
 
  As informações que você pode exibir incluem:  
 
@@ -47,6 +52,6 @@ Você pode exibir informações de servidores Linux e UNIX no console do System 
 
  Por exemplo, se você executar o relatório chamado Contagem de Versões do Sistema Operacional, ele exibirá a lista de diferentes sistemas operacionais e o número de clientes que executando cada sistema operacional. O relatório se baseia nas informações do inventário de hardware que foram enviadas por diferentes clientes do Configuration Manager que executam diferentes sistemas operacionais.  
 
- Também é possível criar relatórios personalizados específicos para os dados dos servidores Linux e UNIX. A propriedade **Legenda** da classe de inventário de hardware **Sistema Operacional** é um atributo útil que você pode usar para identificar sistemas operacionais específicos na consulta do relatório.  
+ Também é possível criar relatórios personalizados específicos para os dados de servidores Linux e UNIX. A propriedade **Legenda** da classe de inventário de hardware **Sistema Operacional** é um atributo útil que você pode usar para identificar sistemas operacionais específicos na consulta do relatório.  
 
  Para obter informações sobre os relatórios no Configuration Manager, consulte [Relatórios no System Center Configuration Manager](../../../core/servers/manage/reporting.md).  

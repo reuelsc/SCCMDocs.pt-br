@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 472cf012805700e1ec2de2f3c83a0ef63e10183b
-ms.sourcegitcommit: 5f17355f954b9d9e10325c0e9854a9d582dec777
+ms.openlocfilehash: e76dc5892ad34d72bfee3cd4aea0fa660e34855d
+ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329593"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477527"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Sobre as configurações do cliente no Configuration Manager
 
@@ -460,6 +460,10 @@ Defina essa opção como **Sim** para habilitar o gerenciamento de energia nos c
 ### <a name="allow-users-to-exclude-their-device-from-power-management"></a>Permitir que os usuários excluam seu dispositivo do gerenciamento de energia
 
 Escolha **Sim** para permitir que usuários do Centro de Software excluam seus computadores das configurações de gerenciamento de energia definidas.  
+
+### <a name="allow-network-wake-up"></a>Permitir a ativação de rede
+
+Adicionado na versão 1810. Quando definido como **Habilitar**, configura as definições de energia no adaptador de rede para permitir que o adaptador de rede ative o dispositivo. Quando definido como **Desabilitar**,as configurações de energia no adaptador de rede são configuradas para não permitir que o adaptador de rede ative o dispositivo.
 
 ### <a name="enable-wake-up-proxy"></a>Habilitar proxy de ativação
 

@@ -2,7 +2,7 @@
 title: Itens preteridos para clientes
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os sistemas operacionais de clientes que não são mais compatíveis com o Configuration Manager.
-ms.date: 01/15/2019
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d55c246c696a550ad3935a1f2bf9a7b838af996a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 9c6c4af31af08d2c723df01fa37f21f708453044
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156848"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58523768"
 ---
 # <a name="removed-and-deprecated-items-for-configuration-manager-clients"></a>Itens removidos e preteridos de clientes do Configuration Manager
 
@@ -33,7 +33,7 @@ A menos que seja indicado de outra forma, cada sistema operacional é compatíve
 
 |**Sistemas operacionais**|**Substituição anunciada pela primeira vez**|**Suporte removido**|  
 |-|-|-|
-|Linux e UNIX|22 de março de 2018||
+|Linux e UNIX|22 de março de 2018|Versão 1902|
 |Windows 8: Professional, Enterprise|12 de janeiro de 2016|Versão 1802|
 |Windows Embedded 8 Pro|12 de janeiro de 2016|Versão 1802|
 |Windows Embedded 8 Industry|12 de janeiro de 2016|Versão 1802|

@@ -1,8 +1,8 @@
 ---
 title: Acessibilidade
 titleSuffix: Configuration Manager
-description: Saiba mais sobre os recursos que tornam o System Center Configuration Manager acessível para pessoas com deficiências.
-ms.date: 7/31/2017
+description: Saiba mais sobre os recursos que tornam o Configuration Manager acessível para todos.
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,24 +11,42 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f52e903f730590cd9e0b3c8e6f53982ac24fc1b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 5a1bf32c77989c11c55723d5edf271e234ccd4ec
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136236"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58523734"
 ---
-# <a name="accessibility-features-in-system-center-configuration-manager"></a>Recursos de acessibilidade no System Center Configuration Manager
+# <a name="accessibility-features-in-configuration-manager"></a>Recursos de acessibilidade no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
 
-O System Center Configuration Manager inclui recursos para ajudar a torná-lo acessível para pessoas com deficiências.
+O Configuration Manager inclui recursos que ajudam a torná-lo acessível a todas as pessoas.
+
+> [!Note]  
+> A partir da versão 1902, para melhorar os recursos de acessibilidade do console do Configuration Manager, atualize o .NET para a versão 4.7 ou posterior no computador que executa o console. <!-- SCCMDocs-pr issue #3228 -->  
+> 
+> Para saber mais sobre as mudanças de acessibilidade realizadas no .NET 4.7.1 e 4.7.2, confira as [novidades de acessibilidade no .NET Framework](https://docs.microsoft.com/dotnet/framework/whats-new/whats-new-in-accessibility).  
 
 
-## <a name="bkmk_aconsole"></a> Recursos de acessibilidade para o console do Configuration Manager  
 
-**Atalhos e aprimoramentos na versão 1706 e posterior**
+## <a name="keyboard-shortcuts"></a>Atalhos de teclado
+
+### <a name="console-workspaces"></a>Workspaces do console
+
+Para acessar um workspace, use os seguintes atalhos de teclado:  
+
+|Atalho de teclado| Workspace|
+|--------|--------|  
+|Ctrl + 1| Ativos e conformidade|
+|Ctrl + 2|  Biblioteca de software|
+|Ctrl + 3|  monitoramento|
+|Ctrl + 4|  Administração|
+
+
+### <a name="other-keyboard-shortcuts"></a>Outros atalhos de teclado
 
 |Atalho de teclado|  Finalidade|
 |--------|--------|  
@@ -40,93 +58,37 @@ O System Center Configuration Manager inclui recursos para ajudar a torná-lo ac
 |Alt     |Altera o foco para dentro e fora da faixa de opções.|
 
 
-- Melhora a navegação no painel de navegação quando você digita as letras de um nome de nó.
-- A navegação por teclado no modo de exibição principal e na faixa de opções agora é circular.
-- Agora, a navegação por teclado no painel de detalhes é circular. Para retornar ao painel ou objeto anterior, use Ctrl + D, depois, Shift + TAB.
+
+## <a name="other-accessibility-features"></a>Outros recursos de acessibilidade
+
+- Para navegar no painel de navegação, digite as letras do nome de um nó.
+
+- A navegação por teclado pelo modo de exibição principal e na faixa de opções é circular.
+
+- A navegação pelo teclado no painel de detalhes é circular. Para retornar ao painel ou objeto anterior, use Ctrl + D, depois, Shift + TAB.
+
 - Depois de atualizar um modo de exibição do Workspace, o foco é definido para o painel principal desse workspace.
-- Correção de um problema para permitir que os leitores de tela anunciem os nomes dos itens de lista.
-- Adição de nomes acessíveis para vários controles na página, o que permite aos leitores de tela anunciarem informações importantes.
+
+- Para acessar um menu do workspace, pressione a tecla Tab até que o ícone Expandir/Recolher esteja em foco. Em seguida, pressione a tecla de seta para baixo para acessar o menu do workspace.  
+
+- Para navegar por um menu de workspace, use as teclas de direção.  
+
+- Para acessar diferentes áreas no workspace, use a tecla Tab e as teclas Shift+Tab. Para navegar dentro de uma área do workspace, como a faixa de opções, use as teclas de direção.  
+
+- Para acessar a barra de endereços quando seu foco estiver no nó de árvore, use Shift+Tab três vezes.  
+
+- Em uma página de assistente ou de propriedades, você pode se mover entre as caixas com os atalhos de teclado. Pressione a tecla Alt mais o caractere sublinhado (Alt+_) para selecionar uma caixa específica.     
+
+- Para navegar até os diferentes nós de um workspace, insira a primeira letra do nome do nó. Cada pressionamento de tecla move o cursor para o próximo nó que começa com determinada letra. Quando você estiver usando um leitor de tela, o leitor lê o nome do nó.
 
 
-**Os atalhos de teclado a seguir estão disponíveis para todas as versões**
 
-- Para acessar um workspace, use os seguintes atalhos de teclado:  
+## <a name="see-also"></a>Consulte também
 
-|Atalho de teclado| Workspace|
-|--------|--------|  
-|Ctrl + 1| Ativos e conformidade|
-|Ctrl + 2|  Biblioteca de software|
-|Ctrl + 3|  monitoramento|
-|Ctrl + 4|  Administração|
-
-
--   Para acessar um menu do workspace, pressione a tecla Tab até que o ícone Expandir/Recolher esteja em foco. Em seguida, pressione a tecla de seta para baixo para acessar o menu do workspace.  
-
--   Para navegar por um menu de workspace, use as teclas de direção.  
-
--   Para acessar diferentes áreas no workspace, use a tecla Tab e as teclas Shift+Tab. Para navegar dentro de uma área do workspace, como a faixa de opções, use as teclas de direção.  
-
--   Para acessar a barra de endereços quando seu foco estiver no nó de árvore, use Shift+Tab três vezes.  
-
--   Em uma página de assistente ou de propriedades, você pode se mover entre as caixas com os atalhos de teclado. Pressione a tecla Alt mais o caractere sublinhado (Alt+_) para selecionar uma caixa específica.     
-
--  Para navegar até os diferentes nós de um workspace, insira a primeira letra do nome do nó. Cada pressionamento de tecla move o cursor para o próximo nó que começa com determinada letra. Quando você estiver usando um leitor de tela, o leitor lê o nome do nó.
+Confira mais informações sobre os conceitos básicos de navegação nas interfaces de usuário do Configuration Manager nos seguintes artigos:
+- [Usar o console do Configuration Manager](/sccm/core/servers/manage/admin-console)  
+- [Guia do usuário do Centro de Software](/sccm/core/understand/software-center)
 
 > [!NOTE]  
->  As informações nessa seção podem se aplicar somente a usuários que licenciam produtos da Microsoft nos Estados Unidos. Se você adquiriu este produto fora dos Estados Unidos, pode usar o cartão de informações da subsidiária fornecido com o pacote do software ou acessar o [site de Acessibilidade da Microsoft](http://go.microsoft.com/fwlink/?LinkId=8431) para obter informações de contato dos serviços de suporte da Microsoft. Você pode contatar a subsidiária para descobrir se os tipos de produtos e serviços descritos nessa seção estão disponíveis na sua área. As informações sobre acessibilidade estão disponíveis em outros idiomas, incluindo japonês e francês.  
+> As informações neste artigo podem se aplicar somente a usuários que licenciam produtos da Microsoft nos Estados Unidos. Se você adquiriu este produto fora dos Estados Unidos, pode usar o cartão de informações da subsidiária fornecido com o pacote do software ou acessar o [site de Acessibilidade da Microsoft](https://go.microsoft.com/fwlink/?LinkId=8431) para obter informações de contato dos serviços de suporte da Microsoft. Você pode contatar a subsidiária para descobrir se os tipos de produtos e serviços descritos nessa seção estão disponíveis na sua área. As informações sobre acessibilidade estão disponíveis em outros idiomas, incluindo japonês e francês.  
 
-##  <a name="bkmk_ahelp"></a> Recursos de acessibilidade para a Ajuda do Configuration Manager  
- A Ajuda do Configuration Manager inclui recursos que o tornam acessível a um maior número de usuários, incluindo aqueles que têm destreza limitada, visão subnormal ou outras deficiências.  
-
-|Para fazer isso|Usar este atalho de teclado|  
-|----------------|--------------------------------|  
-|Exibir a janela da Ajuda.|F1|  
-|Mover o cursor entre o painel do tópico da Ajuda e o painel de navegação (as guias **Conteúdo**, **Pesquisar**e **Índice** ).|F6|  
-|Alterar entre as guias (por exemplo, **Conteúdo**, **Pesquisar** e **Índice**) enquanto estiver no painel de navegação.|Alt + letra sublinhada da guia|  
-|Selecionar o próximo texto oculto ou hiperlink.|Guia|  
-|Selecionar o texto oculto ou hiperlink anterior|Shift+Tab|  
-|Executar a ação de Mostrar tudo, Ocultar tudo, Texto oculto ou hiperlink.|Entrar|  
-|Exibir o menu **Opções** para acessar qualquer comando na barra de ferramentas da Ajuda.|Alt+O|  
-|Ocultar ou mostrar o painel que contém as guias **Conteúdo**, **Pesquisar** e **Índices**.|Alt+O e depois pressione T|  
-|Exibir o tópico visualizado anteriormente.|Alt+O e depois pressione B|  
-|Exibir o próximo tópico em uma sequencia de tópicos exibidos anteriormente.|Alt+O e depois pressione F|  
-|Retornar à página inicial especificada.|Alt+O e depois pressione H|  
-|Impedir que a janela da Ajuda abra um tópico da Ajuda, como para interromper o download de uma página da Web.|Alt+O e depois pressione S|  
-|Abrir a caixa de diálogo **Opções da Internet** no Internet Explorer, na qual é possível alterar as configurações de acessibilidade.|Alt+O e depois pressione I|  
-|Atualizar o tópico, como uma página da Web vinculada.|Alt+O e depois pressione R|  
-|Imprimir todos os tópicos em um livro ou apenas um tópico selecionado.|Alt+O e depois pressione P|  
-|Fechar a janela da Ajuda.|Alt+F4|  
-
-#### <a name="to-change-the-appearance-of-a-help-topic"></a>Para alterar a aparência de um tópico da Ajuda  
-
-1.  Para se preparar para personalizar cores, estilos e tamanhos de fontes na Ajuda, abra a janela da Ajuda.  
-
-2.  Clique em **Opções** e, em seguida, clique em **Opções da Internet**.  
-
-3.  Na guia **Geral**, clique em **Acessibilidade**. Selecione **Ignorar cores especificadas em páginas da Web**, **Ignorar estilos de fonte especificados em páginas da Web** e **Ignorar tamanhos de fonte especificados em páginas da Web**. Você também pode optar por usar as configurações especificadas na sua própria folha de estilo.  
-
-#### <a name="to-change-the-color-of-the-background-or-text-in-help"></a>Para alterar a cor do plano de fundo ou texto na Ajuda  
-
-1.  Abra a janela da Ajuda.  
-
-2.  Clique em **Opções** e, em seguida, clique em **Opções da Internet**.  
-
-3.  Na guia **Geral**, clique em **Acessibilidade**. Em seguida, selecione **Ignorar cores especificadas em páginas da Web**. Você também pode optar por usar as configurações especificadas na sua própria folha de estilo.  
-
-4.  Para personalizar as cores usadas na Ajuda, na guia **Geral**, clique em **Cores**. Desmarque a caixa de seleção **Usar cores do Windows** e selecione as cores de fonte e de plano de fundo que deseja usar.  
-
-    > [!NOTE]  
-    >  Se você alterar a cor de plano de fundo dos tópicos da Ajuda na janela da Ajuda, a alteração também afetará a cor de plano de fundo das páginas da Web no Internet Explorer.  
-
-#### <a name="to-change-the-font-in-help"></a>Para alterar a fonte na Ajuda  
-
-1.  Abra a janela da Ajuda.  
-
-2.  Clique em **Opções** e, em seguida, clique em **Opções da Internet**.  
-
-3.  Na guia **Geral**, clique em **Acessibilidade**. Para usar as mesmas configurações usadas em sua instância do Windows Internet Explorer, selecione **Ignorar estilos de fonte especificados em páginas da Web** e **Ignorar tamanhos de fonte especificados em páginas da Web**. Você também pode optar por usar as configurações especificadas na sua própria folha de estilo.  
-
-4.  Para personalizar o estilo de fonte usado na Ajuda, na guia **Geral**, clique em **Fontes** e escolha o estilo de fonte desejado.  
-
-    > [!NOTE]  
-    >  Se você alterar a fonte dos tópicos da Ajuda na janela da Ajuda, a alteração também afetará a fonte das páginas da Web no Internet Explorer.  

@@ -2,7 +2,7 @@
 title: Verificações de pré-requisitos
 titleSuffix: Configuration Manager
 description: Referência das verificações de pré-requisito específicos para atualizações do Configuration Manager.
-ms.date: 12/14/2018
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bea2d7fc41bdec96fbdfe3508d13eea0a59d514
-ms.sourcegitcommit: ceec0e20bf801071f2a05233f984cf17acc3fd29
+ms.openlocfilehash: 81689907f326399de704b075b8500b82803b4d3d
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265029"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58524176"
 ---
 # <a name="list-of-prerequisite-checks-for-configuration-manager"></a>Lista de verificações de pré-requisitos para o Configuration Manager
 
@@ -455,11 +455,11 @@ O computador do Configuration Manager é membro de um domínio do Windows.
 Para instalar o servidor do site, ele deve ter pelo menos 15 GB de espaço livre em disco. Se você instalar o Provedor de SMS no mesmo servidor, ele precisará de mais 1 GB de espaço livre.
 
 #### <a name="pending-system-restart"></a>Reinicialização do sistema pendente 
-*Aplica-se a: Site de administração central, site primário, site secundário, console do Configuration Manager, Provedor de SMS, SQL Server, ponto de gerenciamento, ponto de distribuição*
+*Aplica-se a: Site de administração central, site primário, site secundário*
 
 Antes de executar a instalação, outro programa exige que o servidor seja reiniciado.
 
-Da versão 1810 em diante, essa verificação é mais resiliente. Para ver se o computador está em um estado de reinicialização pendente, ela verifica os seguintes locais do Registro:<!--SCCMDocs-pr issue 3010-->  
+Da versão 1810 em diante, essa verificação é mais resiliente. Para ver se o computador está em um estado de reinicialização pendente, ela verifica os seguintes locais do registro:<!--SCCMDocs-pr issue 3010-->  
 
 - `HKLM:Software\Microsoft\Windows\CurrentVersion\Component Based Servicing\RebootPending`  
 - `HKLM:SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update\RebootRequired`  
@@ -515,6 +515,18 @@ O computador do Configuration Manager é membro de um domínio do Windows.
 
 A unidade de disco é formatada com o sistema de arquivos NTFS. Para aumentar a segurança, instale componentes do servidor do site em unidades de disco formatadas com o sistema de arquivos NTFS.
 
+#### <a name="pending-system-restart-on-the-remote-sql-server"></a>Reinicialização do sistema pendente no servidor SQL remoto
+*Aplica-se a: Versão 1902 e posterior, SQL Server remoto*
+
+Antes de executar a instalação, outro programa exige que o servidor seja reiniciado.
+
+Para ver se o computador está em um estado de reinicialização pendente, ela verifica os seguintes locais do registro:<!--SCCMDocs-pr issue 3377-->  
+
+- `HKLM:Software\Microsoft\Windows\CurrentVersion\Component Based Servicing\RebootPending`  
+- `HKLM:SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update\RebootRequired`  
+- `HKLM:SYSTEM\CurrentControlSet\Control\Session Manager, PendingFileRenameOperations`  
+- `HKLM:Software\Microsoft\ServerManager, CurrentRebootAttempts`  
+
 #### <a name="schema-extensions"></a>Extensões de esquema 
 *Aplica-se a: Site de administração central, site primário*
 
@@ -525,7 +537,7 @@ O Configuration Manager não requer extensões de esquema do Active Directory pa
 #### <a name="bkmk_changetracking"></a> Limpeza do controle de alterações do SQL
 *Aplica-se a: Servidor de banco de dados do site*
 
-Da versão 1810 em diante, verifique se o banco de dados do site tem uma lista de pendências de dados de controle de alterações do SQL.<!--SCCMDocs-pr issue 3023-->  
+A partir da versão 1810, verifique se o banco de dados do site tem uma lista de pendências de dados de controle de alterações do SQL.<!--SCCMDocs-pr issue 3023-->  
 
 Verifique manualmente essa verificação executando um procedimento armazenado de diagnóstico no banco de dados do site. Primeiro, crie uma [conexão de diagnóstico](https://docs.microsoft.com/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators?view=sql-server-2017) para seu banco de dados do site. O método mais fácil é usar o Editor de Consultas do Mecanismo de Banco de Dados do SQL Server Management Studio e se conectar ao `admin:<instance name>`. 
 

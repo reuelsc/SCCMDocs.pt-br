@@ -1,7 +1,7 @@
 ---
 title: Alterações do Configuration Manager 2012
 description: Identifique as mudanças e os novos recursos do System Center Configuration Manager com relação ao System Center 2012 Configuration Manager.
-ms.date: 03/22/2018
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd275406a95507441e6b60167c7658a7c5dfccf9
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 05304b1cd7da4878bc06b5214b95e3a6a6c26895
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136357"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58524108"
 ---
 # <a name="whats-changed-in-system-center-configuration-manager-from-system-center-2012-configuration-manager"></a>O que mudou no System Center Configuration Manager do System Center 2012 Configuration Manager
 
@@ -29,9 +29,9 @@ System Center Configuration Manager:
 
 - não usa um identificador de ano ou de produto no nome do produto, ao contrário das versões anteriores, como o Configuration Manager 2007 ou o System Center 2012 Configuration Manager.  
 
-- Dá suporte a atualizações incrementais no produto, também chamadas de versões de atualização. A versão de inicial era a 1511. As versões seguintes são liberadas várias vezes no ano como atualizações no console, como a versão 1710.  
+- Dá suporte a atualizações incrementais no produto, também chamadas de versões de atualização. A versão de inicial era a 1511. As seguintes versões são lançadas várias vezes no ano como atualizações de console, como a versão 1810.  
 
-- É instalado usando uma versão de linha de base. Embora 1511 fosse a versão de linha de base original, novas versões de linha de base também são liberadas periodicamente, como a versão 1802. As versões de linha de base podem ser usadas para instalar um novo site do System Center Configuration Manager e para atualizar de uma versão com suporte do Configuration Manager 2012.  
+- É instalado usando uma versão de linha de base. Embora a 1511 fosse a versão de linha de base original, novas versões de linha de base também são lançadas periodicamente, como a versão 1902. As versões de linha de base podem ser usadas para instalar um novo site do System Center Configuration Manager e para atualizar de uma versão com suporte do Configuration Manager 2012.  
 
 
 
@@ -39,9 +39,9 @@ System Center Configuration Manager:
 
 O System Center Configuration Manager usa um método de serviço no console chamado **Atualizações e Manutenção** que facilita a localização e instalação das atualizações recomendadas.  
 
-Algumas versões estão disponíveis apenas como atualizações para sites existentes (dentro do console do Configuration Manager) e não podem ser usadas para instalar novos sites do Configuration Manager. Por exemplo, a atualização 1710 está disponível apenas no console do Configuration Manager. Ela atualiza um site que já executa uma versão do System Center Configuration Manager.
+Algumas versões estão disponíveis apenas como atualizações para sites existentes (dentro do console do Configuration Manager) e não podem ser usadas para instalar novos sites do Configuration Manager. Por exemplo, a atualização 1810 está disponível apenas no console do Configuration Manager. Ela atualiza um site que já executa uma versão do System Center Configuration Manager.
 
-Periodicamente, uma versão de atualização também é liberada como uma nova versão de linha de base (como a atualização 1802). Esse tipo de atualização pode ser usado para instalar uma nova hierarquia, sem a necessidade de iniciar com uma versão de linha de base mais antiga (como 1511) e atualizá-la para a versão mais atual.
+Periodicamente, uma versão de atualização também é lançada como uma nova versão de linha de base (como a atualização 1902). Esse tipo de atualização pode ser usada para instalar uma nova hierarquia sem a necessidade de iniciar com uma versão de linha de base mais antiga (como 1802) e atualizá-la para a versão mais atual.
 
 
 Para saber mais sobre o uso de atualizações, consulte [Atualizações para o Configuration Manager](/sccm/core/servers/manage/updates).  

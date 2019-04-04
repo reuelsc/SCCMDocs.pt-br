@@ -2,7 +2,7 @@
 title: Notificação de cliente
 titleSuffix: Configuration Manager
 description: Gerencie clientes executando ações imediatas de um console do Configuration Manager central.
-ms.date: 03/19/2019
+ms.date: 03/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39135a1fa548c83e0ba9c7d2a98cf1e925217280
-ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
+ms.openlocfilehash: db68a55136d708ad9276f8b1319dde33fcde35ac
+ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58197020"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477459"
 ---
 # <a name="client-notification-in-configuration-manager"></a>Notificação do cliente no Configuration Manager
 
@@ -141,7 +141,7 @@ Dispare clientes para verificar a conformidade com acesso condicional. Para obte
 
 ### <a name="wake-up"></a>Ativação
 
-Da versão 1810 em diante, disparar dispositivos suspensos para que retornem ao estado de energia total.
+A partir da versão 1810, os dispositivos de gatilho configurados para dar suporte a Wake-on-LAN para ativar o uso de outros dispositivos na mesma sub-rede para enviar o pacote de Wake-on-LAN.
 
 
 ### <a name="restart"></a>Reiniciar
