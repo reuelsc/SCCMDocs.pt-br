@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 063502ae7b09fcdcd7ae1b5c463da4b616829804
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 1280e7cbd1c2d8e7524b296e48d0b1bec426d9ed
+ms.sourcegitcommit: da753df27d3909265ca45d3e79091f1e98758d16
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56754510"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913618"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Como conectar o Configuration Manager com a análise de área de trabalho 
 
@@ -31,7 +31,7 @@ Análise da área de trabalho está totalmente integrado com o Configuration Man
 
 Primeiro, certifique-se de que seu site do Configuration Manager está em execução pelo menos a versão 1810. Para obter mais informações, confira [Instalar atualizações no console](/sccm/core/servers/manage/install-in-console-updates).
 
-Você também precisará instalar o versão 1810 pacote cumulativo de atualizações (4486457) para dar suporte à integração com a área de trabalho de análise. Para obter mais informações sobre esta atualização, consulte [atualização cumulativa para o branch atual do Configuration Manager, versão 1810](https://support.microsoft.com/help/4486457).
+Você também precisará instalar a versão 1810 Update Rollup 2 (4488598) para dar suporte à integração com a área de trabalho de análise. Para obter mais informações sobre esta atualização, consulte [Update Rollup 2 para o branch atual do Configuration Manager, versão 1810](https://support.microsoft.com/help/4488598).
 
 1. Atualize o site com o pacote cumulativo de atualizações da versão 1810. Para obter mais informações, confira [Instalar atualizações no console](/sccm/core/servers/manage/install-in-console-updates).  
 

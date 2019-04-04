@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f05b1115338f9808a950bcd1646d8035f3a563b
-ms.sourcegitcommit: 4441b3035222cfaf7442416873ed824ac7d852c5
+ms.openlocfilehash: 12f19fe6f52d1ceb4b47b080e45030df898a332a
+ms.sourcegitcommit: da753df27d3909265ca45d3e79091f1e98758d16
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58356352"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913550"
 ---
 # <a name="tutorial-deploy-office-365-to-pilot"></a>Tutorial: Implantar o Office 365 para piloto 
 
@@ -46,7 +46,7 @@ Antes de iniciar este tutorial, certifique-se de que ter os seguintes pré-requi
 
 - Uma assinatura do Azure Active Directory, com **administrador da empresa** permissões  
 
-- O Configuration Manager, versão 1810 com pacote cumulativo de atualizações 4486457 ou posterior, com **administrador completo** função  
+- O Configuration Manager, versão 1810 com 4488598 de Rollup de atualização ou posterior, com **administrador completo** função  
 
 - Pelo menos um dispositivo Windows 10 com as seguintes configurações:  
 

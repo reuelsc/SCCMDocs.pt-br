@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8602db7ece8d786598eb419eb855f1c77cff35ca
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 4105a8a81ab3f09dee9cf3ca5a2462ed2bb4183a
+ms.sourcegitcommit: da753df27d3909265ca45d3e79091f1e98758d16
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56754553"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913584"
 ---
 # <a name="what-is-desktop-analytics"></a>O que é análise de área de trabalho?
 
@@ -74,7 +74,7 @@ Para usar a análise de área de trabalho, verifique se o que seu ambiente atend
 
     - **Administrador da empresa** permissões no Azure  
 
-- Configuration Manager, versão 1810 com pacote cumulativo de atualizações 4486457 ou posterior. Para obter mais informações, consulte [atualização do Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
+- Configuration Manager, versão 1810 com Update Rollup 4488598 ou posterior. Para obter mais informações, consulte [atualização do Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
 
     - **Administrador completo** função no Configuration Manager  
 
