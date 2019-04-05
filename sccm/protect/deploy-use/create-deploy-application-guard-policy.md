@@ -11,16 +11,17 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa50719107838ed2c5c277a45ead4a7d9be6192a
-ms.sourcegitcommit: dff462bd9830e5e66f519f3c948d5150c18e94ad
+ms.openlocfilehash: cf5345cd54882ae46171b7d3800e1ed818834ecb
+ms.sourcegitcommit: d584c126a0a5725567631b74ac1e01f63242a997
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58417025"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58860996"
 ---
 # <a name="create-and-deploy-windows-defender-application-guard-policy"></a>Criar e implantar políticas do Windows Defender Application Guard 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
-<!-- 1351960 --> Você pode criar e implantar políticas do [Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview) usando a proteção de ponto de extremidade do Configuration Manager. Essas políticas ajudam a proteger os usuários por meio da abertura de sites não confiáveis em um contêiner isolado seguro que não pode ser acessado pelas outras partes do sistema operacional.
+<!-- 1351960 -->  
+Você pode criar e implantar políticas do [Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview) usando a proteção de ponto de extremidade do Configuration Manager. Essas políticas ajudam a proteger os usuários por meio da abertura de sites não confiáveis em um contêiner isolado seguro que não pode ser acessado pelas outras partes do sistema operacional.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

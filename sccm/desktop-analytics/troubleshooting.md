@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bebf4065a4db1c45ee7eaa0a5b04b8d1533f29f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: d857b0e9d280bfed0834a97760d4fd481f0398d7
+ms.sourcegitcommit: d138a6a9ccbb6a03dc378272cf6f81b98b940f1d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56754535"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59013400"
 ---
 # <a name="troubleshooting-desktop-analytics"></a>Solução de problemas de análise da área de trabalho
 
@@ -137,7 +137,8 @@ As colunas a seguir estão disponíveis na lista de dispositivos:
 - [Conectividade de ponto de extremidade de diagnóstico do Office](#office-diagnostic-endpoint-connectivity)  
 
 #### <a name="appraiser-configuration"></a>Configuração de avaliador
-<!--20,21--> A ferramenta de avaliação é o componente de Windows que corresponde do [atualizações de compatibilidade](/sccm/desktop-analytics/enroll-devices#update-devices). Ele avalia os aplicativos e drivers do dispositivo para compatibilidade com a versão mais recente do Windows. 
+<!--20,21-->
+A ferramenta de avaliação é o componente de Windows que corresponde do [atualizações de compatibilidade](/sccm/desktop-analytics/enroll-devices#update-devices). Ele avalia os aplicativos e drivers do dispositivo para compatibilidade com a versão mais recente do Windows. 
 
 Se essa verificação for bem-sucedida, o componente de avaliador está configurado corretamente no dispositivo. 
 
@@ -155,7 +156,8 @@ Para obter mais informações, examine M365AHandler.log no cliente.
 
 
 #### <a name="minimum-compatibility-update"></a>Atualização de compatibilidade mínimo
-<!--18,19,32--> A atualização de compatibilidade (appraiser.dll) não está instalado ou atualizado no dispositivo. Ele é mais antigo que o requisito mínimo para a área de trabalho de análise, 10.0.17763. 
+<!--18,19,32-->
+A atualização de compatibilidade (appraiser.dll) não está instalado ou atualizado no dispositivo. Ele é mais antigo que o requisito mínimo para a área de trabalho de análise, 10.0.17763. 
 
 Instale a atualização de compatibilidade mais recente. Para obter mais informações, consulte [atualizações de compatibilidade](/sccm/desktop-analytics/enroll-devices#bkmk_appraiser).
 
@@ -170,7 +172,8 @@ Essa propriedade exibirá a data e hora em que o dispositivo pela última vez fo
 
 #### <a name="appraiser-data-collection"></a>Coleta de dados de avaliador
 <!--Appraiser run status-->
-<!--22,33--> Essa propriedade mostra o resultado mais recente do Windows executando o componente do avaliador. 
+<!--22,33-->
+Essa propriedade mostra o resultado mais recente do Windows executando o componente do avaliador. 
 
 Se não for bem-sucedida, ela pode mostrar um dos seguintes erros: 
 
@@ -212,7 +215,8 @@ Essa propriedade exibirá a data e hora em que o dispositivo pela última vez fo
 
 #### <a name="census-data-collection"></a>Coleta de dados de censo
 <!-- Census run status -->
-<!--51,52--> Census é o componente do Windows que faz o inventário de dispositivo. Esses dados de inventário são usados para entender o dispositivo e sua configuração. 
+<!--51,52-->
+Census é o componente do Windows que faz o inventário de dispositivo. Esses dados de inventário são usados para entender o dispositivo e sua configuração. 
 
 Essa propriedade mostra o resultado mais recente do Windows executando o componente de censo.
 
@@ -228,7 +232,8 @@ Verificar o seguinte arquivo: `%windir%\System32\DeviceCensus.exe`. Se ele não 
 
 
 #### <a name="windows-diagnostic-endpoint-connectivity"></a>Conectividade de ponto de extremidade de diagnóstico do Windows
-<!--12,15--> Se essa verificação for bem-sucedida, o dispositivo é capaz de se conectar ao usuário conectado telemetria e experiência de ponto de extremidade (Vortex). 
+<!--12,15-->
+Se essa verificação for bem-sucedida, o dispositivo é capaz de se conectar ao usuário conectado telemetria e experiência de ponto de extremidade (Vortex). 
 
 Caso contrário, ele pode mostrar um dos seguintes erros:  
 
@@ -275,7 +280,8 @@ Verifique as permissões na chave do registro. Certifique-se de que a conta sist
 
 
 #### <a name="commercial-id-configuration"></a>Configuração de ID comercial
-<!--9, 11, 53--> A Microsoft usa uma ID comercial exclusiva para mapear as informações de dispositivos para seu espaço de trabalho de análise de área de trabalho. Quando você integra o Configuration Manager com a análise de área de trabalho, ele consulta automaticamente o serviço para essa ID. Configuration Manager automaticamente deve aplicar essa ID para os clientes para que as configurações de análise de área de trabalho de destino. 
+<!--9, 11, 53-->
+A Microsoft usa uma ID comercial exclusiva para mapear as informações de dispositivos para seu espaço de trabalho de análise de área de trabalho. Quando você integra o Configuration Manager com a análise de área de trabalho, ele consulta automaticamente o serviço para essa ID. Configuration Manager automaticamente deve aplicar essa ID para os clientes para que as configurações de análise de área de trabalho de destino. 
 
 Se essa verificação for bem-sucedida, em seguida, o dispositivo esteja devidamente configurado com uma ID comercial.
 
@@ -331,7 +337,8 @@ Certifique-se de que outro mecanismo de política, como a diretiva de grupo, nã
 
 
 #### <a name="diagtrack-service-configuration"></a>Configuração do serviço DiagTrack
-<!--44,45,50--> Se essa verificação for bem-sucedida, o componente DiagTrack está configurado corretamente no dispositivo. A versão mínima necessária pela análise de área de trabalho é 10010586 (10.0.10586). 
+<!--44,45,50-->
+Se essa verificação for bem-sucedida, o componente DiagTrack está configurado corretamente no dispositivo. A versão mínima necessária pela análise de área de trabalho é 10010586 (10.0.10586). 
 
 Caso contrário, ela pode exibir um dos seguintes erros:
 
@@ -369,7 +376,8 @@ Verifique se que você não tiver IDs duplicadas no seu ambiente. Por exemplo, s
 
 
 #### <a name="unique-device-identifier-retrieval"></a>Recuperação de identificador exclusivo do dispositivo
-<!--54--> Análise da área de trabalho usa o serviço de Account da Microsoft para uma identidade de dispositivo mais confiável. 
+<!--54-->
+Análise da área de trabalho usa o serviço de Account da Microsoft para uma identidade de dispositivo mais confiável. 
 
 Certifique-se a **conta de logon no Assistente do Microsoft** serviço não está desabilitado. O tipo de inicialização deve ser **Manual (início do gatilho)**.
 
@@ -377,7 +385,8 @@ Para desabilitar o acesso à conta do usuário final Microsoft, use as configura
 
 
 #### <a name="windows-diagnostic-data-opt-in"></a>Windows dados de diagnóstico opt-in
-<!--8,40,55,62--> Essa propriedade verifica se o Windows está configurado corretamente para permitir que os dados de diagnóstico. Ele verifica o valor de Allowtelemetry=0 nas chaves do registro a seguir:
+<!--8,40,55,62-->
+Essa propriedade verifica se o Windows está configurado corretamente para permitir que os dados de diagnóstico. Ele verifica o valor de Allowtelemetry=0 nas chaves do registro a seguir:
 
 - `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection`
 - `HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`
@@ -418,6 +427,7 @@ Os seguintes arquivos de log estão no ponto de conexão de serviço no seguinte
 | **M365ADeploymentPlanWorker.log** | Informações sobre a sincronização de plano de implantação de área de trabalho de análise para o Gerenciador de configuração local do serviço de nuvem |
 | **M365ADeviceHealthWorker.log** | Informações sobre a integridade do dispositivo carregar do Configuration Manager para a nuvem da Microsoft |
 | **M365AUploadWorker.log** | Informações sobre a coleta e o dispositivo carregar do Configuration Manager para a nuvem da Microsoft |
+| **SmsAdminUI.log** | Informações sobre a atividade do console do Configuration Manager, como configurar os serviços de nuvem do Azure  |
 
 
 ### <a name="configuration-manager-client"></a>Cliente do Configuration Manager
@@ -426,14 +436,14 @@ Os seguintes arquivos de log estão no cliente do Configuration Manager no segui
 
 | Log | Descrição |
 |---------|---------|
-| **M365Handler.log** | Informações sobre a política de configurações de área de trabalho de análise |
+| **M365AHandler.log** | Informações sobre a política de configurações de área de trabalho de análise |
 
 
 ### <a name="enable-verbose-logging"></a>Habilitar o log detalhado 
 
 1. No ponto de conexão de serviço, vá para a seguinte chave do registro: `HKLM\Software\Microsoft\SMS\Tracing\SMS_SERVICE_CONNECTOR`  
 2. Defina as **LogLevel** valor `0`  
-3. Execute o seguinte comando SQL no banco de dados do site:  
+3. (Opcional) Execute o seguinte comando SQL no banco de dados do site:  
 
     ```SQL
     DELETE FROM M365AProperties WHERE Name = 'M365ATenantUpdateInfo_LastUpdateTime'
