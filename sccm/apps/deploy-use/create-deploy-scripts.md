@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 007c3b68932a673b5d1971fbcf6919a7ad3adc70
-ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
+ms.sourcegitcommit: da753df27d3909265ca45d3e79091f1e98758d16
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2019
+ms.lasthandoff: 04/04/2019
 ms.locfileid: "57881836"
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Criar e executar scripts do PowerShell do console do Configuration Manager
@@ -177,11 +177,11 @@ As três funções de segurança usadas para executar scripts não são criadas 
 
 ## <a name="script-parameters"></a>Parâmetros do script
 *(Introduzido na versão 1710)*  
-Adicionar parâmetros a um script oferece maior flexibilidade para o seu trabalho. Você pode incluir até 10 parâmetros. A seguir, é descrita a funcionalidade atual do recurso Executar Scripts com os parâmetros do script para os tipos de dados *String* e *Integer*. Também há listas de valores predefinidos disponíveis. Se o seu script tiver tipos de dados sem suporte, você receberá um aviso.
+Adicionar parâmetros a um script oferece maior flexibilidade para o seu trabalho. Você pode incluir até dez parâmetros. A seguir, é descrita a funcionalidade atual do recurso Executar Scripts com os parâmetros do script para os tipos de dados *String* e *Integer*. Também há listas de valores predefinidos disponíveis. Se o seu script tiver tipos de dados sem suporte, você receberá um aviso.
 
 Na caixa de diálogo **Criar Script**, clique em **Parâmetros do Script** em **Script**.
 
-Cada um dos parâmetros do script tem sua própria caixa de diálogo para adicionar mais detalhes e validação. Se houver um parâmetro padrão no script, ele será enumerado no parâmetro de interface do usuário e você pode defini-lo. Configuration Manager não substituirá o valor padrão, pois ele nunca modifique o script diretamente. Você pode pensar isso como "previamente preenchido valores sugeridos" é fornecido na interface do usuário, mas o Configuration Manager não fornece acesso aos valores de "default" em tempo de execução. Isso pode ser contornado, editando o script para que os padrões corretos. <!--17694323-->
+Cada um dos parâmetros do script tem sua própria caixa de diálogo para adicionar mais detalhes e validação. Se houver um parâmetro padrão no script, ele será enumerado na interface de usuário do parâmetro e você poderá defini-lo. O Configuration Manager não substituirá o valor padrão, pois ele nunca modificará o script diretamente. Você pode pensar nisso como "valores sugeridos pré-preenchidos" são fornecidos na interface do usuário, mas o Configuration Manager não fornece acesso a valores "padrão" em tempo de execução. Isso pode ser contornado editando o script para ter os padrões corretos. <!--17694323-->
 
 >[!IMPORTANT]
 > Os valores de parâmetro não podem conter um apóstrofo. </br></br>
@@ -263,7 +263,7 @@ O script é executado como a conta do *sistema* ou do *computador* nos clientes 
 
 ## <a name="script-monitoring"></a>Monitoramento do script
 
-Depois de iniciar a execução de um script em uma coleção de dispositivos, use o procedimento a seguir para monitorar a operação. Começando pela versão 1710, é possível monitorar um script em tempo real conforme ele é executado e também retornar a um relatório de uma determinada execução do recurso Executar Script. Como parte de dados de status do script é limpa os [tarefa de manutenção de excluir operações antigas do cliente](../../core/servers/manage/reference-for-maintenance-tasks.md) ou exclusão de script.<br>
+Depois de iniciar a execução de um script em uma coleção de dispositivos, use o procedimento a seguir para monitorar a operação. Começando pela versão 1710, é possível monitorar um script em tempo real conforme ele é executado e também retornar a um relatório de uma determinada execução do recurso Executar Script. Os dados de status do script são limpos como parte da [tarefa de manutenção Excluir Operações Antigas do Cliente](../../core/servers/manage/reference-for-maintenance-tasks.md) ou da exclusão do script.<br>
 
 ![Monitor de script – Status da Execução do Script](./media/run-scripts/RS-monitoring-three-bar.png)
 
@@ -299,7 +299,7 @@ Microsoft Windows 10 Enterprise
 - Os clientes do 1810 retornam uma saída menor do que 80 KB para o site por meio de um canal de comunicação rápido. Essa alteração aumenta o desempenho da exibição da saída do script ou da consulta.  
 
   - Se a saída do script ou da consulta for maior que 80 KB, o cliente enviará os dados por meio de uma mensagem de estado.  
-  - Os clientes anteriores à 1802 continuam a usar as mensagens de estado.
+  - Clientes anteriores a versão 1802 continuam a usar mensagens de estado.
 
 ## <a name="script-output-pre-1810"></a>Saída de script pré-1810
 
@@ -317,7 +317,7 @@ Microsoft Windows 10 Enterprise
 
 ## <a name="log-files"></a>Arquivos de log
 
-Começando na versão 1810, registro em log adicional foi adicionado para solução de problemas.
+A partir da versão 1810, o registro em log extra foi adicionado para solução de problemas.
 
 - No cliente, por padrão, em C:\Windows\CCM\logs:  
   - **Scripts.log**  
