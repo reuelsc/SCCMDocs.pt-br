@@ -2,7 +2,7 @@
 title: Analisador de integridade do aplicativo
 titleSuffix: Configuration Manager
 description: Um guia de instruções para avaliar a compatibilidade com o analisador de integridade do aplicativo na área de trabalho de análise.
-ms.date: 01/25/2019
+ms.date: 04/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,19 +12,19 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 122a27276adcaf57461157e9df03ee1092e52af5
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 21b4907667e055c9595b31eedf9da0ad516b5fec
+ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56754554"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59069357"
 ---
 # <a name="how-to-assess-compatibility-with-app-health-analyzer"></a>Como avaliar a compatibilidade com o analisador de integridade do aplicativo
 
 > [!Note]  
 > Essas informações se relaciona a um serviço de visualização que pode ser substancialmente modificado antes do lançamento comercial. A Microsoft não oferece garantias, expressas ou implícitas, quanto às informações fornecidas aqui.  
 
-Use o Kit de ferramentas do analisador de integridade do aplicativo para a área de trabalho de análise para avaliar problemas de compatibilidade de aplicativos de desktop. Ele ajuda a concentrar seus esforços de validação para aplicativos da área de trabalho, incluindo aplicativos de linha de negócios. A ferramenta fornece uma classificação de risco, juntamente com as ações de correção possíveis. Ele também inclui um relatório de prontidão do aplicativo para ajudá-lo a avaliar a preparação do aplicativo para suas atualizações do Windows 10. 
+Use o Kit de ferramentas do analisador de integridade do aplicativo para a área de trabalho de análise para avaliar problemas de compatibilidade de aplicativos de desktop. Ele ajuda a concentrar seus esforços de validação para aplicativos da área de trabalho, incluindo aplicativos de linha de negócios. A ferramenta fornece uma classificação de risco, juntamente com as ações de correção possíveis. Ele também inclui um relatório de prontidão do aplicativo para ajudá-lo a avaliar a preparação do aplicativo para suas atualizações do Windows 10.
 
 
 
@@ -32,15 +32,15 @@ Use o Kit de ferramentas do analisador de integridade do aplicativo para a área
 
 Baixe o Kit de ferramentas do [Microsoft Download Center](http://download.microsoft.com/download/3/7/D/37D7E378-D805-4822-A712-4EADBF50FC08/AppHealthAnalyzer.zip)<!-- (https://www.microsoft.com/download/details.aspx?id=57276) -->. Sempre use a versão mais atual.
 
-O download é um arquivo do Windows Installer (MSI). Instale o Kit de ferramentas do analisador de integridade do aplicativo em um computador do usuário. Quando você executar o Kit de ferramentas, um assistente orienta você pelo processo de criação de um relatório de preparação do aplicativo. 
+O download é um arquivo do Windows Installer (MSI). Instale o Kit de ferramentas do analisador de integridade do aplicativo em um computador do usuário. Quando você executar o Kit de ferramentas, um assistente orienta você pelo processo de criação de um relatório de preparação do aplicativo.
 
-O Kit de ferramentas inclui scripts de exemplo. Se você precisar automatizar a coleta de informações sobre a preparação dos dispositivos em toda a organização, use o Configuration Manager para implantar esses scripts. Para obter mais informações, consulte [automação](#automation). 
+O Kit de ferramentas inclui scripts de exemplo. Se você precisar automatizar a coleta de informações sobre a preparação dos dispositivos em toda a organização, use o Configuration Manager para implantar esses scripts. Para obter mais informações, consulte [automação](#automation).
 
 
 
 ## <a name="how-it-works"></a>Como isso funciona
 
-A ferramenta faz uma análise estática de aplicativos que já estão instalados em um dispositivo. Ele não faz análise de um instalador de aplicativo do pacote. Um usuário não precisa executar o aplicativo. A ferramenta avalia todos os aplicativos instalados registrados com o Windows no dispositivo. 
+A ferramenta faz uma análise estática de aplicativos que já estão instalados em um dispositivo. Ele não faz análise de um instalador de aplicativo do pacote. Um usuário não precisa executar o aplicativo. A ferramenta avalia todos os aplicativos instalados registrados com o Windows no dispositivo.
 
 Analisador de integridade do aplicativo não exige que você mantenha os instaladores para aplicativos herdados que você não gerencia ativamente. Ele identifica problemas de compatibilidade com o aplicativo em seu estado instalado. Todos os aplicativos são avaliados para regras de compatibilidade predefinidos. Esses sinais são problemas comuns de predominantes relatados à Microsoft quando os clientes de atualização para o Windows 10. As informações de compatibilidade também incluem ações de correção possíveis ou correções. Se você tiver aplicativos com problemas, comece com as ações sugeridas.
 
@@ -67,7 +67,7 @@ Antes de instalar e usar o Kit de ferramentas, verifique se que o dispositivo at
 
 
 
-## <a name="analyze"></a>Analisar 
+## <a name="analyze"></a>Analisar
 
 1. Instale o analisador de integridade do aplicativo para o dispositivo de destino. Por padrão, ele instala o seguinte caminho: `C:\Program Files\Microsoft Corporation\Microsoft App Health Analyzer`  
 
@@ -76,7 +76,7 @@ Antes de instalar e usar o Kit de ferramentas, verifique se que o dispositivo at
     > [!Note]  
     > Se qualquer uma das configurações de diagnóstico de dados necessários não estiverem configurados, você verá um erro. Verifique se que você definir corretamente as configurações de pré-requisito. Para obter mais informações, consulte [níveis de dados de diagnóstico](/sccm/desktop-analytics/enable-data-sharing#diagnostic-data-levels).  
 
-3. Quando o relatório de prontidão do aplicativo for aberto, ele começa a avaliação de aplicativos. Aguarde até que o Kit de ferramentas ser concluído, que pode demorar dependendo do número de aplicativos no dispositivo.   
+3. Quando o relatório de prontidão do aplicativo for aberto, ele começa a avaliação de aplicativos. Aguarde até que o Kit de ferramentas ser concluído, que pode demorar dependendo do número de aplicativos no dispositivo.  
 
 ![Captura de tela do relatório de disponibilidade do aplicativo do analisador de integridade do aplicativo](media/app-readiness-report-evaluating.png)
 
@@ -86,20 +86,23 @@ Você pode minimizar a janela e continuar com outras tarefas enquanto o Kit de f
 ### <a name="app-readiness-report-features"></a>Recursos de relatório de prontidão do aplicativo
 
 #### <a name="get-started"></a>Introdução
-Este guia fornece uma visão geral dos sinais com suporte nesta versão atual. Ele também inclui as ações de correção possíveis. 
+
+Este guia fornece uma visão geral dos sinais com suporte nesta versão atual. Ele também inclui as ações de correção possíveis.
 
 #### <a name="insights"></a>Insights
-Este guia fornece uma exibição de todos os aplicativos que a ferramenta é avaliada. Ele mostra a avaliação de risco e os vários sinais usados para identificar problemas de compatibilidade. 
+
+Este guia fornece uma exibição de todos os aplicativos que a ferramenta é avaliada. Ele mostra a avaliação de risco e os vários sinais usados para identificar problemas de compatibilidade.
 
 - **Sinais** menu: Filtrar esses aplicativos por sinais usando o menu à esquerda  
 
-- **Exportação de CSV**: Exportar essas informações como um arquivo de valores separados por vírgulas (CSV)   
+- **Exportação de CSV**: Exportar essas informações como um arquivo de valores separados por vírgulas (CSV)  
 
 - **Examinar novamente aplicativos**: Se você instalar qualquer novo aplicativo, use esta opção para executar novamente a ferramenta  
 
 - **Solução de problemas de ID**: Se o dispositivo tiver aplicativos instalados, mas se nenhuma informação no relatório, dar a essa ID para dar suporte  
 
 #### <a name="desktop-analytics"></a>Análise de Área de Trabalho
+
 Essa guia fornece uma visão geral de como você pode usar o analisador de integridade do aplicativo para fornecer informações de preparação para aplicativos em sua organização.
 
 
@@ -108,8 +111,7 @@ Essa guia fornece uma visão geral de como você pode usar o analisador de integ
 
 Para obter essas informações de aplicativo em vários dispositivos, implante a versão de linha de comando do analisador de integridade do aplicativo com o Configuration Manager. Implantá-lo a um pequeno conjunto de dispositivos representativos dentro da sua organização. Por exemplo, usar a análise de área de trabalho *piloto* coleção. O mesmo [pré-requisitos](#prerequisites) se aplicam para esses dispositivos.
 
-
-Antes de fazer uma implantação mais ampla, primeiro verifique se uma execução bem-sucedida. Verifique se que os dados estão aparecendo na área de trabalho de análise. 
+Antes de fazer uma implantação mais ampla, primeiro verifique se uma execução bem-sucedida. Verifique se que os dados estão aparecendo na área de trabalho de análise.
 
 O Kit de ferramentas do analisador de integridade do aplicativo inclui um exemplo de script, run_silent.cmd. Por padrão, esse script está no seguinte caminho: `C:\Program Files\Microsoft Corporation\Microsoft App Health Analyzer`. Use esse script para automatizar o processo com o Configuration Manager.
 
@@ -128,7 +130,8 @@ O Kit de ferramentas do analisador de integridade do aplicativo inclui um exempl
 
 ## <a name="desktop-analytics-integration"></a>Integração da área de trabalho de análise
 
-A seguinte captura de tela da área de trabalho de análise mostra os detalhes da versão 1.15.25 ContosoApp. 
+A seguinte captura de tela da área de trabalho de análise mostra os detalhes da versão 1.15.25 ContosoApp.
+
 - Ele tem um **médio** avaliação de riscos  
 - Uma versão adotada está disponível  
 - Ele tem uma dependência de driver  
@@ -147,14 +150,17 @@ Esta seção aborda as etapas de solução de problemas e os problemas operacion
 
 - Nada acontece quando você executar a ferramenta  
 
+### <a name="diagnostic-data-settings"></a>Configurações de dados de diagnóstico
 
-#### <a name="diagnostic-data-settings"></a>Configurações de dados de diagnóstico
 Verifique novamente as configurações para as configurações de dados de diagnóstico do Windows. Configuration Manager deve definir esses valores quando integra o dispositivo para a área de trabalho de análise. Você pode usar outros métodos, como a diretiva de grupo ou de script como uma solução alternativa. Para obter mais informações, consulte [níveis de dados de diagnóstico](/sccm/desktop-analytics/enable-data-sharing#diagnostic-data-levels).  
 
-#### <a name="verbose-mode"></a>Modo detalhado
+### <a name="verbose-mode"></a>Modo detalhado
+
 Execute a ferramenta no modo detalhado com o script run_verbose.cmd. Por padrão, o script está no seguinte caminho: `C:\Program Files\Microsoft Corporation\Microsoft App Health Analyzer\run_verbose.cmd`
 
 O modo detalhado gera logs adicionais, que podem ajudar a solucionar os problemas potenciais. Ele salva os logs para o `LogCollection` pasta no local instalado. Por exemplo, o caminho de coleção de log padrão é: `C:\Program Files\Microsoft Corporation\Microsoft App Health Analyzer\LogCollection\`
 
-<!--Send the logs to AHASupport, who will follow up for further investigations. --do we really want to include this in public documentation?-->
 
+## <a name="see-also"></a>Consulte também
+
+O benefício de centro FastTrack para Windows 10 fornece acesso aos **aplicativo de área de trabalho garantir**. Esse benefício é um novo serviço projetado para resolver problemas com a compatibilidade de aplicativo do Office 365 ProPlus e Windows 10. Para obter mais informações, consulte [aplicativo de área de trabalho garantir](https://docs.microsoft.com/fasttrack/win-10-desktop-app-assure).

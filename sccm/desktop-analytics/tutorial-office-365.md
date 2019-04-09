@@ -2,7 +2,7 @@
 title: Tutorial – implantar o Office 365
 titleSuffix: Configuration Manager
 description: Um tutorial sobre como usar a área de trabalho de análise e o Configuration Manager para implantar o Office 365 em um grupo piloto.
-ms.date: 01/25/2019
+ms.date: 04/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: tutorial
@@ -12,14 +12,14 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12f19fe6f52d1ceb4b47b080e45030df898a332a
-ms.sourcegitcommit: da753df27d3909265ca45d3e79091f1e98758d16
+ms.openlocfilehash: 4d21b2b94c53390a9fcdbc1be640578060042ea9
+ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913550"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59069442"
 ---
-# <a name="tutorial-deploy-office-365-to-pilot"></a>Tutorial: Implantar o Office 365 para piloto 
+# <a name="tutorial-deploy-office-365-to-pilot"></a>Tutorial: Implantar o Office 365 para piloto
 
 > [!Note]  
 > Essas informações se relaciona a um serviço de visualização que pode ser substancialmente modificado antes do lançamento comercial. A Microsoft não oferece garantias, expressas ou implícitas, quanto às informações fornecidas aqui.  
@@ -34,7 +34,7 @@ Neste tutorial, você aprenderá como:
 > * Criar um plano de implantação de área de trabalho de análise do Office 365 ProPlus  
 > * Implantar o Office 365 ProPlus no Configuration Manager para o grupo piloto  
 
-Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar. Quando configurado corretamente, o uso da área de trabalho de análise não incorre em custos do Azure. 
+Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar. Quando configurado corretamente, o uso da área de trabalho de análise não incorre em custos do Azure.
 
 A análise da área de trabalho usa um *espaço de trabalho do Log Analytics* na sua assinatura do Azure. Um espaço de trabalho é essencialmente um contêiner que inclui informações de conta e informações de configuração simples para a conta. Para obter mais informações, consulte [gerenciar espaços de trabalho](https://docs.microsoft.com/azure/log-analytics/log-analytics-manage-access?toc=/azure/azure-monitor/toc.json).
 
@@ -109,7 +109,7 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 
     - **Colaboradores de espaço de trabalho**: Criar e gerenciar planos de implantação neste espaço de trabalho. Eles não precisam de qualquer acesso do Azure adicional.  
   
-   Para adicionar um usuário a um grupo, digite seu nome ou endereço de email na **insira o nome ou endereço de email** seção grupo apropriado. Quando terminar, selecione **próxima**. 
+   Para adicionar um usuário a um grupo, digite seu nome ou endereço de email na **insira o nome ou endereço de email** seção grupo apropriado. Quando terminar, selecione **próxima**.
 
 5. Na página para **definir seu espaço de trabalho**:  
 
@@ -148,11 +148,11 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 
 3. Selecione o aplicativo e observe os **ID do aplicativo**. Esse valor é um GUID que é usado para configurar a conexão do Configuration Manager.  
 
-4. Selecione **as configurações** sobre o aplicativo e, em seguida, selecione **chaves**. No **senhas** , digite um **descrição da chave**, especifique uma expiração **duração**e, em seguida, selecione **salvar**. Cópia de **valor** da chave, que é usado para configurar a conexão do Configuration Manager. 
+4. Selecione **as configurações** sobre o aplicativo e, em seguida, selecione **chaves**. No **senhas** , digite um **descrição da chave**, especifique uma expiração **duração**e, em seguida, selecione **salvar**. Cópia de **valor** da chave, que é usado para configurar a conexão do Configuration Manager.
 
     > [!Important]  
     > Isso é a única oportunidade para copiar o valor da chave. Se você não copiá-lo agora, você precisará criar outra chave.  
-    > 
+    >
     > Salve o valor da chave em um local seguro.  
 
 5. No aplicativo **as configurações** painel, selecione **permissões necessárias**.  
@@ -205,11 +205,11 @@ Instale o pacote de cumulativo de atualizações do Configuration Manager versã
 
     - **Nome do locatário do Azure AD**: Esse nome é como ele é chamado no Configuration Manager  
 
-    - **ID de locatário do Azure AD**: O **ID de diretório** você copiou do Azure AD   
+    - **ID de locatário do Azure AD**: O **ID de diretório** você copiou do Azure AD  
 
-    - **ID do cliente**: O **ID do aplicativo** você copiou do aplicativo Azure AD   
+    - **ID do cliente**: O **ID do aplicativo** você copiou do aplicativo Azure AD  
 
-    - **Chave secreta**: A tecla **valor** você copiou do aplicativo Azure AD   
+    - **Chave secreta**: A tecla **valor** você copiou do aplicativo Azure AD  
 
     - **Vencimento da Chave Secreta**: A mesma data de expiração da chave   
 
@@ -233,7 +233,7 @@ Instale o pacote de cumulativo de atualizações do Configuration Manager versã
 
     - **Coleção de destino**: Esta coleção inclui todos os dispositivos que o Configuration Manager configura com sua ID comercial e as configurações de dados de diagnóstico. É o conjunto completo de dispositivos do Configuration Manager se conecta ao serviço de análise de área de trabalho.  
 
-    - **Dispositivos na coleção de destino usam um proxy de usuário autenticado para comunicação de saída**: Por padrão, esse valor é **não**. Se for necessário em seu ambiente, definido como **Sim**.   
+    - **Dispositivos na coleção de destino usam um proxy de usuário autenticado para comunicação de saída**: Por padrão, esse valor é **não**. Se for necessário em seu ambiente, definido como **Sim**.  
 
     - **Selecione as coleções específicas para sincronizar com a área de trabalho de análise**: Selecione **adicionar** incluir coleções adicionais. Essas coleções estão disponíveis no portal de análise de área de trabalho para o agrupamento com planos de implantação. Certifique-se de incluir coleções de exclusão do projeto-piloto e piloto.  
 
@@ -245,7 +245,7 @@ O Configuration Manager cria uma política de configurações para configurar di
 
 Monitore a configuração de seus dispositivos para análise de área de trabalho. No console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, expanda o **manutenção do Microsoft 365** nó e selecione o **integridade de Conexão** painel.  
 
-Configuration Manager sincroniza qualquer plano de implantação de área de trabalho de análise dentro de 15 minutos de criar a conexão. No console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, expanda o **manutenção do Microsoft 365** nó e selecione o **planos de implantação** nó. 
+Configuration Manager sincroniza qualquer plano de implantação de área de trabalho de análise dentro de 15 minutos de criar a conexão. No console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, expanda o **manutenção do Microsoft 365** nó e selecione o **planos de implantação** nó.
 
 
 
@@ -275,7 +275,7 @@ Use este procedimento para criar um plano de implantação na área de trabalho 
 
         - Baixa instalar o limite de contagem para seus suplementos do Office. O limite padrão é `2%`. Suplementos abaixo desse limite são definidos automaticamente *baixa contagem de instalações*. Análise da área de trabalho não valida esses suplementos durante o piloto. 
 
-            Se um suplemento é instalado em uma porcentagem maior de computadores que esse limite, o plano de implantação marcará o suplemento como *Noteworthy*. Em seguida, você pode decidir sua importância para testar durante a fase piloto.   
+            Se um suplemento é instalado em uma porcentagem maior de computadores que esse limite, o plano de implantação marcará o suplemento como *Noteworthy*. Em seguida, você pode decidir sua importância para testar durante a fase piloto.  
 
     - **Data de conclusão**: Escolha a data pelo qual Office deve ser totalmente implantado para todos os dispositivos de destino.  
 
@@ -287,7 +287,7 @@ Use este procedimento para criar um plano de implantação na área de trabalho 
 
     1. Sobre o **suplementos do Office** , selecione para mostrar apenas **não revisado** ativos.  
 
-    2. Selecione cada suplemento e, em seguida, selecione **editar**. Você pode selecionar mais de um aplicativo para editar ao mesmo tempo.   
+    2. Selecione cada suplemento e, em seguida, selecione **editar**. Você pode selecionar mais de um aplicativo para editar ao mesmo tempo.  
 
     3. Escolha um nível de importância do **importância** lista. Se quiser que a área de trabalho de análise para validar o suplemento durante o piloto, selecione **crítica** ou **importante**. Ele não valida os suplementos marcados como **importante não**. Considere o risco de compatibilidade e outras informações de plano ao se atribuírem níveis de importância.  
 
@@ -337,7 +337,7 @@ Use este procedimento para implantar o Office 365 ProPlus no Configuration Manag
 
     5. Ao concluir, selecione **revisão** no canto superior direito. Examine as configurações definidas e, em seguida, selecione **enviar**.  
 
-5. Selecione **Avançar**. Sobre o **implantação** página, selecione **não** para implantá-lo agora. (O procedimento a seguir usa o plano de implantação de área de trabalho de análise para a implantação.) Selecione **próxima** e conclua o assistente.  
+4. Selecione **Avançar**. Sobre o **implantação** página, selecione **não** para implantá-lo agora. (O procedimento a seguir usa o plano de implantação de área de trabalho de análise para a implantação.) Selecione **próxima** e conclua o assistente.  
 
 
 ### <a name="bkmk_deploy-app"></a> Implantar o Office 365 usando o plano de implantação de área de trabalho de análise
@@ -348,7 +348,12 @@ Use este procedimento para implantar o Office 365 ProPlus no Configuration Manag
 
 3. No **criar um piloto do status** lado a lado, escolha **Application** na lista suspensa e selecione **implantar**.  
 
-4. No **geral** página do assistente par implantar Software, selecione **procurar** ao lado de **Software** campo. Selecione seu aplicativo do Office 365, por exemplo, **Office 365 ProPlus**. Com a integração de análise de área de trabalho, o Configuration Manager cria automaticamente uma coleção para o plano de implantação piloto. Selecione **Avançar**.  
+4. No **geral** página do assistente par implantar Software, selecione **procurar** ao lado de **Software** campo. Selecione seu aplicativo do Office 365, por exemplo, **Office 365 ProPlus**. Selecione **Avançar**.  
+
+    > [!Note]  
+    > Com a integração de análise de área de trabalho, o Configuration Manager cria automaticamente uma coleção para o plano de implantação piloto. Ele pode levar até 10 minutos para esta coleção sincronizar antes de você pode usá-lo.<!-- 3887891 -->
+    >
+    > Essa coleção é reservada para dispositivos de plano de implantação de área de trabalho de análise. Não há suporte para alterações manuais a esta coleção.<!-- 3866460, SCCMDocs-pr 3544 -->  
 
 5. Sobre o **conteúdo** página, selecione **Add**e, em seguida, selecione **ponto de distribuição**. Selecione um ponto de distribuição disponíveis para hospedar o conteúdo de instalação e, em seguida, selecione **Okey**. Em seguida, selecione **Avançar**.  
 
@@ -375,11 +380,8 @@ Use este procedimento para implantar o Office 365 ProPlus no Configuration Manag
 -->
 
 
-
-
 ## <a name="next-steps"></a>Próximas etapas
 
 Avance para o próximo artigo para saber mais sobre planos de implantação de área de trabalho de análise.
 > [!div class="nextstepaction"]  
 > [Planos de implantação](/sccm/desktop-analytics/about-deployment-plans)
-

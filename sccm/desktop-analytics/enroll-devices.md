@@ -2,7 +2,7 @@
 title: Registrar dispositivos de área de trabalho de análise
 titleSuffix: Configuration Manager
 description: Saiba como registrar dispositivos de área de trabalho de análise.
-ms.date: 01/25/2019
+ms.date: 04/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,25 +12,26 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e409a1bba4642f2a9390c08896ba86cb676839f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: c5d5e6665b0ddd2e7726af4b8ac8929d5019fedf
+ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56754569"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59069459"
 ---
-# <a name="how-to-enroll-devices-in-desktop-analytics"></a>Como registrar dispositivos no Analytics de área de trabalho 
+# <a name="how-to-enroll-devices-in-desktop-analytics"></a>Como registrar dispositivos no Analytics de área de trabalho
 
 > [!Note]  
 > Essas informações se relaciona a um serviço de visualização que pode ser substancialmente modificado antes do lançamento comercial. A Microsoft não oferece garantias, expressas ou implícitas, quanto às informações fornecidas aqui.  
 
-Quando você [conectar o Configuration Manager](/sccm/desktop-analytics/connect-configmgr) para análise de área de trabalho, você definir configurações para registrar dispositivos para análise de área de trabalho. Você pode alterar essas configurações a qualquer momento. Além disso, verifique se que os dispositivos estão atualizados. 
+Quando você [conectar o Configuration Manager](/sccm/desktop-analytics/connect-configmgr) para análise de área de trabalho, você definir configurações para registrar dispositivos para análise de área de trabalho. Você pode alterar essas configurações a qualquer momento. Além disso, verifique se que os dispositivos estão atualizados.
 
 
 
 ## <a name="update-devices"></a>Atualizar dispositivos
 
-Há dois tipos de atualizações que você precisa aplicar a melhor experiência com a área de trabalho de análise: 
+Há dois tipos de atualizações que você precisa aplicar a melhor experiência com a área de trabalho de análise:
+
 - [Atualizações de compatibilidade](#bkmk_appraiser)  
 - [Serviço de telemetria e experiências do usuário conectado](#bkmk_diagtrack)
 
@@ -50,9 +51,11 @@ Reinicie dispositivos depois de instalar as atualizações de compatibilidade pe
 > Há uma atualização opcional relacionada [3150513 KB](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=3150513). Essa atualização fornece definições para as atualizações mais antigas de compatibilidade e configuração atualizada. Para obter mais informações, consulte [atualização de definição de compatibilidade mais recente do Windows](https://support.microsoft.com/help/3150513).  
 
 #### <a name="windows-10"></a>Windows 10
+
 O Windows 10 inclui o componente de compatibilidade. Para obter a atualização de compatibilidade mais recente, instale a atualização cumulativa mais recente do Windows 10.
 
 #### <a name="windows-81"></a>Windows 8.1
+
 Baixe a atualização: [KB 2976978](http://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB2976978) 
 
 Executa o diagnóstico nos sistemas Windows 8.1 que participam do programa de Aperfeiçoamento da experiência do cliente do Windows. Estes diagnósticos ajudam a determinar se você pode ter problemas de compatibilidade ao atualizar para o Windows 10.
@@ -60,6 +63,7 @@ Executa o diagnóstico nos sistemas Windows 8.1 que participam do programa de Ap
 Para obter mais informações, consulte [atualização de compatibilidade para manter-se atualizado no Windows 8.1 a Windows](https://support.microsoft.com/help/2976978).
 
 #### <a name="windows-7-with-service-pack-1"></a>Windows 7 com Service Pack 1
+
 Baixe a atualização: [KB 2952664](http://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB2952664) 
 
 Executa o diagnóstico na do Windows 7 com sistemas de Service Pack 1 (SP1) que participam do programa de Aperfeiçoamento da experiência do cliente do Windows. Estes diagnósticos ajudam a determinar se você pode ter problemas de compatibilidade ao atualizar para o Windows 10.
@@ -74,14 +78,16 @@ Com a dados de diagnóstico do Windows habilitados, o serviço de experiência d
 Para obter a melhor experiência, instale as atualizações a seguir dependendo da versão do sistema operacional.
 
 > [!Note]  
-> Quando você instalar essas atualizações, esperar que os seguintes comportamentos: 
+> Quando você instalar essas atualizações, esperar que os seguintes comportamentos:
+> 
 > - Dispositivos que você se registra para análise de área de trabalho aparecem no serviço em menos de uma hora  
 > - Dispositivos rapidamente relatam o status nas atualizações de recurso e qualidade para Windows e o Office  
-> 
+>
 > Sem essas atualizações, esses processos podem levar mais de 48 horas para um dispositivo relatar a análise de área de trabalho.  
 
 
 #### <a name="windows-10"></a>Windows 10
+
 Instale a atualização cumulativa mais recente do Windows 10.
 
 <!-- 
@@ -93,9 +99,11 @@ Instale a atualização cumulativa mais recente do Windows 10.
  -->
 
 #### <a name="windows-81"></a>Windows 8.1
+
 Instale o pacote cumulativo mensal de outubro de 2018, [KB4462926](https://support.microsoft.com/help/4462926)
 
 #### <a name="windows-7"></a>Windows 7
+
 Instale o pacote cumulativo mensal de outubro de 2018, [KB4462923](https://support.microsoft.com/help/4462923)
 
 
@@ -105,17 +113,17 @@ Instale o pacote cumulativo mensal de outubro de 2018, [KB4462923](https://suppo
 O serviço de análise de área de trabalho tem sem agentes para instalar. Registro de dispositivo requer a configuração de configurações nos dispositivos que você deseja monitorar. Essas configurações controlam a qual instância de área de trabalho de análise que o dispositivo deve enviar seus dados e outras opções de configuração.
 
 > [!Note]  
-> Se você já estiver usando o Windows Analytics, use o mesmo espaço de trabalho para análise de área de trabalho. Você precisará registrar novamente os dispositivos para análise de área de trabalho que você registrou anteriormente no Windows Analytics. 
-> 
-> Você pode ter apenas um espaço de trabalho de análise de área de trabalho por locatário do Azure AD. Dispositivos podem enviar somente dados de diagnóstico para um espaço de trabalho.   
+> Se você já estiver usando o Windows Analytics, use o mesmo espaço de trabalho para análise de área de trabalho. Você precisará registrar novamente os dispositivos para análise de área de trabalho que você registrou anteriormente no Windows Analytics.
+>
+> Você pode ter apenas um espaço de trabalho de análise de área de trabalho por locatário do Azure AD. Dispositivos podem enviar somente dados de diagnóstico para um espaço de trabalho.  
 
-Configuration Manager fornece uma experiência integrada para gerenciar e implantar essas configurações para os clientes. Para obter a melhor experiência, use o Configuration Manager. 
+Configuration Manager fornece uma experiência integrada para gerenciar e implantar essas configurações para os clientes. Para obter a melhor experiência, use o Configuration Manager.
 
 Quando você conecta o Configuration Manager para análise de área de trabalho, você pode definir as configurações para registrar dispositivos. Para obter mais informações, consulte [como conectar o Configuration Manager com a área de trabalho de análise](/sccm/desktop-analytics/connect-configmgr#bkmk_connect).
 
 Para alterar essas configurações, use o procedimento a seguir:
 
-1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e selecione o nó **Serviços do Azure**. Selecione a conexão de área de trabalho de análise e, em seguida, escolha **propriedades** na faixa de opções. 
+1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e selecione o nó **Serviços do Azure**. Selecione a conexão de área de trabalho de análise e, em seguida, escolha **propriedades** na faixa de opções.
 
 2. Sobre o **dados de diagnóstico** página, faça as alterações necessárias para as seguintes configurações:  
 
@@ -152,12 +160,14 @@ O Configuration Manager define as seguintes configurações do Windows em `Micro
 | **AllowDeviceNameInTelemetry** | *Aplica-se ao Windows 10, versão 1803 e posterior*: Um opt-in separado é necessário para permitir que dispositivos continuam a enviar o nome do dispositivo.<br> <br>Observação: Por padrão, o nome do dispositivo não será enviado à Microsoft. Se você não enviar o nome do dispositivo, ele aparece na área de trabalho de análise como "Desconhecido". Esse comportamento pode tornar difícil de identificar e avaliar os dispositivos. Para obter mais informações, consulte [nome do dispositivo](#device-name). |
 | **CommercialDataOptIn** | *Aplica-se ao Windows 7 e Windows 8.1*: Um valor de `1` é necessária para análises de área de trabalho. Para obter mais informações, consulte [Opt-in dados comerciais no Windows 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/ee126127\(v=ws.10\)). |
 
-Exiba essas configurações no editor de diretiva de grupo no seguinte caminho: **Configuração do computador** > **modelos administrativos** > **componentes do Windows** > **dados coleta e a versão prévia Compilações**. 
+Exiba essas configurações no editor de diretiva de grupo no seguinte caminho: **Configuração do computador** > **modelos administrativos** > **componentes do Windows** > **dados coleta e a versão prévia Compilações**.
 
+> [!Important]  
+> Na maioria das circunstâncias, apenas use o Configuration Manager para definir essas configurações. Também não aplica essas configurações nos objetos de diretiva de grupo do domínio. Para obter mais informações, consulte [resolução de conflitos](#conflict-resolution).<!-- SCCMDocs-pr 3120 -->
 
 ### <a name="device-name"></a>Nome do dispositivo
 
-Começando no Windows 10, versão 1803, o nome do dispositivo não é coletado por padrão. Coleta o nome do dispositivo com os dados de diagnóstico requer um opt-in separado. Sem o nome do dispositivo, é mais difícil para você identificar quais dispositivos requerem atenção ao avaliar uma atualização para uma nova versão do Windows ou do Office. 
+Começando no Windows 10, versão 1803, o nome do dispositivo não é coletado por padrão. Coleta o nome do dispositivo com os dados de diagnóstico requer um opt-in separado. Sem o nome do dispositivo, é mais difícil para você identificar quais dispositivos requerem atenção ao avaliar uma atualização para uma nova versão do Windows ou do Office.
 
 Se você não enviar o nome do dispositivo, ele aparece na área de trabalho de análise como "Desconhecido".
 
@@ -170,9 +180,9 @@ Há uma opção nas configurações do Configuration Manager para análise de á
 
 Em geral, use coleções do Configuration Manager para registro e configurações de análise de área de trabalho de destino. Use associação direta ou consultas para incluir ou excluir dispositivos da coleção. Para obter mais informações, confira [Como criar coleções](/sccm/core/clients/manage/collections/create-collections).
 
-Configuration Manager configura apenas as configurações do Windows, se um valor ainda não existir. Se você precisar definir configurações diferentes para um único grupo de dispositivos, você pode usar [política de grupo](#group-policy). Configurações direcionadas pela política de grupo têm precedência sobre configurações do Configuration Manager.
+Configuration Manager configura apenas as configurações do Windows, se um valor ainda não existir. Se você precisar definir configurações diferentes para um único grupo de dispositivos, você pode usar [política de grupo](#windows-settings). Configurações direcionadas pela política de grupo têm precedência sobre configurações do Configuration Manager.
 
-Se você direcionar os clientes do Configuration Manager com as configurações do Windows Analytics e análise de área de trabalho, as configurações para análise de área de trabalho terão precedência. 
+Se você direcionar os clientes do Configuration Manager com as configurações do Windows Analytics e análise de área de trabalho, as configurações para análise de área de trabalho terão precedência.
 
 Quando você configura o nível de dados de diagnóstico, você pode definir o limite superior para o dispositivo. Por padrão no Windows 10, versão 1803 e posterior, os usuários podem escolher definir um nível inferior. Você pode controlar esse comportamento usando a configuração de política de grupo **interface do usuário de consentimento de configuração configurar telemetria**. Para saber mais, veja [Configurar dados de diagnóstico do Windows em sua organização](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management).
 

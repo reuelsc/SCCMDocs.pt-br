@@ -2,7 +2,7 @@
 title: Como implantar o piloto
 titleSuffix: Configuration Manager
 description: Um guia de instruções para a implantação em um grupo piloto de análise de área de trabalho.
-ms.date: 01/25/2019
+ms.date: 04/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 797b8ab61f5be2fd851e735c475ed610ed7d3cfe
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 4aa078f5a8306cb30ea83d45b93b18971be7764f
+ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56754511"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59069374"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Como implantar o piloto, com a análise de área de trabalho
 
@@ -32,7 +32,7 @@ Um dos benefícios da análise de área de trabalho é ajudar a identificar o me
 
 ## <a name="address-issues"></a>Solucionar problemas
 
-Use o portal de análise de área de trabalho para examinar os problemas relatados com ativos que podem bloquear a sua implantação. Em seguida, aprovar, rejeitar ou modificar a correção sugerida. Todos os itens devem ser marcados **pronto** ou **pronto (com correção)** antes de inicia a implantação piloto. 
+Use o portal de análise de área de trabalho para examinar os problemas relatados com ativos que podem bloquear a sua implantação. Em seguida, aprovar, rejeitar ou modificar a correção sugerida. Todos os itens devem ser marcados **pronto** ou **pronto (com correção)** antes de inicia a implantação piloto.
 
 1. Acesse o portal de análise de área de trabalho e selecione **planos de implantação** no grupo gerenciar.  
 
@@ -42,10 +42,9 @@ Use o portal de análise de área de trabalho para examinar os problemas relatad
 
 4. Sobre o **aplicativos** guia, examine os aplicativos que precisam de sua entrada.  
 
-5. Para cada aplicativo, selecione o nome do aplicativo. No painel de informações, examine a recomendação e selecione o decisão de atualização. Se você escolher **não revisado** ou **não é possível**, em seguida, análise de área de trabalho não inclui os dispositivos com esse aplicativo na implantação piloto.  
+5. Para cada aplicativo, selecione o nome do aplicativo. No painel de informações, examine a recomendação e selecione o decisão de atualização. Se você escolher **não revisado** ou **não é possível**, em seguida, análise de área de trabalho não inclui os dispositivos com esse aplicativo na implantação piloto. Se você escolher **pronto (com correção)**, use o **anotações de correção** para capturar as ações necessárias para resolver um problema, como *reinstalar* ou *encontrar o versão recomendada do fabricante*.
 
 6. Repita esta revisão de outros ativos.  
-
 
 
 
@@ -73,15 +72,18 @@ Configuration Manager usa os dados da área de trabalho de análise para criar u
 
     - **Sequência de tarefas** para Windows 10  
   
-   Selecione **implantar**. Essa ação inicia o Assistente para implantar Software para o tipo de objeto selecionado. 
+   Selecione **implantar**. Essa ação inicia o Assistente para implantar Software para o tipo de objeto selecionado.
 
+    > [!Note]  
+    > Com a integração de análise de área de trabalho, o Configuration Manager cria automaticamente uma coleção para o plano de implantação piloto. Ele pode levar até 10 minutos para esta coleção sincronizar antes de você pode usá-lo.<!-- 3887891 -->
+    >
+    > Essa coleção é reservada para dispositivos de plano de implantação de área de trabalho de análise. Não há suporte para alterações manuais a esta coleção.<!-- 3866460, SCCMDocs-pr 3544 -->  
 
 Para obter mais informações, consulte os seguintes artigos:  
 
 - [Implantar um aplicativo](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy)  
 
 - [Implantar uma sequência de tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS)  
-
 
 Se seu plano de implantação é para Windows 10 e Office 365, repita esse processo para criar uma segunda implantação. Por exemplo, se for a primeira implantação da sequência de tarefas, crie uma segunda implantação para o aplicativo.
 
@@ -100,7 +102,7 @@ Use o Configuration Manager implantação de monitoramento para o mesmo como qua
 
 ### <a name="desktop-analytics-portal"></a>Portal de análise da área de trabalho
 
-Use o portal de análise de área de trabalho para exibir o status de qualquer plano de implantação. Selecione o plano de implantação e, em seguida, selecione **visão geral do plano**. 
+Use o portal de análise de área de trabalho para exibir o status de qualquer plano de implantação. Selecione o plano de implantação e, em seguida, selecione **visão geral do plano**.
 
 ![Captura de tela de visão geral do plano de implantação na área de trabalho de análise](media/deployment-plan-overview.png)
 
@@ -126,7 +128,7 @@ Conforme você resolver esses problemas de implantação, o painel continua most
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Permitir que a execução do piloto para um período de tempo para coletar dados operacionais. Incentive os usuários de dispositivos piloto para testar aplicativos, suplementos e macros. 
+Permitir que a execução do piloto para um período de tempo para coletar dados operacionais. Incentive os usuários de dispositivos piloto para testar aplicativos, suplementos e macros.
 
 Quando sua implantação piloto atende aos seus critérios de êxito, vá para o próximo artigo para implantar na produção.
 > [!div class="nextstepaction"]  

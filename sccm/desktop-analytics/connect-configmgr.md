@@ -2,7 +2,7 @@
 title: Conectar o Configuration Manager
 titleSuffix: Configuration Manager
 description: Um guia de instruções para conectar o Configuration Manager com a análise de área de trabalho.
-ms.date: 01/25/2019
+ms.date: 04/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,19 +12,19 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1280e7cbd1c2d8e7524b296e48d0b1bec426d9ed
-ms.sourcegitcommit: da753df27d3909265ca45d3e79091f1e98758d16
+ms.openlocfilehash: b30770b912e012aafa3f1d476c4791873752ecc7
+ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913618"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59069340"
 ---
-# <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Como conectar o Configuration Manager com a análise de área de trabalho 
+# <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Como conectar o Configuration Manager com a análise de área de trabalho
 
 > [!Note]  
 > Essas informações se relaciona a um serviço de visualização que pode ser substancialmente modificado antes do lançamento comercial. A Microsoft não oferece garantias, expressas ou implícitas, quanto às informações fornecidas aqui.  
 
-Análise da área de trabalho está totalmente integrado com o Configuration Manager. Primeiro, verifique se que o site é atualizado para dar suporte a recursos mais recentes. Em seguida, crie a conexão de área de trabalho de análise no Configuration Manager. Por fim, monitore a integridade de conexão. 
+Análise da área de trabalho está totalmente integrado com o Configuration Manager. Primeiro, verifique se que o site é atualizado para dar suporte a recursos mais recentes. Em seguida, crie a conexão de área de trabalho de análise no Configuration Manager. Por fim, monitore a integridade de conexão.
 
 
 ## <a name="bkmk_hotfix"></a> Atualizar o site
@@ -59,13 +59,13 @@ Use este procedimento para conectar o Configuration Manager para análise de ár
 
     - **Nome do locatário do Azure AD**: Esse nome é como ele é chamado no Configuration Manager  
 
-    - **ID de locatário do Azure AD**: O **ID de diretório** você copiou do Azure AD   
+    - **ID de locatário do Azure AD**: O **ID de diretório** você copiou do Azure AD  
 
-    - **ID do cliente**: O **ID do aplicativo** você copiou do aplicativo Azure AD   
+    - **ID do cliente**: O **ID do aplicativo** você copiou do aplicativo Azure AD  
 
-    - **Chave secreta**: A tecla **valor** você copiou do aplicativo Azure AD   
+    - **Chave secreta**: A tecla **valor** você copiou do aplicativo Azure AD  
 
-    - **Vencimento da Chave Secreta**: A mesma data de expiração da chave   
+    - **Vencimento da Chave Secreta**: A mesma data de expiração da chave  
 
     - **URI da ID do aplicativo**: Essa configuração deve preencher automaticamente com o seguinte valor: `https://cmmicrosvc.manage.microsoft.com/`  
   
@@ -82,7 +82,7 @@ Use este procedimento para conectar o Configuration Manager para análise de ár
         > [!Note]  
         > Começando com o Windows 10 versão 1803, o nome do dispositivo não será enviado à Microsoft por padrão. Se você não enviar o nome do dispositivo, ele aparece na área de trabalho de análise como "Desconhecido". Esse comportamento pode tornar difícil de identificar e avaliar os dispositivos.  
 
-   Selecione **Avançar**. O **funcionalidade disponível** página mostra a funcionalidade de análise de área de trabalho que está disponível com as configurações de dados de diagnóstico da página anterior. Selecione **próxima** para continuar ou **Previous** para fazer alterações.   
+   Selecione **Avançar**. O **funcionalidade disponível** página mostra a funcionalidade de análise de área de trabalho que está disponível com as configurações de dados de diagnóstico da página anterior. Selecione **próxima** para continuar ou **Previous** para fazer alterações.  
 
     ![Exemplo de página de funcionalidade disponível no Assistente de serviços do Azure](media/available-functionality.png)
 
@@ -92,11 +92,14 @@ Use este procedimento para conectar o Configuration Manager para análise de ár
 
     - **Coleção de destino**: Esta coleção inclui todos os dispositivos que o Configuration Manager configura com sua ID comercial e as configurações de dados de diagnóstico. É o conjunto completo de dispositivos do Configuration Manager se conecta ao serviço de análise de área de trabalho.  
 
-    - **Dispositivos na coleção de destino usam um proxy de usuário autenticado para comunicação de saída**: Por padrão, esse valor é **não**. Se for necessário em seu ambiente, definido como **Sim**.   
+    - **Dispositivos na coleção de destino usam um proxy de usuário autenticado para comunicação de saída**: Por padrão, esse valor é **não**. Se for necessário em seu ambiente, definido como **Sim**.  
 
     - **Selecione as coleções específicas para sincronizar com a área de trabalho de análise**: Selecione **adicionar** incluir coleções adicionais. Essas coleções estão disponíveis no portal de análise de área de trabalho para o agrupamento com planos de implantação. Certifique-se de incluir coleções de exclusão do projeto-piloto e piloto.  
 
         Essas coleções continuam a sincronização como suas alterações de associação. Por exemplo, o seu plano de implantação usa uma coleção com uma regra de associação do Windows 7. Como esses dispositivos de atualização para o Windows 10, e o Configuration Manager avalia a associação da coleção, esses dispositivos soltem fora a coleta e o plano de implantação.  
+
+        > [!Important]  
+        > Certifique-se de limitar essas coleções adicionais na coleção de destino. Sobre as propriedades dessas coleções adicionais, o **limitação de coleção** deve ser a mesma coleção de análise de área de trabalho **coleção de destino**.<!-- 4097528 -->  
 
 6. Conclua o assistente.  
 
@@ -110,7 +113,7 @@ Monitore a configuração de seus dispositivos para análise de área de trabalh
 
 Para obter mais informações, consulte [monitorar a integridade de conexão](/sccm/desktop-analytics/troubleshooting#monitor-connection-health).
 
-Configuration Manager sincroniza qualquer plano de implantação de área de trabalho de análise dentro de 15 minutos de criar a conexão. No console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, expanda o **manutenção do Microsoft 365** nó e selecione o **planos de implantação** nó. 
+Configuration Manager sincroniza qualquer plano de implantação de área de trabalho de análise dentro de 15 minutos de criar a conexão. No console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, expanda o **manutenção do Microsoft 365** nó e selecione o **planos de implantação** nó.
 
 
 
@@ -119,4 +122,3 @@ Configuration Manager sincroniza qualquer plano de implantação de área de tra
 Avance para o próximo artigo para registrar dispositivos para análise de área de trabalho.
 > [!div class="nextstepaction"]  
 > [Registrar dispositivos](/sccm/desktop-analytics/enroll-devices)  
-
