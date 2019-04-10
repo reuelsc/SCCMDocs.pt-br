@@ -2,21 +2,21 @@
 title: CMPivot para dados em tempo real
 titleSuffix: Configuration Manager
 description: Saiba como usar o CMPivot no Configuration Manager para consultar clientes em tempo real.
-ms.date: 08/21/2018
+ms.date: 04/04/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 32e2d6b9-148f-45e2-8083-98c656473f82
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2527639e3a0370c4e18d5e6030fc3a26a10c6d21
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: dd914030afb8490b11666fc953d846e03090b834
+ms.sourcegitcommit: deb28cdc95a456d4a38499ef1bc71e765ef6dc13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120190"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58901461"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>O CMPivot para dados em tempo real no Configuration Manager
 
@@ -28,6 +28,8 @@ O Configuration Manager sempre forneceu um grande armazenamento centralizado de 
 
 Por exemplo, na [mitigação das vulnerabilidades do canal de execução especulativa](https://blogs.technet.microsoft.com/configurationmgr/2018/01/08/additional-guidance-to-mitigate-speculative-execution-side-channel-vulnerabilities/), um dos requisitos é atualizar o BIOS do sistema. Você pode usar o CMPivot para consultar rapidamente as informações do BIOS do sistema e localizar clientes que não estejam em conformidade.
 
+ > [!Tip]  
+ > Alguns softwares de segurança podem bloquear scripts em execução de c:\windows\ccm\scriptstore. Isso pode impedir a execução bem-sucedida das consultas do CMPivot. Alguns softwares de segurança também podem gerar alertas ou eventos de auditoria ao executar o CMPivot PowerShell.
 
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -36,19 +38,25 @@ Os seguintes componentes são necessários para usar o CMPivot:
 
 - Atualize os dispositivos de destino para a versão mais recente do cliente do Configuration Manager.  
 
-- O administrador do Configuration Manager precisa da permissão para **Ler** no objeto **Scripts do SMS** e da permissão para **Executar Scripts** no objeto **Coleção**, além do escopo padrão. A função **Executor de Scripts**, que não é criada por padrão, tem essas permissões. Para obter mais informações sobre como criar essa função de segurança personalizada, confira [Funções de segurança para scripts](/sccm/apps/deploy-use/create-deploy-scripts#bkmk_ScriptRoles).  
+- Permissões para CMPivot:
+  - Permissão de **Leitura** no objeto **Scripts SMS**
+  - Permissão para **Executar Scripts** na **Coleção**
+  - Permissão de **Leitura** nos **Relatórios de Inventário**
+  - O escopo padrão. 
+
+- Os clientes de destino exigem no mínimo o PowerShell versão 4.
 
 - Para coletar dados para as entidades a seguir, os clientes de destino exigem o PowerShell versão 5.0:  
-    - Administradores
-    - Conexão
-    - IPConfig
-    - SMBConfig 
+  - Administradores
+  - Conexão
+  - IPConfig
+  - SMBConfig
 
-
-
+ 
 ## <a name="limitations"></a>Limitações
 
-- Em uma hierarquia, conecte o console do Configuration Manager a um *site primário* para executar o CMPivot. A ação **Iniciar o CMPivot** não aparece no console quando ele está conectado a um site de administração central.  
+- Em uma hierarquia, conecte o console do Configuration Manager a um *site primário* para executar o CMPivot. A ação **Iniciar o CMPivot** não aparece no console quando ele está conectado a um CAS (site de administração central).
+  - Começando no Configuration Manager versão 1902, você pode executar o CMPivot de um CAS. Em alguns ambientes, são necessárias permissões adicionais. Para obter mais informações, confira [CMPivot starting in version 1902](#bkmk_cmpivot1902) (CMPivot começando na versão 1902).
 
 - O CMPivot somente retorna dados para clientes conectados ao site atual.  
 
@@ -59,7 +67,6 @@ Os seguintes componentes são necessários para usar o CMPivot:
 - Somente uma instância do CMPivot pode ser executada por vez em um computador que esteja executando o console do Configuration Manager.  
 
 - Na versão 1806, a consulta da entidade **Administrators** só funciona se o grupo se chama "Administrators". Ela não funcionará se o nome do grupo estiver traduzido. Por exemplo, "Administrateurs" em francês.<!--SCCMDocs issue 759-->  
-
 
 
 ## <a name="start-cmpivot"></a>Iniciar o CMPivot
@@ -94,7 +101,7 @@ Os seguintes componentes são necessários para usar o CMPivot:
 
 A janela do CMPivot contém os seguintes elementos:  
 
-1. A coleção que o CMPivot atualmente tem como destino está na barra de título na parte superior e na barra de status na parte inferior da janela. Por exemplo, **Todos os Sistemas** na captura de tela acima.  
+1. A coleção que o CMPivot atualmente tem como destino está na barra de título na parte superior e na barra de status na parte inferior da janela. Por exemplo, "PM_Team_Machines" na captura de tela acima.  
 
 2. O painel à esquerda lista as **Entidades** disponíveis nos clientes. Algumas entidades dependem da WMI, enquanto outras usam o PowerShell para obter dados de clientes.   
 
@@ -218,35 +225,259 @@ Para [mitigar vulnerabilidades do canal lateral de execução especulativa](http
 
 ### <a name="example-4-free-disk-space"></a>Exemplo 4: Espaço livre em disco
 
-Você precisa armazenar temporariamente um arquivo grande em um servidor de arquivos de rede, mas não tem certeza de qual tem capacidade suficiente. Você inicia o CMPivot em relação a uma coleção de servidores de arquivos e consulta a entidade **Disco**. Você modifica a consulta para CMPivot para retornar rapidamente uma lista de servidores ativos contendo dados de armazenamento em tempo real:  
+Você precisa armazenar temporariamente um arquivo grande em um servidor de arquivos de rede, mas não tem certeza de qual tem capacidade suficiente. Inicie o CMPivot em uma coleção de servidores de arquivos e consulte a entidade **Disk**. Modifique a consulta para CMPivot para retornar rapidamente uma lista de servidores ativos contendo dados de armazenamento em tempo real:  
 
 `Disk | where (Description == 'Local Fixed Disk') | where isnotnull( FreeSpace ) | order by FreeSpace asc`
 
 
+## <a name="bkmk_cmpivot"></a> CMPivot começando na versão 1810
+<!--1359068, 3607759-->
+
+O CMPivot inclui as seguintes melhorias começando no Configuration Manager versão 1810:
+
+- [Desempenho e utilitário do CMPivot](#bkmk_cmpivot-perf)
+- [Funções escalares](#bkmk_cmpivot-functions)  
+- [Visualizações de renderização](#bkmk_cmpivot-charts)  
+- [Inventário de hardware](#bkmk_cmpivot-hinv)  
+- [Operadores escalares](#bkmk_cmpivot-operators)  
+- [Resumo da consulta](#bkmk_cmpivot-summary)  
+- [Mensagens de status de auditoria](#cmpivot-audit-status-messages)
+
+### <a name="bkmk_cmpivot-perf"></a> Desempenho e utilitário do CMPivot
+
+- O CMPivot retornará até 100 mil células em vez de 20 mil linhas.
+  - Se a entidade tiver 5 propriedades, o que significa 5 colunas, serão mostradas até 20.000 linhas.
+  - Para uma entidade com 10 propriedades, serão mostradas até 10.000 linhas.
+  - O total de dados mostrado será menor ou igual a 100.000 células.
+- Na guia Resumo da Consulta, selecione a contagem de dispositivos com falha e offline e, em seguida, selecione a opção para **Criar coleção**. Essa opção facilita o direcionamento desses dispositivos com uma implantação de correção.
+- Salve consultas **Favoritas** clicando no ícone de pasta.
+   ![Exemplo de salvamento de uma consulta favorita no CMPivot](media/cmpivot-favorite.png)
+
+- Os clientes atualizados para a versão 1810 retornam uma saída menor que 80 KB para o site por meio de um canal de comunicação rápido.
+  - Essa alteração aumenta o desempenho da exibição da saída do script ou da consulta.
+  - Se a saída do script ou da consulta for maior que 80 KB, o cliente enviará os dados por meio de uma mensagem de estado.
+  - Se o cliente não tiver atualizado para a versão 1810 do cliente, ele continuará usando mensagens de estado.
+
+### <a name="bkmk_cmpivot-functions"></a> Funções escalares
+O CMPivot dá suporte para as funções escalares a seguir:
+- **ago()**: subtrai o intervalo de tempo determinado da hora atual UTC do relógio  
+- **datetime_diff()**: calcula a diferença do calendário entre dois valores de data e hora  
+- **now()**: retorna a hora atual UTC do relógio  
+- **bin()**: arredonda os valores até um número inteiro múltiplo de um determinado tamanho de compartimento  
+
+> [!Note]  
+> O tipo de dados de data e hora representa um momento no tempo, geralmente expresso como uma data e hora do dia. Valores de hora são medidos em unidades de 1 segundo. Um valor de data e hora está sempre no fuso horário UTC. Sempre expresse literais de data e hora no formato ISO 8601, por exemplo, `yyyy-mm-dd HH:MM:ss`  
+
+#### <a name="examples"></a>Exemplos
+- `datetime(2015-12-31 23:59:59.9)`: um literal de data e hora específico   
+- `now()`: a hora atual  
+- `ago(1d)`: a hora atual menos um dia  
+
+
+### <a name="bkmk_cmpivot-charts"></a> Visualizações de renderização
+
+O CMPivot agora inclui suporte Básico para o [operador render](https://docs.microsoft.com/azure/kusto/query/renderoperator) do Log Analytics. Esse suporte inclui os seguintes tipos:  
+- **barchart**: a primeira coluna é o eixo x e pode ser texto, datetime ou numérico. A segunda coluna deve ser numérica e é exibida como uma faixa horizontal.  
+- **columnchart**: como barchart, com faixas verticais, em vez de faixas horizontais.  
+- **piechart**: a primeira coluna é a cor do eixo, a segunda coluna é numérica.  
+- **timechart**: gráfico de linha. A primeira coluna é o eixo x e deve ser datetime. A segunda coluna é o eixo y.  
+
+#### <a name="example-bar-chart"></a>Exemplo: gráfico de barras
+A consulta a seguir renderiza os aplicativos usados mais recentemente como um gráfico de barras:
+
+```
+CCMRecentlyUsedApplications
+| summarize dcount( Device ) by ProductName
+| top 10 by dcount_
+| render barchart
+```
+![Exemplo de visualização de gráfico de barras CMPivot](media/1359068-cmpivot-barchart.png)
+
+#### <a name="example-time-chart"></a>Exemplo: gráfico de tempo
+Para renderizar gráficos de tempo, use o novo operador **bin()** para agrupar eventos no tempo. A consulta seguinte mostra quando os dispositivos iniciaram nos últimos sete dias:
+
+``` 
+OperatingSystem 
+| where LastBootUpTime <= ago(7d)
+| summarize count() by bin(LastBootUpTime,1d)
+| render timechart
+```
+![Exemplo de visualização de gráfico de tempo CMPivot](media/1359068-cmpivot-timechart.png)
+
+#### <a name="example-pie-chart"></a>Exemplo: gráfico de pizza
+A consulta a seguir exibe todas as versões de sistema operacional em um gráfico de pizza:
+
+```
+OperatingSystem 
+| summarize count() by Caption
+| render piechart
+```
+![Exemplo de visualização de gráfico de pizza CMPivot](media/1359068-cmpivot-piechart.png)
+
+
+### <a name="bkmk_cmpivot-hinv"></a> Inventário de hardware
+Use o CMPivot para consultar qualquer classe de inventário de hardware. Essas classes incluem todas as extensões personalizadas que você fez ao inventário de hardware. O CMPivot imediatamente retorna resultados em cache da última verificação de inventário de hardware no banco de dados do site. Ao mesmo tempo, ele atualiza os resultados, se necessário, com os dados dinâmicos de qualquer cliente online.
+
+A saturação de cor dos dados na tabela de resultados ou no gráfico indica se os dados estão armazenados em cache ou ativos. Por exemplo, azul-escuro representa dados em tempo real de um cliente online. Azul claro corresponde a dados armazenados em cache.
+
+#### <a name="example"></a>Exemplo
+```
+LogicalDisk
+| summarize sum( FreeSpace ) by Device
+| order by sum_ desc
+| render columnchart
+```
+![Exemplo de consulta de inventário CMPivot com visualização de gráfico de coluna](media/1359068-cmpivot-inventory.png)
+
+#### <a name="limitations"></a>Limitações
+- Não há suporte para as seguintes entidades de inventário de hardware:  
+    - Propriedades de matriz, por exemplo, endereço IP  
+    - Real32/Real64 <!--example?-->  
+    - Propriedades do objeto inserido <!--example?-->  
+- Nomes de entidade de inventário devem começar com um caractere
+- Não é possível substituir as entidades internas criando uma entidade de inventário de mesmo nome  
+
+
+### <a name="bkmk_cmpivot-operators"></a> Operadores escalares
+O CMPivot inclui os seguintes operadores escalares:  
+
+> [!Note]  
+> - LHS: cadeia de caracteres à esquerda do operador  
+> - RHS: cadeia de caracteres à direita do operador  
+
+
+|Operador|Descrição|Exemplo (produz verdadeiro)|
+|--------|-----------|---------------------|
+|==|Igual a|`"aBc" == "aBc"`|
+|!=|Diferente de|`"abc" != "ABC"`|
+|como|LHS contém uma correspondência para RHS|`"FabriKam" like "%Brik%"`|
+|!like|LHS não contém uma correspondência para RHS|`"Fabrikam" !like "%xyz%"`|
+|contém|RHS ocorre como uma subsequência de LHS|`"FabriKam" contains "BRik"`|
+|!contains|RHS não ocorre em LHS|`"Fabrikam" !contains "xyz"`|
+|startswith|RHS é uma subsequência inicial de LHS|`"Fabrikam" startswith "fab"`|
+|!startswith|RHS não é uma subsequência inicial de LHS|`"Fabrikam" !startswith "kam"`|
+|endswith|RHS é uma subsequência de fechamento de LHS|`"Fabrikam" endswith "Kam"`|
+|!endswith|RHS não é uma subsequência de fechamento de LHS|`"Fabrikam" !endswith "brik"`|
+
+
+### <a name="bkmk_cmpivot-summary"></a> Resumo da consulta
+
+Selecione a guia **Resumo da Consulta** guia na parte inferior da janela do CMPivot. Esse status ajuda a identificar clientes que estão offline ou solucionar problemas de erros que podem ocorrer. Selecione um valor na coluna de contagem para abrir uma lista de dispositivos específicos com esse status. 
+
+Por exemplo, selecione a contagem de dispositivos com um status de Falha. Veja a mensagem de erro específica e exporte uma lista desses dispositivos. Se o erro for que um cmdlet específico não é reconhecido, crie uma coleção da lista de dispositivos exportados para implantar uma atualização do Windows PowerShell.  
+
+### <a name="cmpivot-audit-status-messages"></a>Mensagens de status de auditoria do CMPivot
+
+Começando na versão 1810, quando você executa o CMPivot, uma mensagem de status de auditoria é criada com a **MessageID 40805**. Você pode exibir as mensagens de status acessando **Monitoramento** < **Status do Sistema** < **Consultas de Mensagens de Status**. Você pode executar **Todas as Mensagens de Status de Auditoria de um Usuário Específico**, **Todas as Mensagens de Status de Auditoria de um Site Específico** ou criar sua própria consulta de mensagem de status.
+
+O formato a seguir é usado para a mensagem:
+
+MessageId 40805: O usuário &lt;Nome-de-Usuário> executou o script &lt;GUID-do-Script> com o hash &lt;Hash-do-Script> na coleção &lt;ID-da-Coleção>.
+
+- 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14 é o GUID do Script do CMPivot.
+- O Hash do Script pode ser visto no arquivo scripts.log do cliente.
+- Você também pode ver o hash armazenado na pontuação de script do cliente. O nome do arquivo no cliente é &lt;Script-Guid>_&lt;Script-Hash>.
+    - Nome do arquivo de exemplo: C:\Windows\CCM\ScriptStore\7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14_abc1d23e45678901fabc123d456ce789fa1b2cd3e456789123fab4c56789d0123.ps
+   
+
+![Exemplo de mensagem de status de auditoria do CMPivot](media/cmpivot-audit-status-message.png)
+
+## <a name="bkmk_cmpivot1902"></a> CMPivot começando na versão 1902
+<!--3610960-->
+Começando no Configuration Manager versão 1902, agora você pode executar o CMPivot do CAS (site de administração central) em uma hierarquia. O site primário ainda gerencia a comunicação com o cliente. Quando o CMPivot é executado do site de administração central, ele se comunica com o site primário pelo canal de assinatura de mensagem de alta velocidade. Essa comunicação não depende da replicação padrão do SQL entre sites.
+
+Executar o CMPivot no CAS exigirá permissões adicionais quando o SQL ou o provedor não estiver no mesmo computador ou no caso da configuração SQL Always On. Com essas configurações remotas, você tem um "cenário de salto duplo" para o CMPivot.
+
+Para fazer o CMPivot funcionar no CAS nesse “cenário de salto duplo”, você pode definir a delegação restrita. Para entender as implicações de segurança dessa configuração, leia o artigo [Delegação restrita de Kerberos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview). Se você tiver mais de uma configuração remota, como SQL ou o Provedor do SCCM, sendo colocada com o CAS ou não, talvez precise de uma combinação de configurações de permissão. Abaixo estão as etapas que você precisa executar:
+
+### <a name="cas-has-a-remote-sql-server"></a>O CAS tem um SQL Server remoto
+
+1. Vá para o servidor SQL de cada site primário.
+   1. Adicione o SQL Server remoto e o servidor do site do CAS ao grupo [Configmgr_DviewAccess](/sccm/core/plan-design/hierarchy/accounts#configmgr_dviewaccess).
+   ![Grupo Configmgr_DviewAccess no SQL Server do site primário](media/cmpivot-dviewaccess-group.png)
+1. Vá para Usuários e Computadores do Active Directory.
+   1. Para cada servidor do site primário, clique com botão direito do mouse e selecione **Propriedades**.
+      1. Na guia Delegação, escolha a terceira opção, **Confiar no computador para delegação apenas a serviços especificados**. 
+      1. Escolha **Usar apenas Kerberos**.
+      1. Adicione serviço do SQL Server do CAS com a porta e a instância.
+      1. Verifique se essas alterações se alinham à política de segurança da sua empresa!
+   1. Para o site do CAS, clique com o botão direito do mouse e selecione **Propriedades**.
+      1. Na guia Delegação, escolha a terceira opção, **Confiar no computador para delegação apenas a serviços especificados**. 
+      1. Escolha **Usar apenas Kerberos**.
+      1. Adicione o serviço do SQL Server de cada site primário com a porta e a instância.
+      1. Verifique se essas alterações se alinham à política de segurança da sua empresa!
+
+   ![Exemplo de delegação do CMPivot AD de salto duplo](media/cmpivot-ad-delegation.png)
+
+### <a name="cas-has-a-remote-provider"></a>O CAS tem um provedor remoto
+
+1. Vá para o servidor SQL de cada site primário.
+   1. Adicione a conta do computador do provedor e o servidor do site do CAS ao grupo [Configmgr_DviewAccess](/sccm/core/plan-design/hierarchy/accounts#configmgr_dviewaccess).
+1. Vá para Usuários e Computadores do Active Directory.
+   1. Selecione o computador do provedor do CAS, clique com botão direito do mouse e selecione **Propriedades**.
+      1. Na guia Delegação, escolha a terceira opção, **Confiar no computador para delegação apenas a serviços especificados**. 
+      1. Escolha **Usar apenas Kerberos**.
+      1. Adicione o serviço do SQL Server de cada site primário com a porta e a instância.
+      1. Verifique se essas alterações se alinham à política de segurança da sua empresa!
+   1. Selecione o servidor do site de CAS, clique com botão direito do mouse e selecione **Propriedades**.
+      1. Na guia Delegação, escolha a terceira opção, **Confiar no computador para delegação apenas a serviços especificados**. 
+      1. Escolha **Usar apenas Kerberos**.
+      1. Adicione o serviço do SQL Server de cada site primário com a porta e a instância.
+      1. Verifique se essas alterações se alinham à política de segurança da sua empresa!
+1. Reinicie o computador do provedor remoto do CAS.
+
+### <a name="sql-always-on"></a>SQL Always On
+
+1. Vá para o servidor SQL de cada site primário.
+   1. Adicione o servidor do site do CAS ao grupo [Configmgr_DviewAccess](/sccm/core/plan-design/hierarchy/accounts#configmgr_dviewaccess).
+1. Vá para Usuários e Computadores do Active Directory.
+   1. Para cada servidor do site primário, clique com botão direito do mouse e selecione **Propriedades**.
+      1. Na guia Delegação, escolha a terceira opção, **Confiar no computador para delegação apenas a serviços especificados**. 
+      1. Escolha **Usar apenas Kerberos**.
+      1. Adicione as contas de serviço do SQL Server do CAS para os nós do SQL com a porta e a instância.
+      1. Verifique se essas alterações se alinham à política de segurança da sua empresa!
+   1. Selecione o servidor do site de CAS, clique com botão direito do mouse e selecione **Propriedades**.
+      1. Na guia Delegação, escolha a terceira opção, **Confiar no computador para delegação apenas a serviços especificados**. 
+      1. Escolha **Usar apenas Kerberos**.
+      1. Adicione o serviço do SQL Server de cada site primário com a porta e a instância.
+      1. Verifique se essas alterações se alinham à política de segurança da sua empresa!
+1. Verifique se o [SPN foi publicado](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/listeners-client-connectivity-application-failover?view=sql-server-2017#SPNs) para o nome do ouvinte do SQL do CAS e para cada nome de ouvinte do SQL primário.
+1. Reinicie os servidores SQL primários.
+1. Reinicie o servidor do site do CAS e os servidores SQL do CAS.
+
 
 ## <a name="inside-cmpivot"></a>Dentro do CMPivot
 
-O CMPivot envia consultas para os clientes que usam o "canal rápido" do Configuration Manager. Esse canal de comunicação do servidor para o cliente também é usado por outros recursos, como ações de notificação do cliente, status do cliente e Endpoint Protection. Os clientes retornarão os resultados por meio do sistema de mensagens de estado igualmente rápido. As mensagens de estado são armazenadas temporariamente no banco de dados. 
+O CMPivot envia consultas para os clientes que usam o "canal rápido" do Configuration Manager. Esse canal de comunicação do servidor para o cliente também é usado por outros recursos, como ações de notificação do cliente, status do cliente e Endpoint Protection. Os clientes retornarão os resultados por meio do sistema de mensagens de estado igualmente rápido. As mensagens de estado são armazenadas temporariamente no banco de dados. Para obter mais informações sobre as portas usadas para a notificação do cliente, confira o artigo [Portas](/sccm/core/plan-design/hierarchy/ports#BKMK_PortsClient-MP).
 
-As consultas e os resultados são todos somente texto. As entidades **InstallSoftware** e **Processo** retornam alguns dos maiores conjuntos de resultados. Durante o teste de desempenho, o maior tamanho do arquivo de mensagem de estado de um cliente para essas consultas foi menor que **1 KB**. Dimensionado para um ambiente grande com 50 mil clientes ativos, essa consulta única geraria menos de 50 MB de dados pela rede.  
+As consultas e os resultados são todos somente texto. As entidades **InstallSoftware** e **Processo** retornam alguns dos maiores conjuntos de resultados. Durante o teste de desempenho, o maior tamanho do arquivo de mensagem de estado de um cliente para essas consultas foi menor que **1 KB**. Dimensionado para um ambiente grande com 50 mil clientes ativos, essa consulta única geraria menos de 50 MB de dados pela rede. Todos os itens na página de boas-vindas que estiverem sublinhados retornarão menos de mil informações por cliente.
+
+![Exemplo de entidades sublinhadas do CMPivot](media/cmpivot-underlined-entities.png)
+
+Começando no Configuration Manager 1810, o CMPivot pode consultar dados de inventário de hardware, incluindo as classes de inventário de hardware estendido. Essas novas entidades (entidades não sublinhadas na página de boas-vindas) podem retornar conjuntos de dados muito maiores, dependendo da quantidade de dados definida para uma propriedade de inventário de hardware específica. Por exemplo, a entidade "InstalledExecutable" pode retornar vários MB de dados por cliente, dependendo dos dados específicos sendo consultados. Preste atenção no desempenho e na escalabilidade dos seus sistemas ao retornar conjuntos de dados de inventário de hardware maiores de coleções maiores usando o CMPivot.
 
 Uma consulta atinge o tempo limite após uma hora. Por exemplo, uma coleção tem 500 dispositivos e 450 dos clientes estão online no momento. Esses dispositivos ativos recebem a consulta e retornam os resultados quase imediatamente. Se você deixar a janela CMPivot aberta, conforme os outros 50 clientes ficarem online, eles também receberão a consulta e retornarão resultados. 
 
->[!TIP]
-> As interações de CMPivot são registradas nos seguintes arquivos de log:
->
-> **No lado do servidor:**
-> - SmsProv.log
-> - bgbServer.log
-> - StateSys.log
->
-> **No lado do cliente:**
-> - CCMNotificationAgent.log
-> - Scripts.log
-> - StateMessage.log
->
-> Para obter mais informações, consulte [Arquivos de log](/sccm/core/plan-design/hierarchy/log-files).
+## <a name="log-files"></a>Arquivos de log
 
+ As interações do CMPivot são registradas nos seguintes arquivos de log:
 
-## <a name="see-also"></a>Consulte também
+**No lado do servidor:**
+- SmsProv.log
+- BgbServer.log
+- StateSys.log
+
+**No lado do cliente:**
+ - CCMNotificationAgent.log
+ - Scripts.log
+ - StateMessage.log
+
+Para obter mais informações, confira [Arquivos de log](/sccm/core/plan-design/hierarchy/log-files) e [Solução de problemas do CMPivot](/sccm/core/servers/manage/cmpivot-tsg.md).
+
+## <a name="next-steps"></a>Próximas etapas
+ 
+[Solução de problemas do CMPivot](/sccm/core/servers/manage/cmpivot-tsg.md)
+
 [Criar e executar scripts do PowerShell](/sccm/apps/deploy-use/create-deploy-scripts)
+
+

@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e937bf4adf3b695bf33d41318e5d48bc560ad06b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 94a55e0678942623e6afe9752f435ceb8eb71270
+ms.sourcegitcommit: d584c126a0a5725567631b74ac1e01f63242a997
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128095"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58861047"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurar o gateway de gerenciamento de nuvem para o Configuration Manager
 
@@ -43,7 +43,7 @@ Use a seguinte lista de verificação para verificar se você tem as informaçõ
 
     - Integração com o [Azure AD](/sccm/core/servers/deploy/configure/azure-services-wizard) para o **Gerenciamento de Nuvem**. A descoberta de usuário do Azure AD não é necessária.  
     
-    - O provedor de recursos **Microsoft.ClassicCompute** deve estar registrado na assinatura do Azure. Para obter mais informações, consulte [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
+    - Os provedores de recursos **Microsoft.ClassicCompute** & **Microsoft.Storage** devem estar registrados na assinatura do Azure. Para obter mais informações, consulte [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
 
     - Um administrador da assinatura precisa entrar.  
 
@@ -226,7 +226,7 @@ Sempre mantenha, pelo menos, um CMG ativo para que os clientes baseados na Inter
 
 Por padrão, os clientes atualizam a política a cada 24 horas. Portanto, aguarde, pelo menos, um dia depois de criar um novo CMG antes de excluir o antigo. Se os clientes forem desativados ou estiverem sem uma conexão com a Internet, talvez você precise aguardar mais. 
 
-A partir da versão 1802, caso você tenha um CMG no método de implantação clássico, precisará implantar um novo CMG para usar o método de implantação do Azure Resource Manager.<!--509753--> Há duas opções:  
+Começando com a versão 1802, caso você tenha um CMG no método de implantação clássico, precisará implantar um novo CMG para usar o método de implantação do Azure Resource Manager.<!--509753--> Há duas opções:  
 
 - Caso deseje reutilizar o mesmo nome de serviço:  
 

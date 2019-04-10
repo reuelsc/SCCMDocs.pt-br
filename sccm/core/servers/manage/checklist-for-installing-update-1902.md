@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60856d3e2621f48fb669a4a1385876ddae849b2e
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: 5833db7cd6f47d0711fdcfae5d1f7a4114d7ff34
+ms.sourcegitcommit: d584c126a0a5725567631b74ac1e01f63242a997
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58524994"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58861013"
 ---
 # <a name="checklist-for-installing-update-1902-for-configuration-manager"></a>Lista de verificação para a instalação da atualização 1902 do Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Ao usar o Branch Atual do Configuration Manager, é possível instalar a atualização no console da versão 1902 para atualizar a hierarquia de uma versão anterior. <!-- baseline only statement:-->(Como a versão 1802 também está disponível como uma [mídia de linha de base](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions), você pode usar a mídia de instalação para instalar o primeiro site de uma nova hierarquia.)
+Ao usar o Branch Atual do Configuration Manager, é possível instalar a atualização no console da versão 1902 para atualizar a hierarquia de uma versão anterior. <!-- baseline only statement:-->(Como a versão 1902 também está disponível como uma [mídia de linha de base](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions), você pode usar a mídia de instalação para instalar o primeiro site de uma nova hierarquia.)
 
 Para obter a atualização para a versão 1902, você precisa usar um ponto de conexão de serviço no site de nível superior da hierarquia. Essa função do sistema de sites pode estar no modo online ou offline. Depois que a hierarquia baixar o pacote de atualização da Microsoft, encontre-a no console. No workspace **Administração** e selecione o nó **Atualizações e Manutenção**.
 
@@ -96,7 +96,7 @@ Deve ser instalada uma versão mínima do SQL Server 2012 Native Client que incl
 
 #### <a name="review-the-site-and-hierarchy-status-for-unresolved-issues"></a>Examine o status do site e da hierarquia quanto a problemas não resolvidos 
 Uma atualização de site pode falhar devido a problemas operacionais existentes. Antes de atualizar um site, resolva todos os problemas operacionais para os seguintes sistemas:  
-- Servidor do site  
+- O servidor do site  
 - O servidor de banco de dados do site  
 - Funções do sistema de site remoto em outros servidores   
 

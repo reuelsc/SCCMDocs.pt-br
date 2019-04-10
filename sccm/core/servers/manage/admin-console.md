@@ -2,21 +2,21 @@
 title: Console do Configuration Manager
 titleSuffix: Configuration Manager
 description: Saiba mais sobre como navegar por meio do console do Configuration Manager.
-ms.date: 03/06/2019
+ms.date: 04/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 463ce307-59dd-4abd-87b8-42ca9db178d7
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f9c06f40af1134055d4038fd23954b3f4c59682
-ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
+ms.openlocfilehash: fb58662350caec9fd1a08295c93c3811893048a9
+ms.sourcegitcommit: da753df27d3909265ca45d3e79091f1e98758d16
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57562101"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913533"
 ---
 # <a name="using-the-configuration-manager-console"></a>Usando o console do Configuration Manager
 
@@ -116,7 +116,36 @@ Na parte inferior do menu de contexto da coluna, você pode classificar ou agrup
 
 ![O Configuration Manager agrupa por coluna](media/column-group-by.png)  
 
+## <a name="bkmk_viewconnected"></a> Exibir consoles conectados recentemente
+<!--3699367-->
 
+Começando na versão 1902, você pode exibir as conexões mais recentes do console do Configuration Manager. O modo de exibição inclui conexões ativas e aqueles que se conectaram recentemente. Você sempre verá sua conexão de console atual na lista e verá apenas as conexões do console do Configuration Manager. Você não verá o PowerShell nem outras conexões baseadas em SDK com o Provedor de SMS. O site remove da lista as instâncias com mais de 30 dias.
+
+
+### <a name="prerequisites-to-view-connected-consoles"></a>Pré-requisitos para exibir os consoles conectados
+
+- Sua conta precisa da permissão **Leitura** no objeto **SMS_Site** 
+- O IIS precisa ser instalado no servidor do Provedor de SMS <!---SCCMDocs-pr issue 1326--> 
+- Habilite o Provedor de SMS para usar um certificado.<!--SCCMDocs-pr issue 3135--> Use uma das seguintes opções:  
+
+  - Habilitar [HTTP aprimorado](/sccm/core/plan-design/hierarchy/enhanced-http) (recomendado)
+  - Associar manualmente um certificado baseado em PKI à porta 443 no IIS no servidor que hospeda a função de Provedor de SMS  
+
+### <a name="view-connected-consoles"></a>Exibir consoles conectados
+
+1. No console do Configuration Manager, acesse o workspace **Administração**.  
+
+2. Expanda **Segurança** e selecione o nó **Conexões do console**.  
+
+3. Exiba as conexões recentes, com as seguintes propriedades:  
+
+    - Nome de usuário
+    - Nome do computador
+    - Código do site conectado
+    - Versão do console
+    - Horário da última conexão: Quando o usuário *abriu* o console pela última vez
+
+![Exibir as conexões de console do Configuration Manager](media/console-connections.png) 
 
 ## <a name="command-line-options"></a>Opções de linha de comando
 
@@ -155,14 +184,15 @@ Da versão 1806 em diante, as colunas a seguir estão disponíveis no nó **Disp
 
 - **Usuários primários** <!--1357280-->  
 
-- **Usuário conectado atualmente** <!--1358202-->  
+- **Usuário conectado no momento** <!--1358202-->  
     > [!NOTE]  
     > Exibir o usuário conectado no momento exige [descoberta de usuário](/sccm/core/servers/deploy/configure/configure-discovery-methods#bkmk_config-adud) e [afinidade de dispositivo de usuário](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity).  
 
 Para obter mais informações sobre como mostrar uma coluna não padrão, confira [Colunas](#columns).
 
 #### <a name="improvement-to-device-search-performance"></a>Melhoria de desempenho da Pesquisa de Dispositivos
-<!-- 3614690 --> Começando na versão 1806, ao pesquisar em uma Coleção de Dispositivos, o recurso não pesquisa a palavra-chave em relação a todas as propriedades do objeto. Quando você não especifica o conteúdo que deseja pesquisar, o mecanismo pesquisa as quatro propriedades a seguir:
+<!-- 3614690 -->
+Começando na versão 1806, ao pesquisar em uma coleção de dispositivos, o recurso não pesquisa a palavra-chave em relação a todas as propriedades do objeto. Quando você não especifica o conteúdo que deseja pesquisar, o mecanismo pesquisa as quatro propriedades a seguir:
 - Name
 - Usuários primários
 - Usuário conectado no momento
@@ -174,7 +204,8 @@ Este comportamento melhora significativamente o tempo necessário para pesquisar
 ### <a name="monitoring-workspace"></a>Workspace de monitoramento
 
 #### <a name="copy-details-in-monitoring-views"></a>Copiar detalhes em exibições de monitoramento
-<!--1357856--> Começando na versão 1806, copie informações do painel **Detalhes do Ativo** para os seguintes nós de monitoramento:  
+<!--1357856-->
+Começando na versão 1806, copie informações do painel **Detalhes do Ativo** para os seguintes nós de monitoramento:  
 
 - **Status da Distribuição de Conteúdo**  
 
