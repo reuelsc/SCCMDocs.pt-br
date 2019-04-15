@@ -2,7 +2,7 @@
 title: Gerenciar o Windows como serviço
 titleSuffix: Configuration Manager
 description: Exibir o estado do WaaS (Windows como serviço) usando o Configuration Manager, criar planos de manutenção para formar anéis de implantação e exibir alertas quando os clientes do Windows 10 estiverem próximos do fim do suporte.
-ms.date: 03/15/2017
+ms.date: 04/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 614ccc06a3fef5cca54c7eb1c32952e8531aedfa
-ms.sourcegitcommit: d71e558db2da124357b840332e2da671b3810507
+ms.openlocfilehash: 13fde17d8fe46b723a8f49b22a68685fbc4d47de
+ms.sourcegitcommit: d4b0e44e6bb06a830d0887493528d9166a15154b
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58269056"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506236"
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gerenciar o Windows como um serviço usando o System Center Configuration Manager
 
@@ -54,6 +54,7 @@ ms.locfileid: "58269056"
 -   O Internet Explorer 9 ou posterior deve estar instalado no computador que executa o console do Configuration Manager.  
 
 -   As atualizações de software devem ser configuradas e sincronizadas. Selecione a classificação **Atualizações** e sincronize as atualizações de software antes que as atualizações de recursos do Windows 10 fiquem disponíveis no console do Configuration Manager. Para obter mais informações, consulte [Preparar-se para o gerenciamento de atualização de software](../../sum/get-started/prepare-for-software-updates-management.md).  
+- A partir da versão 1902 do Configuration Manager, verifique a opção **Especificar a prioridade do thread para atualizações de recurso** na [configuração do cliente](/sccm/core/clients/deploy/about-client-settings#bkmk_thread-priority) para garantir que seja apropriada para seu ambiente.
 
 ##  <a name="BKMK_ServicingDashboard"></a> Painel de serviço do Windows 10  
  O painel de serviço do Windows 10 fornece informações sobre os computadores Windows 10 em seu ambiente, os planos de serviço ativos, as informações de conformidade e assim por diante. Os dados contidos no painel de serviço do Windows 10 dependem da instalação do Ponto de Conexão de Serviço. O painel contém os seguintes blocos:  
@@ -72,7 +73,7 @@ ms.locfileid: "58269056"
 
 -   **Bloco Monitoramento do Plano de Serviço**: exibe os planos de serviço criados e um gráfico da conformidade para cada um. Esse bloco fornece uma visão geral rápida do estado atual das implantações de plano de serviço. Se um anel de implantação anterior atender às suas expectativas quanto à conformidade, será possível selecionar um plano de serviço posterior (anel de implantação) e clicar em **Implantar Agora** , em vez de aguardar até que as regras do plano de serviço sejam disparadas automaticamente.  
 
--   O **bloco Builds do Windows 10**: exibe uma linha do tempo fixa da imagem que fornece uma visão geral dos builds do Windows 10 atualmente liberadas e fornece uma ideia geral de quando os builds farão a transição para estados diferentes.  
+-   O **bloco Builds do Windows 10**: exibe uma linha do tempo fixa da imagem que fornece uma visão geral dos builds do Windows 10 atualmente liberadas e fornece uma ideia geral de quando os builds farão a transição para estados diferentes. Este bloco foi removido a partir da versão 1902 do Configuration Manager, pois as informações mais detalhadas são apresentadas no [painel do Ciclo de Vida do Produto](/sccm/core/clients/manage/asset-intelligence/product-lifecycle-dashboard). <!--3446861-->
 
 > [!IMPORTANT]  
 >  As informações mostradas no painel de serviço do Windows 10 (como o ciclo de vida do suporte para versões do Windows 10) são fornecidas para sua conveniência e somente para uso interno em sua empresa. Você não deve depender exclusivamente dessas informações para confirmar a conformidade da atualização. Certifique-se de verificar a precisão das informações fornecidas a você.  
@@ -146,13 +147,13 @@ ms.locfileid: "58269056"
 
 7. Na página Atualizações, configure os critérios de pesquisa para filtrar as atualizações que são adicionadas ao plano de serviço. Somente as atualizações que atendem aos critérios especificados são adicionadas à implantação associada. Os filtros de propriedade a seguir estão disponíveis: <!--3098809, 3113836, 3204570 -->
 
-   - **Arquitetura** (começando na versão 1810)
+   - **Arquitetura** (a partir da versão 1810)
    - **Idioma**
-   - **Categoria de produto** (começando na versão 1810)
+   - **Categoria de produto** (a partir da versão 1810)
    - **Necessária**
       > [!Important]    
       > É recomendável que, como parte dos critérios de pesquisa, que você defina o campo **Obrigatório** com um valor de **>=1**. Usar esses critérios garante que apenas as atualizações aplicáveis são adicionadas ao plano de serviço.
-   - **Substituída** (começando na versão 1810)
+   - **Substituído** (a partir da versão 1810)
    - **Título**
 
     Clique em **Visualizar** para exibir as atualizações que atendem aos critérios especificados.  
