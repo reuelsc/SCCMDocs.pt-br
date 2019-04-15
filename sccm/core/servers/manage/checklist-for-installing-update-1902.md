@@ -2,7 +2,7 @@
 title: Lista de verificação para a versão 1902
 titleSuffix: Configuration Manager
 description: Conheça as ações a serem executadas antes de atualizar para o Configuration Manager, versão 1902.
-ms.date: 03/27/2019
+ms.date: 04/11/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5833db7cd6f47d0711fdcfae5d1f7a4114d7ff34
-ms.sourcegitcommit: d584c126a0a5725567631b74ac1e01f63242a997
+ms.openlocfilehash: c9d0714bd55b4c99b181dfaf3ac34e63a0e9a35e
+ms.sourcegitcommit: d4b0e44e6bb06a830d0887493528d9166a15154b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58861013"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506134"
 ---
 # <a name="checklist-for-installing-update-1902-for-configuration-manager"></a>Lista de verificação para a instalação da atualização 1902 do Configuration Manager
 
@@ -65,7 +65,7 @@ Na primeira vez que você usar um console do Configuration Manager após a concl
 ## <a name="checklist"></a>Lista de Verificação
 
 #### <a name="all-sites-run-a-supported-version-of-configuration-manager"></a>Todos os sites executam uma versão com suporte do Configuration Manager  
-Cada servidor do site na hierarquia deve executar a mesma versão do Configuration Manager antes de iniciar a instalação da atualização 1902. Para atualizar para a versão 1902, use a versão 1710, 1802, 1806 ou 1810.
+Cada servidor do site na hierarquia deve executar a mesma versão do Configuration Manager antes de iniciar a instalação da atualização 1902. Para atualizar para a versão 1902, use a versão 1802, 1806 ou 1810.
 
 #### <a name="review-the-status-of-your-product-licensing"></a>Examinar o status de licenciamento de produtos 
 Você deve ter direitos de assinatura equivalentes para instalar essa atualização ou um contrato de SA (Software Assurance) ativo. Ao atualizar o site, a página **Licenciamento** apresentará a opção de confirmar a **Data de expiração do Software Assurance**.

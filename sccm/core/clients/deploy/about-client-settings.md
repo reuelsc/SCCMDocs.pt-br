@@ -2,7 +2,7 @@
 title: Configurações do cliente
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as configurações padrão e personalizadas para controlar os comportamentos do cliente
-ms.date: 03/21/2019
+ms.date: 04/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e76dc5892ad34d72bfee3cd4aea0fa660e34855d
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: 42218443f83726bfbca0dcf77ffa37e61c46a2b3
+ms.sourcegitcommit: d4b0e44e6bb06a830d0887493528d9166a15154b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58477527"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506202"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Sobre as configurações do cliente no Configuration Manager
 
@@ -784,11 +784,23 @@ Quando você configura essa opção como **Sim**, ela habilita a definição das
 
 Quando você define essa opção para **Sim** e o cliente tem pelo menos uma janela de manutenção de "Atualização de Software" definida, as atualizações de software serão instaladas durante uma janela de manutenção "Todas as implantações". Por padrão, essa configuração é definida como **Não**. Essa configuração de cliente foi adicionada no Configuration Manager versão 1810. <!--2839307-->
 
+### <a name="bkmk_thread-priority"></a> Especificar a prioridade de thread para as atualizações de recurso
+<!--3734525-->
+A partir da versão 1902 do Configuration Manager, você pode ajustar a prioridade com o qual os clientes do Windows 10 versão 1709 ou posteriores instalam uma atualização de recurso por meio do [serviço do Windows 10](/sccm/osd/deploy-use/manage-windows-as-a-service). Essa configuração não afeta as sequências de tarefas de atualização in-loco do Windows 10.
+
+Essa configuração de cliente fornece as seguintes opções:
+
+- **Não Configurado**: O Configuration Manager não altera a configuração. Os administradores podem preparar antecipadamente seu próprio arquivo setupconfig.ini. Esse valor é o padrão. 
+- **Normal**: a Instalação do Windows usa mais recursos do sistema e é atualizada com mais rapidez. Ela usa mais tempo do processador, portanto, o tempo total de instalação é menor, mas a interrupção do usuário é maior.  
+   - Configura o arquivo setupconfig.ini no dispositivo com a `/Priority Normal` [opção de linha de comando de instalação do Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options).
+
+- **Baixa**: você pode continuar a trabalhar no dispositivo enquanto ele baixa e faz as atualizações em segundo plano. O tempo total de instalação é maior, mas a interrupção do usuário é menor. Talvez você precise aumentar o tempo de execução máximo da atualização para evitar um tempo limite ao usar essa opção.
+  - Remova a `/Priority` [opção de linha de comando de instalação do Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options) do arquivo setupconfig.ini.
+
+
 ### <a name="enable-third-party-software-updates"></a>Habilitar atualizações do software de terceiros 
 
 Quando você define essa opção como **Sim**, ela define a política para “Permitir atualizações assinadas para um local do serviço Microsoft Update da intranet” e instala o certificado de autenticação para o repositório Fornecedores Confiáveis no cliente. Essa configuração de cliente foi adicionada ao Configuration Manager versão 1802.
-
-
 
 ## <a name="state-messaging"></a>Mensagem de Estado
 
