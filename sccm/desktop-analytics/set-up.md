@@ -2,7 +2,7 @@
 title: Configurar Análise de Área de Trabalho
 titleSuffix: Configuration Manager
 description: Um guia de instruções para configurar e integração para análise de área de trabalho.
-ms.date: 01/25/2019
+ms.date: 04/15/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,14 +12,14 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b20637cea4e02f390ae845ff9d421e5011120ab
-ms.sourcegitcommit: 4441b3035222cfaf7442416873ed824ac7d852c5
+ms.openlocfilehash: 0d03b670ade984298df7a1ba5428a3f8696360bb
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58356318"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673557"
 ---
-# <a name="how-to-set-up-desktop-analytics"></a>Como configurar a análise de área de trabalho 
+# <a name="how-to-set-up-desktop-analytics"></a>Como configurar a análise de área de trabalho
 
 > [!Note]  
 > Essas informações se relaciona a um serviço de visualização que pode ser substancialmente modificado antes do lançamento comercial. A Microsoft não oferece garantias, expressas ou implícitas, quanto às informações fornecidas aqui.  
@@ -36,22 +36,30 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 
 3. Sobre o **confirmar sua assinatura** , examine a lista de necessárias licenças qualificadas. Mudar a configuração para **Yes** lado **tem uma das assinaturas com suporte ou superior**e, em seguida, selecione **próxima**.  
 
-4. Sobre o **dar acesso de usuários e aplicativos** página, análise de área de trabalho pré-configura dois grupos de segurança no Azure Active Directory:  
+4. Sobre o **dar aos usuários acesso** página:
 
-    - **Os proprietários do espaço de trabalho**: Criar e gerenciar espaços de trabalho. Essas contas precisam de acesso de proprietário à assinatura do Azure.  
+    - **Você deseja que a análise da área de trabalho para gerenciar funções de diretório para seus usuários**: Análise da área de trabalho atribui automaticamente o **proprietários do espaço de trabalho** e **colaboradores do espaço de trabalho** grupos para o **administrador de análise de área de trabalho** função. Se esses grupos já estão uma **Administrador Global**, não há nenhuma alteração.  
 
-    - **Colaboradores de espaço de trabalho**: Criar e gerenciar planos de implantação neste espaço de trabalho. Eles não precisam de qualquer acesso do Azure adicional.  
-  
-   Para adicionar um usuário a um grupo, digite seu nome ou endereço de email na **insira o nome ou endereço de email** seção grupo apropriado. Quando terminar, selecione **próxima**. 
+        Se você não selecionar essa opção, análise de área de trabalho ainda adicionará os usuários como membros dos grupos de segurança de dois. Um **Administrador Global** precisa atribuir manualmente as **administrador de análise de área de trabalho** função para os usuários.  
+
+        Para obter mais informações sobre como atribuir permissões de função de administrador no Azure Active Directory e as permissões atribuídas às **os administradores de análise de área de trabalho**, consulte [permissões da função de administrador no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
+
+    - Análise da área de trabalho pré-configura dois grupos de segurança no Azure Active Directory:  
+
+        - **Os proprietários do espaço de trabalho**: Um grupo de segurança para criar e gerenciar espaços de trabalho. Essas contas precisam de acesso de proprietário à assinatura do Azure.  
+
+        - **Colaboradores de espaço de trabalho**: Um grupo de segurança para criar e gerenciar planos de implantação neste espaço de trabalho. Eles não precisam de qualquer acesso do Azure adicional.  
+
+        Para adicionar um usuário a um grupo, digite seu nome ou endereço de email na **insira o nome ou endereço de email** seção grupo apropriado. Quando terminar, selecione **próxima**.
 
 5. Na página para **definir seu espaço de trabalho**:  
 
     - Para usar um espaço de trabalho para análise de área de trabalho, selecione-o e continue com a próxima etapa.  
 
         > [!Note]  
-        > Se você já estiver usando o Windows Analytics, selecione o mesmo espaço de trabalho. Você precisará registrar novamente os dispositivos para análise de área de trabalho que você registrou anteriormente no Windows Analytics. 
-        > 
-        > Você pode ter apenas um espaço de trabalho de análise de área de trabalho por locatário do Azure AD. Dispositivos podem enviar somente dados de diagnóstico para um espaço de trabalho.   
+        > Se você já estiver usando o Windows Analytics, selecione o mesmo espaço de trabalho. Você precisará registrar novamente os dispositivos para análise de área de trabalho que você registrou anteriormente no Windows Analytics.
+        >
+        > Você pode ter apenas um espaço de trabalho de análise de área de trabalho por locatário do Azure AD. Dispositivos podem enviar somente dados de diagnóstico para um espaço de trabalho.  
 
     - Para criar um espaço de trabalho para análise de área de trabalho, selecione **adicionar espaço de trabalho**.  
 
@@ -70,7 +78,7 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 
 8. Volta na página para **definir seu espaço de trabalho**, selecione **próxima**.  
 
-9. Sobre o **última etapa** página, selecione **vá para a área de trabalho de análise**. 
+9. Sobre o **última etapa** página, selecione **vá para a área de trabalho de análise**.
 
 O portal do Azure mostra a área de trabalho de analítica **Home** página.
 
@@ -94,11 +102,11 @@ Crie um aplicativo no Azure AD para o Configuration Manager.
 
 3. Selecione o aplicativo e observe os **ID do aplicativo**. Esse valor é um GUID que é usado para configurar a conexão do Configuration Manager.  
 
-4. Selecione **as configurações** sobre o aplicativo e, em seguida, selecione **chaves**. No **senhas** , digite um **descrição da chave**, especifique uma expiração **duração**e, em seguida, selecione **salvar**. Cópia de **valor** da chave, que é usado para configurar a conexão do Configuration Manager. 
+4. Selecione **as configurações** sobre o aplicativo e, em seguida, selecione **chaves**. No **senhas** , digite um **descrição da chave**, especifique uma expiração **duração**e, em seguida, selecione **salvar**. Cópia de **valor** da chave, que é usado para configurar a conexão do Configuration Manager.
 
     > [!Important]  
     > Isso é a única oportunidade para copiar o valor da chave. Se você não copiá-lo agora, você precisará criar outra chave.  
-    > 
+    >
     > Salve o valor da chave em um local seguro.  
 
 5. No aplicativo **as configurações** painel, selecione **permissões necessárias**.  

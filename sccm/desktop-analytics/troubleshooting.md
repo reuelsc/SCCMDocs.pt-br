@@ -2,7 +2,7 @@
 title: Solução de problemas de análise da área de trabalho
 titleSuffix: Configuration Manager
 description: Detalhes técnicos para ajudá-lo a solucionar problemas com a análise de área de trabalho.
-ms.date: 04/05/2019
+ms.date: 04/15/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7fab23b4d1d977d2d634a11959887f1c1baa9a7
-ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
+ms.openlocfilehash: f0da26f1ea2b7f7c0c49377cb934e451d56889b7
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59069425"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673659"
 ---
 # <a name="troubleshooting-desktop-analytics"></a>Solução de problemas de análise da área de trabalho
 
@@ -272,7 +272,7 @@ Para obter mais informações, examine M365AHandler.log no cliente.
 #### <a name="check-end-user-diagnostic-data"></a>Verificar os dados de diagnóstico do usuário final
 
 <!--1004-->
-Se essa verificação não for bem-sucedida, o usuário selecionou um menor dados de diagnóstico do Windows no dispositivo.
+Se essa verificação não for bem-sucedida, o usuário selecionou um menor dados de diagnóstico do Windows no dispositivo. Ele também pode ser causado por um objeto de diretiva de grupo conflitantes. Para obter mais informações, consulte [configurações do Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).
 
 Dependendo das necessidades de negócios, você pode desabilitar a opção de usuário por meio da diretiva de grupo. Use a configuração para **interface do usuário de consentimento de configuração configurar telemetria**. Para saber mais, veja [Configurar dados de diagnóstico do Windows em sua organização](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management).
 
@@ -289,7 +289,7 @@ Essa propriedade pode exibir os erros a seguir:
 
 Para obter mais informações, examine M365AHandler.log no cliente.  
 
-Verifique as permissões na chave do registro. Certifique-se de que a conta sistema local pode acessar essa chave para o cliente do Configuration Manager definir.  
+Verifique as permissões na chave do registro. Certifique-se de que a conta sistema local pode acessar essa chave para o cliente do Configuration Manager definir. Ele também pode ser causado por um objeto de diretiva de grupo conflitantes. Para obter mais informações, consulte [configurações do Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).  
 
 #### <a name="commercial-id-configuration"></a>Configuração de ID comercial
 
@@ -308,7 +308,7 @@ Caso contrário, ele pode mostrar um dos seguintes erros:
 
 Para obter mais informações, examine M365AHandler.log no cliente.  
 
-Verifique as permissões na chave do registro. Certifique-se de que a conta sistema local pode acessar essa chave para o cliente do Configuration Manager definir.  
+Verifique as permissões na chave do registro. Certifique-se de que a conta sistema local pode acessar essa chave para o cliente do Configuration Manager definir. Ele também pode ser causado por um objeto de diretiva de grupo conflitantes. Para obter mais informações, consulte [configurações do Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).  
 
 Há uma ID diferente para o dispositivo. Essa chave do registro é usada pela política de grupo. Ela terá precedência sobre a ID fornecida pelo Configuration Manager.  
 
@@ -341,7 +341,7 @@ Caso contrário, ele pode mostrar um dos seguintes erros:
 
 Para obter mais informações, examine M365AHandler.log no cliente.  
 
-Verifique as permissões na chave do registro. Certifique-se de que a conta sistema local pode acessar essa chave para o cliente do Configuration Manager definir.  
+Verifique as permissões na chave do registro. Certifique-se de que a conta sistema local pode acessar essa chave para o cliente do Configuration Manager definir. Ele também pode ser causado por um objeto de diretiva de grupo conflitantes. Para obter mais informações, consulte [configurações do Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).  
 
 Certifique-se de que outro mecanismo de política, como a diretiva de grupo, não é desabilitar essa configuração.
 
@@ -402,7 +402,7 @@ Essa propriedade verifica se o Windows está configurado corretamente para permi
 - `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection`
 - `HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`
 
-Verifique as permissões nessas chaves do registro. Certifique-se de que a conta sistema local pode acessar essas chaves para o cliente do Configuration Manager definir.  
+Verifique as permissões nessas chaves do registro. Certifique-se de que a conta sistema local pode acessar essas chaves para o cliente do Configuration Manager definir. Ele também pode ser causado por um objeto de diretiva de grupo conflitantes. Para obter mais informações, consulte [configurações do Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).  
 
 Para obter mais informações, examine M365AHandler.log no cliente.  
 
@@ -473,6 +473,54 @@ Os seguintes arquivos de log estão no cliente do Configuration Manager no segui
 
 
 
-## <a name="bkmk_MALogAnalyticsReader"></a> Função de aplicativo MALogAnalyticsReader
+## <a name="bkmk_AzureADApps"></a> Aplicativos do Azure AD
 
-Quando você configurar a análise de área de trabalho, você aceita um consentimento em nome de sua organização. Esse consentimento é atribuir a 
+Análise da área de trabalho adiciona os seguintes aplicativos ao AD do Azure:
+
+- **Gerenciador de configuração de Microsserviço**: Conecta o Configuration Manager com a análise da área de trabalho. Este aplicativo não tem nenhum requisito de acesso.  
+
+- **Administrador de cliente do Office 365**: Recupera dados do seu espaço de trabalho do Log Analytics. Este aplicativo requer acesso de gravação para o Log Analytics.  
+
+- **MALogAnalyticsReader**: Recupera grupos do OMS e os dispositivos criados no Log Analytics. Para obter mais informações, consulte [função de aplicativo MALogAnalyticsReader](#bkmk_MALogAnalyticsReader).  
+
+Se você precisar provisionar esses aplicativos depois de concluir o conjunto de backup, vá para o **aos serviços conectados** painel. Selecione **configurar o acesso de usuários e aplicativos**e provisionar os aplicativos.  
+
+- **Aplicativo do Azure AD para o Configuration Manager**. Se você precisar provisionar ou solucionar problemas de conexão depois de concluir o conjunto de backup, consulte [criar aplicativo para o Configuration Manager](/sccm/desktop-analytics/set-up#create-app-for-configuration-manager). Este aplicativo requer **gravar dados de coleção do CM** e **ler dados de coleção do CM** no **Configuration Manager Service** API.  
+
+### <a name="bkmk_MALogAnalyticsReader"></a> Função de aplicativo MALogAnalyticsReader
+
+Quando você configurar a análise de área de trabalho, você aceita um consentimento em nome de sua organização. Esse consentimento é atribuir o aplicativo MALogAnalyticsReader a função de leitor do Log Analytics para o espaço de trabalho. Essa função de aplicativo é necessária pela análise de área de trabalho.
+
+Se houver um problema com esse processo durante o conjunto de backup, use o seguinte processo para adicionar manualmente essa permissão:
+
+1. Vá para o [portal do Azure](http://portal.azure.com)e selecione **todos os recursos**. Selecione o espaço de trabalho do tipo **do Log Analytics**.  
+
+2. No menu do espaço de trabalho, selecione **controle de acesso (IAM)**, em seguida, selecione **Add**.  
+
+3. No **adicionar permissões** painel, defina as seguintes configurações:  
+
+    - **Função**: **Leitor do log Analytics**  
+
+    - **Atribuir acesso a**: **Usuário, grupo ou aplicativo do Azure AD**  
+
+    - **Selecione**: **MALogAnalyticsReader**  
+
+4. Selecione **Salvar**.
+
+O portal mostrará uma notificação de que ele adicionou a atribuição de função.
+
+
+## <a name="data-latency"></a>Latência de dados
+
+<!-- 3846531 -->
+Dados no portal de análise de área de trabalho são atualizados diariamente. Esta atualização inclui alterações de dispositivo coletadas dos dados de diagnóstico e as alterações feitas na configuração. Por exemplo, quando você altera um ativo **decisão de atualização**, ele pode resultar em alterações para o estado de preparação de dispositivos com esse ativo instalado.
+
+- **As alterações de administrador** geralmente são processadas pelo serviço de análise de área de trabalho dentro de nove horas. Por exemplo, se você fizer alterações às 11:00 PM UTC, o portal deve refletir essas alterações antes do UTC-08:00 AM no dia seguinte.
+
+- **Alterações de dispositivo** detectado por UTC a meia-noite no horário local geralmente são incluídos na atualização diária. Normalmente é mais 23 horas de latência associada com o processamento das alterações de dispositivo em comparação com as alterações de administrador.
+
+Se você não estiver vendo as alterações atualizadas dentro desses intervalos de tempo, aguarde a outra 24 horas para a próxima atualização diária. Se você vir a intervalos mais longos, verifique o painel de integridade do serviço. Se o serviço de relatórios como íntegros, entre em contato com o suporte da Microsoft.
+
+Ao configurar a análise de área de trabalho pela primeira vez, os gráficos no Configuration Manager e o portal de análise de área de trabalho podem não mostrar dados completos. Pode levar 2 a 3 dias para dispositivos ativos enviar dados de diagnóstico para o serviço de análise de área de trabalho, o serviço para processar os dados e, em seguida, sincronizar com seu site do Configuration Manager.
+
+Em uma hierarquia do Configuration Manager, ele pode levar 10 minutos para novas coleções aparecerá para planos de implantação. Os sites primários criarem as coleções, e o site de administração central sincroniza com análise de área de trabalho.<!-- 3896921 -->

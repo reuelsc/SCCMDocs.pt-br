@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b46bf167bc77716fe360940c4fb45cae2dc9dc5a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: a10a7b5bbb3a1b7d0dada86774f3412e22faff01
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56754565"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673540"
 ---
 # <a name="updates-in-desktop-analytics"></a>Atualizações na análise da área de trabalho 
 
@@ -48,7 +48,7 @@ Dispositivos estão executando uma atualização de segurança com mais de 1 a v
 #### <a name="not-measured"></a>Não é medido
 Análise da área de trabalho ainda não avaliou o dispositivo. 
 
-- Para Windows, isso inclui dispositivos que executam o Windows 7 ou Windows 8.1  
+- Para Windows, isso inclui dispositivos que executam o Windows 7, Windows 8.1 ou Windows 10 dispositivos registrados para o programa do Windows Insider  
 
 - Para o Office, isso inclui dispositivos com uma das seguintes versões:  
 
@@ -81,12 +81,12 @@ Dispositivos estiver executando a atualização mais recente do recurso para ess
 Dispositivos estão executando uma atualização de recurso que está dentro de 90 dias de atingir o final do serviço.
 
 #### <a name="end-of-service"></a>Final do serviço
-Dispositivos estão executando uma atualização de recurso que ultrapassou o fim da data de serviço. Para obter detalhes sobre o encerramento de datas do serviço, consulte {xlink na seção relevante do UDR_monitoring} |
+Dispositivos estão executando uma atualização de recurso que ultrapassou o fim da data de serviço. Para obter detalhes sobre o encerramento de datas do serviço, consulte [folha de fatos de ciclo de vida do Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)  <!-- {xlink into relevant section of UDR_monitoring}|-->
 
 #### <a name="not-measured"></a>Não é medido
 Análise da área de trabalho ainda não avaliou o dispositivo. 
 
-- Para Windows, isso inclui dispositivos que executam o Windows 7 ou Windows 8.1  
+- Para Windows, isso inclui dispositivos que executam o Windows 7, Windows 8.1 ou Windows 10 dispositivos registrados para o programa do Windows Insider
 
 - Para o Office, isso inclui dispositivos com uma das seguintes versões:  
 

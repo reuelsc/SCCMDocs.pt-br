@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b56fac3060acc16fe46221464ddc6535b478399
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 35e8e883acafaa1d606d81402b868b8a755d0887
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56754543"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673455"
 ---
 # <a name="how-to-create-deployment-plans-in-desktop-analytics"></a>Como criar planos de implantação na área de trabalho de análise 
 
@@ -56,7 +56,7 @@ Siga as etapas neste artigo para usar a análise de área de trabalho para criar
 
     2. Selecione cada aplicativo e, em seguida, selecione **editar**. Você pode selecionar mais de um aplicativo para editar ao mesmo tempo.   
 
-    3. Escolha um nível de importância do **importância** lista. Se quiser que a área de trabalho de análise para validar o suplemento durante o piloto, selecione **crítica** ou **importante**. Ele não valida os suplementos marcados como **importante não**. Considere o risco de compatibilidade e outras informações de plano ao se atribuírem níveis de importância.  
+    3. Escolha um nível de importância do **importância** lista. Se quiser que a área de trabalho de análise para validar o suplemento durante o piloto, selecione **crítica** ou **importante**. Ele não valida os suplementos marcados como **importante não**. Considere a [riscos de compatibilidade](/sccm/desktop-analytics/compat-risk) e outras informações de plano ao se atribuírem níveis de importância.  
 
         Ao se atribuírem níveis de importância, você também pode escolher o decisão de atualização.  
 

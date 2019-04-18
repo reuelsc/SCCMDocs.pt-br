@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da0bde04e019fdf0fbb0a997be652860824270b1
-ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
+ms.openlocfilehash: bf2114ac77a75fedc18c38a8d373b9c0a1ada591
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59069391"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673404"
 ---
 # <a name="compatibility-risk-for-windows-apps-in-desktop-analytics"></a>Risco de compatibilidade de aplicativos do Windows na área de trabalho de análise
 
@@ -52,8 +52,17 @@ O analisador de integridade do aplicativo examina o banco de dados de compatibil
 
 ### <a name="ready-for-windows"></a>Pronto para Windows
 
-O repositório de dados pronto para o Windows verifica blocos de compatibilidade em um dispositivo. Ele correlaciona dados de outros clientes reporting aplicativos semelhantes. A Microsoft usa dados de outros dispositivos semelhantes em que esse aplicativo não relatado nenhum problema.
+O [pronto para o Windows](https://www.readyforwindows.com) catálogo de aplicativos se correlaciona dados de diagnóstico de outros clientes relatar os mesmos aplicativos com verificações adicionais da Microsoft, como os blocos de compatibilidade em um dispositivo. 
 
+As categorias possíveis são:
+
+- **Dados insuficientes** significa que muito poucos dispositivos Windows 10 comerciais estão compartilhando informações para esse aplicativo para a Microsoft categorizar sua adoção.
+
+- **Adotado** significa que o aplicativo foi instalado em pelo menos de 10.000 dispositivos comerciais do Windows 10.  
+
+- **Altamente adotados** significa que o aplicativo foi instalado em pelo menos 100.000 dispositivos comerciais do Windows 10.  
+
+- **Entre em contato com o desenvolvedor** significa que pode haver problemas de compatibilidade com essa solução e, portanto, a Microsoft recomenda a entrar em contato com o fornecedor de software para saber mais.  
 
 ### <a name="app-health-analyzer-signals-for-compatibility-assessment"></a>Analisador de integridade do aplicativo sinaliza para avaliação de compatibilidade
 
