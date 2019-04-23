@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a256435c927c880363d20e6e52a22179a3271f3a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: baed9b8032c0020153754d400ea127eab9b56812
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56142367"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673795"
 ---
 # <a name="use-multicast-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Usar o multicast para implantar o Windows pela rede com o System Center Configuration Manager
 
@@ -33,7 +33,7 @@ O multicast é um método de otimização da rede que pode ser usado no ambiente
   Conclua as etapas em um dos cenários de implantação de sistema operacional e use as seções a seguir para dar suporte a multicast.  
 
 ##  <a name="BKMK_Configure"></a> Configurar um ponto de distribuição para dar suporte a multicast  
- Para usar o multicast ao implantar sistemas operacionais, é necessário configurar um ponto de distribuição para dar suporte a multicast. Para mais informações, consulte [Configurar pontos de distribuição para dar suporte a multicast](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_DPMulticast).  
+ Para usar o multicast ao implantar sistemas operacionais, é necessário configurar um ponto de distribuição para dar suporte a multicast. Para obter mais informações, consulte [Instalar e configurar pontos de distribuição](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_config-multicast). Para uma lista de portas necessárias para dar suporte ao multicast, consulte [Portas](/sccm/core/plan-design/hierarchy/ports#BKMK_PortsClient-DP2).  
 
 ## <a name="prepare-an-operating-system-image-for-multicast-deployments"></a>Preparar uma imagem do sistema operacional para implantações multicast  
  Para configurar o pacote de imagens do sistema operacional para dar suporte a multicast, veja [Preparar a imagem do sistema operacional para implantações multicast](../get-started/manage-operating-system-images.md#BKMK_OSImageMulticast).  
