@@ -2,7 +2,7 @@
 title: Novidades no MDM híbrido
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune.
-ms.date: 04/05/2019
+ms.date: 04/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01e5d9761cb90715e88a2658d8bf1c31c7cd92cf
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
-ms.translationtype: HT
+ms.openlocfilehash: 0251371b8a0e9fa41dc5008beffa87977c47d7c6
+ms.sourcegitcommit: d23ccf7b95e6c2a6b156975194ebbc375cb5e6ea
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802913"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60124498"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -46,6 +46,16 @@ Cada seção deste artigo lista recursos híbridos em três categorias diferente
 |**Novo no Configuration Manager Technical Preview**| Todos os recursos listados nessa categoria funcionam apenas com o branch de visualização técnica especificado. Para testar esses recursos, você deve instalar a versão de visualização técnica especificada na descrição do recurso. Para obter mais informações, confira [Visualização técnica para o Configuration Manager](/sccm/core/get-started/technical-preview).|
 |**Novo no Configuration Manager (Branch Atual)**| Todos os recursos listados nessa categoria funcionam apenas com a versão especificada do Configuration Manager (branch atual). Se estiver usando uma versão mais antiga do Configuration Manager para sua implantação híbrida, atualize para a versão do Configuration Manager (branch atual) especificada na descrição do recurso. Para obter mais informações, veja [Atualizar para o Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).|
 
+
+
+## <a name="april-2019"></a>Abril de 2019
+
+### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+#### <a name="openssl-encryption-for-android-app-protection-policies"></a>Criptografia do OpenSSL para políticas de proteção de aplicativo do Android
+
+<!-- 3747362 -->
+Políticas de proteção de aplicativo do Intune (aplicativo) em dispositivos Android agora usam uma biblioteca de criptografia do OpenSSL que tem certificação FIPS 140-2. Para obter mais informações, consulte [configurações de política de proteção de aplicativo do Android no Microsoft Intune](https://docs.microsoft.com/intune/app-protection-policy-settings-android#encryption).
 
 
 ## <a name="march-2019"></a>Março de 2019

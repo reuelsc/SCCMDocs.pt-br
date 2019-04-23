@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66fc982fa7f2cee3fdd83945c1b43d490b40d2f2
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: 006a887a3989d7f05b7cf44b13562e644e6f7d94
+ms.sourcegitcommit: d23ccf7b95e6c2a6b156975194ebbc375cb5e6ea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59673778"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60124396"
 ---
 # <a name="tutorial-deploy-office-365-to-pilot"></a>Tutorial: Implantar o Office 365 para piloto
 
@@ -45,6 +45,8 @@ A análise da área de trabalho usa um *espaço de trabalho do Log Analytics* na
 Antes de iniciar este tutorial, certifique-se de que ter os seguintes pré-requisitos:  
 
 - Uma assinatura do Azure Active Directory, com **administrador da empresa** permissões  
+    
+    Para obter mais informações, consulte [pré-requisitos de análise de área de trabalho](/sccm/desktop-analytics/overview#prerequisites).
 
 - O Configuration Manager, versão 1810 com 4488598 de Rollup de atualização ou posterior, com **administrador completo** função  
 
@@ -119,7 +121,11 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 
         Para adicionar um usuário a um grupo, digite seu nome ou endereço de email na **insira o nome ou endereço de email** seção grupo apropriado. Quando terminar, selecione **próxima**.
 
+A etapa a seguir pode ser concluída por um **proprietário do espaço de trabalho** ou **Colaborador**. 
+
 5. Na página para **definir seu espaço de trabalho**:  
+
+    - Selecione sua assinatura do Azure. 
 
     - Para usar um espaço de trabalho para análise de área de trabalho, selecione-o e continue com a próxima etapa.  
 
@@ -129,7 +135,9 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 
         2. Selecione a lista suspensa para **selecione o nome de assinatura do Azure para este espaço de trabalho**e escolha a assinatura do Azure para este espaço de trabalho.  
 
-        3. Selecione o **região** na lista e, em seguida, selecione **Add**.  
+        3. **Criar um novo** grupo de recursos ou **usar existente**.  
+
+        4. Selecione o **região** na lista e, em seguida, selecione **Add**.  
 
 6. Selecione um espaço de trabalho novo ou existente e, em seguida, selecione **definido como espaço de trabalho de análise de área de trabalho**.  Em seguida, selecione **Continue** na **confirmar e conceder acesso** caixa de diálogo.  
 
@@ -142,7 +150,7 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 
 ### <a name="create-an-app-in-azure-ad-for-configuration-manager"></a>Criar um aplicativo no Azure AD para o Configuration Manager  
 
-1. No [portal do Azure](https://portal.azure.com), acesse **Azure Active Directory**e selecione **registros do aplicativo**. Em seguida, selecione **novo registro de aplicativo**.  
+1. Abra o [portal do Azure](http://portal.azure.com) como um usuário com permissões de administrador da empresa, acesse **Azure Active Directory**e selecione **registros do aplicativo**. Em seguida, selecione **novo registro de aplicativo**.  
 
 2. No **criar** painel, defina as seguintes configurações:  
 

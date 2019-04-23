@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4105a8a81ab3f09dee9cf3ca5a2462ed2bb4183a
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
-ms.translationtype: HT
+ms.openlocfilehash: 1229dabb0fedf600f7d57a2a400df87906945ba4
+ms.sourcegitcommit: d23ccf7b95e6c2a6b156975194ebbc375cb5e6ea
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802624"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60124413"
 ---
 # <a name="what-is-desktop-analytics"></a>O que é análise de área de trabalho?
 
@@ -71,8 +71,14 @@ Para usar a análise de área de trabalho, verifique se o que seu ambiente atend
 ### <a name="technical"></a>Técnico
 
 - Uma assinatura do Azure Active Directory  
+    
+    - [**Administrador da empresa** ](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator) permissões no Azure para **aceite o contrato de serviço**, **confirmar sua assinatura** e **dar acesso de usuário** 
 
-    - **Administrador da empresa** permissões no Azure  
+    - **Proprietário do espaço de trabalho** ou **Colaborador** permissões **definir seu espaço de trabalho** e  
+
+        - [**Colaborador de análise de log** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-contributor) e [ **administrador de acesso do usuário** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) no grupo de recursos para usar um espaço de trabalho existente ou criar um novo espaço de trabalho em um grupo de recursos existente.
+
+        - [**Proprietário**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner), ou [ **Colaborador** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) e [ **administrador de acesso do usuário** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) permissões sobre o assinatura para criar um espaço de trabalho em um novo grupo de recursos.
 
 - Configuration Manager, versão 1810 com Update Rollup 4488598 ou posterior. Para obter mais informações, consulte [atualização do Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
 

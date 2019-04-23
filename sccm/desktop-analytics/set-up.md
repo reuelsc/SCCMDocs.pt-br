@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d03b670ade984298df7a1ba5428a3f8696360bb
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: b75b82f632c8bfbbc11a2b11d58ab83116e2180a
+ms.sourcegitcommit: d23ccf7b95e6c2a6b156975194ebbc375cb5e6ea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59673557"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60124430"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Como configurar a análise de área de trabalho
 
@@ -51,6 +51,8 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
         - **Colaboradores de espaço de trabalho**: Um grupo de segurança para criar e gerenciar planos de implantação neste espaço de trabalho. Eles não precisam de qualquer acesso do Azure adicional.  
 
         Para adicionar um usuário a um grupo, digite seu nome ou endereço de email na **insira o nome ou endereço de email** seção grupo apropriado. Quando terminar, selecione **próxima**.
+
+A etapa a seguir pode ser concluída por um **proprietário do espaço de trabalho** ou **Colaborador**. Consulte [pré-requisitos.](/sccm/desktop-analytics/overview#prerequisites) 
 
 5. Na página para **definir seu espaço de trabalho**:  
 
@@ -88,7 +90,7 @@ O portal do Azure mostra a área de trabalho de analítica **Home** página.
 
 Crie um aplicativo no Azure AD para o Configuration Manager.
 
-1. No [portal do Azure](http://portal.azure.com), acesse **Azure Active Directory**e selecione **registros do aplicativo**. Em seguida, selecione **novo registro de aplicativo**.  
+1. Abra o [portal do Azure](http://portal.azure.com) como um usuário com permissões de administrador da empresa, acesse **Azure Active Directory**e selecione **registros do aplicativo**. Em seguida, selecione **novo registro de aplicativo**.  
 
 2. No **criar** painel, defina as seguintes configurações:  
 
