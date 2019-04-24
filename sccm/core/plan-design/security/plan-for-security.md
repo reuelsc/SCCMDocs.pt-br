@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f0ea9d6d923aeb1c278e5f3e96806044bbae6e4
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: f6ffa061e3d04bbbda31cc4406494b492ba98d9b
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138612"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673846"
 ---
 # <a name="plan-for-security-in-configuration-manager"></a>Planejar a segurança no Configuration Manager
 
@@ -121,7 +121,7 @@ Consulte seus administradores PKI antes de decidir se os clientes do Configurati
 -   O requisito de verificar a CRL para cada conexão a um sistema de sites configurado para usar um certificado PKI é maior do que os seguintes requisitos:  
     - Conexões mais rápidas  
     - Processamento eficiente no cliente  
-    - O risco de os clientes não conseguirem se conectar a servidores caso não consigam localizar a CRL  
+    - O risco dos clientes não conseguirem se conectar aos servidores caso a CRL não seja localizada  
 
 
 ###  <a name="BKMK_PlanningForRootCAs"></a> Planejar certificados PKI de raiz confiável e a lista de emissores de certificados  
@@ -267,7 +267,7 @@ Devido ao grande número de escolhas e opções de configuração no Configurati
 
 10. Estenda a distribuição de certificado PKI de clientes e sistemas de sites que executam o IIS. Configure as funções do sistema de site para conexões de cliente HTTPS e conexões de Internet conforme necessário.  
 
-11. Para maior segurança: Quando estiver seguro de que todos os clientes estão usando um certificado PKI de cliente para autenticação e criptografia, altere as propriedades do site para usar somente HTTPS.  
+11. Para a maior segurança: Quando estiver seguro de que todos os clientes estão usando um certificado PKI de cliente para autenticação e criptografia, altere as propriedades do site para usar somente HTTPS.  
 
     Esse plano primeiro apresenta certificados PKI para autenticação somente via HTTP e, em seguida, para autenticação e criptografia via HTTPS. Quando você segue esse plano para introduzir gradualmente esses certificados, pode reduzir o risco de os clientes se tornarem não gerenciados. Você também se beneficia da maior segurança à qual o Configuration Manager dá suporte.  
 

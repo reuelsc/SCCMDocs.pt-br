@@ -2,7 +2,7 @@
 title: Servidores de sistema de site com suporte
 titleSuffix: Configuration Manager
 description: Saiba quais versões do Windows podem ser usadas para hospedar um site ou função de sistema de site do Configuration Manager.
-ms.date: 01/15/2019
+ms.date: 04/16/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5352d1d43de97375eb66389586778d7c23c2aa0
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 125d139548b827d349864496cd636622449b8fe3
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138697"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673625"
 ---
 # <a name="supported-operating-systems-for-configuration-manager-site-system-servers"></a>Sistemas operacionais compatíveis com servidores do sistema de site do Configuration Manager
 
@@ -233,6 +233,7 @@ Esse suporte tem a seguinte limitação:
 
 Há suporte para a instalação do núcleo do servidor para as seguintes versões de SO do servidor para uso como um **ponto de distribuição**: 
 
+- Windows Server 2019 (começando no Configuration Manager, versão 1810)  
 - Windows Server, versão 1809 (começando no Configuration Manager, versão 1810)  
 - Windows Server, versão 1803 (começando no Configuration Manager, versão 1802)  
 - Windows Server, versão 1709 (começando no Configuration Manager, versão 1710)  
