@@ -1,137 +1,130 @@
-items:
 - name: Entender e explorar
   items:
-  - name: Introdução à implantação do sistema operacional
-    href: understand/introduction-to-operating-system-deployment.md
+    - name: Introdução à implantação do sistema operacional
+      href: understand/introduction-to-operating-system-deployment.md
 - name: Plano e design
   items:
-  - name: Requisitos de infraestrutura para implantação do sistema operacional
-    href: plan-design/infrastructure-requirements-for-operating-system-deployment.md
-  - name: Considerações sobre o planejamento para automatizar tarefas
-    href: plan-design/planning-considerations-for-automating-tasks.md
-  - name: Segurança e privacidade para implantação do sistema operacional
-    href: plan-design/security-and-privacy-for-operating-system-deployment.md
-  - name: Planejar a interoperabilidade na implantação do sistema operacional
-    href: plan-design/planning-for-operating-system-deployment-interoperability.md
+    - name: Requisitos de infraestrutura para implantação do sistema operacional
+      href: plan-design/infrastructure-requirements-for-operating-system-deployment.md
+    - name: Considerações sobre o planejamento para automatizar tarefas
+      href: plan-design/planning-considerations-for-automating-tasks.md
+    - name: Segurança e privacidade para implantação do sistema operacional
+      href: plan-design/security-and-privacy-for-operating-system-deployment.md
+    - name: Planejar a interoperabilidade na implantação do sistema operacional
+      href: plan-design/planning-for-operating-system-deployment-interoperability.md
 - name: Introdução
   items:
-  - name: Preparar as funções do sistema de sites para implantações de sistemas operacionais
-    href: get-started/prepare-site-system-roles-for-operating-system-deployments.md
-  - name: Preparar a implantação do sistema operacional
-    href: get-started/prepare-for-operating-system-deployment.md
-    items:
-    - name: Gerenciar imagens de inicialização
-      href: get-started/manage-boot-images.md
+    - name: Preparar as funções do sistema de sites para implantações de sistemas operacionais
+      href: get-started/prepare-site-system-roles-for-operating-system-deployments.md
+    - name: Preparar a implantação do sistema operacional
+      href: get-started/prepare-for-operating-system-deployment.md
       items:
-      - name: Personalizar imagens de inicialização
-        href: get-started/customize-boot-images.md
-    - name: Gerenciar imagens do sistema operacional
-      href: get-started/manage-operating-system-images.md
-      items:
-      - name: Personalizar imagens do sistema operacional
-        href: get-started/customize-operating-system-images.md
-    - name: Gerenciar pacotes de atualização do sistema operacional
-      href: get-started/manage-operating-system-upgrade-packages.md
-    - name: Gerenciar drivers
-      href: get-started/manage-drivers.md
-    - name: Gerenciar o estado do usuário
-      href: get-started/manage-user-state.md
-    - name: Preparar-se para implantações em computadores desconhecidos
-      href: get-started/prepare-for-unknown-computer-deployments.md
-    - name: Associar usuários a um computador de destino
-      href: get-started/associate-users-with-a-destination-computer.md
-  - name: Preparar o cache par do Windows PE para reduzir o tráfego da WAN
-    href: get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md
+        - name: Gerenciar imagens de inicialização
+          href: get-started/manage-boot-images.md
+          items:
+            - name: Personalizar imagens de inicialização
+              href: get-started/customize-boot-images.md
+        - name: Gerenciar imagens do sistema operacional
+          href: get-started/manage-operating-system-images.md
+          items:
+            - name: Personalizar imagens do sistema operacional
+              href: get-started/customize-operating-system-images.md
+        - name: Gerenciar pacotes de atualização do sistema operacional
+          href: get-started/manage-operating-system-upgrade-packages.md
+        - name: Gerenciar drivers
+          href: get-started/manage-drivers.md
+        - name: Gerenciar o estado do usuário
+          href: get-started/manage-user-state.md
+        - name: Preparar-se para implantações em computadores desconhecidos
+          href: get-started/prepare-for-unknown-computer-deployments.md
+        - name: Associar usuários a um computador de destino
+          href: get-started/associate-users-with-a-destination-computer.md
+    - name: Preparar o cache par do Windows PE para reduzir o tráfego da WAN
+      href: get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md
 - name: Implantar e usar
   items:
-  - name: Cenários para implantar sistemas operacionais corporativos
-    href: deploy-use/scenarios-to-deploy-enterprise-operating-systems.md
-    items:
-    - name: Atualizar o Windows para a última versão
-      href: deploy-use/upgrade-windows-to-the-latest-version.md
-    - name: Windows Autopilot para dispositivos existentes
-      href: deploy-use/windows-autopilot-for-existing-devices.md
-    - name: Atualizar um computador existente com uma nova versão do Windows
-      href: deploy-use/refresh-an-existing-computer-with-a-new-version-of-windows.md
-    - name: Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)
-      href: deploy-use/install-new-windows-version-new-computer-bare-metal.md
-    - name: Substituir um computador existente e transferir configurações
-      href: deploy-use/replace-an-existing-computer-and-transfer-settings.md
-  - name: Métodos para implantar sistemas operacionais corporativos
-    href: deploy-use/methods-to-deploy-enterprise-operating-systems.md
-    items:
-    - name: Usar PXE para implantar o Windows na rede
-      href: deploy-use/use-pxe-to-deploy-windows-over-the-network.md
-    - name: Use o Centro de Software para implantar o Windows pela rede
-      href: deploy-use/use-software-center-to-deploy-windows-over-the-network.md
-    - name: Use a mídia inicializável para implantar o Windows na rede
-      href: deploy-use/use-bootable-media-to-deploy-windows-over-the-network.md
-    - name: Usar a mídia autônoma para implantar o Windows sem uso da rede
-      href: deploy-use/use-stand-alone-media-to-deploy-windows-without-using-the-network.md
-    - name: Usar multicast para implantar o Windows na rede
-      href: deploy-use/use-multicast-to-deploy-windows-over-the-network.md
-    - name: Criar uma imagem de um OEM na fábrica ou em um repositório local
-      href: deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md
-    - name: Implantar o Windows to Go
-      href: deploy-use/deploy-windows-to-go.md
-  - name: Gerenciar o Windows como serviço
-    href: deploy-use/manage-windows-as-a-service.md
-  - name: Criar uma implantação em fases
-    href: deploy-use/create-phased-deployment-for-task-sequence.md
-  - name: Gerenciar e monitorar implantações em fases
-    href: deploy-use/manage-monitor-phased-deployments.md
-  - name: Monitorar implantações do sistema operacional
-    href: deploy-use/monitor-operating-system-deployments.md
-  - name: Gerenciar sequências de tarefas para automatizar tarefas
-    href: deploy-use/manage-task-sequences-to-automate-tasks.md
-    items:
-    - name: Criar uma sequência de tarefas para instalar um sistema operacional
-      href: deploy-use/create-a-task-sequence-to-install-an-operating-system.md
-    - name: Criar uma sequência de tarefas para atualizar um sistema operacional
-      href: deploy-use/create-a-task-sequence-to-upgrade-an-operating-system.md
-    - name: Criar uma sequência de tarefas para capturar um sistema operacional
-      href: deploy-use/create-a-task-sequence-to-capture-an-operating-system.md
-    - name: Criar uma sequência de tarefas para capturar e restaurar o estado do usuário
-      href: deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md
-    - name: Use uma sequência de tarefas para gerenciar discos rígidos virtuais
-      href: deploy-use/use-a-task-sequence-to-manage-virtual-hard-disks.md
-  - name: Cenários de sequência de tarefas personalizada
-    items:
-    - name: Criar uma sequência de tarefas personalizada
-      href: deploy-use/create-a-custom-task-sequence.md
-    - name: Criar uma sequência de tarefas para outras implantações que não sejam do sistema operacional
-      href: deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md
-    - name: Etapas de sequência de tarefas para gerenciar o BIOS para a conversão de UEFI
-      href: deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md
-    - name: Pré-provisionar o BitLocker no Windows PE
-      href: deploy-use/preprovision-bitlocker-in-windows-pe.md
-  - name: Criar mídia de sequência de tarefas
-    href: deploy-use/create-task-sequence-media.md
-    items:
-    - name: Criar mídia autônoma
-      href: deploy-use/create-stand-alone-media.md
-    - name: Criar mídia pré-configurada
-      href: deploy-use/create-prestaged-media.md
-    - name: Criar mídia inicializável
-      href: deploy-use/create-bootable-media.md
-    - name: Criar mídia de captura
-      href: deploy-use/create-capture-media.md
+    - name: Cenários para implantar sistemas operacionais corporativos
+      href: deploy-use/scenarios-to-deploy-enterprise-operating-systems.md
+      items:
+        - name: Atualizar o Windows para a última versão
+          href: deploy-use/upgrade-windows-to-the-latest-version.md
+        - name: Windows Autopilot para dispositivos existentes
+          href: deploy-use/windows-autopilot-for-existing-devices.md
+        - name: Atualizar um computador existente com uma nova versão do Windows
+          href: deploy-use/refresh-an-existing-computer-with-a-new-version-of-windows.md
+        - name: Instalar uma nova versão do Windows em um novo computador (sem sistema operacional)
+          href: deploy-use/install-new-windows-version-new-computer-bare-metal.md
+        - name: Substituir um computador existente e transferir configurações
+          href: deploy-use/replace-an-existing-computer-and-transfer-settings.md
+    - name: Métodos para implantar sistemas operacionais corporativos
+      href: deploy-use/methods-to-deploy-enterprise-operating-systems.md
+      items:
+        - name: Usar PXE para implantar o Windows na rede
+          href: deploy-use/use-pxe-to-deploy-windows-over-the-network.md
+        - name: Use o Centro de Software para implantar o Windows pela rede
+          href: deploy-use/use-software-center-to-deploy-windows-over-the-network.md
+        - name: Use a mídia inicializável para implantar o Windows na rede
+          href: deploy-use/use-bootable-media-to-deploy-windows-over-the-network.md
+        - name: Usar a mídia autônoma para implantar o Windows sem uso da rede
+          href: deploy-use/use-stand-alone-media-to-deploy-windows-without-using-the-network.md
+        - name: Usar multicast para implantar o Windows na rede
+          href: deploy-use/use-multicast-to-deploy-windows-over-the-network.md
+        - name: Criar uma imagem de um OEM na fábrica ou em um repositório local
+          href: deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md
+        - name: Implantar o Windows to Go
+          href: deploy-use/deploy-windows-to-go.md
+    - name: Gerenciar o Windows como serviço
+      href: deploy-use/manage-windows-as-a-service.md
+    - name: Criar uma implantação em fases
+      href: deploy-use/create-phased-deployment-for-task-sequence.md
+    - name: Gerenciar e monitorar implantações em fases
+      href: deploy-use/manage-monitor-phased-deployments.md
+    - name: Monitorar implantações do sistema operacional
+      href: deploy-use/monitor-operating-system-deployments.md
+    - name: Gerenciar sequências de tarefas para automatizar tarefas
+      href: deploy-use/manage-task-sequences-to-automate-tasks.md
+      items:
+        - name: Criar uma sequência de tarefas para instalar um sistema operacional
+          href: deploy-use/create-a-task-sequence-to-install-an-operating-system.md
+        - name: Criar uma sequência de tarefas para atualizar um sistema operacional
+          href: deploy-use/create-a-task-sequence-to-upgrade-an-operating-system.md
+        - name: Criar uma sequência de tarefas para capturar um sistema operacional
+          href: deploy-use/create-a-task-sequence-to-capture-an-operating-system.md
+        - name: Criar uma sequência de tarefas para capturar e restaurar o estado do usuário
+          href: deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md
+        - name: Use uma sequência de tarefas para gerenciar discos rígidos virtuais
+          href: deploy-use/use-a-task-sequence-to-manage-virtual-hard-disks.md
+    - name: Cenários de sequência de tarefas personalizada
+      items:
+        - name: Criar uma sequência de tarefas personalizada
+          href: deploy-use/create-a-custom-task-sequence.md
+        - name: Criar uma sequência de tarefas para outras implantações que não sejam do sistema operacional
+          href: deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md
+        - name: Etapas de sequência de tarefas para gerenciar o BIOS para a conversão de UEFI
+          href: deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md
+        - name: Pré-provisionar o BitLocker no Windows PE
+          href: deploy-use/preprovision-bitlocker-in-windows-pe.md
+    - name: Criar mídia de sequência de tarefas
+      href: deploy-use/create-task-sequence-media.md
+      items:
+        - name: Criar mídia autônoma
+          href: deploy-use/create-stand-alone-media.md
+        - name: Criar mídia pré-configurada
+          href: deploy-use/create-prestaged-media.md
+        - name: Criar mídia inicializável
+          href: deploy-use/create-bootable-media.md
+        - name: Criar mídia de captura
+          href: deploy-use/create-capture-media.md
 - name: Referências técnicas
   items:
-  - name: Etapas da sequência de tarefas
-    href: understand/task-sequence-steps.md
-    items:
-    - name: Instalar Atualizações de Software
-      href: understand/install-software-updates.md
-  - name: Como usar variáveis de sequência de tarefas
-    href: understand/using-task-sequence-variables.md
-  - name: Variáveis de sequência de tarefas
-    href: understand/task-sequence-variables.md
-  - name: Comandos prestart para mídia de sequência de tarefas
-    href: understand/prestart-commands-for-task-sequence-media.md
-ms.openlocfilehash: 068cb9a5fb17fdb03647d95f6471d43c43ba2a64
-ms.sourcegitcommit: 33a006204f7f5f9b9acd1f3e84c4bc207362d00a
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57305738"
+    - name: Etapas da sequência de tarefas
+      href: understand/task-sequence-steps.md
+      items:
+        - name: Instalar Atualizações de Software
+          href: understand/install-software-updates.md
+    - name: Como usar variáveis de sequência de tarefas
+      href: understand/using-task-sequence-variables.md
+    - name: Variáveis de sequência de tarefas
+      href: understand/task-sequence-variables.md
+    - name: Comandos prestart para mídia de sequência de tarefas
+      href: understand/prestart-commands-for-task-sequence-media.md

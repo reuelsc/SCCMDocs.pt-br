@@ -1,96 +1,89 @@
-items:
 - name: Entender e explorar
   items:
-  - name: Introdução às atualizações de software
-    href: understand/software-updates-introduction.md
-  - name: Ícones usados para as atualizações de software
-    href: understand/software-updates-icons.md
+    - name: Introdução às atualizações de software
+      href: understand/software-updates-introduction.md
+    - name: Ícones usados para as atualizações de software
+      href: understand/software-updates-icons.md
 - name: Plano e design
   items:
-  - name: Planejar atualizações de software
-    href: plan-design/plan-for-software-updates.md
-  - name: Pré-requisitos para atualizações de software
-    href: plan-design/prerequisites-for-software-updates.md
-  - name: Práticas recomendadas para atualizações de software
-    href: plan-design/software-updates-best-practices.md
-  - name: Segurança e privacidade das atualizações de software
-    href: plan-design/security-and-privacy-for-software-updates.md
+    - name: Planejar atualizações de software
+      href: plan-design/plan-for-software-updates.md
+    - name: Pré-requisitos para atualizações de software
+      href: plan-design/prerequisites-for-software-updates.md
+    - name: Práticas recomendadas para atualizações de software
+      href: plan-design/software-updates-best-practices.md
+    - name: Segurança e privacidade das atualizações de software
+      href: plan-design/security-and-privacy-for-software-updates.md
 - name: Introdução
   items:
-  - name: Preparar-se para o gerenciamento de atualização de software
-    href: get-started/prepare-for-software-updates-management.md
-  - name: Instalar um ponto de atualização de software
-    href: get-started/install-a-software-update-point.md
-  - name: sincronizar atualizações de software
-    href: get-started/synchronize-software-updates.md
-  - name: Sincronizar atualizações de software por meio de um ponto de atualização de software desconectado
-    href: get-started/synchronize-software-updates-disconnected.md
-  - name: Configurar classificações e produtos
-    href: get-started/configure-classifications-and-products.md
-  - name: Gerenciar configurações de atualizações de software
-    href: get-started/manage-settings-for-software-updates.md
-  - name: Remover um ponto de atualização de software
-    href: get-started/remove-a-software-update-point.md
+    - name: Preparar-se para o gerenciamento de atualização de software
+      href: get-started/prepare-for-software-updates-management.md
+    - name: Instalar um ponto de atualização de software
+      href: get-started/install-a-software-update-point.md
+    - name: sincronizar atualizações de software
+      href: get-started/synchronize-software-updates.md
+    - name: Sincronizar atualizações de software por meio de um ponto de atualização de software desconectado
+      href: get-started/synchronize-software-updates-disconnected.md
+    - name: Configurar classificações e produtos
+      href: get-started/configure-classifications-and-products.md
+    - name: Gerenciar configurações de atualizações de software
+      href: get-started/manage-settings-for-software-updates.md
+    - name: Remover um ponto de atualização de software
+      href: get-started/remove-a-software-update-point.md
 - name: Implantar e usar
   items:
-  - name: Baixar atualizações de software
-    href: deploy-use/download-software-updates.md
-  - name: Adicionar atualizações de software a um grupo de atualização
-    href: deploy-use/add-software-updates-to-an-update-group.md
-  - name: Implantar atualizações de software
-    href: deploy-use/deploy-software-updates.md
-    items:
-    - name: Implantar atualizações de software manualmente
-      href: deploy-use/manually-deploy-software-updates.md
-    - name: Implantar atualizações de software automaticamente
-      href: deploy-use/automatically-deploy-software-updates.md
-    - name: Criar uma implantação em fases
-      href: ../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json
-  - name: Monitorar atualizações de software
-    href: deploy-use/monitor-software-updates.md
-    items:
-    - name: Gerenciar e monitorar implantações em fases
-      href: ../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json
-  - name: Manutenção de atualizações de software
-    href: deploy-use/software-updates-maintenance.md
-  - name: Realização de serviços em um grupo de servidores
-    href: deploy-use/service-a-server-group.md
-  - name: Painel de gerenciamento de clientes do Office 365
-    href: deploy-use/office-365-dashboard.md
-  - name: Gerenciar atualizações do Office 365 ProPlus
-    href: deploy-use/manage-office-365-proplus-updates.md
-  - name: Otimizar a entrega de atualização do Windows 10
-    href: deploy-use/optimize-windows-10-update-delivery.md
-  - name: Gerenciar os arquivos de instalação expressa para atualizações do Windows 10
-    href: deploy-use/manage-express-installation-files-for-windows-10-updates.md
-  - name: Integração com o Windows Update for Business no Windows 10
-    href: deploy-use/integrate-windows-update-for-business-windows-10.md
-  - name: Atualizações de software de terceiros
-    href: deploy-use/third-party-software-updates.md
-  - name: Cenário de exemplo para implantar atualizações de segurança
-    href: deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md
+    - name: Baixar atualizações de software
+      href: deploy-use/download-software-updates.md
+    - name: Adicionar atualizações de software a um grupo de atualização
+      href: deploy-use/add-software-updates-to-an-update-group.md
+    - name: Implantar atualizações de software
+      href: deploy-use/deploy-software-updates.md
+      items:
+        - name: Implantar atualizações de software manualmente
+          href: deploy-use/manually-deploy-software-updates.md
+        - name: Implantar atualizações de software automaticamente
+          href: deploy-use/automatically-deploy-software-updates.md
+        - name: Criar uma implantação em fases
+          href: ../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json
+    - name: Monitorar atualizações de software
+      href: deploy-use/monitor-software-updates.md
+      items:
+        - name: Gerenciar e monitorar implantações em fases
+          href: ../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json
+    - name: Manutenção de atualizações de software
+      href: deploy-use/software-updates-maintenance.md
+    - name: Realização de serviços em um grupo de servidores
+      href: deploy-use/service-a-server-group.md
+    - name: Painel de gerenciamento de clientes do Office 365
+      href: deploy-use/office-365-dashboard.md
+    - name: Gerenciar atualizações do Office 365 ProPlus
+      href: deploy-use/manage-office-365-proplus-updates.md
+    - name: Otimizar a entrega de atualização do Windows 10
+      href: deploy-use/optimize-windows-10-update-delivery.md
+    - name: Gerenciar os arquivos de instalação expressa para atualizações do Windows 10
+      href: deploy-use/manage-express-installation-files-for-windows-10-updates.md
+    - name: Integração com o Windows Update for Business no Windows 10
+      href: deploy-use/integrate-windows-update-for-business-windows-10.md
+    - name: Atualizações de software de terceiros
+      href: deploy-use/third-party-software-updates.md
+    - name: Cenário de exemplo para implantar atualizações de segurança
+      href: deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md
 - name: System Center Updates Publisher
   href: tools/updates-publisher.md
   items:
-  - name: Instalar o
-    href: tools/install-updates-publisher.md
-  - name: Configurar opções
-    href: tools/updates-publisher-options.md
-  - name: Gerenciar catálogos
-    href: tools/updates-publisher-catalogs.md
-  - name: Gerenciar atualizações
-    href: tools/manage-updates-with-updates-publisher.md
-  - name: Gerenciar publicações
-    href: tools/updates-publisher-publications.md
-  - name: Criar novas atualizações
-    href: tools/create-updates-with-updates-publisher.md
-  - name: Regras de aplicabilidade
-    href: tools/updates-publisher-applicability-rules.md
-  - name: Certificados e segurança
-    href: tools/updates-publisher-security.md
-ms.openlocfilehash: 2f0cf536a5f34c47951f6d5992d3509d81d1e2dd
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802573"
+    - name: Instalar o
+      href: tools/install-updates-publisher.md
+    - name: Configurar opções
+      href: tools/updates-publisher-options.md
+    - name: Gerenciar catálogos
+      href: tools/updates-publisher-catalogs.md
+    - name: Gerenciar atualizações
+      href: tools/manage-updates-with-updates-publisher.md
+    - name: Gerenciar publicações
+      href: tools/updates-publisher-publications.md
+    - name: Criar novas atualizações
+      href: tools/create-updates-with-updates-publisher.md
+    - name: Regras de aplicabilidade
+      href: tools/updates-publisher-applicability-rules.md
+    - name: Certificados e segurança
+      href: tools/updates-publisher-security.md
