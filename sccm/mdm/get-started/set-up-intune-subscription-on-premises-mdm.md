@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: aff4fcc67325645387aea1e57354321769a515ca
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57558058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62217007"
 ---
 # <a name="set-up-a-microsoft-intune-subscription-for-on-premises-mdm-in-configuration-manager"></a>Configurar uma assinatura do Microsoft Intune para MDM local no Configuration Manager
 
@@ -27,7 +27,7 @@ Configuration Manager local gerenciamento de dispositivo móvel (MDM) requer uma
 Antes de instalar as funções do sistema de sites necessárias para o MDM local, configure a assinatura do Intune. Essa ação minimiza o tempo necessário para as funções do sistema de sites recentemente instaladas para se tornar funcional.  
 
 > [!Note]  
-> Começando na versão 1810, uma conexão do Intune não é mais necessário para novas implantações de MDM local.<!--3607730, fka 1359124--> Sua organização ainda exige licenças do Intune para usar esse recurso. No momento, é possível remover a conexão do Intune de implantações de MDM local existentes. Para obter mais informações, confira a [postagem no blog de suporte do Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150).  
+> Começando na versão 1810, uma conexão do Intune não é mais necessário para novas implantações de MDM local.<!--3607730, fka 1359124--> Sua organização ainda exige licenças do Intune para usar esse recurso. No momento, não é possível remover a conexão do Intune das implantações de MDM locais existentes. Para obter mais informações, confira a [postagem no blog de suporte do Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150).  
 
 
 

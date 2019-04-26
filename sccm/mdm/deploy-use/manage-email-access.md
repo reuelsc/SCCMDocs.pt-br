@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2ee4ed8f102507b4d62a1ccbfe1cc38240e85df9
-ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58196850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62260442"
 ---
 # <a name="manage-email-access-in-configuration-manager"></a>Gerenciar acesso a email no Configuration Manager
 
@@ -176,7 +176,7 @@ Para obter detalhes sobre como configurar a política de conformidade, consulte 
 #### <a name="for-exchange-online-and-tenants-in-the-new-exchange-online-dedicated-environment"></a>Para p Exchange Online (e locatários no novo ambiente do Exchange Online dedicado)
 
 > [!NOTE]  
-> Você também pode criar a política de acesso condicional no console de gerenciamento do Azure AD. O console de gerenciamento do Azure AD permite que você crie políticas de acesso condicional no dispositivo do Intune (chamada de política de acesso condicional baseada em dispositivos no Azure AD), além de outras políticas de acesso condicional, como a autenticação multifator. Você também pode definir políticas de acesso condicional para aplicativos corporativos de terceiros com suporte pelo Azure AD, como o Salesforce e o Box. Para obter mais detalhes, consulte [How To: Exigir que os dispositivos gerenciados para acesso de aplicativo de nuvem com acesso condicional](https://docs.microsoft.com/azure/active-directory/conditional-access/require-managed-devices).  
+> Você também pode criar a política de acesso condicional no console de gerenciamento do Azure AD. O console de gerenciamento do Azure AD permite que você crie políticas de acesso condicional no dispositivo do Intune (chamada de política de acesso condicional baseada em dispositivos no Azure AD), além de outras políticas de acesso condicional, como a autenticação multifator. Você também pode definir políticas de acesso condicional para aplicativos corporativos de terceiros com suporte pelo Azure AD, como o Salesforce e o Box. Para obter mais detalhes, consulte [How To: exigir dispositivos gerenciados para acesso de aplicativo de nuvem com o acesso condicional](https://docs.microsoft.com/azure/active-directory/conditional-access/require-managed-devices).  
 
 As políticas de acesso condicional usam o seguinte fluxo para o Exchange Online para decidir se devem permitir ou bloquear os dispositivos.  
 

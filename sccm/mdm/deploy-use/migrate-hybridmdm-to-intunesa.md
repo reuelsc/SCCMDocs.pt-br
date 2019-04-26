@@ -12,11 +12,11 @@ ms.technology: configmgr-hybrid
 ms.assetid: 1dd696ce-3e46-4dfa-a76d-592fe0f0320e
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e2b62362bfcc9a76e407e9c0124306f83ac4a782
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56134462"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62282078"
 ---
 # <a name="migrate-hybrid-mdm-users-and-devices-to-intune-standalone"></a>Migrar usuários e dispositivos do MDM híbrido para o Intune autônomo
 
@@ -25,7 +25,7 @@ ms.locfileid: "56134462"
 Este artigo aborda a migração do MDM híbrido para uma experiência somente na nuvem usando o Intune no Azure. 
 
 > [!Important]  
-> A partir de 14 de agosto de 2018, o gerenciamento híbrido de dispositivos móveis é um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+> O gerenciamento híbrido de dispositivos móveis é um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures) desde 14 de agosto de 2018. Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
 
 
 Inicie a migração para o Intune autônomo usando uma abordagem em fases. Com essa abordagem, você testa um pequeno subconjunto de usuários e dispositivos, enquanto a maioria de seus usuários e dispositivos ainda é gerenciada com o MDM híbrido. Depois de verificar a funcionalidade do Intune, inicie a migração de mais recursos para o Intune.    
@@ -69,7 +69,8 @@ Para obter mais informações, consulte os seguintes artigos:
 
 
 ## <a name="request-assistance"></a>Solicitar assistência
-<!--Intune bug 2339232-->Para solicitar assistência do programa Microsoft FastTrack, comece indo até [FastTrack for Microsoft 365](https://fasttrack.microsoft.com/microsoft365/capabilities?view=security).
+<!--Intune bug 2339232-->
+Para solicitar assistência do programa Microsoft FastTrack, começar acessando [FastTrack para o Microsoft 365](https://fasttrack.microsoft.com/microsoft365/capabilities?view=security).
 
 1. Clique em "Entrar" e insira sua ID da organização.  
 

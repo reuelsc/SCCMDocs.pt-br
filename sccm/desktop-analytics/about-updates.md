@@ -13,11 +13,11 @@ manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a10a7b5bbb3a1b7d0dada86774f3412e22faff01
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59673540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62243488"
 ---
 # <a name="updates-in-desktop-analytics"></a>Atualizações na análise da área de trabalho 
 

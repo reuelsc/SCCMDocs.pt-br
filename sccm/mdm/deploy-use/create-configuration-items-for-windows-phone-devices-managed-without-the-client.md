@@ -11,11 +11,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 29b46cc49930d47439dc5e60b72e4bf5017829b9
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56139214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62275659"
 ---
 # <a name="how-to-create-configuration-items-for-windows-phone-devices-managed-without-the-system-center-configuration-manager-client"></a>Como criar itens de configuração para dispositivos Windows Phone gerenciados sem o cliente do System Center Configuration Manager
 Use o item de configuração do **Windows Phone** do System Center Configuration Manager para gerenciar as configurações para dispositivos Windows Phone que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  

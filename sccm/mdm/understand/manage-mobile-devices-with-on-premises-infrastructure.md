@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 49e07a7ebe6ec53d61ea9e2ee3bc941dd8561094
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57558211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62286945"
 ---
 # <a name="on-premises-mdm-in-configuration-manager"></a>MDM local no Configuration Manager
 
@@ -29,7 +29,7 @@ Configuration Manager local gerenciamento de dispositivo móvel (MDM) é uma sol
 O MDM local é diferente do Microsoft Intune, que também se baseia em recursos internos do OMA DM. Todas as funções de gerenciamento no Intune são fornecidas por meio de serviços de nuvem. O MDM local também é diferente da solução de gerenciamento baseado em cliente tradicionalmente oferecida pelo Configuration Manager. Ele utiliza uma infraestrutura semelhante, mas não usa o software cliente instalado separadamente nos dispositivos que ele gerencia.  
 
 > [!Note]  
-> Começando na versão 1810, uma conexão do Intune não é mais necessário para novas implantações de MDM local.<!--3607730, fka 1359124--> Sua organização ainda exige licenças do Intune para usar esse recurso. No momento, é possível remover a conexão do Intune de implantações de MDM local existentes. Para obter mais informações, confira a [postagem no blog de suporte do Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150).  
+> Começando na versão 1810, uma conexão do Intune não é mais necessário para novas implantações de MDM local.<!--3607730, fka 1359124--> Sua organização ainda exige licenças do Intune para usar esse recurso. No momento, não é possível remover a conexão do Intune das implantações de MDM locais existentes. Para obter mais informações, confira a [postagem no blog de suporte do Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150).  
 
 A tabela a seguir lista as vantagens e desvantagens do MDM local em comparação com o gerenciamento tradicional baseado em cliente:  
 

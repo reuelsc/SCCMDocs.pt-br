@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 601b58b2f955170e5ab2f038cb49306efe3b499c
-ms.sourcegitcommit: ec4411fe30770f90128cf6cbd181047db90040cb
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57881717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62255254"
 ---
 # <a name="manage-skype-for-business-online-access"></a>Gerenciar o acesso do Skype for Business Online
 

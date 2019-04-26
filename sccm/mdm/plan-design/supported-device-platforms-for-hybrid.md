@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2ad56362a829f90d17688bfa69ad2a8883fd4fe2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62287275"
 ---
 # <a name="supported-device-platforms-for-hybrid-mdm"></a>Plataformas de dispositivo com suporte para MDM híbrido
 

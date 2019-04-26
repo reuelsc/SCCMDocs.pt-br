@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 62db216d2047ee0272c6b3fa226493b5e8af5f84
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62256381"
 ---
 # <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>Gerenciar o acesso aos recursos da empresa com base em risco de dispositivo, rede e aplicativo
 
@@ -27,7 +27,7 @@ Controle o acesso de dispositivos móveis a recursos corporativos com base na av
 Com base na avaliação de riscos relatada pelo Lookout, ativada por meio das políticas de conformidade do Configuration Manager, é possível configurar políticas de acesso condicional. Essas políticas permitem ou bloqueiam dispositivos que o Configuration Manager determina como não compatíveis devido a ameaças detectadas nesses dispositivos.
 
 > [!Important]  
-> A partir de 14 de agosto de 2018, o gerenciamento híbrido de dispositivos móveis é um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+> O gerenciamento híbrido de dispositivos móveis é um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures) desde 14 de agosto de 2018. Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
 
 
 

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 006a887a3989d7f05b7cf44b13562e644e6f7d94
-ms.sourcegitcommit: d23ccf7b95e6c2a6b156975194ebbc375cb5e6ea
+ms.openlocfilehash: 66b7d7da7081a4523378c0dc4b2a00917ac16ea9
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60124396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62261410"
 ---
 # <a name="tutorial-deploy-office-365-to-pilot"></a>Tutorial: Implantar o Office 365 para piloto
 
@@ -121,7 +121,7 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 
         Para adicionar um usuário a um grupo, digite seu nome ou endereço de email na **insira o nome ou endereço de email** seção grupo apropriado. Quando terminar, selecione **próxima**.
 
-A etapa a seguir pode ser concluída por um **proprietário do espaço de trabalho** ou **Colaborador**. 
+A etapa a seguir pode ser concluída por um **proprietário do espaço de trabalho** ou **Colaborador**. Para obter mais informações, consulte [pré-requisitos](/sccm/desktop-analytics/overview#prerequisites).
 
 5. Na página para **definir seu espaço de trabalho**:  
 

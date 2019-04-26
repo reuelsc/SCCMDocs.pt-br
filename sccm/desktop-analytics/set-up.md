@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b75b82f632c8bfbbc11a2b11d58ab83116e2180a
-ms.sourcegitcommit: d23ccf7b95e6c2a6b156975194ebbc375cb5e6ea
+ms.openlocfilehash: 7f59e7a9feb53370b069852b871ce2a2c333dda0
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60124430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62258190"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Como configurar a análise de área de trabalho
 
@@ -68,8 +68,10 @@ A etapa a seguir pode ser concluída por um **proprietário do espaço de trabal
         1. Insira um **nome do espaço de trabalho**.<!--do we have any guidance for this name?-->  
 
         2. Selecione a lista suspensa para **selecione o nome de assinatura do Azure para este espaço de trabalho**e escolha a assinatura do Azure para este espaço de trabalho.  
+        
+        3. **Criar um novo** grupo de recursos ou **usar existente**. 
 
-        3. Selecione o **região** na lista e, em seguida, selecione **Add**.  
+        4. Selecione o **região** na lista e, em seguida, selecione **Add**.  
 
 6. Selecione um espaço de trabalho novo ou existente e, em seguida, selecione **definido como espaço de trabalho de análise de área de trabalho**.  Em seguida, selecione **Continue** na **confirmar e conceder acesso** caixa de diálogo.  
 

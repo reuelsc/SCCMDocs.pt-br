@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fad5ce96b84b5a6edfafdead64cff0223009ebf8
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57558041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62288636"
 ---
 # <a name="preparation-steps-for-on-premises-mdm-in-configuration-manager"></a>Etapas de preparação para o MDM local no Configuration Manager
 
@@ -31,7 +31,7 @@ As seguintes tarefas de alto nível são necessárias para preparar o Configurat
     Inscreva-se no Microsoft Intune e, em seguida, adicione a assinatura ao Configuration Manager por meio do console do Configuration Manager. Essa etapa é necessária para fins de licenciamento. Intune não é usado para gerenciar os dispositivos ou armazenar informações de gerenciamento. Toda coordenação e gerenciamento de dispositivos está com a iniciativa da sua organização usando a infraestrutura local do Configuration Manager.  
 
     > [!Note]  
-    > Começando na versão 1810, uma conexão do Intune não é mais necessário para novas implantações de MDM local.<!--3607730, fka 1359124--> Sua organização ainda exige licenças do Intune para usar esse recurso. No momento, é possível remover a conexão do Intune de implantações de MDM local existentes. Para obter mais informações, confira a [postagem no blog de suporte do Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150).  
+    > Começando na versão 1810, uma conexão do Intune não é mais necessário para novas implantações de MDM local.<!--3607730, fka 1359124--> Sua organização ainda exige licenças do Intune para usar esse recurso. No momento, não é possível remover a conexão do Intune das implantações de MDM locais existentes. Para obter mais informações, confira a [postagem no blog de suporte do Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150).  
 
 - [Instalar funções do sistema de site para o MDM local](/sccm/mdm/get-started/install-site-system-roles-for-on-premises-mdm)  
 

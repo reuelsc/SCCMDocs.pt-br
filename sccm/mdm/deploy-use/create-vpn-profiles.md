@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d7accfe4c329b61c7791bc4b82028d48fdc81931
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62256577"
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Perfis de VPN em dispositivos móveis no System Center Configuration Manager
 
@@ -50,7 +50,7 @@ Esta tabela mostra o tipo de conexão com suporte em cada plataforma de disposit
  |PPTP|Sim|Não|Sim|Sim|Sim|Não|Sim|  
  |L2TP|Sim|Não|Sim|Sim|Sim|Não|Sim (OMA-URI)|  
 
-<sup>1</sup> A partir da versão 1802, o uso do tipo de conexão do Cisco AnyConnect varia.<!--1357393-->  
+<sup>1</sup> iniciando na versão 1802, o uso do tipo de conexão do Cisco AnyConnect varia.<!--1357393-->  
    - Use a opção **Cisco Legacy AnyConnect** para perfis de VPN nas seguintes versões:
        - iOS com Cisco AnyConnect versão 4.0.5 ou anterior
        - macOS com qualquer versão do Cisco AnyConnect

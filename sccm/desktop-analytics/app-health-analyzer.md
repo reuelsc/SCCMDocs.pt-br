@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21b4907667e055c9595b31eedf9da0ad516b5fec
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: d982094a427f1f67992584e3262493d3f4a96766
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62206521"
 ---
 # <a name="how-to-assess-compatibility-with-app-health-analyzer"></a>Como avaliar a compatibilidade com o analisador de integridade do aplicativo
 
@@ -30,7 +30,7 @@ Use o Kit de ferramentas do analisador de integridade do aplicativo para a área
 
 ## <a name="download"></a>Baixar
 
-Baixe o Kit de ferramentas do [Microsoft Download Center](http://download.microsoft.com/download/3/7/D/37D7E378-D805-4822-A712-4EADBF50FC08/AppHealthAnalyzer.zip)<!-- (https://www.microsoft.com/download/details.aspx?id=57276) -->. Sempre use a versão mais atual.
+Entre em contato com seu representante da Microsoft para obter um link de download. Sempre use a versão mais atual.
 
 O download é um arquivo do Windows Installer (MSI). Instale o Kit de ferramentas do analisador de integridade do aplicativo em um computador do usuário. Quando você executar o Kit de ferramentas, um assistente orienta você pelo processo de criação de um relatório de preparação do aplicativo.
 

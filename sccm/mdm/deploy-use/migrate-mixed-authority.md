@@ -12,11 +12,11 @@ ms.technology: configmgr-hybrid
 ms.assetid: 6f0201d7-5714-4ba0-b2bf-d1acd0203e9a
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b7f2875852b49ab8af9b1f34c4747f12a6620896
-ms.sourcegitcommit: fd16fc2b681608fd6def5bad2cedffbcd1f2423a
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56405668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62282460"
 ---
 # <a name="change-the-mdm-authority-for-specific-users-mixed-mdm-authority"></a>Alterar a autoridade de MDM para usuários específicos (autoridade de MDM mista) 
 
@@ -45,7 +45,7 @@ Gerencie usuários migrados e seus dispositivos no Intune. Continue a gerenciar 
 - Os dispositivos para os usuários na coleção associada à assinatura do Intune podem ser registrados no MDM híbrido. Todos os dispositivos associados aos usuários que não estão na coleção são gerenciados no Intune, contanto que o usuário tenha uma licença do Intune/EMS.   
 
     > [!Note]  
-    > Os usuários podem se inscrever no Intune autônomo, mesmo que você os tenha bloqueado por meio do console do Configuration Manager. Para bloquear completamente o registro de um usuário, não licencie os usuários indesejados para o Intune. Eles não podem se inscrever sem uma licença.<!--SCCMDocs issue 738-->  
+    > Os usuários podem se inscrever no Intune autônomo, mesmo que você os tenha bloqueado por meio do console do Configuration Manager. Para bloquear completamente o registro de um usuário, não licencie os usuários indesejados para o Intune. Eles não podem inscrever sem uma licença.<!--SCCMDocs issue 738-->  
 
 - Quando você migrar um usuário Intune, o usuário e os dispositivos aparecerão no Intune no Portal do Azure após cerca de 15 minutos.   
 
@@ -85,7 +85,7 @@ Gerencie usuários migrados e seus dispositivos no Intune. Continue a gerenciar 
 - Não migre contas de usuário que foram adicionadas como gerenciadores de registro de dispositivo (DEM) no Configuration Manager. Mais tarde, quando você alterar sua autoridade de MDM no nível do locatário para o Intune, essas contas de usuário serão migradas corretamente. Se você migrar a conta de usuário do DEM antes da alteração de autoridade MDM de nível de locatário, você deve adicionar manualmente o usuário como um DEM no Intune no Azure. No entanto, dispositivos registrados usando um DEM não migrem com êxito. Entre em contato com o suporte para migrar esses dispositivos. Para saber mais, confira [Adicionar um gerenciador de registro de dispositivo](https://docs.microsoft.com/intune/device-enrollment-manager-enroll#add-a-device-enrollment-manager).  
 
     > [!Note]  
-    > Enquanto estiver no modo de autoridade mista, não mova essas contas para o Intune removendo-as da coleção de nuvem do ConfigMgr. Se você fizer isso, o usuário se tornará um usuário padrão e não poderá inscrever mais de 15 dispositivos. Em vez disso, migre esses usuários e seus dispositivos assim que você alternar totalmente a autoridade do MDM para o locatário.<!--Intune bug 2174210-->  
+    > Enquanto estiver no modo de autoridade mista, não mova essas contas para o Intune removendo-as da coleção de nuvem do ConfigMgr. Se você fizer isso, o usuário se tornará um usuário padrão e não poderá inscrever mais de 15 dispositivos. Migre em vez disso, esses usuários e seus dispositivos, quando você alternar totalmente a autoridade de MDM para o locatário.<!--Intune bug 2174210-->  
 
 - Dispositivos registrados usando um DEM e dispositivos sem [afinidade do usuário](/sccm/mdm/deploy-use/user-affinity-for-hybrid-managed-devices) não são migradas automaticamente para a nova autoridade MDM. Para alternar a autoridade de gerenciamento para esses dispositivos MDM, confira [Migrar dispositivos sem afinidade de usuário](#migrate-devices-without-user-affinity).  
 
