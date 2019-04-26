@@ -1,94 +1,87 @@
-items:
 - name: Entender e explorar
   items:
-  - name: Introdução
-    href: understand/introduction-to-application-management.md
+    - name: Introdução
+      href: understand/introduction-to-application-management.md
 - name: Introdução
   items:
-  - name: Criar e implantar um aplicativo
-    href: get-started/create-and-deploy-an-application.md
+    - name: Criar e implantar um aplicativo
+      href: get-started/create-and-deploy-an-application.md
 - name: Plano e design
   items:
-  - name: Planejar e configurar o gerenciamento de aplicativos
-    href: plan-design/plan-for-and-configure-application-management.md
-  - name: Segurança e privacidade
-    href: plan-design/security-and-privacy-for-application-management.md
+    - name: Planejar e configurar o gerenciamento de aplicativos
+      href: plan-design/plan-for-and-configure-application-management.md
+    - name: Segurança e privacidade
+      href: plan-design/security-and-privacy-for-application-management.md
 - name: Implantar e usar
   items:
-  - name: Criar aplicativos
-    href: deploy-use/create-applications.md
-    items:
-    - name: Criar aplicativos de computador Mac
-      href: get-started/creating-mac-computer-applications.md
-    - name: Criar aplicativos do Windows
-      href: get-started/creating-windows-applications.md
-    - name: Criar aplicativos de servidores Linux e UNIX
-      href: get-started/creating-linux-and-unix-server-applications.md
-    - name: Criar aplicativos Windows Embedded
-      href: get-started/creating-windows-embedded-applications.md
-    - name: Criar condições globais
-      href: deploy-use/create-global-conditions.md
-    - name: Pacotes e programas
-      href: deploy-use/packages-and-programs.md
-  - name: Implantar aplicativos
-    items:
-    - name: Implantar aplicativos
-      href: deploy-use/deploy-applications.md
-    - name: Criar uma implantação em fases
-      href: ../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json
-    - name: Aprovar aplicativos
-      href: deploy-use/app-approval.md
-    - name: Compartilhar um aplicativo
-      href: deploy-use/share-applications.md
-    - name: Simular implantações de aplicativos
-      href: deploy-use/simulate-application-deployments.md
-    - name: Implantar aplicativos virtuais do App-V
-      href: get-started/deploying-app-v-virtual-applications.md
-  - name: Monitorar aplicativos
-    items:
-    - name: Monitorar aplicativos do console
-      href: deploy-use/monitor-applications-from-the-console.md
-    - name: Gerenciar e monitorar implantações em fases
-      href: ../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json
-    - name: Monitorar o uso de aplicativos com a medição de software
-      href: deploy-use/monitor-app-usage-with-software-metering.md
-  - name: Gerenciar aplicativos
-    items:
-    - name: Tarefas de gerenciamento
-      href: deploy-use/management-tasks-applications.md
-    - name: Afinidade de dispositivo do usuário
-      href: deploy-use/link-users-and-devices-with-user-device-affinity.md
-    - name: Aplicativos da Microsoft Store para Empresas comprados por volume
-      href: deploy-use/manage-apps-from-the-windows-store-for-business.md
-    - name: Ambientes virtuais do App-V
-      href: deploy-use/create-app-v-virtual-environments.md
-  - name: Atualizar e desativar aplicativos
-    items:
-    - name: Atualizar e desativar aplicativos
-      href: deploy-use/update-and-retire-applications.md
-    - name: Revisar e substituir aplicativos
-      href: deploy-use/revise-and-supersede-applications.md
-    - name: Desinstalar aplicativos
-      href: deploy-use/uninstall-applications.md
-  - name: Executar e gerenciar scripts
-    href: deploy-use/create-deploy-scripts.md
-    items:
-    - name: Saiba mais sobre a segurança de script do PowerShell
-      href: deploy-use/learn-script-security.md
-  - name: Package Conversion Manager
-    href: pcm/package-conversion-manager.md
-    items:
-    - name: Como analisar e converter pacotes
-      href: pcm/how-to-analyze-and-convert.md
-    - name: Solução de problemas do Gerenciador de Conversão de Pacotes
-      href: pcm/troubleshoot-pcm.md
-    - name: Referências técnicas
+    - name: Criar aplicativos
+      href: deploy-use/create-applications.md
       items:
-      - name: Mensagens de erro
-        href: pcm/error-messages.md
-ms.openlocfilehash: e8e963fb8d33b8d57dc1d1eaadd4eb16501d9ff7
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52455745"
+        - name: Criar aplicativos de computador Mac
+          href: get-started/creating-mac-computer-applications.md
+        - name: Criar aplicativos do Windows
+          href: get-started/creating-windows-applications.md
+        - name: Criar aplicativos de servidores Linux e UNIX
+          href: get-started/creating-linux-and-unix-server-applications.md
+        - name: Criar aplicativos Windows Embedded
+          href: get-started/creating-windows-embedded-applications.md
+        - name: Criar condições globais
+          href: deploy-use/create-global-conditions.md
+        - name: Pacotes e programas
+          href: deploy-use/packages-and-programs.md
+    - name: Implantar aplicativos
+      items:
+        - name: Implantar aplicativos
+          href: deploy-use/deploy-applications.md
+        - name: Criar uma implantação em fases
+          href: ../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json
+        - name: Aprovar aplicativos
+          href: deploy-use/app-approval.md
+        - name: Compartilhar um aplicativo
+          href: deploy-use/share-applications.md
+        - name: Simular implantações de aplicativos
+          href: deploy-use/simulate-application-deployments.md
+        - name: Implantar aplicativos virtuais do App-V
+          href: get-started/deploying-app-v-virtual-applications.md
+    - name: Monitorar aplicativos
+      items:
+        - name: Monitorar aplicativos do console
+          href: deploy-use/monitor-applications-from-the-console.md
+        - name: Gerenciar e monitorar implantações em fases
+          href: ../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json
+        - name: Monitorar o uso de aplicativos com a medição de software
+          href: deploy-use/monitor-app-usage-with-software-metering.md
+    - name: Gerenciar aplicativos
+      items:
+        - name: Tarefas de gerenciamento
+          href: deploy-use/management-tasks-applications.md
+        - name: Afinidade de dispositivo do usuário
+          href: deploy-use/link-users-and-devices-with-user-device-affinity.md
+        - name: Aplicativos da Microsoft Store para Empresas comprados por volume
+          href: deploy-use/manage-apps-from-the-windows-store-for-business.md
+        - name: Ambientes virtuais do App-V
+          href: deploy-use/create-app-v-virtual-environments.md
+    - name: Atualizar e desativar aplicativos
+      items:
+        - name: Atualizar e desativar aplicativos
+          href: deploy-use/update-and-retire-applications.md
+        - name: Revisar e substituir aplicativos
+          href: deploy-use/revise-and-supersede-applications.md
+        - name: Desinstalar aplicativos
+          href: deploy-use/uninstall-applications.md
+    - name: Executar e gerenciar scripts
+      href: deploy-use/create-deploy-scripts.md
+      items:
+        - name: Saiba mais sobre a segurança de script do PowerShell
+          href: deploy-use/learn-script-security.md
+    - name: Package Conversion Manager
+      href: pcm/package-conversion-manager.md
+      items:
+        - name: Como analisar e converter pacotes
+          href: pcm/how-to-analyze-and-convert.md
+        - name: Solução de problemas do Gerenciador de Conversão de Pacotes
+          href: pcm/troubleshoot-pcm.md
+        - name: Referências técnicas
+          items:
+            - name: Mensagens de erro
+              href: pcm/error-messages.md

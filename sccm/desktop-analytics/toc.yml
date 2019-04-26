@@ -1,51 +1,44 @@
-items:
 - name: Análise de Área de Trabalho
   items:
-  - name: Visão geral
-    href: overview.md
-  - name: Tutoriais
-    items:
-    - name: Piloto para Office 365
-      href: tutorial-office-365.md
-  - name: Conceitos
-    items:
-    - name: Planos de implantação
-      href: about-deployment-plans.md
-    - name: Ativos
-      href: about-assets.md
-    - name: Qualidade e atualizações do recurso
-      href: about-updates.md
-    - name: Risco de compatibilidade para aplicativos do Windows
-      href: compat-risk.md
-    - name: Monitoramento do status de integridade
-      href: health-status-monitoring.md
-  - name: Guias de instruções
-    items:
-    - name: Configurar Análise de Área de Trabalho
-      href: set-up.md
-    - name: Conectar o Configuration Manager
-      href: connect-configmgr.md
-    - name: Registrar dispositivos
-      href: enroll-devices.md
-    - name: Criar planos de implantação
-      href: create-deployment-plans.md
-    - name: Implantar para o piloto
-      href: deploy-pilot.md
-    - name: Implantar para a produção
-      href: deploy-prod.md
-    - name: Avaliação de compatibilidade com o Analisador de Integridade de Aplicativos
-      href: app-health-analyzer.md
-  - name: Referência
-    items:
-    - name: Habilitar o compartilhamento de dados
-      href: enable-data-sharing.md
-    - name: Solução de problemas
-      href: troubleshooting.md
-    - name: Privacidade
-      href: privacy.md
-ms.openlocfilehash: 473ddb150610af13b099bc601e05e8c50be6aac8
-ms.sourcegitcommit: ad25a7bdd983c5a0e4c95bffdc61c9a1ebcbb765
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55073173"
+    - name: Visão geral
+      href: overview.md
+    - name: Tutoriais
+      items:
+        - name: Piloto para Office 365
+          href: tutorial-office-365.md
+    - name: Conceitos
+      items:
+        - name: Planos de implantação
+          href: about-deployment-plans.md
+        - name: Ativos
+          href: about-assets.md
+        - name: Qualidade e atualizações do recurso
+          href: about-updates.md
+        - name: Risco de compatibilidade para aplicativos do Windows
+          href: compat-risk.md
+        - name: Monitoramento do status de integridade
+          href: health-status-monitoring.md
+    - name: Guias de instruções
+      items:
+        - name: Configurar Análise de Área de Trabalho
+          href: set-up.md
+        - name: Conectar o Configuration Manager
+          href: connect-configmgr.md
+        - name: Registrar dispositivos
+          href: enroll-devices.md
+        - name: Criar planos de implantação
+          href: create-deployment-plans.md
+        - name: Implantar para o piloto
+          href: deploy-pilot.md
+        - name: Implantar para a produção
+          href: deploy-prod.md
+        - name: Avaliação de compatibilidade com o Analisador de Integridade de Aplicativos
+          href: app-health-analyzer.md
+    - name: Referência
+      items:
+        - name: Habilitar o compartilhamento de dados
+          href: enable-data-sharing.md
+        - name: Solução de problemas
+          href: troubleshooting.md
+        - name: Privacidade
+          href: privacy.md
