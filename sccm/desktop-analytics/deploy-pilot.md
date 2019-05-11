@@ -2,7 +2,7 @@
 title: Como implantar o piloto
 titleSuffix: Configuration Manager
 description: Um guia de instruções para a implantação em um grupo piloto de análise de área de trabalho.
-ms.date: 04/05/2019
+ms.date: 04/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,19 +12,19 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4aa078f5a8306cb30ea83d45b93b18971be7764f
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: d11e5eeb5e7a183c6b409fdbe58034ebe181898f
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62234272"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083162"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Como implantar o piloto, com a análise de área de trabalho
 
 > [!Note]  
 > Essas informações se relaciona a um serviço de visualização que pode ser substancialmente modificado antes do lançamento comercial. A Microsoft não oferece garantias, expressas ou implícitas, quanto às informações fornecidas aqui.  
 
-Um dos benefícios da análise de área de trabalho é ajudar a identificar o menor conjunto de dispositivos que fornecem a cobertura mais ampla de fatores. Ele aborda os fatores que são mais importantes para um piloto de atualizações e upgrades do Windows e do Office. Verificando se que o piloto é mais bem-sucedida permite mover com mais rapidez e confiança a ampla implantações em produção.  
+Um dos benefícios da análise de área de trabalho é ajudar a identificar o menor conjunto de dispositivos que fornecem a cobertura mais ampla de fatores. Ele aborda os fatores que são mais importantes para um piloto de atualizações e upgrades do Windows. Verificando se que o piloto é mais bem-sucedida permite mover com mais rapidez e confiança a ampla implantações em produção.  
 
 [!INCLUDE [Definition of pilot and production](includes/define-pilot-prod.md)]
 
@@ -50,42 +50,31 @@ Use o portal de análise de área de trabalho para examinar os problemas relatad
 
 ## <a name="create-software"></a>Criar software
 
-Antes de implantar o Windows ou do Office, primeiro crie os objetos de software no Configuration Manager.
-
-- [Aplicativo de Office 365 ProPlus](https://docs.microsoft.com/sccm/sum/deploy-use/manage-office-365-proplus-updates#deploy-office-365-apps)  
-
-- [Sequência de tarefas de atualização in-loco do Windows 10](https://docs.microsoft.com/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system)
+Antes de implantar o Windows, primeiro crie os objetos de software no Configuration Manager. Para obter mais informações, consulte [sequência de tarefas de atualização in-loco do Windows 10](https://docs.microsoft.com/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system).
 
 
 
 ## <a name="deploy-to-pilot-devices"></a>Implantar em dispositivos piloto
 
-Configuration Manager usa os dados da área de trabalho de análise para criar uma coleção para a implantação piloto. Não implante a aplicativo ou sequência de tarefas usando uma implantação tradicional. Use o procedimento a seguir para criar uma implantação integrada de análise de área de trabalho:
+Configuration Manager usa os dados da área de trabalho de análise para criar uma coleção para a implantação piloto. Não implante a sequência de tarefas usando uma implantação tradicional. Use o procedimento a seguir para criar uma implantação integrada de análise de área de trabalho:
 
 1. No console do Configuration Manager, vá para o **biblioteca de Software**, expanda **área de trabalho de análise de manutenção**e selecione o **planos de implantação** nó.  
 
 2. Selecione seu plano de implantação e, em seguida, selecione **detalhes do plano de implantação** na faixa de opções.  
 
-3. No **criar um piloto do status** lado a lado, escolha um dos seguintes tipos de objeto na lista suspensa:  
+3. No **criar um piloto do status** lado a lado, selecione **sequência de tarefas** na lista suspensa.  
 
-    - **Aplicativo** para o Office 365 ProPlus  
+    > [!Note]  
+    > Não use o **aplicativo** opção. Ele está reservado para a funcionalidade futura.
 
-    - **Sequência de tarefas** para Windows 10  
-  
-   Selecione **implantar**. Essa ação inicia o Assistente para implantar Software para o tipo de objeto selecionado.
+    Selecione **implantar**. Essa ação inicia o Assistente para implantar Software para o tipo de objeto selecionado.
 
     > [!Note]  
     > Com a integração de análise de área de trabalho, o Configuration Manager cria automaticamente uma coleção para o plano de implantação piloto. Ele pode levar até 10 minutos para esta coleção sincronizar antes de você pode usá-lo.<!-- 3887891 -->
     >
     > Essa coleção é reservada para dispositivos de plano de implantação de área de trabalho de análise. Não há suporte para alterações manuais a esta coleção.<!-- 3866460, SCCMDocs-pr 3544 -->  
 
-Para obter mais informações, consulte os seguintes artigos:  
-
-- [Implantar um aplicativo](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy)  
-
-- [Implantar uma sequência de tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS)  
-
-Se seu plano de implantação é para Windows 10 e Office 365, repita esse processo para criar uma segunda implantação. Por exemplo, se for a primeira implantação da sequência de tarefas, crie uma segunda implantação para o aplicativo.
+Para obter mais informações, consulte [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).
 
 
 
@@ -93,11 +82,7 @@ Se seu plano de implantação é para Windows 10 e Office 365, repita esse proce
 
 ### <a name="configuration-manager-console"></a>Console do Configuration Manager
 
-Use o Configuration Manager implantação de monitoramento para o mesmo como qualquer outra implantação de sequência de tarefa e de aplicativo. Para obter mais informações, consulte os seguintes artigos:  
-
-- [Monitorar aplicativo de console do Configuration Manager](/sccm/apps/deploy-use/monitor-applications-from-the-console)  
-
-- [Monitorar implantações do sistema operacional](/sccm/osd/deploy-use/monitor-operating-system-deployments)  
+Use o Configuration Manager implantação de monitoramento para o mesmo como qualquer outra implantação de sequência de tarefas. Para obter mais informações, consulte [implantações de sistema operacional do Monitor](/sccm/osd/deploy-use/monitor-operating-system-deployments).
 
 
 ### <a name="desktop-analytics-portal"></a>Portal de análise da área de trabalho
@@ -128,7 +113,7 @@ Conforme você resolver esses problemas de implantação, o painel continua most
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Permitir que a execução do piloto para um período de tempo para coletar dados operacionais. Incentive os usuários de dispositivos piloto para testar aplicativos, suplementos e macros.
+Permitir que a execução do piloto para um período de tempo para coletar dados operacionais. Incentive os usuários de dispositivos piloto para testar aplicativos.
 
 Quando sua implantação piloto atende aos seus critérios de êxito, vá para o próximo artigo para implantar na produção.
 > [!div class="nextstepaction"]  
