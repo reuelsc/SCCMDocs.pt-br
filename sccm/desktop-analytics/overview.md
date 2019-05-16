@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6827f94a0191aee9c1fe1e20978e6414050fca7c
-ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
+ms.openlocfilehash: 78e9454212bb8264926c1aba5262f06db1798abe
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65612508"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673436"
 ---
 # <a name="what-is-desktop-analytics"></a>O que é análise de área de trabalho?
 
@@ -101,20 +101,14 @@ Para usar a análise de área de trabalho, verifique se o que seu ambiente atend
 
 ### <a name="licensing"></a>Licenciamento
 
-A maioria dos recursos na área de trabalho de análise não exigem qualquer licenças adicionais ou assinaturas. Quando configurado corretamente, o uso da área de trabalho de análise não incorre em custos do Azure.
+Análise da área de trabalho requer uma das seguintes assinaturas de licença:
 
-Para acessar os insights de integridade do Windows ou para exportar dados, existem requisitos de licença adicionais. Se você não tiver uma das seguintes assinaturas, você pode configurar e usar a análise de área de trabalho, mas você não é licenciados para usar o insights de integridade do Windows ou para exportar dados:
+- Windows 10 Enterprise E3 ou E5; ou Microsoft 365 F1, E3 ou E5  
 
-- Windows 10 Enterprise ou Windows 10 Education: por dispositivo com Software Assurance ativo  
+- Windows 10 Education A3 ou A5; ou Microsoft 365 A3 ou A5  
 
-- Windows 10 Enterprise E3 ou E5: assinatura por dispositivo ou por usuário (incluída com o Microsoft 365 F1, E3 ou E5)  
+- Windows VDA E3 ou E5  
 
-- Windows 10 Education A3 ou A5 (incluído com o Microsoft 365 educação A3 ou A5)  
-
-- Windows Virtual Desktop Access E3 ou E5: por dispositivo de assinatura por usuário  
-
-> [!Note]  
-> Para licenças por dispositivo, você não precisa ativar cada dispositivo com uma licença. Você precisa apenas licenças suficientes para dispositivos registrados na área de trabalho de análise.  
 
 
 

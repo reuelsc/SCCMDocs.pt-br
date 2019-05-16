@@ -2,7 +2,7 @@
 title: Planos de implantação na área de trabalho de análise
 titleSuffix: Configuration Manager
 description: Saiba mais sobre planos de implantação na área de trabalho de análise.
-ms.date: 04/22/2019
+ms.date: 05/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91cd7fc450ee53f900ae890e3a698c26c789ba8c
-ms.sourcegitcommit: 4023fb6fb534d8a0d589c8208f021e3311c7167f
+ms.openlocfilehash: b44684f897e7aad4365c39e58c9bfd486bde7cbb
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64880579"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673290"
 ---
 # <a name="about-deployment-plans-in-desktop-analytics"></a>Sobre planos de implantação na área de trabalho de análise
 
@@ -51,8 +51,6 @@ Como parte do seu plano de implantação, você deve executar as seguintes açõ
 Análise da área de trabalho atualiza os dados de plano de implantação diariamente. As alterações feitas não podem aparecer para 24 horas. Essas alterações incluem a atribuição de importância para um aplicativo ou escolhendo um dispositivo para incluir em um piloto.  
 
 Após a conexão da área de trabalho de análise para o Configuration Manager, selecione suas coleções nos planos de implantação. Essa integração, em seguida, permite que você implante o Windows a uma coleção com base nos dados de análise de área de trabalho.
-
-Enquanto a análise de área de trabalho funciona melhor com coleções do Configuration Manager, você também pode criar grupos de dispositivos no Log Analytics. Para obter mais informações, consulte [pesquisas de log de grupos de computadores no Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-computer-groups).
 
 
 
