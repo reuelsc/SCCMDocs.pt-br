@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 0e9f0fbd-e442-4509-a021-bfdedf2d04dd
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 209e09ba11de851a1275211364af3cee930737d0
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: a5fb9a553efa634dad314da58298611cdf0bbb58
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131533"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65498974"
 ---
 # <a name="configuration-options-for-site-system-roles-in-configuration-manager"></a>Configurar opções para funções do sistema de sites no Configuration Manager
 
@@ -29,7 +29,7 @@ A maioria das opções de configuração de funções do sistema de sites do Con
 ##  <a name="BKMK_ApplicationCatalog_Website"></a> Ponto de sites da Web do Catálogo de Aplicativos  
 
 > [!Note]  
-> A partir da versão 1806, o ponto de site do catálogo de aplicativos não será mais *necessário*, mas ainda será *compatível*. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).  
+> A partir da versão 1806, o ponto de site do catálogo de aplicativos não será mais *necessário*, mas ainda será *compatível*. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).  
 > 
 > Não há mais suporte para a **experiência do usuário do Silverlight** para o ponto do site do Catálogo de Aplicativos. Para saber mais, consulte [Recursos removidos e preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
 
@@ -54,7 +54,7 @@ A maioria das opções de configuração de funções do sistema de sites do Con
 ##  <a name="BKMK_ApplicationCatalog_WebService"></a> Ponto de serviços Web do Catálogo de Aplicativos  
 
 > [!Note]  
-> A partir da versão 1806, o ponto de serviço de site do catálogo de aplicativos e ponto de serviço Web não são mais *necessária*, mas ainda são *compatíveis*. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).  
+> A partir da versão 1806, o ponto de serviço de site do catálogo de aplicativos e ponto de serviço Web não são mais *necessária*, mas ainda são *compatíveis*. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).  
 
  Para saber mais sobre como configurar o ponto de serviço da Web do Catálogo de Aplicativos, veja [Planejar e configurar o gerenciamento de aplicativos](/sccm/apps/plan-design/plan-for-and-configure-application-management).  
 

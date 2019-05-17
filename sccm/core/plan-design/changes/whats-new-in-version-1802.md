@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 5bd637b1-d7a1-411b-877a-c7aae9741173
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d36ac033b197c21122b49aba70bdeaef4f9b5ac
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: 6e6e603210342f5acc3e66328fca95e964dde2bf
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802845"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65495508"
 ---
 # <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Novidades da versão 1802 do System Center Configuration Manager
 
@@ -214,12 +214,12 @@ Esta versão inclui as seguintes melhorias na implantação de sistema operacion
      - Suporte para todos os cenários de implantação de sistema operacional do Centro de Software, PXE e mídia.
      - Melhorias das ações do console, como copiar, importar, exportar e aviso durante a exclusão do objeto.
      - Suporte para o assistente para [Criar Arquivo de Conteúdo Pré-Teste](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent).
-     - Integração com a verificação de implantação. Para obter mais informações, consulte [Implantações de alto risco de sequência de tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS). 
+     - Integração com a verificação de implantação. Para obter mais informações, consulte [Implantações de alto risco de sequência de tarefas](/sccm/osd/deploy-use/deploy-a-task-sequence). 
      - A etapa Executar sequência de tarefas agora pode ser usada em vários níveis de sequências de tarefas, não apenas em um único relacionamento de pai-filho. Os relacionamentos de vários níveis aumentam a complexidade, portento, use com cuidado. Esses relacionamentos ainda estão marcados para referências circulares.
     
 ### <a name="deployment-templates-for-task-sequences"></a>Modelos de implantação para sequências de tarefas
 <!-- 1357391 -->
-O [assistente de implantação para sequências de tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS) agora pode criar um modelo de implantação. O modelo de implantação pode ser salvo e aplicado a uma sequência de tarefas existente ou nova para criar uma implantação. 
+O [assistente de implantação para sequências de tarefas](/sccm/osd/deploy-use/deploy-a-task-sequence) agora pode criar um modelo de implantação. O modelo de implantação pode ser salvo e aplicado a uma sequência de tarefas existente ou nova para criar uma implantação. 
 
 ### <a name="phased-deployments-for-task-sequences"></a>Implantações em fases para sequências de tarefas
 <!--1356837-->
@@ -287,11 +287,11 @@ O relatório **Detalhes do Serviço do Windows 10 para uma coleção específica
 
 ### <a name="improvements-to-configuration-manager-policies-for-windows-defender-exploit-guard"></a>Melhorias nas Políticas do Configuration Manager para o Windows Defender Exploit Guard
 <!-- 1356220 -->
-As configurações de políticas adicionais para os componentes [Redução da Superfície de Ataque](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy#BKMK_ASR) e [Acesso controlado a pastas](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy#BKMK_CFA) foram adicionadas ao Configuration Manager para o [Windows Defender Exploit Guard](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard).
+As configurações de políticas adicionais para os componentes [Redução da Superfície de Ataque](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy#bkmk_ASR) e [Acesso controlado a pastas](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy#bkmk_CFA) foram adicionadas ao Configuration Manager para o [Windows Defender Exploit Guard](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard).
 
 ### <a name="new-host-interaction-settings-for-windows-defender-application-guard"></a>Novas configurações de interação de host para o Windows Defender Application Guard
 <!-- 1356256 -->
-Para dispositivos Windows 10 versão 1709 e posteriores, há duas novas configurações de interação de host para o [Windows Defender Application Guard](/sccm/protect/deploy-use/create-deploy-application-guard-policy#BKMK_HIS): 
+Para dispositivos Windows 10 versão 1709 e posteriores, há duas novas configurações de interação de host para o [Windows Defender Application Guard](/sccm/protect/deploy-use/create-deploy-application-guard-policy#bkmk_HIS): 
 - O acesso ao processador de gráficos virtuais do host pode ser concedido a sites. 
 - Arquivos baixados dentro do contêiner podem ser persistentes no host. 
 

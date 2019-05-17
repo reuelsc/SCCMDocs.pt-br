@@ -2,7 +2,7 @@
 title: Introdução às coleções
 titleSuffix: Configuration Manager
 description: Veja uma introdução às coleções para usar coleções no System Center Configuration Manager.
-ms.date: 01/03/2017
+ms.date: 05/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9b995d0abfc3f14dce35e0aec70ac25b2ca2853
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 15359aa414554d0bef9e29c011966caec1c1e6d6
+ms.sourcegitcommit: 417e3834a42b415a8e129327dd3c15cc0c7ec5a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138935"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65443151"
 ---
 # <a name="introduction-to-collections-in-system-center-configuration-manager"></a>Introdução às coleções no System Center Configuration Manager
 
@@ -35,7 +35,7 @@ Aqui estão alguns exemplos do uso de coleção:
 |Operação|Exemplo|  
 |---------|-------|  
 |Recursos de agrupamento|É possível criar coleções que agrupam os recursos baseados na hierarquia da sua organização.<br /><br /> Por exemplo, é possível criar uma coleção de todos os computadores na UO (Unidade Organizacional) "London Headquarters" do Active Directory. Para obter mais informações sobre como criar esse tipo de coleção, consulte [How to Create Collections in System Center Configuration Manager (Como criar coleções no System Center Configuration Manager)](../../../../core/clients/manage/collections/create-collections.md).<br /><br /> É possível usar essa coleção para operações como: definir configurações do Endpoint Protection, definir configurações de gerenciamento de energia do dispositivo ou instalar o cliente do Configuration Manager.|  
-|[Implantação de aplicativo]|Você pode criar uma coleção de todos os computadores que não têm o Microsoft Office 2013 instalado e implantá-lo em todos os computadores nessa coleção.<br /><br /> Você também pode usar os requisitos do aplicativo para executar esta tarefa. Para obter mais informações, consulte [Como criar aplicativos com o System Center Configuration Manager](../../../../apps/deploy-use/create-applications.md).|  
+|Implantação de aplicativo|Você pode criar uma coleção de todos os computadores que não têm o Microsoft Office 2013 instalado e implantá-lo em todos os computadores nessa coleção.<br /><br /> Você também pode usar os requisitos do aplicativo para executar esta tarefa. Para obter mais informações, consulte [Como criar aplicativos com o System Center Configuration Manager](../../../../apps/deploy-use/create-applications.md).|  
 |[Gerenciando as configurações do cliente](../../../../core/clients/deploy/about-client-settings.md)|Embora as configurações padrão do cliente no Configuration Manager sejam aplicáveis a todos os dispositivos e todos os usuários, você pode criar configurações de cliente personalizadas que sejam aplicáveis a uma coleção de dispositivos ou a um conjunto de usuários.<br /><br /> Por exemplo, se desejar que o controle remoto esteja disponível somente para alguns dispositivos, defina as configurações do cliente para permitir o controle remoto e, em seguida, defina as configurações personalizadas do cliente que não permitem o controle remoto e implante-as na coleção de clientes excepcionais. |  
 |[Gerenciamento de energia](../power/introduction-to-power-management.md)|Você pode definir configurações de energia específicas por coleção.|  
 |[Administração baseada em funções](../../../../core/servers/deploy/configure/configure-role-based-administration.md)|Usar coleções para controlar quais grupos de usuários têm acesso a vários recursos no console do Configuration Manager.|  
