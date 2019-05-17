@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
 ms.assetid: a7f91e63-4750-402e-9970-dd14be7f76a3
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a0dbe80e2333df85893365a366d5862842ffa3d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 045a1daef8da0863ed7957ce4c9d3d48cfacca64
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125401"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65496187"
 ---
 # <a name="manage-certificates-and-security-for-updates-publisher"></a>Gerenciar certificados e segurança para o Updates Publisher
 
@@ -72,9 +72,9 @@ Veja a seguir um exemplo de como configurar o certificado de autenticação em c
 
 6. Use um dos métodos a seguir para adicionar o certificado usado para assinar o catálogo de atualizações para cada computador cliente que usará o WUA para verificar a existência de atualizações no catálogo. Adicione o certificado no computador cliente da seguinte maneira:
 
-   -   Para certificados autoassinados: Adicione o certificado aos repositórios de certificados **Autoridades de Certificação Confiáveis** e **Editores Confiáveis**.
+   -   Para os certificados autoassinados: adicione o certificado aos repositórios de certificado **Autoridades de Certificação Raiz Confiáveis** e **Editores Confiáveis**.
 
-   -   Para certificados emitidos por CAs (Autoridades de Certificação): Adicione o certificado ao repositório de certificados **Fornecedores Confiáveis**.
+   -   Para certificados emitidos por uma CA (autoridade de certificação): adicione o certificado ao repositório de certificados **Editores Confiáveis**.
 
    > [!NOTE]
    > O WUA também verifica se a configuração **Permitir conteúdo assinado da política de grupo de local do serviço de atualização da intranet da Microsoft** está habilitada no computador local. Essa configuração da política deve ser habilitada para que o WUA procure atualizações que foram criadas e publicadas com o Updates Publisher. Para saber mais sobre como habilitar essa configuração de Política de Grupo, confira [Como configurar a Política de Grupo em computadores cliente](<https://technet.microsoft.com/library/bb530967.aspx(d=robot>).

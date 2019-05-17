@@ -2,21 +2,21 @@
 title: Ícones usados para as atualizações de software
 titleSuffix: Configuration Manager
 description: O console do Configuration Manager contém ícones que indicam um estado para o grupo de atualização de software ou atualização sincronizada.
-author: aczechowski
 manager: dougeby
 ms.date: 10/06/2016
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 63c5ef72-5715-4d86-85a2-71beba469fab
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 898eabbb142a5562464950812cbfd057d3d65187
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 9dbb2b7fadf13a49c25e2eb9bb6fcc608d3869f6
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128265"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65495848"
 ---
 # <a name="icons-used-for-software-updates-in-system-center-configuration-manager"></a>Ícones usados para as atualizações de software no System Center Configuration Manager
 

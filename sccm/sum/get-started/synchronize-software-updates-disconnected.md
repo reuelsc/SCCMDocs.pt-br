@@ -2,21 +2,21 @@
 title: 'Sincronizar atualizações sem conexão com a Internet '
 titleSuffix: Configuration Manager
 description: Execute a sincronização de atualizações de software no ponto de atualização de software superior que está desconectado da Internet.
-author: aczechowski
 ms.date: 01/23/2017
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 1a997c30-8e71-4be5-89ee-41efb2c8d199
 manager: dougeby
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ca643b348d9d6d2800c671d9985f10d08bf5d60
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 67b284e369268b184067e33d2a505585618795e5
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130462"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65493974"
 ---
 # <a name="synchronize-software-updates-from-a-disconnected-software-update-point"></a>Sincronizar atualizações de software por meio de um ponto de atualização de software desconectado  
 
@@ -99,7 +99,7 @@ ms.locfileid: "56130462"
 
      **wsusutil.exe import export.cab import.log**  
 
-     O formato pode ser resumido da seguinte maneira: O WSUSutil.exe é seguido do comando de importação, do nome do arquivo de pacote (.cab) que é criado durante a operação de exportação, do caminho do arquivo de pacote se ele está em uma pasta diferente e do nome de um arquivo de log. O WSUSutil.exe importa os metadados do servidor de exportação e cria um arquivo de log da operação.  
+     O formato pode ser resumido da seguinte maneira: o WSUSutil.exe é seguido do comando de importação, do nome do arquivo de pacote (.cab) criado durante a operação de exportação, do caminho do arquivo de pacote, caso ele esteja em uma pasta diferente, e do nome de um arquivo de log. O WSUSutil.exe importa os metadados do servidor de exportação e cria um arquivo de log da operação.  
 
 ## <a name="next-steps"></a>Próximas etapas
 Depois de sincronizar as atualizações de software pela primeira vez ou depois que houver novas classificações ou produtos disponíveis, você deverá [configurar as novas classificações e produtos](configure-classifications-and-products.md) para sincronizar atualizações de software com os novos critérios.

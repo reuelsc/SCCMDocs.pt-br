@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d71afc9ac8af973d43eac9ee7e1fb4322333d49
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 79ef6832a32f0cb3ea36b8c36423b46ae3216438
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131686"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65082907"
 ---
 # <a name="create-a-custom-task-sequence-with-system-center-configuration-manager"></a>Criar uma sequência de tarefas personalizada com o System Center Configuration Manager
 
@@ -48,4 +48,4 @@ Quando você cria uma sequência de tarefas personalizada no System Center Confi
    Geralmente, você usará as sequências de tarefas para automatizar tarefas para implantação de sistema operacional, mas é possível criar uma sequência de tarefas personalizada para automatizar uma variedade de tarefas. Para mais informações, consulte [Criar uma sequência de tarefas para implantações que não são de sistema operacional](create-a-task-sequence-for-non-operating-system-deployments.md).  
 
    ## <a name="next-steps"></a>Próximas etapas
-   [Implantar a sequência de tarefas](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)
+   [Implantar a sequência de tarefas](/sccm/osd/deploy-use/deploy-a-task-sequence)

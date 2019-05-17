@@ -2,8 +2,8 @@
 title: Introdução às atualizações de software
 titleSuffix: Configuration Manager
 description: Tenha noções básicas sobre atualizações de software no System Center Configuration Manager.
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.date: 10/30/2017
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac745419dafea6a8fc86ddf1c744944f8f5698b2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: e95055473cc5d61b10ee06e43456f3f7dfeb428b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125027"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65493376"
 ---
 # <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Introdução às atualizações de software no System Center Configuration Manager
 
@@ -130,19 +130,19 @@ Para obter um exemplo que mostra como você pode implantar atualizações de sof
 
  Incluindo o agendamento da verificação, a verificação de conformidade das atualizações de software pode ter início das seguintes maneiras:  
 
--   **Agendamento de verificação das atualizações de software**: A verificação de conformidade das atualizações de software começa no agendamento de verificação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre como definir as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#software-updates).  
+-   **Agendamento de verificação das atualizações de software**: a verificação de conformidade das atualizações de software começa no agendamento de verificação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre como definir as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
--   **Ação Propriedades do Configuration Manager**: O usuário pode iniciar a ação **Ciclo de Verificação de Atualizações de Software** ou **Ciclo de Avaliação de Implantação de Atualizações de Software** na guia **Ação** na caixa de diálogo **Propriedades do Configuration Manager** no computador cliente.  
+-   **Ação Propriedades do Configuration Manager**: o usuário pode iniciar a ação **Ciclo de Verificação de Atualizações de Software** ou **Ciclo de Avaliação de Implantação de Atualizações de Software** na guia **Ação** na caixa de diálogo **Propriedades do Configuration Manager** no computador cliente.  
 
--   **Agendamento de reavaliação da implantação**: A avaliação da implantação e verificação de conformidade das atualizações de software começam no agendamento de reavaliação da implantação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#software-updates).  
+-   **Agendamento de reavaliação da implantação**: a avaliação da implantação e a verificação de conformidade das atualizações de software começam no agendamento de reavaliação da implantação definido nas configurações do Agente Cliente de Atualizações de Software. Para obter mais informações sobre as configurações do cliente de Atualizações de Software, veja [Configurações do cliente de Atualizações de Software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
--   **Antes de baixar arquivos de atualização**: Quando um computador cliente recebe uma política de atribuição de uma nova implantação necessária, o Agente Cliente de Atualizações de Software baixa os arquivos de atualização no cache local do cliente. Para baixar os arquivos de atualização de software, o agente cliente inicia uma varredura para verificar se a atualização de software ainda é necessária.  
+-   **Antes de baixar arquivos de atualização**: quando um computador cliente recebe uma política de atribuição de uma nova implantação necessária, o Agente Cliente de Atualizações de Software baixa os arquivos de atualização no cache local do cliente. Para baixar os arquivos de atualização de software, o agente cliente inicia uma varredura para verificar se a atualização de software ainda é necessária.  
 
--   **Antes da instalação da atualização de software**: Para baixar os arquivos de atualização de software, o Agente Cliente de Atualizações de Software inicia uma varredura para verificar se as atualização ainda são necessárias.  
+-   **Antes da instalação da atualização de software**: logo antes da instalação da atualização de software, o Agente Cliente de Atualizações de Software inicia uma verificação para confirmar se as atualizações de software ainda são necessárias.  
 
--   **Após a instalação da atualização de software**: Depois que uma instalação de atualização de software é concluída, o Agente Cliente de Atualizações de Software inicia uma varredura para verificar se as atualizações não são mais necessárias e cria uma nova mensagem de estado que indica que a atualização de software foi instalada. Quando a instalação é concluída, mas uma reinicialização é necessária, a mensagem de estado indica que uma reinicialização está pendente no computador cliente.  
+-   **Após a instalação da atualização de software**: logo após uma instalação de atualização de software ser concluída, o Agente Cliente de Atualizações de Software inicia uma verificação para confirmar se as atualizações não são mais necessárias e cria uma nova mensagem de estado que indica que a atualização de software foi instalada. Quando a instalação é concluída, mas uma reinicialização é necessária, a mensagem de estado indica que uma reinicialização está pendente no computador cliente.  
 
--   **Após a reinicialização do sistema**: Quando uma reinicialização do sistema está pendente no computador cliente para que a instalação da atualização de software seja concluída, o Agente Cliente de Atualizações de Software inicia uma verificação após a reinicialização para verificar se a atualização de software não é mais necessária e cria uma mensagem de estado que indica que a atualização de software está instalada.  
+-   **Após a reinicialização do sistema**: quando uma reinicialização do sistema está pendente no computador cliente para que a instalação da atualização de software seja concluída, o Agente Cliente de Atualizações de Software inicia uma verificação após a reinicialização para confirmar se a atualização de software não é mais necessária e cria uma mensagem de estado que indica que a atualização de software está instalada.  
 
 #### <a name="time-to-live-value"></a>Valor de vida útil  
  Os metadados de atualizações de software necessários na verificação de conformidade das atualizações são armazenados no computador cliente local e, por padrão, são relevantes por até 24 horas. Esse valor é conhecido como TTL (Vida Útil).  

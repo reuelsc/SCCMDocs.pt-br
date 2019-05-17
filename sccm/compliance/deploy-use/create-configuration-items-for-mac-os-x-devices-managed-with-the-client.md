@@ -2,7 +2,7 @@
 title: 'Criar itens de configuração para Macs gerenciados pelo cliente '
 titleSuffix: Configuration Manager
 description: Use o item de configuração do Mac OS X do System Center Configuration Manager para gerenciar as configurações de dispositivos Mac OS X.
-ms.date: 03/28/2017
+ms.date: 05/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
@@ -11,19 +11,19 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf610c3310265f8b7dd6b467640617928a51258f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 07ef57dba35fc78bcf4e108ec571106b099b9145
+ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124046"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65214794"
 ---
 # <a name="how-to-create-configuration-items-for-mac-os-x-devices-managed-with-the-system-center-configuration-manager-client"></a>Como criar itens de configuração para dispositivos Mac OS X gerenciados com o cliente do System Center Configuration Manager
 Use o item de configuração do **Mac OS X (personalizado)** do System Center Configuration Manager para gerenciar as configurações de dispositivos Mac OS X que são gerenciados pelo cliente do Configuration Manager.  
   
  O sistema operacional Mac OS X usa arquivos de lista de propriedade (ou plist) para armazenar configurações de aplicativo. Use as configurações de conformidade para avaliar e corrigir configurações em um arquivo de lista de propriedade. Você também pode gerenciar as configurações do Mac OS X escrevendo um Script do Shell que retorna um valor que pode ser avaliado e corrigido quanto à conformidade.  
   
-### <a name="to-create-a-custom-mac-os-x-configuration-item"></a>Para criar um item de configuração personalizado do Mac OS X  
+## <a name="to-create-a-custom-mac-os-x-configuration-item"></a>Para criar um item de configuração personalizado do Mac OS X  
   
 1. No console do Configuration Manager, clique em **Ativos e conformidade**.  
   
@@ -81,18 +81,18 @@ Use o item de configuração do **Mac OS X (personalizado)** do System Center Co
   
 14. Na caixa de diálogo **Criar Regra** , forneça as seguintes informações:  
   
-    -   **Nome:** insira um nome para a regra de conformidade.  
+    -   **Nome:** Digite um nome para a regra de conformidade.  
   
-    -   **Descrição:** insira uma descrição para a regra de conformidade.  
+    -   **Descrição:** Insira uma descrição para a regra de conformidade.  
   
-    -   **Configuração selecionada:** clique em **Procurar** para abrir a caixa de diálogo **Selecionar Configuração**. Selecione a configuração que você deseja definir uma regra de, ou clique em **nova configuração**. Quando tiver terminado, clique em **Selecione**.  
+    -   **Configuração selecionada:** Clique em **Procurar** para abrir o **Selecionar configuração** caixa de diálogo. Selecione a configuração que você deseja definir uma regra de, ou clique em **nova configuração**. Quando tiver terminado, clique em **Selecione**.  
   
         > [!TIP]  
         >  Você também pode clicar em **propriedades** para exibir informações sobre a configuração selecionada no momento.  
   
-    -   **Tipo de regra:** selecione o tipo de regra de conformidade que você deseja usar:  
+    -   **Tipo de regra:** selecione o tipo de regra de conformidade que deseja usar:  
   
-        -   **Valor:** crie uma regra que compare o valor retornado pelo item de configuração com um valor que você especifica.  
+        -   **Valor:** crie uma regra que compara o valor retornado pelo item de configuração com um valor especificado.  
   
         -   **Existential** - Crie uma regra que avalia a configuração dependendo se ela existir em um dispositivo.  
   
@@ -145,7 +145,7 @@ Use o item de configuração do **Mac OS X (personalizado)** do System Center Co
   
             -   **A configuração não deve existir em dispositivos cliente**  
   
-        -   **Gravidade de não conformidade para relatórios:** especifique o nível de gravidade relatado em caso de falha desta regra de conformidade. Os níveis de severidade disponíveis são os seguintes:  
+        -   **Severidade de não conformidade para relatórios:** Especifique o nível de severidade relatado se a regra de conformidade falhar. Os níveis de severidade disponíveis são os seguintes:  
   
             -   **Nenhum** - os computadores que não cumprem essa regra de conformidade não relatam uma severidade de falha em relatórios do Configuration Manager.  
   
@@ -168,5 +168,6 @@ Use o item de configuração do **Mac OS X (personalizado)** do System Center Co
   
     Se quiser adicionar esse item de configuração a uma linha de base de configuração, consulte [Como criar linhas de base de configuração para as configurações de conformidade no System Center Configuration Manager](../../compliance/deploy-use/create-configuration-baselines.md).  
   
-## <a name="see-also"></a>Consulte também  
- [Itens de configuração de dispositivos gerenciados com o cliente do System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)
+## <a name="next-steps"></a>Próximas etapas
+
+ [Itens de configuração de dispositivos gerenciados com o cliente do System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items.md)

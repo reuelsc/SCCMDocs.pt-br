@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99cd37d0034725c85709e454960171714cd3db13
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: fa86d335b94db796f37955462abddeb9451ccf4e
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133809"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083132"
 ---
 # <a name="use-software-center-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Use o Centro de Software para implantar o Windows pela rede com o System Center Configuration Manager
 
@@ -34,8 +34,8 @@ Conclua as etapas em um dos cenários de implantação de sistema operacional. E
 Para disponibilizar a implantação de sistema operacional no Centro de Software, configure a implantação. Você pode configurar a implantação na página **Configurações de Implantação** do Assistente de Implantação de Software ou na guia **Configurações de Implantação** nas propriedades de implantação. Para a configuração **Tornar disponível para o seguinte** , configure a opção **Somente os clientes do Configuration Manager** ou **Clientes do Configuration Manager, mídia e PXE**. Após a implantação do sistema operacional pelo sistema, o sistema operacional será exibido no Centro de Software para membros da coleção de destino.
 
 ##  <a name="BKMK_Deploy"></a> Implantar a sequência de tarefas em computadores  
-Implantar o sistema operacional para uma coleção de destino. Para obter mais informações, consulte [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS). Quando você implanta sistemas operacionais para o Centro de Software, você pode configurar se a implantação será obrigatória ou estará disponível.
+Implantar o sistema operacional para uma coleção de destino. Para obter mais informações, consulte [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence). Quando você implanta sistemas operacionais para o Centro de Software, você pode configurar se a implantação será obrigatória ou estará disponível.
 
--   **Implantação necessária**: implantações necessárias disponibilizarão o sistema operacional no Centro de Software, mas ele será iniciado automaticamente no agendamento de atribuição configurado.
+-   **Implantação necessária**: implantações necessárias tornarão o sistema operacional disponível no Centro de Software, mas ele será iniciado automaticamente no agendamento de atribuição configurado.
 
 -   **Implantação disponível**: o sistema operacional estará disponível no Centro de Software e o usuário poderá instalá-lo sob demanda.

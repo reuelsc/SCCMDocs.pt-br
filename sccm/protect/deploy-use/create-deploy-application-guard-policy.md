@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
 ms.assetid: 33a6c1d9-4dd8-411c-a748-693a5bd2ea5a
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf5345cd54882ae46171b7d3800e1ed818834ecb
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: 3e2eb7aa483c48ee6099cbb1605c082c9b0315ee
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802233"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500634"
 ---
 # <a name="create-and-deploy-windows-defender-application-guard-policy"></a>Criar e implantar políticas do Windows Defender Application Guard 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -33,7 +33,7 @@ Para criar e implantar uma política do Windows Defender Application Guard, é n
 1. No console do Configuration Manager, escolha **Ativos e Conformidade**.
 2. No workspace **Ativos e Conformidade**, escolha **Visão Geral** > **Endpoint Protection** > **Windows Defender Application Guard**.
 3. Na guia **Início**, no grupo **Criar**, clique em **Criar Política do Windows Defender Application Guard**.
-4. Usando o [artigo](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/configure-wd-app-guard) como referência, você pode procurar e definir as configurações disponíveis. O Configuration Manager permite que você defina algumas configurações de política. Consulte [Configurações de interação de host](#BKMK_HIS) e [Comportamento do aplicativo](#BKMK_AppB).
+4. Usando o [artigo](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/configure-wd-app-guard) como referência, você pode procurar e definir as configurações disponíveis. O Configuration Manager permite que você defina algumas configurações de política. Consulte [Configurações de interação de host](#bkmk_HIS) e [Comportamento do aplicativo](#bkmk_ABS).
 5. Na página **Definição de Rede**, especifique a identidade corporativa e defina o limite da rede corporativa.
 
     > [!NOTE]

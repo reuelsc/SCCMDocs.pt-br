@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea320b42bfb08ec0023598d010375042d143c220
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: e5651f381f2c4a101c82d6f1f7730ffc4ae99a20
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124063"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083537"
 ---
 # <a name="manage-os-images-with-configuration-manager"></a>Gerenciar imagens do sistema operacional com o Configuration Manager
 
@@ -110,6 +110,6 @@ Use implantações multicast para permitir que mais de um computador baixe simul
 
     -   **Transferir este pacote somente via multicast**: especifique se deseja que o ponto de distribuição para implantar a imagem somente durante uma sessão de multicast.  
 
-         Se você selecionar **Transferir este pacote somente via multicast**, também será preciso especificar a opção de implantação de sequência de tarefa para **Baixar conteúdo localmente quando necessário executando a sequência de tarefas**. Para obter mais informações, consulte [Deploy a task sequence](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).   
+         Se você selecionar **Transferir este pacote somente via multicast**, também será preciso especificar a opção de implantação de sequência de tarefa para **Baixar conteúdo localmente quando necessário executando a sequência de tarefas**. Para obter mais informações, consulte [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).   
 
 5.  Selecione **OK** para salvar as configurações e fechar as propriedades da imagem.  

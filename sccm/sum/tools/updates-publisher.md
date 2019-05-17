@@ -7,20 +7,20 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
 ms.assetid: 2200b02b-e76b-4aa7-a77a-6dc5e70f1333
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f21e087e73a26191af56793e0015cbb21e8714c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: d19f2529c549c84b969124bf006dd5793b28521b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136527"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65493392"
 ---
 # <a name="system-center-updates-publisher"></a>System Center Updates Publisher
 
-*Aplica-se a: System Center Updates Publisher*
+*Aplica-se ao: System Center Updates Publisher*
 
 O System Center Updates Publisher (Updates Publisher) é uma ferramenta autônoma que permite que os fornecedores independentes de software ou os desenvolvedores de aplicativos de linha de negócios gerenciem atualizações personalizadas. Isso inclui atualizações com dependências, como drivers e pacotes de atualização.
 
@@ -45,19 +45,19 @@ Quando você abre o Updates Publisher, ele mostra como padrão o nó Visão gera
 O Updates Publisher tem quatro workspaces para ajudar a organizá-lo.
 
 
-**Workspace de atualizações:** use este workspace para [criar](/sccm/sum/tools/create-updates-with-updates-publisher) e [gerenciar](/sccm/sum/tools/manage-updates-with-updates-publisher) atualizações de software e pacotes de atualização. Isso inclui a atribuição de atualizações e pacotes a uma publicação, publicação e exportação para outro repositório do Updates Publisher.
+**Workspace de Atualizações:** use este workspace para [criar](/sccm/sum/tools/create-updates-with-updates-publisher) e [gerenciar](/sccm/sum/tools/manage-updates-with-updates-publisher) atualizações de software e pacotes de atualização. Isso inclui a atribuição de atualizações e pacotes a uma publicação, publicação e exportação para outro repositório do Updates Publisher.
 
-**Workspace de publicações:** é nesse local que você [gerencia as publicações](/sccm/sum/tools/updates-publisher-publications). Uma publicação é um grupo de atualizações que você cria para simplificar a exportação e a publicação das atualizações.
+**Workspace de Publicações:** e neste local que você [gerencia as publicações](/sccm/sum/tools/updates-publisher-publications). Uma publicação é um grupo de atualizações que você cria para simplificar a exportação e a publicação das atualizações.
 
 O gerenciamento de publicações inclui a publicação de atualizações em um servidor para que os clientes possam localizar e instalá-las, exportar atualizações e pacotes para uso de outras instalações do Updates Publisher ou modificação do conteúdo ou detalhes de uma publicação.
 
 
 
-**Workspace de regras:** é nesse local que você [gerencia as regras de aplicabilidade](/sccm/sum/tools/updates-publisher-applicability-rules) que podem ser salvas e, em seguida, usadas com as atualizações implantadas. Há dois tipos de regras:
+**Workspace de Regras:** é neste local que você [gerencia regras de aplicabilidade](/sccm/sum/tools/updates-publisher-applicability-rules) que podem ser salvas e, em seguida, usadas com as atualizações implantadas. Há dois tipos de regras:
 
 -   Regras instaláveis – Essas regras ajudam a determinar se um cliente deve instalar uma atualização.
 -   Regras instaladas – Essas regras verificam se uma atualização já está instalada.
 
-**Workspace de catálogos:** use esse workspace para adicionar e [gerenciar catálogos de atualizações de software](/sccm/sum/tools/updates-publisher-catalogs). Isso inclui a importação de atualizações de software desses catálogos para o repositório do Updates Publisher.
+**Workspace de Catálogos:** use esse workspace para adicionar e [gerenciar catálogos de atualizações de software](/sccm/sum/tools/updates-publisher-catalogs). Isso inclui a importação de atualizações de software desses catálogos para o repositório do Updates Publisher.
 ## <a name="first-steps"></a>Primeiras etapas
 Para começar, primeiro [instale](/sccm/sum/tools/install-updates-publisher)e depois [configure as opções](/sccm/sum/tools/updates-publisher-options) do Updates Publisher.

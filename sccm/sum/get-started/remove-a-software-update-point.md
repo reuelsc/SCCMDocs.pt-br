@@ -2,21 +2,21 @@
 title: Remover um ponto de atualização de software
 titleSuffix: Configuration Manager
 description: Siga esse procedimento para remover a função do sistema de sites do ponto de atualização de software em um site no console do Configuration Manager.
-author: aczechowski
 ms.date: 10/06/2016
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 2486375c-d4a2-4cf2-9124-9bee02bbf173
 manager: dougeby
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7ab7e28d576bb543fa47f86ad4363e9cffd53e0
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 999ace880812c6baa3fd359433e4e929699c8612
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138000"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499756"
 ---
 #  <a name="BKMK_RemoveSUP"></a> Remover a função do sistema de sites do ponto de atualização de software  
 

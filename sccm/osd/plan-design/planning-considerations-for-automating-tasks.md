@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6030bb1a02a94e61cf3ef53b6d90f7b6a5ae4f7a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 32a645f95d25c92809723ae735f566535fc4043d
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122093"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083300"
 ---
 # <a name="planning-considerations-for-automating-tasks-in-configuration-manager"></a>Considerações de planejamento para automatizar tarefas no Gerenciador de Configurações
 
@@ -92,12 +92,13 @@ ms.locfileid: "56122093"
 
 
 ## <a name="add-child-task-sequences-to-a-task-sequence"></a>Adicionar sequências de tarefas filho a uma sequência de tarefas
- <!--1261338--> Começando com o Configuration Manager versão 1710, você pode adicionar uma nova etapa de sequência de tarefas que executa outra sequência de tarefas. Essa etapa cria um relacionamento pai-filho entre as sequências de tarefas. O uso dessa etapa permite que você crie sequências de tarefas mais modulares que podem ser usadas novamente.  
+ <!--1261338-->
+ Começando com o Configuration Manager versão 1710, você pode adicionar uma nova etapa de sequência de tarefas que executa outra sequência de tarefas. Essa etapa cria um relacionamento pai-filho entre as sequências de tarefas. O uso dessa etapa permite que você crie sequências de tarefas mais modulares que podem ser usadas novamente.  
 
  Para saber mais, confira [Executar sequência de tarefas](/sccm/osd/understand/task-sequence-steps#child-task-sequence). 
 
  > [!Note]  
- > O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, veja [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+ > O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 
 
@@ -190,7 +191,7 @@ ms.locfileid: "56122093"
  >   
  >  Se clientes baixarem sequências de tarefas fora de uma janela de manutenção, a sequência de tarefas será baixada duas vezes. Nesse cenário, o cliente faz o download da sequência de tarefas, desabilita o filtro de gravação, reinicia o computador e baixa a sequência de tarefas novamente. Esse comportamento ocorre porque a sequência de tarefas foi baixada originalmente em uma sobreposição temporária, que é apagada quando o dispositivo é reiniciado.  
 
- Para obter mais informações sobre como implantar sequências de tarefas, consulte [Implantar uma sequência de tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  
+ Para obter mais informações sobre como implantar sequências de tarefas, consulte [Implantar uma sequência de tarefas](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 
 
 
@@ -267,7 +268,7 @@ Para obter mais informações, confira [HTTP aprimorado](/sccm/core/plan-design/
 > [!Note]  
 > Os cenários de implantação de sistema operacional a seguir ainda exigem o uso de uma conta de acesso à rede:
 >  
-> - A [opção de implantação](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS) de sequência de tarefas, **Acessar conteúdo diretamente de um ponto de distribuição quando necessário executando a sequência de tarefas**   
+> - A [opção de implantação](/sccm/osd/deploy-use/deploy-a-task-sequence) de sequência de tarefas, **Acessar conteúdo diretamente de um ponto de distribuição quando necessário executando a sequência de tarefas**   
 > - A opção de etapa de [Armazenamento de Estado da Solicitação](/sccm/osd/understand/task-sequence-steps#BKMK_RequestStateStore), **Se a conta de computador não conseguir se conectar a um armazenamento de estado, use a conta de acesso à rede** 
 > - Ao conectar-se com um domínio não confiável ou entre florestas do Active Directory 
 > - A opção de etapa [Aplicar Imagem do Sistema Operacional](/sccm/osd/understand/task-sequence-steps#BKMK_ApplyOperatingSystemImage), **Acessar o conteúdo diretamente do ponto de distribuição** 

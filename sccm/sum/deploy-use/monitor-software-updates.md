@@ -2,8 +2,8 @@
 title: Monitorar atualizações de software
 titleSuffix: Configuration Manager
 description: O console do System Center Configuration Manager fornece alertas e status para monitorar atualizações e a conformidade.
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.date: 07/30/2018
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 9afd7b0f-5c8e-48bc-9a65-1f7d74103688
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9399900849ead41118cb727c3ec36cd8345e393b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 5cd5c27aa04f25b044f74533983a214dc9f9341b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133098"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500147"
 ---
 # <a name="monitor-software-updates-in-system-center-configuration-manager"></a>Monitorar atualizações de software no System Center Configuration Manager
 
@@ -32,7 +32,7 @@ Começando do Configuration Manager versão 1610, é possível usar o Painel de 
 
 -   Configuração de ADR: é possível definir as configurações de alertas no Assistente de Regra de Implantação Automática e nas propriedades da ADR.  
 
--   Configuração de implantação: Você pode definir as configurações de alertas no Assistente para Implantar Atualizações de Software e nas propriedades de implantação.  
+-   Configuração de implantação: é possível definir as configurações de alertas no Assistente para Implantar Atualizações de Software e nas propriedades de implantação.  
 
 Depois de definir as configurações de alerta, se ocorrerem as condições especificadas, o Configuration Manager gerará um alerta. Você pode revisar os alertas de atualização de software nos seguintes locais:  
 
@@ -69,9 +69,9 @@ A seguir há alguns dos relatórios que são úteis para a identificação de po
 #### <a name="compliance-9---overall-health-and-compliance-starting-in-version-1806"></a>Conformidade 9 – integridade e conformidade gerais (começando na versão 1806)
 O relatório inclui as seguintes partes:
 
-- **Clientes Íntegros versus Total de Clientes**: esse gráfico de barras compara os clientes "íntegros" que se comunicaram com o site no período de tempo especificado em relação ao número total de clientes na coleção especificada.
-- **Visão geral de conformidade**: esse gráfico de pizza mostra o estado de conformidade geral do grupo de atualização de software específico em clientes ativos na coleção especificada.
-- **Cinco principais fora de conformidade por ID do artigo**: esse gráfico de barras exibe as cinco principais atualizações de software no grupo especificado que estão fora de conformidade em clientes ativos na coleção especificada.
+- **Clientes Íntegro vs Total de Clientes**: esse gráfico de barras compara os clientes "íntegros" que se comunicaram com o site no período de tempo especificado em relação ao número total de clientes na coleção especificada.
+- **Visão Geral de Conformidade**: esse gráfico de pizza mostra o estado de conformidade geral do grupo de atualização de software específico em clientes ativos na coleção especificada.
+- **Cinco principais atualizações sem conformidade por ID de artigo**: esse gráfico de barras exibe as cinco principais atualizações de software no grupo especificado que estão fora de conformidade em clientes ativos na coleção especificada.
 - A parte inferior do relatório é uma tabela com mais detalhes, que lista as atualizações de software no grupo especificado.
 
 #### <a name="management-2---updates-required-but-not-deployed"></a>gerenciamento 2 - Atualizações necessárias, mas não implantadas

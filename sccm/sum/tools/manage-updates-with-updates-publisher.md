@@ -7,20 +7,20 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
 ms.assetid: cd64994c-b426-4465-96cd-54b0edc2778d
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f658ce4757455e4e49cff6228ee37a38b8e4fa5
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 88cc03de66847143336425dbc4b730703d15378c
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56139486"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65493779"
 ---
 # <a name="manage-software-updates-in-updates-publisher"></a>Gerenciar atualizações de software no Updates Publisher
 
-*Aplica-se a: System Center Updates Publisher*     
+*Aplica-se ao: System Center Updates Publisher*     
 
 No System Center Updates Publisher, use o **Workspace de Atualizações** para gerenciar atualizações de software e pacotes que você importou para o repositório.  
 
@@ -90,7 +90,7 @@ Há duas maneiras de publicar pacotes e atualizações:
 ### <a name="to-publish-updates-and-bundles"></a>Para publicar atualizações e pacotes
 1.  Acesse **Workspace de Atualizações** e selecione uma ou mais atualizações e pacotes que você deseja publicar. Em seguida, escolha **Publicar** na guia **Início** da faixa de opções.
 
-2.  Na página **Selecionar** do assistente **Publicar**, selecione como você deseja publicar as atualizações. As opções são as mesmas para a [atribuição de atualizações](#assign-updates-and-bundles-to-a-publication): **Conteúdo Completo**, **Somente metadados** ou **Automática**.
+2.  Na página **Selecionar** do assistente **Publicar**, selecione como você deseja publicar as atualizações. As opções são as mesmas para [atribuição de atualizações](#assign-updates-and-bundles-to-a-publication): **Conteúdo Completo**, **Somente metadados** ou **Automáticas**.
 
     Também é possível escolher assinar todas as atualizações com um novo certificado de publicação.
 

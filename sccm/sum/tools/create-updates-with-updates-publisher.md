@@ -7,20 +7,20 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
 ms.assetid: 46a1a8ac-126c-4ee6-ae09-32dfbdb83368
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0cf0665e3302181370b3d2d08b4071be3527852a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: ec448f0d2752cda2509b6daa0302ff521044bef4
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56141129"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65493778"
 ---
 # <a name="create--software-updates-and-update-bundles-with-updates-publisher"></a>Criar atualizações de software e pacotes de atualização com o Updates Publisher
 
-*Aplica-se a: System Center Updates Publisher*
+*Aplica-se ao: System Center Updates Publisher*
 
 Com o Updates Publisher, você pode usar o assistente **Criar Atualização** para criar suas próprias atualizações, e o assistente **Criar Pacote** para criar pacotes de atualizações.
 
@@ -55,31 +55,31 @@ Como esses dois assistentes têm um fluxo de trabalho semelhante, o procedimento
 
     __Propriedades localizadas:__
 
-   - **Idioma**: Selecione um idioma e especifique um título e uma descrição. Selecione outros idiomas, um por vez, e o próprio título e descrição de cada um deles.
+   - **Idioma**: selecione um idioma e especifique um título e uma descrição. Selecione outros idiomas, um por vez, e o próprio título e descrição de cada um deles.
 
-   - **Título**: Insira o nome da atualização. Esse nome é exibido no Workspace de Atualizações do console Updates Publisher.
+   - **Título**: insira o nome do banco de dados. Esse nome é exibido no Workspace de Atualizações do console Updates Publisher.
 
-   - **Descrição**: Uma descrição amigável da atualização. Você pode incluir o que a atualização instala e porque ou quando ela deve ser usada.
+   - **Descrição**: uma descrição amigável da atualização. Você pode incluir o que a atualização instala e porque ou quando ela deve ser usada.
 
-     **Classificação:** As opções a seguir são descrições comuns para as diferentes classificações.
+     **Classificação:** as opções a seguir são descrições comuns para classificações diferentes.
 
-   - **Atualização**: Uma atualização para um aplicativo ou arquivo instalado no momento.
+   - **Atualizar**: uma atualização para um aplicativo ou arquivo instalado no momento.
 
-   - **Crítica**: Uma atualização lançada em larga escala para um problema específico que soluciona um bug crítico não relacionado à segurança.
+   - **Crítica**: uma atualização lançada em larga escala para um problema específico que soluciona um bug crítico não relacionado à segurança.
 
-   - **Feature Pack**: Novos recursos de produtos que são distribuídos fora de um lançamento de produto e que normalmente são incluídos no próximo lançamento do produto completo.
+   - **Pacote de Recursos**: novos recursos de produtos que são distribuídos fora de um lançamento de produto e que normalmente são incluídos no próximo lançamento do produto completo.
 
-   - **Segurança**: Uma atualização lançada em larga escala para um problema específico a um produto relacionado à segurança.
+   - **Segurança**: uma atualização lançada em larga escala para um problema específico a um produto relacionado à segurança.
 
-   - **Pacote Cumulativo de Atualizações**: Um conjunto cumulativo de hotfixes que são reunidos em um pacote para facilitar a implantação. Esses hotfixes podem incluir atualizações de segurança, atualizações críticas, atualizações e assim por diante. Um pacote cumulativo de atualizações geralmente aborda uma área específica, como segurança ou um recurso do produto.
+   - **Pacote Cumulativo de Atualizações**: um conjunto cumulativo de hotfixes reunidos para facilitar a implantação. Esses hotfixes podem incluir atualizações de segurança, atualizações críticas, atualizações e assim por diante. Um pacote cumulativo de atualizações geralmente aborda uma área específica, como segurança ou um recurso do produto.
 
-   - **Service Pack**: Um conjunto cumulativo de hotfixes que são aplicados a um aplicativo. Esses hotfixes podem incluir atualizações de segurança, atualizações críticas, atualizações de software e assim por diante.
+   - **Service Pack**: um conjunto cumulativo de hotfixes que são aplicados a um aplicativo. Esses hotfixes podem incluir atualizações de segurança, atualizações críticas, atualizações de software e assim por diante.
 
-   - **Ferramenta**: Especifica uma ferramenta ou recurso que ajuda a concluir uma ou mais tarefas.
+   - **Ferramenta**: especificam uma ferramenta ou recurso que ajuda a concluir uma ou mais tarefas.
 
-     -   **Driver**: Uma atualização de um driver de software.
+     -   **Driver**: uma atualização de um driver de software.
 
-   **Fornecedor:** Especifique um fornecedor para a atualização. Use a lista suspensa para usar valores de atualizações que estão no repositório. Quando você especifica um fornecedor, o assistente cria uma pasta com o nome desse fornecedor em **Todas as Atualizações de Software** no **Workspace de Atualizações**, caso essa pasta ainda não exista. Os nomes a seguir são nomes do WSUS (Windows Server Update Services) reservados que não podem ser inseridos para as atualizações criadas por você:
+   **Fornecedor**: especifica um fornecedor para a atualização. Use a lista suspensa para usar valores de atualizações que estão no repositório. Quando você especifica um fornecedor, o assistente cria uma pasta com o nome desse fornecedor em **Todas as Atualizações de Software** no **Workspace de Atualizações**, caso essa pasta ainda não exista. Os nomes a seguir são nomes do WSUS (Windows Server Update Services) reservados que não podem ser inseridos para as atualizações criadas por você:
    >*   Microsoft Corporation
    >*   Microsoft
    >*   Atualização
@@ -98,32 +98,32 @@ Como esses dois assistentes têm um fluxo de trabalho semelhante, o procedimento
    >*   Pacote
    >*   Atualização do Pacote
 
-**Produto**: Especifique o tipo de produto da atualização. Use a lista suspensa para usar valores de atualizações que estão no repositório. A mesma lista com os nomes reservados do WSUS que não podem ser usados para **Fornecedor**, não pode ser usada para **Produto**.
+**Produto**: especifique o tipo de produto da atualização. Use a lista suspensa para usar valores de atualizações que estão no repositório. A mesma lista com os nomes reservados do WSUS que não podem ser usados para **Fornecedor**, não pode ser usada para **Produto**.
 
- **URL de informações adicionais**: Especifique a URL em que você pode encontrar mais informações sobre essa atualização. Use letras minúsculas para **https** ou **http** quando inserir essa URL.
+ **URL de informações adicionais**: especifique a URL onde você pode encontrar mais informações sobre essa atualização. Use letras minúsculas para **https** ou **http** quando inserir essa URL.
 
 4. Na página **Informações Opcionais**, configure os detalhes que fornecem mais informações sobre a atualização.
 
    -   **ID do Boletim**: IDs de boletim são normalmente, mas nem sempre, oferecidas pelos fornecedores de atualização.
 
-   -   **ID do artigo**: Se um artigo de atualização de software estiver disponível, a ID do Artigo poderá ser útil para pessoas que buscam informações adicionais sobre a atualização.
+   -   **ID do Artigo**: se um artigo de atualização de software estiver disponível, a ID do Artigo poderá ser útil para pessoas que buscam informações adicionais sobre a atualização.
 
-   -   **IDs de CVE:** Lista um ou mais identificadores de CVE (Vulnerabilidades e exposições comuns) que fornecem informações de segurança sobre a atualização ou pacote de atualizações. Ao listar mais de um, use um ponto e vírgula para separar os CVEs, como neste exemplo: *CVE1;CVE2.*
+   -   **IDs de CVE:** lista um ou mais identificadores de CVE (Vulnerabilidades e exposições comuns) que fornecem informações de segurança sobre a atualização ou pacote de atualizações. Ao listar mais de um, use um ponto e vírgula para separar os CVEs, como neste exemplo: *CVE1; CVE2.*
 
-   -   **URL de suporte:** Lista a URL que contém informações de suporte para esta atualização se houver alguma disponível. Use letras minúsculas para **https** ou **http** quando inserir essa URL.
+   -   **URL de Suporte:** lista a URL que contém informações de suporte para esta atualização, se houver alguma disponível. Use letras minúsculas para **https** ou **http** quando inserir essa URL.
 
-   -   **Gravidade:** Defina o nível de gravidade dessa atualização.
+   -   **Gravidade:** defina o nível de gravidade dessa atualização.
 
-   -   **Impacto:** As opções a seguir podem ser usadas para especificar o impacto:
+   -   **Impacto:** as opções a seguir podem ser usadas para especificar o impacto:
        -   **Normal –** use para indicar que a atualização exige procedimentos de instalação típicos.
        -   **Secundário –** use para indicar que a atualização exige procedimentos mínimos de instalação.
        -   **Requer um tratamento exclusivo –** use para indicar que a atualização deve ser instalada sozinha, separada de outras atualizações.   <br /><br />
 
-   -   **Comportamento de Reinicialização:** Use para fornecer informações sobre o comportamento de reinicialização das atualizações. Essa configuração não afeta o comportamento real da instalação da atualização.
+   -   **Comportamento de Reinicialização:** use para fornecer informações sobre o comportamento de reinicialização das atualizações. Essa configuração não afeta o comportamento real da instalação da atualização.
 
-       -   **Nunca reinicia**: O computador nunca executa uma reinicialização do sistema após a instalação da atualização de software.
-       -   **Sempre exige reinicialização**: O computador sempre executa uma reinicialização do sistema após a instalação da atualização de software.
-       -   **Pode solicitar reinicialização**: Depois de instalar a atualização de software, o computador solicitará uma reinicialização do sistema somente se for necessário. O usuário tem a opção de adiar a reinicialização. Este é o valor padrão. <br /><br />
+       -   **Nunca reinicia**: o computador nunca executa uma reinicialização do sistema após a instalação da atualização de software.
+       -   **Sempre exige reinicialização**: o computador sempre executa uma reinicialização do sistema após a instalação da atualização de software.
+       -   **Pode solicitar reinicialização**: depois de instalar a atualização de software, o computador solicitará uma reinicialização do sistema somente se for necessário. O usuário tem a opção de adiar a reinicialização. Este é o valor padrão. <br /><br />
 
 5. Na página **Pré-requisito**, especifique os pré-requisitos que devem ser instalados em um computador para que essa atualização possa ser instalada. Os pré-requisitos podem ser **detectoids** ou outras atualizações. Detectoids são regras de alto nível, como uma que exige que a CPU dos computadores seja um processador de 64 bits. Os detectoids também podem especificar as atualizações específicas que devem ser instaladas antes que essa atualização possa ser instalada.
 

@@ -2,8 +2,8 @@
 title: Realização de serviços em um grupo de servidores
 titleSuffix: Configuration Manager
 description: O console do System Center Configuration Manager fornece alertas e status para monitorar atualizações e a conformidade.
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.date: 12/07/2016
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 304a83ea-0f72-437d-9688-2e6e0c7526dd
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aac5c9d6c683447fe7dda50e6dcfd52b7024656d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 68e4ed043e4a3c0efb77ef69d8bf294d63a0b7fa
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131635"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500062"
 ---
 # <a name="service-a-server-group"></a>Realização de serviços em um grupo de servidores
 
@@ -42,11 +42,11 @@ As configurações do grupo do servidores são definidas nas propriedades de uma
 
 4.  Na página **Configurações do Grupo de Servidor**, especifique uma das seguintes configurações:  
 
-    -   **Permitir que um percentual dos computadores seja atualizado ao mesmo tempo**: Especifica que apenas um determinado percentual de clientes seja atualizado a qualquer momento. Se, por exemplo, a coleção tiver 10 clientes e for configurada para atualizar 30% dos clientes ao mesmo tempo, apenas três clientes instalarão atualizações de software a qualquer momento.  
+    -   **Allow a percentage of machines to be updated at the same time (Permitir que um percentual de computadores seja atualizado ao mesmo tempo)**: especifica que somente um determinado percentual dos clientes serão atualizados a qualquer dado momento. Se, por exemplo, a coleção tiver 10 clientes e for configurada para atualizar 30% dos clientes ao mesmo tempo, apenas três clientes instalarão atualizações de software a qualquer momento.  
 
-    -   **Permitir que vários computadores sejam atualizados ao mesmo tempo**: Especifica que apenas um determinado número de clientes seja atualizado a qualquer momento.  
+    -   **Allow a number of machines to be updated at the same time (Permitir que um número de computadores seja atualizado ao mesmo tempo)**: especifica que somente um determinado número dos clientes será atualizado a qualquer dado momento.  
 
-    -   **Especificar a sequência de manutenção**: especifica que os clientes na coleção serão atualizados um de cada vez na sequência que você configurar. Um cliente instalará atualizações de software apenas depois que o cliente que está à sua frente na lista terminar de instalar atualizações de software.  
+    -   **Especifique a sequência de manutenção**: especifica que os clientes na coleção serão atualizados um de cada vez na sequência que você configurar. Um cliente instalará atualizações de software apenas depois que o cliente que está à sua frente na lista terminar de instalar atualizações de software.  
 
 5.  Especifique se deseja usar um script de pré-implantação (drenagem de nó) ou pós-implantação (retomada de nó).  
 

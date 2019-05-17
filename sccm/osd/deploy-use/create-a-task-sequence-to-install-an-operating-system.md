@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c18d6320397281156e39624ea8dc50e6d0539ed
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: c6d0cecc348076bcf728cb08ba29500ae55d1c77
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56139901"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65082873"
 ---
 # <a name="create-a-task-sequence-to-install-an-operating-system-in-system-center-configuration-manager"></a>Criar uma sequência de tarefas para instalar um sistema operacional no System Center Configuration Manager
 
@@ -62,15 +62,15 @@ Use sequências de tarefas no System Center Configuration Manager para instalar 
 
 6. Na página **Instalar Windows** , especifique as seguintes configurações e clique em **Próximo**.  
 
-   -   **Pacote de imagem**: especifique o pacote que contém a imagem do sistema operacional para instalação. Para obter mais informações, consulte [Gerenciar imagens do sistema operacional](../get-started/manage-operating-system-images.md).  
+   -   **Pacote da imagem**: especifique o pacote que contém a imagem do sistema operacional para instalação. Para obter mais informações, consulte [Gerenciar imagens do sistema operacional](../get-started/manage-operating-system-images.md).  
 
    -   **Imagem**: se o pacote de imagens do sistema operacional contém várias imagens, especifique o índice da imagem do sistema operacional para instalação.  
 
    -   **Particionar e formatar o computador de destino instalando o sistema operacional**: especifique se você deseja que a sequência de tarefas particione e formate o computador de destino antes da instalação do sistema operacional.  
 
-   -   **Chave do produto (Product Key)**: especifique a chave do produto do sistema operacional Windows a instalar. Você pode especificar as chaves de licença de volume codificadas e as chaves do produto padrão. Se você usar uma chave de produto sem codificação, cada grupo de 5 caracteres deverá ser separado por um traço (-). Por exemplo: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
+   -   **Chave do produto**: especifique a chave do produto do sistema operacional Windows a instalar. Você pode especificar as chaves de licença de volume codificadas e as chaves do produto padrão. Se você usar uma chave de produto sem codificação, cada grupo de 5 caracteres deverá ser separado por um traço (-). Por exemplo: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
 
-   -   **Modo de licenciamento do servidor**: especifique que a licença do servidor é **Por estação**, **Por servidor** ou que nenhuma licença está especificada. Se a licença do servidor for **Por servidor**, especifique também o número máximo de conexões de servidor.  
+   -   **Modo de licenciamento do servidor**: especifique se a licença do servidor é **Por estação**, **Por servidor**ou se nenhuma licença está especificada. Se a licença do servidor for **Por servidor**, especifique também o número máximo de conexões de servidor.  
 
    -   Especifique como lidar com a conta de administrador usada quando a imagem de sistema operacional é implantada.  
 
@@ -80,7 +80,7 @@ Use sequências de tarefas no System Center Configuration Manager para instalar 
 
 7. Na página **Configurar a Rede** , especifique as seguintes configurações e clique em **Próximo**.  
 
-   -   **Ingressar em um grupo de trabalho**: especifique se deseja adicionar o computador de destino a um grupo de trabalho.  
+   -   **Ingressar no grupo de trabalho**: especifique se deseja adicionar o computador de destino a um grupo de trabalho.  
 
    -   **Ingressar em um domínio**: especifique se deseja adicionar o computador de destino a um domínio. Em **Domínio**, especifique o nome do domínio.  
 
@@ -110,7 +110,7 @@ Use sequências de tarefas no System Center Configuration Manager para instalar 
 
 12. Conclua o assistente.  
 
-    Agora é possível implantar a sequência de tarefas em uma coleção de computadores.  Para obter mais informações, consulte [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
+    Agora é possível implantar a sequência de tarefas em uma coleção de computadores.  Para obter mais informações, consulte [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 
 ##  <a name="BKMK_InstallExistingOSImageTSExample"></a> Exemplo de sequência de tarefas para instalar uma imagem do sistema operacional existente  
  Use a tabela a seguir como guia ao criar uma sequência de tarefas que implanta um sistema operacional usando uma imagem do sistema operacional existente. A tabela ajudarão você a decidir a seqüência geral de etapas da sequência de tarefas e como organizar e estruturar as etapas da sequência de tarefas em grupos lógicos. A sequência de tarefas que você criar este exemplo pode variar e pode conter mais ou menos grupos e etapas de sequência de tarefas.  

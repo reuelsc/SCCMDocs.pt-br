@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
 ms.assetid: b1fdaee2-2816-4447-94cd-609f6948f215
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59e64462f22736f7f132ae5f3d683d791b04ccf2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: c10dcc07ba2f67b004da462dbde17fb2200ec7a1
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132911"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65496796"
 ---
 # <a name="software-metering-in-system-center-configuration-manager"></a>Medição de software no System Center Configuration Manager
 
@@ -48,7 +48,7 @@ A medição de software não tem dependências externas, apenas dependências in
 
    -   **Habilitar medição de software em clientes**: selecione **True** para habilitar a medição de software.
 
-   -   **Agendar coleta de dados**: configurar a frequência com que os dados de medição de software são coletados dos computadores cliente. Use o valor padrão de cada **7 dias** ou clique em **Agendamento** para especificar um agendamento personalizado.
+   -   **Agendar coleta de dados**: configure a frequência com que os dados de medição de software são coletados dos computadores cliente. Use o valor padrão de cada **7 dias** ou clique em **Agendamento** para especificar um agendamento personalizado.
 
 5. Clique em **OK** para fechar a caixa de diálogo **Configurações Padrão** .
 

@@ -2,21 +2,21 @@
 title: Preparar-se para o gerenciamento de atualização de software
 titleSuffix: Configuration Manager
 description: Para preparar-se para gerenciar atualizações, conclua essas tarefas para exibir os dados de avaliação de conformidade no console do System Center Configuration Manager.
-author: aczechowski
 ms.date: 10/06/2016
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 01907900-e28b-4cd7-9479-42906416707b
 manager: dougeby
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57d83601af5aa41a61b80d539bf87f4e9616792c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 8381a9a5195982a2defa347934c28286e9082ce7
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138017"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65493965"
 ---
 # <a name="prepare-for-software-updates-management"></a>Preparar-se para o gerenciamento de atualização de software
 
@@ -30,7 +30,7 @@ O ponto de atualização de software é necessário no site de administração c
 ## <a name="step-2-synchronize-software-updates"></a>Etapa 2: Sincronizar atualizações de software
 A sincronização de atualização de software é o processo de recuperar metadados de atualização de software que atendem aos critérios configurados. Atualizações de software não são exibidas no console do Configuration Manager até que você sincronize as atualizações de software. Para ver mais detalhes, consulte [Sincronizar atualizações de software](synchronize-software-updates.md).   
 
-## <a name="step-3-configure-classifications-and-products-to-synchronize"></a>Etapa 3: configurar classificações e produtos para sincronizar
+## <a name="step-3-configure-classifications-and-products-to-synchronize"></a>Etapa 3: Configurar classificações e produtos para sincronizar
 Execute essa configuração no site da administração central ou no site primário autônomo. Depois de sincronizar atualizações de software na primeira vez, o Configuration Manager recupera uma lista atualizada de produtos e classificações. Agora, você pode selecionar entre as novas opções nas propriedades do Componente de Ponto de Atualização de Software. Depois de configurar as novas classificações e produtos, repita a etapa 2 para iniciar a sincronização de atualizações de software para recuperar metadados de atualizações de software para os novos critérios. Para ver os detalhes, consulte [Configurar classificações e produtos para sincronizar](configure-classifications-and-products.md).
 
 ## <a name="step-4-manage-settings-for-software-updates"></a>Etapa 4: Gerenciar configurações de atualizações de software

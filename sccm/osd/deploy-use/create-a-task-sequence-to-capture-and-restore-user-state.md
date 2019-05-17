@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0077cd6a906da59a06f4cf619b74ddc0af947cea
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 709442083cd2d9c935aeb2c5fe6c2ad30a2dddf5
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133911"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083042"
 ---
 # <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-configuration-manager"></a>Criar uma sequência de tarefas para capturar e restaurar o estado do usuário no Gerenciador de Configurações
 
@@ -30,13 +30,13 @@ ms.locfileid: "56133911"
 
  Para capturar e restaurar o estado do usuário, adicione as seguintes etapas à sequência de tarefas:  
 
- - [Solicitar repositório de estado](/sccm/osd/understand/task-sequence-steps#BKMK_RequestStateStore): se você armazenar o estado do usuário no ponto de migração de estado, precisará desta etapa.  
+ - [Solicitar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_RequestStateStore): essa etapa é necessária se você armazenar o estado do usuário no ponto de migração de estado.  
 
-- [Capturar estado do usuário](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureUserState): essa etapa captura os dados de estado do usuário. Em seguida, os armazena no ponto de migração de estado ou no disco local usando links físicos.  
+- [Capturar Estado do Usuário](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureUserState): essa etapa captura os dados de estado do usuário. Em seguida, os armazena no ponto de migração de estado ou no disco local usando links físicos.  
 
-- [Restaurar estado do usuário](/sccm/osd/understand/task-sequence-steps#BKMK_RestoreUserState): essa etapa restaura os dados de estado do usuário no computador de destino. Ela pode recuperar os dados de um ponto de migração de estado ou se houver um link físico no disco local.  
+- [Restaurar Estado do Usuário](/sccm/osd/understand/task-sequence-steps#BKMK_RestoreUserState): essa etapa restaura os dados de estado do usuário no computador de destino. Ela pode recuperar os dados de um ponto de migração de estado ou se houver um link físico no disco local.  
 
-- [Liberar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_ReleaseStateStore): se você armazenar o estado do usuário no ponto de migração de estado, precisará desta etapa. Ela remove os dados do ponto de migração de estado.  
+- [Liberar Armazenamento de Estado](/sccm/osd/understand/task-sequence-steps#BKMK_ReleaseStateStore): essa etapa é necessária se você armazenar o estado do usuário no ponto de migração de estado. Ela remove os dados do ponto de migração de estado.  
 
 
  Use os procedimentos a seguir para adicionar as etapas de sequência de tarefas necessárias para capturar e restaurar o estado do usuário. Para saber mais sobre a criação de sequências de tarefas em [Gerenciar sequências de tarefas para automatizar tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks).  
@@ -62,7 +62,7 @@ ms.locfileid: "56133911"
     >  A ação de sequência de tarefas executada antes da etapa **Liberar Armazenamento de Estado** deve ser bem-sucedida para que a etapa **Liberar Armazenamento de Estado** seja iniciada.  
 
 
- Implante essa sequência de tarefas para capturar o estado do usuário em um computador de destino. Para obter informações sobre como implantar sequências de tarefas, consulte [Implantar uma sequência de tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  
+ Implante essa sequência de tarefas para capturar o estado do usuário em um computador de destino. Para obter informações sobre como implantar sequências de tarefas, consulte [Implantar uma sequência de tarefas](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 
 
 
@@ -86,7 +86,7 @@ ms.locfileid: "56133911"
    >  A ação de sequência de tarefas executada antes da etapa **Liberar Armazenamento de Estado** deve ser bem-sucedida para que a etapa **Liberar Armazenamento de Estado** seja iniciada.  
 
 
- Implante essa sequência de tarefas para restaurar o estado do usuário em um computador de destino. Para obter mais informações sobre como implantar sequências de tarefas, consulte [Implantar uma sequência de tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  
+ Implante essa sequência de tarefas para restaurar o estado do usuário em um computador de destino. Para obter mais informações sobre como implantar sequências de tarefas, consulte [Implantar uma sequência de tarefas](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 
 
 

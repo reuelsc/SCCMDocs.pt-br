@@ -2,21 +2,21 @@
 title: Cenário de exemplo para implantar e monitorar as atualizações de software de segurança
 titleSuffix: Configuration Manager
 description: Use este cenário de exemplo de como usar atualizações de software no Configuration Manager para implantar e monitorar as atualizações de software de segurança que a Microsoft lança mensalmente.
-author: aczechowski
 manager: dougeby
 ms.date: 10/06/2016
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: c32f757a-02da-43f2-b055-5cfd097d8c43
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30377a9b2cfde1616114779ab7790deec1fb2bb2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 02c1f1cbc80bacf35306d2e4d5367a41ec5d8c1c
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132118"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65496334"
 ---
 # <a name="example-scenario-for-using-system-center-configuration-manager-to-deploy-and-monitor-the-security-software-updates-released-monthly-by-microsoft"></a>Exemplo de cenário de uso do System Center Configuration Manager para implantar e monitorar as atualizações de software de segurança liberadas mensalmente pela Microsoft
 
@@ -47,8 +47,8 @@ Este tópico fornece um cenário de exemplo de como usar atualizações de softw
 
 |Processar|Referência|  
 |-------------|---------------|  
-|No nó **Todas as Atualizações de Software** do console do Configuration Manager, João adiciona critérios para exibir somente as atualizações de software de segurança liberadas ou revisadas no ano de 2015 que atendem aos seguintes critérios:<br /><br /><ul><li>**Critérios**: Data de lançamento ou revisão</li><li>**Condição**: é maior ou igual à data específica<br />**Valor**: 1/1/2015</li><li>**Critérios**: Classificação de Atualização<br />**Valor**: Atualizações de Segurança</li><li>**Critérios**: Expirado <br />**Valor**: Não</li></ul>|Nenhuma informação adicional|
-|João adiciona todas as atualizações de software filtradas a um novo grupo de atualização de software com os seguintes requisitos:<br /><br /><ul><li>**Nome**: Grupo de conformidade – Atualizações de Segurança da Microsoft 2015</li><li>**Descrição**: Atualizações de software|[Adicionar atualizações de software a um grupo de atualização](add-software-updates-to-an-update-group.md)|  
+|No nó **Todas as Atualizações de Software** do console do Configuration Manager, João adiciona critérios para exibir somente as atualizações de software de segurança liberadas ou revisadas no ano de 2015 que atendem aos seguintes critérios:<br /><br /><ul><li>**Critérios**: Data de lançamento ou revisão</li><li>**Condição**: é maior ou igual à data específica<br />**Valor**: 1/1/2015</li><li>**Critérios**: classificação da atualização<br />**Valor**: Atualizações de Segurança</li><li>**Critérios**: Expirado <br />**Valor**: Não</li></ul>|Nenhuma informação adicional|
+|João adiciona todas as atualizações de software filtradas a um novo grupo de atualização de software com os seguintes requisitos:<br /><br /><ul><li>**Nome**: Grupo de Conformidade - Atualizações de Segurança da Microsoft 2015</li><li>**Descrição**: Atualizações de software|[Adicionar atualizações de software a um grupo de atualização](add-software-updates-to-an-update-group.md)|  
 
 ##  <a name="BKMK_Step2"></a> Etapa 2: Criar uma regra de implantação automática para o mês atual  
  João cria uma regra de implantação automática para as atualizações de software de segurança lançadas pela Microsoft para o mês vigente. Ele executa as etapas da tabela a seguir.  
@@ -57,7 +57,7 @@ Este tópico fornece um cenário de exemplo de como usar atualizações de softw
 |-------------|---------------|  
 |João cria uma regra de implantação automática com os seguintes requisitos:<br /><br /><ol><li>Na guia **Geral** , João configura o seguinte:<br /> <ul><li>Especifica o nome **Atualizações de Segurança Mensais**.</li><li>Seleciona um conjunto de teste com clientes limitados.</li><li>Seleciona **Criar um novo grupo de atualização de software**.</li><li>Verifica se **Habilitar a implantação após esta regra ser executada** não está selecionado.</li></ul></li><li>Na guia **Configurações de implantação** , João seleciona as configurações padrão.</li><li>Na página **Atualizações de software**, João configura os seguintes filtros de propriedade e critérios de pesquisa:<br /><ul><li>Data de lançamento ou revisão **Último mês**.</li><li>Classificação da atualização **Atualizações de segurança**.</li></ul></li><li>Na página **Avaliação**, João habilita a regra para execução em um agendamento para a **segunda quinta-feira** de cada **mês**. João também verifica que seu agendamento da sincronização está definido para execução na **segunda quarta-feira** de cada **mês**.</li><li>João usa as configurações padrão nas páginas de Agendamento de implantação, Experiência do usuário, Alertas e Configurações de download.</li><li>Na página do **Pacote de Implantação**, João especifica um novo pacote de implantação.</li><li>João usa as configurações padrão nas páginas de Local de download e Seleção de idioma.</li></ol>|[Implantar atualizações de software automaticamente](automatically-deploy-software-updates.md)|  
 
-##  <a name="BKMK_Step3"></a> Etapa 3: Verificar se as atualizações de software estão prontas para serem implantadas  
+##  <a name="BKMK_Step3"></a> Etapa 3: Verificar se as atualizações de software estão prontas para ser implantadas  
  Na segunda quinta-feira de cada mês, João verifica se as atualizações de software estão prontas para ser implantadas. Ele executa a etapa a seguir.  
 
 |Processar|Referência|  
@@ -69,7 +69,7 @@ Este tópico fornece um cenário de exemplo de como usar atualizações de softw
 
 |Processar|Referência|  
 |-------------|---------------|  
-|João cria duas implantações de teste para o novo grupo de atualização de software. Ele considera os ambientes a seguir para cada implantação:<br /><br /> **Implantação de teste da estação de trabalho**: João considera o seguinte para a implantação de teste da estação de trabalho:<br /><br /><ul><li>Especifica uma coleção de implantação que contém um subconjunto de clientes da estação de trabalho para verificar a implantação.</li><li>Define as configurações de implantação apropriadas para os clientes da estação de trabalho em seu ambiente.</li></ul><br />**Implantação de teste do servidor**: João considera o seguinte para a implantação de teste do servidor:<br /><br /><ul><li>Especifica uma coleção de implantação que contém um subconjunto de clientes de servidor para verificar a implantação.</li><li>Define as configurações de implantação apropriadas para os clientes de servidor em seu ambiente.</li></ul>|[Implantar atualizações de software](deploy-software-updates.md)|  
+|João cria duas implantações de teste para o novo grupo de atualização de software. Ele considera os ambientes a seguir para cada implantação:<br /><br /> **Implantação de teste da estação de trabalho**: John considera o seguinte para a implantação de teste da estação de trabalho:<br /><br /><ul><li>Especifica uma coleção de implantação que contém um subconjunto de clientes da estação de trabalho para verificar a implantação.</li><li>Define as configurações de implantação apropriadas para os clientes da estação de trabalho em seu ambiente.</li></ul><br />**Implantação de teste do servidor**: John considera o seguinte para a implantação de teste do servidor:<br /><br /><ul><li>Especifica uma coleção de implantação que contém um subconjunto de clientes de servidor para verificar a implantação.</li><li>Define as configurações de implantação apropriadas para os clientes de servidor em seu ambiente.</li></ul>|[Implantar atualizações de software](deploy-software-updates.md)|  
 |João verifica se as implantações de teste obtiveram êxito.|[Status de implantação de atualizações de software](monitor-software-updates.md#BKMK_SUDeployStatus)|  
 |João atualiza as duas implantações com novas coleções que incluem seus servidores e estações de trabalho de produção.|Nenhuma informação adicional|  
 

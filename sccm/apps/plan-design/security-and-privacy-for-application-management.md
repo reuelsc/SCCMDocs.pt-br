@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13467e3b227a8080d03e3e44864970703c2e000f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 6d8715b8d91f6397fbf5d4d254b48f8078b0dfc3
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126330"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083255"
 ---
 # <a name="security-and-privacy-for-application-management-in-configuration-manager"></a>Segurança e privacidade para gerenciamento de aplicativos no Configuration Manager
 
@@ -27,11 +27,12 @@ ms.locfileid: "56126330"
 
 
 ### <a name="use-the-new-software-center-without-the-application-catalog"></a>Usar o novo Centro de Software sem o Catálogo de Aplicativos
-<!--1358309--> A partir da versão 1806, as funções do catálogo de aplicativos não são mais necessárias para exibir aplicativos disponíveis ao usuário no Centro de Software. Essa configuração ajuda a reduzir a infraestrutura de servidor necessária para fornecer aplicativos aos usuários. Reduzir infraestrutura de servidor também reduz a superfície de ataque. 
+<!--1358309-->
+A partir da versão 1806, as funções do catálogo de aplicativos não são mais necessárias para exibir aplicativos disponíveis ao usuário no Centro de Software. Essa configuração ajuda a reduzir a infraestrutura de servidor necessária para fornecer aplicativos aos usuários. Reduzir infraestrutura de servidor também reduz a superfície de ataque. 
 
 Para fornecer uma experiência consistente e segura de aplicativos para clientes baseados na Internet, use o Azure Active Directory e o gateway de gerenciamento de nuvem.
 
-Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex). 
+Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex). 
 
 
 ### <a name="use-https-with-the-application-catalog"></a>Usar HTTPS com o Catálogo de Aplicativos
@@ -178,7 +179,7 @@ Se for configurar um tipo de implantação de aplicativo Web, use HTTPS para pro
 > [!Important]  
 > A partir do Configuration Manager versão 1802, o cliente não instala o Silverlight automaticamente.
 > 
-> A partir da versão 1806, não há mais suporte para a **experiência do usuário do Silverlight** para o ponto do site do Catálogo de Aplicativos. Os usuários devem usar o novo Centro de Software. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).  
+> A partir da versão 1806, não há mais suporte para a **experiência do usuário do Silverlight** para o ponto do site do Catálogo de Aplicativos. Os usuários devem usar o novo Centro de Software. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).  
 
  Os clientes do Configuration Manager versão 1710 e mais recente exigem o Microsoft Silverlight 5, que deve ser executado em modo de confiança elevada para que os usuários instalem o software do Catálogo de Aplicativos. Por padrão, os aplicativos Silverlight são executados no modo de confiança parcial para impedir que os aplicativos acessem dados do usuário. Se ele ainda não estiver instalado, o Configuration Manager instalará automaticamente o Microsoft Silverlight 5 nos clientes. Por padrão, o Configuration Manager define a configuração do cliente do Agente de computador **Permitir que os aplicativos Silverlight sejam executados no modo de confiança elevada** para **Sim**. Essa configuração permite que os aplicativos Silverlight assinados e confiáveis solicitem o modo de confiança elevada.  
 
@@ -212,7 +213,7 @@ Se for configurar um tipo de implantação de aplicativo Web, use HTTPS para pro
 - O **Catálogo de Aplicativos** é um site que permite aos usuários solicitar o software a ser instalado.  
 
     > [!Note]  
-    > A partir do Configuration Manager 1802, a principal funcionalidade do Catálogo de Aplicativos agora está incluída no Centro de Software. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).  
+    > A partir do Configuration Manager 1802, a principal funcionalidade do Catálogo de Aplicativos agora está incluída no Centro de Software. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).  
 
 - O **Centro de Software** é instalado automaticamente em um dispositivo durante a instalação do cliente do Configuration Manager. Os usuários alteram configurações, procuram e instalam aplicativos do Centro de Software.  
 
