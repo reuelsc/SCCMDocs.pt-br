@@ -61,6 +61,8 @@
           href: understand/configuration-manager-on-azure.md
     - name: Perguntas frequentes sobre produtos e licenciamento
       href: understand/product-and-licensing-faq.md
+    - name: Perguntas frequentes sobre o porte e o desempenho do site
+      href: understand/site-size-performance-faq.md
     - name: Perguntas frequentes sobre dados de diagnóstico e de uso
       href: understand/frequently-asked-questions-about-diagnostics-and-usage-data.md
 - name: Plano e design
@@ -101,8 +103,8 @@
           href: plan-design/configs/supported-configurations.md
         - name: Números de tamanho e escala
           href: plan-design/configs/size-and-scale-numbers.md
-        - name: Pré-requisitos de sites e do sistema de sites
-          href: plan-design/configs/site-and-site-system-prerequisites.md
+        - name: Diretrizes sobre o porte e o desempenho do site
+          href: plan-design/configs/site-size-performance-guidelines.md
         - name: Sistemas operacionais com suporte para servidores de sistema de sites
           href: plan-design/configs/supported-operating-systems-for-site-system-servers.md
         - name: Sistemas operacionais compatíveis para clientes e dispositivos
@@ -339,7 +341,7 @@
           href: servers/deploy/configure/site-components.md
         - name: Publicar dados do site
           href: servers/deploy/configure/publish-site-data.md
-        - name: Gerenciar conteúdo e infraestrutura de conteúdo
+        - name: Manage content and content infrastructure
           items:
             - name: Visão geral da infraestrutura de conteúdo
               href: servers/deploy/configure/manage-content-and-content-infrastructure.md
