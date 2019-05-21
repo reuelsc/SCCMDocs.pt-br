@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15ccbb201b7db02f51ccec322e5a320e143d8da3
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: d93e7fd61b2cff49e7729a9037e56d69c6e4c5ac
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62227198"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933517"
 ---
 # <a name="enroll-devices-with-device-enrollment-manager-with-configuration-manager"></a>Registrar dispositivos com o gerenciador de registro de dispositivo no Configuration Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "62227198"
 As organizações podem usar o Intune para gerenciar um grande número de dispositivos móveis com uma única conta de usuário. A conta do *DEM* (gerenciador de registro de dispositivos) é uma conta especial do usuário usada para registrar dispositivos. Adicionar usuários existentes à conta do DEM para fornecer recursos de DEM especiais. Cada dispositivo registrado usa uma única licença. Recomendamos o uso de dispositivos registrados com essa conta como dispositivos compartilhados sem afinidade de usuário em vez de dispositivos pessoais dedicados.  
 
 ## <a name="enroll-corporate-owned-devices-with-the-device-enrollment-manager"></a>Registrar dispositivos corporativos com o gerenciador de registro de dispositivo  
- Você pode atribui-la a um gerente da loja ou supervisor, por exemplo, como um conta de usuário de gerenciador de registro de dispositivos, para permitir que ela faça o seguinte:  
+ Você pode atribuir um gerente da loja ou supervisor, por exemplo, um Gerenciador de registro de dispositivo conta de usuário para permitir que o usuário faça o seguinte:  
 
 -   Registrar até 1.000 dispositivos para gerenciamento  
 -   Use o aplicativo Portal da Empresa para instalar aplicativos da empresa  
@@ -41,7 +41,7 @@ As seguintes limitações se aplicam a dispositivos gerenciados usando uma conta
 - Se você usar o DEM para registrar dispositivos iOS, não poderá usar o Apple Configurator ou o DEP (Programa de registro de dispositivo) da Apple para registrar dispositivos. (somente iOS) 
 
   **Exemplos de cenários do gerenciador de registro de dispositivo:**   
-  Um restaurante quer tablets de ponto de venda para sua equipe e faz o pedido de monitores para sua equipe da cozinha. Os funcionários nunca precisam ter acesso aos dados da empresa ou fazer logon como um usuário. O administrador do Intune cria uma conta de gerenciador de registro de dispositivos e registra os dispositivos da empresa usando essa conta. Como alternativa, o administrador pode conceder credenciais de gerenciador de registro de dispositivos a um gerente do restaurante, permitindo que ele registre e gerencie os dispositivos.  
+  Um restaurante quer tablets de ponto de venda para sua equipe e faz o pedido de monitores para sua equipe da cozinha. Os funcionários nunca precisam ter acesso aos dados da empresa ou fazer logon como um usuário. O administrador do Intune cria uma conta de gerenciador de registro de dispositivos e registra os dispositivos da empresa usando essa conta. Como alternativa, o administrador pode conceder o registro do dispositivo Gerenciador de credenciais para um gerente do restaurante, permitindo que eles se registrar e gerenciar os dispositivos.  
 
   O administrador ou o gerente podem implantar aplicativos específicos da função para os dispositivos do restaurante. Um administrador também pode selecionar um dispositivo no console e desativá-lo de gerenciamento de dispositivo móvel.  
 

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a157e8696a9b4b24acb722be037185351f94ccdc
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 8f774fc163d6ec9739733002a4c5054a2e85fec8
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62255353"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933555"
 ---
 # <a name="manage-mobile-devices-with-system-center-configuration-manager-and-exchange"></a>Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange
 
@@ -40,7 +40,7 @@ Use o conector do Exchange Server no System Center Configuration Manager quando 
  O dispositivo móvel do usuário aparece automaticamente no Catálogo de Aplicativos quando é gerenciado pelo conector do Exchange Server e o Exchange Server é local. Ao configurar o conector do Exchange Server para o Microsoft Exchange Online, é necessário configurar manualmente a afinidade de dispositivo de usuário para que o dispositivo móvel do usuário apareça no Catálogo de Aplicativos. Para obter mais informações sobre como configurar manualmente a afinidade de dispositivo de usuário, consulte [Vincular usuários e dispositivos com a afinidade de dispositivo de usuário no System Center Configuration Manager](../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md).  
 
 > [!TIP]  
->  Se você gerenciar um dispositivo móvel usando o conector do Exchange Server e esse dispositivo for transferido para outro usuário, exclua o dispositivo do console do Configuration Manager antes que o novo proprietário configure sua conta do Exchange no dispositivo móvel transferido.  
+>  Se você gerenciar um dispositivo móvel usando o conector do Exchange Server e o dispositivo for transferido para outro usuário, exclua o dispositivo do console do Configuration Manager antes que o novo proprietário do dispositivo móvel configura sua conta do Exchange em Este dispositivo móvel transferido.  
 
 ## <a name="required-security-permissions"></a>Permissões de segurança necessárias  
  Você deve ter as seguintes permissões de segurança para configurar o conector do Exchange Server:  
