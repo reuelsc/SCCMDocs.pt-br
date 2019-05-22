@@ -2,7 +2,7 @@
 title: Novidades no MDM híbrido
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune.
-ms.date: 04/18/2019
+ms.date: 05/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0251371b8a0e9fa41dc5008beffa87977c47d7c6
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 73fe5e23cd23c874e56b0d71cb6988d815bcbc5c
+ms.sourcegitcommit: d1df13fc95a1f1540177c294555d9be26161b9cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62287050"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974094"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -46,6 +46,25 @@ Cada seção deste artigo lista recursos híbridos em três categorias diferente
 |**Novo no Configuration Manager Technical Preview**| Todos os recursos listados nessa categoria funcionam apenas com o branch de visualização técnica especificado. Para testar esses recursos, você deve instalar a versão de visualização técnica especificada na descrição do recurso. Para obter mais informações, confira [Visualização técnica para o Configuration Manager](/sccm/core/get-started/technical-preview).|
 |**Novo no Configuration Manager (Branch Atual)**| Todos os recursos listados nessa categoria funcionam apenas com a versão especificada do Configuration Manager (branch atual). Se estiver usando uma versão mais antiga do Configuration Manager para sua implantação híbrida, atualize para a versão do Configuration Manager (branch atual) especificada na descrição do recurso. Para obter mais informações, veja [Atualizar para o Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).|
 
+
+## <a name="may-2019"></a>Maio de 2019
+
+### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+#### <a name="intune-policies-update-authentication-method-and-company-portal-app-installation"></a>As políticas do Intune atualizar método de autenticação e a instalação do aplicativo de Portal da empresa
+
+<!-- 1927359 -->
+
+Em dispositivos já registrados por meio do Assistente de instalação por meio de um dos métodos de registro de dispositivo corporativo da Apple, Intune não dá suporte a Portal da empresa quando ele é instalado manualmente pelos usuários da app store. Essa alteração só é relevante quando você autenticar com o Assistente de configuração da Apple durante o registro. Ele afeta somente os dispositivos iOS registrados por meio dos seguintes métodos:  
+
+- Apple Configurator
+- Gerente de negócios da Apple
+- Apple School Manager
+- Programa de registro de dispositivo (DEP) da Apple
+
+Se usuários instalar o aplicativo de Portal da empresa da loja de aplicativos e, em seguida, tente registrar esses dispositivos por meio dele, eles receberão um erro. Além disso, o **identificar o dispositivo** tela no aplicativo Portal da empresa em breve se tornarão obsoleta.
+
+Para instalar o Portal da empresa em dispositivos já registrados no DEP, enviar por push como um aplicativo gerenciado com as políticas de configuração de aplicativo. Para obter mais informações sobre esse processo, consulte [aplicar as configurações para aplicativos iOS com políticas de configuração de aplicativo no Configuration Manager](/sccm/mdm/deploy-use/configure-ios-apps-with-app-configuration-policies).
 
 
 ## <a name="april-2019"></a>Abril de 2019

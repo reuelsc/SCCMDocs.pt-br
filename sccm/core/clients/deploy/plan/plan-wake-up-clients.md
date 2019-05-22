@@ -2,25 +2,32 @@
 title: Ativação de clientes
 titleSuffix: Configuration Manager
 description: Planejar a ativação de clientes no System Center Configuration Manager usando o Wake On LAN (WOL).
-ms.date: 05/23/2018
+ms.date: 04/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
 ms.assetid: 52ee82b2-0b91-4829-89df-80a6abc0e63a
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ad20f88d6296a45c97e7c04d94624f9341d369e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: a16d598b80dd18802e42cae51aeba3c91a4d707c
+ms.sourcegitcommit: 9af73f5c1b93f6ccaea3e6a096f75a5fecd65c2f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125969"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64669145"
 ---
 # <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>Planejar a ativação de clientes no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
+
+ O Configuration Manager oferece suporte a pacotes de ativação que ativam computadores em modo de suspensão quando você quer instalar o software necessário, como atualizações de software e aplicativos.
+
+> [!NOTE]
+> Este artigo descreve como funciona uma versão mais antiga de Wake on LAN. Esta funcionalidade ainda existe no Configuration Manager versão 1810, que também inclui uma versão mais recente de Wake on LAN. As duas versões do Wake on LAN podem, e em muitos casos serão, habilitadas simultaneamente. Para saber mais sobre como funciona a nova versão do Wake on LAN a partir da 1810 e habilitar uma ou as duas versões, confira [Como configurar o Wake on LAN](/sccm/core/clients/deploy/configure-wake-on-lan).  
+
+## <a name="how-to-wake-up-clients-in-system-center-configuration-manager"></a>Como ativar clientes no System Center Configuration Manager
 
  O Configuration Manager oferece suporte a pacotes de ativação que ativam computadores em modo de suspensão quando você quer instalar o software necessário, como atualizações de software e aplicativos.  
 
@@ -30,7 +37,7 @@ Você pode completar o método tradicional do pacote de ativação usando as con
 
 2. Se não houver resposta de outros computadores, supõe-se que estarão em modo de suspensão. Os computadores ativos tornam-se *computadores gerenciadores* da sub-rede.  
 
-    É possível que um computador não responda por outro motivo que não seja a suspensão (por exemplo, está desligado, removido da rede, ou a configuração de proxy de ativação do cliente não é mais aplicada), por isso recebem um pacote de ativação todos os dias às 14h. hora local. Computadores que não respondem não serão mais considerados como em suspensão e não serão despertados pelo proxy de ativação.  
+    É possível que um computador não responda por outro motivo que não seja a suspensão (por exemplo, está desligado, foi removido da rede ou a configuração de proxy de ativação do cliente não é mais aplicada), por isso recebem um pacote de ativação todos os dias às 14h. hora local. Computadores que não respondem não serão mais considerados como em suspensão e não serão despertados pelo proxy de ativação.  
 
     Para oferecer suporte ao proxy de ativação, pelo menos três computadores devem estar ativos em cada sub-rede. Para atingir este requisito, três computadores, de forma não determinista, são escolhidos para serem *computadores guardiões* da sub-rede. Este estado significa que eles permanecem ativos apesar de eventuais políticas de energia configuradas para suspensão ou hibernação após um período de inatividade. Computadores guardiões respeitam comandos de desligamento ou reinicialização, por exemplo, como resultado de tarefas de manutenção. Se esta ação acontecer, os computadores guardiões restantes ativarão outro computador na sub-rede, de modo que a sub-rede continuará a ter três computadores guardiões.  
 
@@ -84,7 +91,7 @@ Se você desejar ativar computadores para instalação de software agendada, dev
 
 Decidir se pretende usar pacotes de difusão para sub-rede, ou pacotes unicast, e que número da porta UDP usar. Por padrão, pacotes de ativação profissionais são transmitidos usando a porta UDP 9, mas para ajudar a aumentar a segurança, você pode selecionar uma porta alternativa para o site se essa porta alternativa tiver suporte para roteadores e firewalls intermediários.  
 
-### <a name="choose-between-unicast-and-subnet-directed-broadcast-for-wake-on-lan"></a>Escolha entre as transmissões unicast e de sub-rede para Wake on LAN  
+## <a name="choose-between-unicast-and-subnet-directed-broadcast-for-wake-on-lan"></a>Escolha entre as transmissões unicast e de sub-rede para Wake on LAN  
  Se você escolher ativar computadores enviando pacotes de ativação tradicionais, deve decidir se quer transmitir pacotes unicast ou pacotes de transmissão direcionados à sub-rede. Se você utilizar proxy de ativação, deverá usar pacotes unicast. Caso contrário, use a tabela a seguir para ajudá-lo a determinar qual método de transmissão escolher.  
 
 |Método de transmissão|Vantagem|Desvantagem|  
@@ -93,4 +100,4 @@ Decidir se pretende usar pacotes de difusão para sub-rede, ou pacotes unicast, 
 |Transmissão direcionada à sub-rede|Taxa de sucesso superior do que unicast se houver computadores que mudam frequentemente de endereço IP na mesma sub-rede.<br /><br /> Nenhuma reconfiguração de comutador é necessária.<br /><br /> Alta taxa de compatibilidade com adaptadores de computador para todos os estados de suspensão, porque as transmissões direcionadas à sub-rede eram o método de transmissão original para o envio de pacotes de ativação.|Solução menos segura do que usar unicast porque um invasor pode enviar fluxos contínuos de solicitações de eco ICMP por meio de um endereço de origem falso para o endereço de transmissão direcionado. Isso faz com que todos os hosts respondam a esse endereço de origem. Quando os roteadores são configurados para permitir transmissões direcionadas à sub-rede, a configuração adicional é recomendada por razões de segurança:<br /><br /> -   Configure os roteadores para permitir somente transmissões direcionadas a IP do servidor do site do Configuration Manager usando um número da porta UDP especificado.<br />-   Configure o Configuration Manager para usar o número da porta não padrão especificado.<br /><br /> Pode ser necessário reconfigurar todos os roteadores intermediários para habilitar transmissões direcionadas a sub-redes.<br /><br /> Consome mais largura de banda de rede que as transmissões em unicast.<br /><br /> Compatível somente com IPv4. Não há suporte para IPv6.|  
 
 > [!WARNING]  
->  Há riscos de segurança associados com transmissões direcionadas a sub-redes: Um invasor pode enviar fluxos contínuos de eco ICMP (Internet Control Message Protocol) de um endereço de origem falsificado para o endereço de transmissão direcionado, o que faz com que todos os hosts respondam àquele endereço de origem. Esse tipo de ataque de negação de serviço é comumente chamado de ataque smurf e é geralmente mitigado não permitindo transmissões direcionadas a sub-redes.
+>  Há riscos de segurança associados a transmissões direcionadas a sub-redes: Um invasor pode enviar fluxos contínuos de eco ICMP (Internet Control Message Protocol) de um endereço de origem falsificado para o endereço de transmissão direcionado, o que faz com que todos os hosts respondam àquele endereço de origem. Esse tipo de ataque de negação de serviço é comumente chamado de ataque smurf e é geralmente mitigado não permitindo transmissões direcionadas a sub-redes.
