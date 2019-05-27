@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93862e95a3bae13582c2aa70daf2db22f9d621d8
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: cc88e70360599391c84e54e41e73b53ef3b70678
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65495463"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66177032"
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novidades da versão 1706 do System Center Configuration Manager
 
@@ -96,7 +96,7 @@ A integração aprimorada possibilita o seguinte:
 
 -   Use o Azure AD para autenticar clientes na Internet a fim de acessar seus sites do Configuration Manager. O Azure AD substitui a necessidade de configurar e usar certificados de autenticação de cliente. Isso exige a função do sistema de site de gateway de gerenciamento de nuvem. Para saber mais, confira [Instalar e atribuir clientes do Configuration Manager na Internet usando o Azure AD para autenticação](/sccm/core/clients/deploy/deploy-clients-cmg-azure).
 
--   Instalar e gerenciar o cliente do Configuration Manager em computadores localizados na Internet. Isso exige o uso da função do sistema de site de gateway de gerenciamento de nuvem. Para saber mais, confira [Instalar e atribuir clientes do Configuration Manager na Internet usando o Azure AD para autenticação](/sccm/core/clients/deploy/deploy-clients-cmg-azure).
+-   Instale e gerencie o cliente do Configuration Manager em computadores localizados na Internet. Isso exige o uso da função do sistema de site de gateway de gerenciamento de nuvem. Para saber mais, confira [Instalar e atribuir clientes do Configuration Manager na Internet usando o Azure AD para autenticação](/sccm/core/clients/deploy/deploy-clients-cmg-azure).
 
 -   Configurar a Descoberta de Usuário do Azure AD.  Use o Assistente para Serviços do Azure para configurar esse novo método de descoberta. Esse novo método consulta seu Azure AD em busca de dados de usuário que você pode usar junto com dados de descoberta tradicionais.  Há suporte para a sincronização completa e delta.  Para saber mais, confira [Descoberta de Usuário do Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).
 

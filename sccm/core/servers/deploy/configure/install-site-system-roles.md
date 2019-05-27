@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 991db8c7076f9f76515aba17df6339c133f1d63e
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 5c93c7ead83a09bb882c5f0468d936c5188d46b2
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65498583"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176931"
 ---
 # <a name="install-site-system-roles-for-system-center-configuration-manager"></a>Instalar funções do sistema de sites ao System Center Configuration Manager
 
@@ -69,7 +69,7 @@ Antes de instalar a função do sistema de sites, o Configuration Manager verifi
 4.  Na página **Geral** , especifique as configurações gerais para o sistema de site e clique em **Próximo**.  
 
     > [!TIP]  
-    >  Para acessar a nova função do sistema de site da Internet, é necessário especificar um FQDN de Internet.  
+    >  Para acessar a nova função do sistema de site da Internet, será necessário especificar um FQDN de Internet.  
 
 5.  Na página **Proxy**, especifique as configurações para o servidor proxy, caso as funções do sistema de site executadas precisem de um servidor proxy para se conectarem a locais na Internet. Clique em **Avançar**.  
 

@@ -2,7 +2,7 @@
 title: Coexistência do MDM de terceiros
 titleSuffix: Configuration Manager
 description: Saiba mais sobre como usar um serviço MDM de terceiros com o Configuration Manager
-ms.date: 04/26/2019
+ms.date: 05/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,18 +11,18 @@ ms.assetid: ed4dc65e-e5d5-4f75-88ac-f4849ec8fc10
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6abf4c81d03d5887294c85337b403a6fb17dca98
-ms.sourcegitcommit: 23852dda81bb8496dd10c0a8ec4f740a8e15efc3
+ms.openlocfilehash: 5fbb2d4a902c21ac2fa2186bba70f58d66e50c48
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873365"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176843"
 ---
 # <a name="third-party-mdm-coexistence-with-configuration-manager"></a>Coexistência do MDM de terceiros com o Configuration Manager
 
 Ao gerenciar simultaneamente os dispositivos Windows 10 com o Configuration Manager e o Microsoft Intune, essa funcionalidade é chamada de [cogerenciamento](/sccm/comanage/overview). Quando você gerencia dispositivos com o Configuration Manager e se registra a um serviço MDM de terceiros, essa funcionalidade é chamada de *coexistência*. Ter duas autoridades de gerenciamento para um único dispositivo pode ser um desafio se ambas não forem orquestradas corretamente. Com o cogerenciamento, o Configuration Manager e o Intune equilibram as [cargas de trabalho](/sccm/comanage/workloads) para garantir que haja nenhum conflito. Essa interação não existe com os serviços de terceiros, portanto, há limitações nos recursos de gerenciamento da coexistência.
 
-O cliente do Configuration Manager pode coexistir com um serviço MDM de terceiros em um dispositivo que tenha ingressado no Azure Active Directory. O dispositivo pode ser de qualquer um dos seguintes tipos:
+O cliente do Configuration Manager pode coexistir com um serviço MDM de terceiros em um dispositivo que executa o Windows 10 versão 1709 ou posterior e tenha ingressado no Azure Active Directory. O dispositivo pode ser de qualquer um dos seguintes tipos:
 
 - Somente [ingressado no Azure AD](https://docs.microsoft.com/azure/active-directory/devices/azureadjoin-plan). (Esse tipo é às vezes chamado de “ingressado em domínio de nuvem”)  
 

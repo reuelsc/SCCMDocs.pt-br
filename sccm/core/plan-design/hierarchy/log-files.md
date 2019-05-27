@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f86fccc965fd0d6147c55a7c9a3ad25b81e95aff
-ms.sourcegitcommit: 417e3834a42b415a8e129327dd3c15cc0c7ec5a2
+ms.openlocfilehash: 5994eb6ab241e35bd0b4c4ecceb9fe6c4ef35a00
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65443091"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176041"
 ---
 # <a name="log-files-in-configuration-manager"></a>Arquivos de log no Configuration Manager
 
@@ -115,7 +115,7 @@ No Configuration Manager, os componentes cliente e de servidor do site registram
     -   [Servidor do WSUS](#BKMK_WSUSLog)  
 
 ##  <a name="BKMK_AboutLogs"></a> Sobre arquivos de log do Configuration Manager  
- A maioria dos processos do Configuration Manager grava informações operacionais em um arquivo de log dedicado ao processo em questão. Estes arquivos de log são identificados pelas extensões de arquivo **.log** ou **.lo_** . O Configuration Manager grava no arquivo .log até que o log atinja seu tamanho máximo. Quando o log está cheio, o arquivo .log é copiado em um arquivo com o mesmo nome mas com extensão .lo_ e o processo ou componente continua a gravar no arquivo .log. Quando o arquivo .log atinge novamente seu tamanho máximo, o arquivo .lo_ é substituído e o processo se repete. Alguns componentes criam um histórico de arquivos de log acrescentando uma data ou o carimbo de data/hora ao nome do arquivo de log e ao manter a extensão .log. Uma exceção ao tamanho máximo e uso do arquivo .lo_ é o cliente para Linux e UNIX. Para saber mais sobre como o cliente do Linux e UNIX usa arquivos de log, consulte [Gerenciar arquivos de log do cliente para Linux e UNIX](#BKMK_ManageLinuxLogs) neste artigo.  
+ A maioria dos processos do Configuration Manager grava informações operacionais em um arquivo de log dedicado ao processo em questão. Estes arquivos de log são identificados pelas extensões de arquivo **.log** ou **.lo_**. O Configuration Manager grava no arquivo .log até que o log atinja seu tamanho máximo. Quando o log está cheio, o arquivo .log é copiado em um arquivo com o mesmo nome mas com extensão .lo_ e o processo ou componente continua a gravar no arquivo .log. Quando o arquivo .log atinge novamente seu tamanho máximo, o arquivo .lo_ é substituído e o processo se repete. Alguns componentes criam um histórico de arquivos de log acrescentando uma data ou o carimbo de data/hora ao nome do arquivo de log e ao manter a extensão .log. Uma exceção ao tamanho máximo e uso do arquivo .lo_ é o cliente para Linux e UNIX. Para saber mais sobre como o cliente do Linux e UNIX usa arquivos de log, consulte [Gerenciar arquivos de log do cliente para Linux e UNIX](#BKMK_ManageLinuxLogs) neste artigo.  
 
  Para exibir os logs, use a ferramenta de visualizador de log do Configuration Manager, CMTrace, localizada na pasta \\SMSSetup\\Tools da mídia de origem do Configuration Manager. A ferramenta CMTrace é adicionada a todas as imagens de inicialização adicionadas à Biblioteca de Software. Começando na versão 1806, a ferramenta de visualização de log CMTrace é instalada automaticamente junto com o cliente do Configuration Manager.<!--1357971--> Para obter mais informações, confira [CMTrace](/sccm/core/support/cmtrace). 
 
@@ -268,8 +268,8 @@ O cliente do Configuration Manager para computadores Mac registra as informaçõ
 |--------------|-------------|  
 |CCMClient-&lt;*data_hora*>.log|Registra atividades que estão relacionadas a operações do cliente Mac, que incluem gerenciamento de aplicativos, inventário e log de erros.<br /><br /> Esse arquivo de log está localizado na pasta /Library/Application Support/Microsoft/CCM/Logs no computador Mac.|  
 |CCMAgent-&lt;*data_hora*>.log|Registra informações que estão relacionadas a operações do cliente, que incluem operações de logon e logoff do usuário e atividade do computador Mac.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
-|CCMNotifications-&lt;*data_hora>* .log|Registra atividades relacionadas a notificações do Configuration Manager exibidas no computador Mac.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
-|CCMPrefPane-&lt;*data_hora>* .log|Registra atividades relacionadas à caixa de diálogo de preferências do Configuration Manager no computador Mac, que inclui logs de erros e status geral.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
+|CCMNotifications-&lt;*data_hora>*.log|Registra atividades relacionadas a notificações do Configuration Manager exibidas no computador Mac.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
+|CCMPrefPane-&lt;*data_hora>*.log|Registra atividades relacionadas à caixa de diálogo de preferências do Configuration Manager no computador Mac, que inclui logs de erros e status geral.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
 
 O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicação entre computadores Mac e o ponto de gerenciamento habilitado para dispositivos móveis e computadores Mac.  
 
@@ -416,7 +416,7 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 |Nome do log|Descrição|Computador com o arquivo de log|  
 |--------------|-----------------|----------------------------|  
 |objreplmgr.log|Registra detalhes sobre a replicação de arquivos de notificação de atualizações de software de um site pai para sites filho.|Servidor do site|  
-|PatchDownloader.log|Registra detalhes sobre o processo de baixar atualizações de software da fonte de atualizações para o destino de download no servidor de site.|O computador que hospeda o console do Configuration Manager no qual os downloads são iniciados|  
+|PatchDownloader.log|Registra detalhes sobre o processo de baixar atualizações de software da fonte de atualizações para o destino de download no servidor de site.|Quando você baixar atualizações manualmente, esse arquivo estará no diretório `%temp%` no computador em que você usa o console. Para regras de implantação automática, se o cliente do Configuration Manager estiver instalado no servidor do site, esse arquivo estará no servidor do site em `%windir%\CCM\Logs`.|  
 |ruleengine.log|Registra detalhes sobre regras de implantação automática para identificação, download de conteúdo, grupo de atualização de software e criação de implantação.|Servidor do site| 
 |SMS_ISVUPDATES_SYNCAGENT.log| Arquivo de log para a sincronização de atualizações de software de terceiros, começando no Configuration Manager versão 1806.| Ponto de atualização de software de nível superior na hierarquia do Configuration Manager.| 
 |SUPSetup.log|Registra os detalhes sobre a instalação do ponto de atualização de software. Quando a instalação do ponto de atualização de software é concluída, **Installation was successful** é gravado nesse arquivo de log.|Servidor do sistema de site|  
@@ -782,7 +782,7 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |Nome do log|Descrição|Computador com o arquivo de log|  
 |--------------|-----------------|----------------------------|  
 |Ccmperf.log|Registra as atividades relacionadas à manutenção e captura de dados referentes aos contadores de desempenho de cliente.|Cliente|  
-|PatchDownloader.log|Registra detalhes sobre o processo de baixar atualizações de software da fonte de atualizações para o destino de download no servidor de site.|O computador que hospeda o console do Configuration Manager no qual os downloads são iniciados|  
+|PatchDownloader.log|Registra detalhes sobre o processo de baixar atualizações de software da fonte de atualizações para o destino de download no servidor de site.|Quando você faz o download das atualizações manualmente, elas ficarão no diretório %temp% do usuário que está executando o console no computador em que você está executando o console. No caso das Regras de Implantação Automática, esse arquivo estará no servidor do site em %windir%\CCM\Logs se o cliente do ConfigMgr estiver instalado no servidor do site.|  
 |PolicyEvaluator.log|Registra os detalhes sobre a avaliação de políticas em computadores cliente, incluindo as políticas de atualizações de software.|Cliente|  
 |RebootCoordinator.log|Registra os detalhes sobre a coordenação da reinicialização do sistema em computadores cliente após as instalações de atualização de software.|Cliente|  
 |ScanAgent.log|Registra os detalhes sobre as solicitações de verificação de atualizações de software, a localização do WSUS e ações relacionadas.|Cliente|  
