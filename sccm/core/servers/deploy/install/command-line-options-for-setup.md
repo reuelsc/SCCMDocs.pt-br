@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 0da167f1-52cf-4dfd-8f73-833ca3eb8478
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5c85e3058a63868cfee28865c1be222919b29a8
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 434b53d24d050cc66cbb5e8bec7a681311f945b8
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56141816"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65498679"
 ---
 # <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opções de linha de comando para instalação no System Center Configuration Manager
 
@@ -75,7 +75,7 @@ ms.locfileid: "56141816"
 
     -   **Valores:** ManageLanguages  
 
-    -   **Detalhes:** Gerencia o servidor, o cliente e o suporte ao idioma do cliente móvel em um site.  
+    -   **Detalhes:** gerencia o servidor, o cliente e o suporte ao idioma do cliente móvel em um site.  
 
 **Opções**  
 
@@ -83,7 +83,7 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** DEU, FRA, RUS, CHS, JAP, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
     -   **Detalhes:** especifica os idiomas do servidor que estarão disponíveis para o console do Configuration Manager, relatórios e objetos do Configuration Manager. Inglês está disponível por padrão.  
 
@@ -91,15 +91,15 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** DEU, FRA, RUS, CHS, JAP, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **Detalhes:** Especifica os idiomas que estarão disponíveis para computadores cliente. Inglês está disponível por padrão.  
+    -   **Detalhes:** especifica os idiomas que estarão disponíveis para computadores cliente. Inglês está disponível por padrão.  
 
 -   **Nome da chave:** DeleteServerLanguages  
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** DEU, FRA, RUS, CHS, JAP, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
     -   **Detalhes:** Especifica os idiomas a serem removidos e que não estarão mais disponíveis para o console, os relatórios e objetos do Configuration Manager. Inglês está disponível por padrão e não pode ser removido.  
 
@@ -107,7 +107,7 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** DEU, FRA, RUS, CHS, JAP, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
     -   **Detalhes:** Especifica os idiomas a serem removidos e que não estarão mais disponíveis para os computadores cliente. Inglês está disponível por padrão e não pode ser removido.  
 
@@ -121,7 +121,7 @@ ms.locfileid: "56141816"
 
          1 = Instalar  
 
-    -   **Detalhes:** Especifica se os idiomas do cliente do dispositivo móvel estão instalados.  
+    -   **Detalhes:** especifica se os idiomas do cliente do dispositivo móvel estão instalados.  
 
 -   **Nome da chave:** PrerequisiteComp  
 
@@ -139,7 +139,7 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Caminho para os arquivos de pré-requisito da instalação*>  
+    -   **Valores:**  <*Caminho para os arquivos de pré-requisito da instalação*>  
 
     -   **Detalhes:** Especifica o caminho para os arquivos de pré-requisito da instalação. Dependendo do valor de **PrerequisiteComp**, a instalação usará esse caminho para armazenar os arquivos baixados ou para localizar os arquivos baixados anteriormente.  
 
@@ -173,7 +173,7 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *ou* Eval  
+    -   **Valores:**  <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *ou* Eval  
 
     -   **Detalhes:** especifica a chave do produto (Product Key) de instalação do Configuration Manager, incluindo os traços. Insira **Eval** para instalar a versão de avaliação do Configuration Manager.  
 
@@ -181,23 +181,23 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Código do site*>  
+    -   **Valores:**  <*Código do site*>  
 
-    -   **Detalhes:** Especifica três caracteres alfanuméricos que identificam exclusivamente o site na hierarquia.  
+    -   **Detalhes:** especifica três caracteres alfanuméricos que identificam exclusivamente o site na hierarquia.  
 
 -   **Nome da chave:** Nome do site  
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Nome do site*>  
+    -   **Valores:**  <*Nome do site*>  
 
-    -   **Detalhes:** Especifica o nome para esse site.  
+    -   **Detalhes:** especifica o nome para esse site.  
 
 -   **Nome da chave:** SMSInstallDir  
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Caminho de instalação do Configuration Manager*>  
+    -   **Valores:**  <*Caminho de instalação do Configuration Manager*>  
 
     -   **Detalhes:** especifica a pasta de instalação dos arquivos de programa do Configuration Manager.  
 
@@ -205,9 +205,9 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*FQDN do Provedor de SMS*>  
+    -   **Valores:**  <*FQDN do Provedor de SMS*>  
 
-    -   **Detalhes:** Especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você pode configurar outros Provedores de SMS para o site após a instalação inicial.  
+    -   **Detalhes:** especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você pode configurar outros Provedores de SMS para o site após a instalação inicial.  
 
 -   **Nome da chave:** PrerequisiteComp  
 
@@ -225,7 +225,7 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Caminho para os arquivos de pré-requisito da instalação*>  
+    -   **Valores:**  <*Caminho para os arquivos de pré-requisito da instalação*>  
 
     -   **Detalhes:** Especifica o caminho para os arquivos de pré-requisito da instalação. Dependendo do valor de **PrerequisiteComp**, a instalação usará esse caminho para armazenar os arquivos baixados ou para localizar os arquivos baixados anteriormente.  
 
@@ -239,7 +239,7 @@ ms.locfileid: "56141816"
 
          1 = Instalar  
 
-    -   **Detalhes:** Especifica se deseja instalar o console do Configuration Manager.  
+    -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager.  
 
 -   **Nome da chave:** JoinCEIP  
     > [!Note]  
@@ -259,7 +259,7 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** DEU, FRA, RUS, CHS, JAP, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
     -   **Detalhes:** especifica os idiomas do servidor que estarão disponíveis para o console do Configuration Manager, relatórios e objetos do Configuration Manager. Inglês está disponível por padrão.  
 
@@ -267,25 +267,25 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** DEU, FRA, RUS, CHS, JAP, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **Detalhes:** Especifica os idiomas que estarão disponíveis para computadores cliente. Inglês está disponível por padrão.  
+    -   **Detalhes:** especifica os idiomas que estarão disponíveis para computadores cliente. Inglês está disponível por padrão.  
 
 -   **Nome da chave:** DeleteServerLanguages  
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** DEU, FRA, RUS, CHS, JAP, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **Detalhes:** Modifica um site após a instalação. Especifica os idiomas a serem removidos e que não estarão mais disponíveis para o console, os relatórios e objetos do Configuration Manager. Inglês está disponível por padrão e não pode ser removido.  
+    -   **Detalhes:** modifica um site após a instalação. Especifica os idiomas a serem removidos e que não estarão mais disponíveis para o console, os relatórios e objetos do Configuration Manager. Inglês está disponível por padrão e não pode ser removido.  
 
 -   **Nome da chave:** DeleteClientLanguages  
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** DEU, FRA, RUS, CHS, JAP, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **Detalhes:** Modifica um site após a instalação. Especifica os idiomas a serem removidos e que não estarão mais disponíveis para os computadores cliente. Inglês está disponível por padrão e não pode ser removido.  
+    -   **Detalhes:** modifica um site após a instalação. Especifica os idiomas a serem removidos e que não estarão mais disponíveis para os computadores cliente. Inglês está disponível por padrão e não pode ser removido.  
 
 -   **Nome da chave:** MobileDeviceLanguage  
 
@@ -297,7 +297,7 @@ ms.locfileid: "56141816"
 
          1 = Instalar  
 
-    -   **Detalhes:** Especifica se os idiomas do cliente do dispositivo móvel estão instalados.  
+    -   **Detalhes:** especifica se os idiomas do cliente do dispositivo móvel estão instalados.  
 
 **SQLConfigOptions**  
 
@@ -305,7 +305,7 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Nome do SQL Server*>  
+    -   **Valores:**  <*Nome do SQL Server*>  
 
     -   **Detalhes:** especifica o nome do servidor ou da instância clusterizada que executa o SQL Server e que hospedará o banco de dados do site.  
 
@@ -313,7 +313,7 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>  
+    -   **Valores:**  <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>  
 
     -   **Detalhes:** especifica o nome do banco de dados do SQL Server a ser criado ou o banco de dados do SQL Server a ser usado durante a instalação do banco de dados do site de administração central.  
 
@@ -324,15 +324,15 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Número da porta SSB*>  
+    -   **Valores:**  <*Número da porta SSB*>  
 
-    -   **Detalhes:** Especifica a porta do SSB (SQL Server Service Broker) a ser usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas é possível usar outra porta.  
+    -   **Detalhes:** especifica a porta do SSB (SQL Server Service Broker) a ser usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas é possível usar outra porta.  
 
 -   **Nome da chave:** SQLDataFilePath  
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Caminho para o arquivo .mdb do banco de dados*>  
+    -   **Valores:**  <*Caminho para o arquivo .mdb do banco de dados*>  
 
     -   **Detalhes:** especifica um local alternativo para criar o arquivo .mdb do banco de dados.  
 
@@ -340,7 +340,7 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Caminho para o arquivo .ldf do banco de dados*>  
+    -   **Valores:**  <*Caminho para o arquivo .ldf do banco de dados*>  
 
     -   **Detalhes:** especifica um local alternativo para criar o arquivo .ldf do banco de dados.  
 
@@ -362,7 +362,7 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **Valores:** <*FQDN do servidor de ponto de conexão de serviço*>  
+    -   **Valores:**  <*FQDN do servidor de ponto de conexão de serviço*>  
 
     -   **Detalhes:** especifica o FQDN do servidor que hospedará a função do sistema de sites do ponto de conexão do serviço.  
 
@@ -382,7 +382,7 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** obrigatório quando **UseProxy** for igual a 1  
 
-    -   **Valores:** <*FQDN do servidor proxy*>  
+    -   **Valores:**  <*FQDN do servidor proxy*>  
 
     -   **Detalhes:** especifica o FQDN do servidor proxy usado pelo ponto de conexão de serviço.  
 
@@ -390,7 +390,7 @@ ms.locfileid: "56141816"
 
     -   **Obrigatório:** obrigatório quando **UseProxy** for igual a 1  
 
-    -   **Valores:** <*Número da porta*>  
+    -   **Valores:**  <*Número da porta*>  
 
     -   **Detalhes:** especifica o número da porta a ser usado para a porta do proxy.  
 
@@ -405,7 +405,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** InstallPrimarySite  
 
-    -   **Detalhes:** Instala um site primário.  
+    -   **Detalhes:** instala um site primário.  
 
 -   **Nome da chave:** CDLatest  
 
@@ -421,7 +421,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *ou* Eval  
+    -   **Valores:**  <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *ou* Eval  
 
     -   **Detalhes:** especifica a chave do produto (Product Key) de instalação do Configuration Manager, incluindo os traços. Insira **Eval** para instalar a versão de avaliação do Configuration Manager.  
 
@@ -429,23 +429,23 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Código do site*>  
+    -   **Valores:**  <*Código do site*>  
 
-    -   **Detalhes:** Especifica três caracteres alfanuméricos que identificam exclusivamente o site na hierarquia.  
+    -   **Detalhes:** especifica três caracteres alfanuméricos que identificam exclusivamente o site na hierarquia.  
 
 -   **Nome da chave:** SiteName  
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Nome do site*>  
+    -   **Valores:**  <*Nome do site*>  
 
-    -   **Detalhes:** Especifica o nome para esse site.  
+    -   **Detalhes:** especifica o nome para esse site.  
 
 -   **Nome da chave:** SMSInstallDir  
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Caminho de instalação do Configuration Manager*>
+    -   **Valores:**  <*Caminho de instalação do Configuration Manager*>
 
     -   **Detalhes:** especifica a pasta de instalação dos arquivos de programa do Configuration Manager.  
 
@@ -453,9 +453,9 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*FQDN do Provedor de SMS*>  
+    -   **Valores:**  <*FQDN do Provedor de SMS*>  
 
-    -   **Detalhes:** Especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você pode configurar outros Provedores de SMS para o site após a instalação inicial.  
+    -   **Detalhes:** especifica o FQDN para o servidor que hospedará o Provedor de SMS. Você pode configurar outros Provedores de SMS para o site após a instalação inicial.  
 
 -   **Nome da chave:** PrerequisiteComp  
 
@@ -473,7 +473,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Caminho para os arquivos de pré-requisito da instalação*>  
+    -   **Valores:**  <*Caminho para os arquivos de pré-requisito da instalação*>  
 
     -   **Detalhes:** Especifica o caminho para os arquivos de pré-requisito da instalação. Dependendo do valor de **PrerequisiteComp**, a instalação usará esse caminho para armazenar os arquivos baixados ou para localizar os arquivos baixados anteriormente.  
 
@@ -487,7 +487,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          1 = Instalar  
 
-    -   **Detalhes:** Especifica se deseja instalar o console do Configuration Manager.  
+    -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager.  
 
 -   **Nome da chave:** JoinCEIP  
     > [!Note]  
@@ -507,9 +507,9 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*FQDN do servidor do site do ponto de gerenciamento*>  
+    -   **Valores:**  <*FQDN do servidor do site do ponto de gerenciamento*>  
 
-    -   **Detalhes:** Especifica o FQDN do servidor que hospedará a função de sistema de site do ponto de gerenciamento.  
+    -   **Detalhes:** especifica o FQDN do servidor que hospedará a função de sistema de site do ponto de gerenciamento.  
 
 -   **Nome da chave:** ManagementPointProtocol  
 
@@ -517,15 +517,15 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** HTTPS *ou* HTTP  
 
-    -   **Detalhes:** Especifica o protocolo a ser usado para o ponto de gerenciamento.  
+    -   **Detalhes:** especifica o protocolo a ser usado para o ponto de gerenciamento.  
 
 -   **Nome da chave:** DistributionPoint  
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*FQDN do servidor do site do ponto de distribuição*>  
+    -   **Valores:**  <*FQDN do servidor do site do ponto de distribuição*>  
 
-    -   **Detalhes:** Especifica o protocolo a ser usado para o ponto de distribuição.  
+    -   **Detalhes:** especifica o protocolo a ser usado para o ponto de distribuição.  
 
 -   **Nome da chave:** DistributionPointProtocol  
 
@@ -533,7 +533,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Valores:** HTTPS *ou* HTTP  
 
-    -   **Detalhes:** Especifica o protocolo a ser usado para o ponto de distribuição.  
+    -   **Detalhes:** especifica o protocolo a ser usado para o ponto de distribuição.  
 
 -   **Nome da chave:** RoleCommunicationProtocol  
 
@@ -553,13 +553,13 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          1 = Usar  
 
-    -   **Detalhes:** Especifica se os clientes usarão um certificado PKI de cliente para se comunicar com as funções do sistema de site.  
+    -   **Detalhes:** especifica se os clientes usarão um certificado PKI de cliente para se comunicar com as funções do sistema de site.  
 
 -   **Nome da chave:** AddServerLanguages  
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** DEU, FRA, RUS, CHS, JAP, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
     -   **Detalhes:** especifica os idiomas do servidor que estarão disponíveis para o console do Configuration Manager, relatórios e objetos do Configuration Manager. Inglês está disponível por padrão.  
 
@@ -567,25 +567,25 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** DEU, FRA, RUS, CHS, JAP, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **Detalhes:** Especifica os idiomas que estarão disponíveis para computadores cliente. Inglês está disponível por padrão.  
+    -   **Detalhes:** especifica os idiomas que estarão disponíveis para computadores cliente. Inglês está disponível por padrão.  
 
 -   **Nome da chave:** DeleteServerLanguages  
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** DEU, FRA, RUS, CHS, JAP, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **Detalhes:** Modifica um site após a instalação. Especifica os idiomas a serem removidos e que não estarão mais disponíveis para o console, os relatórios e objetos do Configuration Manager. Inglês está disponível por padrão e não pode ser removido.  
+    -   **Detalhes:** modifica um site após a instalação. Especifica os idiomas a serem removidos e que não estarão mais disponíveis para o console, os relatórios e objetos do Configuration Manager. Inglês está disponível por padrão e não pode ser removido.  
 
 -   **Nome da chave:** DeleteClientLanguages  
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** DEU, FRA, RUS, CHS, JAP, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
+    -   **Valores:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK ou ZHH  
 
-    -   **Detalhes:** Modifica um site após a instalação. Especifica os idiomas a serem removidos e que não estarão mais disponíveis para os computadores cliente. Inglês está disponível por padrão e não pode ser removido.  
+    -   **Detalhes:** modifica um site após a instalação. Especifica os idiomas a serem removidos e que não estarão mais disponíveis para os computadores cliente. Inglês está disponível por padrão e não pode ser removido.  
 
 -   **Nome da chave:** MobileDeviceLanguage  
 
@@ -597,7 +597,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          1 = Instalar  
 
-    -   **Detalhes:** Especifica se os idiomas do cliente do dispositivo móvel estão instalados.  
+    -   **Detalhes:** especifica se os idiomas do cliente do dispositivo móvel estão instalados.  
 
 **SQLConfigOptions**  
 
@@ -605,7 +605,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Nome do SQL Server*>  
+    -   **Valores:**  <*Nome do SQL Server*>  
 
     -   **Detalhes:** especifica o nome do servidor ou da instância clusterizada que executa o SQL Server e que hospedará o banco de dados do site.  
 
@@ -613,7 +613,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>  
+    -   **Valores:**  <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>  
 
     -   **Detalhes:** especifica o nome do banco de dados SQL Server a ser criado ou o banco de dados SQL Server a ser usado durante a instalação do banco de dados do site primário.  
 
@@ -624,7 +624,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Número da porta SSB*>  
+    -   **Valores:**  <*Número da porta SSB*>  
 
     -   **Detalhes:** especifica a porta SSB usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas é possível usar outra porta.  
 
@@ -632,7 +632,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Caminho para o arquivo .mdb do banco de dados*>  
+    -   **Valores:**  <*Caminho para o arquivo .mdb do banco de dados*>  
 
     -   **Detalhes:** especifica um local alternativo para criar o arquivo .mdb do banco de dados.  
 
@@ -640,7 +640,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Caminho para o arquivo .ldf do banco de dados*>  
+    -   **Valores:**  <*Caminho para o arquivo .ldf do banco de dados*>  
 
     -   **Detalhes:** especifica um local alternativo para criar o arquivo .ldf do banco de dados.  
 
@@ -650,7 +650,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*FQDN do site de administração central*>  
+    -   **Valores:**  <*FQDN do site de administração central*>  
 
     -   **Detalhes:** especifica o site de administração central ao qual o site primário é anexado quando ele ingressa na hierarquia do Configuration Manager. Especifique o site de administração central durante a instalação.  
 
@@ -658,19 +658,19 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Interval*>  
+    -   **Valores:**  <*Interval*>  
 
-    -   **Detalhes:** Especifica o intervalo de repetição (em minutos) para tentar uma conexão ao site de administração central depois de a conexão falhar. Por exemplo, se a conexão com o site de administração central falhar, o site primário aguardará o número de minutos especificados para o valor de **CASRetryInterval** e, em seguida, tentará a conexão novamente.  
+    -   **Detalhes:** especifica o intervalo de repetição (em minutos) para tentar uma conexão ao site de administração central depois de a conexão falhar. Por exemplo, se a conexão com o site de administração central falhar, o site primário aguardará o número de minutos especificados para o valor de **CASRetryInterval** e, em seguida, tentará a conexão novamente.  
 
 -   **Nome da chave:** WaitForCASTimeout  
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Timeout*>  
+    -   **Valores:**  <*Timeout*>  
 
          Um valor de **0** a **100**  
 
-    -   **Detalhes:** Especifica o valor máximo do tempo limite (em minutos) para o site primário se conectar ao site de administração central. Por exemplo, se o site primário falhar ao se conectar ao site de administração central, o site primário tentará a conexão novamente ao site de administração central com base no valor de **CASRetryInterval** até atingir o período de **WaitForCASTimeout**. É possível especificar um valor de **0** a **100**.  
+    -   **Detalhes:** especifica o valor máximo do tempo limite (em minutos) para o site primário se conectar ao site de administração central. Por exemplo, se o site primário falhar ao se conectar ao site de administração central, o site primário tentará a conexão novamente ao site de administração central com base no valor de **CASRetryInterval** até atingir o período de **WaitForCASTimeout**. É possível especificar um valor de **0** a **100**.  
 
 **CloudConnectorOptions**  
 
@@ -690,7 +690,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **Valores:** <*FQDN do servidor de ponto de conexão de serviço*\>  
+    -   **Valores:**  <*FQDN do servidor de ponto de conexão de serviço*\>  
 
     -   **Detalhes:** especifica o FQDN do servidor que hospedará a função do sistema de sites do ponto de conexão do serviço.  
 
@@ -710,7 +710,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** obrigatório quando **UseProxy** for igual a 1  
 
-    -   **Valores:** <*FQDN do servidor proxy*>  
+    -   **Valores:**  <*FQDN do servidor proxy*>  
 
     -   **Detalhes:** especifica o FQDN do servidor proxy usado pelo ponto de conexão de serviço.  
 
@@ -718,7 +718,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** obrigatório quando **UseProxy** for igual a 1  
 
-    -   **Valores:** <*Número da porta*>  
+    -   **Valores:**  <*Número da porta*>  
 
     -   **Detalhes:** especifica o número da porta a ser usado para a porta do proxy.  
 
@@ -785,7 +785,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Essa chave é necessária quando a configuração **DatabaseRecoveryOptions** tem o valor **40**.  
 
-    -   **Valores:** <*FQDN do site de referência*>  
+    -   **Valores:**  <*FQDN do site de referência*>  
 
     -   **Detalhes:** especifica o site primário de referência que o site de administração central usará para recuperar dados globais se o backup do banco de dados for mais antigo que o período de retenção do controle de alterações ou quando o site for recuperado sem backup.  
 
@@ -797,7 +797,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Caminho para o conjunto de backup do servidor do site*>  
+    -   **Valores:**  <*Caminho para o conjunto de backup do servidor do site*>  
 
     -   **Detalhes:** Especifica o caminho para o conjunto de backup do servidor de site. Essa chave é opcional quando a configuração **ServerRecoveryOptions** tem o valor **1** ou **2**. Especifique um valor para a chave **SiteServerBackupLocation** recuperar o site usando um backup do site. Caso não especifique um valor, o site é reinstalado sem ser restaurado por meio de um conjunto de backup.  
 
@@ -805,9 +805,9 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** essa chave é obrigatória quando você configura um valor **1** ou **4** para a chave **ServerRecoveryOptions** e um valor **10** para a chave **DatabaseRecoveryOptions**.  
 
-    -   **Valores:** <*Caminho para o conjunto de backup do banco de dados do site*>  
+    -   **Valores:**  <*Caminho para o conjunto de backup do banco de dados do site*>  
 
-    -   **Detalhes:** Especifica o caminho para o conjunto de backup do banco de dados do site.  
+    -   **Detalhes:** especifica o caminho para o conjunto de backup do banco de dados do site.  
 
 **Opções**  
 
@@ -815,7 +815,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *ou* Eval  
+    -   **Valores:**  <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *ou* Eval  
 
     -   **Detalhes:** especifica a chave do produto (Product Key) de instalação do Configuration Manager, incluindo os traços. Insira **Eval** para instalar a versão de avaliação do Configuration Manager.  
 
@@ -823,23 +823,23 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Código do site*>  
+    -   **Valores:**  <*Código do site*>  
 
-    -   **Detalhes:** Especifica três caracteres alfanuméricos que identificam exclusivamente o site na hierarquia. Especifique o código do site usado pelo site antes da falha.
+    -   **Detalhes:** especifica três caracteres alfanuméricos que identificam exclusivamente o site na hierarquia. Especifique o código do site usado pelo site antes da falha.
 
 -   **Nome da chave:** SiteName  
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Nome do site*>  
+    -   **Valores:**  <*Nome do site*>  
 
-    -   **Detalhes:** Especifica o nome para esse site.  
+    -   **Detalhes:** especifica o nome para esse site.  
 
 -   **Nome da chave:** SMSInstallDir  
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Caminho de instalação do Configuration Manager*>  
+    -   **Valores:**  <*Caminho de instalação do Configuration Manager*>  
 
     -   **Detalhes:** especifica a pasta de instalação dos arquivos de programa do Configuration Manager.  
 
@@ -847,7 +847,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*FQDN do Provedor de SMS*>  
+    -   **Valores:**  <*FQDN do Provedor de SMS*>  
 
     -   **Detalhes:** especifica o FQDN do servidor que hospeda o Provedor de SMS. Especifique o servidor que hospedou o Provedor de SMS antes da falha.  
 
@@ -869,7 +869,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Caminho para os arquivos de pré-requisito da instalação*>  
+    -   **Valores:**  <*Caminho para os arquivos de pré-requisito da instalação*>  
 
     -   **Detalhes:** Especifica o caminho para os arquivos de pré-requisito da instalação. Dependendo do valor de **PrerequisiteComp**, a instalação usará esse caminho para armazenar os arquivos baixados ou para localizar os arquivos baixados anteriormente.  
 
@@ -883,7 +883,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          1 = Instalar  
 
-    -   **Detalhes:** Especifica se deseja instalar o console do Configuration Manager.  
+    -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager.  
 
 -   **Nome da chave:** JoinCEIP  
     > [!Note]  
@@ -905,7 +905,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Nome do SQL Server*>  
+    -   **Valores:**  <*Nome do SQL Server*>  
 
     -   **Detalhes:** especifica o nome do servidor ou da instância clusterizada que executa o SQL Server e que hospeda o banco de dados do site. Especifique o mesmo servidor que hospedou o banco de dados do site antes da falha.  
 
@@ -913,7 +913,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>  
+    -   **Valores:**  <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>  
 
     -   **Detalhes:** Especifica o nome do banco de dados SQL Server a ser criado ou o banco de dados SQL Server a ser usado durante a instalação do banco de dados do site de administração central. Especifique o mesmo nome do banco de dados usado antes da falha.  
 
@@ -924,7 +924,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Número da porta SSB*>  
+    -   **Valores:**  <*Número da porta SSB*>  
 
     -   **Detalhes:** especifica a porta SSB usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022. Especifique a mesma porta SSB usada antes da falha.  
 
@@ -932,7 +932,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Caminho para o arquivo .mdb do banco de dados*>  
+    -   **Valores:**  <*Caminho para o arquivo .mdb do banco de dados*>  
 
     -   **Detalhes:** especifica um local alternativo para criar o arquivo .mdb do banco de dados.  
 
@@ -940,7 +940,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Caminho para o arquivo .ldf do banco de dados*>  
+    -   **Valores:**  <*Caminho para o arquivo .ldf do banco de dados*>  
 
     -   **Detalhes:** especifica um local alternativo para criar o arquivo .ldf do banco de dados.  
 
@@ -962,7 +962,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **Valores:** <*FQDN do servidor de ponto de conexão de serviço*>  
+    -   **Valores:**  <*FQDN do servidor de ponto de conexão de serviço*>  
 
     -   **Detalhes:** especifica o FQDN do servidor que hospedará a função do sistema de sites do ponto de conexão do serviço.  
 
@@ -982,7 +982,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **Valores:** <*FQDN do servidor proxy*>  
+    -   **Valores:**  <*FQDN do servidor proxy*>  
 
     -   **Detalhes:** especifica o FQDN do servidor proxy usado pelo ponto de conexão de serviço.  
 
@@ -990,7 +990,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **Valores:** <*Número da porta*>  
+    -   **Valores:**  <*Número da porta*>  
 
     -   **Detalhes:** especifica o número da porta a ser usado para a porta do proxy.  
 
@@ -1003,7 +1003,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*RecoverPrimarySite*>  
+    -   **Valores:**  <*RecoverPrimarySite*>  
 
     -   **Detalhes:** recupera um site primário.  
 
@@ -1057,7 +1057,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Caminho para o conjunto de backup do servidor do site*>  
+    -   **Valores:**  <*Caminho para o conjunto de backup do servidor do site*>  
 
     -   **Detalhes:**  
 
@@ -1067,9 +1067,9 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** essa chave é obrigatória quando você configura um valor **1** ou **4** para a chave **ServerRecoveryOptions** e um valor **10** para a chave **DatabaseRecoveryOptions**.  
 
-    -   **Valores:** <*Caminho para o conjunto de backup do banco de dados do site*>  
+    -   **Valores:**  <*Caminho para o conjunto de backup do banco de dados do site*>  
 
-    -   **Detalhes:** Especifica o caminho para o conjunto de backup do banco de dados do site.  
+    -   **Detalhes:** especifica o caminho para o conjunto de backup do banco de dados do site.  
 
 **Opções**  
 
@@ -1085,23 +1085,23 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Código do site*>  
+    -   **Valores:**  <*Código do site*>  
 
-    -   **Detalhes:** Especifica três caracteres alfanuméricos que identificam exclusivamente o site na hierarquia. Especifique o código do site usado pelo site antes da falha.
+    -   **Detalhes:** especifica três caracteres alfanuméricos que identificam exclusivamente o site na hierarquia. Especifique o código do site usado pelo site antes da falha.
 
 -   **Nome da chave:** SiteName  
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Nome do site*>  
+    -   **Valores:**  <*Nome do site*>  
 
-    -   **Detalhes:** Especifica o nome para esse site.  
+    -   **Detalhes:** especifica o nome para esse site.  
 
 -   **Nome da chave:** SMSInstallDir  
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Caminho de instalação do Configuration Manager*>  
+    -   **Valores:**  <*Caminho de instalação do Configuration Manager*>  
 
     -   **Detalhes:** especifica a pasta de instalação dos arquivos de programa do Configuration Manager.  
 
@@ -1109,7 +1109,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*FQDN do Provedor de SMS*>  
+    -   **Valores:**  <*FQDN do Provedor de SMS*>  
 
     -   **Detalhes:** especifica o FQDN do servidor que hospeda o Provedor de SMS. Especifique o servidor que hospedou o Provedor de SMS antes da falha. Configure Provedores de SMS adicionais para o site após a instalação inicial. Para obter mais informações sobre o Provedor de SMS, consulte [Planejar o Provedor de SMS](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
@@ -1129,7 +1129,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Caminho para os arquivos de pré-requisito da instalação*>  
+    -   **Valores:**  <*Caminho para os arquivos de pré-requisito da instalação*>  
 
     -   **Detalhes:** Especifica o caminho para os arquivos de pré-requisito da instalação. Dependendo do valor de **PrerequisiteComp**, a instalação usará esse caminho para armazenar os arquivos baixados ou para localizar os arquivos baixados anteriormente.  
 
@@ -1143,7 +1143,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
          1 = Instalar  
 
-    -   **Detalhes:** Especifica se deseja instalar o console do Configuration Manager.  
+    -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager.  
 
 -   **Nome da chave:** JoinCEIP  
     > [!Note]  
@@ -1165,7 +1165,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Nome do SQL Server*>  
+    -   **Valores:**  <*Nome do SQL Server*>  
 
     -   **Detalhes:** especifica o nome do servidor ou da instância clusterizada que executa o SQL Server e que hospeda o banco de dados do site. Especifique o mesmo servidor que hospedou o banco de dados do site antes da falha.  
 
@@ -1173,7 +1173,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>
+    -   **Valores:**  <*Nome do banco de dados do site*> ou <*Nome da instância*>\\<*Nome do banco de dados do site*>
 
     -   **Detalhes:**  
 
@@ -1186,7 +1186,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Sim  
 
-    -   **Valores:** <*Número da porta SSB*>  
+    -   **Valores:**  <*Número da porta SSB*>  
 
     -   **Detalhes:** especifica a porta SSB usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022. Especifique a mesma porta SSB usada antes da falha.  
 
@@ -1194,7 +1194,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Caminho para o arquivo .mdb do banco de dados*>  
+    -   **Valores:**  <*Caminho para o arquivo .mdb do banco de dados*>  
 
     -   **Detalhes:** especifica um local alternativo para criar o arquivo .mdb do banco de dados.  
 
@@ -1202,7 +1202,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Caminho para o arquivo .ldf do banco de dados*>  
+    -   **Valores:**  <*Caminho para o arquivo .ldf do banco de dados*>  
 
     -   **Detalhes:** especifica um local alternativo para criar o arquivo .ldf do banco de dados.  
 
@@ -1212,7 +1212,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** ver detalhes.  
 
-    -   **Valores:** <*Código do site de administração central*>  
+    -   **Valores:**  <*Código do site de administração central*>  
 
     -   **Detalhes:** especifica o site de administração central ao qual o site primário é anexado quando ingressa na hierarquia do Configuration Manager. Essa configuração é necessária se o site primário foi anexado ao site de administração central antes da falha. Especifique o código do site usado para o site de administração central antes da falha.  
 
@@ -1220,17 +1220,17 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Interval*>  
+    -   **Valores:**  <*Interval*>  
 
-    -   **Detalhes:** Especifica o intervalo de repetição (em minutos) para tentar uma conexão ao site de administração central depois de a conexão falhar. Por exemplo, se a conexão com o site de administração central falhar, o site primário aguardará o número de minutos especificados para o valor de **CASRetryInterval** e, em seguida, tentará a conexão novamente.  
+    -   **Detalhes:** especifica o intervalo de repetição (em minutos) para tentar uma conexão ao site de administração central depois de a conexão falhar. Por exemplo, se a conexão com o site de administração central falhar, o site primário aguardará o número de minutos especificados para o valor de **CASRetryInterval** e, em seguida, tentará a conexão novamente.  
 
 -   **Nome da chave:** WaitForCASTimeout  
 
     -   **Obrigatório:** Não  
 
-    -   **Valores:** <*Timeout*>  
+    -   **Valores:**  <*Timeout*>  
 
-    -   **Detalhes:** Especifica o valor máximo do tempo limite (em minutos) para o site primário se conectar ao site de administração central. Por exemplo, se o site primário falhar ao se conectar ao site de administração central, o site primário tentará a conexão novamente ao site de administração central com base no valor de **CASRetryInterval** até atingir o período de **WaitForCASTimeout**. É possível especificar um valor de **0** a **100**.  
+    -   **Detalhes:** especifica o valor máximo do tempo limite (em minutos) para o site primário se conectar ao site de administração central. Por exemplo, se o site primário falhar ao se conectar ao site de administração central, o site primário tentará a conexão novamente ao site de administração central com base no valor de **CASRetryInterval** até atingir o período de **WaitForCASTimeout**. É possível especificar um valor de **0** a **100**.  
 
 **CloudConnectorOptions**  
 
@@ -1250,7 +1250,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **Valores:** <*FQDN do servidor de ponto de conexão de serviço*>  
+    -   **Valores:**  <*FQDN do servidor de ponto de conexão de serviço*>  
 
     -   **Detalhes:** especifica o FQDN do servidor que hospedará a função do sistema de sites do ponto de conexão do serviço.  
 
@@ -1270,7 +1270,7 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **Valores:** <*FQDN do servidor proxy*>  
+    -   **Valores:**  <*FQDN do servidor proxy*>  
 
     -   **Detalhes:** especifica o FQDN do servidor proxy usado pelo ponto de conexão de serviço.  
 
@@ -1278,6 +1278,6 @@ Use os detalhes a seguir para instalar um site primário usando um arquivo de sc
 
     -   **Obrigatório:** obrigatório quando **CloudConnector** for igual a 1  
 
-    -   **Valores:** <*Número da porta*>  
+    -   **Valores:**  <*Número da porta*>  
 
     -   **Detalhes:** especifica o número da porta a ser usado para a porta do proxy.  

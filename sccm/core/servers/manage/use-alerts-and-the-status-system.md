@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 7341cc6e-9e08-41e4-bcc6-6c1ff12e85ca
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70e19304d63c9660a685b37db19219ba38981b18
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 52c501c30d2eb4ecea3d7830d0f0c3bb61262137
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133445"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65497227"
 ---
 # <a name="use-alerts-and-the-status-system-for-system-center-configuration-manager"></a>Usar alertas e o sistema de status para o System Center Configuration Manager
 
@@ -288,15 +288,15 @@ Como o sistema de status mantém configurações separadas para cada site, você
 ###  <a name="BKMK_MonitorAlerts"></a> Monitorar alertas  
  Você pode exibir alertas no nó **Alertas** no workspace **Monitoramento**. Alertas têm um dos seguintes estados de alerta:  
 
-- **Nunca disparado**: A condição do alerta ainda não foi atendida.  
+- **Nunca disparado**: a condição do alerta ainda não foi atendida.  
 
-- **Ativo**: A condição do alerta foi atendida.  
+- **Ativo**: a condição do alerta foi atendida.  
 
-- **Cancelado**: A condição de um alerta ativo não foi mais atendida. Esse estado indica que a condição que causou o alerta agora está resolvida.  
+- **Cancelado**: a condição de um alerta ativo não foi mais atendida. Esse estado indica que a condição que causou o alerta agora está resolvida.  
 
 - **Adiado**: um usuário administrativo configurou o Configuration Manager para avaliar o estado do alerta posteriormente.  
 
-- **Desabilitado**: O alerta foi desabilitado por um usuário administrativo. Quando um alerta está nesse estado, o Configuration Manager não atualiza o alerta mesmo que o estado do alerta seja alterado.  
+- **Desabilitado**: o alerta foi desabilitado por um usuário administrativo. Quando um alerta está nesse estado, o Configuration Manager não atualiza o alerta mesmo que o estado do alerta seja alterado.  
 
   Você pode executar uma das ações a seguir quando o Configuration Manager gerar um alerta:  
 

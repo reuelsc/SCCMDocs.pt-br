@@ -2,21 +2,21 @@
 title: CMTrace
 titleSuffix: Configuration Manager
 description: Saiba mais sobre como usar a ferramenta CMTrace para exibir arquivos de log para o Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 05/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 6a4a3290-5228-4871-918a-554aa1c20834
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87552016d1cd17e79abf01a9de9109195d3d2a70
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 988e834de78bac64be43600ca73d0d51ff29bf4b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125284"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65496771"
 ---
 # <a name="cmtrace"></a>CMTrace
 
@@ -30,7 +30,7 @@ CMTrace é uma das [ferramentas do Configuration Manager](/sccm/core/support/too
 
 A ferramenta ajuda a analisar arquivos de log por meio de destaque, filtragem e pesquisa de erro.
 
-Começando na versão 1806, a ferramenta de visualização de log CMTrace é instalada automaticamente junto com o cliente do Configuration Manager. Ela é adicionada ao diretório de instalação do cliente, que, por padrão, é `%WinDir%\CCM\CMTrace.exe`.<!--1357971-->
+Começando na versão 1806, a ferramenta de visualização de log CMTrace é instalada automaticamente junto com o cliente do Configuration Manager. Ela é adicionada ao diretório de instalação do cliente, que por padrão é `%WinDir%\CCM\CMTrace.exe`.<!--1357971-->
 
 > [!Note]  
 > O CMTrace não é registrado automaticamente no Windows para abrir a extensão de arquivo .log. Para obter mais informações, veja [Associações de arquivo](#file-associations).  
@@ -115,8 +115,8 @@ As seguintes ações estão disponíveis no menu **Ferramentas**:
 - [Filtrar](#filter)
 - [Pesquisa de Erro](#error-lookup)
 - [Pausar](#pause)
-- [Mostrar/Ocultar Detalhes](#show-hide-details)
-- [Mostrar/Ocultar Painel de Informações](#show-hide-info-pane)
+- [Mostrar/Ocultar Detalhes](#show/hide-details)
+- [Mostrar/Ocultar Painel de Informações](#show/hide-info-pane)
 
 #### <a name="find"></a>Localizar
 Pesquise o arquivo de log aberto para uma cadeia de caracteres de texto especificada.  
@@ -141,7 +141,8 @@ Insira uma cadeia de caracteres que usa o CMTrace para pesquisar o texto de cada
 #### <a name="filter"></a>Filtro
 Mostrar ou ocultar linhas de log com base nos critérios especificados. Aplica filtros a qualquer uma das quatro colunas, não importa se elas estão visíveis. Essas configurações se aplicam a cada arquivo de log aberto. 
 
-Exemplos: <!--SCCMDocs issue #603-->
+Exemplos:
+<!--SCCMDocs issue #603-->
 - Filtre **SMSTS.log** no texto de entrada que contém "a ação" ou "o grupo". 
 - Filtre **InventoryAgent.log** no ponto em que o texto de entrada contém "destino".
 
@@ -230,7 +231,8 @@ O CMTrace é compatível com a funcionalidade básica do tipo "arrastar e soltar
 ## <a name="other-tips"></a>Outras dicas
 
 ### <a name="last-directory-registry-key"></a>Chave do Registro do último diretório
-<!--511280--> Por padrão, o CMTrace salva o último local de log que você abriu. Esse comportamento é útil no servidor do site, uma vez que ele sempre usa como o padrão o caminho de logs. 
+<!--511280-->
+Por padrão, o CMTrace salva o último local de log que você abriu. Esse comportamento é útil no servidor do site, uma vez que ele sempre usa como o padrão o caminho de logs. 
 
 Na primeira vez que você inicializá-lo em um cliente, ele usará como padrão o diretório de trabalho atual. Esse local pode ser o caminho no qual você salvou o CMTrace ou um caminho como `%userprofile%\Desktop`. 
 

@@ -2,7 +2,7 @@
 title: Criar aplicativos
 titleSuffix: Configuration Manager
 description: Crie aplicativos com tipos de implantação, métodos de detecção e requisitos para instalação do software.
-ms.date: 03/04/2019
+ms.date: 05/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 236ae6e9efafcfe24f064fb643a43524eee3718d
-ms.sourcegitcommit: 4ab85212268e76d3fd22f00e6c74edaa5abde60c
+ms.openlocfilehash: e796996f870fcdd8428f3a16b08eee56d249cfa6
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57426933"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673386"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Criar aplicativos no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Um aplicativo do Configuration Manager define os metadados sobre o aplicativo. Um aplicativo tem um ou mais tipos de implantação. Esses tipos de implantação incluem os arquivos de instalação e as informações necessárias para instalação do software em dispositivos. Um tipo de implantação também tem regras, como métodos de detecção e requisitos. Essas regras especificam quando e como o cliente deve instalar o software.  
+Um aplicativo do Gerenciador de Configurações define os metadados sobre o aplicativo. Um aplicativo tem um ou mais tipos de implantação. Esses tipos de implantação incluem os arquivos de instalação e as informações necessárias para instalação do software em dispositivos. Um tipo de implantação também tem regras, como métodos de detecção e requisitos. Essas regras especificam quando e como o cliente deve instalar o software.  
 
 Crie aplicativos usando os seguintes métodos:  
 
@@ -88,7 +88,7 @@ Em seguida, detecte automaticamente ou especifique manualmente as informações 
 
     -   **Usar uma conexão VPN automática (se configurada)**: se você implantou um perfil de VPN para o dispositivo no qual o usuário inicia o aplicativo, conecte-se à VPN quando o aplicativo for iniciado. Essa opção é somente para Windows 8.1 e Windows Phone 8.1. Em dispositivos Windows Phone 8.1, se você implantar mais de um perfil de VPN no dispositivo, não haverá suporte para conexões VPN automáticas. Para obter mais informações, consulte [Perfis de VPN](/sccm/protect/deploy-use/vpn-profiles).  
 
-    - **Provisionar este aplicativo para todos os usuários no dispositivo**<!--1358310-->: começando na versão 1806, é possível provisionar um aplicativo com um pacote do aplicativo do Windows para todos os usuários no dispositivo. Para obter mais informações, confira [Criar aplicativos Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_provision).  
+    - **Provisionar este aplicativo para todos os usuários no dispositivo**<!--1358310-->: a partir da versão 1806, forneça um aplicativo com um pacote de aplicativos do Windows para todos os usuários no dispositivo. Para obter mais informações, confira [Criar aplicativos Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_provision).  
 
        > [!Tip]  
        > Se você estiver modificando um aplicativo existente, essa configuração estará na guia **Experiência do Usuário** das propriedades de tipo de implantação do pacote do aplicativo do Windows.  
@@ -106,7 +106,7 @@ Para adicionar mais tipos de implantação ou definir outras configurações, co
 
 2.  Especifique as **Informações gerais** sobre o aplicativo:  
 
-    - O **Nome** do aplicativo é obrigatório e precisa ter menos de 256 caracteres.  
+    - O **Nome** do aplicativo é obrigatório e deve ter menos de 256 caracteres.  
 
     - **Comentários do administrador**, **Publicador** e **Versão do Software** são metadados adicionais para descrever ainda mais o aplicativo.  
 
@@ -126,6 +126,9 @@ Para adicionar mais tipos de implantação ou definir outras configurações, co
         > Um nome de aplicativo localizado é necessário para cada versão de idioma que você configura.  
 
     -   **Categorias do usuário**: escolha **Editar** para especificar as categorias do aplicativo no idioma selecionado. Os usuários do Centro de Software usam essas categorias para filtrar e classificar os aplicativos disponíveis.  
+
+        > [!IMPORTANT]  
+        > As categorias de usuários se aplicam apenas a implantações para coleções de usuários.  Se um aplicativo for implantado em uma coleção de computadores, as categorias de usuários serão ignoradas.
 
     -   **Documentação do usuário**: especifique o local de um arquivo no qual os usuários do Centro de Software podem obter mais informações sobre este aplicativo. Esse local é um endereço de site ou um caminho de rede e um nome de arquivo. Verifique se os usuários têm acesso a esse local.  
 
@@ -237,13 +240,13 @@ Na página **Conteúdo**, especifique as seguintes informações:
 
 - **Programa de instalação**: especifique o nome do programa de instalação e todos os parâmetros de instalação necessários.  
 
-    - **A instalação é iniciada em**: opcionalmente, especifique a pasta que contém o programa de instalação para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente ou um caminho para a pasta do ponto de distribuição que tem os arquivos de instalação.  
+    - **A instalação é iniciada em**: opcionalmente, especifique a pasta que contém o programa de instalação para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente ou um caminho para a pasta do ponto de distribuição que contém os arquivos de instalação.  
 
 - **Desinstalar programa**: opcionalmente, especifique o nome do programa de desinstalação e os parâmetros necessários.  
 
     - **A desinstalação é iniciada em**: opcionalmente, especifique a pasta que contém o programa de desinstalação para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente. Também pode ser um caminho relativo em um ponto de distribuição da pasta com o pacote.  
 
-- **Reparar o programa**: opcionalmente, começando na versão 1810, para tipos de implantação do Windows Installer e o instalador de Script, especifique o nome do programa reparo e todos os parâmetros necessários.<!--1357866-->  
+- **Programa de reparação**: a partir da versão 1810, para os tipos de implantação do Windows Installer e do Script Installer, especifique opcionalmente o nome do programa de reparação e os parâmetros necessários.<!--1357866-->  
 
     - **Reparo inicia em**: opcionalmente, especifique a pasta que contém o programa de reparo para o tipo de implantação. Essa pasta pode ser um caminho absoluto no cliente. Também pode ser um caminho relativo em um ponto de distribuição da pasta com o pacote.  
 
@@ -263,11 +266,11 @@ Quando você exibe as propriedades de um tipo de implantação, as opções a se
 
         - **Local do conteúdo de desinstalação**: especifique o caminho de rede para o conteúdo que é usado para desinstalar o aplicativo.  
 
-- **Permitir que os clientes usem pontos de distribuição do grupo de limites do site padrão**: especifique se os clientes devem baixar e instalar o software de um ponto de distribuição no grupo de limites do site padrão, quando o conteúdo não está disponível em um ponto de distribuição nos grupos de limites atuais ou vizinhos.  
+- **Permitir que os clientes usem pontos de distribuição do grupo de limites de site padrão**: especifique se os clientes devem baixar e instalar o software de um ponto de distribuição no grupo de limites do site padrão, quando o conteúdo não estiver disponível em um ponto de distribuição nos grupos de limites atuais ou vizinhos.  
 
 - **Opções de implantação**: especifique se os clientes devem baixar o aplicativo ao usarem um ponto de distribuição de um vizinho ou os grupos de limites do site padrão.  
 
-- **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações, confira [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). Começando na versão 1802, o BranchCache está sempre habilitado nos clientes. Essa configuração foi removida, pois os clientes usam o BranchCache quando há suporte para ele no ponto de distribuição.  
+- **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações, confira [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). A partir da versão 1802, o BranchCache está sempre habilitado nos clientes. Essa configuração foi removida, pois os clientes usam o BranchCache quando há suporte para ele no ponto de distribuição.  
 
 
 ### <a name="bkmk_dt-detect"></a> Opções de **Método de Detecção** do tipo de implantação   
@@ -321,7 +324,7 @@ Continue na próxima seção sobre como usar um script personalizado como um mé
 2.  Na caixa de diálogo **Editor de Scripts**, clique na lista suspensa **Tipo de Script**. Selecione uma das linguagens de script a seguir para detectar o tipo de implantação: PowerShell, VBScript ou JScript.  
 
     > [!Note]  
-    > Começando na versão 1810, quando um script do Windows PowerShell é executado como um método de detecção do aplicativo, o cliente do Configuration Manager chama PowerShell com o `-NoProfile` parâmetro. Essa opção inicia o PowerShell sem perfis. Um perfil do PowerShell é um script executado quando o PowerShell é iniciado. <!--3607762-->  
+    > A partir da versão 1810, quando um script do Windows PowerShell é executado como um método de detecção de aplicativo, o cliente do Configuration Manager chama o PowerShell com o parâmetro `-NoProfile`. Essa opção inicia o PowerShell sem perfis. Um perfil do PowerShell é um script executado quando o PowerShell é iniciado. <!--3607762-->  
 
 3.  Na caixa **Conteúdo do script**, insira o script que você deseja usar ou cole o conteúdo de um script existente. Escolha **Abrir** para navegar até um script existente salvo. Clique em **Limpar** para remover o texto no campo Conteúdo do script. Se necessário, habilite a opção para **Executar o script como um processo de 32 bits em clientes de 64 bits**.  
 
@@ -403,7 +406,7 @@ Na página **Experiência do Usuário** , especifique as seguintes informações
 
     - **Instalar para o sistema**: o cliente instala o aplicativo apenas uma vez. Ele está disponível para todos os usuários.  
 
-    - **Instalar para o sistema se o recurso for dispositivo, caso contrário, instalar para o usuário**: se você implantar o aplicativo em um dispositivo, o cliente o instalará para todos os usuários. Se você implantar o aplicativo para um usuário, o cliente o instalará apenas para esse usuário.  
+    - **Instalar para o sistema se o recurso for um dispositivo; caso contrário, instalar para o usuário**: se você implantar o aplicativo em um dispositivo, o cliente o instalará para todos os usuários. Se você implantar o aplicativo para um usuário, o cliente o instalará apenas para esse usuário.  
 
 - **Requisito de logon**: selecione uma das seguintes opções:  
 
@@ -432,7 +435,7 @@ Na página **Experiência do Usuário** , especifique as seguintes informações
     >  Se você selecionar a opção **Instalar para o usuário** na lista suspensa **Comportamento da instalação**, essa opção estará habilitada por padrão.  
 
     > [!IMPORTANT]  
-    > Começando na versão 1802, quando você seleciona o comportamento **Instalar para o sistema**, essa configuração é opcional. Essa alteração existe principalmente para permitir que um usuário final interaja com a instalação durante uma sequência de tarefas. Por exemplo, para executar um processo de instalação que solicita ao usuário final que escolha várias opções. Alguns instaladores de aplicativos não podem silenciar os prompts de usuário ou o processo de instalação pode exigir valores de configuração específicos conhecidos apenas pelo usuário. <!--1356976-->  
+    > A partir da versão 1802, quando você seleciona o comportamento **Instalar para o sistema**, essa configuração é opcional. Essa alteração existe principalmente para permitir que um usuário final interaja com a instalação durante uma sequência de tarefas. Por exemplo, para executar um processo de instalação que solicita ao usuário final que escolha várias opções. Alguns instaladores de aplicativos não podem silenciar os prompts de usuário ou o processo de instalação pode exigir valores de configuração específicos conhecidos apenas pelo usuário. <!--1356976-->  
     >  
     > A instalação no contexto do sistema e a permissão para os usuários interagirem com a instalação não é uma configuração segura. Para obter mais informações, consulte [Segurança e privacidade do gerenciamento de aplicativos](/sccm/apps/plan-design/security-and-privacy-for-application-management#bkmk_interact).  
 
@@ -648,7 +651,7 @@ O Configuration Manager dá suporte aos seguintes tipos de implantação de apli
 |--------------------------|----------------------|  
 | **Windows Installer (arquivo \*.msi)** | Um arquivo do Windows Installer. |  
 | **Pacote do aplicativo do Windows (\*.appx, \*.appxbundle)** | Para o Windows 8 ou posteriores. Selecione um arquivo de pacote do aplicativo do Windows ou um pacote do lote de aplicativo do Windows. |  
-| **Pacote do aplicativo do Windows (\*.appx, \*.appxbundle, \*.msix, \*.msixbundle)** | Começando na versão 1806, para os novos formatos pacote do aplicativo (.msix) e lote de aplicativo (.msixbundle) do Windows 10. Selecione um arquivo de pacote do aplicativo do Windows ou um pacote do lote de aplicativo do Windows.<!--1357427--> |  
+| **Pacote do aplicativo do Windows (\*.appx, \*.appxbundle, \*.msix, \*.msixbundle)** | A partir da versão 1806, para os novos formatos pacote do aplicativo (.msix) e lote de aplicativo (.msixbundle) do Windows 10. Selecione um arquivo de pacote do aplicativo do Windows ou um pacote do lote de aplicativo do Windows.<!--1357427--> |  
 | **Pacote do aplicativo do Windows (na Windows Store)** | Para o Windows 8 ou posteriores. Especifique um link para o aplicativo na Windows Store ou procure o repositório para selecionar o aplicativo.<sup>[Observação 1](#bkmk_note1)</sup> |  
 | **Instalador de Script** | Especifique um script ou programa que é executado em clientes Windows para instalar conteúdo ou executar uma ação. Use esse tipo de implantação para instaladores setup.exe ou wrappers de script. |  
 | **Microsoft Application Virtualization 4** | Um manifesto do Microsoft App-V v4. |  

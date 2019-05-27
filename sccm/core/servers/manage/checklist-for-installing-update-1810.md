@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: b87ac054-9b37-4725-a3f3-2340cfb10bff
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11a67aa698340cd100ded1ca64b9a97960bc6b9b
-ms.sourcegitcommit: 56ec6933cf7bfc93842f55835ad336ee3a1c6ab5
+ms.openlocfilehash: c57042e6ea4db7b244b8617bbef99633d9026d1b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57211662"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501120"
 ---
 # <a name="checklist-for-installing-update-1810-for-configuration-manager"></a>Lista de verificação para instalar a atualização 1810 do Configuration Manager
 
@@ -96,7 +96,7 @@ Deve ser instalada uma versão mínima do SQL Server 2012 Native Client que incl
 
 #### <a name="review-the-site-and-hierarchy-status-for-unresolved-issues"></a>Examine o status do site e da hierarquia quanto a problemas não resolvidos 
 Uma atualização de site pode falhar devido a problemas operacionais existentes. Antes de atualizar um site, resolva todos os problemas operacionais para os seguintes sistemas:  
-- Servidor do site  
+- O servidor do site  
 - O servidor de banco de dados do site  
 - Funções do sistema de site remoto em outros servidores   
 
@@ -146,7 +146,8 @@ Para obter mais informações, confira [Atualizar clientes](/sccm/core/clients/
 Para definir um período no qual as atualizações a um servidor do site podem ser instaladas, use as janelas de serviço. Isso pode ajudar a controlar quando os sites em sua hierarquia instalam a atualização. Para obter mais informações, confira [Períodos de serviço para servidores do site](/sccm/core/servers/manage/service-windows).
 
 #### <a name="review-supported-extensions"></a>Examinar extensões com suporte
-<!--SCCMdocs#587--> Se você ampliar o Configuration Manager com outros produtos da Microsoft ou de parceiros da Microsoft, confirme se eles são compatíveis com a versão 1810. Solicite essas informações ao fornecedor do produto. Por exemplo, confira as [notas de versão](/sccm/mdt/release-notes) do Microsoft Deployment Toolkit.
+<!--SCCMdocs#587-->
+Se você ampliar o Configuration Manager com outros produtos da Microsoft ou de parceiros da Microsoft, confirme se eles dão suporte à versão 1810. Solicite essas informações ao fornecedor do produto. Por exemplo, confira as [notas de versão](/sccm/mdt/release-notes) do Microsoft Deployment Toolkit.
 
 #### <a name="run-the-setup-prerequisite-checker"></a>Executar o verificador de pré-requisitos de instalação   
 Quando a atualização está listada no console como **Disponível**, você pode executar o verificador de pré-requisitos independentemente antes de instalar a atualização. (Ao instalar a atualização no site, o verificador de pré-requisitos é executado novamente).

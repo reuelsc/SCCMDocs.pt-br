@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 060b1f71519227673dd2b8b67b5def026e96f493
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: d686baa95cc29a2e4923c0572a0d056beeff9f5b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131890"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499218"
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>Implantação de exemplo passo a passo dos certificados PKI do System Center Configuration Manager: autoridade de certificação do Windows Server 2008
 
@@ -72,7 +72,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 |Requisitos do certificado|Descrição do certificado|  
 |-----------------------------|-----------------------------|  
 |Certificado do servidor Web para sistemas de sites que executam IIS|Use este certificado para criptografar dados e autenticar o servidor para os clientes. Ele deve ser instalado externamente do System Center Configuration Manager em servidores de sistemas de sites que executam o IIS (Serviços de Informações da Internet) e que estão configurados no System Center Configuration Manager para usar HTTPS.<br /><br /> Para obter as etapas para configurar e instalar este certificado, veja [Implantar o certificado do servidor Web para sistemas de sites que executam o IIS](#BKMK_webserver2008_cm2012) neste tópico.|  
-|Certificado de serviço para os clientes se conectarem a pontos de distribuição baseados em nuvem|Para obter as etapas para configurar e instalar este certificado, consulte [Implantar o certificado de serviço para pontos de distribuição baseados em nuvem](#BKMK_clouddp2008_cm2012) neste tópico.<br /><br /> **Importante:** Esse certificado é usado em conjunto com o certificado de gerenciamento do Windows Azure. Para obter mais informações sobre o certificado de gerenciamento, consulte [How to Create a Management Certificate](http://go.microsoft.com/fwlink/p/?LinkId=220281) (Como criar um certificado de gerenciamento) e [How to Add a Management Certificate to a Windows Azure Subscription](http://go.microsoft.com/fwlink/?LinkId=241722) (Como adicionar um certificado de gerenciamento a uma assinatura do Microsoft Azure) na seção Plataforma Microsoft Azure da Biblioteca MSDN.|  
+|Certificado de serviço para os clientes se conectarem a pontos de distribuição baseados em nuvem|Para obter as etapas para configurar e instalar este certificado, consulte [Implantar o certificado de serviço para pontos de distribuição baseados em nuvem](#BKMK_clouddp2008_cm2012) neste tópico.<br /><br /> **Importante:** esse certificado é usado em conjunto com o certificado de gerenciamento do Windows Azure. Para obter mais informações sobre o certificado de gerenciamento, consulte [How to Create a Management Certificate](http://go.microsoft.com/fwlink/p/?LinkId=220281) (Como criar um certificado de gerenciamento) e [How to Add a Management Certificate to a Windows Azure Subscription](http://go.microsoft.com/fwlink/?LinkId=241722) (Como adicionar um certificado de gerenciamento a uma assinatura do Microsoft Azure) na seção Plataforma Microsoft Azure da Biblioteca MSDN.|  
 |Certificado do cliente para computadores com Windows|Este certificado é usado para autenticar computadores cliente do System Center Configuration Manager em sistemas de sites que estão configurados para usar HTTPS. Ele também pode ser usado para pontos de gerenciamento e pontos de migração para monitoramento do status operacional quando estiverem configurados para usar HTTPS. Ele deve ser instalado externamente ao System Center Configuration Manager nos computadores.<br /><br /> Para obter as etapas para configurar e instalar este certificado, veja [Implantar o certificado do cliente para computadores Windows](#BKMK_client2008_cm2012) neste tópico.|  
 |Certificado do cliente para pontos de distribuição|Este certificado tem duas finalidades:<br /><br /> Use este certificado para autenticar o ponto de distribuição para um ponto de gerenciamento habilitado para HTTPS antes que o ponto de distribuição envie mensagens de status.<br /><br /> Quando a opção do ponto de distribuição **Habilitar suporte a PXE para clientes** é selecionada, o certificado é enviado para computadores que o PXE inicializa para que eles possam se conectar a um ponto de gerenciamento habilitado para HTTPS durante a implantação do sistema operacional.<br /><br /> Para obter as etapas para configurar e instalar este certificado, veja [Implantar o certificado do cliente para pontos de distribuição](#BKMK_clientdistributionpoint2008_cm2012) neste tópico.|  
 |Certificado de registro para dispositivos móveis|Este certificado é usado para autenticar clientes de dispositivos móveis do System Center Configuration Manager em sistemas de sites que estão configurados para usar HTTPS. Ele deve ser instalado como parte do registro do dispositivo móvel no System Center Configuration Manager e você escolhe o modelo do certificado definido como uma configuração do cliente do dispositivo móvel.<br /><br /> Para obter as etapas para configurar este certificado, veja [Implantar o certificado de registro para dispositivos móveis](#BKMK_mobiledevices2008_cm2012) neste tópico.|  
@@ -170,14 +170,14 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 15. Na página **Resultados da Instalação de Certificados** espere até que o certificado seja instalado e escolha **Concluir**.  
 
-16. Feche os **Certificados (computador local)**.  
+16. Feche os **Certificados (computador local)** .  
 
 ###  <a name="BKMK_webserver42008"></a> Configurar o IIS para usar o certificado do servidor Web  
  Este procedimento associa o certificado instalado ao **Site Padrão**do IIS.  
 
 ##### <a name="to-set-up-iis-to-use-the-web-server-certificate"></a>Configurar o IIS para usar o certificado do servidor Web  
 
-1. No servidor membro que tem o IIS instalado, escolha **Iniciar**, **Programas**, **Ferramentas Administrativas** e **Gerenciador do IIS (Serviços de Informações da Internet)**.  
+1. No servidor membro que tem o IIS instalado, escolha **Iniciar**, **Programas**, **Ferramentas Administrativas** e **Gerenciador do IIS (Serviços de Informações da Internet)** .  
 
 2. Expanda **Sites**, clique com o botão direito do mouse em **Site Padrão** e escolha **Editar Ligações**.  
 
@@ -190,7 +190,7 @@ Este exemplo de implantação passo a passo, que usa uma AC (autoridade de certi
 
 5. Escolha **OK** na caixa de diálogo **Editar Associação do Site** e escolha **Fechar**.  
 
-6. Feche o **Gerenciador do IIS (Serviços de Informações da Internet)**.  
+6. Feche o **Gerenciador do IIS (Serviços de Informações da Internet)** .  
 
    Agora o servidor membro está configurado com um certificado do servidor Web do System Center Configuration Manager.  
 
@@ -293,14 +293,14 @@ Esta implantação de certificados abrange os seguintes procedimentos:
 
 16. Na página **Resultados da Instalação de Certificados** espere até que o certificado seja instalado e escolha **Concluir**.  
 
-17. Feche os **Certificados (computador local)**.  
+17. Feche os **Certificados (computador local)** .  
 
 ###  <a name="BKMK_clouddpexporting2008"></a> Exportar o certificado personalizado do servidor Web para pontos de distribuição baseados em nuvem  
  Este procedimento exporta o certificado personalizado do servidor Web para um arquivo, assim ele pode ser importando quando você criar o ponto de distribuição baseado em nuvem.  
 
 ##### <a name="to-export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a>Para exportar o certificado personalizado do servidor Web para pontos de distribuição baseados em nuvem  
 
-1. No console **Certificados (Computador Local)**, clique com o botão direito do mouse no certificado que você acabou de instalar, escolha **Todas as Tarefas** e escolha **Exportar**.  
+1. No console **Certificados (Computador Local)** , clique com o botão direito do mouse no certificado que você acabou de instalar, escolha **Todas as Tarefas** e escolha **Exportar**.  
 
 2. No Assistente para Exportação de Certificados, escolha **Avançar**.  
 
@@ -317,7 +317,7 @@ Esta implantação de certificados abrange os seguintes procedimentos:
 
 7. Para fechar o assistente, escolha **Concluir** na página **Assistente para Exportação de Certificados** e escolha **OK** na caixa de diálogo de confirmação.  
 
-8. Feche os **Certificados (computador local)**.  
+8. Feche os **Certificados (computador local)** .  
 
 9. Armazene o arquivo com segurança e verifique se você pode acessá-lo do console do System Center Configuration Manager.  
 
@@ -406,11 +406,11 @@ Esta implantação de certificados abrange os seguintes procedimentos:
 
 8. Na caixa de diálogo **Adicionar ou Remover Snap-ins**, escolha **OK**.  
 
-9. No console, expanda **Certificados (Computador Local)**, **Pessoal** e escolha **Certificados**.  
+9. No console, expanda **Certificados (Computador Local)** , **Pessoal** e escolha **Certificados**.  
 
 10. No painel de resultados, confirme se um certificado tem a **Autenticação de Cliente** na coluna **Finalidade** e que o **Certificado do Cliente do ConfigMgr** está na coluna **Modelo de Certificado**.  
 
-11. Feche os **Certificados (computador local)**.  
+11. Feche os **Certificados (computador local)** .  
 
 12. Repita as etapas de 1 a 11 para o servidor membro para verificar se o servidor que será configurado como ponto de gerenciamento também tem um certificado do cliente.  
 
@@ -499,14 +499,14 @@ Esta implantação de certificados abrange os seguintes procedimentos:
 
 12. No painel de resultados, confirme se um certificado tem a **Autenticação de Cliente** na coluna **Finalidade** e que o **Certificado do Ponto de Distribuição do Cliente do ConfigMgr** está na coluna **Modelo de Certificado**.  
 
-13. Não feche os **Certificados (computador local)**.  
+13. Não feche os **Certificados (computador local)** .  
 
 ###  <a name="BKMK_exportclientdistributionpoint22008"></a> Exportar o certificado do cliente para pontos de distribuição  
  Este procedimento exporta o certificado personalizado de autenticação de estação de trabalho para um arquivo para que ele possa ser importado nas propriedades do ponto de distribuição.  
 
 ##### <a name="to-export-the-client-certificate-for-distribution-points"></a>Para exportar o certificado do cliente para pontos de distribuição  
 
-1. No console **Certificados (Computador Local)**, clique com o botão direito do mouse no certificado que você acabou de instalar, escolha **Todas as Tarefas** e escolha **Exportar**.  
+1. No console **Certificados (Computador Local)** , clique com o botão direito do mouse no certificado que você acabou de instalar, escolha **Todas as Tarefas** e escolha **Exportar**.  
 
 2. No Assistente para Exportação de Certificados, escolha **Avançar**.  
 
@@ -523,7 +523,7 @@ Esta implantação de certificados abrange os seguintes procedimentos:
 
 7. Para fechar o assistente, escolha **Concluir** na página **Assistente para Exportação de Certificados** e escolha **OK** na caixa de diálogo de confirmação.  
 
-8. Feche os **Certificados (computador local)**.  
+8. Feche os **Certificados (computador local)** .  
 
 9. Armazene o arquivo com segurança e verifique se você pode acessá-lo do console do System Center Configuration Manager.  
 
@@ -580,7 +580,7 @@ Esta implantação de certificados abrange os seguintes procedimentos:
  Crie o certificado de provisionamento com sua AC interna quando computadores AMT são configurados com a impressão digital do certificado da AC raiz interna. Quando não for esse o caso e você precisar usar uma autoridade de certificação externa, use as instruções da empresa que emitiu o certificado de provisionamento AMT, o que, muitas vezes, envolverá solicitar o certificado do site público da empresa. Você também poderá encontrar instruções detalhadas para a AC externa escolhida no [site Intel vPro Expert Center: Microsoft vPro Manageability](http://go.microsoft.com/fwlink/?LinkId=132001) (Intel vPro Expert Center: capacidade de gerenciamento do Microsoft vPro).  
 
 > [!IMPORTANT]  
->  CAs externas podem não oferecer suporte ao identificador de objeto de provisionamento do Intel AMT. Quando esse for o caso, forneça o atributo OU do **Certificado de Instalação de Cliente do Intel(R)**.  
+>  CAs externas podem não oferecer suporte ao identificador de objeto de provisionamento do Intel AMT. Quando esse for o caso, forneça o atributo OU do **Certificado de Instalação de Cliente do Intel(R)** .  
 
  Quando você solicitar um certificado de provisionamento AMT de uma AC externa, instale o certificado no repositório de certificados do computador pessoal no servidor membro que hospedará o ponto de serviço fora de banda.  
 
@@ -660,7 +660,7 @@ Esta implantação de certificados abrange os seguintes procedimentos:
 
 12. Na página **Resultados da Instalação de Certificados** espere até que o certificado seja instalado e escolha **Concluir**.  
 
-13. Feche os **Certificados (computador local)**.  
+13. Feche os **Certificados (computador local)** .  
 
     O certificado de provisionamento AMT de sua AC interna agora está instalado e pronto para ser selecionado nas propriedades do ponto de serviço fora de banda.  
 
@@ -722,7 +722,7 @@ Esta implantação de certificados abrange os seguintes procedimentos:
 
 7. Selecione as seguintes permissões **Permitir** para esse grupo de segurança: **Ler** e **Registrar**.  
 
-8. Escolha **OK** e feche o console de gerenciamento de **Modelos de Certificado**, **certtmpl – [Modelos de Certificado]**.  
+8. Escolha **OK** e feche o console de gerenciamento de **Modelos de Certificado**, **certtmpl – [Modelos de Certificado]** .  
 
 9. No console de gerenciamento da **Autoridade de Certificação**, clique com o botão direito do mouse em **Modelos de Certificado**, escolha **Novo** e **Modelo de Certificado a Ser Emitido**.  
 

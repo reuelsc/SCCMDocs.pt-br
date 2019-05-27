@@ -1,6 +1,6 @@
 ---
 title: MMS 2019 Docathon
-ms.date: 04/18/2019
+ms.date: 05/06/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: ffd912f5776f38f9a5af6fd0b628127d0100c926
-ms.sourcegitcommit: 14d27fa21dea8bbb48a410d01def651c31567bd6
+ms.openlocfilehash: 76970a024e54067aaa6a3059bb95a6c134a2e999
+ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64346659"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65214698"
 ---
 # <a name="mms-2019-docathon"></a>MMS 2019 Docathon
 
@@ -97,7 +97,7 @@ Começar a pensar e planejar sua meta para esse evento. O que você quer realiza
 
 ## <a name="contest-summary"></a>Resumo do concurso
 
-O concurso ocorre durante toda a semana, de 6 a 9 de maio. Qualquer participante da MMS 2019 pode participar. Os prêmios serão entregues na quinta-feira, 9 de maio, após a [sessão de P e R da equipe de produto do ConfigMgr](https://sched.co/N6ge). Você precisa estar na MMS 2019 para vencer, mas não precisa participar dessa sessão. Se você não estiver na sessão, para coletar um prêmio, entre em contato com Aaron antes que ele vá embora na sexta-feira de manhã.
+O concurso ocorre durante toda a semana, de 6 a 9 de maio. Qualquer participante da MMS 2019 pode participar. Enviar entradas até às 15:00 CT de quinta-feira, dia 9 de maio de 2019. Os prêmios serão entregues na quinta-feira, 9 de maio, após a [sessão de P e R da equipe de produto do ConfigMgr](https://sched.co/N6ge). Você precisa estar na MMS 2019 para vencer, mas não precisa participar dessa sessão. Se você não estiver na sessão, para coletar um prêmio, entre em contato com Aaron antes que ele vá embora na sexta-feira de manhã.
 
 > [!Important]  
 > Você deve incluir a hashtag **#MMS2019Docathon** em todas as contribuições para obter crédito.
@@ -206,7 +206,7 @@ REGRAS OFICIAIS do Concurso do Evento Microsoft Cloud + AI Developer Relations C
         - Maior quantidade de linhas alteradas
         - Maior quantidade de artigos alterados
 
-    Os vencedores serão selecionados após às 17h, Hora Central dos EUA, na quinta-feira, 9 de maio de 2019.
+    Os vencedores serão selecionados depois das 15:00 CT, na quinta-feira, dia 9 de maio de 2019.
 
     Os vencedores serão notificados no Evento e devem reivindicar o prêmio antes do encerramento do Evento.
 

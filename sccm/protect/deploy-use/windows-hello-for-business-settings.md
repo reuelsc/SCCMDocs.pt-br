@@ -7,33 +7,34 @@ ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
 ms.assetid: a95bc292-af10-4beb-ab56-2a815fc69304
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d23fee65cec798440449a00bf8a22d58cc373132
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 94cbbb7616588fa88bae9ae71f5b5f53dd4a4d63
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133775"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500355"
 ---
 # <a name="windows-hello-for-business-settings-in-configuration-manager"></a>Configurações do Windows Hello para Empresas no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-<!--1245704--> O Configuration Manager permite a integração com o Windows Hello para Empresas (antigo Microsoft Passport para Windows), um método de entrada alternativo para dispositivos Windows 10. O Hello para Empresas usa o Active Directory ou uma conta do Azure Active Directory para substituir uma senha, cartão inteligente ou cartão inteligente virtual. O Hello para Empresas permite que você use um **gesto do usuário** para fazer logon, em vez de uma senha. O gesto do usuário pode ser um PIN simples, uma autenticação biométrica ou um dispositivo externo, como um leitor de impressão digital.
+<!--1245704-->
+O Configuration Manager permite a integração com o Windows Hello para Empresas (o antigo Microsoft Passport para Windows), que é um método de logon alternativo para dispositivos Windows 10. O Hello para Empresas usa o Active Directory ou uma conta do Azure Active Directory para substituir uma senha, cartão inteligente ou cartão inteligente virtual. O Hello para Empresas permite que você use um **gesto do usuário** para fazer logon, em vez de uma senha. O gesto do usuário pode ser um PIN simples, uma autenticação biométrica ou um dispositivo externo, como um leitor de impressão digital.
 
 
 > [!Important]  
-> A partir de dezembro de 2017, Windows Hello para empresas no Configuration Manager é um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Implantação do Windows Server 2016 autoridade do Active Directory Federation Services registro (RA ADFS) é mais simples, proporciona uma melhor experiência de usuário e tem uma experiência de registro de certificado mais determinista.  
+> Em dezembro de 2017, as configurações do Windows Hello para Empresas no Configuration Manager tornaram-se um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). A implantação da Autoridade de Registro dos Serviços de Federação do Active Directory (ADFS RA) do Windows Server 2016 é mais simples, fornece uma melhor experiência do usuário e tem uma experiência de registro de certificado mais determinística.  
 
 
 Para obter mais informações, confira [Windows Hello para Empresas](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification).
 
 
 > [!Note]  
-> O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, veja [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 
 O Configuration Manager integra-se com o Windows Hello para Empresas de duas maneiras:  
@@ -51,7 +52,7 @@ O Configuration Manager integra-se com o Windows Hello para Empresas de duas man
 Você pode controlar o Windows Hello para Empresas em dispositivos com Windows 10 ingressados em domínio por meio da criação e implantação de um perfil de negócios do Windows Hello para Empresas. Essa abordagem é recomendada.
 
 
-Se você estiver usando a autenticação baseada em certificado, também será necessário implantar um perfil de certificado, conforme descrito em [Configurar um perfil de certificado](#configure-a-certificate-profile). Se você estiver usando a autenticação baseada em chave, não será necessário implantar um perfil de certificado.
+Se você estiver usando a autenticação baseada em certificado, também será necessário implantar um perfil de certificado, conforme descrito em [Configurar um perfil de certificado](#configure-a-certificate-profile-to-enroll-the-windows-hello-for-business-enrollment-certificate-in-configuration-manager). Se você estiver usando a autenticação baseada em chave, não será necessário implantar um perfil de certificado.
 
 
 

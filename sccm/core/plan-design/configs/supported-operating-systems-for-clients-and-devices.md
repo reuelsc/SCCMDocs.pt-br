@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 100fdd8e9032b1d16ae79b3cd52ffba3b3609446
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: af9d8c16033a22c828f014dfd4bad771851c08de
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140153"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499332"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versões de sistema operacional compatíveis com clientes e dispositivos para o Configuration Manager
 
@@ -361,7 +361,7 @@ O Configuration Manager dá suporte ao gerenciamento limitado de dispositivos qu
 
 ### <a name="supported-versions-of-exchange-server"></a>Versões compatíveis do Exchange Server
 
-- **Exchange Online (Office 365)**: Essa versão inclui o Business Productivity Online Standard Suite  
+- **Exchange Online (Office 365)** : Essa versão inclui o Business Productivity Online Standard Suite  
 
 - **Exchange Server 2016** (começando com a versão 1802)  
 

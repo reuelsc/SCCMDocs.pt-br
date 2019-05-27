@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: abb696f3-a816-4f12-a9f1-0503a81e1976
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6adb326a484976335d114277e095884e107f9906
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: db33a822c762922a04cbfe695435950023384f93
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124789"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501000"
 ---
 # <a name="test-the-database-upgrade-when-installing-an-update"></a>Testar a atualização do banco de dados ao instalar uma atualização
 

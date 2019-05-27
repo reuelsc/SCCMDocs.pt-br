@@ -2,7 +2,7 @@
 title: Criar itens de configuração filho
 titleSuffix: Configuration Manager
 description: Crie itens de configuração filho no System Center Configuration Manager.
-ms.date: 10/06/2016
+ms.date: 05/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42b6bceacf8d8ecd733e4d13b882fe3b5c0500e7
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 0b88ee7eaac8df8ffce93937f3a3f2616b9e085b
+ms.sourcegitcommit: 417e3834a42b415a8e129327dd3c15cc0c7ec5a2
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135738"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65443165"
 ---
 # <a name="how-to-create-child-configuration-items-in-system-center-configuration-manager"></a>Como criar itens de configuração filho no System Center Configuration Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "56135738"
 Os itens de configuração filho no System Center Configuration Manager são cópias dos itens de configuração que mantêm uma relação com o item de configuração original, portanto, eles herdam a configuração original do item de configuração pai.  
 
 Quando você vê as propriedades de um item de configuração filho no console do Configuration Manager, não é possível editar os objetos herdados e as configurações com seus critérios de validação. No entanto, você pode adicionar e editar critérios de validação adicionais para o item de configuração filho e também pode adicionar novos objetos e configurações a ele.
-A finalidade comum para criar e editar um item de configuração filho é refinar o item de configuração original para atender às suas necessidades comerciais.  
+Um exemplo para criar e editar um item de configuração filho é refinar o item de configuração original para atender aos seus requisitos de negócios.  
 
 > [!NOTE]  
 >  Só é possível criar itens de configuração filho por meio de itens de configuração do tipo **Windows Desktops e Servers (personalizados)**.  

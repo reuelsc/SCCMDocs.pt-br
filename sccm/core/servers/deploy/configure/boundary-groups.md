@@ -2,21 +2,21 @@
 title: Configurar grupos de limites
 titleSuffix: Configuration Manager
 description: Ajude os clientes a encontrar os sistemas de sites usando grupos de limites para organizar logicamente os locais de rede relacionados chamados limites
-ms.date: 11/27/2018
+ms.date: 05/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 5db2926f-f03e-49c7-b44b-e89b1a5a6779
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1062cd5983c3eb0d1353b6387b7d9ee507df3b4
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 011f2cb69ec2de6070bc4f2266dbf73a0e1e7843
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132632"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65498911"
 ---
 # <a name="configure-boundary-groups-for-configuration-manager"></a>Configurar grupos de limites para o Configuration Manager
 
@@ -41,7 +41,7 @@ Os clientes usam grupos de limites para:
     - Pontos de gerenciamento preferenciais  
 
         > [!Note]  
-        > Se você usar pontos de gerenciamento preferenciais, habilite essa opção para a hierarquia, e não de dentro da configuração do grupo de limites. Saiba mais em [Habilitar o uso de pontos de gerenciamento preferenciais](#to-enable-use-of-preferred-management-points).  
+        > Se você usar pontos de gerenciamento preferenciais, habilite essa opção para a hierarquia, e não de dentro da configuração do grupo de limites. Saiba mais em [Habilitar o uso de pontos de gerenciamento preferenciais](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_proc-prefer).  
 
 
 
@@ -84,7 +84,7 @@ Quando um cliente não consegue encontrar um sistema de sites disponível, ele c
 
 ### <a name="the-default-site-boundary-group"></a>O grupo de limite do site padrão
 
-Você pode criar seus próprios grupos de limites e cada site tem um grupo de limites de site padrão que o Configuration Manager cria. Esse grupo é denominado **Default-Site-Boundary-Group&lt;sitecode>**. Por exemplo, o grupo para o site ABC seria nomeado **Default-Site-Boundary-Group&lt;ABC>**.
+Você pode criar seus próprios grupos de limites e cada site tem um grupo de limites de site padrão que o Configuration Manager cria. Esse grupo é denominado **Default-Site-Boundary-Group&lt;sitecode>** . Por exemplo, o grupo para o site ABC seria nomeado **Default-Site-Boundary-Group&lt;ABC>** .
 
 Para cada grupo de limites que você criar, o Configuration Manager criará automaticamente um link implícito para cada grupo de limites de site padrão na hierarquia.  
 
@@ -185,13 +185,15 @@ O arquivo de log **smsts.log** da sequência de tarefas mostra a prioridade das 
 
 ### <a name="bkmk_bgoptions"></a> Opções de grupo de limites para downloads de pares
 
-<!--1356193--> Da versão 1806 em diante, os grupos de limites incluem as seguintes configurações adicionais para dar a você mais controle sobre a distribuição de conteúdo em seu ambiente:  
+<!--1356193-->
+A partir da versão 1806, os grupos de limites incluem as seguintes configurações adicionais para dar a você mais controle sobre a distribuição de conteúdo em seu ambiente:  
 
 - [Permitir downloads de par neste grupo de limites](#bkmk_bgoptions1)  
 
 - [Durante os downloads de pares, use apenas pares na mesma sub-rede](#bkmk_bgoptions2)  
 
-<!--1358749--> A versão 1810 adiciona as seguintes opções:  
+<!--1358749-->
+A versão 1810 adiciona as seguintes opções:  
 
 - [Preferir pontos de distribuição a de pares na mesma sub-rede](#bkmk_bgoptions3)  
 
@@ -280,14 +282,15 @@ Para saber mais, confira [Mudar manualmente clientes para um novo ponto de atual
 
 
 ## <a name="management-points"></a>Pontos de gerenciamento
-<!-- 1324594 --> A partir da versão 1802, configure relações de fallback para os pontos de gerenciamento entre grupos de limites. Esse comportamento proporciona maior controle para os pontos de gerenciamento que os clientes usam. Na guia **Relações** das propriedades do grupo de limites, há uma coluna para o ponto de gerenciamento. Quando você adiciona um novo grupo de limites de fallback, o tempo de fallback para o ponto de gerenciamento é sempre zero (0). Esse comportamento é o mesmo para o **Comportamento padrão** no grupo de limites padrão do site.
+<!-- 1324594 -->
+A partir da versão 1802, configure relações de fallback para os pontos de gerenciamento entre grupos de limites. Esse comportamento proporciona maior controle para os pontos de gerenciamento que os clientes usam. Na guia **Relações** das propriedades do grupo de limites, há uma coluna para o ponto de gerenciamento. Quando você adiciona um novo grupo de limites de fallback, o tempo de fallback para o ponto de gerenciamento é sempre zero (0). Esse comportamento é o mesmo para o **Comportamento padrão** no grupo de limites padrão do site.
 
 Anteriormente, um problema comum ocorre quando você possui um ponto de gerenciamento protegido em uma rede segura. Os clientes da rede corporativa principal recebem políticas que incluem esse ponto de gerenciamento protegido, mesmo que não possam se comunicar com ele em um firewall. Para solucionar esse problema, use a opção **Nunca realizar fallback** para garantir que os clientes apenas retornem aos pontos de gerenciamento com os quais eles podem se comunicar.
 
 Ao atualizar o site para a versão 1802, o Configuration Manager adiciona todos os pontos de gerenciamento de intranet ao grupo de limites padrão do site. Esse grupo de servidores não inclui os pontos de gerenciamento voltados apenas para a internet. Esse comportamento de upgrade garante que as versões mais antigas do cliente continuem a se comunicar com pontos de gerenciamento. Para aproveitar ao máximo esse recurso, mova seus pontos de gerenciamento para os grupos de limites desejados.
 
 > [!Note]  
-> Se você habilitar pontos de distribuição no grupo de limites do site padrão para fallback, e um ponto de gerenciamento é colocado em um ponto de distribuição, o site também adiciona o ponto de gerenciamento para o grupo de limites do site padrão.<!--VSO 2841292-->  
+> Se você habilitar pontos de distribuição no grupo de limites do site padrão para fallback, e um ponto de gerenciamento for colocado em um ponto de distribuição, o site também adiciona o ponto de gerenciamento para o grupo de limites do site padrão.<!--VSO 2841292-->  
 
 Se um cliente estiver em um grupo de limites sem um ponto de gerenciamento atribuído, o site dará ao cliente toda a lista de pontos de gerenciamento. Esse comportamento garante que um cliente sempre receba uma lista de pontos de gerenciamento.
 
@@ -402,7 +405,7 @@ Você não configura mais os pontos de distribuição individuais como rápidos 
 
 ### <a name="new-default-boundary-group-at-each-site"></a>Novo grupo de limites padrão em cada site
 
-Cada site primário tem um novo grupo de limites padrão chamado **Default-Site-Boundary-Group&lt;sitecode>**. Quando um cliente não está em um local de rede atribuído a um grupo de limites, ele usa os sistemas de sites associados ao grupo padrão de seu site atribuído. Planeje usar esse grupo de limites como uma substituição para o conceito de local de conteúdo de fallback.     
+Cada site primário tem um novo grupo de limites padrão chamado **Default-Site-Boundary-Group&lt;sitecode>** . Quando um cliente não está em um local de rede atribuído a um grupo de limites, ele usa os sistemas de sites associados ao grupo padrão de seu site atribuído. Planeje usar esse grupo de limites como uma substituição para o conceito de local de conteúdo de fallback.     
 
 #### <a name="allow-fallback-source-locations-for-content-is-removed"></a>Remoção de **Permitir locais de origem de fallback para conteúdo**
 Você não configura mais explicitamente um ponto de distribuição a ser usado para fallback. As opções para definir essa configuração foram removidas do console.

@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: ed931751-18f2-4230-a09e-a0a329fbfa1c
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59376c5b9846e32cc8b63666956424a11211f1c0
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 679f62bb38bab06c074c97e92ff7d3adcae80f1b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130785"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501440"
 ---
 # <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Sobre métodos de descoberta para o System Center Configuration Manager
 
@@ -109,9 +109,9 @@ A descoberta de grupos do Active Directory não dá suporte a atributos estendid
 
 Você pode configurar os seguintes escopos de descoberta que controlam como esse método pesquisa informações:  
 
--   **Localização**: Use um local, se você quiser pesquisar um ou mais contêineres do Active Directory. Essa opção de escopo dá suporte a uma pesquisa recursiva dos contêineres especificados do Active Directory. Esse processo pesquisa cada contêiner filho no contêiner especificado. Ele continua até que não sejam mais encontrados contêineres filho.  
+-   **Localização**: use um local, se você quiser pesquisar um ou mais contêineres do Active Directory. Essa opção de escopo dá suporte a uma pesquisa recursiva dos contêineres especificados do Active Directory. Esse processo pesquisa cada contêiner filho no contêiner especificado. Ele continua até que não sejam mais encontrados contêineres filho.  
 
--   **Grupos**: Usar grupos se desejar pesquisar um ou mais grupos específicos do Active Directory. Você pode configurar o **Domínio do Active Directory** para usar o domínio e a floresta padrão ou para limitar a pesquisa a um controlador de domínio específico. Além disso, você pode especificar um ou mais grupos para a pesquisa. Se você não especificar pelo menos um grupo, todos os grupos encontrados no local especificado do **Domínio do Active Directory** serão pesquisados.  
+-   **Grupos**: use grupos se desejar pesquisar um ou mais grupos específicos do Active Directory. Você pode configurar o **Domínio do Active Directory** para usar o domínio e a floresta padrão ou para limitar a pesquisa a um controlador de domínio específico. Além disso, você pode especificar um ou mais grupos para a pesquisa. Se você não especificar pelo menos um grupo, todos os grupos encontrados no local especificado do **Domínio do Active Directory** serão pesquisados.  
 
 > [!CAUTION]  
 >  Ao configurar um escopo de descoberta, selecione apenas os grupos a serem descobertos. Essa recomendação é feita porque a descoberta de grupos do Active Directory tenta descobrir cada membro de cada grupo no escopo da descoberta. A descoberta de grupos grandes pode exigir uso extensivo de largura de banda e recursos do Active Directory.  

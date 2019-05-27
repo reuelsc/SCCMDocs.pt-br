@@ -7,20 +7,20 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
 ms.assetid: 4e620080-5400-45bb-87c2-fbdbc8aeacac
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17a233c7f71edfd9d294c33ee3b9813cc581b8c6
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 7a26aaa2d4e409e899763cedebd32ebf64c93ffa
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124131"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65496375"
 ---
 # <a name="configure-options-for-updates-publisher"></a>Configurar opções para o Updates Publisher
 
-*Aplica-se a: System Center Updates Publisher*
+*Aplica-se ao: System Center Updates Publisher*
 
 Analise e defina as opções e configurações relacionadas que afetam a operação do Updates Publisher.
 
@@ -57,9 +57,9 @@ Você deve configurar o Updates Publisher para trabalhar com um servidor de atua
 
   Se um certificado digital não for detectado automaticamente para o servidor de atualização, escolha uma das seguintes opções:
 
-  -   **Procurar**: A opção de procurar só estará disponível quando o servidor de atualização for instalado no servidor em que você executa o console. Depois de selecionar um certificado você deve escolher **Criar** para adicionar o certificado ao repositório de certificados do WSUS no servidor de atualização. Você deve inserir a senha do arquivo **.pfx** para os certificados selecionados por esse método.
+  -   **Procurar**: a opção de procurar só estará disponível quando o servidor de atualização for instalado no servidor onde você executa o console. Depois de selecionar um certificado você deve escolher **Criar** para adicionar o certificado ao repositório de certificados do WSUS no servidor de atualização. Você deve inserir a senha do arquivo **.pfx** para os certificados selecionados por esse método.
 
-  -   **Criar:** Use essa opção para criar um novo certificado. Isso também adiciona o certificado ao repositório de certificados do WSUS no servidor de atualização.
+  -   **Criar:** use essa opção para criar um novo certificado. Isso também adiciona o certificado ao repositório de certificados do WSUS no servidor de atualização.
 
   **Se você criar seu próprio certificado de autenticação**, configure o seguinte:
 
@@ -74,15 +74,15 @@ Você deve configurar o Updates Publisher para trabalhar com um servidor de atua
 ## <a name="configmgr-server"></a>ConfigMgr Server
 Use essas opções ao usar o Configuration Manager com o Updates Publisher.
 
--   **Especifique o servidor do Configuration Manager:** Depois de habilitar o suporte para o Configuration Manager, especifique a localização do servidor de site de nível superior de sua hierarquia do Configuration Manager. Se esse servidor for remoto com relação à instalação do Updates Publisher, especifique o FQDN do servidor do site. Escolha **Conexão de Teste** para garantir que você possa se conectar ao servidor do site.
+-   **Especifique o servidor do Configuration Manager:** depois de habilitar o suporte para o Configuration Manager, especifique o local do servidor de site de nível superior de sua hierarquia do Configuration Manager. Se esse servidor for remoto com relação à instalação do Updates Publisher, especifique o FQDN do servidor do site. Escolha **Conexão de Teste** para garantir que você possa se conectar ao servidor do site.
 
--   **Configurar limites:** Os limites são usados quando você publica atualizações com um tipo de publicação Automática. Os valores do limite ajudam a determinar quando o conteúdo completo de uma atualização é publicado em vez de apenas os metadados. Para conhecer mais tipos de publicação, veja [Atribuir atualizações a uma publicação](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication)
+-   **Configurar limites:** os limites são usados quando você publica atualizações com um tipo de publicação Automática. Os valores do limite ajudam a determinar quando o conteúdo completo de uma atualização é publicado em vez de apenas os metadados. Para conhecer mais tipos de publicação, veja [Atribuir atualizações a uma publicação](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication)
 
     Habilite um ou os dois limites a seguir:
 
-    -   **Limite de contagem de solicitações do cliente:** Define quantos clientes devem solicitar uma atualização antes que o Updates Publisher possa publicar automaticamente o conjunto completo de conteúdo para essa atualização. Até que o número especificado de clientes solicite a atualização, apenas os metadados das atualizações são publicados.
+    -   **Limite de contagem de solicitação do cliente:** define quantos clientes devem solicitar uma atualização antes que o Updates Publisher possa publicar automaticamente o conjunto completo de conteúdo para essa atualização. Até que o número especificado de clientes solicite a atualização, apenas os metadados das atualizações são publicados.
 
-    -   **Limite de tamanho de origem do pacote (MB):** Isso impede a publicação automática de atualizações que ultrapassam o tamanho especificado. Se o tamanho das atualizações ultrapassar esse valor, apenas os metadados serão publicados. Atualizações menores do que o tamanho especificado podem ter seu conteúdo completo publicado.
+    -   **Limite de tamanho de origem do pacote (MB):** isso impede a publicação automática de atualizações que ultrapassam o tamanho especificado. Se o tamanho das atualizações ultrapassar esse valor, apenas os metadados serão publicados. Atualizações menores do que o tamanho especificado podem ter seu conteúdo completo publicado.
 
 ## <a name="proxy-settings"></a>Configurações Proxy
 O Updates Publisher usa as configurações de proxy quando você importa catálogos de software da Internet ou publica atualizações na Internet.
@@ -101,17 +101,17 @@ O conteúdo de editores não confiáveis pode danificar os computadores dos clie
 ## <a name="advanced"></a>Avançado
 As opções avançadas incluem as seguintes:
 
--   **Localização do repositório:** Exiba e modifique a localização do arquivo de banco de dados, **scupdb.sdf**. Esse arquivo é o repositório para o Updates Publisher.
+-   **Local do repositório:** veja e modifique o local do arquivo de Banco de Dados, **scupdb.sdf**. Esse arquivo é o repositório para o Updates Publisher.
 
--   **Carimbo de data/hora:** Quando habilitado, um carimbo de data/hora é adicionado às atualizações assinadas por você, identificando quando foram assinadas. Uma atualização que foi assinada enquanto um certificado era válido pode ser usada após a expiração desse certificado de autenticação. Por padrão, as atualizações de software não podem ser implantadas após a expiração do certificado de assinatura.
+-   **Carimbo de hora:** quando habilitado, um carimbo de hora é adicionado às atualizações assinadas por você, identificando quando foram assinadas. Uma atualização que foi assinada enquanto um certificado era válido pode ser usada após a expiração desse certificado de autenticação. Por padrão, as atualizações de software não podem ser implantadas após a expiração do certificado de assinatura.
 
--   **Verificar se há atualizações nos catálogos inscritos:** Sempre que o Updates Publisher é iniciado, ele pode procurar automaticamente por atualizações para os catálogos nos quais você se inscreveu. Quando uma atualização de catálogo é encontrada, os detalhes são fornecidos como **Alertas Recentes** na janela **Visão Geral** do **Workspace de Atualizações**.
+-   **Verificar se há atualizações nos catálogos inscritos:** sempre que o Updates Publisher é iniciado, ele pode procurar automaticamente por atualizações para os catálogos nos quais você se inscreveu. Quando uma atualização de catálogo é encontrada, os detalhes são fornecidos como **Alertas Recentes** na janela **Visão Geral** do **Workspace de Atualizações**.
 
--   **Revogação de certificado:** Escolha esta opção para habilitar verificações de revogação de certificado.
+-   **Revogação de certificado:** escolha esta opção para habilitar verificações de revogação de certificado.
 
--   **Publicação de origem local:** O Updates Publisher pode usar uma cópia local de uma atualização que você está publicando antes de baixar essa atualização da Internet. O local deve ser uma pasta no computador que executa o Updates Publisher. Por padrão, esse local é **Meus Documents\LocalSourcePublishing.** Use isso quando você tiver baixado anteriormente uma ou mais atualizações ou tiver feito modificações em uma atualização que você deseja implantar.
+-   **Publicação de origem local:** o Updates Publisher pode usar uma cópia local de uma atualização que você está publicando antes de baixar essa atualização da Internet. O local deve ser uma pasta no computador que executa o Updates Publisher. Por padrão, esse local é **Meus Documents\LocalSourcePublishing.** Use isso quando você tiver baixado anteriormente uma ou mais atualizações ou tiver feito modificações em uma atualização que você deseja implantar.
 
--   **Assistente para Limpeza de Atualizações de Software:** Inicie o assistente de limpeza de atualizações. O assistente expira atualizações que estão no servidor de atualização, mas que não estão no repositório do Updates Publisher. Consulte [Expirar atualizações sem referência](#expire-unreferenced-software-updates) para obter mais detalhes.
+-   **Assistente para Limpeza de Atualizações de Software:** inicie o assistente para limpeza de atualizações. O assistente expira atualizações que estão no servidor de atualização, mas que não estão no repositório do Updates Publisher. Consulte [Expirar atualizações sem referência](#expire-unreferenced-software-updates) para obter mais detalhes.
 
 ## <a name="updates"></a>Atualizações
  O Updates Publisher pode verificar automaticamente novas atualizações sempre que é aberto. Você também pode aceitar receber builds de visualização do Updates Publisher.
@@ -122,7 +122,7 @@ para abrir as **Propriedades do Updates Publisher** e escolha **Verificar se há
 Quando o Updates Publisher encontra uma nova atualização, ele exibe a janela **Atualização Disponível** e você pode optar por instalá-la. Se você optar por não instalar a atualização, ela será oferecida na próxima vez que você abrir o console.
 
 ## <a name="logging"></a>Registrando em log
-O Updates Publisher registra informações básicas sobre o Updates Publisher em **&lt;*path*&gt;\Windows\Temp\UpdatesPublisher.log**.
+O Updates Publisher registra informações básicas sobre o Updates Publisher em **%WINDIR%\Temp\UpdatesPublisher.log**.
 
 Use o bloco de notas ou o **CMTrace** para exibir o log. CMTrace é a ferramenta de arquivo de log do Configuration Manager localizada na pasta **\SMSSetup\Tools** da mídia de origem do Configuration Manager.
 

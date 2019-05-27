@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 19539f4d-1667-4b4c-99a1-9995f12cf5f7
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8a55ec24a70e6059bb638d1d7ddfc7651574055
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 8506996f7b769003c937de69a9c7f659341c4294
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56134360"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501023"
 ---
 #  <a name="recover-a-configuration-manager-site"></a>Recuperar um site do Configuration Manager
 
@@ -133,7 +133,7 @@ O processo para reinicializar o site ou dados globais substitui dados existentes
 - Os dados copiados do site XYZ são inseridos no banco de dados do site ABC.
 
 #### <a name="example-scenario-1-the-primary-site-reinitializes-the-global-data-from-the-central-administration-site"></a>Cenário de exemplo 1: o site primário reinicializa os dados globais do site de administração central  
-o processo de recuperação remove os dados globais existentes do site primário no banco de dados do site primário e substitui os dados pelos dados globais copiados do site de administração central.
+O processo de recuperação remove os dados globais existentes do site primário no banco de dados do site primário e substitui os dados pelos dados globais copiados do site de administração central.
 
 #### <a name="example-scenario-2-the-central-administration-site-reinitializes-the-site-data-from-a-primary-site"></a>Cenário de exemplo 2: O site de administração central reinicializa os dados do site de um site primário 
 O processo de recuperação remove os dados existentes do site primário do banco de dados do site de administração central. Ele substitui os dados pelos dados copiados do site primário. Os dados do site de outros sites primários não são afetados.
@@ -146,27 +146,27 @@ Depois que um banco de dados do site é restaurado de um backup, o Configuration
 #### <a name="recovered-site-is-a-central-administration-site"></a>O site recuperado é um site administração central
 - Backup de banco de dados dentro do período de retenção do controle de alterações  
 
-     - **Dados globais**: As alterações nos dados globais após o backup são replicadas de todos os sites primários.  
+     - **Dados globais**: as alterações nos dados globais após o backup são replicadas de todos os sites primários.  
 
-     - **Dados do site**: As alterações nos dados do site após o backup são replicadas de todos os sites primários.  
+     - **Dados do site**: as alterações nos dados do site após o backup são replicadas de todos os sites primários.  
 
 - Backup de banco de dados mais antigo que o período de retenção do controle de alterações  
 
      - **Dados globais**: o site de administração central reinicializa os dados globais do site primário de referência, quando especificados. Em seguida, todos os outros sites primários reinicializam os dados globais do site de administração central. Se você não especificar um site de referência, todos os sites primários reinicializarão os dados globais do site de administração central. Esses dados são o que você restaurou do backup.  
 
-     - **Dados do site**: O site de administração central reinicializa os dados do site por meio de cada site primário.  
+     - **Dados do site**: o site de administração central reinicializa os dados do site por meio de cada site primário.  
 
 #### <a name="recovered-site-is-a-primary-site"></a>O site recuperado é um site primário
 - Backup de banco de dados dentro do período de retenção do controle de alterações  
 
-     - **Dados globais**: As alterações dos dados globais após o backup são replicadas no site de administração central.  
+     - **Dados globais**: as alterações dos dados globais após o backup são replicadas no site de administração central.  
 
-     - **Dados do site**: O site de administração central reinicializa os dados do site por meio do site primário. As alterações após o backup são perdidas. Os clientes regeneram a maioria dos dados quando enviam informações para o site primário.  
+     - **Dados do site**: o site de administração central reinicializa os dados do site por meio do site primário. As alterações após o backup são perdidas. Os clientes regeneram a maioria dos dados quando enviam informações para o site primário.  
 
 - Backup de banco de dados mais antigo que o período de retenção do controle de alterações  
-     - **Dados globais**: O site primário reinicializa os dados globais do site de administração central.  
+     - **Dados globais**: o site primário reinicializa os dados globais do site de administração central.  
 
-     - **Dados do site**: O site de administração central reinicializa os dados do site por meio do site primário. As alterações após o backup são perdidas. Os clientes regeneram a maioria dos dados quando enviam informações para o site primário.  
+     - **Dados do site**: o site de administração central reinicializa os dados do site por meio do site primário. As alterações após o backup são perdidas. Os clientes regeneram a maioria dos dados quando enviam informações para o site primário.  
 
 
 

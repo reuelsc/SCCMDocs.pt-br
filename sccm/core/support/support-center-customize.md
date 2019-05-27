@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: a6f7f6b7-9ef3-4ffa-a3cf-d877ac55983b
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b100daf91b8bb7c5d4dd5f041c57e7dc9dac390e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: e8ae8d006555a79be1a27b327a3de78c75743bad
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156773"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500743"
 ---
 # <a name="customize-support-center"></a>Personalizar o Centro de Suporte
 
@@ -128,7 +128,7 @@ Se o mesmo valor de atributo de chave for usado em um elemento `<add/>` dentro d
 
 ## <a name="bkmk_wildcards"></a> Coletando arquivos de log adicionais usando caracteres curinga
 
-Para coletar arquivos de log adicionais, use curingas no caminho do arquivo ou no nome de arquivo. Esses caracteres curinga incluem variáveis de ambiente de todo o sistema, como `%WINDIR%`, mas excluem variáveis de ambiente no escopo do usuário, como `%USERPROFILE%`. Para coletar arquivos de log adicionais usando essa pesquisa de arquivo de log não-recursivo, use um elemento `<add/>` dentro do elemento `<additionalLogFiles>`. 
+Para coletar arquivos de log adicionais, use curingas no caminho do arquivo ou no nome de arquivo. Esses caracteres curinga incluem variáveis de ambiente de todo o sistema, como `%WINDIR%`, mas excluem variáveis de ambiente no escopo do usuário, como `%USERPROFILE%`. Para coletar arquivos de log adicionais usando essa pesquisa de arquivo de log não recursivo, use um elemento `<add/>` dentro do elemento `<additionalLogFiles>`. 
 
 Estes exemplos mostram como o Centro de Suporte usa esse recurso no arquivo de configuração padrão.
 

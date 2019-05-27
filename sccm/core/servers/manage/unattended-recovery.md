@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 828c31d1-3d70-4412-b1a8-c92e7e504d39
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0da207f92ea2c11266831a0c03f5b846654e83a4
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 34072fe18bc2d0d751938ff536f6d4ba8e4c378b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128993"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500959"
 ---
 # <a name="unattended-site-recovery-for-configuration-manager"></a>Recuperação autônoma de sites para o Configuration Manager   
 
@@ -44,7 +44,7 @@ ms.locfileid: "56128993"
 
     -   **Obrigatório:** Sim
     -   **Valores:** RecoverCCAR
-    -   **Detalhes:** Recupera um site de administração central
+    -   **Detalhes:** recupera um site de administração central
 
 
 -   **Nome da chave:** CDLatest
@@ -72,7 +72,7 @@ ms.locfileid: "56128993"
 
 -   **Nome da chave:** DatabaseRecoveryOptions
 
-    -   **Obrigatório:** Talvez
+    -   **Obrigatório:** talvez
     -   **Valores:**   
          - **10** = Restaurar o banco de dados do site por meio do backup.  
          - **20** = Usar um banco de dados do site recuperado manualmente usando outro método.   
@@ -83,7 +83,7 @@ ms.locfileid: "56128993"
 
 -   **Nome da chave:** ReferenceSite  
 
-    -   **Obrigatório:** Talvez
+    -   **Obrigatório:** talvez
     -   **Valores:** &lt;ReferenceSiteFQDN\>
     -   **Detalhes:** especifica o site primário de referência. Se o backup do banco de dados é mais antigo que o período de retenção do controle de alterações ou se o site é recuperado sem um backup, o site de administração central usa o site de referência para recuperar os dados globais.
 
@@ -102,9 +102,9 @@ ms.locfileid: "56128993"
 
 -   **Nome da chave:** BackupLocation
 
-    -   **Obrigatório:** Talvez
+    -   **Obrigatório:** talvez
     -   **Valores:** &lt;PathToSiteDatabaseBackupSet\>
-    -   **Detalhes:** Especifica o caminho para o conjunto de backup do banco de dados do site. A chave **BackupLocation** é necessária quando o valor **1** ou **4** é configurado para a chave **ServerRecoveryOptions** , e o valor **10** é configurado para a chave **DatabaseRecoveryOptions** .
+    -   **Detalhes:** especifica o caminho para o conjunto de backup do banco de dados do site. A chave **BackupLocation** é necessária quando o valor **1** ou **4** é configurado para a chave **ServerRecoveryOptions** , e o valor **10** é configurado para a chave **DatabaseRecoveryOptions** .
 
 
 **Opções**
@@ -128,7 +128,7 @@ ms.locfileid: "56128993"
 
   -   **Obrigatório:** Sim
   -   **Valores:** SiteName
-  -   **Detalhes:** Descrição para esse site.
+  -   **Detalhes:** descrição desse site.
 
 
 - **Nome da chave:** SMSInstallDir
@@ -164,10 +164,10 @@ ms.locfileid: "56128993"
 
 - **Nome da chave:** AdminConsole
 
-  -   **Obrigatório:** Talvez
+  -   **Obrigatório:** talvez
   -   **Valores:** 0 ou 1 0 = Não instalar   
        1 = instalar
-  -   **Detalhes:** Especifica se deseja instalar o console do Configuration Manager. Essa chave é necessária quando a configuração de **ServerRecoveryOptions** tem o valor **4**.
+  -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager. Essa chave é necessária quando a configuração de **ServerRecoveryOptions** tem o valor **4**.
 
 
 - **Nome da chave:** JoinCEIP   
@@ -178,7 +178,7 @@ ms.locfileid: "56128993"
   -   **Valores:** 0 ou 1  
        0 = não ingressar  
        1 = ingressar
-  -   **Detalhes:** Especifica se deve ingressar no Programa de Aperfeiçoamento da Experiência do Usuário.
+  -   **Detalhes:** especifica se deve ingressar no Programa de Aperfeiçoamento da Experiência do Usuário.
 
 **SQLConfigOptions**
 
@@ -192,8 +192,8 @@ ms.locfileid: "56128993"
 -   **Nome da chave:** DatabaseName
 
     -   **Obrigatório:** Sim
-    -   **Valores:** *&lt;SiteDatabaseName\>* ou *&lt;InstanceName\>*\\*&lt;SiteDatabaseName\>*
-    -   **Detalhes:** O nome do banco de dados do SQL Server a ser criado ou usado para instalar o banco de dados do site de administração central. Especifique o mesmo nome do banco de dados usado antes da falha.
+    -   **Valores:** *&lt;SiteDatabaseName\>* ou *&lt;InstanceName\>* \\ *&lt;SiteDatabaseName\>*
+    -   **Detalhes:** o nome do banco de dados do SQL Server a ser criado ou usado para instalar o banco de dados do site de administração central. Especifique o mesmo nome do banco de dados usado antes da falha.
 
         > [!IMPORTANT]  
         >  Se você não usar a instância padrão, precisará especificar o nome da instância e o nome do banco de dados do site.
@@ -202,7 +202,7 @@ ms.locfileid: "56128993"
 
     -   **Obrigatório:** Não
     -   **Valores:** &lt;*SSBPortNumber*>
-    -   **Detalhes:** Especifique a porta do SQL Server Service Broker (SSB) usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas há suporte para outras portas. Especifique a mesma porta SSB usada antes da falha.
+    -   **Detalhes:** especifique a porta do SQL Server Service Broker (SSB) usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas há suporte para outras portas. Especifique a mesma porta SSB usada antes da falha.
 
 ## <a name="recover-a-primary-site-unattended"></a>Recuperar um site primário autônomo
  Use as informações a seguir para configurar um arquivo de script de instalação autônoma para recuperar um site de administração central.
@@ -213,7 +213,7 @@ ms.locfileid: "56128993"
 
     -   **Obrigatório:** Sim
     -   **Valores:** RecoverPrimarySite
-    -   **Detalhes:** Recupera um site primário
+    -   **Detalhes:** recupera um site primário
 
 
 -   **Nome da chave:** CDLatest
@@ -243,7 +243,7 @@ ms.locfileid: "56128993"
 
 -   **Nome da chave:** DatabaseRecoveryOptions
 
-    -   **Obrigatório:** Talvez
+    -   **Obrigatório:** talvez
     -   **Valores:**   
          - **10** = Restaurar o banco de dados do site por meio do backup.  
          - **20** = Usar um banco de dados do site recuperado manualmente usando outro método.     
@@ -261,9 +261,9 @@ ms.locfileid: "56128993"
 
 -   **Nome da chave:** BackupLocation
 
-    -   **Obrigatório:** Talvez
+    -   **Obrigatório:** talvez
     -   **Valores:** &lt;PathToSiteDatabaseBackupSet\>
-    -   **Detalhes:** Especifica o caminho para o conjunto de backup do banco de dados do site. A chave **BackupLocation** é necessária quando o valor **1** ou **4** é configurado para a chave **ServerRecoveryOptions** , e o valor **10** é configurado para a chave **DatabaseRecoveryOptions** .
+    -   **Detalhes:** especifica o caminho para o conjunto de backup do banco de dados do site. A chave **BackupLocation** é necessária quando o valor **1** ou **4** é configurado para a chave **ServerRecoveryOptions** , e o valor **10** é configurado para a chave **DatabaseRecoveryOptions** .
 
 **Opções**
 
@@ -287,7 +287,7 @@ ms.locfileid: "56128993"
 
     -   **Obrigatório:** Sim
     -   **Valores:** SiteName
-    -   **Detalhes:** Descrição para esse site.
+    -   **Detalhes:** descrição desse site.
 
 
 -   **Nome da chave:** SMSInstallDir
@@ -325,11 +325,11 @@ ms.locfileid: "56128993"
 
 -   **Nome da chave:** AdminConsole
 
-    -   **Obrigatório:** Talvez
+    -   **Obrigatório:** talvez
     -   **Valores:** 0 ou 1  
          0 = não instalar   
          1 = instalar  
-    -   **Detalhes:** Especifica se deseja instalar o console do Configuration Manager. Essa chave é necessária quando a configuração de **ServerRecoveryOptions** tem o valor **4**.
+    -   **Detalhes:** especifica se deseja instalar o console do Configuration Manager. Essa chave é necessária quando a configuração de **ServerRecoveryOptions** tem o valor **4**.
 
 -   **Nome da chave:** JoinCEIP  
     > [!Note]  
@@ -339,7 +339,7 @@ ms.locfileid: "56128993"
     -   **Valores:** 0 ou 1    
          0 = não ingressar  
          1 = ingressar
-    -   **Detalhes:** Especifica se deve ingressar no Programa de Aperfeiçoamento da Experiência do Usuário.
+    -   **Detalhes:** especifica se deve ingressar no Programa de Aperfeiçoamento da Experiência do Usuário.
 
 
 **SQLConfigOptions**
@@ -354,8 +354,8 @@ ms.locfileid: "56128993"
 -   **Nome da chave:** DatabaseName
 
     -   **Obrigatório:** Sim
-    -   **Valores:** *&lt;SiteDatabaseName\>* ou *&lt;InstanceName\>*\\*&lt;SiteDatabaseName\>*
-    -   **Detalhes:** O nome do banco de dados do SQL Server a ser criado ou usado para instalar o banco de dados do site de administração central. Especifique o mesmo nome do banco de dados usado antes da falha.
+    -   **Valores:** *&lt;SiteDatabaseName\>* ou *&lt;InstanceName\>* \\ *&lt;SiteDatabaseName\>*
+    -   **Detalhes:** o nome do banco de dados do SQL Server a ser criado ou usado para instalar o banco de dados do site de administração central. Especifique o mesmo nome do banco de dados usado antes da falha.
 
         > [!IMPORTANT]    
         >  Se você não usar a instância padrão, precisará especificar o nome da instância e o nome do banco de dados do site.
@@ -364,13 +364,13 @@ ms.locfileid: "56128993"
 
     -   **Obrigatório:** Não
     -   **Valores:** &lt;*SSBPortNumber*>
-    -   **Detalhes:** Especifique a porta do SQL Server Service Broker (SSB) usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas há suporte para outras portas. Especifique a mesma porta SSB usada antes da falha.
+    -   **Detalhes:** especifique a porta do SQL Server Service Broker (SSB) usada pelo SQL Server. Normalmente, o SSB está configurado para usar a porta TCP 4022, mas há suporte para outras portas. Especifique a mesma porta SSB usada antes da falha.
 
 **ExpansionOption de hierarquia**
 
 -   **Nome da chave:** CCARSiteServer
 
-    -   **Obrigatório:** Talvez
+    -   **Obrigatório:** talvez
     -   **Valores:** &lt;*SiteCodeForCentralAdministrationSite*>
     -   **Detalhes:** especifica o site de administração central ao qual o site primário é anexado quando ele ingressa na hierarquia do Configuration Manager. Essa configuração é necessária se o site primário foi anexado ao site de administração central antes da falha. Especifique o código do site usado para o site de administração central antes da falha.
 
@@ -378,11 +378,11 @@ ms.locfileid: "56128993"
 
     -   **Obrigatório:** Não
     -   **Valores:** &lt;*Intervalo*>
-    -   **Detalhes:** Especifica o intervalo de repetição (em minutos) para tentar uma conexão ao site de administração central depois de a conexão falhar. Por exemplo, se a conexão com o site de administração central falha, o site primário aguarda o número de minutos especificados para CASRetryInterval e, em seguida, tenta a conexão novamente.
+    -   **Detalhes:** especifica o intervalo de repetição (em minutos) para tentar uma conexão ao site de administração central depois de a conexão falhar. Por exemplo, se a conexão com o site de administração central falha, o site primário aguarda o número de minutos especificados para CASRetryInterval e, em seguida, tenta a conexão novamente.
 
 
 -   **Nome da chave:** WaitForCASTimeout
 
     -   **Obrigatório:** Não
     -   **Valores:** &lt;*Tempo limite*>
-    -   **Detalhes:** Especifica o valor máximo do tempo limite (em minutos) para o site primário se conectar ao site de administração central. Por exemplo, se o site primário falhar ao conectar-se ao site de administração central, o site primário tentará novamente a conexão ao site de administração central baseado no CASRetryInterval até chegar ao período do WaitForCASTimeout. Você pode especificar um valor de 0 a 100.
+    -   **Detalhes:** especifica o valor máximo do tempo limite (em minutos) para o site primário se conectar ao site de administração central. Por exemplo, se o site primário falhar ao conectar-se ao site de administração central, o site primário tentará novamente a conexão ao site de administração central baseado no CASRetryInterval até chegar ao período do WaitForCASTimeout. Você pode especificar um valor de 0 a 100.

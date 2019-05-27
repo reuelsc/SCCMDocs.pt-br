@@ -2,7 +2,7 @@
 title: Ponto de distribuição de recepção
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as configurações e limitações para usar um ponto de distribuição por pull com o Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 05/06/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5336db0bd16d4845650bae775f2eff895e617fb
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 488fa5251711c8d9c7702e2b240a6f10602d447f
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56142265"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499294"
 ---
 # <a name="use-a-pull-distribution-point-with-configuration-manager"></a>Usar um ponto de distribuição por pull com o Configuration Manager
 
@@ -74,13 +74,13 @@ Ao usar um ponto de distribuição por pull, examine e defina as seguintes confi
 
     -   **Número de repetições**: o número de vezes que o Gerenciador de Transferência de Pacote tenta notificar o ponto de distribuição de recepção para baixar o conteúdo. Depois de tentar esse número de vezes, o Gerenciador de Transferência de Pacote cancelará a transferência. Esse valor é 30 por padrão.  
 
-    -   **Atraso antes de tentar novamente (minutos)**: o número de minutos que o Gerenciador de Transferência de Pacote espera entre as tentativas. Esse valor é 20 por padrão.  
+    -   **Atraso antes de tentar novamente (minutos)** : o número de minutos que o Gerenciador de Transferência de Pacote espera entre as tentativas. Esse valor é 20 por padrão.  
 
 5.  No grupo **Configurações de sondagem de status**, examine os seguintes valores:  
 
     -   **Número de sondagens**: o número de vezes que o Gerenciador de Transferência de Pacote contata o ponto de distribuição de recepção para recuperar o status do trabalho. Se o Gerenciador de Transferência de Pacote tentar esse número de vezes antes que o trabalho seja concluído, ele cancelará a transferência. Esse valor é 72 por padrão.   
 
-    -   **Atraso antes de tentar novamente (minutos)**: o número de minutos que o Gerenciador de Transferência de Pacote espera entre as tentativas. Esse valor é 60 por padrão.   
+    -   **Atraso antes de tentar novamente (minutos)** : o número de minutos que o Gerenciador de Transferência de Pacote espera entre as tentativas. Esse valor é 60 por padrão.   
     
     > [!NOTE]  
     >  Quando o Gerenciador de Transferência de Pacote cancela um trabalho porque ele excedeu o número de tentativas de sondagem, o ponto de distribuição por pull continua a baixar o conteúdo. Ao terminar, o ponto de distribuição por pull envia a mensagem de status apropriada e o console reflete o novo status.  
@@ -102,7 +102,7 @@ Ao usar um ponto de distribuição por pull, examine e defina as seguintes confi
 
 -   Os pontos de distribuição por pull não usam as configurações na guia **Geral** das **Propriedades do Componente de Distribuição de Software** de cada site. Essas configurações incluem **Distribuição simultânea** e **Repetição multicast**.  
 
--   Para transferir conteúdo de um ponto de distribuição de origem em uma floresta remota, instale o cliente do Configuration Manager no ponto de distribuição por pull. Além disso, configure uma conta de acesso à rede que possa acessar o ponto de distribuição de origem. Começando na versão 1806, se você habilitar a opção do site para **Usar certificados gerados pelo Configuration Manager para o sistema de sites HTTP**, não será necessário usar uma conta de acesso à rede.<!--1358228-->  
+-   Para transferir conteúdo de um ponto de distribuição de origem em uma floresta remota, instale o cliente do Configuration Manager no ponto de distribuição por pull. Além disso, configure uma conta de acesso à rede que possa acessar o ponto de distribuição de origem. A partir da versão 1806, se você habilitar a opção do site para **Usar certificados gerados pelo Configuration Manager para o sistema de sites HTTP**, não será necessário usar uma conta de acesso à rede.<!--1358228-->  
 
 -   Se o ponto de distribuição por pull também for um cliente do Configuration Manager, a versão do cliente precisará ser a mesma que a do site do Configuration Manager que instala esse ponto de distribuição por pull. O ponto de distribuição por pull usa o CCMFramework comum entre o ponto de distribuição por pull e o cliente do Configuration Manager.  
 
@@ -120,7 +120,7 @@ Ao configurar o ponto de distribuição por pull, especifique um ou mais pontos 
 
 -   Use o SDK do Configuration Manager para especificar um ponto de distribuição de origem que está configurado para HTTPS. Para usar um ponto de distribuição de origem que está configurado para HTTPS, instale o cliente do Configuration Manager no ponto de distribuição por pull.  
 
--   Começando na versão 1806, se os escritórios remotos tiverem uma conexão melhor com a Internet ou para reduzir a carga em seus links de WAN, use um [ponto de distribuição na nuvem](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) no Microsoft Azure como a origem. O ponto de distribuição por pull precisa de acesso à Internet para se comunicar com o Microsoft Azure. O conteúdo precisa ser distribuído ao ponto de distribuição na nuvem de origem.<!--1321554-->  
+-   Começando na versão 1806, se os escritórios remotos tiverem uma conexão melhor com a Internet ou para reduzir a carga em seus links de WAN, use um [ponto de distribuição na nuvem](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) no Microsoft Azure como a origem. O ponto de distribuição por pull precisa de acesso à Internet para se comunicar com o Microsoft Azure. O conteúdo deve ser distribuído para o ponto de distribuição da nuvem de origem.<!--1321554-->  
 
     > [!Note]  
     > Esse recurso pode incorrer em encargos para sua assinatura do Azure para armazenamento e rede para saída de dados. Para obter mais informações, confira o [Custo do uso de um ponto de distribuição na nuvem](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_cost).  

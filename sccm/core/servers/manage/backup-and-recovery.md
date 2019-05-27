@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: f7832d83-9ae2-4530-8a77-790e0845e12f
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7fb6a87f965db0a329a4f64918b0efcd5732ea0b
-ms.sourcegitcommit: d71e558db2da124357b840332e2da671b3810507
+ms.openlocfilehash: aff3393dca29d558c62c0a508b8cbf6c98f9fbfa
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58269128"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501231"
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Fazer backup de um site do Configuration Manager
 
@@ -167,7 +167,7 @@ A biblioteca de conteúdo no Configuration Manager é o local em que todos os ar
 
 -   A biblioteca de conteúdo deve ser restaurada antes de redistribuir o conteúdo nos pontos de distribuição. Quando você começa a redistribuição do conteúdo, o Configuration Manager copia os arquivos da biblioteca de conteúdo no servidor do site para os pontos de distribuição. Para obter mais informações, confira [A biblioteca de conteúdo](/sccm/core/plan-design/hierarchy/the-content-library).  
 
--   Os diretórios de origem do pacote devem ser restaurados antes de atualizar o conteúdo nos pontos de distribuição. Quando você começa uma atualização de conteúdo, o Configuration Manager copia arquivos novos ou modificados da origem do pacote para a biblioteca de conteúdo. Em seguida, ele copia os arquivos para pontos de distribuição associados. Execute a seguinte consulta do SQL Server no banco de dados do site para encontrar o local de origem do pacote para todos os pacotes e aplicativos: `SELECT * FROM v_Package`. É possível identificar o site de origem do pacote observando os três primeiros caracteres da ID do pacote. Por exemplo, se a ID do pacote for CEN00001, o código do site de origem será CEN. Ao restaurar os arquivos de origem do pacote, eles devem ser restaurados no mesmo local em que estavam antes da falha.  
+-   Os arquivos de origem do pacote devem ser restaurados antes de atualizar o conteúdo nos pontos de distribuição. Quando você começa uma atualização de conteúdo, o Configuration Manager copia arquivos novos ou modificados da origem do pacote para a biblioteca de conteúdo. Em seguida, ele copia os arquivos para pontos de distribuição associados. Execute a seguinte consulta do SQL Server no banco de dados do site para encontrar o local de origem do pacote para todos os pacotes e aplicativos: `SELECT * FROM v_Package`. É possível identificar o site de origem do pacote observando os três primeiros caracteres da ID do pacote. Por exemplo, se a ID do pacote for CEN00001, o código do site de origem será CEN. Ao restaurar os arquivos de origem do pacote, eles devem ser restaurados no mesmo local em que estavam antes da falha.  
 
 Inclua a biblioteca de conteúdo e os arquivos de origem do pacote em seu backup de sistema de arquivos para o servidor do site.  
 

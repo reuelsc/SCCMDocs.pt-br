@@ -2,7 +2,7 @@
 title: Gerenciar pontos de distribuição
 titleSuffix: Configuration Manager
 description: Use pontos de distribuição para hospedar o conteúdo a ser implantado em usuários e dispositivos.
-ms.date: 07/30/2018
+ms.date: 05/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5d5d3a1efd2dc58cca06b18fc4221d52ce58bb7f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 3bd5a2b483551fc760b0dc69cd488bf1e3671732
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125283"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65498650"
 ---
 # <a name="install-and-configure-distribution-points-in-configuration-manager"></a>Instalar e configurar pontos de distribuição no Configuration Manager
 
@@ -169,7 +169,8 @@ Esse processo popula automaticamente a guia **Membros** da janela Criar Grupo de
 
 
 ## <a name="bkmk_reassign"></a> Reatribuir um ponto de distribuição
-<!-- 1306937 --> Muitos clientes têm amplas infraestruturas do Configuration Manager e estão reduzindo sites primários ou secundários para simplificar os ambientes deles. Eles ainda precisam manter os pontos de distribuição de localizações de filiais para fornecer conteúdo para clientes gerenciados. Esses pontos de distribuição geralmente contêm vários terabytes de conteúdo ou mais. Distribuir esse conteúdo para esses servidores remotos custa muito em termos de largura de banda de rede e de tempo. 
+<!-- 1306937 -->
+Muitos clientes têm grande infraestruturas do Configuration Manager e estão reduzindo sites primários ou secundários para simplificar os ambientes deles. Eles ainda precisam manter os pontos de distribuição de localizações de filiais para fornecer conteúdo para clientes gerenciados. Esses pontos de distribuição geralmente contêm vários terabytes de conteúdo ou mais. Distribuir esse conteúdo para esses servidores remotos custa muito em termos de largura de banda de rede e de tempo. 
 
 A partir da versão 1802, esse recurso permite reatribuir um ponto de distribuição para outro site primário sem a redistribuição do conteúdo. Esta ação atualiza a atribuição de sistema, persistindo todo o conteúdo no servidor. Se você precisar reatribuir vários pontos de distribuição, primeiro execute essa ação em um único ponto de distribuição. Em seguida, continue com os demais servidores, um por vez.
 
@@ -190,7 +191,7 @@ Siga estas etapas para reatribuir um ponto de distribuição:
 
 Monitore a reatribuição da mesma forma como quando você adiciona uma nova função. O método mais simples é atualizar a exibição do console após alguns minutos. Adicione a coluna de código do site à exibição. Esse valor é alterado quando o Configuration Manager reatribui o servidor. Se você tentar realizar outra ação no servidor de destino antes de atualizar a exibição do console, ocorrerá um erro de "objeto não encontrado". Garanta que o processo foi concluído e atualize a exibição do console antes de iniciar outras ações no servidor.
 
-Depois de reatribuir um ponto de distribuição, atualize o certificado do servidor. O novo servidor do site precisa recriptografar esse certificado usando sua chave pública e armazená-lo no banco de dados do site. Para obter mais informações, consulte a configuração **Criar um certificado autoassinado ou importar um certificado de cliente PKI (infraestrutura de chave pública) para o ponto de distribuição** na guia [Geral](#general) das propriedades do ponto de distribuição. 
+Depois de reatribuir um ponto de distribuição, atualize o certificado do servidor. O novo servidor do site precisa recriptografar esse certificado usando sua chave pública e armazená-lo no banco de dados do site. Para obter mais informações, consulte a configuração **Criar um certificado autoassinado ou importar um certificado de cliente PKI (infraestrutura de chave pública) para o ponto de distribuição** na guia [Geral](#bkmk_config-general) das propriedades do ponto de distribuição. 
 
 - Para certificados PKI, você não precisa criar um novo certificado. Importe o mesmo .PFX e insira a senha.  
 
@@ -255,7 +256,22 @@ As seguintes configurações estão na página **Ponto de distribuição** do as
 
 - **Habilitar e configurar o BranchCache para este ponto de distribuição**: escolha esta configuração permitir que o Configuration Manager configure o Windows BranchCache no servidor do ponto de distribuição. Para obter mais informações, confira [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache).  
 
-- **Ajustar a velocidade de download para usar a largura de banda de rede não utilizada (Windows LEDBAT)**<!--1358112-->: Começando na versão 1806, habilite os pontos de distribuição para usar o controle de congestionamento de rede. Para obter mais informações, confira [LEDBAT do Windows](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#windows-ledbat). O ponto de distribuição precisa estar executando o Windows Server, versão 1709. Não há nenhum pré-requisito do cliente.  
+- **Ajustar a velocidade de download para usar a largura de banda de rede não utilizada (Windows LEDBAT)**<!--1358112-->: Começando na versão 1806, habilite os pontos de distribuição para usar o controle de congestionamento de rede. Para obter mais informações, confira [LEDBAT do Windows](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#windows-ledbat). Requisitos mínimos para suporte do LEDBAT:<!-- SCCMDocs issue 883 -->  
+
+    - Configuration Manager versão 1806 (distribuição geral)  
+
+        - Windows Server, versão 1709 ou posterior  
+
+    - Configuration Manager versão 1806 com o pacote de atualizações (4462978) ou posterior  
+
+        - Windows Server, versão 1709 ou posterior
+        - Windows Server 2016 com as atualizações KB4132216 e KB4284833
+
+    - Configuration Manager versão 1810 ou posterior:
+
+        - Windows Server, versão 1709 ou posterior
+        - Windows Server 2016 com as atualizações KB4132216 e KB4284833
+        - Windows Server 2019  
 
 - **Descrição**: uma descrição opcional para essa função de ponto de distribuição.  
 
@@ -301,9 +317,9 @@ As seguintes configurações estão na página **Ponto de distribuição** do as
 
 Especifique as configurações de unidade para o ponto de distribuição. Configure até duas unidades de disco para a biblioteca de conteúdo e duas unidades de disco para o compartilhamento de pacotes. O Configuration Manager pode usar outras unidades quando as duas primeiras atingirem a reserva de espaço de unidade configurada. A página **Configurações de Unidade** configura a prioridade das unidades de disco e a quantidade de espaço livre em disco que permanece em cada unidade de disco.  
 
--   **Reserva de espaço na unidade (MB)**: esse valor determina a quantidade de espaço livre que uma unidade precisa ter para que o Configuration Manager escolha uma outra unidade para continuar processo de cópia. Arquivos de conteúdo podem abranger várias unidades.  
+-   **Reserva de espaço na unidade (MB)** : esse valor determina a quantidade de espaço livre que uma unidade precisa ter para que o Configuration Manager escolha uma outra unidade para continuar processo de cópia. Arquivos de conteúdo podem abranger várias unidades.  
 
--   **Localizações de conteúdo**: especifique os locais para o compartilhamento de biblioteca e pacote de conteúdo nesse ponto de distribuição. Por padrão, todos os locais de conteúdo são definidos como **Automático**. O Configuration Manager copia conteúdo para o local de conteúdo primário até que a quantidade de espaço livre atinja o valor especificado para **Reserva de espaço de unidade (MB)**. Quando você seleciona **Automático**, o Configuration Manager define os locais de conteúdo primários como a unidade de disco com mais espaço em disco na instalação. Ele define os locais secundários como a unidade de disco com o segundo maior espaço livre em disco. Quando os locais primários e secundários atingem a reserva de espaço na unidade, o Configuration Manager seleciona outra unidade disponível com o maior espaço livre em disco para continuar o processo de cópia.  
+-   **Localizações de conteúdo**: especifique os locais para o compartilhamento de biblioteca e pacote de conteúdo nesse ponto de distribuição. Por padrão, todos os locais de conteúdo são definidos como **Automático**. O Configuration Manager copia conteúdo para o local de conteúdo primário até que a quantidade de espaço livre atinja o valor especificado para **Reserva de espaço de unidade (MB)** . Quando você seleciona **Automático**, o Configuration Manager define os locais de conteúdo primários como a unidade de disco com mais espaço em disco na instalação. Ele define os locais secundários como a unidade de disco com o segundo maior espaço livre em disco. Quando os locais primários e secundários atingem a reserva de espaço na unidade, o Configuration Manager seleciona outra unidade disponível com o maior espaço livre em disco para continuar o processo de cópia.  
 
 > [!Tip]  
 >  Para impedir que o Configuration Manager instale em uma unidade específica, crie um arquivo vazio chamado **no_sms_on_drive.sms** e copie-o para a pasta raiz da unidade antes de instalar o ponto de distribuição.  
@@ -343,8 +359,10 @@ Selecione a opção para **Habilitar suporte a PXE para clientes** e, em seguida
 
 - **Habilitar um respondente PXE sem o Serviço de Implantação do Windows**: começando na versão 1806, essa opção habilita um respondente PXE no ponto de distribuição, que não requer WDS. Esse respondente PXE dá suporte a redes IPv6. Se você habilitar essa opção em um ponto de distribuição que já esteja habilitado para PXE, o Configuration Manager suspenderá o serviço WDS. Se você desabilitar essa opção, mas escolher a opção **Habilitar suporte a PXE para clientes**, o ponto de distribuição habilitará o WDS novamente.<!--1357580-->  
 
-    > [!Note]
-    >Não há suporte para o uso do Respondente PXE sem o WDS em servidores que também estejam executando um servidor DHCP.
+    > [!Note]  
+    > Na versão 1810 e anteriores, não há suporte para usar o respondente PXE sem o WDS em servidores que também estejam executando um servidor DHCP.
+    >
+    > A partir da versão 1902, quando você habilita um respondente PXE em um ponto de distribuição sem o Serviço de Implantação do Windows, ele pode agora estar no mesmo servidor que o serviço DHCP. <!--3734270-->  
 
 - **Exigir uma senha quando os computadores usarem PXE**: para fornecer segurança adicional para implantações PXE, especifique uma senha forte.  
 
@@ -361,9 +379,9 @@ Selecione a opção para **Habilitar suporte a PXE para clientes** e, em seguida
 - **Adaptadores de rede**: especifique se o ponto de distribuição deve responder às solicitações PXE de todas as interfaces de rede ou de interfaces de rede específicas. Se o ponto de distribuição responde a adaptadores de rede específicos, forneça o endereço MAC de cada adaptador de rede.  
 
     > [!Note]  
-    > Ao alterar o adaptador de rede, reinicie o serviço do WDS para garantir que ele salve a configuração corretamente. Começando na versão 1806, ao usar o serviço de respondente PXE, reinicie o **Serviço de Respondente PXE do ConfigMgr** (SccmPxe).<!--SCCMDocs issue 642-->  
+    > Ao alterar o adaptador de rede, reinicie o serviço do WDS para garantir que ele salve a configuração corretamente. A partir da versão 1806, ao usar o serviço de respondente PXE, reinicie o **Serviço de Respondente PXE do ConfigMgr** (SccmPxe).<!--SCCMDocs issue 642-->  
 
-- **Especificar o atraso de resposta do servidor PXE (segundos)**: ao usar vários servidores PXE, especifique quanto tempo esse ponto de distribuição habilitado para PXE deve esperar para responder às solicitações do computador. Por padrão, o ponto de distribuição habilitado para PXE do Configuration Manager responde imediatamente.  
+- **Especificar o atraso de resposta do servidor PXE (segundos)** : ao usar vários servidores PXE, especifique quanto tempo esse ponto de distribuição habilitado para PXE deve esperar para responder às solicitações do computador. Por padrão, o ponto de distribuição habilitado para PXE do Configuration Manager responde imediatamente.  
 
 
 ### <a name="bkmk_config-multicast"></a> Multicast  
@@ -390,9 +408,9 @@ Selecione a opção para **Habilitar multicast para enviar dados a vários clien
 
 - **Habilitar multicast agendado**: especifique como o Configuration Manager é controlado ao iniciar a implantação de sistemas operacionais em computadores de destino. Configure as seguintes opções:  
 
-    - **Atraso de início da sessão (minutos)**: especifique o número de minutos que o Configuration Manager espera antes de responder à primeira solicitação de implantação.  
+    - **Atraso de início da sessão (minutos)** : especifique o número de minutos que o Configuration Manager espera antes de responder à primeira solicitação de implantação.  
 
-    - **Tamanho mínimo da sessão (clientes)**: especifique quantas solicitações devem ser recebidas antes que o Configuration Manager comece a implantar o sistema operacional.  
+    - **Tamanho mínimo da sessão (clientes)** : especifique quantas solicitações devem ser recebidas antes que o Configuration Manager comece a implantar o sistema operacional.  
 
 
 > [!IMPORTANT]  
@@ -428,7 +446,7 @@ Gerencie o conteúdo distribuído ao ponto de distribuição. Selecione na lista
 
 ### <a name="bkmk_config-valid"></a> Validação de conteúdo  
 
-Defina um agendamento para validar a integridade dos arquivos de conteúdo no ponto de distribuição. Quando você habilita a validação de conteúdo segundo um agendamento, o Configuration Manager inicia o processo no horário agendado. Ele verifica todo o conteúdo no ponto de distribuição. Também é possível configurar a prioridade da validação de conteúdo. Por padrão, a prioridade é definida como **Mais Baixa**. O aumento da prioridade pode aumentar o uso do processador e do disco no servidor durante o processo de validação, mas o processo é concluído com mais rapidez. 
+Defina um agendamento para validar a integridade dos arquivos de conteúdo no ponto de distribuição. Quando você habilita a validação de conteúdo segundo um agendamento, o Configuration Manager inicia o processo no horário agendado. Ele verifica todo o conteúdo no ponto de distribuição baseado na classe SMS_PackagesInContLib SCCMDP local. Também é possível configurar a prioridade da validação de conteúdo. Por padrão, a prioridade é definida como **Mais Baixa**. O aumento da prioridade pode aumentar o uso do processador e do disco no servidor durante o processo de validação, mas o processo é concluído com mais rapidez. 
 
 Para exibir os resultados do processo de validação de conteúdo, no workspace **Monitoramento**, expanda **Status da Distribuição**e escolha o nó **Status do Conteúdo**. Ele mostra o conteúdo para cada tipo de software, por exemplo, aplicativo, pacote de atualização de software e imagem de inicialização.  
 
@@ -489,4 +507,4 @@ Configure limites de taxa para controlar a largura de banda de rede que o Config
 
 - **Modo de pulso**: essa opção especifica o tamanho dos blocos de dados que o servidor do site envia para o ponto de distribuição. Você também pode especificar um retardo de tempo entre o envio de cada bloco de dados. Use essa opção quando você deve enviar dados através de uma conexão de rede com largura de banda bem baixa para o ponto de distribuição. Por exemplo, é possível especificar a restrição de enviar 1 KB de dados a cada cinco segundos, independentemente da velocidade do link ou de seu uso em um determinado momento.  
 
-- **Limitado a taxas máximas de transferência especificadas por hora**: especifique essa configuração para que um site envie dados para um ponto de distribuição usando somente a porcentagem de tempo que você define. Quando você usa essa opção, o Configuration Manager não identifica a largura de banda disponível da rede. Nesse caso, ele divide o tempo em que pode enviar dados. O servidor envia dados por um curto período de tempo, seguido por períodos de tempo em que os dados não são enviados. Por exemplo, se você definir **Limitar largura de banda disponível** a **50%**, o Configuration Manager transmitirá dados por um período de tempo seguido de igual período de tempo igual em que nenhum dado é enviado. O tamanho real da quantidade de dados ou o tamanho do bloco de dados não é gerenciado. Ele gerencia apenas o período de tempo durante o qual envia dados.  
+- **Limitado a taxas máximas de transferência especificadas por hora**: especifique essa configuração para que um site envie dados para um ponto de distribuição usando somente a porcentagem de tempo que você define. Quando você usa essa opção, o Configuration Manager não identifica a largura de banda disponível da rede. Nesse caso, ele divide o tempo em que pode enviar dados. O servidor envia dados por um curto período de tempo, seguido por períodos de tempo em que os dados não são enviados. Por exemplo, se você definir **Limitar largura de banda disponível** a **50%** , o Configuration Manager transmitirá dados por um período de tempo seguido de igual período de tempo igual em que nenhum dado é enviado. O tamanho real da quantidade de dados ou o tamanho do bloco de dados não é gerenciado. Ele gerencia apenas o período de tempo durante o qual envia dados.  

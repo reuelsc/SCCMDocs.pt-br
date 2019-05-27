@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f14953b7c2008f6d0e9e5715a8096126e56b0b7e
-ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
+ms.openlocfilehash: f86fccc965fd0d6147c55a7c9a3ad25b81e95aff
+ms.sourcegitcommit: 417e3834a42b415a8e129327dd3c15cc0c7ec5a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57881955"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65443091"
 ---
 # <a name="log-files-in-configuration-manager"></a>Arquivos de log no Configuration Manager
 
@@ -115,7 +115,7 @@ No Configuration Manager, os componentes cliente e de servidor do site registram
     -   [Servidor do WSUS](#BKMK_WSUSLog)  
 
 ##  <a name="BKMK_AboutLogs"></a> Sobre arquivos de log do Configuration Manager  
- A maioria dos processos do Configuration Manager grava informações operacionais em um arquivo de log dedicado ao processo em questão. Estes arquivos de log são identificados pelas extensões de arquivo **.log** ou **.lo_**. O Configuration Manager grava no arquivo .log até que o log atinja seu tamanho máximo. Quando o log está cheio, o arquivo .log é copiado em um arquivo com o mesmo nome mas com extensão .lo_ e o processo ou componente continua a gravar no arquivo .log. Quando o arquivo .log atinge novamente seu tamanho máximo, o arquivo .lo_ é substituído e o processo se repete. Alguns componentes criam um histórico de arquivos de log acrescentando uma data ou o carimbo de data/hora ao nome do arquivo de log e ao manter a extensão .log. Uma exceção ao tamanho máximo e uso do arquivo .lo_ é o cliente para Linux e UNIX. Para saber mais sobre como o cliente do Linux e UNIX usa arquivos de log, consulte [Gerenciar arquivos de log do cliente para Linux e UNIX](#BKMK_ManageLinuxLogs) neste artigo.  
+ A maioria dos processos do Configuration Manager grava informações operacionais em um arquivo de log dedicado ao processo em questão. Estes arquivos de log são identificados pelas extensões de arquivo **.log** ou **.lo_** . O Configuration Manager grava no arquivo .log até que o log atinja seu tamanho máximo. Quando o log está cheio, o arquivo .log é copiado em um arquivo com o mesmo nome mas com extensão .lo_ e o processo ou componente continua a gravar no arquivo .log. Quando o arquivo .log atinge novamente seu tamanho máximo, o arquivo .lo_ é substituído e o processo se repete. Alguns componentes criam um histórico de arquivos de log acrescentando uma data ou o carimbo de data/hora ao nome do arquivo de log e ao manter a extensão .log. Uma exceção ao tamanho máximo e uso do arquivo .lo_ é o cliente para Linux e UNIX. Para saber mais sobre como o cliente do Linux e UNIX usa arquivos de log, consulte [Gerenciar arquivos de log do cliente para Linux e UNIX](#BKMK_ManageLinuxLogs) neste artigo.  
 
  Para exibir os logs, use a ferramenta de visualizador de log do Configuration Manager, CMTrace, localizada na pasta \\SMSSetup\\Tools da mídia de origem do Configuration Manager. A ferramenta CMTrace é adicionada a todas as imagens de inicialização adicionadas à Biblioteca de Software. Começando na versão 1806, a ferramenta de visualização de log CMTrace é instalada automaticamente junto com o cliente do Configuration Manager.<!--1357971--> Para obter mais informações, confira [CMTrace](/sccm/core/support/cmtrace). 
 
@@ -268,8 +268,8 @@ O cliente do Configuration Manager para computadores Mac registra as informaçõ
 |--------------|-------------|  
 |CCMClient-&lt;*data_hora*>.log|Registra atividades que estão relacionadas a operações do cliente Mac, que incluem gerenciamento de aplicativos, inventário e log de erros.<br /><br /> Esse arquivo de log está localizado na pasta /Library/Application Support/Microsoft/CCM/Logs no computador Mac.|  
 |CCMAgent-&lt;*data_hora*>.log|Registra informações que estão relacionadas a operações do cliente, que incluem operações de logon e logoff do usuário e atividade do computador Mac.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
-|CCMNotifications-&lt;*data_hora>*.log|Registra atividades relacionadas a notificações do Configuration Manager exibidas no computador Mac.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
-|CCMPrefPane-&lt;*data_hora>*.log|Registra atividades relacionadas à caixa de diálogo de preferências do Configuration Manager no computador Mac, que inclui logs de erros e status geral.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
+|CCMNotifications-&lt;*data_hora>* .log|Registra atividades relacionadas a notificações do Configuration Manager exibidas no computador Mac.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
+|CCMPrefPane-&lt;*data_hora>* .log|Registra atividades relacionadas à caixa de diálogo de preferências do Configuration Manager no computador Mac, que inclui logs de erros e status geral.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
 
 O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicação entre computadores Mac e o ponto de gerenciamento habilitado para dispositivos móveis e computadores Mac.  
 
@@ -494,9 +494,9 @@ O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicaç
 
  Além dos arquivos de log do Configuration Manager, examine os logs dos aplicativos do Windows no Visualizador de Eventos no servidor que executa o Serviço de Registro de Dispositivo de Rede e no servidor que hospeda o ponto de registro de certificado. Por exemplo, procure por mensagens da origem **NetworkDeviceEnrollmentService** . Você também pode usar os seguintes arquivos de log:  
 
--   Arquivos de log do IIS para o Serviço de Registro de Dispositivo de Rede: **&lt;path\>\inetpub\logs\LogFiles\W3SVC1**  
+-   Arquivos de log de IIS para o Serviço de Registro de Dispositivo de Rede: **%SYSTEMDRIVE%\inetpub\logs\LogFiles\W3SVC1**  
 
--   Arquivos de log do IIS para o ponto de registro de certificado: **&lt;path\>\inetpub\logs\LogFiles\W3SVC1**  
+-   Arquivos de log de IIS para o ponto de registro de certificado: **%SYSTEMDRIVE%\inetpub\logs\LogFiles\W3SVC1**  
 
 -   Arquivo de log da Política de Registro de Dispositivo de Rede: **mscep.log**  
 

@@ -2,8 +2,8 @@
 title: Implantar atualizações de software
 titleSuffix: Configuration Manager
 description: Saiba como implantar manual ou automaticamente as atualizações de software no console do Configuration Manager.
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.date: 11/27/2018
 ms.topic: conceptual
@@ -11,18 +11,18 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cabcb57a429e0fb14732cead98902ca5b43957af
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: d01e01bf8318e5d4016420044a5f2f49c9b6965c
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156756"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673368"
 ---
 # <a name="deploy-software-updates"></a>Implantar atualizações de software  
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-A fase de implantação de atualização de software é o processo de implantação de atualizações de software. Independentemente de como você implanta as atualizações de software, o site:
+A fase de implantação da atualização de software é o processo de implantação de atualizações de software. Independentemente de como você implanta as atualizações de software, o site:
 - Adiciona as atualizações a um grupo de atualização de software
 - Distribui o conteúdo da atualização aos pontos de distribuição
 - Implanta o grupo de atualização nos clientes  
@@ -114,7 +114,8 @@ Para obter mais informações e etapas detalhadas, confira [Implantar atualizaç
 
 ## <a name="bkmk_phased"></a> Implantar atualizações de software em fases
 
-<!--1358146--> Começando na versão 1810, crie implantações em fases das atualizações de software. As implantações em fases permitem que você coordene uma distribuição coordenada e sequenciada do software com base em grupos e critérios personalizáveis.
+<!--1358146-->
+A partir da versão 1810, crie implantações em fases para atualizações de software. As implantações em fases permitem que você coordene uma distribuição coordenada e sequenciada do software com base em grupos e critérios personalizáveis.
 
 Saiba mais em [Criar implantações em fases](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json).
 

@@ -2,21 +2,21 @@
 title: Painel do Ciclo de Vida do Produto
 titleSuffix: Configuration Manager
 description: Exiba a Política de Ciclo de Vida da Microsoft com o painel de ciclo de vida do produto no Configuration Manager.
-ms.date: 11/27/2018
+ms.date: 05/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 8b5b144a-0e5f-4fcc-87b2-33b9bcdb5655
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 716c5218eafaf6297292fdd852589b7327e2ecaa
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: b8876f00ecb26aabd84f863ee1fcef4f2aac283a
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120020"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673413"
 ---
 # <a name="manage-microsoft-lifecycle-policy-with-configuration-manager"></a>Gerenciar a Política de Ciclo de Vida da Microsoft com o Configuration Manager
 
@@ -26,7 +26,7 @@ Começando com a versão 1806, você pode usar o painel de ciclo de vida do prod
 
 Para obter mais informações, confira [Política de Ciclo de Vida da Microsoft](https://support.microsoft.com/lifecycle).
 
-Começando na versão 1810, o painel inclui informações para o System Center 2012 Configuration Manager e posteriores.<!--1358702-->  
+A partir da versão 1810, o painel inclui informações para o System Center 2012 Configuration Manager e posteriores.<!--1358702-->  
 
 
 
@@ -35,6 +35,8 @@ Começando na versão 1810, o painel inclui informações para o System Center 2
  Para ver os dados no painel do ciclo de vida do produto, são necessários os seguintes componentes:  
 
 - O Internet Explorer 9 ou posterior deve estar instalado no computador que executa o console do Configuration Manager.  
+
+- Uma função do ponto de conexão de serviço deve ser instalada e configurada. Para obter atualizações para os dados nesse painel, o ponto de conexão de serviço deve estar online ou deve ser sincronizado regularmente se estiver offline. Para obter mais informações, consulte [Sobre o ponto de conexão de serviço](/sccm/core/servers/deploy/configure/about-the-service-connection-point).
 
 - Um ponto do Reporting Services é necessário para a funcionalidade de hiperlink no painel. Os links do painel para relatórios do SSRS (SQL Server Reporting Services). Para obter mais informações, confira [Reporting in Configuration Manager](/sccm/core/servers/manage/reporting) (Relatórios no Configuration Manager).  
 
@@ -67,7 +69,8 @@ Altere o modo de exibição selecionando uma das seguintes opções na lista **C
 - **Windows Client**: exibir versões de sistema operacional do cliente Windows  
 - **Windows Server**: exibir versões do sistema operacional do Windows Server  
 - **Banco de dados**: Exibir versões do SQL Server  
-- **Configuration Manager**: iniciando na versão 1810, exibir versões do Configuration Manager  
+- **Configuration Manager**: iniciando na versão 1810, exibir versões do Configuration Manager 
+- **Microsoft Office**: começando na versão 1902, exiba as informações de versões instaladas do Office 2003 até o Office 2016 <!--3556026-->
 
 O painel contém os seguintes blocos:  
 
@@ -101,4 +104,4 @@ Também há relatórios adicionais disponíveis. No console do Configuration Man
 
 - **Ciclo de vida 05A – painel de ciclo de vida do produto**: Começando na versão 1810, esse relatório inclui informações semelhantes às do painel no console. Selecione uma categoria para exibir a contagem de produtos em seu ambiente e os dias de suporte restantes.  
 
-Para obter mais informações, confira a [Lista de relatórios](/sccm/core/servers/manage/list-of-reports#asset-intelligence).<!--SCCMDocs issue 997-->  
+Para saber mais, confira a [Lista de relatórios](/sccm/core/servers/manage/list-of-reports#asset-intelligence).<!--SCCMDocs issue 997-->  

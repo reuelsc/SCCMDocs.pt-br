@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: a1fe22d0-4695-4de0-8bf0-e3475b03cf0e
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a7438a2815f615b029888d8fb1ca28f601735d5
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: fed583e07c59f61f5c06b8355f9d59f18dde47e6
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140003"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499056"
 ---
 # <a name="how-to-configure-boundary-groups-for-configuration-manager"></a>Como configurar grupos de limites para o Configuration Manager
 
@@ -102,7 +102,8 @@ Para saber mais, confira [Fallback](/sccm/core/servers/deploy/configure/boundary
 
 
 ### <a name="bkmk_options"></a> Configurar as opções de grupo de limites
-<!--1356193--> A partir da versão 1806, para configurar outras opções para clientes nesse grupo de limites, alterne para a guia **Opções**. Para saber mais, confira [Opções de grupo de limites para downloads de pares](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).
+<!--1356193-->
+A partir da versão 1806, para configurar outras opções para clientes nesse grupo de limites, alterne para a guia **Opções**. Para saber mais, confira [Opções de grupo de limites para downloads de pares](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).
 
 - **Permitir downloads de par nesse grupo de limites**: Essa opção é habilitada por padrão. O ponto de gerenciamento fornece aos clientes uma lista de locais de conteúdo que inclui fontes de pares.  
 

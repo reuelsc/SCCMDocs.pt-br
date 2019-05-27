@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f2d2b10419cec019cc3c0791c7a7aadc016c15b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: fdfb536607ce20cd9727882ad92c3ed963c69241
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133792"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499470"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>Versões do SQL Server compatíveis com o Configuration Manager
 
@@ -85,7 +85,8 @@ Use esta versão do SQL Server, com, no mínimo, a [atualização cumulativa ver
   <!--SMS.498506-->
 
 ### <a name="sql-server-2016-sp2-standard-enterprise"></a>SQL Server 2016 SP2: Standard, Enterprise  
-<!--514985--> Use esta versão do SQL Server sem uma versão de atualização cumulativa mínima para os seguintes sites:  
+<!--514985-->
+Use esta versão do SQL Server sem uma versão de atualização cumulativa mínima para os seguintes sites:  
 
 -   Um site de administração central  
 -   Um site primário  
@@ -145,7 +146,8 @@ Use esta versão do SQL Server sem uma versão de atualização cumulativa míni
 
 ### <a name="sql-server-2017-express"></a>SQL Server 2017 Express   
 Use esta versão do SQL Server, com, no mínimo, a [atualização cumulativa versão 2](https://support.microsoft.com/help/4052574), a partir do [Configuration Manager versão 1710](/sccm/core/plan-design/changes/whats-new-in-version-1710) para os seguintes sites:
--   Um site secundário<!--SMS.498506-->
+-   Um site secundário
+<!--SMS.498506-->
 
 ### <a name="sql-server-2016-express-sp2"></a>SQL Server 2016 Express SP2  
 Use esta versão do SQL Server sem uma versão de atualização cumulativa mínima para os seguintes sites:
@@ -211,7 +213,7 @@ Use esta versão do SQL Server sem uma versão de atualização cumulativa míni
 
 -   **Para um servidor de banco de dados instalado no mesmo computador do que o servidor do site**: Limite a memória do SQL Server a 50-80% da memória de sistema endereçável disponível.  
 
--   **Para um servidor de banco de dados dedicado (remoto do servidor do site)**: Limite a memória do SQL Server a 80-90% da memória de sistema endereçável disponível.  
+-   **Para um servidor de banco de dados dedicado (remoto do servidor do site)** : Limite a memória do SQL Server a 80-90% da memória de sistema endereçável disponível.  
 
 -   **Para a reserva de memória para o pool de buffers de cada instância do SQL Server em uso**:  
 

@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 8db92d67-5d9c-4e9c-80d0-ae6fa0dd4817
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70612d3f60802892aa99bbc4fc006b9385cb8756
-ms.sourcegitcommit: af8693048e6706ffda72572374f56e0bc7dfce2c
+ms.openlocfilehash: b4f69d686a48af3c6e710c6aff592d71de1dbff1
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57737321"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65496996"
 ---
 # <a name="the-cdlatest-folder-for-configuration-manager"></a>A pasta CD.Latest do Configuration Manager
 
@@ -44,7 +44,7 @@ Os cenários a seguir criam ou atualizam a pasta CD.Latest em um site de adminis
 
 Os arquivos de origem da pasta CD.Latest têm suporte para os seguintes cenários:  
 
-### <a name="backup-and-recovery"></a>Backup e descoberta
+### <a name="backup-and-recovery"></a>Backup e recuperação
 Para recuperar um site, use os arquivos de origem de uma pasta CD.Latest que corresponda ao site. Quando você executa um backup do site usando a tarefa interna de backup do site, a pasta CD.Latest é incluída como parte do backup.
 
 - Ao reinstalar um site como parte de uma recuperação de site, você instala o site da pasta CD.Latest incluída no backup. Esta ação instala o site usando as versões dos arquivos que correspondem ao backup e ao banco de dados do site.  
@@ -62,7 +62,8 @@ Quando quiser instalar um novo site primário filho abaixo de um site de adminis
 Quando expandir um site primário autônomo por meio da instalação de um novo site de administração central, use os arquivos de instalação e de origem da pasta CD.Latest do site primário. Este processo usa arquivos de instalação de origem que correspondem à versão do site primário. Para obter mais informações, confira [Expandir um site primário autônomo](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#bkmk_expand).
 
 ### <a name="install-a-secondary-site"></a>Instale um site secundário
-<!-- SCCMDocs-pr issue #3164 --> Quando quiser instalar um novo site secundário abaixo de um site primário que instalou uma ou mais atualizações no console, use os arquivos de origem da pasta CD.Latest do site primário. 
+<!-- SCCMDocs-pr issue #3164 -->
+Quando quiser instalar um novo site secundário abaixo de um site primário que instalou uma ou mais atualizações no console, use os arquivos de origem da pasta CD.Latest do site primário. 
 
 Para saber mais, confira [Instalar um site secundário](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#bkmk_secondary). 
 

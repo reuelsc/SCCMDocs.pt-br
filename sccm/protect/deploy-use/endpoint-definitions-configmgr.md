@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
 ms.assetid: 3b9c4027-a98b-406b-935c-ccabcfe713df
-author: aczechowski
+author: mestew
+ms.author: mstewart
 manager: dougeby
-ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 411811c4047cd781d0edcd5cc345ff82acc80f91
-ms.sourcegitcommit: 0a23cde6112cbb5987f433bffcf6f223b994ba72
+ms.openlocfilehash: 976a6b149175b817ea7039faf1f909a73f2b514d
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56667436"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500535"
 ---
 #  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Usando as atualizações de Software do Configuration Manager para fornecer atualizações de definições
 
@@ -52,7 +52,7 @@ ms.locfileid: "56667436"
 7. Na página **Configurações de Implantação** do assistente, na lista **Nível de detalhe**, selecione **Somente mensagens de erro** e clique em **Avançar**.
 
    > [!NOTE]
-   >  Selecionando **somente mensagens de erro** reduzirá o número de mensagens de estado retornado pela implantação de definição. Essa configuração ajuda a reduzir o uso de processamento da CPU nos servidores do Configuration Manager.
+   >  Selecionar **Somente mensagens de erro** reduzirá o número de mensagens de estado retornadas pela implantação da definição. Essa configuração ajuda a reduzir o uso de processamento da CPU nos servidores do Configuration Manager.
 
 8. Na lista **Filtros de propriedade** , marque a caixa de seleção **Classificação da Atualização** .
 

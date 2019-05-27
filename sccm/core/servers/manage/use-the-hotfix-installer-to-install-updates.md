@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: f3058277-c597-4dac-86d1-41b6f7e62b36
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67d2fc976b08e438c6f19a7fecca03761bb099f6
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 1ca292a5266c19bc4e2b1fbc69dd0c3fe869a58e
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124723"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500914"
 ---
 # <a name="use-the-hotfix-installer-to-install-updates-for-system-center-configuration-manager"></a>Usar o Instalador do Hotfix para instalar atualizações do System Center Configuration Manager
 
@@ -86,7 +86,7 @@ O assistente também cria implantações que você pode usar para instalar as at
  Quando você executa o pacote de atualização, ele extrai um arquivo com o mesmo nome do pacote de atualização para uma pasta temporária no computador e executa o Updatesetup.exe. Updatesetup.exe inicia a Atualização de Software para o Assistente do Configuration Manager &lt;versão do produto\> &lt;Número da KB\>.  
 
  Conforme for aplicável ao escopo da atualização, o assistente criará uma série de pastas na pasta de instalação do System Center Configuration Manager no servidor do site. A estrutura da pasta se parece com esta:   
- **\\\\&lt;Nome do servidor\>\SMS_&lt;Código do site\>\HotFix.\\&lt;Número da KB\>\\&lt;Tipo de atualização\>\\&lt;Plataforma\>**.  
+ **\\\\&lt;Nome do servidor\>\SMS_&lt;Código do site\>\HotFix.\\&lt;Número da KB\>\\&lt;Tipo de atualização\>\\&lt;Plataforma\>** .  
 
  A tabela a seguir fornece detalhes sobre as pastas na estrutura de pasta:  
 

@@ -2,27 +2,28 @@
 title: Centro de Suporte
 titleSuffix: Configuration Manager
 description: Solucionar problemas de clientes do Configuration Manager com o Centro de Suporte.
-ms.date: 03/06/2019
+ms.date: 05/10/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: c631197d-7daa-4faa-9e22-980cd6d604c2
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 367c293794eea86ef8b7b7fb0e331ce0602b325e
-ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
+ms.openlocfilehash: 9246ea46787b1db466b8aca5d8a602617c80e26a
+ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57562033"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65612519"
 ---
 # <a name="support-center-for-configuration-manager"></a>Centro de Suporte do Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-<!--1357489--> Da versão 1810 em diante, use o Centro de Suporte para solução de problemas do cliente, exibição de log em tempo real ou captura do estado de um computador de cliente do Configuration Manager para análise posterior. O Centro de Suporte é uma ferramenta única para consolidação das diversas ferramentas de solução de problemas do administrador. 
+<!--1357489-->
+A partir da versão 1810, use o Centro de Suporte para solucionar problemas do cliente, exibir logs em tempo real ou capturar o estado de um computador de cliente do Configuration Manager para análise posterior. O Centro de Suporte é uma ferramenta única para consolidação das diversas ferramentas de solução de problemas do administrador. 
 
 
 
@@ -46,7 +47,7 @@ O Centro de Suporte inclui Visualizador do Centro de Suporte, uma ferramenta que
 
 ### <a name="support-center-log-file-viewer"></a>Visualizador de arquivos de log do Centro de Suporte
 
-O Centro de Suporte inclui um visualizador de logs moderno. Essa ferramenta substitui o CMTrace. O OneTrace fornece uma interface personalizável com suporte para guias e janelas encaixáveis. Ele tem uma camada de apresentação rápida e pode carregar arquivos de log grandes em segundos.
+O Centro de Suporte inclui um visualizador de logs moderno. Essa ferramenta substitui o CMTrace e fornece uma interface personalizável com suporte para guias e janelas encaixáveis. Ele tem uma camada de apresentação rápida e pode carregar arquivos de log grandes em segundos.
 
 
 ### <a name="powershell-cmdlets"></a>Cmdlets do PowerShell
@@ -79,7 +80,8 @@ Após a instalação, localize os itens a seguir no menu Iniciar no grupo do **M
 ## <a name="known-issues"></a>Problemas conhecidos 
 
 #### <a name="you-cant-install-the-latest-version-if-an-older-version-is-already-installed"></a>Não é possível instalar a versão mais recente, quando a versão anterior está instalada
-<!--SCCMDocs-pr issue #3090--> Se você já instalou uma versão anterior do Centro de Suporte, a versão 1810 do instalador falhará. Esse problema ocorre devido à maneira pela qual os arquivos são versionados entre a versão original e a versão mais recente. Para contornar esse problema, primeiro desinstale a versão anterior do Centro de Suporte. Em seguida, instale a versão mais recente (1810) do Configuration Manager.
+<!--SCCMDocs-pr issue #3090-->
+Se você já tiver instalado uma versão anterior do Centro de Suporte, o instalador da versão 1810 falhará. Esse problema ocorre devido à maneira pela qual os arquivos são versionados entre a versão original e a versão mais recente. Para contornar esse problema, primeiro desinstale a versão anterior do Centro de Suporte. Em seguida, instale a versão mais recente (1810) do Configuration Manager.
 
 #### <a name="remote-connections-must-include-computer-name-or-domain-as-part-of-the-user-name"></a>Conexões remotas devem incluir o nome do computador ou domínio como parte do nome de usuário
 Se você se conectar a um cliente remoto do Centro de Suporte, deverá fornecer o nome do computador ou o nome de domínio da conta de usuário ao estabelecer a conexão. Se você usar um nome do computador ou nome de domínio abreviado (como `.\administrator`), a conexão será bem-sucedida, mas o Centro de Suporte não coletará dados do cliente. 
@@ -93,7 +95,8 @@ Ao conectar-se a clientes remotos usando o cmdlet [New-CMMachineConnection](http
 em que `<connection_name>` é o nome da conexão remota.
 
 #### <a name="application-deployment-evaluation-cycle-request-isnt-sent-correctly-to-remote-machines"></a>A solicitação de ciclo de avaliação de implantação de aplicativos não é enviada de maneira correta para computadores remotos
-<!--2849356--> No Centro de Suporte, se você selecionar **Avaliação de implantação de aplicativo** na ação **gatilho Invocar** na guia **Conteúdo**, essa ação iniciará uma tarefa que avaliará os aplicativos implantados. Se você estiver conectado a um cliente local, tanto as implantações de aplicativos de computador quanto as de usuário serão avaliadas. No entanto, se você estiver conectado a um cliente remoto, apenas as implantações de aplicativos de computador serão avaliadas.
+<!--2849356-->
+No Centro de Suporte, se você selecionar **Avaliação de implantação de aplicativo** na ação **Invocar gatilho** da guia **Conteúdo**, essa ação iniciará uma tarefa que avaliará os aplicativos implantados. Se você estiver conectado a um cliente local, tanto as implantações de aplicativos de computador quanto as de usuário serão avaliadas. No entanto, se você estiver conectado a um cliente remoto, apenas as implantações de aplicativos de computador serão avaliadas.
 
 
 ## <a name="next-steps"></a>Próximas etapas

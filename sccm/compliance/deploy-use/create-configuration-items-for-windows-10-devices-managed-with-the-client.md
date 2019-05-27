@@ -2,7 +2,7 @@
 title: 'Criar itens de configuração para Windows 10 gerenciados pelo cliente '
 titleSuffix: Configuration Manager
 description: Use o item de configuração do System Center Configuration Manager no Windows 10 para gerenciar configurações para computadores Windows 10 que são gerenciados pelo cliente do Configuration Manager.
-ms.date: 03/28/2017
+ms.date: 05/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7215214c315af5965344c2b3c8ffbd29d522012
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 6a26ffcb0d88f50902e82049102825af956a4027
+ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121015"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65214927"
 ---
 # <a name="how-to-create-configuration-items-for-windows-10-devices-managed-with-the-system-center-configuration-manager-client"></a>Como criar itens de configuração para dispositivos Windows 10 gerenciados com o Cliente do System Center Configuration Manager
 Use o item de configuração do System Center Configuration Manager no **Windows 10** para gerenciar configurações para computadores Windows 10 que são gerenciados pelo cliente do Configuration Manager.  
@@ -42,12 +42,12 @@ Use o item de configuração do System Center Configuration Manager no **Windows
   
 7. Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do Windows 10 que avaliarão o item de configuração.  
   
-8. Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Windows 10 configuration item settings reference](#BKMK_Ref) neste tópico para obter detalhes e clique **Avançar**.  
+8. Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Consulte [Referência de definições de itens de configuração do Windows 10](#BKMK_Ref), neste artigo, para obter detalhes e clique em **Avançar**.  
   
    > [!TIP]  
    >  Se a configuração desejada não estiver na lista, marque a **caixa de seleção Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
   
-9. Em cada página de configurações, defina as configurações necessárias e se deseja corrigi-las quando não forem compatíveis nos dispositivos (quando houver suporte para essa opção).  
+9. Em cada página de configurações, defina as configurações necessárias e se deseja corrigi-las quando não estiverem em conformidade nos dispositivos (quando houver suporte).  
   
 10. Para cada grupo de configurações, você também pode configurar a severidade que será relatada quando um item de configuração for considerado não compatível de:  
   
@@ -61,7 +61,7 @@ Use o item de configuração do System Center Configuration Manager no **Windows
   
     -   **Crítico com evento** – dispositivos que não cumprem essa regra de conformidade relatam uma severidade de falha de **Crítico com evento** em relatórios do Configuration Manager. Este nível de severidade também é registrado como um evento do Windows no log de eventos do aplicativo.  
   
-11. Na página **Aplicabilidade da Plataforma** do assistente, examine as configurações que não são compatíveis com as plataformas com suporte selecionadas anteriormente. Você pode voltar e remover essas configurações ou pode continuar.  
+11. Na página **Aplicabilidade da Plataforma** do assistente, reveja as configurações que não são compatíveis com as plataformas com suporte selecionadas anteriormente. Você pode voltar e remover essas configurações ou pode continuar.  
   
     > [!TIP]  
     >  As configurações sem suporte não são avaliadas quanto à conformidade.  
@@ -70,7 +70,7 @@ Use o item de configuração do System Center Configuration Manager no **Windows
   
     Você pode exibir o novo item de configuração no nó **Itens de Configuração** do workspace **Ativos e Conformidade**.  
   
-##  <a name="windows-10-configuration-item-settings-reference"></a>Referência de configurações do item de configuração do Windows 10  
+## <a name="BKMK_Ref"></a> Referência de definições de itens de configuração do Windows 10  
   
 ### <a name="password"></a>Senha  
   
@@ -79,11 +79,11 @@ Use o item de configuração do System Center Configuration Manager no **Windows
 |**Exigir configurações de senha em dispositivos**|Requer uma senha nos dispositivos com suporte.|  
 |**Comprimento mínimo da senha (caracteres)**|O comprimento mínimo de caracteres para a senha.|  
 |**Validade da senha em dias**|O número de dias antes que a senha precise ser alterada.|  
-|**Número de senhas lembradas**|Impede a reutilização das senhas anteriores.|  
-|**Número de tentativas de logon com falha antes do apagamento do dispositivo**|Apaga o dispositivo se o logon falhar esse número de vezes.|  
-|**Tempo ocioso antes que o dispositivo móvel seja bloqueado**|Especifica quantos minutos o dispositivo deve ficar inativo antes que seja bloqueado automaticamente.|  
+|**Número de senhas lembradas**|Impede a reutilização de senhas anteriores.|  
+|**Número de tentativas de logon com falha antes do apagamento do dispositivo**|Limpa o dispositivo se o logon falhar este número de vezes.|  
+|**Tempo ocioso antes que o dispositivo móvel seja bloqueado**|Especifica por quantos minutos o dispositivo deve ficar inativo antes de ser bloqueado automaticamente.|  
 |**Complexidade da senha**|Escolha se é possível especificar um PIN como “1234” ou se é necessário fornecer uma senha forte.|
-|**Número de conjuntos de caracteres complexos exigidos na senha**|Se você tiver selecionado uma senha **forte**, use essa configuração para configurar o número de conjuntos de caracteres complexos necessários. Para uma senha forte, isso deve ser definido para pelo menos **3**, o que significa que letras e números são obrigatórios. Selecione **4** se deseja aplicar uma senha que requer ainda caracteres especiais como **(% $**.<br>(somente Windows 10)  |
+|**Número de conjuntos de caracteres complexos exigidos na senha**|Se você tiver selecionado uma senha **forte**, use essa configuração para configurar o número de conjuntos de caracteres complexos necessários. Para uma senha forte, essa configuração deve ser definida como pelo menos **3, o que significa que letras e números são obrigatórios. Selecione **4** se deseja aplicar uma senha que requer ainda caracteres especiais como **(% $**.<br>(somente Windows 10)  |
   
 ###  <a name="device"></a>Dispositivo  
   
@@ -133,4 +133,4 @@ A Proteção de Informações do Windows (anteriormente conhecido como Proteçã
 Para saber mais sobre como configurar a Proteção de Informações do Windows com o Configuration Manager, veja [Proteger os dados da empresa usando a WIP (Proteção de Informações do Windows)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip).
   
 ## <a name="see-also"></a>Consulte também  
- [Itens de configuração de dispositivos gerenciados com o cliente do System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)
+ [Itens de configuração de dispositivos gerenciados com o cliente do System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items.md)

@@ -2,21 +2,21 @@
 title: Notas de versão
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os problemas urgentes que ainda não foram corrigidos no produto nem abordados em um artigo da base de dados de conhecimento do Suporte da Microsoft.
-ms.date: 03/27/2019
+ms.date: 04/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 030947fd-f5e0-4185-8513-2397fb2ec96f
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a168e12000f11ca2bb6af8b1988f508910ab7263
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: 861d1d12c0df4b2f606a3f36983805fddd83711f
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58523955"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65497683"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Notas de versão do Configuration Manager
 
@@ -145,6 +145,9 @@ Altere o seguinte valor de registro para `0` e reinicie o **Serviço Clique para
 ## <a name="mobile-device-management"></a>Gerenciamento de dispositivos móveis  
 
 ### <a name="validation-for-ios-app-link-sometimes-fails-on-valid-link"></a>Às vezes, a validação do link do aplicativo iOS falha quando o link é válido
+
+*Aplica-se a: Configuration Manager versão 1810*
+
 <!-- LSI 106004348 -->
 Quando você cria um novo aplicativo do tipo **Pacote do aplicativo para iOS da App Store**, o validador não aceita algumas URLs válidas para o **Local**. Especificamente, a App Store do iOS não exige um valor para a seção de nome do aplicativo da URL. Por exemplo, os dois links a seguir são válidos e apontam para o mesmo aplicativo, mas o **Assistente para Criar Aplicativo** aceita apenas o primeiro:
 - `https://itunes.apple.com/us/app/app-name/id123456789?mt=8`

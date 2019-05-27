@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99df201cb3525a124b42d5d599d4a74708258bad
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: a513eb15f9a8c841aa5896ee5d416bd7863d0cb9
+ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59673710"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65612784"
 ---
 # <a name="ports-used-in-configuration-manager"></a>Portas usadas no Configuration Manager
 
@@ -718,7 +718,7 @@ Após a instalação, é possível alterar a porta. Não é necessário usar o m
 #### <a name="bkmk_note4"></a> Observação 4: daemon do TFTP (Trivial FTP)
 O serviço do sistema Trivial FTP (TFTP) Daemon não requer um nome de usuário ou senha e é parte integral do WDS (Serviços de Implantação do Windows). O serviço Trivial FTP Daemon implementa o suporte ao protocolo TFTP definido pelos seguintes RFCs:  
 
-- RFC 350: TFTP  
+- RFC 1350: TFTP  
 
 - RFC 2347: extensão da opção  
 
@@ -730,7 +730,7 @@ TFTP é projetado para dar suporte a ambientes de inicialização sem disco. O T
 
 O ponto de distribuição habilitado para PXE e o cliente no Windows PE selecionam portas de número elevado alocadas dinamicamente para transferências TFTP. Essas portas são definidas pela Microsoft, entre 49152 e 65535. Para obter mais informações, confira [Visão geral do serviço e requisitos de porta de rede para o Windows](https://support.microsoft.com/help/832017/service-overview-and-network-port-requirements-for-windows)
 
-No entanto, durante a inicialização real do PXE, a placa de rede no dispositivo seleciona a porta de número elevado alocada dinamicamente que ela usa durante a transferência TFTP. A placa de rede no dispositivo não está associada às portas de número elevado alocadas dinamicamente definidas pela Microsoft. Ela está associada apenas às portas definidas no RFC 350. Essa porta pode ser qualquer uma de 0 a 65535. Para obter informações sobre quais portas de número elevado alocadas dinamicamente a placa de rede usa, entre em contato com o fabricante de hardware do dispositivo.
+No entanto, durante a inicialização real do PXE, a placa de rede no dispositivo seleciona a porta de número elevado alocada dinamicamente que ela usa durante a transferência TFTP. A placa de rede no dispositivo não está associada às portas de número elevado alocadas dinamicamente definidas pela Microsoft. Ela está associada apenas às portas definidas no RFC 1350. Essa porta pode ser qualquer uma de 0 a 65535. Para obter informações sobre quais portas de número elevado alocadas dinamicamente a placa de rede usa, entre em contato com o fabricante de hardware do dispositivo.
 
 
 #### <a name="bkmk_note5"></a> Observação 5: a comunicação entre o servidor do site e o sistemas de site

@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 2aca914f-641e-4bc8-98d4-bbf0a2a5276f
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e794ff161f193f76fc899ab35acb1d29afdf606
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: cbe2608058f7364ba2b78a7ed31a01dbec5ef65f
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120327"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499176"
 ---
 # <a name="prepare-windows-servers-to-support-configuration-manager"></a>Preparar servidores Windows para dar suporte ao Configuration Manager
 
@@ -47,20 +47,20 @@ Os recursos do Windows a seguir são necessários em determinados servidores de 
 
     Já que o .NET Framework 4.0 e posteriores não são compatíveis para substituir as versões 3.5 e anteriores, quando diferentes versões são listadas como necessárias, é preciso planejar para habilitar cada versão no mesmo computador.  
 
-- **BITS (Serviço de Transferência Inteligente em Segundo Plano)**: Os pontos de gerenciamento exigem o BITS (e as opções selecionadas automaticamente) para dar suporte à comunicação com dispositivos gerenciados.  
+- **BITS (Serviço de Transferência Inteligente em Segundo Plano)** : os pontos de gerenciamento exigem que o BITS (e as opções selecionadas automaticamente) dê suporte à comunicação com os dispositivos gerenciados.  
 
 - **BranchCache**: Os pontos de distribuição podem ser configurados com o BranchCache para dar suporte a clientes que usam o BranchCache.  
 
 - **Eliminação de duplicação de dados**: Os pontos de distribuição podem ser configurados com a eliminação de duplicação de dados e se beneficiar desse recurso.  
 
-- **RDC (Compactação Diferencial Remota)**: Cada computador que hospeda um servidor do site ou um ponto de distribuição requer a RDC. A RDC é usada para gerar assinaturas de pacote e fazer comparações de assinatura.  
+- **RDC (Compactação Diferencial Remota)** : cada computador que hospeda um servidor do site ou um ponto de distribuição requer a RDC. A RDC é usada para gerar assinaturas de pacote e fazer comparações de assinatura.  
 
 ### <a name="roles"></a>Funções  
 As seguintes funções do Windows são necessárias para dar suporte a funcionalidades específicas, como atualizações de software e implantações de SO, enquanto o IIS é necessário para as funções mais comuns do sistema de sites.  
 
 - **Serviço de Registro de Dispositivo de Rede** (em Serviços de Certificados do Active Directory): Essa função do Windows é um pré-requisito para usar perfis de certificado no Configuration Manager.  
 
-- **Servidor Web (IIS)**: Incluindo:  
+- **Servidor Web (IIS)** : incluindo:  
     - Recursos comuns de HTTP  
           - Redirecionamento de HTTP  
     - Desenvolvimento de aplicativos  

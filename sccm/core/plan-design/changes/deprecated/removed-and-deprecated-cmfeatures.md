@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 287a6324-ae65-4d38-b2ef-198d47c91231
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40469e8173303eb7ad46ef8e716529c37ec6e76d
-ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
+ms.openlocfilehash: 96a9c497f7b8dbcd831fd42de646e836fc91ef29
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56838779"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65496340"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Recursos removidos e preteridos do Configuration Manager
 
@@ -38,7 +38,7 @@ Essas informações estão sujeitas a alterações em versões futuras. Elas pod
 |Acesso condicional local<br>Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).|30 de janeiro de 2019|1º de setembro de 2019|
 |Gerenciamento híbrido de dispositivos móveis (MDM)<br>Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<br><br>Com a versão de serviço 1902 do Intune, com previsão para o fim de fevereiro de 2019, os novos clientes não poderão criar uma nova conexão híbrida.<!--Intune feature 2683117-->|14 de agosto de 2018|1º de setembro de 2019|
 |Configurações do Windows Hello para Empresas no Configuration Manager<br>Para saber mais, veja as [Configurações para Windows Hello para Empresas](/sccm/protect/deploy-use/windows-hello-for-business-settings).|Dezembro de 2017|A primeira versão lançada após 1º de novembro de 2019|
-|Não há mais suporte para a **experiência do usuário do Silverlight** para o ponto do site do Catálogo de Aplicativos. Os usuários devem usar o novo Centro de Software. OBSERVAÇÃO: ainda há suporte para as funções de ponto de site do Catálogo de Aplicativos e de ponto de serviço Web. Em alguns cenários, o novo Centro de Software comunica-se com o ponto de site do Catálogo de Aplicativos. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).<!--1358309-->|11 de agosto de 2017| Versão 1806|
+|Não há mais suporte para a **experiência do usuário do Silverlight** para o ponto do site do Catálogo de Aplicativos. Os usuários devem usar o novo Centro de Software. OBSERVAÇÃO: ainda há suporte para as funções de ponto de site do Catálogo de Aplicativos e de ponto de serviço Web. Em alguns cenários, o novo Centro de Software comunica-se com o ponto de site do Catálogo de Aplicativos. Para saber mais, veja [Configurar Centro de Software](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).<!--1358309-->|11 de agosto de 2017| Versão 1806|
 |A versão anterior do Centro de Software.<br><br>Para saber mais sobre o novo Centro de Software, veja [Planejar e configurar o gerenciamento de aplicativos](/sccm/apps/plan-design/plan-for-and-configure-application-management##bkmk_userex).|13 de dezembro de 2016|Versão 1802|
 |Gerenciamento de VHDs (discos de rígidos virtuais) com o Configuration Manager. <br><br>Essa reprovação inclui a remoção de opções para criar um novo VHD ou gerenciar um VHD usando uma sequência de tarefas, e a remoção do nó de discos rígidos virtuais no console do Configuration Manager. <br><br>VHDs existentes não são excluídos, mas não são mais acessíveis de dentro do console do Configuration Manager.  |6 de janeiro de 2017 |Versão 1710|
 |Sequências de tarefas: <br /> – Converter Disco em Dinâmico <br /> – Instalar Ferramentas de Implantação |18 de novembro de 2016|Versão 1710|

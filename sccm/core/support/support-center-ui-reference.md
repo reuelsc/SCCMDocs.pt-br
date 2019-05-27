@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 41cdebfe-b595-40aa-a385-32e0746255ed
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 970d2fbf69a7c4c91a55cadf5d420988b2207ca2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 7858497f1ff49e5068da066cc481ca5fd38f825f
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131091"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500708"
 ---
 # <a name="support-center-user-interface-reference"></a>Referência de interface do usuário do Centro de Suporte
 
@@ -223,19 +223,19 @@ Os seguintes itens nesse menu solicitam uma ação do cliente relacionada ao con
 
 - **Serviços de Localização**  
 
-    - **Atualizar locais de conteúdo**: Atualiza os pontos de distribuição usados por todos os downloads de conteúdo ativos.  
+    - **Atualizar locais de conteúdo**: atualiza os pontos de distribuição usados por todos os downloads de conteúdo ativos.  
 
-    - **Atualizar pontos de gerenciamento**: Atualiza a lista interna de pontos de gerenciamento usados pelo cliente.  
+    - **Atualizar pontos de gerenciamento**: atualiza a lista interna de pontos de gerenciamento usados pelo cliente.  
 
     - **Atingir tempo limite de solicitações de conteúdo**: se houver solicitações de localização de conteúdo em execução por muito tempo, essa ação interromperá a solicitação.  
 
-  - **Avaliação de implantação de aplicativo**: Inicia uma tarefa que avalia os aplicativos implantados.  
+  - **Avaliação de implantação de aplicativo**: inicia uma tarefa que avalia os aplicativos implantados.  
 
-  - **Avaliação de implantação de atualizações de software**: Inicia uma tarefa que avalia as atualizações de software implantadas.  
+  - **Avaliação de implantação de atualizações de software**: inicia uma tarefa que avalia as atualizações de software implantadas.  
 
-  - **Verificação de origem de atualizações de software**: Inicia uma tarefa que verifica os locais de origem da atualização.  
+  - **Verificação de origem de atualizações de software**: inicia uma tarefa que verifica os locais de origem da atualização.  
 
-  - **Atualização de lista de origem do Windows Installer**: Inicia uma tarefa que atualiza o local de origem para instalações do Windows Installer (MSI).  
+  - **Atualização de lista de origem do Windows Installer**: inicia uma tarefa que atualiza o local de origem para instalações do Windows Installer (MSI).  
 
 #### <a name="content-view"></a>Exibição de conteúdo
 Veja aplicativos, pacotes e atualizações que são carregados no cliente. Ao selecionar um aplicativo, pacote ou a atualização, você pode exibir detalhes deste conteúdo. Para alguns aplicativos, você também pode fazer as seguintes ações:  
@@ -271,7 +271,7 @@ Selecione **Monitor** para exibir o progresso ativo da atualização de software
 Para cada evento, a exibição mostra as propriedades a seguir:  
 
  - **Tempo**: a hora em que o cliente gerou o evento  
- - **Tipo de tópico**: O tipo de mensagem de estado  
+ - **Tipo de tópico**: o tipo de mensagem de estado  
  - **ID do tópico**: ID da mensagem de estado, usada para mapear eventos nos arquivos de log  
  - **Tipo de ID do tópico**: o subtipo da mensagem de estado  
  - **ID de estado**: o resultado da ação que você está monitorando  
@@ -293,7 +293,7 @@ O Centro de Suporte carrega ou atualiza a lista de inventário do cliente para a
 
 Os seguintes itens nesse menu solicitam uma ação do cliente relacionada ao inventário:  
 
- - **Ciclo de coleta de dados de descoberta (pulsação)**: dispara a tarefa do cliente usada para coletar informações de descoberta do dispositivo  
+ - **Ciclo de coleta de dados de descoberta (pulsação)** : dispara a tarefa do cliente usada para coletar informações de descoberta do dispositivo  
 
  - **Ciclo de coleta de arquivos**: dispara a tarefa de cliente usada para coletar arquivos locais  
 
@@ -303,9 +303,9 @@ Os seguintes itens nesse menu solicitam uma ação do cliente relacionada ao inv
 
  - **Ciclo de inventário de software**: dispara a tarefa do cliente usada para coletar dados de inventário de software  
 
- - **Ciclo de relatório de medição de software**: Dispara a tarefa do cliente usada para criar um relatório de medição de software e enviá-lo para o ponto de gerenciamento. Acompanhe o progresso dessa tarefa no **SWMTRReportGen.log**.
+ - **Ciclo de relatório de medição de software**: dispara a tarefa do cliente usada para criar um relatório de medição de software e enviá-lo para o ponto de gerenciamento. Acompanhe o progresso dessa tarefa no **SWMTRReportGen.log**.
 
- - **Enviar mensagens de estado não enviadas na fila**: Dispara a tarefa do cliente para liberar a fila de mensagens de estado.
+ - **Enviar mensagens de estado não enviadas na fila**: dispara a tarefa do cliente para liberar a fila de mensagens de estado.
 
  - **Advanced**  
      - **Ciclo de inventário de hardware (ressincronização completa)**  
@@ -469,8 +469,8 @@ Depois de localizar duas ou mais correspondências para a cadeia de caracteres q
 
 #### <a name="error-lookup"></a>Pesquisa de erro
 Insira um código de erro para procurá-lo nos arquivos de log abertos no momento. Use os seguintes formatos de código de erro:
- - **inteiro de 32 bits (com sinal)**: Por exemplo, `-2147024891`  
- - **inteiro de 32 bits (sem sinal)**: Por exemplo, `2147942405`  
+ - **inteiro de 32 bits (com sinal)** : Por exemplo, `-2147024891`  
+ - **inteiro de 32 bits (sem sinal)** : Por exemplo, `2147942405`  
  - **hexadecimal de 32 bits**: Por exemplo, `0x80070005`  
 
 #### <a name="decode-certificate"></a>Decodificar certificado

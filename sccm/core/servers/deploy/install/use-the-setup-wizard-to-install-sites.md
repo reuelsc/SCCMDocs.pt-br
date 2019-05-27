@@ -6,16 +6,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 1f703376-5f2c-4fd2-8209-7028c931ddc7
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67c82a884a5d3df3b1e61e1f9f2c109ff2b7fef6
-ms.sourcegitcommit: af8693048e6706ffda72572374f56e0bc7dfce2c
+ms.openlocfilehash: 92c51158412b8bc9737c4851fc43dc2a7776488b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57737343"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501253"
 ---
 # <a name="use-the-setup-wizard-to-install-configuration-manager-sites"></a>Usar o Assistente para Instalação para instalar sites do Configuration Manager
 
@@ -67,7 +67,7 @@ Se você estiver instalando um site de administração central como parte de um 
         > - Instala um ponto de gerenciamento e um ponto de distribuição no computador do servidor do site.  
         > - Configura o site com o idioma inglês e o idioma de exibição do sistema operacional no servidor do site primário, se ele corresponder a um dos idiomas a que o Configuration Manager dá suporte.  
 
-4. Na página **Chave do Produto (Product Key)**:  
+4. Na página **Chave do Produto (Product Key)** :  
 
     - escolha se deseja instalar o Configuration Manager como uma edição de avaliação ou uma edição licenciada.  
 
@@ -140,7 +140,7 @@ Se você estiver instalando um site de administração central como parte de um 
 
 12. Na página **Informações do Banco de Dados**, especifique as informações a seguir:  
 
-    - **Nome do SQL Server (FQDN)**: por padrão, esse valor é definido como o computador do servidor do site.  
+    - **Nome do SQL Server (FQDN)** : por padrão, esse valor é definido como o computador do servidor do site.  
 
         Se você usar uma porta personalizada, adicione-a ao FQDN do SQL Server. Coloque uma vírgula e depois o número da porta após o FQDN do SQL Server. Por exemplo, para o servidor *SQLServer1.fabrikam.com*, use o seguinte para especificar a porta *1551*: `SQLServer1.fabrikam.com,1551`  
 
@@ -369,9 +369,9 @@ Use o console do Configuration Manager para instalar um site secundário.
 
     Você pode configurar até duas unidades de disco para a biblioteca de conteúdo e duas unidades de disco para o compartilhamento de pacote. No entanto, o Configuration Manager pode usar outras unidades quando as duas primeiras atingirem a reserva de espaço de unidade configurada. A página **Configurações de Unidade** é o local em que você configura a prioridade das unidades de disco e a quantidade de espaço livre em disco a permanecer em cada unidade de disco.  
 
-    - **Reserva de espaço na unidade (MB)**: o valor que você define para esta configuração determina a quantidade de espaço livre na unidade antes que o Configuration Manager escolha uma unidade diferente e continue o processo de cópia nessa unidade. Arquivos de conteúdo podem abranger várias unidades.  
+    - **Reserva de espaço na unidade (MB)** : o valor que você define para esta configuração determina a quantidade de espaço livre na unidade antes que o Configuration Manager escolha uma unidade diferente e continue o processo de cópia nessa unidade. Arquivos de conteúdo podem abranger várias unidades.  
 
-    - **Localizações de conteúdo**: Especifique os locais de conteúdo para a biblioteca de conteúdo e o compartilhamento de pacotes. O Configuration Manager copia conteúdo para o local de conteúdo primário até que a quantidade de espaço livre atinja o valor especificado para **Reserva de espaço de unidade (MB)**.  
+    - **Localizações de conteúdo**: especifique os locais de conteúdo da biblioteca de conteúdo e do compartilhamento de pacotes. O Configuration Manager copia conteúdo para o local de conteúdo primário até que a quantidade de espaço livre atinja o valor especificado para **Reserva de espaço de unidade (MB)** .  
 
     Por padrão, os locais de conteúdo são definidos para **Automático**. O local do conteúdo primário é definido como a unidade de disco com mais espaço em disco no momento da instalação. O local secundário é definido como a unidade de disco que tem o maior espaço em disco após a unidade primária. Quando as unidades primárias e secundárias atingirem a reserva de espaço de unidade, o Configuration Manager selecionará outra unidade disponível com o maior espaço em disco e continuará o processo de cópia.  
 

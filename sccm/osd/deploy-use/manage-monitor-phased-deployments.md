@@ -2,21 +2,21 @@
 title: Gerenciar e monitorar implantações em fases
 titleSuffix: Configuration Manager
 description: Entenda como gerenciar e monitorar implantações em fases para software no Configuration Manager.
-ms.date: 11/27/2018
+ms.date: 04/16/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
 ms.assetid: dc245916-bc11-4983-9c4d-015f655007c1
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ebf89e46b33649f12ea5770d6e771e811a66094
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: f378fd399a874b0db3844bbf02528dfe92981db5
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125724"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500660"
 ---
 # <a name="manage-and-monitor-phased-deployments"></a>Gerenciar e monitorar implantações em fases
 
@@ -35,16 +35,16 @@ Quando você seleciona a configuração, **Iniciar manualmente a segunda fase da
 
 1. Como iniciar essa ação varia de acordo com o tipo de software implantado:  
 
-    - **Aplicativo** (somente na versão 1806 ou posterior): vá até o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione **Aplicativos**.   
+    - **Aplicativo** (somente na versão 1806 ou posteriores): acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione **Aplicativos**.   
 
-    - **Atualização de software** (somente na versão 1810 ou posterior): vá até o workspace **Biblioteca de Software** e, em seguida, selecione um dos seguintes nós:    
+    - **Atualização de software** (somente na versão 1810 ou posterior): vá para o workspace **Biblioteca de Software** e, em seguida, selecione um dos seguintes nós:    
         - Atualizações de software  
             - **Todas as Atualizações de Software**  
             - **Grupos de Atualizações de Software**   
         - Serviço do Windows 10, **Todas as Atualizações do Windows 10**  
         - Gerenciamento de Cliente do Office 365, **Atualizações do Office 365**  
 
-    - **Sequência de tarefas**: acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**.   
+    - **Sequência de tarefas**: acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequência de Tarefas**.   
 
 2. Selecione o software com a implantação em fases.  
 
@@ -62,16 +62,16 @@ Talvez você precise suspender manualmente ou retomar uma implantação em fases
 
 1. Como iniciar essa ação varia de acordo com o tipo de software implantado:  
 
-    - **Aplicativo** (somente na versão 1806 ou posterior): acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione **Aplicativos**.   
+    - **Aplicativo** (somente na versão 1806 ou posteriores): acesse o workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione **Aplicativos**.   
 
-    - **Atualização de software** (somente na versão 1810 ou posterior): acesse o workspace **Biblioteca de Software** e, em seguida, selecione um dos seguintes nós:    
+    - **Atualização de software** (somente na versão 1810 ou posterior): vá para o workspace **Biblioteca de Software** e, em seguida, selecione um dos seguintes nós:    
         - Atualizações de software  
             - **Todas as Atualizações de Software**  
             - **Grupos de Atualizações de Software**   
         - Serviço do Windows 10, **Todas as Atualizações do Windows 10**  
         - Gerenciamento de Cliente do Office 365, **Atualizações do Office 365**  
 
-    - **Sequência de tarefas**: acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequências de Tarefas**. Selecione uma sequência de tarefas existente e clique em **Criar Implantação em Fases** na faixa de opções.  
+    - **Sequência de tarefas**: acesse o workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione **Sequência de Tarefas**. Selecione uma sequência de tarefas existente e clique em **Criar Implantação em Fases** na faixa de opções.  
 
 2. Selecione o software com a implantação em fases.  
 
@@ -86,32 +86,33 @@ When you suspend a phased deployment, it sets the available and deadline times o
 
 ## <a name="bkmk_monitor"></a> Monitorar
 <!--1358577-->
+A partir da versão 1902, as implantações em fases têm seu próprio nó de monitoramento dedicado, facilitando a identificação de implantações em fases criadas por você e a navegação até a exibição de monitoramento de implementações em fases. No espaço de trabalho **Monitoramento**, selecione **Implantações em fases** e clique duas vezes em uma das implementações em fases para ver o status. <!--3555949-->
 
-Da versão 1806 em diante, as implantações em fases têm uma experiência de monitoramento nativa. No nó **Implantações** no workspace **Monitoramento**, selecione uma implantação em fases e clique em **Status da Implantação em Fases** na faixa de opções.
+No Configuration Manager 1806 e 1810, você pode ver a experiência de monitoramento nativa para implantações em fases. No nó **Implantações** no workspace **Monitoramento**, selecione uma implantação em fases e clique em **Status da Implantação em Fases** na faixa de opções.
 
 ![Painel de status de implantação em fases, mostrando o status de duas fases](media/1358577-phased-deployment-status.png)
 
 Este painel mostra as seguintes informações para cada fase da implantação:  
 
-- **Total de dispositivos**: o número de dispositivos afetados por essa fase.  
+- **Total de dispositivos** ou **Total de recursos**: quantos dispositivos estão planejados por essa fase.  
 
-- **Status**: o status atual dessa fase. Cada fase pode estar em um dos seguintes estados:  
+- **Status**: o status atual desta fase. Cada fase pode estar em um dos seguintes estados:  
 
     - **Implantação criada**: a implantação em fases criou uma implantação do software para a coleção para essa fase. Os clientes são direcionados ativamente com este software.  
 
-    - **Aguardando**: a fase anterior ainda não atingiu os critérios de êxito para que a implantação continue nessa fase.  
+    - **Aguardando**: a fase anterior ainda não atendeu aos critérios de sucesso para que a implantação passe para essa fase.  
 
     - **Suspenso**: um administrador suspendeu a implantação.  
 
-- **Progresso**: os estados de implantação codificados por cores dos clientes. Por exemplo: Êxito, Em Andamento, Erro, Requisitos Não Atendidos e Desconhecido. 
+- **Progresso**: os estados de implantação com codificação de cores de clientes. Por exemplo: Êxito, Em Andamento, Erro, Requisitos Não Atendidos e Desconhecido. 
 
 #### <a name="success-criteria-tile"></a>Bloco de critérios de sucesso
 
-Use a lista suspensa **Selecionar Fase** para alterar a exibição do bloco **Critérios de Sucesso**. Esse bloco compara a **Meta de Fase** com a conformidade atual da implantação. Com as configurações padrão, a meta da fase é 95%. Esse valor significa que a implantação precisa de 95% de conformidade para ir para a próxima fase. 
+Use a lista suspensa **Selecionar Fase** para alterar a exibição do bloco **Critérios de Sucesso**. Esse bloco compara a **Meta de Fase** com a conformidade atual da implantação. Com as configurações padrão, a meta da fase é 95%. Esse valor significa que a implantação precisa de 95% de conformidade para ir para a próxima fase.
 
-Neste exemplo, a meta da fase é 65% e a conformidade atual é de 66,7%. A implantação em fases é movida automaticamente para a segunda fase, pois a primeira cumpriu os critérios de sucesso.  
+No exemplo, a meta da fase é de 65% e a conformidade atual é de 66,7%. A implantação em fases é movida automaticamente para a segunda fase, pois a primeira cumpriu os critérios de sucesso.  
 
-![Bloco de Critérios de Sucesso de Exemplo do Status da Implantação em Fases](media/pod-status-success-criteria-tile.png)
+   ![Exemplo de Critérios de Êxito do Status da Implantação em Fases em que a meta é de 65%](media/pod-status-success-criteria-tile.png)
 
 A meta da fase é igual ao **Percentual de sucesso da implantação** nas Configurações de Fase para a *próxima* fase. Para a implantação em fases iniciar a próxima fase, essa segunda fase define os critérios para o sucesso da primeira fase. Para exibir essa configuração: 
 

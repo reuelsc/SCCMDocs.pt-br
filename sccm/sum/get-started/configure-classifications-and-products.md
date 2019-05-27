@@ -2,8 +2,8 @@
 title: Configurar classificações e produtos
 titleSuffix: Configuration Manager
 description: Siga estas etapas para configurar as classificações e os produtos de atualização de software a serem sincronizados no console do Configuration Manager.
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.date: 02/15/2019
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1d984598288434aa1e81c6bd2c51a315edfa551
-ms.sourcegitcommit: fd16fc2b681608fd6def5bad2cedffbcd1f2423a
-ms.translationtype: HT
+ms.openlocfilehash: 747e66adb8f6ce0d013073463ee2472785d3bb70
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56405685"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500007"
 ---
 #  <a name="configure-classifications-and-products-to-synchronize"></a>configurar classificações e produtos para sincronizar  
 
@@ -41,23 +41,23 @@ ms.locfileid: "56405685"
     > [!NOTE]  
     >  Cada atualização de software é definida com uma classificação de atualização que ajuda a organizar os diferentes tipos de atualização. Durante o processo de sincronização, os metadados de atualizações de software para as classificações especificadas são sincronizados. O Configuration Manager fornece a capacidade de sincronizar atualizações de software com as seguintes classificações de atualização:  
     >   
-    > - **Atualizações Críticas**: especifica uma correção lançada em larga escala para um problema específico que corrige um bug crítico não relacionado a segurança.  
-    > - **Atualizações de definições**: especifica uma atualização de software frequente e lançada em larga escala que contém adições ao banco de dados de definição de um produto.  
-    > - **Feature Packs**: especifica novas funcionalidades de produtos distribuídas pela primeira vez fora de um lançamento de produto e que normalmente são incluídas no próximo lançamento do produto completo.  
-    > - **Atualizações de Segurança**: especifica uma correção lançada em larga escala para uma vulnerabilidade relacionada à segurança específica do produto.  
+    > - **Atualizações críticas**: especifica uma correção amplamente divulgada para um problema específico que soluciona um erro crítico não relacionado a segurança.  
+    > - **Atualizações de definições**: especifica uma atualização de software amplamente divulgada e frequente que contém adições ao banco de dados de definições de um produto.  
+    > - **Feature Packs**: especifica novas funcionalidades do produto que são distribuídas inicialmente fora de uma versão do produto e que normalmente serão incluídas na próxima versão completa do produto.  
+    > - **Atualizações de segurança**: especifica uma correção amplamente divulgada para uma vulnerabilidade relacionada a segurança específica do produto.  
     > - **Service Packs**: especifica um conjunto cumulativo e testado de todos os hotfixes, atualizações de segurança, atualizações críticas e atualizações aplicadas a um produto. Além disso, os service packs podem conter correções adicionais para problemas encontrados internamente desde o lançamento do produto.  
-    > - **Ferramentas**: Especificam um utilitário ou um recurso que ajuda a concluir uma ou mais tarefas.  
-    > - **Pacotes cumulativos de atualizações**: especifica um conjunto cumulativo e testado de hotfixes, atualizações de segurança, atualizações críticas e atualizações combinadas para facilitar a implantação. Um pacote cumulativo de atualizações geralmente aborda uma área específica, como segurança ou um componente do produto.  
-    > - **Atualizações**: especifica uma correção lançada em larga escala para um problema específico. Uma atualização corrige um bug não crítico não relacionado à segurança.  
-    > - **Atualização**: especifica uma atualização para os recursos e funcionalidades do Windows 10. Seus sites e pontos de atualização de software devem executar o WSUS 4.0 com o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para obter a classificação de **Upgrade**.    
+    > - **Ferramentas**: especifica um utilitário ou um recurso que ajuda a concluir uma ou mais tarefas.  
+    > - **Pacotes cumulativos de atualização**: especifica um conjunto cumulativo e testado de hotfixes, atualizações de segurança, atualizações críticas e atualizações que são agrupados para facilitar a implantação. Um pacote cumulativo de atualizações geralmente aborda uma área específica, como segurança ou um componente do produto.  
+    > - **Atualizações**: especifica uma correção amplamente divulgada para um problema específico. Uma atualização corrige um bug não crítico não relacionado à segurança.  
+    > - **Upgrade**: especifica uma atualização para os recursos e funcionalidades do Windows 10. Seus sites e pontos de atualização de software devem executar o WSUS 4.0 com o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para obter a classificação de **Upgrade**.    
     >       
 
     > [!NOTE]    
-    > Começando com o Configuration Manager versão 1706, você pode marcar a caixa de seleção **Incluir atualizações de drivers e de firmware do Microsoft Surface** para sincronizar os drivers do Microsoft Surface.<!--1098490--> Todos os pontos de atualização de software devem executar o Windows Server 2016 para sincronizar com êxito os drivers do Surface. Se você habilitar um ponto de atualização de software em um computador que executa o Windows Server 2012 depois de habilitar os drivers do Surface, os resultados da verificação das atualizações de driver não serão precisos. Isso resulta na exibição de dados de conformidade incorretos no console do Configuration Manager e nos relatórios do Configuration Manager.  
+    > A partir do Configuration Manager versão 1706, você pode marcar a caixa de seleção **Incluir drivers e atualizações de firmware do Microsoft Surface** para sincronizar os drivers do Microsoft Surface.<!--1098490--> Todos os pontos de atualização de software devem executar o Windows Server 2016 para sincronizar com êxito os drivers do Surface. Se você habilitar um ponto de atualização de software em um computador que executa o Windows Server 2012 depois de habilitar os drivers do Surface, os resultados da verificação das atualizações de driver não serão precisos. Isso resulta na exibição de dados de conformidade incorretos no console do Configuration Manager e nos relatórios do Configuration Manager.  
     >  
     > Esse recurso foi introduzido pela primeira vez na versão 1706 como um [recurso de pré-lançamento](/sccm/core/servers/manage/pre-release-features). A partir da versão 1710, esse recurso deixou de ser um recurso de pré-lançamento.  
     >  
-    > O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, veja [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+    > O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 5.  Na guia **Produtos** , especifique os produtos para os quais você deseja sincronizar atualizações de software e clique em **Fechar**.  
 

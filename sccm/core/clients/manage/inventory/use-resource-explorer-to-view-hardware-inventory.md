@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
 ms.assetid: 375912f5-436d-4315-bdbe-d77afee6c9f3
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc4958e83c73da91aa31fb8ac0e1b84375218ac9
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: c55b7b5bc4effdb1bf1f13dbe0248aa56ad2abe1
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128197"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499966"
 ---
 # <a name="how-to-use-resource-explorer-to-view-hardware-inventory-in-configuration-manager"></a>Como usar o Gerenciador de Recursos para exibir o inventário de hardware no Configuration Manager
 
@@ -58,7 +58,8 @@ O Gerenciador de Recursos contém as seguintes seções relacionadas ao inventá
 
 
 ## <a name="bkmk_bigint"></a> Uso de valores inteiros grandes
-<!--1357880--> No Configuration Manager 1802 e nas versões anteriores, o inventário de hardware tem um limite de inteiros maiores que 4.294.967.296 (2^32). Esse limite pode ser alcançado para atributos como tamanhos de disco rígido em bytes. O ponto de gerenciamento não processa os valores inteiros acima desse limite, portanto, nenhum valor é armazenado no banco de dados. 
+<!--1357880-->
+No Configuration Manager 1802 e nas versões anteriores, o inventário de hardware tem um limite de inteiros maiores que 4.294.967.296 (2^32). Esse limite pode ser alcançado para atributos como tamanhos de disco rígido em bytes. O ponto de gerenciamento não processa os valores inteiros acima desse limite, portanto, nenhum valor é armazenado no banco de dados. 
 
 Começando na versão 1806, o limite foi aumentado para 18.446.744.073.709.551.616 (2^64). 
 

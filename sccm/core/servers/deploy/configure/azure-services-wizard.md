@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5a0834e61173708fd99dcdc8806e2f8e633e87c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 94e632638018d213d46b34e87f8b5398cb49c59e
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137500"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499077"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurar serviços do Azure para uso com o Configuration Manager
 
@@ -67,7 +67,7 @@ A tabela a seguir lista os detalhes sobre cada um dos serviços.
 |Gerenciamento de nuvem com<br>Descoberta de usuários do Azure AD | Vários | Público, privado | ![Com suporte](media/green_check.png) | ![Com suporte](media/green_check.png) | Importar, criar |
 |Conector do Log Analytics | Um | Público, privado | ![Com suporte](media/green_check.png) | ![Sem suporte](media/Red_X.png) | Importar |
 |Upgrade Readiness | Um | Público | ![Com suporte](media/green_check.png) | ![Sem suporte](media/Red_X.png) | Importar |
-|Microsoft Store para<br>Negócios | Um | Público | ![Com suporte](media/green_check.png) | ![Sem suporte](media/Red_X.png) | Importar, criar |
+|Microsoft Store para<br>Empresas | Um | Público | ![Com suporte](media/green_check.png) | ![Sem suporte](media/Red_X.png) | Importar, criar |
 
 
 ### <a name="about-azure-ad-apps"></a>Sobre os aplicativos do Azure AD
@@ -252,7 +252,7 @@ Por fim, conclua o Assistente de Serviços do Azure pelas páginas Resumo, Progr
 ## <a name="view-the-configuration-of-an-azure-service"></a>Exibir a configuração de um serviço do Azure
 Exiba as propriedades de um serviço do Azure que você configurou para ser usado. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e selecione **Serviços do Azure**. Selecione o serviço que deseja exibir ou editar e, em seguida, selecione **Propriedades**.
 
-Se você selecionar um serviço e, em seguida, selecionar **Excluir** na faixa de opções, essa ação excluirá a conexão no Configuration Manager. Ela não removerá o aplicativo no Azure AD. Solicite que o administrador do Azure exclua o aplicativo quando ele não for mais necessário. Se preferir, execute o Assistente de Serviço do Azure para importar o aplicativo.<!--483440-->
+Se você selecionar um serviço e, em seguida, selecionar **Excluir** na faixa de opções, essa ação excluirá a conexão no Configuration Manager. Ela não removerá o aplicativo no Azure AD. Solicite que o administrador do Azure exclua o aplicativo quando ele não for mais necessário. Ou execute o Assistente de Serviço do Azure para importar o aplicativo.<!--483440-->
 
 
 ## <a name="cloud-management-data-flow"></a>Fluxo de dados do gerenciamento de nuvem

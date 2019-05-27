@@ -2,21 +2,21 @@
 title: Novidades na versão 1902
 titleSuffix: Configuration Manager
 description: Obtenha os detalhes sobre as alterações e as novas funcionalidades incluídas na versão 1902 do Branch Atual do Configuration Manager.
-ms.date: 04/17/2019
+ms.date: 05/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbc38cdb72a2c8f595eed88e0b4b5b5e29374597
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: 0c88cdc52442463bb3788c80c45d6c074dd900f5
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59673642"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673417"
 ---
 # <a name="whats-new-in-version-1902-of-configuration-manager-current-branch"></a>Novidades da versão 1902 do Branch Atual do Configuration Manager
 
@@ -173,9 +173,9 @@ Para obter mais informações, consulte [Como administrar remotamente um computa
 
 ### <a name="specify-a-custom-port-for-peer-wakeup"></a>Especificar uma porta personalizada para ativação de par
 <!--3605925-->
-Agora você pode especificar um número da porta personalizado para o proxy de ativação. Nas configurações do cliente, no grupo **Gerenciamento de energia**, defina a configuração para **Número de porta Wake On LAN (UDP)**.  
+***[Atualizado]***  Agora você pode especificar um número da porta personalizado para o proxy de ativação. Nas configurações do cliente, no grupo **Gerenciamento de energia**, defina a configuração para **Número de porta Wake On LAN (UDP)** .  
 
-<!-- For more information, see [How to configure Wake on LAN](/sccm/core/clients/deploy/configure-wake-on-lan). -->
+Para saber mais, confira [Como configurar o Wake On LAN](/sccm/core/clients/deploy/configure-wake-on-lan).
 
 
 
@@ -218,17 +218,30 @@ Agora você pode ver uma barra de progresso mais detalhada durante uma sequênci
 Esse recurso funciona com qualquer versão do Windows 10 com suporte e somente com a sequência de tarefas de atualização in-loco. 
 
 
-### <a name="improvements-to-task-sequence-media-creation"></a>Melhorias na criação de mídia de sequência de tarefas 
+### <a name="improvements-to-task-sequence-media-creation"></a>Melhorias na criação de mídia de sequência de tarefas
+
 <!--3556027, fka 1359388-->
-Esta versão inclui várias melhorias para ajudá-lo a criar e gerenciar de maneira melhor a mídia de sequência de tarefas. <!-- For more information, see [Create task sequence media](/sccm/osd/deploy-use/create-task-sequence-media). -->
+***[Atualizado]*** Esta versão inclui várias melhorias para ajudá-lo a criar e gerenciar de maneira melhor a mídia de sequência de tarefas. Para saber mais, confira os seguintes artigos sobre tipos de mídia específicos:
+
+- [Criar mídia autônoma](/sccm/osd/deploy-use/create-stand-alone-media)
+- [Criar mídia pré-configurada](/sccm/osd/deploy-use/create-prestaged-media)
+- [Criar mídia inicializável](/sccm/osd/deploy-use/create-bootable-media)
+- [Criar mídia de captura](/sccm/osd/deploy-use/create-capture-media)
 
 #### <a name="specify-temporary-storage"></a>Especificar armazenamento temporário
-Agora, quando você cria a mídia de sequência de tarefas, personalize a localização que seu site usa para armazenamento temporário de dados. Esse processo pode exigir muito espaço de unidade temporária. Essa alteração oferece maior flexibilidade para escolher em que local armazenar esses arquivos temporários. 
+
+Agora, quando você cria a mídia de sequência de tarefas, personalize a localização que seu site usa para armazenamento temporário de dados. Esse processo pode exigir muito espaço de unidade temporária. Essa alteração oferece maior flexibilidade para escolher em que local armazenar esses arquivos temporários.
 
 No **Assistente Criar Mídia de Sequência de Tarefas**, especifique uma localização para a **Pasta de preparo**. Por padrão, essa localização é semelhante ao seguinte caminho: `%UserProfile%\AppData\Local\Temp`.
 
 #### <a name="add-a-label-to-the-media"></a>Adicione um rótulo à mídia
+
 Agora você pode adicionar um rótulo à mídia de sequência de tarefas. Esse rótulo ajuda a identificar melhor a mídia depois de criá-la. No **Assistente Criar Mídia de Sequência de Tarefas**, especifique um **Rótulo de mídia**.
+
+#### <a name="include-autoruninf-file-on-media"></a>Incluir arquivo autorun.inf na mídia
+
+<!-- 4090666 -->
+Quando você cria a mídia de sequência de tarefas, o Configuration Manager não adiciona um arquivo autorun.inf. Normalmente, esse arquivo é bloqueado por produtos antimalware. Você ainda pode incluir o arquivo se necessário para seu cenário.
 
 
 ### <a name="import-a-single-index-of-an-os-image"></a>Importar um índice único de uma imagem do sistema operacional
@@ -254,8 +267,9 @@ Ao criar um agendamento para atualizar um sistema operacional, selecione a opç�
 
 
 ### <a name="improvements-to-run-powershell-script-task-sequence-step"></a>Melhorias na etapa da sequência de tarefas Executar Script do PowerShell
+
 <!--3556028, fka 1359389-->
-A etapa de sequência de tarefas **Executar Script do PowerShell** agora inclui as seguintes melhorias:  
+***[Atualizado]*** Agora a etapa de sequência de tarefas **Executar Script do PowerShell** inclui as seguintes melhorias:  
 
 - Você pode agora inserir diretamente o código do Windows PowerShell nessa etapa. Essa alteração permite que você execute comandos do PowerShell durante uma sequência de tarefas sem primeiro criar e distribuir o pacote com o script.
 
@@ -271,17 +285,18 @@ A etapa de sequência de tarefas **Executar Script do PowerShell** agora inclui 
 
 - Para incluir os parâmetros do script no log de sequência de tarefas, defina a variável de sequência de tarefas **OSDLogPowerShellParameters** para **TRUE**. Por padrão, os parâmetros não estão no log.  
 
-- Outras melhorias que fornecem funcionalidade semelhante como a etapa [Executar linha de comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine). Por exemplo, especifique as credenciais de usuário alternativas ou um tempo limite. 
+- Outras melhorias que fornecem funcionalidade semelhante como a etapa [Executar linha de comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine). Por exemplo, especifique as credenciais de usuário alternativas ou um tempo limite.
 
 > [!Important]  
 > Para aproveitar esse novo recurso do Configuration Manager, depois de atualizar o site, atualize também os clientes com a versão mais recente. Embora a nova funcionalidade seja exibida no console do Configuration Manager quando você atualiza o site e o console, o cenário completo só funcionará quando a versão do cliente também for a mais recente.
 
-<!-- For more information, see [Run PowerShell Script](/sccm/osd/understand/task-sequence-steps#BKMK_RunPowerShellScript). -->
+Para saber mais, confira [Executar scripts do PowerShell](/sccm/osd/understand/task-sequence-steps#BKMK_RunPowerShellScript).
 
 
 ### <a name="other-improvements-to-os-deployment"></a>Outras melhorias à implantação do sistema operacional
+
 <!--3633146,3641475,3654172,3734270-->
-Esta versão inclui as seguintes melhorias na implantação do sistema operacional:
+***[Atualizado]*** Esta versão inclui as seguintes melhorias na implantação do sistema operacional:
 
 - Há uma nova ação padrão para **Exibição** nas sequências de tarefas. <!--3633146-->  
 
@@ -296,20 +311,13 @@ Esta versão inclui as seguintes melhorias na implantação do sistema operacion
 ## <a name="bkmk_userxp"></a> Centro de software
 
 ### <a name="replace-toast-notifications-with-dialog-window"></a>Substituir as notificações do sistema por uma janela de diálogo
+
 <!--3555947-->
-Às vezes, os usuários não veem a notificação do sistema do Windows sobre uma reinicialização ou implantação necessária. Assim, eles não veem a experiência de adiar o lembrete. Esse comportamento pode levar a uma experiência ruim para o usuário quando o cliente alcança um prazo final.
+***[Atualizado]*** Às vezes os usuários não veem a notificação do sistema do Windows sobre uma reinicialização ou implantação necessária. Assim, eles não veem a experiência de adiar o lembrete. Esse comportamento pode levar a uma experiência ruim para o usuário quando o cliente alcança um prazo final.
 
-Agora quando as implantações precisam ser reinicializadas ou são necessárias alterações de software, você tem a opção de usar uma janela de diálogo mais intrusiva. 
+Agora quando as implantações precisam ser reinicializadas ou são necessárias alterações de software, você tem a opção de usar uma janela de diálogo mais intrusiva.
 
-#### <a name="software-changes-are-required"></a>São necessárias alterações de software
-Na página **Experiência do Usuário** do Assistente de Implantação de Software, selecione a opção de notificação do usuário para **Exibir no Centro de Software e mostrar todas as notificações**. Selecione a opção a seguir: **Quando forem necessárias alterações no software, mostrar ao usuário uma janela de diálogo em vez de uma notificação do sistema**.  
-
-<!-- For more information, see [Configure Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex) -->
-
-#### <a name="restart-required"></a>Reinicialização necessária
-Nas configurações do cliente, no grupo **Reinicialização do Computador**, habilite a opção a seguir: **Quando uma implantação exigir uma reinicialização, mostrar uma janela de diálogo ao usuário em vez de uma notificação do sistema**.  
-
-<!-- For more information, see [About client settings](/sccm/core/clients/deploy/about-client-settings#computer-restart). -->
+Para saber mais, confira [Plano para o Centro de Software](/sccm/apps/plan-design/plan-for-software-center#bkmk_impact)
 
 
 ### <a name="configure-user-device-affinity-in-software-center"></a>Configurar a afinidade de dispositivo do usuário no Centro de Software
@@ -345,7 +353,7 @@ Especifique essas configurações no grupo **Centro de Software** das configura�
 <!--3734525-->
 ***[Atualizado]*** Ajuste a prioridade em que os clientes instalam uma atualização de recurso pelo [serviço do Windows 10](/sccm/osd/deploy-use/manage-windows-as-a-service). Por padrão, agora os clientes instalam atualizações de recurso com uma prioridade de processamento mais alta. 
 
-Use as configurações do cliente para configurar esta opção. No grupo **Atualizações de Software**, defina a seguinte configuração: **Especifique a prioridade de thread para as atualizações de recurso**. 
+Use as configurações do cliente para configurar esta opção. No grupo **Atualizações de Software**, defina a seguinte configuração: **Especifique a prioridade de thread para as atualizações de recurso**.
 
 Para obter mais informações, consulte [Sobre as configurações do cliente](/sccm/core/clients/deploy/about-client-settings#software-updates). 
 
@@ -384,9 +392,9 @@ Para obter mais informações, veja [Gerenciar atualizações do Office 365](/sc
 
 ### <a name="office-products-on-lifecycle-dashboard"></a>Produtos do Office no painel de ciclo de vida
 <!--3556026-->
-O painel de ciclo de vida do produto agora inclui informações das versões instaladas do Office 2003 até o Office 2016. Os dados aparecem depois que o site executa a tarefa de resumo de ciclo de vida, que ocorre a cada 24 horas.
+***[Atualizado]*** O painel de ciclo de vida do produto agora inclui informações sobre as versões instaladas do Office 2003 até o Office 2016. Os dados aparecem depois que o site executa a tarefa de resumo de ciclo de vida, que ocorre a cada 24 horas.
 
-<!-- For more information, see [Use the Product Lifecycle dashboard](/sccm/core/clients/manage/asset-intelligence/product-lifecycle-dashboard). -->
+Para saber mais, veja [Usar o painel de Ciclo de Vida do Produto](/sccm/core/clients/manage/asset-intelligence/product-lifecycle-dashboard).
 
 
 
@@ -398,18 +406,18 @@ O painel de ciclo de vida do produto agora inclui informações das versões ins
 
 ### <a name="dedicated-monitoring-for-phased-deployments"></a>Monitoramento dedicado para implantações em fases
 <!--3555949-->
-As implantações em fases agora têm seu próprio nó de monitoramento dedicado. Esse nó facilita a identificação das implantações em fases que você criou e a navegação até a exibição de monitoramento da implantação em fases. No console do Configuration Manager, acesse o workspace **Monitoramento** e selecione o nó **Implantações em fases**. Ele mostra a lista de implantações em fases.
+***[Atualizado]*** As implantações em fases agora têm seu próprio nó de monitoramento dedicado. Esse nó facilita a identificação das implantações em fases que você criou e a navegação até a exibição de monitoramento da implantação em fases. No console do Configuration Manager, acesse o workspace **Monitoramento** e selecione o nó **Implantações em fases**. Ele mostra a lista de implantações em fases.
 
-<!-- For more information, see [Phased deployment monitoring view](/sccm/osd/deploy-use/manage-monitor-phased-deployments#bkmk_monitor). -->
+Para saber mais, veja [Exibição de monitoramento da implantações em fases](/sccm/osd/deploy-use/manage-monitor-phased-deployments#bkmk_monitor). 
 
 
 ### <a name="improvement-to-phased-deployment-success-criteria"></a>Melhoria dos critérios de sucesso da implantação em fases
 <!--3555946-->
-Especifica critérios adicionais para o sucesso de uma fase em uma implantação em fases. Em vez de apenas um percentual, esse critério agora também pode ser o número de dispositivos implantados com êxito. Essa opção é útil quando o tamanho da coleção é variável, e você tem um número específico de dispositivos para mostrar o êxito antes de passar para a próxima fase. 
+***[Atualizado]*** Especifica critérios adicionais para o sucesso de uma fase em uma implantação em fases. Em vez de apenas um percentual, esse critério agora também pode ser o número de dispositivos implantados com êxito. Essa opção é útil quando o tamanho da coleção é variável, e você tem um número específico de dispositivos para mostrar o êxito antes de passar para a próxima fase. 
 
-Crie uma implantação em fases para uma sequência de tarefas, uma atualização de software ou um aplicativo. Em seguida, na página Configurações do assistente, selecione a opção a seguir como critérios para o sucesso da primeira fase: **Número de dispositivos implantados com êxito**. 
+Crie uma implantação em fases para uma sequência de tarefas, uma atualização de software ou um aplicativo. Em seguida, na página Configurações do assistente, selecione a opção a seguir como critérios para o sucesso da primeira fase: **Número de dispositivos implantados com êxito**.
 
-<!-- For more information, see [Create phased deployments](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence). -->
+Saiba mais em [Criar implantações em fases](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence).
 
 
 

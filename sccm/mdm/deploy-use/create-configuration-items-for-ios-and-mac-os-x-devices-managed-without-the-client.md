@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 690aefeac875e3c3f39d5801bdb33d69ccecb45e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 1d511df5dc4b6e29a86d4eabacec9037ee204ecc
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135813"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176738"
 ---
 # <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Como criar itens de configuração para dispositivos com iOS e Mac OS X gerenciados com o Intune
 Use o item de configuração **iOS e Mac OS X** do System Center Configuration Manager para gerenciar as configurações para dispositivos iOS e Mac OS X que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  
@@ -92,7 +92,7 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
 |**Assistente de voz quando bloqueado**|Permite o uso de um aplicativo de assistência de voz como o Siri quando o dispositivo estiver bloqueado.|  
 |**Captura de tela**|Permite tirar uma captura de tela da tela do dispositivo.|  
 |**Cliente de chat com vídeo**|Permite o uso de aplicativos de chat com vídeo, como o Facetime.|  
-|**Jogo para vários participantes**|Permite jogar com outros jogadores na Internet.|  
+|**Jogo para vários participantes**|Permite jogar com outros jogadores na internet.|  
 |**Software de carteira pessoal quando bloqueado**|Permite o uso de software de carteira pessoal como o Passbook.|  
 |**Envio de dados de diagnóstico**|Permita o envio de arquivos de log do aplicativo.|  
 |**Notificações da central de ações**|Permita que o usuário acesse a exibição de notificações sem desbloquear o dispositivo.|
@@ -116,8 +116,8 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
 |**Teclados preditivos** (somente supervisionado)|Permita o uso de teclados preditivos que sugerem palavras que o usuário pode querer.|
 |**Verificação ortográfica do teclado** (somente supervisionado)|Permite o verificador de ortografia do dispositivo.|
 |**Modificação das configurações de notificação** (somente supervisionado)|Permita que o usuário altere as configurações de notificação do dispositivo.|
-|**Retornar resultados da Internet em pesquisa de Destaque** (somente supervisionado)|Permita que a pesquisa de Destaque conecte-se à Internet para fornecer mais resultados.|
-|**Usar Siri para consultar o conteúdo da Internet gerado pelo usuário** (somente supervisionado)|Permita que a Siri acesse sites da Web para responder perguntas.|
+|**Retornar resultados da internet em pesquisa de destaque** (somente supervisionado)|Permitem que a pesquisa do Spotlight se conecte à internet para fornecer mais resultados.|
+|**Usar Siri para consultar o conteúdo gerado pelo usuário da internet** (somente supervisionado)|Permita que a Siri acesse sites da Web para responder perguntas.|
 
   
 ###  <a name="store"></a>Repositório  
@@ -138,7 +138,7 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
   
 |Nome da configuração|Detalhes|  
 |------------------|-------------|  
-|**Navegador padrão**|O usuário pode alterar o navegador de Internet padrão.|  
+|**Navegador padrão**|Usuário pode alterar o navegador de internet padrão.|  
 |**Preenchimento automático**|O usuário pode alterar as configurações de preenchimento automático no navegador.|  
 |**Script ativo**|O navegador pode executar scripts, como scripts do ActiveX.|  
 |**Bloqueador de pop-up**|Habilita ou desabilita o bloqueador de pop-ups do navegador.|  

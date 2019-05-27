@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15dbcbb3d0528a2627ab00bf81c6de5f5441d9e2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: cc4a984b15af66a5426d30f3fb4f0b68c794ba5f
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120300"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673331"
 ---
 # <a name="how-to-use-maintenance-windows-in-system-center-configuration-manager"></a>Como usar as janelas de manutenção no System Center Configuration Manager
 
@@ -59,10 +59,19 @@ As janelas de manutenção permitem que você defina um período em que as opera
 
 4.  Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 
-5.  Na guia **Janelas de Manutenção** da caixa de diálogo **Propriedades do &lt;nome da coleção\>**, escolha o ícone **Novo**.  
+5.  Na guia **Janelas de Manutenção** da caixa de diálogo **Propriedades do &lt;nome da coleção\>** , escolha o ícone **Novo**.  
 
 6.  Conclua a caixa de diálogo **&lt;novo\> Agendamento**.  
 
 7.  Faça uma seleção na lista suspensa **Aplicar este agendamento a**.  
 
-8.  Escolha **OK** e feche a caixa de diálogo **Propriedades do &lt;nome da coleção\>**.  
+8.  Escolha **OK** e feche a caixa de diálogo **Propriedades do &lt;nome da coleção\>** .  
+ 
+## <a name="bkmk_powershell"></a> Uso do PowerShell
+
+O PowerShell pode ser usado para configurar as janelas de manutenção.  Para obter mais informações, consulte:
+
+* [Set-CMMaintenanceWindow](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmmaintenancewindow)
+* [Get-CMMaintenanceWindow](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmmaintenancewindow)
+* [New-CMMaintenanceWindow](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmmaintenancewindow)
+* [Remove-CMMaintenanceWindow](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmmaintenancewindow)

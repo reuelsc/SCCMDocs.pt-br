@@ -1,8 +1,8 @@
 ---
 title: Contas usadas
 titleSuffix: Configuration Manager
-description: Identifique e gerencie grupos e contas do Windows no Configuration Manager.
-ms.date: 03/29/2019
+description: Identifique e gerencie grupos e contas do Windows e objetos SQL usados no Configuration Manager.
+ms.date: 05/01/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a05ff407c3787283a58973f2861432a0a26a52b0
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: 5b9f4f95916a2d547f89cab7dac838b7fe68fb30
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802777"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933457"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Contas usadas no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Use as seguintes informações para identificar os grupos e as contas do Windows usados no Configuration Manager, como são usados e quais são os requisitos.  
+Use as seguintes informações para identificar os grupos e as contas do Windows e objetos SQL usados no Configuration Manager, como são usados e quais são os requisitos.  
 
 - [Grupos do Windows que o Configuration Manager cria e usa](#bkmk_groups)  
     - [ConfigMgr_CollectedFilesAccess](#configmgr_collectedfilesaccess)  
@@ -61,7 +61,10 @@ Use as seguintes informações para identificar os grupos e as contas do Windows
     - [Conta de conexão de pasta de rede da sequência de tarefas](#task-sequence-network-folder-connection-account)  
     - [Execução da sequência de tarefas como conta](#task-sequence-run-as-account)  
 
-
+- [Objetos do usuário que o Configuration Manager usa no SQL](#bkmk_sqlobjects)
+    - [smsdbuser_ReadOnly](#smsdbuser_ReadOnly)
+    - [smsdbuser_ReadWrite](#smsdbuser_ReadWrite)
+    - [smsdbuser_ReportSchema](#smsdbuser_ReportSchema)
 
 ## <a name="bkmk_groups"></a> Grupos do Windows que o Configuration Manager cria e usa  
 
@@ -71,7 +74,7 @@ Use as seguintes informações para identificar os grupos e as contas do Windows
 >  Quando o Configuration Manager cria um grupo em um computador que é membro do domínio, trata-se de um grupo de segurança local. Se o computador for um controlador de domínio, o grupo será um grupo de domínio local. Esse tipo de grupo é compartilhado entre todos os controladores de domínio no domínio.  
 
 
-### <a name="configmgrcollectedfilesaccess"></a>ConfigMgr_CollectedFilesAccess
+### <a name="configmgr_collectedfilesaccess"></a> ConfigMgr_CollectedFilesAccess
 
 O Configuration Manager usa esse grupo para conceder acesso para exibir arquivos coletados pelo inventário de software.  
 
@@ -89,7 +92,7 @@ O Configuration Manager gerencia automaticamente a associação ao grupo. A asso
 Por padrão, este grupo tem a permissão **Ler** para a seguinte pasta no servidor do site: `C:\Program Files\Microsoft Configuration Manager\sinv.box\FileCol`  
 
 
-### <a name="configmgrdviewaccess"></a>ConfigMgr_DViewAccess  
+### <a name="configmgr_dviewaccess"></a>ConfigMgr_DViewAccess  
 
  Esse grupo é um grupo de segurança local criado no servidor de banco de dados do site ou no servidor de réplica de banco de dados pelo Configuration Manager para um site primário filho. O site o cria quando você usa exibições distribuídas para a replicação de banco de dados entre sites em uma hierarquia. Ele contém o servidor do site e as contas de computador do SQL Server do site de administração central.
 
@@ -523,7 +526,7 @@ Para obter mais informações, confira [Planejar atualizações de software](/sc
 > [!NOTE]  
 >  A conta de site de origem e a [conta de banco de dados do site de origem](#source-site-database-account) são identificadas como **Gerenciador de Migração** no nó **Contas** do workspace **Administração** no console do Configuration Manager.  
 
- Para saber mais, confira [Migrar dados entre hierarquias](https://docs.microsoft.com/en-us/sccm/core/migration/migrate-data-between-hierarchies).
+ Para saber mais, confira [Migrar dados entre hierarquias](https://docs.microsoft.com/sccm/core/migration/migrate-data-between-hierarchies).
 
 
 ### <a name="source-site-database-account"></a>Conta do banco de dados do site de origem  
@@ -539,7 +542,7 @@ Para obter mais informações, confira [Planejar atualizações de software](/sc
 > [!NOTE]  
 >  A conta de site de origem e a [conta de banco de dados do site de origem](#source-site-database-account) são identificadas como **Gerenciador de Migração** no nó **Contas** do workspace **Administração** no console do Configuration Manager.  
 
- Para saber mais, confira [Migrar dados entre hierarquias](https://docs.microsoft.com/en-us/sccm/core/migration/migrate-data-between-hierarchies).
+ Para saber mais, confira [Migrar dados entre hierarquias](https://docs.microsoft.com/sccm/core/migration/migrate-data-between-hierarchies).
 
 
 ### <a name="task-sequence-domain-join-account"></a>Conta de ingresso no domínio de sequência de tarefas 
@@ -589,3 +592,25 @@ Para obter mais informações, confira [Planejar atualizações de software](/sc
 >   
 >  Se a linha de comando exigir acesso administrativo no computador, considere a criação de uma conta do administrador local exclusivamente para essa conta em todos os computadores que executam a sequência de tarefas. Exclua a conta depois que você não precisar mais dela.  
 
+
+## <a name="bkmk_sqlobjects"></a> Objetos do usuário que o Configuration Manager usa no SQL 
+<!--SCCMDocs issue #1160-->
+O Configuration Manager automaticamente cria e mantém os seguintes objetos de usuário no SQL.  Esses objetos estão localizados no banco de dados do Configuration Manager em Segurança/Usuários.  
+
+> [!IMPORTANT]  
+>  Modificar ou remover esses objetos pode causar problemas drásticos em um ambiente do Configuration Manager.  É recomendável não fazer quaisquer alterações a esses objetos.
+
+
+### <a name="smsdbuserreadonly"></a>smsdbuser_ReadOnly
+
+Esse objeto é usado para executar consultas no contexto de somente leitura.  Esse objeto é utilizado em vários procedimentos armazenados.
+
+
+### <a name="smsdbuserreadwrite"></a>smsdbuser_ReadWrite
+
+Esse objeto é usado para fornecer permissões para instruções SQL dinâmicas.
+
+
+### <a name="smsdbuserreportschema"></a>smsdbuser_ReportSchema
+
+Esse objeto é usado para acionar as execuções de Relatórios SQL.  O procedimento armazenado a seguir é usado com essa função: spSRExecQuery.

@@ -2,7 +2,7 @@
 title: Implantar clientes no Windows
 titleSuffix: Configuration Manager
 description: Saiba como implantar o cliente do Configuration Manager em computadores Windows.
-ms.date: 07/30/2018
+ms.date: 04/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 639521ecf0084b40bf61ac3d635ab4f5e55d1321
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 3260fb68d9ce334061fc39fe8d40cd68d109655e
+ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123838"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65214723"
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-configuration-manager"></a>Como implantar clientes em computadores Windows no Configuration Manager
 
@@ -38,7 +38,7 @@ Há três maneiras principais de usar o push de cliente:
 
 - Inicie uma instalação do cliente por push executando o Assistente de Instalação do Cliente por Push para uma coleção específica ou um recurso específico em uma coleção.  
 
-- Você também pode usar o Assistente de Instalação do Cliente por Push para instalar o cliente do Configuration Manager para resultados de [consulta](/sccm/core/servers/manage/queries-technical-reference). Para que a instalação tenha êxito, um dos itens retornados pela consulta deverá ser o atributo **ResourceID** da classe **Recurso do Sistema**.   
+- Você também pode usar o Assistente de Instalação do Cliente por Push para instalar o cliente do Configuration Manager para resultados de [consulta](/sccm/core/servers/manage/introduction-to-queries). Para que a instalação tenha êxito, um dos itens retornados pela consulta deverá ser o atributo **ResourceID** da classe **Recurso do Sistema**.   
 
 Se o servidor do site não puder acessar o computador cliente nem iniciar o processo de instalação, ele repetirá automaticamente a instalação a cada hora. O servidor continua tentando novamente por até sete dias.  
 
@@ -310,7 +310,7 @@ Use o procedimento a seguir para criar um pacote e um programa do Configuration 
 
 4.  Na página **Arquivos de Origem**, selecione **Sempre obter arquivos da pasta de origem**.  
 
-5.  Na página **Pasta de Origem**, selecione **Caminho de rede (Nome UNC)**. Em seguida, insira o caminho de rede para o servidor e o compartilhamento que contém os arquivos de instalação do cliente.  
+5.  Na página **Pasta de Origem**, selecione **Caminho de rede (Nome UNC)** . Em seguida, insira o caminho de rede para o servidor e o compartilhamento que contém os arquivos de instalação do cliente.  
 
     > [!NOTE]  
     >  O computador no qual a implantação do Configuration Manager é executada deve ter acesso à pasta de rede especificada. Caso contrário, a instalação do cliente falhará.  

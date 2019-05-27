@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be3b70d91155b379881332ddb7c8d405d0d92e84
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: 9775bd47e91876a7651bb58fee50b2111f3b7ef1
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58523853"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083517"
 ---
 # <a name="site-server-high-availability-in-configuration-manager"></a>Alta disponibilidade do servidor do site no Configuration Manager
 
@@ -70,7 +70,7 @@ O Microsoft Core Services Engineering e Operations usou esse recurso para migrar
 
     - O SQL Server que hospeda o banco de dados do site pode usar uma instância padrão, uma instância nomeada, o [cluster do SQL Server](/sccm/core/servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database) ou um [Grupo de disponibilidade Always On do SQL Server](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database).  
 
-    - Os dois servidores de sites precisam das funções de segurança **sysadmin** e **securityadmin** na instância do SQL Server que hospeda o banco de dados do site. O servidor do site original já deve ter essas funções, portanto, adicione-as ao novo servidor do site. Por exemplo, o script SQL a seguir adiciona essas funções ao novo servidor de site **VM2** no domínio Contoso:  
+    - Os dois servidores de sites precisam da função de segurança **sysadmin** na instância do SQL Server que hospeda o banco de dados do site. O servidor do site original já deve ter essas funções, portanto, adicione-as ao novo servidor do site. Por exemplo, o script SQL a seguir adiciona essas funções ao novo servidor de site **VM2** no domínio Contoso:  
 
         ```SQL
         USE [master]
@@ -78,9 +78,7 @@ O Microsoft Core Services Engineering e Operations usou esse recurso para migrar
         CREATE LOGIN [contoso\vm2$] FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english]
         GO
         ALTER SERVER ROLE [sysadmin] ADD MEMBER [contoso\vm2$]
-        GO
-        ALTER SERVER ROLE [securityadmin] ADD MEMBER [contoso\vm2$]
-        GO        
+        GO       
         ```
     - Ambos os servidores do site precisam acessar o banco de dados do site na instância do SQL Server. O servidor do site original já deve ter esse acesso, portanto, adicione-o ao novo servidor do site. Por exemplo, o script SQL a seguir adiciona um logon ao banco de dados **CM_ABC** ao novo servidor de site **VM2** no domínio Contoso:  
 

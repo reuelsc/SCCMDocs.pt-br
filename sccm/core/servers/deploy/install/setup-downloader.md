@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: bda87fc5-2e4c-4992-98a4-01770365038c
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: abfad38e0c02ff6c0af8d4c9c47bdeed7598e513
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 23fbe5ecb6b69f9832ca34659cd35f5ad25b29b9
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129741"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501321"
 ---
 # <a name="setup-downloader-for-system-center-configuration-manager"></a>Downloader de Instalação para System Center Configuration Manager
 
@@ -64,9 +64,9 @@ Você tem duas opções para executar o Downloader de Instalação:
 
     -   **/LANG**: use essa opção para baixar os arquivos de idiomas na pasta de download.  
 
-    -   **/NOUI**: use essa opção para iniciar o Downloader de Instalação sem exibir a interface de usuário. Ao usar essa opção, você deve especificar o **caminho de download** como parte da linha de comando no prompt de comando.  
+    -   **/NOUI**: use essa opção para iniciar a Ferramenta de Download de Instalação sem exibir a interface de usuário. Ao usar essa opção, você deve especificar o **caminho de download** como parte da linha de comando no prompt de comando.  
 
-    -   **&lt;DownloadPath\>**: você pode especificar o caminho para a pasta de download para iniciar automaticamente processo de verificação ou download. Você deve especificar o caminho de download ao usar a opção **/NOUI**. Se você não especificar um caminho de download, deverá especificar o caminho quando o Downloader de Instalação for aberto. O Downloader de Instalação criará a pasta caso ela não exista.  
+    -   **&lt;DownloadPath\>** : você pode especificar o caminho para a pasta de download para iniciar automaticamente processo de verificação ou download. Você deve especificar o caminho de download ao usar a opção **/NOUI**. Se você não especificar um caminho de download, deverá especificar o caminho quando o Downloader de Instalação for aberto. O Downloader de Instalação criará a pasta caso ela não exista.  
 
     Comandos de exemplo:
 

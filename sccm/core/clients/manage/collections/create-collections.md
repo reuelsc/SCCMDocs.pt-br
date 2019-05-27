@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e79ec4b19ad45c49438ef273bcaf031754cf7e7
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.openlocfilehash: 40cb1a96771181b395ec2f628e0f0c3c2efe29b7
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57558126"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673308"
 ---
 # <a name="how-to-create-collections-in-configuration-manager"></a>Como criar coleções no Configuration Manager
 
@@ -171,7 +171,7 @@ Na caixa de diálogo **Propriedades de Regra de Consulta** , especifique as segu
 
 - **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione um dos valores de **Recursos do Sistema** para pesquisar dados de inventário retornados de computadores cliente ou **Computador Desconhecido** para selecionar valores retornados por computadores desconhecidos.  
 
-- **Editar Instrução de Consulta**: abre a caixa de diálogo **Propriedades da Instrução da Consulta**, em que é possível criar uma consulta a ser usada como a regra para a coleção. Para saber mais sobre consultas, consulte [Referência técnica de consultas](/sccm/core/servers/manage/queries-technical-reference).  
+- **Editar Instrução de Consulta**: abre a caixa de diálogo **Propriedades da Instrução da Consulta**, em que é possível criar uma consulta a ser usada como a regra para a coleção. Para saber mais sobre consultas, confira [Introdução a consultas](/sccm/core/servers/manage/introduction-to-queries).  
 
 
 ### <a name="bkmk-category"></a> Regra de categoria de dispositivo
@@ -218,3 +218,10 @@ Para saber mais sobre como exportar coleções, consulte [Como gerenciar coleç�
 
 5. Conclua o assistente para importar a coleção. A nova coleção é exibida no nó **Coleções de Usuários** ou **Coleções de Dispositivos** do workspace **Ativos e Conformidade**. Atualize ou recarregue o console do Configuration Manager para ver os membros da coleção recém-importada.  
 
+## <a name="bkmk_powershell"></a> Uso do PowerShell
+
+O PowerShell pode ser usado para criar e importar coleções.  Para obter mais informações, consulte:
+
+* [New-CMCollection](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmcollection)
+* [Set-CMCollection](https://docs.microsoft.com/powershell/module/ConfigurationManager/Set-CMCollection)
+* [Import-CMCollection](https://docs.microsoft.com/powershell/module/ConfigurationManager/Import-CMCollection)

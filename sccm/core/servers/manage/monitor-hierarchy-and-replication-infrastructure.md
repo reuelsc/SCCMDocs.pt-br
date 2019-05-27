@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 3fab4d67-8d2a-45ce-8b06-471280102cf6
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7a9fcf06630c76fc3e1123fa56861c4de224521
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: dcc3a43f1cc2393a66fe50ef74e864afeb27704c
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129367"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501060"
 ---
 # <a name="monitor-hierarchy-and-replication-infrastructure-in-system-center-configuration-manager"></a>Monitorar a infraestrutura de hierarquia e de replicação no System Center Configuration Manager
 
@@ -89,9 +89,9 @@ O Configuration Manager oferece diversos métodos para monitorar o status e as o
 ###  <a name="BKMK_SH_Node"></a> Sobre o nó da Hierarquia do Site  
 O nó **Hierarquia do site** do workspace **Monitoramento** oferece uma visão geral da sua hierarquia e dos links entre sites do Configuration Manager. Você pode usar dois modos de exibição:  
 
--   **Diagrama Hierárquico**: Esse modo de exibição mostra a sua hierarquia como um mapa de topologia que foi simplificado para mostrar somente informações essenciais.  
+-   **Diagrama Hierárquico**: esse modo de exibição mostra a sua hierarquia como um mapa de topologia que foi simplificado para mostrar somente informações essenciais.  
 
--   **Exibição Geográfica**: Este modo exibe os sites em um mapa geográfico, mostrando os locais de site que você configurar.  
+-   **Exibição Geográfica**: este modo exibe os sites em um mapa geográfico, mostrando os locais de site que você configurar.  
 
 Use o nó **Hierarquia do Site** para monitorar a saúde de cada site e os links de replicação entre sites e suas relações com fatores externos, como uma localização geográfica.  
 
@@ -106,9 +106,9 @@ Como o status do site e o status do link entre sites são replicados como dados 
 
  As seguintes opções modificam o diagrama hierárquico:  
 
--   **Grupos**: Você pode configurar o número de sites primários e secundários que disparam uma alteração na exibição de diagrama hierárquico que combina os sites em um único objeto. Quando os sites são combinados em um único objeto, você pode ver o número total de sites e um rollup de mensagens de status e status de sites de alto nível. As configurações de grupo não afetam o modo de exibição geográfico.  
+-   **Grupos**: você pode configurar o número de sites primários e secundários que disparam uma alteração na exibição de diagrama hierárquico que combina os sites em um único objeto. Quando os sites são combinados em um único objeto, você pode ver o número total de sites e um rollup de mensagens de status e status de sites de alto nível. As configurações de grupo não afetam o modo de exibição geográfico.  
 
--   **Sites favoritos**: Você pode especificar sites individuais como favoritos. Um ícone de estrela identifica um site favorito no diagrama hierárquico. Sites favoritos não são combinados com outros sites quando você usa grupos e são sempre exibidos individualmente.  
+-   **Sites favoritos**: você pode especificar sites individuais como favoritos. Um ícone de estrela identifica um site favorito no diagrama hierárquico. Sites favoritos não são combinados com outros sites quando você usa grupos e são sempre exibidos individualmente.  
 
 #### <a name="geographical-view"></a>Exibição Geográfica  
  O modo de exibição geográfica mostra a localização de cada site em um mapa geográfico. Somente os sites configurados com um local serão exibidos. Quando você seleciona um site nesse modo de exibição, os links de replicação para sites pai ou filho são mostrados. Diferentemente da exibição de diagrama hierárquico, não é possível exibir detalhes da mensagem de status do site ou do link de replicação nesse modo de exibição.  
@@ -118,7 +118,7 @@ Como o status do site e o status do link entre sites são replicados como dados 
 
 A opção a seguir modifica a exibição geográfica.  
 
--   **Local do Site**: Você pode especificar uma localização geográfica para cada site. Você pode especificar a localização como um endereço de rua, o nome de um local como o nome de uma cidade ou por coordenadas de latitude e longitude. Por exemplo, para usar a latitude e a longitude de Redmond, Washington, você especificaria **N 47 40 26.3572 W 122 7 17.4432** como a localização do site. Você não precisa especificar os símbolos para graus, minutos ou segundos de longitude ou latitude. O Configuration Manager usa o Bing Mapas para exibir o local na exibição geográfica. Isso oferece a você a opção de exibir sua hierarquia em relação a um local geográfico, o que pode fornecer informações sobre questões regionais que podem afetar sites específicos ou a replicação entre sites.  
+-   **Local do Site**: você pode especificar uma localização geográfica para cada site. Você pode especificar a localização como um endereço de rua, o nome de um local como o nome de uma cidade ou por coordenadas de latitude e longitude. Por exemplo, para usar a latitude e a longitude de Redmond, Washington, você especificaria **N 47 40 26.3572 W 122 7 17.4432** como a localização do site. Você não precisa especificar os símbolos para graus, minutos ou segundos de longitude ou latitude. O Configuration Manager usa o Bing Mapas para exibir o local na exibição geográfica. Isso oferece a você a opção de exibir sua hierarquia em relação a um local geográfico, o que pode fornecer informações sobre questões regionais que podem afetar sites específicos ou a replicação entre sites.  
 
      Quando você especifica um local, você pode usar a caixa **Local** para pesquisar um site específico da sua hierarquia. Com o site selecionado, insira o local como um nome de cidade ou endereço na coluna **Local** . O Configuration Manager usa o Bing Mapas para resolver o local.  
 

@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 1b931c9d-ffae-4d8e-baa7-c330a152674f
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d759ada36184ac8a6d1ac59c94c96cdaf234d56
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 2c9f8b65180c4255c5c279d75f012db766163fd6
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56139367"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500771"
 ---
 # <a name="accessibility-features-in-support-center"></a>Recursos de acessibilidade no Centro de Suporte
 
@@ -62,7 +62,7 @@ Você também pode usar um teclado para executar tarefas comuns no Centro de sup
 |Fechar todos os arquivos de log<br>(na guia **Logs** do Centro de Suporte e na janela do **Visualizador de Log**)|**Ctrl** + **W** |
 |Pesquisar nos arquivos de log| - **Ctrl** + **F**: abrir a caixa de diálogo **Localizar** para inserir uma cadeia de caracteres de pesquisa<br> - **F3**: localizar a próxima correspondência<br> - **Shift** + **F3**: localizar a correspondência anterior|
 |Pesquisar um código de erro<br>(na guia **Logs** e na janela do **Visualizador de Log**)|**Ctrl** + **L** |
-|Copiar de um arquivo de log| - **Ctrl** + **C**: Copia o texto do arquivo de log<br> - **Ctrl** + **Shift** + **C**: Copia a entrada de log sem formatação|
+|Copiar de um arquivo de log| - **Ctrl** + **C**: copia o texto do arquivo de log<br> - **Ctrl** + **Shift** + **C**: copia a entrada de log sem formatação|
 |Filtro rápido usando o texto do arquivo de log<br>(na guia **Logs** e na janela do **Visualizador de Log**)|**Ctrl** + **Shift** + **C** |
 |Anotar um arquivo de log<br>(na guia **Logs** e na janela do **Visualizador de Log**)|**Ctrl** + **Shift** + **N** <sup>[Observação 1](#bkmk_note1)</sup>|
 |Abrir a Ajuda|**F1**|

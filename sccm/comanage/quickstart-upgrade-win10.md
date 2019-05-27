@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0815a974f3b1f29f664a2948eed33de24c6ecff3
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: bbc042975840e5b4e840928f01257785f4859dd4
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "56754546"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176835"
 ---
 # <a name="upgrade-windows-10-for-co-management"></a>Atualizar o Windows 10 para o cogerenciamento
 
@@ -52,7 +52,7 @@ Veja algumas dicas que aprendemos com a ajuda de milhares de clientes para se at
 
 ## <a name="case-studies"></a>Estudos de caso
 
-A Microsoft IT implantou o Windows 10 para 96.000 usuários distribuídos na Microsoft. A implantação incluiu usuários remotos e usuários da rede corporativa. A implantação foi concluída em nove semanas. Para saber mais sobre a experiência deles, confira [Implantação do Windows 10 na Microsoft como uma atualização in-loco](https://www.microsoft.com/download/details.aspx?id=50377).  
+A Microsoft IT implantou o Windows 10 para 96.000 usuários distribuídos na Microsoft. A implantação incluiu usuários remotos e usuários da rede corporativa. A implantação foi concluída em nove semanas. Para saber mais sobre a experiência deles, confira [Implantação do Windows 10 na Microsoft como uma atualização in-loco](https://www.microsoft.com/itshowcase/deploying-windows-10-at-microsoft-as-an-in-place-upgrade).  
 
 Um grande fabricante europeu de software usa com sucesso um grupo de usuários pioneiros. Após os grupos iniciais de teste e piloto, aproximadamente 2.000 funcionários recebem a primeira atualização, upgrades e software. Esse grupo inclui equipe de TI e voluntários. Esse nível de envolvimento com seus usuários proporciona a eles um nível maior de confiança ao testar e mais credibilidade quando os lançamentos em massa começam.
 

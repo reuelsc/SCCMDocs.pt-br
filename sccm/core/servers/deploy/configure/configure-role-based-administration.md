@@ -6,16 +6,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 57413dd3-b2f8-4a5f-b27f-8464d357caff
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 554e67e171fe5b800d231d257105531dcd633baf
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 73583d4dea93cefcbe9dd9615671606112cc8860
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131567"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65498941"
 ---
 # <a name="configure-role-based-administration-for-configuration-manager"></a>Configurar administração baseada em funções para o Configuration Manager   
 
@@ -175,9 +175,9 @@ No Configuration Manager, a administração baseada em funções combina funçõ
 
 -   **Todas as instâncias dos objetos relacionados às funções de segurança atribuídas**: essa opção associa o usuário administrativo ao escopo **Todos** e às coleções **Todos os Sistemas** e **Todos os Usuários e Grupos de Usuários**. As funções de segurança que são atribuídas ao usuário definem o acesso a objetos.  
 
--   **Somente as instâncias de objetos que estiverem atribuídas a coleções ou escopos de segurança especificados**: Essa opção associa o usuário administrativo aos mesmos escopos de segurança e coleções que estão associados à conta que você usa para configurar o usuário administrativo. Essa opção oferece suporte à adição ou remoção de funções de segurança e coleções para personalizar o escopo administrativo do usuário administrativo.  
+-   **Somente as instâncias de objetos que estiverem atribuídas a coleções ou escopos de segurança especificados**: essa opção associa o usuário administrativo aos mesmos escopos de segurança e coleções que estão associados à conta que você usa para configurar o usuário administrativo. Essa opção oferece suporte à adição ou remoção de funções de segurança e coleções para personalizar o escopo administrativo do usuário administrativo.  
 
--   **Associar funções de segurança atribuídas a coleções e escopos de segurança específicos**: Essa opção permite que você crie as associações específicas entre as funções de segurança individuais, os escopos de segurança e as coleções específicos para o usuário.  
+-   **Associar funções de segurança atribuídas a coleções e escopos de segurança específicos**: essa opção permite que você crie as associações específicas entre as funções de segurança individuais, os escopos de segurança e as coleções específicas do usuário.  
 
     > [!NOTE]  
     >  Essa opção está disponível somente quando você modifica as propriedades de um usuário administrativo.  

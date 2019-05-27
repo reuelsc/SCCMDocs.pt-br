@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: b06f781b-ab25-4d9a-b128-02cbd7cbcffe
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ce8cff2be91950ee7e43cd96f03ab41990170c9
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 3f03b5b01b443f1611d514e9a7473a93c8e0e5a0
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56139612"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499553"
 ---
 # <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Réplicas de banco de dados para pontos de gerenciamento para o System Center Configuration Manager
 
@@ -162,7 +162,7 @@ Use o procedimento a seguir como um exemplo de como configurar o servidor de ré
    6. Na página **Segurança do Agente de Distribuição**, clique no botão de propriedades **(.…)** na linha Conexão do Assinante da caixa de diálogo e defina as configurações de segurança para a conexão.  
 
       > [!TIP]  
-      >  O botão de propriedades, **(....)**, está na quarta coluna da caixa de exibição.  
+      >  O botão de propriedades, **(....)** , está na quarta coluna da caixa de exibição.  
 
       **Configurações de segurança:**  
 
@@ -181,7 +181,7 @@ Use o procedimento a seguir como um exemplo de como configurar o servidor de ré
 
         Depois de definir as configurações de segurança da conexão, clique em **OK** para salvá-las e clique em **Próximo**.  
 
-   7. Na página **Agenda de sincronização** , na caixa de listagem **Agenda do Agente** , selecione **Definir agendamento**e configure a **Nova Agenda de Trabalho**. Defina a frequência para ocorrer **Diariamente**, a cada **5 minuto(s)**, e a duração para **Sem data de término**. Clique em **Próximo** para salvar o agendamento e clique em **Próximo** novamente.  
+   7. Na página **Agenda de sincronização** , na caixa de listagem **Agenda do Agente** , selecione **Definir agendamento**e configure a **Nova Agenda de Trabalho**. Defina a frequência para ocorrer **Diariamente**, a cada **5 minuto(s)** , e a duração para **Sem data de término**. Clique em **Próximo** para salvar o agendamento e clique em **Próximo** novamente.  
 
    8. Na página **Ações do assistente** , marque a caixa de seleção para **Criar a(s) assinatura(s)** e clique em **Próximo**.  
 
@@ -223,11 +223,11 @@ Use o procedimento a seguir como um exemplo de como configurar o servidor de ré
 
 Além de configurar o ponto de gerenciamento para usar o servidor de réplica de banco de dados, você deve habilitar a **Autenticação do Windows** no **IIS** no ponto de gerenciamento:  
 
-1.  Abra o **Gerenciador do IIS (Serviços de Informações da Internet)**.  
+1.  Abra o **Gerenciador do IIS (Serviços de Informações da Internet)** .  
 
 2.  Selecione o site da Web usado pelo ponto de gerenciamento e abra **Autenticação**.  
 
-3.  Defina a **Autenticação do Windows** como **Habilitada**e feche o **Gerenciador do IIS (Serviços de Informações da Internet)**.  
+3.  Defina a **Autenticação do Windows** como **Habilitada**e feche o **Gerenciador do IIS (Serviços de Informações da Internet)** .  
 
 ###  <a name="BKMK_DBReplica_Cert"></a> Etapa 4 – configurar um certificado autoassinado para o servidor de réplica de banco de dados  
  Você deve criar um certificado autoassinado no servidor de réplica de banco de dados e disponibilizar esse certificado para cada ponto de gerenciamento que usará esse servidor.  
@@ -429,7 +429,7 @@ Para dar suporte à notificação do cliente com uma réplica de banco de dados 
     Execute a consulta a seguir para configurar os detalhes necessários no servidor de réplica de banco de dados e para exportar o certificado ao servidor de réplica de banco de dados: **EXEC sp_BgbConfigSSBForReplicaDB '&lt;FQDN de réplica do SQL Server\>', '&lt;Nome do banco de dados de réplica\>', '&lt;Caminho de arquivo de backup de certificado\>'**  
 
    > [!NOTE]  
-   >  Se o servidor de réplica de banco de dados não estiver na instância padrão do SQL Server, será necessário especificar, nesta etapa, o nome da instância, além do nome do banco de dados de réplica. Para isso, substitua o **&lt;Nome do banco de dados de réplica\>** pelo **&lt;Nome da instância\\Nome do banco de dados de réplica\>**.  
+   >  Se o servidor de réplica de banco de dados não estiver na instância padrão do SQL Server, será necessário especificar, nesta etapa, o nome da instância, além do nome do banco de dados de réplica. Para isso, substitua o **&lt;Nome do banco de dados de réplica\>** pelo **&lt;Nome da instância\\Nome do banco de dados de réplica\>** .  
 
     Após exportar o certificado do servidor de réplica de banco de dados, coloque uma cópia do certificado no servidor do banco de dados dos sites primários.  
 
@@ -438,7 +438,7 @@ Para dar suporte à notificação do cliente com uma réplica de banco de dados 
     Execute a consulta a seguir para importar o certificado do servidor de réplica de banco de dados e especificar os detalhes necessários: **EXEC sp_BgbConfigSSBForRemoteService 'REPLICA', '&lt;Porta do SQL Service Broker\>', '&lt;Caminho do Arquivo de Certificado\>', '&lt;FQDN de Réplica do SQL Server\>', '&lt;Nome do banco de dados de réplica\>'**  
 
    > [!NOTE]  
-   >  Se o servidor de réplica de banco de dados não estiver na instância padrão do SQL Server, será necessário especificar, nesta etapa, o nome da instância, além do nome do banco de dados de réplica. Para isso, substitua o **&lt;Nome do banco de dados de réplica\>** pelo **\Nome da instância\\Nome do banco de dados de réplica\>**.  
+   >  Se o servidor de réplica de banco de dados não estiver na instância padrão do SQL Server, será necessário especificar, nesta etapa, o nome da instância, além do nome do banco de dados de réplica. Para isso, substitua o **&lt;Nome do banco de dados de réplica\>** pelo **\Nome da instância\\Nome do banco de dados de réplica\>** .  
 
 4. Em seguida, no servidor de banco de dados do site, execute o comando a seguir para exportar o certificado para esse servidor: **EXEC sp_BgbCreateAndBackupSQLCert '&lt;Caminho de Arquivo de Backup de Certificado\>'**  
 
@@ -458,7 +458,7 @@ Para dar suporte à notificação do cliente com uma réplica de banco de dados 
 -   Para cada réplica de banco de dados subsequentes que use esse script para configurar, atualize o nome amigável do certificado.  Para fazer isso, edite a linha **$enrollment.CertificateFriendlyName = "ConfigMgr SQL Server Identification Certificate"** e substitua **ConfigMgr SQL Server Identification Certificate** por um novo nome, como  **ConfigMgr SQL Server Identification Certificate1**.  
 
 ##  <a name="BKMK_DBReplicaOps"></a> Gerenciar configurações de réplica de banco de dados  
- Ao usar réplica de banco de dados em um site, observe as informações das seções abaixo para suplementar o processo executado para desinstalar uma réplica, desinstalar um site que use réplica de banco de dados ou mover o banco de dados do site para uma nova instalação de SQL Server. Ao usar as informações das seções abaixo para excluir publicações, siga as diretrizes para excluir a replicação transacional da versão de SQL Server utilizada para a réplica de banco de dados. Por exemplo, se você usa o SQL Server 2008 R2, confira [How to: Delete a Publication (Replication Transact-SQL Programming) (Como: excluir uma publicação (programação Transact-SQL de replicação))](http://go.microsoft.com/fwlink/p/?LinkId=273934).  
+ Ao usar réplica de banco de dados em um site, observe as informações das seções abaixo para suplementar o processo executado para desinstalar uma réplica, desinstalar um site que use réplica de banco de dados ou mover o banco de dados do site para uma nova instalação de SQL Server. Ao usar as informações das seções abaixo para excluir publicações, siga as diretrizes para excluir a replicação transacional da versão de SQL Server utilizada para a réplica de banco de dados. Por exemplo, se você usa o SQL Server 2008 R2, confira [How to: Como excluir uma publicação (Programação Transact-SQL de replicação)](http://go.microsoft.com/fwlink/p/?LinkId=273934).  
 
 > [!NOTE]  
 >  Após restaurar o banco de dados do site que estava configurado para as réplicas de banco de dados, reconfigure cada réplica para poder usá-las, recriando as publicações e assinaturas.  

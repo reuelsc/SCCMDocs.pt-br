@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e586990d049119c3cb00a61c56a1b84763104309
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 6e253d731c5c5cefa6bc13b04f40ab18855af4b8
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137891"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176893"
 ---
 # <a name="troubleshoot-package-conversion-manager"></a>Solução de problemas do Gerenciador de Conversão de Pacotes
 
@@ -38,7 +38,7 @@ Se o Provedor de SMS não está funcionando corretamente, o console do Configura
 
 ## <a name="package-readiness"></a>Preparação de pacote
 
-Antes de converter um pacote em um aplicativo, analise o pacote usando a função  **Analisar** do Gerenciador de Conversão de Pacotes. Após a análise, adicione a coluna **Preparação** ao nó **Pacotes** do console do Configuration Manager. A lista de pacotes exibe um dos seguintes estados de preparação do pacote analisado:
+Antes de converter um pacote em um aplicativo, analise o pacote usando a função **Analisar** do Gerenciador de Conversão de Pacotes. Após a análise, adicione a coluna **Preparação** ao nó **Pacotes** do console do Configuration Manager. A lista de pacotes exibe um dos seguintes estados de preparação do pacote analisado:
 
  - **Automática**: o pacote pode ser convertido diretamente com a função **Converter**.      
 
@@ -47,7 +47,7 @@ Antes de converter um pacote em um aplicativo, analise o pacote usando a funçã
 
  - **Manual**: o pacote precisa de algumas adições ou alterações antes que você possa convertê-lo usando a função **Corrigir e Converter**.  
 
- - **Não aplicável**: o pacote não é adequado para conversão. Corrija os problemas com o pacote ou continue a implantá-lo como um pacote.  
+ - **Não Aplicável**: o pacote não é adequado para conversão. Corrija os problemas com o pacote ou continue a implantá-lo como um pacote.  
 
  - **Erro**: o pacote contém erros. Corrija esses erros manualmente antes de analisar e convertê-lo.  
 

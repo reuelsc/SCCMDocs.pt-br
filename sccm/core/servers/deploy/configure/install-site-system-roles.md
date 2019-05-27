@@ -1,5 +1,5 @@
 ---
-title: Instalar funções do sistema de site
+title: Instalar funções do sistema de sites
 titleSuffix: Configuration Manager
 description: Os assistentes ajudam a adicionar funções do sistema de sites a um servidor do sistema de sites novo ou existente no site.
 ms.date: 2/7/2017
@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 61f5c774-7667-44ae-b8e4-a4951318b183
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d9028077d2d8fdae624ae7c10bfb7bf307f97a2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 991db8c7076f9f76515aba17df6339c133f1d63e
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128306"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65498583"
 ---
 # <a name="install-site-system-roles-for-system-center-configuration-manager"></a>Instalar funções do sistema de sites ao System Center Configuration Manager
 
@@ -24,9 +24,9 @@ ms.locfileid: "56128306"
 
 O console do System Center Configuration Manager tem dois assistentes que você pode usar para instalar funções de sistema de sites:  
 
--   **Assistente para Adicionar Funções do Sistema de Sites**: Use esse assistente para adicionar funções do sistema de site para um servidor do sistema de site existente no site.  
+-   **Assistente para Adicionar Funções do Sistema de Sites**: use esse assistente para adicionar funções do sistema de site para um servidor do sistema de site existente no site.  
 
--   **Assistente para Criar Servidor do Sistema de Sites**: Use esse assistente para especificar um novo servidor com um servidor do sistema de site e instale uma ou mais funções do sistema de site no servidor. Esse assistente é o mesmo que o **Assistente para Adicionar Funções do Sistema de Site**, exceto que na primeira página, você deve especificar o nome do servidor para usar e o site no qual você deseja instalá-lo.  
+-   **Assistente para Criar Servidor do Sistema de Sites**: use esse assistente para especificar um novo servidor com um servidor do sistema de site e instale uma ou mais funções do sistema de site no servidor. Esse assistente é o mesmo que o **Assistente para Adicionar Funções do Sistema de Site**, exceto que na primeira página, você deve especificar o nome do servidor para usar e o site no qual você deseja instalá-lo.  
 
 Ao instalar a função do sistema de site em um computador remoto (incluindo uma instância do Provedor de SMS), a conta do computador do computador remoto é adicionada ao grupo local no servidor de site. Quando o site é instalado em um controlador de domínio, o grupo no servidor de sites é um grupo de domínio, ao invés de um grupo local. Nesse caso, a função de sistema do site remoto não fica operacional até a reinicialização do computador da função de sistema do site ou até que o tíquete Kerberos para a conta do computador remoto seja atualizado. Para obter mais informações, consulte [Contas usadas no System Center Configuration Manager](../../../../core/plan-design/hierarchy/accounts.md).  
 

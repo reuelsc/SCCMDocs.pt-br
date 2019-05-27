@@ -2,27 +2,27 @@
 title: Ferramentas do Configuration Manager
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as ferramentas para ajudá-lo a gerenciar e solucionar problemas de infraestrutura do Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 04/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 395403dc-6997-4415-93fd-6b1eeb6ba31a
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1479524f08f17aa59f6e7dc771253a4fb6720189
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: b3324189cdf482684cc0738c51fbf336a65ee221
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131125"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500704"
 ---
 # <a name="configuration-manager-tools"></a>Ferramentas do Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-As ferramentas do Configuration Manager incluem [ferramentas baseadas em cliente](#client-tools) e [baseadas em servidor](#server-tools). Use essas ferramentas para ajudar a dar suporte e solucionar problemas de infraestrutura do Configuration Manager. 
+As ferramentas do Configuration Manager incluem [ferramentas baseadas em cliente](#client-tools) e [baseadas em servidor](#server-tools). Use essas ferramentas para ajudar a dar suporte e solucionar problemas de infraestrutura do Configuration Manager.
 
 Do Configuration Manager versão 1806 em diante, essas ferramentas estão incluídas na pasta `CD.Latest\SMSSETUP\Tools` no servidor do site. Nenhuma instalação adicional é necessária.<!--1357145--> Use essas versões das ferramentas com o Configuration Manager versão 1806 e posteriores.
 
@@ -67,16 +67,17 @@ Todos os sistemas operacionais do Windows listados como clientes compatíveis em
 - [Executar Ferramenta de Resumo do Medidor](/sccm/core/support/run-meter-summ): execute a tarefa de resumo de medição e analise os dados de medição
 
 > [!Note]  
-> A pasta ServerTools também inclui os seguintes arquivos 
+> A pasta ServerTools também inclui os seguintes arquivos:
+>
 > - AdminUI.WqlQueryEngine.dll
 > - Microsoft.ConfigurationManagement.ManagementProvider.dll
-> - Microsoft.Diagnostics.Tracing.EventSource.dll. 
+> - Microsoft.Diagnostics.Tracing.EventSource.dll
 >
 > Várias ferramentas de servidor exigem essas bibliotecas. Você não pode usá-las diretamente.  
 
 
 
-## <a name="other-tools"></a>Outras ferramentas
+## <a name="other-tools-and-toolkits"></a>Outras ferramentas e kits de ferramentas
 
 - [Ferramenta de limpeza da biblioteca de conteúdo](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool): use **ContentLibraryCleanup.exe** em `CD.Latest\SMSSETUP\TOOLS\ContentLibraryCleanup` para remover conteúdo órfão de um ponto de distribuição.  
 
@@ -85,3 +86,13 @@ Todos os sistemas operacionais do Windows listados como clientes compatíveis em
 - [Ferramenta de redefinição de atualização](/sccm/core/servers/manage/update-reset-tool): use **CMUpdateReset.exe** em `CD.Latest\SMSSETUP\TOOLS\CMUpdateReset` para corrigir problemas quando as atualizações no console tiverem problemas no download ou na replicação.  
 
 - [Ferramenta de Conexão de Serviço](/sccm/core/servers/manage/use-the-service-connection-tool): use **ServiceConnectionTool.exe** em `CD.Latest\SMSSETUP\TOOLS\ServiceConnectionTool` para manter o site atualizado quando o ponto de conexão de serviço estiver offline.  
+
+- [Centro de Suporte](/sccm/core/support/support-center): Colete informações de clientes para facilitar a análise ao solucionar problemas.
+
+- [MDT (Microsoft Deployment Toolkit)](/sccm/mdt/): Uma coleção de ferramentas, processos e diretrizes para automatizar as implantações de sistema operacional de desktop e servidor.
+
+- [SCUP (System Center Updates Publisher)](/sccm/sum/tools/updates-publisher): Uma ferramenta autônoma para gerenciar e importar as atualizações de software personalizado.
+
+- [Extensões do SCAP (Protocolo de Automação de Conteúdo de Segurança)](/sccm/compliance/plan-design/scap/about-scap): Analise e avalie o ambiente para conformidade com as linhas de base do NIST.
+
+- [Gerenciador de conversão de pacote](/sccm/apps/pcm/package-conversion-manager): Converta pacotes herdados em aplicativos.

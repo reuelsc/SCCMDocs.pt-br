@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 49505eb1-d44d-4121-8712-e0f3d8b15bf5
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6524fb7715c9bc3040996a16b4204464e0505123
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 38b2355159e3ce0472a5a5ceb0ff0a5f2275358d
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56139180"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499538"
 ---
 # <a name="configure-discovery-methods-for-configuration-manager"></a>Configurar métodos de descoberta para o Configuration Manager
 
@@ -37,7 +37,7 @@ Configure métodos de descoberta para encontrar recursos para gerenciá-los na r
 
 2.  Selecione o método de descoberta para o site em que deseja habilitar a descoberta.  
 
-3.  Na guia **Início** da faixa de opções, no grupo **Propriedades**, selecione **Propriedades**. Em seguida, na guia **Geral**, selecione a opção para **Habilitar &lt;método de descoberta\>**.  
+3.  Na guia **Início** da faixa de opções, no grupo **Propriedades**, selecione **Propriedades**. Em seguida, na guia **Geral**, selecione a opção para **Habilitar &lt;método de descoberta\>** .  
 
      Se essa opção já estiver habilitada, você poderá desabilitar o método de descoberta desmarcando a caixa de seleção.  
 
@@ -246,7 +246,7 @@ Para obter mais informações, consulte [Descoberta de usuários do Azure AD](/s
  > Se você *criar* o aplicativo para servidores por meio do Configuration Manager, o Azure AD criará automaticamente as permissões com o aplicativo. Você ainda precisa dar o consentimento ao aplicativo no portal do Azure.
 
  > [!Note]  
- > Se o usuário tiver uma identidade federada ou sincronizada, use a [descoberta de usuários do Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser) do Configuration Manager, bem como a descoberta de usuários do Azure AD. Para obter mais informações sobre identidades híbridas, consulte [Definir uma estratégia de adoção de identidade híbrida](/azure/active-directory/active-directory-hybrid-identity-design-considerations-identity-adoption-strategy).<!--497750-->
+ > Se o usuário tiver uma identidade federada ou sincronizada, use a [descoberta de usuários do Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser) do Configuration Manager, bem como a descoberta de usuários do Azure AD. Para saber mais sobre identidades híbridas, confira [Definir uma estratégia de adoção de identidade híbrida](/azure/active-directory/active-directory-hybrid-identity-design-considerations-identity-adoption-strategy).<!--497750-->
 
 
 

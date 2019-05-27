@@ -2,7 +2,7 @@
 title: Versões de visualização técnica
 titleSuffix: Configuration Manager
 description: Saiba mais sobre o branch de visualização técnica para fazer o test drive das novas funcionalidades e recursos no Configuration Manager.
-ms.date: 04/03/2019
+ms.date: 04/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2909de734954d9519c04bc02012c3bfe17c9b81f
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: c6797b25138bdd09dd4a879ef461d5420c38ab47
+ms.sourcegitcommit: 8eccf5429aabcef17d5762e4b03912ccad1215e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802505"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64928863"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Visualização técnica para o Configuration Manager
 
@@ -119,19 +119,25 @@ Os seguintes recursos estão disponíveis com a visualização técnica mais rec
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-1903"></a>Technical Preview versão 1903
+### <a name="technical-preview-version-1904"></a>Visualização Técnica versão 1904
 
 <!-- - [title](/sccm/core/get-started/2019/technical-preview-1901#bkmk_anchor) <!--ID-->
 
-- [Estimador de custo de serviços de nuvem](/sccm/core/get-started/2019/technical-preview-1903#bkmk_cmg) <!--3555774-->  
+- [Painel de preparação de atualização do Office 365 ProPlus](/sccm/core/get-started/2019/technical-preview-1904#bkmk_o365) <!--4021125-->  
 
-- [Use seu ponto de distribuição como um servidor de cache local para a Otimização de Entrega](/sccm/core/get-started/2019/technical-preview-1903#bkmk_doinc) <!--3555764-->  
+- [Configurar a atualização dinâmica durante as atualizações de recursos](/sccm/core/get-started/2019/technical-preview-1904#configure-dynamic-update-during-feature-updates) <!--4062619-->  
 
-- [Recuperar o bloqueio para editar sequências de tarefas](/sccm/core/get-started/2019/technical-preview-1903#bkmk_sedo) <!--3699337-->  
+- [GitHub e o Hub de Comunidade](/sccm/core/get-started/2019/technical-preview-1904#community-hub-and-github) <!--3555935,3555936-->  
 
-- [Detalhar atualizações necessárias](/sccm/core/get-started/2019/technical-preview-1903#bkmk_req-updates) <!--4224414-->  
+- [CMPivot autônomo](/sccm/core/get-started/2019/technical-preview-1904#bkmk_cmpivot) <!--3555890-->  
 
-- [Melhoria na criação de mídia de sequência de tarefas](/sccm/core/get-started/2019/technical-preview-1903#bkmk_tsmedia) <!--4090666-->  
+- [Melhorias na infraestrutura do Centro de Software ](/sccm/core/get-started/2019/technical-preview-1904#bkmk_swctr) <!--3555950-->  
+
+- [Controle aprimorado sobre a manutenção do WSUS](/sccm/core/get-started/2019/technical-preview-1904#improved-control-over-wsus-maintenance) <!--4110109-->  
+
+- [Pacotes de driver de pré-cache e imagens do sistema operacional](/sccm/core/get-started/2019/technical-preview-1904#bkmk_precache) <!--4224642-->  
+
+- [Melhorias na implantação do sistema operacional](/sccm/core/get-started/2019/technical-preview-1904#bkmk_osd) <!--2839943,4447680-->  
 
 > [!Note]  
 > Os recursos que estavam disponíveis em uma versão anterior da visualização técnica permanecem disponíveis em versões posteriores. De forma semelhante, os recursos que foram adicionadas ao branch atual do Configuration Manager permanecem disponíveis no branch da visualização técnica.  
@@ -147,6 +153,11 @@ Then remove the bottom of this list and/or move individual items not in CB to th
 
  | Recurso | Versão da visualização técnica | Versão do branch atual |  
  |---------|---------------------------|------------------------|
+ | Avaliador de Custos de Serviços de Nuvem <!--3555774--> | [Visualização Técnica 1903](/sccm/core/get-started/2019/technical-preview-1903#bkmk_cmg) | ![Não foi adicionado](media/Red_X.gif) |
+ | Use seu ponto de distribuição como um servidor de cache local para a Otimização de Entrega <!--3555764--> | [Visualização Técnica 1903](/sccm/core/get-started/2019/technical-preview-1903#bkmk_doinc) | ![Não foi adicionado](media/Red_X.gif) |
+ | Recuperar o bloqueio para editar sequências de tarefas <!--3699337--> | [Visualização Técnica 1903](/sccm/core/get-started/2019/technical-preview-1903#bkmk_sedo) | ![Não foi adicionado](media/Red_X.gif) |
+ | Detalhar atualizações necessárias <!--4224414--> | [Visualização Técnica 1903](/sccm/core/get-started/2019/technical-preview-1903#bkmk_req-updates) | ![Não foi adicionado](media/Red_X.gif) |
+ | Melhorias na criação de mídia de sequência de tarefas <!--4090666--> | [Visualização Técnica 1903](/sccm/core/get-started/2019/technical-preview-1903#bkmk_tsmedia) | ![Não foi adicionado](media/Red_X.gif) |
  | Idiomas adicionais para atualizações do Office 365 <!--3555955--> | [Tech Preview 1902.2](/sccm/core/get-started/2019/technical-preview-1902-2#bkmk_o365lang) | Versão 1902 |
  | Integração com análises para a preparação do Office 365 ProPlus <!--3735402--> | [Tech Preview 1902.2](/sccm/core/get-started/2019/technical-preview-1902-2#bkmk_o365) | Versão 1902 |
  | Melhoria dos critérios de sucesso da implantação em fases <!--3555946--> | [Tech Preview 1902.2](/sccm/core/get-started/2019/technical-preview-1902-2#bkmk_pod) | Versão 1902 |
@@ -178,11 +189,7 @@ Then remove the bottom of this list and/or move individual items not in CB to th
  | Interromper o serviço de nuvem quando ele exceder o limite <!--3735092--> | [Visualização Técnica 1901](/sccm/core/get-started/2019/technical-preview-1901#bkmk_cmg) | Versão 1902 |
  | Tempo limite do modo de provisionamento do cliente <!--3197824--> | [Visualização Técnica 1901](/sccm/core/get-started/2019/technical-preview-1901#bkmk_osdprov) | Versão 1902 |
  | Melhorias na implantação do sistema operacional <!--3633146,3641475,3654172,3734270--> | [Visualização Técnica 1901](/sccm/core/get-started/2019/technical-preview-1901#bkmk_osd) | Versão 1902 |
- | Melhorias na etapa da sequência de tarefas Executar Script do PowerShell <!--3556028 fka 1359389--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_posh) | Versão 1902 |
- | Melhorias nas aprovações de aplicativo por email <!--3594063--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_email) | Versão 1902 |
- | Configurar a afinidade de dispositivo do usuário no Centro de Software <!--3485366--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_uda) | Versão 1902 |
- | Melhorias no console do Configuration Manager <!--3594151--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_console) | Versão 1902 |
- | Baixar relatórios do Hub de Comunidade<!--3555936--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_hub) | ![Não foi adicionado](media/Red_X.gif) |
+
 
 ## <a name="features-in-previous-technical-previews"></a>Recursos em visualização técnicas anteriores
 
@@ -196,6 +203,7 @@ With each CB release, review and remove from this list for anything that's now a
 
 | Recurso        | Versão da visualização técnica |  
 |----------------|---------------------------|
+| Baixar relatórios do Hub de Comunidade<!--3555936--> | [Tech Preview 1812](capabilities-in-technical-preview-1812.md#bkmk_hub) |
 | Hub de Comunidade <!--3556020, fka 1357766--> | [Visualização técnica 1807](capabilities-in-technical-preview-1807.md#bkmk_hub) |
 | Serviço de respondente PXE baseado no cliente <!--3556018, fka 1357148--> | [Tech Preview 1712](capabilities-in-technical-preview-1712.md#client-based-pxe-responder-service) |
 | Suporte de inicialização de rede PXE para IPv6 <!--3601254, fka 1269793--> |[Visualização Técnica 1706](capabilities-in-technical-preview-1706.md#pxe-network-boot-support-for-ipv6)|

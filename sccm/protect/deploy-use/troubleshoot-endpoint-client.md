@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
 ms.assetid: d837253e-fcc2-422a-9e2c-c78b938dfd8c
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f7528f15c67e8ce339013db583d545cb252712d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: MTE75
+ms.openlocfilehash: 1b8bda1fd21ed3281142a717b768ff7d8c6ac3c3
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125656"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500420"
 ---
 # <a name="troubleshooting-windows-defender-or-endpoint-protection-client"></a>Solucionando problemas do cliente Windows Defender ou Endpoint Protection
 
@@ -234,7 +234,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 3.  Se você usar um modem com cabo ou um roteador DSL, verifique se as conexões com o roteador e para o computador está conectado. Tente desligar e desativar o roteador e o modem. Aguarde alguns minutos, conecte o modem primeiro, espere um minuto, e em seguida, conecte o roteador e reinicie o computador.  
 
 ##  <a name="detected-threat-cant-be-remediated"></a>Ameaça detectada não pode ser corrigida  
- Quando o Windows Defender ou o Endpoint Protection detecta uma possível ameaça oculta em um arquivo compactado com extensão de nome de arquivo .zip ou em um compartilhamento de rede, ele tenta colocá-la em quarentena ou removê-la.  
+ Quando o Windows Defender ou o Endpoint Protection detectar uma ameaça potencial oculta em um arquivo compactado com extensão de nome de arquivo .zip ou em um compartilhamento de rede, ele tentará lidar com essa ameaça colocando-a em quarentena ou removendo-a.  
 
 ### <a name="remove-or-scan-the-file"></a>Remova ou verifique o arquivo  
 

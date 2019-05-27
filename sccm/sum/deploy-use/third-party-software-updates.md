@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
 ms.assetid: 946b0f74-0794-4e8f-a6af-9737d877179b
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e361760d9d7a2b21f42dc7b9504d653b584fca0a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 04963f6c565a9cb83655416dd706d5dd9055a29b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132431"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499910"
 ---
 # <a name="enable-third-party-updates"></a>Habilitar atualizações de terceiros 
 
@@ -37,7 +37,7 @@ Da versão 1806 em diante, o nó **Catálogos de Atualização de Software de Te
 
 ## <a name="additional-requirements-when-the-sup-is-remote-from-the-top-level-site-server"></a>Requisitos adicionais quando SUP é remoto do servidor do site de nível superior 
 
-1. SSL deverá ser habilitado no SUP quando ele for remoto. Isso requer um certificado de autenticação de servidor gerado de uma autoridade de certificação interna ou por meio de um provedor público.
+1. SSL deverá ser habilitado no SUP quando ele for remoto. Isso requer um certificado de autenticação de servidor gerado por uma autoridade de certificação interna ou por meio de um provedor público.
     - [Configurar SSL no WSUS](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#bkmk_2.5.ConfigSSL)
         - Quando você configura SSL no WSUS, observe alguns dos serviços Web e os diretórios virtuais são sempre HTTP, e não HTTPS. 
         - O Configuration Manager baixa o conteúdo de terceiros para pacotes de atualização de software do seu diretório de conteúdo do WSUS por HTTP.   
@@ -108,12 +108,12 @@ Habilite atualizações de terceiros em clientes nas configurações do cliente.
 
      ![Catálogo personalizado para adicionar atualizações de terceiros](media/third-party-updates-custom-catalog.png)
 1. Na página **Geral**, especifique os itens a seguir: 
-    - **URL de download**: Um endereço HTTPS válido do catálogo personalizado.
-    - **Publicador**: O nome da organização que publica o catálogo. 
-    - **Nome**: O nome do catálogo a ser exibido no Console do Configuration Manager. 
-    - **Descrição**: Uma descrição do catálogo. 
-    - **URL de suporte** (opcional): Um endereço HTTPS válido de um site para obter ajuda com o catálogo. 
-    - **Contato para suporte** (opcional): Informações de contato para obter ajuda com o catálogo. 
+    - **URL de download**: um endereço HTTPS válido do catálogo personalizado.
+    - **Publicador**: o nome da organização que publica o catálogo. 
+    - **Nome**: o nome do catálogo a ser exibido no Console do Configuration Manager. 
+    - **Descrição**: uma descrição do catálogo. 
+    - **URL de suporte** (opcional): um endereço HTTPS válido de um site para obter ajuda com o catálogo. 
+    - **Contatar Suporte** (opcional): informações de contato para obter ajuda com o catálogo. 
 2. Clique em **Avançar** para examinar o resumo de catálogo e continuar com o preenchimento do **Assistente de Catálogo Personalizado de Atualizações de Software de Produtos de Terceiros**.
 
 
@@ -169,7 +169,7 @@ A sincronização de atualizações de software de terceiros é tratada pelo com
 
 ## <a name="status-messages"></a>Mensagens de status
 
-| MessageID       | Severidade           | Descrição | Causa possível| Possível solução
+| MessageID       | Severidade           | Descrição | Causa possível| Solução possível
 | ------------- |-------------| -----|----|----|
 | 11516     | Erro |Falha ao publicar o conteúdo para atualizar a "ID de Atualização" porque o conteúdo não assinado.  Somente o conteúdo com assinaturas válidas pode ser publicado.  |O Configuration Manager não permite que atualizações não assinadas sejam publicadas.| Publica a atualização de maneira alternativa. </br></br>Veja se uma atualização assinada está disponível do fornecedor.|
 | 11523  | Aviso |  O catálogo de "X" não inclui certificados de assinatura de conteúdo, tentativas de publicar o conteúdo para atualização desse catálogo poderão não obter sucesso até que os certificados de assinatura do conteúdo sejam adicionados e aprovados. | Essa mensagem pode ocorrer quando você importa um catálogo que está usando uma versão mais antiga do formato de arquivo cab.|Entre em contato com o provedor do catálogo para obter um catálogo atualizado que inclua os certificados de assinatura de conteúdo. </br> </br> Os certificados para os binários não estão incluídos no arquivo cab, de modo que a publicação do conteúdo cab falhará. Você pode contornar esse problema localizando o certificado no nó **Certificados**, desbloqueá-lo e, em seguida, publicar a atualização novamente. Se você estiver publicando várias atualizações assinadas com diferentes certificados, precisará desbloquear cada certificado usado.|

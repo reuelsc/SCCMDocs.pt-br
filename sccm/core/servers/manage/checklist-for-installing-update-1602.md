@@ -7,17 +7,17 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: b63ef197-01f0-4894-b929-5ef8403c5195
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 606e4a5573a2dd1c58ea1c85515029f2f27f1d29
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: ba54ff30f880520106ef615ef713781149776eda
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132608"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501215"
 ---
 # <a name="checklist-for-installing-update-1602-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1602 do System Center Configuration Manager
 
@@ -125,7 +125,7 @@ A partir da versão de atualização 1602, as janelas de manutenção passam a s
 
  **Execute o verificador de pré-requisitos de instalação:**  antes de instalar a atualização 1602, você pode executar o verificador de pré-requisitos independentemente da instalação da atualização. Ao instalar a atualização no site, o Verificador de Pré-requisitos é executado novamente.  
 
-Para obter mais informações, consulte a **Etapa 3: Executar o verificador de pré-requisitos antes de instalar uma atualização** no tópico [Atualizações do System Center Configuration Manager](../../../core/servers/manage/updates.md).  
+Para saber mais, confira a **Etapa 3: Executar o verificador de pré-requisitos antes de instalar uma atualização** no tópico [Atualizações do System Center Configuration Manager](../../../core/servers/manage/updates.md).  
 
 > [!IMPORTANT]  
 >  Quando o verificador de pré-requisitos for executado como parte de uma instalação de atualização ou de modo independente, o processo atualizará alguns arquivos de origem do produto que são usados para tarefas de manutenção do site. Portanto, após executar o verificador de pré-requisitos, mas antes de instalar a atualização 1602, se você precisa executar uma tarefa de manutenção de site, execute **Setupwfe.exe** (Instalação do Configuration Manager) na pasta CD.Latest no servidor de sites.  

@@ -2,7 +2,7 @@
 title: Monitorar o cogerenciamento
 titleSuffix: Configuration Manager
 description: Use o painel de cogerenciamento para examinar as informações sobre dispositivos cogerenciados.
-ms.date: 01/14/2019
+ms.date: 04/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c731692bc2277cc5ce97e079387b392ca09ff3e
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: f10e71bbf3099bad4d367f068c4a5f9e098f97eb
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "56754567"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083271"
 ---
 # <a name="how-to-monitor-co-management-in-configuration-manager"></a>Como monitorar o cogerenciamento no Configuration Manager
 
@@ -172,6 +172,7 @@ Para saber mais, confira [Valores de erro de registro do MDM](https://docs.micro
 
 duas políticas são criadas no nó **Implantações** do workspace **Monitoramento**. Uma política para o grupo piloto e outra para produção. Essas políticas relatam somente o número de dispositivos nos quais o Configuration Manager aplicou a política. Elas não consideram quantos dispositivos estão registrados no Intune, o que é um requisito para que os dispositivos possam ser cogerenciados.  
 
+A política de produção (CoMgmtSettingsProd) é direcionada para a coleção **Todos os Sistemas**. Ela tem uma condição de aplicabilidade que verifica o tipo e a versão do sistema operacional. Se o cliente for um servidor do sistema operacional ou se não for o Windows 10, a política não se aplica e nenhuma ação será tomada.
 
 
 ## <a name="wmi-device-data"></a>Dados de dispositivo do WMI

@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 68dc6acd-5848-47a4-b4c1-ffa40e47890b
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b395cc8a19a3aab86f3ad40302673d41afe4885
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 7cc2e1783843f600f88b78e0db0cc6b8b8db0f55
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123358"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500994"
 ---
 # <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Referência para tarefas de manutenção do System Center Configuration Manager
 
@@ -27,7 +27,7 @@ Este tópico lista detalhes de cada uma das tarefas de manutenção de site do S
 **Fazer backup do servidor do site**: use essa tarefa para preparar a recuperação de dados críticos. Você pode criar um backup de suas informações críticas para restaurar um site e o banco de dados do Configuration Manager. Para obter mais informações, consulte [Backup e recuperação para o System Center Configuration Manager](../../../protect/understand/backup-and-recovery.md).  
 
 -   **Site de administração central**: Habilitada    
--   **Site primário**: Não habilitado    
+-   **Site primário**: não ativado    
 -   Site secundário: Não disponível  
 
 **Verificar título do aplicativo com informações de inventário**: use essa tarefa para manter a consistência entre os títulos de software relatados no inventário de software e os títulos de software no catálogo do Asset Intelligence. Para obter mais informações, consulte [Introdução ao Asset Intelligence no System Center Configuration Manager](../../../core/clients/manage/asset-intelligence/introduction-to-asset-intelligence.md).  
@@ -38,13 +38,13 @@ Este tópico lista detalhes de cada uma das tarefas de manutenção de site do S
 
 **Limpar sinalizador de instalação**: use essa tarefa para remover o sinalizador instalado de clientes que não enviam um registro de descoberta de pulsação durante o período de **Redescoberta de Cliente**. O sinalizador instalado impede a instalação automática do cliente por push em um computador que possa ter um cliente do Configuration Manager ativo.  
 
--   Site de administração central: Não disponível    
--   **Site primário**: Não habilitado    
+-   Site da administração central: Não disponível    
+-   **Site primário**: não ativado    
 -   Site secundário: Não disponível  
 
-**Excluir dados antigos de solicitação de aplicativo**: Use esta tarefa para excluir solicitações de aplicativos antigas do banco de dados. Para obter mais informações sobre solicitações do aplicativo, consulte [Criar e implantar um aplicativo com o System Center Configuration Manager](/sccm/apps/get-started/create-and-deploy-an-application).  
+**Excluir dados antigos de solicitação de aplicativo**: use esta tarefa para excluir solicitações de aplicativos antigas do banco de dados. Para obter mais informações sobre solicitações do aplicativo, consulte [Criar e implantar um aplicativo com o System Center Configuration Manager](/sccm/apps/get-started/create-and-deploy-an-application).  
 
--   Site de administração central: Não disponível
+-   Site da administração central: Não disponível
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
@@ -71,51 +71,51 @@ Este tópico lista detalhes de cada uma das tarefas de manutenção de site do S
 - Site secundário - não disponível
 
 
-**Excluir arquivos antigos coletados**: Use esta tarefa para excluir informações obsoletas sobre arquivos coletados do banco de dados. Essa tarefa também exclui os arquivos coletados da estrutura de pasta do servidor do site no site selecionado. Por padrão, as cinco cópias mais recentes de arquivos coletados são armazenadas no servidor de sites no diretório **Inboxes\sinv.box\FileCol**. Para obter mais informações, consulte [Introdução ao inventário se software no System Center Configuration Manager](/sccm/core/clients/manage/inventory/introduction-to-software-inventory).  
+**Excluir arquivos antigos coletados**: use esta tarefa para excluir informações obsoletas sobre arquivos coletados do banco de dados. Essa tarefa também exclui os arquivos coletados da estrutura de pasta do servidor do site no site selecionado. Por padrão, as cinco cópias mais recentes de arquivos coletados são armazenadas no servidor de sites no diretório **Inboxes\sinv.box\FileCol**. Para obter mais informações, consulte [Introdução ao inventário se software no System Center Configuration Manager](/sccm/core/clients/manage/inventory/introduction-to-software-inventory).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Excluir dados antigos de associação de computador**: Use esta tarefa para excluir dados antigos de associação do computador de implantação do sistema operacional do banco de dados. Essas informações são usadas como parte da conclusão das restaurações de estado do usuário. Para obter mais informações sobre associações de computador, consulte [Gerenciar estado do usuário no System Center Configuration Manager](../../../osd/get-started/manage-user-state.md).  
+**Excluir dados antigos de associação de computador**: use esta tarefa para excluir dados antigos de associação do computador de implantação do sistema operacional do banco de dados. Essas informações são usadas como parte da conclusão das restaurações de estado do usuário. Para obter mais informações sobre associações de computador, consulte [Gerenciar estado do usuário no System Center Configuration Manager](../../../osd/get-started/manage-user-state.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Excluir dados antigos de detecção de exclusão**: Use esta tarefa para excluir dados antigos do banco de dados que foi criado pelas Exibições de Extração. Por padrão, as Exibições de Extração estão desabilitadas. Só é possível habilitá-las usando o SDK do Configuration Manager. A menos que as Exibições de Extração sejam habilitadas, não há nenhum dado para esta tarefa excluir.  
+**Excluir dados antigos de detecção de exclusão**: use esta tarefa para excluir dados antigos do banco de dados que foi criado pelas Exibições de Extração. Por padrão, as Exibições de Extração estão desabilitadas. Só é possível habilitá-las usando o SDK do Configuration Manager. A menos que as Exibições de Extração sejam habilitadas, não há nenhum dado para esta tarefa excluir.  
 
 -   **Site de administração central**: Habilitada    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Excluir registro antigo de apagamento de dispositivo**: Use esta tarefa para excluir dados antigos sobre ações de limpeza de dispositivo móvel do banco de dados. Para saber mais sobre como apagar dispositivos móveis, veja [Proteger seus dados com apagamento, bloqueio ou redefinição de senha remotos usando o System Center Configuration Manager](/sccm/mdm/deploy-use/wipe-lock-reset-devices).  
+**Excluir registro antigo de apagamento de dispositivo**: use esta tarefa para excluir dados antigos sobre ações de limpeza de dispositivo móvel do banco de dados. Para saber mais sobre como apagar dispositivos móveis, veja [Proteger seus dados com apagamento, bloqueio ou redefinição de senha remotos usando o System Center Configuration Manager](/sccm/mdm/deploy-use/wipe-lock-reset-devices).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Excluir dispositivos antigos gerenciados pelo conector do Exchange Server**: Use essa tarefa para excluir dados antigos dos dispositivos móveis gerenciados usando o conector do Exchange Server. Esses dados são excluídos de acordo com o intervalo configurado na opção **Ignorar dispositivos móveis que estejam inativos por mais de () dias** na guia **Descoberta** das propriedades do conector do Exchange Server. Para obter mais informações, consulte [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
+**Excluir dispositivos antigos gerenciados pelo conector do Exchange Server**: use essa tarefa para excluir dados antigos dos dispositivos móveis gerenciados usando o conector do Exchange Server. Esses dados são excluídos de acordo com o intervalo configurado na opção **Ignorar dispositivos móveis que estejam inativos por mais de () dias** na guia **Descoberta** das propriedades do conector do Exchange Server. Para obter mais informações, consulte [Gerenciar dispositivos móveis com o System Center Configuration Manager e o Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 
--   Site de administração central: Não disponível   
+-   Site da administração central: Não disponível   
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Excluir dados antigos de descoberta**: Use esta tarefa para excluir dados antigos de descoberta do banco de dados. Esses dados podem incluir registros resultantes dos métodos de descoberta de pulsação, descoberta de rede e descoberta do Active Directory Domain Services (Sistema, Usuário e Grupo). Essa tarefa também removerá dispositivos antigos marcados como desativados. Quando essa tarefa é executada em um site, os dados associados a esse site são excluídos, e essas alterações são replicadas em outros sites. Para obter mais informações sobre Descoberta, consulte [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
+**Excluir dados antigos de descoberta**: use esta tarefa para excluir dados antigos de descoberta do banco de dados. Esses dados podem incluir registros resultantes dos métodos de descoberta de pulsação, descoberta de rede e descoberta do Active Directory Domain Services (Sistema, Usuário e Grupo). Essa tarefa também removerá dispositivos antigos marcados como desativados. Quando essa tarefa é executada em um site, os dados associados a esse site são excluídos, e essas alterações são replicadas em outros sites. Para obter mais informações sobre Descoberta, consulte [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Excluir dados antigos de uso do ponto de distribuição**: Use esta tarefa para excluir dados antigos do banco de dados para pontos de distribuição que foram armazenados além de um tempo especificado.  
+**Excluir dados antigos de uso do ponto de distribuição**: use esta tarefa para excluir dados antigos do banco de dados para pontos de distribuição que foram armazenados além de um tempo especificado.  
 
 -   **Site de administração central**: Habilitada    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Excluir dados antigo de histórico de status de integridade do Endpoint Protection**: Use esta tarefa para excluir informações de status antigas do Endpoint Protection do banco de dados. Para saber mais sobre as informações de status do Endpoint Protection, consulte [Como monitorar o Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/monitor-endpoint-protection.md).  
+**Excluir dados antigo de histórico de status de integridade do Endpoint Protection**: use esta tarefa para excluir informações de status antigas do Endpoint Protection do banco de dados. Para saber mais sobre as informações de status do Endpoint Protection, consulte [Como monitorar o Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/monitor-endpoint-protection.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
@@ -123,17 +123,17 @@ Este tópico lista detalhes de cada uma das tarefas de manutenção de site do S
 
 Essa tarefa aplica-se a dispositivos registrados pelo Microsoft Intune (híbrido) ou registrados no gerenciamento de dispositivo móvel local do Configuration Manager. Para obter mais informações, consulte [Sistemas operacionais com suporte para clientes e dispositivos](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#bkmk_OnpremOS).
 
--   Site de administração central: Não disponível    
--   **Site primário**: Não habilitado    
+-   Site da administração central: Não disponível    
+-   **Site primário**: não ativado    
 -   Site secundário: Não disponível  
 
-**Excluir histórico antigo de inventário**: Use esta tarefa para excluir dados de inventário do banco de dados, que foram armazenados além do tempo especificado. Para obter informações sobre o histórico de inventário, consulte [Como usar o Gerenciador de Recursos para ver o inventário de hardware no System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
+**Excluir histórico antigo de inventário**: use esta tarefa para excluir dados de inventário do banco de dados, que foram armazenados além do tempo especificado. Para obter informações sobre o histórico de inventário, consulte [Como usar o Gerenciador de Recursos para ver o inventário de hardware no System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Excluir dados antigos de log**: Use esta tarefa para excluir dados antigos de log que são usados para solução de problemas do banco de dados. Esses dados não estão relacionados às operações de componente do Configuration Manager.  
+**Excluir dados antigos de log**: use esta tarefa para excluir dados antigos de log que são usados para solução de problemas do banco de dados. Esses dados não estão relacionados às operações de componente do Configuration Manager.  
 
 > [!IMPORTANT]  
 > Por padrão, esta tarefa é executada diariamente em cada site. Em um site de administração central e sites primários, a tarefa exclui dados com mais de 30 dias. Ao usar o SQL Server Express em um site secundário, certifique-se que esta tarefa seja executada diariamente e exclua os dados que ficaram inativos por 7 dias.  
@@ -144,7 +144,7 @@ Essa tarefa aplica-se a dispositivos registrados pelo Microsoft Intune (híbrido
 
 **Excluir histórico antigo de tarefas de notificação**: use essa tarefa para excluir informações sobre tarefas de notificação de cliente do banco de dados do site quando ele não for atualizado durante um período especificado. Para saber mais sobre notificações do cliente, veja [Tarefas de implantação de cliente do System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
@@ -166,39 +166,39 @@ Essa tarefa aplica-se a dispositivos registrados pelo Microsoft Intune (híbrido
 -   **Site primário**: Habilitada    
 -   **Site secundário**: Habilitada  
 
-**Excluir dados antigos de medição de software**: Use esta tarefa para excluir dados antigos de medição de software do banco de dados, armazenados além do tempo especificado. Para obter mais informações, consulte [Medição de software no System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
+**Excluir dados antigos de medição de software**: use esta tarefa para excluir dados antigos de medição de software do banco de dados, armazenados além do tempo especificado. Para obter mais informações, consulte [Medição de software no System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Excluir dados antigos de resumo de medição de software**: Use esta tarefa para excluir dados antigos de resumo de medição de software do banco de dados, armazenados além do tempo especificado. Para obter mais informações, consulte [Medição de software no System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
+**Excluir dados antigos de resumo de medição de software**: use esta tarefa para excluir dados antigos de resumo de medição de software do banco de dados, armazenados além do tempo especificado. Para obter mais informações, consulte [Medição de software no System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Excluir mensagens de status antigas**: Use esta tarefa para excluir dados de mensagens antigas de status como configurado nas regras de filtro de status do banco de dados. Para saber mais, veja a seção “Monitorar o sistema de status do Configuration Manager” no tópico [Usar alertas e o sistema de status para o System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+**Excluir mensagens de status antigas**: use esta tarefa para excluir dados de mensagens antigas de status como configurado nas regras de filtro de status do banco de dados. Para saber mais, veja a seção “Monitorar o sistema de status do Configuration Manager” no tópico [Usar alertas e o sistema de status para o System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
 -   **Site de administração central**: Habilitada    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Excluir dados antigos de ameaça**: Use esta tarefa para excluir dados de ameaça do banco de dados ao Endpoint Protection. armazenados além do tempo especificado. Para obter informações sobre o Endpoint Protection, consulte [Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
+**Excluir dados antigos de ameaça**: use esta tarefa para excluir dados de ameaça do banco de dados ao Endpoint Protection. armazenados além do tempo especificado. Para obter informações sobre o Endpoint Protection, consulte [Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
 **Excluir computadores desconhecidos antigos**: use essa tarefa para excluir informações sobre computadores desconhecidos do banco de dados do site quando ele não for atualizado durante um período especificado. Para obter mais informações, consulte [Preparar implantações de computador desconhecido no System Center Configuration Manager](../../../osd/get-started/prepare-for-unknown-computer-deployments.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Excluir dados antigos de afinidade de dispositivo de usuário**: Use esta tarefa para excluir dados antigos de afinidade de usuário do banco de dados. Para obter mais informações, consulte [Vincular usuários e dispositivos com a afinidade de dispositivo de usuário no System Center Configuration Manager](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md).  
+**Excluir dados antigos de afinidade de dispositivo de usuário**: use esta tarefa para excluir dados antigos de afinidade de usuário do banco de dados. Para obter mais informações, consulte [Vincular usuários e dispositivos com a afinidade de dispositivo de usuário no System Center Configuration Manager](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
@@ -207,30 +207,30 @@ Essa tarefa aplica-se a dispositivos registrados pelo Microsoft Intune (híbrido
 -   **Site primário**: Habilitada
 -   Site secundário: Não disponível
 
-**Excluir dados inativos de descoberta de cliente**: Use esta tarefa para excluir dados de descoberta para clientes inativos do banco de dados. Os clientes são marcados como inativos quando são sinalizados como obsoletos e por configurações feitas no status do cliente.
+**Excluir dados inativos de descoberta de cliente**: use esta tarefa para excluir dados de descoberta para clientes inativos do banco de dados. Os clientes são marcados como inativos quando são sinalizados como obsoletos e por configurações feitas no status do cliente.
 
 Esta tarefa só opera em recursos que são clientes do Configuration Manager. É diferente da tarefa **Excluir Dados Antigos de Descoberta**, que exclui qualquer registro de dados de descoberta antigo. Quando esta tarefa é executada em um site, remove os dados do banco de dados em todos os sites em uma hierarquia. Para obter mais informações, consulte [How to configure client status in System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).  
 
 > [!IMPORTANT]  
 > Quando habilitada, configure essa tarefa para ser executada em intervalos superiores aos do agendamento de **Descoberta de Pulsação**. Isso permite que os clientes ativos enviem um registro de Descoberta de Pulsação para marcar o registro do cliente como ativo, de forma que a tarefa não o exclua.  
 
--   Site de administração central: Não disponível    
--   **Site primário**: Não habilitado    
+-   Site da administração central: Não disponível    
+-   **Site primário**: não ativado    
 -   Site secundário: Não disponível  
 
-**Excluir alertas obsoletos**: Use esta tarefa para excluir alertas obsoletos do banco de dados, armazenados além do tempo especificado. Para obter mais informações, consulte [Usar alertas e o sistema de status para o System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+**Excluir alertas obsoletos**: use esta tarefa para excluir alertas obsoletos do banco de dados, armazenados além do tempo especificado. Para obter mais informações, consulte [Usar alertas e o sistema de status para o System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
 -   **Site de administração central**: Habilitada    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Excluir dados obsoletos de descoberta de cliente**: Use esta tarefa para excluir registros obsoletos de cliente do banco de dados. Um registro que está marcado como obsoleto geralmente foi substituído por um novo registro para o mesmo cliente. O registro mais recente torna-se o registro atual do cliente. Para obter mais informações sobre Descoberta, consulte [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
+**Excluir dados obsoletos de descoberta de cliente**: use esta tarefa para excluir registros obsoletos de cliente do banco de dados. Um registro que está marcado como obsoleto geralmente foi substituído por um novo registro para o mesmo cliente. O registro mais recente torna-se o registro atual do cliente. Para obter mais informações sobre Descoberta, consulte [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
 
 > [!IMPORTANT]  
 > Quando habilitada, configure essa tarefa para ser executada em intervalos superiores aos do agendamento de Descoberta de Pulsação. Isso permite que o cliente envie um registro de descoberta de pulsação que define o status obsoleto corretamente.  
 
--   Site de administração central: Não disponível    
--   **Site primário**: Não habilitado    
+-   Site da administração central: Não disponível    
+-   **Site primário**: não ativado    
 -   Site secundário: Não disponível  
 
 **Excluir sub-redes e sites obsoletos de descoberta de floresta**: Use essa tarefa para excluir dados sobre sites, sub-redes e domínios do Active Directory que não foram descobertos pelo método de descoberta de floresta do Active Directory nos últimos 30 dias. Isso remove os dados de descoberta, mas não afeta os limites criados por meio desses dados de descoberta. Para obter mais informações, consulte [Executar descoberta para o System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
@@ -244,15 +244,15 @@ Esta tarefa só opera em recursos que são clientes do Configuration Manager. É
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível
 
-**Excluir revisões não usadas de aplicativo**: Use esta tarefa para excluir revisões de aplicativos que não são mais referenciadas. Para mais informações, consulte [Como revisar e substituir aplicativos no System Center Configuration Manager](../../../apps/deploy-use/revise-and-supersede-applications.md).  
+**Excluir revisões não usadas de aplicativo**: use esta tarefa para excluir revisões de aplicativos que não são mais referenciadas. Para mais informações, consulte [Como revisar e substituir aplicativos no System Center Configuration Manager](../../../apps/deploy-use/revise-and-supersede-applications.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Avaliar membros da coleção**: Você configura a Avaliação de Associação da Coleção como um componente do site. Para obter mais informações sobre os componentes do site consulte [Site components for System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md).  
+**Avaliar membros da coleção**: configure a Avaliação de Associação da Coleção como um componente do site. Para obter mais informações sobre os componentes do site consulte [Site components for System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
@@ -266,29 +266,29 @@ Esta tarefa só opera em recursos que são clientes do Configuration Manager. É
 
 Para melhorar o desempenho, os índices do banco de dados do Configuration Manager são frequentemente atualizados para permanecerem sincronizados com os dados que são armazenados no banco de dados. Essa tarefa cria índices em colunas de banco de dados que são pelo menos 50 por cento exclusivas, elimina índices em colunas que são exclusivas em menos 50 por cento e reconstrói todos os índices existentes que atendem aos critérios de exclusividade dos dados.  
 
--   **Site de administração central**: Não habilitado    
--   **Site primário**: Não habilitado    
--   **Site secundário**: Não habilitado  
+-   **Site de administração central**: não ativado    
+-   **Site primário**: não ativado    
+-   **Site secundário**: não ativado  
 
-**Resumir dados de software instalado**: Use essa tarefa para resumir os dados do software instalado de vários registros em um registro geral. O resumo de dados pode compactar a quantidade de dados armazenados no banco de dados do Configuration Manager. Para obter mais informações, consulte [Introdução ao inventário se software no System Center Configuration Manager](../../clients/manage/inventory/introduction-to-software-inventory.md).  
+**Resumir dados de software instalado**: use essa tarefa para resumir os dados do software instalado de vários registros em um registro geral. O resumo de dados pode compactar a quantidade de dados armazenados no banco de dados do Configuration Manager. Para obter mais informações, consulte [Introdução ao inventário se software no System Center Configuration Manager](../../clients/manage/inventory/introduction-to-software-inventory.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Resumir dados de uso do arquivo de medição de software**: Use essa tarefa para resumir os dados de vários registros do software medindo o uso do arquivo em um registro geral. O resumo de dados pode compactar a quantidade de dados armazenados no banco de dados do Configuration Manager.
+**Resumir dados de uso do arquivo de medição de software**: use essa tarefa para resumir os dados de vários registros do software medindo o uso do arquivo em um registro geral. O resumo de dados pode compactar a quantidade de dados armazenados no banco de dados do Configuration Manager.
 
 É possível usar esta tarefa com a tarefa **Resumir Dados de Uso Mensal de Medição de Software** para resumir dados de medição de software e para conservar o espaço em disco no banco de dados do Configuration Manager. Para obter mais informações, consulte [Medição de software no System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Resumir dados de uso mensal de medição de software**: Use essa tarefa para resumir os dados de vários registros de uso mensal de medição de software em um registro geral. O resumo de dados pode compactar a quantidade de dados armazenados no banco de dados do Configuration Manager.
+**Resumir dados de uso mensal de medição de software**: use essa tarefa para resumir os dados de vários registros de uso mensal de medição de software em um registro geral. O resumo de dados pode compactar a quantidade de dados armazenados no banco de dados do Configuration Manager.
 
 É possível usar esta tarefa com a tarefa **Resumir Dados de Uso de Arquivo de Medição de Software** para resumir dados de medição de software e para conservar o espaço no banco de dados do Configuration Manager. Para obter mais informações, consulte [Medição de software no System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
@@ -296,12 +296,12 @@ Para melhorar o desempenho, os índices do banco de dados do Configuration Manag
 
 Esses mapeamentos são armazenados em uma tabela para referência rápida. Quando uma associação de coleções é alterada, esses mapeamentos armazenados são atualizados para que reflitam essas mudanças. No entanto, é possível que esses mapeamentos fiquem fora de sincronia. Por exemplo, se o site não processar corretamente um arquivo de notificação, essa mudança pode não ser refletida em uma alteração nos mapeamentos. Essa tarefa atualiza esse mapeamento com base na associação de coleção atual.  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  
 
-**Atualizar tabelas do Catálogo de Aplicativos**: Use essa tarefa para sincronizar o cache de banco de dados do site de Catálogo do Aplicativo com as informações mais recentes do aplicativo. Quando você altera a configuração dessa tarefa de manutenção, a configuração se aplica a todo site primário na hierarquia.  
+**Atualizar tabelas do Catálogo de Aplicativos**: use essa tarefa para sincronizar o cache de banco de dados do site de Catálogo do Aplicativo com as informações mais recentes do aplicativo. Quando você altera a configuração dessa tarefa de manutenção, a configuração se aplica a todo site primário na hierarquia.  
 
--   Site de administração central: Não disponível    
+-   Site da administração central: Não disponível    
 -   **Site primário**: Habilitada    
 -   Site secundário: Não disponível  

@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: bb0a87a6-fd65-440b-90a5-2fef35622c9d
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c0705df8fafea253fde06ed605521aad2d6ffbd
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: d8d681dbd9996fb7eddbc2b37cf6af6a32401560
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131703"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65497594"
 ---
 # <a name="checklist-for-installing-update-1806-for-configuration-manager"></a>Lista de verificação para instalar a atualização 1806 do Configuration Manager
 
@@ -140,7 +140,8 @@ Para obter mais informações, confira [Atualizar clientes](/sccm/core/clients/
 Para definir um período no qual as atualizações a um servidor do site podem ser instaladas, use as janelas de serviço. Isso pode ajudar a controlar quando os sites em sua hierarquia instalam a atualização. Para obter mais informações, confira [Períodos de serviço para servidores do site](/sccm/core/servers/manage/service-windows).
 
 #### <a name="review-supported-extensions"></a>Examinar extensões com suporte
-<!--SCCMdocs#587--> Se você ampliar o Configuration Manager com outros produtos da Microsoft ou de parceiros da Microsoft, confirme se eles são compatíveis com a versão 1806. Solicite essas informações ao fornecedor do produto. Por exemplo, confira as [notas de versão](/sccm/mdt/release-notes) do Microsoft Deployment Toolkit.
+<!--SCCMdocs#587-->
+Se você ampliar o Configuration Manager com outros produtos da Microsoft ou de parceiros da Microsoft, confirme se eles dão suporte à versão 1806. Solicite essas informações ao fornecedor do produto. Por exemplo, confira as [notas de versão](/sccm/mdt/release-notes) do Microsoft Deployment Toolkit.
 
 #### <a name="run-the-setup-prerequisite-checker"></a>Executar o verificador de pré-requisitos de instalação   
 Quando a atualização está listada no console como **Disponível**, você pode executar o verificador de pré-requisitos independentemente antes de instalar a atualização. (Ao instalar a atualização no site, o verificador de pré-requisitos é executado novamente).

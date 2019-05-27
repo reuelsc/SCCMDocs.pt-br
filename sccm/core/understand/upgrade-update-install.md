@@ -2,7 +2,7 @@
 title: Sobre upgrade, atualização e instalação
 titleSuffix: Configuration Manager
 description: Aprenda a diferença entre os termos Instalação, Atualização e Upgrade ao gerenciar a infraestrutura do Configuration Manager.
-ms.date: 1/11/2017
+ms.date: 04/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df4daee11a72100debb93270fc6e51ab1a5e2622
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 53803d154a871739c5dd8cf7eaff4eebf92fd651
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140037"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083431"
 ---
 # <a name="about-upgrade-update-and-install-for-site-and-hierarchy-infrastructure"></a>Sobre upgrade, atualização e instalação para infraestrutura de site e hierarquia
 
@@ -34,11 +34,11 @@ Para saber mais detalhes, confira [Atualização para o System Center Configurat
 
 
 ## <a name="update"></a>Atualização
-A *atualização* é usada para instalar atualizações no console do System Center Configuration Manager e para atualizações fora de banda, que são atualizações que não podem ser entregues de dentro do console do Configuration Manager. As atualizações no console podem modificar a versão de seu site de Branch Atual (ou site de Technical Preview) para execute uma versão posterior. Por exemplo, se o seu site executar a versão 1606, você poderá instalar uma atualização para a versão 1610. As atualizações também podem instalar correções para um problema conhecido, sem modificar a versão dos sites.      
+A *atualização* é usada para instalar atualizações no console do System Center Configuration Manager e para atualizações fora de banda, que são atualizações que não podem ser entregues de dentro do console do Configuration Manager. As atualizações no console podem modificar a versão de seu site de Branch Atual (ou site de Technical Preview) para execute uma versão posterior. Por exemplo, se o seu site executar a versão 1806, você poderá instalar uma atualização para a versão 1810. As atualizações também podem instalar correções para um problema conhecido sem modificar a versão do site.      
 
-Normalmente, as atualizações adicionam novos recursos, correções de segurança melhoram a qualidade de sua implantação existente. Se você usar a ramificação Technical Preview, uma atualização poderá instalar uma versão mais recente do Technical Preview.
+Normalmente, as atualizações adicionam novos recursos, melhorias de qualidade e correções de segurança à implantação existente. Se você usar a ramificação Technical Preview, uma atualização poderá instalar uma versão mais recente do Technical Preview.
 -   Escolha quando instalar a atualização no console, começando pelo site de nível superior de sua hierarquia.
-- Você pode instalar qualquer atualização disponível no console. Por exemplo, se seu site executar a versão 1602, e as versões 1606 e 1610 forem oferecidas, considere a instalação da versão 1610, pois cada versão inclui os recursos disponibilizados nas versões anteriores.
+- Você pode instalar qualquer atualização disponível no console. Por exemplo, se seu site executar a versão 1802, e as versões 1806 e 1810 forem oferecidas, considere a instalação da versão 1810, pois cada versão inclui os recursos disponibilizados nas versões anteriores.
 - Após a conclusão da instalação de uma nova atualização em seu site de nível superior, os sites primários filhos começarão automaticamente o processo de atualização. No entanto, você pode configurar [Períodos de manutenção](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkservicewindowa-service-windows-for-site-servers) para controlar o cronograma das atualizações.
 - Os sites secundários não instalam automaticamente as atualizações. Em vez disso, inicie manualmente a atualização de dentro do console do Configuration Manager.
 

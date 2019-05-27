@@ -1,8 +1,8 @@
 ---
 title: Criar mídia de sequência de tarefas
 titleSuffix: Configuration Manager
-description: Crie mídia de sequência de tarefas, como um CD, para implantar um sistema operacional em um computador de destino em seu ambiente do Configuration Manager.
-ms.date: 10/06/2016
+description: Crie uma mídia de sequência de tarefas para implantar um SO em um computador de destino no seu ambiente do Configuration Manager.
+ms.date: 05/02/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,57 +11,75 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3aa7a1acdd6378e41afe24c869a8ffa898a916b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 101cee8ed63cacfc41481b2df69b42e1760d8837
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122603"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65082810"
 ---
-# <a name="create-task-sequence-media-with-system-center-configuration-manager"></a>Criar mídia de sequência de tarefas com o System Center Configuration Manager
+# <a name="create-task-sequence-media"></a>Criar mídia de sequência de tarefas
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Você pode usar mídia para capturar uma imagem de sistema operacional de um computador de referência ou implantar um sistema operacional em um computador de destino em seu ambiente do System Center Configuration Manager. A mídia que você criar pode ser um conjunto de CD, DVD ou uma unidade flash USB.  
+Você pode usar a mídia para capturar uma imagem do SO de um computador de referência ou para implantar um SO em um computador de destino no seu ambiente do Configuration Manager. A mídia que você criar pode ser um conjunto de CD, DVD ou uma unidade flash USB.  
 
- A mídia é usada muitas vezes para implantar sistemas operacionais em computadores de destino que não têm uma conexão de rede ou que têm uma conexão de baixa largura de banda em seu local do Configuration Manager. No entanto, a mídia de implantação também é usada para iniciar a implantação do sistema operacional fora de um sistema operacional Windows. Esse segundo uso de mídia de implantação é importante às vezes, quando não há sistema operacional no computador de destino, o sistema operacional está em um estado não operacional ou o usuário administrativo deseja fazer a repartição do disco rígido no computador de destino.  
+A mídia é usada principalmente para implantar sistemas operacionais em computadores de destino que não tenham uma conexão de rede ou que tenham uma conexão de baixa largura de banda com o seu site do Configuration Manager. No entanto, você também pode usar mídia para iniciar uma implantação de SO fora de um SO Windows existente. Esse método é útil quando não há um SO, quando o SO não está funcionando ou se você deseja reparticionar o disco rígido.  
 
- A mídia de implantação inclui mídia inicializável, mídia autônoma e mídia em pré-teste. O conteúdo da mídia de implantação varia, dependendo do tipo de mídia que você usar. Por exemplo, mídia autônoma contém a sequência de tarefas que implanta o sistema operacional, enquanto outros tipos de mídia recuperam sequências de tarefas do ponto de gerenciamento.  
-
-> [!IMPORTANT]  
->  Para criar uma mídia de sequência de tarefas, é preciso ser um administrador no computador no qual você executa o console do Configuration Manager. Se você não for um administrador, serão solicitadas as credenciais de administrador quando você iniciar o assistente para Criar Mídia de Sequência de Tarefas.  
-
-##  <a name="BKMK_PlanCaptureMedia"></a> Mídia de captura para imagens do sistema operacional  
- Mídia de captura permite que você capture uma imagem do sistema operacional de um computador de referência. A mídia de captura contém a imagem de inicialização que inicia o computador de referência e a sequência de tarefas que captura a imagem do sistema operacional. Para obter informações sobre como criar mídia de captura, consulte [Create capture media with System Center Configuration Manager](create-capture-media.md) (Criar mídia de captura com o System Center Configuration Manager).  
-
-##  <a name="BKMK_PlanBootableMedia"></a> Implantações de sistema operacional com mídia inicializável  
- A mídia inicializável contém somente a imagem de inicialização, [comandos prestart](../understand/prestart-commands-for-task-sequence-media.md) opcionais e seus arquivos necessários, bem como binários do Configuration Manager. Quando o computador de destino é iniciado, conecta-se à rede e recupera a sequência de tarefas, a imagem do sistema operacional e qualquer outro conteúdo necessário da rede. Como a sequência de tarefa não está na mídia, você pode alterar a sequência de tarefas ou o conteúdo sem precisar recriar a mídia.  
+A mídia de implantação inclui mídia inicializável, mídia autônoma e mídia em pré-teste. O conteúdo da mídia varia dependendo do tipo de mídia usado. Por exemplo, a mídia autônoma contém a sequência de tarefas que implanta o SO. Outros tipos de mídia recuperam sequências de tarefas do ponto de gerenciamento.  
 
 > [!IMPORTANT]  
->  Os pacotes em mídia inicializável não são criptografados. O usuário administrativo deve tomar as medidas de segurança apropriadas, como adicionar uma senha à mídia, verificar se o conteúdo do pacote está protegido contra usuários não autorizados.  
+> Para criar uma mídia de sequência de tarefas, você deve ser administrador no computador em que executa o console do Configuration Manager. Se você não for administrador, receberá um prompt para inserir credenciais de administrador ao iniciar o Assistente para Criar Mídia de Sequência de Tarefas.  
 
- Para obter informações sobre como criar a mídia inicializável, veja [Criar mídia inicializável](create-bootable-media.md).  
 
-##  <a name="BKMK_PlanPrestagedMedia"></a> Implantações de sistema operacional com mídia pré-configurada  
- Mídia pré-testada permite que você pré-teste a mídia inicializável e uma imagem de sistema operacional em um disco rígido para o processo de provisionamento. A mídia pré-testada é um arquivo em formato WIM (Windows Imaging) que pode ser instalado em um computador bare-metal pelo fabricante ou em um centro de preparo corporativo que não está conectado ao ambiente do Configuration Manager.  
+## <a name="BKMK_PlanCaptureMedia"></a> Mídia de captura
 
- A mídia em pré-teste contém a imagem de inicialização usada para iniciar o computador de destino e a imagem do sistema operacional aplicada ao computador de destino. Também é possível especificar aplicativos, pacotes e pacotes de driver para incluir como parte da mídia pré-configurada. A sequência de tarefas que implanta o sistema operacional não está incluída na mídia. Ao implantar uma sequência de tarefas que utiliza a mídia pré-configurada, o cliente primeiro verifica se há conteúdo válido no cache local da sequência de tarefas e, caso o conteúdo não possa ser localizado ou não foi revisado, o cliente baixa o conteúdo do ponto de distribuição.  
+A mídia de captura permite capturar uma imagem do sistema operacional em um computador de referência. A mídia de captura contém a imagem de inicialização que inicia o computador de referência e a sequência de tarefas que captura a imagem do SO.
 
- A mídia pré-testada é aplicada à unidade de disco rígido de um novo computador antes do computador ser enviado ao usuário final. Quando o computador inicia pela primeira vez, após a mídia pré-testada ter sido aplicada, o computador inicia o Windows PE e conecta-se a um ponto de gerenciamento para localizar a sequência de tarefas que conclui o processo de implantação do sistema operacional.  
+Para saber mais sobre como criar a mídia de captura, confira [Criar mídia de captura](/sccm/osd/deploy-use/create-capture-media).  
+
+
+## <a name="BKMK_PlanBootableMedia"></a> Mídia inicializável
+
+A mídia inicializável contém os seguintes componentes:
+
+- A imagem de inicialização
+- [Comandos prestart](/sccm/osd/understand/prestart-commands-for-task-sequence-media) opcionais e seus arquivos necessários
+- Binários do Configuration Manager
+
+Quando o computador de destino é iniciado, ele se conecta à rede e recupera a sequência de tarefas, a imagem do SO e qualquer outro conteúdo necessário da rede. Como a sequência de tarefas não está na mídia, você pode alterar a sequência de tarefas ou o conteúdo sem ter que recriar a mídia.  
 
 > [!IMPORTANT]  
->  Os pacotes em mídia pré-testada não são criptografados. O usuário administrativo deve tomar as medidas de segurança apropriadas, como adicionar uma senha à mídia, verificar se o conteúdo do pacote está protegido contra usuários não autorizados.  
+> Os pacotes em uma mídia inicializável não são criptografados. Tome medidas de segurança apropriadas, como adicionar uma senha à mídia, para garantir que o conteúdo do pacote fique protegido contra usuários não autorizados.  
 
- Para obter informações sobre como criar uma mídia pré-configurada, consulte [Criar mídia pré-configurada](create-prestaged-media.md).  
+Para saber mais sobre como criar uma mídia inicializável, confira [Criar mídia inicializável](/sccm/osd/deploy-use/create-bootable-media).  
 
-##  <a name="BKMK_PlanStandaloneMedia"></a> Implantações de sistema operacional com mídia autônoma  
- Mídia autônoma contém tudo o que é necessário para implantar o sistema operacional. Isso inclui a sequência de tarefas e qualquer outro conteúdo necessário. Como tudo o que é necessário para implantar o sistema operacional é armazenado na mídia autônoma, o espaço em disco necessário para mídia autônoma é significativamente maior do que o espaço em disco necessário para outros tipos de mídia.  
 
- Para mais informações sobre como criar mídia autônoma, consulte [Criar mídia autônoma](create-stand-alone-media.md).  
+## <a name="BKMK_PlanPrestagedMedia"></a> Mídia em pré-teste
 
-## <a name="media-considerations-when-using-site-systems-configured-for-https"></a>Considerações sobre mídia ao usar sistemas de sites configurados para HTTPS  
- Quando seu ponto de gerenciamento e pontos de distribuição são configurados para usar comunicação HTTPS, você deve criar mídia de inicialização e mídia em pré-teste no site primário, não no site de administração central. Além disso, considere o seguinte para ajudá-lo a determinar se deseja configurar a mídia como dinâmica ou com base no site:  
+A mídia em pré-teste aplicar uma mídia inicializável e uma imagem do SO a um disco rígido antes do processo de provisionamento. A mídia em pré-teste é um arquivo de imagem do Windows (WIM). Ela pode ser instalada em um computador sem sistema operacional pelo fabricante ou no seu centro de preparo que não esteja conectado ao ambiente de produção do Configuration Manager.  
 
--   Para configurar a mídia como mídia dinâmica, todos os sites primários devem ter autoridade de certificação raiz do site por meio do qual você criou a mídia. Você pode importar a autoridade de certificação raiz para todos os sites primários na sua hierarquia.  
+A mídia em pré-teste contém a imagem de inicialização usada para iniciar o computador de destino e a imagem do SO aplicada ao computador de destino. Também é possível especificar aplicativos, pacotes e pacotes de driver para incluir como parte da mídia em pré-teste. A sequência de tarefas que implanta o SO não está incluída na mídia. Quando você implanta uma sequência de tarefas que usa uma mídia em pré-teste, primeiro o cliente verifica o cache de sequência de tarefas local em busca de conteúdo válido. Se o conteúdo não for encontrado ou se tiver sido revisado, o cliente baixará o conteúdo de um ponto de distribuição ou par.  
 
--   Quando sites primários na hierarquia do Configuration Manager usam autoridades de certificação raízes diferentes, você deve usar mídia baseada em site em cada site.  
+A mídia em pré-teste é aplicada à unidade de disco rígido de um novo computador antes do computador ser enviado ao usuário final. Quando o computador é iniciado pela primeira vez após a aplicação da mídia em pré-teste, ele é iniciado no Windows PE. O computador se conecta a um ponto de gerenciamento para localizar a sequência de tarefas que conclui o processo de implantação do SO.  
+
+> [!IMPORTANT]  
+> Os pacotes na mídia em pré-teste não são criptografados. Tome medidas de segurança apropriadas, como adicionar uma senha à mídia, para garantir que o conteúdo do pacote fique protegido contra usuários não autorizados.  
+
+Para saber mais sobre como criar uma em pré-teste, confira [Criar mídia em pré-teste](/sccm/osd/deploy-use/create-prestaged-media).  
+
+
+## <a name="BKMK_PlanStandaloneMedia"></a> Mídia autônoma
+
+A mídia autônoma contém tudo o que é necessário para implantar o SO. Esse conteúdo inclui a sequência de tarefas e qualquer outro conteúdo necessário. Como tudo o que é necessário para implantar o SO está armazenado na mídia autônoma, o espaço em disco necessário para a mídia autônoma é maior do que para outros tipos de mídia.  
+
+Para saber mais sobre como criar uma mídia autônoma, confira [Criar mídia autônoma](/sccm/osd/deploy-use/create-stand-alone-media).  
+
+
+## <a name="considerations-when-using-https"></a>Considerações ao usar o HTTPS
+
+Quando você configurar seus pontos de gerenciamento e pontos de distribuição para usar HTTPS, crie a mídia de inicialização e a mídia em pré-teste em um site primário, e não no site de administração central. Além disso, considere o seguinte ponto para ajudá-lo a determinar se a mídia deve ser configurada como dinâmica ou baseada em site:  
+
+- Para configurar a mídia como dinâmica, todos os sites primários devem ter a autoridade de certificação raiz (CA) do site no qual você criou essa mídia. Você pode importar a autoridade de certificação raiz para todos os sites primários na sua hierarquia.  
+
+- Quando sites primários na hierarquia do Configuration Manager usam autoridades de certificação raízes diferentes, você deve usar mídia baseada em site em cada site.  

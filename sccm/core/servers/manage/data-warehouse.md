@@ -2,30 +2,31 @@
 title: Data warehouse
 titleSuffix: Configuration Manager
 description: Banco de dados e ponto de serviço de data warehouse para o Configuration Manager
-ms.date: 11/27/2018
+ms.date: 05/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: aaf43e69-68b4-469a-ad58-9b66deb29057
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4630504cbbf4b00fbfa12b666e26b93fcda09ae5
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 02990fa09e18a9e46914ff622ed20f4cbb958f33
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130166"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501132"
 ---
 #  <a name="the-data-warehouse-service-point-for-configuration-manager"></a>O ponto de serviço do data warehouse para o Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-<!--1277922--> Use o ponto de serviço do data warehouse para armazenar e relatar dados históricos de longo prazo da sua implantação do Configuration Manager.
+<!--1277922-->
+Use o ponto de serviço do data warehouse para armazenar e relatar dados históricos de longo prazo da sua implantação do Configuration Manager.
 
 > [!Note]  
-> O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, veja [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 
 O data warehouse dá suporte a até 2 TB de dados, com carimbos de data e hora para controle de alterações. O data warehouse armazena dados automaticamente sincronizando dados do banco de dados do site do Configuration Manager com o banco de dados de data warehouse. Essas informações ficam acessíveis de seu ponto do Reporting Services. Dados sincronizados com o banco de dados de data warehouse são mantidos por três anos. Periodicamente, uma tarefa interna remove os dados com mais de três anos.
@@ -84,7 +85,7 @@ Cada hierarquia dá suporte a uma única instância dessa função, em qualquer 
 
 Para instalar a função, use o **Assistente para Adicionar Funções de Sistema de Site** ou o **Assistente para Criar Funções do Sistema de Site**. Para saber mais, confira [Instalar funções do sistema de sites](/sccm/core/servers/deploy/configure/install-site-system-roles). Na página **Seleção de Função do Sistema** do assistente, selecione a função **Ponto de serviço do Data Warehouse**. 
 
-Ao instalar a função, o Configuration Manager cria o banco de dados de data warehouse para você em uma instância especificada do SQL Server. Se você especificar o nome de um banco de dados existente, o Configuration Manager não criará um novo banco de dados. Em vez disso, ele usa um que você especifica. Esse processo é o mesmo de quando você [move o banco de dados de data warehouse para um novo SQL Server](#move-the-data-warehouse-database).
+Ao instalar a função, o Configuration Manager cria o banco de dados de data warehouse para você em uma instância especificada do SQL Server. Se você especificar o nome de um banco de dados existente, o Configuration Manager não criará um novo banco de dados. Em vez disso, ele usa um que você especifica. Esse processo é o mesmo de quando você [move o banco de dados de data warehouse para um novo SQL Server](#move-the-database).
 
 
 ### <a name="configure-properties"></a>Configurar propriedades
@@ -137,7 +138,7 @@ Ao instalar a função, o Configuration Manager cria o banco de dados de data wa
 Depois de instalar um ponto de serviço do data warehouse, vários relatórios são disponibilizados no ponto do Reporting Services para o site. Se você instalar o ponto de serviço do data warehouse antes de instalar um ponto do reporting services, os relatórios serão adicionados automaticamente ao instalar posteriormente o ponto do reporting services.
 
 > [!WARNING]  
-> Iniciando na versão 1802, o ponto do data warehouse dá suporte a credenciais alternativas.<!--507334--> Se você tiver atualizado de uma versão anterior do Configuration Manager, precisará especificar as credenciais que serão usadas pelo SQL Server Reporting Services para se conectar ao banco de dados de data warehouse. Relatórios do data warehouse não abrem até você adicionar as credenciais. 
+> A partir da versão 1802, o ponto do data warehouse dá suporte a credenciais alternativas.<!--507334--> Se você tiver atualizado de uma versão anterior do Configuration Manager, precisará especificar as credenciais que serão usadas pelo SQL Server Reporting Services para se conectar ao banco de dados de data warehouse. Relatórios do data warehouse não abrem até você adicionar as credenciais. 
 > 
 > Para especificar uma conta, defina o **Nome de usuário** para a conta de ponto de serviço do data warehouse nas propriedades da função. Para saber mais, confira [Configurar propriedades](#configure-properties). 
 
@@ -240,7 +241,7 @@ Use as etapas a seguir para configurar os certificados:
 
     3. No **SQL Server Configuration Manager**, em **Serviços SQL Server**, reinicie o **Serviço SQL Server**. Se o SQL Reporting Services também estiver instalado no servidor que hospeda o banco de dados do data warehouse, reinicie também os serviços **Reporting Service**.  
 
-    4. Abra o MMC (Console de Gerenciamento Microsoft) e adicione o snap-in **Certificados**. Selecione **Conta de computador** do computador local. Expanda a pasta **Pessoal** e selecione **Certificados**. Exporte o arquivo **Certificado de Identificação do Data Warehouse SQL Server** como um arquivo **X.509 binário codificado em DER (. CER)**.  
+    4. Abra o MMC (Console de Gerenciamento Microsoft) e adicione o snap-in **Certificados**. Selecione **Conta de computador** do computador local. Expanda a pasta **Pessoal** e selecione **Certificados**. Exporte o arquivo **Certificado de Identificação do Data Warehouse SQL Server** como um arquivo **X.509 binário codificado em DER (. CER)** .  
 
 2. No computador que hospeda o SQL Server Reporting Services, abra o MMC e adicione o snap-in de **Certificados**. Selecione **Conta de computador**. Na pasta **Autoridades de Certificação Raiz Confiáveis**, importe o **Certificado de Identificação do Data Warehouse SQL Server**.  
 

@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 021fa2a29512fa3dde06af77093100f5c1dff0ad
-ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
+ms.openlocfilehash: 63eb7fa579d002b4cae48ed0a43a2246350e2633
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613052"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933317"
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gerenciar o Office 365 ProPlus com o Configuration Manager
 
@@ -166,7 +166,7 @@ Use o procedimento a seguir no ponto de atualização de software do site de adm
 > A configuração de idiomas de atualização adicionais do Office 365 é aplicada a todo o site. Depois de adicionar os idiomas usando o procedimento a seguir, todas as atualizações do Office 365 serão baixadas nesses idiomas, bem como os idiomas que você selecionar na página **Seleção de idioma** nos assistentes Baixar atualizações de software ou Implantar atualizações de software.
 
 1. Em um prompt de comando, digite *wbemtest* como administrador para abrir o Testador de Instrumentação de Gerenciamento do Windows.
-2. Clique em **Conectar**e, em seguida, digite *root\sms\site_&lt;siteCode&gt;*.
+2. Clique em **Conectar**e, em seguida, digite *root\sms\site_&lt;siteCode&gt;* .
 3. Clique em **Consulta** e, em seguida, execute a seguinte consulta: *select &#42; from SMS_SCI_Component where componentname ="SMS_WSUS_CONFIGURATION_MANAGER"*  
    ![Consulta WMI](../media/1-wmiquery.png)
 4. No painel de resultados, clique duas vezes no objeto com o código de site para o site de administração central ou o site primário autônomo.
@@ -224,7 +224,7 @@ Para alterar o canal de atualização após habilitar os clientes do Office 365 
 - Canal Semestral (direcionado) <br/>
 <i>(anteriormente Primeira Versão do Canal Adiado)</i>:  
   **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/b8f9b850-328d-4355-9145-c59439a0c4cf
-<!--the channel names changed in Sept 2017- https://docs.microsoft.com/en-us/DeployOffice/overview-of-update-channels-for-office-365-proplus?ui=en-US&rs=en-US&ad=US-->
+<!--the channel names changed in Sept 2017- https://docs.microsoft.com/DeployOffice/overview-of-update-channels-for-office-365-proplus?ui=en-US&rs=en-US&ad=US-->
 
 
 <!--- You can create an Office 365 app without using the Office 365 Installation Wizard. To do this, you use the Office 2016 Deployment Tool (ODT) to download Office installation source files to a network share, generate Configure.xml that specifies the correct Office version and channel, and so on. Then, create an app for the files using the normal app management process.

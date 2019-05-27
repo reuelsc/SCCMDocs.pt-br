@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: a79f83be-884c-48e6-94d6-ed0a68c22e2f
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8621f759a2e79090c6cd6dac5f2f3749147cabed
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: f2312cb68940f5d0eb3d0dd33d192d07b6801d8e
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133343"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501032"
 ---
 # <a name="management-insights-in-configuration-manager"></a>Insights de gerenciamento no Configuration Manager
 
@@ -65,7 +65,8 @@ As regras dos insights de gerenciamento reavaliam sua aplicabilidade de acordo c
 
 O arquivo de log das regras de insight de gerenciamento está em **SMS_DataEngine.log** no servidor do site.
 
-<!--1357930--> Começando na versão 1806, algumas regras permitem executar uma ação. Selecione uma regra, selecione **Mais Detalhes** e, se disponível, selecione **Agir**. 
+<!--1357930-->
+A partir da versão 1806, algumas regras permitem executar uma ação. Selecione uma regra, selecione **Mais Detalhes** e, se disponível, selecione **Agir**. 
 
 Dependendo da regra, essa ação tem um dos seguintes comportamentos:  
 
@@ -144,7 +145,8 @@ Insights que ajudam a simplificam o gerenciamento limpando e reconfigurando cole
 
 
 ### <a name="proactive-maintenance"></a>Manutenção proativa
-<!--1352184--> Começando na versão 1806, as regras deste grupo destacam possíveis problemas de configuração que podem ser evitados por meio da manutenção dos objetos do Configuration Manager.    
+<!--1352184-->
+A partir da versão 1806, as regras deste grupo destacam possíveis problemas de configuração que podem ser evitados por meio da manutenção dos objetos do Configuration Manager.    
 
 - **Grupos de limites sem sistemas de sites atribuídos**: sem sistemas de sites atribuídos, os grupos de limites só podem ser usados para atribuição de site. Para obter mais informações, consulte [Configurar grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups).  
 

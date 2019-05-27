@@ -1,8 +1,8 @@
 ---
 title: Criar mídia de captura
 titleSuffix: Configuration Manager
-description: Use o Assistente para Criar Mídia da Sequência de Tarefas para criar mídia de captura no Configuration Manager, a fim de capturar uma imagem do sistema operacional de um computador de referência.
-ms.date: 01/23/2017
+description: Use uma mídia de captura no Configuration Manager para capturar uma imagem do SO de um computador de referência.
+ms.date: 05/02/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: article
@@ -11,68 +11,97 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: edf7d7d40e42535a600d127dc0692aee3d7dd857
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: d6e1e007387a50146a899bca767aa5d1f2d85a3a
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56142418"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65082755"
 ---
-# <a name="create-capture-media-with-system-center-configuration-manager"></a>Criar mídia de captura com o System Center Configuration Manager
+# <a name="create-capture-media"></a>Criar mídia de captura
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-A mídia de captura no Configuration Manager permite que você capture uma imagem do sistema operacional de um computador de referência. Use a mídia de captura para o cenário a seguir:  
+Uma mídia de captura no Configuration Manager permite capturar uma imagem do SO de um computador de referência. A mídia de captura contém a imagem de inicialização que inicia o computador de referência e a sequência de tarefas que captura a imagem do SO. Use a mídia de captura do cenário para [Criar uma sequência de tarefas para capturar um sistema operacional](/sccm/osd/deploy-use/create-a-task-sequence-to-capture-an-operating-system).  
 
--   [Criar uma sequência de tarefas para capturar um sistema operacional](create-a-task-sequence-to-capture-an-operating-system.md)  
 
-##  <a name="BKMK_CreateCaptureMedia"></a> Como criar mídia de captura  
- Use a mídia de captura para capturar uma imagem do sistema operacional de um computador de referência. A mídia de captura contém a imagem de inicialização que inicia o computador de referência e a sequência de tarefas que captura a imagem do sistema operacional.
+## <a name="prerequisites"></a>Pré-requisitos
 
-Você cria a mídia de captura usando o Assistente para Criar Mídia de Sequência de Tarefas. Antes de executar o assistente, todas as condições a seguir devem ser atendidas:  
+Antes de criar uma mídia de captura usando o Assistente para Criar Mídia de Sequência de Tarefas, verifique se todas essas condições foram atendidas.
 
-|Tarefa|Descrição|  
-|----------|-----------------|  
-|Imagem de inicialização|Considere o seguinte sobre a imagem de inicialização que você usará na sequência de tarefas para capturar o sistema operacional:<br /><br /> -   A arquitetura da imagem de inicialização deve ser apropriada para a arquitetura do computador de destino. Por exemplo, um computador de destino x64 pode iniciar e executar uma imagem de inicialização x86 ou x64. No entanto, um computador de destino x86 pode iniciar e executar apenas uma imagem de inicialização x86.<br />-   Verifique se a imagem de inicialização contém os drivers de rede e armazenamento em massa necessários para provisionar o computador de destino.|  
-|Distribuir todo o conteúdo associado à sequência de tarefas|Você deve distribuir todo o conteúdo exigido pela sequência de tarefas para pelo menos um ponto de distribuição. Isso inclui a imagem de inicialização, a imagem do sistema operacional e outros arquivos associados. O assistente reúne as informações do ponto de distribuição quando ele cria a mídia autônoma. Você precisa ter direitos de acesso de **Leitura** à biblioteca de conteúdo no ponto de distribuição.  Para obter mais informações, consulte [Distribute content](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).|  
-|Preparar a unidade USB removível|Para uma unidade USB removível:<br /><br /> Se você pretende usar uma unidade USB removível, a unidade USB deve ser conectada ao computador no qual o assistente é executado e a unidade USB deve ser detectável pelo Windows como um dispositivo de remoção. O assistente grava diretamente na unidade USB ao criar a mídia.|  
-|Criar uma pasta de saída|Para um conjunto de CD/DVD:<br /><br /> Para executar o Assistente para Criar Mídia de Sequência de Tarefas para criar mídia para um conjunto de CD ou DVD, é preciso criar uma pasta para os arquivos de saída criados pelo assistente. A mídia criada para um conjunto de CD ou DVD é gravada como arquivos .iso diretamente na pasta.|  
+### <a name="boot-image"></a>Imagem de inicialização
 
- Use o procedimento a seguir para criar mídia de captura.  
+Considere os seguintes pontos sobre a imagem de inicialização usada na sequência de tarefas para implantar o SO:
 
-#### <a name="to-create-capture-media"></a>Para criar mídia de captura  
+- A arquitetura da imagem de inicialização deve ser apropriada para a arquitetura do computador de destino. Por exemplo, um computador de destino x64 pode iniciar e executar uma imagem de inicialização x86 ou x64. No entanto, um computador de destino x86 pode iniciar e executar apenas uma imagem de inicialização x86.
+- Certifique-se de que a imagem de inicialização contenha os drivers de rede e de armazenamento necessários para provisionar o computador de destino.
 
-1. No console do Configuration Manager, clique em **Biblioteca de Software**.  
+### <a name="distribute-all-content-associated-with-the-task-sequence"></a>Distribuir todo o conteúdo associado à sequência de tarefas
 
-2. No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e clique em **Sequências de Tarefas**.  
+Distribua todo o conteúdo exigido pela sequência de tarefas para pelo menos um ponto de distribuição. Esse conteúdo inclui a imagem de inicialização, a imagem do SO e outros arquivos associados. O assistente reúne o conteúdo do ponto de distribuição ao criar a mídia de captura.
 
-3. Na guia **Início** , no grupo **Criar** , clique em **Criar Mídia de Sequência de Tarefas** para iniciar o Assistente para Criar Mídia de Sequência de Tarefas.  
+Sua conta de usuário precisa pelo menos de direitos de acesso de **Leitura** à biblioteca de conteúdo nesse ponto de distribuição. Para obter mais informações, consulte [Distribuir conteúdo](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute).
 
-4. Na página **Selecionar o Tipo de Mídia** , selecione **Capturar mídia**e clique em **Próximo**.  
+### <a name="prepare-the-removable-usb-drive"></a>Preparar a unidade USB removível
 
-5. Na página **Tipo de Mídia** , especifique se a mídia é uma unidade flash ou um conjunto de CD/DVD e clique em configurar o seguinte:  
+Se estiver usando uma unidade USB removível, conecte-a ao computador em que você executa o Assistente para Criar Mídia de Sequência de Tarefas. A unidade USB deve ser detectável pelo Windows como um dispositivo de remoção. O assistente grava diretamente na unidade USB ao criar a mídia.
 
-   - Se você selecionar a **Unidade flash USB**, especifique a unidade na qual deseja armazenar o conteúdo.  
+### <a name="create-an-output-folder"></a>Criar uma pasta de saída
 
-   - Caso selecione **Conjunto de CD/DVD**, especifique a capacidade da mídia, o nome e o caminho dos arquivos de saída. O assistente grava os arquivos de saída nesse local. Por exemplo: **\\\nomedoservidor\pasta\arquivodesaida.iso**  
+Antes de executar o Assistente para Criar Mídia de Sequência de Tarefas para criar a mídia para um conjunto de CD ou DVD, crie uma pasta para os arquivos de saída que são gerados. A mídia criada para um conjunto de CD ou DVD é gravada como um arquivo .ISO diretamente na pasta.
 
-      Se a capacidade da mídia for muito pequena para armazenar todo o conteúdo, vários arquivos são criados e você deve armazenar o conteúdo em vários CDs ou DVDs. Se várias mídias forem necessárias, o Configuration Manager adicionará um número de sequência ao nome de cada arquivo de saída criado. Além disso, se você implantar um aplicativo juntamente com o sistema operacional e o aplicativo não couber em uma única mídia, o Configuration Manager armazenará o aplicativo em várias mídias. Quando a mídia autônoma é executada, o Configuration Manager solicita ao usuário a próxima mídia, na qual o aplicativo está armazenado.  
 
-     > [!IMPORTANT]  
-     >  Se você selecionar uma imagem .iso existente, o Assistente de Mídia de Sequência de Tarefas excluirá essa imagem da unidade ou do compartilhamento assim que você prosseguir para a próxima página do assistente. A imagem existente será excluída mesmo se você cancelar o assistente.  
+## <a name="process"></a>Processar
 
-     Clique em **Avançar**.  
+1. No console do Configuration Manager, acesse o espaço de trabalho **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione o nó **Sequências de Tarefas**.  
 
-6. Na página **Imagem de inicialização** , especifique as informações a seguir e clique em **Próximo**.  
+2. Na guia **Início** da faixa de opções, no grupo **Criar**, selecione **Criar Mídia de Sequência de Tarefas**. Essa ação inicia o Assistente para Criar Mídia de Sequência de Tarefas.  
 
-   > [!IMPORTANT]  
-   >  A arquitetura da imagem de inicialização que você especifica deve ser apropriada para a arquitetura do computador de referência. Por exemplo, um computador de referência x64 pode iniciar e executar uma imagem de inicialização x86 ou x64. No entanto, um computador de referência x86 pode iniciar e executar somente uma imagem de inicialização x86.  
+3. Na página **Selecionar o Tipo de Mídia**, selecione **Capturar mídia**.  
 
-   -   Na caixa **Imagem de inicialização** , especifique a imagem de inicialização para iniciar o computador de referência.  
+4. Na página **Tipo de Mídia**, especifique se a mídia é uma **Unidade USB removível** ou um **Conjunto de CD/DVD**. Em seguida, configure as seguintes opções:  
 
-   -   Na caixa **Ponto de distribuição** , especifique o ponto de distribuição onde a imagem de inicialização reside. O assistente recupera a imagem de inicialização do ponto de distribuição e a grava na mídia.  
+    > [!IMPORTANT]  
+    > A mídia usa um sistema de arquivos FAT32. Você não pode criar uma mídia em uma unidade USB cujo conteúdo inclua um arquivo com mais de 4 GB.  
 
-       > [!NOTE]  
-       >  É necessário ter direitos de acesso de leitura à biblioteca de conteúdo do ponto de distribuição.  
+    - Se você selecionar **Unidade USB removível**, selecione a unidade na qual deseja armazenar o conteúdo.  
 
-7. Conclua o assistente.  
+        - **Formatar a unidade USB removível (FAT32) e torná-la inicializável**: por padrão, permita que o Configuration Manager prepare a unidade USB. Muitos dispositivos UEFI mais recentes requerem uma partição FAT32 inicializável. No entanto, esse formato também limita o tamanho dos arquivos e a capacidade geral da unidade. Se você já formatou e configurou a unidade de disco removível, desabilite essa opção.
+
+    - Se você selecionar **Conjunto de CD/DVD**, especifique a capacidade da mídia (**Tamanho da mídia**) e o nome e o caminho do arquivo de saída (**Arquivo de mídia**). O assistente grava os arquivos de saída nesse local. Por exemplo: `\\servername\folder\outputfile.iso`  
+
+        Se a capacidade da mídia for muito pequena para armazenar todo o conteúdo, ela criará vários arquivos. Portanto, você precisará armazenar o conteúdo em vários CDs ou DVDs. Quando vários arquivos de mídia são necessários, o Configuration Manager adiciona um número de sequência ao nome de cada arquivo de saída criado.  
+
+        > [!IMPORTANT]  
+        > Se você selecionar uma imagem .iso existente, o Assistente de Mídia de Sequência de Tarefas excluirá essa imagem da unidade ou do compartilhamento assim que você prosseguir para a próxima página do assistente. A imagem existente será excluída mesmo se você cancelar o assistente.  
+
+    - **Pasta de preparo**<!--1359388-->: o processo de criação da mídia pode exigir muito espaço em disco temporário. Por padrão, essa localização é semelhante ao seguinte caminho: `%UserProfile%\AppData\Local\Temp`. A partir da versão 1902, para fornecer maior flexibilidade quando se trata de armazenar esses arquivos temporários, altere esse valor para outra unidade e caminho.  
+
+    - **Rótulo de mídia**<!--1359388-->: a partir da versão 1902, adicione um rótulo à mídia de sequência de tarefas. Esse rótulo ajuda a identificar melhor a mídia depois de criá-la. O valor padrão é `Configuration Manager`. Esse campo de texto é exibido nos seguintes locais:  
+
+        - Se você montar um arquivo ISO, o Windows exibirá esse rótulo como o nome da unidade montada  
+
+        - Se você formatar uma unidade USB, ela usará os primeiro 11 caracteres do rótulo como seu nome  
+
+        - O Configuration Manager grava um arquivo de texto chamado `MediaLabel.txt` na raiz da mídia. Por padrão, o arquivo inclui uma única linha de texto: `label=Configuration Manager`. Se você personalizar o rótulo de mídia, essa linha usará o rótulo personalizado, em vez do valor padrão.  
+
+    - **Incluir arquivo autorun.inf na mídia**<!-- 4090666 -->: a partir da versão 1902, o Configuration Manager não adiciona um arquivo autorun.inf por padrão. Normalmente, esse arquivo é bloqueado por produtos antimalware. Para obter mais informações sobre o recurso AutoRun do Windows, confira [Creating an AutoRun-enabled CD-ROM Application](https://docs.microsoft.com/windows/desktop/shell/autoplay) (Criando um aplicativo de CD-ROM habilitado para AutoRun). Se ainda for necessário para o seu cenário, selecione essa opção para incluir o arquivo.  
+
+5. Na página **Imagem de inicialização**, especifique as seguintes opções:  
+
+    > [!IMPORTANT]  
+    > A arquitetura da imagem de inicialização que você distribuir deve ser apropriada para a arquitetura do computador de destino. Por exemplo, um computador de destino x64 pode iniciar e executar uma imagem de inicialização x86 ou x64. No entanto, um computador de destino x86 pode iniciar e executar apenas uma imagem de inicialização x86.  
+
+    - **Imagem de inicialização**: selecione a imagem de inicialização para iniciar o computador de destino.  
+
+    - **Ponto de distribuição**: selecione o ponto de distribuição que possui a imagem de inicialização. O assistente recupera a imagem de inicialização do ponto de distribuição e a grava na mídia.  
+
+        > [!NOTE]  
+        > Sua conta de usuário precisa pelo menos de permissões de **Leitura** à biblioteca de conteúdo no ponto de distribuição.  
+
+6. Conclua o assistente.  
+
+
+## <a name="next-steps"></a>Próximas etapas
+
+[Criar uma sequência de tarefas para capturar um sistema operacional](/sccm/osd/deploy-use/create-a-task-sequence-to-capture-an-operating-system)

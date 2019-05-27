@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ffe97408d5de71c9ea67b07649d7b92ad77f0a57
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: a41f144909ba946d3c3bc2f00a1573cad2c9b850
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56143688"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933333"
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1612 do System Center Configuration Manager
 
@@ -318,4 +318,4 @@ Depois de fazer essas alterações de configuração, você poderá criar uma po
 
 ## <a name="change-to-configuring-multi-factor-authentication-for-device-enrollment"></a>Alterar a configuração da autenticação multifator para registro de dispositivo
 
-Agora que você pode configurar a MFA (Autenticação Multifator) para o registro de dispositivo no Portal do Azure, a opção de MFA foi removida no console do Configuration Manager. Você pode encontrar mais informações sobre como configurar o MFA para registro [neste tópico do Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/multi-factor-authentication-azure-active-directory).
+Agora que você pode configurar a MFA (Autenticação Multifator) para o registro de dispositivo no Portal do Azure, a opção de MFA foi removida no console do Configuration Manager. Você pode encontrar mais informações sobre como configurar o MFA para registro [neste tópico do Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/multi-factor-authentication-azure-active-directory).
