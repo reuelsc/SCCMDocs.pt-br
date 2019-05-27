@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9775bd47e91876a7651bb58fee50b2111f3b7ef1
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: 5738be3bd84d7698e7b67128e3aff178d2460e52
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083517"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176917"
 ---
 # <a name="site-server-high-availability-in-configuration-manager"></a>Alta disponibilidade do servidor do site no Configuration Manager
 
@@ -26,10 +26,10 @@ ms.locfileid: "65083517"
 
 Historicamente, você poderia adicionar redundância à maioria das funções no Configuration Manager com várias instâncias dessas funções em seu ambiente. Exceto para o próprio servidor do site. A partir da versão 1806 do Configuration Manager, a alta disponibilidade da função de servidor do site é uma solução baseada no Configuration Manager de instalação de um servidor de site adicional no modo  *passivo*. A versão 1810 adiciona suporte à hierarquia, portanto, os sites de administração central e os sites primários filhos também podem ter um servidor de site adicional no modo passivo. O servidor do site no modo passivo pode ser local ou baseado em nuvem no Azure.
 
-Esse recurso traz os seguintes benefícios 
-- Redundância e alta disponibilidade para a função de servidor do site  
+Esse recurso traz os seguintes benefícios 
+- Redundância e alta disponibilidade para a função de servidor do site  
 - Alteração mais fácil do hardware ou sistema operacional do servidor do site  
-- Transferência mais fácil do servidor do seu site para o Azure IaaS  
+- Transferência mais fácil do servidor do seu site para o Azure IaaS  
 
 O servidor do site no modo passivo é usado além do servidor do site existente que está no modo *ativo*. Um servidor do site no modo passivo está disponível para uso imediato quando for necessário. Inclua este servidor do site adicional como parte de seu design geral para tornar o serviço do Configuration Manager [altamente disponível](/sccm/core/servers/deploy/configure/high-availability-options).  
 

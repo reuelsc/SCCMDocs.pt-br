@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 301b7de8d991b7e272aa57e6d87e912d6c3df210
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 03368d543b539b018ba581277cb0ba7e6e8cb251
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65495394"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933504"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novidades na versão 1806 do branch atual do Configuration Manager
 
@@ -308,7 +308,7 @@ Para obter mais informações, confira [Criar aplicativos Windows](/sccm/apps/ge
 
 ### <a name="uninstall-application-on-approval-revocation"></a>Desinstalar o aplicativo na revogação da aprovação
 <!--1357891-->
-O comportamento mudou para quando você revoga a aprovação de um aplicativo. Agora, quando você nega a solicitação para o aplicativo, o cliente desinstala o aplicativo do dispositivo do usuário. Esse comportamento exige que você habilite o [recurso opcional](https://docs.microsoft.com/en-us/sccm/core/servers/manage/install-in-console-updates#bkmk_options) **Aprovar solicitações de aplicativos para usuários por dispositivo**. 
+O comportamento mudou para quando você revoga a aprovação de um aplicativo. Agora, quando você nega a solicitação para o aplicativo, o cliente desinstala o aplicativo do dispositivo do usuário. Esse comportamento exige que você habilite o [recurso opcional](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_options) **Aprovar solicitações de aplicativos para usuários por dispositivo**. 
 
 Para obter informações, confira [Deploy applications](/sccm/apps/deploy-use/deploy-applications#bkmk_approval) (Implantar aplicativos).
 
