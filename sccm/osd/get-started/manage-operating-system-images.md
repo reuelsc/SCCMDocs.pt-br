@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5651f381f2c4a101c82d6f1f7730ffc4ae99a20
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: 40bfd1c8a541fbb1f108741ef2d4fa00b11088d7
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083537"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176100"
 ---
 # <a name="manage-os-images-with-configuration-manager"></a>Gerenciar imagens do sistema operacional com o Configuration Manager
 
@@ -77,6 +77,8 @@ Antes de usar uma imagem do sistema operacional, adicione-a ao seu site do Confi
 
 5.  Conclua o assistente.  
 
+Para o cmdlet do PowerShell equivalente deste assistente do console, confira [New-CMOperatingSystemImage](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmoperatingsystemimage?view=sccm-ps).
+
 
 Em seguida, distribua a imagem do sistema operacional aos pontos de distribuição.  
 
@@ -104,7 +106,7 @@ Use implantações multicast para permitir que mais de um computador baixe simul
 
 4.  Mude para a guia **Configurações de Distribuição** e configure as seguintes opções:  
 
-    -   **Permitir que este pacote seja transferido via multicast (WinPE somente)**: selecione essa opção para que o Configuration Manager implante simultaneamente as imagens do sistema operacional usando multicast.  
+    -   **Permitir que este pacote seja transferido via multicast (WinPE somente)** : selecione essa opção para que o Configuration Manager implante simultaneamente as imagens do sistema operacional usando multicast.  
 
     -   **Criptografar pacotes multicast**: especifique se o site criptografa a imagem antes que ela seja enviada ao ponto de distribuição. Se a imagem contiver informações confidenciais, use esta opção. Se a imagem não estiver criptografada, seu conteúdo ficará visível em texto não criptografado na rede. Em seguida, um usuário não autorizado poderá interceptar e exibir o conteúdo de imagem.  
 

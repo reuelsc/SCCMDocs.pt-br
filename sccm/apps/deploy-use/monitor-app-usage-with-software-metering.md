@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c10dcc07ba2f67b004da462dbde17fb2200ec7a1
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 652c10cfcb4d53b32409dd5af83e7d55f2676463
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496796"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933474"
 ---
 # <a name="software-metering-in-system-center-configuration-manager"></a>Medição de software no System Center Configuration Manager
 
@@ -163,14 +163,14 @@ A medição de software não tem dependências externas, apenas dependências in
 
   O Woodgrove Bank implantou o Microsoft Office 2010 como seu conjunto de produtividade do office padrão. No entanto, para dar suporte a um aplicativo herdado, alguns computadores devem continuar executando o Microsoft Office Word 2003. O departamento de TI deseja reduzir os custos de licenciamento e suporte removendo essas cópias do Word 2003 se o aplicativo herdado não for mais utilizado. O suporte técnico também deseja identificar os usuários que usam o aplicativo herdado.
 
-  John é o gerente de sistemas de TI do Woodgrove Bank e usa a medição de software no Configuration Manager para atingir esses objetivos de negócios. Ele executa as seguintes ações:
+  O gerente de sistemas de TI do Woodgrove Bank usa a medição de software no Configuration Manager para atingir esses objetivos de negócios. O administrador executa as seguintes ações:
 
-- John verifica os pré-requisitos da medição de software e confirma que o ponto do Reporting Services está instalado e operacional.
-- John define as configurações do cliente padrão para a medição de software:<br>Ele habilita a medição de software e usa a agenda de coleta de dados padrão de uma vez a cada sete dias.<br>Ele configura inventário de software para arquivos de inventário que têm a extensão .exe definindo a configuração do cliente de inventário de software como **Inventariar esses tipos de arquivo**.<br>Ele adiciona um novo regra de medição de software, chamada **woodgrove.exe**, para monitorar o aplicativo herdado.
-- John aguarda por sete dias, após os quais os computadores cliente começam a relatar os dados de uso para o executável **woodgrove.exe** .
-- João usa o relatório **Base de instalação de todos os programas de software medidos** do Configuration Manager para ver quais computadores têm o aplicativo **woodgrove.exe** carregado.
-- Depois de seis meses, John executa o relatório **Computadores que têm um programa medido instalado mas não executaram o programa desde uma data especificada**, especificando a regra de medição de software e  uma data seis meses no passado. Este relatório identifica 120 computadores que não executaram o programa nos últimos seis meses.
-- John faz algumas verificações adicionais para confirmar que o aplicativo herdado não é necessário nos computadores identificados. Ele desinstala o aplicativo herdado e a cópia do Word 2003 desses computadores.<br>John executa o relatório **Usuários que executaram um programa de software medido específico** para fornecer à assistência técnica uma lista de usuários que continuam usando o aplicativo herdado.
-- John continua verificando os relatórios de medição de software semanalmente e toma medidas corretivas, se necessário.
+- Verifica os pré-requisitos da medição de software e confirma que o ponto do Reporting Services está instalado e operacional.
+- Define as configurações do cliente padrão para a medição de software:<br>O administrador habilita a medição de software e usa a agenda de coleta de dados padrão de uma vez a cada sete dias.<br>O administrador configura inventário de software para arquivos de inventário que têm a extensão .exe definindo a configuração do cliente de inventário de software como **Inventariar esses tipos de arquivo**.<br>O administrador adiciona um novo regra de medição de software, chamada **woodgrove.exe**, para monitorar o aplicativo herdado.
+- Aguarde sete dias, após os quais os computadores cliente começam a relatar os dados de uso para o executável **woodgrove.exe**.
+- O administrador usa o relatório **Base de instalação de todos os programas de software medidos** do Configuration Manager para ver quais computadores têm o aplicativo **woodgrove.exe** carregado.
+- Depois de seis meses, o administrador executa o relatório **Computadores que têm um programa medido instalado mas não executaram o programa desde uma data especificada**, especificando a regra de medição de software e uma data seis meses no passado. Este relatório identifica 120 computadores que não executaram o programa nos últimos seis meses.
+- O administrador faz algumas verificações adicionais para confirmar que o aplicativo herdado não é necessário nos computadores identificados. O administrador desinstala o aplicativo herdado e a cópia do Word 2003 desses computadores.<br>O administrador executa o relatório **Usuários que executaram um programa de software medido específico** para fornecer à assistência técnica uma lista de usuários que continuam usando o aplicativo herdado.
+- O administrador continua verificando os relatórios de medição de software semanalmente e toma medidas corretivas, se necessário.
 
   Como resultado deste curso de ação, os custos de licenciamento e suporte de TI são reduzidos removendo os aplicativos que não são mais necessários. Além disso, o suporte técnico agora tem a lista que gostaria de ter com os usuários que executam o aplicativo herdado.

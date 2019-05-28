@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b8bda1fd21ed3281142a717b768ff7d8c6ac3c3
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
-ms.translationtype: HT
+ms.openlocfilehash: 3e0b8e6a522e367e17d6c13fad3896a6606d3e5c
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500420"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176079"
 ---
 # <a name="troubleshooting-windows-defender-or-endpoint-protection-client"></a>Solucionando problemas do cliente Windows Defender ou Endpoint Protection
 
@@ -48,7 +48,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
   **Causa**  
 
-  As causas mais comuns para problemas de atualização são problemas de conectividade com a Internet. No entanto, se você souber que está conectado à internet porque você pode navegar para outros sites da Web, o problema pode ser causado por conflitos com as configurações no Windows Internet Explorer.  
+  As causas mais comuns para problemas de atualização são problemas de conectividade com a Internet. No entanto, se você souber que está conectado à Internet porque você pode navegar para outros sites da Web, o problema pode ser causado por conflitos com as configurações no Windows Internet Explorer.  
 
 > [!IMPORTANT]  
 >  Você precisa sair do Internet Explorer para concluir essas etapas. Portanto, imprimi-as, anote-as, ou copie-as para outro arquivo e, em seguida, marque este tópico para acesso futuro.  
@@ -158,7 +158,7 @@ Se você tiver problemas com o Windows Defender ou Endpoint Protection, entre em
 
 ### <a name="step-7-contact-support"></a>Etapa 7: Entrar em contato com o suporte  
 
--   Se as etapas não resolveram o problema, contate o suporte. Para obter mais informações, consulte [Atendimento ao cliente](http://go.microsoft.com/fwlink/?LinkID=196174) (http://go.microsoft.com/fwlink/?LinkID=196174)).  
+-   Se as etapas não resolveram o problema, contate o suporte. Para saber mais, confira [Atendimento ao cliente](https://support.microsoft.com/contactus/).  
 
 ##  <a name="starting-windows-defender-or-endpoint-protection-service"></a>Iniciar o serviço do Windows Defender ou Endpoint Protection  
  **Sintoma**  

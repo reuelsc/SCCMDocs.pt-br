@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0a32357001f37f537f13fe85e71a41f9cb658ac
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: e5178a84443779384e3223998ab8336b46c2d4d0
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122433"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176895"
 ---
 # <a name="manage-apps-from-the-microsoft-store-for-business-with-configuration-manager"></a>Gerenciar aplicativos da Microsoft Store para Empresas com o Configuration Manager
 
@@ -83,7 +83,7 @@ Em seguida, ocorrem os seguintes comportamentos:
 
 - O usuário precisa concluir a instalação pela loja  
 
-- No console do Configuration Manager, o status de implantação do aplicativo relata falha com o seguinte erro: “O aplicativo da Microsoft Store foi aberto no computador cliente e está aguardando que o usuário conclua a instalação.”  
+- No console do Configuration Manager, o status de implantação do aplicativo relata falha com o seguinte erro: "O aplicativo da Microsoft Store foi aberto no computador cliente e está esperando o usuário concluir a instalação."  
 
 No próximo ciclo de avaliação do aplicativo:  
 
@@ -167,3 +167,8 @@ Depois que os aplicativos online são implantados, todas as atualizações dos a
 Ao implantar aplicativos offline em dispositivos Windows 10 com o cliente do Configuration Manager, não permita que os usuários atualizem aplicativos externos a implantações do Configuration Manager. O controle de atualizações em aplicativos offline é especialmente importante em ambientes de vários usuários, como salas de aula. Uma opção é desabilitar a Microsoft Store usando uma [política de grupo](https://docs.microsoft.com/windows/configuration/stop-employees-from-using-microsoft-store#a-href-idblock-store-group-policyablock-microsoft-store-using-group-policy). 
 
 Depois que o administrador da Microsoft Store para Empresas adquirir um aplicativo offline, não publique o aplicativo aos usuários por meio da loja. Essa configuração garante que os usuários não possam instalar nem atualizar online. Os usuários somente recebem atualizações de aplicativos offline por meio do Configuration Manager. 
+
+## <a name="see-also"></a>Consulte também
+
+[Compreensão e solução de problemas da integração da Microsoft Store para Empresas com ConfigMgr](https://support.microsoft.com/help/4010214)
+
