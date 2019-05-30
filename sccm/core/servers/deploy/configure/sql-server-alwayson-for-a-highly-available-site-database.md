@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08f5e0d9986c59d9a2a37c26f3ed9e245ac62f41
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 6f70373f1fea7928e801c0ccdbbe75cf96e54d20
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120031"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933533"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparar para usar os grupos de disponibilidade AlwaysOn do SQL Server com o Configuration Manager
 
@@ -61,7 +61,7 @@ A conta de computador do servidor do site deve ser membro do grupo **Administrad
 ### <a name="sql-server"></a>SQL Server
 
 #### <a name="version"></a>Version  
-Cada réplica no grupo de disponibilidade deve executar uma versão do SQL Server compatível com sua versão do Gerenciador de Configurações. Quando há suporte no SQL Server, nós diferentes de um grupo de disponibilidade poderão executar versões diferentes do SQL Server. Para saber mais, veja [Versões do SQL Server compatíveis com o Gerenciador de Configurações](/sccm/core/plan-design/configs/support-for-sql-server-versions) <!--SCCMDocs issue 656-->
+Cada réplica no grupo de disponibilidade deve executar uma versão do SQL Server compatível com sua versão do Gerenciador de Configurações. Quando há suporte no SQL Server, nós diferentes de um grupo de disponibilidade poderão executar versões diferentes do SQL Server. Para obter mais informações, confira [Versões do SQL Server compatíveis com o Configuration Manager](/sccm/core/plan-design/configs/support-for-sql-server-versions).<!--SCCMDocs issue 656-->
 
 #### <a name="edition"></a>Edição  
 Use uma edição *Enterprise* do SQL Server.
@@ -88,7 +88,7 @@ Cada instância do SQL Server pode ser executada sob uma conta de usuário de do
 - Você pode usar a réplica de confirmação assíncrona para recuperar sua réplica síncrona. Para saber mais, veja [Opções de recuperação do banco de dados do site](/sccm/core/servers/manage/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption).  
 
     > [!Warning]  
-    > O Gerenciador de Configurações não é compatível com *failover* para uso da réplica de confirmação assíncrona como banco de dados do site. Para saber mais, veja [Failover e modos de failover (Grupos de Disponibilidade AlwaysOn)](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/failover-and-failover-modes-always-on-availability-groups?view=sql-server-2014).  
+    > O Gerenciador de Configurações não é compatível com *failover* para uso da réplica de confirmação assíncrona como banco de dados do site. Para saber mais, veja [Failover e modos de failover (Grupos de Disponibilidade AlwaysOn)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/failover-and-failover-modes-always-on-availability-groups?view=sql-server-2014).  
 
 O Gerenciador de Configurações não valida o estado da réplica de confirmação assíncrona para confirmar se é atual. O uso de uma réplica de confirmação assíncrona como banco de dados do site pode por em risco a integridade do seu site e dos dados. Por design, essa réplica pode não estar sincronizada. Para saber mais, veja [Visão geral dos Grupos de Disponibilidade AlwaysOn do SQL Server](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server).
 
@@ -247,7 +247,8 @@ As seguintes limitações aplicam-se a todos os cenários.
 - **MultiSubnetFailover**: O uso de um grupo de disponibilidade não é compatível com o Configuration Manager em uma configuração de várias sub-redes. Também não é possível usar a cadeia de conexão da palavra-chave do [MutliSubnetFailover](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server#MultiSubnetFailover).  
 
 #### <a name="sql-servers-that-host-additional-availability-groups"></a>Servidores SQL que hospedam grupos de disponibilidade adicionais
-<!--SCCMDocs issue 649--> Quando o SQL Server hospeda um ou mais grupos de disponibilidade além do grupo que você usa para o Gerenciador de Configurações, ele precisa de configurações específicas no momento em que você executar a instalação do Gerenciador de Configurações. Essas configurações também são necessárias para instalar uma atualização no Gerenciador de Configurações. Cada réplica em cada grupo de disponibilidade deve ter as seguintes configurações:
+<!--SCCMDocs issue 649-->
+Quando o SQL Server hospeda um ou mais grupos de disponibilidade além do grupo usado para o Configuration Manager, ele precisa de configurações específicas no momento em que a Instalação do Configuration Manager é executada. Essas configurações também são necessárias para instalar uma atualização no Gerenciador de Configurações. Cada réplica em cada grupo de disponibilidade deve ter as seguintes configurações:
 
 - Failover Manual  
 - Permitir qualquer conexão somente leitura  
@@ -268,7 +269,8 @@ Ao executar a Instalação do Gerenciador de Configurações para mover um banco
 Esses erros podem ser ignorados.
 
 #### <a name="site-expansion"></a>Expansão do site
-<!--SCCMDocs issue 568--> Se você configurar o banco de dados do site para que um site primário autônomo use o SQL AlwaysOn, você não poderá expandir o site para incluir um site de administração central. Se você tentar esse processo, não dará certo. Para expandir o site, remova temporariamente o banco de dados do site primário do grupo de disponibilidade.
+<!--SCCMDocs issue 568-->
+Se configurar o banco de dados do site para que um site primário autônomo use o Always On do SQL, você não poderá expandir o site para incluir um site de administração central. Se você tentar esse processo, não dará certo. Para expandir o site, remova temporariamente o banco de dados do site primário do grupo de disponibilidade.
 
 
 
@@ -287,9 +289,9 @@ Defina o modelo de recuperação do banco de dados de site como **Completo**. Es
 
 ## <a name="changes-for-site-recovery"></a>Alterações para a recuperação de site
 
-Se pelo menos um nó do grupo de disponibilidade permanecer funcional, use a opção de recuperação de site para **Ignorar a recuperação de banco de dados (Use esta opção se o banco de dados do site não tiver sido afetado)**.
+Se pelo menos um nó do grupo de disponibilidade permanecer funcional, use a opção de recuperação de site para **Ignorar a recuperação de banco de dados (Use esta opção se o banco de dados do site não tiver sido afetado)** .
 
-Quando todos os nós de um grupo de disponibilidade tiverem sido perdidos, será preciso recriar o grupo de disponibilidade antes de recuperar o site. O Gerenciador de Configurações não pode recriar nem restaurar o nó de disponibilidade. Recrie o grupo, restaure o backup e reconfigure o SQL. Em seguida, use a opção de recuperação de site para **Ignorar a recuperação do banco de dados (use esta opção se o banco de dados do site não tiver sido afetado)**.
+Quando todos os nós de um grupo de disponibilidade tiverem sido perdidos, será preciso recriar o grupo de disponibilidade antes de recuperar o site. O Gerenciador de Configurações não pode recriar nem restaurar o nó de disponibilidade. Recrie o grupo, restaure o backup e reconfigure o SQL. Em seguida, use a opção de recuperação de site para **Ignorar a recuperação do banco de dados (use esta opção se o banco de dados do site não tiver sido afetado)** .
 
 Para obter mais informações, veja [Backup e recuperação](/sccm/core/servers/manage/backup-and-recovery).
 

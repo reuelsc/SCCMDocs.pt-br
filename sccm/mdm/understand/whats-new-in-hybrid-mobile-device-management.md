@@ -2,7 +2,7 @@
 title: Novidades no MDM híbrido
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune.
-ms.date: 05/23/2019
+ms.date: 05/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc41388c1586fc73ce93127dd0e6492f587d18be
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: b6a4cfbc7e9db5f4402278b73c2ca7ea1d869953
+ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176683"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66355010"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -50,6 +50,12 @@ Cada seção deste artigo lista recursos híbridos em três categorias diferente
 ## <a name="may-2019"></a>Maio de 2019
 
 ### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+#### <a name="windows-company-portal-app"></a>Aplicativo do Portal da Empresa para Windows
+
+<!-- 3316993 -->
+
+O aplicativo de Portal de empresa do Windows agora tem uma nova página rotulada **dispositivos**. O **dispositivos** página mostra aos usuários todos os seus dispositivos registrados. Os usuários verão essa alteração no Portal da empresa quando eles usam a versão 10.3.4291.0 e posterior. Para obter mais informações, consulte [como configurar o aplicativo de Portal da empresa do Microsoft Intune](https://docs.microsoft.com/intune/company-portal-app).
 
 #### <a name="android-enterprise-app-management"></a>Gerenciamento de aplicativo do Android Enterprise
 
@@ -284,7 +290,7 @@ Os usuários finais agora podem acessar as propriedades e ações da conta princ
 #### <a name="pin-prompt-when-you-change-fingerprints-or-face-id-on-an-ios-device"></a>Solicitação de PIN ao alterar impressões digitais ou identificação de rosto em um dispositivo iOS
 
 <!--2637704-->  
-Os usuários agora são solicitados a inserir um PIN após fazerem alterações biométricas em seu dispositivo iOS. Isso inclui alterações em impressões digitais ou identificação facial registradas. O tempo da solicitação depende da configuração do tempo limite em *Verificar novamente os requisitos de acesso após (minutos)*.  Quando não há um PIN definido, o usuário é solicitado a definir um.  
+Os usuários agora são solicitados a inserir um PIN após fazerem alterações biométricas em seu dispositivo iOS. Isso inclui alterações em impressões digitais ou identificação facial registradas. O tempo da solicitação depende da configuração do tempo limite em *Verificar novamente os requisitos de acesso após (minutos)* .  Quando não há um PIN definido, o usuário é solicitado a definir um.  
 
 Esse recurso está disponível apenas para iOS e requer a participação de aplicativos que integram o SDK do aplicativo Intune para iOS, versão 8.1.1 ou posterior. A integração do SDK é necessária para que o comportamento possa ser aplicado aos aplicativos de destino. Essa integração ocorre sem interrupção, e depende de equipes do aplicativo específico. Alguns aplicativos que participam incluem WXP, Outlook, Managed Browser e Yammer.
 

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef015f755a42ff113b2ca80bcc2a5650fbf30231
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 11b970cc93db5edbabec58d18cd6d12b2275fd57
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56134734"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933260"
 ---
 # <a name="capabilities-in-technical-preview-18062-for-system-center-configuration-manager"></a>Funcionalidades na visualização técnica 1806.2 do System Center Configuration Manager
 
@@ -42,7 +42,8 @@ Steps to workaround, if any.
 ## <a name="known-issues-in-this-technical-preview"></a>Problemas conhecidos neste Technical Preview
 
 ### <a name="ki_sqlncli"></a> Os clientes não serão atualizados automaticamente
-<!--518760--> Ao atualizar para a versão 1806.2, o site também atualiza o SQL Native Client, o que pode causar uma reinicialização pendente no servidor do site. Esse atraso faz com que determinados arquivos não sejam atualizados, o que afeta a atualização automática do cliente.
+<!--518760-->
+Ao atualizar para a versão 1806.2, o site também atualiza o SQL Native Client, o que pode causar uma reinicialização pendente no servidor do site. Esse atraso faz com que determinados arquivos não sejam atualizados, o que afeta a atualização automática do cliente.
 
 #### <a name="workarounds"></a>Soluções Alternativas
 Evite esse problema atualizando manualmente o SQL Native Client *antes de atualizar* o Configuration Manager para a versão 1806.2. Para saber mais, confira [atualização de serviço mais recente do SQL Server 2012 Native Client](https://www.microsoft.com/download/details.aspx?id=50402).
@@ -66,7 +67,8 @@ Se você estiver instalando um novo cliente em seu site de technical preview ver
 
 
 ### <a name="ki_version"></a> A versão 1806.2 mostra a versão 1806 em Sobre o Configuration Manager
-<!--518148--> Depois de atualizar para a versão technical preview 1806.2, se você abrir a janela **Sobre o Configuration Manager** do canto superior esquerdo do console, ele ainda aparecerá como **Versão 1806**. 
+<!--518148-->
+Depois de atualizar para a versão de visualização técnica 1806.2, se você abrir a janela **Sobre o Configuration Manager** no canto superior esquerdo do console, ela ainda mostrará **Versão 1806**. 
 
 #### <a name="workaround"></a>Solução alternativa
 Use a propriedade **Versão do site** para determinar a diferença entre 1806 e 1806.2:
@@ -92,7 +94,8 @@ Esta versão inclui as seguintes melhorias nas [implantações em fases](/sccm/o
 
 
 ### <a name="bkmk_pod-monitor"></a> Status da implantação em fases
-<!--1358577--> As implantações em fases agora têm uma experiência de monitoramento nativa. No nó **Implantações** no workspace **Monitoramento**, selecione uma implantação em fases e clique em **Status da Implantação em Fases** na faixa de opções.
+<!--1358577-->
+As implantações em fases agora têm uma experiência de monitoramento nativa. No nó **Implantações** no workspace **Monitoramento**, selecione uma implantação em fases e clique em **Status da Implantação em Fases** na faixa de opções.
 
 ![Painel de status de implantação em fases, mostrando o status de duas fases](media/1358577-phased-deployment-status.png)
 
@@ -112,27 +115,29 @@ Este painel mostra as seguintes informações para cada fase da implantação:
 
 
 #### <a name="known-issue"></a>Problema conhecido
-O painel de status de implantação em fases pode mostrar várias linhas para a mesma fase.<!--518510-->
+O painel do status de implantação em fases pode mostrar várias linhas para a mesma fase.<!--518510-->
 
 
 ### <a name="bkmk_pod-app"></a> Implantação em fases de aplicativos
-<!--1358147--> Crie implantações em fases para aplicativos. As implantações em fases permitem que você coordene uma distribuição coordenada e sequenciada do software com base em grupos e critérios personalizáveis.
+<!--1358147-->
+Crie implantações em fases para aplicativos. As implantações em fases permitem que você coordene uma distribuição coordenada e sequenciada do software com base em grupos e critérios personalizáveis.
 
 No console do Configuration Manager, vá para a **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione **Aplicativos**. Selecione um aplicativo e clique em **Criar Implantação em Fases** na faixa de opções. 
 
 O comportamento de uma implantação de aplicativo em fases é igual ao de sequências de tarefas. Para saber mais, confira [Criar implantações em fases para uma sequência de tarefas](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence).
 
 #### <a name="prerequisite"></a>Pré-requisito
-Distribua o conteúdo para o aplicativo para um ponto de distribuição antes de criar a implantação em fases.<!--518293-->
+Distribua o conteúdo do aplicativo para um ponto de distribuição antes de criar a implantação em fases.<!--518293-->
 
 #### <a name="known-issue"></a>Problema conhecido
 Você não pode criar manualmente as fases para um aplicativo. O assistente cria automaticamente duas fases para implantações de aplicativos.
 
 
 ### <a name="bkmk_pod-throttle"></a> Distribuição gradual durante as implantações em fases
-<!--1358578--> Durante uma implantação em fases, a distribuição em cada fase agora pode acontecer gradualmente. Esse comportamento ajuda a reduzir o risco de problemas de implantação e diminui a carga na rede causada pela distribuição de conteúdo aos clientes. O site pode tornar gradualmente o software disponível, dependendo da configuração de cada fase. Todos os clientes em uma fase têm um prazo em relação à hora em que o software é disponibilizado. A janela entre o horário disponível e o prazo final é a mesma para todos os clientes em uma fase. 
+<!--1358578-->
+Durante uma implantação em fases, a distribuição em cada fase agora pode ocorrer gradualmente. Esse comportamento ajuda a reduzir o risco de problemas de implantação e diminui a carga na rede causada pela distribuição de conteúdo aos clientes. O site pode tornar gradualmente o software disponível, dependendo da configuração de cada fase. Todos os clientes em uma fase têm um prazo em relação à hora em que o software é disponibilizado. A janela entre o horário disponível e o prazo final é a mesma para todos os clientes em uma fase. 
 
-Quando você criar uma implantação em fases e configurar manualmente uma fase na página **Configurações de Fase** do Assistente de Adição de Fase ou na página **Configurações** do assistente de Criação de Implantação em Fases, configure a opção: **Disponibilizar esse software gradualmente durante este período de tempo (em dias)**. O valor padrão dessa configuração é **0**. Portanto, por padrão, a implantação não é limitada.
+Quando você criar uma implantação em fases e configurar manualmente uma fase na página **Configurações de Fase** do Assistente de Adição de Fase ou na página **Configurações** do assistente de Criação de Implantação em Fases, configure a opção: **Disponibilizar esse software gradualmente durante este período de tempo (em dias)** . O valor padrão dessa configuração é **0**. Portanto, por padrão, a implantação não é limitada.
 
 > [!Note]  
 > Essa opção só está disponível para implantações em fases de sequências de tarefas.  
@@ -140,7 +145,8 @@ Quando você criar uma implantação em fases e configurar manualmente uma fase 
 
 
 ## <a name="bkmk_msix"></a> Suporte para novos formatos do pacote de aplicativo do Windows
-<!--1357427--> O Configuration Manager agora dá suporte à implantação do novo pacote de aplicativo do Windows 10 (.msix) e formatos do pacote de aplicativo (.msixbundle). Os builds mais recentes do [Windows Insider Preview](https://insider.windows.com/) atualmente dão suporte a esses novos formatos.
+<!--1357427-->
+O Configuration Manager agora é compatível com a implantação do novo pacote do aplicativo do Windows 10 (.msix) e de formatos do lote do aplicativo (.msixbundle). Os builds mais recentes do [Windows Insider Preview](https://insider.windows.com/) atualmente dão suporte a esses novos formatos.
 
 Para obter uma visão geral do MSIX, confira [Visão detalhada do MSIX](https://blogs.msdn.microsoft.com/sgern/2018/06/18/a-closer-look-at-msix/).
 
@@ -154,13 +160,14 @@ Para saber como criar um novo aplicativo MSIX, confira [Suporte a MSIX introduzi
 Tente concluir as tarefas. Depois, envie seus [comentários](capabilities-in-technical-preview-1804.md#bkmk_feedback) sobre como isso funcionou.
 
 1. No console do Configuration Manager, [crie um aplicativo](/sccm/apps/deploy-use/create-applications). 
-2. Escolha o **Tipo** do arquivo de instalação de aplicativo como **Pacote de aplicativo do Windows (\*.appx, \*.appxbundle, \*.msix, \*.msixbundle)**.
+2. Escolha o **Tipo** do arquivo de instalação de aplicativo como **Pacote de aplicativo do Windows (\*.appx, \*.appxbundle, \*.msix, \*.msixbundle)** .
 3. [Implantar o aplicativo](/sccm/apps/deploy-use/deploy-applications) no cliente executando o build mais recente do Windows Insider Preview.
 
 
 
 ## <a name="bkmk_client-push"></a> Melhoria de segurança do cliente por push
-<!--1358204--> Ao usar o método [cliente por push](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation) de instalação do cliente do Configuration Manager, o servidor de site cria uma conexão remota para o cliente para iniciar a instalação. A partir desta versão, o site pode exigir autenticação mútua do Kerberos não permitindo fallback para NTLM antes de estabelecer a conexão. Essa melhoria ajuda a proteger a comunicação entre o servidor e o cliente. 
+<!--1358204-->
+Ao usar o método de instalação do [cliente por push](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation) do cliente do Configuration Manager, o servidor do site cria uma conexão remota com o cliente para iniciar a instalação. A partir desta versão, o site pode exigir autenticação mútua do Kerberos não permitindo fallback para NTLM antes de estabelecer a conexão. Essa melhoria ajuda a proteger a comunicação entre o servidor e o cliente. 
 
 Dependendo das políticas de segurança, seu ambiente pode já preferir ou exigir Kerberos em vez da autenticação NTLM mais antiga. Para saber mais sobre as considerações de segurança desses protocolos de autenticação, confira [Configuração de política de segurança do Windows para restringir o NTLM](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-outgoing-ntlm-traffic-to-remote-servers#security-considerations).
 
@@ -185,7 +192,8 @@ Quando você atualiza o site, o comportamento existente persiste. Depois que voc
 
 
 ## <a name="bkmk_insights"></a> Insights de gerenciamento para manutenção proativa
-<!--1352184,et al--> Insights de gerenciamento adicionais estão disponíveis nesta versão para realçar os possíveis problemas de configuração. Examine as seguintes regras no novo grupo **Manutenção Proativa**:  
+<!--1352184,et al-->
+Insights de gerenciamento adicionais estão disponíveis nesta versão para realçar os possíveis problemas de configuração. Examine as seguintes regras no novo grupo **Manutenção Proativa**:  
 
 - **Itens de configuração não usados**: itens de configuração que não fazem parte de uma linha de base de configuração e têm mais de 30 dias.  
 
@@ -202,7 +210,8 @@ Quando você atualiza o site, o comportamento existente persiste. Depois que voc
 
 
 ## <a name="bkmk_comgmt"></a> Carga de trabalho de aplicativos móveis de transição para dispositivos cogerenciados
-<!--1357892--> Gerencie aplicativos móveis com o Microsoft Intune e continue usando o Configuration Manager para implantar aplicativos da área de trabalho do Windows. Para fazer a transição da carga de trabalho de aplicativos modernos, acesse a página de propriedades de cogerenciamento. Mova o controle deslizante do Configuration Manager para Piloto ou Todos. 
+<!--1357892-->
+Gerencie aplicativos móveis com o Microsoft Intune e continue usando o Configuration Manager para implantar aplicativos da área de trabalho do Windows. Para fazer a transição da carga de trabalho de aplicativos modernos, acesse a página de propriedades de cogerenciamento. Mova o controle deslizante do Configuration Manager para Piloto ou Todos. 
 
 Após a transição dessa carga de trabalho, todos os aplicativos disponíveis implantados do Intune estão disponíveis no Portal da Empresa. Os aplicativos que você implanta do Configuration Manager estão disponíveis no Centro de Software. 
 
@@ -215,7 +224,8 @@ Para obter mais informações, consulte os seguintes artigos:
 
 
 ## <a name="bkmk_bgoptions"></a> Opções de grupo de limites para downloads de pares
-<!--1356193--> Os grupos de limites agora incluem configurações adicionais para dar a você mais controle sobre a distribuição de conteúdo em seu ambiente. Esta versão adiciona as seguintes opções:  
+<!--1356193-->
+Os grupos de limites agora incluem configurações adicionais para dar a você mais controle sobre a distribuição de conteúdo em seu ambiente. Esta versão adiciona as seguintes opções:  
 
 - **Permitir downloads de par nesse grupo de limites**: Essa configuração é habilitada por padrão. O ponto de gerenciamento fornece aos clientes uma lista de locais de conteúdo que inclui fontes de pares. <!--This setting also affects applying Group IDs for Delivery Optimization.518268-->  
 
@@ -235,12 +245,13 @@ Para obter mais informações, consulte os seguintes artigos:
 
 
 ### <a name="known-issue"></a>Problema conhecido
-Se o cliente do código-fonte par tiver mais de um endereço IP (IPv4, IPv6 ou ambos), o cache de pares não funcionará. A nova opção, **Durante os downloads de pares, use apenas pares na mesma sub-rede**, não terá efeito se a fonte de mesmo nível tiver mais de um endereço IP.<!--518661-->   
+Se o cliente do código-fonte par tiver mais de um endereço IP (IPv4, IPv6 ou ambos), o cache de pares não funcionará. A nova opção, **Durante os downloads de pares, use apenas pares na mesma sub-rede**, não terá efeito se a fonte par tiver mais de um endereço IP.<!--518661-->   
 
 
 
 ## <a name="bkmk_3pupdate"></a> Suporte a catálogos personalizados de atualizações de software de terceiros
-<!--1358714--> Essa versão aumenta ainda mais o suporte para atualizações de software de terceiros, como resultado de seus [comentários no UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8803711-3rd-party-patching-scup-integration-with-sccm-co). A [versão Technical Preview 1806](/sccm/core/get-started/capabilities-in-technical-preview-1806#bkmk-3pupdate) forneceu suporte para *catálogos de parceiros*, que são catálogos registrados de fornecedores de software. Os catálogos que você fornece, que não estão registrados com a Microsoft, são chamados de *catálogos personalizados*. Adicione catálogos personalizados no console do Configuration Manager.  
+<!--1358714-->
+Essa versão aumenta ainda mais o suporte para atualizações de software de terceiros, como resultado de seus [comentários no UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8803711-3rd-party-patching-scup-integration-with-sccm-co). A [versão Technical Preview 1806](/sccm/core/get-started/capabilities-in-technical-preview-1806#bkmk-3pupdate) forneceu suporte para *catálogos de parceiros*, que são catálogos registrados de fornecedores de software. Os catálogos que você fornece, que não estão registrados com a Microsoft, são chamados de *catálogos personalizados*. Adicione catálogos personalizados no console do Configuration Manager.  
 
 
 ### <a name="prerequisites"></a>Pré-requisitos 
@@ -293,7 +304,7 @@ Exclua catálogos personalizados do mesmo nó do console. Selecione um catálogo
 
 
 ### <a name="known-issue"></a>Problema conhecido
-A ação de exclusão em catálogos personalizados está esmaecida, assim, você não pode excluir catálogos personalizados no console. Para solucionar esse problema, use a ferramenta **wbemtest** no servidor do site. Consulte a instância que você deseja excluir com o nome ou a URL de download, por exemplo: `select * from SMS_ISVCatalog where DownloadURL="http://www.contoso.com/catalog.cab"`. Na janela de resultados de consulta, selecione o objeto e clique em **Excluir**.<!--518676-->  
+A ação de exclusão em catálogos personalizados está esmaecida, assim, você não pode excluir catálogos personalizados no console. Para solucionar esse problema, use a ferramenta **wbemtest** no servidor do site. Consulte a instância que você deseja excluir com o nome ou a URL de download, por exemplo: `select * from SMS_ISVCatalog where DownloadURL="http://www.contoso.com/catalog.cab"`. Na janela de resultados da consulta, selecione o objeto e clique em **Excluir**.<!--518676-->  
 
 
 
@@ -301,7 +312,7 @@ A ação de exclusão em catálogos personalizados está esmaecida, assim, você
 
 Esta versão inclui os seguintes aprimoramentos:  
 
-- Os recursos a seguir agora dão suporte ao uso Azure EUA Nuvem de governo:<!--511980-->  
+- Os recursos a seguir agora dão suporte ao uso Azure EUA Nuvem Governamental:<!--511980-->  
 
     - Integração do site para **Gerenciamento de Nuvem** por meio dos [Serviços do Azure](/sccm/core/servers/deploy/configure/azure-services-wizard)  
 
@@ -309,12 +320,13 @@ Esta versão inclui os seguintes aprimoramentos:
 
     - Implantando um [ponto de distribuição na nuvem com o Azure Resource Manager](/sccm/core/get-started/capabilities-in-technical-preview-1805#cloud-distribution-point-support-for-azure-resource-manager)  
 
-- Os clientes estão usando o Windows AutoPilot para provisionar o Windows 10 em dispositivos unidos ao Azure Active Directory que estão conectados à rede local. Para instalar ou atualizar o cliente do Configuration Manager nesses dispositivos, agora você não precisa de um ponto de distribuição de nuvem ou um ponto de distribuição local configurado para **permitir que os clientes se conectem anonimamente**. Em vez disso, habilite a opção de site para **Usar certificados gerados pelo Configuration Manager para sistemas de sites HTTP**, que permite que um cliente associado ao domínio de nuvem se comunique com um ponto de distribuição habilitado para HTTP local. Para saber mais, confira [melhorias nas comunicações seguras com o cliente](https://docs.microsoft.com/en-us/sccm/core/get-started/capabilities-in-technical-preview-1805#improved-secure-client-communications).<!--515854-->  
+- Os clientes estão usando o Windows AutoPilot para provisionar o Windows 10 em dispositivos unidos ao Azure Active Directory que estão conectados à rede local. Para instalar ou atualizar o cliente do Configuration Manager nesses dispositivos, agora você não precisa de um ponto de distribuição de nuvem ou um ponto de distribuição local configurado para **permitir que os clientes se conectem anonimamente**. Em vez disso, habilite a opção de site para **Usar certificados gerados pelo Configuration Manager para sistemas de sites HTTP**, que permite que um cliente associado ao domínio de nuvem se comunique com um ponto de distribuição habilitado para HTTP local. Para obter mais informações, confira [Melhorias nas comunicações seguras com o cliente](https://docs.microsoft.com/sccm/core/get-started/capabilities-in-technical-preview-1805#improved-secure-client-communications).<!--515854-->  
 
 
 
 ## <a name="bkmk_report"></a> Novo relatório de conformidade de atualizações de software
-<!--1357775--> A exibição da conformidade de relatórios de atualizações de software tradicionalmente inclui dados de clientes que não entraram em contato com o site recentemente. Um novo relatório permite filtrar os resultados de conformidade para um grupo de atualização de software específico por clientes "íntegros". Este relatório mostra o estado de conformidade mais realista de clientes ativos em seu ambiente. 
+<!--1357775-->
+A exibição de relatórios de conformidade de atualizações de software tradicionalmente inclui dados de clientes que não contataram o site recentemente. Um novo relatório permite filtrar os resultados de conformidade para um grupo de atualização de software específico por clientes "íntegros". Este relatório mostra o estado de conformidade mais realista de clientes ativos em seu ambiente. 
  
 Para exibir o relatório, vá para o workspace **Monitoramento**, expanda **Relatórios**, expanda **Relatórios**, expanda **Atualizações de Software – Conformidade** e selecione **Conformidade 9 - Integridade geral e conformidade**. Especifique o **Grupo de Atualização**, o **Nome da Coleção** e o estado de **Integridade do Cliente**.
 

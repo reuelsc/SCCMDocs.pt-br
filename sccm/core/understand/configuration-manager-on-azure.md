@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 985b439a9f74f92a68b1e1c70e4cca0580b819c0
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: bd2a745f7fc158739898930c9d05ea40724879b1
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126787"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176085"
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager no Azure – Perguntas frequentes
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -49,7 +49,7 @@ A rede é uma decisão muito importante. As velocidades de rede e latência pode
 - **ExpressRoute** (recomendado)
   - Extensão natural para seu datacenter (pode unir vários datacenters)
   - Conexões privadas entre datacenters do Azure e sua infraestrutura
-  - Não passe pela Internet pública
+  - Não passa pela Internet pública
   - Oferece confiabilidade, velocidades rápidas, latência mais baixa, segurança alta
   - Oferece opções de planos de dados ilimitados e velocidades de até 10 Gbps
 - **Gateway de VPN**
@@ -135,10 +135,10 @@ A abordagem de gerenciamento de conteúdo é muito semelhante à dos servidores 
 >  Se o suporte a PXE for necessário, use pontos de distribuição locais (padrão ou pull) para responder às solicitações de inicialização. [No momento, não há suporte para o WDS ser executado em VMs do Azure](https://technet.microsoft.com/library/hh831764(v=ws.11).aspx).
 
 
-### <a name="while-i-am-ok-with-the-limitations-of-cloud-based-distribution-points-i-dont-want-to-put-my-management-point-into-a-dmz-even-though-that-is-needed-to-support-my-internet-based-clients-do-i-have-any-other-options"></a>Embora eu esteja OK com as limitações dos pontos de distribuição baseados em nuvem, não quero colocar meu ponto de gerenciamento em um DMZ, mesmo que isso seja necessário para dar suporte aos meus clientes baseados na Internet. Tenho alguma outra opção?
+### <a name="while-i-am-ok-with-the-limitations-of-cloud-based-distribution-points-i-dont-want-to-put-my-management-point-into-a-dmz-even-though-that-is-needed-to-support-my-internet-based-clients-do-i-have-any-other-options"></a>Embora eu tenha aceitado as limitações dos pontos de distribuição baseados em nuvem, não quero colocar meu ponto de gerenciamento em um DMZ, mesmo que isso seja necessário para dar suporte a meus clientes baseados na Internet. Tenho alguma outra opção?
 Sim. Com o Configuration Manager versão 1610, apresentamos o [Gateway de gerenciamento de nuvem](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) como um recurso de pré-lançamento. (Esse recurso apareceu pela primeira vez na Technical Preview versão 1606 como o [Serviço de Proxy de Nuvem](/sccm/core/get-started/capabilities-in-technical-preview-1606#a-namecloudproxyacloud-proxy-service-for-managing-clients-on-the-internet).)
 
-O **Gateway de Gerenciamento de Nuvem** fornece uma maneira simples de gerenciar clientes do Configuration Manager na Internet. O serviço, que é implantado no Microsoft Azure e requer uma assinatura do Azure, conecta-se à sua infraestrutura do Configuration Manager local usando uma nova função chamada ponto de conexão do gateway de gerenciamento de nuvem. Depois de implantado e configurado, os clientes podem acessar funções do sistema de sites do Configuration Manager locais independentemente de se eles estão conectados à rede privada interna ou na Internet.
+O **Gateway de Gerenciamento de Nuvem** fornece uma maneira simples de gerenciar clientes do Configuration Manager na Internet. O serviço, que é implantado no Microsoft Azure e requer uma assinatura do Azure, conecta-se à sua infraestrutura do Configuration Manager local usando uma nova função chamada ponto de conexão do gateway de gerenciamento de nuvem. Após a implantação e a configuração, os clientes podem acessar as funções do sistema de sites do Configuration Manager locais, independentemente de se eles estão conectados à rede privada interna ou à Internet.
 
 Você pode começar a usar o gateway de gerenciamento de nuvem em seu ambiente e nos fornecer comentários para melhorá-lo. Para obter mais informações sobre os recursos de pré-lançamento, consulte [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkprereleasea-use-pre-release-features-from-updates).
 

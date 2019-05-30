@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28e0326cf370d000052eb3bc675e70377d7954c5
-ms.sourcegitcommit: 234f97fde834f94b75f90850378521cf0c5a2343
+ms.openlocfilehash: 7eb322550c6d11426240736d3d0c6b9ff2c9764f
+ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64945102"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66264552"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Tutorial: Implantar o Windows 10 para piloto
 
@@ -140,6 +140,10 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 6. Selecione um espaço de trabalho novo ou existente e, em seguida, selecione **definido como espaço de trabalho de análise de área de trabalho**.  Em seguida, selecione **Continue** na **confirmar e conceder acesso** caixa de diálogo.  
 
 7. Na nova guia do navegador, escolha uma conta para usar para entrar. Selecione a opção para **consentir em nome de sua organização** e selecione **Accept**.  
+
+
+    > [!Note]  
+    > Esse consentimento é atribuir o aplicativo MALogAnalyticsReader a função de leitor do Log Analytics para o espaço de trabalho. Essa função de aplicativo é necessária pela análise de área de trabalho. Para obter mais informações, consulte [função de aplicativo MALogAnalyticsReader](/sccm/desktop-analytics/troubleshooting#bkmk_MALogAnalyticsReader).  
 
 8. Volta na página para **definir seu espaço de trabalho**, selecione **próxima**.  
 
@@ -315,7 +319,7 @@ Use este procedimento para implantar o Windows 10 no Configuration Manager para 
 
 Em seguida, distribua o pacote de atualização do sistema operacional para pontos de distribuição.  
 
-1. Selecione o pacote de atualização do sistema operacional na lista. Sobre o **Home** guia da faixa de opções, no **implantação** grupo, selecione **distribuir conteúdo**. O Assistente para Distribuir Conteúdo é aberto.  
+1. Selecione o pacote de atualização do sistema operacional na lista. Na guia **Início** da faixa de opções, no grupo **Implantação**, selecione **Distribuir Conteúdo**. O Assistente para Distribuir Conteúdo é aberto.  
 
 2. Sobre o **gerais** , verifique se que o conteúdo listado é o conteúdo que você deseja distribuir e, em seguida, selecione **próxima**.  
 

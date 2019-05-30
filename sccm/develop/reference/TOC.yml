@@ -2362,11 +2362,13 @@
           href: core/servers/configure/removedistributionpoints-method-in-class-sms_distributionpointgroup.md
         - name: Método RemovePackages na classe SMS_DistributionPointGroup
           href: core/servers/configure/removepackages-method-in-class-sms_distributionpointgroup.md
-    - name: Classe WMI de servidor SMS_DistributionPointInfo
+    - name: Servidor na classe WMI SMS_DistributionPointInfo
       href: core/servers/configure/sms_distributionpointinfo-server-wmi-class.md
       items:
-        - name: Método GetChainedPullDPs na classe SMSDistributionPointInfo
+        - name: Método GetChainedPullDPs
           href: core/servers/configure/getchainedpulldps-method-in-class-smsdistributionpointinfo.md
+        - name: Método SetDPMaintenanceMode
+          href: core/servers/configure/setdpmaintenancemode-method-in-class-sms-distributionpointinfo.md
     - name: Classe WMI de servidor SMS_DistributionStatus
       href: core/servers/configure/sms_distributionstatus-server-wmi-class.md
     - name: Classe WMI de servidor SMS_LastPXEAdvertisement

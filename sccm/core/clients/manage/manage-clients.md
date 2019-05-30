@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b62ca813b11a6c49366c80623e7c4462e2e4897
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: aa92ed294196d44aaafcf4e873c706e135928c90
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133894"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176650"
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Como gerenciar clientes no System Center Configuration Manager
 
@@ -224,7 +224,7 @@ O cliente do Configuration Manager baixa o conteúdo do software necessário log
 
 Se o cliente tentar baixar o conteúdo de um programa ou aplicativo que seja maior que o tamanho do cache, a implantação falhará devido ao tamanho do cache insuficiente. O cliente gerará uma mensagem de status 10050 para o tamanho do cache insuficiente. Se você aumentar o tamanho do cache posteriormente, o resultado será:  
 
--   Para um programa necessário: O cliente não tenta automaticamente baixar o conteúdo novamente. Reimplante o pacote e o programa no cliente.  
+-   Para um programa necessário: O cliente não tenta automaticamente baixar o conteúdo de novo. Reimplante o pacote e o programa no cliente.  
 -   Para um aplicativo necessário: o cliente tentará novamente baixar o conteúdo automaticamente quando baixar sua política de cliente.  
 
 Se o cliente tenta baixar um pacote menor do que o tamanho do cache, mas o cache estiver cheio, todas as implantações obrigatórias continuarão sendo repetidas até que o espaço do cache esteja disponível, o download atinja o tempo limite ou a contagem de repetição atinja seu limite. Se o tamanho do cache for aumentado posteriormente, o cliente do Configuration Manager tentará baixar o pacote novamente durante o próximo intervalo de repetição. O cliente tenta baixar o conteúdo a cada quatro horas por 18 vezes.  
@@ -304,10 +304,13 @@ Ajuste o tamanho do cache do cliente sem precisar reinstalar o cliente configura
 
 1.  Abra um prompt de comando do Windows e altere a pasta para o local em que o CCMSetup.exe está localizado.  
 
-2.  Digite **Ccmsetup.exe /uninstall**e pressione **Enter**.  
+2.  Digite **CCMSetup.exe /uninstall** e, em seguida, pressione **Enter.**  
 
 > [!NOTE]  
->  O processo de desinstalação não exibe nenhum resultado na tela. Para verificar se a desinstalação do cliente foi bem-sucedida, examine o arquivo de log **CCMSetup.log** na pasta *%windir%\ ccmsetup* no computador cliente.  
+>  O processo de desinstalação não exibe nenhum resultado na tela. Para verificar se a desinstalação do cliente foi bem-sucedida, examine o arquivo de log **CCMSetup.log** na pasta *%windir%\ccmsetup\logs* no computador cliente.  
+
+> [!TIP]
+> Caso precise aguardar a conclusão do processo de desinstalação antes de realizar outras ações, execute `Wait-Process CCMSetup` no PowerShell. Esse comando pode pausar um script até que o processo de CCMSetup seja concluído.
 
 ##  <a name="BKMK_ConflictingRecords"></a> Gerenciar registros conflitantes de clientes do Configuration Manager  
  O Configuration Manager usa o identificador de hardware para tentar identificar clientes que podem ser duplicatas e alertá-lo quando houver registros conflitantes. Por exemplo, se você reinstalar um computador, o identificador de hardware será o mesmo, mas o GUID usado pelo Configuration Manager poderá ser alterado.  
@@ -425,6 +428,6 @@ Você pode iniciar a política de recuperação usando:
 
     -   Navegue até o arquivo usando o Windows Explorer e clique duas vezes no arquivo de script.  
 
-    -   Abra um prompt de comando e digite: **cscript &lt;caminho\nomearquivo.vbs>**.  
+    -   Abra um prompt de comando e digite: **cscript &lt;caminho\nomearquivo.vbs>** .  
 
 5.  Escolha **OK** na caixa de diálogo **Windows Script Host**.  

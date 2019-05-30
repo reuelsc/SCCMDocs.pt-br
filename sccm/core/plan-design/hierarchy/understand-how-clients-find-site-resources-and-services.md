@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cf206bfb0774ee1d45c70e2a0c890a2f157ad65
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 9c3058eed3cd7fe4430824d5a55f155694a2ed44
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56127177"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66177024"
 ---
 # <a name="learn-how-clients-find-site-resources-and-services-for-system-center-configuration-manager"></a>Saiba como os clientes encontram serviços e recursos do site para o System Center Configuration Manager
 
@@ -76,9 +76,9 @@ Quando o cliente não consegue localizar um ponto de gerenciamento válido na su
 
 Depois que um cliente localiza e entra em contato com um ponto de gerenciamento com êxito, ele baixa a lista atual de pontos de gerenciamento que estão disponíveis na hierarquia e atualiza a lista de MP local. Isso se aplica igualmente a clientes que estão associados ao domínio e os que não estão.  
 
-Por exemplo, quando um cliente do Configuration Manager na Internet se conecta a um ponto de gerenciamento baseado na Internet, o ponto de gerenciamento envia para esse cliente uma lista de pontos de gerenciamento disponíveis baseados na Internet no site. Da mesma forma, os clientes que ingressaram no domínio ou em grupos de trabalho também recebem a lista de pontos de gerenciamento que eles podem usar.  
+Por exemplo, quando um cliente do Configuration Manager que está na Internet se conecta a um ponto de gerenciamento baseado na Internet, o ponto de gerenciamento envia a esse cliente uma lista de pontos de gerenciamento baseados na Internet disponíveis no site. Da mesma forma, os clientes que ingressaram no domínio ou em grupos de trabalho também recebem a lista de pontos de gerenciamento que eles podem usar.  
 
-Um cliente que não está configurado para a Internet não recebe pontos de gerenciamento voltados apenas para a Internet. Clientes de grupo de trabalho configurados para a Internet comunicam-se apenas com pontos de gerenciamento voltados para a Internet.  
+Um cliente que não está configurado para a Internet não recebe pontos de gerenciamento somente para a Internet. Os clientes do grupo de trabalho configurados para a Internet comunicam-se apenas com os pontos de gerenciamento para a Internet.  
 
 ##  <a name="BKMK_MPList"></a> A lista de MP  
 A lista de MP é a origem preferencial para o local de origem do serviço para um cliente, pois é uma lista priorizada de pontos de gerenciamento que o cliente já identificou. Essa lista é classificada por cada cliente com base em seu local de rede no momento em que o cliente atualizou a lista, armazenando-a localmente no cliente no WMI.  
@@ -148,7 +148,7 @@ Clientes na intranet podem usar o DNS para o local do serviço. Isso exige que p
 Considere usar o DNS para o local do serviço quando qualquer uma das seguintes condições forem verdadeiras:
 -   O esquema do AD DS não foi estendido para dar suporte ao Configuration Manager.
 -   Os clientes da intranet estiverem localizados em uma floresta que não esteja habilitada para publicar no Configuration Manager.  
--   Você possui clientes em computadores do grupo de trabalho, os quais não estão configurados para gerenciamento de cliente somente pela Internet. (Um cliente de grupo de trabalho configurado para a Internet somente se comunicará com pontos de gerenciamento da Internet e não usará o DNS para o local do serviço).  
+-   Você tem clientes em computadores do grupo de trabalho, os quais não estão configurados para o gerenciamento de clientes somente pela Internet. (Um cliente de grupo de trabalho configurado para a Internet somente se comunicará com pontos de gerenciamento para a Internet e não usará o DNS para a localização do serviço.)  
 -   Você pode [configurar clientes para localizar pontos de gerenciamento do DNS](http://technet.microsoft.com/library/gg682055).  
 
 Quando um site publica registros de localização de serviço para pontos de gerenciamento no DNS:  
@@ -196,7 +196,7 @@ Para publicar um ponto de gerenciamento no Configuration Manager, especifique os
     > [!NOTE]  
     >  A porta do registro SRV deve corresponder à porta de comunicação usada pelo ponto de gerenciamento. Por padrão, ela é **80** para comunicação HTTP e **443** para comunicação HTTPS.  
 
--   **Destino**: Insira o FQDN da intranet especificado para o sistema de site que é configurado com a função do site do ponto de gerenciamento.  
+-   **Destino**: Insira o FQDN da intranet especificado para o sistema de sites que é configurado com a função do site do ponto de gerenciamento.  
 
 Se você estiver usando o DNS do Windows Server, você poderá usar o procedimento a seguir para inserir esse registro DNS nos pontos de gerenciamento da intranet. Se você estiver usando uma implementação diferente para DNS, use as informações desta seção sobre os valores dos campos e consulte a documentação de DNS para adaptar esse procedimento.  
 
@@ -236,7 +236,7 @@ Se você estiver usando o DNS do Windows Server, você poderá usar o procedimen
         > [!NOTE]  
         >  A porta do registro SRV deve corresponder à porta de comunicação usada pelo ponto de gerenciamento. Por padrão, ela é **80** para comunicação HTTP e **443** para comunicação HTTPS.  
 
-    -   **Host que oferece este serviço**: Insira o FQDN da intranet especificado para o sistema de site que é configurado com a função do site do ponto de gerenciamento.  
+    -   **Host que oferece este serviço**: Insira o FQDN da intranet especificado para o sistema de sites que é configurado com a função do site do ponto de gerenciamento.  
 
 Repita essas etapas para cada ponto de gerenciamento da intranet que você desejar publicar no DNS.  
 

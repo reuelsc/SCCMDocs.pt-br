@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 251a614aebce244edddfe362a5f7119ca9dd0c87
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 11ad5a0bef004b778ba431c9a2da30f51eafc443
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132499"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933285"
 ---
 # <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funcionalidades na Visualização Técnica 1706 do System Center Configuration Manager
 
@@ -54,7 +54,8 @@ Este artigo apresenta os recursos disponíveis na Visualização Técnica do Sys
 -->
 
 ## <a name="improved-boundary-groups-for-software-update-points"></a>Grupos de limites aprimorados para os pontos de atualização de software
-<!-- 1324591 --> Esta versão inclui aprimoramentos no funcionamento dos pontos de atualização de software com grupos de limites. O exemplo a seguir resume o novo comportamento de fallback:
+<!-- 1324591 -->
+Esta versão inclui aprimoramentos no funcionamento dos pontos de atualização de software com grupos de limites. O exemplo a seguir resume o novo comportamento de fallback:
 - Agora, o fallback para pontos de atualização de software usa um tempo configurável para fallback para grupos de limites vizinhos, com um tempo mínimo de 120 minutos.
 
 - Independentemente da configuração de fallback, um cliente tenta acessar o último ponto de atualização de software usado durante 120 minutos. Após não conseguir acessar o servidor durante 120 minutos, o cliente verifica seu pool de pontos de atualização de software disponíveis, para poder encontrar um novo.
@@ -76,7 +77,8 @@ Para saber mais, confira [pontos de atualização de software](/sccm/core/server
 
 
 ## <a name="site-server-role-high-availability"></a>Alta disponibilidade da função de servidor do site
-<!-- 1128774 --> A alta disponibilidade para a função de servidor do site é uma solução baseada no Configuration Manager para instalar um servidor do site primário no modo *Passivo*. O servidor do site no modo passivo existe além do servidor do site primário existente, que está no modo *Ativo*. Um servidor do site no modo passivo está disponível para uso imediato, quando for necessário.
+<!-- 1128774 -->
+Alta disponibilidade para a função de servidor do site é uma solução com base no Configuration Manager que serve para instalar um servidor do site primário adicional no modo *Passivo*. O servidor do site no modo passivo existe além do servidor do site primário existente, que está no modo *Ativo*. Um servidor do site no modo passivo está disponível para uso imediato, quando for necessário.
 
 Um servidor do site primário no modo passivo:
 -   Usa o mesmo banco de dados do site que o servidor do site ativo.
@@ -184,7 +186,8 @@ Tente concluir as tarefas a seguir e, depois, envie-nos **Comentários** usando 
 
 
 ## <a name="include-trust-for-specific-files-and-folders-in-a-device-guard-policy"></a>Incluir relação de confiança para arquivos e pastas específicos em uma política de Proteção do Dispositivo
-<!-- 1324676 --> Nesta versão, adicionamos mais recursos para o gerenciamento de política de [Proteção do dispositivo](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)
+<!-- 1324676 -->
+Nesta versão, adicionamos mais recursos para o gerenciamento de política de [Proteção do Dispositivo](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)
 
 Agora, você tem a opção de adicionar a relação de confiança para arquivos específicos e pastas em uma política de Proteção do Dispositivo. Isso permite que você:
 
@@ -200,7 +203,8 @@ Agora, você tem a opção de adicionar a relação de confiança para arquivos 
 
 
 ## <a name="hide-task-sequence-progress"></a>Ocultar o progresso da sequência de tarefas
-<!-- 1354291 --> Nesta versão, é possível controlar quando o andamento da sequência de tarefas é exibido aos usuários finais por meio de uma nova variável. Em sua sequência de tarefas, use a etapa **Definir Variável de Sequência de Tarefas** para definir o valor para a variável **TSDisableProgressUI** a fim de ocultar ou exibir o andamento da sequência de tarefas. Você pode usar a etapa Definir Variável de Sequência de Tarefas várias vezes em uma sequência de tarefas para alterar o valor da variável. Isso permite que você oculte ou exiba o andamento da sequência de tarefas em diferentes seções da sequência de tarefas.
+<!-- 1354291 -->
+Nesta versão, você pode controlar quando o andamento da sequência de tarefas é exibido aos usuários finais por meio de uma nova variável. Em sua sequência de tarefas, use a etapa **Definir Variável de Sequência de Tarefas** para definir o valor para a variável **TSDisableProgressUI** a fim de ocultar ou exibir o andamento da sequência de tarefas. Você pode usar a etapa Definir Variável de Sequência de Tarefas várias vezes em uma sequência de tarefas para alterar o valor da variável. Isso permite que você oculte ou exiba o andamento da sequência de tarefas em diferentes seções da sequência de tarefas.
 
 #### <a name="to-hide-task-sequence-progress"></a>Para ocultar o progresso da sequência de tarefas
 No editor de sequência de tarefas, use a etapa [Definir Variável de Sequência de Tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) para definir o valor da variável **TSDisableProgressUI** como **True** a fim de ocultar o andamento da sequência de tarefas.
@@ -209,7 +213,8 @@ No editor de sequência de tarefas, use a etapa [Definir Variável de Sequência
 No editor de sequência de tarefas, use a etapa [Definir Variável de Sequência de Tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) para definir o valor da variável **TSDisableProgressUI** como **False** a fim de exibir o andamento da sequência de tarefas.
 
 ## <a name="specify-a-different-content-location-for-install-content-and-uninstall-content"></a>Especificar um local de conteúdo diferente para instalar e desinstalar o conteúdo
-<!-- 1097546 --> Atualmente, no Configuration Manager, você especifica a localização de instalação que contém os arquivos de instalação de um aplicativo. Quando você especifica um local de instalação, ele também é usado como o local de desinstalação do conteúdo do aplicativo.
+<!-- 1097546 -->
+Atualmente, no Configuration Manager, você especifica o local de instalação que contém os arquivos de instalação de um aplicativo. Quando você especifica um local de instalação, ele também é usado como o local de desinstalação do conteúdo do aplicativo.
 Com base em seus comentários, quando você quer desinstalar um aplicativo implantado, e o conteúdo do aplicativo não está no computador cliente, o cliente baixa todos os arquivos de instalação do aplicativo novamente antes do aplicativo ser desinstalado.
 Para resolver esse problema, agora você pode especificar um local do conteúdo de instalação e um local do conteúdo de desinstalação opcional. Além disso, você pode optar por não especificar um local do conteúdo de desinstalação.
 
@@ -226,7 +231,8 @@ Para resolver esse problema, agora você pode especificar um local do conteúdo 
 
 
 ## <a name="accessibility-improvements"></a>Aprimoramentos na acessibilidade  
-<!--1253000 --> Esta versão prévia apresenta vários aprimoramentos nos [recursos de acessibilidade](/sccm/core/understand/accessibility-features) no console do Configuration Manager. Elas incluem:     
+<!--1253000 -->
+Esta visualização apresenta vários aprimoramentos nos [recursos de acessibilidade](/sccm/core/understand/accessibility-features) no console do Configuration Manager. Elas incluem:     
 
 **Novos atalhos de teclado para movimentar-se pelo console:**
 -   CTRL + M - define o foco no painel principal (central).
@@ -246,7 +252,8 @@ Para resolver esse problema, agora você pode especificar um local do conteúdo 
 
 
 ## <a name="changes-to-the-azure-services-wizard-to-support-upgrade-readiness"></a>Alterações no Assistente dos Serviços do Azure para oferecer suporte ao Upgrade Readiness
-<!-- 1353331 --> Começando nesta versão, use o Assistente dos Serviços do Azure para configurar uma conexão do Configuration Manager com o [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics). O uso do assistente simplifica a configuração do conector usando um assistente comum para serviços relacionados do Azure.   
+<!-- 1353331 -->
+A partir desta versão, use o Assistente dos Serviços do Azure para configurar uma conexão do Configuration Manager para o [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics). O uso do assistente simplifica a configuração do conector usando um assistente comum para serviços relacionados do Azure.   
 
 Embora o método para configurar a conexão tenha mudado, os pré-requisitos de conexão e do modo como você usa o Upgrade Readiness permanecem inalterados.   
 
@@ -384,7 +391,8 @@ Depois de executar um script nos dispositivos cliente, use este procedimento par
 3. Na lista **Resultados do Script**, veja os resultados de cada script executado em dispositivos cliente. Um código de saída do script **0** geralmente indica que o script foi executado com êxito.
 
 ## <a name="pxe-network-boot-support-for-ipv6"></a>Suporte de inicialização de rede PXE para IPv6
-<!-- 1269793 --> Agora você pode habilitar o suporte à inicialização de rede do PXE para IPv6 para iniciar uma sequência de tarefas de implantação de sistema operacional. Quando você usa essa configuração, os pontos de distribuição habilitados para PXE oferecerá suporte para IPv4 e IPv6. Essa opção não exige WDS e interromperá o WDS, se ele estiver presente.
+<!-- 1269793 -->
+Agora você pode habilitar o suporte à inicialização de rede do PXE para IPv6 para iniciar uma sequência de tarefas de implantação de sistema operacional. Quando você usa essa configuração, os pontos de distribuição habilitados para PXE oferecerá suporte para IPv4 e IPv6. Essa opção não exige WDS e interromperá o WDS, se ele estiver presente.
 
 #### <a name="to-enable-pxe-boot-support-for-ipv6"></a>Para habilitar o suporte à inicialização de PXE para IPv6
 Use o procedimento a seguir para habilitar a opção de suporte a IPv6 para PXE.
@@ -393,7 +401,8 @@ Use o procedimento a seguir para habilitar a opção de suporte a IPv6 para PXE.
 2. Na guia **PXE**, selecione **Suporte a IPv6** para habilitar o suporte a IPv6 para PXE.
 
 ## <a name="manage-microsoft-surface-driver-updates"></a>Gerenciar atualizações de driver do Microsoft Surface
-<!-- 1098490 --> Agora você pode usar o Configuration Manager para gerenciar atualizações de driver do Microsoft Surface.
+<!-- 1098490 -->
+Agora você pode usar o Configuration Manager para gerenciar atualizações de driver do Microsoft Surface.
 
 ### <a name="prerequisites"></a>Pré-requisitos
 Todos os pontos de atualização de software devem executar o Windows Server 2016.
@@ -405,7 +414,8 @@ Tente concluir as tarefas a seguir e, depois, envie-nos **Comentários** usando 
 3. [Implantar os drivers sincronizados do Microsoft Surface](/sccm/sum/deploy-use/deploy-software-updates)
 
 ## <a name="configure-windows-update-for-business-deferral-policies"></a>Configurar as políticas de adiamento do Windows Update for Business
-<!-- 1290890 --> Agora você pode configurar as políticas de adiamento para as Atualizações de Recurso do Windows 10 ou Atualizações de Qualidade para dispositivos com Windows 10 gerenciados diretamente pelo Windows Update for Business. Você pode gerenciar as políticas de adiamento no novo nó **Políticas do Windows Update for Business** em **Biblioteca de Software** > **Manutenção do Windows 10**.
+<!-- 1290890 -->
+Agora você pode configurar as políticas de adiamento para as Atualizações de Recurso do Windows 10 ou Atualizações de Qualidade para dispositivos com Windows 10 gerenciados diretamente pelo Windows Update for Business. Você pode gerenciar as políticas de adiamento no novo nó **Políticas do Windows Update for Business** em **Biblioteca de Software** > **Manutenção do Windows 10**.
 
 ### <a name="prerequisites"></a>Pré-requisitos
 Os dispositivos com Windows 10 gerenciados pelo Windows Update for Business devem ter conectividade com a Internet.
@@ -417,11 +427,11 @@ Os dispositivos com Windows 10 gerenciados pelo Windows Update for Business deve
 4. Na página **Políticas de Adiamento**, defina se deseja adiar ou pausar as Atualizações de Recurso.    
     Normalmente, as Atualizações de Recurso são recursos novos do Windows. Depois de definir a configuração **Nível de preparação do branch**, defina se, e por quanto tempo, você quer adiar o recebimento de Atualizações de Recurso após a disponibilização da Microsoft.
     - **Nível de preparação do branch**: defina o branch para o qual o dispositivo receberá atualizações do Windows (Branch Atual ou Branch Atual para Negócios).
-    - **Período de adiamento (dias)**:  especifique o número de dias durante os quais as Atualizações de Recurso serão adiadas. Você pode adiar o recebimento dessas Atualizações de Recurso por um período de 180 dias a partir do lançamento.
+    - **Período de adiamento (dias)** :  especifique o número de dias durante os quais as Atualizações de Recurso serão adiadas. Você pode adiar o recebimento dessas Atualizações de Recurso por um período de 180 dias a partir do lançamento.
     - **Pausar atualizações de recursos a partir de**: selecione se você quer pausar o recebimento de Atualizações de Recursos nos dispositivos durante um período de até 60 dias a contar do momento que você pausar as atualizações. Após o número máximo de dias, a funcionalidade de pausa expirará automaticamente, e o dispositivo verificará no Windows Update se há atualizações aplicáveis. Após essa verificação, você poderá pausar as atualizações novamente. Retome as Atualizações de Recurso desmarcando a caixa de seleção.   
 5. Escolha se deseja adiar ou pausar as Atualizações de Qualidade.     
     Normalmente, as Atualizações de Qualidade são correções e aprimoramentos funcionalidades existentes do Windows, e geralmente são publicadas na primeira terça-feira de cada mês, embora possam ser liberadas a qualquer momento pela Microsoft. Você pode definir se, e por quanto tempo, deseja adiar o recebimento das Atualizações de Qualidade após sua disponibilização.
-    - **Período de adiamento (dias)**: especifique o número de dias durante os quais as Atualizações de Recurso serão adiadas. Você pode adiar o recebimento dessas Atualizações de Recurso por um período de 180 dias a partir do lançamento.
+    - **Período de adiamento (dias)** : especifique o número de dias durante os quais as Atualizações de Recurso serão adiadas. Você pode adiar o recebimento dessas Atualizações de Recurso por um período de 180 dias a partir do lançamento.
     - **Pausar atualizações de qualidade a partir de**: selecione se você quer pausar o recebimento de Atualizações de Qualidade nos dispositivos durante um período de até 35 dias a contar do momento que você pausar as atualizações. Após o número máximo de dias, a funcionalidade de pausa expirará automaticamente, e o dispositivo verificará no Windows Update se há atualizações aplicáveis. Após essa verificação, você poderá pausar as atualizações novamente. Retome as Atualizações de Qualidade desmarcando a caixa de seleção.
 6. Selecione **Instalar as atualizações de outros produtos da Microsoft** para habilitar a configuração da política de grupo que torna as configurações de adiamento aplicáveis ao Microsoft Update, bem como para o Windows Update.
 7. Selecione **Incluir drivers com o Windows Update** para atualizar automaticamente os drivers de Windows Updates. Se você desmarcar essa configuração, as atualizações de driver não serão baixadas do Windows Update.
@@ -436,14 +446,15 @@ Os dispositivos com Windows 10 gerenciados pelo Windows Update for Business deve
     - **Corrigir regras não compatíveis quando houver suporte**: selecione para corrigir automaticamente quaisquer regras não compatíveis com o WMI (Instrumentação de Gerenciamento do Windows), o Registro, os scripts e todas as configurações de dispositivos móveis registrados pelo Configuration Manager.
     - **Permitir correção fora da janela de manutenção**: se uma janela de manutenção tiver sido configurada para a coleção na qual você está implantando a política, habilite esta opção para permitir que as configurações de conformidade corrijam o valor fora da janela de manutenção. Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](/sccm/core/clients/manage/collections/use-maintenance-windows).
     - **Gerar um alerta**: configurará um alerta gerado se a conformidade da linha de base de configuração for menor que um percentual especificado por uma data e hora determinadas. Você também pode especificar se deseja que um alerta seja enviado para o System Center Operations Manager.
-    - **Atraso aleatório (horas)**: especifica uma janela de atraso para evitar o processamento excessivo no Serviço de Registro de Dispositivo de Rede. O valor padrão é de 64 horas.
+    - **Atraso aleatório (horas)** : especifica uma janela de atraso para evitar o processamento excessivo no Serviço de Registro de Dispositivo de Rede. O valor padrão é de 64 horas.
     - **Agendamento**: especifique o agendamento de avaliação de conformidade com base no qual o perfil implantado será avaliado em computadores cliente. O agendamento poderá ser simples ou personalizado. O perfil será avaliado por computadores cliente quando o usuário fizer logon.
 4.  Conclua o assistente para implantar o perfil.
 
 
 
 ## <a name="support-for-entrust-certification-authorities"></a>Suporte para autoridades de certificação Entrust
-<!-- 1350740 --> Agora, o Configuration Manager dá suporte a autoridades de certificação Entrust; isso permite a entrega de certificados PFX a dispositivos registrados no Microsoft Intune.
+<!-- 1350740 -->
+Agora, o Configuration Manager dá suporte a autoridades de certificação Entrust; isso permite o envio de certificados PFX para dispositivos registrados no Microsoft Intune.
 
 Você pode configurar o Entrust como a autoridade de certificação ao adicionar a função Ponto de Registro de Certificado no Configuration Manager. Ao adicionar um novo perfil de certificado que emite os certificados PFX, você pode selecionar uma autoridade de certificação Microsoft ou Entrust.
 
@@ -453,7 +464,7 @@ Você pode configurar o Entrust como a autoridade de certificação ao adicionar
 ## <a name="cisco-ipsec-support-for-ios-vpn-profiles"></a>Suporte do Cisco (IPsec) para perfis VPN do iOS
 <!-- 1321367 -->
 
-Você pode criar um perfil VPN do iOS com Cisco (IPsec) como o tipo de conexão. Para saber mais, confira [Criar perfis VPN](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles).
+Você pode criar um perfil VPN do iOS com Cisco (IPsec) como o tipo de conexão. Para saber mais, confira [Criar perfis VPN](https://docs.microsoft.com/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles).
 
 
 ## <a name="new-windows-configuration-item-settings"></a>Novas definições de item de configuração do Windows
@@ -533,7 +544,8 @@ A partir desta versão, você pode usar três novas configurações de política
 Veja [proteger aplicativos usando políticas de proteção de aplicativos no Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) para testar as novas configurações de política de proteção do aplicativo.
 
 ## <a name="android-and-ios-enrollment-restrictions"></a>Restrições de inscrição do Android e iOS
-<!-- 1290826 --> Começando nessa versão, os administradores podem especificar que os usuários não podem inscrever dispositivos Android ou iOS pessoais no ambiente híbrido. Isso permite que você limite os dispositivos inscritos a dispositivos da empresa ou iOS previamente declarados inscritos somente com o Programa de registro do dispositivos.
+<!-- 1290826 -->
+A partir desta versão, os administradores podem especificar que os usuários não podem inscrever dispositivos Android ou iOS pessoais no ambiente híbrido. Isso permite que você limite os dispositivos inscritos a dispositivos da empresa ou iOS previamente declarados inscritos somente com o Programa de registro do dispositivos.
 
 ### <a name="try-it-out"></a>Experimente
 1. No console do Configuration Manager, no workspace **Administração**, acesse **Serviços de Nuvem** > **Assinatura do Microsoft Intune**.
@@ -563,7 +575,8 @@ A definição de DisallowCrossProfileCopyPaste como true impede o comportamento 
 4. Selecione o valor para **Permitir o compartilhamento de dados entre perfis pessoais e de trabalho** e conclua o assistente.
 
 ## <a name="device-health-attestation-assessment-for-compliance-policies-for-conditional-access"></a>Avaliação do Atestado de Integridade do Dispositivo para políticas de conformidade para acesso condicional
-<!-- 1097546 --> Começando nesta versão, você pode usar o status do Atestado de Integridade do Dispositivo como uma regra de política de conformidade para acesso condicional aos recursos da empresa.
+<!-- 1097546 -->
+A partir desta versão, você pode usar o status do Atestado de Integridade do Dispositivo como uma regra de política de conformidade para acesso condicional aos recursos da empresa.
 
 ### <a name="try-it-out"></a>Experimente
 Selecione uma regra de Atestado de Integridade do Dispositivo como parte de uma avaliação de política de conformidade.

@@ -2,7 +2,7 @@
 title: Planejar o provedor de SMS
 titleSuffix: Configuration Manager
 description: Saiba sobre a função do sistema de site do Provedor de SMS no Configuration Manager.
-ms.date: 03/12/2019
+ms.date: 05/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ff872817805c85665bde7219ca26de0bf8d78ef
-ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
+ms.openlocfilehash: 31818bf0b639db4172e090a68a704380208781ca
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58197105"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176986"
 ---
 # <a name="plan-for-the-sms-provider"></a>Planejar o provedor de SMS 
 
@@ -69,7 +69,7 @@ Para obter mais informações sobre como gerenciar o Provedor de SMS, confira [G
 
 Ao instalar um site, o primeiro provedor de SMS para o site é instalado automaticamente. Você pode especificar qualquer um dos seguintes locais com suporte para o Provedor de SMS:  
 
--   Servidor do site  
+-   O servidor do site  
 
 -   O servidor de banco de dados do site  
 
@@ -259,9 +259,14 @@ A instalação do Windows ADK pode exigir até 650 MB de espaço livre em disco 
 
 A partir da versão 1810, o Provedor de SMS fornece acesso de interoperabilidade da API somente leitura ao WMI por HTTPS, chamado de **serviço de administração**. Essa API REST pode ser utilizada no lugar de um serviço Web personalizado para acessar informações do site.
 
-O formato de URL do **serviço de administração** é `https://<servername>/AdminService/wmi/<ClassName>`, em que `<servername>` é o servidor no qual o Provedor de SMS está instalado e `<ClassName>` é um nome de classe WMI válido do Configuration Manager.
+O formato de URL do **serviço de administração** é `https://<servername>/AdminService/wmi/<ClassName>`, em que `<servername>` é o servidor no qual o Provedor de SMS está instalado e `<ClassName>` é um nome de classe WMI válido do Configuration Manager. Na versão 1810, esse nome de classe não inclui o prefixo `SMS_`. Na versão 1902 e posterior, esse nome de classe é o mesmo que o nome de classe WMI. 
 
-Por exemplo, `https://servername/AdminService/wmi/SMS_Site`
+Por exemplo:
+- 1810: `https://servername/AdminService/wmi/Site`
+- 1902 e posterior: `https://servername/AdminService/wmi/SMS_Site`
+
+> [!Note]  
+> Os nomes de classe do serviço de administração diferenciam maiúsculas de minúsculas. Lembre-se de empregar o uso de maiúsculas apropriado, por exemplo, SMS_Site.
 
 Faz chamadas diretas para esse serviço com o cmdlet do Windows PowerShell [Invoke-RestMethod](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod).
 

@@ -139,3 +139,5 @@
       href: understand/task-sequence-variables.md
     - name: Comandos prestart para mídia de sequência de tarefas
       href: understand/prestart-commands-for-task-sequence-media.md
+    - name: Modo de provisionamento
+      href: understand/provisioning-mode.md

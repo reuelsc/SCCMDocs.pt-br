@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c65c85c6ec340fe595efa3bfd403e3c8d1d6a017
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: aa7d623cdd27258a265cd1b1ad22edeb78fe4da8
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56134666"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66177011"
 ---
 # <a name="configuring-reporting-in-system-center-configuration-manager"></a>Configurando relatórios no System Center Configuration Manager
 
@@ -52,7 +52,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 6.  Na página **URL do Gerenciador de Relatório** , clique na URL em **Identificação do Site do Gerenciador de Relatórios** para testar a conexão com o diretório virtual do Gerenciador de Relatórios. A caixa de diálogo **Segurança do Windows** poderá abrir e solicitar credenciais de segurança. Por padrão, a conta de usuário é exibida. Digite sua senha e clique em **OK**. Verifique se a página da Web é aberta com êxito. Feche a janela do navegador.  
 
     > [!NOTE]  
-    >  O Gerenciador de Relatórios do Reporting Services não é necessário para gerar relatórios no Configuration Manager, mas será necessário se você quiser executar relatórios em um navegador da Internet ou gerenciar relatórios usando o Gerenciador de Relatórios.  
+    >  O Gerenciador de Relatórios do Reporting Services não é necessário para gerar relatórios no Configuration Manager, mas ele será necessário se você desejar executar relatórios em um navegador da Internet ou gerenciar relatórios usando o Gerenciador de Relatórios.  
 
 7.  Clique em **Sair** para fechar o Reporting Services Configuration Manager.  
 
@@ -100,7 +100,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
     -   **Novo sistema de sites**: Na guia **Início** , no grupo **Criar** , clique em **Criar Servidor do Sistema de Site**. O **Assistente para Criar Servidor do Sistema de Site** será aberto.  
 
-    -   **Sistema de sites existente**: Clique no servidor no qual deseja instalar a função do sistema de site do ponto do Reporting Services. Ao clicar em um servidor, uma lista das funções do sistema de site que já estão instaladas no servidor será exibida no painel de resultados.  
+    -   **Sistema de sites existente**: Clique no servidor no qual deseja instalar a função do sistema de sites do ponto do Reporting Services. Ao clicar em um servidor, uma lista das funções do sistema de site que já estão instaladas no servidor será exibida no painel de resultados.  
 
          Na guia **Início** , no grupo **Servidor** , clique em **Adicionar Função do Sistema de Site**. O **Assistente para Adicionar Funções do Sistema de Site** será aberto.  
 
@@ -225,7 +225,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 
     5.  Na caixa de diálogo **Adicionar ou Remover Snap-ins** , clique em **OK**.  
 
-    6.  No console, expanda **Certificados (computador local)**, **Pessoas Confiáveis**e selecione **Certificados**.  
+    6.  No console, expanda **Certificados (computador local)** , **Pessoas Confiáveis**e selecione **Certificados**.  
 
     7.  Clique com o botão direito do mouse no certificado com o nome amigável de &lt;*FQDN do servidor do site*>, clique em **Todas as Tarefas** e selecione **Exportar**.  
 
@@ -278,7 +278,7 @@ Antes de criar, modificar e executar relatórios no console do System Center Con
 6.  Clique em **OK** para salvar as alterações e sair da caixa de diálogo.  
 
 ## <a name="upgrading-sql-server"></a>Atualizando o SQL Server  
- Após atualizar o SQL Server e o SQL Server Reporting Services usado como fonte de dados para um ponto do Reporting Services, talvez você veja alguns erros ao executar ou editar relatórios no console do Configuration Manager. Para que o relatório seja executado adequadamente no console do Configuration Manager, é necessário remover a função do sistema de sites do ponto do Reporting Services para o site e reinstalá-la. No entanto, após a atualização você poderá continuar executando e editando relatórios com êxito em um navegador da Internet.  
+ Após atualizar o SQL Server e o SQL Server Reporting Services usado como fonte de dados para um ponto do Reporting Services, talvez você veja alguns erros ao executar ou editar relatórios no console do Configuration Manager. Para que o relatório seja executado adequadamente no console do Configuration Manager, é necessário remover a função do sistema de sites do ponto do Reporting Services para o site e reinstalá-la. No entanto, após a atualização, você poderá continuar executando e editando relatórios com êxito em um navegador da Internet.  
 
 ##  <a name="BKMK_ConfigureReportOptions"></a> Configurar opções de relatório  
  Use as opções de relatório de um site do Configuration Manager para selecionar o ponto do Reporting Services padrão que será usado para gerenciar seus relatórios. Embora você possa ter mais de um ponto do Reporting Services em um site, somente o servidor de relatório padrão selecionado nas opções de relatório será usado para gerenciar relatórios. Use o procedimento a seguir para configurar as opções de relatório para o seu site.  

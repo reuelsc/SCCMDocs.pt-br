@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab5802ea43884ac23d434edd39569159ca48480a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 6aa1c324a3ff24feb14c6b867728a76252a8c19d
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138425"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176026"
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Recursos na Technical Preview 1709 do System Center Configuration Manager
 
@@ -44,7 +44,8 @@ Este artigo apresenta os recursos que estão disponíveis na Technical Preview d
 **Veja a seguir os novos recursos que você pode experimentar nesta versão.**  
 
 ## <a name="improved-vpn-profile-experience-in-configuration-manager-console"></a>Melhoria da experiência do perfil de VPN no Console do Configuration Manager
-<!-- 1313282 --> Nesta versão, atualizamos as páginas do assistente de perfil VPN e de propriedades para exibir as configurações apropriadas à plataforma selecionada. Especificamente:
+<!-- 1313282 -->
+Com esta versão, as páginas de assistente e de propriedades do perfil de VPN foram atualizadas para exibir as configurações apropriadas para a plataforma selecionada. Especificamente:
 
 - Cada plataforma tem seu próprio fluxo de trabalho, o que significa que os novos perfis de VPN contêm apenas a configuração com suporte na plataforma.
 - As páginas **Plataformas com Suporte** agora são exibidas após a página **Geral**.  Agora você escolhe a plataforma antes de configurar os valores das propriedades.
@@ -78,7 +79,8 @@ Crie um novo perfil de VPN usando o processo normal. Observe que a primeira pág
 Conforme você selecionar diferentes plataformas, observe que serão exibidas apenas as configurações relevantes para a plataforma selecionada.
 
 ## <a name="co-management-for-windows-10-devices"></a>Cogerenciamento para dispositivos Windows 10    
-<!-- 1350871 --> Muitos clientes desejam gerenciar os dispositivos Windows 10 da mesma forma que gerenciam os dispositivos móveis, ou seja, usando uma solução baseada em nuvem simplificada e com menor custo. No entanto, fazer a transição do gerenciamento tradicional para o gerenciamento moderno pode ser um desafio. A partir do Windows 10, versão 1607 (também conhecido como a Atualização de Aniversário), você pode associar um dispositivo com Windows 10 ao Active Directory (AD) local e ao Azure AD baseado em nuvem ao mesmo tempo (Azure AD híbrido). O cogerenciamento aproveita essa melhoria e permite que você gerencie dispositivos com Windows 10 simultaneamente por meio do Configuration Manager e o Intune. É uma solução que fornece uma ponte do gerenciamento tradicional para o moderno e fornece um caminho para fazer a transição usando uma abordagem em fases. 
+<!-- 1350871 -->
+Muitos clientes desejam gerenciar os dispositivos Windows 10 da mesma forma em que gerenciam os dispositivos móveis, usando uma solução baseada em nuvem simplificada e com menor custo. No entanto, fazer a transição do gerenciamento tradicional para o gerenciamento moderno pode ser um desafio. A partir do Windows 10, versão 1607 (também conhecido como a Atualização de Aniversário), você pode associar um dispositivo com Windows 10 ao Active Directory (AD) local e ao Azure AD baseado em nuvem ao mesmo tempo (Azure AD híbrido). O cogerenciamento aproveita essa melhoria e permite que você gerencie dispositivos com Windows 10 simultaneamente por meio do Configuration Manager e o Intune. É uma solução que fornece uma ponte do gerenciamento tradicional para o moderno e fornece um caminho para fazer a transição usando uma abordagem em fases. 
 
 ### <a name="prerequisites"></a>Pré-requisitos
 Você deve ter os seguintes pré-requisitos em vigor antes de habilitar o cogerenciamento. Há pré-requisitos gerais e pré-requisitos diferentes para clientes existentes do Configuration Manager e para dispositivos que não são clientes.
@@ -109,10 +111,10 @@ Estes são os pré-requisitos gerais para habilitar o cogerenciamento:
 Depois que você habilitar o cogerenciamento, o Configuration Manager continuará a gerenciar todas as cargas de trabalho. Quando você decidir que está pronto, poderá fazer com que o Intune comece a gerenciar as cargas de trabalho disponíveis. Nesta versão, o Intune pode gerenciar as cargas de trabalho as seguir.   
 
 #### <a name="compliance-policies"></a>Políticas de conformidade
-As políticas de conformidade definem as regras e configurações que um dispositivo deve obedecer para ser considerado em conformidade pelas políticas de acesso condicional. Você também pode usar as políticas de conformidade para monitorar e corrigir problemas com dispositivos, independentemente do acesso condicional. Para obter detalhes, consulte [Políticas de conformidade do dispositivo](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/device-compliance-policies).  
+As políticas de conformidade definem as regras e configurações que um dispositivo deve obedecer para ser considerado em conformidade pelas políticas de acesso condicional. Você também pode usar as políticas de conformidade para monitorar e corrigir problemas com dispositivos, independentemente do acesso condicional. Para obter detalhes, consulte [Políticas de conformidade do dispositivo](https://docs.microsoft.com/sccm/mdm/deploy-use/device-compliance-policies).  
 
 #### <a name="windows-update-for-business-policies"></a>Políticas do Windows Update para Empresas
-As políticas do Windows Update para Empresas permitem configurar políticas de adiamento para atualizações de recursos ou atualizações de qualidade do Windows 10 para dispositivos Windows 10 gerenciados diretamente pelo Windows Update para Empresas. Para obter detalhes, consulte [Configurar as políticas de adiamento do Windows Update for Business](https://docs.microsoft.com/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10#configure-windows-update-for-business-deferral-policies).  
+As políticas do Windows Update para Empresas permitem configurar políticas de adiamento para atualizações de recursos ou atualizações de qualidade do Windows 10 para dispositivos Windows 10 gerenciados diretamente pelo Windows Update para Empresas. Para obter detalhes, consulte [Configurar as políticas de adiamento do Windows Update for Business](https://docs.microsoft.com/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10#configure-windows-update-for-business-deferral-policies).  
 
 ### <a name="remote-actions-available-in-intune-on-azure-for-co-managed-devices"></a>Ações remotas disponíveis no Intune no Azure para dispositivos cogerenciados
 Quando um dispositivo Windows 10 está habilitado para cogerenciamento, você tem as seguintes ações remotas disponíveis por meio do Intune no Azure:  
@@ -160,7 +162,7 @@ Por exemplo, se você tiver os valores a seguir:
    >[!Note]    
    >Use o valor **MutualAuthPath** na exibição de SQL **vProxy_Roles** para o valor da **URL do ponto de extremidade de autenticação mútua do gateway de gerenciamento de nuvem**.
 
-- **FQDN do MP (ponto de gerenciamento)**: sccmmp.corp.contoso.com    
+- **FQDN do MP (ponto de gerenciamento)** : sccmmp.corp.contoso.com    
 - **Sitecode**: PS1    
 - **ID do locatário do Azure AD**: 72F988BF-86F1-41AF-91AB-2D7CD011XXXX    
 - **Nome do locatário do Azure AD**: contoso    
@@ -177,7 +179,7 @@ ccmsetup.msi CCMSETUPCMD="/mp:https:/&#47;contoso.cloudapp.net/CCM_Proxy_MutualA
 > [!Tip]
 >Você pode encontrar os parâmetros de linha de comando para o seu site usando as seguintes etapas:     
 > 1. No console do Configuration Manager, acesse **Administração** > **Visão Geral** > **Serviços de Nuvem** > **Cogerenciamento**.  
-> 2. Na guia Início, no grupo Gerenciar, escolha **Configurar o cogerenciamento** para abrir o Assistente para Integração de Cogerenciamento.    
+> 2. Na guia Página Inicial, no grupo Gerenciar, escolha **Configurar o cogerenciamento** para abrir o Assistente de Integração de Cogerenciamento.    
 > 3. Na página Assinatura, clique em **Entrar**, entre no seu locatário do Intune e, em seguida, clique em **Avançar**.    
 > 4. Na página Habilitação, clique em **Copiar** na seção **Dispositivos registrados no Intune** para copiar a linha de comando para a área de transferência e, em seguida, salve a linha de comando, que será usada no procedimento para criar o aplicativo.  
 > 5. Clique em **Cancelar** para sair do assistente.
@@ -186,21 +188,21 @@ ccmsetup.msi CCMSETUPCMD="/mp:https:/&#47;contoso.cloudapp.net/CCM_Proxy_MutualA
 Para novos dispositivos Windows 10, você pode usar o serviço AutoPilot para definir a configuração inicial pelo usuário, que inclui ingressar o dispositivo no AD e no Azure AD, bem como registrar o dispositivo no Intune. Em seguida, crie um aplicativo no Intune para implantar o cliente do Configuration Manager.  
 1. Habilite o AutoPilot para os novos dispositivos Windows 10. Para obter detalhes, consulte [Visão geral do Windows AutoPilot](https://docs.microsoft.com/windows/deployment/windows-10-auto-pilot).  
 2. Configure o registro automático no Azure AD para que seus dispositivos sejam registrados automaticamente no Intune. Para obter detalhes, consulte  [Registrar os dispositivos Windows no Microsoft Intune](https://docs.microsoft.com/intune/windows-enroll).
-3. Crie um aplicativo no Intune com o pacote do cliente do Configuration Manager e implante o aplicativo nos dispositivos Windows 10 que você deseja cogerenciar. Use a [linha de comando para instalar o cliente do Configuration Manager](#command-line-to-install-configuration-manager-client) ao percorrer as etapas para [instalar clientes da Internet usando o Azure AD](https://docs.microsoft.com/en-us/sccm/core/clients/deploy/deploy-clients-cmg-azure).   
+3. Crie um aplicativo no Intune com o pacote do cliente do Configuration Manager e implante o aplicativo nos dispositivos Windows 10 que você deseja cogerenciar. Use a [linha de comando para instalar o cliente do Configuration Manager](#command-line-to-install-configuration-manager-client) ao seguir as etapas para [instalar clientes da Internet usando o Azure AD](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-cmg-azure).   
 
 #### <a name="windows-10-devices-not-enrolled-in-intune-or-a-configuration-manager-client"></a>Dispositivos Windows 10 não registrados no Intune nem em um cliente do Configuration Manager
 Para dispositivos Windows 10 que não estão registrados no Intune e não têm o cliente do Configuration Manager, você pode usar o registro automático para registrar o dispositivo no Intune. Em seguida, crie um aplicativo no Intune para implantar o cliente do Configuration Manager.
 1. Configure o registro automático no Azure AD para que seus dispositivos sejam registrados automaticamente no Intune. Para obter detalhes, consulte  [Registrar os dispositivos Windows no Microsoft Intune](https://docs.microsoft.com/intune/windows-enroll).  
-2. Crie um aplicativo no Intune com o pacote do cliente do Configuration Manager e implante o aplicativo nos dispositivos Windows 10 que você deseja cogerenciar. Use a [linha de comando para instalar o cliente do Configuration Manager](#command-line-to-install-configuration-manager-client) ao percorrer as etapas para [instalar clientes da Internet usando o Azure AD](https://docs.microsoft.com/en-us/sccm/core/clients/deploy/deploy-clients-cmg-azure).
+2. Crie um aplicativo no Intune com o pacote do cliente do Configuration Manager e implante o aplicativo nos dispositivos Windows 10 que você deseja cogerenciar. Use a [linha de comando para instalar o cliente do Configuration Manager](#command-line-to-install-configuration-manager-client) ao seguir as etapas para [instalar clientes da Internet usando o Azure AD](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-cmg-azure).
 
 #### <a name="windows-10-devices-enrolled-in-intune"></a>Dispositivos Windows 10 registrados no Intune
-Para dispositivos Windows 10 que já estão registrados no Intune, crie um aplicativo no Intune para implantar o cliente do Configuration Manager. Use a [linha de comando para instalar o cliente do Configuration Manager](#command-line-to-install-configuration-manager-client) ao percorrer as etapas para [instalar clientes da Internet usando o Azure AD](https://docs.microsoft.com/en-us/sccm/core/clients/deploy/deploy-clients-cmg-azure).  
+Para dispositivos Windows 10 que já estão registrados no Intune, crie um aplicativo no Intune para implantar o cliente do Configuration Manager. Use a [linha de comando para instalar o cliente do Configuration Manager](#command-line-to-install-configuration-manager-client) ao seguir as etapas para [instalar clientes da Internet usando o Azure AD](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-cmg-azure).  
 
 ### <a name="switch-configuration-manager-workloads-to-intune"></a>Mudar as cargas de trabalho do Configuration Manager para o Intune
 Na seção anterior, você preparou os dispositivos Windows 10 para o cogerenciamento. Agora, esses dispositivos ingressaram no AD e no Azure AD, e estão registrados no Intune e têm o cliente do Configuration Manager. Provavelmente ainda há dispositivos Windows 10 que ingressaram no AD e têm o cliente do Configuration Manager, mas que não ingressaram no Azure AD e não estão registrados no Intune. O procedimento a seguir fornece as etapas para habilitar o cogerenciamento e preparar o restante dos dispositivos Windows 10 (clientes do Configuration Manager sem registro no Intune) para o cogerenciamento e permite que você comece a mudar cargas de trabalho do Configuration Manager específicas para o Intune.
 
 1. No console do Configuration Manager, acesse **Administração** > **Visão Geral** > **Serviços de Nuvem** > **Cogerenciamento**.    
-2. Na guia Início, no grupo Gerenciar, escolha **Configurar o cogerenciamento** para abrir o Assistente para Integração de Cogerenciamento.    
+2. Na guia Página Inicial, no grupo Gerenciar, escolha **Configurar o cogerenciamento** para abrir o Assistente de Integração de Cogerenciamento.    
 3. Na página Assinatura, clique em **Entrar**, entre no seu locatário do Intune e, em seguida, clique em **Avançar**.   
 4. Na página Preparo, defina as seguintes configurações e, em seguida, clique em **Avançar**:
     - **Grupo piloto**: o grupo piloto contém uma ou mais coleções que você seleciona. Use esse grupo como parte de sua distribuição em fases do cogerenciamento. É possível começar com uma coleção de teste pequena e, em seguida, adicionar mais coleções ao grupo piloto à medida que você distribui o cogerenciamento para mais usuários e dispositivos. Você pode alterar as coleções no grupo piloto a qualquer momento por meio das propriedades de cogerenciamento.
