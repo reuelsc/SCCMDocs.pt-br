@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 007c3b68932a673b5d1971fbcf6919a7ad3adc70
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: cc22c66cfa4cf4e628dce7bf3cb268464610c933
+ms.sourcegitcommit: bfb8a17f60dcb9905e739045a5141ae45613fa2c
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802607"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66198430"
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Criar e executar scripts do PowerShell do console do Configuration Manager
 
@@ -54,8 +54,8 @@ Com essa integração no System Center Configuration Manager, você pode usar a 
 - Para executar scripts – sua conta deve ter permissões **Executar Script** para **Coleções**.
 
 Para obter mais informações sobre as funções de segurança do Configuration Manager:</br>
-[Escopos de segurança para executar scripts](#BKMK_Scopes)</br>
-[Funções de segurança para executar scripts](#BKMK_ScriptRoles)</br>
+[Escopos de segurança para executar scripts](#security-scopes)</br>
+[Funções de segurança para executar scripts](#bkmk_ScriptRoles)</br>
 [Fundamentos da administração baseada em funções](/sccm/core/understand/fundamentals-of-role-based-administration).
 
 ## <a name="limitations"></a>Limitações
@@ -72,7 +72,7 @@ No momento, o recurso Executar Scripts dá suporte para:
 
 ## <a name="run-script-authors-and-approvers"></a>Autores e aprovadores do recurso Executar Script
 
-O recurso Executar Scripts usa o conceito de *autores de script* e *aprovadores e script* como funções separadas para a implementação e a execução de um script. A separação das funções de autor e aprovador permite um processo de verificação importante para a potente ferramenta Executar Scripts. Há mais uma função de *executores de script* que permite a execução, mas não a criação nem a aprovação de scripts. Consulte [Criar funções de segurança para scripts](#BKMK_ScriptRoles).
+O recurso Executar Scripts usa o conceito de *autores de script* e *aprovadores e script* como funções separadas para a implementação e a execução de um script. A separação das funções de autor e aprovador permite um processo de verificação importante para a potente ferramenta Executar Scripts. Há mais uma função de *executores de script* que permite a execução, mas não a criação nem a aprovação de scripts. Consulte [Criar funções de segurança para scripts](#bkmk_ScriptRoles).
 
 ### <a name="scripts-roles-control"></a>Controle de funções de scripts
 
