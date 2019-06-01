@@ -2,7 +2,7 @@
 title: Registrar dispositivos de área de trabalho de análise
 titleSuffix: Configuration Manager
 description: Saiba como registrar dispositivos de área de trabalho de análise.
-ms.date: 04/05/2019
+ms.date: 04/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5d5e6665b0ddd2e7726af4b8ac8929d5019fedf
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 8d056d533a83290b638958ff78275ddec1409ec5
+ms.sourcegitcommit: 65e9b30e2b53ab9db679a7b1d50634a73c0028db
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62245867"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66429858"
 ---
 # <a name="how-to-enroll-devices-in-desktop-analytics"></a>Como registrar dispositivos no Analytics de área de trabalho
 
@@ -81,7 +81,7 @@ Para obter a melhor experiência, instale as atualizações a seguir dependendo 
 > Quando você instalar essas atualizações, esperar que os seguintes comportamentos:
 > 
 > - Dispositivos que você se registra para análise de área de trabalho aparecem no serviço em menos de uma hora  
-> - Dispositivos rapidamente relatam o status nas atualizações de recurso e qualidade para Windows e o Office  
+> - Dispositivos rapidamente relatam o status de atualizações de recurso e qualidade do Windows  
 >
 > Sem essas atualizações, esses processos podem levar mais de 48 horas para um dispositivo relatar a análise de área de trabalho.  
 
@@ -127,7 +127,7 @@ Para alterar essas configurações, use o procedimento a seguir:
 
 2. Sobre o **dados de diagnóstico** página, faça as alterações necessárias para as seguintes configurações:  
 
-    - **ID comercial**: você não deve precisar alterar ou editar esse valor. Para obter mais informações sobre como solucionar problemas com a ID comercial, consulte [configuração de ID comercial](/sccm/desktop-analytics/troubleshooting#commercial-id-configuration).  
+    - **ID comercial**: esse valor deve preencher automaticamente com a ID. da sua organização Se ele não abrir, verifique se o servidor proxy está configurado necessário colocar todos os [pontos de extremidade](/sccm/desktop-analytics/enable-data-sharing#endpoints) antes de continuar. Como alternativa, recuperar sua ID comercial do **serviços conectados** painel na [portal de análise de área de trabalho](https://aka.ms/m365aprod).   
 
     - **Nível de dados de diagnóstico do Windows 10**: Para obter mais informações, consulte [níveis de dados de diagnóstico](/sccm/desktop-analytics/enable-data-sharing#diagnostic-data-levels).  
 
@@ -135,7 +135,7 @@ Para alterar essas configurações, use o procedimento a seguir:
 
     Quando você faz alterações a esta página, o **funcionalidade disponível** página mostra uma visualização da funcionalidade de análise de área de trabalho com as configurações de dados de diagnóstico selecionado.  
 
-3. Sobre o **Conexão de análise do Microsoft 365** página, faça as alterações necessárias para as seguintes configurações:
+3. Sobre o **Conexão de análise de área de trabalho** de página, faça as alterações necessárias para as seguintes configurações:
 
     - **Nome de exibição**: O portal de análise de área de trabalho exibe essa conexão do Configuration Manager usando esse nome.  
 
@@ -143,9 +143,10 @@ Para alterar essas configurações, use o procedimento a seguir:
 
     - **Dispositivos na coleção de destino usam um proxy de usuário autenticado para comunicação de saída**: Por padrão, esse valor é **não**. Se for necessário em seu ambiente, definido como **Sim**. Para obter mais informações, consulte [autenticação do servidor Proxy](/sccm/desktop-analytics/enable-data-sharing#proxy-server-authentication).  
 
-    - **Selecione as coleções específicas para sincronizar com a área de trabalho de análise**: Selecione **adicionar** incluir coleções adicionais. Essas coleções estão disponíveis no portal de análise de área de trabalho para o agrupamento com planos de implantação. Certifique-se de incluir coleções de exclusão do projeto-piloto e piloto.  
+    - **Selecione as coleções específicas para sincronizar com a área de trabalho de análise**: Selecione **Add** incluir coleções adicionais de seus **coleção de destino** hierarquia. Essas coleções estão disponíveis no portal de análise de área de trabalho para o agrupamento com planos de implantação. Certifique-se de incluir coleções de exclusão do projeto-piloto e piloto.  <!-- 4097528 -->
 
-        Essas coleções continuam a sincronização como suas alterações de associação. Por exemplo, o seu plano de implantação usa uma coleção com uma regra de associação do Windows 7. Como esses dispositivos de atualização para o Windows 10, e o Configuration Manager avalia a associação da coleção, esses dispositivos soltem fora a coleta e o plano de implantação.  
+        > [!Important] 
+        > Essas coleções continuam a sincronização como suas alterações de associação. Por exemplo, o seu plano de implantação usa uma coleção com uma regra de associação do Windows 7. Como esses dispositivos de atualização para o Windows 10, e o Configuration Manager avalia a associação da coleção, esses dispositivos soltem fora a coleta e o plano de implantação.  
 
 
 ### <a name="windows-settings"></a>Configurações do Windows
@@ -167,7 +168,7 @@ Exiba essas configurações no editor de diretiva de grupo no seguinte caminho: 
 
 ### <a name="device-name"></a>Nome do dispositivo
 
-Começando no Windows 10, versão 1803, o nome do dispositivo não é coletado por padrão. Coleta o nome do dispositivo com os dados de diagnóstico requer um opt-in separado. Sem o nome do dispositivo, é mais difícil para você identificar quais dispositivos requerem atenção ao avaliar uma atualização para uma nova versão do Windows ou do Office.
+Começando no Windows 10, versão 1803, o nome do dispositivo não é coletado por padrão. Coleta o nome do dispositivo com os dados de diagnóstico requer um opt-in separado. Sem o nome do dispositivo, é mais difícil para você identificar quais dispositivos requerem atenção ao avaliar uma atualização para uma nova versão do Windows.
 
 Se você não enviar o nome do dispositivo, ele aparece na área de trabalho de análise como "Desconhecido".
 
