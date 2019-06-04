@@ -2,7 +2,7 @@
 title: Conectar o Configuration Manager
 titleSuffix: Configuration Manager
 description: Um guia de instruções para conectar o Configuration Manager com a análise de área de trabalho.
-ms.date: 04/05/2019
+ms.date: 04/25/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11979d35829660633dd77059562dcf519e0af05b
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 905ea779082387996858727ef8c50f1835b3d61c
+ms.sourcegitcommit: 65753c51fbf596f233fc75a5462ea4a44005c70b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62206118"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66463027"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Como conectar o Configuration Manager com a análise de área de trabalho
 
@@ -55,25 +55,35 @@ Use este procedimento para conectar o Configuration Manager para análise de ár
   
    Selecione **Avançar**.  
 
-3. Sobre o **aplicativo** , selecione apropriado **ambiente do Azure**. Em seguida, selecione **importação** para o aplicativo web. Defina as seguintes configurações na **importar aplicativos** janela:  
+3. Sobre o **aplicativo** , selecione apropriado **ambiente do Azure**. Em seguida, selecione **procurar** para o aplicativo web.  
 
-    - **Nome do locatário do Azure AD**: Esse nome é como ele é chamado no Configuration Manager  
+4. Se você tiver um aplicativo existente que você deseja reutilizar esse serviço, escolha-o na lista e selecione **Okey**.  
 
-    - **ID de locatário do Azure AD**: O **ID de diretório** você copiou do Azure AD  
+5. Na maioria dos casos, você pode criar um aplicativo para a conexão de área de trabalho de análise com esse assistente. Selecione **Criar**.<!-- 3572123 -->  
 
-    - **ID do cliente**: O **ID do aplicativo** você copiou do aplicativo Azure AD  
+    > [!Tip]  
+    > Se você não pode criar o aplicativo nesse assistente, você pode criar manualmente o aplicativo no Azure AD e, em seguida, importar no Configuration Manager. Para obter mais informações, consulte [importação e criar aplicativos para o Configuration Manager](/sccm/desktop-analytics/troubleshooting#create-and-import-app-for-configuration-manager).  
 
-    - **Chave secreta**: A tecla **valor** você copiou do aplicativo Azure AD  
+6. Defina as seguintes configurações na **criar aplicativo de servidor** janela:  
 
-    - **Vencimento da Chave Secreta**: A mesma data de expiração da chave  
+    - **Nome do aplicativo**: Um nome amigável para o aplicativo no Azure AD.
 
-    - **URI da ID do aplicativo**: Essa configuração deve preencher automaticamente com o seguinte valor: `https://cmmicrosvc.manage.microsoft.com/`  
-  
-   Selecione **Verify**e, em seguida, selecione **Okey** para fechar a janela Importar aplicativos. Selecione **próxima** na página do aplicativo do Assistente de serviços do Azure.  
+    - **URL da home page**: esse valor não é usado pelo Configuration Manager, mas é exigido pelo Azure AD. Por padrão, esse valor é `https://ConfigMgrService`.  
 
-4. Sobre o **dados de diagnóstico** página, defina as seguintes configurações:  
+    - **URI da ID do aplicativo**: esse valor precisa ser exclusivo no locatário do Azure AD. Ele é no token de acesso usado pelo cliente do Configuration Manager para solicitar acesso ao serviço. Por padrão, esse valor é `https://ConfigMgrService`.  
 
-    - **ID comercial**: esse valor deve preencher automaticamente com a ID. da sua organização Se ele não abrir, verifique se o servidor proxy está configurado necessário colocar todos os [pontos de extremidade](/sccm/desktop-analytics/enable-data-sharing#endpoints) antes de continuar. Como alternativa, recuperar sua ID comercial do **serviços conectados** painel na [portal de análise de área de trabalho](https://aka.ms/m365aprod).  
+    - **Período de validade da Chave Secreta**: escolha **1 ano** ou **2 anos** na lista suspensa. Um ano é o valor padrão.  
+
+    Selecione **entrar** . Após a autenticação bem-sucedida no Azure, a página mostra o **Nome do Locatário do Azure AD** para referência.
+        
+    > [!Note]  
+    > Conclua esta etapa como uma **administrador da empresa**. Essas credenciais não são salvas pelo Configuration Manager. Essa persona não exige permissões no Configuration Manager e não precisa ser a mesma conta que executa o Assistente de Serviços do Azure.  
+
+    Selecione **OK** para criar o aplicativo Web no Azure AD e feche a caixa de diálogo Criar Aplicativo para Servidores. Na caixa de diálogo do aplicativo de servidor, selecione **Okey**. Em seguida, selecione **próxima** na página do aplicativo do Assistente de serviços do Azure.  
+
+7. Sobre o **dados de diagnóstico** página, defina as seguintes configurações:  
+
+    - **ID comercial**: esse valor deve preencher automaticamente com a ID. da sua organização Se ele não abrir, certifique-se de seu servidor proxy está configurado para permitir todos os itens necessários [pontos de extremidade](/sccm/desktop-analytics/enable-data-sharing#endpoints) antes de continuar. Como alternativa, recuperar sua ID comercial do **serviços conectados** painel na [portal de análise de área de trabalho](https://aka.ms/m365aprod).  
 
     - **Nível de dados de diagnóstico do Windows 10**: Selecione pelo menos **avançado (limitado)**  
 
@@ -86,7 +96,7 @@ Use este procedimento para conectar o Configuration Manager para análise de ár
 
     ![Exemplo de página de funcionalidade disponível no Assistente de serviços do Azure](media/available-functionality.png)
 
-5. Sobre o **coleções** página, defina as seguintes configurações:  
+8. Sobre o **coleções** página, defina as seguintes configurações:  
 
     - **Nome de exibição**: O portal de análise de área de trabalho exibe essa conexão do Configuration Manager usando esse nome. Usá-lo para diferenciar entre hierarquias diferentes. Por exemplo, *laboratório de teste* ou *produção*.  
 
@@ -94,14 +104,13 @@ Use este procedimento para conectar o Configuration Manager para análise de ár
 
     - **Dispositivos na coleção de destino usam um proxy de usuário autenticado para comunicação de saída**: Por padrão, esse valor é **não**. Se for necessário em seu ambiente, definido como **Sim**.  
 
-    - **Selecione as coleções específicas para sincronizar com a área de trabalho de análise**: Selecione **adicionar** incluir coleções adicionais. Essas coleções estão disponíveis no portal de análise de área de trabalho para o agrupamento com planos de implantação. Certifique-se de incluir coleções de exclusão do projeto-piloto e piloto.  
-
-        Essas coleções continuam a sincronização como suas alterações de associação. Por exemplo, o seu plano de implantação usa uma coleção com uma regra de associação do Windows 7. Como esses dispositivos de atualização para o Windows 10, e o Configuration Manager avalia a associação da coleção, esses dispositivos soltem fora a coleta e o plano de implantação.  
+    - **Selecione as coleções específicas para sincronizar com a área de trabalho de análise**: Selecione **Add** incluir coleções adicionais de seus **coleção de destino** hierarquia. Essas coleções estão disponíveis no portal de análise de área de trabalho para o agrupamento com planos de implantação. Certifique-se de incluir coleções de exclusão do projeto-piloto e piloto.  <!-- 4097528 -->  
 
         > [!Important]  
-        > Certifique-se de limitar essas coleções adicionais na coleção de destino. Sobre as propriedades dessas coleções adicionais, o **limitação de coleção** deve ser a mesma coleção de análise de área de trabalho **coleção de destino**.<!-- 4097528 -->  
+        > Essas coleções continuam a sincronização como suas alterações de associação. Por exemplo, o seu plano de implantação usa uma coleção com uma regra de associação do Windows 7. Como esses dispositivos de atualização para o Windows 10, e o Configuration Manager avalia a associação da coleção, esses dispositivos soltem fora a coleta e o plano de implantação.  
 
-6. Conclua o assistente.  
+
+9. Conclua o assistente.  
 
 O Configuration Manager cria uma política de configurações para configurar dispositivos na coleção de destino. Esta política inclui as configurações de dados de diagnóstico para habilitar dispositivos para enviar dados à Microsoft. Por padrão, clientes atualizam a política a cada hora. Depois de receber as novas configurações, pode ser mais várias horas, antes que os dados estão disponíveis na área de trabalho de análise.
 
@@ -109,11 +118,11 @@ O Configuration Manager cria uma política de configurações para configurar di
 
 ## <a name="bkmk_monitor"></a> Monitorar a integridade de conexão
 
-Monitore a configuração de seus dispositivos para análise de área de trabalho. No console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, expanda o **manutenção do Microsoft 365** nó e selecione o **integridade de Conexão** painel.  
+Monitore a configuração de seus dispositivos para análise de área de trabalho. No console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, expanda o **área de trabalho de análise de manutenção** nó e selecione o **integridade de Conexão** Painel de controle.  
 
 Para obter mais informações, consulte [monitorar a integridade de conexão](/sccm/desktop-analytics/troubleshooting#monitor-connection-health).
 
-Configuration Manager sincroniza qualquer plano de implantação de área de trabalho de análise dentro de 15 minutos de criar a conexão. No console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, expanda o **manutenção do Microsoft 365** nó e selecione o **planos de implantação** nó.
+Configuration Manager sincroniza suas coleções dentro de 60 minutos de criar a conexão. No portal de análise de área de trabalho, vá para **piloto Global**e ver suas coleções de dispositivos do Configuration Manager.
 
 
 
