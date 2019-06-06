@@ -2,7 +2,7 @@
 title: Aprovar aplicativos
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as configurações e comportamentos para aprovação de aplicativos no Configuration Manager.
-ms.date: 12/14/2018
+ms.date: 05/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,19 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f78ec291701d15c0907aa780b4bed23b712995c7
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: d1352669db30ad2fad1d7287998227ce1556274d
+ms.sourcegitcommit: 3f43fa8462bf39b2c18b90a11a384d199c2822d8
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135214"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66403377"
 ---
 # <a name="approve-applications-in-configuration-manager"></a>Aprovar aplicativos no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Ao [Implantar um aplicativo](/sccm/apps/deploy-use/deploy-applications) no Configuration Manager, você pode exigir aprovação antes da instalação. Os usuários solicitam o aplicativo no Centro de Software e, em seguida, você pode examinar a solicitação no console do Configuration Manager. Você pode aprovar ou negar a solicitação. 
-
+Ao [Implantar um aplicativo](/sccm/apps/deploy-use/deploy-applications) no Configuration Manager, você pode exigir aprovação antes da instalação. Os usuários solicitam o aplicativo no Centro de Software e, em seguida, você pode examinar a solicitação no console do Configuration Manager. Você pode aprovar ou negar a solicitação.
 
 
 ## <a name="bkmk_approval"></a> Configurações de aprovação
@@ -31,6 +30,7 @@ Ao [Implantar um aplicativo](/sccm/apps/deploy-use/deploy-applications) no Confi
 O comportamento de aprovação do aplicativo depende da sua versão do Configuration Manager. Uma das seguintes configurações de aprovação será exibida na página **Configurações de Implantação** da implantação do aplicativo:  
 
 #### <a name="require-administrator-approval-if-users-request-this-application"></a>Exibir aprovação do administrador se os usuários solicitarem este aplicativo
+
 *Aplica-se às versões 1710 e anteriores*
 
 O administrador aprova as solicitações do usuário para o aplicativo antes que o usuário possa instalá-los. Essa opção fica desabilitada quando a finalidade da implantação é **Obrigatória** ou quando o aplicativo é implantado em uma coleção de dispositivos.  
@@ -39,15 +39,15 @@ As solicitações de aprovação do aplicativo são exibidas no nó **Solicitaç
 
 Depois de aprovar um aplicativo para instalação, você pode **Negar** a solicitação no console do Configuration Manager. Essa ação não faz com que o cliente desinstale o aplicativo de todos os dispositivos. Ela impede que os usuários instalem novas cópias do aplicativo pelo Centro de Software.  
 
-
 #### <a name="an-administrator-must-approve-a-request-for-this-application-on-the-device"></a>Um administrador precisa aprovar uma solicitação para este aplicativo no dispositivo
+
 *Aplica-se às versões 1802 e posteriores <sup>[Observação 1](#bkmk_note1)</sup>*
 
 <a name="bkmk_note1"></a>
 
 > [!Note]  
-> **Observação 1**: O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options). 
-> 
+> **Observação 1:** o Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).
+>
 > Se você não habilitar esse recurso, a experiência anterior será exibida.  
 
 O administrador aprova as solicitações do usuário para o aplicativo antes que o usuário possa instalá-los no dispositivo solicitado. Se o administrador aprova o pedido, o usuário só poderá instalar o aplicativo nesse dispositivo. O usuário deve enviar outro pedido para instalar o aplicativo em outro dispositivo. Essa opção fica desabilitada quando a finalidade da implantação é **Obrigatória** ou quando o aplicativo é implantado em uma coleção de dispositivos. <!--1357015-->  
@@ -64,21 +64,26 @@ Depois de aprovar um aplicativo para instalação, você pode **Negar** a solici
 > [!Important]  
 > Começando na versão 1806, *o comportamento mudou* para casos em que você revoga a aprovação de um aplicativo que já foi aprovado e instalado. Agora quando você **Nega** a solicitação do aplicativo, o cliente desinstala o aplicativo do dispositivo do usuário.<!--1357891-->  
 
+Automatize o processo de aprovação com o cmdlet [Approve-CMApprovalRequest](https://docs.microsoft.com/powershell/module/configurationmanager/approve-cmapprovalrequest?view=sccm-ps) do PowerShell. Começando na versão 1902, esse cmdlet inclui o parâmetro **InstallActionBehavior**. Use esse parâmetro para especificar se deseja instalar o aplicativo imediatamente ou fora do horário comercial.<!-- SCCMDocs-pr issue #3418 -->
 
 
 ## <a name="bkmk_email-approve"></a> Notificações por email
+
 <!--1321550-->
 
 Da versão 1810 em diante, configure notificações por email para solicitações de aprovação do aplicativo. Quando um usuário solicitar um aplicativo, você receberá um email. Clique nos links no email para aprovar ou negar a solicitação sem precisar usar o console do Configuration Manager.
 
-Você pode definir os endereços de email dos usuários que podem aprovar ou negar a solicitação ao criar uma nova implantação para o aplicativo. Se você precisar alterar a lista de endereços de email posteriormente, vá para o workspace **Monitoramento**, expanda **Alertas**e selecione o nó **Assinaturas**. Selecione **Propriedades** de uma das assinaturas **Aprovar o aplicativo por meio de email** que está relacionada à sua implantação do aplicativo. 
+Você pode definir os endereços de email dos usuários que podem aprovar ou negar a solicitação ao criar uma nova implantação para o aplicativo. Se você precisar alterar a lista de endereços de email posteriormente, vá para o workspace **Monitoramento**, expanda **Alertas**e selecione o nó **Assinaturas**. Selecione **Propriedades** de uma das assinaturas **Aprovar o aplicativo por meio de email** que está relacionada à sua implantação do aplicativo.
 
-Se há mais de um alerta, você pode determinar qual alerta corresponde a cada implantação. Abra as propriedades do alerta e exiba a lista de **Alertas selecionados** na guia Geral. A implantação está habilitada como o alerta para esta assinatura. 
+Se há mais de um alerta, você pode determinar qual alerta corresponde a cada implantação. Abra as propriedades do alerta e exiba a lista de **Alertas selecionados** na guia Geral. A implantação está habilitada como o alerta para esta assinatura.
+
+Os usuários podem adicionar um comentário à solicitação no Centro de Software. Este comentário é exibido na solicitação do aplicativo no console do Configuration Manager. Começando na versão 1902, esse comentário também é exibido no email. Incluir este comentário no email ajuda os aprovadores a tomarem uma decisão melhor para aprovar ou negar a solicitação.<!--3594063-->
 
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
 #### <a name="to-send-email-notifications-and-take-action-on-internal-network"></a>Para enviar notificações por email e agir na rede interna
+
 Com esses pré-requisitos, os destinatários recebem um email com notificação da solicitação. Se eles estiverem na rede interna, também poderão aprovar ou negar a solicitação de email.
 
 - Habilite o [recurso opcional](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) **Aprovar solicitações de aplicativo para usuários por dispositivo**.  
@@ -94,8 +99,8 @@ Com esses pré-requisitos, os destinatários recebem um email com notificação 
 
     - Associar manualmente um certificado baseado em PKI à porta 443 no IIS no servidor que hospeda a função de Provedor de SMS  
 
-
 #### <a name="to-take-action-from-internet"></a>Para executar a ação da Internet
+
 Com esses pré-requisitos opcionais adicionais, os destinatários podem aprovar ou negar a solicitação de qualquer lugar em que tenham acesso à Internet.
 
 - Habilite o serviço de administração do Provedor de SMS por meio do gateway de gerenciamento de nuvem. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Configuração do Site** e selecione o nó **Funções do Sistema de Sites e Servidores**. Selecione o servidor com a função de Provedor de SMS. No painel de detalhes, selecione a função **Provedor de SMS** e selecione **Propriedades** na faixa de opções na guia de Função do Site. Selecione a opção para **Permitir tráfego do gateway de gerenciamento de nuvem do Configuration Manager para o serviço de administração**.  
@@ -126,7 +131,7 @@ Com esses pré-requisitos opcionais adicionais, os destinatários podem aprovar 
 
             1. No painel Editar manifesto, localize a propriedade **oauth2AllowImplicitFlow**.  
 
-            2. Altere esse valor para **true**. Por exemplo, toda a linha deve ser semelhante à seguinte: `"oauth2AllowImplicitFlow": true,`   
+            2. Altere esse valor para **true**. Por exemplo, toda a linha deve ser semelhante à seguinte: `"oauth2AllowImplicitFlow": true,`  
 
             3. Selecione **Salvar**.  
 
@@ -150,7 +155,6 @@ Com esses pré-requisitos opcionais adicionais, os destinatários podem aprovar 
 Examine o arquivo **NotiCtrl.log** no servidor do site para solucionar problemas.
 
 
-## <a name="maintenance"></a>Manutenção 
+## <a name="maintenance"></a>Manutenção
 
 O Configuration Manager armazena informações sobre a solicitação de aprovação do aplicativo no banco de dados do site. Para solicitações canceladas ou negadas, o site exclui o histórico de solicitações após 30 dias. Você pode configurar esse comportamento de exclusão com a **tarefa de manutenção do site** [Excluir Dados de Solicitação de Aplicativo](/sccm/core/servers/manage/maintenance-tasks). O site nunca exclui nenhuma solicitação de aplicativo pendente ou aprovada.
-

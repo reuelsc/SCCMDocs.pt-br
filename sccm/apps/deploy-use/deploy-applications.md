@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c27e2d4bb90240ad2cfee5e0c470d7a6b8a76653
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
-ms.translationtype: MTE75
+ms.openlocfilehash: 7550987d9b9679085ad5b546274d0c503b9e28ac
+ms.sourcegitcommit: 3f43fa8462bf39b2c18b90a11a384d199c2822d8
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083333"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66403394"
 ---
 # <a name="deploy-applications-with-configuration-manager"></a>Implantar aplicativos com o Configuration Manager
 
@@ -68,7 +68,7 @@ Na página **Geral** do Assistente para Implantar Software, especifique as segui
     >[!Note]  
     > Se você atualizar o aplicativo dependente após a implantação do aplicativo primário, o site não distribuirá automaticamente nenhum conteúdo novo para a dependência.  
 
-- **Comentários (opcional)**: opcionalmente, insira uma descrição para essa implantação.  
+- **Comentários (opcional)** : opcionalmente, insira uma descrição para essa implantação.  
 
 
 ### <a name="bkmk_deploy-content"></a> Opções de **Conteúdo** da implantação
@@ -125,7 +125,7 @@ Uma das seguintes configurações de aprovação é exibida, dependendo da vers�
 
 - **Um administrador deve aprovar uma solicitação para este aplicativo no dispositivo**: a partir da versão 1802, o administrador aprova as solicitações do usuário para o aplicativo antes de o usuário instalá-lo no dispositivo solicitado. Se o administrador aprova o pedido, o usuário só poderá instalar o aplicativo nesse dispositivo. O usuário deve enviar outro pedido para instalar o aplicativo em outro dispositivo. Essa opção fica desabilitada quando a finalidade da implantação é **Obrigatória** ou quando o aplicativo é implantado em uma coleção de dispositivos.
 
-A partir da versão 1810, você também pode definir uma lista de endereços de email para notificar sobre a solicitação de aprovação.<!--1357015-->  
+Começando na versão 1810, você também pode definir uma lista de endereços de email para notificar sobre a solicitação de aprovação.<!--1357015-->  
 
 Para obter mais informações, confira [Aprovar aplicativos](/sccm/apps/deploy-use/app-approval).
 
@@ -309,6 +309,7 @@ Se você implantar aplicativos como disponíveis para os usuários, a partir da 
 
 ## <a name="next-steps"></a>Próximas etapas
 
- - [Monitorar aplicativos](/sccm/apps/deploy-use/monitor-applications-from-the-console)
- - [Tarefas de gerenciamento de aplicativos](/sccm/apps/deploy-use/management-tasks-applications)
- - [Guia do usuário do Centro de Software](/sccm/core/understand/software-center)
+- [Monitorar aplicativos](/sccm/apps/deploy-use/monitor-applications-from-the-console)
+- [Solucionar problemas de implantação do aplicativo](/sccm/apps/deploy-use/troubleshoot-application-deployment)
+- [Tarefas de gerenciamento de aplicativos](/sccm/apps/deploy-use/management-tasks-applications)
+- [Guia do usuário do Centro de Software](/sccm/core/understand/software-center)

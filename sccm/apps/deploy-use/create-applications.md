@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e796996f870fcdd8428f3a16b08eee56d249cfa6
-ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
+ms.openlocfilehash: c54eb02fe3de3246a7c8ed15e7589fcd4d9b1c9b
+ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65673386"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66264429"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Criar aplicativos no Configuration Manager
 
@@ -86,7 +86,7 @@ Em seguida, detecte automaticamente ou especifique manualmente as informações 
 
     -   **Comportamento da instalação**: selecione uma das três opções de como o Configuration Manager deve instalar esse tipo de implantação. Para obter mais informações sobre essas opções, confira [Experiência de Usuário](#bkmk_dt-ux).  
 
-    -   **Usar uma conexão VPN automática (se configurada)**: se você implantou um perfil de VPN para o dispositivo no qual o usuário inicia o aplicativo, conecte-se à VPN quando o aplicativo for iniciado. Essa opção é somente para Windows 8.1 e Windows Phone 8.1. Em dispositivos Windows Phone 8.1, se você implantar mais de um perfil de VPN no dispositivo, não haverá suporte para conexões VPN automáticas. Para obter mais informações, consulte [Perfis de VPN](/sccm/protect/deploy-use/vpn-profiles).  
+    -   **Usar uma conexão VPN automática (se configurada)** : se você implantou um perfil de VPN para o dispositivo no qual o usuário inicia o aplicativo, conecte-se à VPN quando o aplicativo for iniciado. Essa opção é somente para Windows 8.1 e Windows Phone 8.1. Em dispositivos Windows Phone 8.1, se você implantar mais de um perfil de VPN no dispositivo, não haverá suporte para conexões VPN automáticas. Para obter mais informações, consulte [Perfis de VPN](/sccm/protect/deploy-use/vpn-profiles).  
 
     - **Provisionar este aplicativo para todos os usuários no dispositivo**<!--1358310-->: a partir da versão 1806, forneça um aplicativo com um pacote de aplicativos do Windows para todos os usuários no dispositivo. Para obter mais informações, confira [Criar aplicativos Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_provision).  
 
@@ -209,7 +209,7 @@ Em seguida, use um dos procedimentos a seguir para [identificar automaticamente]
 
     -   **Comportamento da instalação**: selecione uma das três opções de como o Configuration Manager deve instalar esse tipo de implantação. Para obter mais informações sobre essas opções, confira [Experiência de Usuário](#bkmk_dt-ux).  
 
-    -   **Usar uma conexão VPN automática (se configurada)**: se você implantou um perfil de VPN para o dispositivo no qual o usuário inicia o aplicativo, conecte-se à VPN quando o aplicativo for iniciado. Essa opção é somente para Windows 8.1 e Windows Phone 8.1. Em dispositivos Windows Phone 8.1, se você implantar mais de um perfil de VPN no dispositivo, não haverá suporte para conexões VPN automáticas. Para obter mais informações, consulte [Perfis de VPN](/sccm/protect/deploy-use/vpn-profiles).  
+    -   **Usar uma conexão VPN automática (se configurada)** : se você implantou um perfil de VPN para o dispositivo no qual o usuário inicia o aplicativo, conecte-se à VPN quando o aplicativo for iniciado. Essa opção é somente para Windows 8.1 e Windows Phone 8.1. Em dispositivos Windows Phone 8.1, se você implantar mais de um perfil de VPN no dispositivo, não haverá suporte para conexões VPN automáticas. Para obter mais informações, consulte [Perfis de VPN](/sccm/protect/deploy-use/vpn-profiles).  
 
 4.  Escolha **Avançar** e, em seguida, continue nas [Opções de tipo de conteúdo de implantação](#bkmk_dt-content).  
 
@@ -270,7 +270,7 @@ Quando você exibe as propriedades de um tipo de implantação, as opções a se
 
 - **Opções de implantação**: especifique se os clientes devem baixar o aplicativo ao usarem um ponto de distribuição de um vizinho ou os grupos de limites do site padrão.  
 
-- **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações, confira [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). A partir da versão 1802, o BranchCache está sempre habilitado nos clientes. Essa configuração foi removida, pois os clientes usam o BranchCache quando há suporte para ele no ponto de distribuição.  
+- **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações, confira [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). Começando na versão 1802, o BranchCache está sempre habilitado nos clientes. Essa configuração foi removida, pois os clientes usam o BranchCache quando há suporte para ele no ponto de distribuição.  
 
 
 ### <a name="bkmk_dt-detect"></a> Opções de **Método de Detecção** do tipo de implantação   
@@ -338,6 +338,9 @@ Continue na próxima seção sobre como usar um script personalizado como um mé
 
 O Configuration Manager verifica os resultados por meio do script. Ele lê os valores gravados pelo script no fluxo de saída padrão (STDOUT), no fluxo de erro padrão (STDERR) e no código de saída. Se o script for encerrado com um valor diferente de zero, ele falhará e o status de detecção do aplicativo será *Desconhecido*. Se o código de saída for zero e STDOUT tiver dados, o status de detecção do aplicativo será *Instalado*.
 
+> [!TIP]
+> Ao escrever um script de detecção, se você retornar um código de saída zero, mas não retornar a saída (dados em STDOUT), o aplicativo não será detectado como instalado. Para obter mais informações, consulte os exemplos a seguir.
+
 Use as tabelas a seguir para verificar na saída de um script se um aplicativo foi instalado:  
 
 **Código de saída zero:**  
@@ -349,7 +352,6 @@ Use as tabelas a seguir para verificar na saída de um script se um aplicativo f
 |Não está vazio|Vazio|Êxito|Instalado|
 |Não está vazio|Não está vazio|Êxito|Instalado|
 
-
 **Código de saída diferente de zero:**  
 
 |STDOUT|STDERR|Resultado do script|Estado de detecção do aplicativo|
@@ -359,34 +361,62 @@ Use as tabelas a seguir para verificar na saída de um script se um aplicativo f
 |Não está vazio|Vazio|Falha|Desconhecida|
 |Não está vazio|Não está vazio|Falha|Desconhecida|
 
+**Exemplos**
 
-**Exemplos de VBScript**
-
-Use os exemplos de VBScript a seguir para escrever seus próprios scripts de detecção de aplicativos:  
+Use os exemplos de PowerShell/VBScript a seguir para escrever seus próprios scripts de detecção de aplicativos:  
 
 Exemplo 1: o script retorna um código de saída diferente de zero. Esse código indica que o script não foi executado com êxito. Nesse caso, o estado de detecção do aplicativo é desconhecido.  
+
+``` PowerShell
+Exit 1
+```
+
 ``` VBScript
 WScript.Quit(1)
 ```
 
 Exemplo 2: o script retorna um código de saída igual a zero, mas o valor de STDERR não está vazio. Esse resultado indica que o script não foi executado com êxito. Nesse caso, o estado de detecção do aplicativo é desconhecido.  
+
+``` PowerShell
+Write-Error "Script failed"
+Exit 0
+```
+
 ``` VBScript
 WScript.StdErr.Write "Script failed"
 WScript.Quit(0)
 ```
 
 Exemplo 3: o script retorna um código de saída igual a zero, o que indica que ele foi executado com êxito. No entanto, o valor de STDOUT está vazio, o que indica que o aplicativo não está instalado.  
+
+``` PowerShell
+Exit 0
+```
+
 ``` VBScript
 WScript.Quit(0)
 ```
 
 Exemplo 4: o script retorna um código de saída igual a zero, o que indica que ele foi executado com êxito. O valor de STDOUT não está vazio, o que indica que o aplicativo está instalado.  
+
+``` PowerShell
+Write-Host "The application is installed"
+Exit 0
+```
+
 ``` VBScript
 WScript.StdOut.Write "The application is installed"
 WScript.Quit(0)
 ```
 
 Exemplo 5: o script retorna um código de saída igual a zero, o que indica que ele foi executado com êxito. Os valores de STDOUT e STDERR não estão vazios, o que indica que o aplicativo está instalado.  
+
+``` PowerShell
+Write-Host "The application is installed"
+Write-Error "Completed"
+Exit 0
+```
+
 ``` VBScript
 WScript.StdOut.Write "The application is installed"
 WScript.StdErr.Write "Completed"
@@ -435,11 +465,11 @@ Na página **Experiência do Usuário** , especifique as seguintes informações
     >  Se você selecionar a opção **Instalar para o usuário** na lista suspensa **Comportamento da instalação**, essa opção estará habilitada por padrão.  
 
     > [!IMPORTANT]  
-    > A partir da versão 1802, quando você seleciona o comportamento **Instalar para o sistema**, essa configuração é opcional. Essa alteração existe principalmente para permitir que um usuário final interaja com a instalação durante uma sequência de tarefas. Por exemplo, para executar um processo de instalação que solicita ao usuário final que escolha várias opções. Alguns instaladores de aplicativos não podem silenciar os prompts de usuário ou o processo de instalação pode exigir valores de configuração específicos conhecidos apenas pelo usuário. <!--1356976-->  
+    > Começando na versão 1802, quando você seleciona o comportamento **Instalar para o sistema**, essa configuração é opcional. Essa alteração existe principalmente para permitir que um usuário final interaja com a instalação durante uma sequência de tarefas. Por exemplo, para executar um processo de instalação que solicita ao usuário final que escolha várias opções. Alguns instaladores de aplicativos não podem silenciar os prompts de usuário ou o processo de instalação pode exigir valores de configuração específicos conhecidos apenas pelo usuário. <!--1356976-->  
     >  
     > A instalação no contexto do sistema e a permissão para os usuários interagirem com a instalação não é uma configuração segura. Para obter mais informações, consulte [Segurança e privacidade do gerenciamento de aplicativos](/sccm/apps/plan-design/security-and-privacy-for-application-management#bkmk_interact).  
 
-- **Máximo de tempo de execução permitido (minutos)**: especifique o tempo máximo em minutos em que você espera que o tipo de implantação seja executado no computador cliente. Especifique essa configuração como um número inteiro maior que zero. O valor padrão é 120 minutos (duas horas).  
+- **Máximo de tempo de execução permitido (minutos)** : especifique o tempo máximo em minutos em que você espera que o tipo de implantação seja executado no computador cliente. Especifique essa configuração como um número inteiro maior que zero. O valor padrão é 120 minutos (duas horas).  
 
     Use esse valor para as seguintes ações:  
 
@@ -450,7 +480,7 @@ Na página **Experiência do Usuário** , especifique as seguintes informações
     > [!IMPORTANT]  
     >  Um conflito poderá ocorrer se o **Tempo de execução máximo permitido** for maior do que a janela de manutenção agendada. Se o usuário definir o tempo de execução máximo com um período superior ao tamanho de qualquer janela de manutenção disponível, esse tipo de implantação não será executado.  
 
-- **Tempo estimado para instalação (minutos)**: especifique o tempo estimado para a instalação do tipo de implantação. Os usuários veem esse tempo no Centro de Software.  
+- **Tempo estimado para instalação (minutos)** : especifique o tempo estimado para a instalação do tipo de implantação. Os usuários veem esse tempo no Centro de Software.  
 
 
 #### <a name="deployment-type-properties-user-experience-options"></a>Opções de **Experiência do Usuário** das propriedades do tipo de implantação
@@ -535,9 +565,9 @@ Especifique os códigos de retorno para controlar os comportamentos depois que o
 
 3. Selecione uma **Tipo de Código** na lista suspensa. Essa configuração define como o Configuration Manager interpreta o código de retorno especificado desse tipo de implantação. Os tipos disponíveis variam com base na tecnologia do tipo de implantação.   
 
-    - **Êxito (sem reinicialização)**: o tipo de implantação foi instalado com êxito e não é necessário reinicializar.  
+    - **Êxito (sem reinicialização)** : o tipo de implantação foi instalado com êxito e não é necessário reinicializar.  
 
-    - **Falha (sem reinicialização)**: o tipo de implantação não foi instalado.  
+    - **Falha (sem reinicialização)** : o tipo de implantação não foi instalado.  
 
     - **Reinicialização Forçada**: o tipo de implantação foi instalado com êxito, mas requer que o dispositivo seja reiniciado. Nada mais poderá ser instalado até que o dispositivo seja reiniciado.  
 
@@ -551,7 +581,7 @@ Especifique os códigos de retorno para controlar os comportamentos depois que o
 
 
 #### <a name="example-non-zero-success"></a>Exemplo: êxito para diferente de zero
-Você está implantando um aplicativo que retorna um código de saída `1` quando é instalado com êxito. Por padrão, o Configuration Manager detecta esse código de retorno diferente de zero como uma falha. Especifique o Valor do Código de Retorno como `1` e selecione o Tipo de Código **Êxito (sem reinicialização)**. Agora o Configuration Manager interpreta esse código de retorno como êxito para esse tipo de implantação.
+Você está implantando um aplicativo que retorna um código de saída `1` quando é instalado com êxito. Por padrão, o Configuration Manager detecta esse código de retorno diferente de zero como uma falha. Especifique o Valor do Código de Retorno como `1` e selecione o Tipo de Código **Êxito (sem reinicialização)** . Agora o Configuration Manager interpreta esse código de retorno como êxito para esse tipo de implantação.
 
 
 #### <a name="default-return-codes"></a>Códigos de retorno padrão
@@ -651,7 +681,7 @@ O Configuration Manager dá suporte aos seguintes tipos de implantação de apli
 |--------------------------|----------------------|  
 | **Windows Installer (arquivo \*.msi)** | Um arquivo do Windows Installer. |  
 | **Pacote do aplicativo do Windows (\*.appx, \*.appxbundle)** | Para o Windows 8 ou posteriores. Selecione um arquivo de pacote do aplicativo do Windows ou um pacote do lote de aplicativo do Windows. |  
-| **Pacote do aplicativo do Windows (\*.appx, \*.appxbundle, \*.msix, \*.msixbundle)** | A partir da versão 1806, para os novos formatos pacote do aplicativo (.msix) e lote de aplicativo (.msixbundle) do Windows 10. Selecione um arquivo de pacote do aplicativo do Windows ou um pacote do lote de aplicativo do Windows.<!--1357427--> |  
+| **Pacote do aplicativo do Windows (\*.appx, \*.appxbundle, \*.msix, \*.msixbundle)** | Começando na versão 1806, para os novos formatos pacote do aplicativo (.msix) e lote de aplicativo (.msixbundle) do Windows 10. Selecione um arquivo de pacote do aplicativo do Windows ou um pacote do lote de aplicativo do Windows.<!--1357427--> |  
 | **Pacote do aplicativo do Windows (na Windows Store)** | Para o Windows 8 ou posteriores. Especifique um link para o aplicativo na Windows Store ou procure o repositório para selecionar o aplicativo.<sup>[Observação 1](#bkmk_note1)</sup> |  
 | **Instalador de Script** | Especifique um script ou programa que é executado em clientes Windows para instalar conteúdo ou executar uma ação. Use esse tipo de implantação para instaladores setup.exe ou wrappers de script. |  
 | **Microsoft Application Virtualization 4** | Um manifesto do Microsoft App-V v4. |  

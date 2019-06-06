@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c840c0a42ccf36e9c69044a6591b29d70c19093
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 818abdeb24d4c050bb8517bffda9ece0b012852c
+ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126423"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66264409"
 ---
 # <a name="packages-and-programs-in-system-center-configuration-manager"></a>Pacotes e programas no System Center Configuration Manager
 
@@ -28,6 +28,9 @@ O System Center Configuration Manager continua dando suporte a pacotes e program
 - Scripts que não instalam um aplicativo em um computador, como um script para desfragmentar a unidade de disco do computador
 - Scripts “únicos” que não precisam ser monitorados continuamente  
 - Scripts que são executados em um agendamento recorrente e que não usam a avaliação global
+
+> [!TIP]  
+> Considere o uso do recurso de [Scripts](/sccm/apps/deploy-use/create-deploy-scripts) no console do Configuration Manager. Os Scripts podem ser a melhor solução para alguns dos cenários anteriores em vez de usar pacotes e programas.
 
 Quando migra pacotes de uma versão anterior do Configuration Manager, você pode implantá-los em sua hierarquia do Configuration Manager. Após a conclusão da migração, os pacotes são exibidos no nó **Pacotes** do workspace **Biblioteca de Software**.
 
@@ -51,19 +54,19 @@ Os pacotes podem usar alguns recursos novos do Configuration Manager, incluindo 
 
 3. Sobre o **pacote** página do **Criar Assistente de pacote e programa**, especifique as seguintes informações:  
 
-   -   **Nome**: Especifique um nome para o pacote com, no máximo, 50 caracteres.  
+   -   **Nome**: especifique um nome para o pacote com, no máximo, 50 caracteres.  
 
-   -   **Descrição**: Especifique uma descrição para este pacote com, no máximo, 128 caracteres.  
+   -   **Descrição**: especifique uma descrição para este pacote com, no máximo, 128 caracteres.  
 
-   -   **Fabricante** (opcional): Especifique um nome de fabricante para ajudá-lo a identificar o pacote no console do Configuration Manager. Este nome pode ter, no máximo, 32 caracteres.
+   -   **Fabricante** (opcional): especifique um nome de fabricante para ajudá-lo a identificar o pacote no console do Configuration Manager. Este nome pode ter, no máximo, 32 caracteres.
 
-   -   **Idioma** (opcional): Especifique a versão do idioma do pacote com, no máximo, 32 caracteres.  
+   -   **Idioma** (opcional): especifique a versão do idioma do pacote com, no máximo, 32 caracteres.  
 
-   -   **Versão** (opcional):  Especifique um número de versão para o pacote com, no máximo, 32 caracteres.
+   -   **Versão** (opcional): especifique um número de versão para o pacote com, no máximo, 32 caracteres.
 
-   -   **Este pacote contém arquivos de origem**: Essa configuração indica se o pacote exige que os arquivos de origem estejam presentes nos dispositivos cliente. Por padrão, essa caixa de seleção fica desmarcada e o Configuration Manager não usa pontos de distribuição para o pacote. Quando esta caixa de seleção estiver marcada, pontos de distribuição serão usados.  
+   -   **Este pacote contém arquivos de origem**: essa configuração indica se o pacote exige que os arquivos de origem estejam presentes nos dispositivos cliente. Por padrão, essa caixa de seleção fica desmarcada e o Configuration Manager não usa pontos de distribuição para o pacote. Quando esta caixa de seleção estiver marcada, pontos de distribuição serão usados.  
 
-   -   **Pasta de origem**: Se o pacote contiver arquivos de origem, escolha **Procurar** para abrir a caixa de diálogo **Definir Pasta de Origem** e especifique a localização dos arquivos de origem do pacote.  
+   -   **Pasta de origem**: se o pacote contiver arquivos de origem, escolha **Procurar** para abrir a caixa de diálogo **Definir Pasta de Origem** e especifique o local dos arquivos de origem do pacote.  
 
        > [!NOTE]  
        >  A conta de computador do servidor do site deve ter direitos de acesso de leitura para a pasta de origem especificada.  
@@ -81,54 +84,54 @@ Os pacotes podem usar alguns recursos novos do Configuration Manager, incluindo 
 
    2.  Na página **Programa Padrão**, especifique as seguintes informações:  
 
-       -   **Nome:** Especifique um nome para o programa com, no máximo, 50 caracteres.  
+       -   **Nome:** Especifique um nome para o programa com um máximo de 50 caracteres.  
 
            > [!NOTE]  
-           >  O nome do programa deve ser exclusivo em um pacote. Depois de criar um programa, não é possível modificar seu nome.  
+           >  O nome do programa deve ser exclusivo dentro de um pacote. Depois de criar um programa, não é possível modificar seu nome.  
 
-       -   **Linha de comando**: Insira a linha de comando a ser usada para iniciar o programa ou escolha **Procurar** para procurar a localização do arquivo.  
+       -   **Linha de Comando**: insira a linha de comando a ser usada para iniciar o programa ou escolha **Procurar** para procurar o local do arquivo.  
 
            Se um nome de arquivo não tiver uma extensão especificada, o Configuration Manager tentará usar .com, .exe e .bat como possíveis extensões.  
 
-            Quando o programa é executado em um cliente, o Configuration Manager primeiro procura o nome do arquivo de linha de comando no pacote, em seguida, procura na pasta local do Windows e, por fim, procura no local *%path%*. Se o arquivo não for encontrado, o programa falhará.  
+            Quando o programa é executado em um cliente, o Configuration Manager primeiro procura o nome do arquivo de linha de comando no pacote, em seguida, procura na pasta local do Windows e, por fim, procura no local *%path%* . Se o arquivo não for encontrado, o programa falhará.  
 
-       -   **Pasta de inicialização** (opcional): Especifique a pasta por meio da qual o programa é executado, com até 127 caracteres. Essa pasta pode ser um caminho absoluto no cliente ou um caminho relativo à pasta do ponto de distribuição que contém o pacote.
+       -   **Pasta de inicialização** (opcional): especifique a pasta por meio da qual o programa é executado, com até 127 caracteres. Essa pasta pode ser um caminho absoluto no cliente ou um caminho relativo à pasta do ponto de distribuição que contém o pacote.
 
-       -   **Executar**: Especifique o modo em que o programa é executado nos computadores cliente. Selecione uma das seguintes opções:  
+       -   **Executar**: especifique o modo em que o programa é executado nos computadores cliente. Selecione uma das seguintes opções:  
 
-           -   **Normal**: O programa é executado no modo normal, de acordo com os padrões do sistema e do programa. Este é o modo padrão.  
+           -   **Normal**: o programa é executado no modo normal, de acordo com os padrões do sistema e do programa. Este é o modo padrão.  
 
-           -   **Minimizado**: O programa é executado de modo minimizado nos dispositivos cliente. Os usuários podem ver as atividades de instalação na área de notificação ou na barra de tarefas.  
+           -   **Minimizado**: o programa é executado de modo minimizado nos dispositivos cliente. Os usuários podem ver as atividades de instalação na área de notificação ou na barra de tarefas.  
 
-           -   **Maximizado**: O programa é executado de modo maximizado nos dispositivos cliente. Os usuários veem todas as atividades de instalação.  
+           -   **Maximizado**: o programa é executado de modo maximizado nos dispositivos cliente. Os usuários veem todas as atividades de instalação.  
 
-           -   **Oculto**: O programa é executado de modo oculto nos dispositivos cliente. Os usuários não veem nenhuma atividade de instalação.  
+           -   **Oculto**: o programa é executado de modo oculto nos dispositivos cliente. Os usuários não veem nenhuma atividade de instalação.  
 
-       -   **O programa pode ser executado**: Especifique se o programa é executado somente quando um usuário está conectado, somente quando nenhum usuário está conectado ou independentemente de um usuário estar conectado ao computador cliente.  
+       -   **O programa pode ser executado**: especifique se o programa é executado somente quando um usuário está conectado, somente quando nenhum usuário está conectado ou independentemente de um usuário estar conectado ao computador cliente.  
 
-       -   **Modo de execução**: Especifique se o programa é executado com permissões administrativas ou com as permissões do usuário conectado no momento.  
+       -   **Modo de execução**: especifique se o programa é executado com permissões administrativas ou com as permissões do usuário conectado no momento.  
 
-       -   **Permitir que os usuários exibam e interajam com o programa de instalação**: Use essa configuração, se disponível, para especificar se deseja permitir que os usuários interajam com a instalação do programa. Essa caixa de seleção só estará disponível quando a opção **Somente quando nenhum usuário estiver conectado** ou **Se um usuário estiver conectado ou não** estiver marcada em **O programa pode ser executado** e quando a opção **Executar com direitos administrativos** estiver marcada em **Modo de execução**.  
+       -   **Permitir que os usuários exibam e interajam com a instalação do programa**: use essa configuração, se disponível, para especificar se deseja permitir que os usuários interajam com a instalação do programa. Essa caixa de seleção só estará disponível quando a opção **Somente quando nenhum usuário estiver conectado** ou **Se um usuário estiver conectado ou não** estiver marcada em **O programa pode ser executado** e quando a opção **Executar com direitos administrativos** estiver marcada em **Modo de execução**.  
 
-       -   **Modo de unidade**: Especifique as informações sobre como esse programa é executado na rede. Escolha uma das seguintes opções:  
+       -   **Modo de unidade**: especifique as informações sobre como esse programa é executado na rede. Escolha uma das seguintes opções:  
 
-           -   **Executa com nome UNC**: Especifique se o programa é executado com um nome UNC. Essa é a configuração padrão.  
+           -   **Executa com nome UNC**: especifique se o programa é executado com um nome UNC. Essa é a configuração padrão.  
 
-           -   **Exige letra da unidade**: Especifique se o programa exige uma letra da unidade para qualificar totalmente sua localização. Para essa configuração, Configuration Manager pode usar qualquer letra da unidade disponível no cliente.  
+           -   **Exige letra da unidade**: especifique se o programa exige uma letra da unidade para qualificar totalmente seu local. Para essa configuração, Configuration Manager pode usar qualquer letra da unidade disponível no cliente.  
 
-           -   **Exige letra da unidade específica**: Especifique se o programa exige uma letra da unidade específica especificada para qualificar totalmente sua localização (por exemplo, **Z:**). Se a letra da unidade especificada já é usada em um cliente, o programa não será executado.  
+           -   **Exige letra da unidade específica**: especifique se o programa exige uma letra da unidade específica especificada para qualificar totalmente seu local (por exemplo, **Z:** ). Se a letra da unidade especificada já é usada em um cliente, o programa não será executado.  
 
-       -   **Reconectar ao ponto de distribuição ao efetuar logon**: Use essa caixa de seleção para indicar se o computador cliente é reconectado ao ponto de distribuição quando o usuário se conecta. Por padrão, essa caixa de seleção está desmarcada.  
+       -   **Reconectar ao ponto de distribuição no logon**: use essa caixa de seleção para indicar se o computador cliente é reconectado ao ponto de distribuição quando o usuário se conecta. Por padrão, essa caixa de seleção está desmarcada.  
 
    3.  Na página **Requisitos** do **Assistente para Criar Pacote e Programa**, especifique as seguintes informações:  
 
-       -   **Executar outro programa primeiro**: Use essa configuração para identificar um pacote e um programa que são executados antes da execução desse pacote e programa.  
+       -   **Executar outro programa primeiro**: use essa configuração para identificar um pacote e um programa que são executados antes da execução desse pacote e programa.  
 
-       -   **Requisitos da plataforma**: Selecione **Este programa pode ser executado em qualquer plataforma** ou **Este programa pode ser executado somente nas plataformas especificadas** e, em seguida, escolha os sistemas operacionais que os clientes devem executar para poder instalar o pacote e o programa.  
+       -   **Requisitos de plataforma**: selecione **Este programa pode ser executado em qualquer plataforma** ou **Este programa pode ser executado somente nas plataformas especificadas** e, em seguida, escolha os sistemas operacionais que os clientes devem executar para poder instalar o pacote e o programa.  
 
-       -   **Espaço em disco estimado**: Especifique a quantidade de espaço em disco de que o programa de software precisa para ser executado no computador. Isso pode ser especificado como **desconhecido** (a configuração padrão) ou como um número inteiro maior ou igual a zero. Se um valor for especificado, as unidades para o valor também devem ser especificadas.  
+       -   **Espaço em disco estimado**: especifique a quantidade de espaço em disco de que o programa de software precisa para ser executado no computador. Isso pode ser especificado como **desconhecido** (a configuração padrão) ou como um número inteiro maior ou igual a zero. Se um valor for especificado, as unidades para o valor também devem ser especificadas.  
 
-       -   **Tempo de execução máximo permitido (minutos)**: especifique o tempo máximo previsto para que o programa seja executado no computador cliente. Isso pode ser especificado como **desconhecido** (a configuração padrão) ou como um número inteiro maior que zero.  
+       -   **Tempo de execução máximo permitido (minutos)** : especifique o tempo máximo previsto para que o programa seja executado no computador cliente. Isso pode ser especificado como **desconhecido** (a configuração padrão) ou como um número inteiro maior que zero.  
 
             Por padrão, esse valor é definido como 120 minutos.  
 
@@ -148,28 +151,28 @@ Os pacotes podem usar alguns recursos novos do Configuration Manager, incluindo 
 
    2.  Na página **Programa para Dispositivo**, especifique o seguinte:  
 
-       -   **Nome**: Especifique um nome para o programa com, no máximo, 50 caracteres.  
+       -   **Nome**: especifique um nome para o programa com, no máximo, 50 caracteres.  
 
            > [!NOTE]  
            >  O nome do programa deve ser exclusivo em um pacote. Depois de criar um programa, não é possível modificar seu nome.  
 
-       -   **Comentário** (opcional): Especifique um comentário para esse programa de dispositivo com, no máximo, 127 caracteres.  
+       -   **Comentário** (opcional): especifique um comentário para esse programa de dispositivo com, no máximo, 127 caracteres.  
 
-       -   **Pasta de download**: Especifique o nome da pasta no dispositivo Windows CE na qual serão armazenados os arquivos de origem do pacote. O valor padrão é **\Temp\\**.  
+       -   **Pasta de download**: especifique o nome da pasta no dispositivo Windows CE na qual serão armazenados os arquivos de origem do pacote. O valor padrão é **\Temp\\** .  
 
-       -   **Linha de comando**: Insira a linha de comando a ser usada para iniciar o programa ou escolha **Procurar** para procurar a localização do arquivo.  
+       -   **Linha de Comando**: insira a linha de comando a ser usada para iniciar o programa ou escolha **Procurar** para procurar o local do arquivo.  
 
-       -   **Executar linha de comando na pasta de download**: Selecione essa opção para executar o programa na pasta de download especificada anteriormente.  
+       -   **Executar linha de comando na pasta de download**: selecione essa opção para executar o programa na pasta de download especificada anteriormente.  
 
-       -   **Executar linha de comando desta pasta**: Selecione essa opção para especificar outra pasta na qual o programa será executado.  
+       -   **Executar linha de comando nesta pasta**: selecione essa opção para especificar outra pasta na qual o programa será executado.  
 
    3.  Na página **Requisitos**, especifique o seguinte:  
 
-       -   **Espaço em disco estimado**: Especifique a quantidade de espaço em disco necessária para o software. Isso será exibido aos usuários de dispositivos móveis antes da instalação do programa.  
+       -   **Espaço em disco estimado**: especifique a quantidade de espaço em disco necessária para o software. Isso será exibido aos usuários de dispositivos móveis antes da instalação do programa.  
 
-       -   **Programa de download**: Especifique as informações sobre quando esse programa pode ser baixado em dispositivos móveis. Você pode especificar **O mais rápido possível**, **Somente em uma rede rápida**ou **Somente quando o dispositivo estiver encaixado**.  
+       -   **Baixar programa**: especifique as informações sobre quando esse programa pode ser baixado em dispositivos móveis. Você pode especificar **O mais rápido possível**, **Somente em uma rede rápida**ou **Somente quando o dispositivo estiver encaixado**.  
 
-       -   **Requisitos adicionais**: Especifique os requisitos adicionais para esse programa. Eles serão exibidos aos usuários antes da instalação do software. Por exemplo, você poderia notificar os usuários que precisam para fechar todos os outros aplicativos antes de executar o programa.  
+       -   **Requisitos adicionais**: especifique os requisitos adicionais para esse programa. Eles serão exibidos aos usuários antes da instalação do software. Por exemplo, você poderia notificar os usuários que precisam para fechar todos os outros aplicativos antes de executar o programa.  
 
    4.  Escolha **Próxima**.  
 
@@ -207,18 +210,18 @@ Os pacotes podem usar alguns recursos novos do Configuration Manager, incluindo 
 
 5. Na página **Configurações de Implantação**, escolha uma finalidade para essa implantação e especifique as opções de pacotes de ativação e conexões limitadas:  
 
-   - **Finalidade**: Escolha:  
+   - **Finalidade**: escolha entre:  
 
-     -   **Disponível**: Se o aplicativo for implantado em um usuário, o usuário verá o pacote e o programa publicados no Catálogo de Aplicativos e poderá solicitá-los sob demanda. Se o pacote e o programa forem implantados em um dispositivo, o usuário os verá no Centro de Software e poderá instalá-los sob demanda.  
+     -   **Disponível**: se o aplicativo for implantado em um usuário, o usuário verá o pacote e o programa publicados no Catálogo de Aplicativos e poderá solicitá-los sob demanda. Se o pacote e o programa forem implantados em um dispositivo, o usuário os verá no Centro de Software e poderá instalá-los sob demanda.  
 
-     -   **Obrigatório**: O pacote e o programa são implantados automaticamente, de acordo com o agendamento configurado. No entanto, um usuário pode acompanhar o status de implantação de pacote e programa e instalá-lo antes do prazo final usando o Centro de Software.  
+     -   **Obrigatória**: o pacote e o programa são implantados automaticamente, de acordo com o agendamento configurado. No entanto, um usuário pode acompanhar o status de implantação de pacote e programa e instalá-lo antes do prazo final usando o Centro de Software.  
 
      > [!NOTE]
      >  Se vários usuários estiverem conectados ao dispositivo, as implantações de pacote e sequência de tarefas talvez não sejam exibidas no Centro de Software.
 
-   - **Enviar pacotes de ativação**: S a finalidade da implantação estiver definida como **Necessária** e esta opção estiver selecionada, um pacote de ativação será enviado aos computadores antes da instalação da implantação para ativar o computador da suspensão no prazo da instalação. Antes de usar essa opção, os computadores devem ser configurados para Wake On LAN.  
+   - **Enviar pacotes de ativação**: se a finalidade da implantação estiver definida como **Obrigatória** e essa opção estiver selecionada, um pacote de ativação será enviado aos computadores antes que a implantação seja instalada para ativar o computador da suspensão na hora limite da instalação. Antes de usar essa opção, os computadores devem ser configurados para Wake On LAN.  
 
-   - **Permitir que clientes em uma conexão de Internet limitada baixem conteúdo após o prazo de instalação, o que pode incorrer custos adicionais**: Selecione esta opção se ela for necessária.  
+   - **Permitir que os clientes com uma conexão de Internet limitada baixem conteúdo após a hora limite da instalação, o que poderá incorrer custos adicionais**: selecione essa opção, se necessário.  
 
    > [!NOTE]  
    >  A opção **Pré-implantar software no dispositivo primário do usuário** não está disponível quando você implanta um pacote e programa.  
@@ -240,28 +243,28 @@ Os pacotes podem usar alguns recursos novos do Configuration Manager, incluindo 
 
 8. Na página **Experiência do Usuário** , especifique as seguintes informações:  
 
-    -   **Permitir que os usuários executem o programa de forma independente das atribuições**: Se essa opção estiver habilitada, os usuários poderão instalar esse software no Centro de Software, independentemente da hora de instalação agendada.  
+    -   **Permitir que os usuários executem o programa de forma independente das atribuições**: se essa opção estiver habilitada, os usuários poderão instalar esse software no Centro de Software, independentemente da hora de instalação agendada.  
 
-    -   **Instalação do software**: Permite que o software seja instalado fora de qualquer janela de manutenção configurada.  
+    -   **Instalação de software**: permite que o software seja instalado fora de qualquer janela de manutenção configurada.  
 
-    -   **Reinicialização do sistema (se necessário para conclusão da instalação)**: Se a instalação do software exigir uma reinicialização do dispositivo para ser concluída, permita que isso ocorra fora das janelas de manutenção configuradas.  
+    -   **Reinicialização do sistema (se necessário para conclusão da instalação)** : se a instalação do software exigir uma reinicialização do dispositivo para ser concluída, permita que isso ocorra fora das janelas de manutenção configuradas.  
 
-    -   **Dispositivos inseridos**: Ao implantar pacotes e programas em dispositivos Windows Embedded habilitados para filtro de gravação, é possível especificar se os pacotes e os programas serão instalados na sobreposição temporária e confirmar as alterações mais tarde. Como alternativa, confirme as alterações na hora limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na hora limite da instalação ou durante uma janela de manutenção, uma reinicialização é necessária e as alterações são persistidas no dispositivo.  
+    -   **Dispositivos inseridos**: ao implantar pacotes e programas em dispositivos Windows Embedded habilitados para filtro de gravação, é possível especificar se os pacotes e os programas serão instalados na sobreposição temporária e confirmar as alterações mais tarde. Como alternativa, confirme as alterações na hora limite da instalação ou durante uma janela de manutenção. Ao confirmar as alterações na hora limite da instalação ou durante uma janela de manutenção, uma reinicialização é necessária e as alterações são persistidas no dispositivo.  
 
         > [!NOTE]  
         >  Quando você implanta um pacote ou programa em um dispositivo Windows Embedded, certifique-se de que o dispositivo é um membro de uma coleção com uma janela de manutenção configurada. Para obter mais informações sobre como as janelas de manutenção são usadas na implantação de pacotes e programas em dispositivos Windows Embedded, consulte a seção [Criando aplicativos do Windows Embedded](../../apps/get-started/creating-windows-embedded-applications.md).  
 
 9. Na página **Pontos de Distribuição** , especifique as seguintes informações:  
 
-    -   **Opções de implantação**: Especifique as ações que um cliente deve executar para executar o conteúdo do programa. Você pode especificar o comportamento quando o cliente está em um limite de rede rápida ou um limite de rede lenta ou não confiável.  
+    -   **Opções de implantação**: especifique as ações que um cliente deve executar para executar o conteúdo do programa. Você pode especificar o comportamento quando o cliente está em um limite de rede rápida ou um limite de rede lenta ou não confiável.  
 
-    -   **Permita que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: Selecione essa opção para reduzir a carga na rede, permitindo que clientes baixem o conteúdo de outros clientes na rede, na qual já baixaram e armazenaram em cache o conteúdo. Essa opção utiliza o Windows BranchCache e pode ser usada em computadores que executam o Windows Vista SP2 e posterior.  
+    -   **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: selecione essa opção para reduzir a carga na rede, permitindo que os clientes baixem conteúdo de outros clientes na rede que já baixaram e armazenaram em cache o conteúdo. Essa opção utiliza o Windows BranchCache e pode ser usada em computadores que executam o Windows Vista SP2 e posterior.  
 
     -   **Permitir que os clientes usem um local de origem de fallback para o conteúdo**:  
 
-        -  **Versões anteriores à 1610**: Você pode marcar a caixa de seleção **Permitir localização de origem de fallback para conteúdo** para permitir que clientes fora desses grupos de limites façam fallback e usem o ponto de distribuição como uma localização de origem para conteúdo quando nenhum outro ponto de distribuição estiver disponível.
+        -  **Versões anteriores a 1610**: é possível marcar a caixa de seleção **Permitir local de origem de fallback para o conteúdo** para permitir que os clientes fora desses grupos de limite executem fallback e usem o ponto de distribuição como um local de origem para o conteúdo quando nenhum outro ponto de distribuição estiver disponível.
 
-        - **Versão 1610 e posterior**: Não é mais possível configurar a opção **Permitir localização de origem de fallback para o conteúdo**.  Em vez disso, você configura as relações entre grupos de limite que determinam quando um cliente pode iniciar a pesquisa de uma localização de fonte de conteúdo válida em grupos de limite adicionais.
+        - **Versão 1610 e posterior**: não é mais possível configurar a opção **Permitir local de origem de fallback para o conteúdo**.  Em vez disso, você configura as relações entre grupos de limite que determinam quando um cliente pode iniciar a pesquisa de uma localização de fonte de conteúdo válida em grupos de limite adicionais.
 
 10. Na página **Resumo**, examine as ações a serem executadas e conclua o assistente.  
 
@@ -295,26 +298,26 @@ Os pacotes podem usar alguns recursos novos do Configuration Manager, incluindo 
 ###  <a name="pdf"></a>[PDF]  
  Esta seção identifica o arquivo como um arquivo de definição de pacote. Ele contém as seguintes informações:  
 
--   **Versão**: Especifique a versão do formato de arquivo de definição de pacote usada pelo arquivo. Isso corresponde à versão do System Management Server (SMS) ou Configuration Manager para que ele foi escrito. Essa entrada é necessária.  
+-   **Versão**: especifique a versão do formato de arquivo de definição de pacote usada pelo arquivo. Isso corresponde à versão do System Management Server (SMS) ou Configuration Manager para que ele foi escrito. Essa entrada é necessária.  
 
 ###  <a name="package-definition"></a>[Package Definition]  
  Especifique as propriedades do pacote e do programa. Ele fornece as seguintes informações:  
 
 -   **Nome**: O nome do pacote, até 50 caracteres.  
 
--   **Versão** (opcional): A versão do pacote, até 32 caracteres.  
+-   **Versão** (opcional): a versão do pacote, com até 32 caracteres.  
 
--   **Ícone** (opcional): O arquivo que contém o ícone a ser usado para esse pacote. Se for especificado, esse ícone substituirá o ícone padrão do pacote no console do Configuration Manager.
+-   **Ícone** (opcional): o arquivo que contém o ícone a ser usado para esse pacote. Se for especificado, esse ícone substituirá o ícone padrão do pacote no console do Configuration Manager.
 
--   **Publicador**: O publicador do pacote, até 32 caracteres.
+-   **Publisher**: O Editor do pacote, até 32 caracteres.
 
 -   **Idioma**: A versão de idioma do pacote, até 32 caracteres.
 
--   **Comentário** (opcional): Um comentário sobre o pacote, com até 127 caracteres.
+-   **Comentário** (opcional): um comentário sobre o pacote, com até 127 caracteres.
 
 -   **ContainsNoFiles**: Essa entrada indica se é ou não uma fonte associada ao pacote.  
 
--   **Programas**: Os programas definidos para esse pacote. Cada nome de programa corresponde a um **[programa]** seção nesse arquivo de definição de pacote.  
+-   **Programas**: os programas definidos para esse pacote. Cada nome de programa corresponde a um **[programa]** seção nesse arquivo de definição de pacote.  
 
      Exemplo:  
 
@@ -326,40 +329,40 @@ Os pacotes podem usar alguns recursos novos do Configuration Manager, incluindo 
 
 -   **MIFVersion**: O número de versão do pacote (para correspondência de MIF), até 32 caracteres.  
 
--   **MIFPublisher**: O editor do software do pacote (para correspondência de MIF), até 32 caracteres.  
+-   **MIFPublisher**: O Editor do software do pacote (para correspondência de MIF), até 32 caracteres.  
 
 ###  <a name="program"></a>[programa]  
- Para cada programa especificado na entrada **Programas** da seção **[Definição de Pacote]**, o arquivo de definição de pacote deve incluir uma seção [Programa] que define o programa. Cada seção do programa fornece as seguintes informações:  
+ Para cada programa especificado na entrada **Programas** da seção **[Definição de Pacote]** , o arquivo de definição de pacote deve incluir uma seção [Programa] que define o programa. Cada seção do programa fornece as seguintes informações:  
 
 -   **Nome**: O nome do programa, até 50 caracteres. Essa entrada deve ser exclusiva dentro de um pacote. Esse nome é usado ao definir anúncios. Em computadores cliente, o nome do programa é mostrado na **executar programas anunciados** no painel de controle.  
 
--   **Ícone** (opcional): Especifique o arquivo que contém o ícone a ser usado para esse programa. Se for especificado, esse ícone substituirá o ícone padrão do programa no console do Configuration Manager e será exibido nos computadores cliente quando o programa for anunciado.
+-   **Ícone** (opcional): especifique o arquivo que contém o ícone a ser usado para esse programa. Se for especificado, esse ícone substituirá o ícone padrão do programa no console do Configuration Manager e será exibido nos computadores cliente quando o programa for anunciado.
 
--   **Comentário** (opcional): Um comentário sobre o programa, com até 127 caracteres.
+-   **Comentário** (opcional): um comentário sobre o programa, com até 127 caracteres.
 
--   **CommandLine**: Especifique a linha de comando para o programa, em até 127 caracteres. O comando é relativo à pasta de origem do pacote.
+-   **CommandLine**: especifique a linha de comando para o programa, em até 127 caracteres. O comando é relativo à pasta de origem do pacote.
 
--   **StartIn**: Especifique a pasta de trabalho para o programa, em até 127 caracteres. Essa entrada pode ser um caminho absoluto no computador cliente ou um caminho relativo à pasta de origem do pacote.
+-   **StartIn**: especifique a pasta de trabalho para o programa, em até 127 caracteres. Essa entrada pode ser um caminho absoluto no computador cliente ou um caminho relativo à pasta de origem do pacote.
 
--   **Executar**: Especifique o modo de programa no qual o programa é executado. Você pode especificar **minimizado**, **maximizado**, ou **Hidden**. Se essa entrada não for incluída, o programa será executado no modo normal.  
+-   **Executar**: especifique o modo de programa no qual o programa é executado. Você pode especificar **minimizado**, **maximizado**, ou **Hidden**. Se essa entrada não for incluída, o programa será executado no modo normal.  
 
--   **AfterRunning**: Especifique uma ação especial que ocorre depois que o programa é concluído com êxito. Opções disponíveis são **SMSRestart**, **ProgramRestart**, ou **SMSLogoff**. Se essa entrada não for incluída, o programa não executará uma ação especial.  
+-   **AfterRunning**: especifique uma ação especial que ocorre depois que o programa é concluído com êxito. Opções disponíveis são **SMSRestart**, **ProgramRestart**, ou **SMSLogoff**. Se essa entrada não for incluída, o programa não executará uma ação especial.  
 
--   **EstimatedDiskSpace**: Especifique a quantidade de espaço em disco de que o programa de software precisa para ser executado no computador. Isso pode ser especificado como **desconhecido** (a configuração padrão) ou como um número inteiro maior ou igual a zero. Se um valor for especificado, as unidades para o valor também devem ser especificadas.  
+-   **EstimatedDiskSpace**: especifique a quantidade de espaço em disco de que o programa de software precisa para ser executado no computador. Isso pode ser especificado como **desconhecido** (a configuração padrão) ou como um número inteiro maior ou igual a zero. Se um valor for especificado, as unidades para o valor também devem ser especificadas.  
 
      Exemplo:  
 
      `EstimatedDiskSpace=38MB`  
 
--   **EstimatedRunTime**: Especifique a duração estimada (em minutos) para o programa ser executado no computador cliente. Isso pode ser especificado como **desconhecido** (a configuração padrão) ou como um número inteiro maior que zero.  
+-   **EstimatedRunTime**: especifique a duração estimada (em minutos) para o programa ser executado no computador cliente. Isso pode ser especificado como **desconhecido** (a configuração padrão) ou como um número inteiro maior que zero.  
 
      Exemplo:  
 
      `EstimatedRunTime=25`  
 
--   **SupportedClients**: Especifique os processadores e sistemas operacionais nos quais esse programa é executado. As plataformas especificadas devem ser separadas por vírgulas. Se essa entrada não for incluída, a verificação de plataforma com suporte será desabilitada para esse programa.  
+-   **SupportedClients**: especifique os processadores e sistemas operacionais nos quais esse programa é executado. As plataformas especificadas devem ser separadas por vírgulas. Se essa entrada não for incluída, a verificação de plataforma com suporte será desabilitada para esse programa.  
 
--   **SupportedClientMinVersionX**, **SupportedClientMaxVersionX**: Especifique o intervalo inicial e final para os números de versão dos sistemas operacionais especificados na entrada **SupportedClients**.  
+-   **SupportedClientMinVersionX**, **SupportedClientMaxVersionX**: especifique o intervalo inicial e final para os números de versão dos sistemas operacionais especificados na entrada **SupportedClients**.  
 
      Exemplo:  
 
@@ -387,29 +390,29 @@ Os pacotes podem usar alguns recursos novos do Configuration Manager, incluindo 
     Win NT (x64) MaxVersion4=6.00.9999.9999   
     ```  
 
--   **AdditionalProgramRequirements** (opcional): Forneça outras informações ou outros requisitos para os computadores cliente, em até 127 caracteres.
+-   **AdditionalProgramRequirements** (opcional): forneça outras informações ou outros requisitos para os computadores cliente, em até 127 caracteres.
 
--   **CanRunWhen**: Especifique o status do usuário de que o programa precisa para ser executado no computador cliente. Os valores disponíveis são **UserLoggedOn**, **NoUserLoggedOn**, ou **AnyUserStatus**. O valor padrão é **UserLoggedOn**.  
+-   **CanRunWhen**: especifique o status do usuário de que o programa precisa para ser executado no computador cliente. Os valores disponíveis são **UserLoggedOn**, **NoUserLoggedOn**, ou **AnyUserStatus**. O valor padrão é **UserLoggedOn**.  
 
--   **UserInputRequired**: Especifique se o programa exige a interação com o usuário. Os valores disponíveis são **True** ou **False**. O valor padrão é **True**. Essa entrada é definida como **False** se **CanRunWhen** não está definido como **UserLoggedOn**.  
+-   **UserInputRequired**: especifique se o programa exige a interação com o usuário. Os valores disponíveis são **True** ou **False**. O valor padrão é **True**. Essa entrada é definida como **False** se **CanRunWhen** não está definido como **UserLoggedOn**.  
 
--   **AdminRightsRequired**: Especifique se o programa exige credenciais administrativas no computador para ser executado. Os valores disponíveis são **True** ou **False**. O valor padrão é **False**. Essa entrada é definida como **True** se **CanRunWhen** não está definido como **UserLoggedOn**.  
+-   **AdminRightsRequired**: especifique se o programa exige credenciais administrativas no computador para ser executado. Os valores disponíveis são **True** ou **False**. O valor padrão é **False**. Essa entrada é definida como **True** se **CanRunWhen** não está definido como **UserLoggedOn**.  
 
--   **UseInstallAccount**: Especifique se o programa usa a Conta de Instalação do Software Cliente quando ele é executado nos computadores cliente. Por padrão, esse valor é **False**. Esse valor também está **False** se **CanRunWhen** é definido como **UserLoggedOn**.  
+-   **UseInstallAccount**: especifique se o programa usa a Conta de Instalação do Software Cliente quando ele é executado nos computadores cliente. Por padrão, esse valor é **False**. Esse valor também está **False** se **CanRunWhen** é definido como **UserLoggedOn**.  
 
--   **DriveLetterConnection**: Especifique se o programa exige uma conexão de letra da unidade para os arquivos de pacote localizados no ponto de distribuição. Você pode especificar **True** ou **False**. O valor padrão é **False**, o que habilita o programa usar uma conexão UNC. Quando esse valor for definido como **True**, a próxima letra da unidade disponível será usada (começando com Z: e continuando com as anteriores).  
+-   **DriveLetterConnection**: especifique se o programa exige uma conexão de letra da unidade para os arquivos de pacote localizados no ponto de distribuição. Você pode especificar **True** ou **False**. O valor padrão é **False**, o que habilita o programa usar uma conexão UNC. Quando esse valor for definido como **True**, a próxima letra da unidade disponível será usada (começando com Z: e continuando com as anteriores).  
 
--   **SpecifyDrive** (opcional): Especifique uma letra da unidade de que o programa precisa para se conectar aos arquivos de pacote no ponto de distribuição. Essa especificação força o uso de letra de unidade especificada para conexões de cliente para pontos de distribuição.
+-   **SpecifyDrive** (opcional): especifique uma letra da unidade de que o programa precisa para se conectar aos arquivos de pacote no ponto de distribuição. Essa especificação força o uso de letra de unidade especificada para conexões de cliente para pontos de distribuição.
 
--   **ReconnectDriveAtLogon**: Especifique se o computador é reconectado ao ponto de distribuição quando o usuário se conecta. Os valores disponíveis são **True** ou **False**. O valor padrão é **False**.  
+-   **ReconnectDriveAtLogon**: especifique se o computador é reconectado ao ponto de distribuição quando o usuário se conecta. Os valores disponíveis são **True** ou **False**. O valor padrão é **False**.  
 
--   **DependentProgram**: Especifique um programa nesse pacote que deve ser executado antes do programa atual. Esta entrada usa o formato **DependentProgram**=<**NomeDoPrograma>**, em que **<NomeDoPrograma>\>** é a entrada do **Nome** do programa no arquivo de definição de pacote. Se não houver nenhum programa dependente, deixe essa entrada vazia.  
+-   **DependentProgram**: especifique um programa nesse pacote que deve ser executado antes do programa atual. Esta entrada usa o formato **DependentProgram**=<**NomeDoPrograma>** , em que **<NomeDoPrograma>\>** é a entrada do **Nome** do programa no arquivo de definição de pacote. Se não houver nenhum programa dependente, deixe essa entrada vazia.  
 
      Exemplo:  
 
      DependentProgram = administrador  
     DependentProgram =  
 
--   **Atribuição**: Especifique como o programa é atribuído aos usuários. Este valor pode ser: **FirstUser** (somente o primeiro usuário que se conecta ao cliente executa o programa) ou **EveryUser** (todos os usuários que se conectam executam o programa). Quando **CanRunWhen** não está definido como **UserLoggedOn**, essa entrada é definida como **FirstUser**.  
+-   **Atribuição**: especifique como o programa é atribuído aos usuários. Esse valor pode ser: **FirstUser** (somente o primeiro usuário que se conecta ao cliente executa o programa) ou **EveryUser** (todos os usuários que se conectam executam o programa). Quando **CanRunWhen** não está definido como **UserLoggedOn**, essa entrada é definida como **FirstUser**.  
 
--   **Desabilitado**: Especifique se esse programa pode ser anunciado para os clientes. Os valores disponíveis são **True** ou **False**. O valor padrão é **False**.  
+-   **Desabilitado**: especifique se esse programa pode ser anunciado para os clientes. Os valores disponíveis são **True** ou **False**. O valor padrão é **False**.  
