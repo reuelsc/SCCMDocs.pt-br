@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47d2ee0cf82e9739d8e6364098be6c3033ce1ea2
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 0409e71e09297d23251235aa6093886319c80ae6
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62218187"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716252"
 ---
 # <a name="how-to-create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-system-center-configuration-manager-client"></a>Como criar itens de configuração para dispositivos Android e Samsung KNOX gerenciados sem o cliente do System Center Configuration Manager
 
 Use o item de configuração **Android e Samsung KNOX** do System Center Configuration Manager para gerenciar as configurações para os dispositivos Android e Samsung KNOX que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  
 
-#### <a name="to-create-an-android-and-samsung-knox-configuration-item"></a>Para criar um item de configuração do Android e Samsung KNOX  
+## <a name="create-an-android-and-samsung-knox-configuration-item"></a>Criar um item de configuração do Android e Samsung KNOX  
 
 1. No console do Configuration Manager, escolha **Ativos e Conformidade**.  
 
@@ -38,7 +38,7 @@ Use o item de configuração **Android e Samsung KNOX** do System Center Configu
 
 7. Na página **Plataformas com Suporte** do assistente, escolha as plataformas específicas do Android ou Samsung KNOX que avaliarão o item de configuração.  
 
-8. Na página **Configurações do Dispositivo** do assistente, escolha o grupo de configurações que você deseja configurar. Veja a [Referência de configurações do item de configuração para Android e Samsung KNOX](#BKMK_setref) neste tópico para obter detalhes e escolha **Avançar**.  
+8. Na página **Configurações do Dispositivo** do assistente, escolha o grupo de configurações que você deseja configurar. Veja a [Referência de configurações do item de configuração para Android e Samsung KNOX](#android-and-samsung-knox-configuration-item-settings-reference) neste tópico para obter detalhes e escolha **Avançar**.  
 
     > [!TIP]  
     >  Se a configuração desejada não estiver na lista, marque a caixa **Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
@@ -169,7 +169,7 @@ Na página **Aplicativos Compatíveis e Não Compatíveis (Android)** , especifi
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Lista de aplicativos não compatíveis** |                                                                                                                                                                                                                                                                               Especifica uma lista de aplicativos que serão relatados como em não conformidade se forem instalados pelos usuários.                                                                                                                                                                                                                                                                               |
 |  **Lista de aplicativos compatíveis**   |                                                                                                                                                                                                                                                              Especifica uma lista de aplicativos que os usuários têm permissão de instalar. Todos os outros aplicativos instalados serão relatados como não compatíveis.                                                                                                                                                                                                                                                               |
-|          **Adicionar**           | Adiciona um aplicativo à lista selecionada. Especifique um nome da sua preferência, opcionalmente o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.<br /><br /> Para especificar a URL, na [seção de aplicativos do Google Play](https://play.google.com/store/apps), procure o aplicativo que deseja usar.<br /><br /> Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar essa URL na lista de aplicativos compatíveis ou incompatíveis.<br /><br /> **Exemplo:** Procure o Google Play **Microsoft Office Mobile**. A URL usada será **<https://play.google.com/store/apps/details?id=com.microsoft.office.officehub>**. |
+|          **Adicionar**           | Adiciona um aplicativo à lista selecionada. Especifique um nome da sua preferência, opcionalmente o editor do aplicativo, e a URL para o aplicativo na loja de aplicativos.<br /><br /> Para especificar a URL, na [seção de aplicativos do Google Play](https://play.google.com/store/apps), procure o aplicativo que deseja usar.<br /><br /> Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar essa URL na lista de aplicativos compatíveis ou incompatíveis.<br /><br /> **Exemplo:** Procure o Google Play **Microsoft Office Mobile**. A URL usada será **<https://play.google.com/store/apps/details?id=com.microsoft.office.officehub>** . |
 |          **Editarar**          |                                                                                                                                                                                                                                                                                          Permite editar o nome, editor e URL do aplicativo selecionado.                                                                                                                                                                                                                                                                                          |
 |         **Removerr**         |                                                                                                                                                                                                                                                                                                      Exclui o aplicativo selecionado da lista.                                                                                                                                                                                                                                                                                                      |
 |         **Importarar**         |                                                                                                                                                                                                                                                 Importa uma lista dos aplicativos que você especificou em um arquivo de valores separados por vírgulas. Use o formato, nome do aplicativo, editor e URL do aplicativo no arquivo.                                                                                                                                                                                                                                                 |

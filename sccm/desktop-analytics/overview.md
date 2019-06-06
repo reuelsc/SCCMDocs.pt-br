@@ -2,7 +2,7 @@
 title: Análise de Área de Trabalho
 titleSuffix: Configuration Manager
 description: Uma visão geral do serviço de análise de área de trabalho integrado com o Configuration Manager.
-ms.date: 04/22/2019
+ms.date: 06/04/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78e9454212bb8264926c1aba5262f06db1798abe
-ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
+ms.openlocfilehash: bdeffb3b2d478e4984ef721655b78aee5c47c36f
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65673436"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716231"
 ---
 # <a name="what-is-desktop-analytics"></a>O que é análise de área de trabalho?
 
@@ -89,6 +89,11 @@ Para usar a análise de área de trabalho, verifique se o que seu ambiente atend
     - Instale as atualizações mais recentes. Para obter mais informações, consulte [atualizar dispositivos](/sccm/desktop-analytics/enroll-devices#update-devices).  
 
     - Dispositivos também precisam ter o cliente do Configuration Manager, versão 1810 com pacote cumulativo de atualizações 2 (4488598) ou posterior. Para obter mais informações, consulte [atualização do Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
+
+    > [!Note]  
+    > Análise da área de trabalho não dá suporte a atualizações para o canal de manutenção em longo prazo do Windows 10 (LTSC). Para obter mais informações, consulte [Windows como uma visão geral do serviço](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).
+    >
+    > Análise da área de trabalho foi projetado para o cenário de atualização melhor suporte no local. Se você precisar fazer alterações importantes, como da arquitetura de 32 bits para 64 bits, use um cenário de geração de imagens. Insights de análise da área de trabalho ainda são valiosos nesses cenários de implantação do sistema operacional clássico, mas você pode ignorar as diretrizes de específica de atualização in-loco. Para obter mais informações, consulte [cenários para implantar sistemas operacionais corporativos com o Configuration Manager](/sccm/osd/deploy-use/scenarios-to-deploy-enterprise-operating-systems).
 
 - Dados de diagnóstico do Windows. Para obter mais informações, consulte os seguintes artigos:  
 

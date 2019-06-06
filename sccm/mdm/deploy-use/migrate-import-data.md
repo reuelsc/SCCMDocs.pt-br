@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: b552391d-abc0-48a2-a429-93605a13a66a
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46b5034cb95193a07421fe79a445dac0f5b28503
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 0e7c9fde7298d4733c2f3abd9555edb989d7cb66
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62232307"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716215"
 ---
 # <a name="import-configuration-manager-data-to-microsoft-intune"></a>Importar dados do Configuration Manager para o Microsoft Intune 
 
@@ -145,7 +145,7 @@ Você pode substituir o nome do grupo do Active Directory que o importador de da
 #### <a name="find-the-collections-that-cant-be-imported"></a>Localizar as coleções que não podem ser importadas
 Obtenha uma lista com todas as coleções que não podem ser importadas, para que você possa adicioná-las ao seu arquivo .csv de mapeamento de coleção. 
 
-1. Execute a ferramenta Data Importer e selecione os objetos para importação. Use os procedimentos no [fase 1: Descobrir objetos do Configuration Manager e coletar dados de](#phase-1:-discover-configuration-manager-objects-and-collect-data) e [fase 2: Resolver problemas e selecionar os objetos para importação](#phase-2:-resolve-issues-and-select-the-objects-to-import) para descobrir e escolher os objetos. Depois, na página **Resumo**, escolha **Exportar Detalhes** para criar um arquivo .csv com detalhes sobre todas as opções selecionadas para importação, incluindo os objetos que não podem ser importados e implantações.  
+1. Execute a ferramenta Data Importer e selecione os objetos para importação. Use os procedimentos no [fase 1: Descobrir objetos do Configuration Manager e coletar dados de](#phase-1-discover-configuration-manager-objects-and-collect-data) e [fase 2: Resolver problemas e selecionar os objetos para importação](#phase-2-resolve-issues-and-select-the-objects-to-import) para descobrir e escolher os objetos. Depois, na página **Resumo**, escolha **Exportar Detalhes** para criar um arquivo .csv com detalhes sobre todas as opções selecionadas para importação, incluindo os objetos que não podem ser importados e implantações.  
 
 2. Abra o arquivo .csv no Microsoft Excel e filtre os dados com base em **Implantação** para a coluna **Tipo** e **Não** para a coluna **Importável**. A colune de nome da coleção mostra todas as coleções que precisam ser adicionadas a um arquivo de mapeamento de coleção para que essas implantações possam ser importadas.  
 
