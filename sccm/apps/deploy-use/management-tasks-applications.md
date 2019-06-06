@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6f66eedd60c759395126363db9e672c45993d48
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 368fd0b4d86b1ee263bbe47619a4387db614b167
+ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123957"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66264393"
 ---
 # <a name="management-tasks-for-system-center-configuration-manager-applications"></a>Tarefas de gerenciamento para aplicativos do System Center Configuration Manager
 
@@ -47,6 +47,7 @@ Para obter ajuda na criação de aplicativos e tipos de implantação, consulte 
 |**Implantar**|Abre o **Assistente de Implantação de Software** , no qual é possível implantar o aplicativo selecionado em coleções de computadores em sua hierarquia.<br /><br /> Consulte [Implantar aplicativos](../../apps/deploy-use/deploy-applications.md).|  
 |**Distribuir conteúdo**|Abre o **Assistente para Distribuir Conteúdo** , no qual é possível copiar o conteúdo do aplicativo selecionado para pontos de distribuição em sua hierarquia.<br /><br /> Consulte [Gerenciar conteúdo e infraestrutura de conteúdo](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
 |**Exibir Relações**|Mostra um diagrama gráfico das relações entre os aplicativos selecionados e outros aplicativos. Escolha um destes procedimentos:<br><br><ul><li>**Dependência** – mostra os aplicativos que dependem do aplicativo selecionado e os aplicativos dos quais o aplicativo selecionado depende.</li><li>**Substituição** – mostra os aplicativos que são substituídos pelo aplicativo selecionado e os aplicativos pelos quais o aplicativo selecionado é substituído.</li><li>**Condições Globais** – mostra as condições globais referenciadas por esse aplicativo.</li></ol><br /> Consulte [Revisar e substituir aplicativos](../../apps/deploy-use/revise-and-supersede-applications.md) e [Criar condições globais](../../apps/deploy-use/create-global-conditions.md).|  
+|**Copiar aplicativos**|Copie ou duplicados, os aplicativos do Configuration Manager para criar um novo. Essa ação é útil para testar algo ou quando você precisa criar um aplicativo semelhante. O site cria um novo aplicativo, com **-copy** adicionado ao nome. Embora o site copie a maioria dos metadados para o novo aplicativo, ele não copia nenhuma implantação.|
 
 ##  <a name="manage-deployment-types"></a>Gerenciar tipos de implantação  
  No workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos**, escolha **Aplicativos** e o aplicativo que tem o tipo de implantação que você deseja gerenciar. No painel de detalhes, escolha a guia **Tipos de Implantação**, o tipo de implantação que você deseja gerenciar e uma tarefa de gerenciamento.  

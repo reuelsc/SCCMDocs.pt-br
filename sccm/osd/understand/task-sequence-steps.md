@@ -2,7 +2,7 @@
 title: Etapas da sequência de tarefas
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as etapas que você pode adicionar a uma sequência de tarefas do Configuration Manager.
-ms.date: 05/03/2019
+ms.date: 05/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0003b80362dadc1105450d2ba526620c1fabf560
-ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
+ms.openlocfilehash: 2d257d9fd328b04b35ff4c4d29b8a8bbd82ae565
+ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613070"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66355060"
 ---
 # <a name="task-sequence-steps"></a>Etapas da sequência de tarefas
 
@@ -106,7 +106,7 @@ Use as variáveis de sequência de tarefas seguintes com esta etapa:
 - [OSDApplyDriverBootCriticalHardwareComponent](/sccm/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalHardwareComponent)  
 - [OSDApplyDriverBootCriticalID](/sccm/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalID)  
 - [OSDApplyDriverBootCriticalINFFile](/sccm/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalINFFile)  
-- [OSDInstallDriversAdditionalOptions](/sccm/osd/understand/task-sequence-variables#OSDInstallDriversAdditionalOptions)<!--516679/2840016--> (a partir da versão 1806)  
+- [OSDInstallDriversAdditionalOptions](/sccm/osd/understand/task-sequence-variables#OSDInstallDriversAdditionalOptions)<!--516679/2840016--> (começando na versão 1806)  
 
 Para adicionar essa etapa no editor de sequência de tarefas, selecione **Adicionar**, **Drivers** e **Aplicar Pacote de Driver**.
 
@@ -575,7 +575,7 @@ Habilite esta opção especificar qualquer uma das seguintes configurações:
 
     Para saber mais sobre como migrar dados usando links físicos, consulte [Repositório de migração de link físico](https://docs.microsoft.com/windows/deployment/usmt/usmt-hard-link-migration-store).  
 
-- **Capturar em modo offline (somente Windows PE)**: habilite essa configuração para capturar o estado de usuário no Windows PE em vez do sistema operacional completo.  
+- **Capturar em modo offline (somente Windows PE)** : habilite essa configuração para capturar o estado de usuário no Windows PE em vez do sistema operacional completo.  
 
 #### <a name="capture-by-using-volume-copy-shadow-services-vss"></a>Capturar usando o VSS (Serviços de Cópias de Sombra de Volume)
 
@@ -866,7 +866,7 @@ O número do disco físico a ser formatado. O número é baseado na ordem de enu
 
 O tipo de disco a ser formatado. Há duas opções para selecionar na lista suspensa:
 
-- **Padrão (MBR)**: Registro Mestre de Inicialização  
+- **Padrão (MBR)** : Registro Mestre de Inicialização  
 - **GGT**: tabela de partição GUID  
 
 > [!NOTE]  
@@ -1007,7 +1007,7 @@ Programas que usam a opção **Executar outro programa primeiro** para instalar 
 >
 > `WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE`  
 >
-> Para mais informações sobre como criar mídia autônoma, confira [Criar mídia autônoma](/sccm/osd/deploy-use/create-stand-alone-media).  
+> Para mais informações sobre como criar mídia autônoma, confira [Create stand-alone media](/sccm/osd/deploy-use/create-stand-alone-media) (Criar mídia autônoma).  
 
 Essa etapa de sequência de tarefas é executada somente no sistema operacional completo. Ela não é executada no Windows PE.  
 
@@ -1563,7 +1563,7 @@ O exemplo a seguir contém parâmetros válidos:
 
 `-MyParameter1 MyValue1 -MyParameter2 MyValue2`  
 
-O exemplo a seguir contém parâmetros inválidos. Os primeiros dois itens são parâmetros de linha de comando do Windows PowerShell (**-NoLogo** e **-ExecutionPolicy Unrestricted**). O script não consome esses parâmetros.  
+O exemplo a seguir contém parâmetros inválidos. Os primeiros dois itens são parâmetros de linha de comando do Windows PowerShell ( **-NoLogo** e **-ExecutionPolicy Unrestricted**). O script não consome esses parâmetros.  
 
 `-NoLogo -ExecutionPolicy Unrestricted -File MyScript.ps1 -MyParameter1 MyValue1 -MyParameter2 MyValue2`
 
@@ -1814,7 +1814,7 @@ Esta etapa executa as seguintes ações:
 
 2. Habilite ou desabilite a conta de Administrador local com base na opção selecionada na etapa **Aplicar Configurações do Windows**.  
 
-3. Instale o cliente do Configuration Manager usando o pacote baixado anteriormente e as propriedades de instalação especificadas nesta etapa. O cliente é instalado no "modo de provisionamento". Esse modo impede que o cliente processe novas solicitações de política até a conclusão da sequência de tarefas.  
+3. Instale o cliente do Configuration Manager usando o pacote baixado anteriormente e as propriedades de instalação especificadas nesta etapa. O cliente é instalado no "modo de provisionamento". Esse modo impede que o cliente processe novas solicitações de política até a conclusão da sequência de tarefas. Para saber mais, confira o tópico [Modo de provisionamento](/sccm/osd/understand/provisioning-mode).  
 
 4. Aguarde até que o cliente esteja totalmente operacional.  
 
@@ -1906,7 +1906,7 @@ Especifique o número de minutos antes que o Configuration Manager falhe nesta e
 Execute a verificação de compatibilidade da Instalação do Windows sem iniciar o processo de atualização. Essa configuração corresponde à opção de linha de comando `/Compat ScanOnly` da Instalação do Windows. Implante o pacote de atualização do sistema operacional inteiro com essa opção.
 
 <!--SCCMDocs-pr issue 2812-->
-A partir da versão 1806, quando você habilitar essa opção, essa etapa não colocará o cliente do Configuration Manager no modo de provisionamento. A Instalação do Windows é executada silenciosamente em segundo plano, e o cliente continua a funcionar normalmente.
+A partir da versão 1806, quando você habilitar essa opção, essa etapa não colocará o cliente do Configuration Manager no modo de provisionamento. A Instalação do Windows é executada silenciosamente em segundo plano, e o cliente continua a funcionar normalmente. Para saber mais, confira o tópico [Modo de provisionamento](/sccm/osd/understand/provisioning-mode).
 
 A instalação retorna um código de saída como resultado da verificação. A tabela a seguir fornece alguns dos códigos de saída mais comuns:  
 

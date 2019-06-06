@@ -11,12 +11,12 @@ ms.assetid: 63c5ef72-5715-4d86-85a2-71beba469fab
 author: mestew
 ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9dbb2b7fadf13a49c25e2eb9bb6fcc608d3869f6
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 7f096f9ff9baaff2411289c27282ab53eb697b0b
+ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65495848"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354978"
 ---
 # <a name="icons-used-for-software-updates-in-system-center-configuration-manager"></a>Ícones usados para as atualizações de software no System Center Configuration Manager
 
@@ -54,11 +54,11 @@ Atualizações de software sincronizadas são exibidas no console do Configurati
 
  **Descrição:**  
 
- Atualizações de software que foram substituídas por versões mais recentes da atualização de software. Normalmente, uma atualização de software que substitui outra tem uma ou mais das seguintes características:  
+ Atualizações de software que foram substituídas por versões mais recentes da atualização de software. Normalmente, uma atualização de software que substitui outra tem uma ou mais das seguintes coisas:  
 
 - Melhora, aumenta ou acrescenta algo à correção fornecida por uma ou mais atualizações lançadas anteriormente.  
 
-- Melhora a eficiência do pacote de arquivos de atualização de software, que o cliente instala se a atualização for aprovada para instalação. Por exemplo, a atualização de software substituída pode conter arquivos que não são mais relevantes para a correção ou para os sistemas operacionais com suporte pela nova atualização. Sendo assim, esses arquivos não são incluídos no pacote de arquivos da atualização de software de substituição.  
+- Melhora a eficiência do pacote de arquivos de atualização de software, que o cliente instala se a atualização for aprovada para instalação. Por exemplo, a atualização de software substituída pode conter arquivos que não são mais relevantes para a correção ou para os sistemas operacionais compatíveis com a nova atualização. Sendo assim, esses arquivos não são incluídos no pacote de arquivos da atualização de software de substituição.  
 
 - Atualiza versões mais novas de um produto ou, em outras palavras, que não são mais aplicáveis a versões ou configurações mais antigas de um produto. Atualizações de software também podem substituir outras atualizações de software caso tenham sido feitas modificações para expandir o suporte para idiomas. Por exemplo, uma revisão posterior da atualização de um produto do Microsoft Office pode remover o suporte de um sistema operacional mais antigo, mas adicionar suporte para novos idiomas na versão de atualização de software inicial.  
 
@@ -124,3 +124,8 @@ Atualizações de software sincronizadas são exibidas no console do Configurati
  **Problemas operacionais:**  
 
  Quando o conteúdo está ausente para uma atualização de software, os clientes não conseguem instalar a atualização de software até que o conteúdo fique disponível no ponto de distribuição. Você pode redistribuir o conteúdo para pontos de distribuição usando a ação **Redistribuir** . Quando o conteúdo está ausente para uma atualização de software em uma implantação criada em um site pai, a atualização de software precisa ser replicada ou redistribuída para o site filho. Para obter mais informações sobre a redistribuição de conteúdo, consulte [Gerenciar o conteúdo que você distribuiu](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage).  
+
+
+## <a name="next-steps"></a>Próximas etapas 
+
+[Planejar atualizações de software](/sccm/sum/plan-design/plan-for-software-updates)
