@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04b67b324927f4918ff5c0835896cb0d63a9e48c
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: b07fc7bf1c4a226456506d0131c3d6bad14b1766
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62256040"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748225"
 ---
 # <a name="ios-hybrid-enrollment-using-apple-configurator-with-configuration-manager"></a>Registro híbrido do iOS que usa o Apple Configurator com o Configuration Manager
 
@@ -68,7 +68,7 @@ Para obter mais informações, confira [Pré-declarar dispositivos com número d
 
 1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Visão Geral** > **Todos os Dispositivos Corporativos** > **iOS** > **Perfis de Registro**.
 
-2.  Selecione o perfil de registro para implantar em dispositivos móveis e clique em **Exportar…**.
+2.  Selecione o perfil de registro para implantar em dispositivos móveis e clique em **Exportar…** .
 
 3.  Copie e salve a **URL de Perfil** em um arquivo que você pode editar.   
 
@@ -86,7 +86,7 @@ Para obter mais informações, confira [Pré-declarar dispositivos com número d
 
     ```
 
-5.  Salve a URL de perfil editada. Você a usará para adicionar a URL de perfil de registro no Apple Configurator na [próxima seção](#step-4-prepare-the-device-with-apple-configurator).  
+5.  Salve a URL de perfil editada. Você a usará para adicionar a URL de perfil de registro no Apple Configurator na [próxima seção](#prepare-the-device-with-apple-configurator).  
 
 > [!NOTE]
 > A URL do perfil de registro é válida por duas semanas a partir de sua exportação. Depois de duas semanas, você deverá exportar uma nova URL para registro de dispositivos iOS.
@@ -104,7 +104,7 @@ Para preparar os dispositivos iOS para registro, é necessário conectar cada di
 
 3. No painel de preferências, selecione **Servidores** e clique no símbolo "+" abaixo do painel esquerdo para iniciar o assistente do Servidor MDM. Clique em **Avançar**.  
 
-4. Insira o **Nome** e a **URL de Registro** salvos [anteriormente](#step-3-export-the-profile-to-deploy-to-ios-devices). Clique em **Avançar**.  
+4. Insira o **Nome** e a **URL de Registro** salvos [anteriormente](#export-the-profile-to-deploy-to-ios-devices). Clique em **Avançar**.  
 
    > [!NOTE]
    > Se você receber um aviso sobre os requisitos de perfil de confiança da Apple TV, cancele com segurança a opção **Perfil de Confiança** clicando no "X" cinza. Você pode ignorar com segurança qualquer Aviso de certificado de âncora.

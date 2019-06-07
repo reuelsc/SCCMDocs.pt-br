@@ -11,17 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d511df5dc4b6e29a86d4eabacec9037ee204ecc
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: cadeb04e52e584cf260e84ee4bdd4ea6a07de23f
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176738"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748322"
 ---
 # <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Como criar itens de configuração para dispositivos com iOS e Mac OS X gerenciados com o Intune
+
 Use o item de configuração **iOS e Mac OS X** do System Center Configuration Manager para gerenciar as configurações para dispositivos iOS e Mac OS X que estão registrados no Microsoft Intune ou são gerenciados localmente pelo Configuration Manager.  
   
-### <a name="to-create-an-ios-and-mac-os-x-configuration-item"></a>Para criar um item de configuração do iOS e Mac OS X  
+## <a name="create-an-ios-and-mac-os-x-configuration-item"></a>Criar um item de configuração do Mac OS X e o iOS  
   
 1. No console do Configuration Manager, clique em **Ativos e conformidade**.  
   
@@ -37,7 +38,7 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
   
 7. Na página **Plataformas com Suporte** do assistente, selecione as plataformas específicas do iOS ou Mac OS X que avaliarão o item de configuração.  
   
-8. Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Referência de configurações do item de configuração para iOS e Mac OS X](#BKMK_Setref) neste tópico para obter detalhes e clique **Avançar**.  
+8. Na página **Configurações do Dispositivo** do assistente, selecione o grupo de configurações que deseja configurar. Veja [Referência de configurações do item de configuração para iOS e Mac OS X](#ios-and-mac-os-x-configuration-item-settings-reference) neste tópico para obter detalhes e clique **Avançar**.  
   
    > [!TIP]  
    >  Se a configuração desejada não estiver na lista, marque a **caixa de seleção Definir configurações adicionais que não estão nos grupos de configuração padrão**.  
@@ -239,7 +240,7 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
   
         Abra a página do aplicativo e copie a URL para a área de transferência. Agora você pode usar essa URL na lista de aplicativos compatíveis ou incompatíveis.  
   
-        **Exemplo:** Pesquise o **Microsoft Word para iPad** aplicativo. A URL usada será **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+        **Exemplo:** Pesquise o **Microsoft Word para iPad** aplicativo. A URL usada será **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8** .  
   
    -   **Editar** – permite editar o nome, o fornecedor e a URL do aplicativo selecionado.  
   
@@ -276,7 +277,7 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
      >  Para localizar a ID do pacote de um aplicativo, use as seguintes etapas em um computador Mac que tem o aplicativo instalado:  
      > 
      > 1. Abra a pasta na qual o aplicativo está instalado (por exemplo, **/Aplicativos**)  
-     >    2.  Selecione o pacote _<Nome do Aplicativo\>_**.app** e escolha **Mostrar Conteúdo do Pacote**  
+     >    2.  Selecione o pacote _<Nome do Aplicativo\>_ **.app** e escolha **Mostrar Conteúdo do Pacote**  
      >    3.  Abra o arquivo **Info.plist**  
      >    4.  Verifique o valor associado à chave **CFBundleIdentifier**  
      > 
@@ -359,7 +360,7 @@ Use o item de configuração **iOS e Mac OS X** do System Center Configuration M
   
      - Copie a URL da página e use-a como a URL para especificar o aplicativo que você deseja executar no modo de quiosque.  
   
-     - **Exemplo:** Pesquise **Microsoft Word para iPad**. A URL usada será **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+     - **Exemplo:** Pesquise **Microsoft Word para iPad**. A URL usada será **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8** .  
   
    - **Toque** – habilita ou desabilita a tela touch no dispositivo.  
   

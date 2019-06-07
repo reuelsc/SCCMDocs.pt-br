@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e7baf5d26bb823f3b02efb8e71cf4d34330d899
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 6aef8f927a2c4d3cb3eb7fecc4970cb19cbb83ed
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62282385"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748270"
 ---
 # <a name="set-up-ios-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurar o gerenciamento de dispositivo híbrido do iOS com o System Center Configuration Manager e o Microsoft Intune
 
@@ -45,7 +45,7 @@ Um arquivo de solicitação de assinatura de certificado é necessário para sol
 ## <a name="request-an-mdm-push-certificate-from-apple"></a>Solicitar um certificado de PUSH MDM da Apple
 O certificado Push MDM é usado para estabelecer uma relação de confiança entre o serviço de gerenciamento, o Intune e os dispositivos móveis iOS registrados.  
 
-1.  Em um navegador, vá para o [Portal de Certificados por Push da Apple](http://go.microsoft.com/fwlink/?LinkId=269844) e entre com sua ID corporativa da Apple. Essa ID da Apple deve ser usada no futuro para renovar seu certificado APNs.  
+1.  Em um navegador, vá para o [Portal de Certificados por Push da Apple](https://identity.apple.com/pushcert) e entre com sua ID corporativa da Apple. Essa ID da Apple deve ser usada no futuro para renovar seu certificado APNs.  
 
 2.  Conclua o assistente usando o arquivo (.csr) de solicitação de assinatura do certificado. Baixe o certificado Push MDM e salve o arquivo pem localmente. Este arquivo de certificado (.pem) é usado para estabelecer uma relação de confiança entre o servidor do Apple Push Notification e a autoridade de gerenciamento de dispositivo móvel do Intune.  
 

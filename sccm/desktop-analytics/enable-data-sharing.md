@@ -2,7 +2,7 @@
 title: Habilitar o compartilhamento de dados
 titleSuffix: Configuration Manager
 description: Um guia de referência para o compartilhamento de dados de diagnóstico com a análise de área de trabalho.
-ms.date: 04/22/2019
+ms.date: 06/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a30dc89882146c892f5eeec1aacfc31efbfd038
-ms.sourcegitcommit: 65753c51fbf596f233fc75a5462ea4a44005c70b
+ms.openlocfilehash: dbe161fd744343927f0b373775182eccfd58c1b6
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66463050"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748244"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Habilitar o compartilhamento de área de trabalho de análise de dados
 
@@ -56,6 +56,9 @@ Os artigos a seguir também são bons recursos para melhor entender os níveis d
 
 Para habilitar o compartilhamento de dados, configure o servidor de proxy para permitir que os pontos de extremidade a seguir:
 
+> [!Important]  
+> Por privacidade e integridade dos dados, o Windows verifica um certificado SSL da Microsoft ao se comunicar com os pontos de extremidade de dados de diagnóstico. Inspeção e interceptação de SSL não são possíveis. Para usar a análise de área de trabalho, exclua esses pontos de extremidade de inspeção de SSL.<!-- BUG 4647542 -->
+
 | Ponto de extremidade  | Função  |
 |-----------|-----------|
 | `https://v10c.events.data.microsoft.com` | Experiência do usuário conectado e o ponto de extremidade de diagnóstico de componente. Usado por dispositivos que executam o Windows 10, versão 1703 ou posterior, com o 2018-09 cumulativo de atualização ou posterior instalado. |
@@ -77,12 +80,6 @@ Para habilitar o compartilhamento de dados, configure o servidor de proxy para p
 | `https://office.pipe.aria.microsoft.com` | Para a funcionalidade futura <!-- Used by Office clients to send diagnostic data events from universal/modern Office apps, and Win32 Office 16 versions later than 16.0.8702. It's used to collect usage and reliability signals events for Desktop Analytics. --> |
 | `https://graph.windows.net` | Usado para recuperar automaticamente as configurações como CommercialId ao anexar a sua hierarquia para análise de área de trabalho (na função de servidor do Configuration Manager somente). |
 | `https://fef.msua06.manage.microsoft.com` | Usado para associações de coleção de dispositivo de sincronização, planos de implantação e status de preparação do dispositivo com a análise de área de trabalho (na função de servidor do Configuration Manager somente). |
-
-
-### <a name="ssl-inspection"></a>Inspeção de SSL
-
-Por privacidade e integridade dos dados, o Windows verifica um certificado SSL da Microsoft ao se comunicar com os pontos de extremidade de dados de diagnóstico. Inspeção e interceptação de SSL não são possíveis. Para usar a análise de área de trabalho, exclua os pontos de extremidade acima de inspeção de SSL.
-
 
 
 ## <a name="proxy-server-authentication"></a>Autenticação do servidor proxy
