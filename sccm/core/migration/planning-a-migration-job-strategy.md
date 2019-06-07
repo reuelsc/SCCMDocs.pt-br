@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c66ef90812e8b5ccf47063fb335c17aaeca4fa64
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 3f6b445bb2e84cb7c3f35d81c66038686f2b9833
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122212"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66715988"
 ---
 # <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>Planejar a estratégia de trabalho de migração no System Center Configuration Manager
 
@@ -29,18 +29,6 @@ Use trabalhos de migração para configurar os dados específicos que você dese
  Antes de migrar clientes entre hierarquias, assegure-se de que os objetos que os clientes usam foram migrados e que esses objetos estão disponíveis na hierarquia de destino. Por exemplo, ao migrar de uma hierarquia de origem do Configuration Manager 2007 SP2, talvez seja necessário ter um anúncio para o conteúdo que é implantado em uma coleção personalizada que tem um cliente. Nesse cenário, é recomendável migrar a coleção, o anúncio e o conteúdo associado antes de migrar o cliente. Esses dados não poderão ser associados ao cliente na hierarquia de destino se o conteúdo, coleção e anúncio não forem migrados antes da migração do cliente. Se um cliente não está associado aos dados relacionados a um anúncio e conteúdo executados anteriormente, o conteúdo para instalação na hierarquia de destino pode ser oferecido para o cliente, o que talvez seja desnecessário. Quando o cliente migra depois que os dados foram migrados, o cliente é associado a esse conteúdo e anúncio, e a menos que o anúncio seja recorrente, não é oferecido a ele esse conteúdo para a anúncio migrado novamente.  
 
  Alguns objetos requerem mais do que a migração de dados da hierarquia da origem para a hierarquia de destino. Por exemplo, para migrar com êxito as atualizações de software para clientes na hierarquia de destino, você deve implantar um ponto de atualização de software ativo, configurar o catálogo de produtos e sincronizar o ponto de atualização de software com um WSUS (Windows Server Update Services) na hierarquia de destino.  
-
- Use as seções a seguir para ajudá-lo a planejar seus trabalhos de migração.  
-
--   [Tipos de trabalhos de migração](#Types_of_Migration)  
-
--   [Planejamento geral para todos os trabalhos de migração](#About_Migration_Jobs)  
-
--   [Planejando os trabalhos de migração de coleções](#About_Collection_Migration)  
-
--   [Planejando os trabalhos de migração de objetos](#About_Object_Migration)  
-
--   [Planejando trabalhos de migração de objetos migrados anteriormente](#About_Object_Migrations)  
 
 ##  <a name="Types_of_Migration"></a> Tipos de trabalhos de migração  
  O Configuration Manager dá suporte aos seguintes tipos de trabalho de migração. Cada tipo de trabalho foi desenvolvido para ajudar a definir os objetos que você pode incluir nesse trabalho.  

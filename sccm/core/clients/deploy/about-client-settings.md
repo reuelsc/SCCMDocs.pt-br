@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3271c0fbd8673e33d7a7bf6a9c6da4b0ce978377
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: a9610024219107e81c4440a1e96780aaf300e20f
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176785"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66715738"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Sobre as configurações do cliente no Configuration Manager
 
@@ -63,7 +63,7 @@ Configure o computador cliente para o [Windows BranchCache](/sccm/core/plan-desi
 
 - **Habilitar o BranchCache**: Habilite o BranchCache nos computadores cliente.
 
-- **Tamanho máximo do cache do BranchCache (percentual do disco)**: O percentual do disco que é permitido que o BranchCache use.
+- **Tamanho máximo do cache do BranchCache (percentual do disco)** : O percentual do disco que é permitido que o BranchCache use.
 
 ### <a name="configure-client-cache-size"></a>Configurar o tamanho do cache do cliente
 
@@ -72,7 +72,7 @@ O cache do cliente do Configuration Manager em computadores Windows armazena arq
 Se escolher **Sim**, em seguida, especifique:
 
 - **Tamanho máximo de cache (MB)**
-- **Tamanho máximo do cache (percentual do disco)**: O tamanho do cache do cliente expande até o tamanho máximo em MB (megabytes) ou o percentual do disco, o que for menor.
+- **Tamanho máximo do cache (percentual do disco)** : O tamanho do cache do cliente expande até o tamanho máximo em MB (megabytes) ou o percentual do disco, o que for menor.
 
 ### <a name="enable-configuration-manager-client-in-full-os-to-share-content"></a>Habilitar cliente do Configuration Manager em um SO completo para compartilhar conteúdo
 
@@ -277,7 +277,7 @@ Essa opção exige no mínimo a versão do Windows PowerShell 2.0. O padrão é 
 >
 > - O workspace **Monitoramento** no console exibe a ID de erro de estado de implantação **0x87D00327**. Ele também exibe a descrição **O script não está assinado**.  
 > - Os relatórios exibem o tipo **Erro de descoberta**. Em seguida, os relatórios exibem o tipo de erro **0x87D00327** e a descrição **O script não está assinado** ou o código de erro **0x87D00320** e a descrição **O host de script ainda não foi instalado**. Um exemplo de relatório é: **Detalhes de erros de itens de configuração em uma linha de base de configuração para um ativo**.  
-> - O arquivo **DcmWmiProvider.log** exibe a mensagem **O script não está assinado (Erro: 87D00327; Fonte: CCM)**.  
+> - O arquivo **DcmWmiProvider.log** exibe a mensagem **O script não está assinado (Erro: 87D00327; Fonte: CCM)** .  
 
 ### <a name="show-notifications-for-new-deployments"></a>Mostrar notificações para novas implantações
 
@@ -295,7 +295,7 @@ Se os clientes precisarem instalar as atualizações de software obrigatórias a
 
 Caso deseje oferecer aos usuários mais tempo para instalar as implantações de atualização de software ou os aplicativos obrigatórios além da data limite, defina essa opção como **Sim**. Esse período de carência destina-se a um computador desativado por um período estendido e o usuário precisa instalar vários aplicativos ou implantações de atualização. Por exemplo, essa configuração é útil se um usuário retorna de férias e precisa esperar muito tempo enquanto o cliente instala as implantações de aplicativo vencidas.
 
-Defina um período de carência entre 1 e 120 horas. Use essa configuração em conjunto com a propriedade de implantação **Atrasar a imposição dessa implantação de acordo com as preferências do usuário**. Para obter informações, confira [Deploy applications](/sccm/apps/deploy-use/deploy-applications) (Implantar aplicativos).
+Defina um período de carência entre 1 e 120 horas. Use essa configuração em conjunto com a propriedade de implantação **Atrasar a imposição dessa implantação de acordo com as preferências do usuário**. Para obter informações, confira [Deploy applications](/sccm/apps/deploy-use/deploy-applications#delay-enforcement-with-a-grace-period) (Implantar aplicativos).
 
 
 ## <a name="computer-restart"></a>Reinicialização do computador
@@ -494,16 +494,16 @@ Para obter mais informações sobre o proxy de ativação, veja [Planejar como a
 
 Em seguida, defina as seguintes configurações adicionais, conforme necessário:
 
-- **Número da porta do proxy de ativação (UDP)**: O número da porta que os clientes usam para enviar pacotes de ativação para computadores suspensos. Mantenha a porta padrão 25536 ou altere o número para um valor de sua escolha.  
+- **Número da porta do proxy de ativação (UDP)** : O número da porta que os clientes usam para enviar pacotes de ativação para computadores suspensos. Mantenha a porta padrão 25536 ou altere o número para um valor de sua escolha.  
 
-- **Número da porta do Wake On LAN (UDP)**: Mantenha o valor padrão 9, a menos que você tenha alterado o número da porta Wake On LAN (UDP) na guia **Portas** das **Propriedades** do site.  
+- **Número da porta do Wake On LAN (UDP)** : Mantenha o valor padrão 9, a menos que você tenha alterado o número da porta Wake On LAN (UDP) na guia **Portas** das **Propriedades** do site.  
 
     > [!IMPORTANT]  
     > Esse número deve corresponder ao número nas **Propriedades**do site. Se você alterar esse número em um só lugar, ele não será atualizado automaticamente em outro lugar.  
 
 - **Exceção do Windows Defender Firewall para proxy de ativação**: O cliente do Configuration Manager configura automaticamente o número da porta do proxy de ativação em dispositivos que executam o Windows Defender Firewall. Selecione **Configurar** para especificar os perfis de firewall desejados.  
 
-    Se os clientes executarem outro firewall, configure-o manualmente para permitir o **Número da porta do proxy de ativação (UDP)**.  
+    Se os clientes executarem outro firewall, configure-o manualmente para permitir o **Número da porta do proxy de ativação (UDP)** .  
 
 - **Prefixos IPv6, se necessário, para DirectAccess ou outros dispositivos de rede intermediários. Use uma vírgula para especificar várias entradas**: Insira os prefixos IPv6 necessários para que o proxy de ativação funcione na rede.
 
@@ -720,7 +720,7 @@ Se você deseja coletar arquivos de computadores cliente, selecione **Definir Ar
 
     - **Excluir arquivos criptografados e compactados**: Quando você escolhe essa opção, os arquivos que foram compactados ou criptografados não são coletados.  
 
-    - **Parar coleta de arquivos quando o tamanho total dos arquivos exceder (KB)**: Especifique o tamanho do arquivo, em KB (quilobytes), após o qual o cliente interromperá a coleta dos arquivos especificados.  
+    - **Parar coleta de arquivos quando o tamanho total dos arquivos exceder (KB)** : Especifique o tamanho do arquivo, em KB (quilobytes), após o qual o cliente interromperá a coleta dos arquivos especificados.  
 
     > [!NOTE]  
     > O servidor do site coleta as cinco versões alteradas mais recentemente de arquivos coletados e as armazena no diretório `<ConfigMgr installation directory>\Inboxes\Sinv.box\Filecol`. Se um arquivo não tiver sido alterado desde o último ciclo de inventário de software, o arquivo não será coletado novamente.  

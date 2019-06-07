@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e8ebea21b735e6b93d73bf6ff5eb842243ef42d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: fd2e95a82ab01c760ea14158f164e930a77db894
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121855"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748138"
 ---
 # <a name="how-to-use-task-sequence-variables-in-configuration-manager"></a>Como usar as variáveis de sequência de tarefas no Configuration Manager
 
@@ -54,7 +54,7 @@ ms.locfileid: "56121855"
 
  Variáveis de ação de sequência de tarefas especificam definições de configuração usadas por uma única etapa em uma sequência de tarefas. Por padrão, a etapa inicia suas configurações antes da execução. Essas configurações estão disponíveis apenas enquanto a etapa de sequência de tarefas associada está em execução. A sequência de tarefas adiciona o valor da variável de ação ao ambiente antes de executar a etapa. E remove o valor do ambiente após a etapa ser executada.
 
- Por exemplo, você adiciona a etapa **Executar Linha de Comando** a uma sequência de tarefas. Esta etapa inclui uma propriedade **Iniciar em**. A sequência de tarefas armazena um valor padrão para essa propriedade como a variável **WorkingDirectory**. A sequência de tarefas inicia esse valor antes de executar a etapa **Executar Linha de Comando**. Enquanto esta etapa estiver em execução, acesse o valor de propriedade **Iniciar em** pelo valor **WorkingDirectory**. Depois que a etapa for concluída, a sequência de tarefas remove o valor da variável **WorkingDirectory** do ambiente. Se a sequência de tarefas inclui outra etapa **Executar Linha de Comando**, ela inicia uma nova variável **WorkingDirectory**. Nesse momento, a sequência de tarefas define a variável como o valor inicial da etapa atual. Para saber mais, confira [WorkingDirectory](using-task-sequence-variables.md#WorkingDirectory).  
+ Por exemplo, você adiciona a etapa **Executar Linha de Comando** a uma sequência de tarefas. Esta etapa inclui uma propriedade **Iniciar em**. A sequência de tarefas armazena um valor padrão para essa propriedade como a variável **WorkingDirectory**. A sequência de tarefas inicia esse valor antes de executar a etapa **Executar Linha de Comando**. Enquanto esta etapa estiver em execução, acesse o valor de propriedade **Iniciar em** pelo valor **WorkingDirectory**. Depois que a etapa for concluída, a sequência de tarefas remove o valor da variável **WorkingDirectory** do ambiente. Se a sequência de tarefas inclui outra etapa **Executar Linha de Comando**, ela inicia uma nova variável **WorkingDirectory**. Nesse momento, a sequência de tarefas define a variável como o valor inicial da etapa atual. Para saber mais, confira [WorkingDirectory](/sccm/osd/understand/task-sequence-variables#WorkingDirectory).  
 
  O valor *padrão* de uma variável de ação está presente quando a etapa é executada. Se você definir um valor *novo*, ele estará disponível para várias etapas na sequência de tarefas. Se você substituir um valor padrão, o novo valor permanecerá no ambiente. Esse novo valor substitui o valor padrão das outras etapas na sequência de tarefas. Por exemplo, você adiciona uma etapa **Definir Variável de Sequência de Tarefas** como a primeira etapa da sequência de tarefas. Esta etapa define a variável **WorkingDirectory** como `C:\`. Qualquer etapa **Executar Linha de Comando** na sequência de tarefas usa o novo valor de diretório inicial.  
 
@@ -230,7 +230,7 @@ ms.locfileid: "56121855"
 
     - **Condição**: a condição para avaliar o valor da variável. Por exemplo, **igual a**.  
 
-    - **Valor**: o valor da variável a ser verificada. Por exemplo, `false`.  
+    - **Valor**: o valor da variável a verificar. Por exemplo, `false`.  
 
 
  Os três exemplos anteriores formam uma condição comum para testar se a sequência de tarefas está em execução de uma imagem de inicialização no Windows PE: 

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5adc8809edc0a069269dfce71f302452a0e01b45
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 376d35ae0eaca282b9634e2c3eeb50b9c814f270
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124022"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748006"
 ---
 # <a name="learn-more-about-powershell-script-security"></a>Saiba mais sobre a segurança de script do PowerShell
 
@@ -49,8 +49,6 @@ Essa coleção de links foi escolhida para fornecer aos administradores do Confi
 
 [Protegendo contra a injeção de código mal-intencionado](https://blogs.msdn.microsoft.com/powershell/2006/11/22/protecting-against-malicious-code-injection/)
 
-[Informações sobre a segurança na Galeria do PowerShell](https://blogs.msdn.microsoft.com/powershell/2015/08/06/powershell-gallery-new-security-scan/)
-
 [A Equipe Azul do PowerShell discute o log de bloco de Script Profundo, o Log de Eventos Protegidos, a Interface de Verificação de Antimalware e as APIs de Geração de Código Seguro](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
 
 [Para o Windows 10, há uma API para uma interface de verificação de antimalware](https://cloudblogs.microsoft.com/microsoftsecure/2015/06/09/windows-10-to-offer-application-developers-new-malware-defenses/?source=mmpc)
@@ -65,7 +63,7 @@ Passar parâmetros é uma maneira de ter flexibilidade com os scripts e adiar as
 - Utilize o módulo do PowerShell ["caçador de injeção"](https://www.powershellgallery.com/packages/InjectionHunter/1.0.0) na Galeria do PowerShell.
     - Pode haver falsos positivos; portanto, procure a intenção quando algo for sinalizado como suspeito para determinar se ele é um problema real ou não. 
 - O Microsoft Visual Studio tem um analisador de Script, que pode ajudar com a verificação da sintaxe do PowerShell.
-- Este vídeo intitulado: “DEF CON 25 - Lee Holmes - Get $pwnd: Attacking Battle Hardened Windows Server” (Atacando um Windows Server protegido para a batalha) fornece uma visão geral dos tipos de problemas contra os quais você pode proteger (especialmente, a seção 12:20 a 17:50):     <iframe width="560" height="315" src="https://www.youtube.com/embed/ahxMOAAani8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+- Este vídeo intitulado “DEF CON 25 - Lee Holmes - Get $pwnd: Attacking Battle Hardened Windows Server” (Atacando um Windows Server protegido para a batalha) fornece uma visão geral dos tipos de problemas contra os quais você pode proteger (especialmente, a seção 12:20 a 17:50):     <iframe width="560" height="315" src="https://www.youtube.com/embed/ahxMOAAani8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## <a name="environment-recommendations"></a>Recomendações para o ambiente
 Recomendações gerais para administradores do PowerShell.

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44ffc6aa554e30ef96dbe09409ee5360d0ed236d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 33055f0962ef1220d41a2c8ee463cb2380ff60db
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129843"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66715959"
 ---
 # <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>Funcionalidades na Visualização Técnica 1705 do System Center Configuration Manager
 
@@ -135,10 +135,6 @@ Antes de usar uma réplica assíncrona para recuperar o banco de dados do site, 
 Para parar o site, você poderá usar a [ferramenta de manutenção de hierarquia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe) para interromper os principais serviços no servidor do site. Use a linha de comando: **Preinst.exe /stopsite**   
 
 Parar o site é equivalente a interromper o serviço do Gerenciador de Componentes de Site (sitecomp) seguido pelo serviço SMS_Executive, no servidor do site.
-
-> [!TIP]  
-> Se você usar uma réplica primária passiva (introduzida nesta Visualização Técnica como [Alta disponibilidade da função de servidor do site](#site-server-role-high-availability)), não precisará interromper a réplica passiva. Somente o site primário ativo deve ser interrompido.
-
 
 
 ## <a name="improved-user-notifications-for-office-365-updates"></a>Notificações de usuário aprimoradas para atualizações do Office 365

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 988e834de78bac64be43600ca73d0d51ff29bf4b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 332cdf00256ccfbac07b352c22b232edd4ba9363
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496771"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716162"
 ---
 # <a name="cmtrace"></a>CMTrace
 
@@ -115,8 +115,8 @@ As seguintes ações estão disponíveis no menu **Ferramentas**:
 - [Filtrar](#filter)
 - [Pesquisa de Erro](#error-lookup)
 - [Pausar](#pause)
-- [Mostrar/Ocultar Detalhes](#show/hide-details)
-- [Mostrar/Ocultar Painel de Informações](#show/hide-info-pane)
+- [Mostrar/Ocultar Detalhes](#showhide-details)
+- [Mostrar/Ocultar Painel de Informações](#showhide-info-pane)
 
 #### <a name="find"></a>Localizar
 Pesquise o arquivo de log aberto para uma cadeia de caracteres de texto especificada.  

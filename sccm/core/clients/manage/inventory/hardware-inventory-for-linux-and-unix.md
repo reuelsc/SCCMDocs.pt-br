@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18de1d67ecc1dfa6d9c5fb87355c4fed04e2c4c4
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 9b69e6039d7e3626b2e2f7d321bc9150e05ceee3
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176746"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748276"
 ---
 # <a name="hardware-inventory-for-linux-and-unix-in-configuration-manager"></a>Inventário de hardware para o Linux e o UNIX no Configuration Manager
 
@@ -106,7 +106,7 @@ As ações de inventário de hardware são inseridas no arquivo de log do client
 ###  <a name="BKMK_LinuxProvider"></a> Crie um provedor de inventário de hardware personalizado para computadores Linux e UNIX:  
  Para criar um provedor de inventário de hardware personalizado para o cliente do Configuration Manager para Linux e UNIX, use **OMI Source – v.1.0.6** e siga as instruções da Guia de Introdução à OMI. Esse processo inclui a criação de um arquivo MOF (Managed Object Format) que define o esquema do novo provedor. Posteriormente, você importa o arquivo MOF no Configuration Manager para habilitar o suporte da nova classe personalizada de inventário.  
 
- Tanto o OMI Source - v.1.0.6 quanto o Guia de Introdução à OMI estão disponíveis para download no site do [The Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) . Você pode localizar esses downloads na guia **Documentos** na seguinte página da Web no site OpenGroup.org: [OMI (Open Management Infrastructure)](http://go.microsoft.com/fwlink/p/?LinkId=286805).  
+ Tanto o OMI Source - v.1.0.6 quanto o Guia de Introdução à OMI estão disponíveis para download no site do [The Open Group](https://github.com/microsoft/omi/blob/master/README.md) . Você pode localizar esses downloads na guia **Documentos** na seguinte página da Web no site OpenGroup.org: [OMI (Open Management Infrastructure)](http://go.microsoft.com/fwlink/p/?LinkId=286805).  
 
 ###  <a name="BKMK_AddProvidertoLinux"></a> Configure cada computador que executa o Linux ou UNIX com o provedor de inventário de hardware personalizado:  
  Depois de criar um provedor de inventário personalizado, você deve copiar e registrar o arquivo de biblioteca do provedor em cada computador que tenha inventário que você deseja coletar.  
