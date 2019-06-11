@@ -2,7 +2,7 @@
 title: Conectar o Configuration Manager
 titleSuffix: Configuration Manager
 description: Um guia de instruções para conectar o Configuration Manager com a análise de área de trabalho.
-ms.date: 04/25/2019
+ms.date: 06/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 905ea779082387996858727ef8c50f1835b3d61c
-ms.sourcegitcommit: 65753c51fbf596f233fc75a5462ea4a44005c70b
+ms.openlocfilehash: 38391c5d922a33696dc10d761847e40c01e151cc
+ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66463027"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66822002"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Como conectar o Configuration Manager com a análise de área de trabalho
 
@@ -29,11 +29,11 @@ Análise da área de trabalho está totalmente integrado com o Configuration Man
 
 ## <a name="bkmk_hotfix"></a> Atualizar o site
 
-Primeiro, certifique-se de que seu site do Configuration Manager está em execução pelo menos a versão 1810. Para obter mais informações, confira [Instalar atualizações no console](/sccm/core/servers/manage/install-in-console-updates).
+Primeiro, certifique-se de que seu site do Configuration Manager está em execução pelo menos versão 1902. Para obter mais informações, confira [Instalar atualizações no console](/sccm/core/servers/manage/install-in-console-updates).
 
-Você também precisará instalar a versão 1810 Update Rollup 2 (4488598) para dar suporte à integração com a área de trabalho de análise. Para obter mais informações sobre esta atualização, consulte [Update Rollup 2 para o branch atual do Configuration Manager, versão 1810](https://support.microsoft.com/help/4488598).
+Você também precisará instalar o versão 1902 pacote cumulativo de atualizações (4500571) para dar suporte à integração com a área de trabalho de análise. Para obter mais informações sobre esta atualização, consulte [atualização cumulativa para o branch atual do Configuration Manager, versão 1902](https://support.microsoft.com/help/4500571).
 
-1. Atualize o site com o pacote cumulativo de atualizações da versão 1810. Para obter mais informações, confira [Instalar atualizações no console](/sccm/core/servers/manage/install-in-console-updates).  
+1. Atualize o site com o pacote cumulativo de atualizações para a versão 1902. Para obter mais informações, confira [Instalar atualizações no console](/sccm/core/servers/manage/install-in-console-updates).  
 
 2. Atualize clientes. Para simplificar este processo, considere o uso da atualização automática do cliente. Para obter mais informações, consulte [Atualizar clientes](/sccm/core/clients/manage/upgrade/upgrade-clients#automatic-client-upgrade).  
 
@@ -83,7 +83,7 @@ Use este procedimento para conectar o Configuration Manager para análise de ár
 
 7. Sobre o **dados de diagnóstico** página, defina as seguintes configurações:  
 
-    - **ID comercial**: esse valor deve preencher automaticamente com a ID. da sua organização Se ele não abrir, certifique-se de seu servidor proxy está configurado para permitir todos os itens necessários [pontos de extremidade](/sccm/desktop-analytics/enable-data-sharing#endpoints) antes de continuar. Como alternativa, recuperar sua ID comercial do **serviços conectados** painel na [portal de análise de área de trabalho](https://aka.ms/m365aprod).  
+    - **ID comercial**: esse valor deve preencher automaticamente com a ID. da sua organização Se ele não abrir, certifique-se de seu servidor proxy está configurado para permitir todos os itens necessários [pontos de extremidade](/sccm/desktop-analytics/enable-data-sharing#endpoints) antes de continuar. Como alternativa, recuperar sua ID comercial manualmente a partir de [portal de análise de área de trabalho](/sccm/desktop-analytics/troubleshooting#bkmk_ViewCommercialID).  
 
     - **Nível de dados de diagnóstico do Windows 10**: Selecione pelo menos **avançado (limitado)**  
 

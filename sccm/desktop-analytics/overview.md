@@ -2,7 +2,7 @@
 title: Análise de Área de Trabalho
 titleSuffix: Configuration Manager
 description: Uma visão geral do serviço de análise de área de trabalho integrado com o Configuration Manager.
-ms.date: 06/04/2019
+ms.date: 06/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdeffb3b2d478e4984ef721655b78aee5c47c36f
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.openlocfilehash: 8dfa24f92ced6c69f90844e46dccf1df0e93f7a7
+ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66716231"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66821994"
 ---
 # <a name="what-is-desktop-analytics"></a>O que é análise de área de trabalho?
 
@@ -80,7 +80,7 @@ Para usar a análise de área de trabalho, verifique se o que seu ambiente atend
 
         - [**Proprietário**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner), ou [ **Colaborador** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) e [ **administrador de acesso do usuário** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) permissões sobre o assinatura para criar um espaço de trabalho em um novo grupo de recursos.  
 
-- O Configuration Manager, versão 1810 com pacote cumulativo de atualizações 2 (4488598) ou posterior. Para obter mais informações, consulte [atualização do Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
+- O Configuration Manager, versão 1902 com pacote cumulativo de atualizações (4500571) ou posterior. Para obter mais informações, consulte [atualização do Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
 
     - **Administrador completo** função no Configuration Manager  
 
@@ -88,7 +88,7 @@ Para usar a análise de área de trabalho, verifique se o que seu ambiente atend
 
     - Instale as atualizações mais recentes. Para obter mais informações, consulte [atualizar dispositivos](/sccm/desktop-analytics/enroll-devices#update-devices).  
 
-    - Dispositivos também precisam ter o cliente do Configuration Manager, versão 1810 com pacote cumulativo de atualizações 2 (4488598) ou posterior. Para obter mais informações, consulte [atualização do Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
+    - Dispositivos também precisam ter o cliente do Configuration Manager, versão 1902 com pacote cumulativo de atualizações (4500571) ou posterior. Para obter mais informações, consulte [atualização do Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
 
     > [!Note]  
     > Análise da área de trabalho não dá suporte a atualizações para o canal de manutenção em longo prazo do Windows 10 (LTSC). Para obter mais informações, consulte [Windows como uma visão geral do serviço](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).

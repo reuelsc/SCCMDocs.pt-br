@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbe161fd744343927f0b373775182eccfd58c1b6
-ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.openlocfilehash: 7292fdd3cc370af314cef95a4b782616e315a0cb
+ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748244"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66821986"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Habilitar o compartilhamento de área de trabalho de análise de dados
 
@@ -70,8 +70,6 @@ Para habilitar o compartilhamento de dados, configure o servidor de proxy para p
 | `https://watson.telemetry.microsoft.com` | Erro do Windows (WER) de emissão de relatórios. Necessário para monitorar a integridade da implantação no Windows 10, versão 1803 ou anterior. |
 | `https://umwatsonc.events.data.microsoft.com` | Erro do Windows (WER) de emissão de relatórios. Necessário para relatórios de integridade do dispositivo no Windows 10, versão 1809 ou posterior. |
 | `https://ceuswatcab01.blob.core.windows.net`<br> `https://ceuswatcab02.blob.core.windows.net`<br> `https://eaus2watcab01.blob.core.windows.net`<br> `https://eaus2watcab02.blob.core.windows.net`<br> `https://weus2watcab01.blob.core.windows.net`<br> `https://weus2watcab02.blob.core.windows.net` | Erro do Windows (WER) de emissão de relatórios. Necessário para monitorar a integridade da implantação no Windows 10, versão 1809 ou posterior. |
-| `https://www.msftncsi.com` | Erro do Windows (WER) de emissão de relatórios. Necessário para a integridade do dispositivo verificar a conectividade. |
-| `https://www.msftconnecttest.com` | Erro do Windows (WER) de emissão de relatórios. Necessário para a integridade do dispositivo verificar a conectividade. |
 | `https://kmwatsonc.events.data.microsoft.com` | Análise online de pane. Necessário para relatórios de integridade do dispositivo no Windows 10, versão 1809 ou posterior. |
 | `https://oca.telemetry.microsoft.com`  | Online Crash Analysis (OCA). Necessário para monitorar a integridade da implantação no Windows 10, versão 1803 ou anterior. |
 | `https://login.live.com` | Deve para fornecer uma identidade de dispositivo mais confiável para a área de trabalho de análise. <br> <br>Para desabilitar o acesso à conta do usuário final Microsoft, use as configurações de política em vez de bloquear esse ponto de extremidade. Para obter mais informações, consulte [conta da Microsoft na empresa](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication). |

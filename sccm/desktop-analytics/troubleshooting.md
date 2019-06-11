@@ -2,7 +2,7 @@
 title: Solução de problemas de análise da área de trabalho
 titleSuffix: Configuration Manager
 description: Detalhes técnicos para ajudá-lo a solucionar problemas com a análise de área de trabalho.
-ms.date: 06/05/2019
+ms.date: 06/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1f54a2794b3a938366553c635e560ebe1adb320
-ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.openlocfilehash: 32e3d1185ff1f93a988074cdbc8dd7a14a4dcba8
+ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748121"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66822084"
 ---
 # <a name="troubleshooting-desktop-analytics"></a>Solução de problemas de análise da área de trabalho
 
@@ -95,7 +95,7 @@ Selecione o nome da categoria para remover ou adicioná-lo do gráfico. Essa aç
 
 O dispositivo tem os seguintes atributos:
 
-- Um cliente versão 1810 ou posterior do Configuration Manager  
+- Uma versão de cliente 1902 ou posterior do Configuration Manager  
 - Não há nenhum erro de configuração  
 - Análise da área de trabalho recebeu os dados de diagnóstico completos deste dispositivo nos últimos 28 dias  
 - Análise da área de trabalho tem um inventário completo de configuração do dispositivo e aplicativos instalados  
@@ -118,7 +118,7 @@ Verifique se que o dispositivo é capaz de se comunicar com o serviço. Para obt
 
 #### <a name="missing-prerequisites"></a>Pré-requisitos ausentes
 
-O cliente do Configuration Manager não é de pelo menos a versão 1810 (5.0.8740).
+O cliente do Configuration Manager não é de pelo menos versão 1902 (5.0.8790).
 
 Atualize o cliente para a versão mais recente. Considere habilitar a atualização automática do cliente para o site do Configuration Manager. Para obter mais informações, consulte [Atualizar clientes](/sccm/core/clients/manage/upgrade/upgrade-clients#automatic-client-upgrade).  
 
@@ -339,7 +339,7 @@ Verifique as permissões na chave do registro. Certifique-se de que a conta sist
 
 Há uma ID diferente para o dispositivo. Essa chave do registro é usada pela política de grupo. Ela terá precedência sobre a ID fornecida pelo Configuration Manager.  
 
-Para exibir a ID comercial no portal de análise de área de trabalho, use o procedimento a seguir:
+<a name="bkmk_ViewCommercialID"></a> Para exibir a ID comercial no portal de análise de área de trabalho, use o procedimento a seguir:
 
 1. Acesse o portal de análise de área de trabalho e selecione **aos serviços conectados** no grupo de configurações globais.  
 
@@ -348,7 +348,7 @@ Para exibir a ID comercial no portal de análise de área de trabalho, use o pro
 ![Captura de tela da ID comercial no portal de análise de área de trabalho](media/commercial-id.png)
 
 > [!Important]  
-> Somente **obter a nova chave de ID** quando você não pode usar o atual. Se você regenerar a ID comercial, implante a nova ID para seus dispositivos. Esse processo pode resultar em perda de dados de diagnóstico durante a transição.  
+> Somente **obter a nova chave de ID** quando você não pode usar o atual. Se você regenerar a ID comercial, [registrar novamente seus dispositivos com a nova Id](/sccm/desktop-analytics/enroll-devices#device-enrollment). Esse processo pode resultar em perda de dados de diagnóstico durante a transição.  
 
 #### <a name="windows-commercial-data-opt-in"></a>Windows dados comerciais opt-in
 
@@ -604,14 +604,18 @@ O portal mostrará uma notificação de que ele adicionou a atribuição de fun�
 ## <a name="data-latency"></a>Latência de dados
 
 <!-- 3846531 -->
-Dados no portal de análise de área de trabalho são atualizados diariamente. Esta atualização inclui alterações de dispositivo coletadas dos dados de diagnóstico e as alterações feitas na configuração. Por exemplo, quando você altera um ativo **decisão de atualização**, ele pode resultar em alterações para o estado de preparação de dispositivos com esse ativo instalado.
+Ao configurar a análise de área de trabalho pela primeira vez, os relatórios no Configuration Manager e o portal de análise de área de trabalho não podem mostrar dados completo imediatamente. Pode levar 2 a 3 dias para dispositivos ativos enviar dados de diagnóstico para o serviço de análise de área de trabalho, o serviço para processar os dados e, em seguida, sincronizar com seu site do Configuration Manager.
 
-- **As alterações de administrador** geralmente são processadas pelo serviço de análise de área de trabalho dentro de nove horas. Por exemplo, se você fizer alterações às 11:00 PM UTC, o portal deve refletir essas alterações antes do UTC-08:00 AM no dia seguinte.
+Ao sincronizar coleções de dispositivos da sua hierarquia do Configuration Manager para análise de área de trabalho, ele pode levar até 10 minutos para as coleções sejam exibidos no portal de análise de área de trabalho.  Da mesma forma, quando você cria um plano de implantação na área de trabalho de análise, ele pode levar até 10 minutos para as novas coleções associadas com o plano de implantação para aparecer na sua hierarquia do Configuration Manager.  Os sites primários criarem as coleções, e o site de administração central sincroniza com análise de área de trabalho.
 
-- **Alterações de dispositivo** detectado por UTC a meia-noite no horário local geralmente são incluídos na atualização diária. Normalmente é mais 23 horas de latência associada com o processamento das alterações de dispositivo em comparação com as alterações de administrador.
+No portal de análise de área de trabalho, há dois tipos de dados: **Os dados do administrador** e **dados de diagnóstico**:
 
-Se você não estiver vendo as alterações atualizadas dentro desses intervalos de tempo, aguarde a outra 24 horas para a próxima atualização diária. Se você vir a intervalos mais longos, verifique o painel de integridade do serviço. Se o serviço de relatórios como íntegros, entre em contato com o suporte da Microsoft.
+- **Os dados do administrador** refere-se a quaisquer alterações feitas à configuração do espaço de trabalho.  Por exemplo, quando você altera um ativo **decisão de atualização** ou **importância** você está alterando os dados do administrador.  Geralmente, essas alterações têm um efeito de composição, como eles podem alterar o estado de preparação de um dispositivo com o ativo em questão instalado.
 
-Ao configurar a análise de área de trabalho pela primeira vez, os gráficos no Configuration Manager e o portal de análise de área de trabalho podem não mostrar dados completos. Pode levar 2 a 3 dias para dispositivos ativos enviar dados de diagnóstico para o serviço de análise de área de trabalho, o serviço para processar os dados e, em seguida, sincronizar com seu site do Configuration Manager.
+- **Dados de diagnóstico** refere-se aos metadados do sistema carregados dos dispositivos cliente para a Microsoft.  Esses são os dados que impulsiona a análise de área de trabalho e incluem atributos como status de atualização de inventário de dispositivo e de segurança e de recurso.
 
-Em uma hierarquia do Configuration Manager, ele pode levar 10 minutos para novas coleções aparecerá para planos de implantação. Os sites primários criarem as coleções, e o site de administração central sincroniza com análise de área de trabalho.<!-- 3896921 -->
+Por padrão, todos os dados na análise de área de trabalho portal é automaticamente atualizado diariamente. Essa atualização inclui alterações em dados de diagnóstico, bem como as alterações feitas na configuração (dados do administrador) e é geralmente visível em seu portal de análise de área de trabalho por 08:00 AM UTC diariamente.
+
+Quando você faz alterações em dados do administrador, você tem a capacidade de disparar uma atualização sob demanda dos dados de administrador no seu espaço de trabalho abrindo o submenu de moeda de dados e clicar em "Aplicar alterações".  Esse processo geralmente leva entre 15 a 60 minutos, dependendo do tamanho do espaço de trabalho e o escopo das alterações que precisam de processos.  Observe que a solicitar um sob demanda de dados de atualização não resultará em todas as alterações aos dados de diagnóstico.  Para saber mais sobre como solicitar uma atualização sob demanda, consulte nossa página de perguntas Frequentes.
+
+Se você não estiver vendo as alterações atualizadas dentro dos intervalos indicados acima, aguarde 24 horas para a próxima atualização diária. Se você vir a intervalos mais longos, verifique o painel de integridade do serviço. Se o serviço de relatórios como íntegros, entre em contato com o suporte da Microsoft.<!-- 3896921 -->

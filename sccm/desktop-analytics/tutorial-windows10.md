@@ -2,7 +2,7 @@
 title: Tutorial – implantar o Windows 10
 titleSuffix: Configuration Manager
 description: Um tutorial sobre como usar a área de trabalho de análise e o Configuration Manager para implantar o Windows 10 em um grupo piloto.
-ms.date: 04/25/2019
+ms.date: 06/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: tutorial
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7eb322550c6d11426240736d3d0c6b9ff2c9764f
-ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
+ms.openlocfilehash: 09259b62eba5a6cbd84b487f83f0fb26d7cbb7c1
+ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66264552"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66821962"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Tutorial: Implantar o Windows 10 para piloto
 
@@ -48,7 +48,7 @@ Antes de iniciar este tutorial, certifique-se de que ter os seguintes pré-requi
 
     Para obter mais informações, consulte [pré-requisitos de análise de área de trabalho](/sccm/desktop-analytics/overview#prerequisites).
 
-- O Configuration Manager, versão 1810 com pacote cumulativo de atualizações 2 (4488598) ou posterior, com **administrador completo** função  
+- O Configuration Manager, versão 1902 com pacote cumulativo de atualizações (4500571) ou posterior, com **administrador completo** função  
 
 - Mídia de instalação para a versão mais recente do Windows 10
 
@@ -58,7 +58,7 @@ Antes de iniciar este tutorial, certifique-se de que ter os seguintes pré-requi
 
     - A atualização de qualidade cumulativa mais recente do Windows 10  
 
-    - Configuration Manager versão 1810 do cliente com o pacote cumulativo de atualizações 2 (4488598) ou posterior  
+    - 1902 de versão do cliente do Configuration Manager com pacote cumulativo de atualizações (4500571) ou posterior  
 
 - Aprovação de negócios para configurar o nível de dados de diagnóstico do Windows para **avançado (limitado)** nos dispositivos piloto  
 
@@ -77,8 +77,6 @@ Antes de iniciar este tutorial, certifique-se de que ter os seguintes pré-requi
     - `https://eaus2watcab02.blob.core.windows.net`  
     - `https://weus2watcab01.blob.core.windows.net`  
     - `https://weus2watcab02.blob.core.windows.net`  
-    - `https://www.msftncsi.com`  
-    - `https://www.msftconnecttest.com`  
     - `https://kmwatsonc.events.data.microsoft.com`  
     - `https://oca.telemetry.microsoft.com`  
     - `https://login.live.com`  
@@ -157,9 +155,9 @@ Use este procedimento para atualizar do Configuration Manager, conecte-se à ár
 
 ### <a name="update-configuration-manager"></a>Atualizar do Configuration Manager
 
-Instale o pacote cumulativo de atualizações do Configuration Manager versão 1810 2 (4488598) para dar suporte à integração com a área de trabalho de análise. Para obter mais informações sobre esta atualização, consulte [atualização cumulativa para o branch atual do Configuration Manager, versão 1810](https://support.microsoft.com/help/4488598).
+Instale o pacote de cumulativo de atualizações do Configuration Manager versão 1902 (4500571) para dar suporte à integração com a área de trabalho de análise. Para obter mais informações sobre esta atualização, consulte [atualização cumulativa para o branch atual do Configuration Manager, versão 1902](https://support.microsoft.com/help/4500571).
 
-1. Atualize o site com o pacote cumulativo de atualizações da versão 1810. Para obter mais informações, confira [Instalar atualizações no console](/sccm/core/servers/manage/install-in-console-updates).  
+1. Atualize o site com o pacote cumulativo de atualizações para a versão 1902. Para obter mais informações, confira [Instalar atualizações no console](/sccm/core/servers/manage/install-in-console-updates).  
 
 2. Atualize clientes. Para simplificar este processo, considere o uso da atualização automática do cliente. Para obter mais informações, consulte [Atualizar clientes](/sccm/core/clients/manage/upgrade/upgrade-clients#automatic-client-upgrade).  
 
@@ -244,7 +242,7 @@ Use este procedimento para criar um plano de implantação na área de trabalho 
 
     - **Nome**: Planejar um nome exclusivo para a implantação, por exemplo `Windows 10 pilot`  
 
-    - **Produtos e versões**: Selecione o **Windows** produto e a versão mais recente disponível recomendada. Por exemplo, **Windows 10, versão 1809 (recomendado)**.  
+    - **Produtos e versões**: Selecione o **Windows** produto e a versão mais recente disponível recomendada. Por exemplo, **Windows 10, versão 1809 (recomendado)** .  
 
     - **Grupos de dispositivos**: Selecione um ou mais grupos da guia do Configuration Manager e, em seguida, selecione **definido como grupos de destino**. Esses grupos são coleções sincronizadas do Configuration Manager.  
 
@@ -344,7 +342,7 @@ Em seguida, distribua o pacote de atualização do sistema operacional para pont
 
     - **Índice de edição**: se houver vários índices de edição do sistema operacional disponíveis no pacote, selecione o índice de edição desejado. Por padrão, o assistente seleciona o primeiro índice.  
 
-    - **Chave do produto (Product Key)**: especifique a chave do produto do Windows para o sistema operacional instalar. Especifique as chaves de licença de volume codificadas ou as chaves do produto padrão. Se você usar uma chave do produto (Product Key) padrão, separe cada grupo de cinco caracteres com um traço (-). Por exemplo: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*. Quando a atualização for para uma edição de licença de volume, a chave do produto (Product Key) não será necessária.  
+    - **Chave do produto (Product Key)** : especifique a chave do produto do Windows para o sistema operacional instalar. Especifique as chaves de licença de volume codificadas ou as chaves do produto padrão. Se você usar uma chave do produto (Product Key) padrão, separe cada grupo de cinco caracteres com um traço (-). Por exemplo: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*. Quando a atualização for para uma edição de licença de volume, a chave do produto (Product Key) não será necessária.  
 
         > [!Note]  
         > Essa chave de produto pode ser uma MAK (chave de ativação múltipla) ou uma GVLK (chave genérica de licenciamento por volume). Uma GVLK também é conhecida como uma chave de instalação de cliente do KMS (Serviço de Gerenciamento de Chaves). Para obter mais informações, consulte [Planejar a ativação de volume](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client). Para obter uma lista de chaves de instalação de cliente do KMS, veja o [Apêndice A](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys) do guia de ativação do Windows Server.
