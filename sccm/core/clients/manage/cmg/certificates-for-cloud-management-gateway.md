@@ -10,12 +10,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69c5f446c465655adb1e9fee1b891a3152af47e9
-ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
+ms.openlocfilehash: 9368bedd80171077767ead54763abede2381c909
+ms.sourcegitcommit: bfb8a17f60dcb9905e739045a5141ae45613fa2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58197088"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66198452"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificados para o gateway de gerenciamento de nuvem
 
@@ -59,7 +59,7 @@ Certificados para o Gateway de Gerenciamento de Nuvem têm suporte para as segui
 
 Você fornece esse certificado ao criar o CMG no console do Configuration Manager.
 
-O CMG cria um serviço HTTPS ao qual os clientes baseados na Internet se conectam. O servidor exige um certificado de autenticação de servidor para criar o canal de segurança. Adquira um certificado para essa finalidade de um provedor público ou emita-o por meio da PKI (infraestrutura de chave pública). Para obter mais informações, consulte [Certificado raiz confiável do CMG para clientes](#cmg-trusted-root-certificate-to-clients).
+O CMG cria um serviço HTTPS ao qual os clientes baseados na Internet se conectam. O servidor exige um certificado de autenticação de servidor para criar o canal de segurança. Adquira um certificado para essa finalidade de um provedor público ou emita-o por meio da PKI (infraestrutura de chave pública). Para obter mais informações, consulte [Certificado raiz confiável do CMG para clientes](#bkmk_cmgroot).
 
  > [!TIP]
  > Esse certificado exige um nome exclusivo para identificar o serviço no Azure. Antes de solicitar um certificado, confirme se o nome de domínio do Azure desejado é exclusivo. Por exemplo, *GraniteFalls.CloudApp.Net*. Faça logon no [portal do Microsoft Azure](https://portal.azure.com). Selecione **Criar um recurso**, escolha a categoria **Computação** e, em seguida, selecione **Serviço de Nuvem**. No campo **Nome DNS**, digite o prefixo desejado, por exemplo, *GraniteFalls*. A interface reflete se o nome de domínio está disponível ou se já está em uso por outro serviço. Não crie o serviço no portal; apenas use esse processo para verificar a disponibilidade do nome. 
@@ -173,7 +173,7 @@ Depois de emitir um certificado de autenticação de cliente para um computador,
 
 1.  Abra o menu Iniciar. Digite "executar" para abrir a janela Executar. Abra `mmc`.  
 
-2.  No menu Arquivo, escolha **Adicionar/Remover Snap-in...**.  
+2.  No menu Arquivo, escolha **Adicionar/Remover Snap-in...** .  
 
 3.  Na caixa de diálogo Adicionar ou Remover Snap-ins, selecione **Certificados** e, em seguida, selecione **Adicionar**.  
 
@@ -193,9 +193,9 @@ Depois de emitir um certificado de autenticação de cliente para um computador,
 
     c. Selecione o próximo certificado na cadeia e, em seguida, selecione **Exibir Certificado**.  
 
-6.  Nessa nova caixa de diálogo Certificado, mude para a guia **Detalhes**. Selecione **Copiar para Arquivo...**.  
+6.  Nessa nova caixa de diálogo Certificado, mude para a guia **Detalhes**. Selecione **Copiar para Arquivo...** .  
 
-7.  Conclua o Assistente para Exportação de Certificados usando o formato de certificado padrão, **X.509 binário codificado em DER (.CER)**. Anote o nome e o local do certificado exportado.  
+7.  Conclua o Assistente para Exportação de Certificados usando o formato de certificado padrão, **X.509 binário codificado em DER (.CER)** . Anote o nome e o local do certificado exportado.  
 
 8. Exporte todos os certificados no caminho de certificação do certificado de autenticação de cliente original. Anote quais certificados exportados são ACs intermediárias e quais são ACs raiz confiáveis.  
 

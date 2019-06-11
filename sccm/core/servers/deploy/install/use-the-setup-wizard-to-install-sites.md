@@ -1,7 +1,7 @@
 ---
 title: Assistente para Instalação
 titleSuffix: Configuration Manager
-ms.date: 03/07/2019
+ms.date: 05/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92c51158412b8bc9737c4851fc43dc2a7776488b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: e69dbd246e9989494db95cfe5996862c7772822b
+ms.sourcegitcommit: bfb8a17f60dcb9905e739045a5141ae45613fa2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501253"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66198492"
 ---
 # <a name="use-the-setup-wizard-to-install-configuration-manager-sites"></a>Usar o Assistente para Instalação para instalar sites do Configuration Manager
 
@@ -117,6 +117,13 @@ Se você estiver instalando um site de administração central como parte de um 
     - **Nome do site**: cada site exige esse nome amigável, que pode ajudá-lo a identificar o site.  
 
     - **Pasta de instalação**: esse é o caminho para a instalação do Configuration Manager. Você não pode alterar o local depois de instalar o site. O caminho não pode conter espaços à direita ou caracteres Unicode.  
+
+        > [!NOTE]  
+        > Pense na possibilidade de usar a pasta de instalação padrão. Se usa a partição padrão do sistema operacional em um ambiente de produção, você pode enfrentar os seguintes problemas no futuro:  
+        >
+        > - Se o Configuration Manager usar o espaço livre adicional em disco na partição do sistema operacional, o Windows e o Configuration Manager não funcionarão corretamente. Se você instalar o Configuration Manager em uma partição separada, o respectivo consumo de disco não afetará o sistema operacional.
+        > - O desempenho do Configuration Manager é otimizado com um disco rápido. Alguns projetos de servidor não otimizam a velocidade do disco do sistema operacional.
+        > - É possível fazer manutenção, restaurar e reinstalar o sistema operacional sem afetar a instalação do Configuration Manager.  
 
 11. Na página **Instalação do Site**, use a opção a seguir que corresponde ao seu cenário:  
 
