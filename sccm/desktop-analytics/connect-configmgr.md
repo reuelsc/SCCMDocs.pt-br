@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38391c5d922a33696dc10d761847e40c01e151cc
-ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
+ms.openlocfilehash: ad933e5158fea4cafed7ea84a938b6505d6df4e5
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66822002"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834947"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Como conectar o Configuration Manager com a análise de área de trabalho
 
@@ -85,8 +85,8 @@ Use este procedimento para conectar o Configuration Manager para análise de ár
 
     - **ID comercial**: esse valor deve preencher automaticamente com a ID. da sua organização Se ele não abrir, certifique-se de seu servidor proxy está configurado para permitir todos os itens necessários [pontos de extremidade](/sccm/desktop-analytics/enable-data-sharing#endpoints) antes de continuar. Como alternativa, recuperar sua ID comercial manualmente a partir de [portal de análise de área de trabalho](/sccm/desktop-analytics/troubleshooting#bkmk_ViewCommercialID).  
 
-    - **Nível de dados de diagnóstico do Windows 10**: Selecione pelo menos **avançado (limitado)**  
-
+    - **Nível de dados de diagnóstico do Windows 10**: Selecione pelo menos **básico**. Consulte [níveis de dados de diagnóstico](/sccm/desktop-analytics/enable-data-sharing#diagnostic-data-levels)
+  
     - **Permitir que o nome do dispositivo nos dados de diagnóstico**: selecione **habilitar**  
 
         > [!Note]  

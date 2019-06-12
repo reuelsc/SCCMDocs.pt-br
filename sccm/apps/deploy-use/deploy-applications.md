@@ -2,7 +2,7 @@
 title: Implantar aplicativos
 titleSuffix: Configuration Manager
 description: Criar ou simular uma implantação de um aplicativo em uma coleção de dispositivos ou usuários
-ms.date: 05/01/2019
+ms.date: 06/04/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7550987d9b9679085ad5b546274d0c503b9e28ac
-ms.sourcegitcommit: 3f43fa8462bf39b2c18b90a11a384d199c2822d8
-ms.translationtype: HT
+ms.openlocfilehash: 5760b36ddb29c39d6887afb61445f1353f46bbec
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66403394"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66715687"
 ---
 # <a name="deploy-applications-with-configuration-manager"></a>Implantar aplicativos com o Configuration Manager
 
@@ -161,6 +161,12 @@ Talvez você queira dar aos usuários mais tempo para instalar os aplicativos ob
 
 Após a data limite, o cliente instala o aplicativo no primeiro período fora do horário comercial, que o usuário configurou, até esse período de carência. No entanto, o usuário ainda poderá abrir o Centro de Software e instalar o aplicativo a qualquer momento que desejar. Depois que o período de carência expirar, a imposição retorna ao comportamento normal para implantações atrasadas.
 
+![Diagrama de linha do tempo do período de cortesia](media/grace-period.svg)
+
+<!-- SCCMDocs issue #1599 -->
+
+> [!Note]  
+> Na maioria das vezes, esse recurso aborda o cenário quando o dispositivo está desligado enquanto o usuário está fora do escritório. Tecnicamente, o período de cortesia começa quando o cliente obtém a política após o prazo de implantação. O mesmo comportamento ocorre se você parar o serviço de cliente do Configuration Manager (CcmExec) e depois reiniciá-lo em algum momento após o prazo de implantação.
 
 ### <a name="bkmk_deploy-ux"></a> Configurações da **Experiência do Usuário** da implantação
 

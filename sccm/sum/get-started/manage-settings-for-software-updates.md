@@ -11,12 +11,12 @@ manager: dougeby
 author: mestew
 ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90304156778f4f41b2ac35a2840a4a7e7bb4dc32
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: b78d4212201a8ed1a08b7fecdb376cbdfdac7636
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499780"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748212"
 ---
 #  <a name="BKMK_ManageSUSettings"></a> Gerenciar configurações de atualizações de software  
 
@@ -69,7 +69,11 @@ Nas propriedades de atualização de software, você pode analisar informações
 ####  <a name="BKMK_SoftwareUpdateDetails"></a> Detalhes da atualização de software  
 Na guia **Detalhes da Atualização** , é possível exibir as seguintes informações de resumo sobre a atualização de software selecionada:  
 
-- **ID do Boletim**: especifica a ID do boletim associada às atualizações do software de segurança. Você pode encontrar detalhes do boletim de segurança pesquisando a ID do boletim na página da Web [Pesquisa de boletim de segurança da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=58313) .  
+- **ID do Boletim**: especifica a ID do boletim associada às atualizações do software de segurança. Você pode encontrar detalhes do boletim de segurança pesquisando a ID do boletim na página da Web [Microsoft Security Response Center](https://portal.msrc.microsoft.com/).  
+
+> [!NOTE]
+> A maneira como a Microsoft documenta as atualizações de segurança está mudando. O modelo anterior usava as páginas da Web de boletim de segurança e incluía os números de ID de boletim segurança (por exemplo, MS16-XXX) como um ponto dinâmico. Essa forma de documentação de atualização de segurança, incluindo os números de ID do boletim, está sendo desativada e substituída pelo Guia de atualização de segurança. Em vez de IDs de boletim, a nova guia funciona com números de ID de vulnerabilidades e os números de ID do artigo da base de dados. Saiba mais nas [Perguntas frequentes sobre o Guia de atualização de segurança](https://www.microsoft.com/msrc/faqs-security-update-guide).
+
 
 - **ID do Artigo**: especifica a ID do artigo para a atualização do software. O artigo referenciado fornece informações mais detalhadas sobre a atualização do software e o problema que essa atualização corrige ou melhora.  
 
@@ -94,7 +98,7 @@ Na guia **Informações de Conteúdo** , revise as seguintes informações sobre
 
 -   **Caminho de Origem**: especifica o caminho para os arquivos de origem de atualização do software.  
 
--   **Tamanho (MB)**: especifica o tamanho dos arquivos de origem de atualização do software.  
+-   **Tamanho (MB)** : especifica o tamanho dos arquivos de origem de atualização do software.  
 
 ####  <a name="BKMK_CustomBundleInformation"></a> Informações do grupo personalizado  
 Na guia **Informações do Grupo Personalizado** , revise as informações do grupo personalizado para a atualização de software. Quando a atualização de software selecionada contém atualizações de software agrupadas que estão contidas no arquivo de atualização de software, elas são exibidas na seção **Informações do grupo** . Essa guia não exibe atualizações de software agrupadas que são exibidas na guia **Informações de Conteúdo** , como arquivos de atualização para idiomas diferentes.  
@@ -134,6 +138,6 @@ Por padrão, a CRL (lista de certificados revogados) não é verificada ao checa
 Se usada, a verificação da CRL deverá ser habilitada nos consoles do Configuration Manager que processam atualizações de software.  
 
 #### <a name="to-enable-crl-checking"></a>Para habilitar a verificação da CRL  
-No computador que executa a verificação de CRL, no DVD do produto, execute o seguinte prompt de comando: **\SMSSETUP\BIN\X64\\**<*idioma*>**\UpdDwnldCfg.exe /checkrevocation**.  
+No computador que executa a verificação de CRL, no DVD do produto, execute o seguinte prompt de comando: **\SMSSETUP\BIN\X64\\** <*idioma*> **\UpdDwnldCfg.exe /checkrevocation**.  
 
 Por exemplo, para inglês (EUA), execute **\SMSSETUP\BIN\X64\00000409\UpdDwnldCfg.exe /checkrevocation**  

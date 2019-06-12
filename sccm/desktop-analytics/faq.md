@@ -2,7 +2,7 @@
 title: Perguntas Frequentes para análise da área de trabalho
 titleSuffix: Configuration Manager
 description: Perguntas frequentes para análise de área de trabalho.
-ms.date: 04/26/2019
+ms.date: 06/10/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4596923f9a6a42ad98dc17257b22925ad0bc5eed
-ms.sourcegitcommit: 9af73f5c1b93f6ccaea3e6a096f75a5fecd65c2f
+ms.openlocfilehash: 1187688813c2d7a3308ed5ed53e29cb90640dda8
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "64562443"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834834"
 ---
 # <a name="desktop-analytics-faq"></a>Perguntas frequentes sobre análise de área de trabalho
 
@@ -39,6 +39,13 @@ Sim. Para obter mais informações, consulte [converter de BIOS para UEFI durant
 ### <a name="can-i-use-desktop-analytics-with-windows-10-ltsc"></a>Pode usar análise da área de trabalho com Windows 10 LTSC?
 
 Embora você possa usar a análise de área de trabalho para ajudá-lo com a atualização de dispositivos do Windows 10 em longo prazo de manutenção LTSC (canal) para o canal semestral do Windows 10, análise de área de trabalho não dá suporte a atualizações para Windows 10 LTSC. Esse canal do Windows 10 não é destinado para uso amplo e não recebe atualizações do recurso, portanto, não é um destino com suporte com a análise de área de trabalho. Para obter mais informações, consulte [Windows como uma visão geral do serviço](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).
+
+### <a name="can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal"></a>Posso reduzir a quantidade de tempo que leva para os dados devem ser atualizados no meu portal de análise de área de trabalho?
+
+Há dois tipos de dados no portal de análise de área de trabalho: Os dados do administrador e dados de diagnóstico. Para atualizar dados de administrador sob demanda, abra o submenu de moeda de dados e selecione **aplicar alterações**. Essa ação dispara imediatamente uma atualização única de todas as alterações de administrador em seus espaços de trabalho pendentes. As alterações propagam e estão geralmente disponíveis dentro de 15 a 60 minutos. O tempo depende do tamanho do seu espaço de trabalho e o escopo de alterações pendentes. Você pode solicitar uma atualização de dados sob demanda até seis vezes dentro de um período de 24 horas. 
+
+Todos os dados são atualizados automaticamente uma vez diariamente, mesmo se você não solicitar uma atualização de dados sob demanda. Não há nenhuma maneira de disparar uma atualização sob demanda de dados de diagnóstico. Para obter mais informações sobre os diferentes tipos de dados na área de trabalho de análise, consulte [latência de dados](/sccm/desktop-analytics/troubleshooting#data-latency).
+
 
 ## <a name="privacy"></a>Privacidade
 

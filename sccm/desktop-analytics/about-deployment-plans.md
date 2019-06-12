@@ -2,7 +2,7 @@
 title: Planos de implantação na área de trabalho de análise
 titleSuffix: Configuration Manager
 description: Saiba mais sobre planos de implantação na área de trabalho de análise.
-ms.date: 05/14/2019
+ms.date: 06/10/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b44684f897e7aad4365c39e58c9bfd486bde7cbb
-ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
+ms.openlocfilehash: 88c78cef4717cc3a51a53b7fd5aba0cbefa93a8e
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65673290"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834939"
 ---
 # <a name="about-deployment-plans-in-desktop-analytics"></a>Sobre planos de implantação na área de trabalho de análise
 
@@ -48,7 +48,7 @@ Como parte do seu plano de implantação, você deve executar as seguintes açõ
 
 - Decida como corrigir problemas com aplicativos com base nas recomendações da área de trabalho de análise  
 
-Análise da área de trabalho atualiza os dados de plano de implantação diariamente. As alterações feitas não podem aparecer para 24 horas. Essas alterações incluem a atribuição de importância para um aplicativo ou escolhendo um dispositivo para incluir em um piloto.  
+Por padrão, a análise de área de trabalho atualiza dados do plano de implantação diariamente. As alterações feitas em um plano de implantação, como a atribuição de importância para um aplicativo ou escolher um dispositivo para incluir em um piloto, leva até 24 horas para processar. Para acelerar esse processo, solicite uma atualização de dados sob demanda. Para obter mais informações, consulte [perguntas frequentes sobre análise de área de trabalho](/sccm/desktop-analytics/faq#can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal).  
 
 Após a conexão da área de trabalho de análise para o Configuration Manager, selecione suas coleções nos planos de implantação. Essa integração, em seguida, permite que você implante o Windows a uma coleção com base nos dados de análise de área de trabalho.
 
