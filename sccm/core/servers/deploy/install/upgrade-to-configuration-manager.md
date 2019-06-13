@@ -10,12 +10,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 735b5d4d50c09edaeef85a72f6a5aa5f82241762
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: c36a52b5f3bc32cc5e8c725d1a12de6ce467c310
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501273"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748284"
 ---
 # <a name="upgrade-to-configuration-manager"></a>Atualizar para o Configuration Manager
 
@@ -132,7 +132,7 @@ O Configuration Manager não pode atualizar um site primário que tenha uma rép
 
 Para obter mais informações, consulte os seguintes artigos:  
 
-- System Center 2012 Configuration Manager: [Configurar as réplicas de banco de dados para pontos de gerenciamento](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/hh846234\(v=technet.10))  
+- System Center 2012 Configuration Manager: [Configurar as réplicas de banco de dados para pontos de gerenciamento](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/hh846234\(v=technet.10\))  
 
 - Configuration Manager, Branch Atual: [Réplicas de banco de dados para pontos de gerenciamento](/sccm/core/servers/deploy/configure/database-replicas-for-management-points)  
 
@@ -154,7 +154,7 @@ Para desabilitar uma tarefa, registre o agendamento da tarefa para que você pos
 
 Confira mais informações sobre as tarefas de manutenção de site nos seguintes artigos:  
 
-- System Center 2012 Configuration Manager: [Planejando as operações de site](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg712686\(v=technet.10))  
+- System Center 2012 Configuration Manager: [Planejando as operações de site](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg712686\(v=technet.10\))  
 
 - Configuration Manager, Branch Atual: [Referência para tarefas de manutenção](/sccm/core/servers/manage/reference-for-maintenance-tasks)  
 

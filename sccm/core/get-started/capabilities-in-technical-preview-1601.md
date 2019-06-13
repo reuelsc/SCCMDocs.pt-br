@@ -12,12 +12,12 @@ ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa96b497ce942430c5a8391eefd41e939c634ae3
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: be84e7bfae54cf3099b588cce35b01a424c45b8f
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56143666"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716006"
 ---
 # <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1601 do System Center Configuration Manager
 
@@ -93,7 +93,7 @@ Na Visualização técnica 1601, adicionamos suporte para os seguintes recursos:
 
 -   **Acesso condicional com o Serviço de atestado de integridade** Agora você pode restringir o acesso a email e aos serviços 0365 com base na integridade dos dispositivos, conforme relatado pelo Serviço de atestado de integridade.  Além disso, os dispositivos gerenciados pelo Intune são incluídos nos relatórios de integridade do dispositivo.  
 
-    Uma nova regra de conformidade foi adicionada ao console do Configuration Manager, permitindo que você especifique se os dispositivos devem ter o acesso permitido ou bloqueado com base em seu status de integridade.  Para criar essa regra, abra o assistente **Criar Política de Conformidade** e adicione uma nova regra.  Selecione **Informado como íntegro pelo Serviço de Atestado de Integridade** para a condição e defina o valor como **Verdadeiro**.  Isso assegurará que somente dispositivos informados como íntegros tenham acesso aos recursos da empresa. Para obter detalhes sobre o Serviço de atestado de integridade e como a integridade dos dispositivos é informada no Intune, veja [Atestado de Integridade do Dispositivo](#bkmk_devicehealth).  
+    Uma nova regra de conformidade foi adicionada ao console do Configuration Manager, permitindo que você especifique se os dispositivos devem ter o acesso permitido ou bloqueado com base em seu status de integridade.  Para criar essa regra, abra o assistente **Criar Política de Conformidade** e adicione uma nova regra.  Selecione **Informado como íntegro pelo Serviço de Atestado de Integridade** para a condição e defina o valor como **Verdadeiro**.  Isso assegurará que somente dispositivos informados como íntegros tenham acesso aos recursos da empresa. Para obter detalhes sobre o Serviço de atestado de integridade e como a integridade dos dispositivos é informada no Intune, veja [Atestado de Integridade do Dispositivo](/sccm/core/get-started/capabilities-in-technical-preview-1512#bkmk_devicehealth).  
 
 -   **Novas configurações da política de conformidade:** as novas configurações da política de conformidade ajudam a melhorar a segurança e a proteção nos dispositivos usados para acessar o email da empresa e os serviços do SharePoint:  
 
