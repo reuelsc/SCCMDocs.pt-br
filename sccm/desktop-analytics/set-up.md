@@ -2,7 +2,7 @@
 title: Configurar Análise de Área de Trabalho
 titleSuffix: Configuration Manager
 description: Um guia de instruções para configurar e integração para análise de área de trabalho.
-ms.date: 04/25/2019
+ms.date: 06/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b831d6f42e6a9c908b46bf21882cab58fa08483
-ms.sourcegitcommit: 9af73f5c1b93f6ccaea3e6a096f75a5fecd65c2f
+ms.openlocfilehash: a54a6ad56e8ae7504314e5147f4d4d5b0b726562
+ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64559054"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67145970"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Como configurar a análise de área de trabalho
 
@@ -30,7 +30,10 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 
 ## <a name="initial-onboarding"></a>Migração inicial
 
-1. Abra o portal de análise de área de trabalho no gerenciamento de dispositivo do Microsoft 365 como um usuário com **administrador da empresa** permissões. Selecione **iniciar**.  
+1. Abra o [portal de análise de área de trabalho](https://aka.ms/desktopanalytics) no gerenciamento de dispositivo do Microsoft 365 como um usuário com o **Administrador Global** função. Selecione **iniciar**.  
+
+    > [!Tip]  
+    > Para acessar o portal de análise de área de trabalho do console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, selecione o **área de trabalho de análise de manutenção** nó e selecione **planejar implantações**.
 
 2. Sobre o **aceite o contrato de serviço** página, examine o contrato de serviço e selecione **Accept**.  
 

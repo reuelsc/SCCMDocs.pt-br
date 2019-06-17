@@ -2,7 +2,7 @@
 title: Como implantar em produção
 titleSuffix: Configuration Manager
 description: Um guia de instruções para a implantação em um grupo de produção de análise de área de trabalho.
-ms.date: 04/22/2019
+ms.date: 06/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 20067da8eccf9896bcd948f8efa2becd2b35a707
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: e93b08766da4abc37ca3663de5fe2919f1953833
+ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083471"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67146055"
 ---
 # <a name="how-to-deploy-to-production-with-desktop-analytics"></a>Como implantar em produção com a análise de área de trabalho
 
@@ -76,23 +76,15 @@ Também pode haver ativos na **necessária atenção** ou **resultados misturado
 Examine todos os aplicativos. Uma vez que um determinado dispositivo tem uma decisão de atualização positiva para todos os ativos, em seguida, seu estado é alterado para "pronto para produção." Para ver a contagem atual na página principal para o plano de implantação, selecione a terceira etapa de implantação, **Deploy**.
 
 
-
 ## <a name="bkmk_deploy"></a> Implantar em dispositivos que estão prontos
 
 Configuration Manager usa os dados da área de trabalho de análise para criar uma coleção para a implantação de produção. Não implante a sequência de tarefas usando uma implantação tradicional. Use o procedimento a seguir para criar uma implantação integrada de análise de área de trabalho:
 
-1. No console do Configuration Manager, vá para o **biblioteca de Software**, expanda **área de trabalho de análise de manutenção**e selecione o **planos de implantação** nó.  
+Se você seguiu o processo recomendado para [implantar no piloto dispositivos](/sccm/desktop-analytics/deploy-pilot#deploy-to-pilot-devices), a implantação em fases do Configuration Manager está pronta. Como você marca ativos como *pronto*, análise de área de trabalho sincroniza automaticamente os dispositivos para o Configuration Manager. Esses dispositivos são adicionados à coleção de produção. Quando a implantação em fases é movida para a segunda fase, esses dispositivos de produção recebem a implantação da atualização.
 
-2. Selecione seu plano de implantação e, em seguida, selecione **detalhes do plano de implantação** na faixa de opções.  
+Se você tiver configurado a implantação em fases **iniciar manualmente a implantação da segunda fase**, em seguida, você precisa manualmente movê-lo para a próxima fase. Para obter mais informações, veja [Gerenciar e monitorar implantações em fases](/sccm/osd/deploy-use/manage-monitor-phased-deployments#bkmk_move).
 
-3. No **status de produção** lado a lado, selecione **sequência de tarefas** na lista suspensa.  
-
-    > [!Note]  
-    > Não use o **aplicativo** opção. Ele está reservado para a funcionalidade futura.
-
-    Selecione **implantar**. Essa ação inicia o Assistente para implantar Software para o tipo de objeto selecionado.
-
-Para obter mais informações, consulte [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).
+Se você criou uma implantação única integrada de análise de área de trabalho na coleção piloto, você precisará repetir esse processo para implantar na coleção de produção.
 
 
 ### <a name="address-deployment-alerts"></a>Lidar com alertas de implantação
@@ -106,7 +98,6 @@ Como com a implantação do piloto, análise de área de trabalho avisa você de
 - Precisa de atenção – problemas (classificados por tipo de problema)
 
 ![Status da implantação de produção de análise de captura de tela da área de trabalho](media/prod-deployment-status.png)
-
 
 
 ## <a name="bkmk_monitor"></a> Monitorar a integridade dos dispositivos atualizadas

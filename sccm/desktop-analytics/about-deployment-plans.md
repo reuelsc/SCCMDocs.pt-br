@@ -2,7 +2,7 @@
 title: Planos de implantação na área de trabalho de análise
 titleSuffix: Configuration Manager
 description: Saiba mais sobre planos de implantação na área de trabalho de análise.
-ms.date: 06/10/2019
+ms.date: 06/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88c78cef4717cc3a51a53b7fd5aba0cbefa93a8e
-ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
+ms.openlocfilehash: a8080d89995b6ed10efd996b4ad757151e315c74
+ms.sourcegitcommit: af207075c4a8bc59242a41d3192a4057452a0e55
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834939"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67141043"
 ---
 # <a name="about-deployment-plans-in-desktop-analytics"></a>Sobre planos de implantação na área de trabalho de análise
 
@@ -62,6 +62,43 @@ As seguintes regras de preparação estão disponíveis nos planos de implantaç
 
 - Baixa instalar o limite de contagem para seus aplicativos do Windows. Se um aplicativo é instalado em uma porcentagem maior de computadores que esse limite, o plano de implantação marcará o aplicativo como **Noteworthy**. Essa marca significa que você pode decidir quanto é importante testar durante a fase piloto.  
 
+
+## <a name="plan-assets"></a>Plano de ativos
+
+<!-- 4670224 -->
+
+Enquanto o [ativos](/sccm/desktop-analytics/about-assets) área também mostra os dispositivos e aplicativos, o **planejar ativos** área em um plano de implantação específico inclui informações adicionais.
+
+### <a name="devices"></a>Dispositivos
+
+Consulte a **decisão de atualização do Windows** para cada dispositivo no plano de implantação.
+
+Os Windows atualizar decisão **substituir dispositivo** pode ser devido a um dos seguintes motivos:
+
+- Falhou uma verificação de processador do Windows 10 necessários. Para obter mais informações, consulte [requisitos mínimos de hardware](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview#31-processor).
+- Ele tem um bloco de BIOS
+- Ele não tem memória suficiente
+- Um componente crítico de inicialização do sistema tem um driver bloqueado
+- Não é possível atualizar a marca e modelo específicos
+- Há um componente de exibição de classe com um bloco de driver que tem todos os atributos a seguir:
+    - Você não substituir
+    - Não há nenhum driver na nova versão do sistema operacional
+    - Ele não ainda estiver no Windows Update
+- Há outro componente de plug-and-play no sistema que bloqueia a atualização
+- Há um componente sem fio que usa um driver de emulação XP
+- Um componente de rede com uma conexão ativa perderá seu driver. Em outras palavras, após a atualização, ela poderia perder conectividade de rede.
+
+### <a name="apps"></a>Aplicativos
+
+Defina as **decisão de atualização** , bem como a **importância** para esse aplicativo neste plano de implantação. Para obter mais informações, consulte [como criar planos de implantação](/sccm/desktop-analytics/create-deployment-plans).
+
+Os detalhes do aplicativo, você também pode ver as seguintes informações: Recomendações, os fatores de risco de compatibilidade e problemas conhecidos do Microsoft. Use essas informações para ajudar a definir as **decisão de atualização**. Para obter mais informações, consulte [avaliação de compatibilidade](/sccm/desktop-analytics/compat-assessment).
+
+Os aplicativos que a análise de área de trabalho mostra como *digno de nota* baseiam-se o limite de contagem de instalação baixa para as regras de preparação do plano de implantação. Para obter mais informações, consulte [regras de preparação](/sccm/desktop-analytics/create-deployment-plans#readiness-rules).
+
+### <a name="drivers"></a>Drivers
+
+Consulte a lista de drivers incluído com este plano de implantação. Defina as **decisão de atualização**, examine a recomendação da Microsoft e ver os fatores de risco de compatibilidade.
 
 
 ## <a name="importance"></a>importância

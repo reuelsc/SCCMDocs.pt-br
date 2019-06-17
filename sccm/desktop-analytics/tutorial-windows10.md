@@ -2,7 +2,7 @@
 title: Tutorial – implantar o Windows 10
 titleSuffix: Configuration Manager
 description: Um tutorial sobre como usar a área de trabalho de análise e o Configuration Manager para implantar o Windows 10 em um grupo piloto.
-ms.date: 06/10/2019
+ms.date: 06/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: tutorial
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba11906bb8febcd2c2c5ab9295d391680763e0cf
-ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
+ms.openlocfilehash: d8b73deb60cf88f0bdf428bb87250ce115a1084b
+ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834782"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67145826"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Tutorial: Implantar o Windows 10 para piloto
 
@@ -94,7 +94,7 @@ Antes de iniciar este tutorial, certifique-se de que ter os seguintes pré-requi
 
 Use este procedimento para entrar no Analytics de área de trabalho e configurá-lo em sua assinatura. Esse procedimento é um processo único para configurar a análise de área de trabalho para sua organização.  
 
-1. Abra o portal de análise de área de trabalho no gerenciamento de dispositivo do Microsoft 365 como um usuário com **Administrador Global** permissões. Selecione **iniciar**.  
+1. Abra o [portal de análise de área de trabalho](https://aka.ms/desktopanalytics) no gerenciamento de dispositivo do Microsoft 365 como um usuário com **Administrador Global** permissões. Selecione **iniciar**.  
 
 2. Sobre o **aceite o contrato de serviço** página, examine o contrato de serviço e selecione **Accept**.  
 
@@ -232,7 +232,7 @@ Configuration Manager sincroniza suas coleções dentro de 60 minutos de criar a
 
 Use este procedimento para criar um plano de implantação na área de trabalho de análise.
 
-1. Abra o [portal de análise de área de trabalho](https://aka.ms/m365aprod). Usar credenciais que tenham pelo menos **colaboradores do espaço de trabalho** permissões.  
+1. Abra o [portal de análise de área de trabalho](https://aka.ms/desktopanalytics). Usar credenciais que tenham pelo menos **colaboradores do espaço de trabalho** permissões.  
 
 2. Selecione **planos de implantação** no grupo gerenciar.  
 
@@ -266,7 +266,7 @@ Use este procedimento para criar um plano de implantação na área de trabalho 
 
     2. Selecione cada aplicativo e, em seguida, selecione **editar**. Você pode selecionar mais de um aplicativo para editar ao mesmo tempo.  
 
-    3. Escolha um nível de importância do **importância** lista. Se quiser que a área de trabalho de análise para validar o aplicativo durante o piloto, selecione **crítica** ou **importante**. Ele não valida os aplicativos marcados como **importante não**. Considere a [riscos de compatibilidade](/sccm/desktop-analytics/compat-risk) e outras informações de plano ao se atribuírem níveis de importância.  
+    3. Escolha um nível de importância do **importância** lista. Se quiser que a área de trabalho de análise para validar o aplicativo durante o piloto, selecione **crítica** ou **importante**. Ele não valida os aplicativos marcados como **importante não**. Avalie suas [compatibilidade](/sccm/desktop-analytics/compat-assessment) e outras informações de plano ao se atribuírem níveis de importância.  
 
         Ao se atribuírem níveis de importância, você também pode escolher o decisão de atualização.  
 

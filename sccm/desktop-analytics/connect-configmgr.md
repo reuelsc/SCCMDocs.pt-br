@@ -2,7 +2,7 @@
 title: Conectar o Configuration Manager
 titleSuffix: Configuration Manager
 description: Um guia de instruções para conectar o Configuration Manager com a análise de área de trabalho.
-ms.date: 06/07/2019
+ms.date: 06/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdfed49a68963dc0d46a38810f0ac9dc8041d3fc
-ms.sourcegitcommit: e3c1eb0b75d79c05a750d49354c851d15d5e26a3
+ms.openlocfilehash: 7925bf44c78b6f8d51797145b5ae463ac3498eea
+ms.sourcegitcommit: af207075c4a8bc59242a41d3192a4057452a0e55
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67038781"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67141046"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Como conectar o Configuration Manager com a análise de área de trabalho
 
@@ -44,6 +44,9 @@ Você também precisará instalar o versão 1902 pacote cumulativo de atualizaç
 Use este procedimento para conectar o Configuration Manager para análise de área de trabalho e definir as configurações do dispositivo. Esse procedimento é um processo único para anexar a sua hierarquia para o serviço de nuvem.  
 
 1. No console do Configuration Manager, acesse o workspace **Administração**, expanda **Serviços de Nuvem** e selecione o nó **Serviços do Azure**. Selecione **configurar serviços do Azure** na faixa de opções.  
+
+    > [!Tip]  
+    > No console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho e selecione o **área de trabalho de análise de manutenção** nó. No *novo para a área de trabalho de análise?* , selecione o segundo link para *conectar o Configuration Manager para o serviço de análise de área de trabalho*.  
 
 2. Sobre o **serviços do Azure** página do Assistente de serviços do Azure, defina as seguintes configurações:  
 
