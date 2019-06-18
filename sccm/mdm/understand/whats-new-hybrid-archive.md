@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73eda37c9432750d94ef0b770348fc3d3250800c
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
-ms.translationtype: MT
+ms.openlocfilehash: 27df5154a55717a06924bc906edd2c7f6a4f9a2b
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62287377"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67158372"
 ---
 # <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>Recursos híbridos anteriores com o System Center Configuration Manager e Microsoft Intune
 
@@ -432,7 +432,7 @@ Os recursos do Intune a seguir introduzidos em julho de 2016 funcionam em implan
 
   - **Apagamento completo agora disponível para dispositivos Windows 10**
 
-    Os laptops e computadores com Windows 10 registrados como dispositivos móveis podem ser apagados para redefinir o dispositivo para suas configurações de fábrica. Para mais informações, confira [How to protect your devices with remote wipe](/sccm/mdm/deploy-use/wipe-lock-reset) (Como proteger seus dispositivos com o apagamento remoto).
+    Os laptops e computadores com Windows 10 registrados como dispositivos móveis podem ser apagados para redefinir o dispositivo para suas configurações de fábrica. Para mais informações, confira [How to protect your devices with remote wipe](/sccm/mdm/deploy-use/wipe-lock-reset-devices) (Como proteger seus dispositivos com o apagamento remoto).
 
 - **Alterações nas contas dos Gerenciadores de Registro de Dispositivo no aplicativo do Portal da Empresa para iOS**
 
@@ -575,11 +575,11 @@ Não foi realizada a introdução de nenhum recurso híbrido novo em junho de 20
 
 - **Aplicativos da Windows Store para Empresas**
 
-  Na [Windows Store para Empresas](https://www.microsoft.com/en-us/business-store), é possível encontrar e adquirir aplicativos para sua organização, individualmente ou por volume. Ao conectar a loja ao Configuration Manager, é possível gerenciar aplicativos adquiridos por volume no console do Configuration Manager. Para mais informações, confira [Aplicativos da Windows Store para Empresas](/sccm/core/get-started/capabilities-in-technical-preview-1605.md#windows-store-for-business-apps) em [Funcionalidades no Technical Preview 1605 do System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
+  Na [Windows Store para Empresas](https://www.microsoft.com/en-us/business-store), é possível encontrar e adquirir aplicativos para sua organização, individualmente ou por volume. Ao conectar a loja ao Configuration Manager, é possível gerenciar aplicativos adquiridos por volume no console do Configuration Manager. Para mais informações, confira [Aplicativos da Windows Store para Empresas](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_WSFB) em [Funcionalidades no Technical Preview 1605 do System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
 
 - **Melhorias gerais para aplicativos adquiridos por volume**
 
-  Os aplicativos adquiridos por volume da Windows Store para Empresas e da iOS App Store foram consolidados na mesma exibição, **Informações sobre Licença para Aplicativos da Loja**. Além disso, o modo no qual você cria aplicativos adquiridos por volume para o iOS foi aprimorado. Para mais informações, confira [Melhorias gerais para aplicativos adquiridos por volume](/sccm/core/get-started/capabilities-in-technical-preview-1605.md#general-improvements-for-volume-purchased-apps) em [Funcionalidades no Technical Preview 1605 do System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
+  Os aplicativos adquiridos por volume da Windows Store para Empresas e da iOS App Store foram consolidados na mesma exibição, **Informações sobre Licença para Aplicativos da Loja**. Além disso, o modo no qual você cria aplicativos adquiridos por volume para o iOS foi aprimorado. Para mais informações, confira [Melhorias gerais para aplicativos adquiridos por volume](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_VPP2) em [Funcionalidades no Technical Preview 1605 do System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
 
 - **Pré-declarar dispositivos corporativos com número de série do iOS ou IMEI**
 
@@ -639,7 +639,7 @@ Não foi realizada a introdução de nenhum recurso híbrido novo em junho de 20
 
 - **Configuração do SmartLock para dispositivos Android**
 
-  Uma nova configuração foi adicionada ao item de configuração Android e Samsung KNOX Standard que permite controlar o recurso SmartLock em dispositivos Android compatíveis.  Você pode usar essa configuração para impedir que os usuários finais configurem o SmartLock. Confira [Configuração do SmartLock para dispositivos Android](/sccm/get-started/capabilities-in-technical-preview-1604#smartlock-setting-for-android-devices) no [Funcionalidades do Technical Preview 1604 do System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1604.md).  
+  Uma nova configuração foi adicionada ao item de configuração Android e Samsung KNOX Standard que permite controlar o recurso SmartLock em dispositivos Android compatíveis.  Você pode usar essa configuração para impedir que os usuários finais configurem o SmartLock. Confira [Configuração do SmartLock para dispositivos Android](/sccm/core/get-started/capabilities-in-technical-preview-1604#BKMK_Smart) no [Funcionalidades do Technical Preview 1604 do System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1604).  
 
 ### <a name="new-in-configuration-manager-current-branch"></a>Novo no Configuration Manager (Branch Atual)  
  Não foi realizada a introdução de nenhum recurso híbrido novo em abril de 2016 para o Configuration Manager (Branch Atual).  

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bf178465f5aff508daca1d87b1b548a42db931d
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: a9d1b5e96dc8d2a43dfc39b9d1b2cd9678c083c9
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62275725"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159424"
 ---
 # <a name="exchange-activesync-email-profiles-in-system-center-configuration-manager"></a>Perfis de email do Exchange ActiveSync no System Center Configuration Manager
 
@@ -40,7 +40,7 @@ Para implantar perfis de email nos dispositivos, você deve registrar os disposi
 
  Além de configurar uma conta de email no dispositivo, você também pode definir as configurações de sincronização para os contatos, calendários e tarefas.  
 
- Ao criar um perfil de email, você pode incluir várias configurações de segurança. Essas configurações incluem os certificados de identidade, criptografia e assinatura que foram configurados usando os perfis de certificado do System Center Configuration Manager. Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles.md).    
+ Ao criar um perfil de email, você pode incluir várias configurações de segurança. Essas configurações incluem os certificados de identidade, criptografia e assinatura que foram configurados usando os perfis de certificado do System Center Configuration Manager. Para obter mais informações sobre perfis de certificado, consulte [Perfis de certificado do System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).    
 
 ## <a name="create-an-exchange-activesync-email-profile"></a>Criar um perfil de email do Exchange ActiveSync  
 

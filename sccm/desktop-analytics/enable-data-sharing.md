@@ -2,7 +2,7 @@
 title: Habilitar o compartilhamento de dados
 titleSuffix: Configuration Manager
 description: Um guia de referência para o compartilhamento de dados de diagnóstico com a análise de área de trabalho.
-ms.date: 06/05/2019
+ms.date: 06/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,14 +10,13 @@ ms.assetid: be680198-4cea-4378-a686-d52f382ba483
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7292fdd3cc370af314cef95a4b782616e315a0cb
-ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
+ms.openlocfilehash: 3eff032113b92055b32cb81c6cae9363c368a421
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66821986"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159109"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Habilitar o compartilhamento de área de trabalho de análise de dados
 
@@ -61,6 +60,7 @@ Para habilitar o compartilhamento de dados, configure o servidor de proxy para p
 
 | Ponto de extremidade  | Função  |
 |-----------|-----------|
+| `https://aka.ms` | Usado para localizar o serviço |
 | `https://v10c.events.data.microsoft.com` | Experiência do usuário conectado e o ponto de extremidade de diagnóstico de componente. Usado por dispositivos que executam o Windows 10, versão 1703 ou posterior, com o 2018-09 cumulativo de atualização ou posterior instalado. |
 | `https://v10.events.data.microsoft.com` | Experiência do usuário conectado e o ponto de extremidade de diagnóstico de componente. Usado por dispositivos que executam o Windows 10, versão 1803 ou posterior, _sem_ a atualização cumulativa de 2018-09 instalada. |
 | `https://v10.vortex-win.data.microsoft.com` | Experiência do usuário conectado e o ponto de extremidade de diagnóstico de componente. Usado por dispositivos que executam o Windows 10, versão 1709 ou anterior. |

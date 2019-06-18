@@ -10,14 +10,13 @@ ms.assetid: 637fbd8e-b8ea-4c7e-95ee-a60a323c496e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e18e2e43e9bb768f81233fb2d2deda0ae05c1961
-ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
+ms.openlocfilehash: 5ee3d2c35424820658f91628b5f6e23be41498b2
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67145829"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159133"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Como implantar o piloto, com a análise de área de trabalho
 
@@ -58,12 +57,9 @@ Você também pode tomar decisões de todo o sistema sobre quais coleções do C
     - Todos os dispositivos de TI
     - Office CEO
 - No **Global piloto** as configurações, você incluir a **dispositivos de TI de todos os** coleções. Excluir o **CEO office** coleção.
-- Criar um plano de implantação e selecione o **todos os Windows 10 clientes** coleção.
-- Sua **piloto dispositivos incluídos** lista contém os seguintes conjuntos de dispositivo:
-    - Todos os dispositivos na sua lista de inclusão de piloto global: **Todos os dispositivos de TI**
-    - Coleções que também fazem parte do grupo de destino do plano de implantação: **Todos os clientes do Windows 10**
-- Análise da área de trabalho exclui o **recomendável adicionais dispositivos** lista todos os dispositivos em seu projeto-piloto global *exclusão* lista: **Office CEO**
-- Somente as primeiras duas coleções são consideradas como parte do piloto. Depois que as atualizações com êxito a esses grupos e os ativos são *pronto*, análise de área de trabalho sincroniza os dispositivos na **CEO office** coleção à coleção de produção do Configuration Manager.
+- Criar um plano de implantação e selecione **clientes de todos os Windows 10** coleção como sua **grupo de destino**.
+- O **piloto dispositivos incluídos** lista contém o subconjunto de dispositivos no seu **grupo de destino**: **Todos os clientes do Windows 10** que também estão no piloto Global *inclusão* lista: **Todos os dispositivos de TI**  
+- O **dispositivos recomendável adicionais** listas contém um conjunto de dispositivos de sua **grupo de destino** que fornecem redundância e cobertura de máximo para seus ativos importantes.  Análise da área de trabalho exclui dessa lista todos os dispositivos em seu projeto-piloto global *exclusão* lista: **Office CEO**
 
 
 ## <a name="address-issues"></a>Solucionar problemas
@@ -117,12 +113,9 @@ Configuration Manager usa os dados da área de trabalho de análise para criar c
     > [!Note]  
     > Use a configuração padrão para **iniciar automaticamente esta fase após um período de adiamento (em dias)** . Os critérios a seguir devem ser atendidos para a segunda fase iniciar:
     >
-    > 1. Necessidade de atualizar e enviar dados de diagnóstico foi revisado back dispositivos piloto.
     > 1. A primeira fase atinge o **percentual de êxito de implantação** critérios para o sucesso. Você pode definir essa configuração na implantação em fases.
     > 1. Você precisa examinar e tomar decisões de atualização na área de trabalho de análise para marcar ativos críticos e importantes, como *pronto*. Para obter mais informações, consulte [examine ativos que precisam de uma decisão de atualização](/sccm/desktop-analytics/deploy-prod#bkmk_review).
     > 1. Análise da área de trabalho sincroniza para coleções do Configuration Manager os dispositivos de produção que atendem a *pronto* critérios.
-    >
-    > Quando o Configuration Manager em fases implantação move automaticamente para a próxima fase, ele só se aplica a dispositivos que sincroniza de análise de área de trabalho para a coleção de produção.
 
 > [!Important]  
 > Essas coleções continuam a sincronização como suas alterações de associação. Por exemplo, se você identifica um problema com um ativo e marque-a como **não é possível**, dispositivos com esse ativo não atendem mais a *pronto* critérios. Esses dispositivos são removidos da coleção de implantação de produção.
@@ -138,7 +131,7 @@ Abra o plano de implantação. O **Preparando atualização decisões - status g
 
 - **Conclusão da decisão de atualização**: Um dos seguintes estados:
     - Dispositivos com digno de nota ativos que são **pronto** ou **pronto com correção**
-    - É o estado do dispositivo **Blocked**, **dispositivo Replace** ou **reinstalar dispositivos**
+    - É o estado do dispositivo **Blocked**, [ **dispositivo substituir** ](/sccm/desktop-analytics/about-deployment-plans#plan-assets) ou **reinstalar dispositivos**
 
 - **Não revisado**: Dispositivos com ativos digno de nota **não revisado** ou **revisão em andamento**
 

@@ -10,14 +10,13 @@ ms.assetid: 63e08f3f-9558-4ed7-9bf3-3a185ddaac5c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acaefcf2c505786dcc65fa7c74063765ca2fe0cf
-ms.sourcegitcommit: e3c1eb0b75d79c05a750d49354c851d15d5e26a3
+ms.openlocfilehash: 305c31c2a40e51b84a0a5da671db1c3f6dad6f2e
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67038660"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67158997"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Solucionar problemas de análise da área de trabalho
 
@@ -43,7 +42,7 @@ Muitos problemas comuns são causados por pré-requisitos ausentes. Primeiro, co
 
 
 
-## <a name="monitor-connection-health"></a>Monitorar a integridade de conexão
+## <a name="monitor-connection-health"></a>Monitorar a integridade da conexão
 
 Use o **integridade de Conexão** painel no Configuration Manager para fazer uma busca detalhada em categorias por integridade do dispositivo. No console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, expanda o **área de trabalho de análise de manutenção** nó e selecione o **integridade de Conexão** Painel de controle.  
 
@@ -52,29 +51,7 @@ Para obter mais informações, consulte [monitorar a integridade de conexão](/s
 
 ## <a name="log-files"></a>Arquivos de log
 
-Use os seguintes arquivos de log para ajudar a solucionar problemas com a análise de área de trabalho integrado ao Configuration Manager.
-
-
-### <a name="service-connection-point"></a>Ponto de Conexão de Serviço
-
-Os seguintes arquivos de log estão no ponto de conexão de serviço no seguinte diretório: `C:\Program Files\Configuration Manager\Logs\M365A`:
-
-| Log | Descrição |
-|---------|---------|
-| **M365ADeploymentPlanWorker.log** | Informações sobre a sincronização de plano de implantação de área de trabalho de análise para o Gerenciador de configuração local do serviço de nuvem |
-| **M365ADeviceHealthWorker.log** | Informações sobre a integridade do dispositivo carregar do Configuration Manager para a nuvem da Microsoft |
-| **M365AUploadWorker.log** | Informações sobre a coleta e o dispositivo carregar do Configuration Manager para a nuvem da Microsoft |
-| **SmsAdminUI.log** | Informações sobre a atividade do console do Configuration Manager, como configurar os serviços de nuvem do Azure  |
-
-
-### <a name="configuration-manager-client"></a>Cliente do Configuration Manager
-
-Os seguintes arquivos de log estão no cliente do Configuration Manager no seguinte diretório: `C:\Windows\CCM\logs`:
-
-| Log | Descrição |
-|---------|---------|
-| **M365AHandler.log** | Informações sobre a política de configurações de área de trabalho de análise |
-
+Para obter mais informações, consulte [arquivos de Log para análise de área de trabalho](/sccm/core/plan-design/hierarchy/log-files#desktop-analytics)
 
 ### <a name="enable-verbose-logging"></a>Habilitar o log detalhado
 

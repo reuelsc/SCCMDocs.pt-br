@@ -1,5 +1,5 @@
 ---
-title: Monitorar a integridade de conexão
+title: Monitorar a integridade da conexão
 titleSuffix: Configuration Manager
 description: Obter detalhes sobre como monitorar os estados de integridade e o dispositivo de conexão de área de trabalho de análise no Configuration Manager.
 ms.date: 06/11/2019
@@ -10,16 +10,15 @@ ms.assetid: 1f4e26f7-42f2-40c8-80cf-efd405349c6c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7dc9b67dbf57c1803ed732f36e1cb110260146d
-ms.sourcegitcommit: e3c1eb0b75d79c05a750d49354c851d15d5e26a3
+ms.openlocfilehash: 1c5d2af3cf97d6093037e248eff3447035ff413f
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67039727"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159075"
 ---
-# <a name="monitor-connection-health"></a>Monitorar a integridade de conexão
+# <a name="monitor-connection-health"></a>Monitorar a integridade da conexão
 
 Use o **integridade de Conexão** painel no Configuration Manager para fazer uma busca detalhada em categorias por integridade do dispositivo. No console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, expanda o **área de trabalho de análise de manutenção** nó e selecione o **integridade de Conexão** Painel de controle.  
 
