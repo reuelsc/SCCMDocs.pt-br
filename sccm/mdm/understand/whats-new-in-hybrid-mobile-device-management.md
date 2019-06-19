@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0b8d24e536348ed853762cb5aa620e76495e064
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
-ms.translationtype: HT
+ms.openlocfilehash: da4798b958e0fd66e53024a2a104a67b3c1b93ea
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159446"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194601"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -646,7 +646,7 @@ Usando o Azure AD (Azure Active Directory), agora você pode restringir o acesso
 ### <a name="new-in-configuration-manger-technical-preview-1711"></a>Novo no Configuration Manager Technical Preview 1711
 
 - **Novas opções de política de conformidade para Windows 10**   
-  Agora é possível configurar as novas opções de políticas de conformidade para dispositivos com Windows 10. As novas configurações incluem políticas de Firewall, Controle de Conta de Usuário, Windows Defender Antivírus e controle de versões de build do sistema operacional. Para obter mais detalhes, confira [Novas opções de política de conformidade para Windows 10](/sccm/core/get-started/capabilities-in-technical-preview-1711#new-compliance-policy-options-for-windows-10).
+  Agora é possível configurar as novas opções de políticas de conformidade para dispositivos com Windows 10. As novas configurações incluem políticas de Firewall, Controle de Conta de Usuário, Windows Defender Antivírus e controle de versões de build do sistema operacional. Para obter mais detalhes, confira [Novas opções de política de conformidade para Windows 10](/sccm/mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client).
 
 
 
@@ -704,7 +704,7 @@ Usando o Azure AD (Azure Active Directory), agora você pode restringir o acesso
   <!--1428681-->    
 
 - **Bloquear registro de dispositivo Samsung Knox sem suporte**   
-  O aplicativo Portal da Empresa tenta registrar apenas os dispositivos Samsung Knox com suporte. Para evitar erros de ativação do KNOX que impedem o registro do MDM, a tentativa do registro do dispositivo só ocorrerá se o dispositivo for exibido na [lista de dispositivos publicada pela Samsung](https://www.samsungknox.com/knox-supported-devices/knox-workspace). Os dispositivos Samsung podem ter números de modelo que oferecem suporte a KNOX, enquanto outros não. Verifique a compatibilidade do Knox com o revendedor de seu dispositivo antes de comprar e implantar. Encontre a lista completa de dispositivos verificados nas [configurações de política do Android e Samsung KNOX Standard](https://docs.microsoft.com/intune-classic/deploy-use/android-policy-settings-in-microsoft-intune#supported-samsung-knox-standard-devices).
+  O aplicativo Portal da Empresa tenta registrar apenas os dispositivos Samsung Knox com suporte. Para evitar erros de ativação do KNOX que impedem o registro do MDM, a tentativa do registro do dispositivo só ocorrerá se o dispositivo for exibido na [lista de dispositivos publicada pela Samsung](https://www.samsungknox.com/knox-supported-devices/knox-workspace). Os dispositivos Samsung podem ter números de modelo que oferecem suporte a KNOX, enquanto outros não. Verifique a compatibilidade do Knox com o revendedor de seu dispositivo antes de comprar e implantar. Você pode encontrar a lista completa de dispositivos verificados nas [automaticamente registrar dispositivos Android usando o registro de móvel do Samsung Knox](https://docs.microsoft.com/intune/android-samsung-knox-mobile-enroll#prerequisites).
   <!-- 1490695 -->     
 
 - **Fim do suporte para Android 4.3 e inferior**     
@@ -712,7 +712,7 @@ Usando o Azure AD (Azure Active Directory), agora você pode restringir o acesso
   <!--1171126, 1326920 -->     
 
 - **Informar aos usuários finais quais informações do dispositivo podem ser vistas em dispositivos registrados**     
-  Estamos adicionando o **Tipo de Propriedade** à tela de Detalhes do Dispositivo em todos os aplicativos do Portal da Empresa. Essas informações permitirão que os usuários obtenham mais informações sobre privacidade diretamente do artigo [Quais informações sua empresa pode ver?](https://docs.microsoft.com/intune-user-help/what-info-can-your-company-see-when-you-enroll-your-device-in-intune). Esse aprimoramento será implantado em breve em todos os aplicativos do Portal da Empresa. Anunciamos essa funcionalidade para iOS em [setembro](https://docs.microsoft.com/intune/whats-new#week-of-september-11-2017). 
+  Estamos adicionando o **Tipo de Propriedade** à tela de Detalhes do Dispositivo em todos os aplicativos do Portal da Empresa. Essas informações permitirão que os usuários obtenham mais informações sobre privacidade diretamente do artigo [Quais informações sua empresa pode ver?](https://docs.microsoft.com/intune-user-help/what-info-can-your-company-see-when-you-enroll-your-device-in-intune). Esse aprimoramento será implantado em breve em todos os aplicativos do Portal da Empresa. Anunciamos essa funcionalidade para iOS em [setembro](#september-2017). 
   <!--1165314-->     
 
 

@@ -2,7 +2,7 @@
 title: Atualizar dispositivos do Windows para uma versão diferente
 titleSuffix: Configuration Manager
 description: Atualize automaticamente os dispositivos que executam o Windows 10 Desktop ou Windows 10 Mobile para outra edição com o Configuration Manager.
-ms.date: 01/26/2018
+ms.date: 06/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3cda70e7a5f1b2cf7dec079a7e933af48f0bf8ad
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 87105e2f9fa090c171b35ed4cb8a6523c624eca4
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128391"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834843"
 ---
 # <a name="upgrade-windows-devices-with-the-edition-upgrade-policy-in-system-center-configuration-manager"></a>Atualizar dispositivos Windows com a política de atualização de edição no System Center Configuration Manager
 
@@ -91,8 +91,8 @@ Monitore essa implantação através do nó **Implantações** do workspace **Mo
 
 Esses erros não significam que a implantação falhou. Verifique se a atualização foi executada com êxito no PC de destino.
 
-Após avaliar a política de destino, o cliente será reiniciado dentro de duas horas a fim de aplicar a atualização. Certifique-se de informar os usuários nos quais você implanta a política ou agende a política para ser executada fora do horário de trabalho dos usuários.
+Após avaliar a política de destino, o cliente aplicará a atualização dentro de duas horas. [Se o caminho de atualização exigir uma reinicialização](https://docs.microsoft.com/windows/deployment/upgrade/windows-10-edition-upgrades), ele será reiniciado nesse momento. Certifique-se de informar os usuários nos quais você implanta a política ou agende a política para ser executada fora do horário de trabalho dos usuários.
 
-Se o seguinte erro aparecer no **DcmWmiProvider.log** no cliente, verifique se você está usando a chave correta para seu cenário de ativação. Para obter mais informações, consulte a seção [Antes de começar](#before-you-start). Se você estiver usando um serviço de gerenciamento de chaves para a ativação, use uma [chave de instalação de cliente do KMS](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys).  <!-- 496871 -->   
+Se o seguinte erro aparecer no **DcmWmiProvider.log** no cliente, verifique se você está usando a chave correta para o seu cenário de ativação. Para obter mais informações, consulte a seção [Antes de começar](#before-you-start). Se você estiver usando um serviço de gerenciamento de chaves para a ativação, use uma [chave de instalação de cliente do KMS](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys).  <!-- 496871 -->   
 
 `Failed to execute CheckApplicabilityMethod with error = 0x80041001 OsEditionUpgradeProvider`

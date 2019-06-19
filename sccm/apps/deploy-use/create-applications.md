@@ -2,7 +2,7 @@
 title: Criar aplicativos
 titleSuffix: Configuration Manager
 description: Crie aplicativos com tipos de implantação, métodos de detecção e requisitos para instalação do software.
-ms.date: 05/08/2019
+ms.date: 06/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c54eb02fe3de3246a7c8ed15e7589fcd4d9b1c9b
-ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
+ms.openlocfilehash: 6302ca8e1f01f51bef09df2175c4525effd89a7e
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66264429"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834811"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Criar aplicativos no Configuration Manager
 
@@ -312,9 +312,25 @@ Este procedimento configura um método de detecção que indica a presença do t
 
 4.  Clique em **OK** para fechar a caixa de diálogo **Regra de Detecção**.  
 
-Ao criar mais de um método de detecção para um tipo de implantação, crie uma lógica mais complexa agrupando as cláusulas. 
+Ao criar mais de um método de detecção para um tipo de implantação, você pode agrupar cláusulas para criar uma lógica mais complexa.  
 
-Continue na próxima seção sobre como usar um script personalizado como um método de detecção. Ou acesse as opções de [Experiência do Usuário](#bkmk_dt-ux) do tipo de implantação.
+#### <a name="group-detection-clauses-optional"></a>Agrupar cláusulas de detecção *(opcional)*
+
+1.  Crie três ou mais cláusulas de método de detecção em um tipo de implantação.  
+
+2.  Selecione duas ou mais cláusulas consecutivas e, em seguida, selecione **Grupo**. Você verá os parênteses adicionados às colunas associadas, que mostram onde o grupo começa e termina.  
+
+    Exemplo: 
+
+    | Connector  |  ( | Cláusula           |  )  | 
+    |------------|----|------------------|-----| 
+    |            |    | Código do Produto de MSI |     | 
+    | Ou         | (  | existe arquivo1.texto|     | 
+    | E        |    | existe arquivo2.texto | )   | 
+
+3.  Para remover o grupo, selecione as cláusulas agrupadas e, em seguida, selecione **Desagrupar**.  
+
+*Continue* na próxima seção sobre como usar um script personalizado como método de detecção. Ou *acesse* as opções de [Experiência do Usuário](#bkmk_dt-ux) do tipo de implantação.
 
 
 #### <a name="bkmk_detect-script"></a> Usar um script personalizado para verificar a presença de um tipo de implantação  

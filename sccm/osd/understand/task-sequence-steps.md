@@ -2,7 +2,7 @@
 title: Etapas da sequência de tarefas
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as etapas que você pode adicionar a uma sequência de tarefas do Configuration Manager.
-ms.date: 05/28/2019
+ms.date: 06/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d257d9fd328b04b35ff4c4d29b8a8bbd82ae565
-ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
-ms.translationtype: MTE75
+ms.openlocfilehash: 6229c0fe0702eac61b482c31195fd35fe3c5792f
+ms.sourcegitcommit: c43996b3cf083d919ff1ccc3d510af664aec4ed4
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66355060"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67047004"
 ---
 # <a name="task-sequence-steps"></a>Etapas da sequência de tarefas
 
@@ -1525,6 +1525,9 @@ Use as variáveis de sequência de tarefas seguintes com esta etapa:
 - [OSDLogPowerShellParameters](/sccm/osd/understand/task-sequence-variables#OSDLogPowerShellParameters) (a partir da versão 1902)<!--3556028-->  
 
 Para adicionar essa etapa no editor de sequência de tarefas, selecione **Adicionar**, **Geral** e **Executar Script do PowerShell**.
+
+> [!Note]  
+> Use scripts assinados do PowerShell em formato Unicode. O Formato ANSI, que é o padrão, não funciona nesta etapa.
 
 ### <a name="properties"></a>Propriedades  
 

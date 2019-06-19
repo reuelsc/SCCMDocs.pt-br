@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27df5154a55717a06924bc906edd2c7f6a4f9a2b
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
-ms.translationtype: HT
+ms.openlocfilehash: 78926fb271bf1663dbd497f1894e3b4acbffd08b
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67158372"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194633"
 ---
 # <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>Recursos híbridos anteriores com o System Center Configuration Manager e Microsoft Intune
 
@@ -113,7 +113,7 @@ As funcionalidades a seguir estavam disponíveis em versões Technical Preview d
 
 - [Suporte do Android for Work](/sccm/core/plan-design/changes/whats-new-in-version-1702##android-for-work-support)
 - [Configurações de conformidade de aplicativos fora de conformidade](/sccm/core/plan-design/changes/whats-new-in-version-1702#conditional-access-device-compliance-policy-improvements)
-- [Criação e distribuição de certificado PFX e suporte a S/MIME](/sccm/core/plan-design/changes/whats-new-in-version-1702#improvements-to-certificate-profiles)
+- [Criação e distribuição de certificado PFX e suporte a S/MIME](/sccm/core/plan-design/changes/whats-new-in-version-1702#mobile-device-management)
 - [Android and iOS versions are no longer targetable in creation wizards for hybrid MDM (As versões do Android e iOS não precisam mais ser indicadas nos assistentes de criação do MDM híbrido)](/sccm/core/plan-design/changes/whats-new-in-version-1702#android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm)
 
 Os seguintes recursos híbridos adicionais também estão incluídos na versão 1702 do Configuration Manager (ramificação atual):
@@ -192,7 +192,7 @@ Os seguintes recursos híbridos adicionais também estão incluídos na versão 
 
 - **Resolver o problema em que dispositivos iOS estão inativos ou o console do administrador não pode se comunicar com eles**
 
-  Quando os dispositivos dos usuários perdem contato com o Intune, você pode fornecer novas etapas de solução de problemas para ajudá-los a recuperar o acesso aos recursos da empresa. Veja [Dispositivos estão inativos ou o console do administrador não pode se comunicar com eles](https://docs.microsoft.com/intune/troubleshoot/troubleshoot-device-enrollment-in-intune#devices-are-inactive-or-the-admin-console-cannot-communicate-with-them).
+  Quando os dispositivos dos usuários perdem contato com o Intune, você pode fornecer novas etapas de solução de problemas para ajudá-los a recuperar o acesso aos recursos da empresa. Veja [Dispositivos estão inativos ou o console do administrador não pode se comunicar com eles](https://docs.microsoft.com/intune/troubleshoot/troubleshoot-device-enrollment-in-intune#devices-are-inactive-or-the-admin-console-cant-communicate-with-them).
 
 ### <a name="new-in-configuration-manager-technical-preview-1701"></a>Novo no Configuration Manager Technical Preview 1701
 
@@ -571,7 +571,7 @@ Não foi realizada a introdução de nenhum recurso híbrido novo em junho de 20
 
   Ações comuns, como **Desativar/Apagar**, **Redefinir Senha**, **Bloqueio Remoto** e **Ignorar Bloqueio de Ativação** agora podem ser encontradas no menu **Ações do Dispositivo Remoto** acessado pelo workspace **Ativos e Conformidade**
 
-  Para mais informações, confira [Nova experiência para ações de dispositivo remoto](/sccm/core/get-started/capabilities-in-technical-preview-1605#new-experience-for-remote-device-actions) em [Funcionalidades no Technical Preview 1605 do System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
+  Para mais informações, confira [Nova experiência para ações de dispositivo remoto](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_Remote) em [Funcionalidades no Technical Preview 1605 do System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
 
 - **Aplicativos da Windows Store para Empresas**
 
@@ -635,7 +635,7 @@ Não foi realizada a introdução de nenhum recurso híbrido novo em junho de 20
 - **Localizar, gerenciar e distribuir aplicativos da Windows Store para Empresas para dispositivos Windows 10 por meio do console do Configuration Manager**
 
 
-  O suporte para a Windows Store para Empresas está disponível no Configuration Manager Technical Preview 1604 para ajudá-lo a localizar, gerenciar e distribuir aplicativos para os dispositivos Windows 10 sendo gerenciados. Para detalhes, confira [Gerenciar aplicativos adquiridos por volume da Windows Store para Empresas](/sccm/core/get-started/capabilities-in-technical-preview-1604#manage-volume-purchased-apps-from-the-windows-store-for-business) em [Funcionalidades no Technical Preview 1604 do System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1604).  
+  O suporte para a Windows Store para Empresas está disponível no Configuration Manager Technical Preview 1604 para ajudá-lo a localizar, gerenciar e distribuir aplicativos para os dispositivos Windows 10 sendo gerenciados. Para detalhes, confira [Gerenciar aplicativos adquiridos por volume da Windows Store para Empresas](/sccm/core/get-started/capabilities-in-technical-preview-1604#BKMK_WindowsVPP) em [Funcionalidades no Technical Preview 1604 do System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1604).  
 
 - **Configuração do SmartLock para dispositivos Android**
 
