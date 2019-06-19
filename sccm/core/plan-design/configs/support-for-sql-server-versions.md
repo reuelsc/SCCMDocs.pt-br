@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fdfb536607ce20cd9727882ad92c3ed963c69241
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 367ab11340ef36b0caaf23e84f26bdda921ee158
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499470"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834746"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>Versões do SQL Server compatíveis com o Configuration Manager
 
@@ -211,9 +211,9 @@ Use esta versão do SQL Server sem uma versão de atualização cumulativa míni
 ### <a name="sql-server-memory"></a>Memória do SQL Server  
  Reserve memória para o SQL Server usando o SQL Server Management Studio e definindo a configuração **Memória mínima do servidor** em **Opções de Memória do Servidor**. Para saber mais sobre como definir esta configuração, consulte [Opções de configuração do servidor de memória do SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/server-memory-server-configuration-options).  
 
--   **Para um servidor de banco de dados instalado no mesmo computador do que o servidor do site**: Limite a memória do SQL Server a 50-80% da memória de sistema endereçável disponível.  
+-   **Para um servidor de banco de dados instalado no mesmo computador do que o servidor do site**: Limite a memória do SQL Server de 50 a 80% da memória de sistema endereçável disponível.  
 
--   **Para um servidor de banco de dados dedicado (remoto do servidor do site)** : Limite a memória do SQL Server a 80-90% da memória de sistema endereçável disponível.  
+-   **Para um servidor de banco de dados dedicado (remoto do servidor do site)** : Limite a memória do SQL Server de 80 a 90% da memória de sistema endereçável disponível.  
 
 -   **Para a reserva de memória para o pool de buffers de cada instância do SQL Server em uso**:  
 
@@ -227,7 +227,8 @@ Use esta versão do SQL Server sem uma versão de atualização cumulativa míni
 ### <a name="sql-server-clr-integration"></a>Integração de CLR do SQL Server  
   O banco de dados do site exige que o CLR (common language runtime) do SQL Server seja habilitado. Essa opção é habilitada automaticamente ao instalar o Configuration Manager. Para saber mais sobre o CLR, confira [Introdução à integração do SQL Server CLR](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/introduction-to-sql-server-clr-integration).  
 
-
+### <a name="sql-server-service-broker-ssb"></a>SQL SSB (Server Service Broker)
+ O SQL Server Service Broker é necessário tanto para replicação entre sites quanto para um único site primário. 
 
 ##  <a name="bkmk_optional"></a> Configurações opcionais para o SQL Server  
  As configurações a seguir são opcionais para cada banco de dados que usa uma instalação completa do SQL Server.  

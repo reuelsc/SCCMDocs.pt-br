@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ffed5e06cca06c5976ac81eecfaca53032bdbc2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: abb8e846598a9ae0d69eb1b134911ec83006b966
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140071"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834896"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Conceitos fundamentais para o gerenciamento de conteúdo no Configuration Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "56140071"
 O Configuration Manager dá suporte a um sistema robusto de ferramentas e opções para gerenciar o conteúdo de software. As implantações de software, como aplicativos, pacotes, atualizações de software e implantações de sistema operacional, precisam de conteúdo. O Configuration Manager armazena o conteúdo em servidores do site e pontos de distribuição. Esse conteúdo exige uma grande quantidade de largura de banda da rede quando está sendo transferido entre locais. Para planejar e usar a infraestrutura de gerenciamento de conteúdo com eficiência, primeiro entenda as opções e configurações disponíveis. Em seguida, considere como usá-las para que elas sejam ajustadas da melhor forma às suas necessidades de implantação de conteúdo e ambiente de rede.  
 
 > [!TIP]    
-> Para obter mais informações sobre o processo de distribuição de conteúdo e para encontrar ajuda no diagnóstico e na resolução de problemas gerais de distribuição de conteúdo, consulte [Noções básicas e solução de problemas de distribuição de conteúdo no Microsoft Configuration Manager ](https://support.microsoft.com/help/4000401/content-distribution-in-mcm).
+> Para obter mais informações sobre o processo de distribuição de conteúdo e para encontrar ajuda no diagnóstico e na resolução de problemas gerais de distribuição de conteúdo, consulte [Noções básicas e solução de problemas de distribuição de conteúdo no Microsoft Configuration Manager](https://support.microsoft.com/help/4000401/content-distribution-in-mcm).
 
 Os tópicos a seguir são os principais conceitos do gerenciamento de conteúdo. Quando um conceito requer informações adicionais ou complexas, são fornecidos links para direcioná-lo a esses detalhes.
 
@@ -88,14 +88,16 @@ Para saber mais, confira [Suporte para o Windows BranchCache](/sccm/core/plan-de
 
 
 ## <a name="delivery-optimization"></a>Otimização de Entrega
-<!-- 1324696 --> Você usa os grupos de limites do Configuration Manager para definir e regular a distribuição de conteúdo em sua rede corporativa e para escritórios remotos. A [Otimização de Entrega do Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) é uma tecnologia ponto-a-ponto baseada na nuvem para compartilhar conteúdo entre dispositivos do Windows 10. A partir da versão 1802, configure a Otimização de Entrega para que ela use os grupos de limites ao compartilhar o conteúdo entre pares. As configurações do cliente aplicam o identificador do grupo de limites como o identificador do grupo da Otimização de Entrega no cliente. Quando o cliente se comunica com o serviço de nuvem da Otimização de Entrega, ele usa esse identificador para localizar os pares com o conteúdo desejado. Para obter mais informações, consulte as configurações do cliente [Otimização de entrega](/sccm/core/clients/deploy/about-client-settings#delivery-optimization).
+<!-- 1324696 -->
+Você usa os grupos de limites do Configuration Manager para definir e regular a distribuição de conteúdo em sua rede corporativa e para escritórios remotos. A [Otimização de Entrega do Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) é uma tecnologia ponto-a-ponto baseada na nuvem para compartilhar conteúdo entre dispositivos do Windows 10. A partir da versão 1802, configure a Otimização de Entrega para que ela use os grupos de limites ao compartilhar o conteúdo entre pares. As configurações do cliente aplicam o identificador do grupo de limites como o identificador do grupo da Otimização de Entrega no cliente. Quando o cliente se comunica com o serviço de nuvem da Otimização de Entrega, ele usa esse identificador para localizar os pares com o conteúdo desejado. Para obter mais informações, consulte as configurações do cliente [Otimização de entrega](/sccm/core/clients/deploy/about-client-settings#delivery-optimization).
 
 A Otimização de Entrega é a tecnologia recomendada para [otimizar a distribuição de atualização do Windows 10](/sccm/sum/deploy-use/optimize-windows-10-update-delivery) dos arquivos de instalação expressa para atualizações de qualidade do Windows 10.
 
 
 
 ## <a name="windows-ledbat"></a>LEDBAT do Windows
-<!--1358112--> O LEDBAT (Low Extra Delay Background Transport) do Windows é um recurso de controle de congestionamento de rede do Windows Server para ajudar a gerenciar as transferências na rede em segundo plano. Para pontos de distribuição em execução nas versões com suporte do Windows Server, habilite uma opção para ajudar a ajustar o tráfego da rede. Assim, os clientes usam a largura de banda de rede somente quando ela está disponível. 
+<!--1358112-->
+O LEDBAT (Low Extra Delay Background Transport) do Windows é um recurso de controle de congestionamento de rede do Windows Server para ajudar a gerenciar as transferências na rede em segundo plano. Para pontos de distribuição em execução nas versões com suporte do Windows Server, habilite uma opção para ajudar a ajustar o tráfego da rede. Assim, os clientes usam a largura de banda de rede somente quando ela está disponível. 
 
 Para obter mais informações sobre o LEDBAT do Windows em geral, confira a postagem no blog [New transport advancements](https://blogs.technet.microsoft.com/networking/2016/07/18/announcing-new-transport-advancements-in-the-anniversary-update-for-windows-10-and-windows-server-2016/) (Novos avanços de transporte).
 
@@ -108,7 +110,7 @@ O cache par do cliente ajuda você a gerenciar a implantação de conteúdo nos 
 
 Primeiro, implante as configurações do cliente que habilitam o cache par para uma coleção. Assim, os membros dessa coleção poderão agir como uma fonte de conteúdo par para outros clientes no mesmo grupo de limites.
 
-Começando na versão 1806, as fontes de cache par do cliente podem dividir o conteúdo em partes. Essas partes minimizam a transferência de rede para reduzir a utilização de WAN. O ponto de gerenciamento fornece acompanhamento mais detalhado das partes do conteúdo. Ele tenta eliminar mais de um download do mesmo conteúdo por grupo de limites.<!--1357346-->
+Começando na versão 1806, as fontes de cache par do cliente podem dividir o conteúdo em partes. Essas partes minimizam a transferência de rede para reduzir a utilização de WAN. O ponto de gerenciamento fornece acompanhamento mais detalhado das partes do conteúdo. Ele tentará eliminar mais de um download do mesmo conteúdo por grupo de limites.<!--1357346-->
 
 Para saber mais, confira [Cache par para clientes do Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).
 
@@ -134,13 +136,15 @@ Para obter mais informações, consulte [Cache de pares do Windows PE](/sccm/osd
 
     -   Requer que os pontos de distribuição para Internet aceitem HTTPS.  
 
-    -   Pode usar um ponto de distribuição na nuvem.  
+    -   Pode usar um ponto de distribuição na nuvem ou um CMG (gateway de gerenciamento de nuvem).  
+    
+        *   Da versão 1806 em diante, um CMG pode também fornecer conteúdo aos clientes. Essa funcionalidade reduz os certificados necessários e o custo das VMs do Azure. Para obter mais informações, consulte [Modificar um CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway).
 
 -   **Grupo de trabalho**:  
 
     -   Requer que os pontos de distribuição aceitem HTTPS.  
 
-    -   Pode usar um ponto de distribuição na nuvem.  
+    -   Pode usar um ponto de distribuição na nuvem ou CMG.  
 
 
 

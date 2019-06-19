@@ -3,8 +3,8 @@ title: Tutorial&#58; Habilitar o cogerenciamento para novos dispositivos Windows
 titleSuffix: Configuration Manager
 description: Configure o cogerenciamento de dispositivos Windows 10 para o Configuration Manager e o Intune.
 keywords: ''
-author: brenduns
-ms.author: brenduns
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.date: 03/08/2019
 ms.topic: tutorial
@@ -12,12 +12,12 @@ ms.prod: configuration-manager
 ms.service: ''
 ms.technology: ''
 ms.assetid: ''
-ms.openlocfilehash: 61400d382a539efa495af99795e32fc1f2a517ab
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: 3c02a9c05e2c7d24654684f122edcd3eb5a84e06
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "57737347"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834874"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Tutorial: Habilitar o cogerenciamento para novos dispositivos baseados na Internet
 Com o cogerenciamento, você pode manter seus processos bem estabelecidos para usar o Configuration Manager para gerenciar PCs na sua organização. Ao mesmo tempo, você está investindo na nuvem com o uso do Intune para provisionamento moderno e segurança. 
@@ -165,7 +165,7 @@ Exporte o *certificado de autenticação de servidor do CMG* do seu servidor. Ex
 
 3. No Assistente para Exportação de Certificados, selecione **Avançar**, selecione **Sim, exportar a chave privada** e clique em **Avançar**.  
 
-4. Na página Formato do Arquivo de Exportação, selecione **Troca de Informações Pessoais – PKCS nº 12 (.PFX)**, selecione **Avançar** e forneça uma senha. Para o nome do arquivo, especifique um nome como **C:\ConfigMgrCloudMGServer**. Você vai fazer referência a esse arquivo quando criar o CMG no Azure.  
+4. Na página Formato do Arquivo de Exportação, selecione **Troca de Informações Pessoais – PKCS nº 12 (.PFX)** , selecione **Avançar** e forneça uma senha. Para o nome do arquivo, especifique um nome como **C:\ConfigMgrCloudMGServer**. Você vai fazer referência a esse arquivo quando criar o CMG no Azure.  
 
 5. Selecione **Avançar** e confirme as seguintes configurações antes de selecionar **Concluir** para completar a exportação:  
 
@@ -357,7 +357,7 @@ Com as configurações do Azure, as funções do sistema de sites e as configura
 
 4. Na página *Habilitação*, na lista suspensa *Registro automático no Intune*, selecione uma das seguintes opções:  
 
-   - **Piloto**  - *(recomendado)* membros da coleção que você especifica são automaticamente inscritos no Intune e podem ser cogerenciados. Especifique a coleção piloto na página *Preparo* desse assistente. Essa opção permite testar o cogerenciamento em um subconjunto de clientes. Em seguida, você pode distribuir o cogerenciamento para clientes adicionais usando uma abordagem em fases.  
+   - **Piloto**  -  *(recomendado)* membros da coleção que você especifica são automaticamente inscritos no Intune e podem ser cogerenciados. Especifique a coleção piloto na página *Preparo* desse assistente. Essa opção permite testar o cogerenciamento em um subconjunto de clientes. Em seguida, você pode distribuir o cogerenciamento para clientes adicionais usando uma abordagem em fases.  
 
    - **Todos**: o cogerenciamento é habilitado para todos os clientes.  
 
@@ -392,7 +392,7 @@ Assim, quando um dispositivo Windows 10 anteriormente não gerenciado se inscrev
 Por exemplo, *C:\Arquivos de Programas\Microsoft Configuration Manager\bin\i386\ccmsetup.msi*   
 
 4. Selecione **Informações do Aplicativo** e especifique os seguintes detalhes:
-   - **Descrição**: Cliente do Gerenciador de Configurações  
+   - **Descrição**: Cliente do Configuration Manager  
 
    - **Publicador**: Microsoft  
 

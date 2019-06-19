@@ -2,7 +2,7 @@
 title: Planejar a implantação de cliente em dispositivos Windows Embedded
 titleSuffix: Configuration Manager
 description: Planeje a implantação de cliente em dispositivos do Windows Embedded no System Center Configuration Manager.
-ms.date: 04/23/2017
+ms.date: 06/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ba85b6d1e545f467816b3e8dddeec04ae4192a4
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 1fd221ecb62a74e9ff3a56815fbdeacdd27ca026
+ms.sourcegitcommit: e3c1eb0b75d79c05a750d49354c851d15d5e26a3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123678"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67038336"
 ---
 # <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>Planejando a implantação de cliente em dispositivos do Windows Embedded no System Center Configuration Manager
 
@@ -81,6 +81,9 @@ ms.locfileid: "56123678"
 > - c:\Windows\System32\Microsoft\Protect  
 >   -   c:\ProgramData\Microsoft\Crypto  
 >   -   HKEY_LOCAL_MACHINE\Software\Microsoft\SystemCertificates\SMS\Certificates  
+
+> [!NOTE]
+> Nenhuma exceção adicional é necessária para o cliente do Configuration Manager que não aquelas documentadas na caixa **Importante** acima. Adicionar exceções do Configuration Manager ou o WMI (WBEM) extras relacionadas pode levar a falhas do Configuration Manager, incluindo os dispositivos ficarem presos no modo de manutenção ou sofrerem loops de reinicialização. Exceções desnecessárias incluem o diretório do cliente do Configuration Manager, o diretório CCMcache, o diretório CCMSetup, o diretório de cache de Sequência de Tarefas, o diretório WBEM e as chaves do Registro do Configuration Manager relacionadas.
 
  Para ver um exemplo da implantação e gerenciamento de dispositivos Windows Embedded habilitados para filtro de gravação no Configuration Manager, consulte [Cenário de exemplo para implantar e gerenciar os clientes do System Center Configuration Manager em dispositivos Windows Embedded](../../../../core/clients/deploy/example-scenario-for-deploying-and-managing-clients-on-windows-embedded-devices.md).  
 

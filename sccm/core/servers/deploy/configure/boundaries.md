@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4bb3cfa86275562ad46c4fdc988719a493f42bf
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 8c6a6e8a346c53d1f2bc8abdc2c2f2d0b9fafb64
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499073"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834889"
 ---
 # <a name="define-network-locations-as-boundaries-for-system-center-configuration-manager"></a>Definir locais de rede como limites para o System Center Configuration Manager
 
@@ -50,9 +50,10 @@ Cada limite está disponível para uso por todos os sites na sua hierarquia. Dep
         >  Você pode especificar a **Rede** e a **Máscara de Sub-rede** para que a **ID de Sub-rede** seja especificada automaticamente. Quando você salva o limite, somente o valor da ID de Sub-rede é salvo.  
 
     -   Se selecionar o **site do Active Directory**, você deverá especificar ou **Procurar** um site do Active Directory na floresta local do servidor do site.  
+        
+        - Ao especificar um site do Active Directory para um limite, o limite inclui uma sub-rede IP que é um membro de um site do Active Directory. Se a configuração do site do Active Directory mudar no Active Directory, os locais de rede inclusos nesse limite também mudarão.  
 
-        > [!IMPORTANT]  
-        >  Ao especificar um site do Active Directory para um limite, o limite inclui uma sub-rede IP que é um membro de um site do Active Directory. Se a configuração do site do Active Directory mudar no Active Directory, os locais de rede inclusos nesse limite também mudarão.  
+        - Limites de site do Active Directory não funcionam para clientes do Azure AD puros. Se eles fizerem roaming local, não se encaixarão em nenhum limite se definido apenas usando Sites do AD.
 
     -   Se selecionar o **Prefixo IPv6**, você deverá especificar um **Prefixo** no formato de prefixo IPv6.  
 

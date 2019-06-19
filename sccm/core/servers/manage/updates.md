@@ -2,7 +2,7 @@
 title: Atualizações e serviços
 titleSuffix: Configuration Manager
 description: Saiba mais sobre o método de serviço no console chamado Atualizações e Manutenção, que facilita a localização e a instalação de atualizações recomendadas.
-ms.date: 03/27/2019
+ms.date: 06/06/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6ebe46963001a4ccc5932afa14ec7eb206dc1c4
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: bb875529224655fb56aeea5636bf92c7ddaf8b2c
+ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496879"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66822057"
 ---
 # <a name="updates-and-servicing-for-configuration-manager"></a>Atualizações e manutenção do Configuration Manager
 
@@ -28,10 +28,10 @@ O Configuration Manager usa um método de serviço no console chamado **Atualiza
 > Os termos *upgrade*, *atualizar* e *instalar* são usados para descrever três conceitos separados no Configuration Manager. Para mais informações sobre como cada termo é usado, veja [Sobre upgrade, atualização e instalação](/sccm/core/understand/upgrade-update-install).  
 
 
-
 ##  <a name="bkmk_Baselines"></a> Versões de linha de base e atualização  
 
-Use a versão de linha de base mais recente ao instalar um novo site em uma nova hierarquia. 
+Use a versão de linha de base mais recente ao instalar um novo site em uma nova hierarquia.
+
 - Use também uma versão de linha de base para atualizar o System Center 2012 Configuration Manager.  
 
 - Depois de atualizar para o branch atual do Configuration Manager, não use versões de linha de base para se manter atualizado. Em vez disso, use somente [atualizações no console](/sccm/core/servers/manage/install-in-console-updates) para atualizar para a versão mais recente.  
@@ -40,24 +40,24 @@ Use a versão de linha de base mais recente ao instalar um novo site em uma nova
 
 Depois de instalar uma versão de linha de base, versões adicionais do Configuration Manager estarão disponíveis como atualizações no console. As atualizações no console atualizam a infraestrutura para a versão mais recente do Configuration Manager.  
 
--   Instale as atualizações no console para atualizar a versão do site de nível superior.  
+- Instale as atualizações no console para atualizar a versão do site de nível superior.  
 
--   Atualizações instaladas automaticamente no site de administração central em sites primários filho. Controle esse intervalo usando uma janela de manutenção no site primário.  
+- Atualizações instaladas automaticamente no site de administração central em sites primários filho. Controle esse intervalo usando uma janela de manutenção no site primário.  
 
--   Atualize manualmente os sites secundários para uma nova versão de atualização usando o console.  
+- Atualize manualmente os sites secundários para uma nova versão de atualização usando o console.  
 
 Ao instalar uma atualização, ela armazena os arquivos de instalação dessa versão no servidor do site em uma pasta chamada **CD.Latest**. Para mais informações sobre esses arquivos, confira [A pasta CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder).  
 
--   Use os arquivos na pasta CD.Latest durante a recuperação de site. Além disso, quando sua hierarquia não executar mais uma versão de linha de base, use esses arquivos para instalar sites adicionais.  
+- Use os arquivos na pasta CD.Latest durante a recuperação de site. Além disso, quando sua hierarquia não executar mais uma versão de linha de base, use esses arquivos para instalar sites adicionais.  
 
--   Você não pode usar os arquivos de instalação do CD.Latest para instalar o primeiro site de uma nova hierarquia ou para atualizar um site do System Center 2012 Configuration Manager.  
-
+- Você não pode usar os arquivos de instalação do CD.Latest para instalar o primeiro site de uma nova hierarquia ou para atualizar um site do System Center 2012 Configuration Manager.  
 
 ### <a name="version-details"></a>Detalhes de versão
 
 Algumas atualizações do Configuration Manager estão disponíveis como uma versão de atualização no console para a infraestrutura existente e como uma nova versão de linha de base.  
 
 #### <a name="supported-versions"></a>Versões com suporte
+
 As seguintes versões do Configuration Manager com suporte estão disponíveis como uma linha de base e/ou uma atualização:  
 
 | Version | Data de disponibilidade | [Data de término do suporte](/sccm/core/servers/manage/current-branch-versions-supported) | Linha de base | Atualização no console |  
@@ -68,17 +68,19 @@ As seguintes versões do Configuration Manager com suporte estão disponíveis c
 | [1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)<br /><br /> 5.00.8634.1000 | 22 de março de 2018 | 22 de setembro de 2019 | Sim<sup>[Observação 1](#bkmk_note1)</sup> | Sim |
 | [1710](/sccm/core/plan-design/changes/whats-new-in-version-1710)<br /><br /> 5.00.8577.1000 | 20 de novembro de 2017 | 20 de maio de 2019 | Não | Sim |
 
-<a name="bkmk_note1"></a> 
+<a name="bkmk_note1"></a>
 
 > [!Note]  
-> <sup>**Observação 1:**</sup> a mídia de linha de base está disponível como parte das seguintes versões no [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (Centro de Serviços de Licenciamento por Volume):
+> <sup>**Observação 1:** </sup> a mídia de linha de base está disponível como parte das seguintes versões no [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (Centro de Serviços de Licenciamento por Volume):
+>
 > - System Center Config Mgr (branch atual)
 > - System Center 2016 Datacenter
 > - System Center 2016 Standard  
-> 
+>
 > Por exemplo, pesquise no VLSC para localizar `System Center Config Mgr (current branch)`. Localize a mídia de linha de base na lista de arquivos e faça o download para essa versão.  
 
 #### <a name="historical-versions"></a>Versões históricas
+
 A tabela a seguir lista as versões históricas do branch atual do Configuration Manager sem suporte:
 
 | Version | Data de disponibilidade | Data de término do suporte | Linha de base | Atualização no console |  
@@ -92,16 +94,16 @@ A tabela a seguir lista as versões históricas do branch atual do Configuration
 | 1511 <br /><br /> 5.00.8325.1000 | 8 de dezembro de 2015 | 8 de dezembro de 2016 | Sim | Não |  
 
 #### <a name="how-to-check-the-version"></a>Como verificar a versão
+
 Para verificar a versão do site do Configuration Manager, no console, vá para **Sobre o System Center Configuration Manager** no canto superior esquerdo do console. Essa caixa de diálogo exibe a versão do site e do console.  
 
- > [!Note]  
- > Iniciando na versão 1802, a versão do console agora é ligeiramente diferente da versão do site. A versão secundária do console agora corresponde à versão de lançamento do Configuration Manager. Por exemplo, no Configuration Manager versão 1802, a versão inicial é 5.0.8634.1000 e a versão inicial do console é 5.**1802**.1082.1700. Os números de build (1082) e de revisão (1700) podem ser alterados com hotfixes futuros para a versão 1802.
+> [!Note]  
+> Iniciando na versão 1802, a versão do console agora é ligeiramente diferente da versão do site. A versão secundária do console agora corresponde à versão de lançamento do Configuration Manager. Por exemplo, no Configuration Manager versão 1802, a versão inicial é 5.0.8634.1000 e a versão inicial do console é 5.**1802**.1082.1700. Os números de build (1082) e de revisão (1700) podem ser alterados com hotfixes futuros para a versão 1802.
 
 
+## <a name="bkmk_inconsole"></a> Atualizações e serviços no console  
 
-##  <a name="bkmk_inconsole"></a> Atualizações e serviços no console  
-
-Ao usar uma instalação pronta para produção do branch atual do Configuration Manager, a maioria das atualizações ficam disponíveis usando o canal **Atualizações e Manutenção**. Esse método identifica, baixa e disponibiliza as atualizações que se aplicam à versão atual e à configuração da sua infraestrutura. Ele inclui apenas as atualizações que a Microsoft recomenda para todos os clientes.   
+Ao usar uma instalação pronta para produção do branch atual do Configuration Manager, a maioria das atualizações ficam disponíveis usando o canal **Atualizações e Manutenção**. Esse método identifica, baixa e disponibiliza as atualizações que se aplicam à versão atual e à configuração da sua infraestrutura. Ele inclui apenas as atualizações que a Microsoft recomenda para todos os clientes.
 
 As atualizações incluídas são:  
 
@@ -111,7 +113,10 @@ As atualizações incluídas são:
 
 - Hotfixes para a sua versão do Configuration Manager e que todos os clientes devem instalar.
 
-As atualizações no console oferecem maior estabilidade e resolvem os problemas comuns. Elas substituem os tipos de atualização das versões anteriores do produto por service packs, atualizações cumulativas e hotfixes que se aplicam a todos os clientes e à extensão do Microsoft Intune. 
+    > [!Note]  
+    > Começando na versão 1902, hotfixes no console agora têm relações de substituição. Para obter mais informações, veja [Substituições para hotfixes no console](#bkmk_supersede).
+
+As atualizações no console oferecem maior estabilidade e resolvem os problemas comuns. Elas substituem os tipos de atualização das versões anteriores do produto por service packs, atualizações cumulativas e hotfixes que se aplicam a todos os clientes e à extensão do Microsoft Intune.
 
 As atualizações no console podem ser aplicadas a um ou mais dos sistemas a seguir:  
 
@@ -150,32 +155,47 @@ Quando você instala uma atualização no console, ocorre o seguinte processo:
 > [!NOTE]  
 > O branch atual do Configuration Manager, o branch de manutenção em longo prazo e o branch de technical preview são versões diferentes. As atualizações que se aplicam a um Branch não estão disponíveis como atualizações no console para outros Branches. Para saber mais sobre as ramificações disponíveis, confira [Qual ramificação do Configuration Manager devo usar?](/sccm/core/understand/which-branch-should-i-use)
 
+### <a name="bkmk_supersede"></a> Substituições para hotfixes no console
+
+<!-- 3229613 -->
+Começando na versão 1902, hotfixes no console agora têm relações de substituição. Quando a Microsoft publica um novo hotfix do Configuration Manager, o console não exibe nenhum hotfix que seja substituído por esse novo hotfix. Esse novo comportamento ajuda a determinar quais hotfixes instalar.
+
+### <a name="supersedence-example"></a>Exemplo de substituição
+
+Há três hotfixes disponíveis: Hotfix-A, Hotfix-B e Hotfix-C. O Hotfix-A é substituído pelo Hotfix-B e o Hotfix-B é substituído pelo Hotfix-C.
+
+|Hotfix-A|Hotfix-B|Hotfix-C|Exibição no console|
+|--------|--------|--------|---------------|
+|Não instalado|Não instalado|Não instalado|Mostrar todos os três hotfixes|
+|Instalado|Instalado|Não instalado|O Hotfix B aparece como instalado<br/>O Hotfix C aparece como pronto para instalar|
+|Não instalado|Não instalado|Instalado|O Hotfix C aparece como instalado|
 
 
-##  <a name="bkmk_outofband"></a> Hotfixes fora da banda  
+## <a name="bkmk_outofband"></a> Hotfixes fora da banda  
 
 Alguns hotfixes são lançados com disponibilidade limitada para resolver problemas específicos. Outros hotfixes são aplicáveis a todos os clientes, mas não é possível instalar usando o método no console. Essas correções são entregues fora de banda e não são descobertas do serviço de nuvem da Microsoft.  
 
-Geralmente, quando você procura corrigir ou solucionar um problema na implantação do Configuration Manager, poderá saber mais sobre os hotfixes fora de banda por meio dos serviços de atendimento ao cliente da Microsoft, um artigo da base de dados de conhecimento do suporte da Microsoft ou no [Blog da Equipe do Configuration Manager](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/bg-p/ConfigurationManagerBlog). 
+Geralmente, quando você procura corrigir ou solucionar um problema na implantação do Configuration Manager, poderá saber mais sobre os hotfixes fora de banda por meio dos serviços de atendimento ao cliente da Microsoft, um artigo da base de dados de conhecimento do suporte da Microsoft ou no [Blog da Equipe do Configuration Manager](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/bg-p/ConfigurationManagerBlog).
 
 Instale essas correções manualmente, usando um dos seguintes dois métodos:  
 
 #### <a name="update-registration-tool"></a>Ferramenta de Registro de Atualização
+
 Essa ferramenta importa o hotfix manualmente no console do Configuration Manager. Em seguida, instale a atualização como você faria nas atualizações no console que são descobertas automaticamente.  
 
 Esse método é usado para hotfixes que usam a seguinte estrutura de nome de arquivo:  
-  `<Product>-<product version>-<KB article ID>-ConfigMgr.Update.exe`    
+    `<Product>-<product version>-<KB article ID>-ConfigMgr.Update.exe`
 
 Para mais informações, veja [Usar a ferramenta de registro de atualização para importar hotfixes](/sccm/core/servers/manage/use-the-update-registration-tool-to-import-hotfixes).  
 
 #### <a name="hotfix-installer"></a>Instalador de Hotfix
+
 Use essa ferramenta para instalar manualmente um hotfix que não pode ser instalado usando o método no console.  
 
-Esse método é usado para correções que usam a seguinte estrutura de nome de arquivo:   
-   `<Product>-<product version>-<KB article ID>-<platform>-<language>.exe`  
+Esse método é usado para correções que usam a seguinte estrutura de nome de arquivo:  
+    `<Product>-<product version>-<KB article ID>-<platform>-<language>.exe`  
 
 Para obter mais informações, veja [Usar o instalador do hotfix para instalar atualizações](/sccm/core/servers/manage/use-the-hotfix-installer-to-install-updates).  
-
 
 
 ## <a name="next-steps"></a>Próximas etapas
@@ -189,6 +209,5 @@ Os artigos a seguir podem ajudá-lo a entender como localizar e instalar os dife
 - [Usar a ferramenta de registro de atualização para importar hotfixes](/sccm/core/servers/manage/use-the-update-registration-tool-to-import-hotfixes)  
 
 - [Usar o instalador do hotfix para instalar atualizações](/sccm/core/servers/manage/use-the-hotfix-installer-to-install-updates)  
-
 
 Para obter mais informações sobre o branch de visualização técnica, confira [Visualização técnica](/sccm/core/get-started/technical-preview).

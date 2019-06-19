@@ -2,21 +2,21 @@
 title: Tutorial&#58;Habilitar o cogerenciamento de clientes existentes do Configuration Manager
 titleSuffix: Configuration Manager
 description: Configure o cogerenciamento com o Microsoft Intune quando você já gerenciar dispositivos Windows 10 com o Configuration Manager.
-ms.date: 03/08/2019
+ms.date: 06/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: tutorial
 ms.assetid: 140c522f-d09a-40b6-a4b0-e0d14742834a
-author: brenduns
-ms.author: brenduns
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af526f531ed81de105aea9d6c5d7f2ea81e8f104
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: 8b19f54d60ed0594be4a51b5abcef69304a27ece
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "57737279"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834757"
 ---
 # <a name="tutorial-enable-co-management-for-existing-configuration-manager-clients"></a>Tutorial: Habilitar o cogerenciamento de clientes existentes do Configuration Manager
 Com o cogerenciamento, você pode manter os seus processos bem estabelecidos para usar o Configuration Manager a fim de gerenciar PCs em sua organização. Ao mesmo tempo, você está investindo na nuvem com o uso do Intune para provisionamento moderno e de segurança.  
@@ -98,14 +98,13 @@ Para configurar o Azure AD Connect, você precisa de credenciais de um administr
 4. Na página **Visão geral**, selecione **Avançar**.
 5. Na página **Conectar ao Azure AD**, insira as credenciais de um administrador global para seu locatário do Azure AD.
 6. Na página **Opções do dispositivo**, selecione **Configurar ingresso no Azure AD Híbrido** e, em seguida, selecione **Avançar**.
-7. Na página **SCP**, para cada floresta local na qual você quer que o Azure AD Connect configure o SCP (ponto de conexão de serviço), execute as seguintes etapas e, em seguida, selecione **Avançar**:  
+7. Na página **Sistemas operacionais de dispositivos**, selecione os sistemas operacionais usados pelos dispositivos no ambiente do Active Directory e, depois, selecione **Avançar**.  
+
+   Você pode selecionar a opção para dar suporte a dispositivos ingressados em domínio de nível inferior do Windows, mas lembre-se de que o cogerenciamento de dispositivos só tem suporte para Windows 10.
+8. Na página **SCP**, para cada floresta local na qual você quer que o Azure AD Connect configure o SCP (ponto de conexão de serviço), execute as seguintes etapas e, em seguida, selecione **Avançar**:  
    1. Selecione a floresta.  
    2. Selecione o serviço de autenticação.  Se você tiver um domínio federado, selecione o servidor do AD FS, a menos que sua organização tenha exclusivamente clientes do Windows 10 e você tenha configurado a sincronização do computador/dispositivo, ou sua organização esteja usando [SeamlessSSO](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso).  
    3. Clique em **Adicionar** para inserir as credenciais de administrador corporativo.  
-8. Na página **Sistemas operacionais de dispositivos**, selecione os sistemas operacionais usados pelos dispositivos no ambiente do Active Directory e, depois, selecione **Avançar**.  
-
-   Você pode selecionar a opção para dar suporte a dispositivos ingressados em domínio de nível inferior do Windows, mas lembre-se de que o cogerenciamento de dispositivos só tem suporte para Windows 10.
-
 9. Se você tiver um domínio gerenciado, ignore esta etapa.  
 
    Na página **Configuração de federação**, insira as credenciais do administrador do AD FS e, depois, selecione **Avançar**.
@@ -131,7 +130,7 @@ Em seguida, definiremos o registro automático de dispositivos com o Intune. Com
 
 O registro automático também permite que os usuários registrem seus dispositivos Windows 10 ao Intune. Os dispositivos são registrados quando um usuário adiciona uma conta de trabalho aos seus dispositivos pessoais, ou quando um dispositivo corporativo é associado ao Azure Active Directory.  
 
-1. Entre no [portal do Azure](https://portal.azure.com/) e selecione **Azure Active Directory** > **Mobilidade (MDM e MAM)** > **Microsoft Intune**.  
+1. Entre no [portal do Azure](https://portal.azure.com/) e selecione **Azure Active Directory** > **Mobilidade (MDM e MAM)**  > **Microsoft Intune**.  
 
 2. Configure o **escopo do usuário MDM**. Especifique um dos seguintes procedimentos para configurar os dispositivos dos usuários gerenciados pelo Microsoft Intune e aceite os padrões para os valores da URL.  
 
@@ -193,7 +192,7 @@ Com o Azure AD híbrido configurado, as configurações de cliente do Configurat
 
 4. Na página Habilitação, na lista suspensa *Registro automático no Intune*, selecione uma das seguintes opções:  
 
-   - **Piloto**  - *(recomendado)* membros da coleção que você especifica são automaticamente inscritos no Intune e podem ser cogerenciados. Especifique a coleção piloto na página *Preparo* desse assistente. Essa opção permite testar o cogerenciamento em um subconjunto de clientes. Em seguida, você pode distribuir o cogerenciamento para clientes adicionais usando uma abordagem em fases.  
+   - **Piloto**  -  *(recomendado)* membros da coleção que você especifica são automaticamente inscritos no Intune e podem ser cogerenciados. Especifique a coleção piloto na página *Preparo* desse assistente. Essa opção permite testar o cogerenciamento em um subconjunto de clientes. Em seguida, você pode distribuir o cogerenciamento para clientes adicionais usando uma abordagem em fases.  
 
    - **Todos** – o cogerenciamento é habilitado para todos os clientes.  
 
