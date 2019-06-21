@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6d427571db52f19e9d1e45648bdf2cc66b6c6d9
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 9bdca6ded291ca6e32194c61ce24b33b690489cb
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56141265"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286240"
 ---
 # <a name="capabilities-in-technical-preview-1703-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1703 do System Center Configuration Manager
 
@@ -63,7 +63,7 @@ Use o seguinte formato de URL para abrir o Centro de Software para um aplicativo
 3.  Na exibição dos **aplicativos**, clique com o botão direito do mouse em um dos cabeçalhos de coluna e, em seguida, na lista, selecione **ID exclusiva do IC**. Você verá que a ID exclusiva de cada aplicativo agora é mostrada na lista.
 4.  Observe a **ID exclusiva de IC** do aplicativo para o qual você deseja fornecer um link, por exemplo: **ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f/2**
 5.  Em seguida, remova qualquer texto após o aplicativo GUID, neste caso **/2**. Isso deixa você com o identificador do aplicativo.
-6.  Por fim, para concluir a construção do link, preceda-o com **Softwarecenter:SoftwareID =**. Usando o exemplo acima, o link final será: **Softwarecenter:SoftwareId= ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f**.
+6.  Por fim, para concluir a construção do link, preceda-o com **Softwarecenter:SoftwareID =** . Usando o exemplo acima, o link final será: **Softwarecenter:SoftwareId= ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f**.
 
 Usando este link, os usuários finais podem abrir o Centro de Software diretamente para o aplicativo especificado.
 
@@ -83,13 +83,13 @@ O Technical preview 1703 introduz o assistente de **configuração de serviços 
 
 Com technical preview 1703, apenas a Windows Store para Empresas (WSfB) é configurada usando esse assistente.  Outros serviços de nuvem são configurados por meio de seus fluxos de trabalho separados.
 
--   Use as informações deste tópico de visualização para substituir as etapas de configuração encontradas na seção [Configurar sincronização da Windows Store para Empresas](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#set-up-windows-store-for-business-synchronization) do tópico do Branch Atual [Gerenciar aplicativos da Windows Store para Empresas com o System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
+-   Use as informações deste tópico de visualização para substituir as etapas de configuração encontradas na seção [Configurar sincronização da Windows Store para Empresas](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_setup) do tópico do Branch Atual [Gerenciar aplicativos da Windows Store para Empresas com o System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
 -   Para obter mais informações sobre os aplicativos Web, consulte [Autenticação e autorização no serviço de aplicativo do Azure](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview) e [Visão geral de aplicativos Web](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview).
 
 ### <a name="prerequisites-and-planning"></a>Pré-requisitos e planejamento
 Ao configurar uma conexão entre o Configuration Manager e a Windows Store para Empresas, é necessário fornecer uma pasta em que o conteúdo do aplicativo sincronizado do repositório será mantido. Para garantir que essa pasta é segura e que seu conteúdo pode ser implantado em dispositivos, verifique se as seguintes permissões existem:
--   O computador no qual você instala a função do sistema de sites do ponto de conexão de serviço (o site de nível superior na hierarquia) deve ter permissões de leitura e gravação na pasta especificada durante o uso da conta **Computer$**.  
+-   O computador no qual você instala a função do sistema de sites do ponto de conexão de serviço (o site de nível superior na hierarquia) deve ter permissões de leitura e gravação na pasta especificada durante o uso da conta **Computer$** .  
 
 -   O autor do aplicativo deve ter permissões de leitura da pasta especificada.  
 

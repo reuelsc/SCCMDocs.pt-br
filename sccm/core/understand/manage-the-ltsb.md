@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34e0ae19fc7bb3680a148fd5e4ac52feb294963f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 08ab6cebbe44ecad8b8ce15691dd83217ada3ce9
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121304"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194119"
 ---
 # <a name="manage-the-long-term-servicing-branch-of-configuration-manager"></a>Gerenciar o Branch de Manutenção de Longo Prazo do Configuration Manager
 
@@ -47,7 +47,7 @@ Quando você executa o LTSB e está expandindo um site primário autônomo insta
 
 Embora você não execute a Instalação para a expansão do site da pasta CD.Latest, você continua a usar a pasta CD.Latest para a recuperação de site e para instalar um novo site primário filho quando seu primeiro site do LTSB era um site de administração central.
 
-Para saber mais sobre expansão do site, confira [Expandir um site primário autônomo](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#expand-a-stand-alone-primary-site). Para mais informações sobre a pasta CD.Latest, confira [The CD.Latest folder](/sccm/core/servers/manage/the-cd.latest-folder) (A pasta CD.Latest).
+Para saber mais sobre expansão do site, confira [Expandir um site primário autônomo](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#bkmk_expand). Para mais informações sobre a pasta CD.Latest, confira [The CD.Latest folder](/sccm/core/servers/manage/the-cd.latest-folder) (A pasta CD.Latest).
 
 
 ## <a name="recovery"></a>Recuperação

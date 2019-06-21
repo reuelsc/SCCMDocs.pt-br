@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 194a26a4fee7a8a7c97a91db4b579c9db03c1787
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 7836e1779acbfdfbb66d6eac57bc7797abd52563
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129775"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286473"
 ---
 # <a name="use-windows-analytics-with-configuration-manager"></a>Usar o Windows Analytics com o Configuration Manager
 
@@ -52,10 +52,10 @@ Defina essa configuração como **Sim** para definir configurações de dados de
 A ID de chave comercial mapeia informações de dispositivos que você gerencia para o espaço de trabalho do Log Analytics que hospeda os dados do Windows Analytics de sua organização. Se você já configurou uma ID comercial para uso com a Upgrade Readiness, use essa ID. Se você ainda não tiver uma chave de ID comercial, veja [Copiar a chave de ID comercial](https://docs.microsoft.com/windows/deployment/update/windows-analytics-get-started#copy-your-commercial-id-key).
 
 #### <a name="windows-10-telemetry"></a>Telemetria do Windows 10
-Para saber mais, veja [Configurar dados de diagnóstico do Windows em sua organização](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization##diagnostic-data-level).
+Para saber mais, veja [Configurar dados de diagnóstico do Windows em sua organização](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#diagnostic-data-levels).
 
 > [!Note]  
-> Também é possível definir o nível de coleta de dados do Windows 10 como **Avançado (Limitado)**. Essa configuração permite que você obtenha informações acionáveis sobre dispositivos em seu ambiente sem que os dispositivos relatem todos os dados no nível **Avançado** com Windows 10 versão 1709 ou posterior. O nível Avançado (Limitado) inclui métricas do nível Básico, bem como um subconjunto dos dados coletados do nível Avançado relevantes ao Windows Analytics.
+> Também é possível definir o nível de coleta de dados do Windows 10 como **Avançado (Limitado)** . Essa configuração permite que você obtenha informações acionáveis sobre dispositivos em seu ambiente sem que os dispositivos relatem todos os dados no nível **Avançado** com Windows 10 versão 1709 ou posterior. O nível Avançado (Limitado) inclui métricas do nível Básico, bem como um subconjunto dos dados coletados do nível Avançado relevantes ao Windows Analytics.
 
 #### <a name="windows-81-and-earlier-telemetry"></a>Telemetria do Windows 8.1 e anterior   
 Para obter mais informações, consulte [Campos e eventos de telemetria do avaliador do Windows 7, Windows 8 e Windows 8.1](https://go.microsoft.com/fwlink/?LinkID=822965).

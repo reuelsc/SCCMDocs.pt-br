@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b099a645-6434-498f-a408-1d438e394396
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a8961e86ff5184463dd156e2394150968046fb8
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: 618dd44a32e624a67f03bb18ea01169dd80daeb7
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58523785"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194677"
 ---
 # <a name="install-and-configure-a-software-update-point"></a>instalar e configurar um ponto de atualização de software  
 
@@ -147,7 +147,7 @@ ms.locfileid: "58523785"
 >  A página **Idiomas** do assistente está disponível apenas quando você instala o ponto de atualização de software no site de administração central. Você pode configurar os idiomas do Arquivo de Atualização de Software em sites filhos na guia **Idiomas** em Propriedades do Componente de Ponto de Atualização de Software.  
 
 ## <a name="third-party-updates"></a>Atualizações de terceiros
-A partir do Configuration Manager versão 1802, você pode habilitar atualizações de terceiros para clientes do Configuration Manager. Quando você habilitar as atualizações de software nas propriedades de componente de SUP, o SUP baixará o certificado de autenticação usado pelo WSUS para atualizações de terceiros. Essa opção não está disponível durante a instalação do ponto de atualização de software e deve ser configurada depois que o SUP for instalado. Para habilitar as configurações do cliente para atualizações de terceiros, consulte o [Sobre configurações do cliente](/sccm/core/clients/deploy/about-client-settings#Enable-third-party-software-updates) artigo.
+A partir do Configuration Manager versão 1802, você pode habilitar atualizações de terceiros para clientes do Configuration Manager. Quando você habilitar as atualizações de software nas propriedades de componente de SUP, o SUP baixará o certificado de autenticação usado pelo WSUS para atualizações de terceiros. Essa opção não está disponível durante a instalação do ponto de atualização de software e deve ser configurada depois que o SUP for instalado. Para habilitar as configurações do cliente para atualizações de terceiros, consulte o [Sobre configurações do cliente](/sccm/core/clients/deploy/about-client-settings#enable-third-party-software-updates) artigo.
 
 ## <a name="next-steps"></a>Próximas etapas
 Você instalou o ponto de atualização de software iniciando no site de mais alto na hierarquia do Configuration Manager. Repita os procedimentos deste artigo para instalar o ponto de atualização de software em sites filho.

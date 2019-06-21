@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2380c1a543f223c4e9cdf905c8b3782c91f6387b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 5cf48e73e2d273fcff6b6b99cf0eaa06cababa16
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65494808"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159499"
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gerenciar o Windows como um serviço usando o System Center Configuration Manager
 
@@ -136,7 +136,7 @@ ms.locfileid: "65494808"
 
    -   **Especificar o estado de preparação do Windows ao qual este plano de serviço deve ser aplicado**: selecione uma das seguintes opções:  
 
-       -   **Canal semestral (direcionado)**: neste modelo de serviço, as atualizações de recursos estão disponíveis assim que a Microsoft as libera.
+       -   **Canal semestral (direcionado)** : neste modelo de serviço, as atualizações de recursos estão disponíveis assim que a Microsoft as libera.
 
        -   **Canal semestral**: esse canal de serviços é usado normalmente para a implantação ampla. Clientes do Windows 10 no Canal Semestral recebem o mesmo build do Windows 10 que os dispositivos no canal direcionado, apenas em um momento posterior.
 
@@ -288,4 +288,4 @@ Use o procedimento a seguir para modificar as propriedades de um plano de servi�
     >  Você pode verificar os alertas de atualizações de software recentes no nó **Atualizações de Software** no workspace **Biblioteca de Software**.  
 
 **Para obter mais informações:** <br/>
-[Conceitos básicos do Configuration Manager como um serviço e do Windows como um serviço](/sccm/core/understand/configuration-manager-and-windows-as-service.md)
+[Conceitos básicos do Configuration Manager como um serviço e do Windows como um serviço](/sccm/core/understand/configuration-manager-and-windows-as-service)

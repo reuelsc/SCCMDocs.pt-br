@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c57042e6ea4db7b244b8617bbef99633d9026d1b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 59cb31a0d57af21331f48c6a6ba415439fa97239
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501120"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252176"
 ---
 # <a name="checklist-for-installing-update-1810-for-configuration-manager"></a>Lista de verificação para instalar a atualização 1810 do Configuration Manager
 
@@ -34,7 +34,7 @@ Para obter a atualização da versão 1810, você precisa usar um ponto de conex
 
     -   Outro problema de download comum ocorre quando as configurações do servidor proxy impedem downloads de http://silverlight.dlservice.microsoft.com, http://download.microsoft.com e/ou http://go.microsoft.com.
 
-Para obter mais informações de como instalar atualizações, consulte [Atualizações e manutenção no console](/sccm/core/servers/manage/updates#a-namebkmkinconsolea-in-console-updates-and-servicing).
+Para obter mais informações de como instalar atualizações, consulte [Atualizações e manutenção no console](/sccm/core/servers/manage/updates#bkmk_inconsole).
 
 Para obter mais informações sobre as versões do branch atual, veja [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines).
 
@@ -92,7 +92,7 @@ A versão do ADK (Kit de Avaliação e Implantação) do Windows 10 deve ter sup
 Caso você atualize o site antes de atualizar o Windows ADK, consulte [Atualizar pontos de distribuição com a imagem de inicialização](/sccm/osd/get-started/manage-boot-images#update-distribution-points-with-the-boot-image).
 
 #### <a name="review-sql-server-native-client-version"></a>Revisar a versão do SQL Server Native Client
-Deve ser instalada uma versão mínima do SQL Server 2012 Native Client que inclui suporte para o TLS 1.2. Para obter mais informações, confira a [Lista de verificações de pré-requisitos](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-native-client).
+Deve ser instalada uma versão mínima do SQL Server 2012 Native Client que inclui suporte para o TLS 1.2. Para obter mais informações, confira a [Lista de verificações de pré-requisitos](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-server-native-client).
 
 #### <a name="review-the-site-and-hierarchy-status-for-unresolved-issues"></a>Examine o status do site e da hierarquia quanto a problemas não resolvidos 
 Uma atualização de site pode falhar devido a problemas operacionais existentes. Antes de atualizar um site, resolva todos os problemas operacionais para os seguintes sistemas:  
@@ -160,7 +160,7 @@ Para obter mais informações, veja a seção **Executar o verificador de pré-r
 > Quando o verificador de pré-requisitos é executado, o processo atualiza alguns arquivos de origem do produto usados para tarefas de manutenção do site. Portanto, após executar o verificador de pré-requisitos, mas antes de instalar a atualização, se você precisa executar uma tarefa de manutenção de site, execute **Setupwpf.exe**  (Instalação do Configuration Manager) na pasta CD.Latest no servidor de sites.
 
 #### <a name="update-sites"></a>Atualizar sites   
-Agora você está pronto para iniciar a instalação da atualização para a sua hierarquia. Para saber mais sobre como instalar a atualização, veja [Instalação de atualizações no console](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates).
+Agora você está pronto para iniciar a instalação da atualização para a sua hierarquia. Para saber mais sobre como instalar a atualização, veja [Instalação de atualizações no console](/sccm/core/servers/manage/install-in-console-updates#bkmk_install).
 
 Você pode planejar a instalação da atualização fora do horário comercial normal. Determine quando o processo terá um efeito mínimo sobre as suas operações de negócios. Instalar a atualização e suas ações reinstala os componentes do site e as funções do sistema de sites.
 

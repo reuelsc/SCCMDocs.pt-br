@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 53803d154a871739c5dd8cf7eaff4eebf92fd651
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: bd6abbb6b4a11bb9b412b6a2ad1c2f8e5d648c59
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083431"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67193974"
 ---
 # <a name="about-upgrade-update-and-install-for-site-and-hierarchy-infrastructure"></a>Sobre upgrade, atualização e instalação para infraestrutura de site e hierarquia
 
@@ -39,7 +39,7 @@ A *atualização* é usada para instalar atualizações no console do System Cen
 Normalmente, as atualizações adicionam novos recursos, melhorias de qualidade e correções de segurança à implantação existente. Se você usar a ramificação Technical Preview, uma atualização poderá instalar uma versão mais recente do Technical Preview.
 -   Escolha quando instalar a atualização no console, começando pelo site de nível superior de sua hierarquia.
 - Você pode instalar qualquer atualização disponível no console. Por exemplo, se seu site executar a versão 1802, e as versões 1806 e 1810 forem oferecidas, considere a instalação da versão 1810, pois cada versão inclui os recursos disponibilizados nas versões anteriores.
-- Após a conclusão da instalação de uma nova atualização em seu site de nível superior, os sites primários filhos começarão automaticamente o processo de atualização. No entanto, você pode configurar [Períodos de manutenção](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkservicewindowa-service-windows-for-site-servers) para controlar o cronograma das atualizações.
+- Após a conclusão da instalação de uma nova atualização em seu site de nível superior, os sites primários filhos começarão automaticamente o processo de atualização. No entanto, você pode configurar [Períodos de manutenção](/sccm/core/servers/manage/service-windows) para controlar o cronograma das atualizações.
 - Os sites secundários não instalam automaticamente as atualizações. Em vez disso, inicie manualmente a atualização de dentro do console do Configuration Manager.
 
 Para saber mais, confira [Atualizações para o System Center Configuration Manager](/sccm/core/servers/manage/updates) e [Technical Preview do System Center Configuration Manager](/sccm/core/get-started/technical-preview).

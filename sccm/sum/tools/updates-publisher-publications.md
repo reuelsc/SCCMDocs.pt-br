@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 636d9ef3ba7768c73b00de4f50c22629548e7921
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: a56fea517c12e0d6f8e476b28c2af65a04c2593b
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65493945"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67158896"
 ---
 # <a name="manage-publications-in-updates-publisher"></a>Gerenciar publicações no Updates Publisher
 
@@ -76,7 +76,7 @@ Antes de você ter a opção de publicar, é necessário configurar a opção [S
    Se a publicação falhar, você receberá um link para o arquivo UpdatesPublisher.log que pode fornecer mais informações.
 
 ## <a name="export-a-publication"></a>Exportar uma publicação
-Você pode exportar uma publicação de seu repositório do Updates Publisher. Isso exporta as atualizações e os pacotes que são atribuídos a essa publicação e cria um catálogo de atualizações. Depois, você pode [adicionar](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e depois [importar](/sccm/sum/tools/updates-publisher-catalogs#mport-updates) esse catálogo para outra instância do Updates Publisher. Você também pode [exportar atualizações](/sccm/sum/tools/manage-updates-with-updates-publisher#export-updates) que não fazem parte de uma publicação.
+Você pode exportar uma publicação de seu repositório do Updates Publisher. Isso exporta as atualizações e os pacotes que são atribuídos a essa publicação e cria um catálogo de atualizações. Depois, você pode [adicionar](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e depois [importar](/sccm/sum/tools/updates-publisher-catalogs#import-updates) esse catálogo para outra instância do Updates Publisher. Você também pode [exportar atualizações](/sccm/sum/tools/manage-updates-with-updates-publisher#export-updates) que não fazem parte de uma publicação.
 
 Para exportar uma publicação, acesse o **Workspace de Publicações** e selecione a publicação que contém as atualizações que você deseja exportar. Você só pode selecionar uma publicação por vez.
 

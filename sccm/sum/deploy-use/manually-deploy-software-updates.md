@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1c456277b87c3472e1bae8ed9ed65277d647038
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 098091c0ed9fa5948e7bc36cf601342bc847be75
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500172"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159474"
 ---
 # <a name="manually-deploy-software-updates"></a>Implantar atualizações de software manualmente  
 
@@ -246,7 +246,7 @@ Depois de determinar as atualizações que você deseja implantar e adicioná-la
 
 14. Clique em **Próximo** para implantar a atualização de software.  
 
-    Depois que você concluir o assistente, o Configuration Manager baixará as atualizações de software para a biblioteca de conteúdo no servidor do site. Em seguida, ele distribuirá o conteúdo para os pontos de distribuição configurados e implantará o grupo de atualização de software nos clientes na coleção de destino. Para obter mais informações sobre o processo de implantação, veja [Software update deployment process](/sum/understand/software-updates-introduction#BKMK_DeploymentProcess).  
+    Depois que você concluir o assistente, o Configuration Manager baixará as atualizações de software para a biblioteca de conteúdo no servidor do site. Em seguida, ele distribuirá o conteúdo para os pontos de distribuição configurados e implantará o grupo de atualização de software nos clientes na coleção de destino. Para obter mais informações sobre o processo de implantação, veja [Software update deployment process](/sccm/sum/understand/software-updates-introduction#BKMK_DeploymentProcess).  
 
 
 

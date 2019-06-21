@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f903fad2bb0654cd445eeedaca6ddf902bff725
-ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
+ms.openlocfilehash: 3e1ad62c8b8b0f780670e7baf7ebf11de7f6b483
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65214983"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194580"
 ---
 # <a name="task-sequence-variables"></a>Variáveis de sequência de tarefas
 
@@ -179,7 +179,7 @@ Especifica o caminho definido pela variável [SMSTSLocalDataDrive](#SMSTSLocalDa
 
 ### <a name="SMSTSMediaType"></a> _SMSTSMediaType
 
-Especifica o tipo de mídia usada para iniciar a instalação. Exemplos de tipos de mídia são mídia de inicialização, mídia cheia, PXE e mídia em pré-teste.
+Especifica o tipo de mídia usada para iniciar a instalação. Exemplos de tipos de mídia são mídia de inicialização, mídia cheia, PXE e mídia pré-configurada.
 
 ### <a name="SMSTSModel"></a> _SMSTSModel
 
@@ -257,7 +257,7 @@ Bias,StandardBias,DaylightBias,StandardDate.wYear,wMonth,wDayOfWeek,wDay,wHour,w
 
 #### <a name="example"></a>Exemplo
 
-Para o fuso horário **Hora padrão da Costa Leste (EUA e Canadá)**:
+Para o fuso horário **Hora padrão da Costa Leste (EUA e Canadá)** :
 
 ```
 300,0,-60,0,11,0,1,2,0,0,0,0,3,0,2,2,0,0,0,Eastern Standard Time,Eastern Daylight Time
@@ -505,7 +505,7 @@ Em vez de gerar uma chave de inicialização aleatória para a opção de gerenc
 
 Especifica um nome de conta do Windows que tem permissão para armazenar a imagem capturada em um compartilhamento de rede ([OSDCaptureDestination](#OSDCaptureDestination)). Especifique também a [OSDCaptureAccountPassword](#OSDCaptureAccountPassword).
 
-Para saber mais sobre a conta de imagem do sistema operacional de captura, consulte [Contas](/sccm/core/plan-design/hierarchy/accounts#capture-operating-system-image-account).
+Para saber mais sobre a conta de imagem do sistema operacional de captura, consulte [Contas](/sccm/core/plan-design/hierarchy/accounts#capture-os-image-account).
 
 ### <a name="OSDCaptureAccountPassword"></a> OSDCaptureAccountPassword
 
@@ -697,7 +697,7 @@ Para saber mais, confira [Opções de linha de comando do DISM do Windows 10](ht
 
 Especifica a conta de usuário do domínio usada para adicionar o computador de destino ao domínio. Essa variável é necessária ao ingressar em um domínio.
 
-Para saber mais sobre a conta de entrada no domínio da sequência de tarefas, confira [Contas](/sccm/core/plan-design/hierarchy/accounts#task-sequence-editor-domain-joining-account).
+Para saber mais sobre a conta de entrada no domínio da sequência de tarefas, confira [Contas](/sccm/core/plan-design/hierarchy/accounts#task-sequence-domain-join-account).
 
 ### <a name="OSDJoinDomainName"></a> OSDJoinDomainName
 
@@ -1246,7 +1246,7 @@ Para obter mais informações, veja [Sobre os parâmetros e as propriedades de i
 
 Especifica a conta de usuário usada para conectar o compartilhamento de rede em [SMSConnectNetworkFolderPath](#SMSConnectNetworkFolderPath). Especifique a senha da conta com o valor [SMSConnectNetworkFolderPassword](#SMSConnectNetworkFolderPassword).
 
-Para saber mais sobre a conta de conexão da pasta de rede da sequência de tarefas, confira [Contas](/sccm/core/plan-design/hierarchy/accounts#task-sequence-editor-network-folder-connection-account).
+Para saber mais sobre a conta de conexão da pasta de rede da sequência de tarefas, confira [Contas](/sccm/core/plan-design/hierarchy/accounts#task-sequence-network-folder-connection-account).
 
 ### <a name="SMSConnectNetworkFolderDriveLetter"></a> SMSConnectNetworkFolderDriveLetter
 

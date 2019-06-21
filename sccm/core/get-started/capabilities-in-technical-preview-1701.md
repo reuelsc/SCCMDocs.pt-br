@@ -12,12 +12,12 @@ manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4edec748950b4601c4f5889f180f74c158171b33
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: b2d72e0134bdc4f7033ff37c54bed4898fce6832
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136806"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286206"
 ---
 # <a name="capabilities-in-technical-preview-1701-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1701 do System Center Configuration Manager
 
@@ -62,10 +62,10 @@ O seguinte descreve o comportamento de pontos de atualização de software com e
   Quando um cliente usa o fallback, ele usará as configurações de grupo de limite para realizar fallback para criar um pool de pontos de atualização de software disponíveis. Esse pool inclui todos os pontos de atualização de software do *grupo de limite atual* e dos *grupos de limite vizinho* do cliente e do *grupo de limite padrão do site* do cliente.
 
 - **Configure o grupo de limite do site padrão:**  
-  Considere adicionar um ponto de atualização de software para *Default-Site-Boundary-Group&lt;sitecode>*. Isso garante que os clientes que não são membros de outro grupo de limite possam realizar fallback para localizar um ponto de atualização de software.
+  Considere adicionar um ponto de atualização de software para *Default-Site-Boundary-Group&lt;sitecode>* . Isso garante que os clientes que não são membros de outro grupo de limite possam realizar fallback para localizar um ponto de atualização de software.
 
 
-Para gerenciar pontos de atualização de software para grupos de limite, use os [procedimentos da documentação do Branch Atual](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#procedures-for-boundary-groups), mas se lembre de que os tempos de fallback que você deve configurar ainda não são usados para pontos de atualização de software.
+Para gerenciar pontos de atualização de software para grupos de limite, use os [procedimentos da documentação do Branch Atual](/sccm/core/servers/deploy/configure/boundary-group-procedures), mas se lembre de que os tempos de fallback que você deve configurar ainda não são usados para pontos de atualização de software.
 
 
 ## <a name="hardware-inventory-collects-uefi-information"></a>O inventário de hardware coleta informações de UEFI
@@ -116,16 +116,16 @@ Para fazer isso, modifique um arquivo de configuração para apontar para a nuve
      &lt;value>&lt;/value>   
      &lt;/setting>
 
-   - **Editado:**     
+   - **Editado:**      
      &lt;setting name="FairFaxArmResourceId" serializeAs="String"> &lt;value><https://management.usgovcloudapi.net/&lt;/value>>  
      &lt;/setting>
 
    Altere o valor do nome da configuração *FairFaxAuthorityResource* para que seja igual a "<https://login.microsoftonline.com/>"
 
-   - **Original:**&lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
+   - **Original:** &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
      &lt;value>&lt;/value>
 
-   - **Editado:**&lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
+   - **Editado:** &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
      &lt;value><https://login.microsoftonline.com/&lt;/value>>
 
 2. Depois de salvar o arquivo com as duas alterações, reinicie o console do Configuration Manager no mesmo computador e, em seguida, use esse console para instalar o conector do OMS. Para instalar o conector, use as informações em [Sincronizar dados do Configuration Manager para o Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) e selecione o **Workspace do Operations Management Suite** que está na nuvem Microsoft Azure Governamental.

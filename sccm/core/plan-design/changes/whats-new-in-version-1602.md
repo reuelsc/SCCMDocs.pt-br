@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18cfb826c3ed495439fde63b62e52e6fc07067b4
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 43a976e04358a176852d72301335b14cf484ed3c
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496030"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67158808"
 ---
 # <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Novidades da versão 1602 do System Center Configuration Manager
 
@@ -30,7 +30,7 @@ A atualização 1602 do System Center Configuration Manager está disponível ap
 > [!TIP]  
 >  Saiba mais sobre:  
 >   
->   -   [Instalação de novos sites](/sccm/core/servers/deploy/install) (usando uma versão de linha de base como a 1511)  
+>   -   [Instalação de novos sites](/sccm/core/servers/deploy/install/prepare-to-install-sites) (usando uma versão de linha de base como a 1511)  
 >   -   [Instalação de atualizações em sites](/sccm/core/servers/manage/updates) (como a atualização 1602)  
 
  As seções a seguir fornecem detalhes sobre as alterações e novas funcionalidades introduzidas na versão 1602 do Configuration Manager.  
@@ -133,7 +133,7 @@ Você encontrará esses aplicativos no nó **Aplicativos** do console do Configu
  Para obter mais detalhes, consulte [Políticas de conformidade do dispositivo no System Center Configuration Manager](../../../protect/deploy-use/device-compliance-policies.md).  
 
 ### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>Verificar se os dispositivos registrados e em conformidade sempre têm acesso ao Exchange no Local  
- Quando você marca a opção a seguir, os dispositivos registrados no Intune e em conformidade com as políticas de conformidade têm permissão para acessar o Exchange local: **Substituição de regra padrão – sempre permitir que os dispositivos registrados no Intune e em conformidade acessem o Exchange local:**. Essa regra está disponível na **página Geral** do **Assistente de Configuração de Política de Acesso Condicional** do Exchange no local.
+ Quando você marca a opção a seguir, os dispositivos registrados no Intune e em conformidade com as políticas de conformidade têm permissão para acessar o Exchange local: **Substituição de regra padrão – sempre permitir que os dispositivos registrados no Intune e em conformidade acessem o Exchange local:** . Essa regra está disponível na **página Geral** do **Assistente de Configuração de Política de Acesso Condicional** do Exchange no local.
 
  Essa regra substitui a regra padrão, o que significa que mesmo que você defina a regra padrão para bloquear o acesso ou colocar em quarentena, os dispositivos registrados e em conformidade ainda poderão acessar o Exchange no Local. Use essa configuração quando desejar que dispositivos registrados e compatíveis sempre tenham acesso ao email por meio do Exchange no local.   
 

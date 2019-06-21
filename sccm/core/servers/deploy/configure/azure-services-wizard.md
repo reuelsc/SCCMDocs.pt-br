@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94e632638018d213d46b34e87f8b5398cb49c59e
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: d6d7acf1d5c73c59f2ce1e6d2b7f3f7354e21979
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499077"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251884"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurar serviços do Azure para uso com o Configuration Manager
 
@@ -41,7 +41,7 @@ Configure os seguintes serviços do Azure usando esse assistente:
 -   **Conector do Log Analytics**: [conecta ao Azure Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics). Sincronize dados de coleta para o Log Analytics.  
 
     > [!Note]  
-    > Este artigo refere-se ao *Conector do Log Analytics*, que antes era chamado de *Conector do OMS*. Não há diferença funcional. Para saber mais, veja [Gerenciamento do Azure - Monitoramento](https://docs.microsoft.com/azure/monitoring/#operations-management-suite).  
+    > Este artigo refere-se ao *Conector do Log Analytics*, que antes era chamado de *Conector do OMS*. Não há diferença funcional. Para saber mais, veja [Gerenciamento do Azure - Monitoramento](/azure/azure-monitor/terminology#log-analytics).  
 
 -   **Conector do Upgrade Readiness**: conecta ao [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics) do Windows Analytics. Exiba os dados de compatibilidade da atualização do cliente.  
 
@@ -86,7 +86,7 @@ Para obter mais informações sobre as permissões de aplicativo necessárias e 
 Para obter mais informações sobre os aplicativos do Azure, comece com os seguintes artigos:
 - [Autenticação e autorização no Serviço de Aplicativo do Azure](/azure/app-service/app-service-authentication-overview)
 - [Visão geral dos aplicativos Web](/azure/app-service-web/app-service-web-overview)
-- [Noções básicas do registro de um aplicativo no Azure AD](/azure/active-directory/develop/active-directory-authentication-scenarios#basics-of-registering-an-application-in-azure-ad)  
+- [Noções básicas do registro de um aplicativo no Azure AD](/azure/active-directory/develop/authentication-scenarios#authentication-basics-in-microsoft-identity-platform)  
 - [Registrar o aplicativo com o locatário do Azure Active Directory](/azure/active-directory/active-directory-app-registration)
 
 
@@ -267,7 +267,7 @@ O diagrama a seguir é um fluxo de dados conceitual para a interação entre o C
 
 3.  O site armazena dados sobre os objetos de usuário. Para obter mais informações, consulte [Descoberta de usuários do Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).  
 
-4.  O cliente do Configuration Manager solicita o token de usuário do Azure AD. O cliente faz a declaração usando a ID do aplicativo cliente do Azure AD e o aplicativo para servidores como o público-alvo. Para obter mais informações, consulte [Declarações em tokens de segurança do Azure AD](/azure/active-directory/develop/active-directory-authentication-scenarios#claims-in-azure-ad-security-tokens).  
+4.  O cliente do Configuration Manager solicita o token de usuário do Azure AD. O cliente faz a declaração usando a ID do aplicativo cliente do Azure AD e o aplicativo para servidores como o público-alvo. Para obter mais informações, consulte [Declarações em tokens de segurança do Azure AD](/azure/active-directory/develop/authentication-scenarios#claims-in-microsoft-identity-platform-security-tokens).  
 
 5.  O cliente se autentica no site apresentando o token do Azure AD ao gateway de gerenciamento de nuvem e/ou ao ponto de gerenciamento habilitado para HTTPS local.  
 

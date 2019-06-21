@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a41f144909ba946d3c3bc2f00a1573cad2c9b850
-ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
+ms.openlocfilehash: c15b387ec9f2048a923eb220b6c8e3e1fdccded8
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65933333"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286307"
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1612 do System Center Configuration Manager
 
@@ -93,7 +93,7 @@ Página **Geral**: As informações gerais a seguir são necessárias:
 
 Página **Configurações de sincronização**:   
 - **Configurações de dados:**
-  - **Grupos de replicação a serem sincronizados** – Selecione os grupos de dados que você deseja sincronizar. Para obter informações sobre os diferentes tipos de grupos de dados, consulte [Replicação de banco de dados](/sccm/core/servers/manage/data-transfers-between-sites#a-namebkmkdbrepa-database-replication) e **Exibições distribuídas** em [Transferências de dados entre sites](/sccm/core/servers/manage/data-transfers-between-sites).
+  - **Grupos de replicação a serem sincronizados** – Selecione os grupos de dados que você deseja sincronizar. Para obter informações sobre os diferentes tipos de grupos de dados, consulte [Replicação de banco de dados](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_dbrep) e **Exibições distribuídas** em [Transferências de dados entre sites](/sccm/core/servers/manage/data-transfers-between-sites).
   - **Tabelas incluídas na sincronização** – Especifique o nome de cada tabela adicional que você deseja sincronizar. Separe várias tabelas usando uma vírgula. Essas tabelas serão sincronizadas no banco de dados do site, além dos grupos de replicação que você selecionar.
   - **Tabelas excluídas da sincronização** ‑ Especifique o nome das tabelas individuais dos grupos de replicação que você sincronizar. As tabelas especificadas serão excluídas da sincronização. Separe várias tabelas usando uma vírgula.
 - **Configurações de sincronização:**
@@ -310,7 +310,7 @@ Há vários requisitos para habilitar a criação da política de usuário no Ga
 
 - O processo de integração do Azure AD deve ser concluído e o cliente precisa ser inicialmente conectado à rede corporativa para obter as informações de conexão.
 - Os clientes devem ser ambos ingressados no domínio (registrados no Active Directory) e no domínio da nuvem (registrado no Azure AD).
-- É necessário executar a [Descoberta de Usuários do Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#active-directory-user-discovery#active-directory-user-discovery).
+- É necessário executar a [Descoberta de Usuários do Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser).
 - Você deve modificar o cliente do Configuration Manager para permitir solicitações de política de usuário pela Internet e implantar a alteração para o cliente. Como essa alteração para o cliente ocorre *no dispositivo cliente*, ele pode ser implantado por meio do Gateway de Gerenciamento de Nuvem, mesmo se você não tiver concluído as alterações de configuração necessárias para a política de usuário.
 - O ponto de gerenciamento deve ser configurado para usar HTTPS para proteger o token na rede e deve ter o .Net 4.5 instalado.
 

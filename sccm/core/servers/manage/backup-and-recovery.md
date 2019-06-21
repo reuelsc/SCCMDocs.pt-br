@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aff3393dca29d558c62c0a508b8cbf6c98f9fbfa
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 243e38273488f72e3e5e693270b10d6865c3a422
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501231"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252248"
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Fazer backup de um site do Configuration Manager
 
@@ -60,7 +60,7 @@ Depois de restaurar o banco de dados do site, siga as etapas na instalação par
 -   Faz backup de arquivos e pastas específicas
 -   Faz backup da [pasta CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder)   
 
-Planeje executar a tarefa padrão de backup do site pelo menos a cada cinco dias. Esse agendamento ocorre porque o Configuration Manager usa um *Período de retenção do controle de alterações do SQL Server* de cinco dias. Para obter mais informações, veja [Período de retenção do controle de alterações do SQL Server](/sccm/protect/understand/recover-sites#bkmk_SQLretention).
+Planeje executar a tarefa padrão de backup do site pelo menos a cada cinco dias. Esse agendamento ocorre porque o Configuration Manager usa um *Período de retenção do controle de alterações do SQL Server* de cinco dias. Para obter mais informações, veja [Período de retenção do controle de alterações do SQL Server](/sccm/core/servers/manage/recover-sites#sql-server-change-tracking-retention-period).
 
 Para simplificar o processo de backup, crie um arquivo **AfterBackup.bat**. Esse script executa automaticamente ações pós-backup depois que a tarefa de backup é concluída com êxito. Use o arquivo AfterBackup.bat para arquivar o instantâneo de backup em um local seguro. Também é possível usar o arquivo AfterBackup.bat para copiar arquivos para a pasta de backup ou iniciar outras tarefas de backup.  
 

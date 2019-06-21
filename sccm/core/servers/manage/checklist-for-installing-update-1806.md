@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8d681dbd9996fb7eddbc2b37cf6af6a32401560
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 8923b380d5ee8de881e4921e9a7d5a7a680c25b0
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65497594"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252100"
 ---
 # <a name="checklist-for-installing-update-1806-for-configuration-manager"></a>Lista de verificação para instalar a atualização 1806 do Configuration Manager
 
@@ -34,7 +34,7 @@ Para obter a atualização da versão 1806, você precisa usar um ponto de conex
 
     -   Outro problema de download comum ocorre quando as configurações do servidor proxy impedem downloads de http://silverlight.dlservice.microsoft.com e http://download.microsoft.com.
 
-Para obter mais informações de como instalar atualizações, consulte [Atualizações e manutenção no console](/sccm/core/servers/manage/updates#a-namebkmkinconsolea-in-console-updates-and-servicing).
+Para obter mais informações de como instalar atualizações, consulte [Atualizações e manutenção no console](/sccm/core/servers/manage/updates#bkmk_inconsole).
 
 Para obter mais informações sobre as versões do branch atual, veja [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines).
 
@@ -154,7 +154,7 @@ Para obter mais informações, veja a seção **Executar o verificador de pré-r
 > Quando o verificador de pré-requisitos é executado, o processo atualiza alguns arquivos de origem do produto usados para tarefas de manutenção do site. Portanto, após executar o verificador de pré-requisitos, mas antes de instalar a atualização, se você precisa executar uma tarefa de manutenção de site, execute **Setupwpf.exe**  (Instalação do Configuration Manager) na pasta CD.Latest no servidor de sites.
 
 #### <a name="update-sites"></a>Atualizar sites   
-Agora você está pronto para iniciar a instalação da atualização para a sua hierarquia. Para saber mais sobre como instalar a atualização, veja [Instalação de atualizações no console](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates).
+Agora você está pronto para iniciar a instalação da atualização para a sua hierarquia. Para saber mais sobre como instalar a atualização, veja [Instalação de atualizações no console](/sccm/core/servers/manage/install-in-console-updates#bkmk_install).
 
 Você pode planejar a instalação da atualização fora do horário comercial normal. Determine quando o processo terá um efeito mínimo sobre as suas operações de negócios. Instalar a atualização e suas ações reinstala os componentes do site e as funções do sistema de sites.
 

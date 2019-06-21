@@ -12,12 +12,12 @@ ms.prod: configuration-manager
 ms.service: ''
 ms.technology: ''
 ms.assetid: ''
-ms.openlocfilehash: 3c02a9c05e2c7d24654684f122edcd3eb5a84e06
-ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
+ms.openlocfilehash: 94513445c8d1849f0304b304b7dd8672c1e50978
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834874"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67158289"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Tutorial: Habilitar o cogerenciamento para novos dispositivos baseados na Internet
 Com o cogerenciamento, você pode manter seus processos bem estabelecidos para usar o Configuration Manager para gerenciar PCs na sua organização. Ao mesmo tempo, você está investindo na nuvem com o uso do Intune para provisionamento moderno e segurança. 
@@ -450,5 +450,5 @@ Depois de concluir as etapas de configuração deste tutorial, incluindo a últi
 
 ## <a name="next-steps"></a>Próximas etapas
 - Verificar o status de dispositivos cogerenciados com o [painel de cogerenciamento](https://docs.microsoft.com/sccm/core/clients/manage/co-management-dashboard)
-- Usar o [Windows Autopilot]() para provisionar novos dispositivos
+- Usar o [Windows Autopilot](/sccm/comanage/quickstart-autopilot) para provisionar novos dispositivos
 - Usar o [acesso condicional](https://docs.microsoft.com/sccm/comanage/quickstart-conditional-access) e regras de conformidade do Intune para gerenciar o acesso do usuário aos recursos corporativos

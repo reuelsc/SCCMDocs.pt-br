@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88cc03de66847143336425dbc4b730703d15378c
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 1802c4f21939026f6775daecd9fe011d23ae7a38
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65493779"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159503"
 ---
 # <a name="manage-software-updates-in-updates-publisher"></a>Gerenciar atualizações de software no Updates Publisher
 
@@ -44,7 +44,7 @@ Uma nova cópia criada por você tem um status de **Não expirada**, mas, caso c
 ## <a name="edit-updates-and-bundles"></a>Editar atualizações e pacotes
 Você pode selecionar atualizações e pacotes que estão em seu repositório para modificá-los.
 
-No **Workspace de Atualizações**, selecione uma atualização ou pacote e selecione **Editar** na guia **Início** para abrir o assistente para edição. Cada atualização e pacote possui assistentes separados, porém bem relacionados que apresentam as mesmas opções que os assistentes [Criar Atualização](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard) ou [Criar Pacote](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-bundle-wizard).
+No **Workspace de Atualizações**, selecione uma atualização ou pacote e selecione **Editar** na guia **Início** para abrir o assistente para edição. Cada atualização e pacote possui assistentes separados, porém bem relacionados que apresentam as mesmas opções que os assistentes [Criar Atualização](/sccm/sum/tools/create-updates-with-updates-publisher#use-the-create-update-wizard) ou [Criar Pacote](/sccm/sum/tools/create-updates-with-updates-publisher#use-the-create-bundle-wizard).
 
 Durante a edição, você pode alterar todos os detalhes disponíveis sobre a atualização ou pacote para que possa ser usado em seu ambiente. Por exemplo, você pode editar as regras de aplicabilidade ou precedência ou alterar o idioma. Você também pode alterar o produto e o fornecedor para mover a atualização ou agrupar para uma pasta personalizada, a fim de agrupar as atualizações para seu próprio uso.
 
@@ -73,7 +73,7 @@ Ao atribuir atualizações a uma publicação:
 
     -   Use **Atribuir a atualização de software para uma nova publicação** quando você não tiver uma publicação adequada. Isso criará uma nova publicação com o nome especificado por você.
 
-Depois de atribuir atualizações a uma publicação, use o **Workspace de Publicação** para [publicar](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations) ou [exportar](/sccm/sum/tools/updates-publisher-publications#export-a-pubilcation) a publicação como um grupo.
+Depois de atribuir atualizações a uma publicação, use o **Workspace de Publicação** para [publicar](/sccm/sum/tools/updates-publisher-publications#publish-publications) ou [exportar](/sccm/sum/tools/updates-publisher-publications#export-a-publication) a publicação como um grupo.
 
 ## <a name="publish-updates-and-bundles-from-the-updates-workspace"></a>Publicar atualizações e pacotes do Workspace de Atualizações
 Quando você publica atualizações e pacotes, o Updates Publisher adiciona informações sobre essas atualizações e pacotes (metadados) e, possivelmente, os binários para as atualizações (conteúdo completo) para um servidor de atualização para implantação em dispositivos.
@@ -82,7 +82,7 @@ Antes de você ter a opção de publicar, é necessário configurar a opção [S
 
 Há duas maneiras de publicar pacotes e atualizações:
 -   Diretamente do Workspace de Atualizações. (Consulte o procedimento a seguir, *Para publicar atualizações e pacotes*.)
--   Como uma [publicação](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations) do Workspace de Publicações.  
+-   Como uma [publicação](/sccm/sum/tools/updates-publisher-publications#publish-publications) do Workspace de Publicações.  
 
 > [!NOTE]   
 > O Updates Publisher só pode publicar atualizações com 375 megabytes (MB) ou menos de tamanho.
@@ -99,7 +99,7 @@ Há duas maneiras de publicar pacotes e atualizações:
 Se a publicação falhar, você receberá um link para o arquivo UpdatesPublisher.log que pode fornecer mais informações.
 
 ## <a name="export-updates"></a>Exportar atualizações
-Você pode exportar atualizações e pacotes de seu repositório do Updates Publisher para criar um catálogo de atualizações personalizadas. Em seguida, você pode [adicionar](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e depois [importar](/sccm/sum/tools/updates-publisher-catalogs#mport-updates) esse catálogo para outra instância do Updates Publisher. (Você também pode [exportar atualizações como uma publicação](/sccm/sum/tools/updates-publisher-publications##export-a-publication).)
+Você pode exportar atualizações e pacotes de seu repositório do Updates Publisher para criar um catálogo de atualizações personalizadas. Em seguida, você pode [adicionar](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e depois [importar](/sccm/sum/tools/updates-publisher-catalogs#import-updates) esse catálogo para outra instância do Updates Publisher. (Você também pode [exportar atualizações como uma publicação](/sccm/sum/tools/updates-publisher-publications##export-a-publication).)
 
 Para exportar diretamente, acesse o **Workspace de Atualizações** > **Todas as Atualizações de Software** e selecione um ou mais pacotes e atualizações. Não é possível exportar uma pasta de fornecedor ou de produto, mas você pode selecionar uma pasta e, depois, selecionar as atualizações dessa pasta para exportação.
 
@@ -114,7 +114,7 @@ Acesse o **Workspace de Atualizações** > **Todas as Atualizações de Software
 
 -   Se a seleção contiver apenas atualizações ou pacotes que não foram publicados ou que expiraram, você receberá uma solicitação para confirmar a exclusão antes da remoção.
 
--   Se a seleção incluir uma atualização ou um pacote que tenha sido publicado e ainda não expirou, você receberá um aviso. Você deve [expirar](/sccm/sum/tools/updates-publisher-pubilcations#expire-or-reactivate-updates-and-bundles) essas atualizações e, em seguida, publicar essa alteração antes de excluí-las do repositório.  
+-   Se a seleção incluir uma atualização ou um pacote que tenha sido publicado e ainda não expirou, você receberá um aviso. Você deve [expirar](/sccm/sum/tools/updates-publisher-publications#expire-or-reactivate-updates-and-bundles) essas atualizações e, em seguida, publicar essa alteração antes de excluí-las do repositório.  
 
 Se você excluir uma atualização ou pacote de um fornecedor e, depois, importar novamente esse catálogo, essa atualização será restaurada para seu repositório.
 

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 97ea227d1e64bf4e264be6429457aba99ca4833b
-ms.sourcegitcommit: 3f43fa8462bf39b2c18b90a11a384d199c2822d8
+ms.openlocfilehash: 21ed29204a5ed41e54a12a1294bc9582d3e6eaa1
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66403416"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252319"
 ---
 # <a name="install-and-configure-distribution-points-in-configuration-manager"></a>Instalar e configurar pontos de distribuição no Configuration Manager
 
@@ -481,11 +481,11 @@ Para obter mais informações, confira [Validar o conteúdo](/sccm/core/servers/
 
 Gerencie os grupos de limites aos quais você deseja atribuir esse ponto de distribuição. Adicione o ponto de distribuição a pelo menos um grupo de limites. Durante a implantação do conteúdo, os clientes devem estar em um grupo de limites associado a um ponto de distribuição para usá-lo como local de origem do conteúdo.
 
-Configure as *relações* do grupo de limites que definem quanto e em quais grupos de limites um cliente pode fazer fallback para encontrar o conteúdo. Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
+Configure as *relações* do grupo de limites que definem quanto e em quais grupos de limites um cliente pode fazer fallback para encontrar o conteúdo. Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups).
 
 Escolha **Adicionar** e selecione um grupo de limites existente na lista.
 
-Para criar um grupo de limites para esse ponto de distribuição, escolha **Criar**. Para obter mais informações de como criar e configurar um grupo de limites, confira [Procedimentos para grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups#procedures-for-boundary-groups).
+Para criar um grupo de limites para esse ponto de distribuição, escolha **Criar**. Para obter mais informações de como criar e configurar um grupo de limites, confira [Procedimentos para grupos de limites](/sccm/core/servers/deploy/configure/boundary-group-procedures).
 
 Quando você estiver editando as propriedades de um ponto de distribuição já instalado, gerencie a opção para **Habilitar para distribuição sob demanda**. Essa opção permite que o Configuration Manager distribua o conteúdo automaticamente para esse servidor quando um cliente o solicita. Para obter mais informações, confira [Distribuição de conteúdo sob demanda](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#on-demand-content-distribution).
 

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e6e603210342f5acc3e66328fca95e964dde2bf
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 9d35558da6b25bba16b84c931b0254436ac3dd1e
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65495508"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285541"
 ---
 # <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Novidades da versão 1802 do System Center Configuration Manager
 
@@ -35,7 +35,7 @@ As atualizações adicionais a seguir também já estão disponíveis neste lan�
 >  Saiba mais sobre:    
 >   - [Instalação de novos sites](/sccm/core/servers/deploy/install/installing-sites)  
 >   - [Instalação de atualizações em sites](/sccm/core/servers/manage/updates)  
->   - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions)  
+>   - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines)
 
 As seções a seguir fornecem detalhes sobre as alterações e as novas funcionalidades introduzidas na versão 1802 do Configuration Manager.  
 
@@ -135,7 +135,7 @@ Ao criar uma instância do [gateway de gerenciamento de nuvem](/sccm/core/client
 
 ### <a name="configure-hardware-inventory-to-collect-strings-larger-than-255-characters"></a>Configurar o inventário de hardware para coletar cadeias de caracteres maiores que 255 caracteres
 <!-- 1357389 -->
-Configure o tamanho de cadeias de caracteres para serem maiores que 255 caracteres nas propriedades de inventário de hardware. Essa alteração se aplica apenas às classes recém-adicionadas e às propriedades de inventário de hardware que não são chaves. Para obter detalhes, consulte o artigo [Estender o inventário de hardware](/sccm/core/clients/manage/inventory/extend-hardware-inventory#BKMK_GreaterThan255). 
+Configure o tamanho de cadeias de caracteres para serem maiores que 255 caracteres nas propriedades de inventário de hardware. Essa alteração se aplica apenas às classes recém-adicionadas e às propriedades de inventário de hardware que não são chaves. Para obter detalhes, consulte o artigo [Estender o inventário de hardware](/sccm/core/clients/manage/inventory/extend-hardware-inventory#bkmk_GreaterThan255). 
 
  ### <a name="deprecation-announcement-for-linux-and-unix-client-support"></a>Comunicado de reprovação do suporte aos clientes Linux e Unix
  <!--510139-->
@@ -162,7 +162,7 @@ A partir desta versão, o Silverlight deixa de ser instalado nos dispositivos cl
  
 ### <a name="co-management-dashboard-in-system-center-configuration-manager"></a>Painel de cogerenciamento no System Center Configuration Manager
 <!--1356648-->
-A partir desta versão, você pode exibir um painel com informações sobre o cogerenciamento. O painel ajuda você a analisar os computadores cogerenciados no ambiente. Os gráficos podem ajudar a identificar os dispositivos que podem precisar de atenção. Para obter detalhes, consulte o artigo [Painel de cogerenciamento](/sccm/core/clients/manage/client-management-dashboard). 
+A partir desta versão, você pode exibir um painel com informações sobre o cogerenciamento. O painel ajuda você a analisar os computadores cogerenciados no ambiente. Os gráficos podem ajudar a identificar os dispositivos que podem precisar de atenção. Para obter detalhes, consulte o artigo [Painel de cogerenciamento](/sccm/comanage/how-to-monitor#co-management-dashboard). 
 
 
 ## <a name="compliance-settings"></a>Configurações de conformidade
@@ -177,15 +177,15 @@ Para os clientes que utilizam o navegador da Web [Microsoft Edge](https://techne
 
 ### <a name="allow-user-interaction-when-installing-an-application"></a>Permitir a interação do usuário ao instalar um aplicativo
 <!-- 1356976 -->
-Permita que um usuário final interaja com uma instalação de aplicativo durante a execução da sequência de tarefas. Por exemplo, execute um processo de instalação que solicite que o usuário final escolha entre várias opções. Alguns instaladores de aplicativos não podem silenciar os prompts de usuário ou o processo de instalação pode exigir valores de configuração específicos conhecidos apenas pelo usuário. Esse recurso permite que você manipule esses cenários de instalação. Para obter mais informações, consulte [Especificar as opções de experiência do usuário para o tipo de implantação](/sccm/apps/deploy-use/create-applications#specify-user-experience-options-for-the-deployment-type).
+Permita que um usuário final interaja com uma instalação de aplicativo durante a execução da sequência de tarefas. Por exemplo, execute um processo de instalação que solicite que o usuário final escolha entre várias opções. Alguns instaladores de aplicativos não podem silenciar os prompts de usuário ou o processo de instalação pode exigir valores de configuração específicos conhecidos apenas pelo usuário. Esse recurso permite que você manipule esses cenários de instalação. Para obter mais informações, consulte [Especificar as opções de experiência do usuário para o tipo de implantação](/sccm/apps/deploy-use/create-applications#bkmk_dt-ux).
 
 ### <a name="do-not-automatically-upgrade-superseded-applications"></a>Não fazer upgrade automaticamente de aplicativos substituídos
 <!-- 1351266 -->
-Configure uma implantação de aplicativo para não atualizar automaticamente qualquer versão substituída. Agora, ao criar a implantação na página **Configurações de Implantação** do **Assistente de Implantação de Software**, para uma finalidade de instalação **Disponível**, é possível habilitar ou desabilitar a opção **Fazer upgrade automático das versões substituídas deste aplicativo**. Para obter mais informações, consulte [Especificar as configurações de implantação](/sccm/apps/deploy-use/deploy-applications#specify-deployment-settings).
+Configure uma implantação de aplicativo para não atualizar automaticamente qualquer versão substituída. Agora, ao criar a implantação na página **Configurações de Implantação** do **Assistente de Implantação de Software**, para uma finalidade de instalação **Disponível**, é possível habilitar ou desabilitar a opção **Fazer upgrade automático das versões substituídas deste aplicativo**. Para obter mais informações, consulte [Especificar as configurações de implantação](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy-settings).
 
 ### <a name="approve-application-requests-for-users-per-device"></a>Aprovar pedidos de aplicativos para usuários por dispositivo
 <!-- 1357015 -->
-Começando nesta versão, quando um usuário solicita um aplicativo que requer aprovação, o nome específico do dispositivo agora é parte da solicitação. Se o administrador aprova o pedido, o usuário só poderá instalar o aplicativo nesse dispositivo. O usuário deve enviar outro pedido para instalar o aplicativo em outro dispositivo. Para obter mais informações, consulte [Especificar as configurações de implantação](/sccm/apps/deploy-use/deploy-applications#specify-deployment-settings).
+Começando nesta versão, quando um usuário solicita um aplicativo que requer aprovação, o nome específico do dispositivo agora é parte da solicitação. Se o administrador aprova o pedido, o usuário só poderá instalar o aplicativo nesse dispositivo. O usuário deve enviar outro pedido para instalar o aplicativo em outro dispositivo. Para obter mais informações, consulte [Especificar as configurações de implantação](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy-settings).
 
  > [!Note]  
  > Esse é um recurso opcional. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).  
@@ -200,7 +200,7 @@ Começando nesta versão, quando um usuário solicita um aplicativo que requer a
 
 ### <a name="windows-10-in-place-upgrade-task-sequence-via-cloud-management-gateway"></a>Sequência de tarefas de upgrade in-loco do Windows 10 por meio do gateway de gerenciamento de nuvem
 <!-- 1357149 -->
-A [sequência de tarefas de upgrade in-loco](/sccm/osd/deploy-use/upgrade-windows-to-the-latest-version) do Windows 10 agora oferece suporte à implantação de clientes baseados na Internet gerenciados por meio do [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/plan-cloud-management-gateway). Essa habilidade permite que usuários remotos façam upgrade com mais facilidade para o Windows 10 sem precisar se conectar à rede corporativa. Para obter mais informações, consulte [Deploy a task sequence](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#deploy-windows-10-in-place-upgrade-via-cmg).
+A [sequência de tarefas de upgrade in-loco](/sccm/osd/deploy-use/upgrade-windows-to-the-latest-version) do Windows 10 agora oferece suporte à implantação de clientes baseados na Internet gerenciados por meio do [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/plan-cloud-management-gateway). Essa habilidade permite que usuários remotos façam upgrade com mais facilidade para o Windows 10 sem precisar se conectar à rede corporativa. Para obter mais informações, consulte [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).
 
 ### <a name="improvements-to-windows-10-in-place-upgrade-task-sequence"></a>Melhorias na sequência de tarefas de upgrade in-loco do Windows 10
 <!-- 1357425 -->
@@ -240,11 +240,11 @@ Se você implantar aplicativos como disponíveis para usuários, eles agora pode
 
 ### <a name="hide-installed-applications-in-software-center"></a>Ocultar os aplicativos instalados no Centro de Software
 <!--1357592-->
-Os aplicativos instalados agora podem ser ocultados no Centro de Software. Os aplicativos que já estão instalados não serão mais exibidos na guia Aplicativos quando essa opção estiver habilitada nas configurações do cliente. Essa opção é definida como o padrão quando você instala ou atualiza para o Configuration Manager 1802.  Os aplicativos instalados ainda ficam disponíveis para exame na guia de status da instalação. A seção [Ocultar os aplicativos instalados no Centro de Software](/sccm/core/clients/deploy/about-client-settings#BKMK_HideInstalled) traz mais detalhes.   
+Os aplicativos instalados agora podem ser ocultados no Centro de Software. Os aplicativos que já estão instalados não serão mais exibidos na guia Aplicativos quando essa opção estiver habilitada nas configurações do cliente. Essa opção é definida como o padrão quando você instala ou atualiza para o Configuration Manager 1802.  Os aplicativos instalados ainda ficam disponíveis para exame na guia de status da instalação. A seção [Ocultar os aplicativos instalados no Centro de Software](/sccm/core/clients/deploy/about-client-settings#bkmk_HideInstalled) traz mais detalhes.   
 
 ### <a name="hide-unapproved-applications-in-software-center"></a>Ocultar os aplicativos não aprovados no Centro de Software
  <!--1355146-->
-Quando essa opção de configuração é habilitada, os aplicativos disponíveis para o usuário que exigem aprovação são ocultos no Centro de Software.  A seção [Ocultar os aplicativos não aprovados no Centro de Software](/sccm/core/clients/deploy/about-client-settings#BKMK_HideUnapproved) traz mais detalhes.  
+Quando essa opção de configuração é habilitada, os aplicativos disponíveis para o usuário que exigem aprovação são ocultos no Centro de Software.  A seção [Ocultar os aplicativos não aprovados no Centro de Software](/sccm/core/clients/deploy/about-client-settings#bkmk_HideUnapproved) traz mais detalhes.  
 
 ### <a name="software-center-shows-user-additional-compliance-information"></a>O Centro de Software mostra mais informações de conformidade do usuário
 <!-- 1235616 -->

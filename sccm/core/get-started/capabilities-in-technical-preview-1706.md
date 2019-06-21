@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11ad5a0bef004b778ba431c9a2da30f51eafc443
-ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
+ms.openlocfilehash: bbc26ed19de04fd3000d6c3ca713bb2a705ce8ea
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65933285"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286218"
 ---
 # <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funcionalidades na Visualização Técnica 1706 do System Center Configuration Manager
 
@@ -258,10 +258,10 @@ A partir desta versão, use o Assistente dos Serviços do Azure para configurar 
 Embora o método para configurar a conexão tenha mudado, os pré-requisitos de conexão e do modo como você usa o Upgrade Readiness permanecem inalterados.   
 
 ### <a name="prerequisites-for-upgrade-readiness"></a>Pré-requisitos para o Upgrade Readiness
-Os pré-requisitos para uma [conexão com o Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics#create-a-connection-to-upgrade-readiness) são os mesmos detalhados para o Branch Atual do Configuration Manager. Repetimos eles aqui para sua conveniência:  
+Os pré-requisitos para uma [conexão com o Upgrade Readiness](/sccm/core/clients/manage/upgrade-readiness#connect-configuration-manager-to-upgrade-readiness) são os mesmos detalhados para o Branch Atual do Configuration Manager. Repetimos eles aqui para sua conveniência:  
 
 **Pré-requisitos**
--   Para adicionar a conexão, seu ambiente do Configuration Manager deve configurar primeiro um [ponto de conexão de serviço](/sccm/core/servers/deploy/configure/about-the-service-connection-point) em um [modo online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#a-namebkmkmodesa-modes-of-operation). Quando você adiciona a conexão ao seu ambiente, ele também instalará o Microsoft Monitoring Agent no computador que executa essa função de sistema de sites.
+-   Para adicionar a conexão, seu ambiente do Configuration Manager deve configurar primeiro um [ponto de conexão de serviço](/sccm/core/servers/deploy/configure/about-the-service-connection-point) em um [modo online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_modes). Quando você adiciona a conexão ao seu ambiente, ele também instalará o Microsoft Monitoring Agent no computador que executa essa função de sistema de sites.
 -   Registre o Configuration Manager como uma ferramenta de gerenciamento "Aplicativo Web e/ou API Web" e obtenha a [ID do cliente desse registro](https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/).
 -   Crie uma chave de cliente para a ferramenta de gerenciamento registrada no Azure Active Directory.
 -   No Portal de Gerenciamento do Azure, forneça o aplicativo Web registrado com permissão para acessar o OMS, conforme descrito em [Fornecer ao Configuration Manager as permissões para OMS](https://azure.microsoft.com/documentation/articles/log-analytics-sccm/#provide-configuration-manager-with-permissions-to-oms).
@@ -410,7 +410,7 @@ Todos os pontos de atualização de software devem executar o Windows Server 201
 ### <a name="try-it-out"></a>Experimente!
 Tente concluir as tarefas a seguir e, depois, envie-nos **Comentários** usando a guia **Início** da Faixa de Opções para nos contar foi:
 1. Habilite a sincronização para os drivers do Microsoft Surface. Use o procedimento em [Configurar classificação e produtos](/sccm/sum/get-started/configure-classifications-and-products) e selecione **Incluir drivers e atualizações de firmware do Microsoft Surface** na guia **Classificações** para habilitar os drivers do Surface.
-2. [Sincronizar os drivers do Microsoft Surface](/sccm/sum/get-started/synchronize-software-updates.md).
+2. [Sincronizar os drivers do Microsoft Surface](/sccm/sum/get-started/synchronize-software-updates).
 3. [Implantar os drivers sincronizados do Microsoft Surface](/sccm/sum/deploy-use/deploy-software-updates)
 
 ## <a name="configure-windows-update-for-business-deferral-policies"></a>Configurar as políticas de adiamento do Windows Update for Business

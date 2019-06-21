@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f14d245ef6bed5749ace29adae6e20d18574905
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: f524096334d50a3a01ebf79436c32fdf732ca088
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65497455"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252049"
 ---
 # <a name="support-for-configuration-manager-current-branch-versions"></a>Suporte para versões do branch atual do Configuration Manager
 
@@ -43,4 +43,4 @@ Figura 1. Exemplo de sobreposição de ciclo de versão para o suporte à manute
 
 Para obter uma lista das versões do branch atual, confira [Detalhes da versão](/sccm/core/servers/manage/updates#version-details).
 
-Para obter mais informações sobre números de versão e disponibilidade, como uma atualização no console ou como uma linha de base, confira [Versões de linha de base e de atualização](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions).
+Para obter mais informações sobre números de versão e disponibilidade, como uma atualização no console ou como uma linha de base, confira [Versões de linha de base e de atualização](/sccm/core/servers/manage/updates#bkmk_Baselines).

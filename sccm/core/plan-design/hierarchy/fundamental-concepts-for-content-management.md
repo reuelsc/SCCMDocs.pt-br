@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: abb8e846598a9ae0d69eb1b134911ec83006b966
-ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
+ms.openlocfilehash: bf0b57ad1753d797b163b0016517cdad09459013
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834896"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251630"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Conceitos fundamentais para o gerenciamento de conteúdo no Configuration Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "66834896"
 O Configuration Manager dá suporte a um sistema robusto de ferramentas e opções para gerenciar o conteúdo de software. As implantações de software, como aplicativos, pacotes, atualizações de software e implantações de sistema operacional, precisam de conteúdo. O Configuration Manager armazena o conteúdo em servidores do site e pontos de distribuição. Esse conteúdo exige uma grande quantidade de largura de banda da rede quando está sendo transferido entre locais. Para planejar e usar a infraestrutura de gerenciamento de conteúdo com eficiência, primeiro entenda as opções e configurações disponíveis. Em seguida, considere como usá-las para que elas sejam ajustadas da melhor forma às suas necessidades de implantação de conteúdo e ambiente de rede.  
 
 > [!TIP]    
-> Para obter mais informações sobre o processo de distribuição de conteúdo e para encontrar ajuda no diagnóstico e na resolução de problemas gerais de distribuição de conteúdo, consulte [Noções básicas e solução de problemas de distribuição de conteúdo no Microsoft Configuration Manager](https://support.microsoft.com/help/4000401/content-distribution-in-mcm).
+> Para obter mais informações sobre o processo de distribuição de conteúdo e para encontrar ajuda no diagnóstico e na resolução de problemas gerais de distribuição de conteúdo, consulte [Noções básicas e solução de problemas de distribuição de conteúdo no Microsoft Configuration Manager ](https://support.microsoft.com/help/4000401/content-distribution-in-mcm).
 
 Os tópicos a seguir são os principais conceitos do gerenciamento de conteúdo. Quando um conceito requer informações adicionais ou complexas, são fornecidos links para direcioná-lo a esses detalhes.
 
@@ -234,7 +234,7 @@ Os clientes que não conseguem encontrar o conteúdo em um ponto de distribuiç�
 
 Os conceitos de pontos de distribuição preferenciais não são mais usados e as configurações para **Permitir fallback para locais de origem de conteúdo** não estão mais disponíveis ou nem são impostas.
 
-Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
+Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups).
 
 
 
@@ -254,7 +254,7 @@ Para obter mais informações, consulte [Gerenciar largura de banda de rede](/sc
 
 Velocidades de conexão de rede que definem um ponto de distribuição como **Rápido** ou **Lento** não são mais usadas. Em vez disso, cada sistema de sites associado a um grupo de limites é tratado da mesma forma.
 
-Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
+Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups).
 
 
 
@@ -267,7 +267,7 @@ Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/d
 
 -   Embora isso acione o Configuration Manager para distribuir automaticamente o conteúdo para os pontos de distribuição preferenciais daqueles clientes, o cliente pode obter o conteúdo de outros pontos de distribuição antes dos pontos de distribuição preferenciais para o cliente receber a implantação. Quando esse comportamento ocorrer, o conteúdo estará presente no ponto de distribuição para uso pelo próximo cliente que busca essa implantação.  
 
-Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
+Para obter mais informações, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups).
 
 
 

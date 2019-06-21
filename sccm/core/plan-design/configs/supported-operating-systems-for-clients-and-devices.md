@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af9d8c16033a22c828f014dfd4bad771851c08de
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: c6b47c99199458c902f1f56ccc3d5007dfd126eb
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499332"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251536"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versões de sistema operacional compatíveis com clientes e dispositivos para o Configuration Manager
 
@@ -94,7 +94,7 @@ As versões de canal semestral do Windows Server são as instalações do Server
  O Configuration Manager testa e oferece suporte às edições do Windows Server Datacenter, mas não é certificado oficialmente para o Windows Server. O suporte de hotfixes do Configuration Manager não é oferecido para problemas específicos do Windows Server Datacenter Edition. Para obter mais informações sobre o programa de certificação do Windows Server, consulte [Catálogo do Windows Server](https://www.windowsservercatalog.com/). 
 
 #### <a name="bkmk_note2"></a> Observação 2
- Para oferecer suporte à [instalação do cliente por push](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation), adicione o serviço Servidor de Arquivos da função de servidor Serviços de Arquivo e Armazenamento. Para obter informações sobre como instalar recursos do Windows em um Server Core, consulte [Instalar funções, serviços de função e recursos, usando os cmdlets do Windows PowerShell](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#BKMK_installwps).  
+ Para oferecer suporte à [instalação do cliente por push](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation), adicione o serviço Servidor de Arquivos da função de servidor Serviços de Arquivo e Armazenamento. Para obter informações sobre como instalar recursos do Windows em um Server Core, consulte [Instalar funções, serviços de função e recursos, usando os cmdlets do Windows PowerShell](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#install-roles-role-services-and-features-by-using-windows-powershell-cmdlets).  
 
 #### <a name="bkmk_note3"></a> Observação 3
  O novo aplicativo do Centro de Software não conta com suporte em qualquer versão do Windows Server Core.<!--SCCMDocs issue 683-->

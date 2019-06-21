@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04963f6c565a9cb83655416dd706d5dd9055a29b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 3279ba7cd78ca6fc10ddb8662ac816679d01d7cf
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499910"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194678"
 ---
 # <a name="enable-third-party-updates"></a>Habilitar atualizações de terceiros 
 
@@ -90,7 +90,7 @@ Se você precisar configurar manualmente o certificado, por exemplo, houver nece
 
 
 ## <a name="enable-third-party-updates-on-the-clients"></a>Habilite atualizações de terceiros nos clientes
-Habilite atualizações de terceiros em clientes nas configurações do cliente. A configuração define a política de agente do Windows Update para [Permitir atualizações assinadas para um local do serviço Microsoft Update na intranet](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates#BKMK_comp3). Essa configuração do cliente também instala o certificado de autenticação do WSUS para o repositório Fornecedores Confiáveis no cliente. O registro em log do gerenciamento de certificado é visto em `updatesdeployment.log` nos clientes.  Execute estas etapas para cada configuração personalizada do cliente que você deseja usar para atualizações de terceiros. Para obter mais informações, leia o artigo [Sobre as configurações do cliente](/sccm/core/clients/deploy/about-client-settings#Enable-third-party-software-updates).
+Habilite atualizações de terceiros em clientes nas configurações do cliente. A configuração define a política de agente do Windows Update para [Permitir atualizações assinadas para um local do serviço Microsoft Update na intranet](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates#allow-signed-updates-from-an-intranet-microsoft-update-service-location). Essa configuração do cliente também instala o certificado de autenticação do WSUS para o repositório Fornecedores Confiáveis no cliente. O registro em log do gerenciamento de certificado é visto em `updatesdeployment.log` nos clientes.  Execute estas etapas para cada configuração personalizada do cliente que você deseja usar para atualizações de terceiros. Para obter mais informações, leia o artigo [Sobre as configurações do cliente](/sccm/core/clients/deploy/about-client-settings#enable-third-party-software-updates).
 
 1. No console do Configuration Manager, vá até o workspace **Administração** e selecione o nó **Configurações do Cliente**.
 2. Selecione uma configuração personalizada de cliente existente ou crie uma nova. 

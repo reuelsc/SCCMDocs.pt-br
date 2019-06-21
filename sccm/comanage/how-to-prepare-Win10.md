@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31779b3588617816df4309461ed7715b20b0abd4
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: 5600743af8acc0da121454aef2d90167c3ded5fa
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "57558024"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286617"
 ---
 # <a name="how-to-prepare-internet-based-devices-for-co-management"></a>Como preparar dispositivos baseados na Internet para o cogerenciamento
 
@@ -41,7 +41,7 @@ A partir da versão 1802, use o Configuration Manager para coletar e relatar as 
 
 2. Execute o relatório, **Informações do dispositivo do Windows AutoPilot** e veja os resultados.  
 
-3. No visualizador de relatórios, selecione o ícone **Exportar** e escolha a opção **CSV (delimitado por vírgulas)**.  
+3. No visualizador de relatórios, selecione o ícone **Exportar** e escolha a opção **CSV (delimitado por vírgulas)** .  
 
 4. Depois de salvar o arquivo, faça o upload dos dados para a Microsoft Store para Empresas e Educação.  
 
@@ -88,7 +88,7 @@ A partir da versão 1806, são necessárias menos propriedades de linha de coman
 - Se você usar seu próprio certificado SSL PKI e sua CRL não for publicada na Internet, será necessário o seguinte parâmetro:  
     - /noCRLCheck  
     
-     Para saber mais, confira [Planejamento de CRLs](/sccm/core/plan-design/security/plan-for-security#-plan-for-the-site-server-signing-certificate-self-signed)  
+     Para saber mais, confira [Planejamento de CRLs](/sccm/core/plan-design/security/plan-for-security#BKMK_PlanningForCRLs)  
 
 Começando na versão 1810, o site publica informações adicionais do Microsoft Azure AD no Gateway de Gerenciamento de Nuvem. Um cliente associado ao Azure AD obtém essas informações do CMG durante o processo ccmsetup, usando o mesmo locatário ao qual ele está associado. Esse comportamento simplifica ainda mais o registro de dispositivos para o cogerenciamento em um ambiente com mais de um locatário do Azure AD. Agora as duas únicas propriedades necessárias do ccmsetup são **CCMHOSTNAME** e **SMSSiteCode**.<!--3607731-->
 
@@ -98,7 +98,7 @@ Começando na versão 1810, o site publica informações adicionais do Microsoft
 O exemplo a seguir inclui todas essas propriedades:   
 `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver SMSMP=https://mp1.contoso.com`
 
-Para obter mais informações, confira [Propriedades de instalação do cliente](/sccm/core/clients/deploy/about-client-installation-properties).
+Para obter mais informações, consulte [Propriedades de instalação do cliente](/sccm/core/clients/deploy/about-client-installation-properties).
 
 
 ### <a name="create-the-app-in-intune"></a>Criar o aplicativo no Intune

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3ac15d0039377d4635e531052abcec72503b1c4
-ms.sourcegitcommit: d1df13fc95a1f1540177c294555d9be26161b9cb
+ms.openlocfilehash: 67c7c84850d22d7f73a745c61b0c1cb577088f83
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974179"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251687"
 ---
 # <a name="support-for-windows-10-in-configuration-manager"></a>Suporte para Windows 10 no Configuration Manager  
 
@@ -30,7 +30,7 @@ Saiba mais sobre as versões do Windows 10 compatíveis com o Configuration Mana
 > [!Tip]
 > Há suporte para builds do Windows Server como um cliente da mesma maneira que com a versão do Windows 10 associada. Por exemplo, o Windows Server 2016 tem a merma versão de build do Windows 10 LTSB 2016 e o Windows Server versão 1803 tem a mesma versão de build do Windows 10 versão 1803.
 >
-> Para obter mais informações sobre o Windows Server como um sistema de sites, confira [Sistemas operacionais com suporte para servidores de sistema de sites do Configuration Manager](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers#the-server-core-installation-of-windows-server-version-1803).
+> Para obter mais informações sobre o Windows Server como um sistema de sites, confira [Sistemas operacionais com suporte para servidores de sistema de sites do Configuration Manager](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers#bkmk_core).
 
 
 
@@ -61,7 +61,7 @@ A tabela a seguir enumera as versões do Windows 10 que você pode usar, como cl
 | 1709   <!--04/14/2020-->   | ![Com suporte](media/green_check.png) | ![Com suporte](media/green_check.png) | ![Com suporte](media/green_check.png) | ![Com suporte](media/green_check.png) | ![Com suporte](media/green_check.png) |
 | 1803   <!--11/10/2020-->   | ![Sem suporte](media/Red_X.png) | ![Com suporte](media/green_check.png) | ![Com suporte](media/green_check.png) | ![Com suporte](media/green_check.png) | ![Com suporte](media/green_check.png) |
 | 1809   <!--05/11/2021-->   | ![Sem suporte](media/Red_X.png) | ![Sem suporte](media/Red_X.png) | ![Com suporte](media/green_check.png) | ![Com suporte](media/green_check.png) | ![Com suporte](media/green_check.png) |
-| 1.903   <!--TBD-->   | ![Sem suporte](media/Red_X.png) | ![Sem suporte](media/Red_X.png) | ![Sem suporte](media/Red_X.png) | ![Sem suporte](media/Red_X.png) | ![Com suporte](media/green_check.png) |
+| 1\.903   <!--TBD-->   | ![Sem suporte](media/Red_X.png) | ![Sem suporte](media/Red_X.png) | ![Sem suporte](media/Red_X.png) | ![Sem suporte](media/Red_X.png) | ![Com suporte](media/green_check.png) |
 
 <!-- lifecycle reference: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet -->
 

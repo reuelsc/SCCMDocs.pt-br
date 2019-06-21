@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 102890f9e4b96328f117779ba63e9c72bf8f5d15
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 9f49955fed92061fb856a5ff49203f1fa6c9d186
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67158949"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285639"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Tutorial: Implantar o Windows 10 para piloto
 
@@ -221,6 +221,9 @@ Instale o pacote de cumulativo de atualizações do Configuration Manager versã
 8. Conclua o assistente.  
 
 O Configuration Manager cria uma política de configurações para configurar dispositivos na coleção de destino. Esta política inclui as configurações de dados de diagnóstico para habilitar dispositivos para enviar dados à Microsoft. Por padrão, clientes atualizam a política a cada hora. Depois de receber as novas configurações, pode ser mais várias horas, antes que os dados estão disponíveis na área de trabalho de análise.
+
+> [!Note]  
+> Para obter mais informações sobre essas configurações, consulte [configurações do Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).  
 
 Monitore a configuração de seus dispositivos para análise de área de trabalho. No console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, expanda o **área de trabalho de análise de manutenção** nó e selecione o **integridade de Conexão** Painel de controle.  
 

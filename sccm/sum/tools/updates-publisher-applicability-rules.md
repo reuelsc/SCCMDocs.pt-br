@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4b289daa6f0f76c1d8e71879050bdfb6f5de679
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 649c0a134f7ebc77c214801d30720f75b80d34ee
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496487"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159452"
 ---
 # <a name="manage-applicability-rules-in-updates-publisher"></a>Gerenciar regras de aplicabilidade para o Updates Publisher
 
@@ -48,7 +48,7 @@ Você pode criar regras em dois locais no Updates Publisher:
 -   Você também pode criar novas regras no momento da criação ou edição de uma atualização. As regras criadas dessa forma não são salvas para uso futuro.
 
 ## <a name="create-applicability-rule"></a>Criar uma regra de aplicabilidade
-As informações a seguir são semelhantes à criação de regras no [Assistente para Criar Atualizar](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard). Mas, ao contrário do assistente, você tem a opção de salvar seus conjuntos de regras para uso futuro.
+As informações a seguir são semelhantes à criação de regras no [Assistente para Criar Atualizar](/sccm/sum/tools/create-updates-with-updates-publisher#use-the-create-update-wizard). Mas, ao contrário do assistente, você tem a opção de salvar seus conjuntos de regras para uso futuro.
 
 1. No **Workspace de Regras**, escolha **Criar** para abrir o assistente para **Criar Regra**.
 
@@ -82,7 +82,7 @@ O assistente para **Editar Regra** exibe as regras atuais para o conjunto de reg
 
 Depois de fazer as alterações, escolha **OK** para salvar as alterações e fechar o assistente.
 
-Para obter mais detalhes sobre como usar o assistente de regras, veja a **Etapa 7**, a página de aplicabilidade, do [assistente para Criar Atualização](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard).
+Para obter mais detalhes sobre como usar o assistente de regras, veja a **Etapa 7**, a página de aplicabilidade, do [assistente para Criar Atualização](/sccm/sum/tools/create-updates-with-updates-publisher#use-the-create-update-wizard).
 
 ## <a name="delete-applicability-rules"></a>Excluir as regras de aplicabilidade
 Para excluir uma regra de aplicabilidade salva, no **Workspace de Regras** selecione qualquer regra ou conjunto de regras na lista **Minhas regras salvas** e escolha **Excluir** na faixa de opções. Isso remove a regra salva ou o conjunto de regras do Updates Publisher.

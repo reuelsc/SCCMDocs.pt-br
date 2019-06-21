@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 045a1daef8da0863ed7957ce4c9d3d48cfacca64
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 535feb67e700acd5b799c696aa366343581e70fd
+ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496187"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67145733"
 ---
 # <a name="manage-certificates-and-security-for-updates-publisher"></a>Gerenciar certificados e segurança para o Updates Publisher
 
@@ -36,7 +36,7 @@ O procedimento a seguir é um dos vários métodos possíveis para adicionar o c
 
 3.  Selecione **Outro computador**, digite o nome do servidor de atualização ou clique em **Procurar** para localizar o computador do servidor de atualização, clique em **Concluir**, em **Fechar** e clique em **OK**.
 
-4.  Expanda **Certificados (*nome do servidor de atualização*)**, expanda **WSUS** e, em seguida, clique em **Certificados**.
+4.  Expanda **Certificados (*nome do servidor de atualização*)** , expanda **WSUS** e, em seguida, clique em **Certificados**.
 
 5.  No painel de resultados, clique com o botão direito no certificado desejado, clique em **Todas as Tarefas** e clique em **Exportar**.
 
@@ -46,7 +46,7 @@ O procedimento a seguir é um dos vários métodos possíveis para adicionar o c
 
 8.  Se um certificado autoassinado for usado, como **Editores WSUS Autoassinados**, clique com botão direito em **Autoridades de Certificação Raiz Confiáveis**, clique em **Todas as Tarefas** e, em seguida, clique em **Importar**. Conclua o Assistente para Importar Certificados usando o arquivo exportado na etapa 6.
 
-9.  Clique com o botão direito do mouse em **Certificados (*nome do servidor de atualização*)**, clique em **Conectar a outro computador**, insira o nome do computador do Updates Publisher e clique em **OK**.
+9.  Clique com o botão direito do mouse em **Certificados (*nome do servidor de atualização*)** , clique em **Conectar a outro computador**, insira o nome do computador do Updates Publisher e clique em **OK**.
 
 10. Se o Updates Publisher for remoto com relação ao servidor de atualização, repita as etapas 7 a 9 para importar o certificado para o repositório de certificados no computador do Updates Publisher.
 
@@ -66,7 +66,7 @@ Veja a seguir um exemplo de como configurar o certificado de autenticação em c
 
 3. Selecione **Outro computador**, digite o nome do servidor de atualização ou clique em **Procurar** para localizar o computador do servidor de atualização, clique em **Concluir**, em **Fechar** e clique em **OK**.
 
-4. Expanda **Certificados (*nome do servidor de atualização*)**, expanda **WSUS** e, em seguida, clique em **Certificados**.
+4. Expanda **Certificados (*nome do servidor de atualização*)** , expanda **WSUS** e, em seguida, clique em **Certificados**.
 
 5. Clique com o botão direito no certificado no painel de resultados, clique em **Todas as Tarefas** e clique em **Exportar**. Complete o **Assistente para Exportar Certificados** usando as configurações padrão para criar um arquivo de certificado de exportação com o nome e o local especificados no assistente.
 
@@ -77,7 +77,7 @@ Veja a seguir um exemplo de como configurar o certificado de autenticação em c
    -   Para certificados emitidos por uma CA (autoridade de certificação): adicione o certificado ao repositório de certificados **Editores Confiáveis**.
 
    > [!NOTE]
-   > O WUA também verifica se a configuração **Permitir conteúdo assinado da política de grupo de local do serviço de atualização da intranet da Microsoft** está habilitada no computador local. Essa configuração da política deve ser habilitada para que o WUA procure atualizações que foram criadas e publicadas com o Updates Publisher. Para saber mais sobre como habilitar essa configuração de Política de Grupo, confira [Como configurar a Política de Grupo em computadores cliente](<https://technet.microsoft.com/library/bb530967.aspx(d=robot>).
+   > O WUA também verifica se a configuração **Permitir conteúdo assinado da política de grupo de local do serviço de atualização da intranet da Microsoft** está habilitada no computador local. Essa configuração da política deve ser habilitada para que o WUA procure atualizações que foram criadas e publicadas com o Updates Publisher. Para saber mais sobre como habilitar essa configuração de Política de Grupo, confira [Como configurar a Política de Grupo em computadores cliente](https://docs.microsoft.com/en-us/previous-versions/bb530967(v=technet.10)).
 
 
 

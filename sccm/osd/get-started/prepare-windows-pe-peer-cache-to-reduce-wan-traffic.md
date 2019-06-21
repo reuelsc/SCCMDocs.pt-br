@@ -2,7 +2,7 @@
 title: Preparar o cache par do Windows PE para reduzir o tráfego da WAN
 titleSuffix: Configuration Manager
 description: O Cache Par do Windows PE funciona no Windows PE para obter o conteúdo de um par local e minimizar o tráfego da WAN quando não há nenhum ponto de distribuição local.
-ms.date: 10/06/2016
+ms.date: 06/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bedaeed065121e18089cb6b1847397ba5cfdb35a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 80dffb04d7f6ef097ad5b629690e704d1c9a263f
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128748"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286576"
 ---
 # <a name="prepare-windows-pe-peer-cache-to-reduce-wan-traffic-in-system-center-configuration-manager"></a>Preparar o cache par do Windows PE para reduzir o tráfego da WAN no System Center Configuration Manager
 
@@ -64,9 +64,11 @@ Use as seções a seguir para gerenciar o Cache Par.
 
 -   O cliente do Configuration Manager deve estar habilitado para se comunicar entre as seguintes portas em sua rede:  
 
-    -   Porta da difusão de rede inicial para encontrar uma fonte de cache par. Por padrão, essa porta é a 8004.  
+    -   Porta da difusão de rede inicial para encontrar uma fonte de cache par. Por padrão, essa é a porta UDP 8004.  
 
-    -   Porta para download de conteúdo de uma fonte de cache par (HTTP e HTTPS): Por padrão, essa porta é a 8003.  
+    -   Porta para download de conteúdo de uma fonte de cache par (HTTP e HTTPS): Por padrão, essa é a porta TCP 8003.  
+    
+        Para obter mais informações, consulte [as portas usadas para conexões](/sccm/core/plan-design/hierarchy/ports#BKMK_PortsClient-ClientWakeUp).  
 
         > [!TIP]  
         >  Os clientes usarão HTTPS para baixar o conteúdo quando ele estiver disponível. No entanto, o mesmo número da porta será usado para HTTP ou HTTPS.  
@@ -114,7 +116,7 @@ Use as seções a seguir para gerenciar o Cache Par.
 
 - **SMSTSPeerDownload**  
 
-   Valor:  TRUE  
+   Valor: TRUE  
 
    Isso permite que o cliente use o Cache de sistemas pares do Windows PE.  
 

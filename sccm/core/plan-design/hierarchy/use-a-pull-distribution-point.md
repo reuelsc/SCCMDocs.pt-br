@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 488fa5251711c8d9c7702e2b240a6f10602d447f
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: f3e759ef44170c460118d3629d8a7b9648ed8528
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499294"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251639"
 ---
 # <a name="use-a-pull-distribution-point-with-configuration-manager"></a>Usar um ponto de distribuição por pull com o Configuration Manager
 
@@ -42,7 +42,7 @@ Os pontos de distribuição de pull dão suporte às mesmas configurações e fu
 > [!IMPORTANT]  
 > Embora um ponto de distribuição de recepção dê suporte à comunicação por meio dos protocolos HTTP e HTTPS, ao usar o console do Configuration Manager, você só poderá especificar pontos de distribuição de origem configurados para HTTP. É possível usar o SDK do Configuration Manager para especificar um ponto de distribuição de origem configurado para HTTPS.  
 
-Configure um ponto de distribuição por pull ao instalar o ponto de distribuição. Depois de criar um ponto de distribuição, configure-o como ponto de distribuição por pull editando as propriedades de função. Para obter mais informações de como habilitar um ponto de distribuição como um ponto de distribuição por pull, confira [Ponto de distribuição por pull](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#pull-distribution-point).  
+Configure um ponto de distribuição por pull ao instalar o ponto de distribuição. Depois de criar um ponto de distribuição, configure-o como ponto de distribuição por pull editando as propriedades de função. Para obter mais informações de como habilitar um ponto de distribuição como um ponto de distribuição por pull, confira [Ponto de distribuição por pull](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_config-pull).  
 
 Remova a configuração de ponto de distribuição por pull, editando as propriedades do ponto de distribuição. Quando você remove a configuração de ponto de distribuição por pull, ele retorna à operação normal. O servidor do site gerencia as próximas transferências de conteúdo para o ponto de distribuição.  
 

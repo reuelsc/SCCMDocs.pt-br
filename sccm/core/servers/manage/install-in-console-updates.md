@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1209f055d96d57d9b747945ea15584da159428f
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: b6eea68e5d700bda23a306257c4764d8446b2958
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501080"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252042"
 ---
 # <a name="install-in-console-updates-for-configuration-manager"></a>Instalar atualizações no console para o Configuration Manager
 
@@ -395,11 +395,11 @@ Os recursos a seguir são opcionais na versão mais recente do Configuration Man
 
 - [Gerenciador de conversão de pacote](/sccm/apps/pcm/package-conversion-manager) <!--1357861-->
 - [Atualizações de software de terceiros](/sccm/sum/deploy-use/third-party-software-updates)<!--1357605,1352101,1358714-->
-- [Aprovar solicitações de aplicativo para usuários por dispositivo](/sccm/apps/deploy-use/deploy-applications#specify-deployment-settings) <!--1357015-->  
+- [Aprovar solicitações de aplicativo para usuários por dispositivo](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy-settings) <!--1357015-->  
 - [Suporte para o Cisco AnyConnect 4.0.07x e posterior para iOS](/sccm/mdm/deploy-use/create-vpn-profiles)<!--1357393-->
 - [Avaliação do atestado de integridade do dispositivo para políticas de conformidade para acesso condicional](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--1235616-->
 - [Criar e executar scripts](/sccm/apps/deploy-use/create-deploy-scripts) <!--1236459-->
-- [Executar a etapa de sequência de tarefas](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#add-child-task-sequences-to-a-task-sequence) <!--1261338-->
+- [Executar a etapa de sequência de tarefas](/sccm/osd/understand/task-sequence-steps#child-task-sequence) <!--1261338-->
 - [Pré-cache do conteúdo de sequência de tarefas](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content) <!--1021244-->
 - [Atualizações de driver do Surface](/sccm/sum/get-started/configure-classifications-and-products) <!--1098490-->
 - [Gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) <!--1101764-->

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1e01d423df30e36bcf5e7613aee22962077787b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 2e0ad2568c250cbaab0f52f76b98750153aa0b05
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499275"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252347"
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Configurar grupos de disponibilidade AlwaysOn do SQL Server para o Configuration Manager
 
@@ -48,7 +48,7 @@ Para concluir este procedimento, a conta usada deverá ser:
    - **Será membro de seu grupo de disponibilidade:**  
      Se você usar esse servidor como o membro de réplica primária inicial do grupo de disponibilidade, não precisará restaurar uma cópia do banco de dados do site para este ou outro servidor no grupo. O banco de dados já estará em vigor na réplica primária e o SQL Server replicará o banco de dados para as réplicas secundárias durante uma etapa posterior.  
 
-     -    **Não será um membro do grupo de disponibilidade:**   
+     -    **Não será um membro do grupo de disponibilidade:**    
      Restaure uma cópia do banco de dados do site para o servidor que hospedará a réplica primária do grupo.
 
    Para obter informações sobre como concluir essa etapa, confira [Criar um backup completo de banco de dados](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) e [Restaurar um backup de banco de dados usando SSMS](/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms) na documentação do SQL Server.
@@ -122,7 +122,7 @@ Para este procedimento, use as informações em [Remover uma réplica secundári
 A partir do Configuration Manager versão 1706, você pode adicionar uma réplica assíncrona a um grupo de disponibilidade que você usa com o Configuration Manager. Para fazer isso, você não precisa executar os scripts de configuração necessários para configurar uma réplica síncrona. (Isso ocorre porque não há suporte para usar essa réplica assíncrona como o banco de dados do site). Veja [a documentação do SQL Server](https://msdn.microsoft.com/library/hh213247(v=sql.120).aspx(d=robot)) para obter informações sobre como adicionar réplicas secundárias a grupos de disponibilidade.
 
 ## <a name="use-the-asynchronous-replica-to-recover-your-site"></a>Usar a réplica assíncrona para recuperar o site
-Com o Configuration Manager versão 1706 e posterior, você pode usar uma réplica assíncrona para recuperar o banco de dados do site. Para fazer isso, você deve parar o site primário ativo para impedir gravações adicionais no banco de dados do site. Depois de parar o site, você poderá usar uma réplica assíncrona em vez de usar um [banco de dados recuperado manualmente](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption).
+Com o Configuration Manager versão 1706 e posterior, você pode usar uma réplica assíncrona para recuperar o banco de dados do site. Para fazer isso, você deve parar o site primário ativo para impedir gravações adicionais no banco de dados do site. Depois de parar o site, você poderá usar uma réplica assíncrona em vez de usar um [banco de dados recuperado manualmente](/sccm/core/servers/manage/recover-sites#use-a-site-database-that-has-been-manually-recovered).
 
 Para parar o site, você poderá usar a [ferramenta de manutenção de hierarquia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe) para interromper os principais serviços no servidor do site. Use a linha de comando: **Preinst.exe /stopsite**   
 

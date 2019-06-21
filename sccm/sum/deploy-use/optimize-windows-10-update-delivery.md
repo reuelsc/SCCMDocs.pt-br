@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 667dfda7f03c5c39f8a0a2e4ffc2ba38bddf5a0e
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 6d037baba858b3aacc3724e99a66819197b1dd89
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500138"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194509"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Otimizar a entrega de atualizações do Windows 10 com o Configuration Manager
 
@@ -52,12 +52,12 @@ As seções a seguir fornecem mais informações sobre essas tecnologias.
 
 ### <a name="windows-delivery-optimization"></a>Otimização de Entrega do Windows
 
-[Otimização de Entrega](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) é a principal tecnologia de download e método de distribuição de par integrado ao Windows 10. Clientes do Windows 10 podem obter o conteúdo de outros dispositivos em sua rede local que baixam as mesmas atualizações. Usando as [opções do Windows disponíveis para a Otimização de Entrega](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#delivery-optimization-options), você pode configurar clientes em grupos. Esse agrupamento permite que sua organização identifique os dispositivos que são possivelmente os melhores candidatos para atender às solicitações de par. A Otimização de Entrega reduz significativamente a largura de banda geral que é usada para manter os dispositivos atualizados enquanto acelera o tempo de download.
+[Otimização de Entrega](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) é a principal tecnologia de download e método de distribuição de par integrado ao Windows 10. Clientes do Windows 10 podem obter o conteúdo de outros dispositivos em sua rede local que baixam as mesmas atualizações. Usando as [opções do Windows disponíveis para a Otimização de Entrega](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#delivery-optimization-options), você pode configurar clientes em grupos. Esse agrupamento permite que sua organização identifique os dispositivos que são possivelmente os melhores candidatos para atender às solicitações de par. A Otimização de Entrega reduz significativamente a largura de banda geral que é usada para manter os dispositivos atualizados enquanto acelera o tempo de download.
 
 > [!NOTE]  
 > A Otimização de Entrega é uma solução gerenciada de nuvem. O acesso à Internet para o serviço de nuvem da Otimização de Entrega é um requisito para utilizar sua funcionalidade de par.  
 
-Para obter os melhores resultados, talvez você precise configurar o [modo de download](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#download-mode) da Otimização de Entrega para **Grupo (2)** e defina *IDs de Grupo*. No modo de grupo, o emparelhamento pode cruzar sub-redes internas entre dispositivos que pertencem ao mesmo grupo, incluindo dispositivos em locais remotos. Use a [opção de ID de Grupo](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#select-the-source-of-group-ids) para criar seu próprio grupo personalizado independentemente de domínios e sites do AD DS. O modo de download de grupo é a opção recomendada para a maioria das organizações que desejam obter a melhor otimização de largura de banda com a Otimização de Entrega.
+Para obter os melhores resultados, talvez você precise configurar o [modo de download](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#download-mode) da Otimização de Entrega para **Grupo (2)** e defina *IDs de Grupo*. No modo de grupo, o emparelhamento pode cruzar sub-redes internas entre dispositivos que pertencem ao mesmo grupo, incluindo dispositivos em locais remotos. Use a [opção de ID de Grupo](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#select-the-source-of-group-ids) para criar seu próprio grupo personalizado independentemente de domínios e sites do AD DS. O modo de download de grupo é a opção recomendada para a maioria das organizações que desejam obter a melhor otimização de largura de banda com a Otimização de Entrega.
 
 Configurar manualmente essas IDs de grupo é um desafio quando os clientes são transferidos entre diferentes redes. O Configuration Manager versão 1802 adicionou um novo recurso para simplificar o gerenciamento desse processo [integrando os grupos de limites com Otimização de Entrega](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#delivery-optimization). Quando um cliente é ativado, ele se comunica com seu ponto de gerenciamento para obter políticas e fornece suas informações de grupo de limites e de rede. O Configuration Manager cria uma ID exclusiva para cada grupo de limites. O site usa as informações do cliente local para configurar automaticamente a ID de Grupo de Otimização de Entrega do cliente com a ID de limite do Configuration Manager. Quando o cliente passa para outro grupo de limites, ele se comunica com seu ponto de gerenciamento e é reconfigurado automaticamente com uma nova ID de grupo de limites. Com essa integração, Otimização de Entrega pode utilizar as informações do grupo de limites do Configuration Manager para localizar um par do qual deseja baixar atualizações.
 
@@ -150,7 +150,7 @@ As alterações só entram em vigor para as novas atualizações sincronizadas e
 
 
 #### <a name="is-there-any-way-to-see-how-much-content-is-downloaded-from-peers-using-delivery-optimization"></a>Há alguma maneira de ver a quantidade de conteúdo baixado de pares usando a Otimização de Entrega?
-O Windows 10, versão 1703 (e posterior) inclui dois novos cmdlets do PowerShell, **Get-DeliveryOptimizationPerfSnap** e **Get-DeliveryOptimizationStatus**. Esses cmdlets oferecem mais informações sobre o uso do cache e a Otimização de Entrega. Para saber mais, confira [Cmdlets do Windows PowerShell para analisar o uso](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#windows-powershell-cmdlets-for-analyzing-usage)
+O Windows 10, versão 1703 (e posterior) inclui dois novos cmdlets do PowerShell, **Get-DeliveryOptimizationPerfSnap** e **Get-DeliveryOptimizationStatus**. Esses cmdlets oferecem mais informações sobre o uso do cache e a Otimização de Entrega. Para obter mais informações, consulte [de atualizações de otimização de entrega para o Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#the-cloud-service-doesnt-see-other-peers-on-the-network)
 
 
 #### <a name="how-do-clients-communicate-with-delivery-optimization-over-the-network"></a>Como os clientes se comunicam com a Otimização de Entrega na rede?

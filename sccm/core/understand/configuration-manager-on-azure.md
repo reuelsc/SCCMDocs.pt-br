@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd2a745f7fc158739898930c9d05ea40724879b1
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 410c056b22bc4c52010e941a244cffa1fc3b2dff
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176085"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194101"
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager no Azure – Perguntas frequentes
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -136,11 +136,11 @@ A abordagem de gerenciamento de conteúdo é muito semelhante à dos servidores 
 
 
 ### <a name="while-i-am-ok-with-the-limitations-of-cloud-based-distribution-points-i-dont-want-to-put-my-management-point-into-a-dmz-even-though-that-is-needed-to-support-my-internet-based-clients-do-i-have-any-other-options"></a>Embora eu tenha aceitado as limitações dos pontos de distribuição baseados em nuvem, não quero colocar meu ponto de gerenciamento em um DMZ, mesmo que isso seja necessário para dar suporte a meus clientes baseados na Internet. Tenho alguma outra opção?
-Sim. Com o Configuration Manager versão 1610, apresentamos o [Gateway de gerenciamento de nuvem](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) como um recurso de pré-lançamento. (Esse recurso apareceu pela primeira vez na Technical Preview versão 1606 como o [Serviço de Proxy de Nuvem](/sccm/core/get-started/capabilities-in-technical-preview-1606#a-namecloudproxyacloud-proxy-service-for-managing-clients-on-the-internet).)
+Sim. Com o Configuration Manager versão 1610, apresentamos o [Gateway de gerenciamento de nuvem](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) como um recurso de pré-lançamento. (Esse recurso apareceu pela primeira vez na Technical Preview versão 1606 como o [Serviço de Proxy de Nuvem](/sccm/core/get-started/capabilities-in-technical-preview-1606#cloud_proxy).)
 
 O **Gateway de Gerenciamento de Nuvem** fornece uma maneira simples de gerenciar clientes do Configuration Manager na Internet. O serviço, que é implantado no Microsoft Azure e requer uma assinatura do Azure, conecta-se à sua infraestrutura do Configuration Manager local usando uma nova função chamada ponto de conexão do gateway de gerenciamento de nuvem. Após a implantação e a configuração, os clientes podem acessar as funções do sistema de sites do Configuration Manager locais, independentemente de se eles estão conectados à rede privada interna ou à Internet.
 
-Você pode começar a usar o gateway de gerenciamento de nuvem em seu ambiente e nos fornecer comentários para melhorá-lo. Para obter mais informações sobre os recursos de pré-lançamento, consulte [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkprereleasea-use-pre-release-features-from-updates).
+Você pode começar a usar o gateway de gerenciamento de nuvem em seu ambiente e nos fornecer comentários para melhorá-lo. Para obter mais informações sobre os recursos de pré-lançamento, consulte [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
 ### <a name="i-also-heard-that-you-have-another-new-feature-called-peer-cache-introduced-as-a-pre-release-feature-in-version-1610-is-that-different-than-branchcache-which-one-should-i-choose"></a>Também ouvi que você tem outro novo recurso chamado Cache de Sistema Par introduzido com um recurso de pré-lançamento na versão 1610. Isso é diferente do BranchCache? Qual devo escolher?
 Sim, totalmente diferente. O [Cache de Sistema Par](/sccm/core/plan-design/hierarchy/client-peer-cache) é uma tecnologia do Configuration Manager totalmente nativa, em que o BranchCache é um recurso do Windows. Ambos podem ser úteis para você. O BranchCache usa uma difusão para localizar o conteúdo necessário, enquanto o Cache de Sistema Par usa configurações de grupo de limite e fluxo de trabalho de distribuição regulares do Configuration Manager.

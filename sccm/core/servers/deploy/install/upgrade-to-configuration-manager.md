@@ -10,12 +10,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c36a52b5f3bc32cc5e8c725d1a12de6ce467c310
-ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.openlocfilehash: 86e41e932995abc47b6229ce3405f810d75b992b
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748284"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159290"
 ---
 # <a name="upgrade-to-configuration-manager"></a>Atualizar para o Configuration Manager
 
@@ -132,7 +132,7 @@ O Configuration Manager não pode atualizar um site primário que tenha uma rép
 
 Para obter mais informações, consulte os seguintes artigos:  
 
-- System Center 2012 Configuration Manager: [Configurar as réplicas de banco de dados para pontos de gerenciamento](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/hh846234\(v=technet.10\))  
+- System Center 2012 Configuration Manager: [Configurar as réplicas de banco de dados para pontos de gerenciamento](/sccm/core/servers/deploy/configure/database-replicas-for-management-points#BKMK_DBReplica_Config)  
 
 - Configuration Manager, Branch Atual: [Réplicas de banco de dados para pontos de gerenciamento](/sccm/core/servers/deploy/configure/database-replicas-for-management-points)  
 
@@ -154,7 +154,7 @@ Para desabilitar uma tarefa, registre o agendamento da tarefa para que você pos
 
 Confira mais informações sobre as tarefas de manutenção de site nos seguintes artigos:  
 
-- System Center 2012 Configuration Manager: [Planejando as operações de site](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg712686\(v=technet.10\))  
+- System Center 2012 Configuration Manager: [Planejando as operações de site](/sccm/core/plan-design/hierarchy/plan-for-the-site-database)  
 
 - Configuration Manager, Branch Atual: [Referência para tarefas de manutenção](/sccm/core/servers/manage/reference-for-maintenance-tasks)  
 

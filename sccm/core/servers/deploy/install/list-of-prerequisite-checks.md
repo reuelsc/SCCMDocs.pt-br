@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bed079e0037ea09afaf050ef08de16523678970
-ms.sourcegitcommit: 65e9b30e2b53ab9db679a7b1d50634a73c0028db
+ms.openlocfilehash: 79730167346490350a7536c6badb5f0bc0fa85f4
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66429822"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252271"
 ---
 # <a name="list-of-prerequisite-checks-for-configuration-manager"></a>Lista de verificações de pré-requisitos para o Configuration Manager
 
@@ -773,7 +773,7 @@ O Configuration Manager usa o SQL Server Native Client nas seguintes funções d
 
 O SQL Server reserva um mínimo de 8 GB de memória para o site de administração central e site primário e um mínimo de 4 GB de memória para o site secundário.
 
-Para obter mais informações, veja [Como configurar opções de memória usando o SQL Server Management Studio](https://docs.microsoft.com/sql/database-engine/configure-windows/server-memory-server-configuration-options#how-to-configure-memory-options-using-includessmanstudiofullincludesssmanstudiofull-mdmd).
+Para obter mais informações, veja [Como configurar opções de memória usando o SQL Server Management Studio](https://docs.microsoft.com/sql/database-engine/configure-windows/server-memory-server-configuration-options#how-to-configure-memory-options-using-).
 
 > [!NOTE]  
 > Essa verificação não é aplicável ao SQL Server Express em um site secundário. Esta edição é limitada a 1 GB de memória reservada.  

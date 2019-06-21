@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6aa1c324a3ff24feb14c6b867728a76252a8c19d
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 13db7793b0d5a5b4f0845af21f976089205fdc7d
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176026"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286158"
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Recursos na Technical Preview 1709 do System Center Configuration Manager
 
@@ -118,7 +118,7 @@ As políticas do Windows Update para Empresas permitem configurar políticas de 
 
 ### <a name="remote-actions-available-in-intune-on-azure-for-co-managed-devices"></a>Ações remotas disponíveis no Intune no Azure para dispositivos cogerenciados
 Quando um dispositivo Windows 10 está habilitado para cogerenciamento, você tem as seguintes ações remotas disponíveis por meio do Intune no Azure:  
-- [Redefinição de fábrica](https://docs.microsoft.com/intune/devices-wipe#factory-reset)
+- [Redefinição de fábrica](https://docs.microsoft.com/intune/devices-wipe#wipe)
 - [Apagamento seletivo](https://docs.microsoft.com/intune/apps-selective-wipe)
 - [Excluir dispositivos](https://docs.microsoft.com/intune/devices-wipe#delete-devices-from-the-azure-active-directory-portal)
 - [Reiniciar dispositivo](https://docs.microsoft.com/intune/device-restart)

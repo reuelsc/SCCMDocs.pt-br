@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71fab49dc6ba5d949aeaf48145e1f7d0446c0f91
-ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
+ms.openlocfilehash: f707eb4b4fabf98d6e436f038f932515749c35c4
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66355000"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194442"
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-configuration-manager"></a>Usar o PXE para implantar o Windows pela rede com o Configuration Manager
 
@@ -126,7 +126,7 @@ Implante o sistema operacional em uma coleção de destino. Para obter mais info
 
 - **Implantação disponível**: as implantações disponíveis exigem que o usuário esteja presente no computador de destino. O usuário precisa pressionar a tecla **F12** para continuar o processo de inicialização do PXE. Se não houver um usuário presente para pressionar **F12**, o computador será inicializado no sistema operacional atual ou pelo próximo dispositivo de inicialização disponível.
 
-É possível reimplantar uma implantação PXE necessária apagando o status da última implantação PXE atribuída a uma coleção do Configuration Manager ou a um computador. Para obter mais informações sobre a ação **Limpar Implantações PXE Necessárias**, consulte [Gerenciar clientes](/sccm/core/clients/manage/manage-clients#BKMK_ManagingClients_DevicesNode) ou [Gerenciar coleções](/sccm/core/clients/manage/collections/manage-collections#how-to-manage-device-collections). Essa ação redefine o status dessa implantação e reinstala as implantações necessárias mais recentes.
+É possível reimplantar uma implantação PXE necessária apagando o status da última implantação PXE atribuída a uma coleção do Configuration Manager ou a um computador. Para obter mais informações sobre a ação **Limpar Implantações PXE Necessárias**, consulte [Gerenciar clientes](/sccm/core/clients/manage/manage-clients#BKMK_ManagingClients_DevicesNode) ou [Gerenciar coleções](/sccm/core/clients/manage/collections/manage-collections#bkmk_device). Essa ação redefine o status dessa implantação e reinstala as implantações necessárias mais recentes.
 
 > [!IMPORTANT]  
 > O protocolo PXE não é seguro. Verifique se o servidor PXE e o cliente PXE estão localizados em uma rede fisicamente segura, como um data center, para evitar acesso não autorizado ao site.

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 600b786bbb2f718868c5d08c722621682582f4e1
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 726df4e6ddbfc34194fd25951d6dbafd1e9008ad
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500641"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159538"
 ---
 # <a name="create-certificate-profiles"></a>Criar perfis de certificado
 
@@ -25,7 +25,7 @@ ms.locfileid: "65500641"
 
 Use perfis de certificado no SCCM (Configuration Manager) para provisionar dispositivos gerenciados com os certificados necessários para acessar recursos da empresa. Antes de criar perfis de certificado, defina a infraestrutura do certificado conforme descrito em [Configurar a infraestrutura de certificados para o System Center Configuration Manager](certificate-infrastructure.md).  
 
-Este tópico descreve como criar perfis de certificado SCEP e de raiz confiável. Se você quiser criar perfis de certificado PFX, consulte [Criar perfis de certificado PFX](../../protect/deploy-use/create-pfx-certificate-profiles.md).
+Este tópico descreve como criar perfis de certificado SCEP e de raiz confiável. Se você quiser criar perfis de certificado PFX, consulte [Criar perfis de certificado PFX](/sccm/mdm/deploy-use/create-pfx-certificate-profiles).
 
 Para criar um perfil de certificado:
 
@@ -58,9 +58,9 @@ Na página **Geral** do Assistente para Criar Perfil de Certificado, especifique
 
 -   **Configurações do protocolo SCEP**: selecione este tipo de perfil de certificado se desejar solicitar um certificado para um usuário ou dispositivo usando o protocolo SCEP e o serviço de função de Serviço de Registro de Dispositivo de Rede.
 
--   **Troca de Informações Pessoais – Configurações PKCS #12 (PFX) – Importar**: selecione esta opção para importar um certificado PFX. Para saber mais sobre a criação de certificado PFX, confira [Importar perfis de certificado PFX](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md).
+-   **Troca de Informações Pessoais – Configurações PKCS #12 (PFX) – Importar**: selecione esta opção para importar um certificado PFX. Para saber mais sobre a criação de certificado PFX, confira [Importar perfis de certificado PFX](/sccm/mdm/deploy-use/import-pfx-certificate-profiles).
 
--   **Troca de Informações Pessoais – Configurações PKCS #12 (PFX) – Criar**: selecione isso para processar certificados PFX usando uma autoridade de certificação. Para saber mais sobre a criação de certificado PFX, consulte [Criar perfis de certificado PFX](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md).
+-   **Troca de Informações Pessoais – Configurações PKCS #12 (PFX) – Criar**: selecione isso para processar certificados PFX usando uma autoridade de certificação. Para saber mais sobre a criação de certificado PFX, consulte [Criar perfis de certificado PFX](/sccm/mdm/deploy-use/create-pfx-certificate-profiles).
 
 
 ## <a name="configure-a-trusted-ca-certificate"></a>Configurar um certificado de Autoridade de Certificação confiável  
@@ -97,11 +97,11 @@ Na página **Geral** do Assistente para Criar Perfil de Certificado, especifique
 
    -  **Repetições**: especifique o número de vezes que o dispositivo tenta novamente, de modo automático, solicitar o certificado ao servidor que executa o Serviço de Registro de Dispositivo de Rede. Esta configuração oferece suporte ao cenário em que o gerenciador da AC deve aprovar uma solicitação de certificado antes que ela seja aceita. Esta configuração é normalmente usada em ambientes de alta segurança ou caso tenha uma AC emissora autônoma, ao invés de uma AC corporativa. Você também pode usar essa configuração para fins de teste, a fim de inspecionar as opções de solicitação de certificado antes que os processos da AC emissora processe a solicitação de certificado. Use essa configuração com a **Intervalo entre tentativas (minutos)** .  
 
-   -   **Intervalo entre repetições (minutos)**: especifique o intervalo, em minutos, entre cada tentativa de registro ao usar uma aprovação de gerenciador de AC antes que a AC emissora processe a solicitação de certificado. Se for usar a aprovação de gerenciador para fins de teste, provavelmente vai preferir especificar um valor baixo para não ter que ficar esperando muito tempo até que o dispositivo tente solicitar o certificado novamente depois que você aprovou a solicitação. No entanto, se for usar a aprovação de gerenciador em uma rede de produção, provavelmente vai preferir especificar um valor alto para dar tempo suficiente ao administrador da AC para que verifique e aprove ou recuse as aprovações pendentes.  
+   -   **Intervalo entre repetições (minutos)** : especifique o intervalo, em minutos, entre cada tentativa de registro ao usar uma aprovação de gerenciador de AC antes que a AC emissora processe a solicitação de certificado. Se for usar a aprovação de gerenciador para fins de teste, provavelmente vai preferir especificar um valor baixo para não ter que ficar esperando muito tempo até que o dispositivo tente solicitar o certificado novamente depois que você aprovou a solicitação. No entanto, se for usar a aprovação de gerenciador em uma rede de produção, provavelmente vai preferir especificar um valor alto para dar tempo suficiente ao administrador da AC para que verifique e aprove ou recuse as aprovações pendentes.  
 
-   -   **Limite de renovação (%)**: especifique o percentual do tempo de vida do certificado restante antes da renovação das solicitações de dispositivo do certificado.  
+   -   **Limite de renovação (%)** : especifique o percentual do tempo de vida do certificado restante antes da renovação das solicitações de dispositivo do certificado.  
 
-   -   **KSP (Provedor de Armazenamento de Chave)**: especifique o local em que a chave do certificado será armazenada. Escolha um destes valores:  
+   -   **KSP (Provedor de Armazenamento de Chave)** : especifique o local em que a chave do certificado será armazenada. Escolha um destes valores:  
 
    -   **Instalar no TPM (Trusted Platform Module) se houver**: instala a chave no TPM. Se o TPM não estiver presente, a chave será instalada no provedor de armazenamento para a chave de software.  
 
@@ -131,7 +131,7 @@ Na página **Geral** do Assistente para Criar Perfil de Certificado, especifique
 
    -   Caso digite o nome do modelo de certificado, certifique-se de que o nome corresponda exatamente com um dos modelos de certificado relacionados no registro do servidor executando o Serviço de Registro de Dispositivo de Rede. Certifique-se de especificar o nome do modelo de certificado e não o nome para exibição do modelo de certificado.  
 
-   Para localizar os nomes dos modelos de certificado, navegue até a seguinte chave: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP. Você verá os modelos de certificado listados como os valores para **EncryptionTemplate**, **GeneralPurposeTemplate**e **SignatureTemplate**. Por padrão, o valor para todos os modelos de certificado é **IPSECIntermediateOffline**, que mapeia até o nome de exibição do modelo do **IPSec (solicitação offline)**.  
+   Para localizar os nomes dos modelos de certificado, navegue até a seguinte chave: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP. Você verá os modelos de certificado listados como os valores para **EncryptionTemplate**, **GeneralPurposeTemplate**e **SignatureTemplate**. Por padrão, o valor para todos os modelos de certificado é **IPSECIntermediateOffline**, que mapeia até o nome de exibição do modelo do **IPSec (solicitação offline)** .  
 
    > [!WARNING]  
    > 
@@ -166,7 +166,7 @@ Na página **Geral** do Assistente para Criar Perfil de Certificado, especifique
    O modelo de certificado selecionado por você deve ser configurado com uma ou ambas as opções acima de uso da chave. Se não for assim, você verá a mensagem **Uso da chave no CSR não corresponde ao desafio** no arquivo de log do ponto de registro de certificado, **Crp.log**.  
 
 
-- **Tamanho da chave (bits)**: selecione o tamanho da chave em bits.  
+- **Tamanho da chave (bits)** : selecione o tamanho da chave em bits.  
 
 - **Uso estendido de chave**: clique em **Selecionar** para adicionar valores para a finalidade desejada do certificado. Na maioria dos casos, o certificado exigirá **Autenticação de cliente** para que o usuário ou dispositivo possa autenticar-se em um servidor. No entanto, você pode adicionar outros usos da chave conforme necessário.  
 

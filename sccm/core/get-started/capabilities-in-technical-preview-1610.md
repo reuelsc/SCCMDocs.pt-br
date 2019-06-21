@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b164dfe1ea175f0f2141039c3a4a800de1404b9
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: f497272431d8587010ecd7dc0a8205162d9ae7fd
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132346"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286349"
 ---
 # <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1610 do System Center Configuration Manager
 
@@ -33,7 +33,7 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 Agora, você pode filtrar o tamanho do conteúdo para atualizações de software em regras de implantação automática. Por exemplo, você pode definir o filtro **Tamanho do Conteúdo (KB)** como **< 2048** para baixar apenas atualizações de software menores que 2 MB. Usar esse filtro impede que atualizações de software grandes sejam baixadas automaticamente, para dar melhor suporte à manutenção simplificada de nível inferior do Windows quando a largura de banda de rede é limitada. Para obter detalhes, consulte [Configuration Manager and Simplified Windows Servicing on Down Level Operating Systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/) (Configuration Manager e Serviço do Windows simplificado em sistemas operacionais de nível inferior).
 
 #### <a name="to-configure-the-content-size-field"></a>Para configurar o campo Tamanho do Conteúdo
-Para configurar o campo **Tamanho do Conteúdo (KB)**, vá até a página **Atualizações de Software** no Assistente Criar Regra de Implantação Automática quando você cria uma ADR ou vá até a guia **Atualizações de Software** nas propriedades de uma ADR existente.
+Para configurar o campo **Tamanho do Conteúdo (KB)** , vá até a página **Atualizações de Software** no Assistente Criar Regra de Implantação Automática quando você cria uma ADR ou vá até a guia **Atualizações de Software** nas propriedades de uma ADR existente.
 
 ![Campo Tamanho do Conteúdo](media/contentsizefield.png)
 
@@ -86,7 +86,7 @@ Desde que uma coleção esteja configurada para ser excluída, os membros dessa 
 - **Instalação do cliente por push** – você pode usar a instalação do cliente por push para atualizar um cliente que está em uma coleção excluída. Isso é permitido pois é considerado que seja a intenção do administrador, e permite que você atualize os clientes sem remover toda a coleção da exclusão.       
 - **Instalação manual do cliente** – você pode atualizar manualmente os clientes que estão em uma coleção excluída quando usa a seguinte opção de linha de comando com ccmsetup:  ***/ignoreskipupgrade***
 
-  Se você tentar atualizar manualmente um cliente que é um membro da coleção excluída e não usar essa opção, o cliente não instalará o novo software cliente. Para obter mais informações, consulte [Como instalar manualmente os clientes do Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-configuration-manager-clients-manually).
+  Se você tentar atualizar manualmente um cliente que é um membro da coleção excluída e não usar essa opção, o cliente não instalará o novo software cliente. Para obter mais informações, consulte [Como instalar manualmente os clientes do Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual).
 
 Para obter mais informações sobre os métodos de instalação de clientes, consulte [Como implantar clientes em computadores Windows no System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).
 

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bb18dbb093f6182186f648bcde02407f3c14c5a
-ms.sourcegitcommit: e3c1eb0b75d79c05a750d49354c851d15d5e26a3
+ms.openlocfilehash: daee7a247fd12637736caa9c341798950a66c786
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67038574"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251845"
 ---
 # <a name="site-and-site-system-prerequisites-for-configuration-manager"></a>Pré-requisitos do site e do sistema de sites para o Configuration Manager
 
@@ -558,7 +558,7 @@ A configuração padrão do IIS é necessária.
 
 ##  <a name="bkmk_2008"></a> Pré-requisitos para o Windows Server 2008 R2 e Windows Server 2008  
 
-Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estendido e não mais em suporte maintstream, conforme detalhado pelo [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais, como servidores do sistema de sites com o Configuration Manager, consulte [Sistemas operacionais de servidor removidos e preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-server-operating-systems).  
+Agora, o Windows Server 2008 e o Windows Server 2008 R2 estão em suporte estendido e não mais em suporte maintstream, conforme detalhado pelo [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle). Para obter mais informações sobre o suporte futuro para esses sistemas operacionais, como servidores do sistema de sites com o Configuration Manager, consulte [Sistemas operacionais de servidor removidos e preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#server-os).  
 
 Não há suporte para essas versões de sistema operacional para servidores do site nem para a maioria das funções do sistema de sites. Elas ainda são compatíveis com a função do sistema de sites de ponto de distribuição, incluindo pontos de distribuição por pull, PXE e multicast.
 

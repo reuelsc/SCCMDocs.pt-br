@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 367ab11340ef36b0caaf23e84f26bdda921ee158
-ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
+ms.openlocfilehash: 871fc8d32570aaa0af9984b48084965aabf6bc01
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834746"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251771"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>Versões do SQL Server compatíveis com o Configuration Manager
 
@@ -142,7 +142,7 @@ Use esta versão do SQL Server sem uma versão de atualização cumulativa míni
 -   Um site secundário  
 
 ### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3: Standard, Enterprise, Datacenter     
-  Esta versão do SQL Server não é compatível. Para saber mais, confira [Suporte preterido para versões do SQL Server como um banco de dados do site](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-support-for-sql-server-versions-as-a-site-database).  
+  Esta versão do SQL Server não é compatível. Para saber mais, confira [Suporte preterido para versões do SQL Server como um banco de dados do site](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#sql-server).  
 
 ### <a name="sql-server-2017-express"></a>SQL Server 2017 Express   
 Use esta versão do SQL Server, com, no mínimo, a [atualização cumulativa versão 2](https://support.microsoft.com/help/4052574), a partir do [Configuration Manager versão 1710](/sccm/core/plan-design/changes/whats-new-in-version-1710) para os seguintes sites:
@@ -211,9 +211,9 @@ Use esta versão do SQL Server sem uma versão de atualização cumulativa míni
 ### <a name="sql-server-memory"></a>Memória do SQL Server  
  Reserve memória para o SQL Server usando o SQL Server Management Studio e definindo a configuração **Memória mínima do servidor** em **Opções de Memória do Servidor**. Para saber mais sobre como definir esta configuração, consulte [Opções de configuração do servidor de memória do SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/server-memory-server-configuration-options).  
 
--   **Para um servidor de banco de dados instalado no mesmo computador do que o servidor do site**: Limite a memória do SQL Server de 50 a 80% da memória de sistema endereçável disponível.  
+-   **Para um servidor de banco de dados instalado no mesmo computador do que o servidor do site**: Limite a memória do SQL Server a 50-80% da memória de sistema endereçável disponível.  
 
--   **Para um servidor de banco de dados dedicado (remoto do servidor do site)** : Limite a memória do SQL Server de 80 a 90% da memória de sistema endereçável disponível.  
+-   **Para um servidor de banco de dados dedicado (remoto do servidor do site)** : Limite a memória do SQL Server a 80-90% da memória de sistema endereçável disponível.  
 
 -   **Para a reserva de memória para o pool de buffers de cada instância do SQL Server em uso**:  
 
@@ -285,8 +285,8 @@ Para ver um exemplo sobre como configurar o SQL Server para usar uma porta espec
 
 Se você precisa atualizar sua versão do SQL Server, recomendamos os seguintes métodos, do mais fácil para o mais complexo:  
 
-- [Atualização do SQL Server no local](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#a-namebkmksupconfigupgradedbsrva-upgrade-sql-server-on-the-site-database-server) (recomendado)  
+- [Atualização do SQL Server no local](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#to-upgrade-sql-server-on-the-site-database-server) (recomendado)  
 
-- Instale uma nova versão do SQL Server em um novo computador e, em seguida, [use a opção de mover o banco de dados](/sccm/core/servers/manage/modify-your-infrastructure#a-namebkmkdbconfiga-modify-the-site-database-configuration) da instalação do Configuration Manager para apontar o servidor do site para o novo SQL Server  
+- Instale uma nova versão do SQL Server em um novo computador e, em seguida, [use a opção de mover o banco de dados](/sccm/core/servers/manage/modify-your-infrastructure#bkmk_dbconfig) da instalação do Configuration Manager para apontar o servidor do site para o novo SQL Server  
 
 - Use [backup e recuperação](/sccm/protect/understand/backup-and-recovery). Há suporte para o uso de backup e recuperação para um cenário de upgrade do SQL. Você pode ignorar o requisito de controle de versão do SQL ao revisar as [Considerações antes de recuperar um site](/sccm/protect/understand/recover-sites#considerations-before-recovering-a-site). 

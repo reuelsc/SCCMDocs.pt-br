@@ -4,18 +4,18 @@ description: Use este artigo para responder a perguntas frequentes sobre o gatew
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 05/02/2019
+ms.date: 06/19/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 4c1a128d-22fb-49f1-8e0b-36513a8dc117
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71c30e6770d667426a0aabbf03043d6fb44ecced
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: 6a7b4350cbd220393318eb6c8b5eae2a5bee05fc
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083180"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286794"
 ---
 # <a name="frequently-asked-questions-about-the-cloud-management-gateway"></a>Perguntas frequentes sobre o gateway de gerenciamento de nuvem
 
@@ -33,10 +33,9 @@ Para obter informações mais detalhadas, consulte [Certificados do gateway de g
 
 ### <a name="do-i-need-azure-expressroute"></a>O Azure ExpressRoute é necessário?
 
-O [Azure ExpressRoute](/azure/expressroute/expressroute-introduction) possibilita que você estenda a rede local para a nuvem da Microsoft. O ExpressRoute, ou outras conexões de rede virtual desse tipo, não é necessário para o Gateway de Gerenciamento de Nuvem do Configuration Manager. O design do gateway de gerenciamento de nuvem permite que os clientes baseados na Internet se comuniquem por meio do serviço do Azure com os sistemas de sites locais sem nenhuma configuração de rede adicional. Para obter mais informações, consulte [Planejar o gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway)
+Não. O [Azure ExpressRoute](/azure/expressroute/expressroute-introduction) possibilita que você estenda a rede local para a nuvem da Microsoft. O ExpressRoute, ou outras conexões de rede virtual desse tipo, não é necessário para o Gateway de Gerenciamento de Nuvem do Configuration Manager. O design do gateway de gerenciamento de nuvem permite que os clientes baseados na Internet se comuniquem por meio do serviço do Azure com os sistemas de sites locais sem nenhuma configuração de rede adicional. Para obter mais informações, consulte [Planejar o gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway)
 
-Caso sua organização use o ExpressRoute, uma melhor prática de segurança é isolar a assinatura do Azure para o gateway de gerenciamento de nuvem. Essa configuração garante que o serviço de Gateway de Gerenciamento de Nuvem não seja conectado acidentalmente dessa maneira. Para obter mais informações, consulte [Segurança e privacidade do gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/security-and-privacy-for-cloud-management-gateway).
-
+<!-- SCCMDocs#1659 -->
 
 ### <a name="do-i-need-to-maintain-the-azure-virtual-machines"></a>É necessário manter as máquinas virtuais do Azure?
 

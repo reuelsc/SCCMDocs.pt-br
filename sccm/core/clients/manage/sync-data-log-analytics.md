@@ -11,21 +11,22 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b3ba4c5179069e5443beaf1b7f733c797cfd680
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 0f833269540e10647c20353ad208a54d9eb53af9
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156518"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286456"
 ---
 #  <a name="sync-data-from-configuration-manager-to-azure-log-analytics"></a>Sincronizar dados do Configuration Manager com o Azure Log Analytics
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-<!--1258052--> Use o **Assistente dos Serviços do Azure** para configurar uma conexão do Configuration Manager com o serviço de nuvem do Azure Log Analytics. Essa conexão sincroniza os dados de coleção de dispositivo com o Log Analytics. 
+<!--1258052-->
+Use o **Assistente dos Serviços do Azure** para configurar uma conexão do Configuration Manager com o serviço de nuvem do Azure Log Analytics. Essa conexão sincroniza os dados de coleção de dispositivo com o Log Analytics. 
 
 > [!Note]  
-> O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, veja [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 > [!TIP]
 > A partir do Configuration Manager 1802, o Conector do Log Analytics deixa de ser um recurso de pré-lançamento. Para saber mais, confira [Usar recursos de pré-lançamento de atualizações](/sccm/core/servers/manage/pre-release-features).
@@ -35,7 +36,7 @@ ms.locfileid: "56156518"
 ## <a name="prerequisites-for-the-log-analytics-connector"></a>Pré-requisitos para o Conector do Log Analytics
 
 > [!Note]  
-> Este artigo refere-se ao *Conector do Log Analytics*, que antes era chamado de *Conector do OMS*. Não há diferença funcional. Para saber mais, veja [Gerenciamento do Azure - Monitoramento](https://docs.microsoft.com/azure/monitoring/#operations-management-suite).  
+> Este artigo refere-se ao *Conector do Log Analytics*, que antes era chamado de *Conector do OMS*. Não há diferença funcional. Para saber mais, veja [Gerenciamento do Azure - Monitoramento](https://docs.microsoft.com/azure/azure-monitor/terminology#log-analytics).  
 
 - Antes de instalar o conector do Log Analytics no Configuration Manager, forneça as permissões ao Configuration Manager. Conceda *acesso de colaborador* ao *grupo de recursos* do Azure que contém o espaço de trabalho do Log Analytics. Para saber mais, veja [Fornecer ao Configuration Manager permissões para o Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#grant-configuration-manager-with-permissions-to-log-analytics).  
 
@@ -52,7 +53,7 @@ ms.locfileid: "56156518"
 Use o **Assistente dos Serviços do Azure** para configurar uma conexão do Configuration Manager com o serviço de nuvem do Azure Log Analytics. Para obter mais informações e detalhes desse processo, confira [Configurar serviços do Azure](https://docs.microsoft.com/sccm/core/servers/deploy/configure/azure-services-wizard). Selecione a opção do **Conector do OMS** no assistente. 
 
 > [!Note]  
-> Este artigo refere-se ao *Conector do Log Analytics*, que antes era chamado de *Conector do OMS*. Não há diferença funcional. Para saber mais, veja [Gerenciamento do Azure - Monitoramento](https://docs.microsoft.com/azure/monitoring/#operations-management-suite).  
+> Este artigo refere-se ao *Conector do Log Analytics*, que antes era chamado de *Conector do OMS*. Não há diferença funcional. Para saber mais, veja [Gerenciamento do Azure - Monitoramento](https://docs.microsoft.com/azure/azure-monitor/terminology#log-analytics).  
 
 Se você tiver concluído todos os outros procedimentos com êxito, as informações na tela **Configuração de Conexão** aparecerão automaticamente depois que você importar o aplicativo Web. As informações para as configurações de conexão devem aparecer para sua **Assinatura do Azure**, **Grupo de recursos do Azure** e **Workspace do Operations Management Suite**.
 

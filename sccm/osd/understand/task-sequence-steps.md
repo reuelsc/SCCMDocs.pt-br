@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6229c0fe0702eac61b482c31195fd35fe3c5792f
-ms.sourcegitcommit: c43996b3cf083d919ff1ccc3d510af664aec4ed4
-ms.translationtype: HT
+ms.openlocfilehash: 2d510ab884e471a6fc4803826c9c19e21b614273
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67047004"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285590"
 ---
 # <a name="task-sequence-steps"></a>Etapas da sequência de tarefas
 
@@ -171,7 +171,7 @@ Selecione esta opção para fazer o computador de destino ingressar no domínio 
 
 #### <a name="account"></a>Conta
 
-Selecione **Definir** para especificar uma conta com as permissões necessárias para ingressar o computador no domínio. Na caixa de diálogo **Conta de Usuário do Windows**, insira o nome de usuário no seguinte formato: `Domain\User`. Para saber mais, confira [Conta de ingresso no domínio](/sccm/core/plan-design/hierarchy/accounts#task-sequence-editor-domain-joining-account).
+Selecione **Definir** para especificar uma conta com as permissões necessárias para ingressar o computador no domínio. Na caixa de diálogo **Conta de Usuário do Windows**, insira o nome de usuário no seguinte formato: `Domain\User`. Para saber mais, confira [Conta de ingresso no domínio](/sccm/core/plan-design/hierarchy/accounts#task-sequence-domain-join-account).
 
 #### <a name="adapter-settings"></a>Configurações do adaptador
 
@@ -462,7 +462,7 @@ O Configuration Manager captura cada volume (unidade) no computador de referênc
 
 O sistema operacional instalado no computador de referência deve ser uma versão do Windows compatível com o Configuration Manager. Use a ferramenta SysPrep para preparar o sistema operacional no computador de referência. O volume do sistema operacional instalado e o volume de inicialização devem ser o mesmo volume.  
 
-Especifique uma conta com permissões de gravação para o compartilhamento de rede selecionado. Para saber mais sobre a conta de imagem do sistema operacional de captura, consulte [Contas](/sccm/core/plan-design/hierarchy/accounts#capture-operating-system-image-account).
+Especifique uma conta com permissões de gravação para o compartilhamento de rede selecionado. Para saber mais sobre a conta de imagem do sistema operacional de captura, consulte [Contas](/sccm/core/plan-design/hierarchy/accounts#capture-os-image-account).
 
 Essa etapa de sequência de tarefas é executada somente no Windows PE. Ela não é executada no sistema operacional completo.
 
@@ -680,7 +680,7 @@ Selecione a letra da unidade local para atribuir a esta conexão.
 
 #### <a name="account"></a>Conta
 
-Selecione **Definir** para especificar a conta de usuário com permissões para se conectar a esta pasta de rede. Para saber mais sobre a conta de conexão da pasta de rede da sequência de tarefas, confira [Contas](/sccm/core/plan-design/hierarchy/accounts#task-sequence-editor-network-folder-connection-account).
+Selecione **Definir** para especificar a conta de usuário com permissões para se conectar a esta pasta de rede. Para saber mais sobre a conta de conexão da pasta de rede da sequência de tarefas, confira [Contas](/sccm/core/plan-design/hierarchy/accounts#task-sequence-network-folder-connection-account).
 
 
 
@@ -731,6 +731,9 @@ Esta etapa funciona bem em uma sequência de tarefas para atualizar um sistema o
 > Quando você implanta uma sequência de tarefas que contém essa etapa, não selecione **Baixar todo o conteúdo localmente antes de iniciar a sequência de tarefas** ou **Acessar conteúdo diretamente de um ponto de distribuição** para **Opções de implantação** na página **Pontos de Distribuição** do Assistente de Implantação de Software.  
 
 Essa etapa é executada no sistema operacional completo ou no Windows PE. A opção para salvar o pacote no cache do cliente do Configuration Manager não tem suporte no Windows PE.
+
+> [!NOTE]  
+> O **baixar conteúdo do pacote** tarefa não tem suporte para uso com mídia autônoma. Para obter mais informações, consulte [sem suporte a ações para mídia autônoma](/sccm/osd/deploy-use/create-stand-alone-media#unsupported-actions-for-stand-alone-media).  
 
 Para adicionar essa etapa no editor de sequência de tarefas, selecione **Adicionar**, **Software** e **Baixar Conteúdo do Pacote**.
 
@@ -1158,7 +1161,7 @@ Opcionalmente, digite ou navegue para uma unidade organizacional (UO) no domíni
 
 #### <a name="enter-the-account-which-has-permission-to-join-the-domain"></a>Insira a conta que tem permissão para ingressar no domínio
 
-Selecione **Definir** para inserir um nome de usuário e senha para uma conta com permissões para ingressar no domínio. Insira a conta no formato: `Domain\account`. Para saber mais sobre a conta de entrada no domínio da sequência de tarefas, confira [Contas](/sccm/core/plan-design/hierarchy/accounts#task-sequence-editor-domain-joining-account).  
+Selecione **Definir** para inserir um nome de usuário e senha para uma conta com permissões para ingressar no domínio. Insira a conta no formato: `Domain\account`. Para saber mais sobre a conta de entrada no domínio da sequência de tarefas, confira [Contas](/sccm/core/plan-design/hierarchy/accounts#task-sequence-domain-join-account).  
 
 
 
