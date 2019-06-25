@@ -26,7 +26,7 @@ Este procedimento define as configurações padrão do cliente para o inventári
 
 ## <a name="to-configure-software-inventory"></a>Para configurar o inventário de software  
 
-1. No console do Configuration Manager, clique em **Administração** > **Configurações do Cliente****Configurações do Cliente Padrão**.  
+1. No console do Configuration Manager, clique em **Administração** > **Configurações do Cliente** **Configurações do Cliente Padrão**.  
 
 2. Na guia **Início**, no grupo **Propriedades**, clique em **Propriedades**.  
 

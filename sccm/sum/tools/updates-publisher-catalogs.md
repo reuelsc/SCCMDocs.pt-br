@@ -22,7 +22,7 @@ ms.locfileid: "65493741"
 
 *Aplica-se ao: System Center Updates Publisher*
 
-Use **Catálogos****Workspace** para gerenciar catálogos de atualizações de software. Isso inclui a adição de novos catálogos, o gerenciamento de assinaturas de catálogo existentes e a importação de informações sobre as atualizações de um catálogo no repositório do Updates Publisher.
+Use **Catálogos** **Workspace** para gerenciar catálogos de atualizações de software. Isso inclui a adição de novos catálogos, o gerenciamento de assinaturas de catálogo existentes e a importação de informações sobre as atualizações de um catálogo no repositório do Updates Publisher.
 
 Os catálogos de atualizações de software contêm informações sobre as atualizações relacionadas que são criadas por organizações diferentes da Microsoft. Outras organizações incluem sua própria organização e fornecedores de software de terceiros que registraram seus catálogos com a Microsoft. Catálogos registrados de fornecedores de software são chamados *catálogos de parceiros*. Os catálogos que você cria, e que não estão registrados com a Microsoft, são chamados de catálogos de*usuário*.
 
