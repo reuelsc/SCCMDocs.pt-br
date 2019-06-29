@@ -2,7 +2,7 @@
 title: Novidades no MDM híbrido
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os novos recursos de gerenciamento de dispositivo móvel disponíveis para implantações híbridas com o Configuration Manager e o Intune.
-ms.date: 05/28/2019
+ms.date: 06/24/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da4798b958e0fd66e53024a2a104a67b3c1b93ea
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: c269e5f90588634e51f1d3f1e31767b11a038503
+ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194601"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67463773"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
@@ -45,6 +45,14 @@ Cada seção deste artigo lista recursos híbridos em três categorias diferente
 |**Novo no Microsoft Intune** | De modo geral, todos os recursos listados nesta categoria devem funcionar com todas as versões do Configuration Manager. Isso inclui versões do System Center 2012 R2 Configuration Manager, uma vez que esses recursos exigem apenas o serviço Intune e não exigem funcionalidades adicionais no Configuration Manager.|
 |**Novo no Configuration Manager Technical Preview**| Todos os recursos listados nessa categoria funcionam apenas com o branch de visualização técnica especificado. Para testar esses recursos, você deve instalar a versão de visualização técnica especificada na descrição do recurso. Para obter mais informações, confira [Visualização técnica para o Configuration Manager](/sccm/core/get-started/technical-preview).|
 |**Novo no Configuration Manager (Branch Atual)**| Todos os recursos listados nessa categoria funcionam apenas com a versão especificada do Configuration Manager (branch atual). Se estiver usando uma versão mais antiga do Configuration Manager para sua implantação híbrida, atualize para a versão do Configuration Manager (branch atual) especificada na descrição do recurso. Para obter mais informações, veja [Atualizar para o Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).|
+
+## <a name="june-2019"></a>Junho de 2019
+
+### <a name="new-in-microsoft-intune"></a>Novo no Microsoft Intune
+
+### <a name="view-all-installed-apps-from-new-company-portal-web-page"></a>Exibir todos os aplicativos da nova página de web do Portal da empresa 
+<!-- 4224326-->
+O site de Portal da empresa do novo **aplicativos instalados** página lista todos os aplicativos gerenciados (necessários e disponíveis) que estão instalados no dispositivo do usuário. Além do tipo de atribuição, os usuários podem ver o publicador, data de publicação e status da instalação atual do aplicativo. Se você ainda não fez qualquer aplicativo obrigatória ou estará disponível para seus usuários, eles verão uma mensagem explicando que nenhuma empresa aplicativos foram instalados. Para ver a nova exibição, vá para o [site do Portal da empresa](https://portal.manage.microsoft.com) e clique em **aplicativos instalados**.  
 
 
 ## <a name="may-2019"></a>Maio de 2019

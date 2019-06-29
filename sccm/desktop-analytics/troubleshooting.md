@@ -2,7 +2,7 @@
 title: Solucionar problemas de análise da área de trabalho
 titleSuffix: Configuration Manager
 description: Detalhes técnicos para ajudá-lo a solucionar problemas com a análise de área de trabalho.
-ms.date: 06/11/2019
+ms.date: 06/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6a64a007462c8619e05b3002611bb72581b6f92
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 271803e42ba20d8d0340754b3167210414423014
+ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285708"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67463803"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Solucionar problemas de análise da área de trabalho
 
@@ -56,7 +56,7 @@ Para obter mais informações, consulte [arquivos de Log para análise de área 
 ### <a name="enable-verbose-logging"></a>Habilitar o log detalhado
 
 1. No ponto de conexão de serviço, vá para a seguinte chave do registro: `HKLM\Software\Microsoft\SMS\Tracing\SMS_SERVICE_CONNECTOR`  
-2. Defina as **LogLevel** valor `0`  
+2. Defina as **LoggingLevel** valor `0`  
 3. (Opcional) Execute o seguinte comando SQL no banco de dados do site:  
 
     ```SQL
@@ -86,42 +86,43 @@ Depois de concluir a [inicial integração](/sccm/desktop-analytics/set-up#initi
 
 #### <a name="create-app-in-azure-ad"></a>Criar um aplicativo no Azure AD
 
-1. Abra o [portal do Azure](http://portal.azure.com) como um usuário com permissões de administrador da empresa, acesse **Azure Active Directory**e selecione **registros do aplicativo**. Em seguida, selecione **novo registro de aplicativo**.  
+1. Abra o [portal do Azure](http://portal.azure.com) como um usuário com *Administrador Global* permissões, vá para **Azure Active Directory**e selecione **registros do aplicativo**. Em seguida, selecione **novo registro**.  
 
 2. No **criar** painel, defina as seguintes configurações:  
 
     - **Nome**: um nome exclusivo que identifica o aplicativo, por exemplo: `Desktop-Analytics-Connection`  
 
-    - **Tipo de aplicativo**: **Aplicativo Web / API**  
+    - **Suporte para tipos de conta**: **Contas na organização somente o diretório (Contoso)**
 
-    - **URL de logon**: esse valor não é usado pelo Configuration Manager, mas exigido pelo Azure AD. Insira uma URL exclusiva e é válida, por exemplo: `https://configmgrapp`  
+    - **(Opcional) do URI de redirecionamento**: **Web**  
+
+    <!--     - **Sign-on URL**: this value isn't used by Configuration Manager, but required by Azure AD. Enter a unique and valid URL, for example: `https://configmgrapp`   -->
   
-   Selecione **Criar**.  
+    Selecione **registrar**.  
 
-3. Selecione o aplicativo e observe os **ID do aplicativo**. Esse valor é um GUID que é usado para configurar a conexão do Configuration Manager.  
+3. Selecione o aplicativo, observe o **ID do aplicativo (cliente)** e **ID de diretório (Locatário)** . Os valores são GUIDs são usados para configurar a conexão do Configuration Manager.  
 
-4. Selecione **as configurações** sobre o aplicativo e, em seguida, selecione **chaves**. No **senhas** , digite um **descrição da chave**, especifique uma expiração **duração**e, em seguida, selecione **salvar**. Cópia de **valor** da chave, que é usado para configurar a conexão do Configuration Manager.
+4. No **Manage** menu, selecione **certificados e segredos**. Selecione **novo segredo do cliente**. Insira um **descrição**, especifique uma duração de expiração e, em seguida, selecione **Add**. Cópia de **valor** da chave, que é usado para configurar a conexão do Configuration Manager.
 
     > [!Important]  
     > Isso é a única oportunidade para copiar o valor da chave. Se você não copiá-lo agora, você precisará criar outra chave.  
     >
     > Salve o valor da chave em um local seguro.  
 
-5. No aplicativo **as configurações** painel, selecione **permissões necessárias**.  
+5. No **Manage** menu, selecione **permissões de API**.  
 
-    1. Sobre o **permissões necessárias** painel, selecione **Add**.  
+    1. Sobre o **permissões de API** painel, selecione **adicionar uma permissão**.  
 
-    2. No **adicionar acesso à API** painel **selecionar uma API**.  
+    2. No **permissões de API de solicitação** do painel, alterne para o **APIs minha organização usa**.  
 
-    3. Pesquise o **Microsserviço do Configuration Manager** API. Selecione-o e, em seguida, escolha **selecionar**.  
+    3. Pesquise e selecione o **Configuration Manager Microservice** API.  
 
-    4. Sobre o **habilitar acesso** painel, selecione ambas as permissões de aplicativo: **Gravar dados de coleção de CM** e **ler dados de coleção de CM**. Em seguida, escolha **selecionar**.  
+    4. Selecione o **permissões de aplicativo** grupo. Expandir **CmCollectionData**e selecione as seguintes permissões: **Gravar dados de coleção de CM** e **ler dados de coleção de CM**.  
 
-    5. Sobre o **adicionar acesso à API** painel, selecione **feito**.  
+    5. Selecione **adicionar permissões**.  
 
-6. Sobre o **permissões necessárias** página, selecione **conceder permissões**. Selecione **Sim**.  
+6. Sobre o **permissões de API** painel, selecione **conceder consentimento do administrador...** . Selecione **Sim**.  
 
-7. Copie a ID de locatário do AD do Azure. Esse valor é um GUID que é usado para configurar a conexão do Configuration Manager. Selecione **Azure Active Directory** no menu principal e, em seguida, selecione **propriedades**. Cópia de **ID de diretório** valor.  
 
 #### <a name="import-app-in-configuration-manager"></a>Importação de aplicativo no Configuration Manager
 
@@ -182,7 +183,7 @@ Se houver um problema com esse processo durante a instalação, use o seguinte p
 
 3. No **adicionar permissões** painel, defina as seguintes configurações:  
 
-    - **Função**: **Leitor do log Analytics**  
+    - **Função**: **Reader**  
 
     - **Atribuir acesso a**: **Usuário, grupo ou aplicativo do Azure AD**  
 

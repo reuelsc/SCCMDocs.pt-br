@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7c899f56829d63cebc29518cbeb7497b6a203cd
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 6658f0b7a65027715975e6075e5c18a430d38405
+ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67158913"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67463763"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Como configurar a análise de área de trabalho
 
@@ -40,24 +40,20 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 
 4. Sobre o **dar aos usuários acesso** página:
 
-    - **Você deseja que a análise da área de trabalho para gerenciar funções de diretório para seus usuários**: Análise da área de trabalho atribui automaticamente o **proprietários do espaço de trabalho** e **colaboradores do espaço de trabalho** grupos para o **administrador de análise de área de trabalho** função. Se esses grupos já estão uma **Administrador Global**, não há nenhuma alteração.  
+    - **Permitir a análise de área de trabalho para gerenciar funções de diretório em seu nome**: Análise da área de trabalho atribui automaticamente o **proprietários do espaço de trabalho** as **administrador de análise de área de trabalho** função. Se esses grupos já estão uma **Administrador Global**, não há nenhuma alteração.
 
-        Se você não selecionar essa opção, análise de área de trabalho ainda adicionará os usuários como membros dos grupos de segurança de dois. Um **Administrador Global** precisa atribuir manualmente as **administrador de análise de área de trabalho** função para os usuários.  
+        Se você não selecionar essa opção, análise de área de trabalho ainda adiciona usuários como membros do grupo de segurança. Um **Administrador Global** precisa atribuir manualmente as **administrador de análise de área de trabalho** função para os usuários.   
 
         Para obter mais informações sobre como atribuir permissões de função de administrador no Azure Active Directory e as permissões atribuídas às **os administradores de análise de área de trabalho**, consulte [permissões da função de administrador no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
 
-    - Análise da área de trabalho pré-configura dois grupos de segurança no Azure Active Directory:  
+    - Análise da área de trabalho pré-configura a **proprietários do espaço de trabalho** grupo de segurança no Azure Active Directory para criar e gerenciar espaços de trabalho e planos de implantação. 
 
-        - **Os proprietários do espaço de trabalho**: Um grupo de segurança para criar e gerenciar espaços de trabalho. Essas contas precisam de acesso de proprietário à assinatura do Azure.  
-
-        - **Colaboradores de espaço de trabalho**: Um grupo de segurança para criar e gerenciar planos de implantação neste espaço de trabalho. Eles não precisam de qualquer acesso do Azure adicional.  
-
-        Para adicionar um usuário a um grupo, digite seu nome ou endereço de email na **insira o nome ou endereço de email** seção grupo apropriado. Quando terminar, selecione **próxima**.
+        Para adicionar um usuário ao grupo, digite seu nome ou endereço de email na **insira o nome ou endereço de email** seção. Quando terminar, selecione **próxima**.
 
 5. Na página para **definir seu espaço de trabalho**:  
 
     > [!Note]  
-    > Conclua esta etapa como uma **proprietário do espaço de trabalho** ou **Colaborador**. Para obter mais informações, consulte [pré-requisitos](/sccm/desktop-analytics/overview#prerequisites).  
+    > Para concluir esta etapa, o usuário precisa **proprietário do espaço de trabalho** permissões e acesso adicional para a assinatura do Azure e o grupo de recursos. Para obter mais informações, consulte [pré-requisitos](/sccm/desktop-analytics/overview#prerequisites).  
 
     - Para usar um espaço de trabalho para análise de área de trabalho, selecione-o e continue com a próxima etapa.  
 
