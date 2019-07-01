@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5600743af8acc0da121454aef2d90167c3ded5fa
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: a4dd872e803e1d2925f011a60be5d1ee924ca555
+ms.sourcegitcommit: 8e9e7c42a5572797e05936fab0cf84fc27c40862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286617"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398857"
 ---
 # <a name="how-to-prepare-internet-based-devices-for-co-management"></a>Como preparar dispositivos baseados na Internet para o cogerenciamento
 
@@ -60,6 +60,9 @@ Para saber mais, confira [Sequência de tarefas do Windows Autopilot para dispos
 ## <a name="install-the-configuration-manager-client"></a>Instalar o cliente do Configuration Manager
 
 Para dispositivos baseados na Internet no segundo caminho, é preciso criar um aplicativo no Intune. Implante esse aplicativo em dispositivos Windows 10 que ainda não são clientes do Configuration Manager. 
+
+> [!Note]  
+> Antes de implantar este aplicativo nos dispositivos, você deve garantir que o dispositivo confia no certificado de autenticação de servidor do CMG. Para obter mais informações, confira [Certificado raiz confiável do CMG para clientes](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_cmgroot). Se o dispositivo não confiar no certificado de autenticação de servidor do CMG, você pode ver o erro WINHTTP_CALLBACK_STATUS_FLAG_INVALID_CA em ccmsetup.log no cliente.
 
 ### <a name="get-the-command-line-from-configuration-manager"></a>Obter a linha de comando do Configuration Manager
 

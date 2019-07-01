@@ -2,7 +2,7 @@
 title: Criar e executar scripts
 titleSuffix: Configuration Manager
 description: Crie e execute scripts do Powershell em dispositivos clientes.
-ms.date: 03/13/2019
+ms.date: 06/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc22c66cfa4cf4e628dce7bf3cb268464610c933
-ms.sourcegitcommit: bfb8a17f60dcb9905e739045a5141ae45613fa2c
+ms.openlocfilehash: 7dc4351cf092437d81f0f30ed6b450ed1cb1efe2
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66198430"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286525"
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Criar e executar scripts do PowerShell do console do Configuration Manager
 
@@ -76,7 +76,7 @@ O recurso Executar Scripts usa o conceito de *autores de script* e *aprovadores 
 
 ### <a name="scripts-roles-control"></a>Controle de funções de scripts
 
-Por padrão, os usuários não podem aprovar um script que criaram. Como os scripts são eficientes, versáteis e potencialmente implantados em muitos dispositivos, você pode separar as funções entre a pessoa que cria o script e a pessoa que o aprova. Essas funções proporcionam um nível a mais de segurança contra a execução de um script sem supervisão. É possível desligar a aprovação secundária, para facilitar o teste.
+Por padrão, os usuários não é possível aprovar um script que eles já criados. Como os scripts são eficientes, versáteis e potencialmente implantados em muitos dispositivos, você pode separar as funções entre a pessoa que cria o script e a pessoa que o aprova. Essas funções proporcionam um nível a mais de segurança contra a execução de um script sem supervisão. É possível desativar a aprovação secundária para facilitar o teste.
 
 ### <a name="approve-or-deny-a-script"></a>Aprovar ou negar um script
 
@@ -172,7 +172,7 @@ As três funções de segurança usadas para executar scripts não são criadas 
 5. Conclua o assistente. O novo script é exibido na lista **Script** com um status de **Aguardando aprovação**. Antes de executar esse script em dispositivos cliente, você deve aprová-lo. 
 
 > [!IMPORTANT]
-> Evite gerar script de uma reinicialização do dispositivo ou de um reinício do agente do Configuration Manager quando usar o recurso Executar Scripts. Isto pode levar a um estado contínuo de reinicialização. Se necessário, há melhorias no recurso de notificação de cliente que permitem reiniciar os dispositivos, começando na versão 1710 do Configuration Manager. A [coluna de reinicialização pendente](/sccm/core/clients/manage/manage-clients#Restart-clients) pode ajudar a identificar os dispositivos que precisam de uma reinicialização. 
+> Evite gerar script de uma reinicialização do dispositivo ou de um reinício do agente do Configuration Manager quando usar o recurso Executar Scripts. Isto pode levar a um estado contínuo de reinicialização. Se necessário, há melhorias no recurso de notificação de cliente que permitem reiniciar os dispositivos, começando na versão 1710 do Configuration Manager. A [coluna de reinicialização pendente](/sccm/core/clients/manage/manage-clients#restart-clients) pode ajudar a identificar os dispositivos que precisam de uma reinicialização. 
 > <!--SMS503978  -->
 
 ## <a name="script-parameters"></a>Parâmetros do script
@@ -241,6 +241,29 @@ Esse script usa a WMI para consultar o computador sobre a versão do SO.
 Write-Output (Get-WmiObject -Class Win32_operatingSystem).Caption
 ```
 
+## <a name="bkmk_psedit"></a> Editar ou copiar os scripts do PowerShell
+<!--3705507-->
+*(Introduzido na versão 1902)*  
+É possível **Editar** ou **Copiar** um script existente do PowerShell usado com o recurso **Executar Scripts**. Em vez de recriar um script que você precisa alterar, agora pode editá-lo diretamente. As duas ações usam a mesma experiência do assistente de quando você cria um novo script. Quando você edita ou copia um script, o Configuration Manager não persiste o estado de aprovação.
+
+> [!Tip]  
+> Não edite um script que esteja sendo executado ativamente nos clientes. Eles não concluirão a execução do script original, e você pode não obter os resultados esperados desses clientes.  
+
+### <a name="edit-a-script"></a>Editar um script
+
+1. Vá para o **Scripts** nó sob o **biblioteca de Software** espaço de trabalho.
+1. Selecione o script para editar e, em seguida, clique em **editar** na faixa de opções. 
+1. Alterar ou importe novamente o script na **detalhes do Script** página.
+1. Clique em **próxima** para exibir o **resumo** , em seguida, **fechar** quando tiver terminado de edição.
+
+### <a name="copy-a-script"></a>Copiar um script
+
+1. Vá para o **Scripts** nó sob o **biblioteca de Software** espaço de trabalho.
+1. Selecione o script para copiar e, em seguida, clique em **cópia** na faixa de opções.
+1. Renomeie o script a **nome do Script** campo e faça as edições adicionais que talvez seja necessário.
+1. Clique em **próxima** para exibir o **resumo** , em seguida, **fechar** quando tiver terminado de edição.
+
+
 ## <a name="run-a-script"></a>Executar um script
 
 Após a aprovação de um script, ele poderá ser executado em um dispositivo único ou uma coleção. Após o início da execução do script, ele é iniciado rapidamente por meio de um sistema de alta prioridade e o tempo limite esgota em uma hora. Os resultados do script são retornados usando um sistema de mensagem de estado.
@@ -263,7 +286,7 @@ O script é executado como a conta do *sistema* ou do *computador* nos clientes 
 
 ## <a name="script-monitoring"></a>Monitoramento do script
 
-Depois de iniciar a execução de um script em uma coleção de dispositivos, use o procedimento a seguir para monitorar a operação. Começando pela versão 1710, é possível monitorar um script em tempo real conforme ele é executado e também retornar a um relatório de uma determinada execução do recurso Executar Script. Os dados de status do script são limpos como parte da [tarefa de manutenção Excluir Operações Antigas do Cliente](../../core/servers/manage/reference-for-maintenance-tasks.md) ou da exclusão do script.<br>
+Depois de iniciar a execução de um script em uma coleção de dispositivos, use o procedimento a seguir para monitorar a operação. Começando na versão 1710, é possível monitorar um script em tempo real conforme ele é executado e também retornar a um relatório de uma determinada execução do recurso Executar Script. Os dados de status do script são limpos como parte da [tarefa de manutenção Excluir Operações Antigas do Cliente](../../core/servers/manage/reference-for-maintenance-tasks.md) ou da exclusão do script.<br>
 
 ![Monitor de script – Status da Execução do Script](./media/run-scripts/RS-monitoring-three-bar.png)
 
@@ -311,7 +334,7 @@ Microsoft Windows 10 Enterprise
     -  Para o cliente do Configuration Manager versão 1802 e superior, você obtém a formatação JSON.
         - Por exemplo, você pode obter resultados que indicam TEXT em uma versão do cliente e “TEXT” (a saída é colocada entre aspas duplas) em outra versão, o que será colocado no gráfico como duas categorias diferentes.
         - Se você precisar solucionar esse problema, considere a possibilidade de executar o script em duas coleções diferentes. Uma com clientes anteriores à 1802 e outra com clientes 1802 e superiores. Ou você pode converter um objeto de enumeração em um valor de cadeia de caracteres nos scripts, para que eles sejam exibidos corretamente na formatação JSON. 
-- Converta um objeto de enumeração em um valor de cadeia de caracteres nos scripts, para que eles sejam exibidos corretamente na formatação JSON. <!--508377-->
+- Converta um objeto de enumeração em um valor de cadeia de caracteres nos scripts para que sejam exibidos corretamente na formatação JSON. <!--508377-->
 
    ![Converter um objeto de enumeração em um valor de cadeia de caracteres](./media/run-scripts/enum-tostring-JSON.png)
 

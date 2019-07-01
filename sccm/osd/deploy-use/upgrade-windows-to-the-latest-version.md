@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c118c50eccf7fdb443a54f630d2d5698836d44f2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 36304b836dbedcb411310d5f0dd8d0f0a8fd91f1
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135493"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194463"
 ---
 # <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Atualizar o Windows para a versão mais recente com o System Center Configuration Manager
 
@@ -37,7 +37,7 @@ Este artigo fornece as etapas no Configuration Manager para atualizar o sistema 
 
 
 > [!Note]  
-> A partir da versão 1802, a sequência de tarefas de atualização in-loco do Windows 10 dá suporte à implantação de clientes baseados na Internet, gerenciados por meio do [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/plan-cloud-management-gateway). Essa capacidade proporciona aos usuários remotos uma atualização mais fácil para o Windows 10 sem a necessidade de se conectar à intranet. Para obter mais informações, consulte [Implantar a atualização in-loco do Windows 10 por meio do CMG](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#deploy-windows-10-in-place-upgrade-via-cmg). <!-- 1357149 -->
+> A partir da versão 1802, a sequência de tarefas de atualização in-loco do Windows 10 dá suporte à implantação de clientes baseados na Internet, gerenciados por meio do [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/plan-cloud-management-gateway). Essa capacidade proporciona aos usuários remotos uma atualização mais fácil para o Windows 10 sem a necessidade de se conectar à intranet. Para obter mais informações, consulte [Implantar a atualização in-loco do Windows 10 por meio do CMG](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#deploy). <!-- 1357149 -->
 
 
 
