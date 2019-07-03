@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebc2b995c763aa54e1d47ee38ab2d250554f5a29
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 0a50dd4df66292837cd7a3667a0790c04ebddb9a
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62185539"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516013"
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-configuration-manager"></a>Proteja os dados com a limpeza remota, o bloqueio ou a redefinição de senha usando o Configuration Manager
 
@@ -152,7 +152,7 @@ As configurações a seguir também são removidas dos dispositivos Windows 10 M
 
 O Windows 8.1 e o Windows RT 8.1 suportam a limpeza seletiva do conteúdo criptografado do Sistema de Arquivos com Criptografia (EFS). O exemplo a seguir se aplica a um apagamento seletivo de conteúdo habilitado para EFS:  
 
-- Somente os aplicativos e os dados protegidos por EFS, com o mesmo domínio de Internet da conta do Intune, são apagados de forma seletiva. Para obter mais informações, consulte [Apagamento Seletivo do Windows para Gerenciamento de Dados do Dispositivo](http://technet.microsoft.com/library/dn486874.aspx).  
+- Somente os aplicativos e os dados protegidos por EFS, com o mesmo domínio de Internet da conta do Intune, são apagados de forma seletiva. Para obter mais informações, consulte [Apagamento Seletivo do Windows para Gerenciamento de Dados do Dispositivo](https://technet.microsoft.com/library/dn486874.aspx).  
 
 - Se houver qualquer alteração no domínio associado ao EFS, as alterações poderão levar até 48 horas para que os aplicativos e os dados usando o novo domínio possam ser apagados seletivamente.  
 
@@ -252,4 +252,4 @@ Se um usuário perder o dispositivo, você poderá bloqueá-lo remotamente. A ta
 
 ## <a name="see-also"></a>Consulte também  
 
-[Apagamento Seletivo do Windows para Gerenciamento de Dados do Dispositivo](http://technet.microsoft.com/library/dn486874.aspx)   
+[Apagamento Seletivo do Windows para Gerenciamento de Dados do Dispositivo](https://technet.microsoft.com/library/dn486874.aspx)   
