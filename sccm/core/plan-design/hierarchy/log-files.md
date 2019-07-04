@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5994eb6ab241e35bd0b4c4ecceb9fe6c4ef35a00
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: fc52acadacf8ea8e97d23820d521b831bcc31892
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176041"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67158793"
 ---
 # <a name="log-files-in-configuration-manager"></a>Arquivos de log no Configuration Manager
 
@@ -115,7 +115,7 @@ No Configuration Manager, os componentes cliente e de servidor do site registram
     -   [Servidor do WSUS](#BKMK_WSUSLog)  
 
 ##  <a name="BKMK_AboutLogs"></a> Sobre arquivos de log do Configuration Manager  
- A maioria dos processos do Configuration Manager grava informações operacionais em um arquivo de log dedicado ao processo em questão. Estes arquivos de log são identificados pelas extensões de arquivo **.log** ou **.lo_**. O Configuration Manager grava no arquivo .log até que o log atinja seu tamanho máximo. Quando o log está cheio, o arquivo .log é copiado em um arquivo com o mesmo nome mas com extensão .lo_ e o processo ou componente continua a gravar no arquivo .log. Quando o arquivo .log atinge novamente seu tamanho máximo, o arquivo .lo_ é substituído e o processo se repete. Alguns componentes criam um histórico de arquivos de log acrescentando uma data ou o carimbo de data/hora ao nome do arquivo de log e ao manter a extensão .log. Uma exceção ao tamanho máximo e uso do arquivo .lo_ é o cliente para Linux e UNIX. Para saber mais sobre como o cliente do Linux e UNIX usa arquivos de log, consulte [Gerenciar arquivos de log do cliente para Linux e UNIX](#BKMK_ManageLinuxLogs) neste artigo.  
+ A maioria dos processos do Configuration Manager grava informações operacionais em um arquivo de log dedicado ao processo em questão. Estes arquivos de log são identificados pelas extensões de arquivo **.log** ou **.lo_** . O Configuration Manager grava no arquivo .log até que o log atinja seu tamanho máximo. Quando o log está cheio, o arquivo .log é copiado em um arquivo com o mesmo nome mas com extensão .lo_ e o processo ou componente continua a gravar no arquivo .log. Quando o arquivo .log atinge novamente seu tamanho máximo, o arquivo .lo_ é substituído e o processo se repete. Alguns componentes criam um histórico de arquivos de log acrescentando uma data ou o carimbo de data/hora ao nome do arquivo de log e ao manter a extensão .log. Uma exceção ao tamanho máximo e uso do arquivo .lo_ é o cliente para Linux e UNIX. Para saber mais sobre como o cliente do Linux e UNIX usa arquivos de log, consulte [Gerenciar arquivos de log do cliente para Linux e UNIX](#BKMK_ManageLinuxLogs) neste artigo.  
 
  Para exibir os logs, use a ferramenta de visualizador de log do Configuration Manager, CMTrace, localizada na pasta \\SMSSetup\\Tools da mídia de origem do Configuration Manager. A ferramenta CMTrace é adicionada a todas as imagens de inicialização adicionadas à Biblioteca de Software. Começando na versão 1806, a ferramenta de visualização de log CMTrace é instalada automaticamente junto com o cliente do Configuration Manager.<!--1357971--> Para obter mais informações, confira [CMTrace](/sccm/core/support/cmtrace). 
 
@@ -178,6 +178,7 @@ A tabela a seguir lista os arquivos de log localizados no cliente do Configurati
 |InventoryAgent.log|Registra as atividades de inventário de hardware e de software e as ações de descoberta de pulsação no cliente.|  
 |LocationCache.log|Registra a atividade de uso e manutenção do cache de localização para o cliente.|  
 |LocationServices.log|Registra a atividade do cliente para localizar os pontos de gerenciamento, pontos de atualização de software e pontos de distribuição.|  
+|M365AHandler.log|Informações sobre a política de configurações de Análise de Área de Trabalho|
 |MaintenanceCoordinator.log|Registra a atividade de tarefa de manutenção geral do cliente.|  
 |Mifprovider.log|Registra a atividade do provedor de WMI para arquivos MIF.|  
 |mtrmgr.log|Monitora todos os processos de medição de software.|  
@@ -268,8 +269,8 @@ O cliente do Configuration Manager para computadores Mac registra as informaçõ
 |--------------|-------------|  
 |CCMClient-&lt;*data_hora*>.log|Registra atividades que estão relacionadas a operações do cliente Mac, que incluem gerenciamento de aplicativos, inventário e log de erros.<br /><br /> Esse arquivo de log está localizado na pasta /Library/Application Support/Microsoft/CCM/Logs no computador Mac.|  
 |CCMAgent-&lt;*data_hora*>.log|Registra informações que estão relacionadas a operações do cliente, que incluem operações de logon e logoff do usuário e atividade do computador Mac.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
-|CCMNotifications-&lt;*data_hora>*.log|Registra atividades relacionadas a notificações do Configuration Manager exibidas no computador Mac.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
-|CCMPrefPane-&lt;*data_hora>*.log|Registra atividades relacionadas à caixa de diálogo de preferências do Configuration Manager no computador Mac, que inclui logs de erros e status geral.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
+|CCMNotifications-&lt;*data_hora>* .log|Registra atividades relacionadas a notificações do Configuration Manager exibidas no computador Mac.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
+|CCMPrefPane-&lt;*data_hora>* .log|Registra atividades relacionadas à caixa de diálogo de preferências do Configuration Manager no computador Mac, que inclui logs de erros e status geral.<br /><br /> Esse arquivo de log está localizado na pasta ~/Library/Logs no computador Mac.|  
 
 O arquivo de log SMS_DM.log no servidor do sistema de site registra a comunicação entre computadores Mac e o ponto de gerenciamento habilitado para dispositivos móveis e computadores Mac.  
 
@@ -580,6 +581,23 @@ A tabela a seguir lista os arquivos de log que contêm informações relacionada
 |SMSdpmon.log|Registra detalhes sobre as tarefas agendadas de monitoramento de integridade do ponto de distribuição, que estão configuradas em um ponto de distribuição.|Função do sistema de site|  
 |smsdpprov.log|Registra os detalhes sobre a extração de arquivos compactados recebidos de um site primário. Esse log é gerado pelo provedor WMI do ponto de distribuição remoto.|O computador de ponto de distribuição que não está colocalizado com o servidor do site|  
 |smsdpusage.log|Registra os detalhes sobre o smsdpusage.exe que é executado e coleta os dados para o relatório de resumo de uso do ponto de distribuição.|Função do sistema de site|  
+
+
+### <a name="desktop-analytics"></a>Análise de Área de Trabalho
+
+Use os seguintes arquivos de log para ajudar a solucionar problemas com a Análise de Área de Trabalho integrada ao Configuration Manager.
+
+Os arquivos de log no ponto de conexão de serviço estão no seguinte diretório: `%ProgramFiles%\Configuration Manager\Logs\M365A`.
+Os arquivos de log no cliente do Configuration Manager estão no seguinte diretório: `%WinDir%\CCM\logs`.
+
+| Log | Descrição |Computador com o arquivo de log|
+|---------|---------|---------|
+| M365ADeploymentPlanWorker.log | Informações sobre a sincronização do plano de implantação do serviço de nuvem da Análise de Área de Trabalho para o Configuration Manager local |Ponto de Conexão de Serviço|
+| M365ADeviceHealthWorker.log | Informações sobre o upload da integridade do dispositivo do Configuration Manager para a nuvem da Microsoft |Ponto de Conexão de Serviço|
+| M365AHandler.log | Informações sobre a política de configurações de Análise de Área de Trabalho |Cliente|
+| M365AUploadWorker.log | Informações sobre a coleta e o upload do dispositivo do Configuration Manager para a nuvem da Microsoft |Ponto de Conexão de Serviço|
+| SmsAdminUI.log | Informações sobre a atividade do console do Configuration Manager, como configuração dos serviços de nuvem do Azure  |Ponto de Conexão de Serviço|
+
 
 ###  <a name="BKMK_DiscoveryLog"></a> Descoberta  
 A tabela a seguir lista os arquivos de log que contêm informações relacionadas à Descoberta.  

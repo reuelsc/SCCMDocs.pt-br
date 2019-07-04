@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 322eff398726b2c799164ea369e01519dc62ec8f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 4340f21ad257bfe311915edaa918e704832e3e77
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137197"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286432"
 ---
 # <a name="integrate-upgrade-readiness-with-configuration-manager"></a>Integrar o Upgrade Readiness ao Configuration Manager
 
@@ -36,7 +36,7 @@ O Upgrade Readiness depende dos dados do Windows Analytics. Para que o Upgrade R
 
 - Para clientes que executam o Windows 7 ou 8.1:  
 
-    - Instalar as atualizações conforme descrito em [Introdução ao Upgrade Readiness](https://docs.microsoft.com/windows/deployment/upgrade/upgrade-readiness-get-started#deploy-the-compatibility-update-and-related-kbs)  
+    - Instalar as atualizações conforme descrito em [Introdução ao Upgrade Readiness](https://docs.microsoft.com/windows/deployment/upgrade/upgrade-readiness-get-started)  
 
     - Habilitar configurações de cliente de análise do Windows  
 

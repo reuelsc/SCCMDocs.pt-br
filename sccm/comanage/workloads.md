@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 4c90befe-9c4e-4c27-a947-625887e15052
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9477db29a93cd8d4a8a7c9b48be8be563bbe25a6
-ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
+ms.openlocfilehash: 5fb11ac9ffbacfc37b69cb91d34a6885f44abe08
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66264501"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286640"
 ---
 # <a name="co-management-workloads"></a>Cargas de trabalho de cogerenciamento
 
@@ -118,9 +118,11 @@ Para saber mais sobre o recurso do Intune, confira [Atribuir aplicativos do Offi
 
 <!--1357892-->
 
-A partir do Configuration Manager versão 1806, use o Intune para gerenciar aplicativos cliente em dispositivos Windows 10 cogerenciados. Após a transição dessa carga de trabalho, todos os aplicativos disponíveis implantados do Intune estão disponíveis no Portal da Empresa. Os aplicativos que você implanta do Configuration Manager estão disponíveis no Centro de Software.
+A partir do Configuration Manager versão 1806, use o Intune para gerenciar aplicativos cliente e scripts do PowerShell em dispositivos Windows 10 cogerenciados. Após a transição dessa carga de trabalho, todos os aplicativos disponíveis implantados do Intune estão disponíveis no Portal da Empresa. Os aplicativos que você implanta do Configuration Manager estão disponíveis no Centro de Software.
+
 
 Para saber mais sobre o recurso do Intune, confira [O que é o gerenciamento de aplicativo do Microsoft Intune?](https://docs.microsoft.com/intune/app-management).
+
 
 > [!Note]  
 > A carga de trabalho de aplicativos cliente é um recurso em pré-lançamento. Para habilitá-lo, veja [Recursos de pré-lançamento](/sccm/core/servers/manage/pre-release-features).  

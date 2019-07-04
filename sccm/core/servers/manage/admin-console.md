@@ -2,7 +2,7 @@
 title: Console do Configuration Manager
 titleSuffix: Configuration Manager
 description: Saiba mais sobre como navegar por meio do console do Configuration Manager.
-ms.date: 04/03/2019
+ms.date: 06/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb58662350caec9fd1a08295c93c3811893048a9
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: 3fc9e6fad0b7be3762b3d642c94c4cf17266e0b3
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802420"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285746"
 ---
 # <a name="using-the-configuration-manager-console"></a>Usando o console do Configuration Manager
 
@@ -147,6 +147,66 @@ Começando na versão 1902, você pode exibir as conexões mais recentes do cons
 
 ![Exibir as conexões de console do Configuration Manager](media/console-connections.png) 
 
+
+## <a name="bkmk_notify"></a> Notificações do console do Configuration Manager
+<!--3556016, fka 1318035-->
+A partir do Configuration Manager versão 1902, o console notifica você para os seguintes eventos:
+
+- Quando uma atualização está disponível para o Configuration Manager em si
+- Quando ocorrem eventos de ciclo de vida e manutenção no ambiente
+
+Essa notificação é uma barra na parte superior da janela do console abaixo da faixa de opções. Ela substitui a experiência anterior quando atualizações do Configuration Manager estão disponíveis. Essas notificações no console ainda exibem informações críticas, mas não interferem no trabalho no console. Você não pode descartar notificações críticas. O console exibe todas as notificações em uma nova área de notificação da barra de título.
+
+![Barra de notificação e sinalizador no console](./media/1318035-notify-eval-version-expired.png)
+
+### <a name="configure-a-site-to-show-non-critical-notifications"></a>Configurar um site para mostrar notificações não críticas
+
+Você pode configurar cada site para mostrar notificações não críticas nas propriedades do site.
+
+1.  No espaço de trabalho **Administração**, expanda **Configuração do Site** e clique no nó **Sites**.
+1. Selecione o site que você deseja configurar para notificações não críticas.
+1. Na faixa de opções, clique em **Propriedades**.
+1. Na guia **Alertas**, selecione a opção para **Habilitar notificações de console para alterações de integridade do site não críticas**.
+   - Se você habilitar essa configuração, todos os usuários do console verão notificações críticas, de aviso e de informações. Essa configuração é habilitada por padrão.  
+   - Se você desabilitar essa configuração, os usuários do console verão apenas notificações críticas.  
+
+A maioria das notificações de console é por sessão. O console avalia consultas quando um usuário o inicia. Para ver as alterações nas notificações, reinicie o console. Se um usuário descartar uma notificação não crítica, ele será notificado novamente quando o console for reiniciado, se ainda for aplicável.
+
+As seguintes notificações são reavaliadas a cada cinco minutos:
+- O site está no modo de manutenção  
+- O site está no modo de recuperação  
+- O site está no modo de atualização  
+
+As notificações seguem as permissões de administração baseada em funções. Por exemplo, se um usuário não tiver permissões para ver as atualizações do Configuration Manager, ele não verá essas notificações.
+
+Algumas notificações têm uma ação relacionada. Por exemplo, se a versão do console não corresponder à versão do site, selecione **Instalar a nova versão do console**. Essa ação inicializa o instalador do console. 
+
+As seguintes notificações são mais aplicáveis ao branch de visualização técnica:  
+
+- A versão de avaliação está dentro de 30 dias de término (Aviso): a data atual está dentro de 30 dias após a data do término da versão de avaliação  
+- A versão de avaliação expirou (Crítica): a data atual é posterior à data do término da versão de avaliação  
+- Incompatibilidade de versão do console (Crítica): a versão do console não corresponde à versão do site  
+- Há uma atualização do site disponível (Aviso): há um novo pacote de atualização disponível  
+
+Para obter mais informações e assistência na solução de problemas, confira o arquivo **SmsAdminUI.log** no computador do console. Por padrão, esse arquivo de log está no seguinte caminho: `C:\Program Files (x86)\Microsoft Configuration Manager\AdminConsole\AdminUILog\SmsAdminUI.log`.
+
+## <a name="bkmk_doc-dashboard"></a> Painel de documentação no console
+<!--3556019 FKA 1357546-->
+
+A partir do Configuration Manager versão 1902, há um nó **Documentação** no novo espaço de trabalho **Comunidade**. Esse nó inclui informações atualizadas sobre a documentação e os artigos de suporte do Configuration Manager. Ele inclui as seguintes seções:  
+
+### <a name="product-documentation-library"></a>Biblioteca de documentação do produto
+
+- **Recomendado**: uma lista de artigos importantes coletada manualmente.
+- **Tendências**: os artigos mais populares do último mês.
+- **Atualizados recentemente**: artigos revisados no último mês.
+
+### <a name="support-articles"></a>Artigos de suporte
+
+- **Artigos de solução de problemas**: orientações passo a passo para ajudar na solução de problemas de componentes e recursos do Configuration Manager.
+- **Artigos de suporte novos e atualizados**: artigos de suporte que são novos ou foram atualizados nos últimos dois meses.
+
+
 ## <a name="command-line-options"></a>Opções de linha de comando
 
 O console do Configuration Manager tem as seguintes opções de linha de comando:
@@ -160,8 +220,65 @@ O console do Configuration Manager tem as seguintes opções de linha de comando
 |`/sms:NoRestore`|O console ignora a navegação em nó persistente anterior.|  
 
 
-
 ## <a name="tips"></a>Dicas
+
+### <a name="search-device-views-using-mac-address"></a>Pesquisar exibições de dispositivo usando o endereço MAC
+<!--3600878-->
+*(Apresentado na versão 1902)*
+
+Você pode pesquisar um endereço MAC em uma exibição de dispositivo do console do Configuration Manager. Essa propriedade é útil para os administradores de implantação do sistema operacional durante a solução de problemas de implantações baseadas no PXE. Ao exibir uma lista de dispositivos, adicione a coluna **Endereço MAC** à exibição. Use o campo de pesquisa para adicionar os critérios de pesquisa de **Endereço MAC**.
+
+### <a name="maximize-the-browse-registry-window"></a>Maximizar a janela Procurar Registro
+<!--3594151 includes all MMS 1902 console changes-->
+*(Apresentado na versão 1902)*
+1. No workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**. 
+1. Selecione um aplicativo que tenha um tipo de implantação com um método de detecção. Por exemplo, um método de detecção do Windows Installer. 
+1. No painel de detalhes, mude para a guia **Tipos de Implantação**. 
+1. Abra as propriedades de um tipo de implantação e alterne para a guia **Método de Detecção**. Selecione **Adicionar Cláusula**. 
+1. Altere o **Tipo de Configuração** para **Registro** e selecione **Procurar** para abrir a janela **Procurar Registro**. Agora você pode maximizar essa janela.  
+
+### <a name="go-to-the-collection-from-an-application-deployment"></a>Ir para a coleção de uma implantação de aplicativo
+
+*(Apresentado na versão 1902)*
+1. No workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos** e selecione o nó **Aplicativos**. 
+1. Selecione um aplicativo. No painel de detalhes, mude para a guia **Implantações**.
+1. Selecione uma implantação e, em seguida, escolha a nova opção **Coleção** na faixa de opções na guia Implantação. Essa ação alterna a exibição para a coleção que é o destino da implantação.
+   - Essa ação também está disponível no menu de contexto do botão direito do mouse na implantação nesta exibição.
+
+### <a name="edit-a-task-sequence-by-default"></a>Editar uma sequência de tarefas por padrão
+
+*(Apresentado na versão 1902)*
+
+No workspace **Biblioteca de Software**, expanda **Sistemas Operacionais** e selecione o nó **Sequências de Tarefas**. **Editar** agora é a ação padrão ao abrir uma sequência de tarefas. Antes, a ação padrão era **Propriedades**.  
+
+### <a name="remove-content-from-monitoring-status"></a>Remover o conteúdo do status de monitoramento
+*(Apresentado na versão 1902)*
+
+1. No workspace **Monitoramento**, expanda **Status da Distribuição** e selecione **Status do Conteúdo**.
+1. Selecione um item na lista e escolha a opção **Status de Exibição** na faixa de opções. 
+1. No painel de Detalhes do Ativo, clique com o botão direito do mouse em um ponto de distribuição e selecione a nova opção **Remover**. Esta ação remove esse conteúdo do ponto de distribuição selecionado.
+
+### <a name="views-sort-by-integer-values"></a>Classificação de exibições por valores inteiros
+*(Apresentado na versão 1902)*
+
+Fizemos melhorias no modo de como vários modos de exibição classificam dados. Por exemplo, no nó **Implantações** do workspace de **Monitoramento**, as seguintes colunas agora são classificados como números em vez de valores de cadeia de caracteres:  
+
+- Erros de Número
+- Número em Progresso
+- Outro Número
+- Êxito de Número
+- Número Desconhecido  
+
+### <a name="move-the-warning-for-a-large-number-of-results"></a>Mover o aviso para um grande número de resultados
+*(Apresentado na versão 1902)*
+
+Quando você seleciona um nó no console que retorna mais de 1.000 resultados, o Configuration Manager exibe o seguinte aviso:
+
+> O Configuration Manager retornou um grande número de resultados. Você pode restringir os resultados usando a pesquisa. Ou clique aqui para exibir um máximo de 100 mil resultados.
+ 
+Agora há espaço em branco adicional entre esse aviso e o campo de pesquisa. Essa mudança ajuda a evitar que o aviso para exibir mais resultados seja selecionado inadvertidamente. 
+
+
 
 ### <a name="send-feedback"></a>Enviar comentários
 <!--1357542-->

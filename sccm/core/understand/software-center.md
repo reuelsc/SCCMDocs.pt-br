@@ -5,18 +5,18 @@ description: Saiba mais sobre os recursos e as funcionalidades do Centro de Soft
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 02/20/2019
+ms.date: 06/18/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eacd1d1be2564b718423b9d0db8d24b60aac1adb
-ms.sourcegitcommit: 369db96ee84299b5ab6d74b177e6366b3017fc54
+ms.openlocfilehash: c32f3f24f083537396c64c8f8426f8b6e6d6ee7a
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56589910"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252027"
 ---
 # <a name="software-center-user-guide"></a>Guia do usuário do Centro de Software
 
@@ -53,7 +53,8 @@ Clique na guia **Aplicativos** para encontrar e instalar aplicativos implantados
 
 
 ### <a name="install-multiple-applications"></a>Instalar vários aplicativos 
-<!-- 1357126 --> Instale mais de um aplicativo por vez, sem precisar esperar a conclusão de um para iniciar o próximo. Nem todos os aplicativos são qualificados:
+<!-- 1357126 -->
+Instale mais de um aplicativo por vez, em vez de aguardar a conclusão de um antes de iniciar o próximo. Nem todos os aplicativos são qualificados:
 - O aplicativo está visível para você
 - O aplicativo ainda não está instalado ou sendo baixado
 - O administrador de TI não exige aprovação para instalar o aplicativo
@@ -118,9 +119,13 @@ Clique na guia **Opções** para exibir as configurações adicionais desse comp
 
 Indique as horas durante as quais você normalmente trabalha. O administrador de TI pode agendar as instalações de software fora do horário comercial. Permita, pelo menos, quatro horas por dia para tarefas de manutenção do sistema. O administrador de TI ainda poderá instalar atualizações de software e aplicativos críticos durante o horário comercial.
 
-- Clique nas listas suspensas para selecionar os horários mais cedo e mais tarde em que você usa esse computador. Por padrão, esses valores variam das **5h** até às **22h**
+   - Clique nas listas suspensas para selecionar os horários mais cedo e mais tarde em que você usa esse computador. Por padrão, esses valores variam das **5h** até às **22h**
 
-- Marque a caixa de seleção ao lado dos dias da semana que você normalmente usa esse computador. O Centro de Software seleciona somente os dias da semana por padrão.  
+   - Marque a caixa de seleção ao lado dos dias da semana que você normalmente usa esse computador. O Centro de Software seleciona somente os dias da semana por padrão.  
+
+Especifique se você usa regularmente este computador para fazer seu trabalho. O administrador pode automaticamente instalar aplicativos ou disponibilizar aplicativos adicionais para os computadores principais. <!--3485366-->
+
+   - Selecione **Eu uso regularmente este computador para fazer meu trabalho** se o computador que você está usando for um computador principal.
 
 
 ### <a name="power-management"></a>Gerenciamento de Energia

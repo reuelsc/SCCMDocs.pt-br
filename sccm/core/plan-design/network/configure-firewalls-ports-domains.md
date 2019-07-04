@@ -1,8 +1,8 @@
 ---
-title: Firewalls e domínios
+title: Infraestrutura de rede
 titleSuffix: Configuration Manager
-description: Configure firewalls, portas e domínios para preparar-se para comunicações do System Center Configuration Manager.
-ms.date: 2/6/2017
+description: Configure firewalls, portas e domínios para preparar-se para comunicações do Configuration Manager.
+ms.date: 06/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,22 +11,44 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1bec1e86d6b9144b6448bd098c471300a799947
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 60a24e06d650b0e25007fb8490eb0c7d8c1996a1
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499247"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285605"
 ---
-# <a name="set-up-firewalls-ports-and-domains-for-system-center-configuration-manager"></a>Configurar firewalls, portas e domínios para o System Center Configuration Manager
+# <a name="network-infrastructure-considerations-for-configuration-manager"></a>Considerações sobre infraestrutura de rede para o Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Para preparar sua rede para dar suporte ao System Center Configuration Manager, planeje a configuração da infraestrutura, como firewalls, para passar as comunicações usadas pelo Configuration Manager.  
+Para preparar sua rede para dar suporte ao Configuration Manager, você precisará configurar alguns componentes de infraestrutura. Por exemplo, abra portas de firewall para passar as comunicações usadas pelo Configuration Manager.  
 
-|Consideração|Detalhes|  
-|-------------------|-------------|  
-|**Portas e protocolos** usados por diferentes recursos do Configuration Manager. Algumas portas são necessárias, enquanto **domínios e serviços** podem ser personalizados.|A maioria das comunicações do Configuration Manager usa portas comuns, como a porta 80 para HTTP ou 443 para comunicação HTTPS. Entretanto, [algumas funções do sistema de sites dão suporte ao uso de sites personalizados](/sccm/core/plan-design/network/websites-for-site-system-servers) e portas personalizadas.<br /><br /> **Antes de implantar o Configuration Manager**, identifique as portas que você planeja usar e configure os firewalls de acordo.<br /><br /> Mais tarde, **se você precisar alterar uma porta** após instalar o Configuration Manager, não se esqueça de atualizar os firewalls nos dispositivos e na rede, além de alterar a configuração da porta de dentro do Configuration Manager.<br /><br /> Para obter mais informações, consulte: </br>- [Como configurar as portas de comunicação do cliente](../../../core/clients/deploy/configure-client-communication-ports.md) </br>- [Portas usadas no Configuration Manager](../../../core/plan-design/hierarchy/ports.md) </br>- [Requisitos de acesso à Internet para o ponto de conexão de serviço](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls)|  
-|**Domínios e serviços** que clientes e servidores de sites talvez precisem acessar.|Os recursos do Configuration Manager podem exigir que clientes e servidores do site tenham acesso a serviços e domínios específicos na Internet, como o Windowsudpate.microsoft.com ou o serviço Microsoft Intune.<br /><br /> Se você usa o Microsoft Intune para gerenciar dispositivos móveis, também deve configurar o acesso a [portas e domínios exigidos pelo Intune](https://docs.microsoft.com/intune/get-started/network-infrastructure-requirements-for-microsoft-intune)|  
-|**Servidores proxy** para servidores de sistema de sites e para comunicações do cliente. Você pode especificar servidores proxy separados para clientes e servidores de sistema de sites diferentes.|Como essas configurações são feitas quando você instala uma função de sistema de sites ou cliente, você só precisar tomar conhecimento das configurações do servidor proxy para referência futura ao configurar funções de sistemas de sites e clientes.<br /><br /> Se você não tiver certeza se sua implantação precisará usar servidores proxy, examine [Suporte ao servidor proxy no System Center Configuration Manager](../../../core/plan-design/network/proxy-server-support.md) para saber mais sobre as funções de sistemas de sites e ações de cliente que podem usar um servidor proxy.|   
-|  
+## <a name="ports-and-protocols"></a>Portas e protocolos
+
+Diferentes recursos do Configuration Manager usam portas de rede diferentes. Algumas portas são necessárias e algumas você pode personalizar.
+
+A maioria das comunicações do Configuration Manager usa portas comuns, como a porta 80 para HTTP ou 443 para HTTPS. Algumas funções do sistema de sites dão suporte ao uso de sites personalizados e portas personalizadas. Para saber mais, confira [Sites para servidores de sistema de sites](/sccm/core/plan-design/network/websites-for-site-system-servers).
+
+Antes de implantar o Configuration Manager, identifique as portas que você planeja usar e configure os firewalls conforme o desejado.
+
+Depois de instalar o Configuration Manager, se precisar alterar uma porta, não se esqueça de atualizar os firewalls em dispositivos e a rede. Também altere a configuração da porta no Configuration Manager.
+
+Para obter mais informações, consulte os seguintes artigos:
+
+- [Como configurar as portas de comunicação do cliente](/sccm/core/clients/deploy/configure-client-communication-ports)
+- [Portas usadas no Configuration Manager](/sccm/core/plan-design/hierarchy/ports)
+
+
+## <a name="internet-access-requirements"></a>Requisitos de acesso à Internet
+
+Alguns recursos do Configuration Manager dependem da conectividade com a Internet para ter a funcionalidade completa. Se sua organização restringe a comunicação de rede com a Internet usando um dispositivo de firewall ou proxy, dê permissão aos pontos de extremidade necessários.
+
+Para saber mais, confira [Requisitos de acesso à Internet](/sccm/core/plan-design/network/internet-endpoints)
+
+
+## <a name="proxy-servers"></a>Servidores proxy
+
+Você pode especificar servidores proxy separados para clientes e servidores de sistema de sites diferentes. Você deve fazer essas configurações ao instalar um cliente ou função do sistema de site, ou pode alterá-las posteriormente conforme o necessário.
+
+Para obter mais informações, confira [Suporte ao servidor proxy](/sccm/core/plan-design/network/proxy-server-support).

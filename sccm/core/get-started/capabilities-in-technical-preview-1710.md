@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84e7b2692dae8b924cfa418508433755de4da328
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: e668baafac94dfc7da5008c37556c017c5e01c9d
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128357"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286103"
 ---
 # <a name="capabilities-in-technical-preview-1710-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1710 do System Center Configuration Manager
 
@@ -32,7 +32,7 @@ Este artigo apresenta os recursos que estão disponíveis na Technical Preview d
     Workaround details.
 -->
 **Problemas conhecidos nesse Technical Preview:**
-- **Suporte para Windows 10, versão 1709 (também conhecido como Atualização para Criadores de Outono)**.  A partir dessa versão do Windows, a mídia do Windows inclui várias edições. Ao configurar uma sequência de tarefas para usar um pacote de atualização do sistema operacional ou imagem do sistema operacional, selecione uma [edição com suporte para uso no Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
+- **Suporte para Windows 10, versão 1709 (também conhecido como Atualização para Criadores de Outono)** .  A partir dessa versão do Windows, a mídia do Windows inclui várias edições. Ao configurar uma sequência de tarefas para usar um pacote de atualização do sistema operacional ou imagem do sistema operacional, selecione uma [edição com suporte para uso no Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
 - **A atualização para uma versão prévia falha quando há um servidor do site no modo passivo**. Quando você executa uma versão prévia que tem um [servidor do site primário no modo passivo](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), você deverá desinstalar o servidor do site de modo passivo para que seja possível atualizar seu site da versão prévia com êxito para essa nova versão prévia. Você pode reinstalar o servidor de site no modo passivo após a conclusão da instalação pelo site.
 
   Para desinstalar o servidor do site no modo passivo:
@@ -70,9 +70,9 @@ Para testar o uso do recurso Executar Scripts, consulte [Criar e executar script
 ## <a name="limit-windows-10-enhanced-telemetry-to-only-send-data-relevant-to-windows-analytics-device-health"></a>Limitar telemetria avançada do Windows 10 para enviar apenas dados relevantes para a integridade do dispositivo do Windows Analytics
 <!-- 1356148 -->
 
-Com esta versão, agora é possível definir a coleta de dados de telemetria do Windows 10 como **Avançado (Limitado)**. Essa configuração permite que você obtenha informações acionáveis sobre dispositivos em seu ambiente sem que os dispositivos reportem todos os dados no nível de telemetria **Avançado** com Windows 10 versão 1709 ou posterior.
+Com esta versão, agora é possível definir a coleta de dados de telemetria do Windows 10 como **Avançado (Limitado)** . Essa configuração permite que você obtenha informações acionáveis sobre dispositivos em seu ambiente sem que os dispositivos reportem todos os dados no nível de telemetria **Avançado** com Windows 10 versão 1709 ou posterior.
 
-O nível de telemetria Avançado (Limitado) inclui métricas do nível básico, bem como um subconjunto dos dados coletados do nível **Avançado** relevantes ao Windows Analytics. Para saber mais sobre os níveis de telemetria, consulte [Níveis de telemetria](https://docs.microsoft.com/windows/configuration/configure-windows-telemetry-in-your-organization#telemetry-levels).
+O nível de telemetria Avançado (Limitado) inclui métricas do nível básico, bem como um subconjunto dos dados coletados do nível **Avançado** relevantes ao Windows Analytics. Para saber mais sobre os níveis de telemetria, consulte [Níveis de telemetria](/windows/privacy/configure-windows-diagnostic-data-in-your-organization#use-group-policy-to-set-the-diagnostic-data-level).
 
 ### <a name="try-it-out"></a>Experimente!
 Para configurar a coleta de telemetria do Windows 10 em clientes, confira [Como definir as configurações de cliente](/sccm/core/clients/deploy/configure-client-settings). Abra a janela **Serviços de Nuvem** e defina a telemetria do Windows 10 como **Avançado**.
@@ -88,7 +88,8 @@ Adicione um ícone para seu aplicativo no Centro de Software. Para experimentar 
 
 
 ## <a name="check-compliance-from-software-center-for-co-managed-devices"></a>Verificar a conformidade no Centro de Software para dispositivos cogerenciados
-<!-- 1356374 --> Nesta versão, os usuários poderão usar o Centro de Software para verificar a conformidade de seus dispositivos Windows 10 cogerenciados, mesmo quando o acesso condicional for gerenciado pelo Intune. Para obter detalhes, confira [Cogerenciamento para dispositivos com Windows 10](./capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices).
+<!-- 1356374 -->
+Nesta versão, os usuários podem usar o Centro de Software para verificar a conformidade de seus dispositivos Windows 10 cogerenciados, mesmo quando o acesso condicional for gerenciado pelo Intune. Para obter detalhes, confira [Cogerenciamento para dispositivos com Windows 10](./capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices).
 
 
 ## <a name="support-for-exploit-guard"></a>Suporte para Exploit Guard
@@ -112,7 +113,7 @@ Os dispositivos gerenciados devem executar a Atualização para Criadores de Out
 | Proteção contra explorações  | Nenhum  |
 | Proteção de rede  |  Os dispositivos devem ter a [proteção em tempo real do Windows Defender AV]( https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard) habilitada.  |
 
-### <a name="create-an-exploit-guard-policy----1355468---"></a>Criar uma política do Exploit Guard<!--1355468 -->
+### <a name="create-an-exploit-guard-policy----1355468---"></a>Criar uma política do Exploit Guard  <!--1355468 -->
 1. No console do Configuration Manager, acesse **Ativos e conformidade** > **Endpoint Protection** e, em seguida, clique em **Windows Defender Exploit Guard**.
 2. Na guia **Início**, no grupo **Criar**, clique em **Criar Política de Exploração**.
 3. Na página **Geral** do **Assistente para Criar Item de Configuração**, especifique um nome e uma descrição opcional para o item de configuração.
@@ -127,7 +128,8 @@ Os dispositivos gerenciados devem executar a Atualização para Criadores de Out
 Depois de criar políticas do Exploit Guard, use o assistente para Implantar Política do Exploit Guard para implantá-las. Para fazer isso, abra console do Configuration Manager, acesse **Ativos e conformidade** > **Endpoint Protection** e, em seguida, clique em **Implantar Política do Exploit Guard**.
 
 ## <a name="limited-support-for-cng-certificates"></a>Suporte limitado para certificados CNG
-<!-- 1356191 --> Começando com esta versão, agora é possível usar modelos de certificado [CNG: (Cryptography API: Next Generation)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) para os seguintes cenários:
+<!-- 1356191 -->
+Começando com esta versão, agora é possível usar modelos de certificado [API de Criptografia: (Cryptography API: Next Generation)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) para os seguintes cenários:
 
 - O registro de cliente e a comunicação com um ponto de gerenciamento HTTPS.   
 - Distribuição e o aplicativo de implantação de software com um ponto de distribuição HTTPS.   
@@ -150,12 +152,12 @@ Para usar os certificados CNG, sua CA (autoridade de certificação) precisa for
 Para obter os melhores resultados, recomendamos a criação do Nome da Entidade a partir de informações do Active Directory.  Use o Nome DNS para o **Formato de nome de entidade** e inclua o nome DNS no nome alternativo da entidade.  Caso contrário, será necessário fornecer essas informações quando o dispositivo for registrado no perfil do certificado.
 
 
-## <a name="improved-descriptions-for-pending-computer-restarts-----1356283---"></a>Descrições aprimoradas para reinicializações pendentes do computador<!--1356283 -->
+## <a name="improved-descriptions-for-pending-computer-restarts-----1356283---"></a>Descrições aprimoradas para reinicializações pendentes do computador   <!--1356283 -->
 Em [Technical preview 1708](/sccm/core/get-started/capabilities-in-technical-preview-1708#restart-computers-from-the-configuration-manager-console), adicionamos a capacidade de identificar os dispositivos que estão aguardando uma reinicialização de dentro do console do Configuration Manager.
 
 A partir dessa technical preview, o console exibe detalhes adicionais que fornecem informações sobre o processo ou a ação que está solicitando a reinicialização.
 
-## <a name="device-guard-policy-changes----1355092---"></a>Alterações na política do Device Guard <!-- 1355092 -->
+## <a name="device-guard-policy-changes----1355092---"></a>Alterações de política do Device Guard <!-- 1355092 -->
 Com o build Technical Preview 1710, as três alterações a seguir foram feitas em relação às políticas do Device Guard:
 
 ### <a name="device-guard-policies-renamed-to-windows-defender-application-control-policies"></a>Políticas do Device Guard renomeadas para políticas de Controle de Aplicativo do Windows Defender

@@ -2,7 +2,7 @@
 title: Configurações do cliente
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as configurações padrão e personalizadas para controlar os comportamentos do cliente
-ms.date: 05/21/2019
+ms.date: 06/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9610024219107e81c4440a1e96780aaf300e20f
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.openlocfilehash: 157cc09f08cf16056dc3424ddc377fbd95b0fe6e
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66715738"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286844"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Sobre as configurações do cliente no Configuration Manager
 
@@ -59,7 +59,8 @@ Especifique a taxa de transferência máxima que os clientes podem usar fora da 
 
 ### <a name="configure-branchcache"></a>Configurar o BranchCache
 
-Configure o computador cliente para o [Windows BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#branchcache). Para permitir o armazenamento em cache do BranchCache no cliente, defina **Habilitar o BranchCache** como **Sim**.
+Configure o computador cliente para o [Windows BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#bkmk_branchcache
+). Para permitir o armazenamento em cache do BranchCache no cliente, defina **Habilitar o BranchCache** como **Sim**.
 
 - **Habilitar o BranchCache**: Habilite o BranchCache nos computadores cliente.
 
@@ -78,11 +79,11 @@ Se escolher **Sim**, em seguida, especifique:
 
 Habilite o [cache par](/sccm/core/plan-design/hierarchy/client-peer-cache) para clientes do Configuration Manager. Escolha **Sim** e, em seguida, especifique a porta pela qual o cliente se comunica com o computador par.
 
-- **Porta para difusão de rede inicial** (padrão 8004): O Configuration Manager usa essa porta no Windows PE ou no sistema operacional Windows completo. O mecanismo de sequência de tarefas no Windows PE envia a difusão para obter os locais de conteúdo antes de iniciar a sequência de tarefas.<!--SCCMDocs issue 910-->
+- **Porta para difusão de rede inicial** (padrão UDP 8004): O Configuration Manager usa essa porta no Windows PE ou no sistema operacional Windows completo. O mecanismo de sequência de tarefas no Windows PE envia a difusão para obter os locais de conteúdo antes de iniciar a sequência de tarefas.<!--SCCMDocs issue 910-->
 
-- **Porta para download de conteúdo do par** (padrão 8003): O Configuration Manager configura automaticamente as regras do Firewall do Windows para permitir esse tráfego. Se você usar um firewall diferente, deverá configurar manualmente as regras para permitir esse tráfego.
+- **Porta para download de conteúdo do par** (padrão TCP 8003): O Configuration Manager configura automaticamente as regras do Firewall do Windows para permitir esse tráfego. Se você usar um firewall diferente, deverá configurar manualmente as regras para permitir esse tráfego.  
 
-
+    Para saber mais, confira [Portas usadas para conexões](/sccm/core/plan-design/hierarchy/ports#BKMK_PortsClient-ClientWakeUp).  
 
 ## <a name="client-policy"></a>Política do cliente  
 
@@ -95,7 +96,7 @@ Especifica a frequência com que os seguintes clientes do Configuration Manager 
 - Computadores Mac  
 - Computadores que executam o Linux ou UNIX  
 
-Esse valor é de 60 minutos por padrão. Reduzir esse valor faz com que os clientes sondem o site com mais frequência. Com uma grande quantidade de clientes, esse comportamento pode ter um impacto negativo sobre o desempenho do site. As [diretrizes de tamanho e escala](/sccm/core/plan-design/configs/size-and-scale-numbers) se baseiam no valor padrão. Aumentar esse valor faz com que os clientes sondem o site com menos frequência. Quaisquer alterações nas políticas do cliente, incluindo novas implantações, leva mais tempo para os clientes baixarem e processarem.<!-- SCCMDocs issue 823 -->
+Esse valor é de 60 minutos por padrão. Reduzir esse valor faz com que os clientes sondem o site com mais frequência. Com inúmeros clientes, esse comportamento pode ter um impacto negativo sobre o desempenho do site. As [diretrizes de tamanho e escala](/sccm/core/plan-design/configs/size-and-scale-numbers) se baseiam no valor padrão. Aumentar esse valor faz com que os clientes sondem o site com menos frequência. Quaisquer alterações nas políticas do cliente, incluindo novas implantações, leva mais tempo para os clientes baixarem e processarem.<!-- SCCMDocs issue 823 -->
 
 ### <a name="enable-user-policy-on-clients"></a>Habilitar política de usuário em clientes
 
@@ -162,7 +163,7 @@ Escolha **Sim** se deseja implantar itens de configuração de [perfis e dados d
 
 ### <a name="user-notifications-for-required-deployments"></a>Notificações do usuário para implantações necessárias
 
-Para obter mais informações sobre as três seguintes configurações, consulte [Notificações do usuário para implantações obrigatórias](/sccm/apps/deploy-use/deploy-applications#user-notifications-for-required-deployments):
+Para obter mais informações sobre as três seguintes configurações, consulte [Notificações do usuário para implantações obrigatórias](/sccm/apps/deploy-use/deploy-applications#bkmk_notify):
 
 - **Data limite de implantação superior a 24 horas, lembrar o usuário a cada (horas)**
 - **Data limite de implantação inferior a 24 horas, lembrar o usuário a cada (horas)**
@@ -205,7 +206,7 @@ Para obter mais informações sobre essa configuração, consulte [Certificados 
 
 ### <a name="organization-name-displayed-in-software-center"></a>Nome da organização exibido no Centro de Software
 
-Digite o nome que os usuários veem no Centro de Software. Essa informação de identidade visual ajuda os usuários a identificarem este aplicativo como uma fonte confiável. Para saber mais sobre a prioridade dessa configuração, veja [Centro de Software de identidade visual](/sccm/apps/plan-design/plan-for-and-configure-application-management#branding-software-center).  
+Digite o nome que os usuários veem no Centro de Software. Essa informação de identidade visual ajuda os usuários a identificarem este aplicativo como uma fonte confiável. Para saber mais sobre a prioridade dessa configuração, veja [Centro de Software de identidade visual](/sccm/apps/plan-design/plan-for-software-center#branding-software-center).  
 
 ### <a name="use-new-software-center"></a>Usar o novo Centro de Software
 
@@ -384,7 +385,7 @@ Insira o número de minutos durante os quais os dispositivos modernos sondam par
 
 Para habilitar o registro baseado em usuário de dispositivos herdados, defina essa opção como **Sim** e, em seguida, defina a seguinte configuração:
 
-- **Perfil de registro**: Selecione **Definir Perfil** para criar ou selecionar um perfil de registro. Para obter mais informações, consulte [Definir as configurações do cliente para o registro](/sccm/core/clients/deploy/deploy-clients-to-macs#configure-client-settings-for-enrollment).
+- **Perfil de registro**: Selecione **Definir Perfil** para criar ou selecionar um perfil de registro. Para obter mais informações, consulte [Definir as configurações do cliente para o registro](/sccm/core/clients/deploy/deploy-clients-to-macs#configure-client-settings).
 
 ### <a name="allow-users-to-enroll-modern-devices"></a>Permitir que os usuários registrem dispositivos modernos
 
@@ -865,8 +866,8 @@ Especifique o número de dias durante os quais o cliente mede o limite de afinid
 Escolha **Sim** para criar a afinidade de dispositivo de usuário automática com base nas informações de uso coletadas do Configuration Manager.  
 
 ### <a name="allow-user-to-define-their-primary-devices"></a>Permitir ao usuário definir os seus dispositivos primários
-
-Quando essa configuração for **Sim**, os usuários poderão identificar seus próprios dispositivos primários no Centro de Software.
+<!--3485366-->
+Quando essa configuração for **Sim**, os usuários poderão identificar seus próprios dispositivos primários no Centro de Software. Para saber mais, confira o [Guia do usuário do Software Assurance](/sccm/core/understand/software-center#work-information).
 
 
 

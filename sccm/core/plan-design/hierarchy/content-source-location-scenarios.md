@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd80955f65b9c18ca0e2ed74e47caecb0e826049
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 61565ee1d6c98a5ab3a3391d6444aed3f082ae64
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129163"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251737"
 ---
 # <a name="content-source-location-scenarios-in-system-center-configuration-manager"></a>Cenários de local de origem de conteúdo no System Center Configuration Manager
 
@@ -28,7 +28,7 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 > [!IMPORTANT]  
 > **Se seus sites executam a versão 1511, 1602 ou 1606**, as informações neste tópico aplicam-se à sua infraestrutura. Consulte também [Grupos de limites para as versões 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606) para obter informações específicas para grupos de limites com essas versões do Configuration Manager.
 >
-> **Se seus sites executam a versão 1610 ou posterior**, use as informações em [Definir limites de site e grupos de limites para o System Center Configuration Manager](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups) para entender como os clientes localizam pontos de distribuição com conteúdo disponível.
+> **Se seus sites executam a versão 1610 ou posterior**, use as informações em [Definir limites de site e grupos de limites para o System Center Configuration Manager](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups) para entender como os clientes localizam pontos de distribuição com conteúdo disponível.
 
 
 
@@ -62,7 +62,7 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 
 -   **O conteúdo está disponível em um ponto de distribuição preferencial**  
 
--   **Permitir fallback**: Não habilitado  
+-   **Permitir fallback**: não ativado  
 
 -   **Comportamento de implantação para uma rede lenta**: Qualquer configuração  
 
@@ -118,7 +118,7 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 
 -   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** não está habilitada  
 
--   **Permitir fallback**: Não habilitado  
+-   **Permitir fallback**: não ativado  
 
 -   **Comportamento de implantação para uma rede lenta**: Qualquer configuração  
 
@@ -178,7 +178,7 @@ Nas versões anteriores à 1610, o System Center Configuration Manager dava supo
 
 -   **Distribuir o conteúdo deste pacote para os pontos de distribuição preferenciais** está habilitada  
 
--   **Permitir fallback**: Não habilitado  
+-   **Permitir fallback**: não ativado  
 
 -   **Comportamento de implantação para uma rede lenta**: Qualquer configuração  
 

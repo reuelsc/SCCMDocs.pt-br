@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9f43311ea3d36132d8cf77c0c576ad3f0e2cd93
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.openlocfilehash: 01fa13c907b451a3539ca8169c3a04ebbaa1b92c
+ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57558092"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67145768"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Perguntas frequentes sobre licenças e branches do Configuration Manager
 
@@ -42,9 +42,9 @@ O LTSB é uma compilação pronta para produção do Configuration Manager. Ele 
 
 Tanto SA **(Software Assurance)** quanto L&SA **(Licença e Software Assurance)** são opções de licença que concedem direitos de uso Configuration Manager. SA é uma opção para clientes que estão renovando a cobertura de SA de um contrato anterior. L&SA é uma opção para clientes que estão comprando uma nova licença e cobertura de SA.
 
-- **SA (Software Assurance)**: os clientes devem ter o SA ativo para as licenças do Configuration Manager ou direitos de assinatura equivalentes para instalar e usar a opção de branch atual do Configuration Manager.    
+- **SA (Software Assurance)** : os clientes devem ter o SA ativo para as licenças do Configuration Manager ou direitos de assinatura equivalentes para instalar e usar a opção de branch atual do Configuration Manager.    
 
-    - Embora o SA seja opcional para alguns produtos da Microsoft, a única maneira de obter direitos de usar o branch atual do Configuration Manager é com o SA *ou direitos de assinatura equivalente*. Para obter mais informações, veja as [perguntas frequentes sobre o Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/FAQ-Software-Assurance.aspx).<!--this link doesn't work without some language code-->
+    - Embora o SA seja opcional para alguns produtos da Microsoft, a única maneira de obter direitos de usar o branch atual do Configuration Manager é com o SA *ou direitos de assinatura equivalente*. Para saber mais, veja as [perguntas frequentes sobre o Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/FAQ-Software-Assurance.aspx).<!--this link doesn't work without some language code-->
 
 - **L&SA (Licença e Software Assurance) da Microsoft**: clientes que estiverem comprando novas licenças do Configuration Manager devem adquirir a L&SA (a licença e a cobertura do SA).   
 
@@ -52,7 +52,7 @@ Tanto SA **(Software Assurance)** quanto L&SA **(Licença e Software Assurance)*
 
     - No entanto, se o seu SA expirar e você ainda tiver uma licença do Configuration Manager, não poderá mais usar o branch atual. Para mais informações, veja a pergunta frequente [O que acontece se meu SA expirar e eu tiver L&SA?](#bkmk_sa-expires)
 
-Para obter mais informações sobre as ofertas de licença, veja [Maneiras de comprar](https://www.microsoft.com/en-us/licensing/licensing-programs)<!--this link doesn't work without some language code--> e [Termos de licenciamento de produtos](http://www.microsoftvolumelicensing.com/ProductResults.aspx?doc=Product%20Terms,OST&fid=64).  
+Para saber mais sobre as ofertas de licença, veja [Maneiras de comprar](https://www.microsoft.com/Licensing/licensing-programs/licensing-programs)<!--this link doesn't work without some language code--> e os [Termos de licenciamento de produtos](http://www.microsoftvolumelicensing.com/ProductResults.aspx?doc=Product%20Terms,OST&fid=64).  
 
 
 ### <a name="bkmk_equiv-sub"></a> Li o termo "assinatura equivalente", a quais programas ele se refere?   
@@ -76,7 +76,7 @@ Se você usar o System Center Endpoint Protection e seu SA expirar, será necess
 
 ### <a name="bkmk_owncb"></a> Eu sou o "proprietário" do branch atual?   
 
-Não. Você está licenciado para usar o branch atual enquanto seu SA estiver ativo. Por exemplo, via *L&SA*, quando o *SA* expira, você tem apenas direitos de *L (Licença)*, os quais não incluem direitos de uso do branch atual. Se o seu L fornece direitos perpétuos, você pode usar o LTSB do Configuration Manager no lugar do branch atual. Se o seu SA expirou antes de 1º de outubro de 2016, você também pode usar o System Center 2012 R2 Configuration Manager.
+Não. Você está licenciado para usar o branch atual enquanto seu SA estiver ativo. Por exemplo, via *L&SA*, quando o *SA* expira, você tem apenas direitos de *L (Licença)* , os quais não incluem direitos de uso do branch atual. Se o seu L fornece direitos perpétuos, você pode usar o LTSB do Configuration Manager no lugar do branch atual. Se o seu SA expirou antes de 1º de outubro de 2016, você também pode usar o System Center 2012 R2 Configuration Manager.
 
 
 ### <a name="bkmk_standalone"></a> Posso adquirir o Configuration Manager Standalone sem SA?      
@@ -91,7 +91,7 @@ Se o *SA* estiver ativo, você terá os direitos. Se o SA não estiver ativo, de
 
 ### <a name="bkmk_csp"></a> Eu comprei o EMS ou Microsoft 365 por meio de um CSP (Provedor de Solução de Nuvem), tenho direitos para usar o Configuration Manager? 
 
-Sim, você tem direitos para usar o Configuration Manager para gerenciar clientes abordados pela licença do EMS. Primeiramente, baixe e instale o [software de avaliação](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection). Em seguida, entre em contato com o Suporte da Microsoft para obter a chave de licença.<!--issue472--> Ao conversar com o Suporte da Microsoft, peça que consultem o artigo interno com ID 4033838.<!-- SCCMDocs issue 493 --> 
+Sim, você tem direitos para usar o Configuration Manager para gerenciar clientes abordados pela licença do EMS. Primeiramente, baixe e instale o [software de avaliação](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection). Em seguida, entre em contato com o Suporte da Microsoft para obter a chave de licença.<!--issue472--> Ao conversar com o Suporte da Microsoft, peça que confira o artigo interno com ID 4033838.<!-- SCCMDocs issue 493 --> 
 
 
 ### <a name="bkmk_expiration-date"></a> A data de término da minha assinatura é a mesma que a data de validade do SA?    

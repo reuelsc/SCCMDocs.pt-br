@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb16dd6e802c58f042b7eee8ae782e7118dabf1c
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 098c83678585984bbe3dbeddf167e24116afd86b
+ms.sourcegitcommit: 3a3f40f3d39cbecfb9219a64c0185ea4b2ef9671
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159189"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67562016"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Como conectar o Configuration Manager com a análise de área de trabalho
 
@@ -107,6 +107,16 @@ Use este procedimento para conectar o Configuration Manager para análise de ár
     - **Dispositivos na coleção de destino usam um proxy de usuário autenticado para comunicação de saída**: Por padrão, esse valor é **não**. Se for necessário em seu ambiente, definido como **Sim**.  
 
     - **Selecione as coleções específicas para sincronizar com a área de trabalho de análise**: Selecione **Add** incluir coleções adicionais de seus **coleção de destino** hierarquia. Essas coleções estão disponíveis no portal de análise de área de trabalho para o agrupamento com planos de implantação. Certifique-se de incluir coleções de exclusão do projeto-piloto e piloto.  <!-- 4097528 -->  
+
+        > [!Tip]  
+        > A janela Selecionar coleções exibe somente as coleções que são limitadas pela **coleção de destino**.
+        >
+        > No exemplo a seguir, selecione CollectionA como sua coleção de destino. Em seguida, quando você adiciona as coleções adicionais, consulte CollectionA, CollectionB e CollectionC. Não é possível adicionar CollectionD.
+        >
+        > - CollectionA: limitado pela **todos os sistemas** coleção
+        >     - CollectionB: limitado por CollectionA
+        >         - CollectionC: limitado por CollectionB
+        > - CollectionD: limitado pela **todos os sistemas** coleção
 
         > [!Important]  
         > Essas coleções continuam a sincronização como suas alterações de associação. Por exemplo, o seu plano de implantação usa uma coleção com uma regra de associação do Windows 7. Como esses dispositivos de atualização para o Windows 10, e o Configuration Manager avalia a associação da coleção, esses dispositivos soltem fora a coleta e o plano de implantação.  

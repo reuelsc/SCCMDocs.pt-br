@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88799a2e4023a4d4af097c6c3e8d2d92145068aa
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 085bf3a7b14582da0fc46568f9f5f61006b2dde5
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129877"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286128"
 ---
 # <a name="capabilities-in-technical-preview-1802-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1802 do System Center Configuration Manager
 
@@ -50,12 +50,14 @@ Examine [Technical Preview do System Center Configuration Manager](/sccm/core/ge
 
 
 ## <a name="transition-endpoint-protection-workload-to-intune-using-co-management"></a>Transição da carga de trabalho do Endpoint Protection para o Intune usando o cogerenciamento    
-<!-- 1357365 --> Nesta versão, agora você pode passar a carga de trabalho do Endpoint Protection do Configuration Manager para o Intune depois de habilitar o cogerenciamento. Para fazer a transição da carga de trabalho do Endpoint Protection, vá para a página de propriedades de cogerenciamento e mova a barra deslizante do Configuration Manager para **Piloto** ou **Todos**. Para obter detalhes, confira [Cogerenciamento para dispositivos com Windows 10](/sccm/core/clients/manage/co-management-overview).
+<!-- 1357365 -->
+Nesta versão, você pode agora transitar a carga de trabalho do Endpoint Protection a partir do Configuration Manager para o Intune depois de ativar o cogerenciamento. Para fazer a transição da carga de trabalho do Endpoint Protection, vá para a página de propriedades de cogerenciamento e mova a barra deslizante do Configuration Manager para **Piloto** ou **Todos**. Para obter detalhes, confira [Cogerenciamento para dispositivos com Windows 10](/sccm/core/clients/manage/co-management-overview).
 
 
  
 ## <a name="configure-windows-delivery-optimization-to-use-configuration-manager-boundary-groups"></a>Configurar o Otimização de Entrega do Windows para usar os grupos de limites do Configuration Manager
-<!-- 1324696 --> Você usa os grupos de limites do Configuration Manager para definir e regular a distribuição de conteúdo em sua rede corporativa e para escritórios remotos. A [Otimização de Entrega do Windows](/windows/deployment/update/waas-delivery-optimization) é uma tecnologia ponto-a-ponto baseada na nuvem para compartilhar conteúdo entre dispositivos do Windows 10. A partir desta versão, configure a Otimização de Entrega para usar seus grupos de limites ao compartilhar conteúdos entre pares. Uma nova configuração de cliente aplica o identificador do grupo de limites como o identificador do grupo da Otimização de Entrega no cliente. Quando o cliente se comunica com o serviço de nuvem da Otimização de Entrega, ele usa esse identificador para localizar os pares com o conteúdo desejado. 
+<!-- 1324696 -->
+Você usa os grupos de limites do Configuration Manager para definir e regular a distribuição de conteúdo em sua rede corporativa e para escritórios remotos. A [Otimização de Entrega do Windows](/windows/deployment/update/waas-delivery-optimization) é uma tecnologia ponto-a-ponto baseada na nuvem para compartilhar conteúdo entre dispositivos do Windows 10. A partir desta versão, configure a Otimização de Entrega para usar seus grupos de limites ao compartilhar conteúdos entre pares. Uma nova configuração de cliente aplica o identificador do grupo de limites como o identificador do grupo da Otimização de Entrega no cliente. Quando o cliente se comunica com o serviço de nuvem da Otimização de Entrega, ele usa esse identificador para localizar os pares com o conteúdo desejado. 
 
 ### <a name="prerequisites"></a>Pré-requisitos
 - A Otimização de Entrega está disponível apenas em clientes do Windows 10
@@ -67,7 +69,7 @@ Examine [Technical Preview do System Center Configuration Manager](/sccm/core/ge
 2. Selecione o novo grupo da **Otimização de Entrega**.
 3. Habilite a configuração **Usar os grupos de limites do Configuration Manager para a ID do grupo da Otimização de Entrega**.
 
-Para saber mais, confira a opção do modo de entrega **Grupo** nas [opções da Otimização de Entrega](/windows/deployment/update/waas-delivery-optimization#group-id).
+Para saber mais, confira a opção do modo de entrega **Grupo** nas [opções da Otimização de Entrega](/windows/deployment/update/waas-delivery-optimization#how-microsoft-uses-delivery-optimization).
 
 
 
@@ -86,7 +88,8 @@ Ao implantar uma sequência de tarefas de upgrade, use as seguintes configuraç�
 
 
 ## <a name="improvements-to-windows-10-in-place-upgrade-task-sequence"></a>Melhorias na sequência de tarefas de upgrade in-loco do Windows 10
-<!-- 1357425 --> O modelo de sequência de tarefas padrão para a atualização in-loco do Windows 10 agora inclui grupos adicionais com ações recomendadas para adicionar antes e depois do processo de atualização. Essas ações são comuns entre muitos clientes que atualizam com sucesso os dispositivos para o Windows 10. 
+<!-- 1357425 -->
+O modelo de sequência de tarefas padrão para o upgrade in-loco do Windows 10 agora inclui grupos adicionais com ações recomendadas para adicionar antes e depois do processo de upgrade. Essas ações são comuns entre muitos clientes que atualizam com sucesso os dispositivos para o Windows 10. 
 
 ### <a name="new-groups-under-prepare-for-upgrade"></a>Novos grupos em **Preparar para o Upgrade**
 - **Verificações de bateria**: adicione etapas nesse grupo para verificar se o computador está usando bateria ou alimentação com fio. Esta ação requer um script personalizado ou um utilitário para executar esta verificação.
@@ -94,7 +97,7 @@ Ao implantar uma sequência de tarefas de upgrade, use as seguintes configuraç�
 - **Remover aplicativos incompatíveis**: adicione etapas nesse grupo para remover todos os aplicativos que são incompatíveis com esta versão do Windows 10. O método para desinstalar um aplicativo varia. Se o aplicativo usar o Windows Installer, copie a linha de comando **Desinstalar programa** da guia **Programas** nas propriedades do tipo de implantação do Windows Installer do aplicativo. Em seguida, adicione uma etapa **Executar linha de comando** neste grupo com a linha de comando Desinstalar programa. Por exemplo: </br>`msiexec /x {150031D8-1234-4BA8-9F52-D6E5190D1CBA} /q`</br> 
 - **Remover drivers incompatíveis**: adicione etapas nesse grupo para remover os drivers que são incompatíveis com esta versão do Windows 10.
 - **Remover/suspender segurança de terceiros**: adicione etapas nesse grupo para remover ou suspender programas de segurança de terceiros, como antivírus.
-   - Se você estiver usando um programa de criptografia de disco de terceiros, forneça seu driver de criptografia à Instalação do Windows com a [opção de linha de comando](/windows-hardware/manufacture/desktop/windows-setup-command-line-options) **/ReflectDrivers**. Adicione uma etapa [Definir variável de sequência de tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) para a sequência de tarefas neste grupo. Defina a variável de sequência de tarefas como **OSDSetupAdditionalUpgradeOptions**. Defina o valor para **/ReflectDriver** com o caminho para o driver. Esta [variável de ação de sequências de tarefas](/sccm/osd/understand/task-sequence-action-variables#upgrade-operating-system) anexa a linha de comando da Instalação do Windows usada pela sequência de tarefas. Entre em contato com o fornecedor do software para obter qualquer orientação adicional sobre este processo.
+   - Se você estiver usando um programa de criptografia de disco de terceiros, forneça seu driver de criptografia à Instalação do Windows com a [opção de linha de comando](/windows-hardware/manufacture/desktop/windows-setup-command-line-options) **/ReflectDrivers**. Adicione uma etapa [Definir variável de sequência de tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) para a sequência de tarefas neste grupo. Defina a variável de sequência de tarefas como **OSDSetupAdditionalUpgradeOptions**. Defina o valor para **/ReflectDriver** com o caminho para o driver. Esta [variável de ação de sequências de tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_UpgradeOS) anexa a linha de comando da Instalação do Windows usada pela sequência de tarefas. Entre em contato com o fornecedor do software para obter qualquer orientação adicional sobre este processo.
 
 ### <a name="new-groups-under-post-processing"></a>Novos grupos em **Pós-processamento**
 - **Aplicar drivers baseados em instalação**: Adicione etapas nesse grupo para instalar drivers baseados em instalação (.exe) de pacotes.
@@ -104,7 +107,7 @@ Ao implantar uma sequência de tarefas de upgrade, use as seguintes configuraç�
 
 ### <a name="additional-recommendations"></a>Recomendações adicionais
 - Examine a documentação do Windows para [Resolver erros de upgrade do Windows 10](/windows/deployment/upgrade/resolve-windows-10-upgrade-errors). Este artigo também inclui informações detalhadas sobre o processo de upgrade.
-- Na etapa padrão **Verificar a prontidão**, ative  **Verificar o espaço mínimo em disco (MB)**. Defina o valor para pelo menos **16384** (16 GB) para um pacote de upgrade do SO de 32 bits ou **20480** (20 GB) de 64 bits. 
+- Na etapa padrão **Verificar a prontidão**, ative  **Verificar o espaço mínimo em disco (MB)** . Defina o valor para pelo menos **16384** (16 GB) para um pacote de upgrade do SO de 32 bits ou **20480** (20 GB) de 64 bits. 
 - Use a [variável de sequência de tarefas interna](/sccm/osd/understand/task-sequence-built-in-variables) **SMSTSDownloadRetryCount** para repetir a política de download. Atualmente, por padrão, o cliente tenta novamente duas vezes; essa variável é definida como dois (2). Se seus clientes não estiverem conectados a uma conexão de rede corporativa com fio, tentativas adicionais ajudam o cliente a obter uma política. Usar esta variável não causa nenhum efeito colateral negativo, além de uma falha em atraso caso a política não possa ser baixada.<!-- 501016 --> Além disso, aumente a variável **SMSTSDownloadRetryDelay** dos 15 segundos padrão.
 - Execute uma avaliação de compatibilidade em linha. 
    - Adicione uma segunda etapa **Atualizar sistema operacional** no início do grupo **Preparar para Upgrade**. Chame-o de *Avaliação de upgrade*. Especifique o mesmo pacote de upgrade e, em seguida, ative a opção para **Executar verificação de compatibilidade da Instalação do Windows sem iniciar o upgrade**. Habilite **Continuar em caso de erro** na guia Opções. 
@@ -117,7 +120,8 @@ Envie **Comentários** desde a aba **Página inicial** da faixa de opções se v
 
 
 ## <a name="improvements-to-pxe-enabled-distribution-points"></a>Melhorias em pontos de distribuição habilitados para PXE
-<!-- 1357580 --> Para esclarecer o comportamento da [nova funcionalidade PXE](/sccm/core/get-started/capabilities-in-technical-preview-1706#pxe-network-boot-support-for-ipv6) introduzida no Technical Preview versão 1706, renomeamos a opção **Suporte a IPv6**. Na guia **PXE** das propriedades do ponto de distribuição, verifique **Habilitar um respondente PXE sem o Serviço de Implantação do Windows**. 
+<!-- 1357580 -->
+Para esclarecer o comportamento da [nova funcionalidade PXE](/sccm/core/get-started/capabilities-in-technical-preview-1706#pxe-network-boot-support-for-ipv6) introduzida pela primeira vez na versão de Technical Preview 1706, nós renomeamos a opção **Suporte IPv6**. Na guia **PXE** das propriedades do ponto de distribuição, verifique **Habilitar um respondente PXE sem o Serviço de Implantação do Windows**. 
 
 Esta opção habilita um respondente PXE no ponto de distribuição, que não requer o Serviço de Implantação do Windows (WDS - Windows Deployment Services). Se você habilitar esta nova opção em um ponto de distribuição já habilitado para PXE, o Configuration Manager suspende o serviço WDS. Se você desativar esta nova opção, mas ainda **Ativar o suporte PXE para os clientes** , então o ponto de distribuição habilita o WDS novamente.
 
@@ -134,7 +138,8 @@ Para habilitar e configurar o multicast na guia **Multicast** das propriedades d
 
 
 ## <a name="deployment-templates-for-task-sequences"></a>Modelos de implantação para sequências de tarefas
-<!-- 1357391 --> O assistente de implantação para sequências de tarefas agora pode criar um modelo de implantação. O modelo de implantação pode ser salvo e aplicado a uma sequência de tarefas existente ou nova para criar uma implantação. 
+<!-- 1357391 -->
+O assistente de implantação para sequências de tarefas agora pode criar um modelo de implantação. O modelo de implantação pode ser salvo e aplicado a uma sequência de tarefas existente ou nova para criar uma implantação. 
 
 ### <a name="try-it-out"></a>Experimente!  
 Tente concluir as tarefas. Em seguida, envie **Comentários** da guia **Início** da faixa de opções, nos informando como isso funcionou. 
@@ -151,19 +156,22 @@ Tente concluir as tarefas. Em seguida, envie **Comentários** da guia **Início*
 
 
 ## <a name="product-lifecycle-dashboard"></a>Painel do Ciclo de Vida do Produto
-<!--1319632--> O novo [Painel de ciclo de vida do produto](/sccm/core/clients/manage/asset-intelligence/product-lifecycle-dashboard) mostra o estado da política de ciclo de vida de produtos Microsoft para produtos da Microsoft instalados em dispositivos gerenciados com o Configuration Manager. O painel fornece informações sobre produtos da Microsoft em seu ambiente, estado de capacidade de suporte e datas de término do suporte. Você pode usar o painel para entender a disponibilidade de suporte para cada produto. 
+<!--1319632-->
+O novo [Painel do Ciclo de Vida do Produto](/sccm/core/clients/manage/asset-intelligence/product-lifecycle-dashboard) mostra o estado da política do Ciclo de Vida do Produto Microsoft para produtos Microsoft instalados em dispositivos gerenciados com o Configuration Manager. O painel fornece informações sobre produtos da Microsoft em seu ambiente, estado de capacidade de suporte e datas de término do suporte. Você pode usar o painel para entender a disponibilidade de suporte para cada produto. 
 
 Para acessar o Painel do Ciclo de Vida, no console do Configuration Manager, vá para **Ativos e conformidade** >**Asset Intelligence** >**Ciclo de vida do produto**
 
 
 
 ## <a name="improvements-to-reporting"></a>Melhorias em relatórios
-<!--1357653--> Como resultado de [seus comentários](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/32434147-new-builtin-reports-about-windows-10-versions-and) adicionamos um novo relatório, o **Detalhes de manutenção do Windows 10 para uma coleção específica**. Este relatório mostra a ID do recurso, o nome do NetBIOS, o nome do SO, o nome da versão do SO, a compilação, o branch do SO e o estado de manutenção para dispositivos do Windows 10. Para acessar o relatório, vá para **Monitoramento** >**Geração de relatórios** >**Relatório**  >**Sistemas operacionais** >**Detalhes de manutenção do Windows 10 para uma coleção específica**.
+<!--1357653-->
+Como resultado de [seu feedback](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/32434147-new-builtin-reports-about-windows-10-versions-and), adicionamos um novo relatório, **Detalhes de manutenção do Windows 10 para uma coleção específica**. Este relatório mostra a ID do recurso, o nome do NetBIOS, o nome do SO, o nome da versão do SO, a compilação, o branch do SO e o estado de manutenção para dispositivos do Windows 10. Para acessar o relatório, vá para **Monitoramento** >**Geração de relatórios** >**Relatório**  >**Sistemas operacionais** >**Detalhes de manutenção do Windows 10 para uma coleção específica**.
 
 
 
 ## <a name="improvements-to-software-center"></a>Melhorias ao Centro de Software
-<!--1357592--> Como resultado de [seus comentários](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/13002684-software-center-show-only-available-software-hid), os aplicativos instalados agora podem ser ocultados no Centro de Software. Os aplicativos que já estão instalados não serão mais exibidos na guia Aplicativos quando esta opção estiver habilitada. 
+<!--1357592-->
+Como resultado de [seu feedback](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/13002684-software-center-show-only-available-software-hid), os aplicativos instalados agora podem ser ocultados no Centro de Software. Os aplicativos que já estão instalados não serão mais exibidos na guia Aplicativos quando esta opção estiver habilitada. 
 
 ### <a name="try-it-out"></a>Experimente!
 Habilite a configuração **Ocultar aplicativos instalados no Centro de Software** nas configurações do cliente do Centro de Software. Observe o comportamento no Centro de Software quando o usuário final instalar um aplicativo.
@@ -171,12 +179,14 @@ Habilite a configuração **Ocultar aplicativos instalados no Centro de Software
 
 
 ## <a name="improvements-to-run-scripts"></a>Melhorias ao recurso Executar Scripts
-<!--1236459--> O recurso [Executar Scripts](/sccm/apps/deploy-use/create-deploy-scripts) agora retorna a saída de script usando a formatação JSON. Este formato retorna consistentemente uma saída de script legível. Os scripts que falham ao executar podem não obter uma saída retornada. 
+<!--1236459-->
+A função [Executar script](/sccm/apps/deploy-use/create-deploy-scripts) agora retorna a saída de script usando a formatação JSON. Este formato retorna consistentemente uma saída de script legível. Os scripts que falham ao executar podem não obter uma saída retornada. 
 
 
 
 ## <a name="boundary-group-fallback-for-management-points"></a>Fallback de grupo de limites para pontos de gerenciamento
-<!-- 1324594 --> Começando nesta versão, você pode configurar relações de fallback para pontos de gerenciamento entre [grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups). Esse comportamento proporciona maior controle para os pontos de gerenciamento que os clientes usam. Na guia **Relações** das propriedades do grupo de limites, existe uma nova coluna para o ponto de gerenciamento. Quando você adiciona um novo grupo de limites de fallback, o tempo de fallback para o ponto de gerenciamento é sempre zero (0). Esse comportamento é o mesmo para o **Comportamento padrão** no grupo de limites padrão do site.
+<!-- 1324594 -->
+A partir desta versão, você pode configurar relações de fallback para pontos de gerenciamento entre [grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups). Esse comportamento proporciona maior controle para os pontos de gerenciamento que os clientes usam. Na guia **Relações** das propriedades do grupo de limites, existe uma nova coluna para o ponto de gerenciamento. Quando você adiciona um novo grupo de limites de fallback, o tempo de fallback para o ponto de gerenciamento é sempre zero (0). Esse comportamento é o mesmo para o **Comportamento padrão** no grupo de limites padrão do site.
 
 Anteriormente, um problema comum ocorre quando você possui um ponto de gerenciamento protegido em uma rede segura. Os clientes da rede corporativa principal recebem políticas que incluem esse ponto de gerenciamento protegido, mesmo que não possam se comunicar com ele em um firewall. Para solucionar esse problema, use a opção **Nunca realizar fallback** para garantir que os clientes apenas retornem aos pontos de gerenciamento com os quais eles podem se comunicar.
 
@@ -185,7 +195,7 @@ Ao fazer upgrade do site para esta versão, o Configuration Manager adiciona tod
 O fallback dos grupos de limites do ponto de gerenciamento não altera o comportamento durante a instalação do cliente (ccmsetup). Se a linha de comando não especificar o ponto de gerenciamento inicial usando o parâmetro /MP, o novo cliente recebe a lista completa de pontos de gerenciamento disponíveis. Para o processo inicial de inicialização, o cliente usa o primeiro ponto de gerenciamento que ele pode acessar. Uma vez que o cliente estiver registrado no site, ele recebe a lista de pontos de gerenciamento ordenada corretamente com esse novo comportamento. 
 
 ### <a name="prerequisites"></a>Pré-requisitos
-- Habilitar os [pontos de gerenciamento preferenciais](/sccm/core/servers/deploy/configure/boundary-groups#preferred-management-points). No console do Configuration Manager, acesse o workspace **Administração**. Expanda a **Configuração do site** e selecione **Sites**. Clique em **Configurações da hierarquia**  na faixa de opções. Na guia **Geral**, habilite **Os clientes preferem usar os pontos de gerenciamento especificados em grupos de limite**. 
+- Habilitar os [pontos de gerenciamento preferenciais](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_preferred). No console do Configuration Manager, acesse o workspace **Administração**. Expanda a **Configuração do site** e selecione **Sites**. Clique em **Configurações da hierarquia**  na faixa de opções. Na guia **Geral**, habilite **Os clientes preferem usar os pontos de gerenciamento especificados em grupos de limite**. 
 
 ### <a name="known-issues"></a>Problemas conhecidos
 - Os processos de implantação de sistema operacional não estão conscientes dos grupos de limites.
@@ -204,7 +214,8 @@ Quando um cliente recebe cinco erros em dez minutos e não se comunica com um po
 
 
 ## <a name="improved-support-for-cng-certificates"></a>Suporte aprimorado para certificados CNG
-<!-- 1357314 --> O Configuration Manager (branch atual) versão 1710 dá suporte a [certificados CNG (Cryptography Next Generation)](/sccm/core/plan-design/network/cng-certificates-overview). A versão 1710 limita o suporte a certificados de clientes em vários cenários. 
+<!-- 1357314 -->
+O Configuration Manager (branch atual) versão 1710 dá suporte a [Criptografia: CNG (Cryptography Next Generation)](/sccm/core/plan-design/network/cng-certificates-overview). A versão 1710 limita o suporte a certificados de clientes em vários cenários. 
 
 A partir desta versão de visualização técnica, use certificados de CNG para as seguintes funções de servidor habilitadas para HTTPS:
 - Ponto de gerenciamento
@@ -216,7 +227,8 @@ A lista de [cenários sem suporte](/sccm/core/plan-design/network/cng-certificat
 
 
 ## <a name="cloud-management-gateway-support-for-azure-resource-manager"></a>Suporte para gateway de gerenciamento de nuvem para o Azure Resource Manager
-<!-- 1324735 --> Ao criar uma instância do [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/plan-cloud-management-gateway) (CMG), o assistente agora oferece a opção de criar uma **implantação do Azure Resource Manager**. O [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) é uma plataforma moderna para gerenciar todos os recursos da solução como uma única entidade, chamado [grupo de recursos](/azure/azure-resource-manager/resource-group-overview#resource-groups). Ao implantar o CMG com o Azure Resource Manager, o site usa o Azure Active Directory (Azure AD) para autenticar e criar os recursos necessários para a nuvem. Esta implantação modernizada não requer o certificado de gerenciamento do Azure clássico.  
+<!-- 1324735 -->
+Ao criar uma instância do [gateway de gerenciamento de nuvem](/sccm/core/clients/manage/plan-cloud-management-gateway) (CMG), o assistente agora oferece a opção de criar uma **implantação do Azure Resource Manager**. O [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) é uma plataforma moderna para gerenciar todos os recursos da solução como uma única entidade, chamado [grupo de recursos](/azure/azure-resource-manager/resource-group-overview#resource-groups). Ao implantar o CMG com o Azure Resource Manager, o site usa o Azure Active Directory (Azure AD) para autenticar e criar os recursos necessários para a nuvem. Esta implantação modernizada não requer o certificado de gerenciamento do Azure clássico.  
 
 O assistente do CMG ainda fornece a opção para uma **implantação de serviço clássico** usando um certificado de gerenciamento do Azure. Para simplificar a implantação e o gerenciamento de recursos, recomendamos usar o modelo de implantação do Azure Resource Manager para todas as novas instâncias do CMG. Se possível, reimplante as instâncias CMG existentes por meio do Resource Manager.
 
@@ -227,7 +239,7 @@ O Configuration Manager não migra as instâncias do CMG clássicas existentes p
 
 ### <a name="prerequisites"></a>Pré-requisitos
 - Integração com o [Azure AD](/sccm/core/clients/deploy/deploy-clients-cmg-azure). A descoberta do usuário do Azure AD não é necessária.
-- Os mesmos [requisitos para o gateway de gerenciamento de nuvem](/sccm/core/clients/manage/plan-cloud-management-gateway#requirements-for-cloud-management-gateway), com exceção do certificado de gerenciamento do Azure.
+- Os mesmos [requisitos para o gateway de gerenciamento de nuvem](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#requirements), com exceção do certificado de gerenciamento do Azure.
 
 ### <a name="try-it-out"></a>Experimente!  
  Tente concluir as tarefas. Em seguida, envie **Comentários** da guia **Início** da faixa de opções, nos informando como isso funcionou.
@@ -245,7 +257,8 @@ Monitore o progresso da implantação do serviço com o **cloudmgr.log** no pont
 
 
 ## <a name="approve-application-requests-for-users-per-device"></a>Aprovar pedidos de aplicativos para usuários por dispositivo
-<!-- 1357015 --> A partir desta versão, quando um usuário solicitar um aplicativo que requeira aprovação, o nome específico do dispositivo fará parte da solicitação. Se o administrador aprova o pedido, o usuário só poderá instalar o aplicativo nesse dispositivo. O usuário deve enviar outro pedido para instalar o aplicativo em outro dispositivo. 
+<!-- 1357015 -->
+Começando nesta versão, quando um usuário solicita um aplicativo que requer aprovação, o nome específico do dispositivo agora é parte da solicitação. Se o administrador aprova o pedido, o usuário só poderá instalar o aplicativo nesse dispositivo. O usuário deve enviar outro pedido para instalar o aplicativo em outro dispositivo. 
 
 > [!NOTE]
 > Esse recurso é opcional. Ao atualizar para esta versão, ative esse recurso no assistente de atualização. Alternativamente, habilite o recurso no console mais tarde. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).
@@ -265,7 +278,8 @@ Monitore o progresso da implantação do serviço com o **cloudmgr.log** no pont
 
 
 ## <a name="use-software-center-to-browse-and-install-user-available-applications-on-azure-ad-joined-devices"></a>Use o Centro de Software para navegar e instalar aplicativos disponíveis para usuários em dispositivos ingressados no Azure AD
-<!-- 1322613 --> Se você implantar aplicativos como disponíveis para usuários, eles agora podem instalá-los e navegar por eles no Centro de Software nos dispositivos Azure Active Directory (Azure AD).  
+<!-- 1322613 -->
+Se você implantar aplicativos como disponíveis para usuários, eles agora podem navegar e instalá-los por meio do Centro de Software nos dispositivos Azure Active Directory (Azure AD).  
 
 ### <a name="prerequisites"></a>Pré-requisitos
 - Habilitar o HTTPS no ponto de gerenciamento
@@ -286,7 +300,8 @@ Monitore o progresso da implantação do serviço com o **cloudmgr.log** no pont
 
 
 ## <a name="report-on-windows-autopilot-device-information"></a>Relatório sobre as informações do dispositivo do Windows AutoPilot
-<!-- 1351442 --> O Windows AutoPilot é uma solução para integração e configuração de novos dispositivos do Windows 10 de forma moderna. Para saber mais, confira uma [visão geral do Windows AutoPilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot). Um método de registro de dispositivos existentes com o Windows AutoPilot é fazer o upload de informações do dispositivo para a Microsoft Store para Empresas e Educação. Esta informação inclui o número de série do dispositivo, o identificador de produto do Windows e um identificador de hardware. Use o Configuration Manager para coletar e reportar as informações deste dispositivo. 
+<!-- 1351442 -->
+O Windows AutoPilot é uma solução para integração e configuração de novos dispositivos do Windows 10 de forma moderna. Para saber mais, confira uma [visão geral do Windows AutoPilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot). Um método de registro de dispositivos existentes com o Windows AutoPilot é fazer o upload de informações do dispositivo para a Microsoft Store para Empresas e Educação. Esta informação inclui o número de série do dispositivo, o identificador de produto do Windows e um identificador de hardware. Use o Configuration Manager para coletar e reportar as informações deste dispositivo. 
 
 ### <a name="prerequisites"></a>Pré-requisitos
 - Esta informação do dispositivo aplica-se apenas a clientes no Windows 10, versão 1703 e posterior
@@ -296,13 +311,14 @@ Monitore o progresso da implantação do serviço com o **cloudmgr.log** no pont
 
 1. No console do Configuration Manager, workspace **Monitoramento**, expanda o nó **Geração de relatórios**, expanda **Relatórios** e selecione o nó **Hardware - Geral**.
 2. Execute o novo relatório, **Informações do dispositivo do Windows AutoPilot** e veja os resultados. 
-3. No visor do relatório, clique no ícone **Exportar** e selecione a opção **CSV (delimitado por vírgulas)**.
+3. No visor do relatório, clique no ícone **Exportar** e selecione a opção **CSV (delimitado por vírgulas)** .
 4. Depois de salvar o arquivo, faça o upload dos dados para a Microsoft Store para Empresas e Educação. Para saber mais, confira [adicionar dispositivos na Microsoft Store para Empresas e Educação](https://docs.microsoft.com/microsoft-store/add-profile-to-devices#add-devices-and-apply-autopilot-deployment-profile). 
 
 
 
 ## <a name="improvements-to-configuration-manager-policies-for-windows-defender-exploit-guard"></a>Melhorias nas Políticas do Configuration Manager para o Windows Defender Exploit Guard
-<!-- 1356220 --> As configurações de política adicionais para os componentes Redução da Superfície de Ataque e Acesso controlado a pastas foram adicionadas ao Configuration Manager para o [Windows Defender Exploit Guard](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard).
+<!-- 1356220 -->
+As configurações de políticas adicionais para os componentes Redução da superfície de ataque e Acesso controlado a pastas foram adicionadas no Configuration Manager para [Windows Defender Exploit Guard](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard).
 
 **Novas configurações para acesso controlado à pasta**<br/>
 Há duas opções adicionais na configuração do acesso controlado a pastas: **Bloquear somente setores de disco** e **Auditar somente setores de disco**. Essas duas configurações permitem que o acesso controlado à pasta seja ativado apenas para setores de inicialização e não habilita a proteção de pastas específicas ou de pastas protegidas padrão. 
@@ -316,7 +332,8 @@ Há duas opções adicionais na configuração do acesso controlado a pastas: **
 
 
 ## <a name="microsoft-edge-browser-policies"></a>Políticas do navegador Microsoft Edge
-<!-- 1357310 --> Para os clientes que usam o navegador da Web [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) nos clientes Windows 10, agora você pode criar uma política de configurações de conformidade do Configuration Manager para definir várias configurações do Microsoft Edge. Esta política atualmente inclui as seguintes configurações:
+<!-- 1357310 -->
+Para os clientes que utilizam o navegador web [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) nos clientes do Windows 10, agora você pode criar uma política de configurações de conformidade do Configuration Manager para configurar várias configurações do Microsoft Edge. Esta política atualmente inclui as seguintes configurações:
 - **Definir o navegador Microsoft Edge como padrão** : configura a configuração do aplicativo padrão do Windows 10 para o navegador da Web para o Microsoft Edge
 - **Permitir lista suspensa de barra de endereços**: requer o Windows 10, versão 1703 ou posterior. Para saber mais, confira a [política de navegador AllowAddressBarDropdown ](/windows/client-management/mdm/policy-csp-browser#browser-allowaddressbardropdown).
 - **Permitir a sincronização de favoritos entre navegadores da Microsoft**: requer o Windows 10, versão 1703 ou posterior. Para saber mais, confira a [política de navegador SyncFavoritesBetweenIEAndMicrosoftEdge](/windows/client-management/mdm/policy-csp-browser#browser-syncfavoritesbetweenieandmicrosoftedge).
@@ -358,7 +375,8 @@ Como qualquer política de configurações de conformidade, o cliente soluciona 
 
 
 ## <a name="report-for-default-browser-counts"></a>Relatório para as contagens padrão do navegador
-<!-- 1357830 --> Agora, há um novo relatório para mostrar a contagem de clientes com um navegador web específico como o padrão do Windows. 
+<!-- 1357830 -->
+Agora, há um novo relatório para mostrar a contagem de clientes com um navegador web específico como o padrão do Windows. 
 
 ### <a name="known-issues"></a>Problemas conhecidos
 - Quando você abre o relatório pela primeira vez, ele só mostra a contagem e não o BrowserProgID. Para contornar esse problema, edite a consulta para o relatório para a seguinte sintaxe:  
@@ -374,17 +392,19 @@ Como qualquer política de configurações de conformidade, o cliente soluciona 
 Use a seguinte referência para BrowserProgIDs comuns:
 - **AppXq0fevzme2pys62n3e0fbqa7peapykr8v**: Microsoft Edge
 - **IE.HTTP**: Microsoft Internet Explorer
-- **ChromeHTML**: Google Chrome 
+- **ChromeHTML**: Google Chrome
 - **OperaStable**: Software Opera
-- **FirefoxURL-308046B0AF4A39CB**: Mozilla Firefox 
+- **FirefoxURL-308046B0AF4A39CB**: Mozilla Firefox
 
 
 
 ## <a name="support-for-windows-10-arm64-devices"></a>Suporte para dispositivos Windows 10 ARM64
-<!-- 1353704 --> A partir desta versão, o cliente do Configuration Manager tem suporte nos dispositivos ARM64 do Windows 10. Os recursos existentes de gerenciamento de clientes devem funcionar com esses novos dispositivos. Por exemplo, inventário de hardware e software, atualizações de software e gerenciamento de aplicativos. A implantação de sistema operacional atualmente não tem suporte. 
+<!-- 1353704 -->
+A partir desta versão, o cliente do Configuration Manager tem suporte nos dispositivos ARM64 do Windows 10. Os recursos existentes de gerenciamento de clientes devem funcionar com esses novos dispositivos. Por exemplo, inventário de hardware e software, atualizações de software e gerenciamento de aplicativos. A implantação de sistema operacional atualmente não tem suporte. 
 
 ## <a name="changes-to-phased-deployments"></a>Mudanças nas implantações em fases
-<!-- 1357405 --> As implantações em fases automatizam uma distribuição coordenada e sequenciada do software em várias coleções. Nesta versão de Technical Preview, o assistente de implantação em fases pode ser concluído para sequências de tarefas no console do administrador. Implantações também são criadas. No entanto, a segunda fase não começa automaticamente depois de satisfazer os critérios de sucesso da primeira fase. A segunda fase pode ser iniciada manualmente com uma declaração SQL.   
+<!-- 1357405 -->
+As implantações em fases automatizam uma distribuição coordenada e sequenciada do software em várias coleções. Nesta versão de Technical Preview, o assistente de implantação em fases pode ser concluído para sequências de tarefas no console do administrador. Implantações também são criadas. No entanto, a segunda fase não começa automaticamente depois de satisfazer os critérios de sucesso da primeira fase. A segunda fase pode ser iniciada manualmente com uma declaração SQL.   
 
 ### <a name="try-it-out"></a>Experimente!  
   Tente concluir as tarefas. Em seguida, envie **Comentários** da guia **Início** da faixa de opções, nos informando como isso funcionou.

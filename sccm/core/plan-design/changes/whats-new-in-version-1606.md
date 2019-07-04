@@ -7,17 +7,17 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: df2e57b9-6445-4067-98e7-ace85d4e6aa6
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfc10695dc238e7020fd9d1b777ce62d80324beb
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 401565308ac78e1d6db047eca7cda63715474764
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133479"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67158889"
 ---
 # <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Novidades da versão 1606 do System Center Configuration Manager
 
@@ -27,7 +27,7 @@ A atualização 1606 do System Center Configuration Manager está disponível co
 > [!TIP]  
 >  Saiba mais sobre:  
 >   
->  -   [Instalação de novos sites](/sccm/core/servers/deploy/install) (usando uma versão de linha de base como a 1511)  
+>  -   [Instalação de novos sites](/sccm/core/servers/deploy/install/prepare-to-install-sites) (usando uma versão de linha de base como a 1511)  
 >  -   [Instalação de atualizações em sites](/sccm/core/servers/manage/updates) (como a atualização 1602 ou 1606)  
 
  As seções a seguir fornecem detalhes sobre as alterações e novas funcionalidades introduzidas na versão 1606 do Configuration Manager.  
@@ -199,11 +199,11 @@ O Configuration Manager pode ajudar a gerenciar o Bloqueio de Ativação de duas
 Para obter detalhes, consulte [Gerenciar o Bloqueio de Ativação do iOS com o System Center Configuration Manager](../../../mdm/deploy-use/manage-ios-activation-lock.md).
 
 
-### <a name="windows-defender-advanced-threat-protection"></a>Proteção Avançada contra Ameaças do Windows Defender
+### <a name="microsoft-defender-advanced-threat-protection"></a>Proteção Avançada contra Ameaças do Microsoft Defender
 
-O Endpoint Protection pode ajudar a gerenciar e monitorar a ATP (Proteção Avançada contra Ameaças) do Windows Defender. A ATP do Windows Defender é um novo serviço que ajudará as empresas a detectar, investigar e responder a ataques avançados em suas redes. As políticas do Configuration Manager podem ajudá-lo a carregar e monitorar computadores gerenciados que executam o Windows 10, versão 1607 (build 14328) ou posterior.
+O Endpoint Protection pode ajudar a gerenciar e monitorar a ATP (Proteção Avançada contra Ameaças) do Microsoft Defender. A ATP do Microsoft Defender é um novo serviço que ajudará as empresas a detectar, investigar e responder a ataques avançados em suas redes. As políticas do Configuration Manager podem ajudá-lo a carregar e monitorar computadores gerenciados que executam o Windows 10, versão 1607 (build 14328) ou posterior.
 
-Para obter detalhes, confira [Windows Defender Advanced Threat Protection](../../../protect/deploy-use/windows-defender-advanced-threat-protection.md) (Proteção Avançada contra Ameaças do Windows Defender).
+Para obter detalhes, confira [Microsoft Defender Advanced Threat Protection](../../../protect/deploy-use/windows-defender-advanced-threat-protection.md) (Proteção Avançada contra Ameaças do Windows Defender).
 
 ### <a name="device-categories"></a>Categorias de dispositivos
 É possível criar categorias de dispositivos, que podem ser usadas para colocar os dispositivos em coleções de dispositivos automaticamente ao usar o Configuration Manager com o Microsoft Intune. Os usuários devem, então, escolher uma categoria de dispositivo ao registrar um dispositivo no Intune. Além disso, é possível alterar a categoria de um dispositivo no console do Configuration Manager.

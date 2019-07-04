@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82ddc015a9d5df29b54e13efe6382934c713ac4b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 1ab522e7618ff2c64e910a9098d7adc36f43512b
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501400"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252289"
 ---
 # <a name="where-to-get-installation-media-for-system-center-configuration-manager"></a>Onde obter a mídia de instalação o System Center Configuration Manager
 
@@ -26,4 +26,4 @@ Se você tiver licenças de volume do System Center Configuration Manager com o 
 
 Se você quiser adquirir licenças de volume para o System Center Configuration Manager, entre em contato com seu Revendedor da Microsoft preferido ou confira [Como comprar através do licenciamento por volume]( https://www.microsoft.com/Licensing/how-to-buy/how-to-buy.aspx). Você também pode baixar a mídia para instalar uma edição de avaliação do System Center Configuration Manager no site do [Centro de Avaliação da TechNet]( https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection).
 
-Para saber mais sobre a mídia de linha de base do Configuration Manager, confira [Versões de linha de base e de atualização](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions).
+Para saber mais sobre a mídia de linha de base do Configuration Manager, confira [Versões de linha de base e de atualização](/sccm/core/servers/manage/updates#bkmk_Baselines).

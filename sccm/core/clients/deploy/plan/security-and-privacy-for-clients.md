@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9671ccad42fc9135193cf41e058b472b52a412e1
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 70ad1d37b1194374110f0c48469b677f0615ead2
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56142299"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286835"
 ---
 # <a name="security-and-privacy-for-configuration-manager-clients"></a>Segurança e privacidade para clientes do Configuration Manager
 
@@ -80,7 +80,7 @@ Para obter mais informações, veja [Determinar se é necessário bloquear clien
 
 De todos os métodos de instalação do cliente, a instalação do cliente por push é o menos seguro devido às suas muitas dependências. Essas dependências incluem permissões administrativas locais, o compartilhamento Admin$ e exceções do firewall. O número e o tipo dessas dependências aumentam a superfície de ataque.  
 
-Da versão 1806 em diante, ao usar o push de cliente, o site pode exigir autenticação mútua do Kerberos não permitindo fallback para NTLM antes de estabelecer a conexão. Essa melhoria ajuda a proteger a comunicação entre o servidor e o cliente. Para obter mais informações, veja [Como instalar clientes com o push do cliente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientPush).<!--1358204-->  
+Da versão 1806 em diante, ao usar o push de cliente, o site pode exigir autenticação mútua do Kerberos não permitindo fallback para NTLM antes de estabelecer a conexão. Essa melhoria ajuda a proteger a comunicação entre o servidor e o cliente. Para obter mais informações, consulte [Como instalar clientes com o push do cliente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientPush).<!--1358204-->  
 
 Para obter mais informações sobre os diferentes métodos de instalação de cliente, veja [Métodos de instalação do cliente](/sccm/core/clients/deploy/plan/client-installation-methods).  
 
@@ -275,7 +275,7 @@ Antes da instalação ou do registro do cliente em um computador Mac, o Configur
 
 Para garantir a continuidade dos negócios, monitore e acompanhe o período de validade dos certificados que você usa em computadores Mac. O Configuration Manager não dá suporte para a renovação automática desse certificado, nem avisa que o certificado está prestes a expirar. Um período de validade típico é um ano.  
 
-Para obter informações sobre como renovar o certificado, veja [Renovação manual do certificado do cliente Mac](/sccm/core/clients/deploy/deploy-clients-to-macs#renewing-the-mac-client-certificate).  
+Para obter informações sobre como renovar o certificado, veja [Renovação manual do certificado do cliente Mac](/sccm/core/clients/deploy/deploy-clients-to-macs#renew-the-mac-client-certificate).  
 
 
 #### <a name="configure-the-trusted-root-certificate-for-ssl-only"></a>Configurar o certificado raiz confiável para SSL apenas  
