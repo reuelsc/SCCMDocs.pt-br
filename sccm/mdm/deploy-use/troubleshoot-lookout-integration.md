@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9d5ef21702421a776c7fbe692f6aa99672efcce
-ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
+ms.openlocfilehash: 9066983e631e1444cccb7b8c686c5b31e6fcf096
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67516078"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551448"
 ---
 # <a name="troubleshoot-lookout-integration-with-intune"></a>Solucionar problemas da integração do Lookout ao Intune
 
@@ -54,7 +54,7 @@ Isso pode acontecer em qualquer um dos seguintes cenários:
 
 Um dispositivo exibido como **Pendente** significa que o usuário final não abriu o aplicativo Lookout for Work e tocou no botão **Ativar**. Para obter mais detalhes sobre a ativação do dispositivo com o aplicativo Lookout for Work, leia o tópico a seguir:
 
-[Será solicitada a instalação do aplicativo Lookout for Work em seu dispositivo Android ](https://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
+[Será solicitada a instalação do Lookout for Work em seu dispositivo Android](https://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
 
 ### <a name="in-the-lookout-mtp-console-a-device-is-showing-as-active-but-does-not-have-a-device-id"></a>No console do Lookout MTP, um dispositivo está sendo exibido como ativo, mas não tem uma ID de dispositivo.
 Isso significa que o usuário ao qual este dispositivo pertence não está no grupo de registro especificado no Console do Lookout MTP.   Um dispositivo pode ficar nesse estado se o usuário ao qual o dispositivo pertence foi removido do grupo de registro ou se o grupo de registro ao qual o usuário pertence foi removido.
@@ -81,4 +81,4 @@ Desde que o novo usuário esteja em um dos grupos de registro especificados no c
 ## <a name="compliance-remediation-workflows"></a>Fluxos de trabalho de correção de conformidade
 [Será solicitada a instalação do Lookout for Work em seu dispositivo Android]( https://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
 
-[Você precisa resolver uma ameaça que o Lookout for Work encontrou em seu dispositivo Android ](https://docs.microsoft.com/intune/enduser/you-need-to-resolve-a-threat-found-by-lookout-for-work-android)
+[Você precisa resolver uma ameaça encontrada pelo Lookout for Work no dispositivo Android](https://docs.microsoft.com/intune/enduser/you-need-to-resolve-a-threat-found-by-lookout-for-work-android)

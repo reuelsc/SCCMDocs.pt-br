@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 271803e42ba20d8d0340754b3167210414423014
-ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
+ms.openlocfilehash: 246ee2c314df3d942d40d16ac9953580fed32803
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67463803"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551243"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Solucionar problemas de análise da área de trabalho
 
@@ -57,14 +57,6 @@ Para obter mais informações, consulte [arquivos de Log para análise de área 
 
 1. No ponto de conexão de serviço, vá para a seguinte chave do registro: `HKLM\Software\Microsoft\SMS\Tracing\SMS_SERVICE_CONNECTOR`  
 2. Defina as **LoggingLevel** valor `0`  
-3. (Opcional) Execute o seguinte comando SQL no banco de dados do site:  
-
-    ```SQL
-    DELETE FROM M365AProperties WHERE Name = 'M365ATenantUpdateInfo_LastUpdateTime'
-    ```
-
-4. Reinicie o **SMS_EXECUTIVE** serviço no servidor do site
-
 
 
 ## <a name="bkmk_AzureADApps"></a> Aplicativos do Azure AD
