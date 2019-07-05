@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c3058eed3cd7fe4430824d5a55f155694a2ed44
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: eddce66fe58ca44ece7e9c2f15a5f602ad7a78d7
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66177024"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516096"
 ---
 # <a name="learn-how-clients-find-site-resources-and-services-for-system-center-configuration-manager"></a>Saiba como os clientes encontram serviços e recursos do site para o System Center Configuration Manager
 
@@ -132,12 +132,12 @@ Depois de estabelecer comunicação com um ponto de gerenciamento, um cliente co
 Depois, o cliente seleciona aleatoriamente um novo ponto de gerenciamento para usar.  
 
 ##  <a name="bkmk_ad"></a> Active Directory  
-Clientes que ingressaram no domínio podem usar o AD DS para o local do serviço. Isso requer que sites [publiquem dados para o Active Directory](http://technet.microsoft.com/library/hh696543.aspx).  
+Clientes que ingressaram no domínio podem usar o AD DS para o local do serviço. Isso requer que sites [publiquem dados para o Active Directory](https://technet.microsoft.com/library/hh696543.aspx).  
 
 Um cliente poderá usar AD DS para o local do serviço quando todas as condições a seguir forem verdadeiras:  
 
 -   O [esquema do Active Directory foi estendido](https://technet.microsoft.com/library/mt345589.aspx) ou foi estendido para o System Center 2012 Configuration Manager.  
--   A floresta do [Active Directory é configurada para publicação](http://technet.microsoft.com/library/hh696542.aspx)e os sites do Configuration Manager estão configurados para publicação.  
+-   A floresta do [Active Directory é configurada para publicação](https://technet.microsoft.com/library/hh696542.aspx)e os sites do Configuration Manager estão configurados para publicação.  
 -   O computador cliente for um membro de um domínio do Active Directory e puder acessar um servidor de catálogo global.  
 
 Se um cliente não conseguir localizar um ponto de gerenciamento para usar para a localização do serviço do AD DS, ele tentará usar DNS.  
@@ -149,7 +149,7 @@ Considere usar o DNS para o local do serviço quando qualquer uma das seguintes 
 -   O esquema do AD DS não foi estendido para dar suporte ao Configuration Manager.
 -   Os clientes da intranet estiverem localizados em uma floresta que não esteja habilitada para publicar no Configuration Manager.  
 -   Você tem clientes em computadores do grupo de trabalho, os quais não estão configurados para o gerenciamento de clientes somente pela Internet. (Um cliente de grupo de trabalho configurado para a Internet somente se comunicará com pontos de gerenciamento para a Internet e não usará o DNS para a localização do serviço.)  
--   Você pode [configurar clientes para localizar pontos de gerenciamento do DNS](http://technet.microsoft.com/library/gg682055).  
+-   Você pode [configurar clientes para localizar pontos de gerenciamento do DNS](https://technet.microsoft.com/library/gg682055).  
 
 Quando um site publica registros de localização de serviço para pontos de gerenciamento no DNS:  
 

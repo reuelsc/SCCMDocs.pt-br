@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f794e24bd2626e11ce0f3c1664ad0e63eafbbe37
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 08156819af349af0f052cf2b58e8b4a44ef7b74b
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56134139"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516203"
 ---
 # <a name="customize-boot-images-with-system-center-configuration-manager"></a>Personalizar imagens de inicialização com o System Center Configuration Manager
 
@@ -44,17 +44,17 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
 
   Os procedimentos deste tópico demonstram como adicionar os componentes opcionais exigidos pelo Configuration Manager à imagem de inicialização usando os seguintes pacotes do Windows PE:  
 
-- **WinPE-WMI**: adiciona o suporte à WMI (Instrumentação de Gerenciamento do Windows).  
+- **WinPE-WMI**: Adiciona o suporte para a WMI (Instrumentação de Gerenciamento do Windows).  
 
-- **WinPE-Scripting**: adiciona o suporte ao WSH (Windows Script Host).  
+- **WinPE-Scripting**: Adiciona o suporte para o WSH (Windows Script Host).  
 
-- **WinPE-WDS-Tools**: instala as ferramentas dos Serviços de Implantação do Windows.  
+- **WinPE-WDS-Tools**: Instala as ferramentas dos Serviços de Implantação do Windows.  
 
   Existem outros pacotes do Windows PE disponíveis para você adicionar. Os recursos a seguir fornecem mais informações sobre os componentes opcionais que você pode adicionar à imagem de inicialização.  
 
-- Para o Windows PE 5, confira [WinPE: adicionar pacotes (referência de componentes opcionais)](https://msdn.microsoft.com/library/windows/hardware/dn938382\(v=vs.85\).aspx)  
+- Para o Windows PE 5, consulte [WinPE: Adicionar pacotes (Referência de Componentes Opcionais)](https://msdn.microsoft.com/library/windows/hardware/dn938382\(v=vs.85\).aspx)  
 
-- Para Windows PE 3.1, consulte o tópico [Adicionar um pacote a uma imagem do Windows PE](http://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) biblioteca de documentação do TechNet do Windows 7.  
+- Para Windows PE 3.1, consulte o tópico [Adicionar um pacote a uma imagem do Windows PE](https://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) biblioteca de documentação do TechNet do Windows 7.  
 
 > [!NOTE]
 >Ao inicializar no WinPE de uma imagem de inicialização personalizada que inclui ferramentas que você adicionou, é possível abrir um prompt de comando do WinPE e digitar o nome do arquivo da ferramenta para executá-la. O local dessas ferramentas é adicionado automaticamente à variável caminho. O prompt de comando somente poderá ser adicionado se a configuração **Habilitar suporte de comandos (somente teste)** for selecionada na guia **Personalização** nas propriedades da imagem de inicialização.
@@ -77,7 +77,7 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
     Onde C:\WinPEWAIK é a pasta que contém a imagem de inicialização e C:\WinPEMount é a pasta montada.  
 
    > [!NOTE]
-   >  Para obter mais informações sobre o DISM, consulte o tópico [DISM - Referência técnica do Gerenciamento e Manutenção de Imagens de Implantação](http://technet.microsoft.com/library/hh824821.aspx) na biblioteca de documentação técnica do TechNet do Windows 8.1 e do Windows 8.
+   >  Para obter mais informações sobre o DISM, consulte o tópico [DISM - Referência técnica do Gerenciamento e Manutenção de Imagens de Implantação](https://technet.microsoft.com/library/hh824821.aspx) na biblioteca de documentação técnica do TechNet do Windows 8.1 e do Windows 8.
 
 5. Após montar a imagem de inicialização, use o DISM para adicionar componentes opcionais a ela. No Windows PE 5, os componentes opcionais de 64 bits estão localizados em <*Caminho instalação*>\Kits do Windows\8.1\Kit de Avaliação e Implantação\Ambiente de Pré-Instalação do Windows\amd64\WinPE_OCs.  
 
@@ -113,7 +113,7 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\en-us\WinPE-WDS-Tools_en-us.cab"**  
 
    > [!TIP]
-   >  Para obter mais informações sobre os componentes opcionais que você pode adicionar à imagem de inicialização, consulte o tópico [Referência de Componentes Opcionais do Windows PE](http://technet.microsoft.com/library/hh824926.aspx) na biblioteca de documentação do TechNet do Windows 8.1 e do Windows 8.  
+   >  Para obter mais informações sobre os componentes opcionais que você pode adicionar à imagem de inicialização, consulte o tópico [Referência de Componentes Opcionais do Windows PE](https://technet.microsoft.com/library/hh824926.aspx) na biblioteca de documentação do TechNet do Windows 8.1 e do Windows 8.  
 
 6. Use o DISM para adicionar drivers específicos à imagem de inicialização, quando necessário. Digite o seguinte para adicionar drivers à imagem de inicialização:  
 
@@ -137,7 +137,7 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
 
    4. Na página **Fonte de Dados** , especifique as seguintes opções e clique em **Próximo**.  
 
-      - Na caixa **Caminho** , especifique o caminho para o arquivo de imagem de inicialização atualizado. O caminho especificado deve ser um caminho de rede válido no formato UNC. Por exemplo: **\\\\<**<em>nomedoservidor</em>**>\\<**<em>compartilhamento WinPEWAIK</em>**>\winpe.wim**.  
+      - Na caixa **Caminho** , especifique o caminho para o arquivo de imagem de inicialização atualizado. O caminho especificado deve ser um caminho de rede válido no formato UNC. Por exemplo: **\\\\<** <em>nomedoservidor</em> **>\\<** <em>compartilhamento WinPEWAIK</em> **>\winpe.wim**.  
 
       - Selecione a imagem de inicialização na lista suspensa **Imagem de Inicialização** . Se o arquivo WIM contiver várias imagens de inicialização, cada imagem será listada.  
 
@@ -161,7 +161,7 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
 
    4. Em um prompt de comando, digite **wbemtest** para abrir o Testador de instrumentação de gerenciamento do Windows.  
 
-   5. Digite **\\\\<**<em>Computador do Provedor de SMS</em>**>\root\sms\site_<**<em>códigodosite</em>**>** em **Namespace** e clique em **Conectar**.  
+   5. Digite **\\\\<** <em>Computador do Provedor de SMS</em> **>\root\sms\site_<** <em>códigodosite</em> **>** em **Namespace** e clique em **Conectar**.  
 
    6. Clique em **Abrir Instância**, digite **sms_bootimagepackage.packageID="<packageID\>"** e clique em **OK**. Para packageID, insira o valor identificado na etapa 3.  
 
@@ -199,12 +199,12 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
     Onde C:\WinPEWAIK é a pasta que contém a imagem de inicialização e C:\WinPEMount é a pasta montada.  
 
    > [!NOTE]
-   >  Para obter mais informações sobre o DISM, consulte o tópico [Referência técnica do Gerenciamento e Manutenção de Imagens de Implantação](http://technet.microsoft.com/library/dd744256\(v=ws.10\).aspx) na biblioteca de documentação do TechNet do Windows 7.  
+   >  Para obter mais informações sobre o DISM, consulte o tópico [Referência técnica do Gerenciamento e Manutenção de Imagens de Implantação](https://technet.microsoft.com/library/dd744256\(v=ws.10\).aspx) na biblioteca de documentação do TechNet do Windows 7.  
 
 5. Após montar a imagem de inicialização, use o DISM para adicionar componentes opcionais a ela. No Windows PE 3.1, por exemplo, os componentes opcionais estão localizados em <*Caminho de instalação*>\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\.  
 
    > [!NOTE]
-   >  Esse procedimento usa o seguinte local para os componentes opcionais: C:\Arquivos de Programas\Windows AIK\Tools\PETools\amd64\WinPE_FPs. O caminho que você usará poderá ser diferente dependendo da versão e das opções de instalação selecionadas para o Windows AIK.  
+   >  Este procedimento usa o seguinte local para os componentes opcionais: C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs. O caminho que você usará poderá ser diferente dependendo da versão e das opções de instalação selecionadas para o Windows AIK.  
 
     Digite o seguinte para instalar os componentes opcionais:  
 
@@ -229,7 +229,7 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\en-us\winpe-wds-tools_en-us.cab"**  
 
    > [!TIP]
-   >  Para obter mais informações sobre os diferentes pacotes que podem ser adicionados à imagem de inicialização, consulte o tópico [Adicionar um pacote a uma imagem do Windows PE](http://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) na biblioteca de documentação do TechNet do Windows 7.  
+   >  Para obter mais informações sobre os diferentes pacotes que podem ser adicionados à imagem de inicialização, consulte o tópico [Adicionar um pacote a uma imagem do Windows PE](https://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) na biblioteca de documentação do TechNet do Windows 7.  
 
 6. Use o DISM para adicionar drivers específicos à imagem de inicialização, quando necessário. Digite o seguinte para adicionar drivers à imagem de inicialização, se necessário:  
 
@@ -253,7 +253,7 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
 
    4. Na página **Fonte de Dados** , especifique as seguintes opções e clique em **Próximo**.  
 
-      - Na caixa **Caminho** , especifique o caminho para o arquivo de imagem de inicialização atualizado. O caminho especificado deve ser um caminho de rede válido no formato UNC. Por exemplo: **\\\\<**<em>nomedoservidor</em>**>\\<**<em>compartilhamento WinPEWAIK</em>**>\winpe.wim**.  
+      - Na caixa **Caminho** , especifique o caminho para o arquivo de imagem de inicialização atualizado. O caminho especificado deve ser um caminho de rede válido no formato UNC. Por exemplo: **\\\\<** <em>nomedoservidor</em> **>\\<** <em>compartilhamento WinPEWAIK</em> **>\winpe.wim**.  
 
       - Selecione a imagem de inicialização na lista suspensa **Imagem de Inicialização** . Se o arquivo WIM contiver várias imagens de inicialização, cada imagem será listada.  
 
@@ -277,7 +277,7 @@ Cada versão do Configuration Manager dá suporte a uma versão específica do W
 
    4. Em um prompt de comando, digite **wbemtest** para abrir o Testador de instrumentação de gerenciamento do Windows.  
 
-   5. Digite **\\\\<**<em>Computador do Provedor de SMS</em>**>\root\sms\site_<**<em>códigodosite</em>**>** em **Namespace** e clique em **Conectar**.  
+   5. Digite **\\\\<** <em>Computador do Provedor de SMS</em> **>\root\sms\site_<** <em>códigodosite</em> **>** em **Namespace** e clique em **Conectar**.  
 
    6. Clique em **Abrir Instância**, digite **sms_bootimagepackage.packageID="<packageID\>"** e clique em **OK**. Para packageID, insira o valor identificado na etapa 3.  
 

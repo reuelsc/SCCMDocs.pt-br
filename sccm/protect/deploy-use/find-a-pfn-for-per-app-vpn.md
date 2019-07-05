@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d932a4f0bdec3d9bfadbe6c45c12c6f91865a70
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 7021175062a80dffa48a599266fd257c0967e806
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65494437"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551397"
 ---
 # <a name="find-a-package-family-name-pfn-for-per-app-vpn"></a>Localizar um nome da família de pacotes (PFN) para VPN por aplicativo
 
@@ -31,8 +31,9 @@ Se o aplicativo com o qual você está trabalhando já estiver instalado em um c
 
 A sintaxe de Get-AppxPackage é:
 
-` Parameter Set: __AllParameterSets`
-` Get-AppxPackage [[-Name] <String> ] [[-Publisher] <String> ] [-AllUsers] [-User <String> ] [ <CommonParameters>]`
+```
+Get-AppxPackage [[-Name] <String> ] [[-Publisher] <String> ] [-AllUsers] [-User <String> ] [ <CommonParameters>]
+```
 
 > [!NOTE]
 > Talvez você precise executar o PowerShell como administrador para recuperar o PFN
@@ -77,10 +78,10 @@ Eis aqui as informações recuperadas do OneNote:
 
 No Microsoft Edge, as informações que você deseja são exibidas; no Internet Explorer, clique em **Abrir** para ver as informações. O valor do PFN é fornecido na primeira linha. Esta é a aparência dos resultados para o nosso exemplo:
 
-
-`{`
-`  "packageFamilyName": "Microsoft.Office.OneNote_8wekyb3d8bbwe",`
-`  "packageIdentityName": "Microsoft.Office.OneNote",`
-`  "windowsPhoneLegacyId": "ca05b3ab-f157-450c-8c49-a1f127f5e71d",`
-`  "publisherCertificateName": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"`
-`}`
+```json
+{
+  "packageFamilyName": "Microsoft.Office.OneNote_8wekyb3d8bbwe",
+  "packageIdentityName": "Microsoft.Office.OneNote",
+  "windowsPhoneLegacyId": "ca05b3ab-f157-450c-8c49-a1f127f5e71d",
+  "publisherCertificateName": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+}

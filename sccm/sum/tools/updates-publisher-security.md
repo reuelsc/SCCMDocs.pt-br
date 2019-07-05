@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 535feb67e700acd5b799c696aa366343581e70fd
-ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
+ms.openlocfilehash: db60b7cf6332e778279b494b2922cd621983c20c
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67145733"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516286"
 ---
 # <a name="manage-certificates-and-security-for-updates-publisher"></a>Gerenciar certificados e segurança para o Updates Publisher
 
@@ -77,7 +77,7 @@ Veja a seguir um exemplo de como configurar o certificado de autenticação em c
    -   Para certificados emitidos por uma CA (autoridade de certificação): adicione o certificado ao repositório de certificados **Editores Confiáveis**.
 
    > [!NOTE]
-   > O WUA também verifica se a configuração **Permitir conteúdo assinado da política de grupo de local do serviço de atualização da intranet da Microsoft** está habilitada no computador local. Essa configuração da política deve ser habilitada para que o WUA procure atualizações que foram criadas e publicadas com o Updates Publisher. Para saber mais sobre como habilitar essa configuração de Política de Grupo, confira [Como configurar a Política de Grupo em computadores cliente](https://docs.microsoft.com/en-us/previous-versions/bb530967(v=technet.10)).
+   > O WUA também verifica se a configuração **Permitir conteúdo assinado da política de grupo de local do serviço de atualização da intranet da Microsoft** está habilitada no computador local. Essa configuração da política deve ser habilitada para que o WUA procure atualizações que foram criadas e publicadas com o Updates Publisher. Para saber mais sobre como habilitar essa configuração de Política de Grupo, confira [Como configurar a Política de Grupo em computadores cliente](https://docs.microsoft.com/previous-versions/bb530967(v=technet.10)).
 
 
 

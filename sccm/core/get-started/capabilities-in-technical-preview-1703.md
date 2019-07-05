@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9bdca6ded291ca6e32194c61ce24b33b690489cb
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: bc5ebcbec87edf52d7ca7d3f9e6f4341ec60c191
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286240"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67515835"
 ---
 # <a name="capabilities-in-technical-preview-1703-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1703 do System Center Configuration Manager
 
@@ -159,4 +159,4 @@ Para saber mais sobre o que é coletado por cada nível de telemetria do Windows
 - Escolha **aceitar a coleta de dados comerciais em dispositivos com Windows 7, 8 e 8.1**   
 Para obter informações sobre dados coletados desses sistemas operacionais quando você aceita, baixe o arquivo pdf [Windows 7, Windows 8, and Windows 8.1 appraiser telemetry events and fields](https://go.microsoft.com/fwlink/?LinkID=822965) (Campos e eventos de telemetria de avaliação do Windows 7, Windows 8 e Windows 8.1) da Microsoft.
 
-- **Configurar a coleta de dados do Internet Explorer** Em dispositivos que executam o Windows 8.1 ou anteriores, a coleta de dados do Internet Explorer pode permitir que a Preparação para Atualização detecte incompatibilidades de aplicativos Web que poderiam impedir uma atualização tranquila para o Windows 10. A coleta de dados do Internet Explorer pode ser habilitada de acordo com a zona da internet. Para saber mais sobre as zonas de internet, veja [Sobre zonas de segurança de URL](https://msdn.microsoft.com/en-us/library/ms537183(v=vs.85).aspx).
+- **Configurar a coleta de dados do Internet Explorer** Em dispositivos que executam o Windows 8.1 ou anteriores, a coleta de dados do Internet Explorer pode permitir que a Preparação para Atualização detecte incompatibilidades de aplicativos Web que poderiam impedir uma atualização tranquila para o Windows 10. A coleta de dados do Internet Explorer pode ser habilitada de acordo com a zona da internet. Para saber mais sobre as zonas de internet, veja [Sobre zonas de segurança de URL](https://msdn.microsoft.com/library/ms537183(v=vs.85).aspx).

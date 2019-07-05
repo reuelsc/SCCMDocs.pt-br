@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d510ab884e471a6fc4803826c9c19e21b614273
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: e862fe4907d5e480fd8a19c28d890987f73240fa
+ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285590"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67463782"
 ---
 # <a name="task-sequence-steps"></a>Etapas da sequência de tarefas
 
@@ -1774,7 +1774,7 @@ A sequência de tarefas define a variável para esse valor. Defina essa variáve
 
 Use esta etapa para fazer a transição do Windows PE para o novo sistema operacional. Esta etapa da sequência de tarefas é necessária em qualquer implantação de sistema operacional. Ele instala o cliente do Configuration Manager no novo sistema operacional e prepara a sequência de tarefas para continuar a execução no novo sistema operacional.  
 
-Esta etapa é executada somente no Windows PE. Ela não é executada no sistema operacional completo.  
+Esta etapa é responsável por fazer a transição de sequência de tarefas do Windows PE para o sistema operacional completo. A etapa é executada no Windows PE e o sistema operacional completo devido a essa transição. No entanto, uma vez que a transição é iniciado no Windows PE, ele só pode ser adicionado durante a parte do Windows PE da sequência de tarefas.  
 
 Use as variáveis de sequência de tarefas seguintes com esta etapa:  
 

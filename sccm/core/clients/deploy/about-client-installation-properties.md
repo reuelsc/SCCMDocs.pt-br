@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f84b4b775c2baa59a5281a79f8154c0a6d0820f6
-ms.sourcegitcommit: 5feeb99605be5c4c39896bcee239cc274d89b3e8
+ms.openlocfilehash: feef839af1f51c4cbb291f4ed5bc6336da6409b3
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58508523"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286872"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-system-center-configuration-manager"></a>Sobre os parâmetros e propriedades de instalação do cliente no System Center Configuration Manager
 
@@ -114,10 +114,10 @@ Esse parâmetro pode especificar a URL de um gateway de gerenciamento de nuvem. 
 - Execute o seguinte comando: `(Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate | Where-Object {$_.Type -eq "Internet"}).MP`
 - Acrescente o prefixo "https://" para usar com o parâmetro **/mp**.
 
-Exemplo de quando usar a URL do gateway de gerenciamento de nuvem: `ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
+Exemplo de quando usar a URL do gateway de gerenciamento de nuvem: `ccmsetup.exe /mp: https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
  > [!Important]
- > Ao especificar a URL de um gateway de gerenciamento de nuvem para o parâmetro **/mp**, ela deverá começar com **https://**.
+ > Ao especificar a URL de um gateway de gerenciamento de nuvem para o parâmetro **/mp**, ela deverá começar com **https://** .
 
 
 ### <a name="retryltminutes"></a>/retry:&lt;Minutos\>
@@ -253,7 +253,7 @@ Exemplo: o `CCMSetup.exe /ExcludeFeatures:ClientUI` não instala o Centro de Sof
 
 Especifica os parâmetros de linha de comando que são passados para ccmsetup.exe depois que ele é instalado por ccmsetup.msi. Inclua outras propriedades dentro das aspas. Use essa propriedade ao inicializar o cliente do Configuration Manager usando o método de instalação do MDM do Intune. 
 
-Exemplo: `ccmsetup.msi CCMSETUPCMD="/mp:https://mp.contoso.com CCMHOSTNAME=mp.contoso.com"`
+Exemplo: `ccmsetup.msi CCMSETUPCMD="/mp: https://mp.contoso.com CCMHOSTNAME=mp.contoso.com"`
 
  > [!Tip]
  > O Microsoft Intune limita a linha de comando para 1024 caracteres. 
@@ -266,7 +266,7 @@ Exemplo: `ccmsetup.msi CCMSETUPCMD="/mp:https://mp.contoso.com CCMHOSTNAME=mp.co
 
 ### <a name="aadclientappid"></a>AADCLIENTAPPID
 
-Especifica o identificador do aplicativo cliente do Azure AD (Azure Active Directory). O aplicativo cliente é criado ou importado quando você [configura os serviços do Azure](/sccm/core/servers/deploy/configure/azure-services-wizard) para o Gerenciamento de Nuvem. Um administrador do Azure pode obter o valor dessa propriedade no portal do Azure. Para obter mais informações, consulte [Obter a ID do aplicativo](/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-application-id-and-authentication-key). Para a propriedade **AADCLIENTAPPID**, essa ID do aplicativo refere-se ao tipo de aplicativo "Nativo".
+Especifica o identificador do aplicativo cliente do Azure AD (Azure Active Directory). O aplicativo cliente é criado ou importado quando você [configura os serviços do Azure](/sccm/core/servers/deploy/configure/azure-services-wizard) para o Gerenciamento de Nuvem. Um administrador do Azure pode obter o valor dessa propriedade no portal do Azure. Para obter mais informações, consulte [Obter a ID do aplicativo](/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in). Para a propriedade **AADCLIENTAPPID**, essa ID do aplicativo refere-se ao tipo de aplicativo "Nativo".
 
 Exemplo: `ccmsetup.exe AADCLIENTAPPID=aa28e7f1-b88a-43cd-a2e3-f88b257c863b`
 
@@ -288,7 +288,7 @@ Especifica o identificador do locatário do Azure AD. Esse locatário é vincula
 - Na seção Estado do Dispositivo, encontre o valor **TenantId**. Por exemplo, `TenantId : 607b7853-6f6f-4d5d-b3d4-811c33fdd49a`
 
   > [!Note]
-  > Um administrador do Azure também pode obter esse valor no portal do Azure. Para obter mais informações, consulte [Obter ID do locatário](/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-tenant-id)
+  > Um administrador do Azure também pode obter esse valor no portal do Azure. Para obter mais informações, consulte [Obter ID do locatário](/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in)
 
 Exemplo: `ccmsetup.exe AADTENANTID=607b7853-6f6f-4d5d-b3d4-811c33fdd49a`
 
@@ -345,7 +345,7 @@ Exemplo: **CCMSetup.exe CCMALLOWSILENTREBOOT**
 
  Especifica os critérios de seleção de certificado se o cliente tem mais de um certificado para a comunicação HTTPS. Esse certificado é um certificado válido que inclui a funcionalidade de autenticação de cliente.  
 
- É possível pesquisar uma correspondência exata (use **Subject:**) ou uma correspondência parcial (use **SubjectStr:)** no Nome da Entidade ou no Nome Alternativo da Entidade. Exemplos:  
+ É possível pesquisar uma correspondência exata (use **Subject:** ) ou uma correspondência parcial (use **SubjectStr:)** no Nome da Entidade ou no Nome Alternativo da Entidade. Exemplos:  
 
  `CCMCERTSEL="Subject:computer1.contoso.com"` pesquisa um certificado com uma correspondência exata para o nome do computador “computer1.contoso.com” no Nome da Entidade ou no Nome Alternativo da Entidade.  
 
@@ -416,7 +416,7 @@ Essa propriedade pode especificar o endereço de um gateway de gerenciamento de 
 Por exemplo: `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
  > [!Important]
- > Ao especificar o endereço de um gateway de gerenciamento de nuvem para a propriedade **CCMHOSTNAME**, *não* acrescente um prefixo como **https://**. Esse prefixo é usado apenas com a URL de **/mp** de um gateway de gerenciamento de nuvem.
+ > Ao especificar o endereço de um gateway de gerenciamento de nuvem para a propriedade **CCMHOSTNAME**, *não* acrescente um prefixo como **https://** . Esse prefixo é usado apenas com a URL de **/mp** de um gateway de gerenciamento de nuvem.
 
 
 

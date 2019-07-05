@@ -11,21 +11,22 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b655b21b2d630d91d0e1a143e800d613882ca573
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 90c5c57d1717363d83fa921d68caced8cf9e8da1
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135021"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251723"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Cache par para clientes do Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-<!--1101436--> Use o cache par para ajudar a gerenciar a implantação de conteúdo para clientes em locais remotos. O cache par é uma solução interna do Configuration Manager que o os clientes podem usar para compartilhar conteúdo com outros clientes diretamente do cache local.   
+<!--1101436-->
+Use o cache par para ajudar a gerenciar a implantação de conteúdo para clientes em locais remotos. O cache par é uma solução interna do Configuration Manager que o os clientes podem usar para compartilhar conteúdo com outros clientes diretamente do cache local.   
 
 > [!Note]  
-> O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, veja [Habilitar recursos opcionais de atualizações](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> O Configuration Manager não habilita esse recurso opcional por padrão. É necessário habilitar esse recurso antes de usá-lo. Para obter mais informações, consulte [Enable optional features from updates (Habilitar recursos opcionais de atualizações)](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 
 
@@ -39,14 +40,14 @@ Definições:
 
 Use as configurações do cliente para permitir que os clientes sejam fontes de cache par. Você não precisa habilitar os clientes de cache par. Quando você permitir que os clientes sejam fontes de cache par, o ponto de gerenciamento os incluirá na lista de fontes de conteúdo local.<!--510397--> Para obter mais informações sobre esse processo, confira [Operações](#operations).  
 
-Uma fonte de cache par precisa ser membro do grupo de limites atual do cliente de cache par. O ponto de gerenciamento não inclui fontes de cache par de um grupo de limites vizinho na lista de fontes de conteúdo, que ele fornece ao cliente. Ele inclui apenas os pontos de distribuição de um grupo de limites vizinho. Para obter mais informações sobre grupos de limites atuais e vizinhos, confira [Grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).<!--SCCMDocs issue 685-->  
+Uma fonte de cache par precisa ser membro do grupo de limites atual do cliente de cache par. O ponto de gerenciamento não inclui fontes de cache par de um grupo de limites vizinho na lista de fontes de conteúdo, que ele fornece ao cliente. Ele inclui apenas os pontos de distribuição de um grupo de limites vizinho. Para obter mais informações sobre grupos de limite atuais e próximos, consulte [Grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups).<!--SCCMDocs issue 685-->  
 
 O cliente do Configuration Manager usa o cache par para fornecer todo tipo de conteúdo mantido no cache a outros clientes. Esse conteúdo inclui arquivos do Office 365 e arquivos de instalação expressa.<!--SMS.500850-->  
 
 O cache par não substitui o uso de outras soluções, como o Windows BranchCache ou a Otimização de Entrega. O cache par funciona juntamente com outras soluções. Essas tecnologias oferecem mais opções para estender as soluções tradicionais de implantação de conteúdo, como os pontos de distribuição. O cache par é uma solução personalizada que não depende do BranchCache. Se você não habilitar nem usar o BranchCache, o cache par ainda funcionará.  
 
   > [!Note]  
-  > A partir da versão 1802, o Windows BranchCache está sempre ativado nas implantações. A configuração **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede** foi removida.<!--SCCMDocs issue 539--> Se o ponto de distribuição oferecer suporte e estiver habilitado nas configurações do cliente, os clientes usarão o BranchCache. Para saber mais, confira [Configurar o BranchCache](/sccm/core/clients/deploy/about-client-settings#configure-branchcache).<!--SCCMDocs issue 735-->   
+  > A partir da versão 1802, o Windows BranchCache está sempre ativado nas implantações. A configuração para **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede** foi removida.<!--SCCMDocs issue 539--> Se o ponto de distribuição oferecer suporte e estiver habilitado nas configurações do cliente, os clientes usarão o BranchCache. Para saber mais, confira [Configurar o BranchCache](/sccm/core/clients/deploy/about-client-settings#configure-branchcache).<!--SCCMDocs issue 735-->   
 
 
 
@@ -124,7 +125,8 @@ Em clientes habilitados para cache par que usam o Firewall do Windows, o Configu
 
 
 ## <a name="bkmk_parts"></a> Suporte para download parcial
-<!--1357346--> Começando na versão 1806, as fontes de cache de par do cliente podem dividir o conteúdo em partes. Essas partes minimizam a transferência de rede para reduzir a utilização de WAN. O ponto de gerenciamento fornece acompanhamento mais detalhado das partes do conteúdo. Ele tentará eliminar mais de um download do mesmo conteúdo por grupo de limites. 
+<!--1357346-->
+Começando na versão 1806, as fontes de cache de par do cliente podem dividir o conteúdo em partes. Essas partes minimizam a transferência de rede para reduzir a utilização de WAN. O ponto de gerenciamento fornece acompanhamento mais detalhado das partes do conteúdo. Ele tentará eliminar mais de um download do mesmo conteúdo por grupo de limites. 
 
 
 ### <a name="example-scenario"></a>Cenário de exemplo
@@ -173,7 +175,8 @@ Para vê-los tratando o download do conteúdo em partes, examine o **ContentTran
 
 
 ## <a name="guidance-for-cache-management"></a>Diretrizes para gerenciamento de cache
-<!--510645--> O cache par baseia-se no cache do cliente do Configuration Manager para compartilhar o conteúdo. Considere os pontos a seguir para gerenciar o cache do cliente em seu ambiente:  
+<!--510645-->
+O cache par baseia-se no cache do cliente do Configuration Manager para compartilhar o conteúdo. Considere os pontos a seguir para gerenciar o cache do cliente em seu ambiente:  
 
 - O cache do cliente do Configuration Manager não é como a biblioteca de conteúdo em um ponto de distribuição. Enquanto você gerencia o conteúdo que você distribui para um ponto de distribuição, o cliente do Configuration Manager gerencia automaticamente o conteúdo em seu cache. Há definições e métodos para ajudar a controlar qual conteúdo fica no cache de uma fonte de cache par. Para obter mais informações, confira [Configurar o cache do cliente para clientes do Configuration Manager](/sccm/core/clients/manage/manage-clients#BKMK_ClientCache).  
 

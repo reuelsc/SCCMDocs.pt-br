@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f350f10db18c1de599337afac54596d2dfd988ea
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 1f5518346f0085293a2a9b5422c7aef375076d0c
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65494401"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516162"
 ---
 # <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>Como monitorar perfis de certificado no System Center Configuration Manager
 
@@ -58,7 +58,7 @@ Para monitorar a conformidade de certificado SCEP, não use o console, em vez di
    |    0x00000004     |                                                                                                          O registro deve ser adiado.                                                                                                           |
    |    0x00000010     |                                                                                                               Ocorreu um erro.                                                                                                                |
    |    0x00000020     |                                                                                                        O status do registro é desconhecido.                                                                                                        |
-   |    0x00000040     | As informações de status foram ignoradas. Isso poderá ocorrer se uma autoridade de certificação HYPERLINK "<http://msdn.microsoft.com/windows/ms721572>" \l "_security_certification_authority_gly" não for válida ou não tiver sido selecionada para monitoramento. |
+   |    0x00000040     | As informações de status foram ignoradas. Isso poderá ocorrer se uma autoridade de certificação HYPERLINK "<https://msdn.microsoft.com/windows/ms721572>" \l "_security_certification_authority_gly" não for válida ou não tiver sido selecionada para monitoramento. |
    |    0x00000100     |                                                                                                           O registro foi negado.                                                                                                           |
 
 ##  <a name="view-compliance-results-by-using-reports"></a>Exibir resultados de conformidade por meio de relatórios
