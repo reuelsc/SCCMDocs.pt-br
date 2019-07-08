@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db5c6d0d06328ae73921a80b090dffd1fb711d8b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 4e876041d67263b0b5db2acdfdef0ffa1ff318ef
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500553"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551426"
 ---
 # <a name="deploy-profiles-in-system-center-configuration-manager"></a>Implantar perfis no System Center Configuration Manager
 
@@ -55,9 +55,9 @@ Os perfis deverão ser implantados em uma ou mais coleções para poderem ser us
 
     -   **Gerar um alerta** – Habilite esta opção para configurar um alerta que será gerado se a conformidade do perfil for menor do que um percentual especificado por uma data e uma hora determinadas. Você também pode especificar se deseja que um alerta seja enviado para o System Center Operations Manager.  
 
-    -   -   **Atraso aleatório (horas)**: (somente para perfis de certificado que contêm as configurações do protocolo SCEP) – Especifica uma janela de atraso para evitar o processamento excessivo no Serviço de Registro de Dispositivo de Rede. O valor padrão é **64** horas.  
+    -   -   **Atraso aleatório (horas)** : (somente para perfis de certificado que contêm as configurações do protocolo SCEP) – Especifica uma janela de atraso para evitar o processamento excessivo no Serviço de Registro de Dispositivo de Rede. O valor padrão é **64** horas.  
 
-    -   **Especificar o agendamento de avaliação de conformidade para este perfil <type>** – Especifique o agendamento com base no qual o perfil implantado será avaliado nos computadores cliente. O agendamento poderá ser simples ou personalizado.  
+    -   **Especificar o agendamento de avaliação de conformidade para este \<tipo> perfil** – Especifique o agendamento com base no qual o perfil implantado será avaliado nos computadores cliente. O agendamento poderá ser simples ou personalizado.  
 
         > [!NOTE]  
         >  O perfil será avaliado por computadores cliente quando o usuário fizer logon.  

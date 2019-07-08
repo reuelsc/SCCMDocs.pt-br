@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94cbbb7616588fa88bae9ae71f5b5f53dd4a4d63
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 9346e95e3fa66e9f24d1bfc3711917c3d2146e5e
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500355"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551349"
 ---
 # <a name="windows-hello-for-business-settings-in-configuration-manager"></a>Configurações do Windows Hello para Empresas no Configuration Manager
 
@@ -90,9 +90,9 @@ Talvez algumas configurações não exijam a configuração de permissões, ou p
 1.  Entre em uma estação de trabalho de controlador de domínio ou de gerenciamento com as credenciais do administrador de domínio ou equivalentes.
 2.  Abra **usuários e computadores do Active Directory**.
 3.  No painel de navegação, clique com o botão direito no seu nome de domínio e, em seguida, clique em **Propriedades**.
-4.  Na guia **Segurança** da caixa de diálogo *<domain name>* **Propriedades**, clique em **Avançado**. Se a guia **Segurança** não for exibida, habilite **Recursos Avançados** no menu **Exibição** de **Usuários e Computadores do Active Directory**.
+4.  Na guia **Segurança** da caixa de diálogo *\<nome de domínio>* **Propriedades**, clique em **Avançado**. Se a guia **Segurança** não for exibida, habilite **Recursos Avançados** no menu **Exibição** de **Usuários e Computadores do Active Directory**.
 5.  Clique em **Adicionar**.
-6.  Na caixa de diálogo **Entrada de Permissão para** *<domain name>*, clique em **Selecionar uma entidade**.
+6.  Na caixa de diálogo **Entrada de Permissão para** *\<nome de domínio>* , clique em **Selecionar uma entidade de segurança**.
 7.  Na caixa de diálogo **Selecionar Usuário, Computador, Conta de Serviço ou Grupo**, digite **Administradores de Chave** na caixa de texto **Insira o nome do objeto para selecionar**. Clique em **OK**.
 8.  Da lista **Aplica-se a**, selecione **Objetos do Usuário Descendente**.
 9.  Role até a parte inferior da página e clique em **Limpar tudo**.
