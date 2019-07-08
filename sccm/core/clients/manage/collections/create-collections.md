@@ -11,35 +11,34 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40cb1a96771181b395ec2f628e0f0c3c2efe29b7
-ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
+ms.openlocfilehash: ed08a9abb746681eb8e89d471e19990ced313788
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65673308"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550904"
 ---
 # <a name="how-to-create-collections-in-configuration-manager"></a>Como criar coleções no Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Coleções são grupos de usuários ou dispositivos. Use coleções para tarefas como gerenciamento de aplicativos, configurações de conformidade de implantação ou instalação de atualizações de software. Você também pode usar coleções para gerenciar grupos de configurações do cliente ou usá-las com a administração baseada em funções para especificar os recursos que um usuário administrativo pode acessar. O Configuration Manager contém várias coleções internas. Para mais informações, confira [Introduction to collections](/sccm/core/clients/manage/collections/introduction-to-collections) (Introdução às coleções).  
+Coleções são grupos de usuários ou dispositivos. Use coleções para tarefas como gerenciar aplicativos, implantar configurações de conformidade ou instalar atualizações de software. Você também pode usar coleções para gerenciar grupos de configurações do cliente ou usá-las com a administração baseada em funções para especificar os recursos que um usuário administrativo pode acessar. O Configuration Manager contém várias coleções internas. Para mais informações, confira [Introduction to collections](/sccm/core/clients/manage/collections/introduction-to-collections) (Introdução às coleções).  
 
 > [!NOTE]  
 > Uma coleção pode conter usuários ou dispositivos, mas não ambos.  
 
 
-Use este artigo para criar coleções no Configuration Manager. Também é possível importar coleções que foram criadas neste ou em outro site do Configuration Manager. Para saber mais sobre como exportar e importar coleções, confira [Como gerenciar coleções](/sccm/core/clients/manage/collections/manage-collections).  
-
+As informações neste artigo podem ajudar a criar coleções no Configuration Manager. Também é possível importar coleções criadas neste site do Configuration Manager ou em outro site. Para saber mais sobre como exportar e importar coleções, confira [Como gerenciar coleções](/sccm/core/clients/manage/collections/manage-collections).  
 
 
 ## <a name="collection-rules"></a>Regras de coleção
 
-Há regras diferentes que você pode usar para configurar os membros de uma coleção no Configuration Manager.  
+É possível usar diferentes tipos de regras para configurar os membros de uma coleção no Configuration Manager.  
 
 
 ### <a name="direct-rule"></a>Regra direta
 
-Use para escolher os usuários ou computadores que você deseja adicionar a uma coleção. Esta associação não é alterada a menos que você remova um recurso do Configuration Manager. Antes de poder adicionar recursos a uma coleção de regras direta, o Configuration Manager deve ter descoberto ou importado esses recursos. As coleções de regras diretas têm uma maior sobrecarga administrativa que as coleções de regras de consulta, porque requerem alterações manuais.
+Use regras diretas para escolher os usuários ou os computadores que você deseja adicionar a uma coleção. Essa associação não muda, a menos que você remova um recurso do Configuration Manager. Antes de poder adicionar recursos a uma coleção de regras direta, o Configuration Manager deve ter descoberto ou importado esses recursos. As coleções de regras diretas têm uma maior sobrecarga administrativa do que as coleções de regras de consulta, pois exigem alterações manuais.
 
 
 ### <a name="query-rule"></a>Regra de consulta
@@ -65,12 +64,12 @@ Você pode adicionar várias regras de coleção de inclusão a uma coleção.
 
 ### <a name="exclude-collection-rule"></a>Regra de coleção de exclusão
 
-A regra de coleta de exclusão permite que você exclua os membros de outra coleção de uma coleção do Configuration Manager. Se a coleção excluída mudar, o Configuration Manager atualizará a associação da coleção atual em um agendamento.
+As regras de excluir coleção permitem excluir os membros de uma coleção de outra coleção do Configuration Manager. Se a coleção excluída mudar, o Configuration Manager atualizará a associação da coleção atual em um agendamento.
 
 Você pode adicionar várias regras de coleção de exclusão a uma coleção. Se uma coleção incluir regras de inclusão e exclusão de coleção e houver um conflito, a regra de exclusão de coleção terá prioridade.
 
 #### <a name="example"></a>Exemplo
-você cria uma coleção que contém uma regra de coleção de inclusão e uma regra de coleção de exclusão. A regra de coleção de inclusão destina-se a uma coleção de desktops da Dell. A exclusão de coleção destina-se a uma coleção de computadores com menos de 4 GB de RAM. A nova coleção contém desktops da Dell que têm, pelo menos, 4 GB de RAM.
+você cria uma coleção que contém uma regra de coleção de inclusão e uma regra de coleção de exclusão. A regra de coleção de inclusão destina-se a uma coleção de desktops da Dell. A exclusão de coleção destina-se a uma coleção de computadores com menos de 4 GB de RAM. A nova coleção contém desktops da Dell com pelo menos 4 GB de RAM.
 
 
 
@@ -78,20 +77,20 @@ você cria uma coleção que contém uma regra de coleção de inclusão e uma r
 
 1. No console do Configuration Manager, vá até o workspace **Ativos e conformidade**.  
 
-    - Para criar uma *coleção de dispositivos*, selecione o nó **Coleções de Dispositivo**. Na guia **Início** da faixa de opções, no grupo **Criar**, escolha **Criar Coleção de Dispositivos**.  
+    - Para criar uma *coleção de dispositivos*, selecione o nó **Coleções de Dispositivo**. Na guia **Página Inicial** da faixa de opções, no grupo **Criar**, selecione **Criar Coleção de Dispositivos**.  
 
-    - Para criar uma *coleção de usuários*, selecione o nó **Coleções de Usuário**. Na guia **Início** da faixa de opções, no grupo **Criar**, escolha **Criar Coleção de Usuários**.  
+    - Para criar uma *coleção de usuários*, selecione o nó **Coleções de Usuário**. Na guia **Página Inicial** da faixa de opções, no grupo **Criar**, selecione **Criar Coleção de Usuários**.  
 
-2. Na página **Geral** do assistente, forneça um **Nome** e um **Comentário**. Na seção **Limitação de coleção**, escolha **Procurar** e selecione uma limitação de coleção. A coleção que você está criando conterá somente os membros da coleção de limitação.  
+2. Na página **Geral** do assistente, forneça um **Nome** e um **Comentário**. Na seção **Limitação de coleção**, selecione **Procurar** e selecione uma limitação de coleção. A coleção que você está criando conterá somente os membros da limitação de coleção.  
 
-4. Na página **Regras de Associação**, na lista **Adicionar Regra**, selecione o tipo de regra de associação que você quer usar para esta coleção. É possível configurar várias regras para cada coleção. A configuração de cada regra varia. Para saber mais sobre como configurar cada regra, consulte as seções a seguir:  
+4. Na página **Regras de Associação**, na lista **Adicionar Regra**, selecione o tipo de regra de associação que você quer usar para a coleção. É possível configurar várias regras para cada coleção. A configuração de cada regra varia. Para saber mais sobre como configurar cada regra, confira as seções a seguir deste artigo:  
     - [Regra direta](#bkmk-direct)
     - [Regra de consulta](#bkmk-query)
     - [Regra de categoria de dispositivo](#bkmk-category)
     - [Regra de inclusão de coleção](#bkmk-include)
     - [Regra de exclusão de coleção](#bkmk-exclude)
 
-5. Além disso, na página **Regras de Associação**, revise as seguintes configurações:
+5. Além disso, na página **Regras de Associação**, examine as seguintes configurações.
 
     - **Usar atualizações incrementais para esta coleção**: selecione essa opção para examinar e atualizar periodicamente somente recursos novos ou alterados da avaliação de coleção anterior. Esse processo é independente de uma avaliação completa da coleção. Por padrão, atualizações incrementais ocorrem em intervalos de cinco minutos.  
 
@@ -115,112 +114,112 @@ você cria uma coleção que contém uma regra de coleção de inclusão e uma r
 
     - **Agendar uma atualização completa para esta coleção**: agende uma avaliação regular completa da associação da coleção.  
 
-        A partir da versão 1810, as seguintes alterações no comportamento da avaliação de coleção podem melhorar o desempenho do site:<!--3607726-->  
+        Da versão 1810 em diante, estas alterações no comportamento da avaliação da coleção podem melhorar o desempenho do site:<!--3607726-->  
 
-        - Anteriormente, quando você configurava um agendamento em uma coleção baseada em consulta, o site continuava a avaliar a consulta, independentemente de você ter ativado ou não a configuração de coleção para **Agendar uma atualização completa nesta coleção**. Para desabilitar totalmente o agendamento, era preciso alterá-lo para **Nenhum**. 
+        - Anteriormente, quando você configurava um agendamento em uma coleção baseada em consulta, o site continuava a avaliar a consulta, independentemente de você ter ativado ou não a configuração de coleção para **Agendar uma atualização completa nesta coleção**. Para desabilitar totalmente o agendamento, era preciso alterá-lo para **Nenhum**.
 
             Agora o site remove o agendamento ao desabilitar essa configuração. Para especificar um agendamento para avaliação de coleção, ative a opção **Agendar uma atualização completa nesta coleção**.  
 
-            Ao atualizar seu site, para qualquer coleção existente na qual você especificou um agendamento, o site ativa a opção para **Agendar uma atualização completa nesta coleção**. Embora essa configuração possa não ser intencional, foi o comportamento real. Para impedir que o site avalie uma coleção em um agendamento, desative essa opção.  
+            Ao atualizar seu site, para qualquer coleção existente na qual você especificou um agendamento, o site ativa a opção para **Agendar uma atualização completa nesta coleção**. Embora essa configuração talvez não seja sua intenção, ela era o comportamento real da agenda antes de você atualizar o site. Para impedir que o site avalie uma coleção em um agendamento, desative essa opção.  
 
         - Você não pode desabilitar a avaliação de coleções internas como **Todos os sistemas**, mas agora pode configurar o agendamento. Esse comportamento permite que você personalize essa ação em um momento que atenda aos seus requisitos. 
 
-            > [!Tip]  
-            > Altere apenas o **Horário** do planejamento personalizado nas coleções internas. Não altere o **Padrão de recorrência**. Futuras iterações podem impor um padrão de recorrência específico.  
+            > [!TIP]  
+            > Em coleções internas, altere somente o **Horário** do agendamento personalizado. Não altere o **Padrão de recorrência**. Futuras iterações podem impor um padrão de recorrência específico.  
 
 6. Conclua o assistente para criar a nova coleção. A nova coleção é exibida no nó **Coleções de Dispositivos** do workspace **Ativos e Conformidade**.  
 
 > [!NOTE]  
-> É necessário atualizar ou recarregar o console do Configuration Manager para ver os membros da coleção. Eles não aparecem na coleção até a primeira atualização agendada ser executada. Você também pode selecionar manualmente **Atualizar Associação** para a coleção. Pode levar alguns minutos para concluir uma atualização da coleção.  
+> É necessário atualizar ou recarregar o console do Configuration Manager para ver os membros da coleção. Eles não aparecem na coleção até a primeira atualização agendada ser executada. Você também pode selecionar manualmente **Atualizar Associação** para a coleção. Podem ser necessários alguns minutos para concluir uma atualização da coleção.  
 
         
 ### <a name="bkmk-direct"></a> Configurar uma regra direta  
 
-1. Na página **Pesquisar Recursos** do **Assistente para Criar Regra de Associação Direta**, especifique as seguintes informações:  
+1. Na página **Pesquisar Recursos** do **Assistente para Criar Regra de Associação Direta**, especifique as informações a seguir.  
 
-    - **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Por exemplo, o 
-        - **Recurso do Sistema**: pesquise dados de inventário retornados de computadores cliente
-        - **Computador Desconhecido**: selecione entre os valores retornados por computadores desconhecidos
-        - **Recursos de Usuário**: pesquise informações de usuário coletadas pelo Configuration Manager
-        - **Recurso do Grupo de Usuários**: pesquise informações de grupo de usuários coletadas pelo Configuration Manager
+    - **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Por exemplo:
+        - **Recurso do Sistema**: pesquise dados de inventário retornados de computadores cliente.
+        - **Computador Desconhecido**: selecione entre os valores retornados por computadores desconhecidos.
+        - **Recursos de Usuário**: pesquise informações de usuário coletadas pelo Configuration Manager.
+        - **Recurso do Grupo de Usuários**: pesquise informações de grupo de usuários coletadas pelo Configuration Manager.
 
-    - **Nome do atributo**: selecione o atributo associado à classe de recurso selecionada que você deseja pesquisar. Por exemplo, o  
+    - **Nome do atributo**: selecione o atributo associado à classe de recurso selecionada que você deseja pesquisar. Por exemplo:  
 
         - Se quiser selecionar computadores por seu nome NetBIOS, selecione **Recurso do Sistema** na lista **Classe de recurso** e **Nome NetBIOS** na lista **Nome do atributo**.  
 
-        - Se quiser selecionar os usuários por nome de UO (Unidade Organizacional), selecione **Recurso de Usuário** na lista **Classe de recurso** e **Nome de UO de usuário** na lista **Nome do atributo**.  
+        - Se você desejar selecionar os usuários pelo nome da UO (unidade organizacional), selecione **Recurso de Usuário** na lista **Classe de recurso** e **Nome de UO do usuário** na lista **Nome do atributo**.  
 
     - **Excluir recursos marcados como obsoletos**: Se um computador cliente estiver marcado como obsoleto, não inclua esse valor nos resultados da pesquisa.  
 
     - **Excluir recursos que não têm o cliente do Configuration Manager instalado**: esses recursos não serão exibidos nos resultados da pesquisa.  
 
-    - **Valor**: insira um valor de pesquisa no nome do atributo selecionado. Use o caractere de porcentagem `%` como curinga. Por exemplo, o  
-        - Para pesquisar computadores que têm um nome NetBIOS que começa com "M", insira `M%` nesse campo.  
-        - Para pesquisar usuários na UO da Contoso, insira `Contoso` nesse campo.
+    - **Valor**: insira um valor de pesquisa no nome do atributo selecionado. Use o caractere de percentual (%) como curinga. Por exemplo:  
+        - Para pesquisar computadores que têm um nome NetBIOS que começa com "M", insira **M%** nesse campo.  
+        - Para pesquisar usuários na UO da Contoso, digite **Contoso** neste campo.
 
-2. Na página **Selecionar Recursos**, selecione os recursos que você deseja adicionar à coleção na lista **Recursos** e escolha **Avançar**.  
+2. Na página **Selecionar Recursos**, selecione os recursos que você deseja adicionar à coleção na lista **Recursos** e selecione **Avançar**.  
 
 
 ### <a name="bkmk-query"></a> Configurar uma regra de consulta  
 
-Na caixa de diálogo **Propriedades de Regra de Consulta** , especifique as seguintes informações:  
+Na caixa de diálogo **Propriedades da Regra de Consulta**, especifique as seguintes informações.  
 
 - **Nome**: Especifique um nome exclusivo para a consulta.  
 
 - **Importar Instrução de Consulta**: abre a caixa de diálogo **Procurar Consulta**. Selecione uma [Consulta do Configuration Manager](/sccm/core/servers/manage/create-queries) para usar como a regra de consulta da coleção.   
 
-- **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione um dos valores de **Recursos do Sistema** para pesquisar dados de inventário retornados de computadores cliente ou **Computador Desconhecido** para selecionar valores retornados por computadores desconhecidos.  
+- **Classe de recurso**: selecione o tipo de recurso que você deseja pesquisar e adicione à coleção. Selecione um dos valores de **Recursos do Sistema** para pesquisar dados de inventário retornados de computadores cliente ou de **Computador Desconhecido** para selecionar entre os valores retornados por computadores desconhecidos.  
 
-- **Editar Instrução de Consulta**: abre a caixa de diálogo **Propriedades da Instrução da Consulta**, em que é possível criar uma consulta a ser usada como a regra para a coleção. Para saber mais sobre consultas, confira [Introdução a consultas](/sccm/core/servers/manage/introduction-to-queries).  
+- **Editar Instrução de Consulta**: abre a caixa de diálogo **Propriedades da Instrução da Consulta**, em que é possível escrever uma consulta a ser usada como a regra para a coleção. Para saber mais sobre consultas, confira [Introdução a consultas](/sccm/core/servers/manage/introduction-to-queries).  
 
 
 ### <a name="bkmk-category"></a> Regra de categoria de dispositivo
 
-As seguintes ações estão disponíveis na janela **Selecionar Categorias de Dispositivo**:
+As seguintes ações estão disponíveis na janela **Selecionar Categorias de Dispositivo**.
 
-- **Criar**: Especifique um nome para criar uma nova categoria
-- **Renomear**: renomeie a categoria selecionada
-- **Excluir**: Selecione uma ou mais categorias e use essa ação para removê-las da lista
+- **Criar**: especifique um nome para criar uma nova categoria.
+- **Renomear**: altere o nome da categoria selecionada.
+- **Excluir**: selecione uma ou mais categorias e use essa ação para removê-las da lista.
 
 Para saber mais, confira [Categorizar automaticamente dispositivos em coleções](/sccm/core/clients/manage/collections/automatically-categorize-devices-into-collections).<!-- SCCMDocs issue 552 -->
 
 
 ### <a name="bkmk-include"></a> Configurar uma regra de inclusão de coleção  
 
-Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja incluir na nova coleção e, em seguida, escolha **OK**.  
+Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja incluir na nova coleção e, em seguida, selecione **OK**.  
 
 
 ### <a name="bkmk-exclude"></a> Configurar uma regra de exclusão de coleção  
 
-Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja excluir da nova coleção e, em seguida, escolha **OK**.  
+Na caixa de diálogo **Selecionar Coleções**, selecione as coleções que você deseja excluir da nova coleção e, em seguida, selecione **OK**.  
 
 
 
 ## <a name="bkmk_import"></a> Importar uma coleção  
 
-Quando você exporta uma coleção de um site, o Configuration Manager a salva como um arquivo MOF (objeto de objeto gerenciado). Use este procedimento para importar esse arquivo para o banco de dados do seu site. Você precisa **Criar** permissões na classe de coleções. 
+Quando você exporta uma coleção de um site, o Configuration Manager a salva como um arquivo MOF (Managed Object Format). Use este procedimento para importar esse arquivo para o banco de dados do seu site. Para concluir este procedimento, você precisa de permissões para **Criar** na classe de coleções.
 
-> [!Important]  
+> [!IMPORTANT]  
 > - Verifique se o arquivo contém apenas dados de coleção, é de uma fonte confiável e não foi adulterado.  
 > 
-> - Verifique se o arquivo foi exportado de um site que executa a mesma versão do Configuration Manager.  
+> - Verifique se o arquivo foi exportado de um site que executa a mesma versão do Configuration Manager que você está usando.  
 
 Para saber mais sobre como exportar coleções, consulte [Como gerenciar coleções](/sccm/core/clients/manage/collections/manage-collections).
 
 
 1. No console do Configuration Manager, vá até o workspace **Ativos e conformidade**. Selecione o nó **Coleções de Usuários** ou **Coleções de Dispositivos**.  
 
-2. Na guia **Início** da faixa de opções, no grupo **Criar**, escolha **Importar Coleções**.  
+2. Na guia **Página Inicial** da faixa de opções, no grupo **Criar**, selecione **Importar Coleções**.  
 
-3. Na página **Geral** do **Assistente de Importação de Coleções**, escolha **Avançar**.  
+3. Na página **Geral** do **Assistente de Importação de Coleções**, selecione **Avançar**.  
 
-4. Na página **Nome do Arquivo MOF**, escolha **Procurar**. Procure o arquivo MOF que contém as informações de coleção que você deseja importar.  
+4. Na página **Nome do Arquivo MOF**, selecione **Procurar**. Procure o arquivo MOF que contém as informações de coleção que você deseja importar.  
 
 5. Conclua o assistente para importar a coleção. A nova coleção é exibida no nó **Coleções de Usuários** ou **Coleções de Dispositivos** do workspace **Ativos e Conformidade**. Atualize ou recarregue o console do Configuration Manager para ver os membros da coleção recém-importada.  
 
 ## <a name="bkmk_powershell"></a> Uso do PowerShell
 
-O PowerShell pode ser usado para criar e importar coleções.  Para obter mais informações, consulte:
+É possível usar o PowerShell para criar e importar coleções. Para obter mais informações, consulte:
 
 * [New-CMCollection](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmcollection)
 * [Set-CMCollection](https://docs.microsoft.com/powershell/module/ConfigurationManager/Set-CMCollection)

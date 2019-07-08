@@ -10,12 +10,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9167ece07e751302fb221a7b0fe2757386346b5f
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: a64a9ee6808354caaee9eadca0ad18e851a3eb71
+ms.sourcegitcommit: 8e9e7c42a5572797e05936fab0cf84fc27c40862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194478"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398859"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificados para o gateway de gerenciamento de nuvem
 
@@ -88,10 +88,8 @@ Os clientes devem confiar no certificado de autenticação de servidor do CMG. H
 
 - Use um certificado emitido por uma AC corporativa da PKI (infraestrutura de chave pública). A maioria das implementações de PKI corporativo adiciona autoridades de certificação raiz confiáveis aos clientes do Windows. Por exemplo, usando os Serviços de Certificados do Active Directory com a política de grupo. Se você emitir o certificado de autenticação de servidor do CMG de uma AC na qual os clientes não confiam automaticamente, adicione o certificado raiz confiável da AC aos clientes baseados na Internet.  
 
-    - Também use perfis de certificado do Configuration Manager para provisionar certificados em clientes. Para obter mais informações, consulte [Introdução aos perfis de certificado](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
-
-> [!Note]  
-> Da versão 1806 em diante, ao criar um CMG, não é mais necessário fornecer um certificado raiz confiável na página Configurações. Esse certificado não é necessário ao usar o Azure AD (Azure Active Directory) para autenticação do cliente, mas costumava ser necessário no assistente. Se você estiver usando certificados de autenticação de cliente de PKI, ainda será necessário adicionar um certificado raiz confiável para o CMG.<!--SCCMDocs-pr issue #2872-->  
+    - Também use perfis de certificado do Configuration Manager para provisionar certificados em clientes. Para obter mais informações, consulte [Introdução aos perfis de certificado](/sccm/protect/deploy-use/introduction-to-certificate-profiles).
+    - Se você planeja [instalar o cliente do Configuration Manager do Intune](/sccm/comanage/how-to-prepare-win10#install-the-configuration-manager-client), também poderá usar perfis de certificado do Intune para provisionar certificados em clientes. Para obter mais informações, confira [Configurar um perfil de certificado](https://docs.microsoft.com/intune/certificates-configure).
 
 ### <a name="bkmk_serverauthpublic"></a> Certificado de autenticação de servidor emitido por um provedor público
 
@@ -146,6 +144,9 @@ O ponto de conexão do CMG requer que esse certificado encaminhe com segurança 
 Você fornece esse certificado ao criar o CMG no console do Configuration Manager.
 
 O CMG deve confiar nos certificados de autenticação de cliente. Para estabelecer essa relação de confiança, forneça a cadeia de certificados raiz confiáveis. Especifique duas ACs raiz confiáveis e quatro ACs (subordinadas) intermediárias. Adicione todos os certificados na cadeia de confiança. Por exemplo, se o certificado de autenticação de cliente tiver sido emitido por uma autoridade de certificação intermediária, adicione os certificados de autoridade de certificação intermediários e raiz.
+
+> [!Note]  
+> Da versão 1806 em diante, ao criar um CMG, não é mais necessário fornecer um certificado raiz confiável na página Configurações. Esse certificado não é necessário ao usar o Azure AD (Azure Active Directory) para autenticação do cliente, mas costumava ser necessário no assistente. Se você estiver usando certificados de autenticação de cliente de PKI, ainda será necessário adicionar um certificado raiz confiável para o CMG.<!--SCCMDocs-pr issue #2872 SCCMDocs issue #1319-->
 
 #### <a name="export-the-client-certificates-trusted-root"></a>Exportar a raiz confiável do certificado do cliente
 

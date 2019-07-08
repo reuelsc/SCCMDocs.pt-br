@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 950e3d60d0737d9135eb5f47bbc02a07f2a5e65e
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 23fbb29ba4676f6c7282e5337f691f88209e15e6
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67158330"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551226"
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1702 do System Center Configuration Manager
 
@@ -158,7 +158,7 @@ Depois de criar a política de conformidade, você pode monitorar os resultados 
 ## <a name="improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences"></a>Aprimoramentos nas configurações e mensagens de notificação do Centro de Software para sequências de tarefas de alto impacto
 Esta versão inclui os seguintes aprimoramentos para configurações e mensagens de notificação do Centro de Software para sequências de tarefas de implantação de alto impacto:
 
-- Nas propriedades da sequência de tarefas, agora você pode configurar qualquer sequência de tarefas, incluindo sequências de tarefas que não do sistema operacional, como uma implantação de alto risco. Qualquer sequência de tarefas que atender a determinadas condições será automaticamente definida como de alto impacto. Para obter detalhes, consulte [Gerenciar implantações de alto risco](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
+- Nas propriedades da sequência de tarefas, agora você pode configurar qualquer sequência de tarefas, incluindo sequências de tarefas que não do sistema operacional, como uma implantação de alto risco. Qualquer sequência de tarefas que atender a determinadas condições será automaticamente definida como de alto impacto. Para obter detalhes, consulte [Gerenciar implantações de alto risco](https://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
 - Nas propriedades da sequência de tarefas, você pode optar por usar a mensagem de notificação padrão ou criar sua própria mensagem de notificação personalizada para implantações de alto impacto.
 - Nas propriedades da sequência de tarefas, você pode configurar as propriedades do Centro de Software, que incluem tornar uma reinicialização necessária, o tamanho do download da sequência de tarefas e o tempo de execução estimado.
 - A mensagem de implantação de alto impacto padrão para atualizações in-loco agora indicam que seus aplicativos, dados e configurações são migrados automaticamente. Anteriormente, a mensagem padrão para qualquer instalação do sistema operacional indicava que todos os aplicativos, dados e configurações seriam perdidos, o que não era verdade para uma atualização in-loco.
@@ -166,7 +166,7 @@ Esta versão inclui os seguintes aprimoramentos para configurações e mensagens
 ### <a name="set-a-task-sequence-as-a-high-impact-task-sequence"></a>Definir uma sequência de tarefas como uma sequência de tarefas de alto impacto
 Use o procedimento a seguir para definir uma sequência de tarefas como de alto impacto.
 > [!NOTE]
-> Qualquer sequência de tarefas que atender a determinadas condições será automaticamente definida como de alto impacto. Para obter detalhes, consulte [Gerenciar implantações de alto risco](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
+> Qualquer sequência de tarefas que atender a determinadas condições será automaticamente definida como de alto impacto. Para obter detalhes, consulte [Gerenciar implantações de alto risco](https://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
 
 1. No console do Configuration Manager, acesse **Biblioteca de Software** > **Sistemas Operacionais** > **Sequências de Tarefas**.
 2. Selecione a sequência de tarefas a ser editada e clique em **Propriedades**.
@@ -208,7 +208,7 @@ Use o procedimento a seguir para configurar os detalhes da sequência de tarefas
 
 ## <a name="check-for-running-executable-files-before-installing-an-application"></a>Verificar se há arquivos executáveis antes de instalar um aplicativo
 
-Na caixa de diálogo **Propriedades** de *<deployment type name>* de um tipo de implantação, na guia Comportamento de Instalação, agora você pode especificar um ou mais arquivos executáveis que, se estiverem em execução, bloquearão a instalação do tipo de implantação. O usuário deve fechar o arquivo executável em execução (ou ele pode ser fechado automaticamente para implantações com a finalidade obrigatória) antes de o tipo de implantação poder ser instalado.
+Na caixa de diálogo **Propriedades** de *\<nome do tipo de implantação>* de um tipo de implantação, na guia Comportamento de Instalação, agora você pode especificar um ou mais arquivos executáveis que, se estiverem em execução, bloquearão a instalação do tipo de implantação. O usuário deve fechar o arquivo executável em execução (ou ele pode ser fechado automaticamente para implantações com a finalidade obrigatória) antes de o tipo de implantação poder ser instalado.
 
 ### <a name="try-it-out"></a>Experimente.
 

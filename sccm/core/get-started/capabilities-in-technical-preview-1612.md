@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c15b387ec9f2048a923eb220b6c8e3e1fdccded8
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: b3560284733ccad6a9a3676a46f755106596ad03
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286307"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551197"
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1612 do System Center Configuration Manager
 
@@ -186,7 +186,7 @@ Para executar a ferramenta:
 2. Em seguida, insira uma linha de comando que inclui as opções de linha de comando necessárias e os comutadores opcionais que você deseja usar.
 
 **Problema conhecido** Quando a ferramenta é executada, um erro semelhante ao seguinte pode ser retornado quando qualquer pacote ou implantação tiver falhado ou estiver em andamento:
--  *System.InvalidOperationException: Esta biblioteca de conteúdo não pode ser limpa no momento porque o pacote <packageID> não está totalmente instalado.*
+-  *System.InvalidOperationException: No momento, não é possível limpar esta biblioteca de conteúdo porque o pacote \<packageID> não está totalmente instalado.*
 
 **Solução alternativa:** nenhuma. A ferramenta não é confiável para identificar arquivos órfãos quando o conteúdo está em andamento ou não pôde ser implantado. Portanto, a ferramenta não permitirá que você limpe conteúdo até que esse problema seja resolvido.
 
@@ -202,7 +202,7 @@ As opções de linha de comando a seguir podem ser usadas em qualquer ordem.
 | **/dp &lt;FQDN do ponto de distribuição>**  | **Necessária** </br> Especifique o FQDN (nome de domínio totalmente qualificado) do ponto de distribuição que você deseja limpar. </br></br> Exemplo:  ***ContentLibraryCleanup.exe /dp server1.contoso.com***|
 | **/ps &lt;FQDN do site primário>**       | **Opcional** ao limpar o conteúdo de um ponto de distribuição em um site primário.</br>**Obrigatório** ao limpar o conteúdo de um ponto de distribuição em um site secundário. </br></br> Especifique o FQDN do site primário ao qual o ponto de distribuição pertence, ou do pai primário quando o ponto de distribuição estiver em um site secundário. </br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
 | **/sc &lt;código do site primário>**  | **Opcional** ao limpar o conteúdo de um ponto de distribuição em um site primário.</br>**Obrigatório** ao limpar o conteúdo de um ponto de distribuição em um site secundário. </br></br> Especifique o código do site primário ao qual o ponto de distribuição pertence, ou do site pai primário quando o ponto de distribuição estiver em um site secundário.</br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
-| **/log <log file directory>**       |**Opcional** </br> Especifique um diretório no qual os arquivos de log serão colocados. Ele pode ser uma unidade local ou um compartilhamento de rede.</br></br> Quando essa opção não for usada, os arquivos de log são colocados automaticamente na pasta temp dos usuários.</br></br> Exemplo de unidade local: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>Exemplo de compartilhamento de rede: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\&lt;share>\&lt;folder>***|
+| **/log \<diretório do arquivo de log>**       |**Opcional** </br> Especifique um diretório no qual os arquivos de log serão colocados. Ele pode ser uma unidade local ou um compartilhamento de rede.</br></br> Quando essa opção não for usada, os arquivos de log são colocados automaticamente na pasta temp dos usuários.</br></br> Exemplo de unidade local: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>Exemplo de compartilhamento de rede: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\&lt;share>\&lt;folder>***|
 
 
 ## <a name="improvements-for-in-console-search"></a>Melhorias da pesquisa no console

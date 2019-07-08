@@ -11,32 +11,32 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5394cd86e1f137bd7cf76549b117cb53f242f8f1
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 456289520e25fe94da7e94f6a795537f68ba069e
+ms.sourcegitcommit: 3a3f40f3d39cbecfb9219a64c0185ea4b2ef9671
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65497297"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67561972"
 ---
 # <a name="how-to-manage-queries-in-system-center-configuration-manager"></a>Como gerenciar consultas no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Use as informações neste tópico para ajudar a gerenciar consultas no System Center Configuration Manager.  
+Este artigo pode ajudá-lo a gerenciar consultas no System Center Configuration Manager.  
 
  Para obter informações sobre como criar consultas, veja [Como criar consultas no System Center Configuration Manager](../../../core/servers/manage/create-queries.md).  
 
-## <a name="how-to-manage-queries"></a>Como gerenciar consultas  
+## <a name="manage-queries"></a>Gerenciar consultas
  No workspace **Monitoramento**, selecione **Consultas**, selecione a consulta a ser gerenciada e uma tarefa de gerenciamento.  
 
- Use a tabela a seguir para obter mais informações sobre as tarefas de gerenciamento que podem requerer informações adicionais antes de você selecioná-las.  
+ A tabela a seguir fornece informações sobre as tarefas de gerenciamento.  
 
-|Tarefa de gerenciamento|Detalhes|Mais informações|  
-|---------------------|-------------|----------------------|  
-|**Executar**|Executa a consulta selecionada e exibe os resultados no console do Configuration Manager.|Nenhuma informação adicional.|  
-|**Instalar o cliente**|Abre o **Assistente para Instalar Cliente**, que permite instalar o cliente do Configuration Manager nos computadores retornados pela consulta selecionada.<br /><br /> Essa opção não está disponível para consultas que retornam dispositivos móveis, usuários ou grupos de usuários.|Para obter mais informações sobre como instalar clientes do Configuration Manager usando push de cliente, consulte [Implantar clientes em computadores Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).|  
-|**Exportar**|Abre o **Assistente para Exportar Objetos** , que permite exportar esta consulta para um formato MOF (Managed Object Format) que pode ser importado mais tarde em outro site.|Nenhuma informação adicional.|  
-|**Moverr**|Abre a caixa de diálogo **Mover Itens Selecionados** , em que você pode mover a consulta selecionada para uma pasta que você criou anteriormente no nó **Consultas** .|Nenhuma informação adicional.|  
+|Tarefa de gerenciamento|Detalhes| 
+|---------------------|-------------|
+|**Executar**|Executa a consulta selecionada e exibe os resultados no console do Configuration Manager.|
+|**Instalar o cliente**|Abre o **Assistente para Instalar Cliente**, que permite instalar o cliente do Configuration Manager nos computadores retornados pela consulta selecionada.<br /><br /> Essa opção não está disponível para consultas que retornam dispositivos móveis, usuários ou grupos de usuários. <br /><br /> Para obter mais informações sobre como instalar clientes do Configuration Manager usando push de cliente, consulte [Implantar clientes em computadores Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).| 
+|**Exportarar**|Abre o **Assistente de Objetos de Exportação**. Este assistente permite exportar a consulta para um arquivo MOF (Managed Object Format) que pode ser importado em outro site.
+|**Moverr**|Abre a caixa de diálogo **Mover Itens Selecionados**. Essa caixa de diálogo permite mover a consulta selecionada para uma pasta criada anteriormente no nó **Consultas**.|
 
 ## <a name="next-steps"></a>Próximas etapas 
  [Como criar consultas no System Center Configuration Manager](../../../core/servers/manage/create-queries.md)

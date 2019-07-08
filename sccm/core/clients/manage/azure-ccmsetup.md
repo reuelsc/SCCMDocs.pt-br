@@ -2,7 +2,7 @@
 title: Fluxo de trabalho de autenticação do Azure AD
 titleSuffix: Configuration Manager
 description: Detalhes do processo de instalação de cliente do Configuration Manager em um dispositivo Windows 10 com o sistema de autenticação do Azure Active Directory
-ms.date: 05/24/2019
+ms.date: 07/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: 9aaf466a-3f40-4468-b3cd-f0010f21f05a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c422e5134ca798c1a5422cd518d550ed4c188e9a
-ms.sourcegitcommit: bfb8a17f60dcb9905e739045a5141ae45613fa2c
+ms.openlocfilehash: 8bb386aea70253fa033f59ab85732e0b99987c16
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66213797"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550977"
 ---
 # <a name="azure-ad-authentication-workflow"></a>Fluxo de trabalho de autenticação do Azure AD
 
@@ -91,7 +91,7 @@ MessageID: 3087bd34-b82c-4950-b972-e82bb0fb8385 RequestURI: https://MP.MYCORP.CO
 As entradas a seguir são registradas no arquivo **CCM_STS.log**:
 
 ```
-Validated AAD token. TokenType: Device TenantId: XXXXe388-XXXX-485c-XXXX-e8e4eb41XXXX UserId: 00000000-0000-0000-0000-000000000000 DeviceId: 0aebad80-77d2-4f0a-9639-676ee4764bb7 OnPrem_UserSid:  OnPrem_DeviceSid:
+Validated AAD token. TokenType: Device TenantId: XXXXe388-XXXX-485c-XXXX-e8e4eb41XXXX UserId: 00000000-0000-0000-0000-000000000000 DeviceId: 0XXXXX80-77XX-4XXa-X63X-67XXXXX64bb7 OnPrem_UserSid:  OnPrem_DeviceSid:
 
 Return token to client, token type: UDA, hierarchyId: XXXX4f9c-XXXX-46a5-XXXX-7612c324XXXX, userId: 00000000-0000-0000-0000-000000000000, deviceId: GUID:XXXXaee9-cXXc-4ccd-XXXX-f1417d81XXX
 ```
@@ -127,3 +127,85 @@ O dispositivo baixa o conteúdo do cliente e inicia a instalação.
 - Certificado WPJ não encontrado: o cliente está registrado mas não está associado ao Azure AD
 
 O uso da opção /NoCRLCheck funciona apenas para inicialização de ccmsetup. Para que os clientes sejam totalmente funcionais, publique a CRL na Internet. Como alternativa, é possível desabilitar a verificação de CRL na configuração da comunicação com cliente do site. Caso contrário, depois de atualizar as configurações de segurança pelo serviço de localização, os clientes deixarão de se comunicar com o servidor.
+
+
+## <a name="client-registration"></a>Registro do cliente
+
+![Diagrama do fluxo de trabalho de registro do Azure AD](media/azure-ad-registration-workflow.png)  
+
+### <a name="1-configuration-manager-client-request-registration"></a>1. Registro de solicitação de cliente do Configuration Manager
+
+As entradas a seguir estão registradas em log em **ClientIDManagerStartup.log**:
+
+```
+[RegTask] - Client is not registered. Sending registration request for GUID:1XXXXXEF-5XX8-4XX3-XEDX-XXXFBFF78XXX ...        
+Registering client using AAD auth.  
+```
+
+### <a name="2-configuration-manager-request-azure-ad-token-to-register-client"></a>2. Token do Azure AD de solicitação do Configuration Manager para registrar o cliente
+
+As entradas a seguir estão registradas em log em **ADALOperationProvider.log**:
+```
+Getting AAD (user) token with: ClientId = f1f9b14e-XXXX-4f17-XXXX-2593f6eee91e, ResourceUrl = https://ConfigMgrService, AccountId = X49FC29A-ECE3-XXX-A3C1-XXXXXXF035A6E
+Retrieved AAD token for AAD user '00000000-0000-0000-0000-000000000000' 
+
+```
+
+#### <a name="21-configuration-manager-client-is-registered"></a>2.1 O cliente do Configuration Manager é registrado  
+
+As entradas a seguir estão registradas em log em **ClientIDManagerStartup.log**:
+
+```
+[RegTask] - Client is registered. Server assigned ClientID is GUID:1XXXXXEF-5XX8-4XX3-XEDX-XXXFBFF78XXX. Approval status 3  
+```
+
+> [!NOTE]  
+> Durante o registro de cliente, a validação de certificado sempre é executada. Esse processo ocorrerá mesmo que você esteja usando o método de autenticação do Azure AD para registrar o cliente.
+
+
+### <a name="3-configuration-manager-client-token-request"></a>3. Solicitação de token de cliente do Configuration Manager
+
+Depois que o site registra o cliente, o cliente solicita um token CCM. O token CCM é criptografado para a conta do Sistema local (S-1-5-18) e armazenado em cache por oito horas. Depois de oito horas, o token expira e o cliente solicita a renovação de token.
+
+As entradas a seguir estão registradas em log em **ClientIDManagerStartup.log**:
+
+```
+Getting CCM Token from STS server 'MP.MYCORP.COM'   
+Getting CCM Token from https://MP.MYCORP.COM/CCM_STS
+...
+Cached encrypted token for 'S-1-5-18'. Will expire at 'XX/XX/XX XX:XX:XX'   
+```
+
+#### <a name="31-cmg-gets-request"></a>3.1 O CMG obtém a solicitação
+
+As entradas a seguir são registradas no arquivo **IIS.log**:
+
+```
+RD0003FF74XX2 10.0.0.4 GET /CCM_STS - 443 - HTTP/1.1 python-requests/2.20.0 - - 13.95.234.44 404 0 2 1477 154 15
+```
+
+#### <a name="32-cmg-forwards-request-to-cmg-connection-point"></a>3.2 O CMG encaminha a solicitação ao ponto de conexão do CMG
+
+As entradas a seguir são registradas no arquivo **CMGService.log**:
+
+```
+RequestUri: /CCM_PROXY_SERVERAUTH/XXXXXX037938216/CCM_STS  RequestCount: 769  RequestSize: 1081595 Bytes  ResponseCount: 769     ResponseSize: 36143 Bytes  AverageElapsedTime: 3945 ms
+```
+
+#### <a name="33-cmg-connection-point-transforms-cmg-client-request-to-management-point-client-request"></a>3.3 O ponto de conexão do CMG transforma a solicitação do cliente do CMG em uma solicitação de cliente do ponto de gerenciamento
+
+As entradas a seguir são registradas no arquivo **SMS_Cloud_ProxyConnector.log**:
+
+```
+MessageID: 3087bd34-b82c-4950-b972-e82bb0fb8385 RequestURI: https://MP.MYCORP.COM/CCM_STS EndpointName: CCM_STS ResponseHeader: HTTP/1.1 200 OK ~~ ResponseBodySize: 0 ElapsedTime: 2 ms
+```
+
+#### <a name="34-management-point-verifies-user-token-in-site-database"></a>3.4 O ponto de gerenciamento verifica o token de usuário no banco de dados do site
+
+As entradas a seguir são registradas no arquivo **CCM_STS.log**:
+
+```
+Validated AAD token. TokenType: Device TenantId: XXXXe388-XXXX-485c-XXXX-e8e4eb41XXXX UserId: 00000000-0000-0000-0000-000000000000 DeviceId: 0XXXXX80-77XX-4XXa-X63X-67XXXXX64bb7 OnPrem_UserSid:  OnPrem_DeviceSid:
+
+Return token to client, token type: UDA, hierarchyId: XXXX4f9c-XXXX-46a5-XXXX-7612c324XXXX, userId: 00000000-0000-0000-0000-000000000000, deviceId: GUID:XXXXaee9-cXXc-4ccd-XXXX-f1417d81XXX
+```

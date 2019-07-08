@@ -2,7 +2,7 @@
 title: Caminhos para o cogerenciamento
 titleSuffix: Configuration Manager
 description: Entenda os pré-requisitos das duas principais formas de configurar o cogerenciamento.
-ms.date: 01/14/2019
+ms.date: 06/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 803f05dd14da8d280f08f2bcf3608865f384d273
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: 4c34cf73133086f08cb390f39ab4fe715dfcefd2
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "56754516"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550663"
 ---
 # <a name="paths-to-co-management"></a>Caminhos para o cogerenciamento
 
@@ -35,7 +35,10 @@ Seguir esse caminho pode fazer com que seus dispositivos gerenciados pelo Config
 
 Veja o que é necessário para configurar:
 - Azure AD Híbrido
-    - Serviços de Federação do Active Directory (ADFS) com autenticação de passagem (PTA)
+    - Uma das seguintes [opções de identidade híbrida do Azure AD](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-user-signin):  
+       - [Sincronização de hash de senha](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-user-signin#password-hash-synchronization) com [SSO (Logon Único) Contínuo](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso)
+       - [Autenticação de passagem](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta) com [SSO (Logon Único) Contínuo](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso)
+       - [SSO federado (com Serviços de Federação do Active Directory (AD FS))](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-user-signin#federation-that-uses-a-new-or-existing-farm-with-ad-fs-in-windows-server-2012-r2)
     - Azure AD Connect
     - Licença do Azure AD Premium
     - Configurar o ingresso no Azure AD híbrido (escolha uma opção):

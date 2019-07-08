@@ -2,7 +2,7 @@
 title: Recursos preteridos
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os recursos que não são mais compatíveis com o Configuration Manager.
-ms.date: 05/21/2019
+ms.date: 07/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cfa662a3743865317b6c2f469ca0a34cd71f327
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 28ba232fa94ee100c20da31f2eddc5a7341f6ac6
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66177054"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551143"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Recursos removidos e preteridos do Configuration Manager
 
@@ -32,6 +32,7 @@ Essas informações estão sujeitas a alterações em versões futuras. Elas pod
 
 |Recurso|Substituição anunciada pela primeira vez|Suporte&nbsp;removido|  
 |-----------|---|--------------|  
+| Avaliação do atestado de integridade do dispositivo para políticas de conformidade de acesso condicional <!--1235616 aka 3608202--> Para obter mais informações, confira [Gerenciar o acesso aos serviços do Office 365 para PCs gerenciados pelo System Center Configuration Manager](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm#step-1-configure-compliance-policy).| 3 de julho de 2019 | A primeira versão lançada após 1º de novembro de 2019 |
 | O catálogo de aplicativos, incluindo os dois sistemas de sites: o ponto de sites da Web e o ponto de serviços Web do catálogo de aplicativos. Para saber mais, confira [Remover o catálogo de aplicativos](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat). | 21 de maio de 2019 | A primeira versão lançada após 1º de novembro de 2019|
 |A implementação para o compartilhamento de conteúdo do Azure foi alterada. Use um gateway de gerenciamento de nuvem habilitado para conteúdo. Você não poderá criar um ponto de distribuição de nuvem tradicional no futuro.|Fevereiro de 2019|A primeira versão lançada após 1º de novembro de 2019|
 |Implantação de serviço clássico para o Azure para o gateway de gerenciamento de nuvem e o ponto de distribuição na nuvem. Para obter mais informações, confira [Planejar para CMG](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).|Novembro de 2018|A primeira versão lançada após 1º de julho de 2019|

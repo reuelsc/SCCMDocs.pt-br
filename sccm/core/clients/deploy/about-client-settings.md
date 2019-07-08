@@ -2,7 +2,7 @@
 title: Configurações do cliente
 titleSuffix: Configuration Manager
 description: Saiba mais sobre as configurações padrão e personalizadas para controlar os comportamentos do cliente
-ms.date: 06/18/2019
+ms.date: 06/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 157cc09f08cf16056dc3424ddc377fbd95b0fe6e
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 0c6bffc94abecb5f700fbb7236c923f26f3a0de0
+ms.sourcegitcommit: 949db4d2af7f605ee40610e45ae9d917b1045772
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286844"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67314417"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Sobre as configurações do cliente no Configuration Manager
 
@@ -652,6 +652,17 @@ Defina as configurações adicionais nesse grupo como **Sim** para tornar as seg
 
 Por exemplo, caso sua organização não use políticas de conformidade e você deseje ocultar a guia Conformidade do Dispositivo no Centro de Software, defina **Habilitar guia Conformidade do Dispositivo** como **Não**.
 
+### <a name="bkmk_swctr_defaults"></a> Configurar os modos de exibição padrão no Centro de Software
+<!--3612112-->
+*(Apresentado na versão 1902)*
+
+- Configure o **Filtro de aplicativo padrão** como **Todos** ou apenas os aplicativos **Obrigatórios**.  
+
+    - O Centro de Software sempre usa a sua configuração padrão. Os usuários podem alterar esse filtro, mas o Centro de Software não persistirá as preferências deles.  
+
+ - Defina a **Exibição de aplicativo padrão** como **Exibição lado a lado** ou **Exibição de lista**. 
+
+    - Se um usuário alterar essa configuração, o Centro de Software manterá a preferência do usuário no futuro. 
 
 
 ## <a name="software-deployment"></a>Implantação de software  
