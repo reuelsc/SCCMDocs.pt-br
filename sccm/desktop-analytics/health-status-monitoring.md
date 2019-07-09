@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5dc3123763430dc35d566b68e3c1c04762d26de5
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 4b32105304354e9b9d4473451a32f52162f80d02
+ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159044"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67623327"
 ---
 # <a name="health-status-monitoring-in-desktop-analytics"></a>Análise de área de trabalho de monitoramento de status de integridade
 
@@ -58,7 +58,7 @@ Na parte inferior da página de detalhes do aplicativo, as três guias a seguir 
 
 - **Outras versões**: Uma lista de versões alternativas deste aplicativo. Para cada versão, ele mostra as alterações relativas às taxas de falha em sua organização e a média comercial. Se você encontrar uma versão posterior do aplicativo com uma taxa mais baixa de falhas, atualizando o aplicativo pode ajudar.  
 
-    Ele também mostra se a versão tem um **pronto para o Windows** sinal. Para obter mais informações, consulte [avaliação de compatibilidade](/sccm/desktop-analytics/compat-assessment#risk-assessment-engine).  
+    Ele também mostra se a versão tem um **pronto para o Windows** sinal. Para obter mais informações, consulte [avaliação de compatibilidade](compat-assessment.md#driver-risk-assessment).  
 
 - **Principais problemas**: Uma lista da falha mais frequente IDs pela contagem de instância. Uma ID de falha identifica o rastreamento de pilha associado com a falha. Você pode usar essa ID ao chamar o fornecedor do aplicativo para obter suporte.  
 

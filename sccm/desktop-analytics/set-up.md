@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6658f0b7a65027715975e6075e5c18a430d38405
-ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
+ms.openlocfilehash: 96cf6f4dcfa878bb1ecafb7187dc6e9b29755509
+ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67463763"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67623376"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Como configurar a análise de área de trabalho
 
@@ -29,7 +29,7 @@ Use este procedimento para entrar no Analytics de área de trabalho e configurá
 
 ## <a name="initial-onboarding"></a>Migração inicial
 
-1. Abra o [portal de análise de área de trabalho](https://aka.ms/desktopanalytics) no gerenciamento de dispositivo do Microsoft 365 como um usuário com o **Administrador Global** função. Selecione **iniciar**.  
+1. Abra o [portal de análise de área de trabalho](https://aka.ms/desktopanalytics) no gerenciamento de dispositivo do Microsoft 365 como um usuário com o **Administrador Global** função. Selecione **iniciar**. Se você for solicitado um código de convite, use: `DesktopAnalyticsRocks!`
 
     > [!Tip]  
     > Para acessar o portal de análise de área de trabalho do console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, selecione o **área de trabalho de análise de manutenção** nó e selecione **planejar implantações**.
