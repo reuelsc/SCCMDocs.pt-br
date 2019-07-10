@@ -2,7 +2,7 @@
 title: Como fechar sua conta
 titleSuffix: Configuration Manager
 description: Como remover a área de trabalho de análise de sua conta do Azure
-ms.date: 06/11/2019
+ms.date: 07/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 805cb79a1986457f04b11fa5f99b30ec098be99b
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: e2b1c893204366581eacd0f8e953cb2a6fd0d1a4
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159196"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676167"
 ---
 # <a name="how-to-close-your-account"></a>Como fechar sua conta
 
@@ -31,7 +31,7 @@ A primeira etapa é entrar em contato com o Microsoft Support. Abra um caso de s
 
 ## <a name="delete-the-solution"></a>Excluir a solução
 
-1. Entrar para o [portal do Azure](https://portal.azure.com) como um usuário com o **administrador de empresa** função.
+1. Entrar para o [portal do Azure](https://portal.azure.com) como um usuário com o **Administrador Global** função.
 
 1. Pesquisar na **todos os recursos** para o nome do seu espaço de trabalho de análise de área de trabalho. Esse nome é o que você criou quando você se inscrever para o serviço.
 
@@ -44,7 +44,7 @@ Os dados da área de trabalho de análise seja desativado com base em sua polít
 
 ## <a name="remove-user-and-app-access"></a>Remover o acesso de usuário e aplicativo
 
-1. Entrar para o [portal do Azure](https://portal.azure.com) como um usuário com o **administrador de empresa** função. Vá para **do Azure Active Directory**.
+1. Entrar para o [portal do Azure](https://portal.azure.com) como um usuário com o **Administrador Global** função. Vá para **do Azure Active Directory**.
 
 1. Na **funções e os administradores**, pesquise o **administrador da área de trabalho de análise** função. Remova seus membros.
 

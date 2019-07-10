@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7da4767bd8ef26ebf3f56010e99bc1cbd0b0c10
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 231988b9c6b41a904e2ae8225bdb070f0b047618
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62227855"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678904"
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Proteger aplicativos usando políticas de gerenciamento de aplicativos móveis no System Center Configuration Manager
 
@@ -66,7 +66,7 @@ Para aplicar restrições a um aplicativo, este deve incorporar o SDK (Software 
 
 3. Na página **Geral** , selecione **Detectar automaticamente informações sobre este aplicativo em arquivos de instalação**.  
 
-4. Na lista suspensa **Tipo**, selecione **Pacote de aplicativo para iOS (arquivo \*.ipa)**.  
+4. Na lista suspensa **Tipo**, selecione **Pacote de aplicativo para iOS (arquivo \*.ipa)** .  
 
 5. Escolha **Procurar** para selecionar o pacote do aplicativo que você deseja importar e escolha **Avançar**.  
 
@@ -129,9 +129,9 @@ Para aplicar restrições a um aplicativo, este deve incorporar o SDK (Software 
 |**Exigir conformidade do dispositivo com a política corporativa para acesso**|Permite que o aplicativo seja usado somente quando o dispositivo não está com jailbreak ou com raiz.|  
 |**Verificar novamente os requisitos de acesso após (minutos)**|Especifica o período antes que os requisitos de acesso para o aplicativo sejam verificados novamente após o aplicativo ser iniciado (no campo **Tempo Limite**).<br /><br /> No campo **Período de carência offline**, se o dispositivo estiver offline, especificará o período de tempo antes que os requisitos de acesso do aplicativo sejam verificados novamente.|  
 |**Criptografar dados do aplicativo**|Especifica que todos os dados associados ao aplicativo são criptografados, inclusive dados armazenados externamente, como dados armazenados em cartões SD.<br /><br /> **Criptografia para iOS**<br /><br /> Para aplicativos associados a uma política de gerenciamento de aplicativo móvel do Configuration Manager, os dados são criptografados em repouso com a criptografia no nível do dispositivo fornecida pelo sistema operacional. Isso é habilitado pela política de PIN do dispositivo que deve ser definida pelo administrador de TI. Quando um PIN é solicitado, os dados são criptografados segundo as configurações na política de gerenciamento de aplicativo móvel. Conforme indicado na documentação da Apple, [os módulos usados pelo iOS 7 têm a certificação FIPS 140-2](http://support.apple.com/en-us/HT202739).<br /><br /> **Criptografia para Android**<br /><br /> Para aplicativos associados a uma política de gerenciamento de aplicativos móveis do Configuration Manager, a criptografia é fornecida pela Microsoft. Os dados são criptografados de forma síncrona durante operações de E/S de arquivos, de acordo com a configuração na política de gerenciamento de aplicativos móveis. Aplicativos gerenciados no Android usam a criptografia AES-128 no modo CBC utilizando as bibliotecas de criptografia da plataforma. O método de criptografia não tem certificação FIPS 140-2. O conteúdo no armazenamento do dispositivo sempre é criptografado.|  
-    |**Bloquear captura de tela** (somente para dispositivos Android)|Especifica que as funcionalidades de captura de tela do dispositivo sejam bloqueadas durante o uso do aplicativo.|  
-    |**Desabilitar sincronização de contatos**| A partir da versão 1710, essa opção impede que o aplicativo salve dados no aplicativo Contatos nativo do dispositivo. Se você escolher Não, o aplicativo poderá salvar dados para o aplicativo nativo de contatos no dispositivo.|  
-    |**Desabilitar impressão**| A partir da versão 1710, essa opção impede que o aplicativo imprima dados corporativos ou de estudante. |  
+|**Bloquear captura de tela** (somente para dispositivos Android)|Especifica que as funcionalidades de captura de tela do dispositivo sejam bloqueadas durante o uso do aplicativo.|  
+|**Desabilitar sincronização de contatos**| A partir da versão 1710, essa opção impede que o aplicativo salve dados no aplicativo Contatos nativo do dispositivo. Se você escolher Não, o aplicativo poderá salvar dados para o aplicativo nativo de contatos no dispositivo.|  
+|**Desabilitar impressão**| A partir da versão 1710, essa opção impede que o aplicativo imprima dados corporativos ou de estudante. |  
 
 6)  Na página **Managed Browser**, selecione se o navegador gerenciado tem permissão para abrir somente URLs na lista ou para impedir que o navegador gerenciado abra as URLs na lista e escolha **Avançar**.  
 Para mais informações, consulte [Gerenciar o acesso à Internet usando políticas do Managed Browser](manage-internet-access-using-managed-browser-policies.md).  

@@ -11,21 +11,23 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2dd14e7beaef6fe636ea220de557a866e547a602
-ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
+ms.openlocfilehash: c2b697520dee854f956554dfcca60519f930f15b
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67516220"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678633"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novidades no gerenciamento de dispositivo móvel híbrido com o Configuration Manager e o Microsoft Intune
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
-Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de dispositivo móvel) disponíveis para implantações híbridas com o System Center Configuration Manager e o Microsoft Intune.
-
 > [!Important]  
-> O gerenciamento híbrido de dispositivos móveis é um [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures) desde 14 de agosto de 2018. Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+> Este documento não está sendo atualizado. Desde 14 de agosto de 2018, o gerenciamento de dispositivo móvel híbrido é uma [recurso preterido](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Você deve migrar seu ambiente para o Intune autônomo assim que possível. Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).
+>
+> Importantes informações sobre o gerenciamento de dispositivo móvel híbrido (MDM) continuarão a ser adicionado à [Centro de mensagens do Office 365](https://go.microsoft.com/fwlink/?linkid=2070717) e o [no blog de sucesso do cliente do Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/bg-p/IntuneCustomerSuccess) até que o serviço está desativado em 1 de setembro de 2019. <!--Intune feature 2683117-->  
+
+Este artigo fornece detalhes sobre os novos recursos de MDM (gerenciamento de dispositivo móvel) disponíveis para implantações híbridas com o System Center Configuration Manager e o Microsoft Intune. 
 
 > [!Note]  
 > O Intune no Azure é a solução de MDM recomendada pela Microsoft.

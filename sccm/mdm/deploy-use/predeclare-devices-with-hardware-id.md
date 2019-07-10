@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51bdfe22e70be58902dece216305d7a6f6612b06
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 743976f35fb2ced98e0685bf51f38374aea5408e
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62227808"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678918"
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Pré-declarar dispositivos com número de série do iOS ou IMEI
 
@@ -66,10 +66,10 @@ O arquivo .csv que você usa para identificar dispositivos pelo IMEI ou pelo nú
 | Nº do IMEI  | Nº de série do iOS  | Sistema operacional | Detalhes |
 |------------ |---------------|-----|-----|
 | 123456789012345    |   | WINDOWS | Dispositivo Windows de propriedade da empresa|
-|   | A1B2C3D4E5C6 | IOS |  Dispositivo iOS de propriedade da empresa|
-| 223456789012345 | E6D5C4B3A210 |   IOS |  Outro dispositivo iOS|
-| 323456789012345 |        |   IOS |    Um terceiro dispositivo iOS|
-| 123456789012346 |         |   ANDROID |   Dispositivo Android de propriedade da empresa|
+|   | A1B2C3D4E5C6 | IOS | Dispositivo iOS de propriedade da empresa|
+| 223456789012345 | E6D5C4B3A210 |   IOS | Outro dispositivo iOS|
+| 323456789012345 |        |   IOS | Um terceiro dispositivo iOS|
+| 123456789012346 |         |   ANDROID | Dispositivo Android de propriedade da empresa|
 
 Não inclua uma linha de cabeçalho no seu arquivo .csv. O exemplo a seguir mostra os mesmos dados de exemplo no formato CSV:
 

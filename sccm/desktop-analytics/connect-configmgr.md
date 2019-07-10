@@ -2,7 +2,7 @@
 title: Conectar o Configuration Manager
 titleSuffix: Configuration Manager
 description: Um guia de instruções para conectar o Configuration Manager com a análise de área de trabalho.
-ms.date: 06/13/2019
+ms.date: 07/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 098c83678585984bbe3dbeddf167e24116afd86b
-ms.sourcegitcommit: 3a3f40f3d39cbecfb9219a64c0185ea4b2ef9671
+ms.openlocfilehash: f24161b61c796f9c1605a61656af0eb91f225067
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67562016"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676056"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Como conectar o Configuration Manager com a análise de área de trabalho
 
@@ -79,7 +79,7 @@ Use este procedimento para conectar o Configuration Manager para análise de ár
     Selecione **entrar** . Após a autenticação bem-sucedida no Azure, a página mostra o **Nome do Locatário do Azure AD** para referência.
         
     > [!Note]  
-    > Conclua esta etapa como uma **administrador da empresa**. Essas credenciais não são salvas pelo Configuration Manager. Essa persona não exige permissões no Configuration Manager e não precisa ser a mesma conta que executa o Assistente de Serviços do Azure.  
+    > Conclua esta etapa como uma **Administrador Global**. Essas credenciais não são salvas pelo Configuration Manager. Essa persona não exige permissões no Configuration Manager e não precisa ser a mesma conta que executa o Assistente de Serviços do Azure.  
 
     Selecione **OK** para criar o aplicativo Web no Azure AD e feche a caixa de diálogo Criar Aplicativo para Servidores. Na caixa de diálogo do aplicativo de servidor, selecione **Okey**. Em seguida, selecione **próxima** na página do aplicativo do Assistente de serviços do Azure.  
 

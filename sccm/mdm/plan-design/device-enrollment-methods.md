@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be1221b3448c8a2818f7fd02b5ff2d14218bbeed
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: eda9de25d3bdb1a1563d8b74e78ddcad259683f6
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62286779"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678722"
 ---
 # <a name="overview-of-device-enrollment-methods"></a>Visão geral dos métodos de registro de dispositivo
 
@@ -31,19 +31,19 @@ A tabela a seguir mostra os métodos de registro com e seus recursos com suporte
 
 **Métodos de registro do iOS**
 
-| **Método** |  **Apagar** |  **Afinidade**    |   **Bloqueio** | **Detalhes** |
+| **Método** | **Apagar** | **Afinidade** | **Bloqueio** | **Detalhes** |
 |:---:|:---:|:---:|:---:|:---:|
-|**[BYOD](#byod)** | Não|    Sim |   Não | [mais](../deploy-use/enable-platform-enrollment.md)|
-|**[DEM](#dem)**|   Não |Não |Não  | [mais](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
-|**[DEP](#dep)**|   Sim |   Opcional |  Opcional|[mais](../deploy-use/ios-device-enrollment-program-for-hybrid.md)|
-|**[USB-SA](#usb-sa)**| Sim |   Opcional |  Não| [mais](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)|
+|**[BYOD](#byod)** | Não| Sim | Não | [mais](../deploy-use/enable-platform-enrollment.md)|
+|**[DEM](#dem)**| Não |Não |Não | [mais](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
+|**[DEP](#dep)**| Sim | Opcional | Opcional|[mais](../deploy-use/ios-device-enrollment-program-for-hybrid.md)|
+|**[USB-SA](#usb-sa)**| Sim | Opcional | Não| [mais](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)|
 
 **Métodos de registro do Android e do Windows**
 
-| **Método** |  **Apagar** |  **Afinidade**    |   **Bloqueio** | **Detalhes**|
+| **Método** | **Apagar** | **Afinidade** | **Bloqueio** | **Detalhes**|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|**[BYOD](#byod)** | Não|    Sim |   Não | [mais](../deploy-use/enroll-hybrid-windows.md)|
-|**[DEM](#dem)**|   Não |Não |Não  |[mais](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
+|**[BYOD](#byod)** | Não| Sim | Não | [mais](../deploy-use/enroll-hybrid-windows.md)|
+|**[DEM](#dem)**| Não |Não |Não |[mais](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
 
 Para ver uma série de perguntas que ajudarão você a encontrar o método certo, consulte [Escolher como registrar dispositivos](/intune/get-started/choose-how-to-enroll-devices1).
 

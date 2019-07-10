@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7c2e5aacbd939c85cee30afa98a0174d49dc94e
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 8a259e81831c00ad585a0177ac75473eb6d62860
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62288705"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678600"
 ---
 # <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Aplicar configurações a aplicativos iOS com políticas de configuração de aplicativo no System Center Configuration Manager
 
@@ -68,32 +68,33 @@ Para obter mais informações sobre os tipos de instalação de aplicativos, con
 
 O formato da lista de propriedades XML varia dependendo do aplicativo que você está configurando. Entre em contato com o fornecedor do aplicativo para obter detalhes sobre o formato a ser usado.
 O Intune dá suporte aos seguintes tipos de dados em uma lista de propriedades:
-            
-            ```
-            <integer>
-            <real>
-            <string>
-            <array>
-            <dict>
-            <true /> or <false />
-            ```
+
+```
+<integer>
+<real>
+<string>
+<array>
+<dict>
+<true /> or <false />
+```
+
 Para obter mais informações sobre tipos de dados, consulte o artigo [Sobre listas de propriedades](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PropertyLists/AboutPropertyLists/AboutPropertyLists.html) na biblioteca do desenvolvedor do iOS.
 O Intune também dá suporte aos seguintes tipos de token na lista de propriedades:
-            
-            ```
-            {{userprincipalname}} - (Example: John@contoso.com)
-            {{mail}} - (Example: John@contoso.com)
-            {{partialupn}} - (Example: John)
-            {{accountid}} - (Example: fc0dc142-71d8-4b12-bbea-bae2a8514c81)
-            {{deviceid}} - (Example: b9841cd9-9843-405f-be28-b2265c59ef97)
-            {{userid}} - (Example: 3ec2c00f-b125-4519-acf0-302ac3761822)
-            {{username}} - (Example: John Doe)
-            {{serialnumber}} - (Example: F4KN99ZUG5V2) for iOS devices
-            {{serialnumberlast4digits}} - (Example: G5V2) for iOS devices
-            ```
+
+```
+{{userprincipalname}} - (Example: John@contoso.com)
+{{mail}} - (Example: John@contoso.com)
+{{partialupn}} - (Example: John)
+{{accountid}} - (Example: fc0dc142-71d8-4b12-bbea-bae2a8514c81)
+{{deviceid}} - (Example: b9841cd9-9843-405f-be28-b2265c59ef97)
+{{userid}} - (Example: 3ec2c00f-b125-4519-acf0-302ac3761822)
+{{username}} - (Example: John Doe)
+{{serialnumber}} - (Example: F4KN99ZUG5V2) for iOS devices
+{{serialnumberlast4digits}} - (Example: G5V2) for iOS devices
+```
 
 Os caracteres {{ e }} são usados apenas por tipos de token e não devem ser usados para outras finalidades.
-            
+
 5. Para importar um arquivo XML que você criou anteriormente, escolha **Selecionar arquivo**.
 6. Escolha **Próxima**. Se houver erros no código XML, você precisará corrigi-los antes de continuar.
 7. Conclua as etapas mostradas no assistente.
