@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43a5e1a4bf3283c185d612cc31428a23a4e12061
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: b0daf2943b0859227d08069be9c9da69165d5d1a
+ms.sourcegitcommit: de3c86077bbf91b793e94e1f60814df18da11bab
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67678106"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726232"
 ---
 # <a name="what-is-desktop-analytics"></a>O que é análise de área de trabalho?
 
@@ -94,7 +94,7 @@ Para usar a análise de área de trabalho, verifique se o que seu ambiente atend
     >
     > Análise da área de trabalho foi projetado para o cenário de atualização melhor suporte no local. Se você precisar fazer alterações importantes, como da arquitetura de 32 bits para 64 bits, use um cenário de geração de imagens. Insights de análise da área de trabalho ainda são valiosos nesses cenários de implantação do sistema operacional clássico, mas você pode ignorar as diretrizes de específica de atualização in-loco. Para obter mais informações, consulte [cenários para implantar sistemas operacionais corporativos com o Configuration Manager](/sccm/osd/deploy-use/scenarios-to-deploy-enterprise-operating-systems).
 
-- Dados de diagnóstico do Windows. Para obter mais informações, consulte os seguintes artigos:  
+- Dados de diagnóstico do Windows. Para obter mais informações, confira os seguintes artigos:  
 
     - [Níveis de dados de diagnóstico](/sccm/desktop-analytics/enable-data-sharing#diagnostic-data-levels)  
 
@@ -120,4 +120,4 @@ Análise da área de trabalho requer uma das seguintes assinaturas de licença:
 
 O tutorial a seguir fornece um guia passo a passo de Introdução ao Desktop Analytics e o Configuration Manager:  
 
-- [Implantar o Windows 10 para um piloto](/sccm/desktop-analytics/tutorial-windows10)  
+- [Implantar o Windows 10 para piloto](/sccm/desktop-analytics/tutorial-windows10)  
