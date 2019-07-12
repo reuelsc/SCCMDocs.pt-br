@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: 6f0201d7-5714-4ba0-b2bf-d1acd0203e9a
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ccc38188729a05329cc240a9f424ccce9fd433b2
-ms.sourcegitcommit: d1df13fc95a1f1540177c294555d9be26161b9cb
+ms.openlocfilehash: 9ca39be68074213e4bb0a3f667ae69d5257f7a3c
+ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974084"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67818065"
 ---
 # <a name="change-the-mdm-authority-for-specific-users-mixed-mdm-authority"></a>Alterar a autoridade de MDM para usuários específicos (autoridade de MDM mista)
 
@@ -105,7 +105,7 @@ No exemplo a seguir, a coleção de usuários Híbrido contém todos os membros 
 ![Excluir coleções](../media/migrate-excludecollections.png)
 
 > [!Note]  
-> Quando você tiver o **todos os usuários** coleção selecionada para a assinatura do Intune, você não tiver permissão para adicionar uma regra para excluir coleções. Criar uma nova coleção com base nas **todos os usuários** coleção. Verifique se a coleção contém os usuários que você espera. Em seguida, edite a assinatura do Intune para usar a nova coleção. Você pode excluir coleções de usuário da nova coleção para migrar usuários.  
+>   Quando você tiver o **todos os usuários** coleção selecionada para a assinatura do Intune, você não tem permissão para adicionar uma regra para excluir coleções. Em vez disso, crie uma nova coleção com base nas **todos os usuários** coleção, verifique se a coleção contém os usuários que você espera e, em seguida, edite a assinatura do Intune para usar a nova coleção. Você pode excluir coleções de usuário da nova coleção para migrar usuários. Se você excluir um usuário de uma coleção, mas incluem um que o usuário é membro do grupo, o usuário não será excluído da coleção.
 
 Para migrar um grupo de usuários de teste para o Intune, crie uma coleção de usuário que contém os usuários para migrar. Em seguida, exclua a coleção de usuários da coleção que é usada para a assinatura do Intune.  
 
