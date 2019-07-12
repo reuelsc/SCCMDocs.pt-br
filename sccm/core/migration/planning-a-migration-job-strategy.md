@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f6b445bb2e84cb7c3f35d81c66038686f2b9833
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.openlocfilehash: b7acec3488d016a309fe2f159d81087d28b795f7
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66715988"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677245"
 ---
 # <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>Planejar a estratégia de trabalho de migração no System Center Configuration Manager
 
@@ -241,7 +241,7 @@ Use trabalhos de migração para configurar os dados específicos que você dese
 ### <a name="specify-conflict-resolution-for-migrated-data"></a>Especificar a resolução de conflitos de dados migrados  
  Por padrão, os trabalhos de migração não podem substituir dados no banco de dados de destino, a menos que você configure o trabalho de migração para ignorar ou substituir dados que foram migrados anteriormente para o banco de dados de destino.  
 
-##  <a name="About_Collection_Migration "></a> Planejar os trabalhos de migração da coleção  
+##  <a name="About_Collection_Migration"></a> Planejar os trabalhos de migração da coleção  
  Os trabalhos de migração de coleção estão disponíveis apenas quando você migra dados de uma hierarquia de origem executada em uma versão do Configuration Manager 2007 com suporte. Você deve especificar uma ou mais coleções a serem migradas quando realiza a migração por coleção. Para cada coleção especificada, o trabalho de migração seleciona automaticamente todos os objetos relacionados para migração. Por exemplo, se você selecionar uma coleção específica de usuários, os membros da coleção serão identificados e você poderá migrar as implantações associadas a esta coleção. Como opção, você pode selecionar outros objetos de implantação a serem migrados, que estão associados a esses membros. Todos esses itens selecionados são adicionados à lista de objetos que podem ser migrados.  
 
  Quando você migra uma coleção, o System Center Configuration Manager também migra as configurações da coleção, inclusive janelas de manutenção e variáveis da coleção, mas ele não pode migrar as configurações da coleção para o provisionamento do cliente AMT.  

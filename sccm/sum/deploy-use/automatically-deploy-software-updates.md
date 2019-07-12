@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1b77b4c35cfadd3e0e48ddec99344745f402d66
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 8a7cd2e499ac55f9a1210d4f3309b6e0b6cefe16
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500261"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678189"
 ---
 #  <a name="automatically-deploy-software-updates"></a>Implantar atualizações de software automaticamente  
 
@@ -71,8 +71,8 @@ Aprove e implante atualizações de software automaticamente usando uma ADR. Sem
         > [!IMPORTANT]  
         >  Ao implantar atualizações de definição, defina o nível de detalhes como **Apenas erro** para que o cliente relate uma mensagem de estado apenas quando uma atualização de definição falhar. Caso contrário, o cliente relatará um grande número de mensagens de estado que podem afetar o desempenho do servidor do site.  
         
-> [!NOTE]  
-> O nível de detalhe **Somente erro** não envia as mensagens de status de imposição necessárias para o rastreamento de reinicializações pendentes.
+        > [!NOTE]  
+        > O nível de detalhe **Somente erro** não envia as mensagens de status de imposição necessárias para o rastreamento de reinicializações pendentes.
 
     -   **Configuração dos termos da licença**: especifique se deseja implantar automaticamente atualizações de software com os termos de licença associados. Algumas atualizações de software incluem termos de licença. Quando você implanta atualizações de software automaticamente, os termos de licença não são exibidos e não há nenhuma opção para aceitá-los. Opte por implantar automaticamente todas as atualizações de software, independentemente de haver termos de licença associados, ou implante apenas as atualizações que não têm termos de licença associados.  
 
@@ -86,7 +86,7 @@ Aprove e implante atualizações de software automaticamente usando uma ADR. Sem
 
      - Se necessário, filtre o tamanho do conteúdo para atualizações de software nas regras de implantação automática. Para obter mais informações, confira [Configuration Manager and simplified Windows servicing on down level operating systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/) (Configuration Manager e manutenção simplificada do Windows em sistemas operacionais de nível inferior).  
 
-     - A partir da versão 1806, uma propriedade de filtro para **Arquitetura** está disponível. Use esse filtro para excluir arquiteturas, como Itanium e ARM64, que são menos comuns. Lembre-se de que há aplicativos e componentes de 32 bits (x86) em execução em sistemas de 64 bits (x64). A menos que você tenha certeza de que não precisa de x86, habilite-o também ao escolher x64.<!--1322266-->  
+     - Começando na versão 1806, uma propriedade de filtro para **Arquitetura** está disponível. Use esse filtro para excluir arquiteturas, como Itanium e ARM64, que são menos comuns. Lembre-se de que há aplicativos e componentes de 32 bits (x86) em execução em sistemas de 64 bits (x64). A menos que você tenha certeza de que não precisa de x86, habilite-o também ao escolher x64.<!--1322266-->  
 
 
 6.  Na página **Agendamento de Avaliação**, especifique se deseja habilitar a ADR para ser executada de acordo com um agendamento. Quando habilitada, clique em **Personalizar** para definir o agendamento recorrente.  
@@ -100,7 +100,7 @@ Aprove e implante atualizações de software automaticamente usando uma ADR. Sem
     - Para executar a ADR manualmente, selecione a regra no nó **Regra de Implantação Automática** do console e, em seguida, clique em **Executar Agora** na faixa de opções.  
     
        > [!NOTE]  
-       > A partir da versão 1802, as ADRs podem ser agendadas para avaliar o deslocamento a partir de um dia base. Por exemplo, se o patch de terça-feira na verdade cair na quarta-feira, defina o agendamento de avaliação para a segunda terça-feira do mês com deslocamento de um dia.<!--1357133-->  
+       > Começando na versão 1802, as ADRs podem ser agendadas para avaliar o deslocamento a partir de um dia base. Por exemplo, se o patch de terça-feira na verdade cair na quarta-feira, defina o agendamento de avaliação para a segunda terça-feira do mês com deslocamento de um dia.<!--1357133-->  
        >  
        > Ao agendar a avaliação com um deslocamento durante a última semana do mês, se você escolher um deslocamento que continue no próximo mês, o site agendará a avaliação para o último dia do mês.<!--506731-->  
        >  
@@ -165,7 +165,7 @@ Aprove e implante atualizações de software automaticamente usando uma ADR. Sem
 
     - Especifique se os clientes devem baixar e instalar as atualizações de um ponto de distribuição no grupo de limites do site padrão quando o conteúdo das atualizações de software não está disponível em um ponto de distribuição nos grupos de limites atuais ou vizinhos.  
 
-    - **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações, confira [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). A partir da versão 1802, o BranchCache está sempre habilitado nos clientes. Essa configuração foi removida, pois os clientes usam o BranchCache quando há suporte para ele no ponto de distribuição.  
+    - **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede**: especifique se deseja habilitar o uso do BranchCache para downloads de conteúdo. Para obter mais informações, confira [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). Começando na versão 1802, o BranchCache está sempre habilitado nos clientes. Essa configuração foi removida, pois os clientes usam o BranchCache quando há suporte para ele no ponto de distribuição.  
 
     - **Se as atualizações de software não estiverem disponíveis no ponto de distribuição nos grupos de limites atuais, vizinhos ou do site, baixar o conteúdo do Microsoft Updates**: selecione essa configuração para que os clientes conectados à intranet baixem as atualizações de software do Microsoft Update quando as atualizações não estiverem disponíveis nos pontos de distribuição. Os clientes baseados na Internet sempre acessam o Microsoft Update para buscar o conteúdo de atualizações de software.  
 

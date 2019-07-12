@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e862fe4907d5e480fd8a19c28d890987f73240fa
-ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
+ms.openlocfilehash: f5434e42bfdcdf9bd423035c1d30a3c68974d9dd
+ms.sourcegitcommit: de3c86077bbf91b793e94e1f60814df18da11bab
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67463782"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726267"
 ---
 # <a name="task-sequence-steps"></a>Etapas da sequência de tarefas
 
@@ -719,7 +719,7 @@ Use essa etapa para baixar qualquer um dos seguintes tipos de pacote:
 - Pacotes de atualização do sistema operacional  
 - Pacotes de driver  
 - Pacotes  
-- Imagens de inicialização  
+- Imagens de inicialização (em versão 1810 e anterior)  
 
 Esta etapa funciona bem em uma sequência de tarefas para atualizar um sistema operacional nos seguintes cenários:  
 
@@ -1623,7 +1623,7 @@ A partir da versão 1902, especifique que o script do PowerShell seja executado 
 #### <a name="account"></a>Conta
 
 <!-- 3556028 -->
-A partir da versão 1902, especifique a conta de usuário do Windows usada por essa etapa para executar o script do PowerShell. O script é executado com as permissões da conta especificada. Selecione **Definir** para especificar o usuário local ou a conta de domínio. Para saber mais sobre a conta de execução da sequência de tarefas, confira [Contas](/sccm/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
+A partir da versão 1902, especifique a conta de usuário do Windows usada por essa etapa para executar o script do PowerShell. A conta especificada deve ser um administrador local no sistema e o script é executado com as permissões dessa conta. Selecione **Definir** para especificar o usuário local ou a conta de domínio. Para saber mais sobre a conta de execução da sequência de tarefas, confira [Contas](/sccm/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
 
 > [!IMPORTANT]  
 > Se esta etapa especifica uma conta de usuário e é executada no Windows PE, a ação falha. Você não pode ingressar o Windows PE em um domínio. O arquivo **smsts.log** registra essa falha.  

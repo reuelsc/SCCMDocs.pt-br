@@ -10,12 +10,12 @@ ms.assetid: 3e839a3e-e476-4ec2-bf29-21e78180441d
 author: mestew
 ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c7444a30e46b407f01351b7e1d57158cc3b5433
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 2c28e0ab445199233842d4dfcbaed5041203174a
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499295"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676778"
 ---
 # <a name="get-ready-for-system-center-configuration-manager"></a>Prepare-se para o System Center Configuration Manager
 
@@ -24,13 +24,13 @@ ms.locfileid: "65499295"
 Use as informações nos seguintes tópicos quando estiver pronto para começar a planejar sua implantação do System Center Configuration Manager:  
 
 
-  -   [Criar uma hierarquia de sites para o System Center Configuration Manager](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)  
+-   [Criar uma hierarquia de sites para o System Center Configuration Manager](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)  
 
-  -   [Fundamentos de administração baseada em funções para o System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md)  
+-   [Fundamentos de administração baseada em funções para o System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md)  
 
-  -   [Conceitos fundamentais para o gerenciamento de conteúdo no System Center Configuration Manager](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)  
+-   [Conceitos fundamentais para o gerenciamento de conteúdo no System Center Configuration Manager](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)  
 
-  -   [Entender como os clientes encontram serviços e recursos do site para o System Center Configuration Manager](../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)  
+-   [Entender como os clientes encontram serviços e recursos do site para o System Center Configuration Manager](../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)  
 
 -   [Preparar o ambiente de rede para o System Center Configuration Manager](/sccm/core/plan-design/network/configure-firewalls-ports-domains)  
 

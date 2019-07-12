@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23fbb29ba4676f6c7282e5337f691f88209e15e6
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: ee32d282bc04e6c1f97b12dedb8d69ccdcca8915
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551226"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677542"
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1702 do System Center Configuration Manager
 
@@ -72,10 +72,10 @@ A infraestrutura de site de technical preview, clientes e o domínio do Azure AD
 
 ### <a name="set-up-configuration-manager-to-use-azure-ad"></a>Configurar o Configuration Manager para usar o Azure AD
 Para usar o Azure AD com o Configuration Manager, você precisará do seguinte:
--   Assinatura do Azure.
--   Azure AD com DS (Domain Services).
--   Um site do Configuration Manager executado em uma VM do Azure que está ingressada no Azure AD.
--   Clientes do Configuration Manager executados no mesmo ambiente do Azure AD.
+- Assinatura do Azure.
+- Azure AD com DS (Domain Services).
+- Um site do Configuration Manager executado em uma VM do Azure que está ingressada no Azure AD.
+- Clientes do Configuration Manager executados no mesmo ambiente do Azure AD.
 
 Para configurar Azure AD Domain Service, consulte [Introdução aos Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/create-instance).
 
@@ -212,9 +212,9 @@ Na caixa de diálogo **Propriedades** de *\<nome do tipo de implantação>* de u
 
 ### <a name="try-it-out"></a>Experimente.
 
-1.  Nas propriedades de um tipo de implantação do Configuration Manager, escolha a guia **Comportamento de Instalação**.
-2.  Escolha **Adicionar** para adicionar um ou mais nomes de arquivo executável que você deseja verificar. Você também pode adicionar um nome de exibição para tornar mais fácil para os usuários identificarem os aplicativos na lista.
-3.  Se a implantação tiver a finalidade obrigatória, no assistente de implantação de software, você poderá opcionalmente escolher **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação**.
+1. Nas propriedades de um tipo de implantação do Configuration Manager, escolha a guia **Comportamento de Instalação**.
+2. Escolha **Adicionar** para adicionar um ou mais nomes de arquivo executável que você deseja verificar. Você também pode adicionar um nome de exibição para tornar mais fácil para os usuários identificarem os aplicativos na lista.
+3. Se a implantação tiver a finalidade obrigatória, no assistente de implantação de software, você poderá opcionalmente escolher **Fechar automaticamente todos os executáveis em execução especificados na guia de comportamento de instalação da caixa de diálogo de propriedades do tipo de implantação**.
 
 Se o aplicativo tiver sido implantado como **Disponível** e um usuário final tentar instalar um aplicativo, será solicitado que ele feche todos os executáveis em execução especificados antes de prosseguir com a instalação.
 

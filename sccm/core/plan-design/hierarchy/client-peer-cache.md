@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90c5c57d1717363d83fa921d68caced8cf9e8da1
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: aadb544180d7662f1b60c73db6a35b64f8b7efe7
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67251723"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676842"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Cache par para clientes do Configuration Manager
 
@@ -55,11 +55,11 @@ O cache par não substitui o uso de outras soluções, como o Windows BranchCach
 
 Para habilitar o cache par, implante as [configurações do cliente](#bkmk_settings) em uma coleção. Assim, os membros dessa coleção passarão a agir como uma fonte de cache par para outros clientes no mesmo grupo de limites.  
 
- -  Um cliente que opera como fonte de conteúdo de pares envia uma lista do conteúdo disponível armazenado em cache para o ponto de gerenciamento.  
+ - Um cliente que opera como fonte de conteúdo de pares envia uma lista do conteúdo disponível armazenado em cache para o ponto de gerenciamento.  
 
- -  Outro cliente no mesmo grupo de limites faz uma solicitação de local de conteúdo ao ponto de gerenciamento. O servidor retorna a lista de possíveis fontes de conteúdo. Essa lista inclui cada fonte de cache par que tem o conteúdo e está online. Ela também inclui os pontos de distribuição e outros locais de fonte de conteúdo nesse grupo de limites. Para obter mais informações, confira [Prioridade de fonte de conteúdo](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#content-source-priority).  
+ - Outro cliente no mesmo grupo de limites faz uma solicitação de local de conteúdo ao ponto de gerenciamento. O servidor retorna a lista de possíveis fontes de conteúdo. Essa lista inclui cada fonte de cache par que tem o conteúdo e está online. Ela também inclui os pontos de distribuição e outros locais de fonte de conteúdo nesse grupo de limites. Para obter mais informações, confira [Prioridade de fonte de conteúdo](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#content-source-priority).  
 
- -  Como de costume, o cliente que está procurando o conteúdo seleciona uma fonte na lista fornecida. O cliente tenta então obter o conteúdo.  
+ - Como de costume, o cliente que está procurando o conteúdo seleciona uma fonte na lista fornecida. O cliente tenta então obter o conteúdo.  
 
 Da versão 1806 em diante, os grupos de limites incluem configurações adicionais para dar a você mais controle sobre a distribuição de conteúdo em seu ambiente. Para saber mais, confira [Opções de grupo de limites para downloads de pares](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).<!--1356193-->
 

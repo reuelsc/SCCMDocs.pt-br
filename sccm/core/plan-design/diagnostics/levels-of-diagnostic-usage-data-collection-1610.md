@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 777237ae657a83da3ff22b540914271b798c1016
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 193ad88be6766c085373185145429d8535655e61
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121066"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677121"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1610-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1610 do System Center Configuration Manager
 
@@ -43,13 +43,13 @@ Começando com a versão 1610, você altera o nível da coleta de dados no conso
 
 
 - Informações de Instalação:
-    - Build, tipo de instalação, pacotes de idiomas e recursos habilitados  
+  - Build, tipo de instalação, pacotes de idiomas e recursos habilitados  
 
-    - Status e erros de implantação do pacote de atualização, andamento do download e erros de pré-requisitos    
+  - Status e erros de implantação do pacote de atualização, andamento do download e erros de pré-requisitos    
 
-    - Versão do script pós-atualização
+  - Versão do script pós-atualização
 
-    - Uso do anel rápido de atualização
+  - Uso do anel rápido de atualização
 
   - ***[Novo]*** Uso pré-lançamento, tipo de mídia de instalação, tipo de branch
 
@@ -90,7 +90,7 @@ Começando com a versão 1610, você altera o nível da coleta de dados no conso
 - Uso da Descoberta de Rede (habilitada ou desabilitada)
 - Console de administração:
 
-     - Estatísticas sobre as conexões do console (versão de sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versões do .NET instaladas e pacotes de idiomas do console)    
+  - Estatísticas sobre as conexões do console (versão de sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versões do .NET instaladas e pacotes de idiomas do console)    
 
 - Versão do SQL, nível do service pack, edição, ID de ordenação e conjunto de caracteres
 

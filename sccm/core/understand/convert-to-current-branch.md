@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6efa58c2257730de0703d850b814f871684b72c6
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 20b50fcd54513ccd780a7da173766fb177bf5da7
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129027"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676122"
 ---
 # <a name="upgrade-the-long-term-servicing-branch-to-the-current-branch"></a>Atualizar a ramificação de manutenção de longo prazo para a ramificação atual
 
@@ -28,7 +28,7 @@ Quando você tiver um contrato do Software Assurance (ou direitos de licenciamen
 
 Se você tiver vários sites, só precisará converter o site da camada superior da sua hierarquia. Depois que o site da camada superior for convertido:
 - Os sites primários filho serão convertidos automaticamente.
--   Será necessário atualizar manualmente os sites secundários de dentro do console do Configuration Manager.
+- Será necessário atualizar manualmente os sites secundários de dentro do console do Configuration Manager.
 
 ## <a name="run-setup-to-convert-the-long-term-servicing-branch"></a>Executar a configuração para converter a Ramificação de Manutenção de Longo Prazo
 No site de camada superior da sua hierarquia, é possível executar a instalação do Configuration Manager na mídia de linha de base de qualificação e selecionar **Manutenção do site**.  Em seguida, quando a página de licenciamento aparecer, selecione a opção para a Ramificação Atual e conclua o assistente.

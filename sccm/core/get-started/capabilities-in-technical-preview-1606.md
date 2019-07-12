@@ -12,12 +12,12 @@ manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0bdc575819c68876093b452e1f5662cd94b3c28e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 4527a67b7a08d7f5b9fd38d2edb223a9de823436
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56127891"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677633"
 ---
 # <a name="capabilities-in-technical-preview-1606-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1606 do System Center Configuration Manager
 
@@ -28,7 +28,9 @@ Este artigo apresenta os recursos disponíveis no Technical Preview do System Ce
 **Problemas conhecidos nesse Technical Preview:**  
 *  Quando você atualizar do Technical Preview 1604 para o 1605 e, em seguida, para a versão 1606, a atualização poderá falhar e um erro semelhante ao seguinte será registrado no **cmupdate.log**:
 
-       ERROR: Failed to execute SQL Server command:  ~ ~-- Create site boundary group ~IF  dbo.fnIsCasOrStandalonePrimary() = 1 ~BEGIN ~   PRINT N'Create site boundary group during upgrade' ~   EXEC dbo.spBuildDefaultBoundaryGroups @UserName = N'SYSTEM' ~END          
+    ```
+    ERROR: Failed to execute SQL Server command:  ~ ~-- Create site boundary group ~IF  dbo.fnIsCasOrStandalonePrimary() = 1 ~BEGIN ~   PRINT N'Create site boundary group during upgrade' ~   EXEC dbo.spBuildDefaultBoundaryGroups @UserName = N'SYSTEM' ~END          
+    ```
 
     Se isso ocorrer, no nó **Atualizações e Manutenção**, clique em **Verificar se há atualizações** e, em seguida, **Tente novamente** realizar a instalação da atualização.
     ***
@@ -50,7 +52,7 @@ Você pode criar categorias de dispositivos, que podem ser usadas para colocar a
 ### <a name="associate-a-collection-with-a-device-category"></a>Associar uma coleção a uma categoria de dispositivos
 Quando você associa uma coleção a uma categoria de dispositivos, todos os dispositivos na categoria especificada serão adicionados à coleção.
 1.  Na caixa de diálogo **Propriedades** de uma coleção de dispositivos, clique em **Adicionar Regra** > **Regra de Categoria de Dispositivo**.
-2.  Na caixa de diálogo **Create Device Category Membership Rule (Criar Regra de Associação de Categoria de Dispositivos)**, selecione a categoria que será aplicada a todos os dispositivos na coleção.
+2.  Na caixa de diálogo **Create Device Category Membership Rule (Criar Regra de Associação de Categoria de Dispositivos)** , selecione a categoria que será aplicada a todos os dispositivos na coleção.
 3.  Feche a caixa de diálogo **Create Device Category Membership Rule (Criar Regra de Associação de Categoria de Dispositivos)** e a caixa de diálogo de propriedades da coleção.
 
 ### <a name="change-the-category-of-a-device"></a>Alterar a categoria de um dispositivo
@@ -161,11 +163,11 @@ A maneira mais fácil de exportar a raiz dos certificados de cliente usados na r
 >Os certificados de cliente são necessários em qualquer computador que você desejar gerenciar com o Serviço de Proxy de Nuvem e no servidor do sistema de sites que hospeda o ponto do conector de proxy de nuvem. Se você precisar adicionar um certificado do cliente a qualquer uma desses computadores, confira [Implantando o certificado do cliente para computadores Windows](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012).
 
 1. Na janela Executar, digite **mmc** e pressione Executar.
-2. No menu Arquivo no console de gerenciamento, clique em **Adicionar/Remover Snap-ins...**.
-3. Na caixa de diálogo Adicionar ou Remover Snap-ins, clique em **Certificados**, clique em **Adicionar >**, **Conta de computador**, **Avançar**, **Computador local** e em **Concluir**. Clique em **OK** para fechar a caixa de diálogo.
+2. No menu Arquivo no console de gerenciamento, clique em **Adicionar/Remover Snap-ins...** .
+3. Na caixa de diálogo Adicionar ou Remover Snap-ins, clique em **Certificados**, clique em **Adicionar >** , **Conta de computador**, **Avançar**, **Computador local** e em **Concluir**. Clique em **OK** para fechar a caixa de diálogo.
 4. Vá para **Certificados > Pessoal > Certificados**.
 5. Clique duas vezes no certificado para autenticação do cliente no computador, clique na guia Caminho de Certificação e clique duas vezes na autoridade raiz (na parte superior do caminho).
-6.  Clique na guia Detalhes e clique em **Copiar para Arquivo...**.
+6.  Clique na guia Detalhes e clique em **Copiar para Arquivo...** .
 7. Conclua o Assistente de Exportação de Certificado usando o formato de certificado padrão. Verifique a nota do nome e local do certificado raiz que você criar. Você precisará dele para configurar o Serviço de Proxy de Nuvem em uma etapa posterior.
 
 #### <a name="upload-the-management-certificate-to-azure"></a>Carregar o certificado de gerenciamento no Azure
@@ -193,7 +195,7 @@ Certifique-se de copiar a ID da assinatura associada ao certificado de gerenciam
 
 1. No console do Configuration Manager, vá para **Administração > Configuração de Site > Sites**.
 2. Selecione o site primário para os clientes que você deseja gerenciar através do Serviço de Proxy de Nuvem e clique em **Propriedades**.
-3. Na guia Client Computer Communications (Comunicações de Computador Cliente) da folha de propriedades do site primário, selecione a caixa ao lado de **Use PKI client certificate (client authentication) when available (Usar o certificado do cliente PKI (autenticação de cliente) quando disponível)**.
+3. Na guia Client Computer Communications (Comunicações de Computador Cliente) da folha de propriedades do site primário, selecione a caixa ao lado de **Use PKI client certificate (client authentication) when available (Usar o certificado do cliente PKI (autenticação de cliente) quando disponível)** .
 4. Certifique-se de desmarcar a caixa ao lado de **Os clientes verificam a CRL (lista de certificados revogados) para sistemas de sites**. Essa opção seria necessária apenas se você estivesse publicando publicamente sua CRL.
 5. Clique em **OK**.
 
@@ -252,7 +254,7 @@ Com o Technical Preview 1606, foram introduzidas várias ações que se aplicam 
 
     Nos workspaces **Administração** e **Monitoramento**, o nó **Atualizações e Manutenção** inclui um novo botão na Faixa de opções chamado **Ignorar avisos de pré-requisito**.
 
-    Ao instalar atualizações sem usar a opção de Ignorar avisos de pré-requisito (de dentro do Assistente de Atualizações), e a instalação da atualização for interrompida com um estado de **Prereq warning (Aviso de pré-requisito)**, você poderá selecionar **Ignorar avisos de pré-requisito** na faixa de opções para disparar uma continuação automática da instalação da atualização que ignora os avisos de pré-requisito.  
+    Ao instalar atualizações sem usar a opção de Ignorar avisos de pré-requisito (de dentro do Assistente de Atualizações), e a instalação da atualização for interrompida com um estado de **Prereq warning (Aviso de pré-requisito)** , você poderá selecionar **Ignorar avisos de pré-requisito** na faixa de opções para disparar uma continuação automática da instalação da atualização que ignora os avisos de pré-requisito.  
 
 
 

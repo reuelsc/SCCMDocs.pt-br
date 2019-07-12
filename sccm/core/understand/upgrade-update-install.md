@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd6abbb6b4a11bb9b412b6a2ad1c2f8e5d648c59
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: 263ec638afa62cee4f8fce86a9f7b9e35b37f0bb
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67193974"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676035"
 ---
 # <a name="about-upgrade-update-and-install-for-site-and-hierarchy-infrastructure"></a>Sobre upgrade, atualização e instalação para infraestrutura de site e hierarquia
 
@@ -37,7 +37,7 @@ Para saber mais detalhes, confira [Atualização para o System Center Configurat
 A *atualização* é usada para instalar atualizações no console do System Center Configuration Manager e para atualizações fora de banda, que são atualizações que não podem ser entregues de dentro do console do Configuration Manager. As atualizações no console podem modificar a versão de seu site de Branch Atual (ou site de Technical Preview) para execute uma versão posterior. Por exemplo, se o seu site executar a versão 1806, você poderá instalar uma atualização para a versão 1810. As atualizações também podem instalar correções para um problema conhecido sem modificar a versão do site.      
 
 Normalmente, as atualizações adicionam novos recursos, melhorias de qualidade e correções de segurança à implantação existente. Se você usar a ramificação Technical Preview, uma atualização poderá instalar uma versão mais recente do Technical Preview.
--   Escolha quando instalar a atualização no console, começando pelo site de nível superior de sua hierarquia.
+- Escolha quando instalar a atualização no console, começando pelo site de nível superior de sua hierarquia.
 - Você pode instalar qualquer atualização disponível no console. Por exemplo, se seu site executar a versão 1802, e as versões 1806 e 1810 forem oferecidas, considere a instalação da versão 1810, pois cada versão inclui os recursos disponibilizados nas versões anteriores.
 - Após a conclusão da instalação de uma nova atualização em seu site de nível superior, os sites primários filhos começarão automaticamente o processo de atualização. No entanto, você pode configurar [Períodos de manutenção](/sccm/core/servers/manage/service-windows) para controlar o cronograma das atualizações.
 - Os sites secundários não instalam automaticamente as atualizações. Em vez disso, inicie manualmente a atualização de dentro do console do Configuration Manager.

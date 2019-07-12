@@ -2,7 +2,7 @@
 title: Requisitos de infraestrutura para implantação de sistema operacional
 titleSuffix: Configuration Manager
 description: Conheça as dependências externas e do produto e os requisitos para implantação do sistema operacional no Configuration Manager
-ms.date: 10/02/2018
+ms.date: 07/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b7a484bc3e3491ac832ca7b3d6ed926627cbfaa
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 9115fb3e0d36e4664541c70b29929dfe3ef8b6d9
+ms.sourcegitcommit: 5e43c0c6b0b1f449e596f59ceaa92a9b6ca194cc
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133690"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67572730"
 ---
 # <a name="infrastructure-requirements-for-os-deployment-in-configuration-manager"></a>Requisitos de infraestrutura para implantação de sistema operacional no Configuration Manager
 
@@ -187,17 +187,17 @@ Para usar relatórios do Configuration Manager para implantações de sistema op
 
 A função de segurança **Gerenciador de Implantação de Sistema Operacional** é uma função interna que não pode ser alterada. No entanto, é possível copiar a função, fazer alterações e salvar essas alterações como uma nova função de segurança personalizada. Estas são algumas das permissões que se aplicam diretamente às implantações de sistema operacional:  
 
-- **Pacote de imagem de inicialização**: Criar, excluir, modificar, modificar pasta, mover objeto, ler, definir escopo de segurança  
+- **Pacote de Imagem de Inicialização**: Criar, Excluir, Modificar, Modificar Pasta, Mover Objeto, Ler, Definir Escopo de Segurança  
 
-- **Drivers de dispositivo**: Criar, excluir, modificar, modificar pasta, modificar relatório, mover objeto, ler, executar relatório  
+- **Drivers do dispositivo**: Criar, Excluir, Modificar, Modificar Pasta, Modificar Relatório, Mover Objeto, Ler, Executar Relatório  
 
-- **Pacote de drivers**: Criar, excluir, modificar, modificar pasta, mover objeto, ler, definir escopo de segurança  
+- **Pacote de drivers**: Criar, Excluir, Modificar, Modificar Pasta, Mover Objeto, Ler, Definir Escopo de Segurança  
 
-- **Imagem do sistema operacional**: Criar, excluir, modificar, modificar pasta, mover objeto, ler, definir escopo de segurança  
+- **Imagem do sistema operacional**: Criar, Excluir, Modificar, Modificar Pasta, Mover Objeto, Ler, Definir Escopo de Segurança  
 
-- **Pacote de atualização do sistema operacional**: Criar, excluir, modificar, modificar pasta, mover objeto, ler, definir escopo de segurança  
+- **Pacote de atualização do sistema operacional**: Criar, Excluir, Modificar, Modificar Pasta, Mover Objeto, Ler, Definir Escopo de Segurança  
 
-- **Pacote de sequência de tarefas**: Criar, criar mídia de sequência de tarefas, excluir, modificar, modificar pasta, modificar relatório, mover objeto, ler, executar relatório, definir escopo de segurança  
+- **Pacote de sequência de tarefas**: Criar, Criar Mídia de Sequência de Tarefas, Excluir, Modificar, Modificar Pasta, Modificar Relatório, Mover Objeto, Ler, Executar Relatório, Definir Escopo de Segurança  
 
 Para obter mais informações, consulte [Criar funções de segurança personalizadas](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_CreateSecRole).  
 
@@ -262,7 +262,9 @@ Se você planeja co-hospedar o ponto de distribuição em um servidor que execut
      `WDSUTIL /Set-Server /UseDHCPPorts:No /DHCPOption60:Yes`  
 
 > [!NOTE]
-> Ao usar o respondente PXE sem o WDS em vez do WDS, não há suporte para executar também o DHCP no mesmo servidor.
+> Na versão 1810 e anteriores, não há suporte para usar o respondente PXE sem o WDS em servidores que também estejam executando um servidor DHCP.
+>
+> A partir da versão 1902, quando você habilita um respondente PXE em um ponto de distribuição sem o Serviço de Implantação do Windows, ele pode agora estar no mesmo servidor que o serviço DHCP. Para saber mais, leia o tópico [Configurar pelo menos um ponto de distribuição para aceitar solicitações PXE](/sccm/osd/deploy-use/use-pxe-to-deploy-windows-over-the-network#BKMK_Configure).
 
 
 ##  <a name="BKMK_SupportedOS"></a> sistemas operacionais com suporte  

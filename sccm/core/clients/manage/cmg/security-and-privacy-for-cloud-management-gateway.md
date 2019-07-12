@@ -10,12 +10,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7304730b-b517-4c76-aadd-4cbd157dc971
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 013d00fd7c207df45b0f6b7910283c3e8b60b44d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 9ff03c20ccbb79a527f23b6c5cf0cd179751e980
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137163"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677755"
 ---
 # <a name="security-and-privacy-for-the-cloud-management-gateway"></a>Segurança e privacidade do gateway de gerenciamento de nuvem
 
@@ -68,7 +68,8 @@ Publique a CRL (lista de certificados revogados) da PKI para acesso pelos client
 <a name="bkmk_ctl"></a>
 
 ### <a name="review-entries-in-the-sites-certificate-trust-list"></a>Examinar as entradas na lista de certificados confiáveis do site
-<!--503739--> Cada site do Configuration Manager inclui uma lista de autoridades de certificação confiáveis, a CTL (lista de certificados confiáveis). Exiba e modifique a lista acessando o workspace Administração, expanda Configuração do Site e selecione Sites. Selecione um site e clique em Propriedades na faixa de opções. Alterne para a guia Comunicação do Computador Cliente e, em seguida, clique em **Definir** em Autoridades de Certificação Confiáveis.
+<!--503739-->
+Cada site do Configuration Manager inclui uma lista de autoridades de certificação confiáveis, a CTL (lista de certificados confiáveis). Exiba e modifique a lista acessando o workspace Administração, expanda Configuração do Site e selecione Sites. Selecione um site e clique em Propriedades na faixa de opções. Alterne para a guia Comunicação do Computador Cliente e, em seguida, clique em **Definir** em Autoridades de Certificação Confiáveis.
  
 Use uma CTL mais restritiva para um site com um CMG que usa a autenticação de cliente PKI. Caso contrário, os clientes com certificados de autenticação de cliente emitidos por qualquer raiz confiável já existente no ponto de gerenciamento serão automaticamente aceitos para o registro de cliente.
 

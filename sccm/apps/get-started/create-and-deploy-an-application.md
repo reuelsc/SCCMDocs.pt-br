@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 838a1dffd5a84544259d26cc8d58eb843cc57d0f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 979409f34e4c32ce812f2a84ce062d2312a85d3c
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56141061"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676132"
 ---
 # <a name="create-and-deploy-an-application-with-system-center-configuration-manager"></a>Criar e implantar um aplicativo com o System Center Configuration Manager
 
@@ -55,9 +55,9 @@ Verifique se você conferiu as informações em [Introdução ao gerenciamento d
 
 3. Na página **Geral** do **Assistente para Criar Aplicativo**, selecione **Detectar automaticamente informações sobre este aplicativo em arquivos de instalação**. Isso preenche previamente algumas das informações no assistente com informações que são extraídas do arquivo de instalação .msi. Em seguida, especifique as seguintes informações:  
 
-   -   **Tipo**: escolha **Windows Installer (\*arquivo .msi)**.  
+   -   **Tipo**: escolha **Windows Installer (\*arquivo .msi)** .  
 
-   -   **Localização**: digite a localização (ou escolha **Procurar** para selecionar a localização) do arquivo de instalação **Contoso.msi**. Observe que o local deve ser especificado na forma *\\\Server\Share\File* para que o Configuration Manager localize os arquivos de instalação.  
+   -   **Local**: digite o local (ou escolha **Procurar** para selecionar o local) do arquivo de instalação **Contoso.msi**. Observe que o local deve ser especificado na forma *\\\Server\Share\File* para que o Configuration Manager localize os arquivos de instalação.  
 
    Você verá algo semelhante à captura de tela a seguir:  
 
@@ -86,9 +86,9 @@ Verifique se você conferiu as informações em [Introdução ao gerenciamento d
 
 Agora que você criou um aplicativo, é possível refinar as configurações do aplicativo, se necessário. Para examinar as propriedades do aplicativo, selecione o aplicativo e, na guia **Início**, no grupo **Propriedades**, escolha **Propriedades**.  
 
- Na caixa de diálogo **Propriedades do Aplicativo <Contoso\>**, você verá muitos itens que podem ser configurados para refinar o comportamento do aplicativo. Para obter detalhes sobre todas as configurações que é possível definir, consulte [Create applications (Criar aplicativos)](../../apps/deploy-use/create-applications.md). Para os fins deste exemplo, você somente poderá alterar algumas propriedades do tipo de implantação do aplicativo.  
+ Na caixa de diálogo **Propriedades do Aplicativo <Contoso\>** , você verá muitos itens que podem ser configurados para refinar o comportamento do aplicativo. Para obter detalhes sobre todas as configurações que é possível definir, consulte [Create applications (Criar aplicativos)](../../apps/deploy-use/create-applications.md). Para os fins deste exemplo, você somente poderá alterar algumas propriedades do tipo de implantação do aplicativo.  
 
- Escolha a guia **Tipos de Implantação** > **Aplicativo Contoso** Tipo de Implantação > **Editar**.  
+ Escolha a guia **Tipos de Implantação** > **Aplicativo Contoso** Tipo de Implantação > **Editar**. 
 
 Você verá uma caixa de diálogo como esta:  
 
@@ -109,7 +109,7 @@ Você verá uma caixa de diálogo como esta:
 
     -   **Tipo de regra**: **Valor**  
 
-    -   **Operador**: **One of**  
+    -   **Operador**: **Um de**  
 
     -   Na lista de sistemas operacionais, selecione **Windows 10**.  
 
@@ -186,13 +186,13 @@ Use as informações na seção a seguir **Monitorar o aplicativo** para ver o s
 
 5.  Selecione uma das seguintes guias para ver mais atualizações de status sobre a implantação do aplicativo:  
 
-    -   **Êxito**: o aplicativo foi instalado com êxito nos computadores indicados.  
+    -   **Sucesso**: o aplicativo foi instalado com êxito nos computadores indicados.  
 
-    -   **Em andamento**: a instalação do aplicativo ainda não foi concluída.  
+    -   **Em Andamento**: a instalação do aplicativo ainda não foi concluída.  
 
     -   **Erro**: ocorreu um erro ao instalar o aplicativo nos computadores indicados. Informações adicionais sobre o erro também são exibidas.  
 
-    -   **Requisitos Não Atendidos**: não houve tentativa de instalar o aplicativo nos dispositivos indicados porque eles não atenderam aos requisitos configurados (neste exemplo, pois eles não são executados no Windows 10).  
+    -   **Requisitos Não Atendidos**: Não houve tentativa de instalar o aplicativo nos dispositivos indicados porque eles não atenderam aos requisitos configurados (neste exemplo, pois eles não são executados no Windows 10).  
 
     -   **Desconhecido**: o Configuration Manager não conseguiu relatar o status da implantação. Verifique novamente mais tarde.  
 

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d16cbc892a3f4c7565a9672ca7c0145396dcaa3d
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: b1a18371a7f75935b3d72262b35385f8f4e81923
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59673608"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677665"
 ---
 # <a name="how-to-remotely-administer-a-windows-client-computer-by-using-system-center-configuration-manager"></a>Como administrar remotamente um computador cliente com Windows usando o System Center Configuration Manager
 
@@ -65,7 +65,7 @@ Aqui estão três maneiras de iniciar o visualizador de controle remoto:
         - **Todas as telas** – Adicionado no Configuration Manager 1902. Se o computador ao qual você se conectar tiver vários monitores, a exibição de todos os monitores será mostrada na janela do controle remoto. **Todas as telas** – É o único modo de exibição para computadores com vários monitores antes de 1902.
         -  **Primeira tela** – Adicionado no Configuration Manager 1902. A *primeira tela* fica na parte extrema esquerda superior, conforme mostrado nas configurações de exibição do Windows. Não é possível selecionar uma tela específica. Quando você alternar a configuração do visualizador, reconecte a sessão remota. O visualizador salvará sua preferência para conexões futuras.
         -  **Dimensionar para Ajustar** – Dimensiona o monitor do computador remoto para se ajustar ao tamanho da janela do **Controle Remoto do Configuration Manager**.
-       - **Barra de Status** – Alterna a exibição da barra de status da janela do **Controle Remoto do Configuration Manager**.  
+        - **Barra de Status** – Alterna a exibição da barra de status da janela do **Controle Remoto do Configuration Manager**.  
 
        > [!NOTE]  
        >  O visualizador salvará sua preferência para conexões futuras.
@@ -84,7 +84,7 @@ Aqui estão três maneiras de iniciar o visualizador de controle remoto:
 
 ## <a name="to-start-the-remote-control-viewer-from-the-windows-command-line"></a>Para iniciar o visualizador de controle remoto na linha de comando do Windows  
 
--   No prompt de comando do Windows, digite _<Pasta de instalação do Configuration Manager\>_**\AdminConsole\Bin\x64\CmRcViewer.exe**  
+-   No prompt de comando do Windows, digite _<Pasta de instalação do Configuration Manager\>_ **\AdminConsole\Bin\x64\CmRcViewer.exe**  
 
 O CmRcViewer.exe dá suporte às seguintes opções de linha de comando:  
 

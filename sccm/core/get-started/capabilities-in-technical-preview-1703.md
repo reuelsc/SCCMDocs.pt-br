@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc5ebcbec87edf52d7ca7d3f9e6f4341ec60c191
-ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
+ms.openlocfilehash: 8f830100bd2d227df0206c40071711d9c7888f88
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67515835"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677482"
 ---
 # <a name="capabilities-in-technical-preview-1703-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1703 do System Center Configuration Manager
 
@@ -58,12 +58,12 @@ Use o seguinte formato de URL para abrir o Centro de Software para um aplicativo
 
 ### <a name="how-to-get-the-application-identifier-of-an-application"></a>Como obter o identificador do aplicativo de um aplicativo.
 
-1.  No console do Configuration Manager, clique em **Biblioteca de Software**.
-2.  No workspace Biblioteca de Software, expanda **Gerenciamento de Aplicativos** e clique em **Aplicativos**.
-3.  Na exibição dos **aplicativos**, clique com o botão direito do mouse em um dos cabeçalhos de coluna e, em seguida, na lista, selecione **ID exclusiva do IC**. Você verá que a ID exclusiva de cada aplicativo agora é mostrada na lista.
-4.  Observe a **ID exclusiva de IC** do aplicativo para o qual você deseja fornecer um link, por exemplo: **ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f/2**
-5.  Em seguida, remova qualquer texto após o aplicativo GUID, neste caso **/2**. Isso deixa você com o identificador do aplicativo.
-6.  Por fim, para concluir a construção do link, preceda-o com **Softwarecenter:SoftwareID =** . Usando o exemplo acima, o link final será: **Softwarecenter:SoftwareId= ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f**.
+1. No console do Configuration Manager, clique em **Biblioteca de Software**.
+2. No workspace Biblioteca de Software, expanda **Gerenciamento de Aplicativos** e clique em **Aplicativos**.
+3. Na exibição dos **aplicativos**, clique com o botão direito do mouse em um dos cabeçalhos de coluna e, em seguida, na lista, selecione **ID exclusiva do IC**. Você verá que a ID exclusiva de cada aplicativo agora é mostrada na lista.
+4. Observe a **ID exclusiva de IC** do aplicativo para o qual você deseja fornecer um link, por exemplo: **ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f/2**
+5. Em seguida, remova qualquer texto após o aplicativo GUID, neste caso **/2**. Isso deixa você com o identificador do aplicativo.
+6. Por fim, para concluir a construção do link, preceda-o com **Softwarecenter:SoftwareID =** . Usando o exemplo acima, o link final será: **Softwarecenter:SoftwareId= ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f**.
 
 Usando este link, os usuários finais podem abrir o Centro de Software diretamente para o aplicativo especificado.
 
@@ -83,17 +83,17 @@ O Technical preview 1703 introduz o assistente de **configuração de serviços 
 
 Com technical preview 1703, apenas a Windows Store para Empresas (WSfB) é configurada usando esse assistente.  Outros serviços de nuvem são configurados por meio de seus fluxos de trabalho separados.
 
--   Use as informações deste tópico de visualização para substituir as etapas de configuração encontradas na seção [Configurar sincronização da Windows Store para Empresas](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_setup) do tópico do Branch Atual [Gerenciar aplicativos da Windows Store para Empresas com o System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
+- Use as informações deste tópico de visualização para substituir as etapas de configuração encontradas na seção [Configurar sincronização da Windows Store para Empresas](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_setup) do tópico do Branch Atual [Gerenciar aplicativos da Windows Store para Empresas com o System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
--   Para obter mais informações sobre os aplicativos Web, consulte [Autenticação e autorização no serviço de aplicativo do Azure](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview) e [Visão geral de aplicativos Web](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview).
+- Para obter mais informações sobre os aplicativos Web, consulte [Autenticação e autorização no serviço de aplicativo do Azure](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview) e [Visão geral de aplicativos Web](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview).
 
 ### <a name="prerequisites-and-planning"></a>Pré-requisitos e planejamento
 Ao configurar uma conexão entre o Configuration Manager e a Windows Store para Empresas, é necessário fornecer uma pasta em que o conteúdo do aplicativo sincronizado do repositório será mantido. Para garantir que essa pasta é segura e que seu conteúdo pode ser implantado em dispositivos, verifique se as seguintes permissões existem:
--   O computador no qual você instala a função do sistema de sites do ponto de conexão de serviço (o site de nível superior na hierarquia) deve ter permissões de leitura e gravação na pasta especificada durante o uso da conta **Computer$** .  
+- O computador no qual você instala a função do sistema de sites do ponto de conexão de serviço (o site de nível superior na hierarquia) deve ter permissões de leitura e gravação na pasta especificada durante o uso da conta **Computer$** .  
 
--   O autor do aplicativo deve ter permissões de leitura da pasta especificada.  
+- O autor do aplicativo deve ter permissões de leitura da pasta especificada.  
 
--   A conta **Computer$** de cada computador que hospeda uma instância do Provedor de SMS deve poder usar a pasta especificada.
+- A conta **Computer$** de cada computador que hospeda uma instância do Provedor de SMS deve poder usar a pasta especificada.
 
 No Azure Active Directory, registre o Configuration Manager como uma ferramenta de gerenciamento de API Web ou de aplicativo Web. Isso lhe fornecerá uma ID de cliente de que você precisará mais tarde.
 

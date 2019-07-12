@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b9dcd7465265021d52e44d72c77172d4323144e
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 050122d6a1b799a30bd2c5a83ab261e92aaafabe
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285769"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677214"
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novidades da versão 1706 do System Center Configuration Manager
 
@@ -59,8 +59,8 @@ Adicionamos outros aprimoramentos de acessibilidade ao console do Configuration 
 ### <a name="improvements--for-sql-server-always-on-availability-groups"></a>Aprimoramentos para Grupos de Disponibilidade Always On do SQL Server
 <!-- 1352094 -->
 Com esta versão, agora você pode usar réplicas de confirmação assíncrona nos grupos de disponibilidade AlwaysOn do SQL Server usados com o Configuration Manager. Isso significa que você pode adicionar mais réplicas a seus grupos de disponibilidade para usar como backups fora do local (remotos) e, em seguida, usá-los em um cenário de recuperação de desastres.  
-  -   O Configuration Manager dá suporte ao uso de réplica de confirmação assíncrona para recuperar sua réplica síncrona. Confira [Opções de recuperação do banco de dados do site](/sccm/core/servers/manage/recover-sites#site-database-recovery-options) no tópico Backup e recuperação para obter informações sobre como fazer isso.
-  -   Esta versão não dá suporte a failover para usar a réplica de confirmação assíncrona como seu banco de dados do site.
+  - O Configuration Manager dá suporte ao uso de réplica de confirmação assíncrona para recuperar sua réplica síncrona. Confira [Opções de recuperação do banco de dados do site](/sccm/core/servers/manage/recover-sites#site-database-recovery-options) no tópico Backup e recuperação para obter informações sobre como fazer isso.
+  - Esta versão não dá suporte a failover para usar a réplica de confirmação assíncrona como seu banco de dados do site.
 Para saber mais, confira [Preparar para usar os Grupos de Disponibilidade Always On](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database).
 
 ### <a name="update-reset-tool"></a>Ferramenta de redefinição de atualização
@@ -118,25 +118,25 @@ O cache de pares não usa mais a Conta de Acesso de Rede para autenticar solicit
 Nesta versão, adicionamos novas definições de item de configuração para dispositivos com Windows 10 registrados com o Intune, ou gerenciados no Configuration Manager local. As configurações são:
 
 - **Senha**
-    - Criptografia de Dispositivo
+  - Criptografia de Dispositivo
 - **Dispositivo**
-    - Modificação das configurações de região (somente desktop)
-    - Modificação das configurações de energia e suspensão
-    - Modificação das configurações de idioma
-    - Modificação do horário do sistema
-    - Modificação do nome do dispositivo
+  - Modificação das configurações de região (somente desktop)
+  - Modificação das configurações de energia e suspensão
+  - Modificação das configurações de idioma
+  - Modificação do horário do sistema
+  - Modificação do nome do dispositivo
 - **Repositório**
-    - Atualização automática de aplicativos da store
-    - Usar somente armazenamento particular
-    - Inicialização de aplicativo proveniente do armazenamento
+  - Atualização automática de aplicativos da store
+  - Usar somente armazenamento particular
+  - Inicialização de aplicativo proveniente do armazenamento
 - **Microsoft Edge**
-    - Bloquear o acesso à página about:flags
-    - Substituição de prompt SmartScreen
-    - Substituição de prompt SmartScreen para arquivos
-    - Endereço IP do localhost WebRTC
-    - Mecanismo de pesquisa padrão
-    - URL de XML OpenSearch
-    - Home pages (somente desktop)
+  - Bloquear o acesso à página about:flags
+  - Substituição de prompt SmartScreen
+  - Substituição de prompt SmartScreen para arquivos
+  - Endereço IP do localhost WebRTC
+  - Mecanismo de pesquisa padrão
+  - URL de XML OpenSearch
+  - Home pages (somente desktop)
 
 Para obter detalhes de todas as configurações de Windows 10, confira [Como criar itens de configuração para dispositivos Windows 10 e Windows 8.1 gerenciados sem o cliente do System Center Configuration Manager](/sccm/mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client).
 

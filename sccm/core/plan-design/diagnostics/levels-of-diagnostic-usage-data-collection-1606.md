@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8383b654182ba57b52a53755595413b18d1cd4e7
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 69bec7c52d826d76502e52d0d5ddbc1d0cf9c3ef
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121702"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677191"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1606-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1606 do System Center Configuration Manager
 
@@ -42,10 +42,10 @@ Alterações de versões anteriores são indicadas com ***[Novo]*** ou ***[Atual
  A partir da versão 1606 do System Center Configuration Manager, este nível inclui o seguinte:
 
 
- -   Informações de Instalação:
+-   Informações de Instalação:
       - Build, tipo de instalação, pacotes de idiomas e recursos habilitados  
 
-      -   Status e erros de implantação do pacote de atualização, andamento do download e erros de pré-requisitos  
+      -   Status e erros de implantação do pacote de atualização, andamento do download e erros de pré-requisitos 
 
       -  Versão do script pós-atualização
 
@@ -86,7 +86,7 @@ Alterações de versões anteriores são indicadas com ***[Novo]*** ou ***[Atual
 -  Uso da Descoberta de Rede (habilitada ou desabilitada)
 -  Console de administração:
 
-     -  Estatísticas sobre as conexões do console (versão de sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versões do .NET instaladas e pacotes de idiomas do console)    
+    -  Estatísticas sobre as conexões do console (versão de sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versões do .NET instaladas e pacotes de idiomas do console)    
 
 
 - ***[Novo]*** Versão do SQL, nível do service pack, edição, ID de ordenação e conjunto de caracteres

@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89ba5d63b1a033db49da73cc0df3fa0a41f2b696
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 31f47fa04275f2be4efa1558e1d816f74b05d369
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285848"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677304"
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novidades da versão 1702 do System Center Configuration Manager
 
@@ -50,14 +50,14 @@ A versão 1702 descarta o suporte para os seguintes produtos:
 
 ### <a name="improvements-for-in-console-search"></a>Melhorias da pesquisa no console
 Veja a seguir as melhorias no uso de pesquisa no console do Configuration Manager:
- - **Caminho do Objeto:**  
+- **Caminho do Objeto:**  
   Muitos objetos agora dão suporte a uma coluna chamada **Caminho do Objeto**.  Quando você pesquisar e incluir essa coluna nos resultados da exibição, poderá exibir o caminho para cada objeto. Por exemplo, se você executar uma pesquisa por aplicativos no nó Aplicativos e também pesquisar nos subnós, a coluna *Caminho do Objeto* no painel de resultados mostrará o caminho para cada objeto que é retornado.   
 
 - **Preservação do texto de pesquisa:**  
   Quando você inserir texto na caixa de texto de pesquisa e alternar entre a pesquisa de um subdiretório e o nó atual, o texto digitado persistirá e permanecerá disponível para uma nova pesquisa, sem a necessidade de redigitá-lo.
 
 - **Preservação da sua decisão de pesquisar subnós:**  
- A opção selecionada para a pesquisa no *nó atual* ou em *todos os subnós* agora é mantida após alterar o nó no qual você está trabalhando. Esse novo comportamento significa que você não precisa redefinir constantemente essa decisão ao percorrer o console. Ao abrir o console, a opção padrão é pesquisar somente o nó atual.
+  A opção selecionada para a pesquisa no *nó atual* ou em *todos os subnós* agora é mantida após alterar o nó no qual você está trabalhando. Esse novo comportamento significa que você não precisa redefinir constantemente essa decisão ao percorrer o console. Ao abrir o console, a opção padrão é pesquisar somente o nó atual.
 
 
 ### <a name="send-feedback-from-the-configuration-manager-console"></a>Enviar comentários do console do Configuration Manager

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 667a734eefab0e7634d13fd971c218a0803acc13
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: e4742e697737cdb71ad8d668566a289cef5b5f1d
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136408"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677168"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1602-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1602 do System Center Configuration Manager
 
@@ -86,7 +86,7 @@ Alterações de versões anteriores são indicadas com ***[Novo]*** ou ***[Atual
 - ***[Novo]*** Uso de Descoberta de Rede (habilitado ou desabilitado)
 - ***[Novo]*** Console de Administração:
 
-    -  Estatísticas sobre as conexões do console (versão de sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versão do .NET instalada e pacotes de idiomas do console)
+  -  Estatísticas sobre as conexões do console (versão de sistema operacional, idioma, SKU e arquitetura, memória do sistema, número de processadores lógicos, ID do site de conexão, versão do .NET instalada e pacotes de idiomas do console)
 
 ##  <a name="bkmk_level2"></a> Nível 2 - Avançado
 O nível Avançado é o padrão após a conclusão da instalação. Esse nível inclui dados coletados no nível Básico, dados específicos ao recurso (frequência e duração de uso), configurações de cliente do Configuration Manager (nome do componente, estado e algumas configurações como intervalos de sondagem), bem como informações básicas sobre atualizações de software.

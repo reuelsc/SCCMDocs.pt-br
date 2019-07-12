@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01253487d7fb90aaa24dae6a55b9110e516ab4ad
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 7e3cb09f6220f7a0fd57960a9b46087a25ee81c5
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176000"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677344"
 ---
 # <a name="capabilities-in-technical-preview-1708-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1708 do System Center Configuration Manager
 
@@ -88,17 +88,17 @@ A partir desta versão, você pode usar o console do Configuration Manager para 
 Para identificar os dispositivos que estão com reinicialização pendente, vá para **Ativos e Conformidade** > **Dispositivos** e selecione uma coleção com dispositivos que podem exigir uma reinicialização. Depois de selecionar uma coleção, você pode visualizar o status de cada dispositivo no painel de detalhes em uma nova coluna chamada **Reinicialização Pendente**. Cada dispositivo tem um valor de **Sim** ou **Não**.
 
 Para criar a notificação do cliente para reiniciar o dispositivo:
-1.  Localize o dispositivo que você deseja reiniciar no nó Dispositivos do console.
-2.  Clique com o botão direito do mouse no dispositivo, selecione **Notificação do Cliente** e, em seguida, selecione **Reinicializar**. Isso abrirá uma janela de informações sobre a reinicialização. Clique em **OK** para confirmar a solicitação de reinicialização.
+1. Localize o dispositivo que você deseja reiniciar no nó Dispositivos do console.
+2. Clique com o botão direito do mouse no dispositivo, selecione **Notificação do Cliente** e, em seguida, selecione **Reinicializar**. Isso abrirá uma janela de informações sobre a reinicialização. Clique em **OK** para confirmar a solicitação de reinicialização.
 
 Quando a notificação é recebida por um cliente, uma janela de notificação do **Centro de Software** será exibida para informar ao usuário sobre a reinicialização. Por padrão, a reinicialização ocorre após 90 minutos. Você pode modificar o tempo de reinicialização definindo as [configurações do cliente](/sccm/core/clients/deploy/configure-client-settings). As configurações do comportamento de reinicialização são encontradas na guia [Reinicialização do computador](/sccm/core/clients/deploy/about-client-settings#computer-restart) das configurações padrão.
 
 
 ### <a name="try-it-out"></a>Experimente!
 Tente concluir as tarefas a seguir e, depois, envie-nos **Comentários** usando a guia **Início** da Faixa de Opções para nos contar foi:
-1.  Implante um aplicativo ou atualização em um dispositivo que exige que o dispositivo seja reiniciado para concluir a instalação.
-2.  Localize o dispositivo no nó **Ativos e Conformidade** > **Dispositivos** do console e confirme se ele exibe **Sim** na coluna **Reinicialização Pendente**. O status de Reinicialização Pendente pode levar até 20 minutos ser refletido no console.
-3.  Monitore o dispositivo para confirmar se a notificação do Centro de Software abrirá e se o dispositivo reiniciará com êxito.
+1. Implante um aplicativo ou atualização em um dispositivo que exige que o dispositivo seja reiniciado para concluir a instalação.
+2. Localize o dispositivo no nó **Ativos e Conformidade** > **Dispositivos** do console e confirme se ele exibe **Sim** na coluna **Reinicialização Pendente**. O status de Reinicialização Pendente pode levar até 20 minutos ser refletido no console.
+3. Monitore o dispositivo para confirmar se a notificação do Centro de Software abrirá e se o dispositivo reiniciará com êxito.
 
 
 ## <a name="software-center-customization"></a>Personalização do Centro de Software

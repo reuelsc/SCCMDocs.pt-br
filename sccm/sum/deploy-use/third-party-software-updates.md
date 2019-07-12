@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3279ba7cd78ca6fc10ddb8662ac816679d01d7cf
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: 821f37f7c4b001fdf49d805dcdca2eef40cdce74
+ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194678"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67623420"
 ---
 # <a name="enable-third-party-updates"></a>Habilitar atualizações de terceiros 
 
@@ -38,7 +38,7 @@ Da versão 1806 em diante, o nó **Catálogos de Atualização de Software de Te
 ## <a name="additional-requirements-when-the-sup-is-remote-from-the-top-level-site-server"></a>Requisitos adicionais quando SUP é remoto do servidor do site de nível superior 
 
 1. SSL deverá ser habilitado no SUP quando ele for remoto. Isso requer um certificado de autenticação de servidor gerado por uma autoridade de certificação interna ou por meio de um provedor público.
-    - [Configurar SSL no WSUS](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#bkmk_2.5.ConfigSSL)
+    - [Configurar SSL no WSUS](/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#25-secure-wsus-with-the-secure-sockets-layer-protocol)
         - Quando você configura SSL no WSUS, observe alguns dos serviços Web e os diretórios virtuais são sempre HTTP, e não HTTPS. 
         - O Configuration Manager baixa o conteúdo de terceiros para pacotes de atualização de software do seu diretório de conteúdo do WSUS por HTTP.   
     - [Configurar SSL no SUP](../get-started/install-a-software-update-point.md#configure-ssl-communications-to-wsus)

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cc2e1783843f600f88b78e0db0cc6b8b8db0f55
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 24e76f9281158aa28e153efe9124ba2adf94a14d
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500994"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676369"
 ---
 # <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Referência para tarefas de manutenção do System Center Configuration Manager
 
@@ -50,7 +50,7 @@ Este tópico lista detalhes de cada uma das tarefas de manutenção de site do S
 
 **Excluir histórico antigo de download de cliente**: use essa tarefa para excluir os dados históricos sobre a fonte de download usada pelos clientes. As informações de fonte baixadas são usadas para preencher o [painel de Fontes de Dados do Cliente](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard).  
 -  Site de administração central – indisponível
--    **Site primário** – habilitado
+-  **Site primário** – habilitado
 -  Site secundário - não disponível
 
 **Excluir operações antigas de cliente**: use essa tarefa para excluir todos os dados antigos de operações de cliente do banco de dados do site. Isso inclui, por exemplo, dados de notificações do cliente antigas ou expiradas (como solicitações de download do computador ou políticas do usuário) e do Endpoint Protection (como solicitações de um usuário administrativo para os clientes executarem uma varredura ou baixar definições atualizadas).

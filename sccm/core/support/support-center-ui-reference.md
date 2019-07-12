@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7858497f1ff49e5068da066cc481ca5fd38f825f
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 42c1fc69d237b6209b49e45e1b185483b1c55163
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500708"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676322"
 ---
 # <a name="support-center-user-interface-reference"></a>Referência de interface do usuário do Centro de Suporte
 
@@ -229,13 +229,13 @@ Os seguintes itens nesse menu solicitam uma ação do cliente relacionada ao con
 
     - **Atingir tempo limite de solicitações de conteúdo**: se houver solicitações de localização de conteúdo em execução por muito tempo, essa ação interromperá a solicitação.  
 
-  - **Avaliação de implantação de aplicativo**: inicia uma tarefa que avalia os aplicativos implantados.  
+- **Avaliação de implantação de aplicativo**: inicia uma tarefa que avalia os aplicativos implantados.  
 
-  - **Avaliação de implantação de atualizações de software**: inicia uma tarefa que avalia as atualizações de software implantadas.  
+- **Avaliação de implantação de atualizações de software**: inicia uma tarefa que avalia as atualizações de software implantadas.  
 
-  - **Verificação de origem de atualizações de software**: inicia uma tarefa que verifica os locais de origem da atualização.  
+- **Verificação de origem de atualizações de software**: inicia uma tarefa que verifica os locais de origem da atualização.  
 
-  - **Atualização de lista de origem do Windows Installer**: inicia uma tarefa que atualiza o local de origem para instalações do Windows Installer (MSI).  
+- **Atualização de lista de origem do Windows Installer**: inicia uma tarefa que atualiza o local de origem para instalações do Windows Installer (MSI).  
 
 #### <a name="content-view"></a>Exibição de conteúdo
 Veja aplicativos, pacotes e atualizações que são carregados no cliente. Ao selecionar um aplicativo, pacote ou a atualização, você pode exibir detalhes deste conteúdo. Para alguns aplicativos, você também pode fazer as seguintes ações:  

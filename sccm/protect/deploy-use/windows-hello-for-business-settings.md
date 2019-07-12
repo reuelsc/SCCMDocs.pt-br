@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9346e95e3fa66e9f24d1bfc3711917c3d2146e5e
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: dcbe2f7b0e7b1d5905e1160d7302498a72116498
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551349"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678656"
 ---
 # <a name="windows-hello-for-business-settings-in-configuration-manager"></a>Configurações do Windows Hello para Empresas no Configuration Manager
 
@@ -72,7 +72,7 @@ Se você quiser usar o logon baseado em certificado do Windows Hello para Empres
 
 -   No perfil de certificado, selecione um modelo que usa o logon do cartão inteligente EKU.  
 
--   Se você pretende armazenar perfis de certificado no contêiner de chaves do Windows Hello para Empresas, e o perfil de certificado usa o EKU de **Logon de Cartão Inteligente**, deverá configurar as seguintes permissões para registro de chave para garantir que o certificado seja validado corretamente.
+- Se você pretende armazenar perfis de certificado no contêiner de chaves do Windows Hello para Empresas, e o perfil de certificado usa o EKU de **Logon de Cartão Inteligente**, deverá configurar as seguintes permissões para registro de chave para garantir que o certificado seja validado corretamente.
 Você primeiro deverá ter criado o **Administradores de Chave** e adicionado a esse grupo todos os computadores do ponto de gerenciamento do Configuration Manager como membros.
 
 Talvez algumas configurações não exijam a configuração de permissões, ou podem exigir mais configurações. Consulte a tabela a seguir para obter mais ajuda:
@@ -87,15 +87,15 @@ Talvez algumas configurações não exijam a configuração de permissões, ou p
 
 ## <a name="to-configure-permissions"></a>Para configurar as permissões
 
-1.  Entre em uma estação de trabalho de controlador de domínio ou de gerenciamento com as credenciais do administrador de domínio ou equivalentes.
-2.  Abra **usuários e computadores do Active Directory**.
-3.  No painel de navegação, clique com o botão direito no seu nome de domínio e, em seguida, clique em **Propriedades**.
-4.  Na guia **Segurança** da caixa de diálogo *\<nome de domínio>* **Propriedades**, clique em **Avançado**. Se a guia **Segurança** não for exibida, habilite **Recursos Avançados** no menu **Exibição** de **Usuários e Computadores do Active Directory**.
-5.  Clique em **Adicionar**.
-6.  Na caixa de diálogo **Entrada de Permissão para** *\<nome de domínio>* , clique em **Selecionar uma entidade de segurança**.
-7.  Na caixa de diálogo **Selecionar Usuário, Computador, Conta de Serviço ou Grupo**, digite **Administradores de Chave** na caixa de texto **Insira o nome do objeto para selecionar**. Clique em **OK**.
-8.  Da lista **Aplica-se a**, selecione **Objetos do Usuário Descendente**.
-9.  Role até a parte inferior da página e clique em **Limpar tudo**.
+1. Entre em uma estação de trabalho de controlador de domínio ou de gerenciamento com as credenciais do administrador de domínio ou equivalentes.
+2. Abra **usuários e computadores do Active Directory**.
+3. No painel de navegação, clique com o botão direito no seu nome de domínio e, em seguida, clique em **Propriedades**.
+4. Na guia **Segurança** da caixa de diálogo *\<nome de domínio>* **Propriedades**, clique em **Avançado**. Se a guia **Segurança** não for exibida, habilite **Recursos Avançados** no menu **Exibição** de **Usuários e Computadores do Active Directory**.
+5. Clique em **Adicionar**.
+6. Na caixa de diálogo **Entrada de Permissão para** *\<nome de domínio>* , clique em **Selecionar uma entidade de segurança**.
+7. Na caixa de diálogo **Selecionar Usuário, Computador, Conta de Serviço ou Grupo**, digite **Administradores de Chave** na caixa de texto **Insira o nome do objeto para selecionar**. Clique em **OK**.
+8. Da lista **Aplica-se a**, selecione **Objetos do Usuário Descendente**.
+9. Role até a parte inferior da página e clique em **Limpar tudo**.
 10. Na seção **Propriedades**, selecione **Ler msDS-KeyCredentialLink**.
 11. Clique em **OK** três vezes para concluir a tarefa.
 

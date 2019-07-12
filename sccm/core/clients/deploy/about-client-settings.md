@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c6bffc94abecb5f700fbb7236c923f26f3a0de0
-ms.sourcegitcommit: 949db4d2af7f605ee40610e45ae9d917b1045772
+ms.openlocfilehash: 2d329f2d0125a168d776b2855b6fd35e7a223111
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67314417"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677916"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Sobre as configurações do cliente no Configuration Manager
 
@@ -658,11 +658,11 @@ Por exemplo, caso sua organização não use políticas de conformidade e você 
 
 - Configure o **Filtro de aplicativo padrão** como **Todos** ou apenas os aplicativos **Obrigatórios**.  
 
-    - O Centro de Software sempre usa a sua configuração padrão. Os usuários podem alterar esse filtro, mas o Centro de Software não persistirá as preferências deles.  
+  - O Centro de Software sempre usa a sua configuração padrão. Os usuários podem alterar esse filtro, mas o Centro de Software não persistirá as preferências deles.  
 
- - Defina a **Exibição de aplicativo padrão** como **Exibição lado a lado** ou **Exibição de lista**. 
+- Defina a **Exibição de aplicativo padrão** como **Exibição lado a lado** ou **Exibição de lista**. 
 
-    - Se um usuário alterar essa configuração, o Centro de Software manterá a preferência do usuário no futuro. 
+  - Se um usuário alterar essa configuração, o Centro de Software manterá a preferência do usuário no futuro. 
 
 
 ## <a name="software-deployment"></a>Implantação de software  

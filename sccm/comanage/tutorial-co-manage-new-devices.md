@@ -12,17 +12,17 @@ ms.prod: configuration-manager
 ms.service: ''
 ms.technology: ''
 ms.assetid: ''
-ms.openlocfilehash: 94513445c8d1849f0304b304b7dd8672c1e50978
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 696c952484b53c186b6f1d4f8e5b711262ded5a8
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67158289"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678005"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Tutorial: Habilitar o cogerenciamento para novos dispositivos baseados na Internet
 Com o cogerenciamento, você pode manter seus processos bem estabelecidos para usar o Configuration Manager para gerenciar PCs na sua organização. Ao mesmo tempo, você está investindo na nuvem com o uso do Intune para provisionamento moderno e segurança. 
 
-Neste tutorial, você configura o cogerenciamento de dispositivos Windows 10 em um ambiente com o Azure AD (Active Directory) e um AD local, mas que não têm um [Azure AD (Active Directory) híbrido](https://docs.microsoft.com/azure/active-directory/devices/overview#hybrid-azure-ad-joined-devices). O ambiente do Configuration Manager inclui um único site primário com todas as funções do sistema de sites localizadas no mesmo servidor, o servidor do site. Este tutorial começa com a premissa de que seus dispositivos Windows 10 já estão inscritos no Intune. 
+Neste tutorial, você configura o cogerenciamento de dispositivos Windows 10 em um ambiente com o Azure AD (Active Directory) e um AD local, mas que não têm um [Azure AD (Active Directory) híbrido](/azure/active-directory/devices/concept-azure-ad-join-hybrid). O ambiente do Configuration Manager inclui um único site primário com todas as funções do sistema de sites localizadas no mesmo servidor, o servidor do site. Este tutorial começa com a premissa de que seus dispositivos Windows 10 já estão inscritos no Intune. 
 
 Se você tiver um Azure Active Directory híbrido que una o AD local ao Azure AD, é recomendável seguir nosso tutorial complementar, [Habilitar o cogerenciamento para clientes do Configuration Manager](/sccm/comanage/tutorial-co-manage-clients). 
  
@@ -154,7 +154,7 @@ Os provedores de certificados públicos geralmente fornecem instruções para im
 
 6. Na página **Repositório de Certificados**, escolha **Selecionar automaticamente o repositório de certificados conforme o tipo de certificado** e selecione **Avançar**.  
 
-7.  Selecione **Concluir**.
+7. Selecione **Concluir**.
 
 ### <a name="export-the-certificate"></a>Exportar o certificado
 Exporte o *certificado de autenticação de servidor do CMG* do seu servidor. Exportar novamente o certificado o torna utilizável para o gateway de gerenciamento de nuvem no Azure.  
@@ -399,8 +399,10 @@ Por exemplo, *C:\Arquivos de Programas\Microsoft Configuration Manager\bin\i386\
    - **Argumentos de linha de comando**:  *\<Especifique a linha de comando **CCMSETUPCMD**. Você pode usar a linha de comando que salvou na página* Habilitação *do Assistente para Configuração do Cogerenciamento. Essa linha de comando inclui os nomes do seu serviço de nuvem e os valores adicionais que permitem que os dispositivos instalem o software cliente do Configuration Manager.>*  
 
      A estrutura da linha de comando deve ser semelhante a este exemplo usando apenas os parâmetros CCMSETUPCMD e SMSSiteCode:  
- 
-         CCMSETUPCMD="CCMHOSTNAME=<ServiceName.CLOUDAPP.NET/CCM_Proxy_MutualAuth/<GUID>" SMSSiteCode="<YourSiteCode>"  
+
+     ```
+     CCMSETUPCMD="CCMHOSTNAME=<ServiceName.CLOUDAPP.NET/CCM_Proxy_MutualAuth/<GUID>" SMSSiteCode="<YourSiteCode>"  
+     ```
 
      > [!TIP]  
      > Se a linha de comando não estiver disponível, você poderá exibir as propriedades de *CoMgmtSettingsProd* no console do Configuration Manager para obter uma cópia da linha de comando.    

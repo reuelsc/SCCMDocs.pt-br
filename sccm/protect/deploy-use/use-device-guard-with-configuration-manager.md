@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b3ac315806edd90e85fe654039d620ec0097d1b
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: d7c6fcdf0113dd9fa83d2d303661ad5690362715
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176672"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678742"
 ---
 # <a name="device-guard-management-with-configuration-manager"></a>Gerenciamento de Proteção do Dispositivo com Configuration Manager
 
@@ -38,8 +38,8 @@ Você pode usar o Configuration Manager para implantar uma política do Controle
 
 É possível configurar um dos seguintes modos:
 
-1.  **Imposição habilitada** - somente os executáveis confiáveis podem ser executados.
-2.  **Somente auditoria** - permite que todos os executáveis sejam rodados, mas registra os executáveis não confiáveis rodados no log de eventos do cliente local.
+1. **Imposição habilitada** - somente os executáveis confiáveis podem ser executados.
+2. **Somente auditoria** - permite que todos os executáveis sejam rodados, mas registra os executáveis não confiáveis rodados no log de eventos do cliente local.
 
 >[!TIP]
 >Nesta versão do Configuration Manager, a Proteção do Dispositivo é um recurso de pré-lançamento. Para habilitá-lo, veja [Recursos de pré-lançamento no System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).
@@ -77,10 +77,10 @@ Antes de configurar ou implantar políticas de Controle de Aplicativos do Window
 - Independentemente do modo de imposição selecionado, quando uma política do Controle Aplicativos do Windows Defender está implantada, os computadores clientes não podem executar aplicativos HTML com a extensão .hta.
 
 ## <a name="how-to-create-a-windows-defender-application-control-policy"></a>Como criar uma política do Controle de Aplicativos do Windows Defender
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.
-2.  No workspace **Ativos e Conformidade**, expanda **Endpoint Protection** e clique em **Controle de Aplicativos do Windows Defender**.
-3.  Na guia **Início**, no grupo **Criar**, clique em **Criar Política de Controle de Aplicativo**.
-4.  Na página **Geral** do **Assistente para Criar Política de Controle de Aplicativo**, especifique estas configurações:
+1. No console do Configuration Manager, clique em **Ativos e Conformidade**.
+2. No workspace **Ativos e Conformidade**, expanda **Endpoint Protection** e clique em **Controle de Aplicativos do Windows Defender**.
+3. Na guia **Início**, no grupo **Criar**, clique em **Criar Política de Controle de Aplicativo**.
+4. Na página **Geral** do **Assistente para Criar Política de Controle de Aplicativo**, especifique estas configurações:
     - **Nome** – Insira um nome exclusivo para esta política do Controle de Aplicativos do Windows Defender. 
     - **Descrição** – opcionalmente, insira uma descrição da política que ajude a identificá-la no console do Configuration Manager.
     - **Imponha a reinicialização de dispositivos para que essa política possa ser aplicada a todos os processos** - Depois que a política for processada em um computador cliente, uma reinicialização será agendada no cliente de acordo com as **Configurações do Cliente** para **Reinicialização do Computador**.
@@ -89,22 +89,22 @@ Antes de configurar ou implantar políticas de Controle de Aplicativos do Window
     - **Modo de imposição** -escolha um dos seguintes métodos de imposição para a Proteção do Dispositivo no PC cliente.
         - **Imposição habilitada** - permitir somente os executáveis confiáveis podem ser executados.
         - **Somente auditoria** - permite que todos os executáveis sejam rodados, mas registra os executáveis não confiáveis rodados no log de eventos do cliente local.
-5.  Na guia **Inclusões** do assistente **Criar política de controle de aplicativo**, selecione se deseja **Autorizar software de confiança do Intelligent Security Graph**.
+5. Na guia **Inclusões** do assistente **Criar política de controle de aplicativo**, selecione se deseja **Autorizar software de confiança do Intelligent Security Graph**.
 6. Clique em **Adicionar** se quiser adicionar confiança para arquivos ou pastas específicos em computadores. Na caixa de diálogo **Adicionar arquivo ou pasta confiável**, você pode especificar um arquivo local ou um caminho de pasta a confiar. Você também pode especificar um caminho de arquivo ou pasta em um dispositivo remoto no qual você tem permissão para se conectar. Ao adicionar uma relação de confiança para arquivos ou pastas específicas em uma política do Controle de Aplicativos do Windows Defender, você pode:
     - Solucione problemas de comportamentos do instalador gerenciado
     - Confie em aplicativos de linha de negócios que não podem ser implantados com o Configuration Manager
     - Confie em aplicativos que estão incluídos em uma imagem de implantação de sistema operacional. 
-8.  Clique em **Avançar** para concluir o assistente.
+8. Clique em **Avançar** para concluir o assistente.
 
 >[!IMPORTANT]
 >Só há suporte para a inclusão de arquivos confiáveis ou pastas em computadores cliente executando a versão 1706 ou mais recente do cliente do Configuration Manager. Se alguma regra de inclusão for incluída em uma política do Controle de Aplicativos do Windows Defender e a política for implantada em um computador cliente que esteja executando uma versão anterior no cliente do Configuration Manager, a política não será aplicada. A atualização desses clientes mais antigos resolverá o problema. As políticas que não incluem todas as regras de inclusão ainda podem ser aplicadas em versões anteriores do cliente do Configuration Manager.
 
 ## <a name="how-to-deploy-a-windows-defender-application-control-policy"></a>Como implantar uma política do Controle de Aplicativos do Windows Defender
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade**.
-2.  No workspace **Ativos e Conformidade**, expanda **Endpoint Protection** e clique em **Controle de Aplicativos do Windows Defender**.
-3.  Na lista de políticas, selecione a que você deseja implantar e na guia **Início**, no grupo **Implantação**, clique em **Implantar Política de Controle de Aplicativos**.
-4.  Na caixa de diálogo **Implantar política do Controle de Aplicativos**, selecione a coleção na qual deseja implantar a política. Em seguida, configure um agendamento para quando os clientes avaliarem a política. Por fim, selecione se o cliente pode avaliar a política fora de qualquer janela de manutenção configurada.
-5.  Quando tiver terminado, clique em **OK** para implantar a política. 
+1. No console do Configuration Manager, clique em **Ativos e Conformidade**.
+2. No workspace **Ativos e Conformidade**, expanda **Endpoint Protection** e clique em **Controle de Aplicativos do Windows Defender**.
+3. Na lista de políticas, selecione a que você deseja implantar e na guia **Início**, no grupo **Implantação**, clique em **Implantar Política de Controle de Aplicativos**.
+4. Na caixa de diálogo **Implantar política do Controle de Aplicativos**, selecione a coleção na qual deseja implantar a política. Em seguida, configure um agendamento para quando os clientes avaliarem a política. Por fim, selecione se o cliente pode avaliar a política fora de qualquer janela de manutenção configurada.
+5. Quando tiver terminado, clique em **OK** para implantar a política. 
 
 <!--Reworked article to put this inline while working on VSO 1355092
 ### Restarting the device after deploying the policy
@@ -126,8 +126,8 @@ Para monitorar o processamento de uma política do Controle de Aplicativos do Wi
 
 Para verificar o software específico sendo bloqueado ou auditado, confira os seguintes logs de eventos do cliente local:
 
-1.  Para o bloqueio e a auditoria dos arquivos executáveis, use **Logs de Aplicativos e Serviços** > **Microsoft** > **Windows** > **Integridade do Código** > **Operacional**.
-2.  Para o bloqueio e a auditoria do Windows Installer e arquivos de script, use **Logs de Aplicativos e Serviços** > **Microsoft** > **Windows** > **AppLocker** > **MSI e Script**.
+1. Para o bloqueio e a auditoria dos arquivos executáveis, use **Logs de Aplicativos e Serviços** > **Microsoft** > **Windows** > **Integridade do Código** > **Operacional**.
+2. Para o bloqueio e a auditoria do Windows Installer e arquivos de script, use **Logs de Aplicativos e Serviços** > **Microsoft** > **Windows** > **AppLocker** > **MSI e Script**.
 
 <!--Reworked article to put this inline while working on VSO 1355092
 ## Automatically let software run if it is trusted by Intelligent Security Graph

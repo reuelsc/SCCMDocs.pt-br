@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e25d164680530b88670b2589d81231f8e649d1d1
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: f996aa1457fc8b49f914d0f0932836b5fcbd90b9
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122957"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676218"
 ---
 # <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Instalar e atualizar com uma mídia de linha de base da versão 1606 para o System Center Configuration Manager
 
@@ -29,7 +29,7 @@ A mídia de linha de base está disponível em DVD como parte da versão do Micr
 
 Quando você usa a mídia de linha de base da versão 1606, o site que você instala ou para o qual atualiza é:
 - Um *site do Branch Atual* que é equivalente a um site que foi instalado pela primeira vez usando a mídia de linha de base da 1511 e então atualizado para a versão 1606 e com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654.
--   Um *site do LTSB* que é equivalente ao site do Branch Atual que executa a versão 1606 com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654. A mídia de linha de base já inclui o pacote cumulativo de atualizações do hotfix.  Mas o LTSB não dá suporte a todos os recursos ou funcionalidades disponíveis com o Branch Atual, conforme detalhado em [Introdução ao Branch de Manutenção em Longo Prazo do System Center Configuration Manager](introduction-to-the-ltsb.md).
+- Um *site do LTSB* que é equivalente ao site do Branch Atual que executa a versão 1606 com o pacote cumulativo de atualizações do hotfix da 1606 – KB3186654. A mídia de linha de base já inclui o pacote cumulativo de atualizações do hotfix.  Mas o LTSB não dá suporte a todos os recursos ou funcionalidades disponíveis com o Branch Atual, conforme detalhado em [Introdução ao Branch de Manutenção em Longo Prazo do System Center Configuration Manager](introduction-to-the-ltsb.md).
 
 Se você não estiver familiarizado com os diferentes branches do System Center Configuration Manager, confira [Qual branch do Configuration Manager devo usar](which-branch-should-i-use.md).
 
@@ -83,7 +83,7 @@ Ao usar um script autônomo para instalar uma ramificação licenciada, é neces
 Por exemplo, para instalar uma edição do Branch Atual, você usaria:
 
   **Nome da chave: SABranchOptions**
-   -    **SAActive = 1**
+   - **SAActive = 1**
    - **CurrentBranch = 1**
 
 
@@ -100,7 +100,7 @@ Ao usar a mídia de linha de base da 1606 para instalar um novo site de qualquer
 
 - Durante a Instalação, você deve escolher o branch do Configuration Manager que deseja instalar e pode especificar os detalhes do contrato do Software Assurance.
 - Todos os sites na mesma hierarquia devem executar o mesmo branch. Não há suporte para ter uma hierarquia com uma combinação do LTSB e do Branch Atual em sites diferentes.
--   Nova instalação com scripts. Para obter mais informações, consulte "Novas opções de instalação com scripts" anteriormente neste artigo.
+- Nova instalação com scripts. Para obter mais informações, consulte "Novas opções de instalação com scripts" anteriormente neste artigo.
 
 ## <a name="expand-a-stand-alone-primary-site"></a>Expandir um site primário autônomo
 Você pode expandir um site primário autônomo que executa o LTSB.  O processo não é diferente daquele usado para um site de Branch Atual com uma limitação:
@@ -114,7 +114,7 @@ Ao atualizar do System Center 2012 Configuration Manager, use o planejamento, pr
 
 **Atualização para o Branch Atual:**
 - Durante a Instalação, você deve escolher o Branch Atual e pode especificar detalhes para o contrato do Software Assurance.
--   Nova instalação com scripts. Para obter mais informações, consulte "Novas opções de instalação com scripts" anteriormente neste artigo.
+- Nova instalação com scripts. Para obter mais informações, consulte "Novas opções de instalação com scripts" anteriormente neste artigo.
 
 **Atualização para o LTSB:**  
 - Etapas adicionais para seguir na lista de verificação de pré-atualização.

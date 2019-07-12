@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 243e38273488f72e3e5e693270b10d6865c3a422
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: bf20d24b8a1322f1d74c42c66f49fd8026ac075e
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67252248"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676618"
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Fazer backup de um site do Configuration Manager
 
@@ -93,7 +93,7 @@ As informações de status de backup do site são gravadas no arquivo **Smsbkup.
     -   **Unidades locais no servidor do site e SQL Server**: especifica que a tarefa armazene os arquivos de backup para o site no caminho especificado na unidade local do servidor do site. A tarefa armazena os arquivos de backup do banco de dados do site no caminho especificado na unidade local do servidor de banco de dados do site. Crie as pastas locais antes da execução da tarefa de backup. A conta de computador do servidor do site deve ter permissões de **Gravação** NTFS para a pasta criada no servidor do site. A conta de computador do SQL Server deve ter permissões de **Gravação** NTFS para a pasta criada no servidor de banco de dados do site. Essa opção está disponível somente quando o banco de dados do site não está instalado no servidor do site.  
 
     > [!NOTE]  
-    >   A opção de navegar até o destino do backup está disponível somente quando você especifica o caminho de rede do destino do backup.  
+    > A opção de navegar até o destino do backup está disponível somente quando você especifica o caminho de rede do destino do backup.  
     >  
     > O nome da pasta ou do compartilhamento usado como destino do backup não é compatível com o uso de caracteres Unicode.  
 

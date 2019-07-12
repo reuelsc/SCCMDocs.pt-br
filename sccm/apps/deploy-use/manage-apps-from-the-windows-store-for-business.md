@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5178a84443779384e3223998ab8336b46c2d4d0
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 41fb296f45b54723c59c7d6fe803916af95752ad
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176895"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675848"
 ---
 # <a name="manage-apps-from-the-microsoft-store-for-business-with-configuration-manager"></a>Gerenciar aplicativos da Microsoft Store para Empresas com o Configuration Manager
 
@@ -164,7 +164,7 @@ No workspace **Biblioteca de Software**, expanda **Gerenciamento de Aplicativos*
 
 Depois que os aplicativos online são implantados, todas as atualizações dos aplicativos vêm diretamente da Microsoft Store. Além disso, o Configuration Manager não verifica a conformidade da versão de aplicativos online, ele apenas verifica se o Windows relata o aplicativo como instalado.  
 
-Ao implantar aplicativos offline em dispositivos Windows 10 com o cliente do Configuration Manager, não permita que os usuários atualizem aplicativos externos a implantações do Configuration Manager. O controle de atualizações em aplicativos offline é especialmente importante em ambientes de vários usuários, como salas de aula. Uma opção é desabilitar a Microsoft Store usando uma [política de grupo](https://docs.microsoft.com/windows/configuration/stop-employees-from-using-microsoft-store#a-href-idblock-store-group-policyablock-microsoft-store-using-group-policy). 
+Ao implantar aplicativos offline em dispositivos Windows 10 com o cliente do Configuration Manager, não permita que os usuários atualizem aplicativos externos a implantações do Configuration Manager. O controle de atualizações em aplicativos offline é especialmente importante em ambientes de vários usuários, como salas de aula. Uma opção é desabilitar a Microsoft Store usando uma [política de grupo](/windows/configuration/stop-employees-from-using-microsoft-store#block-microsoft-store-using-group-policy). 
 
 Depois que o administrador da Microsoft Store para Empresas adquirir um aplicativo offline, não publique o aplicativo aos usuários por meio da loja. Essa configuração garante que os usuários não possam instalar nem atualizar online. Os usuários somente recebem atualizações de aplicativos offline por meio do Configuration Manager. 
 

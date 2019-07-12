@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b57720d800e224d68f92f339e0c3b4964010e05
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 424710431f9c17642b3a8c6190f8919665f3ac6c
+ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285942"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67623283"
 ---
 # <a name="capabilities-in-technical-preview-1806-for-system-center-configuration-manager"></a>Funcionalidades na visualização técnica 1806 do System Center Configuration Manager
 
@@ -81,7 +81,7 @@ O SCUP continua compatível com outros cenários e catálogos. A lista de catál
 
     > [!Tip]  
     > O ponto de atualização de software requer HTTPS porque esse é um requisito para as APIs do WSUS usadas para lidar com certificados de autenticação. Os clientes não precisam ser habilitados para HTTPS também. Para obter mais informações sobre como habilitar o HTTPS no WSUS, confira os artigos a seguir para obter assistência:  
-    > - [Proteger o WSUS com o protocolo SSL](/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#bkmk_2.5.ConfigSSL) 
+    > - [Proteger o WSUS com o protocolo SSL](/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#25-secure-wsus-with-the-secure-sockets-layer-protocol) 
     > - [Postagem no blog de suporte do WSUS](https://blogs.technet.microsoft.com/sus/2011/05/09/how-to-create-an-internet-facing-wsus-server-that-uses-different-internal-and-external-names/)
 
 - Espaço em disco suficiente no ponto de atualização de software, a pasta WSUSContent, para armazenar o conteúdo binário de origem para atualizações de software de terceiros. A quantidade de armazenamento necessário varia de acordo com o fornecedor, os tipos de atualizações e as atualizações específicas que você publica para implantação. Se você precisar mover a pasta WSUSContent para outra unidade com mais espaço livre, confira a postagem no blog da equipe de suporte do WSUS [How to change the location where WSUS stores updates locally](https://blogs.technet.microsoft.com/sus/2008/05/19/wsus-how-to-change-the-location-where-wsus-stores-updates-locally/) (Como alterar o local onde o WSUS armazena as atualizações localmente).  

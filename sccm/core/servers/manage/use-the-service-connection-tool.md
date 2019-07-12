@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 002ed233a679cdee928160490c8e1ee4425c7382
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 83838e2642d09c001b638900b6cc4fa23975745e
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496252"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676361"
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usar a ferramenta de conexão de serviço do System Center Configuration Manager
 
@@ -101,7 +101,7 @@ Você pode usar os seguintes parâmetros opcionais para especificar um servidor 
 
 #### <a name="specify-the-type-of-updates-to-download"></a>Especifique o tipo de atualizações a serem baixadas
 A partir da versão 1706, o comportamento padrão dos downloads de ferramentas foi alterado e a ferramenta dá suporte a opções para controlar quais arquivos são baixados.
--   Por padrão, a ferramenta baixa somente a atualização mais recente disponível que se aplica à versão do seu site. Ela não baixa os hotfixes.
+- Por padrão, a ferramenta baixa somente a atualização mais recente disponível que se aplica à versão do seu site. Ela não baixa os hotfixes.
 
 Para modificar esse comportamento, use um dos parâmetros a seguir para alterar quais arquivos são baixados. 
 
@@ -110,9 +110,9 @@ Para modificar esse comportamento, use um dos parâmetros a seguir para alterar 
 >
 > Você pode verificar a versão procurando o arquivo *SiteVersion*. txt no arquivo .cab.
 
--   **-downloadall** Essa opção baixa tudo, incluindo atualizações e hotfixes, independentemente da versão do seu site.
--   **-downloadhotfix** Essa opção baixa todos os hotfixes, independentemente da versão do seu site.
--   **-downloadsiteversion** Essa opção baixa atualizações e hotfixes com uma versão maior do que a do seu site.
+- **-downloadall** Essa opção baixa tudo, incluindo atualizações e hotfixes, independentemente da versão do seu site.
+- **-downloadhotfix** Essa opção baixa todos os hotfixes, independentemente da versão do seu site.
+- **-downloadsiteversion** Essa opção baixa atualizações e hotfixes com uma versão maior do que a do seu site.
 
 Linha de comando de exemplo que usa *-downloadsiteversion*:
 - **serviceconnectiontool.exe -connect  *-downloadsiteversion* -usagedatasrc D:\USB -updatepackdest D:\USB\UpdatePacks**

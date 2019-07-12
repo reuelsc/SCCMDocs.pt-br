@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 253710602ca4c46e3ed0d929fb62edea6c3efeb3
-ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
+ms.openlocfilehash: 8caed88289af0947bb9924e50f8369412e3c55f2
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354826"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676685"
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Referência técnica de controles de criptografia
 
@@ -265,11 +265,11 @@ O System Center Configuration Manager usa a assinatura e a criptografia para aju
 ## <a name="about-ssl-vulnerabilities"></a>Sobre as vulnerabilidades do SSL
 Para melhorar a segurança dos servidores e clientes do Configuration Manager, faça o seguinte:
 
--   Habilitar o TLS 1.2
+- Habilitar o TLS 1.2
 
-    Para habilitar o TLS 1.2 no Configuration Manager, confira o artigo [Como habilitar o TLS 1.2 no Configuration Manager](enable-tls-1-2.md).
--   Desabilitar o SSL 3.0, TLS 1.0 e TLS 1.1 
--   Reorganize os pacotes de codificação relacionados a TLS 
+  Para habilitar o TLS 1.2 no Configuration Manager, confira o artigo [Como habilitar o TLS 1.2 no Configuration Manager](enable-tls-1-2.md).
+- Desabilitar o SSL 3.0, TLS 1.0 e TLS 1.1 
+- Reorganize os pacotes de codificação relacionados a TLS 
 
 Para obter mais informações, consulte [Como restringir o uso de certos algoritmos de criptografia e protocolos no Schannel.dll](https://support.microsoft.com/en-us/kb/245030/) e [Priorizando pacotes de criptografia do Schannel](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx). Esses procedimentos não afetam a funcionalidade do Configuration Manager.
 

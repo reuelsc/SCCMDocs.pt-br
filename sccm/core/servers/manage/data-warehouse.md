@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02990fa09e18a9e46914ff622ed20f4cbb958f33
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 7672af696844cfa8afbbe54b1260d8f4c78437a8
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501132"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676514"
 ---
 #  <a name="the-data-warehouse-service-point-for-configuration-manager"></a>O ponto de serviço do data warehouse para o Configuration Manager
 
@@ -154,7 +154,7 @@ A função do sistema de sites do data warehouse inclui os seguintes relatórios
 
 - **Visão Geral de Integridade da Infraestrutura - Histórico**: Exibe uma visão geral da integridade da infraestrutura do seu Configuration Manager.  
 
-- **Lista de Malwares Detectados - Histórico**:    Exibe os malwares que foram detectados na sua organização.  
+- **Lista de Malwares Detectados - Histórico**: Exibe os malwares que foram detectados na sua organização.  
 
 - **Resumo de Distribuição de Software - Histórico**: Um resumo da distribuição de software para um anúncio e computador específicos.  
 

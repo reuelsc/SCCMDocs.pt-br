@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf0b57ad1753d797b163b0016517cdad09459013
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: 5e4585d21b06bbfaa659fe09693af8cff109a1b6
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67251630"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676824"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Conceitos fundamentais para o gerenciamento de conteúdo no Configuration Manager
 
@@ -152,13 +152,13 @@ Para obter mais informações, consulte [Cache de pares do Windows PE](/sccm/osd
 
 Quando um cliente precisa de conteúdo, ele faz uma solicitação de local de conteúdo ao ponto de gerenciamento. O ponto de gerenciamento retorna uma lista de locais de fonte que são válidos para o conteúdo solicitado. Essa lista varia de acordo com o cenário específico, as tecnologias em uso, o design de site, os grupos de limites e as configurações de implantação. A lista a seguir contém todos os locais de fonte de conteúdo possíveis que um cliente pode usar, na ordem em que ele os prioriza:  
 
-1.  O ponto de distribuição no mesmo computador que o cliente
-2.  Uma fonte par na mesma sub-rede da rede
-3.  Um ponto de distribuição na mesma sub-rede da rede
-4.  Uma fonte par no mesmo grupo de limites
-5.  Um ponto de distribuição no grupo de limites atual
-6.  Um ponto de distribuição em um grupo de limites vizinho configurado para fallback
-9.  Um ponto de distribuição no grupo de limites do site padrão 
+1. O ponto de distribuição no mesmo computador que o cliente
+2. Uma fonte par na mesma sub-rede da rede
+3. Um ponto de distribuição na mesma sub-rede da rede
+4. Uma fonte par no mesmo grupo de limites
+5. Um ponto de distribuição no grupo de limites atual
+6. Um ponto de distribuição em um grupo de limites vizinho configurado para fallback
+9. Um ponto de distribuição no grupo de limites do site padrão 
 10. O serviço de nuvem do Windows Update
 11. Um ponto de distribuição para Internet
 12. Um ponto de distribuição na nuvem no Azure

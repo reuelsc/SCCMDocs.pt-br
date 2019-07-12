@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25824b616bb833a715727033504776767b5aa958
-ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
+ms.openlocfilehash: 130cc8511b90da3e95c69f9239e57e2c7ac61d8c
+ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354805"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67623355"
 ---
 # <a name="enhanced-http"></a>HTTP aprimorado
 
@@ -51,7 +51,7 @@ Os cenários a seguir se beneficiam dessas melhorias:
 ### <a name="bkmk_scenario1"></a> Cenário 1: cliente para o ponto de gerenciamento
 
 <!--1356889-->
-[Dispositivos que ingressaram no Azure AD](https://docs.microsoft.com/azure/active-directory/device-management-introduction#azure-ad-joined-devices) podem se comunicar com um ponto de gerenciamento configurado para HTTP. O servidor do site gera um certificado para o ponto de gerenciamento, permitindo que ele se comunique por meio de um canal seguro.
+[Dispositivos que ingressaram no Azure AD](/azure/active-directory/devices/concept-azure-ad-join) podem se comunicar com um ponto de gerenciamento configurado para HTTP. O servidor do site gera um certificado para o ponto de gerenciamento, permitindo que ele se comunique por meio de um canal seguro.
 
 > [!Note]  
 > Esse comportamento mudou com relação à atual branch do Configuration Manager versão 1802, que exige um ponto de gerenciamento habilitado para HTTPS para clientes que ingressaram no Azure AD se comunicarem por meio de um gateway de gerenciamento de nuvem. Para obter mais informações, consulte [Habilitar ponto de gerenciamento para HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
@@ -66,7 +66,7 @@ Esse comportamento inclui cenários de implantação de sistema operacional com 
 ### <a name="bkmk_scenario3"></a> Cenário 3: Identidade do dispositivo do Azure AD
 
 <!--1358460-->
-Um [dispositivo do Azure AD híbrido](https://docs.microsoft.com/azure/active-directory/device-management-introduction#hybrid-azure-ad-joined-devices) ou que ingressou no Azure AD sem um usuário do Azure AD conectado pode se comunicar com segurança com o site atribuído. A identidade do dispositivo baseado em nuvem agora é suficiente para autenticar com o CMG e o ponto de gerenciamento para cenários centrados em dispositivo. (Um token de usuário ainda é necessário para cenários centrados no usuário.)  
+Um [dispositivo do Azure AD híbrido](/azure/active-directory/devices/concept-azure-ad-join-hybrid) ou que ingressou no Azure AD sem um usuário do Azure AD conectado pode se comunicar com segurança com o site atribuído. A identidade do dispositivo baseado em nuvem agora é suficiente para autenticar com o CMG e o ponto de gerenciamento para cenários centrados em dispositivo. (Um token de usuário ainda é necessário para cenários centrados no usuário.)  
 
 
 ## <a name="features"></a>Recursos

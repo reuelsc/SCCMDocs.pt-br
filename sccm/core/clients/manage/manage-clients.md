@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa92ed294196d44aaafcf4e873c706e135928c90
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 8bfcb73f359bd8d1b4438ac28b2395b01217e35d
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176650"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677737"
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Como gerenciar clientes no System Center Configuration Manager
 
@@ -202,8 +202,8 @@ Para identificar os dispositivos que estão aguardando uma reinicialização, ac
  - **Adicionar ou remover recurso**: esse valor é obtido da manutenção baseada em componente do Windows que relata que a adição ou remoção de um recurso do Windows exige uma reinicialização (HKLM\Software\Microsoft\Windows\CurrentVersion\Component Based Servicing\Reboot Pending)
 
 **Para criar a notificação do cliente para reiniciar um dispositivo:**
-1.  Localize o dispositivo que deseja reiniciar em uma coleção no nó **Coleções de Dispositivos** do console.
-2.  Clique com botão direito do mouse no dispositivo, selecione **Notificação do Cliente** e, em seguida, selecione **Reiniciar**. Uma janela de informações será aberta sobre a reinicialização. Clique em **OK** para confirmar a solicitação de reinicialização.
+1. Localize o dispositivo que deseja reiniciar em uma coleção no nó **Coleções de Dispositivos** do console.
+2. Clique com botão direito do mouse no dispositivo, selecione **Notificação do Cliente** e, em seguida, selecione **Reiniciar**. Uma janela de informações será aberta sobre a reinicialização. Clique em **OK** para confirmar a solicitação de reinicialização.
 
 Quando a notificação é recebida por um cliente, uma janela de notificação do **Centro de Software** será exibida para informar ao usuário sobre a reinicialização. Por padrão, a reinicialização ocorre após 90 minutos. Modifique o tempo de reinicialização definindo as [configurações do cliente](/sccm/core/clients/deploy/configure-client-settings). As configurações do comportamento de reinicialização são encontradas na guia [Reinicialização do computador](/sccm/core/clients/deploy/about-client-settings#computer-restart) das configurações padrão.
 
