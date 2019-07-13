@@ -2,7 +2,7 @@
 title: Perguntas Frequentes para análise da área de trabalho
 titleSuffix: Configuration Manager
 description: Perguntas frequentes para análise de área de trabalho.
-ms.date: 06/10/2019
+ms.date: 07/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9daf94a21b66fa0137e0a6bf041f10c87c64c34e
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 663490349bcb61f243980c5e1a3fe1f5651d8573
+ms.sourcegitcommit: 448cc0d9094a3c9e23f011c4673cd1e8b956280a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159089"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860846"
 ---
 # <a name="desktop-analytics-faq"></a>Perguntas frequentes sobre análise de área de trabalho
 
@@ -45,7 +45,6 @@ Há dois tipos de dados no portal de análise de área de trabalho: Os dados do 
 
 Todos os dados são atualizados automaticamente uma vez diariamente, mesmo se você não solicitar uma atualização de dados sob demanda. Não há nenhuma maneira de disparar uma atualização sob demanda de dados de diagnóstico. Para obter mais informações sobre os diferentes tipos de dados na área de trabalho de análise, consulte [latência de dados](/sccm/desktop-analytics/troubleshooting#data-latency).
 
-
 ## <a name="privacy"></a>Privacidade
 
 ### <a name="can-desktop-analytics-be-used-without-a-direct-client-connection-to-the-microsoft-data-management-service"></a>Análise de área de trabalho podem ser usado sem uma conexão direta do cliente ao serviço de gerenciamento de dados da Microsoft?
@@ -61,3 +60,9 @@ Para o serviço de gerenciamento de dados da Microsoft e análise de armazenamen
 ### <a name="where-is-my-organizations-data-stored"></a>Onde estão armazenados os dados da minha organização?
 
 Dados de diagnóstico do Windows em seus computadores são criptografados, enviados para e processados em centros de dados segura gerenciada pela Microsoft localizados nos Estados Unidos. Nossa análise dos dados relacionados à análise de área de trabalho, em seguida, é fornecida a você por meio da solução de análise de área de trabalho no portal do Azure. Análise da área de trabalho é compatível com todas as regiões do Azure. Selecionar uma região do Azure internacional não impede que dados de diagnóstico que estão sendo enviados e processados em centros de dados seguros da Microsoft nos Estados Unidos.
+
+## <a name="other"></a>Outros
+
+### <a name="can-i-use-desktop-analytics-for-my-office-365-proplus-upgrades"></a>Pode usar análise da área de trabalho para minhas atualizações do Office 365 ProPlus?
+
+Não, a área de trabalho de análise se concentra em Windows. A Microsoft desenvolveu a área de trabalho de análise em estreita colaboração com vários clientes. Por meio do programa de visualização, os comentários dos clientes era sobre como a área de trabalho de análise melhorado sua capacidade de gerenciar com segurança as implantações do Windows. Eles também nos disseram que desejavam [prontidão do Office 365 ProPlus ](/sccm/sum/deploy-use/office-365-dashboard#bkmk_o365_readiness) mais estreitamente integrado com ferramentas de gerenciamento do office no Configuration Manager e o Intune. A Microsoft continuará a fazer investimentos nessas áreas, enquanto se concentra em cenários do Windows na área de trabalho de análise.

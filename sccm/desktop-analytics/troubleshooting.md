@@ -2,7 +2,7 @@
 title: Solucionar problemas de análise da área de trabalho
 titleSuffix: Configuration Manager
 description: Detalhes técnicos para ajudá-lo a solucionar problemas com a análise de área de trabalho.
-ms.date: 06/28/2019
+ms.date: 07/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 246ee2c314df3d942d40d16ac9953580fed32803
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: 9a1c170394e3db46572c424dcb04715713d4b24f
+ms.sourcegitcommit: 448cc0d9094a3c9e23f011c4673cd1e8b956280a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551243"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860850"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Solucionar problemas de análise da área de trabalho
 
@@ -74,7 +74,7 @@ Se você precisar provisionar esses aplicativos após concluir a instalação, v
 
 ### <a name="create-and-import-app-for-configuration-manager"></a>Criar e importar um aplicativo para o Configuration Manager
 
-Depois de concluir a [inicial integração](/sccm/desktop-analytics/set-up#initial-onboarding) no portal de análise de área de trabalho, use as seguintes etapas para criar e importar o aplicativo para o Configuration Manager se você não pode criar esse aplicativo do Azure AD a configurar serviços do Azure manualmente Assistente.
+Se você não é possível criar o aplicativo do Azure AD para o Configuration Manager no Assistente para configurar serviços do Azure, ou se você quiser reutilizar um aplicativo existente, você precisa criar e importá-lo manualmente. Depois de concluir a [inicial integração](/sccm/desktop-analytics/set-up#initial-onboarding) no portal de análise de área de trabalho, use as seguintes etapas:
 
 #### <a name="create-app-in-azure-ad"></a>Criar um aplicativo no Azure AD
 

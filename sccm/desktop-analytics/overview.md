@@ -2,7 +2,7 @@
 title: Análise de Área de Trabalho
 titleSuffix: Configuration Manager
 description: Uma visão geral do serviço de análise de área de trabalho integrado com o Configuration Manager.
-ms.date: 06/07/2019
+ms.date: 07/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0daf2943b0859227d08069be9c9da69165d5d1a
-ms.sourcegitcommit: de3c86077bbf91b793e94e1f60814df18da11bab
+ms.openlocfilehash: 45a8e71a3a8777686547ef4e3e05ef868b459792
+ms.sourcegitcommit: 448cc0d9094a3c9e23f011c4673cd1e8b956280a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67726232"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860868"
 ---
 # <a name="what-is-desktop-analytics"></a>O que é análise de área de trabalho?
 
@@ -70,6 +70,9 @@ Para usar a análise de área de trabalho, verifique se o que seu ambiente atend
 ### <a name="technical"></a>Técnico
 
 - Uma assinatura do Azure Active Directory, com [Administrador Global](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator) permissões  
+
+    > [!Important]  
+    > Análise da área de trabalho atualmente é oferecido como um serviço Office 365 e requer uma assinatura do Office 365 em seu locatário do Azure AD. Isso pode não ser um requisito no futuro.
 
     - **Proprietário do espaço de trabalho** ou **Colaborador** permissões **definir seu espaço de trabalho**e as seguintes funções:  
 
