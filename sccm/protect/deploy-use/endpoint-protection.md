@@ -2,21 +2,21 @@
 title: Endpoint Protection
 titleSuffix: Configuration Manager
 description: Saiba como gerenciar as políticas antimalware e a segurança do Firewall do Windows para clientes.
-ms.date: 10/26/2018
+ms.date: 05/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
 ms.assetid: 76c90f64-d729-456b-8304-01852cd66fb6
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1048b24dba0658610471d37f12f75fd1d06b8d03
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: ce48f468154357a0032d737c6d77a6b6b29d9565
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123864"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678828"
 ---
 # <a name="endpoint-protection"></a>Endpoint Protection
 
@@ -29,7 +29,7 @@ O Endpoint Protection gerencia políticas antimalware e a segurança do Firewall
 
  Ao usar o Endpoint Protection com o Configuration Manager, você tem os seguintes benefícios:  
 
--   Configure políticas antimalware, configurações do Firewall do Windows e gerencie a Proteção Avançada contra Ameaças do Windows Defender para alguns grupos de computadores  
+-   Configure políticas antimalware, configurações do Firewall do Windows e gerencie a Proteção Avançada contra Ameaças do Microsoft Defender para alguns grupos de computadores  
 -   Use as atualizações de software do Configuration Manager para baixar os arquivos de definição antimalware mais recentes para manter os computadores cliente atualizados  
 -   Envie notificações por email, use o monitoramento no console e exiba relatórios. Essas ações informam os usuários administrativos quando um malware é detectado nos computadores cliente.  
 
@@ -77,9 +77,9 @@ A partir dos computadores Windows 10 e Windows Server 2016, o Windows Defender j
  Para obter mais informações, consulte [Como criar e implantar políticas do Firewall do Windows para o Endpoint Protection](create-windows-firewall-policies.md).  
 
 
-## <a name="windows-defender-advanced-threat-protection"></a>Proteção Avançada contra Ameaças do Windows Defender
+## <a name="microsoft-defender-advanced-threat-protection"></a>Proteção Avançada contra Ameaças do Microsoft Defender
 
-O Endpoint Protection gerencia e monitora a ATP (Proteção Avançada contra Ameaças) do Windows Defender. O serviço Windows Defender ATP ajuda as empresas a detectar, investigar e responder a ataques avançados contra a rede corporativa. Para obter mais informações, consulte [Proteção Avançada contra Ameaças do Windows Defender](windows-defender-advanced-threat-protection.md).
+Endpoint Protection gerencia e monitora o Microsoft Defender Advanced Threat ATP (proteção), anteriormente conhecido como o Windows Defender ATP. O serviço Microsoft Defender ATP ajuda as empresas a detectar, investigar e responder a ataques avançados contra a rede corporativa. Para saber mais, confira [Proteção Avançada contra Ameaças do Microsoft Defender](windows-defender-advanced-threat-protection.md).
 
 ## <a name="endpoint-protection-workflow"></a>Fluxo de trabalho do Endpoint Protection  
  Use o diagrama a seguir para ajudá-lo a entender o fluxo de trabalho para implementar o Endpoint Protection em sua hierarquia do Configuration Manager.  

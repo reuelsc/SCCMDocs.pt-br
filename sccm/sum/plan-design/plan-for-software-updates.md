@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7404e97cd1ef9c68f80904b5ba26373605c7c751
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 024902baa4c8bb3b893b60feacad7993af8200e5
+ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285460"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67623439"
 ---
 # <a name="plan-for-software-updates-in-configuration-manager"></a>Planejar atualizações de software no Configuration Manager
 
@@ -151,7 +151,7 @@ Para pesquisar o significado de um código de erro, converta o código de erro d
 Mude clientes do Configuration Manager para um novo ponto de atualização de software quando houver problemas com o ponto de atualização de software ativo. Essa alteração somente ocorre quando um cliente recebe vários pontos de atualização de software de um ponto de gerenciamento.
 
 > [!IMPORTANT]    
-> Quando você alternar os dispositivos para usar um novo servidor, os dispositivos usam fallback para localizar esse novo servidor. Clientes mudarem para o novo ponto de atualização de software durante seu próximo ciclo de verificação de atualizações de software.<!-- SCCMDocs#1537 -->
+> Quando você alternar os dispositivos para usar um novo servidor, os dispositivos usam fallback para localizar esse novo servidor. Os clientes mudam para o novo ponto de atualização de software durante seu próximo ciclo de verificação de atualizações de software.<!-- SCCMDocs#1537 -->
 >
 > Antes de iniciar essa alteração, examine suas configurações de grupo de limites para verificar se os pontos de atualização de software estão nos grupos de limites corretos. Para obter mais informações, confira [Pontos de atualização de software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points).  
 >
@@ -299,7 +299,7 @@ Quando um servidor WSUS é configurado como um ponto de atualização de softwar
 Ao adicionar a função de ponto de atualização de software em um servidor de site primário, você não pode usar um servidor WSUS configurado como uma réplica. Quando o servidor WSUS é configurado como uma réplica, o Configuration Manager não consegue configurar o servidor WSUS e a sincronização do WSUS falha. O primeiro ponto de atualização de software instalado em um site primário é o ponto de atualização de software padrão. Pontos de atualização de software adicionais no site são configurados como réplicas do ponto de atualização de software padrão.  
 
 ####  <a name="BKMK_WSUSandSSL"></a> Decidir se o WSUS deve ser configurado para usar SSL  
-Use o protocolo SSL para ajudar a proteger o ponto de atualização de software. O WSUS usa o SSL para autenticar computadores cliente e servidores de WSUS downstream para o servidor do WSUS. Além disso, o WSUS usa SSL para criptografar metadados de atualização de software. Ao optar por proteger o WSUS com SSL, prepare o servidor WSUS antes de instalar o ponto de atualização de software. Para obter mais informações, confira o artigo [Configure SSL on the WSUS server](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#bkmk_2.5.ConfigSSL) (Configurar o SSL no servidor WSUS) na documentação do WSUS. 
+Use o protocolo SSL para ajudar a proteger o ponto de atualização de software. O WSUS usa o SSL para autenticar computadores cliente e servidores de WSUS downstream para o servidor do WSUS. Além disso, o WSUS usa SSL para criptografar metadados de atualização de software. Ao optar por proteger o WSUS com SSL, prepare o servidor WSUS antes de instalar o ponto de atualização de software. Para obter mais informações, confira o artigo [Configure SSL on the WSUS server](/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#25-secure-wsus-with-the-secure-sockets-layer-protocol) (Configurar o SSL no servidor WSUS) na documentação do WSUS. 
 
 Ao instalar e configurar o ponto de atualização de software, selecione a opção para **Habilitar comunicações SSL para o servidor WSUS**. Caso contrário, o Configuration Manager configura o WSUS para não usar SSL. Ao habilitar o SSL em um ponto de atualização de software, configure também os pontos de atualização de software nos sites filho para usar SSL.  
 
@@ -318,9 +318,9 @@ A conexão com o Microsoft Update é sempre configurada para usar a porta 80 par
 
 #### <a name="restrict-access-to-specific-domains"></a>Restringir o acesso a domínios específicos  
 
-Se sua organização restringe a comunicação de rede com a internet usando um dispositivo de firewall ou proxy, você precisa permitir que o ponto de atualização de software ativo acessar os pontos de extremidade de internet. Em seguida, WSUS e as atualizações automáticas podem se comunicar com o serviço de nuvem do Microsoft Update.
+Se sua organização restringe a comunicação de rede com a Internet usando um dispositivo de firewall ou proxy, você precisará permitir que o ponto de atualização de software ativo acesse os pontos de extremidade da Internet. Em seguida, WSUS e as atualizações automáticas podem se comunicar com o serviço de nuvem do Microsoft Update.
 
-Para obter mais informações, consulte [requisitos de acesso à Internet](/sccm/core/plan-design/network/internet-endpoints#bkmk_sum).
+Para saber mais, confira [Requisitos de acesso à Internet](/sccm/core/plan-design/network/internet-endpoints#bkmk_sum).
 
 
 ##  <a name="BKMK_SyncSettings"></a> Planejar as configurações de sincronização  

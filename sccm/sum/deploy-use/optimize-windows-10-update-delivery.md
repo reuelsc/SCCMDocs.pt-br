@@ -2,7 +2,7 @@
 title: Otimizar a entrega de atualização do Windows 10
 titleSuffix: Configuration Manager
 description: Saiba como usar o Configuration Manager para gerenciar o conteúdo de atualização e ficar atualizado com o Windows 10.
-ms.date: 06/15/2018
+ms.date: 07/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d037baba858b3aacc3724e99a66819197b1dd89
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: 4f3f5eb1b25021adee5feecd3119776180250496
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194509"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678655"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Otimizar a entrega de atualizações do Windows 10 com o Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "67194509"
 
 Para muitos clientes, um caminho bem-sucedido para ficar e manter-se atualizado com as atualizações mensais do Windows 10 começa com uma estratégia de distribuição de conteúdo válida usando o Configuration Manager. O tamanho das atualizações de qualidade mensal pode ser uma causa de preocupação para organizações de grandes porte. Há algumas tecnologias disponíveis que se destinam a ajudar a reduzir a carga de rede e a largura de banda para otimizar a distribuição de atualização. Este artigo explica essas tecnologias, as compara e fornece recomendações para ajudá-lo a tomar decisões sobre qual delas usar.  
  
-O Windows 10 fornece vários tipos de atualizações. Para saber mais, confira [Tipos de atualização no Windows Update for Business](https://docs.microsoft.com/windows/deployment/update/waas-manage-updates-wufb#update-types). Este artigo se concentra nas atualizações de *qualidade* do Windows 10 com o Configuration Manager. 
+O Windows 10 fornece vários tipos de atualizações. Para saber mais, confira [Tipos de atualização no Windows Update for Business](/windows/deployment/update/waas-manage-updates-wufb#types-of-updates-managed-by-windows-update-for-business). Este artigo se concentra nas atualizações de *qualidade* do Windows 10 com o Configuration Manager. 
 
 
 ## <a name="express-update-delivery"></a>Entrega expressa de atualização
@@ -92,7 +92,7 @@ A seleção da tecnologia certa de cache de pares para arquivos de instalação 
 | Descoberta de pares | Por meio do serviço de nuvem de Otimização de Entrega (requer acesso à Internet) | Por meio do ponto de gerenciamento (com base em grupos de limites do cliente) | Multicast |
 | Relatórios | Sim (usando o Windows Analytics) | Painel de fontes de dados do cliente do ConfigMgr | Painel de fontes de dados do cliente do ConfigMgr |
 | Controle de uso de WAN | Sim (nativo, pode ser controlado por meio de configurações de política de grupo) | Grupos de limites | Suporte apenas para sub-rede |
-| Tipos de conteúdo com suporte | - Atualizações expressas (por meio do ConfigMgr)</br> - Atualizações do Windows e de segurança</br> - Drivers</br> --Aplicativos da Windows Store</br> Aplicativos da Windows Store para Empresas | Todos os tipos de conteúdo do ConfigMgr, inclusive imagens baixadas no [Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic) | Todos os tipos de conteúdo do ConfigMgr, exceto imagens |
+| Tipos de conteúdo com suporte | **Por meio do ConfigMgr:** </br> Atualizações expressas </br> </br> **Por meio da nuvem da Microsoft:**</br> Atualizações do Windows e de segurança</br> Drivers</br> aplicativos da Windows Store</br> Aplicativos na Windows Store para Empresas | Todos os tipos de conteúdo do ConfigMgr, inclusive imagens baixadas no [Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic) | Todos os tipos de conteúdo do ConfigMgr, exceto imagens |
 | Gerenciamento por meio de ConfigMgr | Parcial (configuração do agente cliente) | Sim (configuração do agente do cliente) | Sim (configuração do agente do cliente) |
 
 
@@ -150,7 +150,7 @@ As alterações só entram em vigor para as novas atualizações sincronizadas e
 
 
 #### <a name="is-there-any-way-to-see-how-much-content-is-downloaded-from-peers-using-delivery-optimization"></a>Há alguma maneira de ver a quantidade de conteúdo baixado de pares usando a Otimização de Entrega?
-O Windows 10, versão 1703 (e posterior) inclui dois novos cmdlets do PowerShell, **Get-DeliveryOptimizationPerfSnap** e **Get-DeliveryOptimizationStatus**. Esses cmdlets oferecem mais informações sobre o uso do cache e a Otimização de Entrega. Para obter mais informações, consulte [de atualizações de otimização de entrega para o Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#the-cloud-service-doesnt-see-other-peers-on-the-network)
+O Windows 10, versão 1703 (e posterior) inclui dois novos cmdlets do PowerShell, **Get-DeliveryOptimizationPerfSnap** e **Get-DeliveryOptimizationStatus**. Esses cmdlets oferecem mais informações sobre o uso do cache e a Otimização de Entrega. Para saber mais, confira [Otimização de entrega para atualizações do Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#the-cloud-service-doesnt-see-other-peers-on-the-network)
 
 
 #### <a name="how-do-clients-communicate-with-delivery-optimization-over-the-network"></a>Como os clientes se comunicam com a Otimização de Entrega na rede?
