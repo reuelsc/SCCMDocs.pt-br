@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d096681c044b794b849d05c48fa17171344b8a64
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 6b586fb4eded2143e42887236d1c52b0a8bae275
+ms.sourcegitcommit: de3c86077bbf91b793e94e1f60814df18da11bab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129860"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726237"
 ---
 # <a name="set-up-your-system-center-configuration-manager-lab"></a>Configurar seu laboratório do System Center Configuration Manager
 
@@ -101,7 +101,7 @@ As próximas etapas necessárias para habilitar clientes do Configuration Manage
 
 1.  Execute o **Editor ADSI**e conecte-se ao domínio em que o servidor do site reside.  
 
-2.  Expanda o **Domínio&lt;nome de domínio totalmente qualificado do computador\>**, expanda o **<nome diferenciado\>**, clique com o botão direito do mouse em **CN=System**, clique em **Novo** e em **Objeto**.  
+2.  Expanda o **Domínio&lt;nome de domínio totalmente qualificado do computador\>** , expanda o **<nome diferenciado\>** , clique com o botão direito do mouse em **CN=System**, clique em **Novo** e em **Objeto**.  
 
 3.  Na caixa de diálogo **Criar Objeto** , selecione **Contêiner**e clique em **Próximo**.  
 
@@ -272,7 +272,7 @@ O IIS (Serviços de Informações da Internet) é um servidor Web flexível e es
 
         -   **Autorização de URL**  
 
-        -   **Autorização do Windows**  
+        -   **Autenticação do Windows**  
 
     -   **Desenvolvimento de aplicativos**  
 

@@ -2,7 +2,7 @@
 title: Dados de diagnóstico e uso para 1810
 titleSuffix: Configuration Manager
 description: Conheça os níveis de dados de diagnóstico e uso coletados na versão 1810.
-ms.date: 11/27/2018
+ms.date: 05/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 52c13109710fc35dcd2853f76188ac42269a8058
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 704cc50369e1df251b706690465a4135ed5b3cdb
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120054"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676880"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1810"></a>Níveis de coleta de dados de uso de diagnóstico para a versão 1810
 
@@ -87,7 +87,7 @@ Para o Configuration Manager versão 1810, esse nível inclui os seguintes dados
 
     - Data de validade do Software Assurance  
 
-    - Status e erros de implantação do pacote de atualização, andamento do download e erros de pré-requisitos  
+    - Status e erros de implantação do pacote de atualização, andamento do download e erros de pré-requisitos 
 
     - Uso do anel rápido de atualização  
 
@@ -259,7 +259,7 @@ Para o Configuration Manager versão 1810, esse nível inclui os seguintes dados
 - Contagem de dispositivos do Microsoft Surface por modelo  
 
 
-### <a name="cloud-services"></a>Cloud Services  
+### <a name="cloud-services"></a>Serviços de Nuvem  
 
 - Estatísticas de descoberta do Azure Active Directory  
 
@@ -351,7 +351,7 @@ Para o Configuration Manager versão 1810, esse nível inclui os seguintes dados
 
 ### <a name="endpoint-protection"></a>Endpoint Protection  
 
-- Políticas de ATP (Proteção Avançada contra Ameaças) do Windows Defender: contagem de políticas e se as políticas foram implantadas  
+- Políticas de ATP (Proteção Avançada contra Ameaças) do Microsoft Defender (anteriormente conhecidas como Windows Defender ATP): contagem de políticas e se as políticas foram implantadas. 
 
 - Contagem de alertas configurados para o recurso Endpoint Protection  
 

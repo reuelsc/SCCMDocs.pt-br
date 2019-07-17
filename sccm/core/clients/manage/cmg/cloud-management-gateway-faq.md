@@ -4,18 +4,18 @@ description: Use este artigo para responder a perguntas frequentes sobre o gatew
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 06/19/2019
+ms.date: 07/05/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 4c1a128d-22fb-49f1-8e0b-36513a8dc117
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a7b4350cbd220393318eb6c8b5eae2a5bee05fc
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 61afe2a98fa6ec76a872501d76293ab077cc2df8
+ms.sourcegitcommit: 5e43c0c6b0b1f449e596f59ceaa92a9b6ca194cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286794"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67572747"
 ---
 # <a name="frequently-asked-questions-about-the-cloud-management-gateway"></a>Perguntas frequentes sobre o gateway de gerenciamento de nuvem
 
@@ -66,7 +66,17 @@ Quando você estiver usando uma implantação do Resource Manager, integre o loc
 
 Se você está usando a autenticação do Azure AD para os usuários e dispositivos gerenciados sobre o CMG, integre esse locatário do Azure AD. Para obter mais informações sobre os serviços do Azure para gerenciamento de nuvem, veja [Configurar serviços do Azure](/sccm/core/servers/deploy/configure/azure-services-wizard). Ao integrar cada locatário do Azure AD, um único CMG pode fornecer a autenticação do Azure AD para vários locatários, não importa o local de hospedagem.
 
+### <a name="how-does-cmg-affect-my-clients-connected-via-vpn"></a>Como o CMG afeta meus clientes conectados por meio de VPN?
 
+Normalmente, os clientes em roaming que se conectam ao seu ambiente por meio de uma VPN são detectados como voltados para a intranet. Eles tentam se conectar à sua infraestrutura local, como pontos de gerenciamento e pontos de distribuição. Alguns preferem ter os clientes em roaming gerenciados por serviços de nuvem, mesmo quando conectados por meio de VPN. Começando com a versão 1902, associa-se o CMG com um grupo de limites. Essa ação força esses clientes a não usar os sistemas de site locais. Para obter mais informações, consulte [Configurar grupos de limites](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#configure-boundary-groups).
+
+### <a name="if-i-enable-a-cmg-will-my-clients-only-connect-to-the-cmg-enabled-management-point-when-theyre-connected-to-the-intranet"></a>Se eu habilitar um CMG, meus clientes se conectarão ao ponto de gerenciamento habilitado para CMG somente quando estiverem conectados à intranet?
+
+Para proteger tráfego confidencial enviado por um CMG, você pode configurar um ponto de gerenciamento HTTPS ou usar HTTP aprimorado.
+
+Se você optar por implantar um CMG e usar certificados PKI para comunicação HTTPS no ponto de gerenciamento habilitado para CMG, selecione a opção para **Permitir clientes somente da internet** nas propriedades do ponto de gerenciamento. Essa configuração garante que os clientes internos continuem a usar os pontos de gerenciamento HTTP em seu ambiente.
+
+Se você usar HTTP aprimorado, não será necessário definir essa configuração. Os clientes continuam a usar HTTP ao se comunicar diretamente com o ponto de gerenciamento habilitado para CMG. Para obter mais informações, confira [HTTP aprimorado](/sccm/core/plan-design/hierarchy/enhanced-http).
 
 ## <a name="next-steps"></a>Próximas etapas
 

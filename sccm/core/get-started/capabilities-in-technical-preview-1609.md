@@ -12,12 +12,12 @@ manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31c25622a42586c044e2b9f515f5e89f9e82ba00
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: caa916afa1bb254223844e97d9f2299a91d1ec07
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133741"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677767"
 ---
 # <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1609 do System Center Configuration Manager
 
@@ -86,7 +86,7 @@ O procedimento para criar e implantar um aplicativo do Configuration Manager por
 
 1. No workspace **Administração** do console do Configuration Manager, clique em **Serviços de Nuvem** > **Atualizações e Manutenção** > **Windows Store para Empresas**.
 2. Selecione sua conta da Windows Store para Empresas e clique em **Propriedades**.
-3. Na caixa de diálogo **Windows Store for Business Account Properties (Propriedades da conta da Windows Store para Empresas)**, insira uma nova chave no campo **Chave secreta do cliente** e clique em **Verificar**. Depois de verificar, clique em **Aplicar** e feche a caixa de diálogo.
+3. Na caixa de diálogo **Windows Store for Business Account Properties (Propriedades da conta da Windows Store para Empresas)** , insira uma nova chave no campo **Chave secreta do cliente** e clique em **Verificar**. Depois de verificar, clique em **Aplicar** e feche a caixa de diálogo.
 
 
 ## <a name="new-compliance-settings-for-configuration-items"></a>Novas configurações de conformidade para itens de configuração
@@ -275,9 +275,9 @@ A seguir estão as principais alterações de grupos de limites e como os client
 
 ### <a name="how-the-new-model-works"></a>Como o novo modelo funciona
 Quando você configura grupos de limites, associa limites (locais de rede) e funções do sistema de sites, como pontos de distribuição, ao grupo de limites. Isso ajuda a vincular os clientes aos servidores do sistema de sites como pontos de distribuição que estão localizados próximos aos clientes na rede.   
--   Você pode atribuir o mesmo limite a vários grupos de limites
--   Servidores de sistema de sites, como pontos de distribuição, podem ser associados a vários grupos de limites, tornando-os disponíveis para uma gama mais ampla de locais de rede
--   Se um ponto de distribuição não estiver associado a um grupo de limites, os clientes não poderão usar esse ponto de distribuição como um local de fonte de conteúdo.
+- Você pode atribuir o mesmo limite a vários grupos de limites
+- Servidores de sistema de sites, como pontos de distribuição, podem ser associados a vários grupos de limites, tornando-os disponíveis para uma gama mais ampla de locais de rede
+- Se um ponto de distribuição não estiver associado a um grupo de limites, os clientes não poderão usar esse ponto de distribuição como um local de fonte de conteúdo.
 
 A partir desse technical preview, você define relações de grupo de limites para configurar o comportamento de fallback para locais de fonte de conteúdo. Esse novo comportamento é configurado na nova guia **Relações** das propriedades do grupo de limites e substitui a configuração dos sistemas de sites para serem rápidos ou lentos e a configuração de um grupo de limites para permitir o fallback do local de fonte para o conteúdo.
 
@@ -285,35 +285,34 @@ Na guia Relações você adiciona outros grupos de limites para configurar uma r
 
 Quando um cliente não consegue encontrar conteúdo e começa a pesquisar os locais dos grupos de limites vizinho, ele aumenta o pool de pontos de distribuição disponíveis para aquele cliente de uma maneira controlada.  
 
--   Um grupo de limites pode ter mais de uma Relação. Isso permite que você configure o fallback para vizinhos diferentes para que ele ocorra após períodos de tempo diferentes.
--   Os clientes realizarão o fallback apenas para um grupo de limites que seja um vizinho de seu gripo de limites atual.
--   Quando um cliente é um membro de vários grupos de limites, o grupo de limite atual é definido como uma união de todos os grupos de limites do cliente.  Esse cliente pode, então, realizar o fallback para um vizinho de qualquer um desses grupos de limites original.
+- Um grupo de limites pode ter mais de uma Relação. Isso permite que você configure o fallback para vizinhos diferentes para que ele ocorra após períodos de tempo diferentes.
+- Os clientes realizarão o fallback apenas para um grupo de limites que seja um vizinho de seu gripo de limites atual.
+- Quando um cliente é um membro de vários grupos de limites, o grupo de limite atual é definido como uma união de todos os grupos de limites do cliente.  Esse cliente pode, então, realizar o fallback para um vizinho de qualquer um desses grupos de limites original.
 
 Além dos links que você define, há um link implícito que é criado automaticamente entre os grupos de limites que você cria e o grupo de limites padrão que é criado automaticamente para cada site. Esse link automático:
--   É usado por clientes que não estão em um limite associado a nenhum grupo de limites na sua hierarquia e usam automaticamente o grupo de limites padrão do seu site atribuído para identificar os locais de fonte de conteúdo válidos.   
--   É uma opção de fallback padrão do grupo de limites atual para o grupo de limites padrão de sites que é usada após 120 minutos.
+- É usado por clientes que não estão em um limite associado a nenhum grupo de limites na sua hierarquia e usam automaticamente o grupo de limites padrão do seu site atribuído para identificar os locais de fonte de conteúdo válidos.   
+-  É uma opção de fallback padrão do grupo de limites atual para o grupo de limites padrão de sites que é usada após 120 minutos.
 
-**Exemplo de uso do novo modelo:**     
-Você cria três grupos de limites que não compartilham limites ou servidores de sistemas de sites:
--   Grupo BG_A com os pontos de distribuição DP_A1 e DP_A2 associados ao grupo
--   Grupo BG_B com os pontos de distribuição DP_B1 e DP_B2 associados ao grupo
--   Grupo BG_C com os pontos de distribuição DP_C1 e DP_C2 associados ao grupo
+**Exemplo de uso do novo modelo:** Você cria três grupos de limites que não compartilham limites ou servidores de sistemas de sites:
+- Grupo BG_A com os pontos de distribuição DP_A1 e DP_A2 associados ao grupo
+- Grupo BG_B com os pontos de distribuição DP_B1 e DP_B2 associados ao grupo
+- Grupo BG_C com os pontos de distribuição DP_C1 e DP_C2 associados ao grupo
 
 Você adiciona os locais de rede dos seus clientes como limites apenas para o grupo BG_A e, em seguida, configura relações daquele grupo de limites para os outros dois grupos de limites:
--   Você configura os pontos de distribuição para o primeiro grupo *vizinho* (BG_B) a ser usado depois de 10 minutos. Esse grupo contém os pontos de distribuição DP_B1 e DP_B2. Ambos estão bem conectadas aos primeiros locais de limite dos grupos.
--   Você configura o segundo grupo *vizinho* (BG_C) a ser usado depois de 20 minutos. Esse grupo contém os pontos de distribuição DP_C1 e DP_C2. Ambos estão em uma WAN dos outros dois grupos de limites.
--   Você também adiciona um ponto de distribuição que está localizado no servidor de site ao grupo de limites de site padrão dos sites. Esse é o local de fonte de conteúdo de menor preferência, mas está localizado centralmente para todos os seus grupos de limites.
+- Você configura os pontos de distribuição para o primeiro grupo *vizinho* (BG_B) a ser usado depois de 10 minutos. Esse grupo contém os pontos de distribuição DP_B1 e DP_B2. Ambos estão bem conectadas aos primeiros locais de limite dos grupos.
+- Você configura o segundo grupo *vizinho* (BG_C) a ser usado depois de 20 minutos. Esse grupo contém os pontos de distribuição DP_C1 e DP_C2. Ambos estão em uma WAN dos outros dois grupos de limites.
+- Você também adiciona um ponto de distribuição que está localizado no servidor de site ao grupo de limites de site padrão dos sites. Esse é o local de fonte de conteúdo de menor preferência, mas está localizado centralmente para todos os seus grupos de limites.
 
-    Exemplo de grupos de limites e tempos de fallback:
+  Exemplo de grupos de limites e tempos de fallback:
 
-     ![BG_Fallack](media/BG_Fallback.png)
+  ![BG_Fallack](media/BG_Fallback.png)
 
 
 Com essa configuração:
--   O cliente inicia a pesquisa de conteúdo dos pontos de distribuição em seu grupo de limites *atual* (BG_A), pesquisando cada ponto de distribuição por dois minutos antes de alternar para o próximo ponto de distribuição no grupo de limites. O pool de clientes dos locais de fonte de conteúdo válidos incluem o DP_A1 e o DP_A2.
--   Se o cliente não conseguir localizar o conteúdo de seu grupo de limites *atual* depois de pesquisar por 10 minutos, ele adicionará os pontos de distribuição do grupo de limites BG_B à sua pesquisa. Então, ele continua a pesquisar o conteúdo de um ponto de distribuição em seu pool combinado de pontos de distribuição que agora inclui os dos grupos de limites BG_A e BG_B. O cliente continua a entrar em contato com cada ponto de distribuição por dois minutos antes de mudar para o próximo ponto de distribuição de seu pool. O pool de clientes dos locais de fonte de conteúdo válidos incluem DP_A1, DP_A2, DP_B1 e DP_B2.
--   Depois de mais 10 minutos (total de 20 minutos), se o cliente ainda não encontra um ponto de distribuição com o conteúdo, ele expande seu pool de pontos de distribuição disponíveis para os pontos do segundo grupo *vizinho*, o grupo de limites BG_C. O cliente agora tem 6 pontos de distribuição para pesquisar (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2) e continua a mudar para um novo ponto de distribuição a cada dois minutos até que o conteúdo seja encontrado.
--   Se o cliente não tiver encontrado conteúdo depois de um total de 120 minutos, ele realizará o fallback para incluir o *grupo de limites de site padrão* como parte de sua pesquisa contínua. Agora o pool de pontos de distribuição inclui todos os pontos de distribuição dos três grupos de limites configurados e o ponto de distribuição final localizado no computador do servidor do site.  O cliente continua, então, a pesquisa do conteúdo, alterando os pontos de distribuição a cada dois minutos até que o conteúdo seja encontrado.
+- O cliente inicia a pesquisa de conteúdo dos pontos de distribuição em seu grupo de limites *atual* (BG_A), pesquisando cada ponto de distribuição por dois minutos antes de alternar para o próximo ponto de distribuição no grupo de limites. O pool de clientes dos locais de fonte de conteúdo válidos incluem o DP_A1 e o DP_A2.
+- Se o cliente não conseguir localizar o conteúdo de seu grupo de limites *atual* depois de pesquisar por 10 minutos, ele adicionará os pontos de distribuição do grupo de limites BG_B à sua pesquisa. Então, ele continua a pesquisar o conteúdo de um ponto de distribuição em seu pool combinado de pontos de distribuição que agora inclui os dos grupos de limites BG_A e BG_B. O cliente continua a entrar em contato com cada ponto de distribuição por dois minutos antes de mudar para o próximo ponto de distribuição de seu pool. O pool de clientes dos locais de fonte de conteúdo válidos incluem DP_A1, DP_A2, DP_B1 e DP_B2.
+- Depois de mais 10 minutos (total de 20 minutos), se o cliente ainda não encontra um ponto de distribuição com o conteúdo, ele expande seu pool de pontos de distribuição disponíveis para os pontos do segundo grupo *vizinho*, o grupo de limites BG_C. O cliente agora tem 6 pontos de distribuição para pesquisar (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2) e continua a mudar para um novo ponto de distribuição a cada dois minutos até que o conteúdo seja encontrado.
+- Se o cliente não tiver encontrado conteúdo depois de um total de 120 minutos, ele realizará o fallback para incluir o *grupo de limites de site padrão* como parte de sua pesquisa contínua. Agora o pool de pontos de distribuição inclui todos os pontos de distribuição dos três grupos de limites configurados e o ponto de distribuição final localizado no computador do servidor do site.  O cliente continua, então, a pesquisa do conteúdo, alterando os pontos de distribuição a cada dois minutos até que o conteúdo seja encontrado.
 
 Ao configurar os diferentes grupos vizinhos para estarem disponíveis em momentos diferentes, você controla quando pontos de distribuição específicos são adicionados como um local de fonte de conteúdo e quando, ou se, o cliente usa o fallback para o grupo de limites de site padrão como uma rede de segurança para o conteúdo que não está disponível em nenhum outro local.
 
@@ -333,7 +332,7 @@ A configuração de implantação original para "Não executar programa" na rede
 Selecionada     |  Selecionada    |  **Sem fallback** – usar apenas os pontos de distribuição no grupo de limites atual       
 Selecionada     |  Não selecionada|  **Sem fallback** – usar apenas os pontos de distribuição no grupo de limites atual       
 Não selecionada |  Não selecionada|  **Fallback para o vizinho** – usar os pontos de distribuição no grupo de limites atual e, em seguida, adicionar os pontos de distribuição do grupo de limite vizinho. A menos que um link explícito para o grupo de limites de site padrão esteja configurado, os clientes não realizarão o fallback para esse grupo.    
-Não selecionada | Selecionada     |   **Fallback normal** – usar pontos de distribuição no grupo de limites atual, em seguida, os dos grupos de limites vizinho e padrão de site
+Não selecionada | Selecionada |   **Fallback normal** – usar pontos de distribuição no grupo de limites atual, em seguida, os dos grupos de limites vizinho e padrão de site
 
  Todas as outras configurações de implantação resultam em **Fallback normal**.  
 
@@ -342,7 +341,7 @@ Não selecionada | Selecionada     |   **Fallback normal** – usar pontos de di
 ## <a name="office-365-client-management-dashboard"></a>Painel de Gerenciamento de Clientes do Office 365  
 O Technical Preview 1609 do Configuration Manager introduz um novo painel. Para exibir o painel, no console do Configuration Manager, vá até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Cliente do Office 365**.
 >[!NOTE]
->No workspace **Novidades** no console do Configuration Manager, o novo painel está nomeado incorretamente como **Office 365 Servicing dashboard (Painel de serviços do Office 365)**.
+>No workspace **Novidades** no console do Configuration Manager, o novo painel está nomeado incorretamente como **Office 365 Servicing dashboard (Painel de serviços do Office 365)** .
 
 O painel exibe gráficos para o seguinte:
 
@@ -373,13 +372,13 @@ Nessa versão, no painel de gerenciamento de clientes do Office 365, é possíve
 1. No console do Configuration Manager, navegue até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Cliente do Office 365**.
 2. Clique em **Office 365 Installer (Instalador do Office 365)** no painel superior direito. O Assistente de Instalação de Cliente do Office 365 é aberto.
 3. Na página **Configurações de Aplicativo**, forneça um nome e uma descrição para o aplicativo, insira o local de download para os arquivos e clique em **Avançar**. Observe que o local deve ser especificado no formato &#92;&#92;*servidor*&#92;*compartilhamento*.
-4. Na página **Import Client Settings (Importar Configurações do Cliente)**, escolha se deseja importar as configurações do cliente do Office 365 de um arquivo de configuração XML existente ou especificar as configurações manualmente e clique em **Avançar**.
+4. Na página **Import Client Settings (Importar Configurações do Cliente)** , escolha se deseja importar as configurações do cliente do Office 365 de um arquivo de configuração XML existente ou especificar as configurações manualmente e clique em **Avançar**.
 Quando você tiver um arquivo de configuração existente, insira o local do arquivo e vá para a etapa 7. Observe que o local deve ser especificado no formato &#92;&#92;*servidor*&#92;*compartilhamento*&#92;*nome do arquivo*.XML.
 
     > [!IMPORTANT]
     >Você pode ter problemas ao tentar importar configurações do cliente (XML) existentes nesse technical preview.
 
-5. Na página **Client Products (Produtos do Cliente)**, selecione o pacote do Office 365 usado, selecione os aplicativos que deseja incluir, selecione quaisquer produtos Office adicionais que devem ser incluídos e clique em **Avançar**.
+5. Na página **Client Products (Produtos do Cliente)** , selecione o pacote do Office 365 usado, selecione os aplicativos que deseja incluir, selecione quaisquer produtos Office adicionais que devem ser incluídos e clique em **Avançar**.
 6. Na página **Configurações do Cliente**, escolha as configurações a serem incluídas e clique em **Avançar**.
 7. Na página **Implantação**, escolha se deseja implantar o aplicativo e clique em **Avançar**.
 Se você optar por não implantar o pacote no assistente, vá para a etapa 9.
@@ -396,21 +395,21 @@ Agora você pode personalizar uma sequência de tarefas de implantação do sist
 #### <a name="to-prepare-the-fat32-partition-for-the-conversion-to-uefi"></a>Para preparar a partição FAT32 para a conversão para UEFI:
 Em uma sequência de tarefas existente para instalar um sistema operacional, você adicionará um novo grupo com etapa para realizar a conversão de BIOS para UEFI.
 
-1. Crie um novo grupo de sequências de tarefas após as etapas para capturar arquivos e configurações e antes das etapas para instalar o sistema operacional. Por exemplo, crie um grupo após o grupo de **Capturar Arquivos e Configurações** denominado **BIOS-to-UEFI (BIOS para UEFI)**.
+1. Crie um novo grupo de sequências de tarefas após as etapas para capturar arquivos e configurações e antes das etapas para instalar o sistema operacional. Por exemplo, crie um grupo após o grupo de **Capturar Arquivos e Configurações** denominado **BIOS-to-UEFI (BIOS para UEFI)** .
 2. Na guia **Opções** do novo grupo, adicione uma nova variável de sequência de tarefas como uma condição em que **_SMSTSBootUEFI** é **diferente** de **true**. Isso impede que as etapas no grupo sejam executadas quando um computador já estiver no modo UEFI.
 ![Grupo BIOS to UEFI (BIOS para UEFI)](media/BIOS-to-UEFI-group.png)
 3. No novo grupo, adicione a etapa de sequência de tarefas **Reiniciar Computador**. Em **Especifique o que executar após reiniciar**, selecione **The boot image assigned to this task sequence is selected (A imagem de inicialização atribuída a essa sequência de tarefas está selecionada)** para iniciar o computador no Windows PE.  
-4. Na guia **Opções**, adicione uma variável de sequência de tarefa como uma condição em que **_SMSTSInWinPE equals false (_SMSTSInWinPE é igual a falso)**. Isso impede que esta etapa seja executada se o computador já estiver no Windows PE.
+4. Na guia **Opções**, adicione uma variável de sequência de tarefa como uma condição em que **_SMSTSInWinPE equals false (_SMSTSInWinPE é igual a falso)** . Isso impede que esta etapa seja executada se o computador já estiver no Windows PE.
 
     ![Etapa Reiniciar Computador](media/Restart-in-Windows-PE.png)
 5. Adicione uma etapa para iniciar a ferramenta de OEM que converterá o firmware de BIOS para UEFI. Isso geralmente será uma etapa de sequência de tarefas **Executar Linha de Comando** com uma linha de comando para iniciar a ferramenta de OEM.
-5.  Adicione a etapa de sequência de tarefas Formatar e Particionar Disco que particionará e formatará o disco rígido. Na etapa, faça o seguinte:
-    1.  Crie a partição FAT32 que será convertida em UEFI antes de o sistema operacional ser instalado. Escolha **GGT** para **Tipo de disco**.
+5. Adicione a etapa de sequência de tarefas Formatar e Particionar Disco que particionará e formatará o disco rígido. Na etapa, faça o seguinte:
+    1. Crie a partição FAT32 que será convertida em UEFI antes de o sistema operacional ser instalado. Escolha **GGT** para **Tipo de disco**.
     ![Etapa Formatar e particionar disco](media/Format-and-partition-disk.png)
-    2.  Vá para as propriedades da partição FAT32. Digite **TSUEFIDrive** no campo **Variável**. Quando a sequência de tarefas detectar essa variável, ela preparará para a transição de UEFI antes de reiniciar o computador.
+    2. Vá para as propriedades da partição FAT32. Digite **TSUEFIDrive** no campo **Variável**. Quando a sequência de tarefas detectar essa variável, ela preparará para a transição de UEFI antes de reiniciar o computador.
     ![Propriedades da partição](media/Partition-properties.png)
     3. Crie uma partição NTFS que o mecanismo de sequência de tarefas usa para salvar seu estado e para armazenar arquivos de log.
-6.  Adicione a etapa de sequência de tarefas **Reiniciar Computador**. Em **Especifique o que executar após reiniciar**, selecione **The boot image assigned to this task sequence is selected (A imagem de inicialização atribuída a essa sequência de tarefas está selecionada)** para iniciar o computador no Windows PE.  
+6. Adicione a etapa de sequência de tarefas **Reiniciar Computador**. Em **Especifique o que executar após reiniciar**, selecione **The boot image assigned to this task sequence is selected (A imagem de inicialização atribuída a essa sequência de tarefas está selecionada)** para iniciar o computador no Windows PE.  
 
 
 
@@ -421,7 +420,7 @@ Nesta versão, você pode obter uma exibição rápida da conformidade geral par
 #### <a name="to-view-the-intune-compliance-charts"></a>Para exibir os gráficos de conformidade do Intune
 1. No console do Configuration Manager, acesse **Monitoramento** > **Visão Geral** > **Configurações de Conformidade**.
 2. O gráfico **Overall Device Compliance (Conformidade Geral do Dispositivo)** é exibido.
-3. Clique no nó **Políticas de Conformidade** para exibir os gráficos **Overall Device Compliance (Conformidade Geral do Dispositivo)** e **Top Non-Compliance Reasons (Principais motivos de não conformidade)**.
+3. Clique no nó **Políticas de Conformidade** para exibir os gráficos **Overall Device Compliance (Conformidade Geral do Dispositivo)** e **Top Non-Compliance Reasons (Principais motivos de não conformidade)** .
 
 ### <a name="limitations-of-intune-compliance-charts-in-tp-1609"></a>Limitações dos gráficos de conformidade do Intune na TP 1609
 - No momento, a busca detalhada para o gráfico **Overall Device Compliance (Conformidade Geral do Dispositivo)** gera um erro.
@@ -434,17 +433,17 @@ Conclua as seções a seguir na ordem:
 1. Adicione em duas políticas de conformidade do iOS no Configuration Manager. Uma política deve ter um conjunto de configurações para dispositivos (por exemplo, definir o comprimento do PIN para 6). A outra política deve ter outro conjunto de configurações (por exemplo, a complexidade do PIN). As configurações de política não devem se sobrepor ou estar em conflito.
 2. Implante as duas políticas em um conjunto de usuários.
 3. Registre dois dispositivos iOS no Intune usando a mesma conta de usuário e uma conta que recebeu as políticas na etapa anterior. Os dispositivos não devem atender aos critérios da política de conformidade.
-4. No Configuration Manager, verifique o gráfico **Overall Device Compliance (Conformidade Geral do Dispositivo)**. Os dois dispositivos devem ser indicados com não compatíveis.
+4. No Configuration Manager, verifique o gráfico **Overall Device Compliance (Conformidade Geral do Dispositivo)** . Os dois dispositivos devem ser indicados com não compatíveis.
 <!-- 5. Click the **Non-compliant** section of the chart. Both devices should appear in the filtered view under **Assets and Compliance** > **Overview** > **Device**. -->
 
 #### <a name="check-the-top-non-compliance-reasons-chart"></a>Verificar o gráfico Top Non-compliance Reasons (Principais motivos de não conformidade)
-5. Verifique o gráfico **Top Non-compliance Reasons (Principais motivos de não conformidade)**. Este gráfico lista os cinco principais motivos de não conformidade, mas quando apenas duas configurações de conformidade foram definidas em políticas, apenas os dois principais motivos de não conformidade são exibidas.
+5. Verifique o gráfico **Top Non-compliance Reasons (Principais motivos de não conformidade)** . Este gráfico lista os cinco principais motivos de não conformidade, mas quando apenas duas configurações de conformidade foram definidas em políticas, apenas os dois principais motivos de não conformidade são exibidas.
 6. Clique em uma das seções no gráfico. Os dois dispositivos devem aparecer na exibição filtrada em **Ativos e Conformidade** > **Visão Geral** > **Dispositivo**.
 
 #### <a name="make-devices-compliant-and-check-the-charts"></a>Tornar os dispositivos compatíveis e verificar os gráficos
 7. Tore um dos dispositivos compatível com uma das políticas. Verifique o gráfico **Overall Device Compliance (Conformidade Geral do Dispositivo)** novamente. O gráfico deve exibir um dispositivo compatível e um dispositivo não compatível.
 8. Torne o outro dispositivo compatível com a mesma política. Isso tornará um dispositivo compatível com as duas políticas e um dispositivo compatível com apenas uma das políticas.
-9. Verifique o gráfico **Top Non-compliance Reasons (Principais motivos de não conformidade)**. Deve haver apenas um motivo de não conformidade listado.
+9. Verifique o gráfico **Top Non-compliance Reasons (Principais motivos de não conformidade)** . Deve haver apenas um motivo de não conformidade listado.
 <!--7. Click the **Compliant** section of the chart. Only the compliant device should appear in the filtered view. -->
 
 

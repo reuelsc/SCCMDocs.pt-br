@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 596c88cd679b2cb37cfcc7a1d8df5f82e3e56702
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.openlocfilehash: 53505aed5fcdcfcaf3603250a40f484cd49c762f
+ms.sourcegitcommit: 5e43c0c6b0b1f449e596f59ceaa92a9b6ca194cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66715968"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67572756"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Contas usadas no Configuration Manager
 
@@ -577,9 +577,9 @@ Para obter mais informações, confira [Planejar atualizações de software](/sc
 
 ### <a name="task-sequence-run-as-account"></a>Execução da sequência de tarefas como conta  
 
- O mecanismo de sequência de tarefas usa **Execução da sequência de tarefas como conta** para executar linhas de comando com credenciais diferentes da conta do Sistema Local. Essa conta é exigida pela etapa de sequência de tarefas [Executar Linha de Comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) com a opção **Executar esta etapa como a seguinte conta**.  
+ O mecanismo de sequência de tarefas usa **Execução da sequência de tarefas como conta** para executar linhas de comando ou scripts do PowerShell com credenciais diferentes da conta do Sistema Local. Essa conta é exigida pelas etapas de sequência de tarefas [Executar Linha de Comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) e [Executar Script do PowerShell](/sccm/osd/understand/task-sequence-steps#BKMK_RunPowerShellScript) com a opção **Executar esta etapa como a seguinte conta** selecionada.  
 
- Configure a conta para ter as permissões mínimas necessárias para executar a linha de comando especificada na sequência de tarefas. A conta requer direitos de entrada interativa. Isso geralmente requer a capacidade de instalar software e acessar recursos de rede.  
+ Configure a conta para ter as permissões mínimas necessárias para executar a linha de comando especificada na sequência de tarefas. A conta requer direitos de entrada interativa. Isso geralmente requer a capacidade de instalar software e acessar recursos de rede. Para a tarefa Executar Script do PowerShell, essa conta requer permissões de administrador local. 
 
 > [!IMPORTANT]  
 >  Não use a conta de acesso à rede para essa conta.  

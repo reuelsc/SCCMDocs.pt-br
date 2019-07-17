@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8506996f7b769003c937de69a9c7f659341c4294
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 48e0f2c1d04f0592cd794aa4315641fe6f9cd15b
+ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501023"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67818115"
 ---
 #  <a name="recover-a-configuration-manager-site"></a>Recuperar um site do Configuration Manager
 
@@ -177,11 +177,11 @@ Use um dos procedimentos a seguir para ajudá-lo a recuperar o servidor do site 
 
 ### <a name="start-a-site-recovery-in-the-setup-wizard"></a>Iniciar uma recuperação do site no assistente de instalação
 
-1.  Copie a [pasta CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) para um local fora da pasta de instalação do Configuration Manager. Por meio da cópia da pasta CD.Latest, execute o assistente de instalação do Configuration Manager.  
+1. Copie a [pasta CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) para um local fora da pasta de instalação do Configuration Manager. Por meio da cópia da pasta CD.Latest, execute o assistente de instalação do Configuration Manager.  
 
-2.  Na página **Guia de Introdução** , selecione **Recuperar um site**e clique em **Avançar**.  
+2. Na página **Guia de Introdução** , selecione **Recuperar um site**e clique em **Avançar**.  
 
-3.  Conclua o assistente usando as opções apropriadas para a recuperação de site.  
+3. Conclua o assistente usando as opções apropriadas para a recuperação de site.  
 
      - Durante a recuperação, a instalação identifica a porta do SQL SSB (Server Service Broker) usada pelo SQL Server. Não altere essa configuração de porta durante a recuperação, ou a replicação de dados não funcionará corretamente após o término da recuperação.  
 
@@ -256,7 +256,7 @@ Ao recuperar sistemas de sistema de sites que executam o IIS configurados para H
 
 ### <a name="reinstall-hotfixes"></a>Reinstalar hotfixes 
 
-Feita a recuperação de site, você deverá reinstalar os hotfixes que foram aplicados ao servidor do site. Depois da recuperação de site, exiba a lista de hotfixes instalados anteriormente na página **Concluído** do assistente de instalação. Essa lista também é salva em `C:\ConfigMgrPostRecoveryActions.html` no servidor do site recuperado.
+Feita a recuperação de site, você deverá reinstalar os [hotfixes fora de banda](/sccm/core/servers/manage/updates#bkmk_outofband) que foram aplicados ao servidor do site. Depois da recuperação de site, exiba a lista de hotfixes instalados anteriormente na página **Concluído** do assistente de instalação. Essa lista também é salva em `C:\ConfigMgrPostRecoveryActions.html` no servidor do site recuperado.
 
 
 ### <a name="recover-custom-reports"></a>Recuperar relatórios personalizados 

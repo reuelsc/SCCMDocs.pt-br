@@ -2,7 +2,7 @@
 title: Dados de diagnóstico e uso da versão 1902
 titleSuffix: Configuration Manager
 description: Conheça os níveis de dados de diagnóstico e uso coletados na versão 1902.
-ms.date: 03/27/2019
+ms.date: 05/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae3ce80fea4988f6a7a6a6d70c4199090d197ac4
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: 726b5a0377791c4d56797cc86015656c7d8ae44d
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58524992"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676847"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1902"></a>Níveis de coleta de dados de uso de diagnóstico da versão 1902
 
@@ -87,7 +87,7 @@ Para o Configuration Manager, versão 1902, esse nível inclui os seguintes dado
 
     - Data de validade do Software Assurance  
 
-    - Status e erros de implantação do pacote de atualização, andamento do download e erros de pré-requisitos  
+    - Status e erros de implantação do pacote de atualização, andamento do download e erros de pré-requisitos 
 
     - Uso do anel rápido de atualização  
 
@@ -361,7 +361,7 @@ Para o Configuration Manager, versão 1902, esse nível inclui os seguintes dado
 
 ### <a name="endpoint-protection"></a>Endpoint Protection  
 
-- Políticas de ATP (Proteção Avançada contra Ameaças) do Windows Defender: contagem de políticas e se as políticas foram implantadas  
+- Políticas de ATP (Proteção Avançada contra Ameaças) do Microsoft Defender (anteriormente conhecidas como Windows Defender ATP): contagem de políticas e se as políticas foram implantadas.
 
 - Contagem de alertas configurados para o recurso Endpoint Protection  
 

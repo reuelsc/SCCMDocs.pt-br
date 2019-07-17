@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cfb945c2189d54c8e74f9f972df784cb441a8e1
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: e686f9cdbece2ceb652ecd2e0f3c6d5eca420caf
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129809"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677828"
 ---
 # <a name="how-to-deploy-clients-to-macs"></a>How to deploy clients to Macs
 
@@ -240,7 +240,7 @@ Este procedimento remove o SMSID. O cliente do Configuration Manager para Mac re
 
 8. Escolha **OK** para fechar a janela **Editar Script de Descoberta**.  
 
-9. Na janela **Criar Configuração**, para **Script de correção (opcional)**, escolha **Adicionar script**. Essa ação especifica um script para remover o SMSID quando ele é encontrado em computadores Mac.  
+9. Na janela **Criar Configuração**, para **Script de correção (opcional)** , escolha **Adicionar script**. Essa ação especifica um script para remover o SMSID quando ele é encontrado em computadores Mac.  
 
 10. Na janela **Criar Script de Correção**, insira o seguinte script de shell:  
 

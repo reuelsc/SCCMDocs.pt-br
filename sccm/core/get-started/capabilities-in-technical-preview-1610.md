@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f497272431d8587010ecd7dc0a8205162d9ae7fd
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: ccd6efc583805022bab908a06d908e010b9ec9d9
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286349"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677572"
 ---
 # <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1610 do System Center Configuration Manager
 
@@ -62,10 +62,10 @@ Como administrador, agora você pode negar uma solicitação de aplicativo aprov
 #### <a name="try-it-out"></a>Experimente
 Para negar uma solicitação de aplicativo aprovada:
 
-1.  No console do Configuration Manager, [crie e implante um aplicativo](https://docs.microsoft.com/sccm/apps/deploy-use/create-applications) que requer aprovação.
-2.  Em um computador cliente, abra o Centro de Software e envie uma solicitação para o aplicativo.
-3.  No console do Configuration Manager, aprove a solicitação do aplicativo.
-4.  Negar solicitação de aplicativo aprovado: no console do Configuration Manager, navegue até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Aplicativos** > **Solicitações de Aprovação** e selecione a solicitação do aplicativo que deseja negar.  Na faixa de opções, clique em **Negar**.
+1. No console do Configuration Manager, [crie e implante um aplicativo](https://docs.microsoft.com/sccm/apps/deploy-use/create-applications) que requer aprovação.
+2. Em um computador cliente, abra o Centro de Software e envie uma solicitação para o aplicativo.
+3. No console do Configuration Manager, aprove a solicitação do aplicativo.
+4. Negar solicitação de aplicativo aprovado: no console do Configuration Manager, navegue até **Biblioteca de Software** > **Visão Geral** > **Gerenciamento de Aplicativos** > **Solicitações de Aprovação** e selecione a solicitação do aplicativo que deseja negar.  Na faixa de opções, clique em **Negar**.
 
 ## <a name="exclude-clients-from-automatic-upgrade"></a>Excluir clientes da atualização automática
 O Technical Preview 1610 apresenta uma nova configuração que você pode usar para excluir uma coleção de clientes e impedir que instalem automaticamente versões atualizadas dos clientes.  Ela se aplica à atualização automática, bem como a outros métodos, como a atualização baseada na atualização de software, scripts de logon e políticas de grupo. Pode ser usada para uma coleção de computadores que precisam de maior atenção ao atualizar o cliente. Um cliente que estiver em uma coleção excluída ignorará todas as solicitações para instalar o software cliente atualizado.
@@ -127,13 +127,13 @@ Especificamente, você pode definir as seguintes configurações do Windows Defe
 
 ### <a name="try-it-out"></a>Experimente!
 
-1.  No console do Configuration Manager, clique em **Ativos e Conformidade** > **Visão Geral** > **Configurações de Conformidade** > **Itens de Configuração** e crie um novo **Item de Configuração**.
-2.  Insira um nome, selecione **Windows 8.1 e Windows 10** em **Configurações para dispositivos gerenciados sem o cliente do Configuration Manager** e clique em **Avançar**.
-3.  Verifique se **Todos os Windows 10 (64 bits)** e **Todos os Windows 10 (32 bits)** estão selecionados na página **Plataformas com Suporte** e, em seguida, clique em **Avançar**.
-4.  Selecione o grupo de configurações **Windows Defender** e clique em **Avançar**.
-5.  Defina as configurações desejadas nesta página e clique em **Avançar**.
-6.  Conclua o assistente.
-7.  Adicione este item de configuração a uma linha de base de configuração e implante essa linha de base em computadores que executam o Windows 10 com Atualização de novembro (1511) ou superior.
+1. No console do Configuration Manager, clique em **Ativos e Conformidade** > **Visão Geral** > **Configurações de Conformidade** > **Itens de Configuração** e crie um novo **Item de Configuração**.
+2. Insira um nome, selecione **Windows 8.1 e Windows 10** em **Configurações para dispositivos gerenciados sem o cliente do Configuration Manager** e clique em **Avançar**.
+3. Verifique se **Todos os Windows 10 (64 bits)** e **Todos os Windows 10 (32 bits)** estão selecionados na página **Plataformas com Suporte** e, em seguida, clique em **Avançar**.
+4. Selecione o grupo de configurações **Windows Defender** e clique em **Avançar**.
+5. Defina as configurações desejadas nesta página e clique em **Avançar**.
+6. Conclua o assistente.
+7. Adicione este item de configuração a uma linha de base de configuração e implante essa linha de base em computadores que executam o Windows 10 com Atualização de novembro (1511) ou superior.
 
 > [!NOTE]
 > Lembre-se de marcar a caixa de seleção **Corrigir as configurações não compatíveis** ao implantar a linha de base de configuração.
@@ -144,14 +144,16 @@ Agora você pode solicitar uma sincronização de política em um dispositivo m�
 
 ### <a name="try-it-out"></a>Experimente!
 
-1.  No console do Configuration Manager, acesse **Ativos e Conformidade** > **Visão Geral** > Dispositivos.
-2.  No menu **Ações de Dispositivo Remoto**, selecione **Enviar Solicitação de Sincronização**.
+1. No console do Configuration Manager, acesse **Ativos e Conformidade** > **Visão Geral** > Dispositivos.
+2. No menu **Ações de Dispositivo Remoto**, selecione **Enviar Solicitação de Sincronização**.
 
 A sincronização pode levar de cinco a dez minutos. Todas as alterações em políticas são sincronizadas com o dispositivo. Você pode acompanhar o estado da solicitação de sincronização na coluna **Estado de Sincronização Remota** na exibição **Dispositivos** ou na caixa de diálogo **Propriedades** do dispositivo.
 
 ## <a name="additional-security-role-support"></a>Suporte a funções de segurança adicionais
 
-Além de Administrador Completo, as seguintes funções de segurança internas agora têm acesso completo aos itens no nó **Todos os dispositivos corporativos**, incluindo **Dispositivos Pré-Declarados**, **Perfis de Registro do iOS** e **Perfis de Registro do Windows**: •   **Gerenciador de Ativos** •   **Gerenciador de Acesso ao Recurso da Empresa**
+Além de Administrador Completo, as seguintes funções de segurança internas agora têm acesso completo aos itens no nó **Todos os dispositivos de propriedade corporativa**, incluindo **Dispositivos Pré-Declarados**, **Perfis de registro do iOS** e **Perfis de registro do Windows**:
+- **Gerenciador de Ativos**
+- **Gerenciador de acesso aos recursos da empresa**
 
 O acesso somente leitura para essas áreas do console do Configuration Manager ainda é concedido à função de **Analista somente leitura**.
 
