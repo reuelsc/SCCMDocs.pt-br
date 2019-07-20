@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b999dddc048c1afe0dd4212ed9b99ebc9c991ff0
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 18879c37bf51adda20dd1cf7bb7a52960312951d
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67678851"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68338041"
 ---
 # <a name="how-to-create-pfx-certificate-profiles-by-importing-certificate-details"></a>Como criar perfis de certificado PFX importando detalhes do certificado
 
@@ -29,9 +29,9 @@ Aqui, você aprende a criar um perfil de certificado importando as credenciais d
 
 - O Configuration Manager tem vários repositórios de certificado apropriados para diferentes dispositivos e sistemas operacionais.  Elas incluem:
 
-  -   iOS e MacOS/OSX
-  -   Android e Android for Work
-  -   Windows 10, incluindo Windows 10 Mobile.
+  - iOS e MacOS/OSX
+  - Android e Android for Work
+  - Windows 10, incluindo Windows 10 Mobile.
 
 Para saber mais, confira [Pré-requisitos para perfis de certificado](../../protect/plan-design/prerequisites-for-certificate-profiles.md).
 
@@ -39,7 +39,7 @@ Para saber mais, confira [Pré-requisitos para perfis de certificado](../../prot
 O System Center Configuration Manager permite que você importe credenciais de certificado e provisione arquivos .pfx (troca de informações pessoais) para dispositivos do usuário. Os arquivos PFX podem ser usados para gerar certificados específicos do usuário para dar suporte à troca de dados criptografados.
 
 > [!TIP]  
->  Um tutorial passo a passo que descreve esse processo está disponível em [Como criar e implantar perfis de certificado PFX no Configuration Manager](http://blogs.technet.com/b/karanrustagi/archive/2015/09/01/how-to-create-and-deploy-pfx-certificate-profiles-in-configuration-manager.aspx).  
+> Um tutorial passo a passo que descreve esse processo está disponível em [Como criar e implantar perfis de certificado PFX no Configuration Manager](http://blogs.technet.com/b/karanrustagi/archive/2015/09/01/how-to-create-and-deploy-pfx-certificate-profiles-in-configuration-manager.aspx).  
 
 ## <a name="create-import-and-deploy-a-personal-information-exchange-pfx-certificate-profile"></a>Criar, importar e implantar um perfil de certificado PFX (Troca de Informações Pessoais)  
 
@@ -52,15 +52,15 @@ O System Center Configuration Manager permite que você importe credenciais de c
 
 4.  Na página **Geral** do Assistente para **Criar Perfil de Certificado** , especifique as seguintes informações:  
 
-    -   **Nome**: Insira um nome exclusivo para o perfil de certificado. Você pode usar no máximo 256 caracteres.  
+    - **Nome**: Insira um nome exclusivo para o perfil de certificado. Você pode usar no máximo 256 caracteres.  
 
-    -   **Descrição**: faça uma descrição que ofereça uma visão geral do perfil de certificado e outras informações relevantes que ajudem a identificá-lo no console do System Center Configuration Manager. Você pode usar no máximo 256 caracteres.  
+    - **Descrição**: faça uma descrição que ofereça uma visão geral do perfil de certificado e outras informações relevantes que ajudem a identificá-lo no console do System Center Configuration Manager. Você pode usar no máximo 256 caracteres.  
 
-    -   **Especifique o tipo de perfil de certificado que deseja criar**: Para certificados PFX, escolha uma das seguintes opções:  
+    - **Especifique o tipo de perfil de certificado que deseja criar**: Para certificados PFX, escolha uma das seguintes opções:  
 
-        -   **Troca de Informações Pessoais – Configurações do PKCS #12 (PFX) – Importação**: Cria um perfil de certificado importando programaticamente as informações de certificados existentes.  
+      - **Troca de Informações Pessoais – Configurações do PKCS #12 (PFX) – Importação**: Cria um perfil de certificado importando programaticamente informações de certificados existentes.  
 
-        -   **Troca de informações pessoais – configurações PKCS #12 (PFX) – criar**: Cria um perfil de certificado PFX usando credenciais fornecidas por uma autoridade de certificação.  Para saber mais, confira [Como criar perfis de certificado PFX usando uma autoridade de certificação](../../mdm/deploy-use/create-pfx-certificate-profiles.md).
+      - **Troca de informações pessoais – configurações de #12 PKCS (pfx) – criar**: Cria um perfil de certificado PFX usando as credenciais fornecidas por uma autoridade de certificação.  Para saber mais, confira [Como criar perfis de certificado PFX usando uma autoridade de certificação](../../mdm/deploy-use/create-pfx-certificate-profiles.md).
 
 
 ### <a name="create-a-pfx-certificate-profile-for-the-imported-credentials"></a>Criar um perfil de certificado PFX para as credenciais importadas
@@ -89,9 +89,9 @@ Use o [SDK do Configuration Manager](http://go.microsoft.com/fwlink/?LinkId=6135
 
 O Script para Criar PFX adicionado no Configuration Manager 2012 SP2 adiciona uma classe SMS_ClientPfxCertificate ao SDK. Esta classe inclui os seguintes métodos:  
 
--   `ImportForUser`  
+- `ImportForUser`  
 
--   `DeleteForUser`  
+- `DeleteForUser`  
 
 O exemplo a seguir importa as credenciais para um perfil de certificado PFX.
 
@@ -113,10 +113,10 @@ O exemplo a seguir importa as credenciais para um perfil de certificado PFX.
 
 Para usar este exemplo, atualize as variáveis de script a seguir:  
 
-   -   **blob**\ – O blob PFX criptografado em base64  
-   -   **$Password** – A senha do arquivo PFX  
-   -   **$ProfileName** – O nome do perfil PFX  
-   -   **ComputerName** – nome do computador host   
+- **blob**\ – O blob PFX criptografado em base64  
+- **$Password** – A senha do arquivo PFX  
+- **$ProfileName** – O nome do perfil PFX  
+- **ComputerName** – nome do computador host   
 
 ## <a name="see-also"></a>Consulte também
 [Criar um novo perfil de certificado](../../protect/deploy-use/create-certificate-profiles.md) orienta você pelo Assistente para criar perfil de certificado.

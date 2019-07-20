@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c81e7198a01e2d5dfca7abc80f6a23714184a32c
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 78ff2181c3ae4bc7069998bf4a6db526da835037
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62255956"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68337883"
 ---
 # <a name="managing-compliance-on-devices-managed-with-intune"></a>Gerenciar a conformidade em dispositivos gerenciados com o Intune
 
@@ -41,7 +41,7 @@ Esses cenários oferecem uma introdução ao uso das configurações de conformi
 
 ## <a name="scenarios-for-windows-81-and-windows-10-devices-managed-with-intune"></a>Cenários para dispositivos com Windows 8.1 e Windows 10 gerenciados com o Intune  
 
-### <a name="scenario-restrict-access-to-the-app-store-on-all-windows-pcs"></a>Cenário: Restringir o acesso à loja de aplicativos em todos os computadores com Windows  
+### <a name="scenario-restrict-access-to-the-app-store-on-all-windows-pcs"></a>Cenário: Restringir o acesso à loja de aplicativos em todos os computadores Windows  
  Nesse cenário, você é o administrador de TI de uma empresa que lida com informações altamente confidenciais. Por isso, você restringe os aplicativos que os usuários podem instalar. Você deseja impedir que os usuários de todos os computadores com Windows 10 baixem aplicativos da Windows Store; para isso, você executa as seguintes ações.  
 
 1. Na página **Geral** do Assistente de Criação de Item de Configuração, selecione o tipo de item de configuração **Windows 8.1 e Windows 10** e clique em **Avançar**.  
@@ -111,7 +111,7 @@ Esses cenários oferecem uma introdução ao uso das configurações de conformi
 
    -   **Exigir configurações de senha em dispositivos** > **Necessário**  
 
-   -   **Comprimento mínimo da senha (caracteres)** > **6**  
+   -   **Comprimento mínimo da senha (caracteres)**  > **6**  
 
    -   **Número de tentativas de logon com falha antes de o dispositivo ser apagado** > **5**  
 
@@ -123,10 +123,10 @@ Esses cenários oferecem uma introdução ao uso das configurações de conformi
 
 Os seguintes tipos de item de configuração do System Center Configuration Manager disponíveis para dispositivos que não são gerenciados pelo cliente do Configuration Manager, por exemplo, dispositivos registrados no Microsoft Intune.  
 
- -   [Como criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados com o Intune](create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)  
+-   [Como criar itens de configuração para dispositivos Windows 8.1 e Windows 10 gerenciados com o Intune](create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)  
 
- -   [Como criar itens de configuração para dispositivos com Windows Phone gerenciados com o Intune](create-configuration-items-for-windows-phone-devices-managed-without-the-client.md)  
+-   [Como criar itens de configuração para dispositivos com Windows Phone gerenciados com o Intune](create-configuration-items-for-windows-phone-devices-managed-without-the-client.md)  
 
- -   [Como criar itens de configuração para dispositivos com iOS e Mac OS X gerenciados com o Intune](create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client.md)  
+-   [Como criar itens de configuração para dispositivos com iOS e Mac OS X gerenciados com o Intune](create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client.md)  
 
- -   [Como criar itens de configuração para dispositivos Android e Samsung KNOX Standard gerenciados com o Intune](create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md)  
+-   [Como criar itens de configuração para dispositivos Android e Samsung KNOX Standard gerenciados com o Intune](create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md)  

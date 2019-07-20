@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0bae054d3daa5aea8e343fef05aa4578221f17b6
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: c0d98ec11f7b9003c710b5150732a9137fc1c013
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62226820"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68337923"
 ---
 # <a name="enable-device-threat-protection-rule-in-the-compliance-policy"></a>Habilitar a regra de proteção contra ameaças móveis na política de conformidade
 
@@ -26,7 +26,7 @@ O Intune com a proteção contra ameaças móveis, Lookout, oferece a capacidade
 
 Para que a detecção de ameaças ao dispositivo do Lookout influencie a política de conformidade do dispositivo:
 
-* Habilite a regra **Proteção contra Ameaças ao Dispositivo** na política de conformidade.
+* A regra **Proteção contra Ameaças ao Dispositivo** deve ser habilitada na política de conformidade.
 
 * A página **Status do Lookout** no **Console de administrador do Intune** deve aparecer como **Ativa**. Consulte o tópico [Habilitar a conexão MTP do Lookout no Intune](enable-lookout-connection-in-intune.md) para obter mais detalhes e instruções sobre como ativar a integração do Lookout.
 
@@ -38,12 +38,12 @@ Para habilitar a regra de proteção contra ameaça ao dispositivo, use uma pol�
 Como parte da configuração de proteção contra ameaça ao dispositivo do Lookout, no [console do Lookout](https://aad.lookout.com), crie uma política que classifica diversas ameaças nos níveis alto, médio e baixo. Na política de conformidade do Intune, você usará o nível de ameaça para definir o nível máximo de ameaças permitido.
 
 Na página **Regras** do assistente de política de conformidade, defina uma nova regra com as informações a seguir:
-  * Condição: Nível de risco máximo de proteção de ameaças de dispositivo.
-  * Valor: O valor pode ser um dos seguintes:
-    * **Nenhum (protegido)**: Este é o mais seguro. Isso significa que o dispositivo não pode ter quaisquer ameaças. Se qualquer nível de ameaças for encontrado, o dispositivo será avaliado como não compatível.
-    * **Baixa**: O dispositivo será avaliado como compatível se apenas ameaças de nível baixo estiverem presentes. Qualquer ameaça superior coloca o dispositivo em um status de não compatível.
-    * **Médio**: O dispositivo será avaliado como compatível se as ameaças encontradas no dispositivo forem de nível baixo ou médio. Se forem detectadas ameaças de nível alto, o dispositivo será determinado como não compatível.
-    * **Alta**: Este é o menos seguro. Essencialmente, essa opção permite todos os níveis de risco, e talvez seja útil somente se você estiver usando esta solução para fins de relatório.
+* Problema Nível máximo de risco da proteção contra ameaças do dispositivo.
+* Valor: O valor pode ser um dos seguintes:
+  * **Nenhum (protegido)** : Esse é o mais seguro. Isso significa que o dispositivo não pode ter quaisquer ameaças. Se qualquer nível de ameaças for encontrado, o dispositivo será avaliado como não compatível.
+  * **Baixa**: O dispositivo será avaliado como compatível se apenas ameaças de nível baixo estiverem presentes. Qualquer ameaça superior coloca o dispositivo em um status de não compatível.
+  * **Médio**: O dispositivo será avaliado como em conformidade se as ameaças encontradas no dispositivo forem de nível baixo ou médio. Se forem detectadas ameaças de nível alto, o dispositivo será determinado como não compatível.
+  * **Alta**: Esse é o menos seguro. Essencialmente, essa opção permite todos os níveis de risco, e talvez seja útil somente se você estiver usando esta solução para fins de relatório.
 
 Se você criar políticas de acesso condicional para o Office 365 e outros serviços, a avaliação de compatibilidade acima será levada em consideração e os dispositivos incompatíveis serão impedidos de acessar recursos da empresa até que a ameaça seja resolvida.
 

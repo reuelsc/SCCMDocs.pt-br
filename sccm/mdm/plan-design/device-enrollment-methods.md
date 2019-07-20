@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eda9de25d3bdb1a1563d8b74e78ddcad259683f6
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 571334f94d1fcd3f53219b406185af3015356e3a
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67678722"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68338058"
 ---
 # <a name="overview-of-device-enrollment-methods"></a>Visão geral dos métodos de registro de dispositivo
 
@@ -60,18 +60,18 @@ O gerenciador de registro de dispositivo é uma conta de usuário especial usada
 
 ### <a name="dep"></a>DEP
 O gerenciamento com o DEP (Programa de registro de dispositivos) da Apple permite criar e implantar políticas "por ondas de rádio" para dispositivos iOS adquiridos e gerenciados com o DEP. O dispositivo é registrado quando o usuário o ativa pela primeira vez e executa o Assistente de Configuração do iOS. Esse método dá suporte ao modo **iOS Supervisionado**, que por sua vez habilita:
-  - Registro bloqueado
-  - Acesso condicional
-  - Detecção de jailbreak
-  - Gerenciamento de aplicativos móveis
+- Registro bloqueado
+- Acesso condicional
+- Detecção de jailbreak
+- Gerenciamento de aplicativos móveis
 
 Saiba mais sobre o [DEP](../deploy-use/ios-device-enrollment-program-for-hybrid.md). ([Voltar à tabela](#overview-of-device-enrollment-methods))
 
 ### <a name="usb-sa"></a>USB-SA
 Registro com Assistente de Configuração e conexão USB. O administrador cria uma política e a exporta para o Apple Configurator. Dispositivos corporativos conectados por USB são preparados com a política. O administrador deve registrar cada dispositivo manualmente. Os usuários recebem seus dispositivos e executam o Assistente de Configuração, registrando seu dispositivo. Esse método dá suporte ao modo **iOS Supervisionado**, que por sua vez habilita:
-  - Acesso condicional
-  - Detecção de jailbreak
-  - Gerenciamento de aplicativos móveis
+- Acesso condicional
+- Detecção de jailbreak
+- Gerenciamento de aplicativos móveis
 
 Saiba mais sobre o [Registro com Assistente de Configuração com o Apple Configurator](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md). ([Voltar à tabela](#overview-of-device-enrollment-methods))
 

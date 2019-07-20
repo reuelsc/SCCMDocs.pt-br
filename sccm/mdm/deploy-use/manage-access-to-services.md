@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f38b991ef942ea3dae3cffc49d7fe498458f6108
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: da2c809c4aaf95de450570814a5b967ca563a2c2
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62255915"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340284"
 ---
 # <a name="manage-access-to-services-in-system-center-configuration-manager"></a>Gerenciar o acesso a serviços no System Center Configuration Manager
 
@@ -25,9 +25,9 @@ ms.locfileid: "62255915"
 Use o acesso condicional para especificar condições para ajudar a proteger o email e outros serviços nos dispositivos registrados no Microsoft Intune.  
 
 > [!Important]  
-> Incluindo o MDM híbrido no local são de acesso condicional [recursos preteridos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+> O MDM híbrido, incluindo acesso condicional local, são [recursos](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures)preteridos. Para saber mais, confira [O que é o MDM híbrido](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
 > 
-> Se você usar o acesso condicional em dispositivos gerenciados com o cliente do Configuration Manager, para certificar-se de que eles ainda estão protegidos, primeiro habilite o acesso condicional no Intune para os dispositivos antes de migrar. Habilitar o cogerenciamento no Configuration Manager, mover a carga de trabalho de política de conformidade para o Intune e, em seguida, concluir a migração do Intune híbrido para Intune autônomo. Para obter mais informações, consulte [acesso condicional com o cogerenciamento](https://docs.microsoft.com/sccm/comanage/quickstart-conditional-access). 
+> Se você usar o acesso condicional em dispositivos gerenciados com o cliente do Configuration Manager, para certificar-se de que eles ainda estão protegidos, primeiro habilite o acesso condicional no Intune para esses dispositivos antes de migrar. Habilite o cogerenciamento no Configuration Manager, mova a carga de trabalho da política de conformidade para o Intune e conclua a migração do Intune híbrido para o Intune autônomo. Para obter mais informações, consulte [acesso condicional com](https://docs.microsoft.com/sccm/comanage/quickstart-conditional-access)o cogerenciamento. 
 
 
  Para obter informações sobre o acesso condicional em dispositivos que são gerenciados com o cliente do Configuration Manager, consulte [gerenciar o acesso aos serviços do Office 365 para PCs gerenciados pelo System Center Configuration Manager](../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
@@ -110,11 +110,11 @@ O acesso condicional ao Exchange Online dedicado dá suporte a dispositivos que 
 
 ## <a name="requirements-for-exchange-on-premises"></a>Requisitos do Exchange Local
 O acesso condicional ao Exchange Local dá suporte a:
--   Windows 8 e posterior (quando registrado com o Intune)
--   Windows Phone 8 e posterior
--   Aplicativo de email nativo no iOS
--   Aplicativo de email nativo no Android 4 ou posterior
--   Não há suporte para o aplicativo Microsoft Outlook (Android e iOS)
+- Windows 8 e posterior (quando registrado com o Intune)
+- Windows Phone 8 e posterior
+- Aplicativo de email nativo no iOS
+- Aplicativo de email nativo no Android 4 ou posterior
+- Não há suporte para o aplicativo Microsoft Outlook (Android e iOS)
 
 **Além disso**:
 
@@ -132,9 +132,9 @@ O acesso condicional ao Exchange Local dá suporte a:
 
 ## <a name="requirements-for-skype-for-business-online"></a>Requisitos para o Skype for Business Online
 O acesso condicional ao Skype Online oferece suporte a dispositivos que executam:
- -   iOS 7.1 e posterior
- -   Android 4.0 e posterior
- -   Samsung KNOX Standard 4.0 ou posterior
+- iOS 7.1 e posterior
+- Android 4.0 e posterior
+- Samsung KNOX Standard 4.0 ou posterior
 
 Habilite a [autenticação moderna](https://aka.ms/SkypeModernAuth) para o Skype for Business Online. 
 
@@ -171,13 +171,13 @@ O Acesso condicional ao SharePoint Online dá suporte a dispositivos que executa
 ## <a name="next-steps"></a>Próximas etapas  
  Leia os tópicos a seguir para saber como configurar políticas de conformidade e políticas de acesso condicional para seu cenário necessário:  
 
--   [Gerenciar políticas de conformidade do dispositivo no System Center Configuration Manager](../../protect/deploy-use/device-compliance-policies.md)  
+- [Gerenciar políticas de conformidade do dispositivo no System Center Configuration Manager](../../protect/deploy-use/device-compliance-policies.md)  
 
--   [Gerenciar acesso a email no System Center Configuration Manager](../../protect/deploy-use/manage-email-access.md)  
+- [Gerenciar acesso a email no System Center Configuration Manager](../../protect/deploy-use/manage-email-access.md)  
 
--   [Gerenciar o acesso ao SharePoint Online no System Center Configuration Manager](../../protect/deploy-use/manage-sharepoint-online-access.md)  
+- [Gerenciar o acesso ao SharePoint Online no System Center Configuration Manager](../../protect/deploy-use/manage-sharepoint-online-access.md)  
 
--   [Gerenciar o acesso do Skype for Business Online](../../protect/deploy-use/manage-skype-for-business-online-access.md)  
+- [Gerenciar o acesso do Skype for Business Online](../../protect/deploy-use/manage-skype-for-business-online-access.md)  
 
 ### <a name="see-also"></a>Consulte também  
 
