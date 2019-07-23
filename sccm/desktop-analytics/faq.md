@@ -2,7 +2,7 @@
 title: Perguntas frequentes sobre análise de desktop
 titleSuffix: Configuration Manager
 description: Perguntas frequentes sobre o desktop Analytics.
-ms.date: 07/19/2019
+ms.date: 07/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a1760e0039280e686e716d8cf876813083d544c
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: 58230d373d7269c95937a108c021e7c73cdbf07a
+ms.sourcegitcommit: 315fbb9c44773b3b1796ae398568cb61bd07092e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340172"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68374430"
 ---
 # <a name="desktop-analytics-faq"></a>Perguntas frequentes sobre o desktop Analytics
 
@@ -28,6 +28,18 @@ ms.locfileid: "68340172"
 ### <a name="can-i-use-desktop-analytics-with-intune-managed-devices"></a>Posso usar a análise de desktops com dispositivos gerenciados pelo Intune? 
 
 A grande maioria dos clientes que podem se beneficiar do fluxo de trabalho de análise de desktops usa Configuration Manager para implantar o Windows. Sabemos que os clientes do Intune adoram as informações adicionais dos dados de análise, e estamos trabalhando em maneiras de compartilhar informações com eles também.
+
+### <a name="its-been-over-72-hours-and-the-portal-is-still-processing-data-what-next"></a>Ele tem mais de 72 horas e o portal ainda está processando dados, o que vem a seguir? 
+
+Quando você configura pela primeira vez a análise de desktops, os relatórios no Configuration Manager e no portal do desktop Analytics podem não mostrar dados completos imediatamente. Pode levar de 2-3 dias para o serviço processar os dados. Se ele tiver mais de 72 horas e o portal ainda estiver processando dados, siga estas etapas:
+
+- Para confirmar se os dispositivos ativos estão configurados corretamente, use o [painel de integridade da conexão](/sccm/desktop-analytics/monitor-connection-health). Esse painel não é atualizado em tempo real.
+- Verifique se os dispositivos estão enviando dados de diagnóstico para o serviço de análise de desktop. Para obter mais informações, consulte [habilitar o compartilhamento de dados](/sccm/desktop-analytics/enable-data-sharing).
+- Provisione [aplicativos do Azure ad](/sccm/desktop-analytics/troubleshooting#bkmk_AzureADApps) no Azure AD.
+- Verifique os dispositivos que você associou à sua organização nos últimos sete dias. No [portal do desktop Analytics](https://aka.ms/desktopanalytics), vá para o painel **Serviços conectados** . Selecionar **registrar dispositivos**e **exibir dados recentes**
+
+Se os dispositivos estiverem configurados corretamente e você ainda não estiver vendo dados em seu espaço de trabalho, [entre em contato com o suporte da Microsoft](https://support.microsoft.com/hub/4343728/support-for-business).
+
 
 ## <a name="windows-upgrade"></a>Atualização do Windows
 

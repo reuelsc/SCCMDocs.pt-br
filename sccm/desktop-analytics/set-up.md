@@ -1,7 +1,7 @@
 ---
 title: Configurar Análise de Área de Trabalho
 titleSuffix: Configuration Manager
-description: Um guia de instruções para configurar e integração para análise de área de trabalho.
+description: Um guia de instruções para configurar e realizar a integração com o desktop Analytics.
 ms.date: 06/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,83 +11,79 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96cf6f4dcfa878bb1ecafb7187dc6e9b29755509
-ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
+ms.openlocfilehash: d2a098c560305429e4bba65c95a65f3b0d2e8c45
+ms.sourcegitcommit: 315fbb9c44773b3b1796ae398568cb61bd07092e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67623376"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68374426"
 ---
-# <a name="how-to-set-up-desktop-analytics"></a>Como configurar a análise de área de trabalho
+# <a name="how-to-set-up-desktop-analytics"></a>Como configurar o desktop Analytics
 
 > [!Note]  
-> Essas informações se relaciona a um serviço de visualização que pode ser substancialmente modificado antes do lançamento comercial. A Microsoft não oferece garantias, expressas ou implícitas, quanto às informações fornecidas aqui.  
+> Essas informações se relacionam a um serviço de visualização que pode ser substancialmente modificado antes de ser lançada comercialmente. A Microsoft não oferece garantias, expressas ou implícitas, quanto às informações fornecidas aqui.  
 
-Use este procedimento para entrar no Analytics de área de trabalho e configurá-lo em sua assinatura. Esse procedimento é um processo único para configurar a análise de área de trabalho para sua organização.  
+Use este procedimento para entrar no desktop Analytics e configurá-lo em sua assinatura. Esse procedimento é um processo único para configurar a análise de desktops para sua organização.  
 
 
+> [!Important]  
+> Para obter informações sobre os pré-requisitos gerais para análise de desktop com Configuration Manager, consulte [pré-requisitos](/sccm/desktop-analytics/overview#prerequisites).  
 
-## <a name="initial-onboarding"></a>Migração inicial
+## <a name="initial-onboarding"></a>Integração inicial
 
-1. Abra o [portal de análise de área de trabalho](https://aka.ms/desktopanalytics) no gerenciamento de dispositivo do Microsoft 365 como um usuário com o **Administrador Global** função. Selecione **iniciar**. Se você for solicitado um código de convite, use: `DesktopAnalyticsRocks!`
+1. Abra o [portal do desktop Analytics](https://aka.ms/desktopanalytics) no gerenciamento de dispositivos Microsoft 365 como um usuário com a função de **administrador global** . Selecione **Iniciar**. Como alternativa, no console do Configuration Manager, vá para o espaço de trabalho **biblioteca de software** , selecione o nó de **manutenção do desktop Analytics** e selecione **planejar**implantações.
 
-    > [!Tip]  
-    > Para acessar o portal de análise de área de trabalho do console do Configuration Manager, vá para o **biblioteca de Software** espaço de trabalho, selecione o **área de trabalho de análise de manutenção** nó e selecione **planejar implantações**.
+2. Na página **aceitar contrato de serviço** , examine o contrato de serviço e selecione **aceitar**.  
 
-2. Sobre o **aceite o contrato de serviço** página, examine o contrato de serviço e selecione **Accept**.  
+3. Na página **confirmar sua assinatura** , examine a lista de licenças de qualificação necessárias. Alterne a configuração para **Sim** ao lado de **você tiver uma das assinaturas com suporte ou mais recentes**e, em seguida, selecione **Avançar**.  
 
-3. Sobre o **confirmar sua assinatura** , examine a lista de necessárias licenças qualificadas. Mudar a configuração para **Yes** lado **tem uma das assinaturas com suporte ou superior**e, em seguida, selecione **próxima**.  
+4. Na página **fornecer acesso aos usuários** :
 
-4. Sobre o **dar aos usuários acesso** página:
+    - **Permitir que o desktop Analytics gerencie funções de diretório em seu nome**: O desktop Analytics atribui automaticamente os **proprietários do espaço de trabalho** à função de administrador do **Desktop Analytics** . Se esses grupos já forem um **administrador global**, não haverá alteração.
 
-    - **Permitir a análise de área de trabalho para gerenciar funções de diretório em seu nome**: Análise da área de trabalho atribui automaticamente o **proprietários do espaço de trabalho** as **administrador de análise de área de trabalho** função. Se esses grupos já estão uma **Administrador Global**, não há nenhuma alteração.
+        Se você não selecionar essa opção, o desktop Analytics ainda adicionará os usuários como membros do grupo de segurança. Um **administrador global** precisa atribuir manualmente a função de **administrador do desktop Analytics** para os usuários.   
 
-        Se você não selecionar essa opção, análise de área de trabalho ainda adiciona usuários como membros do grupo de segurança. Um **Administrador Global** precisa atribuir manualmente as **administrador de análise de área de trabalho** função para os usuários.   
+        Para obter mais informações sobre como atribuir permissões de função de administrador no Azure Active Directory e as permissões atribuídas aos **Administradores do desktop Analytics**, consulte [permissões de função de administrador no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
 
-        Para obter mais informações sobre como atribuir permissões de função de administrador no Azure Active Directory e as permissões atribuídas às **os administradores de análise de área de trabalho**, consulte [permissões da função de administrador no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
+    - A análise de desktops configura o grupo de segurança **proprietários do espaço de trabalho** no Azure Active Directory para criar e gerenciar espaços de trabalho e planos de implantação. 
 
-    - Análise da área de trabalho pré-configura a **proprietários do espaço de trabalho** grupo de segurança no Azure Active Directory para criar e gerenciar espaços de trabalho e planos de implantação. 
+        Para adicionar um usuário ao grupo, digite seu nome ou endereço de email na seção **Inserir nome ou endereço de email** . Quando terminar, selecione **Avançar**.
 
-        Para adicionar um usuário ao grupo, digite seu nome ou endereço de email na **insira o nome ou endereço de email** seção. Quando terminar, selecione **próxima**.
+5. Na página para **configurar seu espaço de trabalho**:  
 
-5. Na página para **definir seu espaço de trabalho**:  
-
-    > [!Note]  
-    > Para concluir esta etapa, o usuário precisa **proprietário do espaço de trabalho** permissões e acesso adicional para a assinatura do Azure e o grupo de recursos. Para obter mais informações, consulte [pré-requisitos](/sccm/desktop-analytics/overview#prerequisites).  
-
-    - Para usar um espaço de trabalho para análise de área de trabalho, selecione-o e continue com a próxima etapa.  
+    - Para usar um espaço de trabalho existente para análise de desktop, selecione-o e continue com a próxima etapa.  
 
         > [!Note]  
-        > Se você já estiver usando o Windows Analytics, selecione o mesmo espaço de trabalho. Você precisará registrar novamente os dispositivos para análise de área de trabalho que você registrou anteriormente no Windows Analytics.
+        > Se você já estiver usando o Windows Analytics, selecione esse mesmo espaço de trabalho. Você precisa registrar novamente os dispositivos no desktop Analytics que você registrou anteriormente no Windows Analytics.
         >
-        > Você pode ter apenas um espaço de trabalho de análise de área de trabalho por locatário do Azure AD. Dispositivos podem enviar somente dados de diagnóstico para um espaço de trabalho.  
+        > Você só pode ter um espaço de trabalho do desktop Analytics por locatário do Azure AD. Os dispositivos só podem enviar dados de diagnóstico para um espaço de trabalho.  
 
-    - Para criar um espaço de trabalho para análise de área de trabalho, selecione **adicionar espaço de trabalho**.  
+    - Para criar um espaço de trabalho para análise de desktop, selecione **adicionar espaço de trabalho**.  
 
-        1. Insira um **nome do espaço de trabalho**.<!--do we have any guidance for this name?-->  
+        1. Insira um **nome de espaço de trabalho**.<!--do we have any guidance for this name?-->  
 
-        2. Selecione a lista suspensa para **selecione o nome de assinatura do Azure para este espaço de trabalho**e escolha a assinatura do Azure para este espaço de trabalho.  
+        2. Selecione a lista suspensa para **selecionar o nome da assinatura do Azure para este espaço de trabalho**e escolha a assinatura do Azure para este espaço de trabalho.  
 
-        3. **Criar um novo** grupo de recursos ou **usar existente**.
+        3. **Criar novo** Grupo de recursos ou **use existente**.
 
-        4. Selecione o **região** na lista e, em seguida, selecione **Add**.  
+        4. Selecione a **região** na lista e, em seguida, selecione **Adicionar**.  
 
-6. Selecione um espaço de trabalho novo ou existente e, em seguida, selecione **definido como espaço de trabalho de análise de área de trabalho**.  Em seguida, selecione **Continue** na **confirmar e conceder acesso** caixa de diálogo.  
+6. Selecione um espaço de trabalho novo ou existente e, em seguida, selecione **definir como espaço de trabalho do desktop Analytics**.  Em seguida, selecione **continuar** na caixa de diálogo **confirmar e conceder acesso** .  
 
-7. Na nova guia do navegador, escolha uma conta para usar para entrar. Selecione a opção para **consentir em nome de sua organização** e selecione **Accept**.  
+7. Na guia novo navegador, escolha uma conta a ser usada para entrar. Selecione a opção para **consentir em nome da sua organização** e selecione **aceitar**.  
 
     > [!Note]  
-    > Esse consentimento é atribuir o aplicativo MALogAnalyticsReader a função de leitor do Log Analytics para o espaço de trabalho. Essa função de aplicativo é necessária pela análise de área de trabalho. Para obter mais informações, consulte [função de aplicativo MALogAnalyticsReader](/sccm/desktop-analytics/troubleshooting#bkmk_MALogAnalyticsReader).  
+    > Esse consentimento é atribuir ao aplicativo MALogAnalyticsReader a função leitor de Log Analytics para o espaço de trabalho. Essa função de aplicativo é necessária para o desktop Analytics. Para obter mais informações, consulte [função de aplicativo MALogAnalyticsReader](/sccm/desktop-analytics/troubleshooting#bkmk_MALogAnalyticsReader).  
 
-8. Volta na página para **definir seu espaço de trabalho**, selecione **próxima**.  
+8. De volta à página para **configurar seu espaço de trabalho**, selecione **Avançar**.  
 
-9. Sobre o **última etapa** página, selecione **vá para a área de trabalho de análise**.
+9. Na página **últimas etapas** , selecione **ir para o desktop Analytics**.
 
-O portal do Azure mostra a área de trabalho de analítica **Home** página.
+A portal do Azure mostra a **Home** Page da análise de desktop.
 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Avance para o próximo artigo para conectar o Configuration Manager com a análise de área de trabalho.
+Avance para o próximo artigo para se conectar Configuration Manager com a análise de desktops.
 > [!div class="nextstepaction"]  
-> [Conectar o Configuration Manager](/sccm/desktop-analytics/connect-configmgr)  
+> [Conectar Configuration Manager](/sccm/desktop-analytics/connect-configmgr)  
