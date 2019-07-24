@@ -2,7 +2,7 @@
 title: Informações de gerenciamento
 titleSuffix: Configuration Manager
 description: Saiba mais sobre a funcionalidade de insights de gerenciamento disponível no console do Configuration Manager.
-ms.date: 11/27/2018
+ms.date: 07/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea90ff0b9c163dac79a96494b03252fbd1935b43
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 17600d9fa04e678e488f36bb923a39e8c41647aa
+ms.sourcegitcommit: b62de6c9cb1bc3e4c9ea5ab5ed3355d83e3a59bc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676489"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67894092"
 ---
 # <a name="management-insights-in-configuration-manager"></a>Insights de gerenciamento no Configuration Manager
 
@@ -143,6 +143,22 @@ Insights que ajudam a simplificam o gerenciamento limpando e reconfigurando cole
 
 - **Coleções vazias**: lista coleções em seu ambiente que não têm membros. Para obter mais informações, confira [Como gerenciar coleções](/sccm/core/clients/manage/collections/manage-collections).  
 
+A partir da versão 1902, há novas regras com recomendações sobre como gerenciar coleções.<!--3555752--> Use esses insights para simplificar o gerenciamento e melhorar o desempenho:
+
+- **Coleções sem nenhuma regra de consulta e nenhum membro direto**: para simplificar a lista de coleções em sua hierarquia, exclua essas coleções.  
+
+- **Coleções com a mesma hora de início de reavaliação**: essas coleções têm a mesma hora de reavaliação que outras coleções. Modifique a hora de reavaliação para que elas não entrem em conflito.  
+
+- **Coleções com tempo de consulta de mais de dois segundos**: examine as regras de consulta dessas coleções. Considere modificar ou excluir a coleção.
+
+- As regras a seguir incluem configurações que podem causar uma carga desnecessária no site. Examine essas coleções e, em seguida, as exclua ou desabilite a avaliação da regra:  
+
+    - **Coleções sem regras de consulta e atualizações incrementais habilitadas**  
+
+    - **Coleções sem nenhuma regra de consulta e habilitadas para avaliação agendada ou incremental**  
+
+    - **Coleções sem nenhuma regra de consulta e com o agendamento de avaliação completa selecionado**  
+
 
 ### <a name="proactive-maintenance"></a>Manutenção proativa
 <!--1352184-->
@@ -174,6 +190,8 @@ Insights para melhorar a segurança dos dispositivos e da infraestrutura.
 Insights que ajudam você a simplificar o gerenciamento diário do seu ambiente. 
 
 - **Versões de cliente não CB**: lista todos os clientes cujas versões não são um build do branch atual. Para obter mais informações, consulte [Atualizar clientes](/sccm/core/clients/manage/upgrade/upgrade-clients).  
+
+- **Atualizar clientes para uma versão do Windows 10 com suporte**: a partir da versão 1902, esta regra relata os clientes que estão executando uma versão do Windows 10 que não tenha mais suporte. Ela também inclui os clientes com uma versão do Windows 10 que esteja perto do fim do serviço (três meses).<!--3897268-->  
 
 
 ### <a name="software-center"></a>Centro de software
