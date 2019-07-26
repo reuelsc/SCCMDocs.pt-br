@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2abfa18bdf454850510c18551f2f64813a7891ea
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: a90dff8b187c28d925daeb9dae02849dd5027bab
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58523921"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339249"
 ---
 # <a name="package-conversion-manager"></a>Package Conversion Manager
 
@@ -42,10 +42,10 @@ Para obter mais informações, consulte os seguintes artigos:
 Essa versão integrada do Gerenciador de Conversão de Pacotes funciona em pacotes no branch atual do Configuration Manager. Não é uma ferramenta autônoma. Se você tiver pacotes e programas em uma versão mais antiga do Configuration Manager, primeiro migre os pacotes para o seu branch atual. Para saber mais, confira [Migrar dados entre hierarquias](/sccm/core/migration/migrate-data-between-hierarchies).
 
 <!-- SCCMDocs-pr issue #3357 -->
-1902 de versão do Configuration Manager inclui os seguintes aprimoramentos:
-- Análise de pacote agendado é executado a cada 7 dias por padrão
+A versão 1902 do Configuration Manager inclui os seguintes aprimoramentos:
+- A análise de pacote agendada é executada a cada 7 dias por padrão
 - Cmdlets do PowerShell para analisar e converter pacotes
-- Aprimoramentos e correções de bug gerais
+- Melhorias e correções de bug gerais
 
 
 
@@ -131,17 +131,17 @@ Nem todos os pacotes são adequados para serem convertidos em aplicativos. Antes
 
 Os melhores tipos de pacote para conversão em aplicativos são aqueles que contêm software voltado ao usuário como, por exemplo:  
 
- - Arquivos do Windows Installer (.msi e .msu)  
+- Arquivos do Windows Installer (.msi e .msu)  
 
- - Programas do Microsoft Application Virtualization (App-V)  
+- Programas do Microsoft Application Virtualization (App-V)  
 
- - Arquivos executáveis ​​do Windows (.exe)  
+- Arquivos executáveis ​​do Windows (.exe)  
 
 Os tipos de pacote que são melhor mantidos como pacotes e não convertidos em aplicativos incluem:
 
- - Ferramentas de manutenção do sistema. Por exemplo, scripts ou utilitários de backup.  
+- Ferramentas de manutenção do sistema. Por exemplo, scripts ou utilitários de backup.  
 
- - Não há suporte para pacotes de software.
+- Não há suporte para pacotes de software.
 
 > [!Tip]  
 > Depois de identificar os pacotes que não são apropriados para conversão em aplicativos, mova-os para uma pasta separada no console do Configuration Manager. Para criar uma pasta de pacote no console do Configuration Manager:  
@@ -154,26 +154,26 @@ Os tipos de pacote que são melhor mantidos como pacotes e não convertidos em a
 
 Para cada pacote que desejar converter, verifique se ele atende às seguintes condições:  
 
- - O local dos arquivos de origem é um caminho UNC completo, por exemplo `\\Server\Share\File`.  
+- O local dos arquivos de origem é um caminho UNC completo, por exemplo `\\Server\Share\File`.  
 
- - Os arquivos do Windows Installer usam apenas um código de produto exclusivo.  
+- Os arquivos do Windows Installer usam apenas um código de produto exclusivo.  
 
 
 ### <a name="bkmk_test"></a> Selecionar pacotes de teste
 
 Se possível, seu grupo de pacotes de teste deve incluir pacotes que atendam aos seguintes critérios:  
 
- - Pelo menos um pacote de teste com um estado de preparação de **Automático**.  
+- Pelo menos um pacote de teste com um estado de preparação de **Automático**.  
 
- - Pelo menos um pacote de teste com um estado de preparação de **Manual**.  
+- Pelo menos um pacote de teste com um estado de preparação de **Manual**.  
 
 Idealmente, seus pacotes de teste devem ser pacotes principais, por exemplo:  
 
- - Pacotes que você conhece bem.  
+- Pacotes que você conhece bem.  
 
- - Os pacotes que são os mais importantes para sua organização.  
+- Os pacotes que são os mais importantes para sua organização.  
 
- - Pacotes que você pode testar com mais facilidade.  
+- Pacotes que você pode testar com mais facilidade.  
 
 Identifique os pacotes apropriados para o teste. Em seguida, mova-os para uma pasta separada no console do Configuration Manager.
 
@@ -191,13 +191,13 @@ Para analisar um pacote individual ou um pequeno grupo, use o Gerenciador de Con
 
 Depois de analisar os pacotes de teste, investigue os pacotes com um estado de preparação de **Manual** ou **Erro**. Determine as razões pelas quais eles têm esse estado. Entre algumas das razões comuns para um estado de preparação de **Manual** ou **Erro** estão:
 
- - O pacote não contém as informações necessárias para criar um método de detecção em um tipo de implantação de aplicativo.  
+- O pacote não contém as informações necessárias para criar um método de detecção em um tipo de implantação de aplicativo.  
 
- - O pacote não contém as informações necessárias para converter as coleções em requisitos e condições globais.  
+- O pacote não contém as informações necessárias para converter as coleções em requisitos e condições globais.  
 
- - O pacote contém mais de um programa.  
+- O pacote contém mais de um programa.  
 
- - O pacote depende de outro pacote que não foi convertido em um aplicativo.  
+- O pacote depende de outro pacote que não foi convertido em um aplicativo.  
 
 Para saber mais, use os seguintes recursos:  
 

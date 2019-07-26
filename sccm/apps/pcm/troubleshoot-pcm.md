@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e253d731c5c5cefa6bc13b04f40ab18855af4b8
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 475f80dc4d5841eb014b8f1ecb4d23ffdb699944
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176893"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339188"
 ---
 # <a name="troubleshoot-package-conversion-manager"></a>Solução de problemas do Gerenciador de Conversão de Pacotes
 
@@ -40,16 +40,16 @@ Se o Provedor de SMS não está funcionando corretamente, o console do Configura
 
 Antes de converter um pacote em um aplicativo, analise o pacote usando a função **Analisar** do Gerenciador de Conversão de Pacotes. Após a análise, adicione a coluna **Preparação** ao nó **Pacotes** do console do Configuration Manager. A lista de pacotes exibe um dos seguintes estados de preparação do pacote analisado:
 
- - **Automática**: o pacote pode ser convertido diretamente com a função **Converter**.      
+- **Automática**: o pacote pode ser convertido diretamente com a função **Converter**.      
 
-    > [!NOTE]  
-    > Uma conversão automática não converte as consultas WQL em requisitos do aplicativo. Use o processo **Corrigir e Converter** para converter essas consultas.  
+  > [!NOTE]  
+  > Uma conversão automática não converte as consultas WQL em requisitos do aplicativo. Use o processo **Corrigir e Converter** para converter essas consultas.  
 
- - **Manual**: o pacote precisa de algumas adições ou alterações antes que você possa convertê-lo usando a função **Corrigir e Converter**.  
+- **Manual**: o pacote precisa de algumas adições ou alterações antes que você possa convertê-lo usando a função **Corrigir e Converter**.  
 
- - **Não Aplicável**: o pacote não é adequado para conversão. Corrija os problemas com o pacote ou continue a implantá-lo como um pacote.  
+- **Não Aplicável**: o pacote não é adequado para conversão. Corrija os problemas com o pacote ou continue a implantá-lo como um pacote.  
 
- - **Erro**: o pacote contém erros. Corrija esses erros manualmente antes de analisar e convertê-lo.  
+- **Erro**: o pacote contém erros. Corrija esses erros manualmente antes de analisar e convertê-lo.  
 
 O painel de detalhes do nó **Pacotes** no console do Configuration Manager mostra quaisquer problemas de preparação. Selecione um pacote e, depois, selecione a guia **Resumo** no painel de detalhes.
 

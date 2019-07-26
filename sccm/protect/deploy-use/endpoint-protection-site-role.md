@@ -11,22 +11,22 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f0b489d4241350dc7b0f5ee7f9a9a48fcf026cf
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 2c1cdbbd1c4ede5c5f2e58bd6c42c982ebaa86fe
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500500"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340333"
 ---
 # <a name="create-an-endpoint-protection-point-site-system-role"></a>Criar uma função do sistema de site do ponto do Endpoint Protection
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
- A função do sistema de sites do ponto do Endpoint Protection deve ser instalada antes que você possa usar o Endpoint Protection. Ela deve estar instalada em apenas um servidor do sistema de sites e deve estar instalada no topo da hierarquia em um site de administração central ou em um site primário autônomo.
+A função do sistema de sites do ponto do Endpoint Protection deve ser instalada antes que você possa usar o Endpoint Protection. Ela deve estar instalada em apenas um servidor do sistema de sites e deve estar instalada no topo da hierarquia em um site de administração central ou em um site primário autônomo.
 
- Use um dos procedimentos a seguir dependendo se você deseja instalar um novo servidor do sistema de sites para o Endpoint Protection ou deseja usar um servidor do sistema de sites existente:
- - [Instalar em um novo servidor do sistema de sites](#new-site-system-server)
- - [Instalar em um servidor do sistema de sites existente](#existing-site-system-server)
+Use um dos procedimentos a seguir dependendo se você deseja instalar um novo servidor do sistema de sites para o Endpoint Protection ou deseja usar um servidor do sistema de sites existente:
+- [Instalar em um novo servidor do sistema de sites](#new-site-system-server)
+- [Instalar em um servidor do sistema de sites existente](#existing-site-system-server)
 
 > [!IMPORTANT]
 >  Quando você instala um ponto do Endpoint Protection, um cliente do Endpoint Protection é instalado no servidor que hospeda o ponto do Endpoint Protection. Serviços e verificações estão desabilitados nesse cliente para permitir que ele coexista com qualquer solução antimalware existente que está instalada no servidor. Se você habilitar mais tarde esse servidor para gerenciamento pelo Endpoint Protection e selecionar a opção para remover qualquer solução antimalware de terceiros, o produto de terceiros não será removido. Você deve desinstalar manualmente o produto.

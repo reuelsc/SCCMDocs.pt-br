@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92e1d0e672d4fc5e6e98f87ba92cec2602f7d240
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: dcbbd799a87992fb34234f89a8660ed85c05dc3a
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496202"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340501"
 ---
 # <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>Pré-requisitos para atualizações de software no System Center Configuration Manager
 
@@ -40,7 +40,8 @@ Este artigo lista os pré-requisitos para atualizações de software no System C
 >[!NOTE]
 >-   Começando com a versão 1702, o Windows Server 2008 R2 não é compatível com a função de ponto de atualização de software. Para obter mais informações, confira [Sistemas operacionais com suporte para servidores do sistema de sites](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers#bkmk_2008r2sp1).  
 
-Quando você tiver diversos pontos de atualização de software em um site, verifique se todos estão executando a mesma versão do WSUS.  
+> [!WARNING]  
+> Quando você tiver diversos pontos de atualização de software em um site, verifique se todos estão executando a mesma versão do WSUS.  
 
 > [!WARNING]  
 >  A classificação de atualizações de software **Upgrades** só é compatível a partir do WSUS 4.0. Antes de sincronizar essa nova classificação e poder avaliar computadores com Windows 10 em um plano de manutenção do Windows 10, é essencial que você instale o [hotfix 3095113](https://support.microsoft.com/kb/3095113) para o WSUS nos pontos de atualização de software e servidores do site. Com esse hotfix, o WSUS em um servidor baseado no Windows Server 2012 ou no Windows Server 2012 R2 pode sincronizar e distribuir upgrades de recurso para o Windows 10. Para obter mais informações, consulte [Gerenciar o Windows como um serviço](../../osd/deploy-use/manage-windows-as-a-service.md).  

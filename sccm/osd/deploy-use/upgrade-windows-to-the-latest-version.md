@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36304b836dbedcb411310d5f0dd8d0f0a8fd91f1
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: 2a0ef3dc874e1a90042859fce745f44e8a1e0472
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194463"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340352"
 ---
 # <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Atualizar o Windows para a versão mais recente com o System Center Configuration Manager
 
@@ -24,16 +24,16 @@ ms.locfileid: "67194463"
 
 Este artigo fornece as etapas no Configuration Manager para atualizar o sistema operacional em um computador. É possível escolher entre diferentes métodos de implantação, como mídia autônoma ou o Centro de Software. O cenário de atualização in-loco tem os seguintes recursos:  
 
--   Atualiza o sistema operacional em computadores que atualmente executam:
-    - Windows 7, Windows 8 ou Windows 8.1. Também é possível fazer atualizações de build a build do Windows 10. Por exemplo, atualize o Windows 10 versão 1607 para o Windows 10, versão 1709.  
-    
-    - Windows Server 2012. Também é possível fazer atualizações de build a build do Windows Server 2016. Para obter mais informações sobre os caminhos de atualização compatíveis, consulte [Caminhos de atualização compatíveis](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016).    
+- Atualiza o sistema operacional em computadores que atualmente executam:
+  - Windows 7, Windows 8 ou Windows 8.1. Também é possível fazer atualizações de build a build do Windows 10. Por exemplo, atualize o Windows 10 versão 1607 para o Windows 10, versão 1709.  
+  
+  - Windows Server 2012. Também é possível fazer atualizações de build a build do Windows Server 2016. Para obter mais informações sobre os caminhos de atualização compatíveis, consulte [Caminhos de atualização compatíveis](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016).    
 
--   Mantém os aplicativos, as configurações e os dados do usuário no computador.  
+- Mantém os aplicativos, as configurações e os dados do usuário no computador.  
 
--   Não tem dependências externas, como o Windows ADK.  
+- Não tem dependências externas, como o Windows ADK.  
 
--   É mais rápido e mais resiliente do que as implantações tradicionais de sistema operacional.  
+- É mais rápido e mais resiliente do que as implantações tradicionais de sistema operacional.  
 
 
 > [!Note]  
@@ -89,12 +89,12 @@ O único pré-requisito para o cenário de atualização é ter um ponto de dist
 
 Para implantar o sistema operacional, use um dos seguintes métodos de implantação:  
 
-  -   [Usar o Centro de Software para implantar o Windows pela rede](use-software-center-to-deploy-windows-over-the-network.md)  
+- [Usar o Centro de Software para implantar o Windows pela rede](use-software-center-to-deploy-windows-over-the-network.md)  
 
-  -   [Usar a mídia autônoma para implantar o Windows sem uso da rede](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
+- [Usar a mídia autônoma para implantar o Windows sem uso da rede](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
 
-      > [!IMPORTANT]  
-      > Ao usar mídia autônoma, você deve incluir uma imagem de inicialização na sequência de tarefas para que ela fique disponível no Assistente para Mídia de Sequência de Tarefas.
+  > [!IMPORTANT]  
+  > Ao usar mídia autônoma, você deve incluir uma imagem de inicialização na sequência de tarefas para que ela fique disponível no Assistente para Mídia de Sequência de Tarefas.
 
 
 

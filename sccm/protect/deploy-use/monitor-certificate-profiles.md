@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f5518346f0085293a2a9b5422c7aef375076d0c
-ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
+ms.openlocfilehash: 3a4ea6d12a41de37325cb64e0a702d6842f9508a
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67516162"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340507"
 ---
 # <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>Como monitorar perfis de certificado no System Center Configuration Manager
 
@@ -63,16 +63,16 @@ Para monitorar a conformidade de certificado SCEP, não use o console, em vez di
 
 ##  <a name="view-compliance-results-by-using-reports"></a>Exibir resultados de conformidade por meio de relatórios
 
- As configurações de conformidade do System Center Configuration Manager incluem relatórios internos que podem ser usados para monitorar informações sobre perfis de certificado. Esses relatórios têm a categoria de relatório de **Gerenciamento de Conformidade e Configurações**.  
+As configurações de conformidade do System Center Configuration Manager incluem relatórios internos que podem ser usados para monitorar informações sobre perfis de certificado. Esses relatórios têm a categoria de relatório de **Gerenciamento de Conformidade e Configurações**.  
 
 > [!IMPORTANT]  
 >  Você deve usar um caractere curinga (%) ao utilizar os parâmetros **Filtro de dispositivo** e **Filtro de usuário** nos relatórios de configurações de conformidade.  
 
 Para monitorar a conformidade de certificado SCEP, use os relatórios de certificado localizados no nó de relatório **Acesso a Recursos da Empresa**:  
 
- -   Histórico de emissão de certificado  
- -   Lista de ativos com certificados perto do vencimento  
- -   Lista de ativos por status de emissão de certificado  
+-   Histórico de emissão de certificado  
+-   Lista de ativos com certificados perto do vencimento  
+-   Lista de ativos por status de emissão de certificado  
 
 
 

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 726df4e6ddbfc34194fd25951d6dbafd1e9008ad
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 375628c7d392a14c22a29cf75e081f6f86783889
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159538"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340454"
 ---
 # <a name="create-certificate-profiles"></a>Criar perfis de certificado
 
@@ -68,17 +68,17 @@ Na página **Geral** do Assistente para Criar Perfil de Certificado, especifique
 > [!IMPORTANT]  
 >  Você deve configurar pelo menos um perfil de certificado de autoridade de certificação confiável antes de criar um perfil de certificado SCEP.    
 >  
->  Se você alterar qualquer um desses valores depois que o certificado for implantado, um novo certificado será solicitado:
->  -  Provedor de armazenamento de chaves
->  -  Nome do modelo de certificado
->  -  Tipo de certificado
->  -  Formato de nome de entidade
->  -  Nome alternativo da entidade
->  -  Período de validade do certificado
->  -  Uso de chave
->  -  Tamanho da chave
->  -  Uso estendido de chave
->  -  Certificado de AC raiz
+> Se você alterar qualquer um desses valores depois que o certificado for implantado, um novo certificado será solicitado:
+> - Provedor de armazenamento de chaves
+> - Nome do modelo de certificado
+> - Tipo de certificado
+> - Formato de nome de entidade
+> - Nome alternativo da entidade
+> - Período de validade do certificado
+> - Uso de chave
+> - Tamanho da chave
+> - Uso estendido de chave
+> - Certificado de AC raiz
 
 1. Na página **Certificado da AC Confiável** do Assistente para Criar Perfil de Certificado, especifique as seguintes informações:  
 

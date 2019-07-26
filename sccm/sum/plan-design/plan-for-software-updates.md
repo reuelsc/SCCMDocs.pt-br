@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 024902baa4c8bb3b893b60feacad7993af8200e5
-ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
+ms.openlocfilehash: ce5a80b99149d31282036b33b97b57294ab38663
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67623439"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340468"
 ---
 # <a name="plan-for-software-updates-in-configuration-manager"></a>Planejar atualizações de software no Configuration Manager
 
@@ -81,9 +81,9 @@ Esta seção inclui os seguintes subtópicos:
 
 
 O site de administração central e todos os sites primários filho precisam ter um ponto de atualização de software. Ao planejar a infraestrutura de ponto de atualização de software, determine as seguintes dependências:
- - Onde instalar o ponto de atualização de software do site  
- - Quais sites exigem um ponto de atualização de software que aceita a comunicação de clientes baseados na Internet
- - Se você precisa de um ponto de atualização de software em sites secundários  
+- Onde instalar o ponto de atualização de software do site  
+- Quais sites exigem um ponto de atualização de software que aceita a comunicação de clientes baseados na Internet
+- Se você precisa de um ponto de atualização de software em sites secundários  
 
 > [!IMPORTANT]  
 >  Para obter mais informações sobre as dependências internas e externas necessárias para as atualizações de software, confira [Pré-requisitos para atualizações de software](prerequisites-for-software-updates.md).  
@@ -318,7 +318,7 @@ A conexão com o Microsoft Update é sempre configurada para usar a porta 80 par
 
 #### <a name="restrict-access-to-specific-domains"></a>Restringir o acesso a domínios específicos  
 
-Se sua organização restringe a comunicação de rede com a Internet usando um dispositivo de firewall ou proxy, você precisará permitir que o ponto de atualização de software ativo acesse os pontos de extremidade da Internet. Em seguida, WSUS e as atualizações automáticas podem se comunicar com o serviço de nuvem do Microsoft Update.
+Se sua organização restringe a comunicação de rede com a Internet usando um dispositivo de firewall ou proxy, você precisará permitir que o ponto de atualização de software ativo acesse os pontos de extremidade da Internet. Em seguida, o WSUS e o Atualizações Automáticas podem se comunicar com o serviço de nuvem do Microsoft Update.
 
 Para saber mais, confira [Requisitos de acesso à Internet](/sccm/core/plan-design/network/internet-endpoints#bkmk_sum).
 
@@ -424,7 +424,7 @@ Considere os seguintes cenários em que poderia ser necessário implantar uma at
 
     > [!NOTE]  
     > - Antes do Configuration Manager versão 1806, quando o Configuration Manager define uma atualização de software substituída como **Expirada**, ele não define a atualização como **Recusada** no WSUS. Os clientes continuam a procurar uma atualização expirada até que a atualização seja recusada manualmente ou por meio de um script personalizado.  Após a versão 1806 do Configuration Manager, Configuration Manager também recusará as atualizações substituídas no WSUS. Para obter mais informações sobre a tarefa de limpeza do WSUS, confira [Manutenção de atualizações de software](/sccm/sum/deploy-use/software-updates-maintenance).
-    > - A partir do Configuration Manager versão 1810, você pode especificar o comportamento de regras de substituição para **atualizações de recursos** separadamente da **atualizações de recurso de não**.
+    > - A partir do Configuration Manager versão 1810, você pode especificar o comportamento das regras de substituição para **atualizações de recursos** separadamente de **atualizações sem recursos**.
 
 ###  <a name="BKMK_UpdateLanguages"></a> Idiomas  
 
@@ -458,7 +458,7 @@ Defina as configurações de detalhes do resumo somente no site de nível superi
 
 Adicione uma janela de manutenção dedicada para a instalação das atualizações de software. Essa ação permite configurar uma janela de manutenção geral e uma janela de manutenção diferente para as atualizações de software. Quando você configura uma janela de manutenção geral e uma janela de manutenção de atualizações de software, os clientes instalam as atualizações de software somente durante a janela de manutenção de atualizações de software. 
 
-Começando com o Configuration Manager versão 1810, você pode alterar esse comportamento e permitir que as atualizações de software instalar durante uma janela de manutenção geral. Para obter mais informações sobre essa configuração do cliente, consulte [configurações do cliente de atualizações de Software](/sccm/core/clients/deploy/about-client-settings#bkmk_SUMMaint).
+A partir do Configuration Manager versão 1810, você pode alterar esse comportamento e permitir que as atualizações de software sejam instaladas durante uma janela de manutenção geral. Para obter mais informações sobre essa configuração do cliente, consulte [configurações do cliente de atualizações de software](/sccm/core/clients/deploy/about-client-settings#bkmk_SUMMaint).
 
 Para obter mais informações sobre janelas de manutenção, consulte [Como usar janelas de manutenção](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
