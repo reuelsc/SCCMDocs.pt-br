@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 645f41a7bad4bd9365c9ec9d51e2567ae270385a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: c4194472965ea498626921a1277047783251649e
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123290"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340060"
 ---
 # <a name="capabilities-in-technical-preview-1711-for-system-center-configuration-manager"></a>Recursos na Technical Preview 1711 do System Center Configuration Manager
 
@@ -32,7 +32,7 @@ Este artigo apresenta os recursos que estão disponíveis na Technical Preview d
     Workaround details.
 -->
 **Problemas conhecidos nesse Technical Preview:**
-- **Suporte para Windows 10, versão 1709 (também conhecido como Atualização para Criadores de Outono)**.  A partir dessa versão do Windows, a mídia do Windows inclui várias edições. Ao configurar uma sequência de tarefas para usar um pacote de atualização do sistema operacional ou imagem do sistema operacional, selecione uma [edição com suporte para uso no Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
+- **Suporte para Windows 10, versão 1709 (também conhecido como Atualização para Criadores de Outono)** .  A partir dessa versão do Windows, a mídia do Windows inclui várias edições. Ao configurar uma sequência de tarefas para usar um pacote de atualização do sistema operacional ou imagem do sistema operacional, selecione uma [edição com suporte para uso no Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
 - **A atualização para uma versão prévia falha quando há um servidor do site no modo passivo**. Quando você executa uma versão prévia que tem um [servidor do site primário no modo passivo](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), você deverá desinstalar o servidor do site de modo passivo para que seja possível atualizar seu site da versão prévia com êxito para essa nova versão prévia. Você pode reinstalar o servidor de site no modo passivo após a conclusão da instalação pelo site.
 
   Para desinstalar o servidor do site no modo passivo:
@@ -57,11 +57,11 @@ Este artigo apresenta os recursos que estão disponíveis na Technical Preview d
 
 Essa Technical Preview melhora a etapa Executar sequência de tarefas. As melhorias incluem os seguintes itens:
 
- - Suporte para todos os cenários de implantação de sistema operacional do Centro de Software, PXE e mídia.
- - Melhorias das ações do console, como copiar, importar, exportar e aviso durante a exclusão do objeto.
- - Suporte para o assistente **Criar Conteúdo de Pré-configuração**.
- - Integração com a verificação de implantação.
- - A etapa Executar sequência de tarefas agora pode ser usada em vários níveis de sequências de tarefas, não apenas em um único relacionamento de pai-filho. Os relacionamentos de vários níveis aumentam a complexidade, portento, use com cuidado. Esses relacionamentos ainda estão marcados para referências circulares.
+- Suporte para todos os cenários de implantação de sistema operacional do Centro de Software, PXE e mídia.
+- Melhorias das ações do console, como copiar, importar, exportar e aviso durante a exclusão do objeto.
+- Suporte para o assistente **Criar Conteúdo de Pré-configuração**.
+- Integração com a verificação de implantação.
+- A etapa Executar sequência de tarefas agora pode ser usada em vários níveis de sequências de tarefas, não apenas em um único relacionamento de pai-filho. Os relacionamentos de vários níveis aumentam a complexidade, portento, use com cuidado. Esses relacionamentos ainda estão marcados para referências circulares.
 
 ### <a name="try-it-out"></a>Experimente!  
 
@@ -80,7 +80,7 @@ Tente concluir as seguintes tarefas e, em seguida, envie **Comentários** na gui
 
 1.  Crie ou edite um aplicativo. Para obter mais informações, consulte [Criar aplicativos com o System Center Configuration Manager](/sccm/apps/deploy-use/create-applications).
 
-    a. Escolha a guia **Experiência do Usuário** nas **Propriedades do Windows Installer (\*arquivo msi)**.
+    a. Escolha a guia **Experiência do Usuário** nas **Propriedades do Windows Installer (\*arquivo msi)** .
 
     b. Selecione **Instalar para o sistema** como o **Comportamento da instalação**.
 

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f560c5bf4ca9a3b58652bc3c53b83d8cf0479cf
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: b468162ce19718b6c0f6f31b961cf61378834597
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551053"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339775"
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-configuration-manager"></a>Como implantar clientes em computadores Windows no Configuration Manager
 
@@ -482,13 +482,13 @@ Os clientes gerenciados pela Internet devem se comunicar com sistemas de sites b
 `CCMSetup.exe /source: D:\Clients /UsePKICert CCMHOSTNAME=server1.contoso.com SMSSIGNCERT=siteserver.cer SMSSITECODE=ABC FSP=server2.contoso.com CCMALWAYSINF=1 CCMFIRSTCERT=1`    
 
 Este exemplo instala o cliente com os seguintes comportamentos:
-  - Usar arquivos de origem de uma pasta na unidade D.
-  - Usar um certificado PKI do cliente.
-  - Selecionar o certificado com o período de validade mais longo.
-  - Gerenciamento de clientes apenas na Internet.
-  - Atribuir o cliente para usar o ponto de gerenciamento baseado na Internet chamado SERVER1.
-  - Atribuir o ponto de status de fallback baseado na Internet no domínio contoso.com.
-  - Atribuir o cliente ao site ABC.  
+- Usar arquivos de origem de uma pasta na unidade D.
+- Usar um certificado PKI do cliente.
+- Selecionar o certificado com o período de validade mais longo.
+- Gerenciamento de clientes apenas na Internet.
+- Atribuir o cliente para usar o ponto de gerenciamento baseado na Internet chamado SERVER1.
+- Atribuir o ponto de status de fallback baseado na Internet no domínio contoso.com.
+- Atribuir o cliente ao site ABC.  
 
 
 ###  <a name="BKMK_ConfigureIBCM_MP"></a> Para configurar clientes para o gerenciamento de clientes baseado na Internet após a instalação do cliente  

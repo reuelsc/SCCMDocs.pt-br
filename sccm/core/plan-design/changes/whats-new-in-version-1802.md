@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d35558da6b25bba16b84c931b0254436ac3dd1e
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 9fdf140b998b4d6d64ade232503b64b14a11416f
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285541"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68338660"
 ---
 # <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Novidades da versão 1802 do System Center Configuration Manager
 
@@ -32,10 +32,10 @@ As atualizações adicionais a seguir também já estão disponíveis neste lan�
 > [!TIP]  
 > Para instalar um novo site, você deve usar uma versão de linha de base do Configuration Manager.  
 >
->  Saiba mais sobre:    
->   - [Instalação de novos sites](/sccm/core/servers/deploy/install/installing-sites)  
->   - [Instalação de atualizações em sites](/sccm/core/servers/manage/updates)  
->   - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines)
+> Saiba mais sobre:    
+> - [Instalação de novos sites](/sccm/core/servers/deploy/install/installing-sites)  
+> - [Instalação de atualizações em sites](/sccm/core/servers/manage/updates)  
+> - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines)
 
 As seções a seguir fornecem detalhes sobre as alterações e as novas funcionalidades introduzidas na versão 1802 do Configuration Manager.  
 
@@ -208,15 +208,15 @@ O modelo de sequência de tarefas padrão para o upgrade in-loco do Windows 10 a
 
 ### <a name="improvements-to-operating-system-deployment"></a>Melhorias na implantação do sistema operacional
 Esta versão inclui as seguintes melhorias na implantação de sistema operacional:
- - No Windows PE, ao iniciar cmtrace.exe, você não precisa mais escolher se deseja tornar este programa o visualizador padrão para arquivos de log. <!-- SMS 500897 -->
- - Adicione imagens de inicialização à etapa da sequência de tarefas [Baixar Conteúdo do Pacote](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent).
- - Melhorias na etapa [Executar a Sequência de Tarefas](/sccm/osd/understand/task-sequence-steps#child-task-sequence): <!-- 1261338 -->   
-     - Suporte para todos os cenários de implantação de sistema operacional do Centro de Software, PXE e mídia.
-     - Melhorias das ações do console, como copiar, importar, exportar e aviso durante a exclusão do objeto.
-     - Suporte para o assistente para [Criar Arquivo de Conteúdo Pré-Teste](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent).
-     - Integração com a verificação de implantação. Para obter mais informações, consulte [Implantações de alto risco de sequência de tarefas](/sccm/osd/deploy-use/deploy-a-task-sequence). 
-     - A etapa Executar sequência de tarefas agora pode ser usada em vários níveis de sequências de tarefas, não apenas em um único relacionamento de pai-filho. Os relacionamentos de vários níveis aumentam a complexidade, portento, use com cuidado. Esses relacionamentos ainda estão marcados para referências circulares.
-    
+- No Windows PE, ao iniciar cmtrace.exe, você não precisa mais escolher se deseja tornar este programa o visualizador padrão para arquivos de log. <!-- SMS 500897 -->
+- Adicione imagens de inicialização à etapa da sequência de tarefas [Baixar Conteúdo do Pacote](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent).
+- Melhorias na etapa [Executar a Sequência de Tarefas](/sccm/osd/understand/task-sequence-steps#child-task-sequence): <!-- 1261338 -->   
+  - Suporte para todos os cenários de implantação de sistema operacional do Centro de Software, PXE e mídia.
+  - Melhorias das ações do console, como copiar, importar, exportar e aviso durante a exclusão do objeto.
+  - Suporte para o assistente para [Criar Arquivo de Conteúdo Pré-Teste](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent).
+  - Integração com a verificação de implantação. Para obter mais informações, consulte [Implantações de alto risco de sequência de tarefas](/sccm/osd/deploy-use/deploy-a-task-sequence). 
+  - A etapa Executar sequência de tarefas agora pode ser usada em vários níveis de sequências de tarefas, não apenas em um único relacionamento de pai-filho. Os relacionamentos de vários níveis aumentam a complexidade, portento, use com cuidado. Esses relacionamentos ainda estão marcados para referências circulares.
+
 ### <a name="deployment-templates-for-task-sequences"></a>Modelos de implantação para sequências de tarefas
 <!-- 1357391 -->
 O [assistente de implantação para sequências de tarefas](/sccm/osd/deploy-use/deploy-a-task-sequence) agora pode criar um modelo de implantação. O modelo de implantação pode ser salvo e aplicado a uma sequência de tarefas existente ou nova para criar uma implantação. 

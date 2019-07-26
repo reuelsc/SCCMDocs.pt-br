@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c492a4fc90b1fba51c8db0031fa73bad2a1e2d2
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: f6004e75c6efee7c2c55a40696407131dd7f02af
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676915"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68338743"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1802-of-system-center-configuration-manager"></a>Níveis da coleta de dados de diagnóstico e de uso da versão 1802 do System Center Configuration Manager
 
@@ -118,340 +118,340 @@ Para o Configuration Manager versão 1802, esse nível inclui os seguintes dados
 
 ### <a name="application-management"></a>Gerenciamento de aplicativos  
 
-   - Requisitos de aplicativo: a contagem de condições internas é referenciada por tecnologia de implantação
+- Requisitos de aplicativo: a contagem de condições internas é referenciada por tecnologia de implantação
 
-   - Substituição de aplicativo, profundidade máxima da cadeia
+- Substituição de aplicativo, profundidade máxima da cadeia
 
-   - Estatísticas de aprovação de aplicativo e frequência de uso
+- Estatísticas de aprovação de aplicativo e frequência de uso
 
-   - Estatísticas de tamanho do conteúdo do aplicativo
+- Estatísticas de tamanho do conteúdo do aplicativo
 
-   - Informações de implantação do aplicativo: uso de instalação versus desinstalação, necessidade de aprovação, habilitação/desabilitação da interação do usuário, dependência, substituição e contagem de uso do recurso de comportamento da instalação  
+- Informações de implantação do aplicativo: uso de instalação versus desinstalação, necessidade de aprovação, habilitação/desabilitação da interação do usuário, dependência, substituição e contagem de uso do recurso de comportamento da instalação  
 
-   - Estatísticas de tamanho e complexidade da política de aplicativo
+- Estatísticas de tamanho e complexidade da política de aplicativo
 
-   - Estatísticas de solicitação de aplicativo disponíveis
+- Estatísticas de solicitação de aplicativo disponíveis
 
-   - Informações básicas de configuração para pacotes e programas: opções de implantação e sinalizadores de programas
+- Informações básicas de configuração para pacotes e programas: opções de implantação e sinalizadores de programas
 
-   - Informações básicas de uso/direcionamento para tipos de implantação: usuário versus dispositivo direcionado, obrigatório versus disponível e aplicativos universais
+- Informações básicas de uso/direcionamento para tipos de implantação: usuário versus dispositivo direcionado, obrigatório versus disponível e aplicativos universais
 
-   - Contagem de ambientes do App-V e propriedades de implantação
+- Contagem de ambientes do App-V e propriedades de implantação
 
-   - Contagem de aplicabilidade de aplicativo por sistema operacional  
+- Contagem de aplicabilidade de aplicativo por sistema operacional  
 
-   - Contagem de aplicativos que são referenciados por uma sequência de tarefas
+- Contagem de aplicativos que são referenciados por uma sequência de tarefas
 
-   - Contagem de marcas distintas do catálogo de aplicativos
+- Contagem de marcas distintas do catálogo de aplicativos
 
-   - Contagem de aplicativos do Office 365 criados usando o painel
+- Contagem de aplicativos do Office 365 criados usando o painel
 
-   - Contagem de pacotes por tipo  
+- Contagem de pacotes por tipo  
 
-   - Contagem de implantações de pacote/programa  
+- Contagem de implantações de pacote/programa  
 
-   - Contagem de licenças de aplicativos do Windows 10 licenciadas  
+- Contagem de licenças de aplicativos do Windows 10 licenciadas  
 
-   - Contagem de tipos de implantação do Windows Installer pelas configurações de conteúdo de desinstalação
+- Contagem de tipos de implantação do Windows Installer pelas configurações de conteúdo de desinstalação
 
-   - Contagem de aplicativos da Microsoft Store para Empresas e estatísticas de sincronização: tipos de aplicativos resumidos, status de aplicativos licenciados e número de aplicativos licenciados online e offline  
+- Contagem de aplicativos da Microsoft Store para Empresas e estatísticas de sincronização: tipos de aplicativos resumidos, status de aplicativos licenciados e número de aplicativos licenciados online e offline  
 
-   - Tipo e duração da janela de manutenção  
+- Tipo e duração da janela de manutenção  
 
-   - Número mínimo/máximo/médio de implantações de aplicativo por usuário/dispositivo por período
+- Número mínimo/máximo/médio de implantações de aplicativo por usuário/dispositivo por período
 
-   - Códigos de erro mais comuns de instalação de aplicativo por tecnologia de implantação
+- Códigos de erro mais comuns de instalação de aplicativo por tecnologia de implantação
 
-   - Contagens e opções de configuração do MSI
+- Contagens e opções de configuração do MSI
 
-   - Estatísticas na interação do usuário final com notificação para implantações de software necessárias   
+- Estatísticas na interação do usuário final com notificação para implantações de software necessárias   
 
-   - Uso do Acesso a Dados Universal, como foi criado
+- Uso do Acesso a Dados Universal, como foi criado
 
-   - ***[Novo]*** Estatísticas agregadas de afinidade de dispositivo de usuário 
+- ***[Novo]*** Estatísticas agregadas de afinidade de dispositivo de usuário 
 
-   - ***[Novo]*** Número máximo e média de usuários primários por dispositivo
+- ***[Novo]*** Número máximo e média de usuários primários por dispositivo
 
 
 ### <a name="client"></a>Cliente  
 
-   - Versão do cliente do AMT (Active Management Technology)
+- Versão do cliente do AMT (Active Management Technology)
 
-   - Idade do BIOS em anos
+- Idade do BIOS em anos
 
-   - Contagem de dispositivos com a Inicialização Segura habilitada
+- Contagem de dispositivos com a Inicialização Segura habilitada
 
-   - Contagem de dispositivos por estado do TPM
+- Contagem de dispositivos por estado do TPM
 
-   - Atualização automática do cliente: configuração de implantação, incluindo piloto do cliente e uso de exclusão (cliente de interoperabilidade estendida)
+- Atualização automática do cliente: configuração de implantação, incluindo piloto do cliente e uso de exclusão (cliente de interoperabilidade estendida)
 
-   - Configuração de tamanho do cache do cliente
+- Configuração de tamanho do cache do cliente
 
-   - Erros de download da implantação do cliente
+- Erros de download da implantação do cliente
 
-   - Estatísticas de integridade do cliente e resumo dos principais problemas
+- Estatísticas de integridade do cliente e resumo dos principais problemas
 
-   - Status da ação de operação de notificação do cliente: quantas vezes cada uma é executada, número máximo de clientes direcionados e taxa média de êxito
+- Status da ação de operação de notificação do cliente: quantas vezes cada uma é executada, número máximo de clientes direcionados e taxa média de êxito
 
-   - Contagem de instalações do cliente de cada tipo de local de origem  
+- Contagem de instalações do cliente de cada tipo de local de origem  
 
-   - Contagem de falhas de instalação do cliente  
+- Contagem de falhas de instalação do cliente  
 
-   - Contagem de dispositivos virtualizados pelo Hyper-V ou Azure  
+- Contagem de dispositivos virtualizados pelo Hyper-V ou Azure  
 
-   - Contagem de ações do Centro de Software   
+- Contagem de ações do Centro de Software   
 
-   - Contagem de dispositivos habilitados para UEFI
+- Contagem de dispositivos habilitados para UEFI
 
-   - Métodos de implantação usados para o cliente e contagem de clientes por método de implantação
+- Métodos de implantação usados para o cliente e contagem de clientes por método de implantação
 
-   - Lista/contagem de agentes cliente habilitados  
+- Lista/contagem de agentes cliente habilitados  
 
-   - Idade do sistema operacional em meses
+- Idade do sistema operacional em meses
 
-   - Número de classes de inventário de hardware, regras de inventário de software e regras de coleta de arquivos
+- Número de classes de inventário de hardware, regras de inventário de software e regras de coleta de arquivos
 
-   - Estatísticas de atestado de integridade do dispositivo: os erros de código mais comuns, número de servidores locais e contagens de dispositivos em vários estados
+- Estatísticas de atestado de integridade do dispositivo: os erros de código mais comuns, número de servidores locais e contagens de dispositivos em vários estados
 
-   - ***[Novo]*** Contagem de dispositivos por navegador padrão
+- ***[Novo]*** Contagem de dispositivos por navegador padrão
 
 
 ### <a name="cloud-services"></a>Serviços de Nuvem  
 
-  - Estatísticas de descoberta do Azure Active Directory
+- Estatísticas de descoberta do Azure Active Directory
 
-  - Estatísticas de uso e de configuração do Gateway de Gerenciamento de Nuvem: contagens de regiões e ambientes e estatísticas de autenticação/autorização
+- Estatísticas de uso e de configuração do Gateway de Gerenciamento de Nuvem: contagens de regiões e ambientes e estatísticas de autenticação/autorização
 
-  - Contagem de aplicativos e serviços do Azure Active Directory conectados ao Configuration Manager
+- Contagem de aplicativos e serviços do Azure Active Directory conectados ao Configuration Manager
 
-  - Contagem de coleções sincronizadas com o Azure Log Analytics
+- Contagem de coleções sincronizadas com o Azure Log Analytics
 
-  - Contagem de Conectores do Upgrade Analytics
+- Contagem de Conectores do Upgrade Analytics
 
-  - Se o conector de nuvem do Azure Log Analytics estiver habilitado ou não
+- Se o conector de nuvem do Azure Log Analytics estiver habilitado ou não
 
 
 ### <a name="co-management"></a>Cogerenciamento  
-  - Estatísticas agregadas de cogerenciamento: número de clientes registrados, clientes que recebem a política, estados da carga de trabalho, tamanhos de coleção de piloto/exclusão e erros de registro  
+- Estatísticas agregadas de cogerenciamento: número de clientes registrados, clientes que recebem a política, estados da carga de trabalho, tamanhos de coleção de piloto/exclusão e erros de registro  
 
-  - Contagem de clientes por método de registro de cogerenciamento  
+- Contagem de clientes por método de registro de cogerenciamento  
 
-  - Estatísticas de erro do registro de cogerenciamento  
+- Estatísticas de erro do registro de cogerenciamento  
 
-  - Estatísticas históricas e de agendamento de registro  
+- Estatísticas históricas e de agendamento de registro  
 
-  - Contagem de clientes qualificados para o cogerenciamento  
+- Contagem de clientes qualificados para o cogerenciamento  
 
-  - Locatário associado do Microsoft Intune
+- Locatário associado do Microsoft Intune
 
 
 ### <a name="collections"></a>Coleções  
 
-   - Uso de ID de coleção (com IDs suficientes)
+- Uso de ID de coleção (com IDs suficientes)
 
-   - Estatísticas de avaliação da coleção: tempo de consulta, contagens de atribuídos versus não atribuídos, contagens por tipo, substituição de ID e uso de regra
+- Estatísticas de avaliação da coleção: tempo de consulta, contagens de atribuídos versus não atribuídos, contagens por tipo, substituição de ID e uso de regra
 
-   - Coleções sem uma implantação
+- Coleções sem uma implantação
 
 
 ### <a name="compliance-settings"></a>Configurações de conformidade  
 
-  - Informações básicas de linha de base de configuração: contagem, número de implantações e número de referências
+- Informações básicas de linha de base de configuração: contagem, número de implantações e número de referências
 
-  - Estatísticas de erro de política de conformidade
+- Estatísticas de erro de política de conformidade
 
-  - Contagem de itens de configuração por tipo  
+- Contagem de itens de configuração por tipo  
 
-  - Contagem de implantações que referenciam configurações internas, incluindo a configuração de correção  
+- Contagem de implantações que referenciam configurações internas, incluindo a configuração de correção  
 
-  - Contagem de regras e implantações criadas para configurações personalizadas, incluindo a configuração de correção  
+- Contagem de regras e implantações criadas para configurações personalizadas, incluindo a configuração de correção  
 
-  - Contagem de protocolos SCEP, VPN, Wi-Fi, certificados (.pfx) e modelos de política de conformidade implantados
+- Contagem de protocolos SCEP, VPN, Wi-Fi, certificados (.pfx) e modelos de política de conformidade implantados
 
-  - Contagem de implantações de certificado SCEP, VPN, Wi-Fi, certificado (.pfx) e política de conformidade por plataforma
+- Contagem de implantações de certificado SCEP, VPN, Wi-Fi, certificado (.pfx) e política de conformidade por plataforma
 
-  - Política do Windows Hello para Empresas (criada, implantada)
+- Política do Windows Hello para Empresas (criada, implantada)
 
 
 ### <a name="content"></a>Conteúdo  
 
-  - ***[Atualizado]***  Estatísticas de grupos de limites: contagem de quantos estavam rápidos, contagem de quantos estavam lentos, contagem por grupo e relações de fallback
+- ***[Atualizado]***  Estatísticas de grupos de limites: contagem de quantos estavam rápidos, contagem de quantos estavam lentos, contagem por grupo e relações de fallback
 
-  - Informações de grupos de limites: contagem de limites e de sistemas de sites atribuídos a cada grupo de limites  
+- Informações de grupos de limites: contagem de limites e de sistemas de sites atribuídos a cada grupo de limites  
 
-  - Relações de grupos de limites e configuração de fallback
+- Relações de grupos de limites e configuração de fallback
 
-  - Estatísticas de download do conteúdo do cliente
+- Estatísticas de download do conteúdo do cliente
 
-  - Contagem de limites por tipo  
+- Contagem de limites por tipo  
 
-  - Contagem de clientes de cache pares, estatísticas de uso e estatísticas de download parcial
+- Contagem de clientes de cache pares, estatísticas de uso e estatísticas de download parcial
 
-  - Informações de configuração do Gerenciador de Distribuição: threads, intervalo de repetição, número de repetições e configurações de pontos de distribuição pull  
+- Informações de configuração do Gerenciador de Distribuição: threads, intervalo de repetição, número de repetições e configurações de pontos de distribuição pull  
 
-  - Informações de configuração dos pontos de distribuição: uso do cache de branch e monitoramento do ponto de distribuição
+- Informações de configuração dos pontos de distribuição: uso do cache de branch e monitoramento do ponto de distribuição
 
-  - Informações dos grupos de pontos de distribuição: contagem de pacotes e pontos de distribuição atribuídos a cada grupo de pontos de distribuição  
+- Informações dos grupos de pontos de distribuição: contagem de pacotes e pontos de distribuição atribuídos a cada grupo de pontos de distribuição  
 
 
 ### <a name="endpoint-protection"></a>Endpoint Protection  
 
-   - Políticas de ATP (Proteção Avançada contra Ameaças) do Microsoft Defender (anteriormente conhecidas como Windows Defender ATP): contagem de políticas e se as políticas foram implantadas.
+- Políticas de ATP (Proteção Avançada contra Ameaças) do Microsoft Defender (anteriormente conhecidas como Windows Defender ATP): contagem de políticas e se as políticas foram implantadas.
 
-   - Contagem de alertas configurados para o recurso Endpoint Protection  
+- Contagem de alertas configurados para o recurso Endpoint Protection  
 
-   - Contagem de coleções selecionadas para serem exibidas no painel do Endpoint Protection  
+- Contagem de coleções selecionadas para serem exibidas no painel do Endpoint Protection  
 
-   - Contagem de políticas, implantações e clientes direcionados do Windows Defender Exploit Guard
+- Contagem de políticas, implantações e clientes direcionados do Windows Defender Exploit Guard
 
-   - Erros de implantação do Endpoint Protection, contagem de códigos de erro de implantação da política do Endpoint Protection  
+- Erros de implantação do Endpoint Protection, contagem de códigos de erro de implantação da política do Endpoint Protection  
 
-   - Uso da política do Firewall do Windows e antimalware do Endpoint Protection (número de políticas exclusivas atribuídas ao grupo)<br /><br /> Esses dados não incluem informações sobre as configurações incluídas na política.  
+- Uso da política do Firewall do Windows e antimalware do Endpoint Protection (número de políticas exclusivas atribuídas ao grupo)<br /><br /> Esses dados não incluem informações sobre as configurações incluídas na política.  
 
 
 ### <a name="migration"></a>Migração  
 
-  - Contagem de objetos migrados (uso do assistente de migração)
+- Contagem de objetos migrados (uso do assistente de migração)
 
 
 ### <a name="mobile-device-management-mdm"></a>MDM (gerenciamento de dispositivo móvel)  
 
-   - Contagem de ações de dispositivo móvel emitidas: comandos de bloquear, redefinição de PIN, apagar, desativar e sincronizar agora
+- Contagem de ações de dispositivo móvel emitidas: comandos de bloquear, redefinição de PIN, apagar, desativar e sincronizar agora
 
-   - Contagem de políticas de dispositivo móvel  
+- Contagem de políticas de dispositivo móvel  
 
-   - Contagem de dispositivos móveis gerenciados pelo Configuration Manager e pelo Microsoft Intune e como eles foram registrados (em massa, baseado no usuário)  
+- Contagem de dispositivos móveis gerenciados pelo Configuration Manager e pelo Microsoft Intune e como eles foram registrados (em massa, baseado no usuário)  
 
-   - Contagem de usuários que têm vários dispositivos móveis registrados  
+- Contagem de usuários que têm vários dispositivos móveis registrados  
 
-   - Agendamento de sondagem de dispositivo móvel e estatísticas de duração de check-in de dispositivos móveis  
+- Agendamento de sondagem de dispositivo móvel e estatísticas de duração de check-in de dispositivos móveis  
 
 
 ### <a name="microsoft-intune-troubleshooting"></a>Solução de problemas do Microsoft Intune  
 
-   - Contagem e tamanho das ações de dispositivo (apagar, desativar, bloquear), telemetria e mensagens de dados replicadas para o Microsoft Intune
+- Contagem e tamanho das ações de dispositivo (apagar, desativar, bloquear), telemetria e mensagens de dados replicadas para o Microsoft Intune
 
-   - Contagem e tamanho de estado, status, inventário, RDR, DDR, UDX, estado de Locatário, POL, LOG, Cert, CRP, Ressincronização, CFD, RDO, BEX, ISM e mensagens de conformidade baixadas do Microsoft Intune
+- Contagem e tamanho de estado, status, inventário, RDR, DDR, UDX, estado de Locatário, POL, LOG, Cert, CRP, Ressincronização, CFD, RDO, BEX, ISM e mensagens de conformidade baixadas do Microsoft Intune
 
-   - Estatísticas de sincronização de usuário completa e delta para o Microsoft Intune
+- Estatísticas de sincronização de usuário completa e delta para o Microsoft Intune
 
 
 ### <a name="on-premises-mobile-device-management-mdm"></a>MDM (Gerenciamento de dispositivos móveis) local  
 
-   - Contagem de perfis e pacotes de registro em massa do Windows 10  
+- Contagem de perfis e pacotes de registro em massa do Windows 10  
 
-   - Estatísticas de êxito/falha de implantação para implantações locais de aplicativo de MDM  
+- Estatísticas de êxito/falha de implantação para implantações locais de aplicativo de MDM  
 
 
 ### <a name="os-deployment"></a>Implantação de sistema operacional  
 
-   - Contagem de imagens de inicialização, drivers, pacotes de driver, pontos de distribuição habilitados para multicast, pontos de distribuição habilitados para PXE e sequências de tarefas  
+- Contagem de imagens de inicialização, drivers, pacotes de driver, pontos de distribuição habilitados para multicast, pontos de distribuição habilitados para PXE e sequências de tarefas  
 
-   - Contagem de imagens de inicialização por versão de cliente do Configuration Manager
+- Contagem de imagens de inicialização por versão de cliente do Configuration Manager
 
-   - Contagem de imagens de inicialização por versão do Windows PE
+- Contagem de imagens de inicialização por versão do Windows PE
 
-   - Contagem de políticas de atualização de edição
+- Contagem de políticas de atualização de edição
 
-   - Contagem de identificadores de hardware excluídos do PXE
+- Contagem de identificadores de hardware excluídos do PXE
 
-   - Contagem de implantações de sistema operacional por versão de sistema operacional
+- Contagem de implantações de sistema operacional por versão de sistema operacional
 
-   - Contagem de atualizações de sistema operacional ao longo do tempo
+- Contagem de atualizações de sistema operacional ao longo do tempo
 
-   - Contagem de implantações de sequência de tarefas usando a opção de baixar conteúdo previamente
+- Contagem de implantações de sequência de tarefas usando a opção de baixar conteúdo previamente
 
-   - Contagens de uso da etapa de sequência de tarefas
+- Contagens de uso da etapa de sequência de tarefas
 
-   - Versão do Windows ADK instalada
+- Versão do Windows ADK instalada
 
 
 ### <a name="site-updates"></a>Atualizações do site  
 
-   - Versões de hotfixes do Configuration Manager instalados
+- Versões de hotfixes do Configuration Manager instalados
 
 
 ### <a name="software-updates"></a>Atualizações de software  
 
-   - Deltas disponíveis e de data limite usados nas regras de implantação automática  
+- Deltas disponíveis e de data limite usados nas regras de implantação automática  
 
-   - Número médio e máximo de atribuições por atualização  
+- Número médio e máximo de atribuições por atualização  
 
-   - Avaliação da atualização de cliente e agendamentos de verificação  
+- Avaliação da atualização de cliente e agendamentos de verificação  
 
-   - Classificações sincronizadas por ponto de atualização de software
+- Classificações sincronizadas por ponto de atualização de software
 
-   - Estatísticas de aplicação de patch de cluster  
+- Estatísticas de aplicação de patch de cluster  
 
-   - Configuração de atualizações expressas do Windows 10
+- Configuração de atualizações expressas do Windows 10
 
-   - Configurações usadas para planos ativos de manutenção do Windows 10  
+- Configurações usadas para planos ativos de manutenção do Windows 10  
 
-   - Contagem de atualizações do Office 365 implantadas  
+- Contagem de atualizações do Office 365 implantadas  
 
-   - Contagem de drivers do Microsoft Surface sincronizados
+- Contagem de drivers do Microsoft Surface sincronizados
 
-   - Contagem de grupos de atualização e atribuições  
+- Contagem de grupos de atualização e atribuições  
 
-   - Contagem de pacotes de atualização e o número mínimo/máximo/médio de pontos de distribuição direcionados com pacotes  
+- Contagem de pacotes de atualização e o número mínimo/máximo/médio de pontos de distribuição direcionados com pacotes  
 
-   - Contagem de atualizações criadas e implantadas com o System Center Update Publisher  
+- Contagem de atualizações criadas e implantadas com o System Center Update Publisher  
 
-   - Contagem de políticas do Windows Update para Empresas criadas e implantadas
+- Contagem de políticas do Windows Update para Empresas criadas e implantadas
 
-   - ***[Novo]*** Estatísticas agregadas das configurações do Windows Update para Empresas
+- ***[Novo]*** Estatísticas agregadas das configurações do Windows Update para Empresas
 
-   - Número de regras de implantação automática vinculadas à sincronização  
+- Número de regras de implantação automática vinculadas à sincronização  
 
-   - Número de regras de implantação automática que criam ou adicionam atualizações a um grupo existente  
+- Número de regras de implantação automática que criam ou adicionam atualizações a um grupo existente  
 
-   - Número de regras de implantação automática que têm várias implantações  
+- Número de regras de implantação automática que têm várias implantações  
 
-   - Número de grupos de atualização e número mínimo/máximo/médio de atualizações por grupo  
+- Número de grupos de atualização e número mínimo/máximo/médio de atualizações por grupo  
 
-   - Número de atualizações e percentual de atualizações implantadas, expiradas, substituídas, baixadas e que contêm EULAs  
+- Número de atualizações e percentual de atualizações implantadas, expiradas, substituídas, baixadas e que contêm EULAs  
 
-   - Estatísticas de balanceamento de carga do ponto de atualização de software
+- Estatísticas de balanceamento de carga do ponto de atualização de software
 
-   - Agendamento de sincronização do ponto de atualização de software  
+- Agendamento de sincronização do ponto de atualização de software  
 
-   - Número total/médio de coleções que têm implantações de atualização de software e número máximo/médio de atualizações implantadas  
+- Número total/médio de coleções que têm implantações de atualização de software e número máximo/médio de atualizações implantadas  
 
-   - Códigos de erro de verificação de atualização e contagem de computadores  
+- Códigos de erro de verificação de atualização e contagem de computadores  
 
-   - Versões de conteúdo do painel do Windows 10  
+- Versões de conteúdo do painel do Windows 10  
 
 
 ### <a name="sqlperformance-data"></a>Dados de desempenho/SQL  
 
-   - Configuração e duração do resumo do site
+- Configuração e duração do resumo do site
 
-   - Contagem das maiores tabelas de banco de dados  
+- Contagem das maiores tabelas de banco de dados  
 
-   - Estatísticas operacionais de descoberta (contagem de objetos encontrados)
+- Estatísticas operacionais de descoberta (contagem de objetos encontrados)
 
-   - Tipos de descoberta, habilitação e agendamento (completo, incremental)
+- Tipos de descoberta, habilitação e agendamento (completo, incremental)
 
-   - Uso, status de integridade e informações de réplica do SQL AlwaysOn
+- Uso, status de integridade e informações de réplica do SQL AlwaysOn
 
-   - Período de retenção, estado de limpeza automática e problemas de desempenho do controle de alterações do SQL
+- Período de retenção, estado de limpeza automática e problemas de desempenho do controle de alterações do SQL
 
-   - Período de retenção do controle de alterações do SQL
+- Período de retenção do controle de alterações do SQL
 
-   - Estatísticas de desempenho de mensagem de estado e status, incluindo tipos de mensagens mais comuns e mais caras
+- Estatísticas de desempenho de mensagem de estado e status, incluindo tipos de mensagens mais comuns e mais caras
 
 
 ### <a name="miscellaneous"></a>Diversos  
 
-   - Configuração do ponto de serviço do data warehouse, incluindo agendamento de sincronização e tempo médio
+- Configuração do ponto de serviço do data warehouse, incluindo agendamento de sincronização e tempo médio
 
-   - Contagem de scripts e estatísticas de execução
+- Contagem de scripts e estatísticas de execução
 
-   - Contagem de sites com WOL (Wake On LAN)
+- Contagem de sites com WOL (Wake On LAN)
 
-   - Estatísticas de desempenho e de uso de relatório
-  
-   - ***[Novo]*** Estatísticas de uso da implantação em fases
+- Estatísticas de desempenho e de uso de relatório
+
+- ***[Novo]*** Estatísticas de uso da implantação em fases
 
 
 

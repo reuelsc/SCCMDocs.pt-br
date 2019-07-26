@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bf7fd4902f5aa30347d2ccc2410227078035872
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 300d3763ba877bcd05817e40f4a8a86a1e899ce5
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496238"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339698"
 ---
 # <a name="removed-and-deprecated-items-for-system-center-configuration-manager"></a>Itens removidos e preteridos do System Center Configuration Manager
 
@@ -47,6 +47,6 @@ Os itens que são removidos ou preteridos são divididos entre três categorias.
 ## <a name="more-information"></a>Mais informações
 
 Para obter mais informações, consulte:
- - O site do [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle).
- - [Suporte para versões do branch atual do Configuration Manager](/sccm/core/servers/manage/current-branch-versions-supported).
+- O site do [Ciclo de Vida do Suporte da Microsoft](https://support.microsoft.com/lifecycle).
+- [Suporte para versões do branch atual do Configuration Manager](/sccm/core/servers/manage/current-branch-versions-supported).
 

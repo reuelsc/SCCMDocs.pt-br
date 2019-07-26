@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7304730b-b517-4c76-aadd-4cbd157dc971
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c584169d56c11be29cd536bf408f20ee59dbf3c
-ms.sourcegitcommit: b62de6c9cb1bc3e4c9ea5ab5ed3355d83e3a59bc
+ms.openlocfilehash: 10c47a9f0da6c61ded9b3ef7de5dc854ce931c37
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67894176"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339164"
 ---
 # <a name="security-and-privacy-for-the-cloud-management-gateway"></a>Segurança e privacidade do gateway de gerenciamento de nuvem
 
@@ -43,8 +43,8 @@ Este artigo inclui informações de segurança e privacidade para o CMG (gateway
 
 ### <a name="configuration-manager-client-facing-roles"></a>Funções voltadas para o cliente do Configuration Manager
 O ponto de gerenciamento e o ponto de atualização de software no IIS hospedam pontos de extremidade no IIS para atender às solicitações de cliente. O CMG não expõe todos os pontos de extremidade internos. Cada ponto de extremidade publicado no CMG tem um mapeamento de URL.
-  - A URL externa é aquela usada pelo cliente para se comunicar com o CMG.
-  - A URL interna é o ponto de conexão de CMG usado para encaminhar solicitações para o servidor interno.
+- A URL externa é aquela usada pelo cliente para se comunicar com o CMG.
+- A URL interna é o ponto de conexão de CMG usado para encaminhar solicitações para o servidor interno.
 
 #### <a name="url-mapping-example"></a>Exemplo de mapeamento de URL
 Quando você habilita o tráfego do CMG em um ponto de gerenciamento, o Configuration Manager cria um conjunto interno de mapeamentos de URL para cada servidor de ponto de gerenciamento. Por exemplo: ccm_system, ccm_incoming e sms_mp. A URL externa para o ponto de extremidade de ccm_system do ponto de gerenciamento pode ser semelhante a esta:  

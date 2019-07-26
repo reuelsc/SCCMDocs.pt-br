@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75737d3f640a9ba0a27277f36791227fbdd08a5a
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 45406eca95511d2380430e4cf4702fb4eca96d5d
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285839"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68338972"
 ---
 # <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>Novidades da versão 1610 do System Center Configuration Manager
 
@@ -28,10 +28,11 @@ A atualização 1610 da ramificação atual do System Center Configuration Manag
 
 > [!TIP]  
 > Para instalar um novo site, você deve usar uma versão de linha de base do Configuration Manager.  
->  Saiba mais sobre:    
->  -   [Instalação de novos sites](https://technet.microsoft.com/library/mt590197.aspx)  
->  -   [Instalação de atualizações em sites](https://technet.microsoft.com/library/mt607046.aspx)  
->  -   [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines)
+>
+> Saiba mais sobre:    
+> - [Instalação de novos sites](https://technet.microsoft.com/library/mt590197.aspx)  
+> - [Instalação de atualizações em sites](https://technet.microsoft.com/library/mt607046.aspx)  
+> - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines)
 
 As seções a seguir fornecem detalhes sobre as alterações e novas funcionalidades introduzidas na versão 1610 do Configuration Manager.  
 

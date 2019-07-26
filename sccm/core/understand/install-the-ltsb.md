@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f996aa1457fc8b49f914d0f0932836b5fcbd90b9
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: f0c3c77175f739ff45364c3c014fee6f11fd662c
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676218"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340127"
 ---
 # <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Instalar e atualizar com uma mídia de linha de base da versão 1606 para o System Center Configuration Manager
 
@@ -82,9 +82,9 @@ Ao usar um script autônomo para instalar uma ramificação licenciada, é neces
 
 Por exemplo, para instalar uma edição do Branch Atual, você usaria:
 
-  **Nome da chave: SABranchOptions**
-   - **SAActive = 1**
-   - **CurrentBranch = 1**
+**Nome da chave: SABranchOptions**
+- **SAActive = 1**
+- **CurrentBranch = 1**
 
 
 > [!IMPORTANT]  

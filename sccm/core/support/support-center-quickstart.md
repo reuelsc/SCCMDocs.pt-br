@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f63193f9d4c9c754a56186f7a36cb9fabaf95725
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: f9124f412b7e22fadf08ddc87668481747d52152
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500724"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339509"
 ---
 # <a name="support-center-quickstart-guide"></a>Guia de início rápido do Centro de Suporte
 
@@ -76,15 +76,15 @@ Criar um arquivo completo do *pacote de solução de problemas* que captura o es
 
 Além dessas capacidades básicas, o Centro de Suporte também pode coletar uma grande variedade de outras informações de estado do cliente. Abra **Centro de Suporte** e selecione **Coletar Todos os Dados**. Esse processo normalmente tem duração de alguns minutos, mesmo em computadores mais recentes. O Centro de Suporte coleta os dados adicionais a seguir:
 
-  - **Política**: configurações de política do Configuration Manager, incluindo a configuração da política solicitada e a configuração da política real  
+- **Política**: configurações de política do Configuration Manager, incluindo a configuração da política solicitada e a configuração da política real  
 
-  - **Certificados**: informações de chave pública para certificados do cliente. O Centro de Suporte não coleta as chaves privadas do certificado.  
+- **Certificados**: informações de chave pública para certificados do cliente. O Centro de Suporte não coleta as chaves privadas do certificado.  
 
-  - **Registro de cliente**: coleta informações de configuração de cliente do Registro. O Centro de Suporte coleta apenas as informações de Registro do Configuration Manager.  
+- **Registro de cliente**: coleta informações de configuração de cliente do Registro. O Centro de Suporte coleta apenas as informações de Registro do Configuration Manager.  
 
-  - **WMI cliente**: informações de configuração de cliente da WMI. O Centro de Suporte não coleta política do cliente.  
+- **WMI cliente**: informações de configuração de cliente da WMI. O Centro de Suporte não coleta política do cliente.  
 
-  - **Solução de problemas**: solução de problemas em tempo real para ajudar a diagnosticar problemas comuns de cliente do Active Directory, pontos de gerenciamento, rede, atribuições de política e registro.  
+- **Solução de problemas**: solução de problemas em tempo real para ajudar a diagnosticar problemas comuns de cliente do Active Directory, pontos de gerenciamento, rede, atribuições de política e registro.  
 
-  - **Despejos de depuração**: execute um despejo de depuração do cliente e dos processos relacionados. Despejos de depuração podem ser grandes. Somente habilite essa opção ao realizar a solução de problemas de desempenho do cliente.  
+- **Despejos de depuração**: execute um despejo de depuração do cliente e dos processos relacionados. Despejos de depuração podem ser grandes. Somente habilite essa opção ao realizar a solução de problemas de desempenho do cliente.  
 

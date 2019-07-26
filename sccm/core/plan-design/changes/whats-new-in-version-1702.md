@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31f47fa04275f2be4efa1558e1d816f74b05d369
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 1e41779d7901471e208c26b9050c4db82b678244
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67677304"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339830"
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novidades da versão 1702 do System Center Configuration Manager
 
@@ -27,10 +27,11 @@ A atualização 1702 da ramificação atual do System Center Configuration Manag
 
 > [!TIP]  
 > Para instalar um novo site, você deve usar uma versão de linha de base do Configuration Manager.  
->  Saiba mais sobre:    
->   - [Instalação de novos sites](https://technet.microsoft.com/library/mt590197.aspx)  
->   - [Instalação de atualizações em sites](https://technet.microsoft.com/library/mt607046.aspx)  
->   - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines)
+>
+> Saiba mais sobre:    
+> - [Instalação de novos sites](https://technet.microsoft.com/library/mt590197.aspx)  
+> - [Instalação de atualizações em sites](https://technet.microsoft.com/library/mt607046.aspx)  
+> - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines)
 
 As seções a seguir fornecem detalhes sobre as alterações e novas funcionalidades introduzidas na versão 1702 do Configuration Manager.  
 
@@ -62,9 +63,9 @@ Veja a seguir as melhorias no uso de pesquisa no console do Configuration Manage
 
 ### <a name="send-feedback-from-the-configuration-manager-console"></a>Enviar comentários do console do Configuration Manager
 
- Você pode usar as opções de comentários no console para enviar comentários diretamente para a equipe de desenvolvimento.
+Você pode usar as opções de comentários no console para enviar comentários diretamente para a equipe de desenvolvimento.
 
- Você pode encontrar a opção **Comentários**:
+Você pode encontrar a opção **Comentários**:
 - Na faixa de opções, na extremidade esquerda da guia Página Inicial de cada nó.  
   ![Faixa de opções](./media/feedback-home.png)
 
@@ -96,25 +97,25 @@ Veja a seguir as alterações em Atualizações e Manutenção:
 
 
 ### <a name="data-warehouse-service-point"></a>Ponto de serviço do Data Warehouse
- Use o ponto de serviço do Data Warehouse para armazenar e relatar dados históricos de longo prazo para sua implantação do Configuration Manager.
+Use o ponto de serviço do Data Warehouse para armazenar e relatar dados históricos de longo prazo para sua implantação do Configuration Manager.
 
- O data warehouse dá suporte a até 2 TB de dados, com carimbos de data e hora para controle de alterações. O armazenamento dos dados é possibilitado por meio de sincronizações automatizadas do banco de dados de site do Configuration Manager para o banco de dados de data warehouse. Essas informações estarão acessíveis no seu ponto do Reporting Services.
+O data warehouse dá suporte a até 2 TB de dados, com carimbos de data e hora para controle de alterações. O armazenamento dos dados é possibilitado por meio de sincronizações automatizadas do banco de dados de site do Configuration Manager para o banco de dados de data warehouse. Essas informações estarão acessíveis no seu ponto do Reporting Services.
 
- Para saber mais, veja o [Ponto de serviço do Data Warehouse](/sccm/core/servers/manage/data-warehouse).
+Para saber mais, veja o [Ponto de serviço do Data Warehouse](/sccm/core/servers/manage/data-warehouse).
 
 
 ### <a name="peer-cache-improvements"></a>Aprimoramentos de cache de pares
- A partir da versão 1702, um computador de origem de cache de pares rejeitará uma solicitação de conteúdo quando o computador de origem do cache de pares atender a qualquer uma das seguintes condições:  
-  -  Está no modo de bateria fraca.
-  -  A carga de CPU excede 80% no momento em que o conteúdo é solicitado.
-  -  A E/S de disco tem um *AvgDiskQueueLength* que excede 10.
-  -  Não há mais conexões disponíveis para o computador.   
+A partir da versão 1702, um computador de origem de cache de pares rejeitará uma solicitação de conteúdo quando o computador de origem do cache de pares atender a qualquer uma das seguintes condições:  
+-  Está no modo de bateria fraca.
+-  A carga de CPU excede 80% no momento em que o conteúdo é solicitado.
+-  A E/S de disco tem um *AvgDiskQueueLength* que excede 10.
+-  Não há mais conexões disponíveis para o computador.   
 Para saber mais, veja **Acesso limitado a uma origem de cache de pares** em [Cache de pares para clientes do Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).   
 
 Além disso, três novos relatórios são adicionados ao seu ponto de relatório. Você pode usar esses relatórios para saber mais detalhes sobre solicitações de conteúdo rejeitadas, incluindo o limite de grupo, o computador e o conteúdo envolvidos. Consulte [Monitoramento](/sccm/core/plan-design/hierarchy/client-peer-cache#monitoring) no tópico de cache de pares.
 
 ### <a name="content-library-cleanup-tool"></a>Ferramenta de limpeza da biblioteca de conteúdo
- Use a [ferramenta de limpeza da biblioteca de conteúdo](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) para remover o conteúdo de pontos de distribuição quando esse conteúdo não está mais associado a um aplicativo.
+Use a [ferramenta de limpeza da biblioteca de conteúdo](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) para remover o conteúdo de pontos de distribuição quando esse conteúdo não está mais associado a um aplicativo.
 
 
 ### <a name="use-the-oms-connector-with-the-azure-government-cloud"></a>Usar o conector do OMS com a nuvem Azure Governamental
@@ -201,14 +202,14 @@ Esta versão introduziu os seguintes aprimoramentos:
 
 ### <a name="improvements-to-the-auto-apply-driver-task-sequence"></a>Melhorias para a sequência de tarefas do Driver de aplicação automática
 Novas variáveis de sequência de tarefas estão agora disponíveis para configurar o valor de tempo limite na etapa de sequência de tarefas do Driver de aplicação automática ao fazer solicitações do catálogo HTTP. As seguintes variáveis e valores padrão (em segundos) estão disponíveis:
-   - SMSTSDriverRequestResolveTimeOut  
-     Padrão: 60
-   - SMSTSDriverRequestConnectTimeOut  
-     Padrão: 60
-   - SMSTSDriverRequestSendTimeOut  
-     Padrão: 60
-   - SMSTSDriverRequestReceiveTimeOut  
-     Padrão: 480
+- SMSTSDriverRequestResolveTimeOut  
+  Padrão: 60
+- SMSTSDriverRequestConnectTimeOut  
+  Padrão: 60
+- SMSTSDriverRequestSendTimeOut  
+  Padrão: 60
+- SMSTSDriverRequestReceiveTimeOut  
+  Padrão: 480
 
 ### <a name="windows-10-adk-tracked-by-build-version"></a>Windows 10 ADK controlado pela versão de build
 O Windows 10 ADK agora é controlado pela versão de build para garantir uma experiência com mais suporte ao personalizar imagens de inicialização do Windows 10. Por exemplo, se o site usa o Windows ADK para Windows 10, versão 1607, somente as imagens de inicialização com a versão 10.0.14393 poderão ser personalizadas no console. Para obter detalhes sobre como personalizar as versões WinPE, consulte [Personalizar imagens de inicialização](/sccm/osd/get-started/customize-boot-images).

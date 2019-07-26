@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42c1fc69d237b6209b49e45e1b185483b1c55163
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 79d805677b6a2572cb659ad8923717922c82f5d2
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676322"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340227"
 ---
 # <a name="support-center-user-interface-reference"></a>Referência de interface do usuário do Centro de Suporte
 
@@ -240,42 +240,42 @@ Os seguintes itens nesse menu solicitam uma ação do cliente relacionada ao con
 #### <a name="content-view"></a>Exibição de conteúdo
 Veja aplicativos, pacotes e atualizações que são carregados no cliente. Ao selecionar um aplicativo, pacote ou a atualização, você pode exibir detalhes deste conteúdo. Para alguns aplicativos, você também pode fazer as seguintes ações:  
 
- - **Atualizar**: atualizar a exibição Detalhes  
+- **Atualizar**: atualizar a exibição Detalhes  
 
- - **Verificar ou baixar**: verificar se um aplicativo está disponível para download  
+- **Verificar ou baixar**: verificar se um aplicativo está disponível para download  
 
- - **Instalar**: instalar o aplicativo  
+- **Instalar**: instalar o aplicativo  
 
- - **Desinstalar**: Desinstalar o aplicativo  
+- **Desinstalar**: Desinstalar o aplicativo  
 
 #### <a name="cache-view"></a>Exibição de cache
 Exiba a configuração de cache do cliente e os detalhes sobre o conteúdo em cache. Quando você conecta o Centro de suporte a um cliente local, também pode fazer as seguintes ações:  
 
- - Para alterar a localização do cache, selecione **Alterar** ao lado do campo **Localização do cache**.  
+- Para alterar a localização do cache, selecione **Alterar** ao lado do campo **Localização do cache**.  
 
- - Para ajustar o tamanho do cache, selecione **Alterar** ao lado do campo **Tamanho do cache**.  
+- Para ajustar o tamanho do cache, selecione **Alterar** ao lado do campo **Tamanho do cache**.  
 
- - Para limpar o cache do cliente, selecione **Limpar** ao lado do campo **Cache em uso**.  
+- Para limpar o cache do cliente, selecione **Limpar** ao lado do campo **Cache em uso**.  
 
 Essa exibição mostra as propriedades a seguir:  
 
- - **Localização**: a localização de cada pasta de cache. Selecione o link para abrir a pasta no Windows Explorer.   
- - **ID de Conteúdo**  
- - **ID de cache**  
- - **Tamanho**  
- - **Última referência**: essa propriedade é a data quando o cliente leu ou gravou pela última vez neste item no cache.  
+- **Localização**: a localização de cada pasta de cache. Selecione o link para abrir a pasta no Windows Explorer.   
+- **ID de Conteúdo**  
+- **ID de cache**  
+- **Tamanho**  
+- **Última referência**: essa propriedade é a data quando o cliente leu ou gravou pela última vez neste item no cache.  
 
 #### <a name="monitoring-view"></a>Exibição de Monitoramento
 Selecione **Monitor** para exibir o progresso ativo da atualização de software e de implantações de atualização de aplicativo. Esta exibição mostra as mensagens de estado geradas no aplicativo e mensagens de evento WMI de atualizações de software.
 
 Para cada evento, a exibição mostra as propriedades a seguir:  
 
- - **Tempo**: a hora em que o cliente gerou o evento  
- - **Tipo de tópico**: o tipo de mensagem de estado  
- - **ID do tópico**: ID da mensagem de estado, usada para mapear eventos nos arquivos de log  
- - **Tipo de ID do tópico**: o subtipo da mensagem de estado  
- - **ID de estado**: o resultado da ação que você está monitorando  
- - **Detalhes** e **Dados de evento**: mais informações sobre as mensagens de estado mostradas nesta exibição. Os detalhes do estado às vezes podem estar em branco.  
+- **Tempo**: a hora em que o cliente gerou o evento  
+- **Tipo de tópico**: o tipo de mensagem de estado  
+- **ID do tópico**: ID da mensagem de estado, usada para mapear eventos nos arquivos de log  
+- **Tipo de ID do tópico**: o subtipo da mensagem de estado  
+- **ID de estado**: o resultado da ação que você está monitorando  
+- **Detalhes** e **Dados de evento**: mais informações sobre as mensagens de estado mostradas nesta exibição. Os detalhes do estado às vezes podem estar em branco.  
 
 
 
@@ -293,23 +293,23 @@ O Centro de Suporte carrega ou atualiza a lista de inventário do cliente para a
 
 Os seguintes itens nesse menu solicitam uma ação do cliente relacionada ao inventário:  
 
- - **Ciclo de coleta de dados de descoberta (pulsação)** : dispara a tarefa do cliente usada para coletar informações de descoberta do dispositivo  
+- **Ciclo de coleta de dados de descoberta (pulsação)** : dispara a tarefa do cliente usada para coletar informações de descoberta do dispositivo  
 
- - **Ciclo de coleta de arquivos**: dispara a tarefa de cliente usada para coletar arquivos locais  
+- **Ciclo de coleta de arquivos**: dispara a tarefa de cliente usada para coletar arquivos locais  
 
- - **Ciclo de inventário de hardware**: dispara a tarefa do cliente usada para coletar dados de inventário de hardware  
+- **Ciclo de inventário de hardware**: dispara a tarefa do cliente usada para coletar dados de inventário de hardware  
 
- - **Ciclo de coleta de IDMIF**: dispara a tarefa do cliente usada para coletar dados IDMIF  
+- **Ciclo de coleta de IDMIF**: dispara a tarefa do cliente usada para coletar dados IDMIF  
 
- - **Ciclo de inventário de software**: dispara a tarefa do cliente usada para coletar dados de inventário de software  
+- **Ciclo de inventário de software**: dispara a tarefa do cliente usada para coletar dados de inventário de software  
 
- - **Ciclo de relatório de medição de software**: dispara a tarefa do cliente usada para criar um relatório de medição de software e enviá-lo para o ponto de gerenciamento. Acompanhe o progresso dessa tarefa no **SWMTRReportGen.log**.
+- **Ciclo de relatório de medição de software**: dispara a tarefa do cliente usada para criar um relatório de medição de software e enviá-lo para o ponto de gerenciamento. Acompanhe o progresso dessa tarefa no **SWMTRReportGen.log**.
 
- - **Enviar mensagens de estado não enviadas na fila**: dispara a tarefa do cliente para liberar a fila de mensagens de estado.
+- **Enviar mensagens de estado não enviadas na fila**: dispara a tarefa do cliente para liberar a fila de mensagens de estado.
 
- - **Advanced**  
-     - **Ciclo de inventário de hardware (ressincronização completa)**  
-     - **Ciclo de inventário de software (ressincronização completa)**  
+- **Advanced**  
+    - **Ciclo de inventário de hardware (ressincronização completa)**  
+    - **Ciclo de inventário de software (ressincronização completa)**  
 
 
 #### <a name="views"></a>Exibições
@@ -469,9 +469,9 @@ Depois de localizar duas ou mais correspondências para a cadeia de caracteres q
 
 #### <a name="error-lookup"></a>Pesquisa de erro
 Insira um código de erro para procurá-lo nos arquivos de log abertos no momento. Use os seguintes formatos de código de erro:
- - **inteiro de 32 bits (com sinal)** : Por exemplo, `-2147024891`  
- - **inteiro de 32 bits (sem sinal)** : Por exemplo, `2147942405`  
- - **hexadecimal de 32 bits**: Por exemplo, `0x80070005`  
+- **inteiro de 32 bits (com sinal)** : Por exemplo, `-2147024891`  
+- **inteiro de 32 bits (sem sinal)** : Por exemplo, `2147942405`  
+- **hexadecimal de 32 bits**: Por exemplo, `0x80070005`  
 
 #### <a name="decode-certificate"></a>Decodificar certificado
 Na caixa de diálogo **Decodificar certificado**, cole o valor de certificado serializado para qualquer certificado no cliente. Encontre esse valor no Registro, nos arquivos de log ou no WMI. Selecione **Processo** para exibir informações gerais e detalhes no certificado. Essas informações incluem o caminho de certificação. Selecione **Exportar** para exportar o certificado como um arquivo **.cer**.
@@ -517,15 +517,15 @@ Na caixa de diálogo Filtros avançados, você pode criar conjuntos de filtro co
 
 ### <a name="manage-filter-sets"></a>Gerenciar conjuntos de filtros
 
-  - Para editar um filtro, selecione o filtro e, em seguida, selecione **Editar**.  
+- Para editar um filtro, selecione o filtro e, em seguida, selecione **Editar**.  
 
-  - Para excluir um filtro, selecione o filtro e, em seguida, selecione **Excluir**.  
+- Para excluir um filtro, selecione o filtro e, em seguida, selecione **Excluir**.  
 
-  - Para limpar todos os filtros, selecione **Limpar**.  
+- Para limpar todos os filtros, selecione **Limpar**.  
 
-  - Para salvar o conjunto atual de filtro, selecione **Salvar filtros**. Em seguida, salve o filtro definido como um arquivo **.filterset**.  
+- Para salvar o conjunto atual de filtro, selecione **Salvar filtros**. Em seguida, salve o filtro definido como um arquivo **.filterset**.  
 
-  - Para carregar um conjunto de filtros salvo, selecione **Carregar filtros**. Em seguida, navegue até um arquivo **.filterset** salvo anteriormente.  
+- Para carregar um conjunto de filtros salvo, selecione **Carregar filtros**. Em seguida, navegue até um arquivo **.filterset** salvo anteriormente.  
 
 
 

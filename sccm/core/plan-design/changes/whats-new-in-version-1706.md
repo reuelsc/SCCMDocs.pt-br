@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 050122d6a1b799a30bd2c5a83ab261e92aaafabe
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: f4c0bc6710f6978eb4ed95b11de6be6845d72e8e
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67677214"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68338793"
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novidades da versão 1706 do System Center Configuration Manager
 
@@ -27,10 +27,11 @@ A atualização 1706 da ramificação atual do System Center Configuration Manag
 
 > [!TIP]  
 > Para instalar um novo site, você deve usar uma versão de linha de base do Configuration Manager.  
->  Saiba mais sobre:    
->   - [Instalação de novos sites](https://technet.microsoft.com/library/mt590197.aspx)  
->   - [Instalação de atualizações em sites](https://technet.microsoft.com/library/mt607046.aspx)  
->   - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines)  
+>
+> Saiba mais sobre:    
+> - [Instalação de novos sites](https://technet.microsoft.com/library/mt590197.aspx)  
+> - [Instalação de atualizações em sites](https://technet.microsoft.com/library/mt607046.aspx)  
+> - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines)  
 
 As seções a seguir fornecem detalhes sobre as alterações e novas funcionalidades introduzidas na versão 1706 do Configuration Manager.  
 
@@ -59,8 +60,8 @@ Adicionamos outros aprimoramentos de acessibilidade ao console do Configuration 
 ### <a name="improvements--for-sql-server-always-on-availability-groups"></a>Aprimoramentos para Grupos de Disponibilidade Always On do SQL Server
 <!-- 1352094 -->
 Com esta versão, agora você pode usar réplicas de confirmação assíncrona nos grupos de disponibilidade AlwaysOn do SQL Server usados com o Configuration Manager. Isso significa que você pode adicionar mais réplicas a seus grupos de disponibilidade para usar como backups fora do local (remotos) e, em seguida, usá-los em um cenário de recuperação de desastres.  
-  - O Configuration Manager dá suporte ao uso de réplica de confirmação assíncrona para recuperar sua réplica síncrona. Confira [Opções de recuperação do banco de dados do site](/sccm/core/servers/manage/recover-sites#site-database-recovery-options) no tópico Backup e recuperação para obter informações sobre como fazer isso.
-  - Esta versão não dá suporte a failover para usar a réplica de confirmação assíncrona como seu banco de dados do site.
+- O Configuration Manager dá suporte ao uso de réplica de confirmação assíncrona para recuperar sua réplica síncrona. Confira [Opções de recuperação do banco de dados do site](/sccm/core/servers/manage/recover-sites#site-database-recovery-options) no tópico Backup e recuperação para obter informações sobre como fazer isso.
+- Esta versão não dá suporte a failover para usar a réplica de confirmação assíncrona como seu banco de dados do site.
 Para saber mais, confira [Preparar para usar os Grupos de Disponibilidade Always On](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database).
 
 ### <a name="update-reset-tool"></a>Ferramenta de redefinição de atualização
@@ -74,9 +75,9 @@ Com esta versão, devem ser corrigidos os problemas com o modo como o console do
 ### <a name="improved-boundary-groups-for-software-update-points"></a>Grupos de limites aprimorados para os pontos de atualização de software
 <!-- 1324591 -->
 Esta versão inclui aprimoramentos no funcionamento dos pontos de atualização de software com grupos de limites. O exemplo a seguir resume o novo comportamento de fallback:
--   Agora, o fallback para pontos de atualização de software usa um tempo configurável para fallback para grupos de limites vizinhos.
--   Independentemente da configuração de fallback, um cliente tenta acessar o último ponto de atualização de software usado durante 120 minutos. Após não conseguir acessar o servidor durante 120 minutos, o cliente verifica seu pool de pontos de atualização de software disponíveis, para poder encontrar um novo.
--   Após não conseguir acessar o servidor original durante duas horas, o cliente muda para um ciclo mais curto a fim de entrar em contato com um novo ponto de atualização de software. Isso significa que, se um cliente não conseguir se conectar com um novo servidor, ele selecionará rapidamente o próximo servidor a partir do pool de servidores disponíveis e tentará contatá-lo.
+- Agora, o fallback para pontos de atualização de software usa um tempo configurável para fallback para grupos de limites vizinhos.
+- Independentemente da configuração de fallback, um cliente tenta acessar o último ponto de atualização de software usado durante 120 minutos. Após não conseguir acessar o servidor durante 120 minutos, o cliente verifica seu pool de pontos de atualização de software disponíveis, para poder encontrar um novo.
+- Após não conseguir acessar o servidor original durante duas horas, o cliente muda para um ciclo mais curto a fim de entrar em contato com um novo ponto de atualização de software. Isso significa que, se um cliente não conseguir se conectar com um novo servidor, ele selecionará rapidamente o próximo servidor a partir do pool de servidores disponíveis e tentará contatá-lo.
 
 Para saber mais, confira [pontos de atualização de software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points) no tópico Grupos de limites do Branch Atual.
 
@@ -85,20 +86,20 @@ Para saber mais, confira [pontos de atualização de software](/sccm/core/server
 Com esta versão, aprimoramos a integração do Configuration Manager e do Azure Active Directory (Azure AD).  Esses aprimoramentos simplificam o modo como configuramos os serviços do Azure que você usa com o Configuration Manager, e ajudam você a gerenciar clientes e usuários que autenticam pelo Azure AD.
 
 A integração aprimorada possibilita o seguinte:  
-  -   Assistente para Serviços do Azure – Esse Assistente fornece uma experiência de configuração comum que substitui os fluxos de trabalho individuais para configurar os seguintes serviços do Azure usados com o Configuration Manager.
-      - **Gerenciamento de Nuvem** permite que os clientes autentiquem usando o Azure Active Directory (Azure AD). Você também pode configurar a Descoberta de Usuário do Azure AD.
-      - **Conector do Log Analytics**: conecte-se ao Azure Log Analytics e sincronize os dados de coleção.
-      - **Upgrade Readiness** Conecte-se ao Upgrade Readiness e exiba dados de compatibilidade de atualização do cliente.
-      - **Windows Store para Empresas** Conecte-se ao repositório online do Windows Store para Empresas e obtenha aplicativos para a sua organização que podem ser implantados com o Configuration Manager.
+- Assistente para Serviços do Azure – Esse Assistente fornece uma experiência de configuração comum que substitui os fluxos de trabalho individuais para configurar os seguintes serviços do Azure usados com o Configuration Manager.
+  - **Gerenciamento de Nuvem** permite que os clientes autentiquem usando o Azure Active Directory (Azure AD). Você também pode configurar a Descoberta de Usuário do Azure AD.
+  - **Conector do Log Analytics**: conecte-se ao Azure Log Analytics e sincronize os dados de coleção.
+  - **Upgrade Readiness** Conecte-se ao Upgrade Readiness e exiba dados de compatibilidade de atualização do cliente.
+  - **Windows Store para Empresas** Conecte-se ao repositório online do Windows Store para Empresas e obtenha aplicativos para a sua organização que podem ser implantados com o Configuration Manager.
 
 
   Isso é feito usando um [aplicativo Web de servidor do Azure](/azure/app-service/app-service-authentication-overview) para fornecer os detalhes da assinatura e de configuração que você inseriria sempre que configurasse um novo componente ou serviço do Configuration Manager com o Azure. Para saber mais, confira [Assistente para Serviços do Azure](/sccm/core/servers/deploy/configure/azure-services-wizard).
 
--   Use o Azure AD para autenticar clientes na Internet a fim de acessar seus sites do Configuration Manager. O Azure AD substitui a necessidade de configurar e usar certificados de autenticação de cliente. Isso exige a função do sistema de site de gateway de gerenciamento de nuvem. Para saber mais, confira [Instalar e atribuir clientes do Configuration Manager na Internet usando o Azure AD para autenticação](/sccm/core/clients/deploy/deploy-clients-cmg-azure).
+- Use o Azure AD para autenticar clientes na Internet a fim de acessar seus sites do Configuration Manager. O Azure AD substitui a necessidade de configurar e usar certificados de autenticação de cliente. Isso exige a função do sistema de site de gateway de gerenciamento de nuvem. Para saber mais, confira [Instalar e atribuir clientes do Configuration Manager na Internet usando o Azure AD para autenticação](/sccm/core/clients/deploy/deploy-clients-cmg-azure).
 
--   Instale e gerencie o cliente do Configuration Manager em computadores localizados na Internet. Isso exige o uso da função do sistema de site de gateway de gerenciamento de nuvem. Para saber mais, confira [Instalar e atribuir clientes do Configuration Manager na Internet usando o Azure AD para autenticação](/sccm/core/clients/deploy/deploy-clients-cmg-azure).
+- Instale e gerencie o cliente do Configuration Manager em computadores localizados na Internet. Isso exige o uso da função do sistema de site de gateway de gerenciamento de nuvem. Para saber mais, confira [Instalar e atribuir clientes do Configuration Manager na Internet usando o Azure AD para autenticação](/sccm/core/clients/deploy/deploy-clients-cmg-azure).
 
--   Configurar a Descoberta de Usuário do Azure AD.  Use o Assistente para Serviços do Azure para configurar esse novo método de descoberta. Esse novo método consulta seu Azure AD em busca de dados de usuário que você pode usar junto com dados de descoberta tradicionais.  Há suporte para a sincronização completa e delta.  Para saber mais, confira [Descoberta de Usuário do Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).
+- Configurar a Descoberta de Usuário do Azure AD.  Use o Assistente para Serviços do Azure para configurar esse novo método de descoberta. Esse novo método consulta seu Azure AD em busca de dados de usuário que você pode usar junto com dados de descoberta tradicionais.  Há suporte para a sincronização completa e delta.  Para saber mais, confira [Descoberta de Usuário do Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).
 
 ### <a name="peer-cache-improvements"></a>Aprimoramentos de cache de pares
 <!-- 1252345 -->

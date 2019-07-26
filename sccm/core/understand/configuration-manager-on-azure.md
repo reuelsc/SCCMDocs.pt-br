@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 042ef488354ff1b527d41407d3ef590ee9fe0e45
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: d8c713dd1de90eaf8705859f5a814e38da9435e6
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676313"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340206"
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager no Azure – Perguntas frequentes
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
@@ -129,7 +129,7 @@ Em geral, você pode aproveitar a diretriz normal uma vez que ela é relacionada
 ### <a name="what-about-content-distribution-and-content-management-should-standard-distribution-points-be-in-azure-or-on-premises-and-should-i-use-branchcache-or-pull-distribution-points-on-premises-or-should-i-make-exclusive-use-of-cloud-distribution-points"></a>E a distribuição de conteúdo e o gerenciamento de conteúdo? Os pontos de distribuição padrão devem estar no Azure ou locais e devo usar BranchCache ou pontos de distribuição por pull localmente? Ou devo fazer uso exclusivo de Pontos de Distribuição na Nuvem?
 A abordagem de gerenciamento de conteúdo é muito semelhante à dos servidores do site e dos sistemas de sites.
 - Se você usa uma conexão de rede rápida e confiável entre o Azure e sua intranet com um plano de dados ilimitado, hospedar os pontos de distribuição padrão no Azure pode ser uma opção.
--  Se você usa um plano de dados limitado e o custo da largura de banda é uma preocupação ou se a conexão de rede entre o Azure e sua intranet não é rápida ou pode não ser confiável, considere outras abordagens. Elas incluem a localização de pontos de distribuição por pull ou padrão localmente, bem como usando o BranchCache. O uso de pontos de distribuição baseados em nuvem também é uma opção, mas existem alguns limites sobre os tipos de conteúdo com suporte (por exemplo, não há suporte para pacotes de atualizações de software).
+- Se você usa um plano de dados limitado e o custo da largura de banda é uma preocupação ou se a conexão de rede entre o Azure e sua intranet não é rápida ou pode não ser confiável, considere outras abordagens. Elas incluem a localização de pontos de distribuição por pull ou padrão localmente, bem como usando o BranchCache. O uso de pontos de distribuição baseados em nuvem também é uma opção, mas existem alguns limites sobre os tipos de conteúdo com suporte (por exemplo, não há suporte para pacotes de atualizações de software).
 
 > [!NOTE]
 >  Se o suporte a PXE for necessário, use pontos de distribuição locais (padrão ou pull) para responder às solicitações de inicialização. [No momento, não há suporte para o WDS ser executado em VMs do Azure](https://technet.microsoft.com/library/hh831764(v=ws.11).aspx).
@@ -156,23 +156,21 @@ Difícil dizer, uma vez que cada ambiente é diferente. O melhor a se fazer é d
 **Conceitos básicos:** https://azure.microsoft.com/documentation/articles/fundamentals-introduction-to-azure/
 
 **Tipos de computadores das VMs do Azure:**
- - Tamanhos da Máquina Virtual: https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs/  
- - Preço da VM: https://azure.microsoft.com/pricing/details/virtual-machines/  
- - Preço de armazenamento: https://azure.microsoft.com/pricing/details/storage/
+- Tamanhos da Máquina Virtual: https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs/  
+- Preço da VM: https://azure.microsoft.com/pricing/details/virtual-machines/  
+- Preço de armazenamento: https://azure.microsoft.com/pricing/details/storage/
 
 **Considerações sobre desempenho de disco:**    
- - Introdução do disco Premium: https://azure.microsoft.com/blog/2014/12/11/introducing-premium-storage-high-performance-storage-for-azure-virtual-machine-workloads/  
- - Informações do disco Premium: https://azure.microsoft.com/documentation/articles/storage-premium-storage-preview-portal/   
- - Coleção útil de gráficos para tamanhos máximos e destinos de desempenho para armazenamento: https://azure.microsoft.com/documentation/articles/storage-scalability-targets/  
- - Outra introdução e alguns dados interessantes sobre o funcionamento do Armazenamento Premium nos bastidores: https://azure.microsoft.com/blog/2015/04/16/azure-premium-storage-now-generally-available-2/
+- Introdução do disco Premium: https://azure.microsoft.com/blog/2014/12/11/introducing-premium-storage-high-performance-storage-for-azure-virtual-machine-workloads/  
+- Informações do disco Premium: https://azure.microsoft.com/documentation/articles/storage-premium-storage-preview-portal/   
+- Coleção útil de gráficos para tamanhos máximos e destinos de desempenho para armazenamento: https://azure.microsoft.com/documentation/articles/storage-scalability-targets/  
+- Outra introdução e alguns dados interessantes sobre o funcionamento do Armazenamento Premium nos bastidores: https://azure.microsoft.com/blog/2015/04/16/azure-premium-storage-now-generally-available-2/
 
 **Disponibilidade:**
- - Do SLA do tempo de atividade de IaaS do Azure: https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/  
- - Conjuntos de disponibilidade explicados: https://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability/
+- Do SLA do tempo de atividade de IaaS do Azure: https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/  
+- Conjuntos de disponibilidade explicados: https://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability/
 
 **Conectividade:**
- - ExpressRoute vs. VPN do Azure: https://azure.microsoft.com/blog/2014/06/10/expressroute-or-virtual-network-vpn-whats-right-for-me/
- - Preços do Express Route: https://azure.microsoft.com/pricing/details/expressroute/
- - Mais sobreo Express Route: https://azure.microsoft.com/documentation/articles/expressroute-introduction/
-
- 
+- ExpressRoute vs. VPN do Azure: https://azure.microsoft.com/blog/2014/06/10/expressroute-or-virtual-network-vpn-whats-right-for-me/
+- Preços do Express Route: https://azure.microsoft.com/pricing/details/expressroute/
+- Mais sobreo Express Route: https://azure.microsoft.com/documentation/articles/expressroute-introduction/

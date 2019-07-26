@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c32f3f24f083537396c64c8f8426f8b6e6d6ee7a
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: 1473db987fc28f9b5a4f487599ad03690b203d23
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67252027"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340151"
 ---
 # <a name="software-center-user-guide"></a>Guia do usuário do Centro de Software
 
@@ -47,9 +47,9 @@ Clique na guia **Aplicativos** para encontrar e instalar aplicativos implantados
 - **Filtros**: o administrador de TI pode criar categorias de aplicativos. Se estiver disponível, clique na lista suspensa para filtrar a exibição somente com os aplicativos de uma categoria específica. Selecione **Todos** para mostrar todos os aplicativos.
 - **Classificar por**: reorganize a lista de aplicativos. Por padrão, essa lista é classificada pelo **Mais recente**. Os aplicativos disponibilizados recentemente são listados com uma marca **Novo** que fica visível por sete dias.
 - **Pesquisar**: ainda não está encontrando o que procura? Insira palavras-chave na caixa de pesquisa para encontrá-lo!
--  **Alternar a exibição**: clique nos ícones para alternar a exibição entre a exibição de lista e a exibição de bloco. Por padrão, a lista de aplicativos é mostrada como blocos gráficos. 
-    - Exibição de bloco: o administrador de TI pode personalizar os ícones. Abaixo de cada bloco, são exibidos o nome do aplicativo, o distribuidor e a versão. 
-    - Exibição de lista: essa exibição mostra o ícone do aplicativo, o nome, o distribuidor, a versão e o status. 
+- **Alternar a exibição**: clique nos ícones para alternar a exibição entre a exibição de lista e a exibição de bloco. Por padrão, a lista de aplicativos é mostrada como blocos gráficos. 
+  - Exibição de bloco: o administrador de TI pode personalizar os ícones. Abaixo de cada bloco, são exibidos o nome do aplicativo, o distribuidor e a versão. 
+  - Exibição de lista: essa exibição mostra o ícone do aplicativo, o nome, o distribuidor, a versão e o status. 
 
 
 ### <a name="install-multiple-applications"></a>Instalar vários aplicativos 
@@ -119,13 +119,13 @@ Clique na guia **Opções** para exibir as configurações adicionais desse comp
 
 Indique as horas durante as quais você normalmente trabalha. O administrador de TI pode agendar as instalações de software fora do horário comercial. Permita, pelo menos, quatro horas por dia para tarefas de manutenção do sistema. O administrador de TI ainda poderá instalar atualizações de software e aplicativos críticos durante o horário comercial.
 
-   - Clique nas listas suspensas para selecionar os horários mais cedo e mais tarde em que você usa esse computador. Por padrão, esses valores variam das **5h** até às **22h**
+- Clique nas listas suspensas para selecionar os horários mais cedo e mais tarde em que você usa esse computador. Por padrão, esses valores variam das **5h** até às **22h**
 
-   - Marque a caixa de seleção ao lado dos dias da semana que você normalmente usa esse computador. O Centro de Software seleciona somente os dias da semana por padrão.  
+- Marque a caixa de seleção ao lado dos dias da semana que você normalmente usa esse computador. O Centro de Software seleciona somente os dias da semana por padrão.  
 
 Especifique se você usa regularmente este computador para fazer seu trabalho. O administrador pode automaticamente instalar aplicativos ou disponibilizar aplicativos adicionais para os computadores principais. <!--3485366-->
 
-   - Selecione **Eu uso regularmente este computador para fazer meu trabalho** se o computador que você está usando for um computador principal.
+- Selecione **Eu uso regularmente este computador para fazer meu trabalho** se o computador que você está usando for um computador principal.
 
 
 ### <a name="power-management"></a>Gerenciamento de Energia

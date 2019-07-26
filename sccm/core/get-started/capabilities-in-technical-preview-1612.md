@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34fca23c43b34d905e6ecea210c0ba7487feeea2
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 5b425103d4d7455a6453f6415f911e01defdc0d6
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67677530"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340117"
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1612 do System Center Configuration Manager
 
@@ -155,8 +155,8 @@ Depois de instalar o Technical Preview 1612, você poderá encontrar o **Content
 A ferramenta lançada com esse Technical Preview visa substituir as versões mais antigas de ferramentas similares lançadas para os produtos anteriores do Configuration Manager. Embora esta versão da ferramenta deixe de funcionar após 1º de março de 2017, novas versões serão lançadas com futuros Technical Previews até que essa ferramenta seja lançada como parte do Branch Atual ou de uma versão fora de banda pronta para produção.
 
 ### <a name="requirements"></a>requisitos  
- - A ferramenta pode ser executada diretamente no computador que hospeda o ponto de distribuição, ou remotamente de outro servidor. A ferramenta só pode ser executada em um único ponto de distribuição por vez.
- - A conta de usuário que executa a ferramenta diretamente deve ter permissões de administração baseada em funções equivalentes a um Administrador Completo na hierarquia do Configuration Manager.  A ferramenta não funcionará quando a conta de usuário tiver as permissões como um membro de um grupo de segurança do Windows que contém as permissões de Administrador Completo.
+- A ferramenta pode ser executada diretamente no computador que hospeda o ponto de distribuição, ou remotamente de outro servidor. A ferramenta só pode ser executada em um único ponto de distribuição por vez.
+- A conta de usuário que executa a ferramenta diretamente deve ter permissões de administração baseada em funções equivalentes a um Administrador Completo na hierarquia do Configuration Manager.  A ferramenta não funcionará quando a conta de usuário tiver as permissões como um membro de um grupo de segurança do Windows que contém as permissões de Administrador Completo.
 
 ### <a name="modes-of-operation"></a>Modos de operação
 A ferramenta pode ser executada em dois modos:

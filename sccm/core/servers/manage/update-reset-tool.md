@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec78a903bd3fa897a240ea04ca7f14349f9a0acd
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: d6366e4a92be6aea0441adf6c81c8c8416b05f33
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500965"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68337984"
 ---
 # <a name="update-reset-tool"></a>Ferramenta de redefinição de atualização
 
@@ -33,9 +33,9 @@ Quando você executa a ferramenta, ela é executada em relação à atualizaçã
 
 ### <a name="prerequisites"></a>Pré-requisitos
 A conta usada para executar a ferramenta requer as seguintes permissões:
--   Permissões de **leitura** e **gravação** para o banco de dados do site de administração central e cada site primário em sua hierarquia. Para definir essas permissões, você poderá adicionar a conta de usuário como membro das [funções de banco de dados fixas](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles) **db_datawriter** e **db_datareader** no banco de dados do Configuration Manager de cada site. A ferramenta não consegue interagir com os sites secundários.
--   **Administrador local** no site de nível superior da sua hierarquia.
--   **Administrador local** no computador que hospeda o ponto de conexão de serviço.
+- Permissões de **leitura** e **gravação** para o banco de dados do site de administração central e cada site primário em sua hierarquia. Para definir essas permissões, você poderá adicionar a conta de usuário como membro das [funções de banco de dados fixas](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles) **db_datawriter** e **db_datareader** no banco de dados do Configuration Manager de cada site. A ferramenta não consegue interagir com os sites secundários.
+- **Administrador local** no site de nível superior da sua hierarquia.
+- **Administrador local** no computador que hospeda o ponto de conexão de serviço.
 
 Você precisa da interface gráfica do usuário do pacote de atualização que você deseja redefinir. Para obter a interface gráfica do usuário:
   1.   No console, acesse **Administração** > **Atualizações e Manutenção**.
@@ -49,17 +49,17 @@ Você precisa da interface gráfica do usuário do pacote de atualização que v
 A ferramenta deve ser executada no site de nível superior da hierarquia.
 
 Ao executar a ferramenta, use os parâmetros de linha de comando para especificar:
-  -   O SQL Server no site de nível superior da hierarquia.
-  -   O nome do banco de dados do site no site de nível superior.
-  -   O GUID do pacote de atualização que você deseja redefinir.
+- O SQL Server no site de nível superior da hierarquia.
+- O nome do banco de dados do site no site de nível superior.
+- O GUID do pacote de atualização que você deseja redefinir.
 
 Com base no status da atualização, a ferramenta identifica os servidores adicionais os quais precisa acessar.   
 
 Se o pacote de atualização estiver em um estado de *pós-download*, a ferramenta não limpará o pacote. Como opção, você pode forçar a remoção de uma atualização que baixou com êxito usando o parâmetro force delete (confira os parâmetros de linha de comando posteriormente neste tópico).
 
 Depois que a ferramenta é executada:
--   Se um pacote tiver sido excluído, reinicie o serviço SMS_Executive no site de nível superior. Em seguida, verifique se há atualizações para que você possa baixar o pacote novamente.
--   Se um pacote não tiver sido excluído, não será necessário realizar qualquer ação. A atualização reinicializa e, depois, reinicia a replicação ou a instalação.
+- Se um pacote tiver sido excluído, reinicie o serviço SMS_Executive no site de nível superior. Em seguida, verifique se há atualizações para que você possa baixar o pacote novamente.
+- Se um pacote não tiver sido excluído, não será necessário realizar qualquer ação. A atualização reinicializa e, depois, reinicia a replicação ou a instalação.
 
 **Parâmetros da linha de comando:**  
 
@@ -72,7 +72,7 @@ Depois que a ferramenta é executada:
 |           **-I &lt;Nome da instância do SQL Server>**           |                    *Opcional* <br> Identifique a instância do SQL Server que hospeda o banco de dados do site.                     |
 |                       **-FDELETE**                       |                       *Opcional* <br> Force a exclusão de um pacote de atualização baixado com êxito.                        |
 
- **Exemplos:**  
- Em um cenário típico, você deve redefinir uma atualização que apresenta problemas de download. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Você pode executar: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+**Exemplos:**  
+Em um cenário típico, você deve redefinir uma atualização que apresenta problemas de download. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Você pode executar: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
- Em um cenário mais complexo, você deve forçar a exclusão do pacote de atualização problemático. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Você pode executar: ***CMUpdateReset.exe -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+Em um cenário mais complexo, você deve forçar a exclusão do pacote de atualização problemático. O FQDN do seu SQL Server é *server1.fabrikam.com*, o banco de dados do site é *CM_XYZ* e a GUID do pacote é *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Você pode executar: ***CMUpdateReset.exe -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***

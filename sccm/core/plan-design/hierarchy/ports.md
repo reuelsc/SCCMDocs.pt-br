@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d697427fe9cfa774cc7baca6563d6c1cc285c8b
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: b8818f858900db76192df1503d9043e6435a4999
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159396"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68338681"
 ---
 # <a name="ports-used-in-configuration-manager"></a>Portas usadas no Configuration Manager
 
@@ -25,31 +25,31 @@ ms.locfileid: "67159396"
 Este artigo lista as portas de rede usadas pelo Configuration Manager. Algumas conexões usam portas que não são configuráveis e algumas dão suporte a portas personalizadas que você especifica. Se você usar qualquer tecnologia de filtragem de porta, verifique se as portas necessárias estão disponíveis. Essas tecnologias de filtragem de porta incluem firewalls, roteadores, servidores proxy ou IPsec.   
 
 > [!NOTE]  
->  Se houver suporte a clientes baseados na Internet usando a ponte SSL, além dos requisitos de porta, você também deverá permitir alguns verbos e cabeçalhos HTTP para percorrer seu firewall.   
+> Se houver suporte a clientes baseados na Internet usando a ponte SSL, além dos requisitos de porta, você também deverá permitir alguns verbos e cabeçalhos HTTP para percorrer seu firewall.   
 
 
 
 ##  <a name="BKMK_ConfigurablePorts"></a> Portas que você pode configurar  
- O Configuration Manager permite que você configure as portas para os seguintes tipos de comunicação:  
+O Configuration Manager permite que você configure as portas para os seguintes tipos de comunicação:  
 
--   Ponto de sites da Web do catálogo de aplicativos com o ponto de serviços Web do catálogo de aplicativos  
+- Ponto de sites da Web do catálogo de aplicativos com o ponto de serviços Web do catálogo de aplicativos  
 
--   Ponto proxy do registro com o ponto de registro  
+- Ponto proxy do registro com o ponto de registro  
 
--   Cliente para sistemas de sites que executam o IIS  
+- Cliente para sistemas de sites que executam o IIS  
 
--   Cliente com Internet (como configurações do servidor proxy)  
+- Cliente com Internet (como configurações do servidor proxy)  
 
--   Ponto de atualização de software com Internet (como configurações do servidor proxy)  
+- Ponto de atualização de software com Internet (como configurações do servidor proxy)  
 
--   Ponto de atualização de software com o servidor WSUS  
+- Ponto de atualização de software com o servidor WSUS  
 
--   Servidor do site com o servidor de banco de dados do site  
+- Servidor do site com o servidor de banco de dados do site  
 
--   Pontos do Reporting Services  
+- Pontos do Reporting Services  
 
-    > [!NOTE]  
-    >  As portas em uso para a função do sistema de sites do ponto do Reporting Services são configuradas no SQL Server Reporting Services. Essas portas são usadas pelo Configuration Manager durante comunicações com o ponto do Reporting Services. Lembre-se de verificar essas portas que definem as informações de filtro IP para políticas IPsec ou para configurar firewalls.  
+  > [!NOTE]  
+  > As portas em uso para a função do sistema de sites do ponto do Reporting Services são configuradas no SQL Server Reporting Services. Essas portas são usadas pelo Configuration Manager durante comunicações com o ponto do Reporting Services. Lembre-se de verificar essas portas que definem as informações de filtro IP para políticas IPsec ou para configurar firewalls.  
 
 Por padrão, a porta HTTP usada para comunicação do cliente com o sistema de sites é a porta 80 e a porta HTTPS padrão é 443. As portas para comunicação do cliente para o sistema de sites por HTTP ou HTTPS podem ser alteradas durante a instalação ou nas propriedades do site do Configuration Manager.  
 
@@ -61,15 +61,15 @@ As portas em uso para a função do sistema de sites do ponto do Reporting Servi
 
 O Configuration Manager não permite que você configure as portas para os seguintes tipos de comunicação:  
 
--   Site a site  
+- Site a site  
 
--   Servidor do site com o sistema de site  
+- Servidor do site com o sistema de site  
 
--   Console do Configuration Manager para Provedor de SMS  
+- Console do Configuration Manager para Provedor de SMS  
 
--   Console do Configuration Manager para a Internet  
+- Console do Configuration Manager para a Internet  
 
--   Conexões com serviços de nuvem, como o Microsoft Intune e pontos de distribuição em nuvem  
+- Conexões com serviços de nuvem, como o Microsoft Intune e pontos de distribuição em nuvem  
 
 
 
@@ -77,9 +77,9 @@ O Configuration Manager não permite que você configure as portas para os segui
 
 As seções a seguir detalham as portas usadas para comunicação no Configuration Manager. As setas no título da seção mostram a direção da comunicação:  
 
--   – > indica que um computador inicia a comunicação e o outro computador sempre responde  
+- – > indica que um computador inicia a comunicação e o outro computador sempre responde  
 
--   &lt; – > indica que qualquer computador pode iniciar a comunicação  
+- &lt; – > indica que qualquer computador pode iniciar a comunicação  
 
 
 ###  <a name="BKMK_PortsAI"></a> Ponto de sincronização do Asset Intelligence – > Microsoft  
@@ -194,7 +194,7 @@ Para obter mais informações, veja [Portas e fluxo de dados do CMG](/sccm/core/
 
 
 ###  <a name="BKMK_PortsClient-GCDC"></a> Cliente – > Controlador de domínio de catálogo global  
- Clientes do Configuration Manager não entram em contato com servidores de catálogo global quando eles estão em um computador de grupo de trabalho ou configurados para comunicação somente via Internet.  
+Clientes do Configuration Manager não entram em contato com servidores de catálogo global quando eles estão em um computador de grupo de trabalho ou configurados para comunicação somente via Internet.  
 
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
@@ -330,15 +330,15 @@ O console do Configuration Manager usa o acesso à Internet para as seguintes a�
 
 
 ###  <a name="BKMK_PortsDist_MP"></a> Ponto de distribuição – > Ponto de gerenciamento  
- Um ponto de distribuição se comunica com o ponto de gerenciamento nos seguintes cenários:  
+Um ponto de distribuição se comunica com o ponto de gerenciamento nos seguintes cenários:  
 
--   Para relatar o status do conteúdo pré-teste  
+- Para relatar o status do conteúdo pré-teste  
 
--   Para relatar dados de resumo de uso  
+- Para relatar dados de resumo de uso  
 
--   Para relatar a validação de conteúdo  
+- Para relatar a validação de conteúdo  
 
--   Para relatar o status dos downloads de pacote (ponto de distribuição pull)
+- Para relatar o status dos downloads de pacote (ponto de distribuição pull)
 
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
@@ -406,7 +406,7 @@ O console do Configuration Manager usa o acesso à Internet para as seguintes a�
 
 
 ###  <a name="BKMK_PortsMP-Site"></a> Ponto de gerenciamento &lt; – > Servidor do site  
- <sup>[Observação 5](#bkmk_note5)</sup>   
+<sup>[Observação 5](#bkmk_note5)</sup>   
 
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
@@ -587,7 +587,7 @@ Para obter mais informações, veja [Portas e fluxo de dados](/sccm/core/plan-de
 
 
 ###  <a name="BKMK_PortsSite-RCL"></a> Servidor do site –> Servidor que hospeda o compartilhamento de biblioteca de conteúdo remoto  
- Começando na versão 1806, é possível relocar a Biblioteca de conteúdo para outro local de armazenamento para liberar espaço no disco rígido em sua administração central ou em servidores do site primário. Para obter mais informações, confira [Configurar uma biblioteca de conteúdo remota para o servidor do site](/sccm/core/plan-design/hierarchy/the-content-library#bkmk_remote).  
+Começando na versão 1806, é possível relocar a Biblioteca de conteúdo para outro local de armazenamento para liberar espaço no disco rígido em sua administração central ou em servidores do site primário. Para obter mais informações, confira [Configurar uma biblioteca de conteúdo remota para o servidor do site](/sccm/core/plan-design/hierarchy/the-content-library#bkmk_remote).  
 
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
@@ -749,9 +749,9 @@ As portas dinâmicas usam um intervalo de números de porta definidos pela vers�
 
  Os clientes usam o protocolo SMB sempre que se conectam aos compartilhamentos UNC. Por exemplo:  
 
--   Instalação manual do cliente que especifica a propriedade da linha de comando CCMSetup.exe **/source:**  
+- Instalação manual do cliente que especifica a propriedade da linha de comando CCMSetup.exe **/source:**  
 
--   Clientes do Endpoint Protection que baixam arquivos de definição de um caminho UNC
+- Clientes do Endpoint Protection que baixam arquivos de definição de um caminho UNC
 
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  
@@ -762,13 +762,13 @@ As portas dinâmicas usam um intervalo de números de porta definidos pela vers�
 
  Para fazer comunicação com o mecanismo de banco de dados do SQL Server e para fazer a replicação entre sites, é possível usar a porta do SQL Server padrão ou especificar portas personalizadas:  
 
--   Uso de comunicações entre sites:  
+- Uso de comunicações entre sites:  
 
-    -   SQL Server Service Broker, que usa como padrão a porta TCP 4022.  
+  - SQL Server Service Broker, que usa como padrão a porta TCP 4022.  
 
-    -   Serviço SQL Server, que usa como padrão a porta TCP 1433.  
+  - Serviço SQL Server, que usa como padrão a porta TCP 1433.  
 
--   A comunicação entre sites entre o mecanismo de banco de dados do SQL Server e várias funções do sistema de sites do Configuration Manager padroniza a porta TCP 1433.  
+- A comunicação entre sites entre o mecanismo de banco de dados do SQL Server e várias funções do sistema de sites do Configuration Manager padroniza a porta TCP 1433.  
 
 - O Configuration Manager usará as mesmas portas e protocolos para se comunicar com cada réplica do Grupo de Disponibilidade do SQL que hospeda o banco de dados do site como se a réplica for uma instância autônoma do SQL Server.
 
@@ -777,31 +777,31 @@ Quando você usar o Azure e o banco de dados do site estiver atrás de um balanc
 - Regras de balanceamento de carga 
 
 Configure as seguintes portas:
- - SQL por TCP: TCP 1433
- - SQL Server Service Broker: TCP 4022
- - Protocolo SMB: TCP 445
- - Mapeador de pontos de extremidade RPC: TCP 135
+- SQL por TCP: TCP 1433
+- SQL Server Service Broker: TCP 4022
+- Protocolo SMB: TCP 445
+- Mapeador de pontos de extremidade RPC: TCP 135
 
 > [!WARNING]  
->  O Configuration Manager não dá suporte a portas dinâmicas. Por padrão, as instâncias nomeadas do SQL Server usam portas dinâmicas para conexões com o mecanismo de banco de dados. Quando você usa uma instância nomeada, configure manualmente a porta estática para a comunicação entre sites.  
+> O Configuration Manager não dá suporte a portas dinâmicas. Por padrão, as instâncias nomeadas do SQL Server usam portas dinâmicas para conexões com o mecanismo de banco de dados. Quando você usa uma instância nomeada, configure manualmente a porta estática para a comunicação entre sites.  
 
- As seguintes funções do sistema de site se comunicam diretamente com o banco de dados do SQL Server:  
+As seguintes funções do sistema de site se comunicam diretamente com o banco de dados do SQL Server:  
 
--   Ponto de serviços Web do Catálogo de Aplicativos  
+- Ponto de serviços Web do Catálogo de Aplicativos  
 
--   Função de ponto de registro de certificado  
+- Função de ponto de registro de certificado  
 
--   Função de ponto de registro  
+- Função de ponto de registro  
 
--   Ponto de gerenciamento  
+- Ponto de gerenciamento  
 
--   Servidor do site  
+- Servidor do site  
 
--   Ponto do Reporting Services  
+- Ponto do Reporting Services  
 
--   Provedor de SMS  
+- Provedor de SMS  
 
--   SQL Server -- > SQL Server  
+- SQL Server -- > SQL Server  
 
 Quando um SQL Server hospeda um banco de dados de mais de um site, cada banco de dados deve usar uma instância separada do SQL Server. Configure cada instância com um conjunto exclusivo de portas.  
 
@@ -813,37 +813,37 @@ Para ver um exemplo sobre como configurar o SQL Server para usar uma porta espec
 ### <a name="bkmk_discovery"> </a> Descoberta e publicação
 
 O Configuration Manager usa as seguintes portas para a descoberta e publicação de informações do site:
- - Protocolo LDAP: 389
- - LDAP de catálogo global: 3268
- - Mapeador de pontos de extremidade RPC: 135
- - RPC: Portas TCP altas alocadas dinamicamente
- - TCP: 1024: 5000
- - TCP:  49152: 65535
+- Protocolo LDAP: 389
+- LDAP de catálogo global: 3268
+- Mapeador de pontos de extremidade RPC: 135
+- RPC: Portas TCP altas alocadas dinamicamente
+- TCP: 1024: 5000
+- TCP:  49152: 65535
 
 
 ###  <a name="BKMK_External"></a> Conexões externas feitas pelo Gerenciador de Configurações  
 
 Clientes do Configuration Manager local ou sistemas de sites podem fazer as seguintes conexões externas:  
 
--   [Ponto de sincronização do Asset Intelligence – &gt; Microsoft](#BKMK_PortsAI)  
+- [Ponto de sincronização do Asset Intelligence – &gt; Microsoft](#BKMK_PortsAI)  
 
--   [Ponto do Endpoint Protection – &gt; Internet](#BKMK_PortsEndpointProtection_Internet)  
+- [Ponto do Endpoint Protection – &gt; Internet](#BKMK_PortsEndpointProtection_Internet)  
 
--   [Cliente – &gt; Controlador de domínio de catálogo global](#BKMK_PortsClient-GCDC)  
+- [Cliente – &gt; Controlador de domínio de catálogo global](#BKMK_PortsClient-GCDC)  
 
--   [Console do Configuration Manager – &gt; Internet](#BKMK_PortsConsole-Internet)  
+- [Console do Configuration Manager – &gt; Internet](#BKMK_PortsConsole-Internet)  
 
--   [Ponto de gerenciamento – &gt; Controlador de domínio](#BKMK_PortsMP-DC)  
+- [Ponto de gerenciamento – &gt; Controlador de domínio](#BKMK_PortsMP-DC)  
 
--   [Servidor do site – &gt; Controlador de domínio](#BKMK_PortsSite-DC)  
+- [Servidor do site – &gt; Controlador de domínio](#BKMK_PortsSite-DC)  
 
--   [Servidor do site &lt; -- &gt; AC (Autoridade de Certificação) Emissora](#BKMK_PortsIssuingCA_SiteServer)  
+- [Servidor do site &lt; -- &gt; AC (Autoridade de Certificação) Emissora](#BKMK_PortsIssuingCA_SiteServer)  
 
--   [Ponto de atualização de software – &gt; Internet](#BKMK_PortsSUP-Internet)  
+- [Ponto de atualização de software – &gt; Internet](#BKMK_PortsSUP-Internet)  
 
--   [Ponto de atualização de software – &gt; Servidor upstream do WSUS](#BKMK_PortsSUP-WSUS)  
+- [Ponto de atualização de software – &gt; Servidor upstream do WSUS](#BKMK_PortsSUP-WSUS)  
 
--   [Ponto de conexão de serviço – &gt; Microsoft Intune](#BKMK_PortsIntuneConnector-WindowsIntune)  
+- [Ponto de conexão de serviço – &gt; Microsoft Intune](#BKMK_PortsIntuneConnector-WindowsIntune)  
 
 - [Ponto de conexão de serviço -- > Azure](#bkmk_scp-cmg)  
 
@@ -852,22 +852,22 @@ Clientes do Configuration Manager local ou sistemas de sites podem fazer as segu
 
 ###  <a name="BKMK_IBCMports"></a> Requisitos de instalação para sistemas de site que oferecem suporte a clientes baseados na Internet  
 
- > [!Note]  
- > Esta seção se aplica somente ao IBCM (gerenciamento de clientes baseados na Internet). Não se aplica ao Gateway de Gerenciamento de Nuvem. Para obter mais informações, veja [Gerenciar clientes na Internet](/sccm/core/clients/manage/manage-clients-internet).  
+> [!Note]  
+> Esta seção se aplica somente ao IBCM (gerenciamento de clientes baseados na Internet). Não se aplica ao Gateway de Gerenciamento de Nuvem. Para obter mais informações, veja [Gerenciar clientes na Internet](/sccm/core/clients/manage/manage-clients-internet).  
 
- Os pontos de gerenciamento baseados na Internet e os pontos de distribuição que dão suporte a clientes baseados em Internet, o ponto de atualização de software e o ponto de status de fallback usam as seguintes portas para instalação e reparo:  
+Os pontos de gerenciamento baseados na Internet e os pontos de distribuição que dão suporte a clientes baseados em Internet, o ponto de atualização de software e o ponto de status de fallback usam as seguintes portas para instalação e reparo:  
 
--   Servidor do site --> sistema de sites: mapeador de ponto de extremidade RPC usando UDP e porta TCP 135.  
+- Servidor do site --> sistema de sites: mapeador de ponto de extremidade RPC usando UDP e porta TCP 135.  
 
--   Servidor do site --> sistema de sites: Portas TCP dinâmicas de RPC  
+- Servidor do site --> sistema de sites: Portas TCP dinâmicas de RPC  
 
--   Servidor do site &lt; --> sistema de sites: Protocolo SMB usando a porta TCP 445
+- Servidor do site &lt; --> sistema de sites: Protocolo SMB usando a porta TCP 445
 
 Instalações de aplicativos e pacotes nos pontos de distribuição requerem as seguintes portas RPC:  
 
--   Servidor do site --> ponto de distribuição: Mapeador de pontos de extremidade RPC usando UDP e a porta TCP 135
+- Servidor do site --> ponto de distribuição: Mapeador de pontos de extremidade RPC usando UDP e a porta TCP 135
 
--   Servidor do site --> ponto de distribuição: Portas TCP dinâmicas de RPC  
+- Servidor do site --> ponto de distribuição: Portas TCP dinâmicas de RPC  
 
 Use o IPsec para ajudar a proteger o tráfego entre o servidor do site e os sistemas de site. Se for preciso restringir as portas dinâmicas usadas com RPC, você pode usar a ferramenta de configuração Microsoft RPC (rpccfg.exe) para configurar um intervalo restrito de portas para esses pacotes RPC. Para obter mais informações sobre a ferramenta de configuração RPC, consulte [Como configurar o RPC para usar determinadas portas e como ajudar a proteger essas portas usando o IPsec](https://support.microsoft.com/help/908472/how-to-configure-rpc-to-use-certain-ports-and-how-to-help-secure-those).  
 
@@ -891,7 +891,7 @@ O servidor do site que executa a migração usa várias portas para se conectar 
 
 ###  <a name="BKMK_ServerPorts"></a> Portas usadas pelo Windows Server  
 
- A tabela a seguir lista algumas das principais portas usadas pelo Windows Server. 
+A tabela a seguir lista algumas das principais portas usadas pelo Windows Server. 
 
 |Descrição|UDP|TCP|  
 |-----------------|---------|---------|  

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee32d282bc04e6c1f97b12dedb8d69ccdcca8915
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 0ed8434086a7f1515cc538c3b265cb4e8f54780e
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67677542"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340099"
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1702 do System Center Configuration Manager
 
@@ -54,10 +54,10 @@ Adicionamos uma função de limpeza automática que exclui os downloads desneces
 
 ## <a name="peer-cache-improvements"></a>Aprimoramentos de cache de pares
 A partir desta versão, um computador de origem de cache de pares rejeitará uma solicitação de conteúdo quando o computador de origem do cache de pares atender a qualquer uma das seguintes condições:  
- -  Está no modo de bateria fraca.
- -  A carga de CPU excede 80% no momento em que o conteúdo é solicitado.
- -  A E/S de disco tem um *AvgDiskQueueLength* que excede 10.
- -  Não há mais conexões disponíveis para o computador.   
+-  Está no modo de bateria fraca.
+-  A carga de CPU excede 80% no momento em que o conteúdo é solicitado.
+-  A E/S de disco tem um *AvgDiskQueueLength* que excede 10.
+-  Não há mais conexões disponíveis para o computador.   
 
 Você pode definir essas configurações usando a classe de configuração de agente cliente para o recurso de origem par (*SMS_WinPEPeerCacheConfig*) quando usar o SDK do System Center Configuration Manager.
 
@@ -101,8 +101,8 @@ Os exemplos seguintes usam um Azure AD do *contoso.onmicrosoft.com*:
 O Azure AD não tem uma UO que armazena grupos. Em vez disso, use a mesma estrutura geral das consultas de sistema ou usuário e configure a consulta LDAP para apontar para a UO que contém os grupos que você deseja descobrir.
 
 Para obter mais informações sobre o Azure AD, consulte o seguinte:  
- - [Azure Active Directory Domain Services](https://azure.microsoft.com/services/active-directory-ds) em azure.microsoft.com.
- - [Documentação do Active Directory Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services) em docs.microsoft.com.
+- [Azure Active Directory Domain Services](https://azure.microsoft.com/services/active-directory-ds) em azure.microsoft.com.
+- [Documentação do Active Directory Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services) em docs.microsoft.com.
 
 ## <a name="conditional-access-device-compliance-policy-improvements"></a>Aprimoramentos na política de conformidade de dispositivo de acesso condicional
 

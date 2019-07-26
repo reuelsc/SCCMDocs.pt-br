@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8ae8d006555a79be1a27b327a3de78c75743bad
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: ac2290c630393a047c5bdd8677562df6e0f0410d
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500743"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340253"
 ---
 # <a name="customize-support-center"></a>Personalizar o Centro de Suporte
 
@@ -24,11 +24,11 @@ ms.locfileid: "65500743"
 
 A ferramenta [Centro de Suporte](/sccm/core/support/support-center) inclui um arquivo de configuração que você pode personalizar. Por padrão, quando você instala o Centro de Suporte, esse arquivo está no seguinte caminho: `C:\Program Files (x86)\Configuration Manager Support Center\ConfigMgrSupportCenter.exe.config`. O arquivo de configuração muda o comportamento do programa:
 
-  - [Personalizar a coleta de dados](#bkmk_datacoll): edite os conjuntos de chaves do Registro e os namespaces do WMI que ele inclui durante a coleta de dados  
+- [Personalizar a coleta de dados](#bkmk_datacoll): edite os conjuntos de chaves do Registro e os namespaces do WMI que ele inclui durante a coleta de dados  
 
-  - [Personalizar grupos de log](#bkmk_loggroups): defina novos grupos de arquivos de log usando expressões regulares. Também adicione outros arquivos de log a grupos de log.  
+- [Personalizar grupos de log](#bkmk_loggroups): defina novos grupos de arquivos de log usando expressões regulares. Também adicione outros arquivos de log a grupos de log.  
 
-  - [Coletar arquivos de log adicionais usando caracteres curinga:](#bkmk_wildcards): use pesquisas curinga para coletar arquivos de log adicionais  
+- [Coletar arquivos de log adicionais usando caracteres curinga:](#bkmk_wildcards): use pesquisas curinga para coletar arquivos de log adicionais  
 
 Para fazer essas alterações, você precisa ter permissões administrativas locais no cliente no qual instalou o Centro de Suporte. Faça essas personalizações usando um editor de texto ou XML, como o Bloco de Notas ou o Visual Studio.
 
@@ -97,9 +97,9 @@ Para coletar chaves do Registro para os programas clássicos instalados no dispo
 
 Para personalizar que arquivos de log o Centro de Suporte coleta e como ele os representa na lista **Grupos de log**, use elementos no elemento `<logGroups>`. Quando você iniciar o Centro de suporte, ele examinará esta seção do arquivo de configuração. Ele então criará um grupo na lista **Grupos de log** para cada valor de atributo de chave exclusivo encontrado nos elementos `<add/>` contidos no elemento `<logGroups>`.
 
-  - **Grupo de logs de componente**: o elemento `<componentLogGroup>` usa um atributo de chave para definir o nome do grupo de log exibido na lista. Ele também usa um atributo de valor que contém uma regex (expressão regular). Ele usa essa regex para coletar um conjunto de arquivos de log relacionados.  
+- **Grupo de logs de componente**: o elemento `<componentLogGroup>` usa um atributo de chave para definir o nome do grupo de log exibido na lista. Ele também usa um atributo de valor que contém uma regex (expressão regular). Ele usa essa regex para coletar um conjunto de arquivos de log relacionados.  
 
-  - **Grupo de log estático:** o elemento `<staticLogGroup>` usa um atributo de chave para definir o nome do grupo de log exibido na lista. Ele também usa um atributo de valor que define um nome de arquivo de log.  
+- **Grupo de log estático:** o elemento `<staticLogGroup>` usa um atributo de chave para definir o nome do grupo de log exibido na lista. Ele também usa um atributo de valor que define um nome de arquivo de log.  
 
 Se o mesmo valor de atributo de chave for usado em um elemento `<add/>` dentro dos elementos `<componentLogGroup>` e do elemento `<staticLogGroup>`, o Centro de Suporte criará um único grupo. Esse grupo inclui os arquivos de log definidos por ambos os elementos que usam a mesma chave.
 

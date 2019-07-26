@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87b9910e5ad7e8f6cb732ef4046d83f5122a6b8f
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 29e0f58404df2cadf2a1e28939ebcec2647b3e6d
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65497778"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339416"
 ---
 # <a name="prepare-to-install-system-center-configuration-manager-sites"></a>Preparar para instalar sites do System Center Configuration Manager
 
@@ -58,45 +58,45 @@ Depois de instalar o site inicial, você pode adicionar mais sites a qualquer mo
 Um site secundário deve ser instalado no console do Configuration Manager. Dessa forma, os sites secundários sempre são instalados usando arquivos de origem do site primário pai.
 
 **Método de instalação**: O método usado para instalar sites adicionais depende do tipo de site que você deseja instalar.
--   **Adicionar um site de administração central**:  Você pode usar o Assistente de Instalação do Configuration Manager ou uma linha de comando com script para instalar o novo site de administração central como um site pai para o site primário autônomo existente. Para obter mais informações, confira [Expansão de um site primário autônomo](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand).
--   **Adicionar um site primário filho**:  Você pode usar o Assistente de Instalação do Configuration Manager ou uma instalação de linha de comando para adicionar um site primário filho abaixo do site de administração central.
--   **Adicionar um site secundário**:  Use o console do Configuration Manager para instalar um site secundário como um site filho abaixo do site primário. Não há suporte para outros métodos para adicionar sites secundários.
+- **Adicionar um site de administração central**:  Você pode usar o Assistente de Instalação do Configuration Manager ou uma linha de comando com script para instalar o novo site de administração central como um site pai para o site primário autônomo existente. Para obter mais informações, confira [Expansão de um site primário autônomo](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand).
+- **Adicionar um site primário filho**:  Você pode usar o Assistente de Instalação do Configuration Manager ou uma instalação de linha de comando para adicionar um site primário filho abaixo do site de administração central.
+- **Adicionar um site secundário**:  Use o console do Configuration Manager para instalar um site secundário como um site filho abaixo do site primário. Não há suporte para outros métodos para adicionar sites secundários.
 
 ## <a name="bkmk_tasks"></a> Tarefas comuns para concluir antes de iniciar uma instalação
--   **Entender a topologia da hierarquia que você usará para a implantação**    
+- **Entender a topologia da hierarquia que você usará para a implantação**    
 Para obter mais informações, consulte [Criar uma hierarquia de sites para o System Center Configuration Manager](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md).  
 
--   **Preparar e configurar servidores individuais para atender aos pré-requisitos e configurações com suporte para uso com o Configuration Manager**         
+- **Preparar e configurar servidores individuais para atender aos pré-requisitos e configurações com suporte para uso com o Configuration Manager**         
 Para obter mais informações, consulte [Site and site system prerequisites](../../../../core/plan-design/configs/site-and-site-system-prerequisites.md) (Pré-requisitos de site e sistema de sites).  
 
--   **Instalar e configurar o SQL Server para hospedar o banco de dados do site**     
+- **Instalar e configurar o SQL Server para hospedar o banco de dados do site**     
 Para obter mais informações, consulte [Suporte para versões do SQL Server para o System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).  
 
--   **Preparar o ambiente de rede para dar suporte ao Configuration Manager**      
+- **Preparar o ambiente de rede para dar suporte ao Configuration Manager**      
 Para obter mais informações, consulte [Configurar firewalls, portas e domínios para preparar-se para o Configuration Manager](../../../../core/plan-design/network/configure-firewalls-ports-domains.md).  
 
 - **Se você usar uma PKI (Infraestrutura de Chave Pública), prepare sua infraestrutura e certificados**      
 Para obter mais informações, consulte [Requisitos de certificado PKI para o Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).
 
--   **Instalar as últimas atualizações de segurança nos computadores que você usará como servidores de site ou servidores de sistema de sites e, quando necessário, reiniciá-los**
+- **Instalar as últimas atualizações de segurança nos computadores que você usará como servidores de site ou servidores de sistema de sites e, quando necessário, reiniciá-los**
 
 ## <a name="bkmk_sitecodes"></a> Sobre nomes de site e códigos de site
 Códigos e nomes de site são usados para identificar e gerenciar os sites em uma hierarquia do Configuration Manager. No console do Configuration Manager, o código e o nome do site são exibidos no formato &lt;*código do site*\> - &lt;*nome do site*\>. Todo código do site que você utiliza na hierarquia deve ser exclusivo. Se o esquema do Active Directory for estendido para o Configuration Manager e os sites estiverem publicando dados, os códigos do site usados dentro de uma floresta do Active Directory deverão ser exclusivos, mesmo se forem usados em uma hierarquia do Configuration Manager diferente ou se forem usados em instalações anteriores do Configuration Manager. Certifique-se de planejar seus códigos e nomes de site antes de implantar a hierarquia.
 
 ### <a name="specify-a-site-code-and-site-name"></a>Especifique um código do site e um nome de site
 Quando você executa a Instalação do Configuration Manager, um código e um nome do site são solicitados para o site de administração central e para cada instalação de site primário e secundário. Um código do site deve identificar exclusivamente cada site na hierarquia. Como o código do site é usado em nomes de pastas, nunca use os nomes a seguir para o código do site, que incluem nomes reservados do Windows e do Configuration Manager:
-  -  AUX
-  -  CON
-  -  NUL
-  -  PRN
-  -  SMS
+- AUX
+- CON
+- NUL
+- PRN
+- SMS
 
 > [!NOTE]
 > A Instalação do Configuration Manager não verifica se o código do site ainda não está em uso.
 
 Para inserir o código do site quando estiver executando a Instalação do Configuration Manager, você deverá inserir três caracteres alfanuméricos. Somente as letras de *A* a *Z* e os números de *0* a *9*, em qualquer combinação, são permitidos em códigos de site. A sequência de letras ou números não tem efeito sobre a comunicação entre sites. Por exemplo, não é necessário nomear um site primário *ABC* e um local secundário *DEF*.
 
-O nome do site é um identificador de nome amigável para o site. Você pode usar apenas os caracteres de *A* a *Z*, *a* a *z*, *0* a *9* e o hífen (*-*) em nomes de sites.
+O nome do site é um identificador de nome amigável para o site. Você pode usar apenas os caracteres de *A* a *Z*, *a* a *z*, *0* a *9* e o hífen ( *-* ) em nomes de sites.
 
 > [!IMPORTANT]
 > Não há suporte para uma alteração do código do site ou do nome do site após instalar o site.
@@ -107,26 +107,26 @@ Os códigos do site não poderão ser usados mais de uma vez em uma hierarquia d
 ## <a name="limits-and-restrictions-for-installed-sites"></a>Limites e restrições para sites instalados
 Antes de instalar um site, é importante entender as seguintes limitações que se aplicam aos sites e hierarquias de site:
 - Após executar a Instalação, não é possível alterar as seguintes propriedades do site sem desinstalar o site e reinstalá-lo usando os novos valores:  
-  -   Diretório de instalação dos Arquivos de Programas  
-  -   Código do site  
-  -   Descrição do site  
+  - Diretório de instalação dos Arquivos de Programas  
+  - Código do site  
+  - Descrição do site  
 - Quando a hierarquia inclui um site de administração central:  
-  -   O Configuration Manager não dá suporte para a movimentação de um site primário filho para fora de uma hierarquia para criar um site primário autônomo ou para anexá-lo a uma hierarquia diferente. Em vez disso, desinstale o site primário filho e, em seguida, reinstale-o como um novo site primário autônomo ou como um site filho do site de administração central de uma hierarquia diferente.  
+  - O Configuration Manager não dá suporte para a movimentação de um site primário filho para fora de uma hierarquia para criar um site primário autônomo ou para anexá-lo a uma hierarquia diferente. Em vez disso, desinstale o site primário filho e, em seguida, reinstale-o como um novo site primário autônomo ou como um site filho do site de administração central de uma hierarquia diferente.  
 
 
 ## <a name="bkmk_optionalsteps"></a> Etapas opcionais antes de executar a Instalação
 **Executar manualmente [Downloader de Instalação](../../../../core/servers/deploy/install/setup-downloader.md)**
 
 Para baixar os arquivos de Instalação atualizados para o Configuration Manager, você pode executar o Downloader de Instalação. Se o computador no qual você executará a instalação não estiver conectado à Internet ou se você pretende instalar vários servidores do site, considere usar o Downloader de Instalação para baixar as atualizações necessárias para a Instalação. Aqui estão algumas informações adicionais:
--  Por padrão, a instalação se conecta à Internet para baixar os arquivos de Instalação atualizados.
--  Por padrão, os arquivos são armazenados na pasta Redist.
--  Você pode direcionar a instalação para um local na rede em que você armazenou anteriormente uma cópia desses arquivos.
+- Por padrão, a instalação se conecta à Internet para baixar os arquivos de Instalação atualizados.
+- Por padrão, os arquivos são armazenados na pasta Redist.
+- Você pode direcionar a instalação para um local na rede em que você armazenou anteriormente uma cópia desses arquivos.
 
 **Executar manualmente o [Verificador de Pré-requisito](../../../../core/servers/deploy/install/prerequisite-checker.md)**
 
 Para identificar e corrigir problemas antes de executar a Instalação para instalar um site e antes de instalar uma função de sistema de sites em um servidor, você pode executar o Verificador de Pré-requisitos. O Verificador de Pré-requisitos ajuda a garantir que o computador atenda aos requisitos para hospedar o site ou função do sistema de sites. Aqui estão algumas informações adicionais:
- -  Por padrão, a Instalação executa o Verificador do Pré-requisitos.
- -  Se houver erros, a Instalação será parada até o problema ser corrigido.
+- Por padrão, a Instalação executa o Verificador do Pré-requisitos.
+- Se houver erros, a Instalação será parada até o problema ser corrigido.
 
 **Identifique portas opcionais**
 
@@ -134,4 +134,4 @@ Você pode identificar portas opcionais para os sistemas de sites e clientes usa
 - Por padrão, os clientes e sistemas de sites usam portas predefinidas para se comunicar.
 - Durante a instalação, você pode configurar portas alternativas.
 
-  Para obter mais informações, consulte [Portas usadas no System Center Configuration Manager](../../../../core/plan-design/hierarchy/ports.md).
+Para obter mais informações, consulte [Portas usadas no System Center Configuration Manager](../../../../core/plan-design/hierarchy/ports.md).

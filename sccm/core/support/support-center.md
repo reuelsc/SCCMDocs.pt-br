@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9246ea46787b1db466b8aca5d8a602617c80e26a
-ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
+ms.openlocfilehash: 192206c7ffcb2d958935cbe66f79400ee422a774
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65612519"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339504"
 ---
 # <a name="support-center-for-configuration-manager"></a>Centro de Suporte do Configuration Manager
 
@@ -33,11 +33,11 @@ O Centro de Suporte tem como objetivo reduzir os desafios e as frustrações ao 
 
 Use o Centro de Suporte para simplificar a experiência de suporte. Ele permite que você:
 
- - Crie um pacote de solução de problemas (arquivo .zip) que contém os arquivos de log do cliente do Configuration Manager. Em seguida, você tem um único arquivo para enviar à equipe de suporte.  
+- Crie um pacote de solução de problemas (arquivo .zip) que contém os arquivos de log do cliente do Configuration Manager. Em seguida, você tem um único arquivo para enviar à equipe de suporte.  
 
- - Exibir arquivos de log do cliente do Configuration Manager, certificados, configurações de Registro, despejos de depuração, políticas do cliente.  
+- Exibir arquivos de log do cliente do Configuration Manager, certificados, configurações de Registro, despejos de depuração, políticas do cliente.  
 
- - Diagnóstico em tempo real de inventário (substitui ContentSpy), política (substitui PolicySpy) e cache do cliente.  
+- Diagnóstico em tempo real de inventário (substitui ContentSpy), política (substitui PolicySpy) e cache do cliente.  
 
 
 ### <a name="support-center-viewer"></a>Visualizador do Centro de Suporte

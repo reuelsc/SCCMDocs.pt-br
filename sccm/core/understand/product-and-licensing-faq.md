@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01fa13c907b451a3539ca8169c3a04ebbaa1b92c
-ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
+ms.openlocfilehash: 7c0975c2b8dcf945464273930073ebf370bd4c32
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67145768"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340165"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Perguntas frequentes sobre licenças e branches do Configuration Manager
 
@@ -44,13 +44,13 @@ Tanto SA **(Software Assurance)** quanto L&SA **(Licença e Software Assurance)*
 
 - **SA (Software Assurance)** : os clientes devem ter o SA ativo para as licenças do Configuration Manager ou direitos de assinatura equivalentes para instalar e usar a opção de branch atual do Configuration Manager.    
 
-    - Embora o SA seja opcional para alguns produtos da Microsoft, a única maneira de obter direitos de usar o branch atual do Configuration Manager é com o SA *ou direitos de assinatura equivalente*. Para saber mais, veja as [perguntas frequentes sobre o Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/FAQ-Software-Assurance.aspx).<!--this link doesn't work without some language code-->
+  - Embora o SA seja opcional para alguns produtos da Microsoft, a única maneira de obter direitos de usar o branch atual do Configuration Manager é com o SA *ou direitos de assinatura equivalente*. Para saber mais, veja as [perguntas frequentes sobre o Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/FAQ-Software-Assurance.aspx).<!--this link doesn't work without some language code-->
 
 - **L&SA (Licença e Software Assurance) da Microsoft**: clientes que estiverem comprando novas licenças do Configuration Manager devem adquirir a L&SA (a licença e a cobertura do SA).   
 
-    - O SA concede direitos de uso do branch atual.
+  - O SA concede direitos de uso do branch atual.
 
-    - No entanto, se o seu SA expirar e você ainda tiver uma licença do Configuration Manager, não poderá mais usar o branch atual. Para mais informações, veja a pergunta frequente [O que acontece se meu SA expirar e eu tiver L&SA?](#bkmk_sa-expires)
+  - No entanto, se o seu SA expirar e você ainda tiver uma licença do Configuration Manager, não poderá mais usar o branch atual. Para mais informações, veja a pergunta frequente [O que acontece se meu SA expirar e eu tiver L&SA?](#bkmk_sa-expires)
 
 Para saber mais sobre as ofertas de licença, veja [Maneiras de comprar](https://www.microsoft.com/Licensing/licensing-programs/licensing-programs)<!--this link doesn't work without some language code--> e os [Termos de licenciamento de produtos](http://www.microsoftvolumelicensing.com/ProductResults.aspx?doc=Product%20Terms,OST&fid=64).  
 
@@ -104,12 +104,12 @@ Se o *SA* ou sua assinatura estiverem ativos, você terá direitos de uso do bra
 Todos os produtos do System Center incluem a tecnologia do SQL Server. Os termos de licenciamento da Microsoft para esses produtos permitem o uso da tecnologia SQL Server por parte do cliente apenas para dar suporte a componentes do System Center. As licenças de acesso de cliente do SQL Server não são necessárias para isso. 
  
 Os direitos de uso aprovados para os recursos do SQL com o Configuration Manager incluem:
- - Função de banco de dados do site
- - O WSUS (Windows Server Update Services) para a função de ponto de atualização de software
- - O SQL Server Reporting Services (SSRS) para a função de ponto de relatório
- - Função do ponto de serviço do Data Warehouse
- - Réplicas de banco de dados para funções de ponto de gerenciamento
- - AlwaysOn do SQL Server 
+- Função de banco de dados do site
+- O WSUS (Windows Server Update Services) para a função de ponto de atualização de software
+- O SQL Server Reporting Services (SSRS) para a função de ponto de relatório
+- Função do ponto de serviço do Data Warehouse
+- Réplicas de banco de dados para funções de ponto de gerenciamento
+- AlwaysOn do SQL Server 
 
 A licença do SQL Server incluída no Configuration Manager oferece suporte a cada instância do SQL Server que você instala para hospedar um banco de dados do Configuration Manager. No entanto, apenas os bancos de dados para o Configuration Manager da lista anterior poderão executar nesse SQL Server quando você usar essa licença. Se um banco de dados de qualquer produto de terceiros ou adicional da Microsoft compartilhar o SQL Server, você deverá ter uma licença separada para essa instância do SQL Server. 
  <!-- sms500967 -->

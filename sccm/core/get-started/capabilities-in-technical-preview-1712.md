@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3154f705afc48cebe075083666e7a5d2b7f726b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: ce992a7d47d77d6542c4f6ede3fb37195714659a
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130268"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339968"
 ---
 # <a name="capabilities-in-technical-preview-1712-for-system-center-configuration-manager"></a>Funcionalidades do Technical Preview 1712 do System Center Configuration Manager
 
@@ -58,17 +58,19 @@ Examine [Technical Preview do System Center Configuration Manager](/sccm/core/ge
 -->
 
 ## <a name="do-not-automatically-upgrade-superseded-applications"></a>Não fazer upgrade automaticamente de aplicativos substituídos
-<!-- 1351266 --> Com base em seus [comentários no UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/11532669-fix-supercedence-behavior), nesta versão, existe a opção de configurar uma implantação de aplicativo para não atualizar automaticamente de versões substituídas. Agora, ao criar a implantação, na página **Configurações de Implantação** do **Assistente de Implantação de Software**, para uma finalidade de instalação **Disponível** ou **Obrigatória**, habilite ou desabilite a opção **Fazer upgrade automaticamente das versões substituídas deste aplicativo**.
+<!-- 1351266 -->
+Com base em seus [comentários no UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/11532669-fix-supercedence-behavior), nesta versão, você tem a opção de configurar uma implantação de aplicativo para não fazer upgrade automaticamente de versões substituídas. Agora, ao criar a implantação, na página **Configurações de Implantação** do **Assistente de Implantação de Software**, para uma finalidade de instalação **Disponível** ou **Obrigatória**, habilite ou desabilite a opção **Fazer upgrade automaticamente das versões substituídas deste aplicativo**.
 
 
 ## <a name="install-multiple-applications-in-software-center"></a>Instalar vários aplicativos no Centro de Software
-<!-- 1357126 --> Se um usuário final ou um técnico da área de trabalho precisar instalar vários aplicativos em um dispositivo, o Centro de Software agora dará suporte à instalação de vários aplicativos selecionados. Isso permite que o usuário seja mais eficiente, não aguardando a conclusão de uma instalação antes do início da próxima.
+<!-- 1357126 -->
+Se um usuário final ou um técnico da área de trabalho precisar instalar vários aplicativos em um dispositivo, o Centro de Software agora dará suporte à instalação de vários aplicativos selecionados. Isso permite que o usuário seja mais eficiente, não aguardando a conclusão de uma instalação antes do início da próxima.
 
 Ao usar o modo de seleção múltipla na guia **Aplicativos**, os seguintes critérios determinam quais aplicativos são habilitados para seleção múltipla pelo Centro de Software:
- - O aplicativo está visível para o usuário
- - O aplicativo ainda não está instalado
- - A aprovação do administrador não é necessária ou já foi concedida
- - O status do aplicativo está disponível (por exemplo, ainda não está baixando conteúdo)
+- O aplicativo está visível para o usuário
+- O aplicativo ainda não está instalado
+- A aprovação do administrador não é necessária ou já foi concedida
+- O status do aplicativo está disponível (por exemplo, ainda não está baixando conteúdo)
 
 ### <a name="try-it-out"></a>Experimente!
 **No console do Configuration Manager:** implante vários aplicativos em um usuário ou dispositivo para instalação, como disponíveis ou obrigatórios (com uma data limite futura). Não exigir aprovação do administrador. Para obter informações, confira [Deploy applications](/sccm/apps/deploy-use/deploy-applications) (Implantar aplicativos).
@@ -83,7 +85,8 @@ Os aplicativos são instalados como de costume, agora somente em sucessão.
 
 
 ## <a name="client-based-pxe-responder-service"></a>Serviço de respondente PXE baseado no cliente
-<!-- 1357148 --> Um desafio comum para os clientes é fornecer serviços PXE em escritórios remotos/filiais com pouca ou nenhuma infraestrutura de servidor. A função de ponto de distribuição dá suporte a sistemas operacionais cliente, mas não pode ser habilitada para PXE devido à dependência dos Serviços de Implantação do Windows.
+<!-- 1357148 -->
+Um desafio comum para clientes é fornecer serviços PXE em escritórios remotos/filiais com pouca ou nenhuma infraestrutura de servidor. A função de ponto de distribuição dá suporte a sistemas operacionais cliente, mas não pode ser habilitada para PXE devido à dependência dos Serviços de Implantação do Windows.
 
 Novas configurações de cliente agora estão disponíveis para permitir um serviço de respondente PXE em clientes do Configuration Manager. Uma imagem de inicialização habilitada para PXE deve residir no cache do cliente do respondente PXE.
 
@@ -105,8 +108,8 @@ No console do Configuration Manager:
 4. Inicie outro cliente na mesma sub-rede para executar a inicialização da rede/PXE como de costume.
 
 ### <a name="known-issues"></a>Problemas conhecidos
- - O editor de sequência de tarefas exibe um ícone vermelho de erro para a etapa **Baixar Conteúdo do Pacote** quando uma imagem de inicialização é adicionada, mas a sequência de tarefas é salva com êxito. A abertura dessa sequência de tarefas novamente no editor também mostra um aviso inofensivo informando que os objetos referenciados não podem ser encontrados. <!-- sms427542 -->
- - A imagem de inicialização da etapa Baixar Conteúdo do Pacote não é mostrada na lista da sequência de tarefas personalizada de referências. Além disso, a ação **Distribuir Conteúdo** não está disponível. <!-- sms504017 -->
+- O editor de sequência de tarefas exibe um ícone vermelho de erro para a etapa **Baixar Conteúdo do Pacote** quando uma imagem de inicialização é adicionada, mas a sequência de tarefas é salva com êxito. A abertura dessa sequência de tarefas novamente no editor também mostra um aviso inofensivo informando que os objetos referenciados não podem ser encontrados. <!-- sms427542 -->
+- A imagem de inicialização da etapa Baixar Conteúdo do Pacote não é mostrada na lista da sequência de tarefas personalizada de referências. Além disso, a ação **Distribuir Conteúdo** não está disponível. <!-- sms504017 -->
 
 
 ## <a name="change-in-the-configuration-manager-client-install"></a>Alteração na instalação do cliente do Configuration Manager  
@@ -117,7 +120,8 @@ Como resultado de seus comentários no UserVoice, o [Silverlight não é mais in
 O painel do Surface agora exibe versões de firmware para dispositivos Surface, em vez da versão do sistema operacional. No console, vá até **Monitoramento** > **Surface Devices**. É possível exibir os seguintes itens:
 - Percentual de Surfaces
 - Percentual de modelos do Surface
-- Cinco principais versões de firmware <!--1355788-->
+- Cinco principais versões de firmware
+ <!--1355788-->
 
 
 ## <a name="improvements-to-office-365-client-management-dashboard"></a>Melhorias no painel de Gerenciamento de Clientes do Office 365 
@@ -134,17 +138,17 @@ Fizemos as melhorias a seguir no console do Configuration Manager, que foram res
 
 ## <a name="improvements-to-operating-system-deployment"></a>Melhorias na implantação do sistema operacional
 Fizemos as melhorias a seguir na implantação de sistema operacional, algumas das quais foram resultado de seus comentários no UserVoice.
- - [Visualizador de log padrão na imagem de inicialização](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/19269823-stop-cmtrace-from-asking-us-if-we-want-to-use-it-a): No Windows PE, ao iniciar cmtrace.exe, você não precisa mais escolher se deseja tornar este programa o visualizador padrão para arquivos de log. <!-- SMS 500897 -->
- - Etapa Baixar o conteúdo do pacote: agora você pode adicionar imagens de inicialização nessa etapa da sequência de tarefas.
+- [Visualizador de log padrão na imagem de inicialização](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/19269823-stop-cmtrace-from-asking-us-if-we-want-to-use-it-a): No Windows PE, ao iniciar cmtrace.exe, você não precisa mais escolher se deseja tornar este programa o visualizador padrão para arquivos de log. <!-- SMS 500897 -->
+- Etapa Baixar o conteúdo do pacote: agora você pode adicionar imagens de inicialização nessa etapa da sequência de tarefas.
 
 
 ## <a name="windows-10-feedback-hub-app-integration"></a>Integração de aplicativos do hub de comentários do Windows 10
 
 Adoramos tanto comentários que agora estamos permitindo-os por meio do [aplicativo hub de comentários](https://support.microsoft.com/en-us/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app) interno do Windows 10. Ao **Adicionar novos comentários**, selecione a categoria **Enterprise Management** e, em seguida, escolha uma das seguintes subcategorias:
- - Cliente do Gerenciador de Configurações
- - Console do Configuration Manager
- - Implantação de sistema operacional do Configuration Manager
- - Configuration Manager Server
+- Cliente do Configuration Manager
+- Console do Configuration Manager
+- Implantação de sistema operacional do Configuration Manager
+- Configuration Manager Server
 
 Continue usando nossa [página do UserVoice](http://configurationmanager.uservoice.com/) para votar em ideias de novos recursos no Configuration Manager.
 

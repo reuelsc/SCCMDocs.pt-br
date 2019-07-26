@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aadb544180d7662f1b60c73db6a35b64f8b7efe7
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 4754077f1a91cd11ce16e17dd3d2ea2f1704ee08
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676842"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68338884"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Cache par para clientes do Configuration Manager
 
@@ -46,8 +46,8 @@ O cliente do Configuration Manager usa o cache par para fornecer todo tipo de co
 
 O cache par não substitui o uso de outras soluções, como o Windows BranchCache ou a Otimização de Entrega. O cache par funciona juntamente com outras soluções. Essas tecnologias oferecem mais opções para estender as soluções tradicionais de implantação de conteúdo, como os pontos de distribuição. O cache par é uma solução personalizada que não depende do BranchCache. Se você não habilitar nem usar o BranchCache, o cache par ainda funcionará.  
 
-  > [!Note]  
-  > A partir da versão 1802, o Windows BranchCache está sempre ativado nas implantações. A configuração para **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede** foi removida.<!--SCCMDocs issue 539--> Se o ponto de distribuição oferecer suporte e estiver habilitado nas configurações do cliente, os clientes usarão o BranchCache. Para saber mais, confira [Configurar o BranchCache](/sccm/core/clients/deploy/about-client-settings#configure-branchcache).<!--SCCMDocs issue 735-->   
+> [!Note]  
+> A partir da versão 1802, o Windows BranchCache está sempre ativado nas implantações. A configuração para **Permitir que os clientes compartilhem conteúdo com outros clientes na mesma sub-rede** foi removida.<!--SCCMDocs issue 539--> Se o ponto de distribuição oferecer suporte e estiver habilitado nas configurações do cliente, os clientes usarão o BranchCache. Para saber mais, confira [Configurar o BranchCache](/sccm/core/clients/deploy/about-client-settings#configure-branchcache).<!--SCCMDocs issue 735-->   
 
 
 
@@ -55,11 +55,11 @@ O cache par não substitui o uso de outras soluções, como o Windows BranchCach
 
 Para habilitar o cache par, implante as [configurações do cliente](#bkmk_settings) em uma coleção. Assim, os membros dessa coleção passarão a agir como uma fonte de cache par para outros clientes no mesmo grupo de limites.  
 
- - Um cliente que opera como fonte de conteúdo de pares envia uma lista do conteúdo disponível armazenado em cache para o ponto de gerenciamento.  
+- Um cliente que opera como fonte de conteúdo de pares envia uma lista do conteúdo disponível armazenado em cache para o ponto de gerenciamento.  
 
- - Outro cliente no mesmo grupo de limites faz uma solicitação de local de conteúdo ao ponto de gerenciamento. O servidor retorna a lista de possíveis fontes de conteúdo. Essa lista inclui cada fonte de cache par que tem o conteúdo e está online. Ela também inclui os pontos de distribuição e outros locais de fonte de conteúdo nesse grupo de limites. Para obter mais informações, confira [Prioridade de fonte de conteúdo](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#content-source-priority).  
+- Outro cliente no mesmo grupo de limites faz uma solicitação de local de conteúdo ao ponto de gerenciamento. O servidor retorna a lista de possíveis fontes de conteúdo. Essa lista inclui cada fonte de cache par que tem o conteúdo e está online. Ela também inclui os pontos de distribuição e outros locais de fonte de conteúdo nesse grupo de limites. Para obter mais informações, confira [Prioridade de fonte de conteúdo](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#content-source-priority).  
 
- - Como de costume, o cliente que está procurando o conteúdo seleciona uma fonte na lista fornecida. O cliente tenta então obter o conteúdo.  
+- Como de costume, o cliente que está procurando o conteúdo seleciona uma fonte na lista fornecida. O cliente tenta então obter o conteúdo.  
 
 Da versão 1806 em diante, os grupos de limites incluem configurações adicionais para dar a você mais controle sobre a distribuição de conteúdo em seu ambiente. Para saber mais, confira [Opções de grupo de limites para downloads de pares](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).<!--1356193-->
 
@@ -73,13 +73,13 @@ Escolha apenas os clientes mais adequados como fontes de cache par. Avalie a ade
 
 Uma fonte de cache par rejeita as solicitações de conteúdo quando atende a uma das seguintes condições no momento em que um par solicita o conteúdo:  
 
-  -  Modo de bateria fraca  
+- Modo de bateria fraca  
 
-  -  A carga do processador excede 80%  
+- A carga do processador excede 80%  
 
-  -  A E/S de disco tem um *AvgDiskQueueLength* que excede 10  
+- A E/S de disco tem um *AvgDiskQueueLength* que excede 10  
 
-  -  Não há mais conexões disponíveis com o computador  
+- Não há mais conexões disponíveis com o computador  
 
 > [!Tip]  
 > Definir essas configurações usando a classe do WMI do servidor de configuração de cliente para o recurso de origem par (*SMS_WinPEPeerCacheConfig*) no SDK do Configuration Manager.  
@@ -98,14 +98,14 @@ Quando a fonte do cache par rejeita uma solicitação de conteúdo, o cliente de
 
 - Não é necessário usar uma [conta de acesso à rede](/sccm/core/plan-design/hierarchy/accounts#network-access-account), com a seguinte exceção:  
 
-    - Configure uma conta de acesso à rede no site quando um cliente habilitado para cache par executar uma sequência de tarefas no Centro de Software e reinicializar a imagem de inicialização. Quando o dispositivo está no Windows PE, ele usa a conta de acesso à rede para obter o conteúdo da fonte de cache par.  
+  - Configure uma conta de acesso à rede no site quando um cliente habilitado para cache par executar uma sequência de tarefas no Centro de Software e reinicializar a imagem de inicialização. Quando o dispositivo está no Windows PE, ele usa a conta de acesso à rede para obter o conteúdo da fonte de cache par.  
 
-    - Quando necessário, a fonte de cache par usa a conta de acesso à rede para autenticar as solicitações de download do par. Essa conta requer somente permissões de usuário de domínio para essa finalidade.  
+  - Quando necessário, a fonte de cache par usa a conta de acesso à rede para autenticar as solicitações de download do par. Essa conta requer somente permissões de usuário de domínio para essa finalidade.  
 
 - Com a versão 1802 e anteriores, o último envio de descoberta de pulsação do cliente determina o limite atual de uma fonte de cache par. Um cliente que usa um perfil móvel em um grupo de limites diferente ainda pode ser membro de seu grupo de limites anterior para fins de cache par. Esse comportamento faz com que seja oferecida ao cliente uma fonte de cache par que não está em seu local de rede imediato. Não habilite a clientes que usam perfil móvel como uma fonte de cache par.<!--SCCMDocs issue 641-->  
 
-    > [!Important]  
-    > Da versão 1806 em diante, o Configuration Manager é mais eficiente em determinar se uma fonte de cache par fez roaming para outro local. Esse comportamento garante que o ponto de gerenciamento ofereça-o como uma fonte de conteúdo aos clientes no novo local, e não no local antigo. Se você estiver usando o recurso de cache par com as fontes de cache par de roaming, depois de atualizar o site para a versão 1806, também atualize todas as fontes de cache par para a versão mais recente do cliente. O ponto de gerenciamento não inclui essas fontes de cache par na lista de locais de conteúdo até que eles sejam atualizadas pelo menos para a versão 1806.<!--SCCMDocs issue 850-->  
+  > [!Important]  
+  > Da versão 1806 em diante, o Configuration Manager é mais eficiente em determinar se uma fonte de cache par fez roaming para outro local. Esse comportamento garante que o ponto de gerenciamento ofereça-o como uma fonte de conteúdo aos clientes no novo local, e não no local antigo. Se você estiver usando o recurso de cache par com as fontes de cache par de roaming, depois de atualizar o site para a versão 1806, também atualize todas as fontes de cache par para a versão mais recente do cliente. O ponto de gerenciamento não inclui essas fontes de cache par na lista de locais de conteúdo até que eles sejam atualizadas pelo menos para a versão 1806.<!--SCCMDocs issue 850-->  
 
 - Antes de tentar baixar conteúdo, o ponto de gerenciamento primeiro valida que a fonte de cache par está online.<!--sms.498675--> Essa validação ocorre por meio do "canal rápido" de notificação do cliente, que usa a porta TCP 10123.<!--511673-->  
 
@@ -187,11 +187,11 @@ O cache par baseia-se no cache do cliente do Configuration Manager para comparti
 - Se necessário, durante uma sequência de tarefas de implantação de sistema operacional, use a variável **SMSTSPreserveContent** para manter o conteúdo no cache do cliente. Para saber mais, confira [Variáveis de sequência de tarefas](/sccm/osd/understand/task-sequence-variables#SMSTSPreserveContent).  
 
 - Se necessário, ao criar o software a seguir, use a opção para **Persistir conteúdo no cache do cliente**:  
-    - Aplicativos
-    - Pacotes
-    - Imagens do sistema operacional
-    - Pacotes de atualização do sistema operacional
-    - Imagens de inicialização
+  - Aplicativos
+  - Pacotes
+  - Imagens do sistema operacional
+  - Pacotes de atualização do sistema operacional
+  - Imagens de inicialização
 
 
 

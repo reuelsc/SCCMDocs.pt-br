@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83838e2642d09c001b638900b6cc4fa23975745e
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 6a7206c6eeab7b737ea4f0130cdf736a52635fce
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676361"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68337874"
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usar a ferramenta de conexão de serviço do System Center Configuration Manager
 
@@ -31,25 +31,25 @@ A seguir estão os pré-requisitos e problemas conhecidos.
 
 **Pré-requisitos:**
 
--   Você tem um ponto de conexão de serviço instalado e ele está definido como **Offline, conexão sob demanda**.  
+- Você tem um ponto de conexão de serviço instalado e ele está definido como **Offline, conexão sob demanda**.  
 
--   A ferramenta deve ser executada em um prompt de comando.  
+- A ferramenta deve ser executada em um prompt de comando.  
 
--   Cada computador no qual a ferramenta é executada (o computador de ponto de conexão de serviço e o computador conectado à Internet) deve ser um sistema x64 (64 bits) e ter os seguintes itens instalados:  
+- Cada computador no qual a ferramenta é executada (o computador de ponto de conexão de serviço e o computador conectado à Internet) deve ser um sistema x64 (64 bits) e ter os seguintes itens instalados:  
 
-    -   Os arquivos x86 e x64 dos **Pacotes Redistribuíveis do Visual C++** .   Por padrão, o Configuration Manager instala a versão x64 no computador que hospeda o ponto de conexão de serviço.  
+  - Os arquivos x86 e x64 dos **Pacotes Redistribuíveis do Visual C++** .   Por padrão, o Configuration Manager instala a versão x64 no computador que hospeda o ponto de conexão de serviço.  
 
-         Para baixar uma cópia dos arquivos do Visual C++, visite [Pacotes Redistribuíveis do Visual C++ para Visual Studio 2013](http://www.microsoft.com/download/details.aspx?id=40784) no Centro de Download da Microsoft.  
+    Para baixar uma cópia dos arquivos do Visual C++, visite [Pacotes Redistribuíveis do Visual C++ para Visual Studio 2013](http://www.microsoft.com/download/details.aspx?id=40784) no Centro de Download da Microsoft.  
 
-    -   .NET Framework 4.5.2 ou posteriores.  
+  - .NET Framework 4.5.2 ou posteriores.  
 
--   A conta usada para executar a ferramenta deve ter:
-    -   Permissões de**Administrador local** no computador que hospeda o ponto de conexão de serviço (no qual a ferramenta é executada).
-    -   Permissões de**Leitura** para o banco de dados do site.  
+- A conta usada para executar a ferramenta deve ter:
+  - Permissões de**Administrador local** no computador que hospeda o ponto de conexão de serviço (no qual a ferramenta é executada).
+  - Permissões de**Leitura** para o banco de dados do site.  
 
 
 
--   Você precisará de uma unidade USB com espaço livre suficiente para armazenar os arquivos e as atualizações ou outro método para transferir arquivos entre o computador do ponto de conexão de serviço e o computador que tem acesso à Internet. (Este cenário pressupõe que seu site e os computadores gerenciados não têm conexão direta com a Internet).  
+- Você precisará de uma unidade USB com espaço livre suficiente para armazenar os arquivos e as atualizações ou outro método para transferir arquivos entre o computador do ponto de conexão de serviço e o computador que tem acesso à Internet. (Este cenário pressupõe que seu site e os computadores gerenciados não têm conexão direta com a Internet).  
 
 
 
@@ -60,21 +60,21 @@ A seguir estão os pré-requisitos e problemas conhecidos.
 
  Neste procedimento, os exemplos de linha de comando usam os seguintes nomes de arquivo e locais de pasta (você não precisa usar estes caminhos e nomes de arquivos e pode usar alternativas que correspondem ao seu ambiente e preferências):  
 
--   O caminho para uma unidade USB em que os dados são armazenados para transferência entre servidores:  **D:\USB\\**  
+- O caminho para uma unidade USB em que os dados são armazenados para transferência entre servidores:  **D:\USB\\**  
 
--   O nome do arquivo .cab que contém dados exportados do seu site: **UsageData.cab**  
+- O nome do arquivo .cab que contém dados exportados do seu site: **UsageData.cab**  
 
--   O nome da pasta vazia em que as atualizações baixadas para o Configuration Manager serão armazenadas para transferência entre servidores: **UpdatePacks**  
+- O nome da pasta vazia em que as atualizações baixadas para o Configuration Manager serão armazenadas para transferência entre servidores: **UpdatePacks**  
 
 No computador que hospeda o ponto de conexão de serviço:  
 
--   Abra um prompt de comando com privilégios administrativos e altere os diretórios para o local que contém **serviceconnectiontool.exe**.  
+- Abra um prompt de comando com privilégios administrativos e altere os diretórios para o local que contém **serviceconnectiontool.exe**.  
 
-     Por padrão, você pode encontrar essa ferramenta na mídia de instalação do Configuration Manager, na pasta **%path%\smssetup\tools\ServiceConnectionTool**. Todos os arquivos nessa pasta devem estar na mesma pasta para a ferramenta de conexão de serviço funcionar.  
+  Por padrão, você pode encontrar essa ferramenta na mídia de instalação do Configuration Manager, na pasta **%path%\smssetup\tools\ServiceConnectionTool**. Todos os arquivos nessa pasta devem estar na mesma pasta para a ferramenta de conexão de serviço funcionar.  
 
 Quando você executa o comando a seguir, a ferramenta prepara um arquivo .cab que contém informações de uso e as copia para um local especificado por você. Os dados no arquivo .cab se baseiam no nível dos dados de uso do diagnóstico que seu site está configurado para coletar. (consulte [Dados de diagnóstico e de uso para o System Center Configuration Manager](../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)).  Execute o seguinte comando para criar o arquivo .cab:  
 
--   **serviceconnectiontool.exe -prepare -usagedatadest D:\USB\UsageData.cab**  
+- **serviceconnectiontool.exe -prepare -usagedatadest D:\USB\UsageData.cab**  
 
 Você também precisará copiar a pasta ServiceConnectionTool com todo seu conteúdo para a unidade USB ou, de alguma forma, disponibilizá-lo no computador que usará para as etapas 3 e 4.  
 
@@ -90,14 +90,14 @@ Você também precisará copiar a pasta ServiceConnectionTool com todo seu conte
 A partir da versão 1606, ao se conectar à Microsoft, você pode carregar vários arquivos .cab ao mesmo tempo (cada um de uma hierarquia diferente) e especificar um servidor proxy e um usuário para o servidor proxy.   
 
 #### <a name="to-upload-multiple-cab-files"></a>Para carregar vários arquivos .cab
- -  Coloque cada arquivo .cab que exportar de hierarquias separadas na mesma pasta. O nome de cada arquivo deve ser exclusivo e você pode renomeá-los manualmente se necessário.
- -  Depois, quando executar o comando para carregar dados para a Microsoft, especifique a pasta que contém os arquivos .cab. (Antes da atualização 1606, você só podia carregar dados de uma hierarquia por vez e a ferramenta exigia que você especificasse o nome do arquivo .cab na pasta.)
- -  Posteriormente, quando você executar a tarefa de importação no ponto de conexão de serviço de uma hierarquia, a ferramenta importará automaticamente somente os dados daquela hierarquia.  
+- Coloque cada arquivo .cab que exportar de hierarquias separadas na mesma pasta. O nome de cada arquivo deve ser exclusivo e você pode renomeá-los manualmente se necessário.
+- Depois, quando executar o comando para carregar dados para a Microsoft, especifique a pasta que contém os arquivos .cab. (Antes da atualização 1606, você só podia carregar dados de uma hierarquia por vez e a ferramenta exigia que você especificasse o nome do arquivo .cab na pasta.)
+- Posteriormente, quando você executar a tarefa de importação no ponto de conexão de serviço de uma hierarquia, a ferramenta importará automaticamente somente os dados daquela hierarquia.  
 
 #### <a name="to-specify-a-proxy-server"></a>Para especificar um servidor proxy
 Você pode usar os seguintes parâmetros opcionais para especificar um servidor proxy (mais informações sobre como usar esses parâmetros estão disponíveis na seção Parâmetros de linha de comando neste tópico):
-  - **-proxyserveruri [FQDN_do_servidor_proxy]** Use este parâmetro para especificar o servidor proxy a ser usado para esta conexão.
-  -  **-proxyusername [nome de usuário]**  Use este parâmetro quando precisar especificar um usuário para o servidor proxy.
+- **-proxyserveruri [FQDN_do_servidor_proxy]** Use este parâmetro para especificar o servidor proxy a ser usado para esta conexão.
+- **-proxyusername [nome de usuário]**  Use este parâmetro quando precisar especificar um usuário para o servidor proxy.
 
 #### <a name="specify-the-type-of-updates-to-download"></a>Especifique o tipo de atualizações a serem baixadas
 A partir da versão 1706, o comportamento padrão dos downloads de ferramentas foi alterado e a ferramenta dá suporte a opções para controlar quais arquivos são baixados.
@@ -124,17 +124,17 @@ Linha de comando de exemplo que usa *-downloadsiteversion*:
 
 1. No computador que hospeda o ponto de conexão de serviço:  
 
-   -   Abra um prompt de comando com privilégios administrativos e altere os diretórios para o local que contém **serviceconnectiontool.exe**.   
+   - Abra um prompt de comando com privilégios administrativos e altere os diretórios para o local que contém **serviceconnectiontool.exe**.   
 
 2. Execute o comando a seguir para que a ferramenta prepare um arquivo .cab que contém informações de uso e copiá-las para um local especificado por você:  
 
-   -   **serviceconnectiontool.exe -prepare -usagedatadest D:\USB\UsageData.cab**  
+   - **serviceconnectiontool.exe -prepare -usagedatadest D:\USB\UsageData.cab**  
 
    Se for carregar arquivos .cab de mais de uma hierarquia ao mesmo tempo, cada arquivo .cab na pasta deverá ter um nome exclusivo. Você pode renomear manualmente os arquivos que adicionar à pasta.
 
    Se quiser exibir as informações de uso coletadas para serem carregadas para o serviço de nuvem do Configuration Manager, execute o seguinte comando para exportar os mesmos dados como um arquivo .csv que você pode exibir usando um aplicativo como o Excel:  
 
-   -   **serviceconnectiontool.exe -export -dest D:\USB\UsageData.csv**  
+   - **serviceconnectiontool.exe -export -dest D:\USB\UsageData.csv**  
 
 3. Após a conclusão da etapa de preparação, mova a unidade USB (ou transfira os dados exportados por outro método) para um computador que tenha acesso à Internet.  
 
@@ -142,14 +142,14 @@ Linha de comando de exemplo que usa *-downloadsiteversion*:
 
 5. Execute o seguinte comando para iniciar o upload de informações de uso e o download de atualizações para o Configuration Manager:  
 
-   -   **serviceconnectiontool.exe -connect -usagedatasrc D:\USB -updatepackdest D:\USB\UpdatePacks**
+   - **serviceconnectiontool.exe -connect -usagedatasrc D:\USB -updatepackdest D:\USB\UpdatePacks**
 
    Para obter mais exemplos dessa linha de comando, consulte a seção [Opções de linha de comando](../../../core/servers/manage/use-the-service-connection-tool.md#bkmk_cmd) mais adiante neste tópico.
 
    > [!NOTE]  
    >  Ao executar a linha de comando para se conectar ao serviço de nuvem do Configuration Manager, pode ocorrer um erro semelhante ao seguinte:  
    >   
-   >  -   Exceção sem tratamento: System.UnauthorizedAccessException:  
+   > - Exceção sem tratamento: System.UnauthorizedAccessException:  
    >   
    >      O acesso ao caminho “C:\  
    >     Users\br\AppData\Local\Temp\extractmanifestcab\95F8A562.sql” foi negado.  
@@ -160,7 +160,7 @@ Linha de comando de exemplo que usa *-downloadsiteversion*:
 
 7. No computador que hospeda o ponto de conexão de serviço, abra um prompt de comando com privilégios administrativos, altere os diretórios para o local que contém **serviceconnectiontool.exe**e execute o seguinte comando:  
 
-   -   **serviceconnectiontool.exe -import -updatepacksrc D:\USB\UpdatePacks**  
+   - **serviceconnectiontool.exe -import -updatepacksrc D:\USB\UpdatePacks**  
 
 8. Após a conclusão da importação, você pode fechar o prompt de comando. (Apenas atualizações da hierarquia aplicável são importadas).  
 
@@ -179,7 +179,7 @@ Cada vez que você executar a ferramenta de conexão de serviço, será gerado u
 Ao usar a ferramenta para conectar e baixar atualizações, um arquivo de log será gravado na raiz da unidade do sistema chamado **ConfigMgrSetup.log**.  Esse arquivo de log fornece informações mais detalhadas, como quais arquivos são baixados, extraídos e se a verificação de hash foi bem-sucedida.
 
 ## <a name="bkmk_cmd"></a> Opções de linha de comando  
- Para exibir informações de ajuda para a ferramenta de ponto de conexão de serviço, abra um prompt de comando para a pasta que contém a ferramenta e execute o comando:  **serviceconnectiontool.exe**.  
+Para exibir informações de ajuda para a ferramenta de ponto de conexão de serviço, abra um prompt de comando para a pasta que contém a ferramenta e execute o comando:  **serviceconnectiontool.exe**.  
 
 
 |Opções de linha de comando|Detalhes|  

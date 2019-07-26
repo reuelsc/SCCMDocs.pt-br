@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8bfcb73f359bd8d1b4438ac28b2395b01217e35d
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 0ae4074897359dcebb9b91392bd36893d0276012
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67677737"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339005"
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Como gerenciar clientes no System Center Configuration Manager
 
@@ -152,12 +152,12 @@ Dependendo do tipo de dispositivo, algumas dessas opções poderão não estar d
       Para obter mais informações, consulte [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md) (MDM [gerenciamento de dispositivo móvel] híbrido com o System Center Configuration Manager e o Microsoft Intune).  
 
 ##  <a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> Gerenciar clientes no nó Coleções de Dispositivos  
-  Muitas das tarefas que estão disponíveis para dispositivos no nó **Dispositivos** também estão disponíveis em coleções. O console aplica automaticamente a operação a todos os dispositivos qualificados da coleção. Essa ação em uma coleção inteira gera pacotes de rede adicionais e aumenta o uso da CPU no servidor do site.  
+Muitas das tarefas que estão disponíveis para dispositivos no nó **Dispositivos** também estão disponíveis em coleções. O console aplica automaticamente a operação a todos os dispositivos qualificados da coleção. Essa ação em uma coleção inteira gera pacotes de rede adicionais e aumenta o uso da CPU no servidor do site.  
 
-  Considere o seguinte antes de executar tarefas no nível da coleção. Uma vez iniciada, você não pode interromper a tarefa do console. 
- - Quantos dispositivos existem na coleção?
- - Os dispositivos estão conectados por conexões de rede de baixa largura de banda?
- - Em quanto tempo essa tarefa precisa ser concluída em todos os dispositivos?
+Considere o seguinte antes de executar tarefas no nível da coleção. Uma vez iniciada, você não pode interromper a tarefa do console. 
+- Quantos dispositivos existem na coleção?
+- Os dispositivos estão conectados por conexões de rede de baixa largura de banda?
+- Em quanto tempo essa tarefa precisa ser concluída em todos os dispositivos?
 
 #### <a name="to-manage-clients-from-the-device-collections-node"></a>Para gerenciar clientes no nó Coleções de Dispositivos  
 
@@ -195,11 +195,11 @@ A partir da versão 1710, você pode usar o console do Configuration Manager par
 > Também é necessário fazer upgrade dos clientes para a versão 1710 para que essa funcionalidade funcione. Recomendamos que você habilite o upgrade automático do cliente para manter os clientes atualizados com sobrecarga administrativa mínima. Para obter mais informações, consulte [Usar o upgrade automático do cliente](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#use-automatic-client-upgrade).
 
 Para identificar os dispositivos que estão aguardando uma reinicialização, acesse o workspace **Ativos e Conformidade** no console do Configuration Manager e selecione o nó **Dispositivos**. Em seguida, exiba o status de cada dispositivo no painel de detalhes em uma nova coluna chamada **Reinicialização Pendente**. Cada dispositivo tem um ou mais dos seguintes valores: 
- - **Não**: não há nenhuma reinicialização pendente
- - **Configuration Manager**: esse valor é obtido do componente de coordenador de reinicialização de cliente (RebootCoordinator.log)
- - **Renomeação de arquivo**: esse valor é obtido do Windows que relata uma operação de renomeação de arquivo pendente (HKLM\SYSTEM\CurrentControlSet\Control\Session Manager, PendingFileRenameOperations)
- - **Windows Update**: esse valor é obtido do Windows Update Agent que relata uma reinicialização pendente obrigatória para uma ou mais atualizações (HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update\RebootRequired)
- - **Adicionar ou remover recurso**: esse valor é obtido da manutenção baseada em componente do Windows que relata que a adição ou remoção de um recurso do Windows exige uma reinicialização (HKLM\Software\Microsoft\Windows\CurrentVersion\Component Based Servicing\Reboot Pending)
+- **Não**: não há nenhuma reinicialização pendente
+- **Configuration Manager**: esse valor é obtido do componente de coordenador de reinicialização de cliente (RebootCoordinator.log)
+- **Renomeação de arquivo**: esse valor é obtido do Windows que relata uma operação de renomeação de arquivo pendente (HKLM\SYSTEM\CurrentControlSet\Control\Session Manager, PendingFileRenameOperations)
+- **Windows Update**: esse valor é obtido do Windows Update Agent que relata uma reinicialização pendente obrigatória para uma ou mais atualizações (HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update\RebootRequired)
+- **Adicionar ou remover recurso**: esse valor é obtido da manutenção baseada em componente do Windows que relata que a adição ou remoção de um recurso do Windows exige uma reinicialização (HKLM\Software\Microsoft\Windows\CurrentVersion\Component Based Servicing\Reboot Pending)
 
 **Para criar a notificação do cliente para reiniciar um dispositivo:**
 1. Localize o dispositivo que deseja reiniciar em uma coleção no nó **Coleções de Dispositivos** do console.

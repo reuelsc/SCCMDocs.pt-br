@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8560c34f1db76afcfe2e65eeaf8311b0a58cc926
-ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
+ms.openlocfilehash: 4e260f26295a27c91a69cad563eaec2395b00a5c
+ms.sourcegitcommit: e0438c191df945305625ae91596c9417d16e8510
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67623444"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68491692"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novidades na versão 1806 do branch atual do Configuration Manager
 
@@ -328,7 +328,8 @@ Para saber mais, confira [Gerenciador de Conversão de Pacotes](/sccm/apps/pcm/p
 Esta versão inclui as seguintes melhorias às implantações em fases:  
 
 #### <a name="create-a-phased-deployment-with-manually-configured-phases"></a>Criar uma implantação em fases com fases configuradas manualmente
-<!--1358148--> Para uma sequência de tarefas, agora configure manualmente as fases ao criar uma implantação em fases. Adicione até 10 fases extras usando a guia **Fases** do assistente para Criar Implantação em Fases. Você ainda pode criar automaticamente uma implantação padrão em duas fases. 
+<!--1358148-->
+Para uma sequência de tarefas, agora configure manualmente as fases ao criar uma implantação em fases. Adicione até 10 fases extras usando a guia **Fases** do assistente para Criar Implantação em Fases. Você ainda pode criar automaticamente uma implantação padrão em duas fases. 
 
 Para obter mais informações, veja [Criar uma implantação em fases com fases configuradas manualmente](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence#bkmk_manual).
 
@@ -404,11 +405,11 @@ Para obter mais informações, confira [Sequências de tarefas e a conta de aces
  Para obter mais informações, consulte [Fazer Upgrade no Sistema Operacional](/sccm/osd/understand/task-sequence-steps#BKMK_UpgradeOS).
 
 #### <a name="revised-documentation-for-task-sequence-variables"></a>Documentação revisada para variáveis de sequência de tarefas
- Agora, dois novos artigos estão disponíveis para entender as variáveis de sequência de tarefas:  
+Agora, dois novos artigos estão disponíveis para entender as variáveis de sequência de tarefas:  
 
- - [Como usar variáveis de sequência de tarefas](/sccm/osd/understand/using-task-sequence-variables) é um novo artigo que descreve os tipos diferentes de variáveis, métodos para definir as variáveis e como acessá-los.  
+- [Como usar variáveis de sequência de tarefas](/sccm/osd/understand/using-task-sequence-variables) é um novo artigo que descreve os tipos diferentes de variáveis, métodos para definir as variáveis e como acessá-los.  
 
- - [Variáveis de sequência de tarefas](/sccm/osd/understand/task-sequence-variables) é uma referência para todas as variáveis de sequência de tarefas disponíveis. Este artigo combina os artigos anteriores, que separavam variáveis internas de variáveis de ação. 
+- [Variáveis de sequência de tarefas](/sccm/osd/understand/task-sequence-variables) é uma referência para todas as variáveis de sequência de tarefas disponíveis. Este artigo combina os artigos anteriores, que separavam variáveis internas de variáveis de ação. 
 
 
 
@@ -607,9 +608,9 @@ Quando estiver pronto para instalar esta versão, veja [Instalação de atualiza
 > [!TIP]  
 > Para instalar um novo site, use uma versão de linha de base do Configuration Manager.  
 >
->  Saiba mais sobre:    
->   - [Instalação de novos sites](/sccm/core/servers/deploy/install/installing-sites)  
->   - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines)
+> Saiba mais sobre:    
+> - [Instalação de novos sites](/sccm/core/servers/deploy/install/installing-sites)  
+> - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#bkmk_Baselines)
 
 Para problemas conhecidos e significativos, veja [Notas de versão](/sccm/core/servers/deploy/install/release-notes).
 
