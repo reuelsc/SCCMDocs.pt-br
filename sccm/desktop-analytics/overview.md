@@ -2,7 +2,7 @@
 title: Análise de Área de Trabalho
 titleSuffix: Configuration Manager
 description: Uma visão geral do serviço de análise de desktop integrado com o Configuration Manager.
-ms.date: 07/19/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 154c142b285c58da714193c964b353dc1e173481
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: 07d2a1b38f77a3b45c3327c054a9f1f36793e504
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68339265"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68535900"
 ---
 # <a name="what-is-desktop-analytics"></a>O que é o desktop Analytics?
 
@@ -84,7 +84,7 @@ Para usar a análise de desktop, verifique se seu ambiente atende aos seguintes 
 
 - Configuration Manager, versão 1902 com pacote cumulativo de atualizações (4500571) ou posterior. Para obter mais informações, consulte [Update Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
 
-    - Função de **administrador completo** no Configuration Manager  
+    - Função de [**administrador completo**](/sccm/core/understand/fundamentals-of-role-based-administration#bkmk_Planroles) no Configuration Manager  
 
     > [!Note]  
     > O desktop Analytics dá suporte a uma ID comercial por locatário Azure Active Directory (Azure AD) e hierarquia de Configuration Manager. Se você tiver várias hierarquias em seu ambiente, use IDs comerciais e locatários do Azure AD diferentes.<!-- 4958160 -->
