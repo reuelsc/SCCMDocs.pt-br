@@ -2,7 +2,7 @@
 title: Notas de versão
 titleSuffix: Configuration Manager
 description: Saiba mais sobre os problemas urgentes que ainda não foram corrigidos no produto nem abordados em um artigo da base de dados de conhecimento do Suporte da Microsoft.
-ms.date: 06/17/2019
+ms.date: 07/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46e84180aca830be6a4b8b5c7110679d857e95be
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 49600557e304edb86ec9a87bb02ef0ddb82ea037
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159332"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339436"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Notas de versão do Configuration Manager
 
@@ -159,6 +159,14 @@ Depois de conectar o site à [Análise de Área de Trabalho](/sccm/desktop-analy
 
 Quando você remove uma coleção, selecione **OK** para fechar a janela de propriedades. Em seguida, abra as propriedades novamente para adicionar uma nova coleção na guia **Conexão de Análise de Área de Trabalho**.
 
+### <a name="pilot-status-tile-shows-some-devices-as-undefined"></a>O bloco de status do piloto mostra alguns dispositivos como 'indefinido'
+
+<!-- 4547783 -->
+*Aplica-se a: Configuration Manager versão 1902 com o pacote de atualizações*
+
+Quando você usa o console do Configuration Manager para monitorar o status da implantação piloto, os dispositivos piloto que estão atualizados na versão de destino do Windows para esse plano de implantação são mostrados como **indefinidos** no bloco de status do piloto.  
+
+Esses dispositivos **indefinidos** estão **atualizados** com a versão de destino do sistema operacional para esse plano de implantação. Nenhuma ação posterior é necessária.
 
 
 ## <a name="mobile-device-management"></a>Gerenciamento de dispositivos móveis  

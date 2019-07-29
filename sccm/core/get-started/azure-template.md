@@ -1,8 +1,8 @@
 ---
 title: Criar um laboratório no Azure
 titleSuffix: Configuration Manager
-description: Automatize a criação de um laboratório do Configuration Manager Technical Preview usando modelos do Azure
-ms.date: 03/18/2019
+description: Automatizar a criação de um laboratório da visualização técnica do Configuration Manager ou do laboratório de avaliação de branch atual usando modelos do Azure
+ms.date: 07/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,22 +11,25 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aeef8e447d646df183f7f2075954e381b08d8c93
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 0c4c565d3c1754ce60ec8f9b7d5dcd2d487f8db1
+ms.sourcegitcommit: cdad3ca82018f1755e5186f8949a898cd201b565
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499729"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68411488"
 ---
-# <a name="create-a-configuration-manager-technical-preview-lab-in-azure"></a>Criar um laboratório do Configuration Manager Technical Preview no Azure
+# <a name="create-a-configuration-manager-lab-in-azure"></a>Criar um laboratório do Configuration Manager no Azure
 
 *Aplica-se a: System Center Configuration Manager (Technical Preview)*
 
 <!--3556017-->
 
-Este guia descreve como criar um ambiente de laboratório do Configuration Manager no Microsoft Azure. Ele usa os modelos do Azure para simplificar e automatizar a criação de um laboratório usando recursos do Azure. Esse processo instala a versão mais recente do branch do Configuration Manager Technical Preview. 
+Este guia descreve como criar um ambiente de laboratório do Configuration Manager no Microsoft Azure. Ele usa os modelos do Azure para simplificar e automatizar a criação de um laboratório usando recursos do Azure. Dois modelos do Azure são fornecidos: 
 
-Para obter mais informações sobre o branch atual do Configuration Manager, confira [Configuration Manager no Azure](/sccm/core/understand/configuration-manager-on-azure).
+- O modelo do Azure da visualização técnica do Configuration Manager instala a versão mais recente do branch da visualização técnica do Configuration Manager.
+- O modelo do Azure do branch atual do Configuration Manager instala a avaliação da versão mais recente do branch atual do Configuration Manager. 
+
+Para saber mais, consulte [Configuration Manager no Azure](/sccm/core/understand/configuration-manager-on-azure).
 
 
 
@@ -44,7 +47,7 @@ Esse processo requer uma assinatura do Azure na qual você possa criar os seguin
 
 ## <a name="process"></a>Processar
 
-1. Acesse o [modelo do Configuration Manager](https://azure.microsoft.com/resources/templates/sccm-technicalpreview/).  
+1. Vá para o [modelo da visualização técnica do Configuration Manager](https://azure.microsoft.com/resources/templates/sccm-technicalpreview/) ou [modelo do branch atual do Configuration Manager](https://azure.microsoft.com/resources/templates/sccm-currentbranch/).  
 
 2. Selecione **Implantar no Azure**, que abre o portal do Azure.  
 
@@ -88,17 +91,17 @@ Para conectar-se às VMs, primeiro obtenha no portal do Azure os endereços IP p
 ## <a name="azure-vm-info"></a>Informações sobre a VM do Azure
 
 Todas as três VMs possuem as seguintes especificações:
-- Standard_D2s_v3, que tem dois núcleos de CPU e 8 GB de memória  
-- Windows Server 2016 Datacenter Edition
 - 150 GB de espaço em disco
 - Um endereço IP público e um privado. Os IPs públicos estão em um grupo de segurança de rede que só permite conexões de área de trabalho remota na porta TCP 3389. 
 
 O prefixo que você especificou no modelo de implantação é o prefixo do nome da VM. Por exemplo, se você definir "contoso" como o prefixo, o nome de computador do controlador de domínio será `contosoDC`.
 
 
-### `<prefix>DC`
+### `<prefix>DC01`
 
-Controlador de domínio do Active Directory
+- Controlador de domínio do Active Directory
+- Standard_B2s, que tem dois núcleos de CPU e 4 GB de memória
+- Windows Server 2019 Datacenter Edition
 
 #### <a name="windows-features-and-roles"></a>Recursos e funções do Windows
 - ADDS (Active Directory Domain Services)
@@ -106,8 +109,10 @@ Controlador de domínio do Active Directory
 - RDC (Compactação Diferencial Remota)
 
 
-### `<prefix>PS1`
+### `<prefix>PS01`
 
+- Standard_B2ms, que tem dois núcleos de CPU e 8 GB de memória
+- Windows Server 2016 Datacenter Edition
 - SQL Server
 - Windows 10 ADK com o Windows PE 
 - Site primário do Configuration Manager
@@ -118,8 +123,10 @@ Controlador de domínio do Active Directory
 - IIS (Serviços de Informações da Internet)
 
 
-### `<prefix>DPMP`
+### `<prefix>DPMP01`
 
+- Standard_B2s, que tem dois núcleos de CPU e 4 GB de memória
+- Windows Server 2019 Datacenter Edition
 - Ponto de distribuição
 - Ponto de gerenciamento
 
@@ -129,3 +136,8 @@ Controlador de domínio do Active Directory
 - IIS (Serviços de Informações da Internet)
 - BITS (Serviço de Transferência Inteligente em Segundo Plano)
 
+### `<prefix>CL01`
+
+- Somente para o modelo de avaliação do branch atual do Configuration Manager
+- Windows 10
+- Cliente do Configuration Manager

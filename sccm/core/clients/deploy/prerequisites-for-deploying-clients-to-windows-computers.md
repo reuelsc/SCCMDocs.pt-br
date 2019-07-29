@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6d93fcc35a6d038b03a0829c6fe66ecc50a5446
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: d350c99c1f09f79850f1bc532a5a75c2db454d3d
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140272"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339093"
 ---
 # <a name="prerequisites-for-deploying-clients-to-windows-computers-in-configuration-manager"></a>Pré-requisitos para a implantação de clientes em computadores Windows no Configuration Manager
 
@@ -99,26 +99,26 @@ Os pré-requisitos a seguir são específicos para os diversos métodos de insta
 
 #### <a name="client-push-installation"></a>Instalação do cliente por push  
 
-   -   O site usa contas de instalação do cliente por push para conectar-se aos computadores para instalar o cliente. Especifique essas contas na guia **Contas** das propriedades de instalação do cliente por push. A conta deve ser membro do grupo local de administradores no computador de destino.  
+-   O site usa contas de instalação do cliente por push para conectar-se aos computadores para instalar o cliente. Especifique essas contas na guia **Contas** das propriedades de instalação do cliente por push. A conta deve ser membro do grupo local de administradores no computador de destino.  
 
-         Se você não especificar uma conta de instalação do cliente por push, o servidor do site usará sua conta do computador.  
+      Se você não especificar uma conta de instalação do cliente por push, o servidor do site usará sua conta do computador.  
 
-   -   O site precisa descobrir o computador no qual você está instalando o cliente. É necessário pelo menos um método de descoberta do Configuration Manager.  
+-   O site precisa descobrir o computador no qual você está instalando o cliente. É necessário pelo menos um método de descoberta do Configuration Manager.  
 
-   -   O computador tem um compartilhamento Admin$.  
+-   O computador tem um compartilhamento Admin$.  
 
-   -   Para efetuar push automaticamente do cliente do Configuration Manager para os recursos descobertos, selecione a opção para **Habilitar a instalação do cliente por push para recursos atribuídos** nas propriedades da instalação do cliente por push.  
+-   Para efetuar push automaticamente do cliente do Configuration Manager para os recursos descobertos, selecione a opção para **Habilitar a instalação do cliente por push para recursos atribuídos** nas propriedades da instalação do cliente por push.  
 
-   -   O computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento para baixar os arquivos de origem.  
+-   O computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento para baixar os arquivos de origem.  
 
-   -   Começando na versão 1806, quando houver necessidade de autenticação mútua do Kerberos, os clientes precisarão estar em uma floresta confiável do Active Directory. O Kerberos no Windows depende do Active Directory para autenticação mútua.<!--1358204-->  
+-   Começando na versão 1806, quando houver necessidade de autenticação mútua do Kerberos, os clientes precisarão estar em uma floresta confiável do Active Directory. O Kerberos no Windows depende do Active Directory para autenticação mútua.<!--1358204-->  
 
 
 Para usar o cliente por push, você precisará das seguintes permissões de segurança:  
 
-   -   Para configurar a conta de instalação do cliente por push: permissão **Modificar** e **Ler** para o objeto **Site**.  
+-   Para configurar a conta de instalação do cliente por push: permissão **Modificar** e **Ler** para o objeto **Site**.  
 
-   -   Para usar o push de clientes para instalar coleções, dispositivos e consultas para clientes: permissão **Modificar Recurso** e **Ler** para o objeto **Coleção**.  
+-   Para usar o push de clientes para instalar coleções, dispositivos e consultas para clientes: permissão **Modificar Recurso** e **Ler** para o objeto **Coleção**.  
 
 
 A função de segurança padrão **Administrador de Infraestrutura** inclui as permissões necessárias para gerenciar instalações do cliente por push.  
@@ -126,11 +126,11 @@ A função de segurança padrão **Administrador de Infraestrutura** inclui as p
 
 #### <a name="software-update-point-based-installation"></a>Instalação baseada em ponto de atualização de software  
 
-   -   Se você não estendeu o esquema do Active Directory ou se você está instalando clientes de outra floresta, use a política de grupo para provisionar os parâmetros de instalação do CCMSetup.exe. Para obter mais informações, confira [Como provisionar propriedades de instalação do cliente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
+-   Se você não estendeu o esquema do Active Directory ou se você está instalando clientes de outra floresta, use a política de grupo para provisionar os parâmetros de instalação do CCMSetup.exe. Para obter mais informações, confira [Como provisionar propriedades de instalação do cliente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
 
-   -   Publique o cliente do Configuration Manager no ponto de atualização de software.  
+-   Publique o cliente do Configuration Manager no ponto de atualização de software.  
 
-   -   Para baixar os arquivos de origem, o computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento.  
+-   Para baixar os arquivos de origem, o computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento.  
 
 
 Para conhecer as permissões de segurança necessárias para gerenciar as atualizações de software do Configuration Manager, consulte [Pré-requisitos para atualizações de software](/sccm/sum/plan-design/prerequisites-for-software-updates).  
@@ -138,9 +138,9 @@ Para conhecer as permissões de segurança necessárias para gerenciar as atuali
 
 #### <a name="group-policy-based-installation"></a>Instalação baseada na política de grupo  
 
-   -   Se você não estendeu o esquema do Active Directory ou se você está instalando clientes de outra floresta, use a política de grupo para provisionar os parâmetros de instalação do CCMSetup.exe. Para obter mais informações, confira [Como provisionar propriedades de instalação do cliente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
+-   Se você não estendeu o esquema do Active Directory ou se você está instalando clientes de outra floresta, use a política de grupo para provisionar os parâmetros de instalação do CCMSetup.exe. Para obter mais informações, confira [Como provisionar propriedades de instalação do cliente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
 
-   -   Para baixar os arquivos de origem, o computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento.  
+-   Para baixar os arquivos de origem, o computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento.  
 
 
 #### <a name="logon-script-based-installation"></a>Instalação baseada em script de logon  
@@ -155,15 +155,15 @@ Para baixar os arquivos de origem, o computador cliente precisa se comunicar com
 
 #### <a name="microsoft-intune-mdm-installation"></a>Instalação do Microsoft Intune MDM
 
- - Exige uma assinatura do Microsoft Intune e as licenças apropriadas.  
+- Exige uma assinatura do Microsoft Intune e as licenças apropriadas.  
 
- - Requer que o dispositivo tenha acesso à Internet, mesmo se ele não for baseado na Internet.  
+- Requer que o dispositivo tenha acesso à Internet, mesmo se ele não for baseado na Internet.  
 
- - Dependendo do caso de uso, também poderá ser necessário usar uma das tecnologias a seguir ou ambas:  
+- Dependendo do caso de uso, também poderá ser necessário usar uma das tecnologias a seguir ou ambas:  
 
-     - Azure Active Directory  
+    - Azure Active Directory  
 
-     - Gateway de gerenciamento de nuvem  
+    - Gateway de gerenciamento de nuvem  
 
 
 #### <a name="workgroup-computer-installation"></a>Instalação de computador do grupo de trabalho  
@@ -175,9 +175,9 @@ Para obter mais informações sobre como configurar a conta de acesso à rede, c
 
 #### <a name="software-distribution-based-installation-for-upgrades-only"></a>Instalação baseada em distribuição de software (somente para atualizações)  
 
-   -   Se você não estendeu o esquema do Active Directory ou se você está instalando clientes de outra floresta, use a política de grupo para provisionar os parâmetros de instalação do CCMSetup.exe. Para obter mais informações, confira [Como provisionar propriedades de instalação do cliente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).   
+-   Se você não estendeu o esquema do Active Directory ou se você está instalando clientes de outra floresta, use a política de grupo para provisionar os parâmetros de instalação do CCMSetup.exe. Para obter mais informações, confira [Como provisionar propriedades de instalação do cliente](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).   
 
-   -   Para baixar os arquivos de origem, o computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento.  
+-   Para baixar os arquivos de origem, o computador cliente precisa se comunicar com um ponto de distribuição ou um ponto de gerenciamento.  
 
 
 Para conhecer as permissões de segurança necessárias para atualizar o cliente do Configuration Manager usando o gerenciamento de aplicativos, consulte [Segurança e privacidade para gerenciamento de aplicativos no Configuration Manager](/sccm/apps/plan-design/security-and-privacy-for-application-management).  
@@ -245,7 +245,7 @@ Para obter mais informações, consulte [Determinar as funções do sistema de s
 
   - Para adicionar, modificar e excluir as funções do sistema de site de registro: permissão **Modificar** para o objeto **Site**.  
 
-  - Para definir as configurações do cliente para o registro: as configurações de cliente padrão exigem a permissão **Modificar** para o objeto **Site** e as configurações de cliente personalizadas exigem as permissões **Agente cliente**.  
+  - Para definir as configurações do cliente para registro: as configurações de cliente padrão exigem a permissão **Modificar** para o objeto **Site** e as configurações de cliente personalizadas exigem as permissões **Agente cliente**.  
 
     A função de segurança padrão **Administrador Completo** inclui as permissões necessárias para configurar as funções do sistema de sites de registro.  
 
@@ -257,7 +257,7 @@ Para obter mais informações, consulte [Determinar as funções do sistema de s
 
   - Para permitir e bloquear dispositivos móveis: **Modificar recurso** para o objeto **Coleção**.  
 
-  - Para bloquear remotamente ou reconfigurar a senha em um dispositivo móvel: **Modificar** recurso para o objeto **Coleção**.  
+  - Para bloquear remotamente um dispositivo móvel ou reconfigurar a respectiva senha: **Modificar** recurso para o objeto **Coleção**.  
 
     A função de segurança padrão **Administrador de Operações** inclui as permissões necessárias para gerenciar dispositivos móveis.  
 

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d060a9426207550352216c215efca50e0b774e46
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 5c21f85271b0fd1f96b3e5397d2f2fb7a3e3798d
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129690"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339877"
 ---
 # <a name="capabilities-in-technical-preview-1804-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1804 do System Center Configuration Manager
 
@@ -32,14 +32,16 @@ Examine o artigo de [Technical Preview](/sccm/core/get-started/technical-preview
 ## <a name="known-issues-in-this-technical-preview"></a>Problemas conhecidos neste Technical Preview
 
 ### <a name="bkmk_ki-prereqs"></a> O link de instalação para baixar as atualizações não está funcionando
-<!--514334--> Se você executar a instalação da mídia, a página inicial inclui um link chamado **Obter as atualizações mais recentes do Configuration Manager**, que não funciona nesta versão. Este link é para baixar os arquivos necessários para a instalação.
+<!--514334-->
+Se você executar a instalação da mídia, a página inicial incluirá um link chamado **Obter as atualizações mais recentes do Configuration Manager** que não funciona nesta versão. Este link é para baixar os arquivos necessários para a instalação.
 
 #### <a name="workaround"></a>Solução alternativa
 Para baixar os arquivos necessários para a instalação, execute o Assistente de instalação. Na página Downloads de Pré-requisitos, use a opção para **Baixar arquivos necessários**. 
 
 
 ### <a name="bkmk_appcathttps"></a> O ponto de serviço Web do catálogo de aplicativos não pode ser habilitado para HTTPS
-<!--512637--> Se o ponto de serviço Web do catálogo de aplicativos for habilitado para HTTPS:
+<!--512637-->
+Se o ponto de serviço Web do catálogo de aplicativos for habilitado para HTTPS:
 
 - Os aplicativos implantados como disponíveis para os usuários não aparecem no Centro de Software  
 
@@ -59,7 +61,8 @@ Reconfigure o ponto de serviço Web do catálogo de aplicativo para se comunicar
 
 
 ## <a name="configure-a-remote-content-library-for-the-site-server"></a>Configurar uma biblioteca de conteúdo remoto para o servidor do site  
-<!--1357525--> Para liberar espaço no disco rígido do seu servidor do site primário, realoque sua [biblioteca de conteúdo](/sccm/core/plan-design/hierarchy/the-content-library) para outra localização de armazenamento. Você pode mover a biblioteca de conteúdo para outra unidade no servidor do site, para um servidor separado ou para discos tolerantes a falhas em uma rede SAN (rede de área de armazenamento). Recomendamos uma rede SAN porque ela fornece armazenamento elástico que aumenta ou diminui ao longo do tempo, a fim de atender às necessidades dinâmicas de conteúdo. 
+<!--1357525-->
+Para liberar espaço no disco rígido do seu servidor do site primário, realoque sua [biblioteca de conteúdo](/sccm/core/plan-design/hierarchy/the-content-library) para outra localização de armazenamento. Você pode mover a biblioteca de conteúdo para outra unidade no servidor do site, para um servidor separado ou para discos tolerantes a falhas em uma rede SAN (rede de área de armazenamento). Recomendamos uma rede SAN porque ela fornece armazenamento elástico que aumenta ou diminui ao longo do tempo, a fim de atender às necessidades dinâmicas de conteúdo. 
 
 Essa biblioteca de conteúdo remoto é um novo pré-requisito para [alta disponibilidade da função de servidor do site](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability). 
 
@@ -109,15 +112,15 @@ Esse comentário vai diretamente para a equipe de produtos da Microsoft do Confi
 
 As seguintes informações anônimas são sempre incluídas com os comentários para proporcionar o contexto:  
 
- - Versão e idioma do console do Configuration Manager  
+- Versão e idioma do console do Configuration Manager  
 
- - Versão do site do Configuration Manager  
+- Versão do site do Configuration Manager  
 
- - ID de suporte, também conhecida como ID da hierarquia  
+- ID de suporte, também conhecida como ID da hierarquia  
 
- - A versão e o idioma do sistema operacional sistema no qual o console está sendo executado  
+- A versão e o idioma do sistema operacional sistema no qual o console está sendo executado  
 
- - A localização exata no console de onde você clicou no sorriso  
+- A localização exata no console de onde você clicou no sorriso  
 
 Esses dados são consistentes com a coleção de nossos dados de diagnóstico e de uso. Para obter mais informações, consulte [Dados de diagnóstico e de uso](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data).
 
@@ -137,9 +140,9 @@ Use o Centro de Suporte para solução de problemas do cliente, exibição de lo
 
 ### <a name="new-support-center-features"></a>Novos recursos do Centro de Suporte  
 
- - Um novo visualizador de log, OneTrace. Ele funciona de modo semelhante ao CMTrace e inclui melhorias, como uma exibição com guias e janelas encaixáveis.  
+- Um novo visualizador de log, OneTrace. Ele funciona de modo semelhante ao CMTrace e inclui melhorias, como uma exibição com guias e janelas encaixáveis.  
 
- - Um novo recurso coletor de dados reúne logs de diagnóstico de um cliente do Configuration Manager local ou remoto. Ele fornece o diagnóstico em tempo real do inventário (substitui o Client Spy), da política (substitui o Policy Spy) e do cache do cliente.  
+- Um novo recurso coletor de dados reúne logs de diagnóstico de um cliente do Configuration Manager local ou remoto. Ele fornece o diagnóstico em tempo real do inventário (substitui o Client Spy), da política (substitui o Policy Spy) e do cache do cliente.  
 
 
 
@@ -150,37 +153,37 @@ Agora, as ferramentas de servidor e cliente do Configuration Manager estão incl
 
 #### <a name="server-tools"></a>Ferramentas de servidor  
 
- - **DP Job Manager**: soluciona problemas de trabalhos de distribuição de conteúdo para os pontos de distribuição  
+- **DP Job Manager**: soluciona problemas de trabalhos de distribuição de conteúdo para os pontos de distribuição  
 
- - **Collection Evaluation Viewer**: exibe detalhes de avaliação de coleção  
+- **Collection Evaluation Viewer**: exibe detalhes de avaliação de coleção  
 
- - **Gerenciador da Biblioteca de Conteúdo**: exibe conteúdos do repositório de instância única da biblioteca de conteúdo  
+- **Gerenciador da Biblioteca de Conteúdo**: exibe conteúdos do repositório de instância única da biblioteca de conteúdo  
 
- - **Transferência da biblioteca de conteúdo**: transfere a biblioteca de conteúdo entre as unidades  
+- **Transferência da biblioteca de conteúdo**: transfere a biblioteca de conteúdo entre as unidades  
 
- - **Ferramenta de Propriedade de Conteúdo**: altera a propriedade de pacotes órfãos. Esses pacotes existem no site sem um servidor de site proprietário.  
+- **Ferramenta de Propriedade de Conteúdo**: altera a propriedade de pacotes órfãos. Esses pacotes existem no site sem um servidor de site proprietário.  
 
- - **Ferramenta de Administração e Auditoria Baseada em Funções**: ajuda os administradores a fazer a auditoria da configuração de funções  
+- **Ferramenta de Administração e Auditoria Baseada em Funções**: ajuda os administradores a fazer a auditoria da configuração de funções  
 
 #### <a name="client-tools"></a>Ferramentas de cliente
 
- - **CMTrace**: exibe logs  
+- **CMTrace**: exibe logs  
 
- - **Deployment Monitoring Tool**: soluciona problemas de aplicativos, atualizações e implantações de linha de base  
+- **Deployment Monitoring Tool**: soluciona problemas de aplicativos, atualizações e implantações de linha de base  
 
- - **Policy Spy**: exibe atribuições de política  
+- **Policy Spy**: exibe atribuições de política  
 
- - **Power Viewer Tool**: exibe o status do recurso de gerenciamento de energia  
+- **Power Viewer Tool**: exibe o status do recurso de gerenciamento de energia  
 
- - **Send Schedule Tool**: aciona agendas e avaliações de linhas de base do DCM  
+- **Send Schedule Tool**: aciona agendas e avaliações de linhas de base do DCM  
 
 > [!Important]  
 > O [Centro de Suporte](#support-center) é recomendado para a maioria casos de uso, pois inclui uma funcionalidade igual ou aprimorada para as seguintes ferramentas:  
->  - Client Spy
->  - CMTrace<sup>1</sup> 
->  - Deployment Monitoring Tool
->  - Policy Spy
->  - Send Schedule Tool
+> - Client Spy
+> - CMTrace<sup>1</sup> 
+> - Deployment Monitoring Tool
+> - Policy Spy
+> - Send Schedule Tool
 > 
 > <sup>1</sup> CMTrace não depende do .NET ou do WPF (Windows Presentation Foundation), portanto ainda é usado em imagens de inicialização do Windows PE.
 
@@ -218,7 +221,8 @@ O comportamento mudou para quando você revoga a aprovação de um aplicativo. A
 
 
 ## <a name="exclude-active-directory-containers-from-discovery"></a>Excluir contêineres do Active Directory da descoberta
-<!--1358143--> Para reduzir o número de objetos descobertos, agora você pode excluir contêineres específicos da descoberta do sistema do Active Directory. Esse recurso é resultado de seus [comentários no UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8414520-exclude-virtual-cluster-and-ou-from-discovery).
+<!--1358143-->
+Para reduzir o número de objetos descobertos, agora você pode excluir contêineres específicos da descoberta do sistema do Active Directory. Esse recurso é resultado de seus [comentários no UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8414520-exclude-virtual-cluster-and-ou-from-discovery).
 
 ### <a name="try-it-out"></a>Experimente!
  Tente concluir as tarefas. Depois, envie seus [comentários](#bkmk_feedback) sobre como isso funcionou.
@@ -264,7 +268,8 @@ Para saber mais sobre configurações do cliente, confira [Definir configuraçõ
 
 
 ## <a name="filter-automatic-deployment-rules-by-software-update-architecture"></a>Filtrar regras de implantação automática pela arquitetura de atualização de software
- <!--1322266--> Agora, você pode filtrar as regras de implantação automática para excluir arquiteturas como Itanium e ARM64.
+ <!--1322266-->
+Agora, você pode filtrar as regras de implantação automática para excluir arquiteturas como Itanium e ARM64.
 
 ### <a name="try-it-out"></a>Experimente!
 Tente concluir as tarefas. Depois, envie seus [comentários](#bkmk_feedback) sobre como isso funcionou.
@@ -290,17 +295,17 @@ Depois de adicionar os critérios de arquitetura, a página de propriedades da r
 ## <a name="improvements-to-os-deployment"></a>Melhorias na implantação do sistema operacional
 Fizemos estas melhorias na implantação de sistema operacional, algumas das quais foram resultado de seus comentários no UserVoice.  
 
- - [Mascarar dados confidenciais armazenados nas variáveis da sequência de tarefas](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): na etapa [Definir Variável de Sequência de Tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable), selecione a nova opção **Não exibir esse valor**. Por exemplo, ao especificar uma senha.<!--1358330--> Os comportamentos a seguir se aplicam quando você habilita essa opção:
-   - O valor da variável não é exibido no smsts.log.
-   - O console do Configuration Manager e o Provedor de SMS lidam com esse valor da mesma forma que outros segredos, como senhas.
-   - O valor não será incluído quando você exportar a sequência de tarefas.
-   - O editor de sequência de tarefas não lê esse valor quando você edita a etapa. Digite novamente o valor inteiro para fazer alterações.
+- [Mascarar dados confidenciais armazenados nas variáveis da sequência de tarefas](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): na etapa [Definir Variável de Sequência de Tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable), selecione a nova opção **Não exibir esse valor**. Por exemplo, ao especificar uma senha.<!--1358330--> Os comportamentos a seguir se aplicam quando você habilita essa opção:
+  - O valor da variável não é exibido no smsts.log.
+  - O console do Configuration Manager e o Provedor de SMS lidam com esse valor da mesma forma que outros segredos, como senhas.
+  - O valor não será incluído quando você exportar a sequência de tarefas.
+  - O editor de sequência de tarefas não lê esse valor quando você edita a etapa. Digite novamente o valor inteiro para fazer alterações.
 
-   > [!Important]  
-   > Variáveis e seus valores são salvos com a sequência de tarefas como XML, e são ofuscados no banco de dados. Quando o cliente solicita uma política de sequência de tarefas do ponto de gerenciamento, ela é criptografada em trânsito e armazenada no cliente. No entanto, todos os valores de variáveis são texto sem formatação no ambiente da sequência de tarefas na memória durante a execução no cliente. Se a sequência de tarefas incluir uma etapa para mostrar o valor da variável, essa saída será em texto sem formatação. Esse comportamento exige uma ação explícita do administrador para incluir uma etapa como essa na sequência de tarefas. 
+  > [!Important]  
+  > Variáveis e seus valores são salvos com a sequência de tarefas como XML, e são ofuscados no banco de dados. Quando o cliente solicita uma política de sequência de tarefas do ponto de gerenciamento, ela é criptografada em trânsito e armazenada no cliente. No entanto, todos os valores de variáveis são texto sem formatação no ambiente da sequência de tarefas na memória durante a execução no cliente. Se a sequência de tarefas incluir uma etapa para mostrar o valor da variável, essa saída será em texto sem formatação. Esse comportamento exige uma ação explícita do administrador para incluir uma etapa como essa na sequência de tarefas. 
 
 
- - [Mascarar o nome do programa durante a Etapa de Execução de Comando de uma sequência de tarefas](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): para impedir que os dados potencialmente confidenciais sejam exibidos ou registrados, defina a variável de sequência de tarefas **OSDDoNotLogCommand** como `TRUE`. Essa variável oculta o nome do programa no smsts.log durante uma etapa da sequência de tarefas [Executar Linha de Comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine). <!--1358493-->  
+- [Mascarar o nome do programa durante a Etapa de Execução de Comando de uma sequência de tarefas](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): para impedir que os dados potencialmente confidenciais sejam exibidos ou registrados, defina a variável de sequência de tarefas **OSDDoNotLogCommand** como `TRUE`. Essa variável oculta o nome do programa no smsts.log durante uma etapa da sequência de tarefas [Executar Linha de Comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine). <!--1358493-->  
 
 
 

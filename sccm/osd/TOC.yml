@@ -101,6 +101,10 @@
           href: deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md
         - name: Implantar uma sequência de tarefas
           href: deploy-use/deploy-a-task-sequence.md
+        - name: Depurar uma sequência de tarefas
+          href: deploy-use/debug-task-sequence.md
+        - name: Configurar o conteúdo de armazenamento prévio em cache
+          href: deploy-use/configure-precache-content.md
         - name: Use uma sequência de tarefas para gerenciar discos rígidos virtuais
           href: deploy-use/use-a-task-sequence-to-manage-virtual-hard-disks.md
     - name: Cenários de sequência de tarefas personalizada
