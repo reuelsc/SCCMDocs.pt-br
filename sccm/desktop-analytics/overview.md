@@ -2,7 +2,7 @@
 title: Análise de Área de Trabalho
 titleSuffix: Configuration Manager
 description: Uma visão geral do serviço de análise de desktop integrado com o Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 07/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07d2a1b38f77a3b45c3327c054a9f1f36793e504
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: fd86e5bd939ecd356a6cf290958a766266248645
+ms.sourcegitcommit: 75f48834b98ea6a238d39f24e04c127b2959d913
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535900"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68604481"
 ---
 # <a name="what-is-desktop-analytics"></a>O que é o desktop Analytics?
 
@@ -109,7 +109,7 @@ Para usar a análise de desktop, verifique se seu ambiente atende aos seguintes 
 - Conectividade de rede de dispositivos para a nuvem pública da Microsoft. Para obter mais informações, consulte [como habilitar o compartilhamento de dados](/sccm/desktop-analytics/enable-data-sharing)  
 
 
-### <a name="licensing"></a>Licenciamento
+### <a name="licensing-and-costs"></a>Licenciamento e custos
 
 A análise de desktops requer uma das seguintes assinaturas de licença:
 
@@ -119,7 +119,14 @@ A análise de desktops requer uma das seguintes assinaturas de licença:
 
 - Windows VDA E3 ou e5  
 
+Além do custo das assinaturas de licença, não há nenhum custo adicional para usar a análise de desktops. No Log Analytics do Azure, a análise de desktops é "classificada como zero". Essa classificação significa que ela é excluída dos limites e dos custos de dados, independentemente do tipo de preço do Azure Log Analytics escolhido. Para obter mais informações sobre os tipos de preço do Azure Log Analytics, consulte [log Analytics de preços](https://azure.microsoft.com/pricing/details/monitor/).
 
+- Se você usar a camada gratuita, que tem um limite na quantidade de dados coletados por dia, os dados de análise da área de trabalho não são considerados nesse limite. Você pode coletar todos os dados de análise de desktop de seus dispositivos e ainda ter o limite completo disponível para coletar dados adicionais de outras fontes.
+
+- Se você usar uma camada paga que cobra por GB de dados coletados, não será cobrado pelos dados de análise de desktop. Você pode coletar todos os dados de análise de desktop de seus dispositivos e não incorrer em nenhum custo.
+
+> [!Note]  
+> Diferentes planos de Log Analytics do Azure têm períodos de retenção de dados diferentes. A análise de desktops herda a política de retenção de dados do espaço de trabalho. Se o seu espaço de trabalho estiver no plano gratuito, a análise de desktops manterá os últimos 30 dias de "instantâneos diários" que são coletados no espaço de trabalho.
 
 
 ## <a name="next-steps"></a>Próximas etapas
