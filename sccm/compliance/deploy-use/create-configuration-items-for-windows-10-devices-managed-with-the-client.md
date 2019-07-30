@@ -11,20 +11,20 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93fdbc2097c0607be42c712e3e3aba309829da4e
-ms.sourcegitcommit: de3c86077bbf91b793e94e1f60814df18da11bab
+ms.openlocfilehash: 9cfb8209343581f8d6b9dc7949032d6399669f95
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67726145"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339150"
 ---
 # <a name="create-configuration-items-for-windows-10-devices"></a>Criar itens de configuração para dispositivos Windows 10
 Use o item de configuração do System Center Configuration Manager no **Windows 10** para gerenciar configurações para computadores Windows 10 que são gerenciados pelo cliente do Configuration Manager.  
   
 > [!IMPORTANT]  
->  Nesta versão, se você tiver criado uma **senha** definindo como parte de um item de configuração do tipo **Windows 10** (para um dispositivo gerenciado com o cliente do Configuration Manager), lembre-se do seguinte problema. Se a configuração ainda não existe ou não foi configurada no dispositivo Windows 10, ela será avaliada incorretamente como compatível.  
+>  Nesta versão, se você criou uma configuração de **senha** como parte de um item de configuração do tipo **Windows 10** (para um dispositivo gerenciado com o cliente do Configuration Manager), esteja ciente do problema a seguir. Se a configuração ainda não existir ou não tiver sido configurada no dispositivo Windows 10, ela será avaliada incorretamente como em conformidade.  
 >   
->  Como alternativa, quando você criar uma configuração para esses dispositivos, verifique se a opção **Corrigir configurações não compatíveis** está marcada nas páginas de configurações do assistente para Criar Item de Configuração. Além disso, ao implantar uma linha de base de configuração que contém um item de configuração do Windows 10 que, por sua vez, contém configurações de senha, selecione **Corrigir regras não compatíveis quando houver suporte para elas**. Fazer essa seleção na caixa de diálogo implantar linhas de base de configuração. Usando essa solução alternativa, a configuração é monitorada e corrigida se for considerada não compatível. Após a correção, a configuração é relatada corretamente como **Compatível** (a menos que um problema seja encontrado; nesse caso, ele relatará **Erro**).  
+>  Como alternativa, quando você criar uma configuração para esses dispositivos, verifique se a opção **Corrigir configurações não compatíveis** está marcada nas páginas de configurações do assistente para Criar Item de Configuração. Além disso, ao implantar uma linha de base de configuração que contém um item de configuração do Windows 10 que, por sua vez, contém configurações de senha, selecione **Corrigir regras não compatíveis quando houver suporte para elas**. Você faz essa seleção na caixa de diálogo implantar linhas de base de configuração. Usando essa solução alternativa, a configuração é monitorada e corrigida se for considerada não compatível. Após a correção, a configuração é relatada corretamente como **Compatível** (a menos que um problema seja encontrado; nesse caso, ele relatará **Erro**).  
   
 ### <a name="to-create-a-windows-10-configuration-item"></a>Para criar um item de configuração do Windows 10  
   
@@ -83,7 +83,7 @@ Use o item de configuração do System Center Configuration Manager no **Windows
 |**Número de tentativas de logon com falha antes do apagamento do dispositivo**|Limpa o dispositivo se o logon falhar por este número de vezes.|  
 |**Tempo ocioso antes que o dispositivo móvel seja bloqueado**|Especifica por quantos minutos o dispositivo deve ficar inativo antes de ser bloqueado automaticamente.|  
 |**Complexidade da senha**|Escolha se é possível especificar um PIN como “1234” ou se é necessário fornecer uma senha forte.|
-|**Número de conjuntos de caracteres complexos exigidos na senha**|Se você tiver selecionado uma senha **forte**, use essa configuração para configurar o número de conjuntos de caracteres complexos necessários. Para uma senha forte, essa configuração deve ser definida com pelo menos **3**, o que significa que letras e números são obrigatórios. Selecione **4** se quiser aplicar uma senha que requer ainda caracteres especiais como **(% $**.<br>(somente Windows 10)  |
+|**Número de conjuntos de caracteres complexos exigidos na senha**|Se você tiver selecionado uma senha **forte**, use essa configuração para configurar o número de conjuntos de caracteres complexos necessários. Para uma senha forte, essa configuração deve ser definida com pelo menos **3**, o que significa que letras e números são obrigatórios. Selecione **4** se quiser aplicar uma senha que requer ainda caracteres especiais como **(% $** .<br>(somente Windows 10)  |
   
 ###  <a name="device"></a>Dispositivo  
   
@@ -117,29 +117,29 @@ Use o item de configuração do System Center Configuration Manager no **Windows
 |------------------|-------------|  
 |**Controle de conta de usuário**|Define como o Controle de Conta de Usuário do Windows funciona no dispositivo.<br />Por exemplo, você pode desabilitá-lo ou definir o nível no qual ele o notificará.|  
 |**Firewall da rede**|Habilita ou desabilita o Firewall do Windows.|  
-|**SmartScreen**|Habilita ou desabilita o SmartScreen do Windows.|  
+|**SmartScreen**|Habilita ou desabilita o Windows SmartScreen.|  
 |**Proteção contra vírus**|Exige que o software antivírus seja instalado e configurado.|  
 |**As assinaturas de proteção contra vírus estão atualizadas**|Exige que os arquivos de assinatura do software antivírus no dispositivo sejam atualizados.|  
   
 ### <a name="windows-information-protection"></a>Windows Information Protection
 
-Com o aumento do uso de dispositivos de funcionário dentro da empresa, aumenta também o risco de vazamentos acidentais de dados por meio de aplicativos e serviços, como email, mídia social e nuvem pública. Eles estão fora do controle da organização. Exemplos incluem quando um funcionário:
+Com o aumento do uso de dispositivos de funcionário dentro da empresa, aumenta também o risco de vazamentos acidentais de dados por meio de aplicativos e serviços, como email, mídia social e nuvem pública. Eles estão fora do controle da organização. Os exemplos incluem quando um funcionário:
 
-- Envia as imagens mais recentes de engenharia da sua conta de email pessoal.
+- Envia as imagens de engenharia mais recentes de sua conta de email pessoal.
 - Copia e cola informações do produto em um tweet.
-- Salva um relatório de vendas em andamento para o armazenamento de nuvem pública.
+- Salva um relatório de vendas em andamento em seu armazenamento em nuvem pública.
 
-A WIP (Proteção de Informações do Windows, anteriormente conhecida como proteção de dados empresariais) ajuda a proteger contra esse possível vazamentos de dados sem interferir na experiência do funcionário. A WIP também ajuda a proteger dados e aplicativos corporativos contra vazamentos de dados acidentais em dispositivos corporativos e dispositivos pessoais que os funcionários levam para o trabalho. WIP não requer alterações em seu ambiente ou outros aplicativos.
+A WIP (Proteção de Informações do Windows, anteriormente conhecida como proteção de dados empresariais) ajuda a proteger contra esse possível vazamentos de dados sem interferir na experiência do funcionário. A WIP também ajuda a proteger dados e aplicativos corporativos contra vazamentos de dados acidentais em dispositivos corporativos e dispositivos pessoais que os funcionários levam para o trabalho. O WIP não requer alterações no seu ambiente ou em outros aplicativos.
 
- Itens de configuração do Configuration Manager Windows Information Protection gerenciam o seguinte:
- 
- - A lista de aplicativos protegidos pela WIP
- - Locais de rede corporativa
- - Nível de proteção
- - Configurações de criptografia
+Configuration Manager itens de configuração da proteção de informações do Windows, gerencie o seguinte:
+
+- A lista de aplicativos protegidos por WIP
+- Locais de rede corporativa
+- Nível de proteção
+- Configurações de criptografia
   
 
 Para saber mais sobre como configurar a WIP com o Configuration Manager, confira [Proteger os dados da empresa usando a WIP (Proteção de Informações do Windows)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip).
   
 ## <a name="see-also"></a>Consulte também  
- [Itens de configuração de dispositivos gerenciados com o cliente do System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items.md)
+[Itens de configuração de dispositivos gerenciados com o cliente do System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items.md)

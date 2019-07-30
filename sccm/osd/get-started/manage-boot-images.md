@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4ed731b9b931e76e6d6b6d1399bf5a273bf561b
-ms.sourcegitcommit: 56ec6933cf7bfc93842f55835ad336ee3a1c6ab5
+ms.openlocfilehash: ddc856b3c1615045aadba60c4616223349a7b61d
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57211645"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340412"
 ---
 # <a name="manage-boot-images-with-configuration-manager"></a>Gerenciar imagens de inicialização com o Configuration Manager
 
@@ -28,7 +28,7 @@ Uma imagem de inicialização no Configuration Manager é uma imagem do [Windows
 
 ## <a name="BKMK_BootImageDefault"></a> Imagens de inicialização padrão
 
-O Configuration Manager fornece duas imagens de inicialização padrão: Uma para oferecer suporte a plataformas x86 e outra para oferecer suporte a plataformas x64. Essas imagens são armazenadas nas pastas *x64* ou *i386* no seguinte compartilhamento no servidor do site: `\\<SiteServerName>\SMS_<sitecode>\osd\boot\`. As imagens de inicialização padrão são atualizadas ou geradas novamente dependendo da ação que você tomar.
+O Configuration Manager fornece duas imagens de inicialização padrão: uma para dar suporte a plataformas x86 e outra para dar suporte a plataformas x64. Essas imagens são armazenadas nas pastas *x64* ou *i386* no seguinte compartilhamento no servidor do site: `\\<SiteServerName>\SMS_<sitecode>\osd\boot\`. As imagens de inicialização padrão são atualizadas ou geradas novamente dependendo da ação que você tomar.
 
 Considere os seguintes comportamentos de uma das ações descritas para as imagens de inicialização padrão:
 
@@ -63,10 +63,10 @@ Quando você atualiza o Configuration Manager 2012 para o branch atual, o site g
 Quando você usa a ação **Atualizar Pontos de Distribuição** no nó **Imagens de Inicialização** do console, o site atualiza a imagem de inicialização de destino com os componentes cliente, os drivers e as personalizações.    
 
 Você pode recarregar a imagem de inicialização com a versão mais recente do WinPE no diretório de instalação do Windows ADK. A página **Geral** do Assistente de Atualização de Pontos de Distribuição fornece as seguintes informações: 
- - A versão atual do Windows ADK instalada no servidor do site
- - A versão atual do cliente de produção
- - A versão do Windows ADK do WinPE na imagem de inicialização
- - A versão do cliente do Configuration Manager na imagem de inicialização
+- A versão atual do Windows ADK instalada no servidor do site
+- A versão atual do cliente de produção
+- A versão do Windows ADK do WinPE na imagem de inicialização
+- A versão do cliente do Configuration Manager na imagem de inicialização
 
 Se as versões na imagem de inicialização estiverem desatualizadas, use a opção para **Recarregar essa imagem de inicialização com a versão atual do Windows PE no Windows ADK**. 
 
@@ -101,7 +101,7 @@ Por exemplo, use o console do Configuration Manager para personalizar imagens de
 - [Suporte para Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk)
 - [Plataformas com suporte DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-supported-platforms)
 
-#### <a name="bkmk_note1"></a> Observação 1: Suporte para Windows PE 3.1
+#### <a name="bkmk_note1"></a> Observação 1: suporte para Windows PE 3.1
 
 Adicione uma imagem de inicialização ao Configuration Manager somente com base no Windows PE *versão 3.1*. Atualize o Windows AIK para Windows 7 (baseado no Windows PE 3.0) com o Suplemento Windows AIK para Windows 7 SP1 (baseado no Windows PE 3.1). Baixe o Suplemento Windows AIK para Windows 7 SP1 no [Centro de Download da Microsoft](https://www.microsoft.com/download/details.aspx?id=5188).  
 
@@ -131,7 +131,7 @@ Adicione uma imagem de inicialização ao Configuration Manager somente com base
 A imagem de inicialização agora estará listada no nó **Imagem de Inicialização**. Antes de usar a imagem de inicialização para implantar um SO, distribua-a para os pontos de distribuição. 
 
 > [!Tip]  
-> No nó **Imagem de Inicialização** do console, a coluna **Tamanho (KB)** exibe o tamanho descompactado de cada imagem de inicialização. Quando o site envia uma imagem de inicialização pela rede, ele envia uma cópia compactada. Normalmente, essa cópia é menor que o tamanho listado na coluna **Tamanho (KB)**.  
+> No nó **Imagem de Inicialização** do console, a coluna **Tamanho (KB)** exibe o tamanho descompactado de cada imagem de inicialização. Quando o site envia uma imagem de inicialização pela rede, ele envia uma cópia compactada. Normalmente, essa cópia é menor que o tamanho listado na coluna **Tamanho (KB)** .  
 
 
 
@@ -185,7 +185,7 @@ Na guia **Drivers** , adicione os drivers de dispositivo do Windows necessários
 
 - Adicione somente drivers de rede e de armazenamento à imagem de inicialização, a menos que haja requisitos para outros drivers no WinPE.  
 
-- Para exibir somente os drivers de armazenamento e de rede, selecione **Ocultar drivers que não estão em uma classe de armazenamento ou de rede (para imagens de inicialização)**. Essa opção também oculta outros drivers que, geralmente, não são necessários para as imagens de inicialização, como drivers de vídeo ou de modem.  
+- Para exibir somente os drivers de armazenamento e de rede, selecione **Ocultar drivers que não estão em uma classe de armazenamento ou de rede (para imagens de inicialização)** . Essa opção também oculta outros drivers que, geralmente, não são necessários para as imagens de inicialização, como drivers de vídeo ou de modem.  
 
 - Para ocultar os drivers que não têm uma assinatura digital válida, selecione **Ocultar drivers que não são assinados digitalmente**.  
 
@@ -210,7 +210,7 @@ Na guia **Personalização** , selecione qualquer uma das seguintes configuraç�
 - Configure o espaço transitório do Windows PE, que é o armazenamento temporário (unidade de RAM) usado pelo WinPE. Por exemplo, quando um aplicativo é executado no WinPE e precisa gravar arquivos temporários, o WinPE redireciona os arquivos para o espaço transitório na memória para simular a presença de uma unidade de disco. Por padrão, esse valor é de 512 MB para dispositivos com mais de 1 GB de RAM, caso contrário, o padrão é 32 MB.  
 
 #### <a name="optional-components"></a>Componentes Opcionais
-Na guia **Componentes Opcionais**, especifique os componentes que serão adicionados ao Windows PE para uso com o Configuration Manager. Para obter mais informações sobre os componentes opcionais disponíveis, confira [WinPE: adicionar pacotes (referência de componentes opcionais)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).  
+Na guia **Componentes Opcionais**, especifique os componentes que serão adicionados ao Windows PE para uso com o Configuration Manager. Para obter mais informações sobre os componentes opcionais disponíveis, consulte [WinPE: Adicionar pacotes (Referência de Componentes Opcionais)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).  
 
 Os seguintes componentes são exigidos pelo Configuration Manager e sempre adicionados às imagens de inicialização:
 - Script (WinPE-Scripting)
@@ -221,9 +221,9 @@ Os seguintes componentes são exigidos pelo Configuration Manager e sempre adici
 A lista **Componentes** mostra itens adicionais que são adicionados a esta imagem de inicialização. Para adicionar mais componentes, selecione o asterisco dourado. Para remover um componente, selecione-o na lista e, em seguida, selecione o X vermelho. 
 
 Os seguintes componentes são comumente usados pelos clientes:
-- Microsoft .NET (WinPE-NetFX): Esse componente é um pré-requisito para o PowerShell. É um dos maiores componentes opcionais.  
-- Windows PowerShell (WinPE-PowerShell): Esse componente requer o .NET e adiciona suporte limitado ao PowerShell. Se você executar scripts personalizados do PowerShell durante a fase do WinPE da sequência de tarefas, adicione esse componente. Há outros componentes que podem ser necessários para outros cmdlets do PowerShell.   
-- HTML (WinPE-HTA): Se você executar aplicativos HTML personalizados durante a fase do WinPE da sequência de tarefas, adicione esse componente. 
+- Microsoft .NET (WinPE-NetFX): esse componente é um pré-requisito para o PowerShell. É um dos maiores componentes opcionais.  
+- Windows PowerShell (WinPE-PowerShell): este componente requer o .NET e adiciona suporte limitado ao PowerShell. Se você executar scripts personalizados do PowerShell durante a fase do WinPE da sequência de tarefas, adicione esse componente. Há outros componentes que podem ser necessários para outros cmdlets do PowerShell.   
+- HTML (WinPE-HTA): se você executar aplicativos HTML personalizados durante a fase do WinPE da sequência de tarefas, adicione esse componente. 
 
 Para saber mais sobre como adicionar idiomas, confira [Configurar vários idiomas](#BKMK_BootImageLanguage). 
 
@@ -255,11 +255,11 @@ Na guia **Configurações de Distribuição** , selecione qualquer uma das segui
 #### <a name="content-locations"></a>Locais de Conteúdo
 Na guia **Locais de Conteúdo**, selecione o ponto de distribuição ou o grupo de pontos de distribuição e use as seguintes ações:  
 
-- **Validar**: Verifique a integridade do pacote de imagem de inicialização no ponto de distribuição ou grupo de pontos de distribuição selecionado.  
+- **Validar**: verifique a integridade do pacote de imagem de inicialização no ponto de distribuição ou grupo de pontos de distribuição selecionado.  
 
-- **Redistribuir**: Distribua a imagem de inicialização para o ponto de distribuição selecionado ou para o grupo de pontos de distribuição novamente.  
+- **Redistribuir**: distribua a imagem de inicialização para o ponto de distribuição selecionado ou para o grupo de pontos de distribuição novamente.  
 
-- **Remover**: Exclua a imagem de inicialização do ponto de distribuição ou grupo de pontos de distribuição selecionado.  
+- **Remover**: exclua a imagem de inicialização do ponto de distribuição ou grupo de pontos de distribuição selecionado.  
 
 #### <a name="security"></a>Segurança
 Na guia **Segurança**, visualize os usuários administrativos que têm permissões para esse objeto.
