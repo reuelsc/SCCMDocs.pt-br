@@ -18,7 +18,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 07/09/2019
 ms.locfileid: "67677828"
 ---
-# <a name="how-to-deploy-clients-to-macs"></a>How to deploy clients to Macs
+# <a name="how-to-deploy-clients-to-macs"></a>Como implantar clientes em Mac
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 

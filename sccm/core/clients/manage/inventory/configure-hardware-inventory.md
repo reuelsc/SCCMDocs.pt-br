@@ -18,7 +18,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 05/09/2019
 ms.locfileid: "65499941"
 ---
-# <a name="how-to-configure-hardware-inventory-in-system-center-configuration-manager"></a>How to configure hardware inventory in System Center Configuration Manager
+# <a name="how-to-configure-hardware-inventory-in-system-center-configuration-manager"></a>Como configurar o Inventário de Hardware no System Center Configuration Manager
 
 *Aplica-se a: System Center Configuration Manager (Branch Atual)*
 
