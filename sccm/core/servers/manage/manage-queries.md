@@ -35,8 +35,8 @@ Este artigo pode ajudá-lo a gerenciar consultas no System Center Configuration 
 |---------------------|-------------|
 |**Executar**|Executa a consulta selecionada e exibe os resultados no console do Configuration Manager.|
 |**Instalar o cliente**|Abre o **Assistente para Instalar Cliente**, que permite instalar o cliente do Configuration Manager nos computadores retornados pela consulta selecionada.<br /><br /> Essa opção não está disponível para consultas que retornam dispositivos móveis, usuários ou grupos de usuários. <br /><br /> Para obter mais informações sobre como instalar clientes do Configuration Manager usando push de cliente, consulte [Implantar clientes em computadores Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).| 
-|**Exportarar**|Abre o **Assistente de Objetos de Exportação**. Este assistente permite exportar a consulta para um arquivo MOF (Managed Object Format) que pode ser importado em outro site.
-|**Moverr**|Abre a caixa de diálogo **Mover Itens Selecionados**. Essa caixa de diálogo permite mover a consulta selecionada para uma pasta criada anteriormente no nó **Consultas**.|
+|**Exportar**|Abre o **Assistente de Objetos de Exportação**. Este assistente permite exportar a consulta para um arquivo MOF (Managed Object Format) que pode ser importado em outro site.
+|**Mover**|Abre a caixa de diálogo **Mover Itens Selecionados**. Essa caixa de diálogo permite mover a consulta selecionada para uma pasta criada anteriormente no nó **Consultas**.|
 
 ## <a name="next-steps"></a>Próximas etapas 
  [Como criar consultas no System Center Configuration Manager](../../../core/servers/manage/create-queries.md)
